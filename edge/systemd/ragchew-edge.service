@@ -1,0 +1,23 @@
+[Unit]
+Description=Ragchew edge call forwarder
+After=network-online.target trunk-recorder.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ragchew
+Group=ragchew
+EnvironmentFile=/etc/ragchew/edge.env
+ExecStart=/opt/ragchew/.venv/bin/ragchew-edge
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/ragchew /run/ragchew
+ReadOnlyPaths=/etc/ragchew
+CapabilityBoundingSet=
+
+[Install]
+WantedBy=multi-user.target

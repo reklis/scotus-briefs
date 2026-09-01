@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Hourly digest {{ digest.watermark }}{% endblock %}
+{% block content %}<h1>Hourly digest</h1><p>{{ digest.message }}</p>
+{% if digest.changed_story_ids %}<ul>{% for id in digest.changed_story_ids %}<li><a href="/stories/{{ id }}">Incident update</a></li>{% endfor %}</ul>{% endif %}
+{% endblock %}

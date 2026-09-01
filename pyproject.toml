@@ -1,0 +1,72 @@
+[project]
+name = "ragchew"
+version = "0.1.0"
+description = "Transcript-grounded Supreme Court legal briefs"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "boto3>=1.35,<2",
+  "fastapi>=0.115,<1",
+  "httpx>=0.27,<1",
+  "jinja2>=3.1,<4",
+  "openai>=1.60,<2",
+  "prometheus-client>=0.21,<1",
+  "psycopg[binary,pool]>=3.2,<4",
+  "pypdf>=6.0,<7",
+  "pydantic>=2.10,<3",
+  "pydantic-settings>=2.7,<3",
+  "python-multipart>=0.0.20,<1",
+  "pyyaml>=6.0,<7",
+  "tenacity>=9,<10",
+  "uvicorn[standard]>=0.34,<1",
+]
+
+[project.optional-dependencies]
+stt = ["faster-whisper>=1.1,<2"]
+
+[dependency-groups]
+dev = [
+  "mypy>=1.14,<2",
+  "pytest>=8.3,<9",
+  "pytest-cov>=6,<7",
+  "respx>=0.22,<1",
+  "ruff>=0.9,<1",
+  "types-pyyaml>=6.0,<7",
+]
+
+[project.scripts]
+ragchew-api = "ragchew.api:main"
+ragchew-edge = "ragchew.edge.cli:main"
+ragchew-worker = "ragchew.worker:main"
+ragchew-publish = "ragchew.publisher:main"
+ragchew-public = "ragchew.public:main"
+ragchew-maintenance = "ragchew.maintenance:main"
+ragchew-scotus-discover = "ragchew.scotus.collector:main"
+ragchew-scotus-worker = "ragchew.scotus.worker:main"
+ragchew-scotus-publish = "ragchew.scotus.publisher:main"
+ragchew-scotus-retention = "ragchew.scotus.retention:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ragchew"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+packages = ["ragchew"]

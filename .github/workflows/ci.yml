@@ -1,0 +1,29 @@
+name: ci
+on:
+  pull_request:
+  push:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --dev
+      - run: uv run ruff check .
+      - run: uv run mypy
+      - run: uv run pytest
+      - run: uvx pip-audit
+      - uses: gitleaks/gitleaks-action@v2
+        env: {GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"}
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f Containerfile -t ragchew:test .
+      - uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ragchew:test
+          severity: HIGH,CRITICAL
+          exit-code: "1"

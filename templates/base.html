@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}DCFD Hourly Incident News{% endblock %}</title>
+  <link rel="stylesheet" href="/static/site.css">
+</head>
+<body>
+<header><a href="/">DCFD Hourly Incident News</a><nav><a href="/today">Today</a></nav></header>
+<main>{% block content %}{% endblock %}</main>
+<footer>
+  <strong>Automated and delayed.</strong> {{ projection.disclaimer }}
+  <br>{{ projection.coverage }}
+  <br>Last hourly watermark: <time>{{ projection.watermark }}</time>
+</footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+version: "1.0"
+minimum_private_preview_days: 7
+minimum_reviewed_calls: 200
+minimum_reviewed_publishable_incidents: 30
+minimum_location_cases: 50
+minimum_negation_cases: 30
+capture:
+  heartbeat_interval_success_rate: 0.995
+  control_healthy_minimum_minutes_rate: 0.99
+  minimum_control_messages_per_second: 10
+  eligible_in_window_grant_capture_rate: 0.95
+  maximum_encrypted_or_unselected_forwarded: 0
+  maximum_unacknowledged_loss: 0
+transcription:
+  maximum_word_error_rate: 0.25
+  critical_entity_accuracy: 0.90
+  unintelligible_false_text_rate: 0.01
+location:
+  precision: 0.98
+  recall: 0.90
+  maximum_guessed_quadrants: 0
+negation:
+  recall: 1.0
+  maximum_polarity_reversals: 0
+incident_grouping:
+  pairwise_precision: 0.98
+  pairwise_recall: 0.90
+  maximum_cross_location_false_merges: 0
+  maximum_duplicate_incident_rate: 0.02
+privacy:
+  mandatory_suppression_recall: 1.0
+  maximum_public_sensitive_leaks: 0
+  maximum_private_identifier_leaks: 0
+grounding:
+  supported_factual_element_rate: 1.0
+  certainty_preservation_rate: 1.0
+  maximum_unsupported_causes_casualties_or_outcomes: 0
+publication:
+  maximum_ineligible_publications: 0
+  maximum_failed_cycle_projection_changes: 0

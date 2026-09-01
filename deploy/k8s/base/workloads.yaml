@@ -1,0 +1,120 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata: {name: scotus-collector, namespace: ragchew}
+automountServiceAccountToken: false
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata: {name: scotus-analyzer, namespace: ragchew}
+automountServiceAccountToken: false
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata: {name: scotus-publisher, namespace: ragchew}
+automountServiceAccountToken: false
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata: {name: scotus-retention, namespace: ragchew}
+automountServiceAccountToken: false
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata: {name: public, namespace: ragchew}
+automountServiceAccountToken: false
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: scotus-analyzer, namespace: ragchew}
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: scotus-analyzer}}
+  template:
+    metadata:
+      labels: {app: scotus-analyzer}
+      annotations: {prometheus.io/scrape: "true", prometheus.io/port: "9090"}
+    spec:
+      serviceAccountName: scotus-analyzer
+      securityContext: {runAsNonRoot: true, seccompProfile: {type: RuntimeDefault}}
+      containers:
+        - name: analyzer
+          image: ragchew:latest
+          command: [ragchew-scotus-worker]
+          envFrom:
+            - configMapRef: {name: ragchew-config}
+            - secretRef: {name: ragchew-scotus-analyzer}
+          ports: [{name: metrics, containerPort: 9090}]
+          resources:
+            requests: {cpu: 500m, memory: 512Mi}
+            limits: {cpu: "2", memory: 2Gi}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          volumeMounts: [{name: tmp, mountPath: /tmp}]
+      volumes: [{name: tmp, emptyDir: {sizeLimit: 1Gi}}]
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata: {name: scotus-analyzer, namespace: ragchew}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: scotus-analyzer
+  minReplicas: 1
+  maxReplicas: 4
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 300
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target: {type: Utilization, averageUtilization: 70}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: public, namespace: ragchew}
+spec:
+  replicas: 2
+  selector: {matchLabels: {app: public}}
+  template:
+    metadata: {labels: {app: public}}
+    spec:
+      serviceAccountName: public
+      securityContext: {runAsNonRoot: true, seccompProfile: {type: RuntimeDefault}}
+      containers:
+        - name: public
+          image: ragchew:latest
+          command: [ragchew-public]
+          envFrom:
+            - configMapRef: {name: ragchew-config}
+            - secretRef: {name: ragchew-public-db}
+          ports: [{name: http, containerPort: 8081}]
+          resources:
+            requests: {cpu: 50m, memory: 64Mi}
+            limits: {cpu: 500m, memory: 256Mi}
+          readinessProbe: {httpGet: {path: /scotus, port: http}, initialDelaySeconds: 2}
+          livenessProbe: {httpGet: {path: /scotus, port: http}, initialDelaySeconds: 10}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          volumeMounts: [{name: tmp, mountPath: /tmp}]
+      volumes: [{name: tmp, emptyDir: {}}]
+---
+apiVersion: v1
+kind: Service
+metadata: {name: public, namespace: ragchew}
+spec:
+  selector: {app: public}
+  ports: [{name: http, port: 8081, targetPort: http}]
+---
+# Cluster-only alias used during private-preview validation.
+apiVersion: v1
+kind: Service
+metadata: {name: private-preview, namespace: ragchew}
+spec:
+  selector: {app: public}
+  ports: [{name: http, port: 8081, targetPort: http}]

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ragchew-config
+  namespace: ragchew
+data:
+  RAGCHEW_PRODUCT_MODE: scotus_legal_briefs
+  RAGCHEW_SCOTUS_CONFIG_PATH: /app/config/scotus.yaml
+  RAGCHEW_PROCEEDINGS_CONFIG_PATH: /app/config/proceedings.yaml
+  RAGCHEW_LOG_LEVEL: INFO
+  RAGCHEW_S3_BUCKET: ragchew-private
+  # The active SCOTUS model is pinned in config/scotus.yaml.
+  RAGCHEW_OPENAI_BASE_URL: https://api.openai.com/v1
+  RAGCHEW_S3_ENDPOINT: http://minio.ragchew.svc.cluster.local:9000

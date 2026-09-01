@@ -1,0 +1,109 @@
+{
+  "scheduled_oral_argument": {
+    "source_id": "supreme_court",
+    "external_id": "24-123",
+    "type": "oral_argument",
+    "scheduled_start_at": "2026-10-05T14:00:00Z",
+    "title": "Example Petitioner v. Example Respondent",
+    "official_identifier": "24-123"
+  },
+  "schedule_revision": {
+    "external_id": "24-123",
+    "first_start_at": "2026-10-05T14:00:00Z",
+    "revised_start_at": "2026-10-05T15:00:00Z",
+    "expected_revision_count": 2
+  },
+  "postponed_hearing": {
+    "source_id": "dc_council",
+    "external_id": "hearing-b25-0001-2026-09-10",
+    "prior_lifecycle": "scheduled",
+    "lifecycle": "postponed",
+    "replacement_time": null
+  },
+  "cancelled_briefing": {
+    "source_id": "dc_mayor",
+    "external_id": "briefing-2026-09-11",
+    "lifecycle": "cancelled",
+    "expected_media_jobs": 0
+  },
+  "live_gap": {
+    "media_external_id": "house-floor-2026-09-12-live",
+    "chunks": [
+      {"sequence": 0, "start_ms": 0, "end_ms": 300000, "discontinuity_before": false},
+      {"sequence": 1, "start_ms": 420000, "end_ms": 720000, "discontinuity_before": true}
+    ],
+    "missing_range_ms": [300000, 420000]
+  },
+  "archive_replacement": {
+    "live_revision": {"kind": "live", "duration_ms": 720000, "canonical": false},
+    "archive_revision": {"kind": "archive", "duration_ms": 840000, "canonical": true},
+    "fills_range_ms": [300000, 420000],
+    "live_evidence_retained": true
+  },
+  "revised_agenda": {
+    "source_id": "dc_council",
+    "external_id": "agenda-committee-2026-09-14",
+    "revisions": [
+      {"revision": 1, "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "items": ["B25-0001"]},
+      {"revision": 2, "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "items": ["B25-0001", "B25-0002"]}
+    ]
+  },
+  "anonymous_sensitive_testimony": {
+    "source_id": "dc_council",
+    "speaker_label": "unknown-3",
+    "participant_role": "private_witness",
+    "identity_basis": "anonymous",
+    "transcript": "My name is Jane Example and my child receives treatment at 100 Main Street.",
+    "sensitivity": ["personal_name", "minor", "medical", "home_address"],
+    "public_name": null,
+    "publishable": false
+  },
+  "oral_argument_question": {
+    "source_id": "supreme_court",
+    "speaker_role": "public_official",
+    "statement_type": "question",
+    "action_type": "none",
+    "action_status": "questioned",
+    "text": "Would your rule apply if the facts were different?",
+    "forbidden_statuses": ["ordered", "effective", "implemented"]
+  },
+  "house_floor_debate": {
+    "source_id": "house_floor",
+    "official_identifier": "H.R. 1234",
+    "statement_type": "debate",
+    "action_status": "argued",
+    "text": "A member urged passage of H.R. 1234.",
+    "forbidden_summary": "The House passed H.R. 1234."
+  },
+  "house_vote": {
+    "source_id": "house_floor",
+    "official_identifier": "Roll Call 321",
+    "document_type": "vote_record",
+    "vote": {"yes": 220, "no": 210, "other": 5},
+    "action_type": "vote",
+    "action_status": "passed_one_chamber",
+    "forbidden_summary": "H.R. 1234 became law."
+  },
+  "council_committee_action": {
+    "source_id": "dc_council",
+    "official_identifier": "B25-0001",
+    "body": "Committee on Example",
+    "action_type": "adopt",
+    "action_status": "advanced",
+    "forbidden_summary": "The full DC Council enacted B25-0001."
+  },
+  "mayoral_announcement": {
+    "source_id": "dc_mayor",
+    "statement_type": "announcement",
+    "action_type": "none",
+    "action_status": "announced",
+    "text": "The mayor announced that a pilot program is planned for next year.",
+    "forbidden_status": "implemented"
+  },
+  "corrected_vote": {
+    "official_identifier": "Roll Call 321",
+    "first": {"yes": 219, "no": 211, "other": 5},
+    "corrected": {"yes": 220, "no": 210, "other": 5},
+    "prior_evidence_retained": true
+  }
+}

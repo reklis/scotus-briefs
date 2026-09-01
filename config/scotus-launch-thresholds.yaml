@@ -1,0 +1,45 @@
+version: "1.0"
+minimum_private_preview_days: 7
+minimum_reviewed_cases: 20
+minimum_newly_published_transcripts: 1
+discovery:
+  successful_poll_rate: 0.99
+  duplicate_case_rate_maximum: 0.0
+  duplicate_argument_rate_maximum: 0.0
+  unapproved_host_or_redirect_collections_maximum: 0
+  audio_or_stt_jobs_maximum: 0
+transcript:
+  accepted_document_completeness_rate: 1.0
+  source_page_count_accuracy: 1.0
+  page_line_coordinate_accuracy: 1.0
+  header_footer_artifact_recall: 1.0
+  ambiguous_pages_maximum: 0
+  named_speaker_precision: 1.0
+  unsupported_speaker_identities_maximum: 0
+legal_status:
+  justice_question_as_holding_maximum: 0
+  transcript_only_final_actions_maximum: 0
+  unsupported_vote_or_outcome_predictions_maximum: 0
+  attributed_contention_recall: 1.0
+citation:
+  quotation_support_rate: 1.0
+  citation_precision: 1.0
+  citation_recall: 0.95
+  invented_authorities_maximum: 0
+issue_grouping:
+  pairwise_precision: 0.98
+  pairwise_recall: 0.90
+  cross_docket_false_merges_maximum: 0
+sensitivity:
+  sensitive_minimization_recall: 1.0
+  public_sensitive_leaks_maximum: 0
+  sealed_or_redacted_publications_maximum: 0
+grounding:
+  supported_factual_element_rate: 1.0
+  approved_claim_reference_rate: 1.0
+  unsupported_procedural_history_maximum: 0
+public_boundary:
+  private_document_or_text_leaks_maximum: 0
+  failed_cycle_projection_changes_maximum: 0
+  missing_disclosure_pages_maximum: 0
+  inaccessible_source_labels_maximum: 0

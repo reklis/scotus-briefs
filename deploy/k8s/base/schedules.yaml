@@ -1,0 +1,90 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata: {name: scotus-discovery, namespace: ragchew}
+spec:
+  schedule: "*/15 * * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      template:
+        metadata: {labels: {app: scotus-collector, component: discovery}}
+        spec:
+          serviceAccountName: scotus-collector
+          restartPolicy: Never
+          securityContext: {runAsNonRoot: true, seccompProfile: {type: RuntimeDefault}}
+          containers:
+            - name: discovery
+              image: ragchew:latest
+              command: [ragchew-scotus-discover]
+              envFrom:
+                - configMapRef: {name: ragchew-config}
+                - secretRef: {name: ragchew-scotus-collector}
+              resources:
+                requests: {cpu: 100m, memory: 128Mi}
+                limits: {cpu: 500m, memory: 512Mi}
+              securityContext:
+                allowPrivilegeEscalation: false
+                readOnlyRootFilesystem: true
+                capabilities: {drop: [ALL]}
+              volumeMounts: [{name: tmp, mountPath: /tmp}]
+          volumes: [{name: tmp, emptyDir: {sizeLimit: 256Mi}}]
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata: {name: scotus-publisher, namespace: ragchew}
+spec:
+  schedule: "*/10 * * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      template:
+        metadata: {labels: {app: scotus-publisher, component: publisher}}
+        spec:
+          serviceAccountName: scotus-publisher
+          restartPolicy: Never
+          securityContext: {runAsNonRoot: true, seccompProfile: {type: RuntimeDefault}}
+          containers:
+            - name: publisher
+              image: ragchew:latest
+              command: [ragchew-scotus-publish]
+              envFrom:
+                - configMapRef: {name: ragchew-config}
+                - secretRef: {name: ragchew-scotus-publisher}
+              resources:
+                requests: {cpu: 100m, memory: 128Mi}
+                limits: {cpu: "1", memory: 512Mi}
+              securityContext:
+                allowPrivilegeEscalation: false
+                readOnlyRootFilesystem: true
+                capabilities: {drop: [ALL]}
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata: {name: scotus-retention, namespace: ragchew}
+spec:
+  schedule: "17 * * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        metadata: {labels: {app: scotus-retention, component: retention}}
+        spec:
+          serviceAccountName: scotus-retention
+          restartPolicy: Never
+          securityContext: {runAsNonRoot: true, seccompProfile: {type: RuntimeDefault}}
+          containers:
+            - name: retention
+              image: ragchew:latest
+              command: [ragchew-scotus-retention]
+              envFrom:
+                - configMapRef: {name: ragchew-config}
+                - secretRef: {name: ragchew-scotus-retention}
+              resources:
+                requests: {cpu: 50m, memory: 64Mi}
+                limits: {cpu: 500m, memory: 256Mi}
+              securityContext:
+                allowPrivilegeEscalation: false
+                readOnlyRootFilesystem: true
+                capabilities: {drop: [ALL]}

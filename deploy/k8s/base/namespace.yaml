@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ragchew
+  labels:
+    app.kubernetes.io/part-of: ragchew

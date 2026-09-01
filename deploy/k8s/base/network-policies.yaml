@@ -1,0 +1,108 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: default-deny, namespace: ragchew}
+spec:
+  podSelector: {}
+  policyTypes: [Ingress, Egress]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: allow-public-ingress, namespace: ragchew}
+spec:
+  podSelector: {matchLabels: {app: public}}
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels: {kubernetes.io/metadata.name: ingress-nginx}
+      ports: [{protocol: TCP, port: 8081}]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: allow-analyzer-monitoring, namespace: ragchew}
+spec:
+  podSelector: {matchLabels: {app: scotus-analyzer}}
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels: {kubernetes.io/metadata.name: monitoring}
+      ports: [{protocol: TCP, port: 9090}]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: allow-dns, namespace: ragchew}
+spec:
+  podSelector: {}
+  policyTypes: [Egress]
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels: {kubernetes.io/metadata.name: kube-system}
+      ports:
+        - {protocol: UDP, port: 53}
+        - {protocol: TCP, port: 53}
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: scotus-collector-egress, namespace: ragchew}
+spec:
+  podSelector: {matchLabels: {app: scotus-collector}}
+  policyTypes: [Egress]
+  egress:
+    - to: [{podSelector: {}}]
+      ports:
+        - {protocol: TCP, port: 5432}
+        - {protocol: TCP, port: 9000}
+    # Base NetworkPolicy cannot select an FQDN. Production overlays must use the
+    # CNI FQDN policy to narrow this to www.supremecourt.gov.
+    - ports: [{protocol: TCP, port: 443}]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: scotus-analyzer-egress, namespace: ragchew}
+spec:
+  podSelector: {matchLabels: {app: scotus-analyzer}}
+  policyTypes: [Egress]
+  egress:
+    - to: [{podSelector: {}}]
+      ports:
+        - {protocol: TCP, port: 5432}
+        - {protocol: TCP, port: 9000}
+    # Production CNI overlays narrow this HTTPS rule to api.openai.com.
+    - ports: [{protocol: TCP, port: 443}]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: scotus-publisher-egress, namespace: ragchew}
+spec:
+  podSelector: {matchLabels: {app: scotus-publisher}}
+  policyTypes: [Egress]
+  egress:
+    - to: [{podSelector: {}}]
+      ports:
+        - {protocol: TCP, port: 5432}
+    # Production CNI overlays narrow this HTTPS rule to api.openai.com.
+    - ports: [{protocol: TCP, port: 443}]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: scotus-retention-egress, namespace: ragchew}
+spec:
+  podSelector: {matchLabels: {app: scotus-retention}}
+  policyTypes: [Egress]
+  egress:
+    - to: [{podSelector: {}}]
+      ports:
+        - {protocol: TCP, port: 5432}
+        - {protocol: TCP, port: 9000}
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: public-db-only, namespace: ragchew}
+spec:
+  podSelector: {matchLabels: {app: public}}
+  policyTypes: [Egress]
+  egress:
+    - to: [{podSelector: {matchLabels: {app: postgres}}}]
+      ports: [{protocol: TCP, port: 5432}]

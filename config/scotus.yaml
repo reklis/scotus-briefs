@@ -1,0 +1,85 @@
+version: "1.0"
+product: scotus_legal_briefs
+source_id: supreme_court
+# Launch remains disabled until private validation gates pass.
+enabled: false
+discovery:
+  terms:
+    - "2025"
+    - "2024"
+    - "2023"
+    - "2022"
+    - "2021"
+    - "2020"
+    - "2019"
+    - "2018"
+    - "2017"
+    - "2016"
+    - "2015"
+    - "2014"
+    - "2013"
+    - "2012"
+    - "2011"
+    - "2010"
+    - "2009"
+    - "2008"
+    - "2007"
+    - "2006"
+    - "2005"
+    - "2004"
+    - "2003"
+    - "2002"
+    - "2001"
+    - "2000"
+  backfill_case_limit: 200
+  backfill_lookback_days: 183
+  backfill_priority: 100
+  new_transcript_priority: 10
+  poll_interval_seconds: 900
+  crawl_delay_seconds: 1.0
+documents:
+  maximum_pdf_bytes: 52428800
+  maximum_pages: 500
+  allowed_content_types:
+    - application/pdf
+    - text/html
+  spool_memory_bytes: 8388608
+  download_audio: false
+  stt_enabled: false
+parser:
+  name: pypdf
+  version: "1"
+  minimum_line_coverage: 0.99
+  maximum_ambiguous_pages: 0
+retention:
+  copied_document_hours: 24
+  extracted_text_days: 30
+  failed_download_hours: 24
+generation:
+  provider: openai
+  model: gpt-5
+  prompt_version: scotus-brief-plain-language-v14
+  brief_generation_enabled: false
+  maximum_brief_api_calls_per_run: 1
+  stop_after_brief_validation_failure: true
+  audience: general_public
+  maximum_context_characters: 60000
+  minimum_observation_confidence: 0.85
+  maximum_sentence_words: 30
+  maximum_paragraph_words: 120
+  public_quotes: false
+  prohibit_vote_predictions: true
+  prohibit_personalized_legal_advice: true
+publication:
+  enabled: false
+  site_name: SCOTUS Legal Briefs
+  base_path: /scotus
+  case_page_requires_official_transcript: true
+  event_driven: true
+launch:
+  minimum_private_preview_days: 7
+  minimum_reviewed_cases: 20
+  minimum_page_line_accuracy: 1.0
+  minimum_grounded_factual_element_rate: 1.0
+  maximum_status_upgrades: 0
+  maximum_sensitive_leaks: 0

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}SCOTUS Legal Briefs{% endblock %}</title>
+  {% block canonical %}{% endblock %}
+  <link rel="stylesheet" href="/static/scotus.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="/scotus">SCOTUS Legal Briefs</a>
+  <nav aria-label="Primary navigation">
+    <a href="/scotus">Cases</a>
+    <a href="/scotus/terms/2025">Current term</a>
+    <a href="/scotus/search">Search</a>
+  </nav>
+</header>
+<aside class="disclosure" aria-label="Important disclosure">
+  <strong>Automated legal analysis:</strong> {{ projection.disclosure }}
+</aside>
+<main id="content">{% block content %}{% endblock %}</main>
+<footer>
+  <p>{{ projection.disclosure }}</p>
+  <p>Projection updated <time datetime="{{ projection.generated_at.isoformat() }}">{{ projection.generated_at }}</time>.</p>
+</footer>
+</body>
+</html>

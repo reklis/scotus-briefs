@@ -1,0 +1,36 @@
+{
+  "ver": 2,
+  "sources": [
+    {
+      "center": 858000000,
+      "rate": 8016000,
+      "ppm": 0,
+      "gain": 14,
+      "ifGain": 24,
+      "bbGain": 20,
+      "digitalRecorders": 4,
+      "debugRecorders": 0,
+      "driver": "osmosdr",
+      "device": "hackrf=0"
+    }
+  ],
+  "systems": [
+    {
+      "control_channels": [855237500, 855462500, 857987500, 858987500],
+      "type": "p25",
+      "shortName": "dcfd-local",
+      "modulation": "qpsk",
+      "talkgroupsFile": "/etc/ragchew/talkgroups.csv",
+      "recordUnknown": false,
+      "hideEncrypted": true,
+      "callLog": true,
+      "audioArchive": true,
+      "compressWav": false
+    }
+  ],
+  "captureDir": "/var/lib/ragchew/capture",
+  "callTimeout": 3,
+  "logFile": true,
+  "logLevel": "info",
+  "frequencyFormat": "hz"
+}

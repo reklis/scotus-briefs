@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: public
+  namespace: ragchew
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  tls: [{hosts: [briefs.example.invalid], secretName: public-tls}]
+  rules:
+    - host: briefs.example.invalid
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: {service: {name: public, port: {name: http}}}

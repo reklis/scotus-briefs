@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ragchew
+      POSTGRES_USER: ragchew
+      POSTGRES_PASSWORD: ragchew
+    ports:
+      - "55432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ragchew"]
+      interval: 1s
+      timeout: 2s
+      retries: 30
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address :9001
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "59000:9000"
+      - "59001:9001"

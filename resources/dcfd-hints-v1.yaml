@@ -1,0 +1,54 @@
+version: dcfd-v1
+units:
+  - Engine
+  - Truck
+  - Rescue Squad
+  - Battalion Chief
+  - Ambulance
+  - Medic
+  - EMS Supervisor
+  - Hazmat
+  - Foam Unit
+  - Fireboat
+  - Mass Casualty Unit
+talkgroups:
+  - 01 DISP
+  - 02 MAIN
+  - INC 10
+  - INC 11
+  - INC 12
+  - INC 20
+  - INC 21
+  - INC 22
+  - INC 30
+  - INC 31
+  - INC 32
+  - INC 40
+  - INC 41
+  - INC 42
+streets:
+  - H Street
+  - K Street
+  - M Street
+  - Pennsylvania Avenue
+  - Massachusetts Avenue
+  - Connecticut Avenue
+  - Wisconsin Avenue
+  - Georgia Avenue
+  - Rhode Island Avenue
+  - New York Avenue
+  - North Capitol Street
+  - South Capitol Street
+  - East Capitol Street
+  - numbered streets
+  - lettered streets
+quadrants: [Northeast, Northwest, Southeast, Southwest, NE, NW, SE, SW]
+landmarks:
+  - Union Station
+  - Dupont Circle
+  - Navy Yard
+  - National Mall
+  - Rock Creek Park
+  - Anacostia River
+  - Potomac River
+  - RFK Campus

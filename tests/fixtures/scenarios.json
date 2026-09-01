@@ -1,0 +1,20 @@
+{
+  "clear_call": {"talkgroup_id": 101, "encrypted": false, "transcript": "Engine 10 respond to the 1400 block of H Street Northeast for a reported fire."},
+  "encrypted_call": {"talkgroup_id": 716, "encrypted": true, "transcript": null},
+  "duplicate": {"capture_id": "same-capture", "same_digest": true},
+  "routine": {"talkgroup_id": 102, "transcript": "Engine 10, okay."},
+  "corrected_location": ["Respond to 1400 H Street Northwest.", "Correction, 1400 H Street Northeast."],
+  "negation": {"transcript": "Engine 10 on scene, no smoke and no fire showing."},
+  "sensitive_medical": {"transcript": "Medic 1 for John Doe in apartment 4B, overdose reported."},
+  "multi_call_fire": [
+    "Engine 10 respond to 1400 H Street Northeast for a reported structure fire.",
+    "Engine 10 on scene, smoke showing from the second floor.",
+    "Request the working fire dispatch."
+  ],
+  "cancellation": ["Box alarm for 1200 K Street Northwest.", "Units can return, alarm unfounded."],
+  "cross_hour": {
+    "before": "2026-08-27T18:58:00Z",
+    "after": "2026-08-27T19:05:00Z",
+    "location": "1400 block H Street NE"
+  }
+}

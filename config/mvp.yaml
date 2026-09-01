@@ -1,0 +1,59 @@
+version: "1.0"
+receiver:
+  receiver_id: dc-pi-01
+  system_id: dcfd
+  # Initial single-receiver 800 MHz window. This does not cover the system's 700 MHz channels.
+  rf_center_hz: 858000000
+  # Trunk Recorder requires an OsmoSDR rate divisible by 24 kHz.
+  rf_sample_rate_hz: 8016000
+  rf_min_hz: 854000000
+  rf_max_hz: 862000000
+  control_channels_hz: [855237500, 855462500, 857987500, 858987500]
+  talkgroups:
+    101: "01 DISP"
+    102: "02 MAIN"
+    700: "03 INC 10"
+    701: "05 INC 11"
+    702: "06 INC 12"
+    703: "07 INC 20"
+    704: "09 INC 21"
+    705: "010 INC 22"
+    710: "0A3 INC 30"
+    711: "0A5 INC 31"
+    712: "0A6 INC 32"
+    713: "0A7 INC 40"
+    714: "0A9 INC 41"
+    715: "0A10 INC 42"
+  spool_max_bytes: 10737418240
+  acknowledged_grace_seconds: 3600
+  heartbeat_seconds: 30
+retry:
+  maximum_attempts: 10
+  base_delay_seconds: 2
+  maximum_delay_seconds: 300
+  job_lease_seconds: 300
+  abandoned_upload_seconds: 3600
+retention:
+  audio_hours: 24
+  transcript_days: 30
+  failed_upload_hours: 24
+publication:
+  grace_minutes: 10
+  lookback_hours: 6
+  minimum_confidence: 0.75
+  on_scene_weight: 1.0
+  dispatch_weight: 0.35
+  allowlist:
+    - structure_fire
+    - rescue
+    - hazmat
+    - major_collision
+    - entrapment
+    - multi_alarm
+  mandatory_suppression:
+    - medical
+    - behavioral_health
+    - suicide
+    - overdose
+    - juvenile
+  residential_location_precision: block

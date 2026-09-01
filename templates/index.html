@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>DC Fire and EMS incident updates</h1>
+<section><h2>Active</h2>
+{% for story in active %}<article><h3><a href="/stories/{{ story.story_id }}">{{ story.title }}</a></h3><p>{{ story.summary }}</p><small>{{ story.location }} · Updated {{ story.updated_at }}</small></article>
+{% else %}<p>No qualifying active incidents are published.</p>{% endfor %}
+</section>
+<section><h2>Resolved and corrected</h2>
+{% for story in resolved %}<article><h3><a href="/stories/{{ story.story_id }}">{{ story.title }}</a></h3><p>{{ story.summary }}</p><small>{{ story.status }} · {{ story.updated_at }}</small></article>
+{% else %}<p>No qualifying resolved incidents are published.</p>{% endfor %}
+</section>
+<p><a href="/digests/{{ projection.watermark.isoformat() }}">Latest hourly digest</a></p>
+{% endblock %}

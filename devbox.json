@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.2/.schema/devbox.schema.json",
+  "packages": [
+    "python@3.12",
+    "uv@latest",
+    "ruff@latest",
+    "postgresql@16",
+    "kubectl@latest",
+    "docker@latest",
+    "docker-compose@latest",
+    "minio-client@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "true"
+    ],
+    "scripts": {
+      "sync": [
+        "uv sync --dev"
+      ],
+      "test": [
+        "uv run pytest"
+      ],
+      "lint": [
+        "ruff check . && uv run mypy src/ragchew"
+      ],
+      "check": [
+        "ruff check . && uv run mypy src/ragchew && uv run pytest"
+      ]
+    }
+  }
+}

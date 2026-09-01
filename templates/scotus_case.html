@@ -1,0 +1,89 @@
+{% extends "scotus_base.html" %}
+{% block title %}{{ case.title }} · SCOTUS Legal Briefs{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ canonical }}">{% endblock %}
+{% block content %}
+<article class="case-brief">
+  <header>
+    <p class="eyebrow">October Term {{ case.term }} · Docket {{ case.primary_docket }}</p>
+    <h1>{{ case.title }}</h1>
+    <p class="dek">{{ case.dek }}</p>
+    <dl class="meta">
+      <div><dt>Official caption</dt><dd>{{ case.caption }}</dd></div>
+      <div><dt>Argument date</dt><dd><time datetime="{{ case.argument_date.isoformat() }}">{{ case.argument_date.date() }}</time></dd></div>
+      <div><dt>Latest verified event</dt><dd>{{ case.case_status.value.replace('_', ' ')|title }}</dd></div>
+      <div><dt>Sources analyzed through</dt><dd>{{ case.maturity.value.replace('_', ' ')|title }}</dd></div>
+    </dl>
+  </header>
+
+  <section aria-labelledby="case-history-heading">
+    <h2 id="case-history-heading">Verified source milestones</h2>
+    <ol class="case-timeline">
+    {% for event in case.case_history %}
+      <li><time datetime="{{ event.changed_at.isoformat() }}">{{ event.changed_at.date() }}</time> — {{ event.explanation }}</li>
+    {% endfor %}
+    </ol>
+  </section>
+
+  <section class="argument-history" aria-labelledby="arguments-heading">
+    <h2 id="arguments-heading">The arguments, in order</h2>
+    <p>This case may have been argued more than once. Each entry below uses that session's official transcript. Later arguments do not erase earlier ones.</p>
+    <ol class="argument-list">
+    {% for argument in case.arguments %}
+      <li>
+        <article class="argument-card">
+          <p class="eyebrow">{% if argument.reargument %}Reargument{% else %}Argument {{ argument.sequence }}{% endif %} · <time datetime="{{ argument.argument_date.isoformat() }}">{{ argument.argument_date.date() }}</time></p>
+          <h3>{{ argument.heading }}</h3>
+          {% for paragraph in argument.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+          <p class="source-actions"><a href="{{ argument.official_transcript_url }}" rel="external">Read the official transcript for this argument</a> · <a href="{{ argument.official_detail_url }}" rel="external">Official argument details</a></p>
+          <details>
+            <summary>Sources used for this argument breakdown</summary>
+            <ul>{% for source in argument.sources %}<li><a href="{{ source.official_url }}" rel="external">{{ source.label }}</a></li>{% endfor %}</ul>
+          </details>
+        </article>
+      </li>
+    {% endfor %}
+    </ol>
+  </section>
+
+  <section aria-labelledby="full-view-heading">
+    <h2 id="full-view-heading">A citizen's guide to the whole case</h2>
+  </section>
+  {% for section in case.sections %}
+  <section aria-labelledby="section-{{ loop.index }}">
+    <h2 id="section-{{ loop.index }}">{{ section.heading }}</h2>
+    {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+    <details>
+      <summary>Official sources for this section</summary>
+      <ul>
+      {% for source in section.sources %}
+        <li><a href="{{ source.official_url }}" rel="external">{{ source.label }}</a></li>
+      {% endfor %}
+      </ul>
+    </details>
+  </section>
+  {% endfor %}
+
+  <section aria-labelledby="provenance-heading">
+    <h2 id="provenance-heading">Official Court provenance</h2>
+    <p><a href="{{ case.official_docket_url }}" rel="external">Official docket and case history</a> · <a href="{{ case.official_detail_url }}" rel="external">Official Supreme Court oral-argument detail page</a></p>
+    {% if case.official_disposition_urls %}
+    <h3>Verified official opinions and orders</h3>
+    <ul>{% for url in case.official_disposition_urls %}<li><a href="{{ url }}" rel="external">Official Court disposition document {{ loop.index }}</a></li>{% endfor %}</ul>
+    {% endif %}
+    <h3>Title and summary sources</h3>
+    <ul>
+      {% for source in case.title_sources %}<li><a href="{{ source.official_url }}" rel="external">{{ source.label }}</a></li>{% endfor %}
+      {% for source in case.dek_sources %}<li><a href="{{ source.official_url }}" rel="external">{{ source.label }}</a></li>{% endfor %}
+    </ul>
+  </section>
+
+  <section aria-labelledby="revision-heading">
+    <h2 id="revision-heading">Revision history</h2>
+    <ol>
+      {% for revision in case.revisions %}
+      <li>Revision {{ revision.revision_number }} · {{ revision.maturity.value.replace('_', ' ')|title }} · <time datetime="{{ revision.created_at.isoformat() }}">{{ revision.created_at }}</time>{% if revision.correction_note %}<p class="correction"><strong>Correction:</strong> {{ revision.correction_note }}</p>{% endif %}</li>
+      {% endfor %}
+    </ol>
+  </section>
+</article>
+{% endblock %}

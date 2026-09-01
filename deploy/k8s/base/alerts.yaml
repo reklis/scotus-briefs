@@ -1,0 +1,39 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata: {name: ragchew-alerts, namespace: ragchew}
+spec:
+  groups:
+    - name: scotus-legal-briefs
+      rules:
+        - alert: RagchewScotusSourceStale
+          expr: time() - ragchew_scotus_source_last_success_timestamp_seconds > 3600
+          for: 15m
+          labels: {severity: critical}
+          annotations: {summary: "Reviewed Supreme Court source polling is stale"}
+        - alert: RagchewScotusTranscriptDelayed
+          expr: ragchew_scotus_transcript_wait_age_seconds > 86400
+          for: 30m
+          labels: {severity: warning}
+          annotations: {summary: "An argument has waited over 24 hours for an official transcript"}
+        - alert: RagchewScotusDocumentFailures
+          expr: increase(ragchew_scotus_document_outcomes_total{outcome=~"failed|quarantined"}[30m]) > 2
+          labels: {severity: warning}
+          annotations: {summary: "Official Court document collection is repeatedly failing"}
+        - alert: RagchewScotusParserFailures
+          expr: increase(ragchew_scotus_parser_outcomes_total{outcome!="complete"}[30m]) > 0
+          labels: {severity: critical}
+          annotations: {summary: "Official transcript parsing failed closed"}
+        - alert: RagchewScotusGroundingDenials
+          expr: increase(ragchew_scotus_brief_policy_outcomes_total{outcome=~"grounding_denied|sensitive_denied"}[1h]) > 3
+          labels: {severity: warning}
+          annotations: {summary: "Legal brief candidates are repeatedly denied by safety policy"}
+        - alert: RagchewScotusJobBacklog
+          expr: sum(ragchew_job_backlog{stage=~"collect|parse|extract|correlate|policy|publish"}) > 50
+          for: 15m
+          labels: {severity: warning}
+          annotations: {summary: "SCOTUS document or analysis job backlog is growing"}
+        - alert: RagchewScotusPublicationStale
+          expr: (time() - ragchew_scotus_last_publication_timestamp_seconds > 86400) and on() (sum(ragchew_job_backlog{stage="publish"}) > 0)
+          for: 1h
+          labels: {severity: warning}
+          annotations: {summary: "No successful SCOTUS projection activation in 24 hours"}

@@ -1,0 +1,37 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyInsecureTransport",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::ragchew-private",
+        "arn:aws:s3:::ragchew-private/*"
+      ],
+      "Condition": {"Bool": {"aws:SecureTransport": "false"}}
+    },
+    {
+      "Sid": "ScotusCollectorPrivateDocuments",
+      "Effect": "Allow",
+      "Principal": {"AWS": "REPLACE_SCOTUS_COLLECTOR_ROLE_ARN"},
+      "Action": ["s3:PutObject", "s3:GetObject"],
+      "Resource": "arn:aws:s3:::ragchew-private/official/us_supreme_court/supreme_court/*"
+    },
+    {
+      "Sid": "ScotusAnalyzerPrivateReads",
+      "Effect": "Allow",
+      "Principal": {"AWS": "REPLACE_SCOTUS_ANALYZER_ROLE_ARN"},
+      "Action": ["s3:GetObject"],
+      "Resource": "arn:aws:s3:::ragchew-private/official/us_supreme_court/supreme_court/*"
+    },
+    {
+      "Sid": "ScotusRetentionDeletes",
+      "Effect": "Allow",
+      "Principal": {"AWS": "REPLACE_SCOTUS_RETENTION_ROLE_ARN"},
+      "Action": ["s3:DeleteObject", "s3:GetObject"],
+      "Resource": "arn:aws:s3:::ragchew-private/official/us_supreme_court/supreme_court/*"
+    }
+  ]
+}

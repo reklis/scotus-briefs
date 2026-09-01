@@ -1,0 +1,20 @@
+[Unit]
+Description=Trunk Recorder for DCFD
+After=network.target
+
+[Service]
+Type=simple
+User=ragchew
+Group=ragchew
+ExecStart=/opt/trunk-recorder/recorder --config=/etc/ragchew/trunk-recorder.json
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/ragchew /run/ragchew
+ReadOnlyPaths=/etc/ragchew
+SupplementaryGroups=plugdev
+
+[Install]
+WantedBy=multi-user.target

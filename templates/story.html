@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ story.title }} · DCFD Hourly Incident News{% endblock %}
+{% block content %}
+<article><h1>{{ story.title }}</h1><p class="status">{{ story.status }}</p><p>{{ story.summary }}</p>
+<dl><dt>Location</dt><dd>{{ story.location }}</dd><dt>Category</dt><dd>{{ story.incident_type }}</dd><dt>First reported</dt><dd>{{ story.first_reported_at }}</dd><dt>Updated</dt><dd>{{ story.updated_at }}</dd></dl>
+{% if story.timeline %}<h2>Timeline</h2><ol>{% for item in story.timeline %}<li><time>{{ item.occurred_at }}</time> {{ item.text }}</li>{% endfor %}</ol>{% endif %}
+<h2>Revision history</h2><ol>{% for revision in story.revisions %}<li>Revision {{ revision.revision_number }} · {{ revision.status }} · {{ revision.created_at }}</li>{% endfor %}</ol>
+</article>
+{% endblock %}

@@ -1,0 +1,99 @@
+{
+  "normal_case": {
+    "term": "2025",
+    "dockets": ["25-466"],
+    "caption": "Sripetch v. SEC",
+    "argument_date": "2026-04-20T00:00:00Z"
+  },
+  "consolidated_case": {
+    "term": "2025",
+    "dockets": ["24-101", "24-102"],
+    "primary_docket": "24-101",
+    "caption": "Example Petitioner v. Example Respondent",
+    "one_case": true,
+    "one_argument": true
+  },
+  "reargument": {
+    "term": "2025",
+    "docket": "24-200",
+    "sessions": [
+      {"date": "2025-11-03T00:00:00Z", "sequence": 1, "reargument": false},
+      {"date": "2026-03-02T00:00:00Z", "sequence": 2, "reargument": true}
+    ]
+  },
+  "revised_transcript": {
+    "external_id": "25-466-transcript",
+    "revisions": [
+      {"revision": 1, "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+      {"revision": 2, "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}
+    ],
+    "prior_evidence_retained": true
+  },
+  "transcript_pages": [
+    {
+      "file_page": 5,
+      "printed_page": 1,
+      "lines": [
+        {"line": 1, "text": "CHIEF JUSTICE ROBERTS: We'll hear argument this morning"},
+        {"line": 2, "text": "in Case 25-466, Sripetch v. SEC."},
+        {"line": 3, "text": "MR. SMITH: Mr. Chief Justice, and may it please the Court:"}
+      ]
+    },
+    {
+      "file_page": 6,
+      "printed_page": 2,
+      "lines": [
+        {"line": 1, "text": "JUSTICE KAGAN: Is that rule consistent with Smith v. Jones?"},
+        {"line": 2, "text": "MR. SMITH: Yes, because the statute addresses a different question."}
+      ]
+    }
+  ],
+  "question": {
+    "speaker": "JUSTICE KAGAN",
+    "type": "justice_question",
+    "status": "questioned",
+    "quote": "Is that rule consistent with Smith v. Jones?",
+    "forbidden": ["court_held", "predicted_vote"]
+  },
+  "concession": {
+    "speaker": "MR. SMITH",
+    "attribution": "Counsel for petitioner",
+    "type": "concession",
+    "status": "conceded",
+    "quote": "We agree that the exception would apply in that circumstance."
+  },
+  "citation": {
+    "raw": "Smith v. Jones, 599 U.S. 100",
+    "normalized": "Smith v. Jones, 599 U.S. 100 (2023)",
+    "must_exist_in_evidence": true
+  },
+  "procedural_posture": {
+    "source_kind": "docket",
+    "text": "The court of appeals affirmed the judgment.",
+    "status": "lower_court_held",
+    "forbidden": "court_held"
+  },
+  "requested_disposition": {
+    "source_kind": "transcript",
+    "text": "The judgment should be reversed.",
+    "status": "requested",
+    "forbidden": "court_ordered"
+  },
+  "later_order": {
+    "source_kind": "order",
+    "text": "The petition for rehearing is denied.",
+    "status": "court_ordered"
+  },
+  "later_opinion": {
+    "source_kind": "opinion",
+    "text": "We hold that the statute does not authorize the challenged action.",
+    "status": "court_held"
+  },
+  "sensitive_record": {
+    "caption": "In re Minor A.",
+    "transcript": "The minor lives at 100 Main Street and receives medical treatment.",
+    "sensitivity": ["minor", "home_address", "medical"],
+    "public_text": "The case concerns a minor's circumstances.",
+    "full_details_public": false
+  }
+}

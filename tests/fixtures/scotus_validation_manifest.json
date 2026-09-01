@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "term": "2025",
+  "source": "checked-in recorded Supreme Court fixtures and derived adversarial variants",
+  "cases": [
+    {"docket":"25-001","profile":"normal","features":["technical_terminology","multiple_advocates"],"review":"pass","note":"Statutory-authority question and competing advocate positions remain attributed."},
+    {"docket":"25-002","profile":"consolidated","features":["consolidated","multiple_advocates"],"review":"pass","note":"Two dockets resolve to one durable case and one argument session."},
+    {"docket":"25-003","profile":"reargument","features":["reargument","multiple_advocates"],"review":"pass","note":"Reargument remains a distinct session under the durable case."},
+    {"docket":"25-004","profile":"sensitive-minor","features":["sensitive_facts","minor"],"review":"pass","note":"Minor name and address are generalized in public claims."},
+    {"docket":"25-005","profile":"sensitive-medical","features":["sensitive_facts","medical"],"review":"pass","note":"Unnecessary treatment details are suppressed."},
+    {"docket":"25-006","profile":"later-order","features":["later_order","technical_terminology"],"review":"pass","note":"Order status derives only from official order evidence."},
+    {"docket":"25-007","profile":"later-opinion","features":["later_opinion","technical_terminology"],"review":"pass","note":"Holding derives only from opinion evidence; argument remains argument."},
+    {"docket":"25-008","profile":"revised-transcript","features":["revised_transcript","multiple_advocates"],"review":"pass","note":"Correction preserves superseded evidence and visible revision history."},
+    {"docket":"25-009","profile":"citation","features":["technical_terminology","citation"],"review":"pass","note":"Authority is accepted only when present in bounded evidence."},
+    {"docket":"25-010","profile":"requested-disposition","features":["technical_terminology","multiple_advocates"],"review":"pass","note":"Requested reversal is not represented as Court action."},
+    {"docket":"25-011","profile":"lower-court-posture","features":["technical_terminology","multiple_advocates"],"review":"pass","note":"Lower-court action is not upgraded to Supreme Court disposition."},
+    {"docket":"25-012","profile":"justice-hypothetical","features":["technical_terminology","multiple_advocates"],"review":"pass","note":"Hypothetical remains a question without vote or holding inference."},
+    {"docket":"25-013","profile":"concession","features":["technical_terminology","multiple_advocates"],"review":"pass","note":"Concession remains attributed to counsel and context-limited."},
+    {"docket":"25-014","profile":"disputed-premise","features":["sensitive_facts","multiple_advocates"],"review":"pass","note":"Competing factual accounts remain attributed and unresolved."},
+    {"docket":"25-015","profile":"sealed-redacted","features":["sensitive_facts","sealed_redacted"],"review":"pass","note":"Sealed or redacted detail cannot enter public claims."},
+    {"docket":"25-016","profile":"consolidated-opinion","features":["consolidated","later_opinion"],"review":"pass","note":"Later opinion links to the durable consolidated case."},
+    {"docket":"25-017","profile":"reargument-order","features":["reargument","later_order"],"review":"pass","note":"Order does not erase either argument session."},
+    {"docket":"25-018","profile":"multi-issue","features":["technical_terminology","multiple_advocates"],"review":"pass","note":"Issues group by supported identifiers without false merge."},
+    {"docket":"25-019","profile":"anonymous-speaker","features":["multiple_advocates","technical_terminology"],"review":"pass","note":"Unsupported speaker identity remains anonymous."},
+    {"docket":"25-020","profile":"publication-rollback","features":["revised_transcript","later_opinion"],"review":"pass","note":"Failed replacement leaves the prior safe projection active."}
+  ],
+  "preview_cycles": [
+    {"date":"2026-08-22","status":"pass"},
+    {"date":"2026-08-23","status":"pass"},
+    {"date":"2026-08-24","status":"pass"},
+    {"date":"2026-08-25","status":"pass"},
+    {"date":"2026-08-26","status":"pass"},
+    {"date":"2026-08-27","status":"pass"},
+    {"date":"2026-08-28","status":"pass"}
+  ],
+  "measurements": {
+    "reviewed_cases": 20,
+    "publication_candidates_reviewed": 20,
+    "page_line_accuracy": 1.0,
+    "speaker_identity_precision": 1.0,
+    "citation_precision": 1.0,
+    "grounded_factual_element_rate": 1.0,
+    "issue_grouping_precision": 1.0,
+    "issue_grouping_recall": 1.0,
+    "legal_status_upgrades": 0,
+    "sensitive_public_leaks": 0,
+    "private_boundary_leaks": 0,
+    "failed_cycle_projection_changes": 0
+  },
+  "live_discovery": {
+    "new_transcript_observed": false,
+    "court_calendar_permitted": false,
+    "status": "unvalidated",
+    "transcript_publication_latency_hours": null
+  },
+  "launch": {
+    "source_enabled": false,
+    "public_site_enabled": false,
+    "reason": "fixture gates pass; live discovery remains explicitly unvalidated"
+  }
+}

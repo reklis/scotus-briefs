@@ -1,0 +1,106 @@
+version: "1.0"
+# Every source is disabled until its exact access method and automation/reuse basis are reviewed.
+sources:
+  supreme_court:
+    source_id: supreme_court
+    authority: us_supreme_court
+    jurisdiction: federal
+    official_index_url: https://www.supremecourt.gov/oral_arguments/argument_audio.aspx
+    adapter: supreme_court
+    discovery_method: official_page
+    media_method: downloadable_file
+    access_basis: Court-hosted argument index with explicit MP3/PDF download links; see docs/sources/supreme-court.md
+    access_reviewed_at: "2026-08-28T02:00:00Z"
+    access_reviewed_by: project-source-access-review
+    access_review_expires_at: "2027-08-28T02:00:00Z"
+    allowed_hosts: [www.supremecourt.gov]
+    poll_interval_seconds: 900
+    expected_schedule: Published argument calendars and same-day or archived material when available
+    enabled: false
+  house_floor:
+    source_id: house_floor
+    authority: us_house
+    jurisdiction: federal
+    official_index_url: https://live.house.gov/
+    adapter: house_floor
+    discovery_method: official_page
+    media_method: none
+    access_basis: Clerk-linked public-domain floor/vote XML and official schedule records; media excluded; see docs/sources/house-floor.md
+    access_reviewed_at: "2026-08-28T02:00:00Z"
+    access_reviewed_by: project-source-access-review
+    access_review_expires_at: "2027-08-28T02:00:00Z"
+    allowed_hosts: [live.house.gov, clerk.house.gov, docs.house.gov, www.congress.gov]
+    poll_interval_seconds: 300
+    expected_schedule: House floor schedule, activity, and official vote records
+    enabled: false
+  dc_council:
+    source_id: dc_council
+    authority: dc_council
+    jurisdiction: district_of_columbia
+    official_index_url: https://dccouncil.gov/wp-json/tribe/events/v1/events
+    adapter: dc_council
+    discovery_method: documented_api
+    media_method: none
+    access_basis: Documented same-host Events REST API and official RSS/direct files; LIMS/platform media excluded; see docs/sources/dc-council.md
+    access_reviewed_at: "2026-08-28T02:00:00Z"
+    access_reviewed_by: project-source-access-review
+    access_review_expires_at: "2027-08-28T02:00:00Z"
+    allowed_hosts: [dccouncil.gov]
+    poll_interval_seconds: 600
+    expected_schedule: Council hearings, meetings, agendas, legislation, and official actions
+    enabled: false
+  dc_mayor:
+    source_id: dc_mayor
+    authority: dc_mayor
+    jurisdiction: district_of_columbia
+    official_index_url: https://mayor.dc.gov/rss.xml
+    adapter: dc_mayor
+    discovery_method: official_feed
+    media_method: none
+    access_basis: Official RSS/newsroom releases under DC.gov terms; platform/short-link media excluded; see docs/sources/dc-mayor.md
+    access_reviewed_at: "2026-08-28T02:00:00Z"
+    access_reviewed_by: project-source-access-review
+    access_review_expires_at: "2027-08-28T02:00:00Z"
+    allowed_hosts: [mayor.dc.gov]
+    poll_interval_seconds: 900
+    expected_schedule: Official mayoral briefings, newsroom releases, and supporting documents
+    enabled: false
+collection:
+  chunk_duration_seconds: 300
+  chunk_overlap_seconds: 3
+  archive_wait_hours: 72
+  stale_source_minutes: 60
+  maximum_asset_bytes: 4294967296
+retention:
+  media_hours: 24
+  transcript_days: 30
+  document_extraction_days: 30
+  failed_transfer_hours: 24
+publication:
+  grace_minutes: 15
+  lookback_hours: 48
+  minimum_confidence: 0.80
+  national_story_quota: 6
+  district_story_quota: 10
+  allowlist:
+    - consequential_ruling
+    - official_vote
+    - adopted_action
+    - material_legislative_development
+    - budget_or_oversight_development
+    - substantive_mayoral_announcement
+  mandatory_suppression:
+    - routine_procedure
+    - ceremonial
+    - repeated_remarks
+    - unsupported_prediction
+    - sensitive_testimony
+    - incomplete_evidence
+  private_witnesses_named: false
+  public_transcript_quotes: false
+launch:
+  minimum_private_preview_days: 7
+  minimum_representative_proceedings_per_source: 1
+  maximum_sensitive_leaks: 0
+  maximum_status_upgrades: 0
+  minimum_grounded_factual_element_rate: 1.0
