@@ -21,6 +21,11 @@ on:
         required: false
         default: ""
         type: string
+      authorized_replay:
+        description: Explicitly replay unchanged local-model input after reviewed failure
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: scotus-pages-publication
@@ -173,16 +178,26 @@ jobs:
         id: live_batch
         if: (inputs.mode || 'nightly') != 'fixture' && inputs.mode != 'initial-empty' && inputs.mode != 'poc-import'
         env:
+          PUBLICATION_MODE: ${{ inputs.mode || 'nightly' }}
+          AUTHORIZED_REPLAY: ${{ inputs.authorized_replay || false }}
           RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter
           RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
         run: |
           set -euo pipefail
+          replay_args=()
+          if [[ "$AUTHORIZED_REPLAY" == "true" ]]; then
+            if [[ "$PUBLICATION_MODE" != "nightly" || "${{ github.event_name }}" != "workflow_dispatch" ]]; then
+              echo "Model replay is allowed only for an explicit manual nightly run." >&2
+              exit 1
+            fi
+            replay_args+=(--authorized-replay)
+          fi
           uv run ragchew-scotus-static batch \
-            --mode "${{ inputs.mode || 'nightly' }}" \
+            --mode "$PUBLICATION_MODE" \
             --state-dir generated-content-input --candidate-state-dir candidate-state \
             --output candidate-site --workspace "$RUNNER_TEMP/ragchew-private" \
             --source-commit "$GITHUB_SHA" --build-epoch "$(git show -s --format=%cI HEAD)" \
-            --github-output "$GITHUB_OUTPUT"
+            --github-output "$GITHUB_OUTPUT" "${replay_args[@]}"
       - name: Build fixture, validate, and exit
         id: fixture_batch
         if: (inputs.mode || 'nightly') == 'fixture'

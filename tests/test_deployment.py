@@ -112,6 +112,10 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert '"$PUBLICATION_MODE" != "nightly"' in workflow
     assert '"$EXPECTED_LIVE_RELEASE_ID" =~ ^[0-9a-f]{64}$' in workflow
     assert 'live_args=(--live-release-id "$EXPECTED_LIVE_RELEASE_ID")' in workflow
+    assert "Explicitly replay unchanged local-model input after reviewed failure" in workflow
+    assert '"$PUBLICATION_MODE" != "nightly"' in workflow
+    assert '"${{ github.event_name }}" != "workflow_dispatch"' in workflow
+    assert "replay_args+=(--authorized-replay)" in workflow
     assert "Run reviewed bounded live adapter" in workflow
     assert "if: always()" in workflow and "Clean persistent runner after build" in workflow
     assert "Clean persistent runner before build" in workflow
