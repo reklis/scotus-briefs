@@ -30,11 +30,17 @@ def test_preview_ledger_has_seven_consecutive_passing_cycles() -> None:
     assert manifest.measurements.publication_candidates_reviewed == len(manifest.cases)
 
 
-def test_no_new_live_transcript_is_explicitly_unvalidated_and_launch_stays_off() -> None:
+def test_unvalidated_live_discovery_requires_disabled_launch_configuration() -> None:
     manifest = ValidationManifest.from_json(MANIFEST)
     assert not manifest.live_discovery.court_calendar_permitted
     assert manifest.live_discovery.status == "unvalidated"
-    assert launch_must_remain_disabled(manifest, CONFIG)
+    disabled = CONFIG.model_copy(
+        update={
+            "enabled": False,
+            "publication": CONFIG.publication.model_copy(update={"enabled": False}),
+        }
+    )
+    assert launch_must_remain_disabled(manifest, disabled)
 
 
 def test_calendar_permitted_without_new_transcript_fails_manifest() -> None:

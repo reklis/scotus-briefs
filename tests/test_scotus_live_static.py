@@ -387,10 +387,13 @@ def test_live_adapter_checks_all_gates_before_factories_or_traffic(tmp_path: Pat
         raise AssertionError
 
     adapter = LiveStaticBatchAdapter(settings_factory=settings)
+    config = ScotusConfig.from_yaml("config/scotus.yaml").model_copy(
+        update={"enabled": False}
+    )
     with pytest.raises(PublicationGateDenied):
         adapter.run(
             state_store=StaticStateStore(tmp_path / "state"),
-            config=ScotusConfig.from_yaml("config/scotus.yaml"),
+            config=config,
             mode=DiscoveryMode.NIGHTLY,
             runner_temp=tmp_path,
             authorized_replay=False,

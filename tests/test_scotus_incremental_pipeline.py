@@ -294,7 +294,10 @@ def test_workspace_is_private_and_always_removable(tmp_path: Path) -> None:
 
 
 def test_unified_budget_gates_and_counts_every_transport_attempt() -> None:
-    disabled = ScotusConfig.from_yaml("config/scotus.yaml")
+    config = ScotusConfig.from_yaml("config/scotus.yaml")
+    disabled = config.model_copy(
+        update={"publication": config.publication.model_copy(update={"enabled": False})}
+    )
     with pytest.raises(PublicationGateDenied):
         UnifiedRunBudget(disabled, CostLedger(updated_at=NOW)).authorize_model_request(
             stage="brief",

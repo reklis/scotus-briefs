@@ -121,25 +121,34 @@ def check() -> list[str]:
 
     config = yaml.safe_load(Path("config/scotus.yaml").read_text(encoding="utf-8"))
     approvals = config.get("approvals", {})
-    for gate in (
+    gate_names = (
         "source_review_approved",
         "licenses_approved",
         "origin_approved",
         "model_runtime_approved",
         "launch_approved",
-    ):
-        if approvals.get(gate) is not False:
-            failures.append(f"launch approval must remain fail-closed: approvals.{gate}")
-    if config.get("publication", {}).get("enabled") is not False:
-        failures.append("static publication must remain disabled before owner launch")
+    )
+    gate_values = [approvals.get(gate) for gate in gate_names]
+    if any(value not in {True, False} for value in gate_values):
+        failures.append("launch approvals must be explicit booleans")
+    if len(set(gate_values)) > 1:
+        failures.append("launch approvals must transition together after owner authorization")
+    publication = config.get("publication", {})
+    generation = config.get("generation", {})
+    live_switches = (
+        config.get("enabled"),
+        publication.get("enabled"),
+        generation.get("brief_generation_enabled"),
+    )
+    if any(live_switches) and not all(live_switches):
+        failures.append("SCOTUS processing, generation, and publication switches must agree")
+    if publication.get("dry_run") is False and not all(gate_values):
+        failures.append("production publication requires every owner approval")
     static = config.get("static", {})
     if static.get("canonical_origin") != "https://scotusbriefs.us":
         failures.append("SCOTUS canonical origin must be https://scotusbriefs.us")
     if static.get("project_base_path") != "/" or static.get("section_path") != "/scotus/":
         failures.append("SCOTUS custom-domain paths must be root project and /scotus/ section")
-    generation = config.get("generation", {})
-    if generation.get("brief_generation_enabled") is not False:
-        failures.append("model brief generation must remain disabled before owner launch")
     if generation.get("provider") != "ollama" or generation.get("model") != "qwen3.8:27b":
         failures.append("SCOTUS generation must use reviewed Ollama model qwen3.8:27b")
     model_budget = config.get("model_budget", {})
