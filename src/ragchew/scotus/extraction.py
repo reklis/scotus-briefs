@@ -57,7 +57,7 @@ class ProposedEvidence(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     block_id: str
-    quote: str = Field(min_length=1, max_length=4_000)
+    quote: str = Field(min_length=1, max_length=1_000)
 
 
 class ProposedLegalObservation(BaseModel):
@@ -66,21 +66,21 @@ class ProposedLegalObservation(BaseModel):
     observation_type: LegalObservationType
     legal_status: LegalStatus
     certainty: LegalCertainty
-    raw_value: str = Field(min_length=1, max_length=8_000)
-    normalized_value: str | None = Field(default=None, max_length=8_000)
+    raw_value: str = Field(min_length=1, max_length=2_000)
+    normalized_value: str | None = Field(default=None, max_length=2_000)
     attribution: str | None = Field(default=None, max_length=500)
     speaker_name: str | None = Field(default=None, max_length=300)
     speaker_kind: SpeakerKind = SpeakerKind.UNKNOWN
     identity_basis: SpeakerIdentityBasis = SpeakerIdentityBasis.ANONYMOUS
-    authority_citations: tuple[str, ...] = ()
+    authority_citations: tuple[str, ...] = Field(default=(), max_length=12)
     confidence: float = Field(ge=0, le=1)
-    evidence: tuple[ProposedEvidence, ...] = Field(min_length=1)
+    evidence: tuple[ProposedEvidence, ...] = Field(min_length=1, max_length=3)
     supersedes_observation_id: UUID | None = None
 
 
 class LegalExtractionBatch(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    observations: list[ProposedLegalObservation]
+    observations: list[ProposedLegalObservation] = Field(max_length=8)
 
 
 @dataclass(frozen=True)
@@ -269,7 +269,7 @@ class DeterministicTranscriptObservationExtractor:
 
 
 class OpenAILegalObservationExtractor:
-    PROMPT_VERSION = "scotus-legal-extraction-v1"
+    PROMPT_VERSION = "scotus-legal-extraction-v2"
 
     def __init__(
         self,
@@ -320,7 +320,10 @@ class OpenAILegalObservationExtractor:
                         "facts. A justice's question is not a vote or holding. Transcript "
                         "evidence cannot establish a Supreme Court order, holding, judgment, "
                         "or disposition. "
-                        "Every quote and citation must occur exactly in its evidence block."
+                        "Every quote and citation must occur exactly in its evidence block. "
+                        "Return no more than eight high-value observations. Keep each observation "
+                        "concise, use the shortest sufficient exact quote, and cite no more than "
+                        "three evidence blocks."
                     ),
                 },
                 {"role": "user", "content": json.dumps(evidence, separators=(",", ":"))},
