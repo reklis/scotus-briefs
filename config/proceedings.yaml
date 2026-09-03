@@ -1,5 +1,5 @@
 version: "1.0"
-# Every source is disabled until its exact access method and automation/reuse basis are reviewed.
+# Sources remain disabled until their exact access method and automation/reuse basis are reviewed.
 sources:
   supreme_court:
     source_id: supreme_court
@@ -16,7 +16,7 @@ sources:
     allowed_hosts: [www.supremecourt.gov]
     poll_interval_seconds: 900
     expected_schedule: Published argument calendars and same-day or archived material when available
-    enabled: false
+    enabled: true
   house_floor:
     source_id: house_floor
     authority: us_house

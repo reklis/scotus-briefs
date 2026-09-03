@@ -18,7 +18,12 @@ def test_mvp_defaults_are_valid() -> None:
 
 def test_proceedings_defaults_are_fail_closed() -> None:
     config = ProceedingsConfig.from_yaml(Path("config/proceedings.yaml"))
-    assert not any(source.enabled for source in config.sources.values())
+    assert config.sources["supreme_court"].enabled is True
+    assert not any(
+        source.enabled
+        for name, source in config.sources.items()
+        if name != "supreme_court"
+    )
     assert config.sources["supreme_court"].discovery_method.value == "official_page"
     assert config.sources["house_floor"].discovery_method.value == "official_page"
     assert config.collection.chunk_overlap_seconds < config.collection.chunk_duration_seconds
