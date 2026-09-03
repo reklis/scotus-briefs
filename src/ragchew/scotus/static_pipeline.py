@@ -819,7 +819,7 @@ class StaticBatchOrchestrator:
                         safe_detail = (
                             str(error)
                             if isinstance(error, BudgetExceeded)
-                            else category.value
+                            else type(error).__name__
                         )
                         LOG.warning(
                             "SCOTUS bounded case failure; category=%s; detail=%s; cases=%d; "
