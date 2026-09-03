@@ -659,7 +659,9 @@ def test_prior_reconstruction_preserves_typed_document_identity(tmp_path: Path) 
     case = case.model_copy(update={"official_disposition_urls": (order_url,)})
 
     candidate = _descriptor_for_public_argument(case, 0, (transcript, order))
-    assert candidate.docket_documents == ()
+    assert [item.official_url for item in candidate.docket_documents] == [
+        case.official_docket_url
+    ]
     assert [item.document_type for item in candidate.related_documents] == [
         DocumentType.ORDER
     ]
@@ -681,8 +683,13 @@ def test_prior_reconstruction_preserves_typed_document_identity(tmp_path: Path) 
     assert {item.logical_key for item in reconstructed} == {
         transcript.logical_key,
         order.logical_key,
+        "2025-25-1:docket:25-1",
     }
-    assert {item.kind.value for item in reconstructed} == {"transcript", "order"}
+    assert {item.kind.value for item in reconstructed} == {
+        "transcript",
+        "docket",
+        "order",
+    }
 
 
 def test_one_shared_crawl_delay_covers_source_and_document_requests(tmp_path: Path) -> None:

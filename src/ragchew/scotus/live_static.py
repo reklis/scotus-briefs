@@ -457,10 +457,45 @@ def _descriptor_for_public_argument(
         raise ValueError("public case transcript document identity has the wrong kind")
     else:
         transcript = _descriptor_from_document_state(transcript_state)
+    shared_by_identity = {
+        (item.document_type, item.official_url): item
+        for item in (
+            _descriptor_from_document_state(state)
+            for state in documents
+            if state.document_kind != "transcript"
+        )
+    }
+    docket_identity = (DocumentType.DOCKET, case.official_docket_url)
+    shared_by_identity.setdefault(
+        docket_identity,
+        DocumentDescriptor(
+            external_id=f"{public_case_key(case.term, case.primary_docket)}:docket:public",
+            document_type=DocumentType.DOCKET,
+            official_url=case.official_docket_url,
+            access_method=SourceAccessMethod.OFFICIAL_PAGE,
+            content_type="text/html",
+        ),
+    )
+    for index, url in enumerate(case.official_disposition_urls, start=1):
+        document_type = (
+            DocumentType.ORDER if "/orders/" in url.casefold() else DocumentType.OPINION
+        )
+        shared_by_identity.setdefault(
+            (document_type, url),
+            DocumentDescriptor(
+                external_id=(
+                    f"{public_case_key(case.term, case.primary_docket)}:"
+                    f"{document_type.value}:public:{index}"
+                ),
+                document_type=document_type,
+                official_url=url,
+                access_method=SourceAccessMethod.OFFICIAL_PAGE,
+                content_type="application/pdf",
+            ),
+        )
     shared = tuple(
-        _descriptor_from_document_state(item)
-        for item in documents
-        if item.document_kind != "transcript"
+        shared_by_identity[key]
+        for key in sorted(shared_by_identity, key=lambda item: (item[0].value, item[1]))
     )
     return ScotusArgumentCandidate(
         term=case.term,
