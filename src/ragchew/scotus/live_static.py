@@ -736,6 +736,7 @@ class LiveStaticDiscovery:
             selected[key] = min(selected_prior, value) if selected_prior else value
 
         work: list[StaticCaseWork] = []
+        invalid_case_keys: set[str] = set()
         ordered_selection = sorted(
             selected.items(), key=lambda item: (item[1][0], item[0])
         )
@@ -769,7 +770,14 @@ class LiveStaticDiscovery:
                 },
             )
             session_work: list[ArgumentSessionWork] = []
-            all_documents = _case_documents(self.cases[key])
+            try:
+                all_documents = _case_documents(self.cases[key])
+            except ValueError:
+                # One malformed public/official descriptor must not prevent unrelated
+                # new cases from reaching their independent fail-closed validation.
+                invalid_case_keys.add(key)
+                self.cases.pop(key, None)
+                continue
             shared = tuple(
                 item.logical_key
                 for item in all_documents
@@ -797,7 +805,10 @@ class LiveStaticDiscovery:
         # Source checkpoints describe complete index responses. Case-level rotation may
         # intentionally leave document rechecks for later and does not make that source
         # response unsafe; changed source cases, however, must all fit this run.
-        deferred_case_keys = tuple(sorted(changed_case_keys - set(selected)))
+        runnable_case_keys = {item.case_key for item in work}
+        deferred_case_keys = tuple(
+            sorted((changed_case_keys - runnable_case_keys) | invalid_case_keys)
+        )
         changed_deferred = bool(set(deferred_case_keys) & source_changed_case_keys)
         return StaticDiscoveryResult(
             work=tuple(work),
@@ -901,19 +912,21 @@ class LiveStaticDiscovery:
                     if prior_same_kind and not _descriptor_urls(
                         prior_same_kind
                     ).issubset(_descriptor_urls(discovered)):
-                        # The public state cannot prove whether a disappeared URL is a
-                        # correction, withdrawal, or transient index omission. Preserve
-                        # the prior case and require explicit reconciliation rather than
-                        # supplying both old and replacement evidence to the model.
-                        raise ValueError(
-                            "official disposition replacement requires reconciliation"
+                        # Recompute against only the current official-index descriptors.
+                        # The prior public case remains active unless that replacement
+                        # independently passes every case and release validator.
+                        retained = tuple(
+                            item
+                            for item in candidate.related_documents
+                            if item.document_type is not document_type
+                        )
+                        related_documents = _merge_descriptors(retained, discovered)
+                    else:
+                        related_documents = _merge_descriptors(
+                            candidate.related_documents, discovered
                         )
                     updated = candidate.model_copy(
-                        update={
-                            "related_documents": _merge_descriptors(
-                                candidate.related_documents, discovered
-                            )
-                        }
+                        update={"related_documents": related_documents}
                     )
                     if _candidate_metadata_changed(candidate, updated):
                         changed_cases.add(candidate_logical_key(candidate))
