@@ -29,6 +29,7 @@ from openai import (
     RateLimitError,
     omit,
 )
+from pydantic import ValidationError
 from pypdf import PdfReader
 
 from ragchew.config import ProceedingsConfig, ScotusConfig, ServiceSettings
@@ -1846,8 +1847,17 @@ class LiveStaticBatchAdapter:
                 )
             except Exception as error:
                 category = failure_category(error)
+                if isinstance(error, ValidationError):
+                    detail = "ValidationError[" + ",".join(
+                        f"{'.'.join(str(part) for part in item['loc'])}:{item['type']}"
+                        for item in error.errors(
+                            include_url=False, include_context=False, include_input=False
+                        )[:10]
+                    ) + "]"
+                else:
+                    detail = type(error).__name__
                 raise RuntimeError(
-                    f"live SCOTUS batch failed: {category.value}"
+                    f"live SCOTUS batch failed: {category.value}; detail={detail}"
                 ) from None
             if result.content.projection is None:
                 projection = ScotusPublicProjection(
