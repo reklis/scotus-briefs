@@ -16,6 +16,11 @@ on:
         required: true
         default: false
         type: boolean
+      expected_live_release_id:
+        description: Verified live release ID for a pre-TLS POC import only
+        required: false
+        default: ""
+        type: string
 
 concurrency:
   group: scotus-pages-publication
@@ -114,15 +119,24 @@ jobs:
         if: (inputs.mode || 'nightly') != 'fixture'
         env:
           PUBLICATION_MODE: ${{ inputs.mode || 'nightly' }}
+          EXPECTED_LIVE_RELEASE_ID: ${{ inputs.expected_live_release_id || '' }}
         run: |
           set -euo pipefail
           bootstrap_args=()
           if [[ "$PUBLICATION_MODE" == "bootstrap" || "$PUBLICATION_MODE" == "initial-empty" || "$PUBLICATION_MODE" == "poc-import" ]]; then
             bootstrap_args+=(--allow-missing-live-bootstrap)
           fi
+          live_args=(--live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json")
+          if [[ -n "$EXPECTED_LIVE_RELEASE_ID" ]]; then
+            if [[ "$PUBLICATION_MODE" != "poc-import" || ! "$EXPECTED_LIVE_RELEASE_ID" =~ ^[0-9a-f]{64}$ ]]; then
+              echo "A supplied live release ID is permitted only for a validated pre-TLS POC import." >&2
+              exit 1
+            fi
+            live_args=(--live-release-id "$EXPECTED_LIVE_RELEASE_ID")
+          fi
           uv run ragchew-scotus-static reconcile \
             --state-dir generated-content-input \
-            --live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json" \
+            "${live_args[@]}" \
             --fail-on-split "${bootstrap_args[@]}"
       - name: Re-render and validate accepted POC public briefs
         id: import_batch
