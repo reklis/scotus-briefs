@@ -6,15 +6,18 @@ Nightly schedule: 03:17 UTC (`17 3 * * *`)
 
 ## Current launch status
 
-The validated empty-state site was first deployed on 2026-09-03. Its Pages release
-ID matches the protected `generated-content` branch. DNS is valid at GitHub; custom-domain
+The validated empty-state site was first deployed on 2026-09-03. The same day, the
+accepted local POC corpus was recovered through the read-only sanitizer and deployed:
+1,710 active articles, 1,875 immutable revisions, 26 terms, and 2,974 HTML pages. Live
+Pages release `fb8e4d0802f5c0c5a24e5705358389a8e14ba22ef957ac4186f412e77889c3ca`
+matches the protected `generated-content` branch. DNS is valid at GitHub; custom-domain
 certificate issuance and HTTPS enforcement are still pending.
 
-Generated-case processing remains disabled. Authorized one-case dry runs confirmed the
-Court and loopback Ollama paths, then failed closed on bounded model extraction/runtime
-validation without producing or publishing a case. Keep `enabled`, brief generation,
-and `launch_approved` false until a complete candidate passes inspection. The empty site
-may remain available while that tuning continues.
+New generated-case processing remains disabled. Authorized one-case dry runs confirmed
+the Court and loopback Ollama paths, then failed closed on bounded model extraction and
+runtime validation without publishing a new case. Keep `enabled`, brief generation, and
+`launch_approved` false until a complete new candidate passes inspection. The migrated
+accepted POC corpus remains the last-known-good site while that tuning continues.
 
 ## One-time owner settings
 
@@ -35,9 +38,10 @@ may remain available while that tuning continues.
    DNS is managed separately by the owner; this repository change makes no DNS changes.
 6. Protect `generated-content` against human/direct updates while permitting the
    workflow's guarded `contents:write` promotion.
-7. Keep every config launch approval, model generation, and publication switch false
-   through fixture and live-no-deploy review. Enabling a schedule is a separate final
-   owner action.
+7. Keep the processing, model-generation, generated-case launch approval, and live
+   publication switches fail-closed through fixture and live-no-deploy review. Record
+   foundational source/license/origin/runtime approvals independently. Enabling new
+   generated-case publication is a separate final owner action.
 
 These repository/environment/secret/protection operations cannot be completed by a
 local checkout.
@@ -92,7 +96,9 @@ RAGCHEW_DATABASE_DSN='postgresql://…' uv run python \
 ```
 
 This command starts a repeatable-read, read-only transaction and fails if any public
-projection exists. Its SQL allowlist reads only accepted brief public fields, approved
+projection exists. Legacy claim UUIDs embedded in prose are replaced with the neutral
+text `official source`; this is required by the current public privacy contract and does
+not change official provenance links. Its SQL allowlist reads only accepted brief public fields, approved
 claim URL/label/page provenance, public-relevant case metadata, complete argument
 session official URLs, status history, and ready/parsed canonical disposition official
 URLs. It does not read transcript text, source or model bodies, observations, object
