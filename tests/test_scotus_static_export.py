@@ -341,16 +341,19 @@ def test_complete_tree_has_archives_pagination_json_and_empty_state(tmp_path: Pa
     ):
         assert (output / path).is_file(), path
     home = (output / "index.html").read_text(encoding="utf-8")
-    assert "Latest case briefs" in home
-    assert "Showing 1" in home and "of 2 cases" in home
-    assert 'href="/ragchew/scotus/cases/' in home
-    assert 'rel="next" href="/ragchew/scotus/page/2/"' in home
+    search = (output / "scotus/search/index.html").read_text(encoding="utf-8")
+    assert "Search public case briefs" in home
+    assert 'id="case-search"' in home
+    assert 'id="search-results"' in home
+    assert 'data-index="/ragchew/data/v1/search.json"' in home
+    assert "Enter a search or choose a filter." in home
     assert "Automated legal analysis" in home
+    assert "Search public case briefs" in search
     validate_static_candidate(output, urls)
 
     empty, _, _ = export(tmp_path, name="empty-bootstrap")
     assert not (empty / "scotus/cases").exists()
-    assert "No public case briefs" in (empty / "index.html").read_text(encoding="utf-8")
+    assert "Search public case briefs" in (empty / "index.html").read_text(encoding="utf-8")
     assert "No public case briefs" in (empty / "scotus/index.html").read_text(encoding="utf-8")
 
 

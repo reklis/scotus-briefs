@@ -1,5 +1,5 @@
 {% extends "scotus_base.html" %}
-{% block title %}Search cases · SCOTUS Legal Briefs{% endblock %}
+{% block title %}{% if page_title %}{{ page_title }}{% else %}Search cases · SCOTUS Legal Briefs{% endif %}{% endblock %}
 {% block content %}
 <section aria-labelledby="page-heading"><h1 id="page-heading">Search public case briefs</h1>
   <p>Free-text search requires JavaScript. All case briefs remain browsable through the term, argument-date, status, and topic archives.</p>
