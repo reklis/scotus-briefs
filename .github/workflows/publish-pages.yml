@@ -84,7 +84,7 @@ jobs:
             echo "commit=" >> "$GITHUB_OUTPUT"
           fi
       - name: Install frozen dependencies
-        uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           enable-cache: false
       - run: uv sync --frozen
@@ -247,7 +247,7 @@ jobs:
         with:
           name: opaque-cost-receipts
           path: receipt
-      - uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           enable-cache: false
       - run: uv sync --project source --frozen
@@ -307,7 +307,7 @@ jobs:
         with:
           name: generated-content-candidate
           path: candidate-state
-      - uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           enable-cache: false
       - run: uv sync --project source --frozen
@@ -347,7 +347,7 @@ jobs:
         with:
           name: generated-content-candidate
           path: candidate-state
-      - uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           enable-cache: false
       - run: uv sync --project source --frozen
