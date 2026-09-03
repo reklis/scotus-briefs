@@ -445,8 +445,18 @@ def _descriptor_for_public_argument(
         (item for item in documents if item.logical_key == transcript_key),
         None,
     )
-    if transcript_state is None or transcript_state.document_kind != "transcript":
-        raise ValueError("public case transcript document identity is missing")
+    if transcript_state is None:
+        transcript = DocumentDescriptor(
+            external_id=transcript_key,
+            document_type=DocumentType.OFFICIAL_TRANSCRIPT,
+            official_url=argument.official_transcript_url,
+            access_method=SourceAccessMethod.OFFICIAL_PAGE,
+            content_type="application/pdf",
+        )
+    elif transcript_state.document_kind != "transcript":
+        raise ValueError("public case transcript document identity has the wrong kind")
+    else:
+        transcript = _descriptor_from_document_state(transcript_state)
     shared = tuple(
         _descriptor_from_document_state(item)
         for item in documents
@@ -460,7 +470,7 @@ def _descriptor_for_public_argument(
         sequence=argument.sequence,
         reargument=argument.reargument,
         official_detail_url=argument.official_detail_url,
-        transcript=_descriptor_from_document_state(transcript_state),
+        transcript=transcript,
         docket_documents=tuple(
             item for item in shared if item.document_type is DocumentType.DOCKET
         ),
@@ -568,16 +578,10 @@ class LiveStaticDiscovery:
         candidates_by_session: dict[tuple[str, str, int], ScotusArgumentCandidate] = {}
         for case_key, case in prior_cases.items():
             case_documents = tuple(documents_by_case.get(case_key, ()))
-            for index, argument in enumerate(case.arguments):
-                transcript_key = (
-                    f"{case_key}:transcript:"
-                    f"{argument.argument_date.date().isoformat()}:{argument.sequence}"
-                )
-                if not any(item.logical_key == transcript_key for item in case_documents):
-                    # Sanitized legacy imports preserve official public provenance but
-                    # intentionally lack private-era logical document checkpoints. Court
-                    # discovery will reconstruct them from current official descriptors.
-                    continue
+            for index in range(len(case.arguments)):
+                # Sanitized legacy imports lack logical document checkpoints. The public
+                # official transcript URL is sufficient to reconstruct safe identity;
+                # current Court bytes are still downloaded and validated before reuse.
                 item = _descriptor_for_public_argument(case, index, case_documents)
                 candidates_by_session[
                     (case_key, item.argument_date.date().isoformat(), item.sequence)
@@ -664,14 +668,14 @@ class LiveStaticDiscovery:
         # Changed and stale-processor cases outrank rotating rechecks. Because each
         # successful migration updates its case pointer, this bounded deterministic
         # prefix drains across later runs even for terms outside bootstrap polling.
-        for key in sorted(changed_case_keys):
+        ordered_changes = (
+            *sorted(source_changed_case_keys),
+            *sorted(changed_case_keys - source_changed_case_keys),
+        )
+        for key in ordered_changes:
             if len(selected) >= case_limit:
                 break
-            reason = (
-                "source_change"
-                if key in source_changed_case_keys
-                else "processor_migration"
-            )
+            reason = "source_change" if key in source_changed_case_keys else "processor_migration"
             selected[key] = (self.config.discovery.new_transcript_priority, reason)
         for selected_item in selection.work:
             if len(selected) >= case_limit:
@@ -744,7 +748,7 @@ class LiveStaticDiscovery:
         # intentionally leave document rechecks for later and does not make that source
         # response unsafe; changed source cases, however, must all fit this run.
         deferred_case_keys = tuple(sorted(changed_case_keys - set(selected)))
-        changed_deferred = bool(deferred_case_keys)
+        changed_deferred = bool(set(deferred_case_keys) & source_changed_case_keys)
         return StaticDiscoveryResult(
             work=tuple(work),
             sources=tuple(

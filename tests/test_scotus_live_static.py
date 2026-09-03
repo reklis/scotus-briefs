@@ -564,8 +564,11 @@ def test_legacy_case_without_document_checkpoints_is_rediscovered_safely(
     result = run(tmp_path, store, court, MockOpenAI())
 
     assert result.publishable
-    assert result.no_public_change
-    assert result.content.projection == first.content.projection
+    assert not result.no_public_change
+    assert result.changed_case_keys == ("2025-25-1",)
+    assert result.content.publication.documents
+    assert result.content.projection is not None
+    assert len(result.content.projection.cases[0].revisions) == 2
 
 
 def test_failure_and_model_budget_exhaustion_keep_prior_case_active(
