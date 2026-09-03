@@ -57,7 +57,7 @@ class ProposedEvidence(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     block_id: str
-    quote: str = Field(min_length=1, max_length=1_000)
+    quote: str = Field(min_length=1, max_length=4_000)
 
 
 class ProposedLegalObservation(BaseModel):
@@ -66,8 +66,8 @@ class ProposedLegalObservation(BaseModel):
     observation_type: LegalObservationType
     legal_status: LegalStatus
     certainty: LegalCertainty
-    raw_value: str = Field(min_length=1, max_length=2_000)
-    normalized_value: str | None = Field(default=None, max_length=2_000)
+    raw_value: str = Field(min_length=1, max_length=8_000)
+    normalized_value: str | None = Field(default=None, max_length=8_000)
     attribution: str | None = Field(default=None, max_length=500)
     speaker_name: str | None = Field(default=None, max_length=300)
     speaker_kind: SpeakerKind = SpeakerKind.UNKNOWN
