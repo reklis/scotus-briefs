@@ -239,6 +239,45 @@ def _publish_empty_bootstrap(args: argparse.Namespace) -> int:
     return 0
 
 
+def _render_import_candidate(args: argparse.Namespace) -> int:
+    _, urls, _ = _config(args.config)
+    source_store = StaticStateStore(args.state)
+    content = source_store.load()
+    parent = StaticStateStore(args.parent_state).load()
+    release = content.release
+    if content.projection is None or release is None:
+        raise ValueError("import candidate must contain a complete projection and release")
+    expected_parent = parent.publication.active_release_id
+    if release.previous_release_id != expected_parent:
+        raise CompareAndSwapConflict("import candidate does not descend from active state")
+    exported = StaticSiteExporter(urls).export(
+        content.projection,
+        args.output,
+        source_commit=release.source_commit,
+        build_epoch=release.generated_at,
+        config_sha256=release.config_sha256,
+        previous_release_id=release.previous_release_id,
+        legacy_slugs={
+            pointer.case_key: pointer.legacy_slugs for pointer in content.publication.cases
+        },
+    )
+    if exported.manifest != release:
+        raise ValueError("rendered import release differs from its validated manifest")
+    source_store.write_candidate(args.candidate_state, content)
+    validate_static_candidate(args.output, urls, state_root=args.candidate_state)
+    _write_outputs(
+        args.github_output,
+        {
+            "release_changed": release.release_id != expected_parent,
+            "publication_ready": True,
+            "release_id": release.release_id,
+            "expected_parent_release_id": expected_parent,
+        },
+    )
+    print(f"rendered validated import release {release.release_id}")
+    return 0
+
+
 def _preview(args: argparse.Namespace) -> int:
     _, urls, config_digest = _config(args.config)
     temporary: Path | None = None
@@ -742,6 +781,20 @@ def build_parser() -> argparse.ArgumentParser:
     empty.add_argument("--build-epoch", required=True)
     empty.add_argument("--github-output", type=Path)
     empty.set_defaults(function=_publish_empty_bootstrap)
+
+    imported = commands.add_parser(
+        "render-import-candidate",
+        help="re-render and validate a prebuilt public generated-state candidate",
+    )
+    imported.add_argument("--state-dir", dest="state", type=Path, required=True)
+    imported.add_argument("--parent-state-dir", dest="parent_state", type=Path, required=True)
+    imported.add_argument(
+        "--candidate-state-dir", dest="candidate_state", type=Path, required=True
+    )
+    imported.add_argument("--output", type=Path, required=True)
+    imported.add_argument("--config", type=Path, default=Path("config/scotus.yaml"))
+    imported.add_argument("--github-output", type=Path)
+    imported.set_defaults(function=_render_import_candidate)
 
     preview = commands.add_parser("preview", help="serve an existing or fixture-backed static tree")
     preview.add_argument("--directory", type=Path)

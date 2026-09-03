@@ -10,7 +10,7 @@ on:
         required: true
         default: fixture
         type: choice
-        options: [fixture, nightly, bootstrap, initial-empty]
+        options: [fixture, nightly, bootstrap, initial-empty, poc-import]
       deploy:
         description: Request deployment after all configured gates and validations pass
         required: true
@@ -74,6 +74,14 @@ jobs:
           path: generated-content-input
           fetch-depth: 1
           persist-credentials: false
+      - name: Check out validated POC import candidate separately
+        if: inputs.mode == 'poc-import'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: poc-import-candidate
+          path: poc-import-input
+          fetch-depth: 1
+          persist-credentials: false
       - name: Record the actual generated-content branch SHA
         id: state_sha
         run: |
@@ -116,6 +124,15 @@ jobs:
             --state-dir generated-content-input \
             --live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json" \
             --fail-on-split "${bootstrap_args[@]}"
+      - name: Re-render and validate accepted POC public briefs
+        id: import_batch
+        if: inputs.mode == 'poc-import'
+        run: |
+          set -euo pipefail
+          uv run ragchew-scotus-static render-import-candidate \
+            --state-dir poc-import-input --parent-state-dir generated-content-input \
+            --candidate-state-dir candidate-state --output candidate-site \
+            --github-output "$GITHUB_OUTPUT"
       - name: Build verified initial empty site without Court/model access
         id: empty_batch
         if: inputs.mode == 'initial-empty'
@@ -128,7 +145,7 @@ jobs:
             --github-output "$GITHUB_OUTPUT"
       - name: Run reviewed bounded live adapter
         id: live_batch
-        if: (inputs.mode || 'nightly') != 'fixture' && inputs.mode != 'initial-empty'
+        if: (inputs.mode || 'nightly') != 'fixture' && inputs.mode != 'initial-empty' && inputs.mode != 'poc-import'
         env:
           RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter
           RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
@@ -160,6 +177,10 @@ jobs:
           LIVE_READY: ${{ steps.live_batch.outputs.publication_ready }}
           LIVE_RELEASE: ${{ steps.live_batch.outputs.release_id }}
           LIVE_PARENT: ${{ steps.live_batch.outputs.expected_parent_release_id }}
+          IMPORT_CHANGED: ${{ steps.import_batch.outputs.release_changed }}
+          IMPORT_READY: ${{ steps.import_batch.outputs.publication_ready }}
+          IMPORT_RELEASE: ${{ steps.import_batch.outputs.release_id }}
+          IMPORT_PARENT: ${{ steps.import_batch.outputs.expected_parent_release_id }}
           EMPTY_CHANGED: ${{ steps.empty_batch.outputs.release_changed }}
           EMPTY_READY: ${{ steps.empty_batch.outputs.publication_ready }}
           EMPTY_RELEASE: ${{ steps.empty_batch.outputs.release_id }}
@@ -170,10 +191,10 @@ jobs:
           FIXTURE_PARENT: ${{ steps.fixture_batch.outputs.expected_parent_release_id }}
         run: |
           set -euo pipefail
-          echo "release_changed=${LIVE_CHANGED:-${EMPTY_CHANGED:-$FIXTURE_CHANGED}}" >> "$GITHUB_OUTPUT"
-          echo "publication_ready=${LIVE_READY:-${EMPTY_READY:-$FIXTURE_READY}}" >> "$GITHUB_OUTPUT"
-          echo "release_id=${LIVE_RELEASE:-${EMPTY_RELEASE:-$FIXTURE_RELEASE}}" >> "$GITHUB_OUTPUT"
-          echo "expected_parent_release_id=${LIVE_PARENT:-${EMPTY_PARENT:-$FIXTURE_PARENT}}" >> "$GITHUB_OUTPUT"
+          echo "release_changed=${LIVE_CHANGED:-${IMPORT_CHANGED:-${EMPTY_CHANGED:-$FIXTURE_CHANGED}}}" >> "$GITHUB_OUTPUT"
+          echo "publication_ready=${LIVE_READY:-${IMPORT_READY:-${EMPTY_READY:-$FIXTURE_READY}}}" >> "$GITHUB_OUTPUT"
+          echo "release_id=${LIVE_RELEASE:-${IMPORT_RELEASE:-${EMPTY_RELEASE:-$FIXTURE_RELEASE}}}" >> "$GITHUB_OUTPUT"
+          echo "expected_parent_release_id=${LIVE_PARENT:-${IMPORT_PARENT:-${EMPTY_PARENT:-$FIXTURE_PARENT}}}" >> "$GITHUB_OUTPUT"
       - name: Validate opaque receipts before any upload
         id: receipts
         if: always()

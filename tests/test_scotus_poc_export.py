@@ -20,6 +20,7 @@ from ragchew.scotus.public_contracts import (
     ScotusPublicProjection,
     public_case_slug,
 )
+from ragchew.scotus.static_cli import build_parser
 from ragchew.scotus.static_state import StaticStateStore
 from ragchew.scotus.static_urls import StaticUrlPolicy
 
@@ -268,6 +269,8 @@ def test_export_merges_history_onto_parent_and_emits_only_validated_state(
         }
     )
     parent = parent_content(unrelated)
+    parent_path = tmp_path / "parent"
+    StaticStateStore(tmp_path / "unused").write_candidate(parent_path, parent)
     destination = tmp_path / "poc-candidate"
     site_destination = tmp_path / "site-candidate"
     static = ScotusConfig.from_yaml("config/scotus.yaml").static
@@ -302,6 +305,31 @@ def test_export_merges_history_onto_parent_and_emits_only_validated_state(
         case for case in loaded.projection.cases if case.primary_docket == "25-466"
     )
     assert recovered_active.title.endswith("2")
+
+    rendered_site = tmp_path / "rendered-site"
+    rendered_state = tmp_path / "rendered-state"
+    github_output = tmp_path / "github-output"
+    command = build_parser().parse_args(
+        [
+            "render-import-candidate",
+            "--state-dir",
+            str(destination),
+            "--parent-state-dir",
+            str(parent_path),
+            "--candidate-state-dir",
+            str(rendered_state),
+            "--output",
+            str(rendered_site),
+            "--github-output",
+            str(github_output),
+        ]
+    )
+    assert command.function(command) == 0
+    assert StaticStateStore(rendered_state).load() == loaded
+    assert (rendered_site / "release/v1/release.json").read_bytes() == (
+        site_destination / "release/v1/release.json"
+    ).read_bytes()
+    assert "publication_ready=true" in github_output.read_text(encoding="utf-8")
 
     emitted = b"\n".join(path.read_bytes() for path in destination.rglob("*.json"))
     for forbidden in (
