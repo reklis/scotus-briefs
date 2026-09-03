@@ -207,6 +207,38 @@ def _fixture_preview(args: argparse.Namespace) -> int:
     return 0
 
 
+def _publish_empty_bootstrap(args: argparse.Namespace) -> int:
+    _, urls, config_digest = _config(args.config)
+    store = StaticStateStore(args.state)
+    content = store.load()
+    if not _is_initial_empty_bootstrap(content) or content.projection is None:
+        raise ValueError("initial Pages publication requires the verified empty bootstrap")
+    parent = content.publication.active_release_id
+    export = StaticSiteExporter(urls).export(
+        content.projection,
+        args.output,
+        source_commit=args.source_commit,
+        build_epoch=_epoch(args.build_epoch),
+        config_sha256=config_digest,
+        previous_release_id=parent,
+    )
+    finalized = store.finalize_candidate(args.candidate_state, content, export.manifest)
+    validate_static_candidate(args.output, urls, state_root=args.candidate_state)
+    if finalized.publication.active_release_id != export.manifest.release_id:
+        raise RuntimeError("empty bootstrap candidate release pointer is inconsistent")
+    _write_outputs(
+        args.github_output,
+        {
+            "release_changed": True,
+            "publication_ready": True,
+            "release_id": export.manifest.release_id,
+            "expected_parent_release_id": parent,
+        },
+    )
+    print(f"built validated empty bootstrap release {export.manifest.release_id}")
+    return 0
+
+
 def _preview(args: argparse.Namespace) -> int:
     _, urls, config_digest = _config(args.config)
     temporary: Path | None = None
@@ -695,6 +727,21 @@ def build_parser() -> argparse.ArgumentParser:
     fixture.add_argument("--state", "--state-dir", dest="state", type=Path)
     fixture.add_argument("--github-output", type=Path)
     fixture.set_defaults(function=_fixture_preview)
+
+    empty = commands.add_parser(
+        "publish-empty-bootstrap",
+        help="build the one-time deployable site from a verified empty bootstrap",
+    )
+    empty.add_argument("--state-dir", dest="state", type=Path, required=True)
+    empty.add_argument(
+        "--candidate-state-dir", dest="candidate_state", type=Path, required=True
+    )
+    empty.add_argument("--output", type=Path, required=True)
+    empty.add_argument("--config", type=Path, default=Path("config/scotus.yaml"))
+    empty.add_argument("--source-commit", required=True)
+    empty.add_argument("--build-epoch", required=True)
+    empty.add_argument("--github-output", type=Path)
+    empty.set_defaults(function=_publish_empty_bootstrap)
 
     preview = commands.add_parser("preview", help="serve an existing or fixture-backed static tree")
     preview.add_argument("--directory", type=Path)

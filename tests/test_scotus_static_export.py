@@ -147,6 +147,37 @@ def test_reconcile_allows_missing_live_marker_only_for_initial_empty_bootstrap(
     )
     assert allowed.function(allowed) == 0
 
+    github_output = tmp_path / "github-output"
+    publish = parser.parse_args(
+        [
+            "publish-empty-bootstrap",
+            "--state-dir",
+            str(state),
+            "--candidate-state-dir",
+            str(tmp_path / "candidate-state"),
+            "--output",
+            str(tmp_path / "site"),
+            "--source-commit",
+            SOURCE_COMMIT,
+            "--build-epoch",
+            EPOCH.isoformat(),
+            "--github-output",
+            str(github_output),
+        ]
+    )
+    assert publish.function(publish) == 0
+    outputs = dict(
+        line.split("=", 1)
+        for line in github_output.read_text(encoding="utf-8").splitlines()
+    )
+    assert outputs["release_changed"] == "true"
+    assert outputs["publication_ready"] == "true"
+    validate_static_candidate(
+        tmp_path / "site",
+        StaticUrlPolicy("https://scotusbriefs.us", "/", "/scotus/"),
+        state_root=tmp_path / "candidate-state",
+    )
+
 
 def test_receipt_upload_validation_rejects_private_payload_with_sanitized_error(
     tmp_path: Path,

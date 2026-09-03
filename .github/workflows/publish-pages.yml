@@ -10,7 +10,7 @@ on:
         required: true
         default: fixture
         type: choice
-        options: [fixture, nightly, bootstrap]
+        options: [fixture, nightly, bootstrap, initial-empty]
       deploy:
         description: Request deployment after all configured gates and validations pass
         required: true
@@ -109,16 +109,26 @@ jobs:
         run: |
           set -euo pipefail
           bootstrap_args=()
-          if [[ "$PUBLICATION_MODE" == "bootstrap" ]]; then
+          if [[ "$PUBLICATION_MODE" == "bootstrap" || "$PUBLICATION_MODE" == "initial-empty" ]]; then
             bootstrap_args+=(--allow-missing-live-bootstrap)
           fi
           uv run ragchew-scotus-static reconcile \
             --state-dir generated-content-input \
             --live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json" \
             --fail-on-split "${bootstrap_args[@]}"
+      - name: Build verified initial empty site without Court/model access
+        id: empty_batch
+        if: inputs.mode == 'initial-empty'
+        run: |
+          set -euo pipefail
+          uv run ragchew-scotus-static publish-empty-bootstrap \
+            --state-dir generated-content-input --candidate-state-dir candidate-state \
+            --output candidate-site --source-commit "$GITHUB_SHA" \
+            --build-epoch "$(git show -s --format=%cI HEAD)" \
+            --github-output "$GITHUB_OUTPUT"
       - name: Run reviewed bounded live adapter
         id: live_batch
-        if: (inputs.mode || 'nightly') != 'fixture'
+        if: (inputs.mode || 'nightly') != 'fixture' && inputs.mode != 'initial-empty'
         env:
           RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter
           RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
@@ -150,16 +160,20 @@ jobs:
           LIVE_READY: ${{ steps.live_batch.outputs.publication_ready }}
           LIVE_RELEASE: ${{ steps.live_batch.outputs.release_id }}
           LIVE_PARENT: ${{ steps.live_batch.outputs.expected_parent_release_id }}
+          EMPTY_CHANGED: ${{ steps.empty_batch.outputs.release_changed }}
+          EMPTY_READY: ${{ steps.empty_batch.outputs.publication_ready }}
+          EMPTY_RELEASE: ${{ steps.empty_batch.outputs.release_id }}
+          EMPTY_PARENT: ${{ steps.empty_batch.outputs.expected_parent_release_id }}
           FIXTURE_CHANGED: ${{ steps.fixture_batch.outputs.release_changed }}
           FIXTURE_READY: ${{ steps.fixture_batch.outputs.publication_ready }}
           FIXTURE_RELEASE: ${{ steps.fixture_batch.outputs.release_id }}
           FIXTURE_PARENT: ${{ steps.fixture_batch.outputs.expected_parent_release_id }}
         run: |
           set -euo pipefail
-          echo "release_changed=${LIVE_CHANGED:-$FIXTURE_CHANGED}" >> "$GITHUB_OUTPUT"
-          echo "publication_ready=${LIVE_READY:-$FIXTURE_READY}" >> "$GITHUB_OUTPUT"
-          echo "release_id=${LIVE_RELEASE:-$FIXTURE_RELEASE}" >> "$GITHUB_OUTPUT"
-          echo "expected_parent_release_id=${LIVE_PARENT:-$FIXTURE_PARENT}" >> "$GITHUB_OUTPUT"
+          echo "release_changed=${LIVE_CHANGED:-${EMPTY_CHANGED:-$FIXTURE_CHANGED}}" >> "$GITHUB_OUTPUT"
+          echo "publication_ready=${LIVE_READY:-${EMPTY_READY:-$FIXTURE_READY}}" >> "$GITHUB_OUTPUT"
+          echo "release_id=${LIVE_RELEASE:-${EMPTY_RELEASE:-$FIXTURE_RELEASE}}" >> "$GITHUB_OUTPUT"
+          echo "expected_parent_release_id=${LIVE_PARENT:-${EMPTY_PARENT:-$FIXTURE_PARENT}}" >> "$GITHUB_OUTPUT"
       - name: Validate opaque receipts before any upload
         id: receipts
         if: always()
