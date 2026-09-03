@@ -72,15 +72,15 @@ class ProposedLegalObservation(BaseModel):
     speaker_name: str | None = Field(default=None, max_length=300)
     speaker_kind: SpeakerKind = SpeakerKind.UNKNOWN
     identity_basis: SpeakerIdentityBasis = SpeakerIdentityBasis.ANONYMOUS
-    authority_citations: tuple[str, ...] = Field(default=(), max_length=12)
+    authority_citations: tuple[str, ...] = ()
     confidence: float = Field(ge=0, le=1)
-    evidence: tuple[ProposedEvidence, ...] = Field(min_length=1, max_length=3)
+    evidence: tuple[ProposedEvidence, ...] = Field(min_length=1)
     supersedes_observation_id: UUID | None = None
 
 
 class LegalExtractionBatch(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    observations: list[ProposedLegalObservation] = Field(max_length=8)
+    observations: list[ProposedLegalObservation]
 
 
 @dataclass(frozen=True)
