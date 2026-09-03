@@ -320,7 +320,11 @@ class _BudgetedModelRequest:
         self.authorized_replay = authorized_replay
 
     def __call__(self, request: dict[str, Any]) -> Any:
-        payload = _request_payload(request)
+        # Ollama reasoning can consume the whole output/time budget before emitting the
+        # required JSON. This production wrapper is Ollama-only, so disable hidden
+        # reasoning and include that transport choice in the request fingerprint.
+        provider_request = {**request, "extra_body": {"think": False}}
+        payload = _request_payload(provider_request)
         serialized = json.dumps(
             payload,
             sort_keys=True,
@@ -348,7 +352,7 @@ class _BudgetedModelRequest:
             authorized_replay=self.authorized_replay,
         )
         return call_with_bounded_transport_retries(
-            lambda: self.client.chat.completions.create(**request),
+            lambda: self.client.chat.completions.create(**provider_request),
             permit=permit,
             maximum_attempts=self.budget.config.model_budget.maximum_transport_attempts,
             retryable=_retryable_model_error,

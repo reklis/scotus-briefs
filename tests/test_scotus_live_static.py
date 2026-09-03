@@ -460,6 +460,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
         "scotus_legal_observations",
         "scotus_legal_brief",
     ]
+    assert all(request["extra_body"] == {"think": False} for request in model.requests)
     receipts = CostReceiptBundle.model_validate_json(
         (tmp_path / "private/public-cost-receipts.json").read_bytes()
     )
