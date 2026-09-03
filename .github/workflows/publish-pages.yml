@@ -126,13 +126,25 @@ jobs:
           if [[ "$PUBLICATION_MODE" == "bootstrap" || "$PUBLICATION_MODE" == "initial-empty" || "$PUBLICATION_MODE" == "poc-import" ]]; then
             bootstrap_args+=(--allow-missing-live-bootstrap)
           fi
-          live_args=(--live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json")
+          canonical_release_url="${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json"
+          live_args=(--live-release-url "$canonical_release_url")
           if [[ -n "$EXPECTED_LIVE_RELEASE_ID" ]]; then
             if [[ "$PUBLICATION_MODE" != "poc-import" && "$PUBLICATION_MODE" != "nightly" ]] || [[ ! "$EXPECTED_LIVE_RELEASE_ID" =~ ^[0-9a-f]{64}$ ]]; then
               echo "A supplied live release ID is permitted only for a protected pre-TLS import or nightly run." >&2
               exit 1
             fi
             live_args=(--live-release-id "$EXPECTED_LIVE_RELEASE_ID")
+          elif [[ "$PUBLICATION_MODE" == "nightly" ]]; then
+            marker="$RUNNER_TEMP/live-release.json"
+            if ! curl --proto '=https' --fail --silent --show-error --connect-timeout 5 \
+              --max-time 30 --output "$marker" "$canonical_release_url"; then
+              pre_tls_url="${canonical_release_url/https:/http:}"
+              curl --proto '=http' --fail --silent --show-error --connect-timeout 5 \
+                --max-time 30 --output "$marker" "$pre_tls_url"
+            fi
+            live_release_id="$(uv run python -c 'import sys; from ragchew.scotus.static_contracts import ReleaseManifest; print(ReleaseManifest.model_validate_json(open(sys.argv[1], "rb").read()).release_id)' "$marker")"
+            rm -f "$marker"
+            live_args=(--live-release-id "$live_release_id")
           fi
           uv run ragchew-scotus-static reconcile \
             --state-dir generated-content-input \

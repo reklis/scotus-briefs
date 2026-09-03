@@ -54,9 +54,11 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "  CANONICAL_ORIGIN: https://scotusbriefs.us\n" in text
     assert "  PROJECT_BASE_PATH: /\n" in text
     assert (
-        '--live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json"'
+        'canonical_release_url="${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json"'
         in text
     )
+    assert "ReleaseManifest.model_validate_json" in text
+    assert "canonical_release_url/https:/http:" in text
     assert "OPENAI_API_KEY" not in text
     assert "services:" not in text
     assert "before live source access" in text
