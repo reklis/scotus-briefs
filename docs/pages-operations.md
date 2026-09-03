@@ -71,10 +71,50 @@ uv run ragchew-scotus-static validate \
   --state-dir bootstrap-candidate --privacy-scan
 ```
 
-The exporter reads public projections, not source/claim/model tables. It refuses to
-invent missing historical case-revision bodies. Independently inspect every file and
-scan from a separate clean checkout. Then create an orphan branch, preserving exactly
-the candidate bytes:
+The legacy exporter reads public projections, not source/claim/model tables. It refuses
+to invent missing historical case-revision bodies.
+
+If and only if the local POC has **no rows** in `scotus_public_projections` but has
+accepted `scotus_brief_revisions`, use the separate operator recovery path. Give it a
+read-only local DSN and a clean checkout of the existing generated-content parent:
+
+```bash
+umask 077
+RAGCHEW_DATABASE_DSN='postgresql://…' uv run python \
+  scripts/export-scotus-poc-briefs.py \
+  --parent-state /absolute/path/generated-content-parent \
+  --output "$PWD/poc-recovery-state" \
+  --site-output "$PWD/poc-recovery-site" \
+  --config config/scotus.yaml \
+  --source-commit "$(git rev-parse HEAD)" \
+  --config-sha256 "$(sha256sum config/scotus.yaml | cut -d' ' -f1)" \
+  --build-epoch 2026-08-28T03:17:00Z
+```
+
+This command starts a repeatable-read, read-only transaction and fails if any public
+projection exists. Its SQL allowlist reads only accepted brief public fields, approved
+claim URL/label/page provenance, public-relevant case metadata, complete argument
+session official URLs, status history, and ready/parsed canonical disposition official
+URLs. It does not read transcript text, source or model bodies, observations, object
+keys, credentials, or claim evidence/private values. The candidate retains the
+parent's opaque ledger and checkpoint state and appends every reconstructed case
+revision. It renders the static site first, attaches that exact file manifest with the
+parent release ID, and cross-validates site and state before returning. Record the
+printed parent digest and release IDs.
+
+Independently inspect every candidate file and, from a separate clean checkout, run:
+
+```bash
+uv run ragchew-scotus-static validate \
+  --output "$PWD/poc-recovery-site" \
+  --state "$PWD/poc-recovery-state" \
+  --config config/scotus.yaml --privacy-scan
+```
+
+Before merging or promoting, verify the generated-content checkout still has the
+printed parent digest and release ID; otherwise discard both candidates and rerun.
+The orphan-branch instructions below apply only to an initial bootstrap, not this POC
+recovery. For an initial bootstrap, preserve exactly the candidate bytes:
 
 ```bash
 git switch --orphan generated-content
