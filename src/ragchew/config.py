@@ -250,8 +250,8 @@ class ScotusRetentionDefaults(BaseModel):
 class ScotusGenerationDefaults(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
-    provider: Literal["openai"]
-    model: str = Field(pattern=r"^(?:gpt-|o[134]-).+")
+    provider: Literal["ollama"]
+    model: Literal["qwen3.8:27b"]
     prompt_version: str
     brief_generation_enabled: bool = False
     maximum_brief_api_calls_per_run: int = Field(default=1, ge=1, le=100)
@@ -404,7 +404,7 @@ class ScotusModelBudget(BaseModel):
     maximum_output_tokens_per_call: int = Field(ge=0)
     input_cost_usd_per_million_tokens: Decimal = Field(ge=0)
     output_cost_usd_per_million_tokens: Decimal = Field(ge=0)
-    maximum_estimated_cost_usd_per_run: Decimal = Field(gt=0)
+    maximum_estimated_cost_usd_per_run: Decimal = Field(ge=0)
     request_timeout_seconds: int = Field(ge=1, le=600)
     maximum_transport_attempts: int = Field(ge=1, le=5)
 
@@ -445,7 +445,7 @@ class ScotusPublicationApprovals(BaseModel):
     source_review_approved: bool = False
     licenses_approved: bool = False
     origin_approved: bool = False
-    publication_secret_configured: bool = False
+    model_runtime_approved: bool = False
     launch_approved: bool = False
 
     def all_live_gates_approved(self) -> bool:
@@ -454,7 +454,7 @@ class ScotusPublicationApprovals(BaseModel):
                 self.source_review_approved,
                 self.licenses_approved,
                 self.origin_approved,
-                self.publication_secret_configured,
+                self.model_runtime_approved,
                 self.launch_approved,
             )
         )
@@ -537,7 +537,7 @@ class ScotusConfig(BaseModel):
             )
         ):
             raise ValueError(
-                "live static publication requires source, license, origin, secret, "
+                "live static publication requires source, license, origin, model-runtime, "
                 "and launch approvals"
             )
         return self
@@ -560,6 +560,7 @@ class ServiceSettings(BaseSettings):
     s3_access_key: str = "minioadmin"
     s3_secret_key: SecretStr = SecretStr("minioadmin")
     receiver_tokens: str = "{}"
+    ollama_base_url: str = "http://127.0.0.1:11434/v1"
     openai_base_url: str = "https://api.openai.com/v1"
     openai_api_key: SecretStr = Field(
         default=SecretStr("unused"),
@@ -575,6 +576,27 @@ class ServiceSettings(BaseSettings):
         "ragchew-scotus-briefs/1.0 "
         "(+https://github.com/reklis/scotus-briefs; contact=https://github.com/reklis)"
     )
+
+    @field_validator("ollama_base_url")
+    @classmethod
+    def require_loopback_ollama_v1(cls, value: str) -> str:
+        parsed = urlsplit(value)
+        hostname = parsed.hostname
+        if (
+            parsed.scheme != "http"
+            or hostname not in {"127.0.0.1", "::1", "localhost"}
+            or parsed.username is not None
+            or parsed.password is not None
+            or parsed.port is None
+            or parsed.path.rstrip("/") != "/v1"
+            or parsed.query
+            or parsed.fragment
+        ):
+            raise ValueError(
+                "Ollama base URL must be an HTTP loopback endpoint with port and /v1 path"
+            )
+        host = f"[{hostname}]" if hostname == "::1" else hostname
+        return f"http://{host}:{parsed.port}/v1"
 
     @field_validator("source_user_agent")
     @classmethod

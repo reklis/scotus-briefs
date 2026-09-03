@@ -11,15 +11,17 @@ untrusted HTML and uses no reader-specific data.
 ## Trusted build boundary
 
 Only the protected default-branch nightly/manual build can contact reviewed Court
-sources or OpenAI. Pull requests and forks are fixture-only and have read-only
-permissions. Actions and container images are immutable-pinned, installs use
+sources or the loopback Ollama runtime. The build job can never run for pull requests;
+forks and pull requests remain fixture-only in CI with read-only permissions. Actions
+and container images are immutable-pinned, installs use
 `uv.lock` with `--frozen`, concurrency is serialized without cancellation, and jobs
 have explicit timeouts.
 
-The build job alone receives `OPENAI_API_KEY` through the protected
-`scotus-publication` environment. Temporary PostgreSQL/MinIO adapters, downloads,
-extracted text, and model material stay in a mode-0700 runner workspace. They are not
-cached or uploaded and are removed in an unconditional final step. Deploy receives
+The protected `scotus-publication` build runs on the persistent self-hosted aarch64
+Spark runner. It receives no model secret and can configure only the validated
+`http://127.0.0.1:11434/v1` endpoint. Pre- and post-build cleanup remove prior source,
+candidates, and the mode-0700 private workspace; none is cached or uploaded. No Docker
+services are started. Deploy receives
 only `pages:write` and `id-token:write`; promotion receives only `contents:write`.
 Neither receives build secrets or obsolete reader credentials.
 
@@ -30,9 +32,13 @@ no-redirect retrieval, conditional requests, one-second minimum pacing, and boun
 responses. Changed access conditions set `review_required`. Missing or malformed
 material cannot remove an existing public case.
 
-Only bounded evidence windows or sanitized approved claims may be sent to the
-official configured OpenAI API. Attempt, token, and estimated-cost limits are checked
-before sending. Logs and summaries contain only public case keys, stages, coarse
+Only bounded evidence windows or sanitized approved claims may be sent to the exact
+local Ollama model `qwen3.8:27b`. The OpenAI SDK targets Ollama's compatible `/v1`
+interface with a non-secret placeholder key, disabled environment proxies/redirects,
+and preserved JSON-schema chat completions. Both workflow and adapter verify the exact
+installed model before model input is sent. Attempt and token limits are checked before
+sending; configured local model rates and maximum cost are zero. Logs and summaries
+contain only public case keys, stages, coarse
 status/error categories, safe counts/digests/timings, and release IDs—never response
 bodies, transcript text, prompts/model payloads, signed URLs, credentials, or private
 stack traces.

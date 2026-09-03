@@ -21,7 +21,7 @@ At 03:17 UTC a protected, serialized, non-cancelling workflow:
 2. conditionally checks the current term/recent correction window and a bounded
    rotating historical slice using a descriptive GitHub project user agent;
 3. selects work under request, byte, document, case, disk, runtime, model-call/token,
-   and estimated-cost limits;
+   and zero-local-cost limits;
 4. downloads required official documents into a mode-0700 runner workspace and fully
    recomputes every required argument session for each changed case;
 5. merges only complete accepted cases while preserving unchanged case bytes and
@@ -29,9 +29,10 @@ At 03:17 UTC a protected, serialized, non-cancelling workflow:
 6. exports and validates a fresh candidate, deploys that exact Pages artifact, then
    compare-and-swap promotes the exact generated state.
 
-PostgreSQL/MinIO may be started as ephemeral build adapters. Their credentials and
-contents never leave the build job. Cleanup runs after success, failure, or signal.
-Deploy and promotion jobs receive no Court/model/database/object credentials. A
+No Docker services run in publication. Court documents and model material stay only
+in the self-hosted runner's mode-0700 workspace. Cleanup runs before and after each
+build, including after failure. Deploy, receipt, and promotion jobs remain
+GitHub-hosted and receive no Court/model/database/object credentials. A
 no-content-change run skips Pages deployment and may advance only validated discovery
 checkpoints. A failed cycle leaves the previous release untouched.
 
@@ -51,7 +52,7 @@ Case identity is stable term plus normalized docket; accepted case revisions are
 append-only. Canonical JSON is UTF-8, sorted, schema-versioned, UTC-normalized, and
 newline-terminated. Public state may retain official URLs, HTTP validators, content
 digests/counts, bounded cursors, processor fingerprints, release pointers, sanitized
-pending reasons, and opaque model attempt/cost receipts.
+pending reasons, and opaque model-attempt receipts with zero local cost.
 
 It must not retain Court/source bodies, PDFs/media, extracted transcript text,
 evidence windows, observations, claims/claim IDs, prompts, model output, object keys,
@@ -66,11 +67,15 @@ a Court disposition. Changed source bytes allocate a new logical document revisi
 one missing or malformed response never retracts an existing brief.
 
 Model inputs are bounded evidence windows for extraction and sanitized approved
-claims for brief generation. Calls use the official configured OpenAI endpoint,
-explicit timeout/retry limits, and one shared attempted-call ledger. Unchanged
-source/parser/model/prompt/config fingerprints cannot buy another attempt without an
-authorized replay. The workflow logs only case keys, stages, coarse outcomes, counts,
-digests, and timings.
+claims for brief generation. Calls use the exact local Ollama model `qwen3.8:27b` at
+the typed loopback-only `http://127.0.0.1:11434/v1` endpoint. The OpenAI SDK is only
+an Ollama-compatible transport with a non-secret placeholder key; JSON-schema chat
+completions remain mandatory. Exact model inventory is verified before evidence or
+completion traffic. Explicit timeout/retry limits and one shared attempted-call
+ledger remain in force, while all configured rates and maximum estimated cost are
+zero. Unchanged source/parser/provider/endpoint/model/prompt/config fingerprints
+cannot buy another attempt without an authorized replay. The workflow logs only case
+keys, stages, coarse outcomes, counts, digests, and timings.
 
 ## Development and migration
 

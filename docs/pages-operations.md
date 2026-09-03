@@ -12,11 +12,14 @@ Nightly schedule: 03:17 UTC (`17 3 * * *`)
    Enable dependency/security updates, secret scanning/push protection, and private
    vulnerability reporting.
 3. Create protected `scotus-publication` environment, restrict it to the default
-   branch, require owner approval for manual jobs, and add only `OPENAI_API_KEY`.
-4. Configure Pages for GitHub Actions and protect `github-pages`. It has no secrets.
-5. Protect `generated-content` against human/direct updates while permitting the
+   branch, and require owner approval for manual jobs. Add no model secret.
+4. Register the aarch64 Spark runner with the repository. The only assumed label is
+   `self-hosted`. Run Ollama as a host service listening only on `127.0.0.1:11434`,
+   install exact model `qwen3.8:27b`, and do not expose the port to a network.
+5. Configure Pages for GitHub Actions and protect `github-pages`. It has no secrets.
+6. Protect `generated-content` against human/direct updates while permitting the
    workflow's guarded `contents:write` promotion.
-6. Keep every config launch approval, paid generation, and publication switch false
+7. Keep every config launch approval, model generation, and publication switch false
    through fixture and live-no-deploy review. Enabling a schedule is a separate final
    owner action.
 
@@ -72,8 +75,10 @@ or from a working tree containing private inputs.
 
 ## Routine and manual runs
 
-The pinned workflow checks the protected default branch, reconciles live and branch
-release IDs, creates a mode-0700 temporary workspace, and runs
+The pinned workflow cannot run its build for pull requests. On the protected default
+branch it cleans the persistent self-hosted workspace, preflights local Ollama and the
+exact `qwen3.8:27b` model, reconciles live and branch release IDs, creates a mode-0700
+temporary workspace, and runs
 `uv run ragchew-scotus-static`. `nightly` uses routine current/recent/rotating limits;
 `bootstrap` manually drains a bounded historical slice; `fixture` uses invented local
 data and can never become publication-ready.
@@ -82,8 +87,9 @@ A manual `deploy=true` requests deployment but cannot override configuration gat
 A manual `deploy=false` run still builds, privacy-scans, and validates the candidate and
 opaque receipts locally, but uploads neither candidate state nor receipts and persists
 nothing to `generated-content`. This prevents a discarded candidate from making its
-paid inputs unreplayable. The tradeoff is deliberate: a runner crash or later dry-run
-rerun can repeat model calls and cost because no durable receipt survives. Restrict
+model inputs unreplayable. The tradeoff is deliberate: a runner crash or later dry-run
+rerun can repeat model calls, though local configured cost is zero, because no durable
+receipt survives. Restrict
 bootstrap/deploy dispatch to owners. Never add PR/fork or arbitrary-ref triggers.
 
 Possible outcomes:
@@ -98,7 +104,8 @@ Possible outcomes:
   reconciliation.
 
 Monitor workflow conclusion/duration, Court request and byte counts, selected/pending
-case counts, model attempted calls/tokens/estimated cost, cleanup status, release ID,
+case counts, model attempted calls/tokens (with zero estimated local cost), pre/post
+cleanup status, release ID,
 and Pages availability. Logs and summaries must remain sanitized. Artifacts retain
 only scanned public candidates/opaque receipts for one day; private workspace is never
 uploaded.
@@ -120,10 +127,11 @@ and branch/Page agreement.
 ## Incidents and legacy retirement
 
 Pause scheduled publication for a privacy finding, credential/action compromise,
-unexpected source/robots/terms/host/redirect change, model spend anomaly, unknown
+unexpected source/robots/terms/host/redirect change, Ollama availability/model identity
+change, unexpected nonzero model cost, unknown
 release, or repeated validation failure. Preserve only sanitized IDs/digests/counts,
-rotate affected credentials, invalidate candidate artifacts, and use GitHub private
-vulnerability reporting where appropriate.
+rotate any affected legacy credentials, invalidate candidate artifacts, and use GitHub
+private vulnerability reporting where appropriate.
 
 After first verified static launch, operators must delete old public/analyzer/CronJob
 Kubernetes resources using `deploy/k8s/dormant/README.md`, revoke reader PostgreSQL,

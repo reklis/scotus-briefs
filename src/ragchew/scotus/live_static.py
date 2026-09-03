@@ -141,7 +141,7 @@ POLICY_VERSION = "scotus-brief-policy-v1"
 DOCUMENT_TEXT_VERSION = "official-document-text-v1"
 
 
-class OpenAIClientFactory(Protocol):
+class OllamaClientFactory(Protocol):
     def __call__(self, settings: ServiceSettings, config: ScotusConfig) -> Any: ...
 
 
@@ -499,8 +499,6 @@ def _validate_live_gates(config: ScotusConfig) -> None:
         raise PublicationGateDenied("brief-generation and publication gates are closed")
     if not config.approvals.all_live_gates_approved():
         raise PublicationGateDenied("live publication approvals are incomplete")
-    if config.generation.provider != "openai":
-        raise PublicationGateDenied("only the reviewed OpenAI provider is allowed")
     if config.generation.prompt_version != OpenAILegalBriefGenerator.PROMPT_VERSION:
         raise PublicationGateDenied("configured brief prompt version is not implemented")
 
@@ -513,9 +511,11 @@ class LiveStaticDiscovery:
         *,
         adapters: Mapping[str, SupremeCourtAdapter],
         config: ScotusConfig,
+        model_endpoint: str,
     ) -> None:
         self.adapters = dict(adapters)
         self.config = config
+        self.model_endpoint = model_endpoint
         self.cases: dict[str, _CaseInput] = {}
         self.now: datetime | None = None
 
@@ -567,7 +567,7 @@ class LiveStaticDiscovery:
                 candidates_by_session[
                     (case_key, item.argument_date.date().isoformat(), item.sequence)
                 ] = item
-        processor = _processor_contract(self.config)
+        processor = _processor_contract(self.config, self.model_endpoint)
         pointer_by_case = {
             pointer.case_key: pointer for pointer in content.publication.cases
         }
@@ -952,9 +952,14 @@ def _case_documents(case: _CaseInput) -> tuple[_PrivateDocument, ...]:
     return tuple(values[key] for key in sorted(values))
 
 
-def _processor_contract(config: ScotusConfig) -> ProcessorFingerprint:
+def _model_identity(config: ScotusConfig, model_endpoint: str) -> str:
+    return f"{config.generation.provider}:{config.generation.model}@{model_endpoint}"
+
+
+def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorFingerprint:
     config_digest = sha256_hex(canonical_json_bytes(config, privacy_check=False))
     parser = f"{config.parser.name}:{config.parser.version}"
+    model_identity = _model_identity(config, model_endpoint)
     extractor = (
         f"{LegalExtractionService.SCHEMA_VERSION}:"
         f"{OpenAILegalObservationExtractor.PROMPT_VERSION}"
@@ -963,8 +968,10 @@ def _processor_contract(config: ScotusConfig) -> ProcessorFingerprint:
         canonical_json_bytes(
             {
                 "config": config_digest,
+                "endpoint": model_endpoint,
                 "extractor": extractor,
                 "model": config.generation.model,
+                "provider": config.generation.provider,
                 "parser": parser,
                 "policy": POLICY_VERSION,
                 "prompt": config.generation.prompt_version,
@@ -976,7 +983,7 @@ def _processor_contract(config: ScotusConfig) -> ProcessorFingerprint:
         parser_version=parser,
         extractor_version=extractor,
         policy_version=POLICY_VERSION,
-        model=config.generation.model,
+        model=model_identity,
         prompt_version=config.generation.prompt_version,
         config_sha256=config_digest,
         composite_sha256=composite,
@@ -994,6 +1001,7 @@ class LiveStaticCaseProcessor:
         config: ScotusConfig,
         document_client: httpx.Client,
         model_client: Any,
+        model_endpoint: str,
         user_agent: str,
         before_court_request: Callable[[], None],
         parser_backend_factory: Callable[[], PdfTextBackend],
@@ -1003,6 +1011,7 @@ class LiveStaticCaseProcessor:
         self.config = config
         self.document_client = document_client
         self.model_client = model_client
+        self.model_endpoint = model_endpoint
         self.user_agent = user_agent
         self.before_court_request = before_court_request
         self.parser_backend_factory = parser_backend_factory
@@ -1102,7 +1111,7 @@ class LiveStaticCaseProcessor:
                 not changed_keys
                 and source.prior is not None
                 and self._processor_case_fingerprints.get(work.case_key)
-                == _processor_contract(self.config).composite_sha256
+                == _processor_contract(self.config, self.model_endpoint).composite_sha256
                 and not _public_metadata_changed(source)
             ):
                 return CaseProcessingResult(
@@ -1320,8 +1329,10 @@ class LiveStaticCaseProcessor:
                     ),
                 )
                 versions = {
+                    "endpoint": self.model_endpoint,
                     "extractor": LegalExtractionService.SCHEMA_VERSION,
                     "model": self.config.generation.model,
+                    "provider": self.config.generation.provider,
                     "parser": parser_versions[argument_id],
                     "prompt": OpenAILegalObservationExtractor.PROMPT_VERSION,
                     "policy": POLICY_VERSION,
@@ -1425,9 +1436,13 @@ class LiveStaticCaseProcessor:
             stage="brief",
             document_digests=all_digests,
             processor_versions={
+                "endpoint": self.model_endpoint,
                 "extractor": LegalExtractionService.SCHEMA_VERSION,
                 "model": self.config.generation.model,
-                "parser": _processor_contract(self.config).parser_version,
+                "provider": self.config.generation.provider,
+                "parser": _processor_contract(
+                    self.config, self.model_endpoint
+                ).parser_version,
                 "policy": POLICY_VERSION,
                 "prompt": self.config.generation.prompt_version,
             },
@@ -1681,12 +1696,29 @@ def _default_document_client(
     )
 
 
-def _default_openai_client(settings: ServiceSettings, config: ScotusConfig) -> OpenAI:
+def _default_ollama_client(settings: ServiceSettings, config: ScotusConfig) -> OpenAI:
+    timeout = config.model_budget.request_timeout_seconds
     return OpenAI(
-        api_key=settings.openai_api_key.get_secret_value(),
-        timeout=config.model_budget.request_timeout_seconds,
+        api_key="ollama-local-no-secret",
+        base_url=settings.ollama_base_url,
+        timeout=timeout,
         max_retries=0,
+        http_client=httpx.Client(
+            follow_redirects=False,
+            timeout=timeout,
+            trust_env=False,
+        ),
     )
+
+
+def _verify_exact_ollama_model(client: Any, expected_model: str) -> None:
+    try:
+        available = client.models.list()
+        model_ids = {item.id for item in available.data if isinstance(item.id, str)}
+    except Exception:
+        raise PublicationGateDenied("local Ollama model preflight failed") from None
+    if expected_model not in model_ids:
+        raise PublicationGateDenied("configured local Ollama model is not installed")
 
 
 class LiveStaticBatchAdapter:
@@ -1699,7 +1731,7 @@ class LiveStaticBatchAdapter:
         proceedings_loader: Callable[[str | Path], ProceedingsConfig] = ProceedingsConfig.from_yaml,
         source_fetcher_factory: SourceFetcherFactory = _default_source_fetcher,
         document_client_factory: DocumentClientFactory = _default_document_client,
-        openai_client_factory: OpenAIClientFactory = _default_openai_client,
+        ollama_client_factory: OllamaClientFactory = _default_ollama_client,
         parser_backend_factory: Callable[[], PdfTextBackend] = PypdfTextBackend,
         rate_limiter_factory: Callable[[float], RequestRateLimiter] = RequestRateLimiter,
         clock: Callable[[], datetime] | None = None,
@@ -1709,7 +1741,7 @@ class LiveStaticBatchAdapter:
         self.proceedings_loader = proceedings_loader
         self.source_fetcher_factory = source_fetcher_factory
         self.document_client_factory = document_client_factory
-        self.openai_client_factory = openai_client_factory
+        self.ollama_client_factory = ollama_client_factory
         self.parser_backend_factory = parser_backend_factory
         self.rate_limiter_factory = rate_limiter_factory
         self.clock = clock or (lambda: datetime.now(UTC))
@@ -1726,10 +1758,6 @@ class LiveStaticBatchAdapter:
         _validate_live_gates(config)
         now = self.clock()
         settings = self.settings_factory()
-        if settings.openai_base_url.rstrip("/") != "https://api.openai.com/v1":
-            raise PublicationGateDenied("SCOTUS processing requires the official OpenAI API")
-        if settings.openai_api_key.get_secret_value() in {"", "unused"}:
-            raise PublicationGateDenied("OpenAI publication secret is not configured")
         proceedings = self.proceedings_loader(settings.proceedings_config_path)
         registry = InMemorySourceRegistry()
         registry.register(_source_from_config(proceedings), "loaded reviewed source configuration")
@@ -1742,14 +1770,20 @@ class LiveStaticBatchAdapter:
             raise SourceAuthorizationError("Supreme Court source adapter contract changed")
 
         # No factory capable of network/model use is called until every gate and source
-        # authorization check above succeeds.
-        raw_fetcher = self.source_fetcher_factory(settings, config)
-        document_client = self.document_client_factory(settings, config)
-        model_client = self.openai_client_factory(settings, config)
+        # authorization check above succeeds. Construction is inside the cleanup scope
+        # because a persistent self-hosted runner must not retain partial clients.
+        raw_fetcher: SourceFetcher | None = None
+        document_client: httpx.Client | None = None
+        model_client: Any = None
         adapters: dict[str, SupremeCourtAdapter] = {}
         discovery: LiveStaticDiscovery | None = None
         processor: LiveStaticCaseProcessor | None = None
         try:
+            raw_fetcher = self.source_fetcher_factory(settings, config)
+            document_client = self.document_client_factory(settings, config)
+            model_client = self.ollama_client_factory(settings, config)
+            # Inventory is checked before Court evidence retrieval or chat completion.
+            _verify_exact_ollama_model(model_client, config.generation.model)
             # The wrapper authorizes each nested index/opinion/order request and the
             # budget wrapper accounts every attempted response body.
             # The orchestrator creates the budget, so adapters are rebound during the
@@ -1772,13 +1806,18 @@ class LiveStaticBatchAdapter:
                     maximum_detail_requests=config.discovery.backfill_case_limit,
                     transcript_archive=True,
                 )
-            discovery = LiveStaticDiscovery(adapters=adapters, config=config)
+            discovery = LiveStaticDiscovery(
+                adapters=adapters,
+                config=config,
+                model_endpoint=settings.ollama_base_url,
+            )
             processor = LiveStaticCaseProcessor(
                 discovery=discovery,
                 authorizer=authorizer,
                 config=config,
                 document_client=document_client,
                 model_client=model_client,
+                model_endpoint=settings.ollama_base_url,
                 user_agent=settings.source_user_agent,
                 before_court_request=crawl_limiter.wait,
                 parser_backend_factory=self.parser_backend_factory,

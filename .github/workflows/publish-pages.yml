@@ -33,8 +33,8 @@ env:
 jobs:
   build:
     name: Build and scan candidate
-    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
-    runs-on: ubuntu-24.04
+    if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: [self-hosted]
     timeout-minutes: 30
     environment: scotus-publication
     permissions:
@@ -46,6 +46,12 @@ jobs:
       expected_parent_release_id: ${{ steps.batch.outputs.expected_parent_release_id }}
       expected_parent_commit: ${{ steps.state_sha.outputs.commit }}
     steps:
+      - name: Clean persistent runner before build
+        run: |
+          set -euo pipefail
+          find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf -- {} +
+          rm -rf "$RUNNER_TEMP/ragchew-private"
+          install -d -m 700 "$RUNNER_TEMP/ragchew-private"
       - name: Require the protected default branch
         env:
           REF_PROTECTED: ${{ github.ref_protected }}
@@ -82,10 +88,17 @@ jobs:
         with:
           enable-cache: false
       - run: uv sync --frozen
+      - name: Preflight exact local Ollama model
+        env:
+          RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --connect-timeout 5 --max-time 30 \
+            http://127.0.0.1:11434/api/tags | \
+            uv run python -c 'import json,sys; names={m.get("name") for m in json.load(sys.stdin).get("models", [])}; raise SystemExit(0 if "qwen3.8:27b" in names else "required exact Ollama model qwen3.8:27b is not installed")'
       - name: Create permission-restricted private parent only
         run: |
           set -euo pipefail
-          install -d -m 700 "$RUNNER_TEMP/ragchew-private"
           if [[ ! -d generated-content-input ]]; then install -d -m 700 generated-content-input; fi
           test ! -e candidate-site
           test ! -e candidate-state
@@ -101,7 +114,7 @@ jobs:
         if: (inputs.mode || 'nightly') != 'fixture'
         env:
           RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
         run: |
           set -euo pipefail
           uv run ragchew-scotus-static batch \
@@ -176,8 +189,8 @@ jobs:
           if-no-files-found: error
           retention-days: 1
       # A manual deploy=false run validates its candidate and receipts locally, then
-      # discards both state and receipts. This avoids making paid inputs unreplayable
-      # without their candidate; an interrupted dry run may therefore repeat model cost.
+      # discards both state and receipts. This avoids making model inputs unreplayable
+      # without their candidate; an interrupted dry run may therefore repeat local model work.
       - name: Upload validated opaque cost receipts
         if: always() && steps.receipts.outcome == 'success' && steps.receipts.outputs.present == 'true' && (github.event_name == 'schedule' || inputs.deploy == true)
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -192,14 +205,17 @@ jobs:
           printf 'Build outcome: `%s`\n' "${{ job.status }}" >> "$GITHUB_STEP_SUMMARY"
           printf 'Live Court/model processing remains fail-closed until every repository gate is enabled.\n' >> "$GITHUB_STEP_SUMMARY"
           if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.deploy }}" != "true" ]]; then
-            printf 'Non-deploy dry run: candidate state and receipts were not persisted; a crash or rerun may repeat model cost.\n' >> "$GITHUB_STEP_SUMMARY"
+            printf 'Non-deploy dry run: candidate state and receipts were not persisted; a crash or rerun may repeat zero-cost local model work.\n' >> "$GITHUB_STEP_SUMMARY"
           fi
-      - name: Remove private workspace
+      - name: Clean persistent runner after build
         if: always()
         run: |
-          chmod -R u+rwX "$RUNNER_TEMP/ragchew-private" 2>/dev/null || true
+          set -euo pipefail
+          chmod -R u+rwX "$RUNNER_TEMP/ragchew-private" "$GITHUB_WORKSPACE" 2>/dev/null || true
           rm -rf "$RUNNER_TEMP/ragchew-private"
+          find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf -- {} +
           test ! -e "$RUNNER_TEMP/ragchew-private"
+          test -z "$(find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -print -quit)"
 
   persist-cost-receipts:
     name: Persist validated opaque receipts only

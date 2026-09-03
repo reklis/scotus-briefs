@@ -34,7 +34,7 @@ The project MUST maintain deny-by-default ignore, build-context, scanning, and r
 - **THEN** the check SHALL fail before merge, image publication, state promotion, or Pages deployment
 
 ### Requirement: Reproducible and least-privilege automation
-Continuous integration and publication automation MUST use frozen dependency resolution, immutable action/image/tool references where supported, minimal GitHub token permissions, no persisted checkout credential for untrusted commands, and automated vulnerability, secret, and license checks.
+Continuous integration and publication automation MUST use frozen dependency resolution, immutable action/image/tool references where supported, minimal GitHub token permissions, no persisted checkout credential for untrusted commands, and automated vulnerability, secret, and license checks. The persistent self-hosted publication runner MUST be dedicated to protected repository workflows and MUST never execute pull-request or arbitrary-ref code.
 
 #### Scenario: CI installs dependencies
 - **WHEN** a pull-request or default-branch workflow installs Python or audit dependencies
@@ -43,6 +43,10 @@ Continuous integration and publication automation MUST use frozen dependency res
 #### Scenario: Pull-request tests run
 - **WHEN** untrusted contribution code executes
 - **THEN** the workflow token SHALL be read-only, checkout credentials SHALL not persist, and publication environments/secrets SHALL be unavailable
+
+#### Scenario: Self-hosted runner is selected
+- **WHEN** a workflow targets the local Spark runner
+- **THEN** it SHALL be a protected default-branch publication build with read-only source permission, no persisted checkout credential, and no pull-request trigger
 
 #### Scenario: Dependency policy fails
 - **WHEN** a prohibited license, high-severity unmitigated vulnerability, mutable publication action, or lockfile mismatch is detected

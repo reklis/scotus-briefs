@@ -48,12 +48,19 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "name: github-pages" in text
     assert "environment: scotus-publication" in text
     assert "RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter" in text
-    assert "OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}" in text
+    assert "runs-on: [self-hosted]" in text
+    assert "RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1" in text
+    assert "qwen3.8:27b" in text
+    assert "OPENAI_API_KEY" not in text
+    assert "services:" not in text
     assert "before live source access" in text
     assert "fail-closed until every repository gate is enabled" in text
 
     build = text[text.index("\n  build:\n") : text.index("\n  persist-cost-receipts:\n")]
-    assert "secrets.OPENAI_API_KEY" in build
+    assert "secrets." not in build
+    assert "github.event_name != 'pull_request'" in build
+    assert "Clean persistent runner before build" in build
+    assert "Clean persistent runner after build" in build
 
     deploy = text[text.index("\n  deploy:\n") : text.index("\n  promote:\n")]
     assert "pages: write" in deploy and "id-token: write" in deploy
@@ -67,6 +74,10 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "pages: write" not in promote and "id-token: write" not in promote
     assert "secrets." not in promote
     assert "RAGCHEW_SCOTUS_BATCH_ADAPTER" not in promote
+
+    hosted_jobs = text[text.index("\n  persist-cost-receipts:\n") :]
+    assert hosted_jobs.count("runs-on: ubuntu-24.04") == 4
+    assert "runs-on: [self-hosted]" not in hosted_jobs
 
 
 def test_launch_gates_remain_fail_closed() -> None:

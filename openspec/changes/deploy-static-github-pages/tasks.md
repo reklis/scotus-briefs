@@ -62,7 +62,7 @@
 - [x] 6.5 Merge only complete validated changed-case projections with exact unchanged prior cases and record incomplete/budget-deferred work solely as sanitized pending state.
 - [x] 6.6 Require both brief-generation and static-publication gates before any paid generation or candidate activation, fixing the publisher path that currently ignores `publication.enabled`.
 - [x] 6.7 Enforce per-run limits for selected cases/documents, HTTP requests/bytes, private disk, runtime, extraction calls, brief calls, total model calls, input size/tokens, output tokens, and estimated spend.
-- [x] 6.8 Configure explicit OpenAI endpoint policy, timeouts, and bounded SDK retries; count every attempted extraction and brief call against one shared budget before sending it.
+- [x] 6.8 Configure explicit model endpoint policy, timeouts, and bounded SDK retries; count every attempted extraction and brief call against one shared budget before sending it.
 - [x] 6.9 Deny repeated paid processing for an unchanged evidence/parser/extractor/policy/model/prompt/config fingerprint unless an authorized replay or changed input is recorded.
 - [x] 6.10 Sanitize operational logs/exceptions to public case key, stage, status, safe counts/digests/timings, and coarse failure category with no response bodies, transcript text, model payloads, signed URLs, secrets, or private stack traces.
 - [x] 6.11 Add unconditional success/failure/signal cleanup that removes the private workspace and terminates run-scoped data services without caching or uploading their contents.
@@ -81,7 +81,7 @@
 
 - [x] 8.1 Pin existing CI actions/tools to reviewed immutable versions, disable persisted checkout credentials, use frozen lockfile installs, and retain read-only fixture-only behavior for pull requests/forks.
 - [x] 8.2 Add a pinned nightly/manual Pages workflow with protected-default-branch checks, serialized non-cancelling concurrency, explicit job timeouts, safe summaries, and no pull-request trigger.
-- [x] 8.3 Implement the read-only build job using protected publication environment secrets, ephemeral services/workspace, static batch/export/validation, unconditional cleanup, and upload of only the scanned Pages candidate with minimal retention.
+- [x] 8.3 Implement the read-only build job using the protected publication environment, an ephemeral private workspace, static batch/export/validation, unconditional cleanup, and upload of only the scanned Pages candidate with minimal retention.
 - [x] 8.4 Implement the no-secret Pages deployment job with only `pages: write` and `id-token: write`, deploying the exact candidate release through the protected Pages environment.
 - [x] 8.5 Implement the post-deploy no-secret generated-content promotion job with minimal `contents: write`, expected-parent compare-and-swap, and exact release/state/snapshot matching.
 - [x] 8.6 Implement isolated `always()` persistence for privacy-scanned opaque cost receipts without advancing the active public projection after a failed run.
@@ -108,16 +108,24 @@
 - [x] 10.3 Add tooling/documentation to create and protect the orphan generated-content branch from an independently scanned empty or legacy bootstrap release.
 - [x] 10.4 Remove the production FastAPI public entry point from deployment commands while retaining only a clearly named fixture/static local preview compatibility path if needed.
 - [x] 10.5 Remove the public Deployment, Service, Ingress, public database secret, SCOTUS analyzer deployment, and SCOTUS CronJobs from the active Kubernetes kustomization; mark remaining manifests as dormant local/migration infrastructure.
-- [x] 10.6 Update environment examples and revoke/remove production reader/database/object-store requirements from the GitHub Pages path while keeping the workflow OpenAI secret scoped to the protected build job.
+- [x] 10.6 Update environment examples and revoke/remove production reader/database/object-store requirements from the GitHub Pages path while keeping model access scoped to the protected build job.
 - [x] 10.7 Add deployment tests proving no active production manifest exposes FastAPI/PostgreSQL/MinIO/Kubernetes to readers and no Pages job receives obsolete backend credentials.
 
 ## 11. Documentation, Dry Run, and Launch
 
 - [x] 11.1 Rewrite the README and architecture/configuration/security docs around the static-only production boundary, public generated state, ephemeral changed-case recomputation, model/source privacy, and fixture-backed local preview.
 - [x] 11.2 Add a Pages operations runbook covering repository settings, environments/secrets, generated branch layout, cron/manual/bootstrap use, budgets, monitoring, no-op/pending outcomes, reconciliation, rollback, and incident response.
-- [x] 11.3 Update source-review documentation for the GitHub-hosted nightly user agent, conditional requests, rate/bounds, transient retention, rotating rechecks, and change conditions that force `review_required`.
+- [x] 11.3 Update source-review documentation for the self-hosted nightly user agent, conditional requests, rate/bounds, transient retention, rotating rechecks, and change conditions that force `review_required`.
 - [x] 11.4 Run Ruff, strict mypy, the full unit/integration suite, dependency/secret/license scans, deterministic static builds, HTML/link/privacy validation, and workflow policy tests; record and resolve all failures.
 - [ ] 11.5 Perform a fixture-only GitHub Actions dry run and verify the Pages artifact, generated-content candidate, logs, summaries, and retained artifacts contain no private or forbidden material.
 - [ ] 11.6 Perform an authorized one-case live dry run with deployment disabled, measure Court requests/bytes/runtime/model use/cost, inspect every public/state file and log, and tune the initial nightly budgets.
 - [ ] 11.7 Bootstrap the protected generated-content branch, manually deploy the validated first release, verify every public route/base path/canonical/source link/search/disclosure, and exercise release-ID reconciliation and rollback.
 - [ ] 11.8 Enable the nightly schedule only after license/source/privacy/legal-status/grounding/accessibility/Pages launch gates pass, then revoke legacy production credentials and document the first successful nightly publication.
+
+## 12. Self-Hosted Spark and Local Ollama
+
+- [x] 12.1 Configure `qwen3.8:27b` through the loopback Ollama OpenAI-compatible endpoint and remove the external OpenAI secret/provider requirement from the static production path.
+- [x] 12.2 Validate the loopback-only Ollama endpoint, exact model availability, JSON-schema chat completion compatibility, zero-cost budget, and provider/endpoint-aware processing fingerprints.
+- [x] 12.3 Move only the protected analysis/build job to the dedicated `self-hosted` Spark runner while keeping PR CI and Pages deploy/promotion jobs GitHub-hosted and isolated from the local model.
+- [x] 12.4 Add persistent-runner preflight and unconditional cleanup that prevent stale Court documents, extracted text, prompts, model responses, candidates, or checkout credentials from surviving a run.
+- [x] 12.5 Update configuration, security/operations/architecture documentation, workflow policy tests, model adapter tests, and local preview instructions for Spark/Ollama.

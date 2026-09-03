@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import re
 import subprocess
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 import yaml
@@ -124,15 +125,60 @@ def check() -> list[str]:
         "source_review_approved",
         "licenses_approved",
         "origin_approved",
-        "publication_secret_configured",
+        "model_runtime_approved",
         "launch_approved",
     ):
         if approvals.get(gate) is not False:
             failures.append(f"launch approval must remain fail-closed: approvals.{gate}")
     if config.get("publication", {}).get("enabled") is not False:
         failures.append("static publication must remain disabled before owner launch")
-    if config.get("generation", {}).get("brief_generation_enabled") is not False:
-        failures.append("paid brief generation must remain disabled before owner launch")
+    generation = config.get("generation", {})
+    if generation.get("brief_generation_enabled") is not False:
+        failures.append("model brief generation must remain disabled before owner launch")
+    if generation.get("provider") != "ollama" or generation.get("model") != "qwen3.8:27b":
+        failures.append("SCOTUS generation must use reviewed Ollama model qwen3.8:27b")
+    model_budget = config.get("model_budget", {})
+    zero_cost_fields = (
+        "input_cost_usd_per_million_tokens",
+        "output_cost_usd_per_million_tokens",
+        "maximum_estimated_cost_usd_per_run",
+    )
+    try:
+        costs_are_zero = all(
+            Decimal(str(model_budget.get(field))) == 0 for field in zero_cost_fields
+        )
+    except InvalidOperation:
+        costs_are_zero = False
+    if not costs_are_zero:
+        failures.append("local Ollama cost rates and maximum must remain zero")
+
+    workflow = Path(".github/workflows/publish-pages.yml").read_text(encoding="utf-8")
+    build = workflow[
+        workflow.index("\n  build:\n") : workflow.index("\n  persist-cost-receipts:\n")
+    ]
+    if "runs-on: [self-hosted]" not in build:
+        failures.append("Pages build must run only on the self-hosted runner")
+    if "OPENAI_API_KEY" in workflow or "secrets." in build:
+        failures.append("self-hosted Pages build must not receive model secrets")
+    if "http://127.0.0.1:11434" not in build or "qwen3.8:27b" not in build:
+        failures.append("Pages build must preflight exact local Ollama model qwen3.8:27b")
+    if "pull_request:" in workflow or "github.event_name != 'pull_request'" not in build:
+        failures.append("Pages build must never run for pull requests")
+    if "services:" in workflow:
+        failures.append("Pages publication must not start Docker services")
+    if not all(
+        name in build
+        for name in (
+            "Clean persistent runner before build",
+            "Clean persistent runner after build",
+        )
+    ):
+        failures.append("self-hosted Pages build requires pre/post persistent-runner cleanup")
+    hosted_jobs = workflow[workflow.index("\n  persist-cost-receipts:\n") :]
+    if "runs-on: [self-hosted]" in hosted_jobs or hosted_jobs.count(
+        "runs-on: ubuntu-24.04"
+    ) != 4:
+        failures.append("receipt, deploy, and promotion jobs must remain Ubuntu-hosted")
     return failures
 
 

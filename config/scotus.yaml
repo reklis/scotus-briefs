@@ -96,9 +96,10 @@ model_budget:
   maximum_output_tokens_per_run: 168000
   maximum_input_tokens_per_call: 100000
   maximum_output_tokens_per_call: 8000
-  input_cost_usd_per_million_tokens: "1.25"
-  output_cost_usd_per_million_tokens: "10.00"
-  maximum_estimated_cost_usd_per_run: "10.00"
+  # The protected local Ollama runtime has no per-token charge.
+  input_cost_usd_per_million_tokens: "0"
+  output_cost_usd_per_million_tokens: "0"
+  maximum_estimated_cost_usd_per_run: "0"
   request_timeout_seconds: 120
   maximum_transport_attempts: 2
 licensing:
@@ -110,11 +111,11 @@ approvals:
   source_review_approved: false
   licenses_approved: false
   origin_approved: false
-  publication_secret_configured: false
+  model_runtime_approved: false
   launch_approved: false
 generation:
-  provider: openai
-  model: gpt-5
+  provider: ollama
+  model: qwen3.8:27b
   prompt_version: scotus-brief-plain-language-v14
   brief_generation_enabled: false
   maximum_brief_api_calls_per_run: 1

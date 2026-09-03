@@ -29,13 +29,15 @@ The complete license text is in `LICENSE.generated-content`.
 
 Generated-content may contain only versioned public projection JSON, immutable public
 case revisions, bounded discovery validators/digests, public release manifests, and
-opaque cost receipts. It must never contain copied PDFs/media, full or partial source
+opaque model-attempt receipts whose local estimated cost is zero. It must never contain
+copied PDFs/media, full or partial source
 page bodies, extracted transcript text, prompts, model responses, approved/rejected
 claim ledgers, object keys, credentials, internal UUIDs, or private processing logs.
 
 Official source material is transient private input. It is downloaded only by a
-trusted bounded job, recomputed for a changed case, removed during unconditional
-cleanup, and never uploaded as a cache or artifact. A URL and page label provide
+trusted bounded job on the self-hosted runner, recomputed for a changed case, removed
+during unconditional post-build cleanup, and never uploaded as a cache or artifact.
+Pre-build cleanup also removes residue from an interrupted prior job. A URL and page label provide
 provenance without republishing the underlying document.
 
 This policy is not a legal opinion about any Court or third-party work. If source

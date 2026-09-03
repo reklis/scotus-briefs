@@ -12,8 +12,10 @@ outcome. Always consult the linked official Court materials.
 
 ## Production boundary
 
-A protected GitHub Actions job runs nightly at 03:17 UTC (and by restricted manual
-dispatch). It checks bounded reviewed Court resources, recomputes an entire changed
+A protected self-hosted GitHub Actions job runs nightly at 03:17 UTC (and by
+restricted manual dispatch). Its aarch64 Spark runner uses the loopback-only Ollama
+model `qwen3.8:27b`; no model credential or remote model endpoint is accepted. It
+checks bounded reviewed Court resources, recomputes an entire changed
 case inside a permission-restricted ephemeral workspace, carries unchanged validated
 case bytes forward, exports a complete project-path-safe site, and runs contract,
 integrity, link, accessibility, and privacy validation. Pages receives only the
@@ -21,13 +23,14 @@ validated static artifact. Any failure leaves the last known-good site active.
 
 The public `generated-content` branch contains only versioned projection/case JSON,
 conditional validators and digests, bounded cursors/pending outcomes, immutable
-public revisions, release manifests, and opaque cost receipts. It never contains
+public revisions, release manifests, and opaque model-attempt/zero-cost receipts. It never contains
 Court PDFs, source HTML, extracted transcript text, observations/claim ledgers,
 prompts, model responses, object keys, credentials, private logs, or internal UUIDs.
 Official documents are linked, not redistributed.
 
-Live Court/model processing is disabled by default. Source, licensing, origin, secret,
-and launch gates remain fail-closed until the repository owner completes review.
+Live Court/model processing is disabled by default. Source, licensing, origin,
+model-runtime, and launch gates remain fail-closed until the repository owner
+completes review.
 
 ## Local development
 
@@ -46,7 +49,7 @@ Local preview is fixture-backed and static. It does not contact the Court or a m
 uv run ragchew-scotus-static fixture-preview \
   --fixture tests/fixtures/static/one-case.json --output site-output \
   --build-epoch 2026-08-28T03:17:00Z
-uv run ragchew-scotus-static serve --output site-output --bind 127.0.0.1 --port 8000
+uv run ragchew-scotus-static preview --directory site-output --host 127.0.0.1 --port 8000
 ```
 
 The exact CLI is also used by `.github/workflows/publish-pages.yml`. Docker Compose,

@@ -1,6 +1,6 @@
 ## Context
 
-The MVP's public boundary is already a sanitized `ScotusPublicProjection`, but production delivery is still a FastAPI/Jinja application that reads the active projection from PostgreSQL. Collection and analysis also assume durable PostgreSQL jobs and S3-compatible private storage. GitHub Pages can serve only files, GitHub-hosted runners are ephemeral, scheduled workflows in a public repository expose logs and artifacts broadly, and the project policy forbids redistribution of copied PDFs or extracted transcript text.
+The MVP's public boundary is already a sanitized `ScotusPublicProjection`, but production delivery is still a FastAPI/Jinja application that reads the active projection from PostgreSQL. Collection and analysis also assume durable PostgreSQL jobs and S3-compatible private storage. GitHub Pages can serve only files. The analysis/build job must run on the dedicated local Spark self-hosted runner so it can use loopback Ollama with `qwen3.8:27b`; that host is persistent even though each pipeline workspace must be ephemeral. Scheduled workflows in a public repository expose logs and artifacts broadly, and the project policy forbids redistribution of copied PDFs or extracted transcript text.
 
 The deployment therefore needs two boundaries: a public, versioned state that may safely survive in Git, and a private processing workspace that exists only for one trusted workflow run. Public state must be sufficient to carry unchanged briefs forward and determine what needs reprocessing. When a source changes, the workflow can re-download and recompute that whole case rather than persist private evidence between runs.
 
@@ -56,7 +56,7 @@ Alternatives rejected: GitHub cache/artifacts are not reliable durable state and
 
 The scheduled build checks out source plus the active generated-content state. It discovers and hashes bounded Court resources, carries byte-identical case JSON forward for unchanged cases, and fully reprocesses each selected new or changed case from its current canonical official documents. This full-case recomputation preserves whole-case/reargument validation without retaining transcript text overnight.
 
-Existing PostgreSQL job and object-store code may be reused through PostgreSQL and MinIO service containers scoped to the build job, or through equivalent in-memory adapters. Either implementation is a build tool only. All private files live under a permission-restricted `$RUNNER_TEMP` path, are never uploaded, and are removed in an unconditional cleanup step. Logs contain stage, public case key, status, counts, and digests only—not response bodies, transcript text, model payloads, signed URLs, or secrets.
+The production batch uses in-memory adapters and local temporary files rather than PostgreSQL or MinIO. The build runs under a dedicated non-privileged self-hosted GitHub Actions account on Spark. Before and after each run it removes prior private/candidate paths, creates a permission-restricted `$RUNNER_TEMP` workspace, never uploads private files, and performs unconditional cleanup because the host survives between jobs. Logs contain stage, public case key, status, counts, and digests only—not response bodies, transcript text, model payloads, signed URLs, or secrets. Pull requests and arbitrary refs never run on the self-hosted machine.
 
 The worker receives bounded `--once`/`--drain` semantics and exits zero only when no runnable selected job remains. Time/budget exhaustion records sanitized pending work and is not represented as complete. Changed-case output replaces a prior case only after all current required argument sessions pass the existing parser, legal-status, grounding, sensitivity, and brief validators.
 
@@ -90,9 +90,9 @@ If discovery, processing, generation, export, validation, or deployment fails, n
 
 A pinned `.github/workflows/publish-pages.yml` runs on a nightly UTC cron and restricted `workflow_dispatch`, never on pull requests. It uses concurrency with `cancel-in-progress: false`, explicit timeouts, frozen dependencies, minimal artifact retention, and these permission boundaries:
 
-1. **Build:** read-only repository access plus the protected publication environment's OpenAI key; checks out both branches with persisted credentials disabled; processes in ephemeral services; uploads only a privacy-scanned Pages candidate.
-2. **Deploy:** `pages: write` and `id-token: write`, no source/model/storage secrets; deploys the exact validated candidate.
-3. **Promote:** after successful deployment, `contents: write`, no secrets; compare-and-swap updates the generated-content active snapshot/state to the exact deployed release.
+1. **Build:** runs only on the dedicated `self-hosted` Spark runner with read-only repository access and a protected publication environment; checks out both branches with persisted credentials disabled, verifies loopback Ollama and the exact `qwen3.8:27b` model, processes in an ephemeral workspace, and uploads only a privacy-scanned Pages candidate. It receives no external model API key.
+2. **Deploy:** runs on GitHub-hosted Ubuntu with `pages: write` and `id-token: write`, no source/model/storage secrets; deploys the exact validated candidate.
+3. **Promote:** runs on GitHub-hosted Ubuntu after successful deployment, with `contents: write` and no secrets; compare-and-swap updates the generated-content active snapshot/state to the exact deployed release.
 
 A sanitized cost receipt may need persistence after a paid call even when publication fails. It is isolated from the active projection and written with a compare-and-swap update by a no-secret step. A public release ID allows the next run's reconciliation command to detect the rare case where Pages deployment succeeds but branch promotion fails, and either promote the matching validated release or redeploy the branch's last active release.
 
@@ -100,9 +100,9 @@ The normal pull-request workflow remains fixture-only and receives no publicatio
 
 ### 8. Bound source use, model cost, and retries
 
-Configuration adds hard maxima for cases/documents, downloaded bytes, private disk, runtime, extraction calls, brief calls, total model calls, input characters/tokens, output tokens, and estimated spend per run. Defaults permit a small nightly amount of changed work. OpenAI calls use explicit timeouts and bounded retries; automatic SDK retries that could exceed the ledger are disabled.
+Configuration adds hard maxima for cases/documents, downloaded bytes, private disk, runtime, extraction calls, brief calls, total model calls, input characters/tokens, and output tokens. Defaults permit a small nightly amount of changed work. The OpenAI Python client is used only as a protocol client for Ollama's loopback OpenAI-compatible endpoint; it sends no requests to OpenAI. Calls use explicit timeouts and bounded retries, and automatic SDK retries that could exceed the ledger are disabled. Startup validates that the endpoint is loopback-only and that Ollama reports the exact configured `qwen3.8:27b` model with JSON-schema completion support.
 
-An opaque input fingerprint covers public document digests plus parser, extractor, policy, model, prompt, and relevant configuration versions. A previously attempted unchanged input is not purchased again unless source bytes or one of those versions changes or an operator explicitly authorizes replay. Budget exhaustion leaves safe pending work for a later run. A runner crash after the provider accepts a request but before receipt persistence can cause one repeat, which is accepted as the unavoidable trade-off without durable private transactional storage.
+An opaque input fingerprint covers public document digests plus provider, endpoint identity, parser, extractor, policy, model, prompt, and relevant configuration versions. A previously attempted unchanged input is not run again unless source bytes or one of those versions changes or an operator explicitly authorizes replay. Budget exhaustion leaves safe pending work for a later run. A runner crash after Ollama accepts a request but before receipt persistence can cause one repeat, which is accepted as the unavoidable trade-off without durable private transactional storage.
 
 ### 9. Make licensing and repository hygiene part of the launch gate
 
@@ -116,7 +116,8 @@ The public release adds contribution and private security-reporting policies, sy
 - **[Court servers omit or misuse cache validators]** → Rotate bounded digest rechecks and never remove prior content after one missing/failed response.
 - **[Public state accidentally includes private evidence]** → Use allowlisted frozen schemas plus structural/textual whole-bundle scans; never upload an unvalidated bundle.
 - **[Deploy and branch promotion cannot be one transaction]** → Use content-derived release IDs, compare-and-swap promotion, and explicit reconciliation against the live release marker.
-- **[Runner dies around a paid model call]** → Disable implicit retries, enforce hard per-run limits, persist an opaque receipt when possible, and accept at most the documented crash-window replay risk.
+- **[Persistent self-hosted runner retains private files or is exposed to untrusted workflows]** → Use a dedicated non-privileged repository runner, prohibit PR/arbitrary-ref execution, enforce pre/post cleanup under a mode-0700 workspace, and periodically audit the runner host and Ollama logs.
+- **[Runner dies around a local model call]** → Disable implicit retries, enforce hard per-run limits, persist an opaque receipt when possible, and accept at most the documented crash-window replay risk.
 - **[Generated-content branch grows indefinitely]** → Keep immutable public case revisions but avoid duplicate rendered trees and private/intermediate data; document an auditable compaction policy if size becomes material.
 - **[JavaScript is disabled]** → Keep all archives and cases pre-rendered; only free-text search requires JavaScript.
 - **[GitHub Pages cannot set arbitrary security headers]** → Avoid inline/untrusted HTML, use a restrictive meta CSP where supported, serve no secrets, and document that transport headers are controlled by GitHub Pages.
@@ -128,7 +129,7 @@ The public release adds contribution and private security-reporting policies, sy
 2. Implement deterministic static export, base-path-safe templates/assets, search, manifesting, privacy scans, and fixture-backed local preview.
 3. Add incremental public state, conditional discovery, same-URL revision allocation, bounded one-shot processing, and cost controls.
 4. Export any accepted legacy public projection through a private operator-only sanitizer, or bootstrap an empty fixture snapshot. Independently scan it before creating the orphan generated-content branch.
-5. Add the pinned nightly/manual workflow in dry-run mode. Configure the canonical origin, project base path, protected publication/Pages environments, OpenAI secret, concurrency, and branch protection.
+5. Install a dedicated self-hosted Actions runner on Spark, restrict it to the repository, verify loopback Ollama and `qwen3.8:27b`, and add the pinned nightly/manual workflow in dry-run mode. Configure the canonical origin, project base path, protected publication/Pages environments, concurrency, and branch protection; no external model secret is used.
 6. Run fixture and live private dry runs without deployment; compare static routes/content with the MVP preview and verify no private data appears in logs, artifacts, branch state, or site files.
 7. Enable GitHub Pages deployment manually, then enable the nightly schedule only after existing legal/source launch gates and licensing approval pass.
 8. Remove the Kubernetes public Service/Ingress/Deployment and scheduled production pipeline from the active deployment; revoke its public database/object credentials. Keep migration/local tooling clearly marked dormant.

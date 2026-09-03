@@ -47,7 +47,7 @@ class BudgetExceeded(RuntimeError):
 
 
 class RepeatedModelInput(RuntimeError):
-    """A paid input already has a durable attempted/blocked receipt."""
+    """A model input already has a durable attempted/blocked receipt."""
 
 
 class PublicationGateDenied(RuntimeError):
@@ -376,7 +376,7 @@ class UnifiedRunBudget:
         if key in self._authorized:
             raise RepeatedModelInput("model input was already authorized in this run")
         if key in previous and not authorized_replay:
-            raise RepeatedModelInput("unchanged paid model input was already recorded")
+            raise RepeatedModelInput("unchanged model input was already recorded")
         self.input_characters += input_characters
         self._authorized.add(key)
         return ModelRequestPermit(self, stage, fingerprint, input_tokens, output_tokens)
@@ -919,17 +919,21 @@ def processor_fingerprint(
     parser: str,
     extractor: str,
     policy: str,
+    provider: str,
+    endpoint: str,
     model: str,
     prompt: str,
     config_digest: str,
 ) -> str:
-    """Stable composite fingerprint for all paid-processing inputs and versions."""
+    """Stable composite fingerprint for all model-processing inputs and versions."""
     return model_input_fingerprint(
         tuple(document_digests),
         {
             "config": config_digest,
+            "endpoint": endpoint,
             "extractor": extractor,
             "model": model,
+            "provider": provider,
             "parser": parser,
             "policy": policy,
             "prompt": prompt,

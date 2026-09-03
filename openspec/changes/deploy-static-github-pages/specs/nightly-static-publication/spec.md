@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Scheduled and manual bounded publication
-The system SHALL provide a nightly UTC GitHub Actions workflow and a restricted manual dispatch that run only from the protected default branch, serialize publication runs, enforce explicit time/runtime/resource limits, and never run live publication for pull requests or forks.
+The system SHALL provide a nightly UTC GitHub Actions workflow and a restricted manual dispatch whose analysis/build job runs only on the dedicated local Spark self-hosted runner from the protected default branch, serializes publication runs, enforces explicit time/runtime/resource limits, and never runs live publication for pull requests or forks.
 
 #### Scenario: Nightly trigger starts
 - **WHEN** the configured cron fires on the default branch
@@ -9,7 +9,7 @@ The system SHALL provide a nightly UTC GitHub Actions workflow and a restricted 
 
 #### Scenario: Pull request executes CI
 - **WHEN** code from a pull request or fork is tested
-- **THEN** only recorded fixtures SHALL be processed and no live-source, OpenAI, Pages-write, generated-content-write, database, or object-storage credential SHALL be available
+- **THEN** only recorded fixtures SHALL be processed on GitHub-hosted infrastructure and no self-hosted runner, live source, Ollama endpoint, Pages write, generated-content write, database, or object-storage credential SHALL be available
 
 #### Scenario: A prior publication is still running
 - **WHEN** another scheduled or manual publication is requested
@@ -91,7 +91,7 @@ The collector/worker/publisher path MUST support bounded one-shot and drain oper
 - **THEN** another paid call SHALL be denied unless evidence/version input changes or an authorized replay is explicit
 
 #### Scenario: Model transport fails
-- **WHEN** an OpenAI request times out or fails after its bounded configured attempts
+- **WHEN** a loopback Ollama request times out or fails after its bounded configured attempts
 - **THEN** the candidate publication SHALL fail without replacing the current site, and retries SHALL NOT exceed the run's call budget
 
 ### Requirement: Full candidate validation and last-known-good publication
@@ -118,11 +118,19 @@ The workflow SHALL separate build, deployment, and generated-state promotion so 
 
 #### Scenario: Build job processes evidence
 - **WHEN** the trusted build job runs in the protected publication environment
-- **THEN** it SHALL have read-only repository access and only the model secret needed for analysis, with checkout credentials disabled and no Pages or branch-write permission
+- **THEN** it SHALL run on the dedicated `self-hosted` Spark runner with read-only repository access, checkout credentials disabled, no Pages or branch-write permission, no external model secret, and access only to loopback Ollama
+
+#### Scenario: Local model is unavailable or changed
+- **WHEN** loopback Ollama is unavailable or does not report the exact configured `qwen3.8:27b` model
+- **THEN** the build SHALL stop before Court evidence is processed or any candidate is published
+
+#### Scenario: Persistent runner starts or finishes a build
+- **WHEN** a publication job starts or exits on the self-hosted host
+- **THEN** it SHALL remove stale private/candidate paths, use a permission-restricted run workspace, perform unconditional cleanup, and leave no Court document, extracted text, prompt, or model response in the Actions workspace
 
 #### Scenario: Deployment job publishes files
 - **WHEN** a validated artifact is deployed
-- **THEN** the deployment job SHALL have only `pages: write` and `id-token: write`, no OpenAI/private processing secret, and a short retention period for the privacy-scanned Pages artifact
+- **THEN** the GitHub-hosted deployment job SHALL have only `pages: write` and `id-token: write`, no local-model or private-processing access, and a short retention period for the privacy-scanned Pages artifact
 
 #### Scenario: Promotion job updates public state
 - **WHEN** a successful release is promoted

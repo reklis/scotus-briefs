@@ -66,7 +66,10 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "services:" not in workflow
     assert "postgres:" not in workflow and "minio:" not in workflow
     assert "environment: scotus-publication" in workflow
-    assert "OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}" in workflow
+    assert "runs-on: [self-hosted]" in workflow
+    assert "OPENAI_API_KEY" not in workflow
+    assert "RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1" in workflow
+    assert "qwen3.8:27b" in workflow
     assert "ragchew.scotus.live_static:LiveStaticBatchAdapter" in workflow
     assert "RAGCHEW_SOURCE_USER_AGENT" in workflow
     assert "github.com/reklis/scotus-briefs" in workflow
@@ -87,7 +90,7 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
         workflow.index("\n  persist-cost-receipts:\n") : workflow.index("\n  deploy:\n")
     ]
     assert "github.event_name == 'schedule' || inputs.deploy == true" in receipt_job
-    assert "crash or rerun may repeat model cost" in workflow
+    assert "crash or rerun may repeat zero-cost local model work" in workflow
     assert "git -C generated-content-input rev-parse HEAD" in workflow
     assert "path: source" in workflow and "path: generated-content" in workflow
     assert "needs: [build, persist-cost-receipts, deploy]" in workflow
@@ -95,7 +98,9 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "stopped before network/model use" not in workflow
     assert "Reconcile release IDs before live source access" in workflow
     assert "Run reviewed bounded live adapter" in workflow
-    assert "if: always()" in workflow and "Remove private workspace" in workflow
+    assert "if: always()" in workflow and "Clean persistent runner after build" in workflow
+    assert "Clean persistent runner before build" in workflow
+    assert "github.event_name != 'pull_request'" in workflow
 
 
 def test_container_is_nonroot_and_uses_immutable_base_images() -> None:

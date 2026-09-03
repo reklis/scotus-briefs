@@ -5,11 +5,10 @@ import json
 from datetime import UTC, datetime
 from pathlib import Path
 from types import SimpleNamespace
-from typing import Any
+from typing import Any, cast
 
 import httpx
 import pytest
-from pydantic import SecretStr
 from pypdf import PdfWriter
 
 from ragchew.config import ProceedingsConfig, ScotusConfig, ServiceSettings
@@ -21,6 +20,7 @@ from ragchew.scotus.live_static import (
     LiveStaticBatchAdapter,
     _case_documents,
     _CaseInput,
+    _default_ollama_client,
     _descriptor_for_public_argument,
 )
 from ragchew.scotus.public_contracts import public_case_key
@@ -161,6 +161,11 @@ class FailingBackend(FixtureBackend):
 class MockOpenAI:
     def __init__(self) -> None:
         self.chat = SimpleNamespace(completions=self)
+        self.models = SimpleNamespace(
+            list=lambda: SimpleNamespace(
+                data=[SimpleNamespace(id="qwen3.8:27b")]
+            )
+        )
         self.requests: list[dict[str, Any]] = []
         self.closed = False
 
@@ -296,7 +301,7 @@ def live_config() -> ScotusConfig:
             "source_review_approved": True,
             "licenses_approved": True,
             "origin_approved": True,
-            "publication_secret_configured": True,
+            "model_runtime_approved": True,
             "launch_approved": True,
         }
     )
@@ -336,7 +341,7 @@ def build_adapter(
     rate_limiter_factory: Any = _immediate_rate_limiter,
 ) -> LiveStaticBatchAdapter:
     settings = ServiceSettings(
-        openai_api_key=SecretStr("synthetic-test-key"),
+        ollama_base_url="http://127.0.0.1:11434/v1",
         proceedings_config_path="unused",
         source_user_agent="ragchew-test contact=test@example.test",
     )
@@ -348,7 +353,7 @@ def build_adapter(
             transport=httpx.MockTransport(court.document_response),
             follow_redirects=False,
         ),
-        openai_client_factory=lambda _settings, _config: model,
+        ollama_client_factory=lambda _settings, _config: model,
         parser_backend_factory=backend,
         rate_limiter_factory=rate_limiter_factory,
         clock=lambda: NOW,
@@ -394,6 +399,43 @@ def test_live_adapter_checks_all_gates_before_factories_or_traffic(tmp_path: Pat
     assert not list(tmp_path.iterdir())
 
 
+def test_default_ollama_sdk_client_is_loopback_and_ignores_proxy_environment() -> None:
+    client = _default_ollama_client(
+        ServiceSettings(_env_file=None),
+        ScotusConfig.from_yaml("config/scotus.yaml"),
+    )
+    try:
+        transport = cast(Any, client._client)
+        assert str(client.base_url) == "http://127.0.0.1:11434/v1/"
+        assert client.api_key == "ollama-local-no-secret"
+        assert transport.follow_redirects is False
+        assert transport._trust_env is False
+    finally:
+        client.close()
+
+
+def test_live_adapter_requires_exact_local_model_before_court_traffic(
+    tmp_path: Path,
+) -> None:
+    court = CourtFixture()
+    model = MockOpenAI()
+    model.models = SimpleNamespace(
+        list=lambda: SimpleNamespace(data=[SimpleNamespace(id="qwen3.8:14b")])
+    )
+    adapter = build_adapter(court, model)
+    with pytest.raises(PublicationGateDenied, match="not installed"):
+        adapter.run(
+            state_store=MemoryStateStore(tmp_path / "state"),
+            config=live_config(),
+            mode=DiscoveryMode.NIGHTLY,
+            runner_temp=tmp_path / "private",
+            authorized_replay=False,
+        )
+    assert court.source_requests == []
+    assert court.document_requests == []
+    assert model.closed
+
+
 def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     tmp_path: Path,
 ) -> None:
@@ -408,6 +450,9 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     case = result.content.projection.cases[0]
     assert len(case.arguments) == 1
     assert len(result.content.publication.documents) == 2
+    processor = result.content.publication.processor
+    assert processor is not None
+    assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",
         "scotus_legal_brief",

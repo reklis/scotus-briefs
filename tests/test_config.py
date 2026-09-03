@@ -36,8 +36,8 @@ def test_scotus_defaults_are_transcript_first_and_fail_closed() -> None:
     assert config.discovery.terms[0] == "2025"
     assert config.discovery.terms[-1] == "2000"
     assert config.discovery.backfill_case_limit == 200
-    assert config.generation.provider == "openai"
-    assert config.generation.model == "gpt-5"
+    assert config.generation.provider == "ollama"
+    assert config.generation.model == "qwen3.8:27b"
     assert config.generation.prompt_version == "scotus-brief-plain-language-v14"
     assert config.generation.brief_generation_enabled is False
     assert config.generation.maximum_brief_api_calls_per_run == 1
@@ -56,7 +56,9 @@ def test_scotus_defaults_are_transcript_first_and_fail_closed() -> None:
     assert config.model_budget.maximum_extraction_calls_per_run == 20
     assert config.model_budget.maximum_brief_calls_per_run == 1
     assert config.model_budget.maximum_total_calls_per_run == 21
-    assert config.model_budget.maximum_estimated_cost_usd_per_run == Decimal("10.00")
+    assert config.model_budget.input_cost_usd_per_million_tokens == Decimal("0")
+    assert config.model_budget.output_cost_usd_per_million_tokens == Decimal("0")
+    assert config.model_budget.maximum_estimated_cost_usd_per_run == Decimal("0")
     assert config.licensing.code_and_documentation == "Apache-2.0"
     assert config.licensing.generated_briefs == "CC-BY-4.0"
     assert not config.approvals.all_live_gates_approved()
@@ -106,7 +108,7 @@ def test_scotus_static_config_rejects_incompatible_model_budgets() -> None:
         ScotusConfig.model_validate(values)
 
     values = config.model_dump()
-    values["model_budget"]["maximum_estimated_cost_usd_per_run"] = "1.00"
+    values["model_budget"]["input_cost_usd_per_million_tokens"] = "1.00"
     with pytest.raises(ValidationError, match="token spend"):
         ScotusConfig.model_validate(values)
 
@@ -137,13 +139,13 @@ def test_scotus_live_publication_requires_every_approval() -> None:
         ScotusConfig.model_validate(values)
 
 
-def test_scotus_config_rejects_local_or_compatible_model_provider() -> None:
+def test_scotus_config_requires_reviewed_ollama_provider_and_exact_model() -> None:
     config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
-    values = config.model_dump()
-    values["generation"]["provider"] = "local"
-    values["generation"]["model"] = "local-model"
-    with pytest.raises(ValidationError):
-        ScotusConfig.model_validate(values)
+    for provider, model in (("openai", "qwen3.8:27b"), ("ollama", "qwen3:27b")):
+        values = config.model_dump()
+        values["generation"].update({"provider": provider, "model": model})
+        with pytest.raises(ValidationError):
+            ScotusConfig.model_validate(values)
 
 
 def test_source_user_agent_rejects_placeholder_contact() -> None:
@@ -157,13 +159,29 @@ def test_source_user_agent_rejects_placeholder_contact() -> None:
     ).source_user_agent
 
 
-def test_standard_openai_api_key_environment_name_is_supported(
+def test_ollama_endpoint_is_typed_normalized_and_loopback_only() -> None:
+    settings = ServiceSettings(
+        _env_file=None,
+        ollama_base_url="http://localhost:11434/v1/",
+    )
+    assert settings.ollama_base_url == "http://localhost:11434/v1"
+    for endpoint in (
+        "https://127.0.0.1:11434/v1",
+        "http://192.168.1.2:11434/v1",
+        "http://user@127.0.0.1:11434/v1",
+        "http://127.0.0.1:11434/v1?token=x",
+        "http://127.0.0.1:11434/api",
+    ):
+        with pytest.raises(ValidationError, match="Ollama base URL"):
+            ServiceSettings(_env_file=None, ollama_base_url=endpoint)
+
+
+def test_ollama_endpoint_environment_name_is_supported(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    monkeypatch.delenv("RAGCHEW_OPENAI_API_KEY", raising=False)
-    monkeypatch.setenv("OPENAI_API_KEY", "test-openai-key")
+    monkeypatch.setenv("RAGCHEW_OLLAMA_BASE_URL", "http://127.0.0.1:11434/v1")
     settings = ServiceSettings(_env_file=None)
-    assert settings.openai_api_key.get_secret_value() == "test-openai-key"
+    assert settings.ollama_base_url == "http://127.0.0.1:11434/v1"
 
 
 def test_enabled_proceeding_source_requires_review() -> None:
