@@ -26,6 +26,8 @@ reconciliation and checkpoint promotion. The first cycle to select model work af
 legacy-checkpoint compatibility fix (`33790480565`) downloaded three documents in 18
 requests (2,344,867 bytes) and made two zero-cost extraction calls. Grounding validation
 rejected the result before the brief stage, so it did not deploy or promote public content.
+An explicit reviewed replay (`33796212480`) produced the same fail-closed result after
+three documents, 18 requests, 2,362,990 bytes, and two extraction calls.
 
 ## One-time owner settings
 
@@ -159,8 +161,10 @@ opaque receipts locally, but uploads neither candidate state nor receipts and pe
 nothing to `generated-content`. This prevents a discarded candidate from making its
 model inputs unreplayable. The tradeoff is deliberate: a runner crash or later dry-run
 rerun can repeat model calls, though local configured cost is zero, because no durable
-receipt survives. Restrict
-bootstrap/deploy dispatch to owners. Never add PR/fork or arbitrary-ref triggers.
+receipt survives. An owner may set `authorized_replay=true` only on an explicit manual
+`nightly` run after reviewing a prior failure; replay does not bypass any grounding,
+privacy, completeness, or publication validator. Restrict bootstrap/deploy/replay
+dispatch to owners. Never add PR/fork or arbitrary-ref triggers.
 
 Possible outcomes:
 
