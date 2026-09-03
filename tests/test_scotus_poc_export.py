@@ -97,7 +97,14 @@ def brief_row(number: int) -> dict[str, Any]:
         "sections": [
             {
                 "heading": "Question presented",
-                "paragraphs": ["Accepted public analysis."],
+                "paragraphs": [
+                    (
+                        "Accepted public analysis ("
+                        "50000000-0000-0000-0000-000000000001)."
+                        if number == 1
+                        else "Corrected accepted public analysis."
+                    )
+                ],
                 "claim_ids": [str(CLAIM_ID)],
             }
         ],
@@ -216,6 +223,8 @@ def test_reader_reconstructs_every_revision_from_allowlisted_public_fields() -> 
         "https://www.supremecourt.gov/opinions/25pdf/25-466.pdf",
     )
     assert corrected.arguments[0].official_transcript_url.endswith("25-466.pdf")
+    assert "official source" in first.sections[0].paragraphs[0]
+    assert "50000000-0000-0000-0000-000000000001" not in first.sections[0].paragraphs[0]
 
     sql = "\n".join(connection.queries).casefold()
     assert "repeatable read read only" in sql

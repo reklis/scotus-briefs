@@ -50,6 +50,9 @@ from ragchew.scotus.static_validation import validate_static_candidate
 
 _SHA256 = re.compile(r"^[0-9a-f]{64}$")
 _GIT_COMMIT = re.compile(r"^[0-9a-f]{40}$")
+_INTERNAL_UUID = re.compile(
+    r"(?i)\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b"
+)
 
 
 class PocExportError(RuntimeError):
@@ -126,6 +129,13 @@ def _json(value: Any) -> Any:
     if isinstance(value, str):
         return json.loads(value)
     return value
+
+
+def _public_text(value: str | None) -> str | None:
+    """Replace legacy inline claim IDs without exposing or silently dropping prose."""
+    if value is None:
+        return None
+    return _INTERNAL_UUID.sub("official source", value)
 
 
 def _source_links(
@@ -251,10 +261,21 @@ class PostgresPocBriefReader:
                 ).fetchall()
         except PocExportError:
             raise
-        except (KeyError, TypeError, ValueError, ValidationError, json.JSONDecodeError):
-            # Validation diagnostics may contain a rejected private value. Keep operator
-            # output at a coarse category and inspect the database only in its private zone.
-            raise PocExportError("POC public records failed recovery validation") from None
+        except ValidationError as error:
+            locations = ",".join(
+                ".".join(str(part) for part in item["loc"])
+                for item in error.errors(
+                    include_url=False, include_context=False, include_input=False
+                )[:10]
+            )
+            raise PocExportError(
+                f"POC public records failed contract validation at: {locations or 'root'}"
+            ) from None
+        except (KeyError, TypeError, ValueError, json.JSONDecodeError) as error:
+            # Never include exception text because it may contain a rejected private value.
+            raise PocExportError(
+                f"POC public records failed recovery validation ({type(error).__name__})"
+            ) from None
 
         provenance = {
             row["claim_id"]: _Provenance(
@@ -296,8 +317,32 @@ class PostgresPocBriefReader:
             return self._build_cases(briefs, provenance, sessions, histories, dispositions)
         except PocExportError:
             raise
-        except (KeyError, TypeError, ValueError, ValidationError):
-            raise PocExportError("POC public records failed recovery validation") from None
+        except ValidationError as error:
+            locations = ",".join(
+                ".".join(str(part) for part in item["loc"])
+                for item in error.errors(
+                    include_url=False, include_context=False, include_input=False
+                )[:10]
+            )
+            raise PocExportError(
+                f"POC public records failed contract validation at: {locations or 'root'}"
+            ) from None
+        except (KeyError, TypeError, ValueError) as error:
+            detail = str(error)
+            safe_detail = (
+                detail
+                if detail.startswith(
+                    (
+                        "forbidden public field at ",
+                        "internal UUID is forbidden at ",
+                        "private or credential-like text is forbidden at ",
+                    )
+                )
+                else type(error).__name__
+            )
+            raise PocExportError(
+                f"POC public records failed recovery validation ({safe_detail})"
+            ) from None
 
     @staticmethod
     def _brief(row: Mapping[str, Any]) -> _BriefRow:
@@ -379,7 +424,7 @@ class PostgresPocBriefReader:
                     revision_number=value.revision_number,
                     maturity=value.maturity,
                     created_at=value.created_at,
-                    correction_note=value.correction_note,
+                    correction_note=_public_text(value.correction_note),
                 )
                 for value in values
             )
@@ -432,14 +477,17 @@ class PostgresPocBriefReader:
                     argument_date=analyses_sessions[-1].argument_date,
                     case_status=case_status,
                     maturity=value.maturity,
-                    title=value.body.title,
-                    dek=value.body.dek,
+                    title=_public_text(value.body.title) or value.body.title,
+                    dek=_public_text(value.body.dek) or value.body.dek,
                     title_sources=source(value.body.title_claim_ids),
                     dek_sources=source(value.body.dek_claim_ids),
                     sections=tuple(
                         PublicBriefSection(
-                            heading=section.heading,
-                            paragraphs=section.paragraphs,
+                            heading=_public_text(section.heading) or section.heading,
+                            paragraphs=tuple(
+                                _public_text(paragraph) or paragraph
+                                for paragraph in section.paragraphs
+                            ),
                             sources=source(section.claim_ids),
                         )
                         for section in value.body.sections
@@ -449,8 +497,11 @@ class PostgresPocBriefReader:
                             sequence=analysis.sequence,
                             argument_date=analysis.argument_date,
                             reargument=analysis.reargument,
-                            heading=analysis.heading,
-                            paragraphs=analysis.paragraphs,
+                            heading=_public_text(analysis.heading) or analysis.heading,
+                            paragraphs=tuple(
+                                _public_text(paragraph) or paragraph
+                                for paragraph in analysis.paragraphs
+                            ),
                             official_detail_url=session.official_detail_url,
                             official_transcript_url=session.official_transcript_url,
                             sources=source(analysis.claim_ids),
