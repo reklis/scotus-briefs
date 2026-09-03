@@ -117,7 +117,7 @@
 - [x] 11.2 Add a Pages operations runbook covering repository settings, environments/secrets, generated branch layout, cron/manual/bootstrap use, budgets, monitoring, no-op/pending outcomes, reconciliation, rollback, and incident response.
 - [x] 11.3 Update source-review documentation for the self-hosted nightly user agent, conditional requests, rate/bounds, transient retention, rotating rechecks, and change conditions that force `review_required`.
 - [x] 11.4 Run Ruff, strict mypy, the full unit/integration suite, dependency/secret/license scans, deterministic static builds, HTML/link/privacy validation, and workflow policy tests; record and resolve all failures.
-- [ ] 11.5 Perform a fixture-only GitHub Actions dry run and verify the Pages artifact, generated-content candidate, logs, summaries, and retained artifacts contain no private or forbidden material.
+- [x] 11.5 Perform a fixture-only GitHub Actions dry run and verify the Pages artifact, generated-content candidate, logs, summaries, and retained artifacts contain no private or forbidden material.
 - [ ] 11.6 Perform an authorized one-case live dry run with deployment disabled, measure Court requests/bytes/runtime/model use/cost, inspect every public/state file and log, and tune the initial nightly budgets.
 - [ ] 11.7 Bootstrap the protected generated-content branch, manually deploy the validated first release, verify every public route/base path/canonical/source link/search/disclosure, and exercise release-ID reconciliation and rollback.
 - [ ] 11.8 Enable the nightly schedule only after license/source/privacy/legal-status/grounding/accessibility/Pages launch gates pass, then revoke legacy production credentials and document the first successful nightly publication.
