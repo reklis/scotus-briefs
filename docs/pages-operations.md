@@ -20,7 +20,9 @@ at most one case, make at most 21 local-model calls including one final brief ca
 has zero external model cost. Prior one-case dry runs confirmed the Court and loopback
 Ollama paths but failed closed on extraction/runtime validation. Those same grounding,
 privacy, completeness, static, and release validators remain mandatory: an unsuccessful
-run cannot replace the migrated accepted POC corpus or advance its active release.
+run cannot replace the migrated accepted POC corpus or advance its active release. The
+first enabled bounded cycle (Actions run `33788120429`) reached live processing and
+failed closed with the sanitized `validation` category; it did not deploy or promote.
 
 ## One-time owner settings
 

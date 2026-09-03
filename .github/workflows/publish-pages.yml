@@ -260,7 +260,7 @@ jobs:
         if: always()
         run: |
           printf 'Build outcome: `%s`\n' "${{ job.status }}" >> "$GITHUB_STEP_SUMMARY"
-          printf 'Live Court/model processing remains fail-closed until every repository gate is enabled.\n' >> "$GITHUB_STEP_SUMMARY"
+          printf 'Court/model candidates remain fail-closed unless every configured gate and validator passes.\n' >> "$GITHUB_STEP_SUMMARY"
           if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.deploy }}" != "true" ]]; then
             printf 'Non-deploy dry run: candidate state and receipts were not persisted; a crash or rerun may repeat zero-cost local model work.\n' >> "$GITHUB_STEP_SUMMARY"
           fi

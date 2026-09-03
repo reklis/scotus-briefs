@@ -60,7 +60,7 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "OPENAI_API_KEY" not in text
     assert "services:" not in text
     assert "before live source access" in text
-    assert "fail-closed until every repository gate is enabled" in text
+    assert "candidates remain fail-closed unless every configured gate and validator passes" in text
 
     build = text[text.index("\n  build:\n") : text.index("\n  persist-cost-receipts:\n")]
     assert "secrets." not in build
