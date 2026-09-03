@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import io
 import json
+from dataclasses import replace
 from datetime import UTC, datetime
 from pathlib import Path
 from types import SimpleNamespace
@@ -546,6 +547,25 @@ def test_reargument_reprocesses_every_session_under_one_case_budget(tmp_path: Pa
     names = [request["response_format"]["json_schema"]["name"] for request in model.requests]
     assert names.count("scotus_legal_observations") == 2
     assert names.count("scotus_legal_brief") == 1
+
+
+def test_legacy_case_without_document_checkpoints_is_rediscovered_safely(
+    tmp_path: Path,
+) -> None:
+    court = CourtFixture()
+    store = MemoryStateStore(tmp_path / "state")
+    first = run(tmp_path, store, court, MockOpenAI())
+    legacy = replace(
+        first.content,
+        publication=first.content.publication.model_copy(update={"documents": ()}),
+    )
+    store.content = legacy
+
+    result = run(tmp_path, store, court, MockOpenAI())
+
+    assert result.publishable
+    assert result.no_public_change
+    assert result.content.projection == first.content.projection
 
 
 def test_failure_and_model_budget_exhaustion_keep_prior_case_active(

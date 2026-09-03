@@ -568,7 +568,16 @@ class LiveStaticDiscovery:
         candidates_by_session: dict[tuple[str, str, int], ScotusArgumentCandidate] = {}
         for case_key, case in prior_cases.items():
             case_documents = tuple(documents_by_case.get(case_key, ()))
-            for index in range(len(case.arguments)):
+            for index, argument in enumerate(case.arguments):
+                transcript_key = (
+                    f"{case_key}:transcript:"
+                    f"{argument.argument_date.date().isoformat()}:{argument.sequence}"
+                )
+                if not any(item.logical_key == transcript_key for item in case_documents):
+                    # Sanitized legacy imports preserve official public provenance but
+                    # intentionally lack private-era logical document checkpoints. Court
+                    # discovery will reconstruct them from current official descriptors.
+                    continue
                 item = _descriptor_for_public_argument(case, index, case_documents)
                 candidates_by_session[
                     (case_key, item.argument_date.date().isoformat(), item.sequence)
