@@ -269,7 +269,7 @@ class DeterministicTranscriptObservationExtractor:
 
 
 class OpenAILegalObservationExtractor:
-    PROMPT_VERSION = "scotus-legal-extraction-v3"
+    PROMPT_VERSION = "scotus-legal-extraction-v4"
 
     def __init__(
         self,
@@ -320,8 +320,14 @@ class OpenAILegalObservationExtractor:
                         "facts. A justice's question is not a vote or holding. Transcript "
                         "evidence cannot establish a Supreme Court order, holding, judgment, "
                         "or disposition. "
-                        "Every quote and citation must occur exactly in its evidence block. "
-                        "Return no more than four high-value observations. Keep raw_value and "
+                        "Return one or two independently useful observations, or an empty list "
+                        "when none can satisfy every rule. Copy block_id exactly. Copy quote as "
+                        "one exact, contiguous substring from that block without correcting "
+                        "spacing, punctuation, capitalization, or transcription errors. Copy "
+                        "speaker_name, speaker_kind, identity_basis, and attribution exactly "
+                        "from the block; use null, unknown, or anonymous when the block does "
+                        "not supply them. Leave authority_citations empty unless each citation "
+                        "appears verbatim in the same evidence block. Keep raw_value and "
                         "normalized_value to one sentence of at most 40 words each. Use one "
                         "evidence block per observation and quote no more than 30 words."
                     ),
