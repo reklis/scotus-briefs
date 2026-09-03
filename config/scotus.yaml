@@ -86,7 +86,7 @@ runner_limits:
   maximum_http_requests_per_run: 100
   maximum_download_bytes_per_run: 104857600
   maximum_private_disk_bytes: 2147483648
-  maximum_runtime_seconds: 3600
+  maximum_runtime_seconds: 1500
 model_budget:
   maximum_extraction_calls_per_run: 20
   maximum_brief_calls_per_run: 1
