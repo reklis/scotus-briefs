@@ -94,7 +94,8 @@ model_budget:
   maximum_input_characters_per_run: 1200000
   maximum_input_tokens_per_run: 2100000
   maximum_output_tokens_per_run: 168000
-  maximum_input_tokens_per_call: 100000
+  # First live dry run required 120,698 conservative UTF-8-byte tokens.
+  maximum_input_tokens_per_call: 130000
   maximum_output_tokens_per_call: 8000
   # The protected local Ollama runtime has no per-token charge.
   input_cost_usd_per_million_tokens: "0"
