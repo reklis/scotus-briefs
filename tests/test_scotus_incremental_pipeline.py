@@ -273,7 +273,10 @@ def live_config() -> ScotusConfig:
             "generation": config.generation.model_copy(update={"brief_generation_enabled": True}),
             "publication": config.publication.model_copy(update={"enabled": True}),
             "model_budget": config.model_budget.model_copy(
-                update={"maximum_brief_calls_per_run": 2}
+                update={
+                    "maximum_brief_calls_per_run": 2,
+                    "maximum_transport_attempts": 2,
+                }
             ),
         }
     )
