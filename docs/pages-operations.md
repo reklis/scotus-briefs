@@ -9,8 +9,9 @@ Nightly schedule: 03:17 UTC (`17 3 * * *`)
 The validated empty-state site was first deployed on 2026-09-03. The same day, the
 accepted local POC corpus was recovered through the read-only sanitizer and deployed:
 1,710 active articles, 1,875 immutable revisions, 26 terms, and 2,974 HTML pages. Live
-Pages release `fb8e4d0802f5c0c5a24e5705358389a8e14ba22ef957ac4186f412e77889c3ca`
-matches the protected `generated-content` branch. DNS is valid at GitHub; custom-domain
+Pages release `458f5b7f0c98d74838e889ad46d45345f91f122d3d09f1b7ae6fc67e9c8f85fe`
+matches the protected `generated-content` branch. The root home page displays the latest
+20 briefs and links into complete pagination and archives. DNS is valid at GitHub; custom-domain
 certificate issuance and HTTPS enforcement are still pending.
 
 New generated-case processing remains disabled. Authorized one-case dry runs confirmed
