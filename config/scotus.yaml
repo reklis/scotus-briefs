@@ -94,8 +94,8 @@ model_budget:
   maximum_input_characters_per_run: 1200000
   maximum_input_tokens_per_run: 2100000
   maximum_output_tokens_per_run: 84000
-  # First live dry run required 120,698 conservative UTF-8-byte tokens at a
-  # 60k-character window; smaller windows keep local structured decoding bounded.
+  # First live dry run required 120,698 conservative UTF-8-byte tokens at the
+  # bounded 60k-character evidence window.
   maximum_input_tokens_per_call: 130000
   maximum_output_tokens_per_call: 4000
   # The protected local Ollama runtime has no per-token charge.
@@ -124,7 +124,7 @@ generation:
   maximum_brief_api_calls_per_run: 1
   stop_after_brief_validation_failure: true
   audience: general_public
-  maximum_context_characters: 20000
+  maximum_context_characters: 60000
   minimum_observation_confidence: 0.85
   maximum_sentence_words: 30
   maximum_paragraph_words: 120
