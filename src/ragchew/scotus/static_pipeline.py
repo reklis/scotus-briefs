@@ -806,6 +806,19 @@ class StaticBatchOrchestrator:
                             elapsed_seconds=time.monotonic() - started,
                             category=category,
                         )
+                        LOG.warning(
+                            "SCOTUS bounded case failure; category=%s; cases=%d; "
+                            "documents=%d; requests=%d; bytes=%d; extraction_calls=%d; "
+                            "brief_calls=%d; total_model_calls=%d",
+                            category.value,
+                            budget.selected_cases,
+                            budget.selected_documents,
+                            budget.http_requests,
+                            budget.downloaded_bytes,
+                            budget.extraction_calls,
+                            budget.brief_calls,
+                            budget.model_calls,
+                        )
                         break
                     budget.check_private_disk(workspace)
                 sources = {item.logical_key: item for item in original.publication.sources}
