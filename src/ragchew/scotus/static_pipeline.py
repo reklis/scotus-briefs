@@ -17,6 +17,8 @@ from pathlib import Path
 from types import FrameType
 from typing import Any, Literal, Protocol
 
+from pydantic import ValidationError
+
 from ragchew.config import ScotusConfig
 from ragchew.proceedings.registry import SourceAuthorizationError
 from ragchew.proceedings.sources.http import SourceFetchError
@@ -816,11 +818,17 @@ class StaticBatchOrchestrator:
                             elapsed_seconds=time.monotonic() - started,
                             category=category,
                         )
-                        safe_detail = (
-                            str(error)
-                            if isinstance(error, BudgetExceeded)
-                            else type(error).__name__
-                        )
+                        if isinstance(error, BudgetExceeded):
+                            safe_detail = str(error)
+                        elif isinstance(error, ValidationError):
+                            safe_detail = "ValidationError[" + ",".join(
+                                f"{'.'.join(str(part) for part in item['loc'])}:{item['type']}"
+                                for item in error.errors(
+                                    include_url=False, include_context=False, include_input=False
+                                )[:10]
+                            ) + "]"
+                        else:
+                            safe_detail = type(error).__name__
                         LOG.warning(
                             "SCOTUS bounded case failure; category=%s; detail=%s; cases=%d; "
                             "documents=%d; requests=%d; bytes=%d; extraction_calls=%d; "
