@@ -6,8 +6,10 @@ GitHub Pages is the only production reader runtime. The exported tree contains t
 landing page, SCOTUS/archive/case/correction/search pages, minimal search data,
 sanitary public JSON, local fingerprinted assets, sitemap/robots/404 files, and a
 content-derived release marker. All internal URLs derive from canonical origin
-`https://reklis.github.io`, project path `/scotus-briefs/`, and section path
-`/scotus/`. No page calls a runtime API.
+`https://scotusbriefs.us`, root project path `/`, and section path `/scotus/`. The
+root `CNAME` contains exactly `scotusbriefs.us` plus one newline, is covered by the
+release integrity manifest, and is validated against the canonical origin. No page
+calls a runtime API.
 
 The old FastAPI projection reader, PostgreSQL views, MinIO objects, and Kubernetes
 workloads are legacy migration/local-test code. They are not deployed to readers.

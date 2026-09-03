@@ -1,7 +1,7 @@
 # GitHub Pages operations runbook
 
 Production repository: `reklis/scotus-briefs`  
-Canonical site: <https://reklis.github.io/scotus-briefs/>  
+Canonical site: <https://scotusbriefs.us/>
 Nightly schedule: 03:17 UTC (`17 3 * * *`)
 
 ## One-time owner settings
@@ -18,7 +18,9 @@ Nightly schedule: 03:17 UTC (`17 3 * * *`)
    and advertises `self-hosted`, `Linux`, `ARM64`, and `spark`; the workflow assumes only
    `self-hosted`. Run Ollama as a host service listening only on `127.0.0.1:11434`,
    install exact model `qwen3.8:27b`, and do not expose the port to a network.
-5. Configure Pages for GitHub Actions and protect `github-pages`. It has no secrets.
+5. Configure Pages for GitHub Actions with custom domain `scotusbriefs.us`, enforce
+   HTTPS after GitHub accepts the domain, and protect `github-pages`. It has no secrets.
+   DNS is managed separately by the owner; this repository change makes no DNS changes.
 6. Protect `generated-content` against human/direct updates while permitting the
    workflow's guarded `contents:write` promotion.
 7. Keep every config launch approval, model generation, and publication switch false
@@ -121,10 +123,10 @@ redeploy its exact site artifact. Stop for an unknown live ID; do not generate o
 split.
 
 Rollback means select a prior immutable validated release, validate its manifest and
-file digests, redeploy those exact bytes, then CAS-update active/previous pointers.
-Never regenerate, patch, or amend an old release. Verify root/SCOTUS/case/archive/
-search/correction/404 routes, canonical URLs, official links, disclosure, release ID,
-and branch/Page agreement.
+file digests, including the exact root `CNAME`, redeploy those exact bytes, then
+CAS-update active/previous pointers. Never regenerate, patch, or amend an old release.
+Verify root/SCOTUS/case/archive/search/correction/404 routes, canonical URLs, official
+links, disclosure, release ID, custom-domain routing, and branch/Page agreement.
 
 ## Incidents and legacy retirement
 

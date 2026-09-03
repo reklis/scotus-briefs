@@ -25,8 +25,8 @@ permissions:
   contents: read
 
 env:
-  CANONICAL_ORIGIN: https://reklis.github.io
-  PROJECT_BASE_PATH: /scotus-briefs
+  CANONICAL_ORIGIN: https://scotusbriefs.us
+  PROJECT_BASE_PATH: /
   RAGCHEW_SOURCE_USER_AGENT: >-
     ragchew-scotus-briefs/1.0 (+https://github.com/reklis/scotus-briefs; contact=https://github.com/reklis)
 
@@ -107,7 +107,7 @@ jobs:
         run: |
           uv run ragchew-scotus-static reconcile \
             --state-dir generated-content-input \
-            --live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}/release/v1/release.json" \
+            --live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json" \
             --fail-on-split
       - name: Run reviewed bounded live adapter
         id: live_batch

@@ -35,6 +35,7 @@ from ragchew.scotus.static_urls import (
 TOOL_VERSION = "ragchew-static-v1"
 DEFAULT_PAGE_SIZE = 20
 MANIFEST_PATH = PurePosixPath("release/v1/release.json")
+CNAME_PATH = PurePosixPath("CNAME")
 
 
 class StaticExportError(RuntimeError):
@@ -315,6 +316,8 @@ class StaticSiteExporter:
             canonical_json_bytes(build_search_index(projection, self.urls)),
         )
         self._write(root / ".nojekyll", b"")
+        if self.urls.custom_domain is not None:
+            self._write(root / CNAME_PATH, f"{self.urls.custom_domain}\n".encode("ascii"))
         self._write(
             root / "robots.txt",
             (

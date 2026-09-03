@@ -76,6 +76,19 @@ class StaticUrlPolicy:
         object.__setattr__(self, "section_path", _normalize_path(self.section_path))
 
     @property
+    def custom_domain(self) -> str | None:
+        """Return the Pages custom domain used by a root-hosted site, if configured."""
+        hostname = urlsplit(self.canonical_origin).hostname
+        if (
+            self.project_base_path != "/"
+            or hostname is None
+            or hostname == "github.io"
+            or hostname.endswith(".github.io")
+        ):
+            return None
+        return hostname
+
+    @property
     def section_root(self) -> str:
         return self.internal(self.section_path.strip("/"))
 

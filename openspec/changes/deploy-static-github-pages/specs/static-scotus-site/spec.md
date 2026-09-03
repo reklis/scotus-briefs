@@ -34,8 +34,12 @@ All internal URLs MUST be generated through one URL policy supporting both a Git
 - **THEN** navigation, styles, scripts, search data, pagination, canonical URLs, redirects, sitemap entries, and case links SHALL resolve beneath `/ragchew/` and SHALL contain no accidental root-absolute `/scotus`, `/static`, or `/api` link
 
 #### Scenario: Custom-domain deployment
-- **WHEN** the project base path is `/` and a canonical origin is configured
-- **THEN** generated links SHALL resolve from the custom-domain root and canonical URLs SHALL use that origin
+- **WHEN** the project base path is `/` and canonical origin `https://scotusbriefs.us` is configured
+- **THEN** generated links SHALL resolve from the custom-domain root, canonical URLs SHALL use that origin, and the artifact SHALL contain a root `CNAME` file with exactly `scotusbriefs.us`
+
+#### Scenario: Custom-domain marker is inconsistent
+- **WHEN** the `CNAME` file is missing, malformed, or differs from the canonical-origin host
+- **THEN** static release validation SHALL fail before deployment
 
 #### Scenario: Stable case identity
 - **WHEN** a published case caption changes but its normalized term and primary docket do not

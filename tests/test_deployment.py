@@ -73,6 +73,12 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "ragchew.scotus.live_static:LiveStaticBatchAdapter" in workflow
     assert "RAGCHEW_SOURCE_USER_AGENT" in workflow
     assert "github.com/reklis/scotus-briefs" in workflow
+    assert "  CANONICAL_ORIGIN: https://scotusbriefs.us\n" in workflow
+    assert "  PROJECT_BASE_PATH: /\n" in workflow
+    assert (
+        '--live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json"'
+        in workflow
+    )
     assert "example.invalid" not in workflow
     assert "release_id=fixture" not in workflow
     assert "test ! -e candidate-site" in workflow

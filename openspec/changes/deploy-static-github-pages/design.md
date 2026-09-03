@@ -30,7 +30,7 @@ The deployment therefore needs two boundaries: a public, versioned state that ma
 
 A new static export command will consume a validated `ScotusPublicProjection` and write a complete directory containing the root landing page, SCOTUS homepage, generated pagination, term archives, argument-date archives, stable case pages, search page/index, correction history, public projection JSON, `404.html`, `robots.txt`, `sitemap.xml`, assets, release metadata, and `.nojekyll`. GitHub Pages receives this directory through the official Pages artifact/deploy actions.
 
-Every internal URL will be produced by one helper from `canonical_origin`, `project_base_path`, and `section_path`. Generated paths will use directories with `index.html` and trailing-slash links. Templates will not contain hardcoded `/scotus`, `/static`, or `/api` roots. Archives and case pages will remain useful without JavaScript.
+Every internal URL will be produced by one helper from canonical origin `https://scotusbriefs.us`, root project path `/`, and section path `/scotus/`. Generated paths will use directories with `index.html` and trailing-slash links. The exporter writes a root `CNAME` containing exactly `scotusbriefs.us`, includes it in the release manifest, and validation rejects a CNAME that does not match the canonical origin. Templates will not contain hardcoded `/scotus`, `/static`, or `/api` roots. Archives and case pages will remain useful without JavaScript.
 
 The production `ragchew-public` service and its database reader are retired. A fixture-backed local preview may serve the generated directory with Python's static HTTP server, but it is not a production architecture.
 
@@ -138,5 +138,5 @@ The public release adds contribution and private security-reporting policies, sy
 ## Open Questions
 
 - Confirm Apache-2.0 for repository-authored software/documentation and CC BY 4.0 for original generated briefs, or select alternatives before implementation merges license files.
-- Confirm the GitHub owner/repository name and whether launch uses project Pages (`/<repository>/`) or a custom domain; the implementation supports both.
+- DNS for the confirmed custom domain `scotusbriefs.us` must be delegated and configured with GitHub Pages apex records before certificate issuance and first deployment; the implementation retains generic project-Page support for tests and fallback.
 - Select the nightly UTC time and initial per-run model/case budget after observing one dry-run case.

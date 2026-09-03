@@ -130,3 +130,10 @@
 - [x] 12.4 Add persistent-runner preflight and unconditional cleanup that prevent stale Court documents, extracted text, prompts, model responses, candidates, or checkout credentials from surviving a run.
 - [x] 12.5 Update configuration, security/operations/architecture documentation, workflow policy tests, model adapter tests, and local preview instructions for Spark/Ollama.
 - [x] 12.6 Install the pinned ARM64 GitHub Actions runner on Spark as a dedicated `gdxspark` system service, register repository labels `self-hosted`, `Linux`, `ARM64`, and `spark`, and verify it is online with local Ollama active.
+
+## 13. Custom Pages Domain
+
+- [x] 13.1 Set the canonical origin to `https://scotusbriefs.us`, use root project path `/`, and retain `/scotus/` as the site section path throughout configuration, workflow, and documentation.
+- [x] 13.2 Generate a deterministic root `CNAME` for `scotusbriefs.us`, include it in release integrity metadata, and reject missing or mismatched custom-domain markers.
+- [ ] 13.3 Configure apex DNS for GitHub Pages, set and verify the repository custom domain, wait for DNS/certificate readiness, and enforce HTTPS.
+- [x] 13.4 Add custom-domain URL, exporter, validation, workflow, repository-policy, and fallback project-Page tests.

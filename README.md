@@ -2,7 +2,7 @@
 
 SCOTUS Legal Briefs turns complete official Supreme Court oral-argument transcripts
 into evidence-grounded, plain-language case briefs. Production is a deterministic
-static site at **<https://reklis.github.io/scotus-briefs/>**. Readers need no FastAPI
+static site at **<https://scotusbriefs.us/>**. Readers need no FastAPI
 service, API, PostgreSQL database, object store, model call, Kubernetes workload, or
 runtime secret.
 
@@ -17,9 +17,10 @@ restricted manual dispatch). Its aarch64 Spark runner uses the loopback-only Oll
 model `qwen3.8:27b`; no model credential or remote model endpoint is accepted. It
 checks bounded reviewed Court resources, recomputes an entire changed
 case inside a permission-restricted ephemeral workspace, carries unchanged validated
-case bytes forward, exports a complete project-path-safe site, and runs contract,
-integrity, link, accessibility, and privacy validation. Pages receives only the
-validated static artifact. Any failure leaves the last known-good site active.
+case bytes forward, exports a complete root-hosted site with its custom-domain
+`CNAME`, and runs contract, integrity, link, accessibility, and privacy validation.
+Pages receives only the validated static artifact. Any failure leaves the last
+known-good site active.
 
 The public `generated-content` branch contains only versioned projection/case JSON,
 conditional validators and digests, bounded cursors/pending outcomes, immutable

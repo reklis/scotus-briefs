@@ -47,8 +47,8 @@ def test_scotus_defaults_are_transcript_first_and_fail_closed() -> None:
     assert config.publication.case_page_requires_official_transcript is True
     assert config.repository.owner == "reklis"
     assert config.repository.name == "scotus-briefs"
-    assert config.static.canonical_origin == "https://reklis.github.io"
-    assert config.static.project_base_path == "/scotus-briefs/"
+    assert config.static.canonical_origin == "https://scotusbriefs.us"
+    assert config.static.project_base_path == "/"
     assert config.static.section_path == "/scotus/"
     assert config.schedule.nightly_cron_utc == "17 3 * * *"
     assert config.bootstrap.maximum_cases_per_run == 1
@@ -86,8 +86,8 @@ def test_scotus_static_config_normalizes_project_and_custom_domain_paths() -> No
 def test_scotus_static_config_rejects_origins_paths_and_runtime_dependencies() -> None:
     config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
     for field, value in (
-        ("canonical_origin", "http://reklis.github.io"),
-        ("canonical_origin", "https://reklis.github.io/scotus-briefs"),
+        ("canonical_origin", "http://scotusbriefs.us"),
+        ("canonical_origin", "https://scotusbriefs.us/scotus"),
         ("project_base_path", "/project/%2e%2e/escape/"),
         ("section_path", "/scotus?api=true"),
         ("output_path", "../pages"),

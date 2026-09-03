@@ -132,6 +132,11 @@ def check() -> list[str]:
             failures.append(f"launch approval must remain fail-closed: approvals.{gate}")
     if config.get("publication", {}).get("enabled") is not False:
         failures.append("static publication must remain disabled before owner launch")
+    static = config.get("static", {})
+    if static.get("canonical_origin") != "https://scotusbriefs.us":
+        failures.append("SCOTUS canonical origin must be https://scotusbriefs.us")
+    if static.get("project_base_path") != "/" or static.get("section_path") != "/scotus/":
+        failures.append("SCOTUS custom-domain paths must be root project and /scotus/ section")
     generation = config.get("generation", {})
     if generation.get("brief_generation_enabled") is not False:
         failures.append("model brief generation must remain disabled before owner launch")
@@ -156,6 +161,12 @@ def check() -> list[str]:
     build = workflow[
         workflow.index("\n  build:\n") : workflow.index("\n  persist-cost-receipts:\n")
     ]
+    if (
+        "  CANONICAL_ORIGIN: https://scotusbriefs.us\n" not in workflow
+        or "  PROJECT_BASE_PATH: /\n" not in workflow
+        or '${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json' not in workflow
+    ):
+        failures.append("Pages workflow must publish and reconcile the scotusbriefs.us root")
     if "runs-on: [self-hosted]" not in build:
         failures.append("Pages build must run only on the self-hosted runner")
     if "OPENAI_API_KEY" in workflow or "secrets." in build:

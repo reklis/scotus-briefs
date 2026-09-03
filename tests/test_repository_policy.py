@@ -51,6 +51,12 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "runs-on: [self-hosted]" in text
     assert "RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1" in text
     assert "qwen3.8:27b" in text
+    assert "  CANONICAL_ORIGIN: https://scotusbriefs.us\n" in text
+    assert "  PROJECT_BASE_PATH: /\n" in text
+    assert (
+        '--live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json"'
+        in text
+    )
     assert "OPENAI_API_KEY" not in text
     assert "services:" not in text
     assert "before live source access" in text

@@ -1,9 +1,10 @@
 # Configuration
 
 `config/scotus.yaml` is the non-secret product configuration. Production output is
-static-only and uses canonical origin `https://reklis.github.io`, project path
-`/scotus-briefs/`, and section path `/scotus/`. Paths are normalized and must remain
-inside the output/state roots; a runtime API URL is forbidden for Pages.
+static-only and uses canonical origin `https://scotusbriefs.us`, root project path
+`/`, and section path `/scotus/`. The exporter emits a root `CNAME` containing exactly
+`scotusbriefs.us` plus one newline. Paths are normalized and must remain inside the
+output/state roots; a runtime API URL is forbidden for Pages.
 
 ## Scheduled and bounded work
 

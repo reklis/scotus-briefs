@@ -31,11 +31,12 @@ def export(
     name: str = "multiple-terms",
     *,
     base: str = "/ragchew/",
+    origin: str = "https://example.test",
     page_size: int = 20,
     epoch: datetime = EPOCH,
     legacy_slugs: dict[str, tuple[str, ...]] | None = None,
 ) -> tuple[Path, StaticUrlPolicy, str]:
-    urls = StaticUrlPolicy("https://example.test", base, "/scotus/")
+    urls = StaticUrlPolicy(origin, base, "/scotus/")
     output = tmp_path / f"site-{len(tuple(tmp_path.iterdir()))}"
     result = StaticSiteExporter(urls, page_size=page_size).export(
         fixture(name),
@@ -173,6 +174,60 @@ def test_project_and_custom_domain_urls_are_confined_and_official_links_unchange
     assert 'href="https://example.test/scotus/' in next(
         (root / "scotus/cases").rglob("index.html")
     ).read_text(encoding="utf-8")
+
+
+def test_custom_domain_cname_is_exact_manifested_and_validated(tmp_path: Path) -> None:
+    output, urls, _ = export(
+        tmp_path,
+        name="one-case",
+        base="/",
+        origin="https://scotusbriefs.us",
+    )
+    assert (output / "CNAME").read_bytes() == b"scotusbriefs.us\n"
+    manifest = ReleaseManifest.model_validate_json(
+        (output / "release/v1/release.json").read_bytes()
+    )
+    cname_record = next(item for item in manifest.files if item.path == "CNAME")
+    assert cname_record.byte_count == len(b"scotusbriefs.us\n")
+    validate_static_candidate(output, urls)
+
+
+@pytest.mark.parametrize(
+    "cname",
+    (
+        b"other.example\n",
+        b"https://scotusbriefs.us\n",
+        b"scotusbriefs.us",
+        b"scotusbriefs.us\nextra.example\n",
+    ),
+)
+def test_custom_domain_validation_rejects_malformed_or_mismatched_cname(
+    tmp_path: Path, cname: bytes
+) -> None:
+    output, urls, _ = export(
+        tmp_path,
+        name="one-case",
+        base="/",
+        origin="https://scotusbriefs.us",
+    )
+    (output / "CNAME").write_bytes(cname)
+    with pytest.raises(StaticValidationError, match="CNAME"):
+        validate_static_candidate(output, urls)
+
+
+def test_project_pages_remains_supported_without_cname(tmp_path: Path) -> None:
+    output, urls, _ = export(
+        tmp_path,
+        name="one-case",
+        base="/project-pages/",
+        origin="https://example.github.io",
+    )
+    assert not (output / "CNAME").exists()
+    validate_static_candidate(output, urls)
+
+    (output / "CNAME").write_bytes(b"scotusbriefs.us\n")
+    with pytest.raises(StaticValidationError, match="must not contain a CNAME"):
+        validate_static_candidate(output, urls)
 
 
 def test_complete_tree_has_archives_pagination_json_and_empty_state(tmp_path: Path) -> None:

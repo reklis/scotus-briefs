@@ -27,7 +27,7 @@ from ragchew.scotus.static_contracts import (
     sha256_hex,
     validate_projection_payload,
 )
-from ragchew.scotus.static_export import MANIFEST_PATH, content_release_id
+from ragchew.scotus.static_export import CNAME_PATH, MANIFEST_PATH, content_release_id
 from ragchew.scotus.static_state import StaticStateStore
 from ragchew.scotus.static_urls import StaticUrlPolicy, archive_slug
 
@@ -192,12 +192,21 @@ def validate_static_candidate(
         Path(urls.output_relative(urls.section("search"))),
         Path(urls.output_relative(urls.section("corrections"))),
     }
+    if urls.custom_domain is not None:
+        required.add(Path(CNAME_PATH))
     missing = sorted(str(path) for path in required if not (candidate / path).is_file())
     if missing:
         _fail(f"candidate is missing required files: {missing}")
-
     if any(path.is_symlink() for path in candidate.rglob("*")):
         _fail("candidate cannot contain symbolic links")
+
+    cname = candidate / CNAME_PATH
+    if urls.custom_domain is None:
+        if cname.exists():
+            _fail("project Pages candidate must not contain a CNAME")
+    elif cname.read_bytes() != f"{urls.custom_domain}\n".encode("ascii"):
+        _fail("CNAME is malformed or does not match the canonical origin")
+
     all_files = tuple(sorted(path for path in candidate.rglob("*") if path.is_file()))
     scan_public_files(
         (*all_files, *(Path(path) for path in log_paths)),
@@ -335,6 +344,8 @@ def _validate_file_allowlist(
         urls.output_relative(urls.section("search")).as_posix(),
         urls.output_relative(urls.section("corrections")).as_posix(),
     }
+    if urls.custom_domain is not None:
+        fixed.add(CNAME_PATH.as_posix())
     case_directories: set[str] = set()
     archive_routes = {""}
     for case in projection.cases:
