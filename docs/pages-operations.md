@@ -19,8 +19,11 @@ The owner enabled generated-case processing on 2026-09-03 and removed the one-ca
 throughput throttle after launch testing. A run may now drain up to 100 cases and 1,100
 zero-cost local-model calls, continuing past individual case validation failures. Court
 rate controls, source authorization, a 5-hour-50-minute runtime bound, private-disk and
-retrieval limits, and every per-case publication validator remain mandatory. Prior dry
-runs confirmed the Court and loopback
+retrieval limits, and every per-case publication validator remain mandatory. Accepted
+legacy imports with no logical-document checkpoint are excluded from processor-migration
+and rotating redownload work; they re-enter processing only when current Court discovery
+reports a metadata change or an owner explicitly requests a backfill. Prior dry runs
+confirmed the Court and loopback
 Ollama paths but failed closed on extraction/runtime validation. Those same grounding,
 privacy, completeness, static, and release validators remain mandatory: an unsuccessful
 run cannot replace the migrated accepted POC corpus or advance its active release. A

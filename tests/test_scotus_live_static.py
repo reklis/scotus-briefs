@@ -25,7 +25,12 @@ from ragchew.scotus.live_static import (
     _descriptor_for_public_argument,
 )
 from ragchew.scotus.public_contracts import public_case_key
-from ragchew.scotus.static_contracts import CostReceiptBundle, ModelAttemptOutcome
+from ragchew.scotus.static_contracts import (
+    CostReceiptBundle,
+    ModelAttemptOutcome,
+    PendingReason,
+    PendingWork,
+)
 from ragchew.scotus.static_pipeline import PublicationGateDenied, StaticBatchResult
 from ragchew.scotus.static_state import GeneratedContent, StaticStateStore
 from ragchew.scotus.transcript_parser import TranscriptParseError
@@ -549,7 +554,7 @@ def test_reargument_reprocesses_every_session_under_one_case_budget(tmp_path: Pa
     assert names.count("scotus_legal_brief") == 1
 
 
-def test_legacy_case_without_document_checkpoints_is_rediscovered_safely(
+def test_legacy_case_without_document_checkpoints_is_not_automatically_reprocessed(
     tmp_path: Path,
 ) -> None:
     court = CourtFixture()
@@ -557,18 +562,34 @@ def test_legacy_case_without_document_checkpoints_is_rediscovered_safely(
     first = run(tmp_path, store, court, MockOpenAI())
     legacy = replace(
         first.content,
-        publication=first.content.publication.model_copy(update={"documents": ()}),
+        publication=first.content.publication.model_copy(
+            update={
+                "documents": (),
+                "cases": tuple(
+                    item.model_copy(update={"processor_sha256": None})
+                    for item in first.content.publication.cases
+                ),
+                "pending_work": (
+                    PendingWork(
+                        case_key="2025-25-1",
+                        reason=PendingReason.BUDGET_EXHAUSTED,
+                        attempts=0,
+                        first_seen_at=NOW,
+                    ),
+                ),
+            }
+        ),
     )
     store.content = legacy
 
     result = run(tmp_path, store, court, MockOpenAI())
 
     assert result.publishable
-    assert not result.no_public_change
-    assert result.changed_case_keys == ("2025-25-1",)
-    assert result.content.publication.documents
-    assert result.content.projection is not None
-    assert len(result.content.projection.cases[0].revisions) == 2
+    assert result.no_public_change
+    assert result.changed_case_keys == ()
+    assert result.content.publication.documents == ()
+    assert result.content.publication.pending_work == ()
+    assert result.content.projection == first.content.projection
 
 
 def test_failure_and_model_budget_exhaustion_keep_prior_case_active(

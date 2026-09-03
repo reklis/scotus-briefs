@@ -576,6 +576,7 @@ class LiveStaticDiscovery:
         for document in content.publication.documents:
             documents_by_case.setdefault(document.case_key, []).append(document)
         candidates_by_session: dict[tuple[str, str, int], ScotusArgumentCandidate] = {}
+        public_transcript_keys: set[str] = set()
         for case_key, case in prior_cases.items():
             case_documents = tuple(documents_by_case.get(case_key, ()))
             for index in range(len(case.arguments)):
@@ -586,17 +587,26 @@ class LiveStaticDiscovery:
                 candidates_by_session[
                     (case_key, item.argument_date.date().isoformat(), item.sequence)
                 ] = item
+                public_transcript_keys.add(transcript_logical_key(item))
         processor = _processor_contract(self.config, self.model_endpoint)
         pointer_by_case = {
             pointer.case_key: pointer for pointer in content.publication.cases
         }
-        # Each pointer records which processor produced its active revision. Missing
-        # provenance is stale by design, allowing old state to migrate incrementally.
+        # A concrete prior processor fingerprint can be migrated when it changes.
+        # Missing fingerprints identify sanitized legacy imports; do not redownload and
+        # regenerate those accepted briefs unless current Court metadata actually changes.
+        legacy_case_keys = {
+            case_key
+            for case_key in prior_cases
+            if pointer_by_case.get(case_key) is not None
+            and pointer_by_case[case_key].processor_sha256 is None
+        }
         migration_case_keys = {
             case_key
             for case_key in prior_cases
-            if pointer_by_case.get(case_key) is None
-            or pointer_by_case[case_key].processor_sha256 != processor.composite_sha256
+            if pointer_by_case.get(case_key) is not None
+            and pointer_by_case[case_key].processor_sha256 is not None
+            and pointer_by_case[case_key].processor_sha256 != processor.composite_sha256
         }
         changed_case_keys: set[str] = set(migration_case_keys)
         source_changed_case_keys: set[str] = set()
@@ -618,7 +628,10 @@ class LiveStaticDiscovery:
         changed_case_keys.update(related_changes)
         source_changed_case_keys.update(related_changes)
         combined = tuple(candidates_by_session.values())
-        known = {item.logical_key for item in content.publication.documents}
+        known = {
+            *(item.logical_key for item in content.publication.documents),
+            *public_transcript_keys,
+        }
         selection_known = known - {
             transcript_logical_key(item)
             for item in combined
@@ -681,6 +694,8 @@ class LiveStaticDiscovery:
             if len(selected) >= case_limit:
                 break
             key = candidate_logical_key(selected_item.candidate)
+            if key in legacy_case_keys and key not in source_changed_case_keys:
+                continue
             selected_prior = selected.get(key)
             value = (selected_item.priority, selected_item.reason)
             selected[key] = min(selected_prior, value) if selected_prior else value
@@ -771,6 +786,9 @@ class LiveStaticDiscovery:
             ),
             processor=processor,
             deferred_case_keys=deferred_case_keys,
+            resolved_pending_case_keys=tuple(
+                sorted(legacy_case_keys - changed_case_keys)
+            ),
             checkpoint_safe=not changed_deferred,
         )
 

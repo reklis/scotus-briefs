@@ -583,6 +583,9 @@ class StaticDiscoveryResult:
     # Cases discovered as changed but omitted by a bounded selection remain explicit
     # pending work instead of disappearing behind an unadvanced source checkpoint.
     deferred_case_keys: tuple[str, ...] = ()
+    # An adapter may explicitly retire stale pending markers when it can prove they were
+    # created only by an obsolete migration policy, not by unresolved source work.
+    resolved_pending_case_keys: tuple[str, ...] = ()
     # A discovery adapter must set this false when its own selection limits omit
     # changed descriptors. Advancing a cursor/checkpoint in that case would hide work.
     checkpoint_safe: bool = True
@@ -722,6 +725,8 @@ class StaticBatchOrchestrator:
                     now=instant,
                 )
                 checkpoints_safe = discovered.checkpoint_safe
+                for resolved_key in discovered.resolved_pending_case_keys:
+                    pending.pop(resolved_key, None)
                 ordered = sorted(discovered.work, key=lambda item: (item.priority, item.case_key))
                 selected_keys = {item.case_key for item in ordered}
                 for deferred_key in discovered.deferred_case_keys:
