@@ -86,10 +86,10 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "runs-on: [self-hosted]" not in hosted_jobs
 
 
-def test_launch_gates_are_owner_approved_and_dry_run_bounded() -> None:
+def test_empty_site_is_live_while_generated_cases_remain_fail_closed() -> None:
     config = yaml.safe_load(Path("config/scotus.yaml").read_text())
-    assert config["enabled"] is True
+    assert config["enabled"] is False
     assert config["publication"]["enabled"] is True
     assert config["publication"]["dry_run"] is True
-    assert config["generation"]["brief_generation_enabled"] is True
-    assert set(config["approvals"].values()) == {True}
+    assert config["generation"]["brief_generation_enabled"] is False
+    assert config["approvals"]["launch_approved"] is False

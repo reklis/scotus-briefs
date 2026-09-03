@@ -4,6 +4,18 @@ Production repository: `reklis/scotus-briefs`
 Canonical site: <https://scotusbriefs.us/>
 Nightly schedule: 03:17 UTC (`17 3 * * *`)
 
+## Current launch status
+
+The validated empty-state site was first deployed on 2026-09-03. Its Pages release
+ID matches the protected `generated-content` branch. DNS is valid at GitHub; custom-domain
+certificate issuance and HTTPS enforcement are still pending.
+
+Generated-case processing remains disabled. Authorized one-case dry runs confirmed the
+Court and loopback Ollama paths, then failed closed on bounded model extraction/runtime
+validation without producing or publishing a case. Keep `enabled`, brief generation,
+and `launch_approved` false until a complete candidate passes inspection. The empty site
+may remain available while that tuning continues.
+
 ## One-time owner settings
 
 1. Protect the default branch: require review, dismiss stale reviews, require CI and

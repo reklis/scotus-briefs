@@ -131,19 +131,19 @@ def check() -> list[str]:
     gate_values = [approvals.get(gate) for gate in gate_names]
     if any(value not in {True, False} for value in gate_values):
         failures.append("launch approvals must be explicit booleans")
-    if len(set(gate_values)) > 1:
-        failures.append("launch approvals must transition together after owner authorization")
     publication = config.get("publication", {})
     generation = config.get("generation", {})
-    live_switches = (
-        config.get("enabled"),
-        publication.get("enabled"),
-        generation.get("brief_generation_enabled"),
-    )
-    if any(live_switches) and not all(live_switches):
-        failures.append("SCOTUS processing, generation, and publication switches must agree")
-    if publication.get("dry_run") is False and not all(gate_values):
-        failures.append("production publication requires every owner approval")
+    if generation.get("brief_generation_enabled") and (
+        not config.get("enabled") or not publication.get("enabled")
+    ):
+        failures.append("brief generation requires processing and publication switches")
+    if publication.get("dry_run") is False and (
+        not all(gate_values)
+        or not config.get("enabled")
+        or not generation.get("brief_generation_enabled")
+        or not publication.get("enabled")
+    ):
+        failures.append("production case publication requires every switch and owner approval")
     static = config.get("static", {})
     if static.get("canonical_origin") != "https://scotusbriefs.us":
         failures.append("SCOTUS canonical origin must be https://scotusbriefs.us")

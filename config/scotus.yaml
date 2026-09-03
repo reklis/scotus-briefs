@@ -1,8 +1,8 @@
 version: "1.0"
 product: scotus_legal_briefs
 source_id: supreme_court
-# Live processing is owner-authorized; publication remains dry-run until validation passes.
-enabled: true
+# The empty static site is live; case processing remains disabled until validation passes.
+enabled: false
 discovery:
   # Routine runs prioritize this term and revisit older terms through a bounded cursor.
   active_term: "2025"
@@ -109,18 +109,18 @@ licensing:
   code_and_documentation: Apache-2.0
   generated_briefs: CC-BY-4.0
   court_materials_excluded: true
-# Owner authorization to perform the bounded live validation and subsequent launch.
+# Foundational approvals are recorded; generated-case launch remains fail-closed.
 approvals:
   source_review_approved: true
   licenses_approved: true
   origin_approved: true
   model_runtime_approved: true
-  launch_approved: true
+  launch_approved: false
 generation:
   provider: ollama
   model: qwen3.8:27b
   prompt_version: scotus-brief-plain-language-v14
-  brief_generation_enabled: true
+  brief_generation_enabled: false
   maximum_brief_api_calls_per_run: 1
   stop_after_brief_validation_failure: true
   audience: general_public

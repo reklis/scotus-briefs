@@ -31,11 +31,11 @@ def test_proceedings_defaults_are_fail_closed() -> None:
     assert config.launch.maximum_status_upgrades == 0
 
 
-def test_scotus_defaults_are_transcript_first_and_bounded_for_launch() -> None:
+def test_scotus_defaults_are_transcript_first_with_live_cases_fail_closed() -> None:
     config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
     assert config.product == "scotus_legal_briefs"
     assert config.source_id == "supreme_court"
-    assert config.enabled is True
+    assert config.enabled is False
     assert config.documents.download_audio is False
     assert config.documents.stt_enabled is False
     assert config.discovery.terms[0] == "2025"
@@ -44,7 +44,7 @@ def test_scotus_defaults_are_transcript_first_and_bounded_for_launch() -> None:
     assert config.generation.provider == "ollama"
     assert config.generation.model == "qwen3.8:27b"
     assert config.generation.prompt_version == "scotus-brief-plain-language-v14"
-    assert config.generation.brief_generation_enabled is True
+    assert config.generation.brief_generation_enabled is False
     assert config.generation.maximum_brief_api_calls_per_run == 1
     assert config.generation.stop_after_brief_validation_failure is True
     assert config.generation.audience == "general_public"
@@ -66,7 +66,12 @@ def test_scotus_defaults_are_transcript_first_and_bounded_for_launch() -> None:
     assert config.model_budget.maximum_estimated_cost_usd_per_run == Decimal("0")
     assert config.licensing.code_and_documentation == "Apache-2.0"
     assert config.licensing.generated_briefs == "CC-BY-4.0"
-    assert config.approvals.all_live_gates_approved()
+    assert config.approvals.source_review_approved is True
+    assert config.approvals.licenses_approved is True
+    assert config.approvals.origin_approved is True
+    assert config.approvals.model_runtime_approved is True
+    assert config.approvals.launch_approved is False
+    assert not config.approvals.all_live_gates_approved()
     assert config.publication.enabled is True
     assert config.publication.dry_run is True
     assert config.launch.maximum_status_upgrades == 0
