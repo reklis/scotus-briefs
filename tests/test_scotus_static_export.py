@@ -172,6 +172,18 @@ def test_reconcile_allows_missing_live_marker_only_for_initial_empty_bootstrap(
     )
     assert outputs["release_changed"] == "true"
     assert outputs["publication_ready"] == "true"
+    published_empty = parser.parse_args(
+        [
+            "reconcile",
+            "--state-dir",
+            str(tmp_path / "candidate-state"),
+            "--live-release-url",
+            "https://scotusbriefs.us/release/v1/release.json",
+            "--fail-on-split",
+            "--allow-missing-live-bootstrap",
+        ]
+    )
+    assert published_empty.function(published_empty) == 0
     validate_static_candidate(
         tmp_path / "site",
         StaticUrlPolicy("https://scotusbriefs.us", "/", "/scotus/"),

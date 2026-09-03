@@ -343,11 +343,9 @@ def _is_initial_empty_bootstrap(content: GeneratedContent) -> bool:
     return bool(
         release is not None
         and projection is not None
-        and release.tool_version == "empty-bootstrap-v1"
-        and release.previous_release_id is None
         and release.case_count == 0
-        and not release.files
         and not projection.cases
+        and not content.publication.cases
         and not content.revisions
         and content.publication.active_release_id == release.release_id
     )

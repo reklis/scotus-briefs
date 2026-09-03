@@ -117,7 +117,7 @@ jobs:
         run: |
           set -euo pipefail
           bootstrap_args=()
-          if [[ "$PUBLICATION_MODE" == "bootstrap" || "$PUBLICATION_MODE" == "initial-empty" ]]; then
+          if [[ "$PUBLICATION_MODE" == "bootstrap" || "$PUBLICATION_MODE" == "initial-empty" || "$PUBLICATION_MODE" == "poc-import" ]]; then
             bootstrap_args+=(--allow-missing-live-bootstrap)
           fi
           uv run ragchew-scotus-static reconcile \
