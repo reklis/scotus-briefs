@@ -212,8 +212,24 @@ class StaticSiteExporter:
             canonical_pages.append(internal_url)
 
         root_url = self.urls.internal()
-        render("scotus_root.html", root_url)
         archive_links = self._archive_links(projection)
+        ordered_cases = sort_cases(projection.cases)
+        listing_page_count = max(1, ceil(len(ordered_cases) / self.page_size))
+        render(
+            "scotus_index.html",
+            root_url,
+            cases=ordered_cases[: self.page_size],
+            page_title="SCOTUS Legal Briefs",
+            heading="Latest case briefs",
+            introduction="Browse every published brief without JavaScript.",
+            archive_links=archive_links,
+            page=1,
+            page_count=listing_page_count,
+            page_start=1,
+            total_cases=len(ordered_cases),
+            previous_url=None,
+            next_url=(self.urls.page("", 2) if listing_page_count > 1 else None),
+        )
         self._render_listing(
             render,
             projection,
