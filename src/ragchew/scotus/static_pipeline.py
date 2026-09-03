@@ -363,11 +363,21 @@ class UnifiedRunBudget:
             raise ValueError("model sizes cannot be negative")
         limits = self.config.model_budget
         if input_tokens > limits.maximum_input_tokens_per_call:
-            raise BudgetExceeded("model input token limit exceeded")
+            raise BudgetExceeded(
+                "model input token limit exceeded "
+                f"(requested={input_tokens}, limit={limits.maximum_input_tokens_per_call})"
+            )
         if output_tokens > limits.maximum_output_tokens_per_call:
-            raise BudgetExceeded("model output token limit exceeded")
+            raise BudgetExceeded(
+                "model output token limit exceeded "
+                f"(requested={output_tokens}, limit={limits.maximum_output_tokens_per_call})"
+            )
         if self.input_characters + input_characters > limits.maximum_input_characters_per_run:
-            raise BudgetExceeded("model input character budget exhausted")
+            raise BudgetExceeded(
+                "model input character budget exhausted "
+                f"(requested={self.input_characters + input_characters}, "
+                f"limit={limits.maximum_input_characters_per_run})"
+            )
         fingerprint = model_input_fingerprint(document_digests, processor_versions)
         key = (stage, fingerprint)
         previous = {
@@ -806,11 +816,17 @@ class StaticBatchOrchestrator:
                             elapsed_seconds=time.monotonic() - started,
                             category=category,
                         )
+                        safe_detail = (
+                            str(error)
+                            if isinstance(error, BudgetExceeded)
+                            else category.value
+                        )
                         LOG.warning(
-                            "SCOTUS bounded case failure; category=%s; cases=%d; "
+                            "SCOTUS bounded case failure; category=%s; detail=%s; cases=%d; "
                             "documents=%d; requests=%d; bytes=%d; extraction_calls=%d; "
                             "brief_calls=%d; total_model_calls=%d",
                             category.value,
+                            safe_detail,
                             budget.selected_cases,
                             budget.selected_documents,
                             budget.http_requests,
