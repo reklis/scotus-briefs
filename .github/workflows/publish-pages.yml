@@ -17,7 +17,7 @@ on:
         default: false
         type: boolean
       expected_live_release_id:
-        description: Verified live release ID for a pre-TLS POC import only
+        description: Verified live release ID for a protected pre-TLS manual run
         required: false
         default: ""
         type: string
@@ -128,8 +128,8 @@ jobs:
           fi
           live_args=(--live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json")
           if [[ -n "$EXPECTED_LIVE_RELEASE_ID" ]]; then
-            if [[ "$PUBLICATION_MODE" != "poc-import" || ! "$EXPECTED_LIVE_RELEASE_ID" =~ ^[0-9a-f]{64}$ ]]; then
-              echo "A supplied live release ID is permitted only for a validated pre-TLS POC import." >&2
+            if [[ "$PUBLICATION_MODE" != "poc-import" && "$PUBLICATION_MODE" != "nightly" ]] || [[ ! "$EXPECTED_LIVE_RELEASE_ID" =~ ^[0-9a-f]{64}$ ]]; then
+              echo "A supplied live release ID is permitted only for a protected pre-TLS import or nightly run." >&2
               exit 1
             fi
             live_args=(--live-release-id "$EXPECTED_LIVE_RELEASE_ID")

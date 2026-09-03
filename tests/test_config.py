@@ -31,11 +31,11 @@ def test_proceedings_defaults_are_fail_closed() -> None:
     assert config.launch.maximum_status_upgrades == 0
 
 
-def test_scotus_defaults_are_transcript_first_with_live_cases_fail_closed() -> None:
+def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> None:
     config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
     assert config.product == "scotus_legal_briefs"
     assert config.source_id == "supreme_court"
-    assert config.enabled is False
+    assert config.enabled is True
     assert config.documents.download_audio is False
     assert config.documents.stt_enabled is False
     assert config.discovery.terms[0] == "2025"
@@ -44,7 +44,7 @@ def test_scotus_defaults_are_transcript_first_with_live_cases_fail_closed() -> N
     assert config.generation.provider == "ollama"
     assert config.generation.model == "qwen3.8:27b"
     assert config.generation.prompt_version == "scotus-brief-plain-language-v14"
-    assert config.generation.brief_generation_enabled is False
+    assert config.generation.brief_generation_enabled is True
     assert config.generation.maximum_brief_api_calls_per_run == 1
     assert config.generation.stop_after_brief_validation_failure is True
     assert config.generation.audience == "general_public"
@@ -70,10 +70,10 @@ def test_scotus_defaults_are_transcript_first_with_live_cases_fail_closed() -> N
     assert config.approvals.licenses_approved is True
     assert config.approvals.origin_approved is True
     assert config.approvals.model_runtime_approved is True
-    assert config.approvals.launch_approved is False
-    assert not config.approvals.all_live_gates_approved()
+    assert config.approvals.launch_approved is True
+    assert config.approvals.all_live_gates_approved()
     assert config.publication.enabled is True
-    assert config.publication.dry_run is True
+    assert config.publication.dry_run is False
     assert config.launch.maximum_status_upgrades == 0
 
 
@@ -133,7 +133,7 @@ def test_scotus_static_config_rejects_incompatible_model_budgets() -> None:
 def test_scotus_live_publication_requires_every_approval() -> None:
     config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
     dry_run_values = config.model_dump()
-    dry_run_values["publication"]["enabled"] = True
+    dry_run_values["publication"].update({"enabled": True, "dry_run": True})
     assert ScotusConfig.model_validate(dry_run_values).publication.dry_run
 
     values = config.model_dump()

@@ -1,8 +1,8 @@
 version: "1.0"
 product: scotus_legal_briefs
 source_id: supreme_court
-# The empty static site is live; case processing remains disabled until validation passes.
-enabled: false
+# Owner-authorized bounded generation; every candidate still fails closed through validation.
+enabled: true
 discovery:
   # Routine runs prioritize this term and revisit older terms through a bounded cursor.
   active_term: "2025"
@@ -109,18 +109,18 @@ licensing:
   code_and_documentation: Apache-2.0
   generated_briefs: CC-BY-4.0
   court_materials_excluded: true
-# Foundational approvals are recorded; generated-case launch remains fail-closed.
+# The owner approved bounded generated-case launch on 2026-09-03.
 approvals:
   source_review_approved: true
   licenses_approved: true
   origin_approved: true
   model_runtime_approved: true
-  launch_approved: false
+  launch_approved: true
 generation:
   provider: ollama
   model: qwen3.8:27b
   prompt_version: scotus-brief-plain-language-v14
-  brief_generation_enabled: false
+  brief_generation_enabled: true
   maximum_brief_api_calls_per_run: 1
   stop_after_brief_validation_failure: true
   audience: general_public
@@ -133,7 +133,7 @@ generation:
   prohibit_personalized_legal_advice: true
 publication:
   enabled: true
-  dry_run: true
+  dry_run: false
   site_name: SCOTUS Legal Briefs
   base_path: /scotus
   case_page_requires_official_transcript: true

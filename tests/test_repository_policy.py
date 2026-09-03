@@ -86,10 +86,13 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "runs-on: [self-hosted]" not in hosted_jobs
 
 
-def test_empty_site_is_live_while_generated_cases_remain_fail_closed() -> None:
+def test_generated_case_publication_is_explicitly_live_and_bounded() -> None:
     config = yaml.safe_load(Path("config/scotus.yaml").read_text())
-    assert config["enabled"] is False
+    assert config["enabled"] is True
     assert config["publication"]["enabled"] is True
-    assert config["publication"]["dry_run"] is True
-    assert config["generation"]["brief_generation_enabled"] is False
-    assert config["approvals"]["launch_approved"] is False
+    assert config["publication"]["dry_run"] is False
+    assert config["generation"]["brief_generation_enabled"] is True
+    assert config["approvals"]["launch_approved"] is True
+    assert config["runner_limits"]["maximum_cases_per_run"] == 1
+    assert config["generation"]["maximum_brief_api_calls_per_run"] == 1
+    assert config["model_budget"]["maximum_estimated_cost_usd_per_run"] == "0"

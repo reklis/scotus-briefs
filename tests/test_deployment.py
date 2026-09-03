@@ -103,8 +103,9 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "needs: [build, persist-cost-receipts]" in workflow
     assert "stopped before network/model use" not in workflow
     assert "Reconcile release IDs before live source access" in workflow
-    assert "Verified live release ID for a pre-TLS POC import only" in workflow
+    assert "Verified live release ID for a protected pre-TLS manual run" in workflow
     assert '"$PUBLICATION_MODE" != "poc-import"' in workflow
+    assert '"$PUBLICATION_MODE" != "nightly"' in workflow
     assert '"$EXPECTED_LIVE_RELEASE_ID" =~ ^[0-9a-f]{64}$' in workflow
     assert 'live_args=(--live-release-id "$EXPECTED_LIVE_RELEASE_ID")' in workflow
     assert "Run reviewed bounded live adapter" in workflow

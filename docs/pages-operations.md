@@ -15,11 +15,12 @@ case interface, initially showing results 1–20 of 1,710 in deterministic site 
 DNS is valid at GitHub; custom-domain
 certificate issuance and HTTPS enforcement are still pending.
 
-New generated-case processing remains disabled. Authorized one-case dry runs confirmed
-the Court and loopback Ollama paths, then failed closed on bounded model extraction and
-runtime validation without publishing a new case. Keep `enabled`, brief generation, and
-`launch_approved` false until a complete new candidate passes inspection. The migrated
-accepted POC corpus remains the last-known-good site while that tuning continues.
+The owner enabled bounded generated-case processing on 2026-09-03. Each run may select
+at most one case, make at most 21 local-model calls including one final brief call, and
+has zero external model cost. Prior one-case dry runs confirmed the Court and loopback
+Ollama paths but failed closed on extraction/runtime validation. Those same grounding,
+privacy, completeness, static, and release validators remain mandatory: an unsuccessful
+run cannot replace the migrated accepted POC corpus or advance its active release.
 
 ## One-time owner settings
 
