@@ -177,7 +177,7 @@ jobs:
           retention-days: 1
       - name: Upload exact Pages artifact
         if: steps.batch.outputs.release_changed == 'true' && steps.batch.outputs.publication_ready == 'true' && steps.receipts.outcome == 'success' && (github.event_name == 'schedule' || inputs.deploy == true)
-        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: candidate-site
           retention-days: 1
