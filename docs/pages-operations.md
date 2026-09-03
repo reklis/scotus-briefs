@@ -13,7 +13,9 @@ Nightly schedule: 03:17 UTC (`17 3 * * *`)
    vulnerability reporting.
 3. Create protected `scotus-publication` environment, restrict it to the default
    branch, and require owner approval for manual jobs. Add no model secret.
-4. Register the aarch64 Spark runner with the repository. The only assumed label is
+4. Register the aarch64 Spark runner with the repository. The installed runner is
+   `spark`, pinned at version `2.337.0`, runs as the non-root `gdxspark` system service,
+   and advertises `self-hosted`, `Linux`, `ARM64`, and `spark`; the workflow assumes only
    `self-hosted`. Run Ollama as a host service listening only on `127.0.0.1:11434`,
    install exact model `qwen3.8:27b`, and do not expose the port to a network.
 5. Configure Pages for GitHub Actions and protect `github-pages`. It has no secrets.

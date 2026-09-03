@@ -129,3 +129,4 @@
 - [x] 12.3 Move only the protected analysis/build job to the dedicated `self-hosted` Spark runner while keeping PR CI and Pages deploy/promotion jobs GitHub-hosted and isolated from the local model.
 - [x] 12.4 Add persistent-runner preflight and unconditional cleanup that prevent stale Court documents, extracted text, prompts, model responses, candidates, or checkout credentials from surviving a run.
 - [x] 12.5 Update configuration, security/operations/architecture documentation, workflow policy tests, model adapter tests, and local preview instructions for Spark/Ollama.
+- [x] 12.6 Install the pinned ARM64 GitHub Actions runner on Spark as a dedicated `gdxspark` system service, register repository labels `self-hosted`, `Linux`, `ARM64`, and `spark`, and verify it is online with local Ollama active.
