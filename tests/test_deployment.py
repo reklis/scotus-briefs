@@ -101,6 +101,7 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "if: always()" in workflow and "Clean persistent runner after build" in workflow
     assert "Clean persistent runner before build" in workflow
     assert "github.event_name != 'pull_request'" in workflow
+    assert "include-hidden-files: true" in workflow
 
 
 def test_container_is_nonroot_and_uses_immutable_base_images() -> None:

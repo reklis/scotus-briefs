@@ -173,6 +173,7 @@ jobs:
           name: scanned-static-candidate
           path: candidate-site
           if-no-files-found: error
+          include-hidden-files: true
           retention-days: 1
       - name: Upload exact Pages artifact
         if: steps.batch.outputs.release_changed == 'true' && steps.batch.outputs.publication_ready == 'true' && steps.receipts.outcome == 'success' && (github.event_name == 'schedule' || inputs.deploy == true)
