@@ -15,9 +15,12 @@ case interface, initially showing results 1–20 of 1,710 in deterministic site 
 DNS is valid at GitHub; custom-domain
 certificate issuance and HTTPS enforcement are still pending.
 
-The owner enabled bounded generated-case processing on 2026-09-03. Each run may select
-at most one case, make at most 21 local-model calls including one final brief call, and
-has zero external model cost. Prior one-case dry runs confirmed the Court and loopback
+The owner enabled generated-case processing on 2026-09-03 and removed the one-case
+throughput throttle after launch testing. A run may now drain up to 100 cases and 1,100
+zero-cost local-model calls, continuing past individual case validation failures. Court
+rate controls, source authorization, a 5-hour-50-minute runtime bound, private-disk and
+retrieval limits, and every per-case publication validator remain mandatory. Prior dry
+runs confirmed the Court and loopback
 Ollama paths but failed closed on extraction/runtime validation. Those same grounding,
 privacy, completeness, static, and release validators remain mandatory: an unsuccessful
 run cannot replace the migrated accepted POC corpus or advance its active release. A

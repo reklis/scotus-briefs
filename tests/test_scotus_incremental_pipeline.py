@@ -29,7 +29,11 @@ from ragchew.scotus.discovery import (
     transcript_logical_key,
 )
 from ragchew.scotus.documents import plan_document_revision
-from ragchew.scotus.public_contracts import ScotusPublicProjection, public_case_key
+from ragchew.scotus.public_contracts import (
+    ScotusPublicProjection,
+    public_case_key,
+    public_case_slug,
+)
 from ragchew.scotus.static_contracts import (
     ConditionalValidators,
     ContentIntegrity,
@@ -405,6 +409,55 @@ def test_deferred_batch_work_cannot_be_hidden_by_advanced_checkpoints(
     assert result.changed_case_keys == (first_key,)
     assert result.pending_case_keys == (deferred_key,)
     assert result.content.publication.sources == ()
+
+
+def test_case_validation_failure_does_not_block_later_complete_case(
+    tmp_path: Path,
+) -> None:
+    projection_payload = json.loads(
+        Path("tests/fixtures/static/one-case.json").read_text(encoding="utf-8")
+    )["projection"]
+    first_case = ScotusPublicProjection.model_validate(projection_payload).cases[0]
+    first_key = public_case_key(first_case.term, first_case.primary_docket)
+    second_docket = "25-998"
+    second_key = public_case_key(first_case.term, second_docket)
+    second_caption = "Second Synthetic Case v. Agency"
+    second_case = first_case.model_copy(
+        update={
+            "primary_docket": second_docket,
+            "caption": second_caption,
+            "slug": public_case_slug(first_case.term, second_docket, second_caption),
+        }
+    )
+
+    class Discovery:
+        def discover(self, **_kwargs: object) -> StaticDiscoveryResult:
+            return StaticDiscoveryResult(
+                work=(
+                    StaticCaseWork(first_key, 1, (), "changed"),
+                    StaticCaseWork(second_key, 2, (), "changed"),
+                )
+            )
+
+    class Processor:
+        def process(self, work: StaticCaseWork, **_kwargs: object) -> CaseProcessingResult:
+            if work.case_key == first_key:
+                raise ValueError("synthetic validation failure")
+            return CaseProcessingResult(second_key, (), second_case)
+
+    result = StaticBatchOrchestrator(
+        state_store=StaticStateStore(tmp_path / "empty"),
+        discovery=Discovery(),
+        processor=Processor(),
+        config=ScotusConfig.from_yaml("config/scotus.yaml"),
+        runner_temp=tmp_path,
+    ).run(now=NOW)
+
+    assert result.publishable
+    assert result.changed_case_keys == (second_key,)
+    assert result.pending_case_keys == (first_key,)
+    assert result.content.projection is not None
+    assert result.content.projection.cases == (second_case,)
 
 
 def test_bounded_worker_empty_queue_drains_without_sleep() -> None:

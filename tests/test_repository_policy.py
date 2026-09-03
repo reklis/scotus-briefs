@@ -95,6 +95,7 @@ def test_generated_case_publication_is_explicitly_live_and_bounded() -> None:
     assert config["publication"]["dry_run"] is False
     assert config["generation"]["brief_generation_enabled"] is True
     assert config["approvals"]["launch_approved"] is True
-    assert config["runner_limits"]["maximum_cases_per_run"] == 1
-    assert config["generation"]["maximum_brief_api_calls_per_run"] == 1
+    assert config["runner_limits"]["maximum_cases_per_run"] == 100
+    assert config["generation"]["maximum_brief_api_calls_per_run"] == 100
+    assert config["generation"]["stop_after_brief_validation_failure"] is False
     assert config["model_budget"]["maximum_estimated_cost_usd_per_run"] == "0"

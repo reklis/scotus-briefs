@@ -45,7 +45,7 @@ jobs:
     name: Build and scan candidate
     if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: [self-hosted]
-    timeout-minutes: 30
+    timeout-minutes: 360
     environment: scotus-publication
     permissions:
       contents: read

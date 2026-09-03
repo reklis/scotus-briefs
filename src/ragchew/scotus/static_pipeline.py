@@ -843,7 +843,8 @@ class StaticBatchOrchestrator:
                             budget.brief_calls,
                             budget.model_calls,
                         )
-                        break
+                        if isinstance(error, BudgetExceeded):
+                            break
                     budget.check_private_disk(workspace)
                 sources = {item.logical_key: item for item in original.publication.sources}
                 documents = {
@@ -892,7 +893,7 @@ class StaticBatchOrchestrator:
             parent_release_id=original.publication.active_release_id,
             changed_case_keys=tuple(changed),
             pending_case_keys=tuple(sorted(pending)),
-            publishable=not failed,
+            publishable=bool(changed) or not failed,
             no_public_change=not changed,
         )
 

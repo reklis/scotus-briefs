@@ -45,8 +45,8 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.generation.model == "qwen3.8:27b"
     assert config.generation.prompt_version == "scotus-brief-plain-language-v14"
     assert config.generation.brief_generation_enabled is True
-    assert config.generation.maximum_brief_api_calls_per_run == 1
-    assert config.generation.stop_after_brief_validation_failure is True
+    assert config.generation.maximum_brief_api_calls_per_run == 100
+    assert config.generation.stop_after_brief_validation_failure is False
     assert config.generation.audience == "general_public"
     assert config.generation.maximum_sentence_words == 30
     assert config.publication.case_page_requires_official_transcript is True
@@ -56,11 +56,11 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.static.project_base_path == "/"
     assert config.static.section_path == "/scotus/"
     assert config.schedule.nightly_cron_utc == "17 3 * * *"
-    assert config.bootstrap.maximum_cases_per_run == 1
-    assert config.runner_limits.maximum_cases_per_run == 1
-    assert config.model_budget.maximum_extraction_calls_per_run == 20
-    assert config.model_budget.maximum_brief_calls_per_run == 1
-    assert config.model_budget.maximum_total_calls_per_run == 21
+    assert config.bootstrap.maximum_cases_per_run == 100
+    assert config.runner_limits.maximum_cases_per_run == 100
+    assert config.model_budget.maximum_extraction_calls_per_run == 1000
+    assert config.model_budget.maximum_brief_calls_per_run == 100
+    assert config.model_budget.maximum_total_calls_per_run == 1100
     assert config.model_budget.input_cost_usd_per_million_tokens == Decimal("0")
     assert config.model_budget.output_cost_usd_per_million_tokens == Decimal("0")
     assert config.model_budget.maximum_estimated_cost_usd_per_run == Decimal("0")
@@ -125,7 +125,7 @@ def test_scotus_static_config_rejects_incompatible_model_budgets() -> None:
         ScotusConfig.model_validate(values)
 
     values = config.model_dump()
-    values["bootstrap"]["maximum_cases_per_run"] = 2
+    values["bootstrap"]["maximum_cases_per_run"] = 101
     with pytest.raises(ValidationError, match="brief-call capacity"):
         ScotusConfig.model_validate(values)
 

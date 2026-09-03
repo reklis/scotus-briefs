@@ -722,7 +722,12 @@ def test_processor_migration_resumes_bounded_cases_before_global_promotion(
 
     base = live_config()
     migrating = base.model_copy(
-        update={"parser": base.parser.model_copy(update={"version": "2"})}
+        update={
+            "parser": base.parser.model_copy(update={"version": "2"}),
+            "runner_limits": base.runner_limits.model_copy(
+                update={"maximum_cases_per_run": 1}
+            ),
+        }
     )
     partial = run(tmp_path, store, court, MockOpenAI(), config=migrating)
     assert partial.content.publication.processor == old_processor
