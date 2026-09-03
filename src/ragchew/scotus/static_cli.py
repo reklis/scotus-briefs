@@ -365,7 +365,19 @@ def _batch(args: argparse.Namespace) -> int:
     if not isinstance(result, StaticBatchResult):
         raise RuntimeError("production batch adapter returned an invalid result")
     if not result.publishable or result.content.projection is None:
-        raise RuntimeError("bounded batch did not produce a publishable public projection")
+        selected = set(result.pending_case_keys)
+        reason_counts: dict[str, int] = {}
+        for pending in result.content.publication.pending_work:
+            if pending.case_key in selected:
+                reason = pending.reason.value
+                reason_counts[reason] = reason_counts.get(reason, 0) + 1
+        safe_summary = ",".join(
+            f"{reason}={count}" for reason, count in sorted(reason_counts.items())
+        ) or "none"
+        raise RuntimeError(
+            "bounded batch did not produce a publishable public projection; "
+            f"pending_cases={len(selected)}; reasons={safe_summary}"
+        )
 
     export = _export_batch_candidate(
         result,
