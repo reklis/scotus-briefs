@@ -1,29 +1,56 @@
 name: ci
+
 on:
   pull_request:
   push:
+    branches: [main]
+
 permissions:
   contents: read
+
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
-      - run: uv sync --dev
+      - name: Check out source without retained credentials
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install reviewed uv
+        uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+        with:
+          enable-cache: false
+      - name: Install the frozen development environment
+        run: uv sync --frozen --dev
       - run: uv run ruff check .
       - run: uv run mypy
       - run: uv run pytest
-      - run: uvx pip-audit
-      - uses: gitleaks/gitleaks-action@v2
-        env: {GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"}
+      - name: Audit locked Python dependencies
+        run: uv run --with pip-audit==2.9.0 pip-audit
+      - name: Inventory dependency licenses
+        run: uv run --with pip-licenses==5.0.0 pip-licenses --format=plain-vertical
+      - name: Scan tracked repository and Docker context policy
+        run: uv run python scripts/check-public-repository.py
+      - name: Scan Git history for secrets
+        uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2.3.9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   image:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - run: docker build -f Containerfile -t ragchew:test .
-      - uses: aquasecurity/trivy-action@master
+      - name: Check out source without retained credentials
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - run: docker build --pull=false -f Containerfile -t ragchew:test .
+      - name: Scan the local image
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
           image-ref: ragchew:test
           severity: HIGH,CRITICAL
           exit-code: "1"
+          ignore-unfixed: true

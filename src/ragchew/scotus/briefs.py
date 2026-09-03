@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Any, Literal, Protocol
@@ -229,6 +230,7 @@ class OpenAILegalBriefGenerator:
         response_schema: dict[str, Any] | None = None,
         maximum_output_tokens: int | None = None,
         reasoning_effort: Literal["low", "medium", "high"] | None = None,
+        request_executor: Callable[[dict[str, Any]], Any] | None = None,
     ) -> None:
         self.model_name = model_name
         self.client = client
@@ -238,6 +240,7 @@ class OpenAILegalBriefGenerator:
         self.response_schema = response_schema
         self.maximum_output_tokens = maximum_output_tokens
         self.reasoning_effort = reasoning_effort
+        self.request_executor = request_executor
 
     def generate(
         self,
@@ -296,10 +299,17 @@ class OpenAILegalBriefGenerator:
             if not self.strict_json_schema
             else ""
         )
-        completion = self.client.chat.completions.create(
+        token_limit = {
+            (
+                "max_completion_tokens"
+                if self.model_name.startswith("gpt-5")
+                else "max_tokens"
+            ): self.maximum_output_tokens or omit
+        }
+        request: dict[str, Any] = dict(
             model=self.model_name,
             temperature=omit if self.model_name.startswith("gpt-5") else 0,
-            max_tokens=self.maximum_output_tokens or omit,
+            **token_limit,
             reasoning_effort=self.reasoning_effort or omit,
             messages=[
                 {
@@ -376,6 +386,11 @@ class OpenAILegalBriefGenerator:
                 },
             ],
             response_format=response_format,
+        )
+        completion = (
+            self.request_executor(request)
+            if self.request_executor is not None
+            else self.client.chat.completions.create(**request)
         )
         content = completion.choices[0].message.content
         if not content:
@@ -1071,7 +1086,11 @@ class InMemoryBriefRevisionStore:
     ) -> LegalBriefRevision:
         for claim in claims:
             self.claims.setdefault(claim.claim_id, claim)
-        return self.revisions.setdefault((revision.brief_id, revision.revision_number), revision)
+        key = (revision.brief_id, revision.revision_number)
+        prior_revision = self.revisions.setdefault(key, revision)
+        if prior_revision != revision:
+            raise RuntimeError("conflicting brief under deterministic revision identity")
+        return prior_revision
 
 
 class PostgresBriefRevisionStore:
@@ -1187,6 +1206,10 @@ class BriefGenerationService:
         brief_id = uuid5(NAMESPACE_URL, f"ragchew:scotus-case-brief:{candidate.case_id}")
         revision = LegalBriefRevision(
             brief_id=brief_id,
+            revision_id=uuid5(
+                NAMESPACE_URL,
+                f"ragchew:scotus-brief-revision:{brief_id}:{revision_number}",
+            ),
             case_id=candidate.case_id,
             argument_id=candidate.argument_id,
             revision_number=revision_number,

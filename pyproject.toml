@@ -27,7 +27,7 @@ stt = ["faster-whisper>=1.1,<2"]
 [dependency-groups]
 dev = [
   "mypy>=1.14,<2",
-  "pytest>=8.3,<9",
+  "pytest>=9.0.3,<10",
   "pytest-cov>=6,<7",
   "respx>=0.22,<1",
   "ruff>=0.9,<1",
@@ -45,6 +45,7 @@ ragchew-scotus-discover = "ragchew.scotus.collector:main"
 ragchew-scotus-worker = "ragchew.scotus.worker:main"
 ragchew-scotus-publish = "ragchew.scotus.publisher:main"
 ragchew-scotus-retention = "ragchew.scotus.retention:main"
+ragchew-scotus-static = "ragchew.scotus.static_cli:main"
 
 [build-system]
 requires = ["hatchling"]

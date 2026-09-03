@@ -1,0 +1,16 @@
+{% extends "scotus_base.html" %}
+{% block title %}Search cases · SCOTUS Legal Briefs{% endblock %}
+{% block content %}
+<section aria-labelledby="page-heading"><h1 id="page-heading">Search public case briefs</h1>
+  <p>Free-text search requires JavaScript. All case briefs remain browsable through the term, argument-date, status, and topic archives.</p>
+  <form id="case-search" role="search">
+    <label for="query">Caption, docket, title, term, status, or topic</label><div class="search-row"><input id="query" name="q" maxlength="200"><button type="submit">Search</button></div>
+    <div class="filters"><label for="status-filter">Status</label><select id="status-filter" name="status"><option value="">All statuses</option>{% for status in statuses %}<option value="{{ status }}">{{ status.replace('_', ' ')|title }}</option>{% endfor %}</select>
+    <label for="topic-filter">Topic</label><select id="topic-filter" name="topic"><option value="">All topics</option>{% for topic in topics %}<option value="{{ topic }}">{{ topic }}</option>{% endfor %}</select></div>
+  </form>
+  <p id="search-status" role="status">Enter a search or choose a filter.</p><ol id="search-results" class="case-list"></ol>
+  <nav id="search-pagination" class="pagination" aria-label="Search result pages" hidden><button id="search-previous" type="button">Previous page</button><span id="search-page"></span><button id="search-next" type="button">Next page</button></nav>
+  <noscript><p>JavaScript is unavailable. Use the archive links on the <a href="{{ urls.section() }}">case index</a>.</p></noscript>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ urls.asset(search_asset) }}" defer data-index="{{ urls.data('search.json') }}"></script>{% endblock %}

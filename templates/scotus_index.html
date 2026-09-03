@@ -3,27 +3,30 @@
 {% block content %}
 <section aria-labelledby="page-heading">
   <h1 id="page-heading">{{ heading }}</h1>
-  <form action="/scotus/search" method="get" role="search">
+  {% if introduction %}<p>{{ introduction }}</p>{% endif %}
+  <form action="{{ urls.section('search') }}" method="get" role="search">
     <label for="query">Search public case briefs</label>
-    <div class="search-row"><input id="query" name="q" value="{{ query }}" maxlength="200"><button type="submit">Search</button></div>
+    <div class="search-row"><input id="query" name="q" value="" maxlength="200"><button type="submit">Search</button></div>
   </form>
+  {% if archive_links %}
+  <nav class="archive-navigation" aria-label="Browse case archives"><ul>{% for label, href in archive_links %}<li><a href="{{ href }}">{{ label }}</a></li>{% endfor %}</ul></nav>
+  {% endif %}
   {% if cases %}
   <p class="results-summary">Showing {{ page_start }}–{{ page_start + cases|length - 1 }} of {{ total_cases }} cases, newest Court document date first.</p>
   <ol class="case-list" start="{{ page_start }}">
     {% for case in cases %}
-    <li>
-      <article>
-        <p class="eyebrow">October Term {{ case.term }} · Docket {{ case.primary_docket }}</p>
-        <h2><a href="{{ public_case_path(case) }}">{{ case.title }}</a></h2>
-        <p>{{ case.dek }}</p>
-        <dl class="meta">
-          <div><dt>Case</dt><dd>{{ case.caption }}</dd></div>
-          <div><dt>Latest Court document date</dt><dd><time datetime="{{ latest_court_document_date(case).isoformat() }}">{{ latest_court_document_date(case).date() }}</time></dd></div>
-          <div><dt>Latest verified event</dt><dd>{{ case.case_status.value.replace('_', ' ')|title }}</dd></div>
-          <div><dt>Sources analyzed through</dt><dd>{{ case.maturity.value.replace('_', ' ')|title }}</dd></div>
-        </dl>
-      </article>
-    </li>
+    <li><article>
+      <p class="eyebrow">October Term {{ case.term }} · Docket {{ case.primary_docket }}</p>
+      <h2><a href="{{ urls.case(case) }}">{{ case.title }}</a></h2>
+      <p>{{ case.dek }}</p>
+      <dl class="meta">
+        <div><dt>Case</dt><dd>{{ case.caption }}</dd></div>
+        <div><dt>Latest Court document date</dt><dd><time datetime="{{ latest_court_document_date(case).isoformat() }}">{{ latest_court_document_date(case).date() }}</time></dd></div>
+        <div><dt>Latest verified event</dt><dd>{{ case.case_status.value.replace('_', ' ')|title }}</dd></div>
+        <div><dt>Sources analyzed through</dt><dd>{{ case.maturity.value.replace('_', ' ')|title }}</dd></div>
+      </dl>
+      {% if case.topics %}<p class="topics">Topics: {% for topic in case.topics %}<a href="{{ urls.section('topics/' + archive_slug(topic)) }}">{{ topic }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>{% endif %}
+    </article></li>
     {% endfor %}
   </ol>
   {% if previous_url or next_url %}
@@ -33,8 +36,6 @@
     {% if next_url %}<a rel="next" href="{{ next_url }}">Next page</a>{% endif %}
   </nav>
   {% endif %}
-  {% else %}
-  <p role="status">No public case briefs match this view.</p>
-  {% endif %}
+  {% else %}<p role="status">No public case briefs match this view.</p>{% endif %}
 </section>
 {% endblock %}

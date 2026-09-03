@@ -1,4 +1,19 @@
+# Local environment and credentials (all variants)
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.jks
+*.kubeconfig
+**/secrets*.yaml
+!deploy/k8s/dormant/secrets.example.yaml
+
+# Python, tools, and build output
 .venv/
 .devbox/
 __pycache__/
@@ -11,8 +26,49 @@ htmlcov/
 dist/
 build/
 *.egg-info/
-var/
-site-output/
+.cache/
+
+# Databases, object data, dumps, and backups
+*.db
+*.sqlite
+*.sqlite3
+*.sql.gz
+*.dump
+*.backup
+backups/
+pgdata/
+minio-data/
+
+# Private source/media and processing material
+*.pdf
 *.wav
 *.flac
 *.m4a
+*.mp3
+*.mp4
+*.mov
+*.webm
+*.ogg
+*.aac
+source-data/
+source-html/
+extracted-text/
+transcripts-private/
+model-dumps/
+prompt-dumps/
+private-workspace/
+run-workspace/
+var/
+
+# Reports and temporary static/publication candidates
+reports/
+coverage.xml
+junit*.xml
+site-output/
+static-candidate*/
+candidate-site/
+candidate-state/
+generated-content-input/
+
+# Reviewed synthetic fixtures are intentionally tracked.
+!tests/fixtures/**

@@ -26,6 +26,11 @@ from ragchew.scotus.documents import (
     PendingDocument,
     ScotusDocumentCollector,
 )
+from ragchew.scotus.static_contracts import (
+    ConditionalValidators,
+    ContentIntegrity,
+    LogicalDocumentState,
+)
 from ragchew.scotus.transcript_parser import (
     PdfTextBackend,
     ScotusTranscriptParser,
@@ -37,9 +42,7 @@ from tests.fakes import FakeObjectStore
 NOW = datetime(2026, 8, 28, 2, tzinfo=UTC)
 
 
-def pdf_bytes(
-    pages: int = 1, *, encrypted: bool = False, empty_password: bool = False
-) -> bytes:
+def pdf_bytes(pages: int = 1, *, encrypted: bool = False, empty_password: bool = False) -> bytes:
     writer = PdfWriter()
     for _ in range(pages):
         writer.add_blank_page(width=612, height=792)
@@ -81,8 +84,7 @@ def pending(*, revision: int = 1) -> PendingDocument:
         external_id="2025:25-466:transcript",
         revision_number=revision,
         official_url=(
-            "https://www.supremecourt.gov/oral_arguments/argument_transcripts/"
-            "2025/25-466_ec8f.pdf"
+            "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2025/25-466_ec8f.pdf"
         ),
         expected_content_type="application/pdf",
         observed_at=NOW,
@@ -103,6 +105,7 @@ def collector(
         ScotusConfig.from_yaml("config/scotus.yaml"),
         user_agent="ragchew-test contact=test@example.test",
         client=httpx.Client(transport=handler, follow_redirects=False),
+        before_request=lambda: None,
     )
     return service, store, objects
 
@@ -137,13 +140,41 @@ def test_reviewed_y2k_archive_transcript_path_is_accepted() -> None:
     item = pending().model_copy(
         update={
             "external_id": "2000:00-6374:transcript",
-            "official_url": (
-                "https://www.supremecourt.gov/pdfs/transcripts/2000/00-6374.pdf"
-            ),
+            "official_url": ("https://www.supremecourt.gov/pdfs/transcripts/2000/00-6374.pdf"),
         }
     )
     service, _, _ = collector(response(pdf_bytes()))
     assert service.collect(item, NOW).status == "ready"
+
+
+def test_conditional_document_304_reuses_accepted_revision() -> None:
+    item = pending()
+    service, store, _ = collector(response(pdf_bytes()))
+    first = service.collect(item, NOW)
+    assert first.sha256 is not None and first.byte_count is not None
+    checkpoint = LogicalDocumentState(
+        logical_key="2025-25-466:transcript:2026-04-20:1",
+        case_key="2025-25-466",
+        document_kind="transcript",
+        official_url=item.official_url,
+        revision_number=1,
+        validators=ConditionalValidators(etag='"court-v1"'),
+        integrity=ContentIntegrity(sha256=first.sha256, byte_count=first.byte_count),
+        checked_at=NOW,
+    )
+
+    def not_modified(request: httpx.Request) -> httpx.Response:
+        assert request.headers["if-none-match"] == '"court-v1"'
+        return httpx.Response(304, headers={"ETag": '"court-v1"'})
+
+    service.client = httpx.Client(
+        transport=httpx.MockTransport(not_modified), follow_redirects=False
+    )
+    result = service.collect(item, NOW + timedelta(days=1), checkpoint=checkpoint)
+    assert result.status == "duplicate"
+    assert result.not_modified
+    assert result.document_revision_id == item.document_revision_id
+    assert len(store.parse_jobs) == 1
 
 
 def test_new_revision_accepts_changed_bytes_and_supersedes_identity() -> None:
@@ -151,20 +182,38 @@ def test_new_revision_accepts_changed_bytes_and_supersedes_identity() -> None:
     service, store, objects = collector(response(pdf_bytes()))
     first = service.collect(item, NOW)
     service.client = httpx.Client(transport=response(pdf_bytes(2)), follow_redirects=False)
-    revised_item = item.model_copy(
-        update={"document_revision_id": uuid4(), "revision_number": 2}
-    )
+    revised_item = item.model_copy(update={"document_revision_id": uuid4(), "revision_number": 2})
     revised = service.collect(revised_item, NOW + timedelta(minutes=15))
     assert first.status == "ready"
     assert revised.status == "ready"
     assert revised.sha256 != first.sha256
     assert len(store.parse_jobs) == 2
     assert len(objects.objects) == 2
-    current = store.accepted_for_identity(
-        item.case_id, item.kind, item.external_id
-    )
+    current = store.accepted_for_identity(item.case_id, item.kind, item.external_id)
     assert current is not None
     assert current.document_revision_id == revised_item.document_revision_id
+
+
+def test_static_collection_allocates_changed_logical_document_revision() -> None:
+    item = pending().model_copy(update={"logical_key": "2025-25-466:transcript:session-1"})
+    service, store, _ = collector(response(pdf_bytes()))
+    assert service.collect(item, NOW).revision_number == 1
+    service.client = httpx.Client(transport=response(pdf_bytes(2)), follow_redirects=False)
+    replacement = item.model_copy(
+        update={
+            "document_revision_id": uuid4(),
+            "external_id": "2025:25-466:transcript:replacement.pdf",
+            "official_url": (
+                "https://www.supremecourt.gov/oral_arguments/argument_transcripts/"
+                "2025/25-466_replacement.pdf"
+            ),
+        }
+    )
+    revised = service.collect(replacement, NOW, allocate_revision=True)
+    assert revised.status == "ready"
+    assert revised.revision_number == 2
+    current = store.accepted_for_identity(item.case_id, item.kind, item.logical_key or "")
+    assert current is not None and current.official_url == replacement.official_url
 
 
 def test_changed_bytes_under_same_revision_identity_are_quarantined() -> None:
@@ -172,9 +221,7 @@ def test_changed_bytes_under_same_revision_identity_are_quarantined() -> None:
     service, store, _ = collector(response(pdf_bytes()))
     assert service.collect(item, NOW).status == "ready"
     service.client = httpx.Client(transport=response(pdf_bytes(2)), follow_redirects=False)
-    conflict = service.collect(
-        item.model_copy(update={"document_revision_id": uuid4()}), NOW
-    )
+    conflict = service.collect(item.model_copy(update={"document_revision_id": uuid4()}), NOW)
     assert conflict.status == "quarantined"
     assert conflict.document_revision_id in store.quarantined
 

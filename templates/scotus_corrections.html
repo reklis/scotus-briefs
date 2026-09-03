@@ -1,0 +1,4 @@
+{% extends "scotus_base.html" %}
+{% block title %}Corrections and revisions · SCOTUS Legal Briefs{% endblock %}
+{% block content %}<section aria-labelledby="page-heading"><h1 id="page-heading">Corrections and revisions</h1><p>Accepted public revisions are append-only. Earlier summaries remain listed in each case's revision history.</p>
+{% if corrected_cases %}<ol class="case-list">{% for case in corrected_cases %}<li><article><h2><a href="{{ urls.case(case) }}">{{ case.title }}</a></h2><p>{{ case.caption }} · Docket {{ case.primary_docket }}</p><ol>{% for revision in case.revisions %}<li>Revision {{ revision.revision_number }} — <time datetime="{{ revision.created_at.isoformat() }}">{{ revision.created_at.date() }}</time>{% if revision.correction_note %}: {{ revision.correction_note }}{% endif %}</li>{% endfor %}</ol></article></li>{% endfor %}</ol>{% else %}<p role="status">No corrected public briefs have been released.</p>{% endif %}</section>{% endblock %}

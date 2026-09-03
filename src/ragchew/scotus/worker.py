@@ -2,13 +2,17 @@
 
 from __future__ import annotations
 
+import argparse
 import logging
 import os
 import re
 import socket
 import tempfile
 import time
+from collections.abc import Callable
+from dataclasses import dataclass
 from datetime import UTC, datetime
+from enum import StrEnum
 from typing import BinaryIO, cast
 from uuid import UUID, uuid4
 
@@ -18,7 +22,7 @@ from prometheus_client import start_http_server
 from pypdf import PdfReader
 
 from ragchew.config import MvpConfig, ScotusConfig, ServiceSettings
-from ragchew.jobs import claim
+from ragchew.jobs import JobLease, claim
 from ragchew.logging_config import configure_logging
 from ragchew.metrics import (
     JOB_BACKLOG,
@@ -59,6 +63,60 @@ from ragchew.scotus.transcript_store import PostgresTranscriptParseStore
 from ragchew.storage import S3ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.worker")
+
+
+class WorkerMode(StrEnum):
+    ONCE = "once"
+    DRAIN = "drain"
+
+
+@dataclass(frozen=True)
+class BoundedWorkerResult:
+    processed: int
+    failed: int
+    drained: bool
+    runtime_exhausted: bool = False
+
+
+def run_bounded_worker(
+    *,
+    claim_next: Callable[[], JobLease | None],
+    process: Callable[[JobLease], None],
+    runnable_count: Callable[[], int],
+    active_lease_count: Callable[[], int],
+    mode: WorkerMode,
+    maximum_idle_seconds: float,
+    maximum_runtime_seconds: float,
+    sleep: Callable[[float], None] = time.sleep,
+) -> BoundedWorkerResult:
+    """Process one job or drain a selected queue without daemon-style sleeping."""
+    if maximum_idle_seconds < 0 or maximum_runtime_seconds <= 0:
+        raise ValueError("worker idle/runtime limits are invalid")
+    started = time.monotonic()
+    idle_started = started
+    processed = 0
+    failed = 0
+    while time.monotonic() - started < maximum_runtime_seconds:
+        lease = claim_next()
+        if lease is None:
+            if runnable_count() == 0 and active_lease_count() == 0:
+                return BoundedWorkerResult(processed, failed, True)
+            if time.monotonic() - idle_started >= maximum_idle_seconds:
+                return BoundedWorkerResult(processed, failed, False)
+            sleep(min(0.1, maximum_idle_seconds))
+            continue
+        idle_started = time.monotonic()
+        try:
+            process(lease)
+        except Exception:
+            failed += 1
+            if not lease.completed:
+                lease.fail(RuntimeError("sanitized worker stage failure"))
+        processed += 1
+        if mode is WorkerMode.ONCE:
+            drained = runnable_count() == 0 and active_lease_count() == 0
+            return BoundedWorkerResult(processed, failed, drained)
+    return BoundedWorkerResult(processed, failed, False, runtime_exhausted=True)
 
 
 def _pending_document(repository: PostgresRepository, revision_id: UUID) -> PendingDocument:
@@ -107,16 +165,10 @@ def _download_private(objects: S3ObjectStore, key: str, maximum: int) -> BinaryI
 
 def _opinion_names_docket(text: str, docket: str) -> bool:
     normalized = " ".join(
-        text.replace("\N{EN DASH}", "-")
-        .replace("\N{EM DASH}", "-")
-        .upper()
-        .split()
+        text.replace("\N{EN DASH}", "-").replace("\N{EM DASH}", "-").upper().split()
     )
     expected = " ".join(docket.upper().split())
-    return (
-        re.search(rf"(?<![0-9A-Z]){re.escape(expected)}(?![0-9A-Z])", normalized)
-        is not None
-    )
+    return re.search(rf"(?<![0-9A-Z]){re.escape(expected)}(?![0-9A-Z])", normalized) is not None
 
 
 def _parse_document(
@@ -138,16 +190,12 @@ def _parse_document(
     kind = ScotusDocumentKind(row["document_kind"])
     if kind is not ScotusDocumentKind.TRANSCRIPT:
         if kind is ScotusDocumentKind.OPINION:
-            file = _download_private(
-                objects, row["object_key"], config.documents.maximum_pdf_bytes
-            )
+            file = _download_private(objects, row["object_key"], config.documents.maximum_pdf_bytes)
             try:
                 reader = PdfReader(file, strict=False)
                 if reader.is_encrypted:
                     reader.decrypt("")
-                text = " ".join(
-                    (page.extract_text() or "") for page in reader.pages[:6]
-                )
+                text = " ".join((page.extract_text() or "") for page in reader.pages[:6])
             finally:
                 file.close()
             if not _opinion_names_docket(text, str(row["primary_docket"])):
@@ -249,24 +297,30 @@ def _extract_parse(
             speaker_label_private=row["speaker_label_private"],
             speaker_name=row["speaker_name"],
             speaker_kind=SpeakerKind(row["speaker_kind"]),
-            advocate_role=(
-                AdvocateRole(row["advocate_role"]) if row["advocate_role"] else None
-            ),
+            advocate_role=(AdvocateRole(row["advocate_role"]) if row["advocate_role"] else None),
             identity_basis=SpeakerIdentityBasis(row["identity_basis"]),
             text_private=row["text_private"],
             confidence=row["confidence"],
         )
         for row in rows
     )
-    blocks = tuple(
-        transcript_turn_block(turn, metadata["official_url_private"]) for turn in turns
-    )
+    blocks = tuple(transcript_turn_block(turn, metadata["official_url_private"]) for turn in turns)
     batches = bounded_contexts(blocks, config.generation.maximum_context_characters)
     extractor: LegalObservationExtractor
     if deterministic:
         extractor = DeterministicTranscriptObservationExtractor()
     else:
-        llm = OpenAI(api_key=settings.openai_api_key.get_secret_value())
+        if not (config.generation.brief_generation_enabled and config.publication.enabled):
+            raise ValueError(
+                "brief-generation and static-publication gates are required for extraction"
+            )
+        if settings.openai_base_url.rstrip("/") != "https://api.openai.com/v1":
+            raise ValueError("SCOTUS extraction requires the official OpenAI API endpoint")
+        llm = OpenAI(
+            api_key=settings.openai_api_key.get_secret_value(),
+            timeout=config.model_budget.request_timeout_seconds,
+            max_retries=0,
+        )
         extractor = OpenAILegalObservationExtractor(config.generation.model, llm)
     store = PostgresLegalObservationStore("", pool=repository.pool)
     output_ids: list[str] = []
@@ -287,6 +341,16 @@ def _extract_parse(
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Run bounded SCOTUS processing stages")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--once", action="store_true", help="process at most one selected job")
+    mode.add_argument("--drain", action="store_true", help="process until selected work drains")
+    parser.add_argument("--stage", action="append", dest="stages", default=[])
+    parser.add_argument("--maximum-idle-seconds", type=float, default=5.0)
+    parser.add_argument("--maximum-runtime-seconds", type=float)
+    args = parser.parse_args()
+    if args.maximum_idle_seconds < 0:
+        parser.error("--maximum-idle-seconds cannot be negative")
     configure_logging(os.getenv("RAGCHEW_LOG_LEVEL", "INFO"))
     settings = ServiceSettings()
     scotus = ScotusConfig.from_yaml(settings.scotus_config_path)
@@ -305,7 +369,7 @@ def main() -> None:
     correlation_store = PostgresScotusCorrelationStore("", pool=repository.pool)
     correlation = ScotusCorrelationEngine()
     worker_id = f"{socket.gethostname()}-{os.getpid()}"
-    configured_stages = tuple(
+    configured_stages = tuple(args.stages) or tuple(
         value.strip()
         for value in os.getenv("RAGCHEW_SCOTUS_WORKER_STAGES", "").split(",")
         if value.strip()
@@ -320,22 +384,44 @@ def main() -> None:
     if deterministic_extraction and scotus.publication.enabled:
         raise ValueError("private deterministic extraction requires disabled publication")
     start_http_server(int(os.getenv("RAGCHEW_METRICS_PORT", "9090")))
+    bounded = bool(args.once or args.drain)
+    maximum_runtime = args.maximum_runtime_seconds or scotus.runner_limits.maximum_runtime_seconds
+    if maximum_runtime <= 0:
+        parser.error("--maximum-runtime-seconds must be positive")
+    worker_started = time.monotonic()
+    idle_started = worker_started
 
     while True:
+        if bounded and time.monotonic() - worker_started >= maximum_runtime:
+            raise SystemExit(2)
         backlog = repository.job_backlog()
         for stage, count in backlog.items():
             JOB_BACKLOG.labels(stage).set(count)
         lease = claim(repository, worker_id, retry, stages=stage_filter)
         if lease is None:
-            time.sleep(1)
+            if bounded:
+                runnable = sum(
+                    count
+                    for stage, count in backlog.items()
+                    if stage_filter is None or stage in stage_filter
+                )
+                active = repository.active_job_lease_count(stage_filter)
+                if runnable == 0 and active == 0:
+                    break
+                if time.monotonic() - idle_started >= args.maximum_idle_seconds:
+                    raise SystemExit(2)
+                time.sleep(min(0.1, args.maximum_idle_seconds))
+            else:
+                time.sleep(1)
             continue
+        idle_started = time.monotonic()
         stage = lease.record.stage
         started = time.monotonic()
         try:
             input_id = UUID(lease.record.input_id)
             if stage == "collect" and lease.record.input_kind == "scotus_document":
                 pending = _pending_document(repository, input_id)
-                result = collector.collect(pending, datetime.now(UTC))
+                result = collector.collect(pending, datetime.now(UTC), allocate_revision=True)
                 SCOTUS_DOCUMENT_OUTCOMES.labels(pending.kind.value, result.status).inc()
                 if result.status == "failed":
                     raise ValueError(result.diagnostic or "document collection failed")
@@ -367,12 +453,16 @@ def main() -> None:
                 )
             lease.complete(output_id)
             JOB_OUTCOMES.labels(stage, "complete").inc()
-        except Exception as error:
-            LOG.exception(
+        except Exception:
+            LOG.error(
                 "SCOTUS job failed",
-                extra={"stage": stage, "job_id": lease.record.job_id, "outcome": "failed"},
+                extra={
+                    "stage": stage,
+                    "outcome": "failed",
+                    "failure_category": "processing",
+                },
             )
-            lease.fail(error)
+            lease.fail(RuntimeError(f"{stage} stage failed"))
             JOB_OUTCOMES.labels(stage, "failed").inc()
             if stage == "parse":
                 SCOTUS_PARSER_OUTCOMES.labels("failed").inc()
@@ -380,3 +470,14 @@ def main() -> None:
                 SCOTUS_EXTRACTION_OUTCOMES.labels("failed").inc()
         finally:
             JOB_DURATION.labels(stage).observe(time.monotonic() - started)
+        if args.once:
+            backlog = repository.job_backlog()
+            runnable = sum(
+                count
+                for selected, count in backlog.items()
+                if stage_filter is None or selected in stage_filter
+            )
+            active = repository.active_job_lease_count(stage_filter)
+            if runnable or active:
+                raise SystemExit(2)
+            break

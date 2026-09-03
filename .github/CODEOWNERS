@@ -1,0 +1,9 @@
+# Repository owner approval is required for all changes.
+* @reklis
+
+# Treat release and public-boundary changes as explicitly owner-reviewed.
+/.github/ @reklis
+/src/ragchew/scotus/ @reklis
+/config/scotus.yaml @reklis
+/LICENSE* @reklis
+/NOTICE @reklis

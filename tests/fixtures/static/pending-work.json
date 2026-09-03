@@ -1,0 +1,26 @@
+{
+  "_fixture": {
+    "notice": "Entirely invented test data; contains no copied Court text or private pipeline data.",
+    "scenario": "pending work",
+    "synthetic": true
+  },
+  "publication_state": {
+    "active_release_id": null,
+    "cases": [],
+    "cursors": [],
+    "documents": [],
+    "pending_work": [
+      {
+        "attempts": 0,
+        "case_key": "2025-25-466",
+        "first_seen_at": "2026-08-28T03:17:00Z",
+        "last_attempted_at": null,
+        "reason": "budget_exhausted"
+      }
+    ],
+    "processor": null,
+    "schema_version": "1.0",
+    "sources": [],
+    "updated_at": "2026-08-28T03:17:00Z"
+  }
+}

@@ -3,13 +3,15 @@
 from __future__ import annotations
 
 import hashlib
+import re
 import tempfile
-from dataclasses import dataclass
+from collections.abc import Callable
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta
-from pathlib import PurePosixPath
+from pathlib import Path, PurePosixPath
 from typing import Any, BinaryIO, Protocol, cast
 from urllib.parse import urlparse
-from uuid import UUID
+from uuid import NAMESPACE_URL, UUID, uuid5
 
 import httpx
 from psycopg import Connection
@@ -23,7 +25,9 @@ from ragchew.config import ScotusConfig
 from ragchew.contracts import StrictModel
 from ragchew.proceedings.contracts import SourceAccessMethod, UtcDatetime
 from ragchew.proceedings.registry import SourceAuthorizer
+from ragchew.proceedings.sources.http import RequestRateLimiter
 from ragchew.scotus.contracts import ScotusDocumentKind
+from ragchew.scotus.static_contracts import ConditionalValidators, LogicalDocumentState
 from ragchew.storage import ObjectStore
 
 
@@ -38,6 +42,7 @@ class PendingDocument(StrictModel):
     source_id: str = "supreme_court"
     kind: ScotusDocumentKind
     external_id: str = Field(min_length=1, max_length=500)
+    logical_key: str | None = Field(default=None, min_length=1, max_length=500)
     revision_number: int = Field(ge=1)
     official_url: str
     expected_content_type: str
@@ -63,15 +68,53 @@ class IngestionOutcome(StrictModel):
     status: str
     document_revision_id: UUID
     sha256: str | None = None
+    byte_count: int | None = Field(default=None, ge=0)
+    revision_number: int | None = Field(default=None, ge=1)
+    validators: ConditionalValidators = ConditionalValidators()
+    not_modified: bool = False
     object_key: str | None = None
     parse_job_created: bool = False
     diagnostic: str | None = None
+
+
+@dataclass(frozen=True)
+class DocumentRevisionPlan:
+    logical_key: str
+    revision_number: int
+    changed: bool
+    prior: LogicalDocumentState | None
+
+
+def plan_document_revision(
+    logical_key: str,
+    *,
+    observed_sha256: str,
+    prior: LogicalDocumentState | None,
+) -> DocumentRevisionPlan:
+    """Allocate content revisions independently from URL/external source identity."""
+    if prior is not None and prior.logical_key != logical_key:
+        raise ValueError("document checkpoint does not match logical identity")
+    if not re.fullmatch(r"[0-9a-f]{64}", observed_sha256):
+        raise ValueError("observed document digest must be SHA-256")
+    if prior is None:
+        return DocumentRevisionPlan(logical_key, 1, True, None)
+    changed = prior.integrity.sha256 != observed_sha256
+    return DocumentRevisionPlan(
+        logical_key,
+        prior.revision_number + int(changed),
+        changed,
+        prior,
+    )
 
 
 class DocumentIngestionStore(Protocol):
     def accepted_for_identity(
         self, case_id: UUID, kind: ScotusDocumentKind, external_id: str
     ) -> AcceptedDocument | None: ...
+
+    def allocate_revision(
+        self, document: PendingDocument, revision_number: int
+    ) -> PendingDocument: ...
 
     def commit(
         self, document: AcceptedDocument, delete_after: datetime, *, priority: int
@@ -96,9 +139,20 @@ class InMemoryDocumentIngestionStore:
         revision_id = self.identity.get((case_id, kind, external_id))
         return self.accepted.get(revision_id) if revision_id else None
 
-    def commit(
-        self, document: AcceptedDocument, delete_after: datetime, *, priority: int
-    ) -> bool:
+    def allocate_revision(self, document: PendingDocument, revision_number: int) -> PendingDocument:
+        revision_id = uuid5(
+            NAMESPACE_URL,
+            f"ragchew:scotus-document:{document.case_id}:{document.kind.value}:"
+            f"{document.logical_key or document.external_id}:{revision_number}",
+        )
+        return document.model_copy(
+            update={
+                "document_revision_id": revision_id,
+                "revision_number": revision_number,
+            }
+        )
+
+    def commit(self, document: AcceptedDocument, delete_after: datetime, *, priority: int) -> bool:
         key = (document.case_id, document.kind, document.external_id)
         prior_id = self.identity.get(key)
         if prior_id:
@@ -165,9 +219,41 @@ class PostgresDocumentIngestionStore:
             ).fetchone()
         return self._accepted(row) if row else None
 
-    def commit(
-        self, document: AcceptedDocument, delete_after: datetime, *, priority: int
-    ) -> bool:
+    def allocate_revision(self, document: PendingDocument, revision_number: int) -> PendingDocument:
+        external_id = document.logical_key or document.external_id
+        revision_id = uuid5(
+            NAMESPACE_URL,
+            f"ragchew:scotus-document:{document.case_id}:{document.kind.value}:"
+            f"{external_id}:{revision_number}",
+        )
+        with self.pool.connection() as connection, connection.transaction():
+            connection.execute(
+                """INSERT INTO scotus_document_revisions
+                   (document_revision_id,case_id,argument_id,document_kind,external_id,
+                    revision_number,official_url_private,status,content_type,observed_at)
+                   VALUES (%s,%s,%s,%s,%s,%s,%s,'discovered',%s,%s)
+                   ON CONFLICT(case_id,document_kind,external_id,revision_number) DO NOTHING""",
+                (
+                    revision_id,
+                    document.case_id,
+                    document.argument_id,
+                    document.kind.value,
+                    external_id,
+                    revision_number,
+                    document.official_url,
+                    document.expected_content_type,
+                    document.observed_at,
+                ),
+            )
+        return document.model_copy(
+            update={
+                "document_revision_id": revision_id,
+                "external_id": external_id,
+                "revision_number": revision_number,
+            }
+        )
+
+    def commit(self, document: AcceptedDocument, delete_after: datetime, *, priority: int) -> bool:
         with self.pool.connection() as connection, connection.transaction():
             existing = connection.execute(
                 """SELECT document_revision_id,sha256 FROM scotus_document_revisions
@@ -298,6 +384,11 @@ class ScotusDocumentCollector:
         *,
         user_agent: str,
         client: httpx.Client | None = None,
+        reserve_request: Callable[[], None] | None = None,
+        record_download: Callable[[int], None] | None = None,
+        before_request: Callable[[], None] | None = None,
+        retain_duplicate_bytes: bool = False,
+        spool_directory: str | Path | None = None,
     ) -> None:
         if "contact" not in user_agent.lower():
             raise ValueError("collector user agent must include contact information")
@@ -307,9 +398,22 @@ class ScotusDocumentCollector:
         self.config = config
         self.user_agent = user_agent
         self.client = client or httpx.Client(follow_redirects=False)
+        self.reserve_request = reserve_request
+        self.record_download = record_download
+        self.before_request = before_request or RequestRateLimiter(
+            config.discovery.crawl_delay_seconds
+        ).wait
+        self.retain_duplicate_bytes = retain_duplicate_bytes
+        self.spool_directory = Path(spool_directory) if spool_directory is not None else None
 
     def collect(
-        self, document: PendingDocument, now: datetime, *, priority: int = 10
+        self,
+        document: PendingDocument,
+        now: datetime,
+        *,
+        priority: int = 10,
+        checkpoint: LogicalDocumentState | None = None,
+        allocate_revision: bool = False,
     ) -> IngestionOutcome:
         try:
             source = self.authorizer.authorize_url(
@@ -322,17 +426,60 @@ class ScotusDocumentCollector:
             if source.source_id != "supreme_court":
                 raise DocumentCollectionError("document source is not Supreme Court")
             _validate_path(document)
-            accepted = self._download(document)
             prior = self.store.accepted_for_identity(
-                document.case_id, document.kind, document.external_id
+                document.case_id,
+                document.kind,
+                document.logical_key or document.external_id,
             )
+            try:
+                accepted = self._download(document, checkpoint=checkpoint)
+            except _DocumentNotModified as response:
+                if prior is None or checkpoint is None:
+                    raise DocumentCollectionError(
+                        "not-modified document has no accepted prior revision"
+                    ) from response
+                return IngestionOutcome(
+                    status="duplicate",
+                    document_revision_id=prior.document_revision_id,
+                    sha256=checkpoint.integrity.sha256,
+                    byte_count=checkpoint.integrity.byte_count,
+                    revision_number=checkpoint.revision_number,
+                    validators=response.validators,
+                    not_modified=True,
+                    object_key=prior.object_key,
+                )
             if prior and prior.sha256 == accepted.sha256:
+                if self.retain_duplicate_bytes:
+                    self.objects.put_file(
+                        prior.object_key,
+                        accepted.file,
+                        prior.content_type,
+                        prior.sha256,
+                    )
                 accepted.file.close()
                 return IngestionOutcome(
                     status="duplicate",
                     document_revision_id=prior.document_revision_id,
                     sha256=prior.sha256,
+                    byte_count=prior.byte_count,
+                    revision_number=prior.revision_number,
+                    validators=accepted.validators,
                     object_key=prior.object_key,
+                )
+            if (
+                allocate_revision
+                and prior
+                and prior.sha256 != accepted.sha256
+                and document.revision_number <= prior.revision_number
+            ):
+                document = self.store.allocate_revision(document, prior.revision_number + 1)
+                accepted.document = accepted.document.model_copy(
+                    update={
+                        "document_revision_id": document.document_revision_id,
+                        "external_id": document.logical_key or document.external_id,
+                        "revision_number": document.revision_number,
+                        "object_key": document_object_key(document, accepted.sha256),
+                    }
                 )
             if (
                 prior
@@ -364,6 +511,9 @@ class ScotusDocumentCollector:
                 status="ready",
                 document_revision_id=document.document_revision_id,
                 sha256=accepted.document.sha256,
+                byte_count=accepted.document.byte_count,
+                revision_number=accepted.document.revision_number,
+                validators=accepted.validators,
                 object_key=accepted.document.object_key,
                 parse_job_created=job_created,
             )
@@ -375,14 +525,43 @@ class ScotusDocumentCollector:
                 diagnostic=str(error),
             )
 
-    def _download(self, document: PendingDocument) -> _DownloadedDocument:
+    def _download(
+        self,
+        document: PendingDocument,
+        *,
+        checkpoint: LogicalDocumentState | None = None,
+    ) -> _DownloadedDocument:
         maximum = self.config.documents.maximum_pdf_bytes
+        if checkpoint is not None:
+            if document.logical_key and checkpoint.logical_key != document.logical_key:
+                raise DocumentCollectionError("document checkpoint identity does not match")
+            if checkpoint.official_url != document.official_url:
+                # Validators apply to one URL. A replacement URL requires a bounded GET
+                # and digest comparison rather than sending unrelated conditions.
+                checkpoint = None
+        if self.reserve_request is not None:
+            self.reserve_request()
+        self.before_request()
+        headers = {"User-Agent": self.user_agent, "Accept": document.expected_content_type}
+        if checkpoint is not None:
+            if checkpoint.validators.etag:
+                headers["If-None-Match"] = checkpoint.validators.etag
+            if checkpoint.validators.last_modified:
+                headers["If-Modified-Since"] = checkpoint.validators.last_modified
         with self.client.stream(
             "GET",
             document.official_url,
-            headers={"User-Agent": self.user_agent, "Accept": document.expected_content_type},
-            timeout=60,
+            headers=headers,
+            timeout=self.config.model_budget.request_timeout_seconds,
         ) as response:
+            validators = ConditionalValidators(
+                etag=response.headers.get("etag")
+                or (checkpoint.validators.etag if checkpoint else None),
+                last_modified=response.headers.get("last-modified")
+                or (checkpoint.validators.last_modified if checkpoint else None),
+            )
+            if response.status_code == 304:
+                raise _DocumentNotModified(validators)
             if 300 <= response.status_code < 400:
                 raise DocumentCollectionError("redirects are not permitted")
             if response.status_code != 200:
@@ -400,7 +579,8 @@ class ScotusDocumentCollector:
             file = cast(
                 BinaryIO,
                 tempfile.SpooledTemporaryFile(  # noqa: SIM115 - returned to object writer
-                    max_size=self.config.documents.spool_memory_bytes
+                    max_size=self.config.documents.spool_memory_bytes,
+                    dir=str(self.spool_directory) if self.spool_directory else None,
                 ),
             )
             digest = hashlib.sha256()
@@ -410,6 +590,12 @@ class ScotusDocumentCollector:
                 if byte_count > maximum:
                     file.close()
                     raise DocumentCollectionError("document exceeds configured byte bound")
+                if self.record_download is not None:
+                    try:
+                        self.record_download(len(chunk))
+                    except Exception:
+                        file.close()
+                        raise
                 digest.update(chunk)
                 file.write(chunk)
         if byte_count == 0:
@@ -426,7 +612,7 @@ class ScotusDocumentCollector:
             document_revision_id=document.document_revision_id,
             case_id=document.case_id,
             kind=document.kind,
-            external_id=document.external_id,
+            external_id=document.logical_key or document.external_id,
             revision_number=document.revision_number,
             official_url=document.official_url,
             content_type=content_type,
@@ -437,13 +623,20 @@ class ScotusDocumentCollector:
             ready_at=document.observed_at,
         )
         file.seek(0)
-        return _DownloadedDocument(document=accepted, file=file)
+        return _DownloadedDocument(document=accepted, file=file, validators=validators)
+
+
+class _DocumentNotModified(Exception):
+    def __init__(self, validators: ConditionalValidators) -> None:
+        super().__init__("official document was not modified")
+        self.validators = validators
 
 
 @dataclass
 class _DownloadedDocument:
     document: AcceptedDocument
     file: BinaryIO
+    validators: ConditionalValidators = field(default_factory=ConditionalValidators)
 
     @property
     def sha256(self) -> str:

@@ -1,3 +1,4 @@
+from decimal import Decimal
 from pathlib import Path
 
 import pytest
@@ -44,6 +45,21 @@ def test_scotus_defaults_are_transcript_first_and_fail_closed() -> None:
     assert config.generation.audience == "general_public"
     assert config.generation.maximum_sentence_words == 30
     assert config.publication.case_page_requires_official_transcript is True
+    assert config.repository.owner == "reklis"
+    assert config.repository.name == "scotus-briefs"
+    assert config.static.canonical_origin == "https://reklis.github.io"
+    assert config.static.project_base_path == "/scotus-briefs/"
+    assert config.static.section_path == "/scotus/"
+    assert config.schedule.nightly_cron_utc == "17 3 * * *"
+    assert config.bootstrap.maximum_cases_per_run == 1
+    assert config.runner_limits.maximum_cases_per_run == 1
+    assert config.model_budget.maximum_extraction_calls_per_run == 20
+    assert config.model_budget.maximum_brief_calls_per_run == 1
+    assert config.model_budget.maximum_total_calls_per_run == 21
+    assert config.model_budget.maximum_estimated_cost_usd_per_run == Decimal("10.00")
+    assert config.licensing.code_and_documentation == "Apache-2.0"
+    assert config.licensing.generated_briefs == "CC-BY-4.0"
+    assert not config.approvals.all_live_gates_approved()
     assert config.launch.maximum_status_upgrades == 0
 
 
@@ -55,6 +71,72 @@ def test_scotus_config_rejects_audio_or_stt() -> None:
         ScotusConfig.model_validate(values)
 
 
+def test_scotus_static_config_normalizes_project_and_custom_domain_paths() -> None:
+    config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
+    values = config.model_dump()
+    values["static"]["project_base_path"] = "project"
+    values["static"]["section_path"] = "/"
+    normalized = ScotusConfig.model_validate(values)
+    assert normalized.static.project_base_path == "/project/"
+    assert normalized.static.section_path == "/"
+
+
+def test_scotus_static_config_rejects_origins_paths_and_runtime_dependencies() -> None:
+    config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
+    for field, value in (
+        ("canonical_origin", "http://reklis.github.io"),
+        ("canonical_origin", "https://reklis.github.io/scotus-briefs"),
+        ("project_base_path", "/project/%2e%2e/escape/"),
+        ("section_path", "/scotus?api=true"),
+        ("output_path", "../pages"),
+        ("generated_state_path", "/tmp/state"),
+        ("runtime_api_url", "https://api.example.test"),
+    ):
+        values = config.model_dump()
+        values["static"][field] = value
+        with pytest.raises(ValidationError):
+            ScotusConfig.model_validate(values)
+
+
+def test_scotus_static_config_rejects_incompatible_model_budgets() -> None:
+    config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
+    values = config.model_dump()
+    values["model_budget"]["maximum_total_calls_per_run"] = 20
+    with pytest.raises(ValidationError, match="total model-call budget"):
+        ScotusConfig.model_validate(values)
+
+    values = config.model_dump()
+    values["model_budget"]["maximum_estimated_cost_usd_per_run"] = "1.00"
+    with pytest.raises(ValidationError, match="token spend"):
+        ScotusConfig.model_validate(values)
+
+    values = config.model_dump()
+    values["bootstrap"]["maximum_cases_per_run"] = 2
+    with pytest.raises(ValidationError, match="brief-call capacity"):
+        ScotusConfig.model_validate(values)
+
+
+def test_scotus_live_publication_requires_every_approval() -> None:
+    config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
+    dry_run_values = config.model_dump()
+    dry_run_values["publication"]["enabled"] = True
+    assert ScotusConfig.model_validate(dry_run_values).publication.dry_run
+
+    values = config.model_dump()
+    values["publication"].update({"enabled": True, "dry_run": False})
+    values["enabled"] = True
+    values["generation"]["brief_generation_enabled"] = True
+    with pytest.raises(ValidationError, match="live static publication"):
+        ScotusConfig.model_validate(values)
+    values["approvals"] = {key: True for key in values["approvals"]}
+    live = ScotusConfig.model_validate(values)
+    assert live.publication.enabled and not live.publication.dry_run
+
+    values["licensing"]["court_materials_excluded"] = False
+    with pytest.raises(ValidationError):
+        ScotusConfig.model_validate(values)
+
+
 def test_scotus_config_rejects_local_or_compatible_model_provider() -> None:
     config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
     values = config.model_dump()
@@ -62,6 +144,17 @@ def test_scotus_config_rejects_local_or_compatible_model_provider() -> None:
     values["generation"]["model"] = "local-model"
     with pytest.raises(ValidationError):
         ScotusConfig.model_validate(values)
+
+
+def test_source_user_agent_rejects_placeholder_contact() -> None:
+    with pytest.raises(ValidationError, match=r"example\.invalid"):
+        ServiceSettings(
+            _env_file=None,
+            source_user_agent="ragchew/1.0 contact=operator@example.invalid",
+        )
+    assert "github.com/reklis/scotus-briefs" in ServiceSettings(
+        _env_file=None
+    ).source_user_agent
 
 
 def test_standard_openai_api_key_environment_name_is_supported(
@@ -82,6 +175,4 @@ def test_enabled_proceeding_source_requires_review() -> None:
     source["access_reviewed_at"] = None
     source["access_reviewed_by"] = None
     with pytest.raises(ValidationError, match="completed access review"):
-        ProceedingsConfig.model_validate(
-            {**config.model_dump(), "sources": {"dc_mayor": source}}
-        )
+        ProceedingsConfig.model_validate({**config.model_dump(), "sources": {"dc_mayor": source}})

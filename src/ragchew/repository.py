@@ -207,8 +207,12 @@ class PostgresRepository:
                      lease_expires_at=now() + (%s * interval '1 second'), attempts=attempts+1
                    FROM candidate WHERE j.job_id=candidate.job_id
                    RETURNING j.job_id,j.stage,j.input_kind,j.input_id,j.input_version,j.attempts""",
-                (list(stages) if stages else None, list(stages) if stages else None,
-                 worker_id, lease_seconds),
+                (
+                    list(stages) if stages else None,
+                    list(stages) if stages else None,
+                    worker_id,
+                    lease_seconds,
+                ),
             ).fetchone()
         return JobRecord(**row) if row else None
 
@@ -289,3 +293,14 @@ class PostgresRepository:
                    GROUP BY stage"""
             ).fetchall()
         return {row["stage"]: row["count"] for row in rows}
+
+    def active_job_lease_count(self, stages: tuple[str, ...] | None = None) -> int:
+        """Count unexpired leases in the selected bounded-worker stage set."""
+        with self._connection() as connection:
+            row = connection.execute(
+                """SELECT count(*) AS count FROM jobs
+                   WHERE status='leased' AND lease_expires_at > now()
+                     AND (%s::text[] IS NULL OR stage = ANY(%s::text[]))""",
+                (list(stages) if stages else None, list(stages) if stages else None),
+            ).fetchone()
+        return int(row["count"]) if row else 0

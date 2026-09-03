@@ -24,11 +24,13 @@ The live page returned “There are no Oral Arguments or Live Audio scheduled fo
 
 - The official detail page explicitly presents MP3 and transcript **Download** links.
 - `https://www.supremecourt.gov/robots.txt`, observed 2026-08-28, allows the oral-argument, docket, and opinion paths for `User-agent: *`, disallows `/images/`, `/rss/`, and `/cdn/`, and specifies `Crawl-delay: 1`.
-- Collection uses a descriptive user agent, conditional requests where supported, at most one request per second to this host, bounded response sizes, no credentials, and no access-control bypass.
+- GitHub-hosted nightly requests identify this project as `SCOTUS-Legal-Briefs/0.1 contact=https://github.com/reklis/scotus-briefs`. This repository URL is the contact route; no unconfirmed email address is advertised.
+- Saved ETag and Last-Modified values are sent conditionally where supported. A 304 creates no processing work. Without a reliable validator, the job performs only a bounded streamed GET and compares the saved byte digest.
+- Routine runs are at most once nightly, preserve at least one second between Court requests, and enforce configured request/byte/document/case/runtime limits. They check the active term and recent transcript/correction/opinion window plus a small rotating historical slice. Bounded historical bootstrap is separately manually dispatched.
 - Backfill begins with October Term 2000. Earlier scanned terms remain out of product scope.
 - A Court-hosted PDF marked encrypted may be processed only when it opens with an empty password. Any PDF requiring a password remains rejected; this does not bypass access control.
+- Source HTML, copied documents, and extracted text exist only in the permission-restricted transient build workspace and are unconditionally deleted. They are never committed, cached, uploaded, or redistributed. Public briefs retain official links, page labels, validators/digests, and sanitized provenance only.
 - Federal government works are generally addressed by 17 U.S.C. §105, but this implementation decision is not legal advice and does not assume rights in third-party material. Only Court-hosted files explicitly linked by approved pages are candidates.
-- Copied audio and document extraction remain private and are deleted under retention policy. Public stories link to the official detail/docket/document page and do not redistribute audio or full transcripts.
 
 ## Registry decision
 
@@ -38,4 +40,4 @@ Allowed host: `www.supremecourt.gov`
 Review expiry: 2027-08-28  
 Enabled for launch: **No** — adapter tests and source-specific private validation are still required.
 
-A changed host, redirect, access method, robots policy, download presentation, or terms notice invalidates this review and must set source health to `review_required`.
+A changed host, redirect, TLS/access method, robots policy or crawl delay, terms/privacy notice, authentication requirement, downloadable-link presentation, content type, material URL pattern, or newly introduced third-party host invalidates this review and must set source health to `review_required`. Repeated validator anomalies or a response that exceeds configured bounds also stop normal processing pending review. One transient missing/failed response never implies deletion or retraction of a published case.

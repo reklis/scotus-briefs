@@ -1,3 +1,4 @@
+# DORMANT: not referenced by the active Kustomization; local migration reference only.
 apiVersion: batch/v1
 kind: CronJob
 metadata: {name: scotus-discovery, namespace: ragchew}
@@ -15,7 +16,7 @@ spec:
           securityContext: {runAsNonRoot: true, seccompProfile: {type: RuntimeDefault}}
           containers:
             - name: discovery
-              image: ragchew:latest
+              image: ragchew:local-migration
               command: [ragchew-scotus-discover]
               envFrom:
                 - configMapRef: {name: ragchew-config}
@@ -47,7 +48,7 @@ spec:
           securityContext: {runAsNonRoot: true, seccompProfile: {type: RuntimeDefault}}
           containers:
             - name: publisher
-              image: ragchew:latest
+              image: ragchew:local-migration
               command: [ragchew-scotus-publish]
               envFrom:
                 - configMapRef: {name: ragchew-config}
@@ -76,7 +77,7 @@ spec:
           securityContext: {runAsNonRoot: true, seccompProfile: {type: RuntimeDefault}}
           containers:
             - name: retention
-              image: ragchew:latest
+              image: ragchew:local-migration
               command: [ragchew-scotus-retention]
               envFrom:
                 - configMapRef: {name: ragchew-config}

@@ -92,9 +92,7 @@ def public_case(*, correction: bool = False):  # type: ignore[no-untyped-def]
         sections=(
             BriefSection(
                 heading="The main question",
-                paragraphs=(
-                    "The case asks whether Congress gave the agency the power to act.",
-                ),
+                paragraphs=("The case asks whether Congress gave the agency the power to act.",),
                 claim_ids=ids,
             ),
         ),
@@ -141,9 +139,7 @@ def public_case(*, correction: bool = False):  # type: ignore[no-untyped-def]
         caption="Sripetch v. SEC",
         argument_date=datetime(2026, 4, 20, tzinfo=UTC),
         case_status=ScotusCaseStatus.CORRECTED if correction else ScotusCaseStatus.ARGUED,
-        official_detail_url=(
-            "https://www.supremecourt.gov/oral_arguments/audio/2025/25-466"
-        ),
+        official_detail_url=("https://www.supremecourt.gov/oral_arguments/audio/2025/25-466"),
         revision=revision,
         claims=claims,
         argument_sessions=(
@@ -191,6 +187,7 @@ def test_public_projection_contains_only_sanitized_case_contract() -> None:
         "parser",
         "prompt",
         "credential",
+        "claim_id",
         "document_revision_id",
         "observation_id",
     ):
@@ -213,9 +210,7 @@ def test_browse_search_filters_and_stable_case_route() -> None:
         response = client.get(path)
         assert response.status_code == 200
         assert "automated legal analysis" in response.text.lower()
-    assert public_case_path(case).endswith(
-        "/2025/25-466/2025-25-466-sripetch-v-sec"
-    )
+    assert public_case_path(case).endswith("/2025/25-466/2025-25-466-sripetch-v-sec")
     empty = client.get("/scotus/search?q=private-transcript-content")
     assert "no public case briefs" in empty.text.lower()
 
@@ -298,9 +293,7 @@ def test_case_index_uses_twenty_item_pages_and_preserves_filters() -> None:
     assert "Paging case 24" in first.text
     assert "Paging case 4" not in first.text
     assert "status=argued&amp;page=2" in first.text
-    assert client.get("/api/scotus/projection").json()["cases"][0]["title"] == (
-        "Paging case 24"
-    )
+    assert client.get("/api/scotus/projection").json()["cases"][0]["title"] == ("Paging case 24")
 
     second = client.get("/scotus?status=argued&page=2")
     assert second.status_code == 200
@@ -339,9 +332,7 @@ def test_multiple_arguments_render_once_in_chronological_case_history() -> None:
                 "The justices tested how the narrower rule would work in practice.",
             ),
             "official_detail_url": "https://www.supremecourt.gov/reargument",
-            "official_transcript_url": (
-                "https://www.supremecourt.gov/reargument-transcript.pdf"
-            ),
+            "official_transcript_url": ("https://www.supremecourt.gov/reargument-transcript.pdf"),
         }
     )
     whole_case = case.model_copy(
@@ -358,12 +349,8 @@ def test_multiple_arguments_render_once_in_chronological_case_history() -> None:
     assert timeline.index(str(first.argument_date.date())) < timeline.index(
         str(second.argument_date.date())
     )
-    assert client.get(
-        f"/scotus/arguments/{first.argument_date.date()}"
-    ).status_code == 200
-    assert client.get(
-        f"/scotus/arguments/{second.argument_date.date()}"
-    ).status_code == 200
+    assert client.get(f"/scotus/arguments/{first.argument_date.date()}").status_code == 200
+    assert client.get(f"/scotus/arguments/{second.argument_date.date()}").status_code == 200
     with pytest.raises(ValidationError, match="duplicate case pages"):
         store.activate(NOW + timedelta(hours=1), NOW, (whole_case, whole_case))
 
@@ -394,11 +381,8 @@ def test_public_source_links_require_official_court_host() -> None:
             label="Unofficial transcript",
             official_url="https://platform.example/transcript",
             page_label="page 1",
-            claim_ids=(uuid4(),),
         )
 
 
 def test_public_slug_is_deterministic() -> None:
-    assert public_case_slug("2025", "25-466", "Sripetch v. SEC") == (
-        "2025-25-466-sripetch-v-sec"
-    )
+    assert public_case_slug("2025", "25-466", "Sripetch v. SEC") == ("2025-25-466-sripetch-v-sec")

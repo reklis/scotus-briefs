@@ -4,6 +4,11 @@ source_id: supreme_court
 # Launch remains disabled until private validation gates pass.
 enabled: false
 discovery:
+  # Routine runs prioritize this term and revisit older terms through a bounded cursor.
+  active_term: "2025"
+  recent_correction_lookback_days: 183
+  recent_opinion_lookback_days: 183
+  historical_rechecks_per_run: 2
   terms:
     - "2025"
     - "2024"
@@ -55,6 +60,58 @@ retention:
   copied_document_hours: 24
   extracted_text_days: 30
   failed_download_hours: 24
+repository:
+  owner: reklis
+  name: scotus-briefs
+static:
+  output_path: build/pages
+  generated_state_path: build/generated-content
+  generated_state_schema: "1.0"
+  canonical_origin: https://reklis.github.io
+  project_base_path: /scotus-briefs/
+  section_path: /scotus/
+  static_only: true
+  runtime_api_url: null
+schedule:
+  nightly_cron_utc: "17 3 * * *"
+bootstrap:
+  maximum_terms_per_run: 2
+  # One whole case requires at least one extraction and one final brief call.
+  maximum_cases_per_run: 1
+  maximum_requests_per_run: 200
+  maximum_download_bytes_per_run: 524288000
+runner_limits:
+  maximum_cases_per_run: 1
+  maximum_documents_per_run: 20
+  maximum_http_requests_per_run: 100
+  maximum_download_bytes_per_run: 104857600
+  maximum_private_disk_bytes: 2147483648
+  maximum_runtime_seconds: 3600
+model_budget:
+  maximum_extraction_calls_per_run: 20
+  maximum_brief_calls_per_run: 1
+  maximum_total_calls_per_run: 21
+  maximum_input_characters_per_run: 1200000
+  maximum_input_tokens_per_run: 2100000
+  maximum_output_tokens_per_run: 168000
+  maximum_input_tokens_per_call: 100000
+  maximum_output_tokens_per_call: 8000
+  input_cost_usd_per_million_tokens: "1.25"
+  output_cost_usd_per_million_tokens: "10.00"
+  maximum_estimated_cost_usd_per_run: "10.00"
+  request_timeout_seconds: 120
+  maximum_transport_attempts: 2
+licensing:
+  code_and_documentation: Apache-2.0
+  generated_briefs: CC-BY-4.0
+  court_materials_excluded: true
+# Owner confirmation is recorded above, but live launch approvals remain fail-closed.
+approvals:
+  source_review_approved: false
+  licenses_approved: false
+  origin_approved: false
+  publication_secret_configured: false
+  launch_approved: false
 generation:
   provider: openai
   model: gpt-5
@@ -72,6 +129,7 @@ generation:
   prohibit_personalized_legal_advice: true
 publication:
   enabled: false
+  dry_run: true
   site_name: SCOTUS Legal Briefs
   base_path: /scotus
   case_page_requires_official_transcript: true

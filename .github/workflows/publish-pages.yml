@@ -1,0 +1,344 @@
+name: publish SCOTUS static Pages
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Fixture preview or bounded live publication mode
+        required: true
+        default: fixture
+        type: choice
+        options: [fixture, nightly, bootstrap]
+      deploy:
+        description: Request deployment after all configured gates and validations pass
+        required: true
+        default: false
+        type: boolean
+
+concurrency:
+  group: scotus-pages-publication
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  CANONICAL_ORIGIN: https://reklis.github.io
+  PROJECT_BASE_PATH: /scotus-briefs
+  RAGCHEW_SOURCE_USER_AGENT: >-
+    ragchew-scotus-briefs/1.0 (+https://github.com/reklis/scotus-briefs; contact=https://github.com/reklis)
+
+jobs:
+  build:
+    name: Build and scan candidate
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    environment: scotus-publication
+    permissions:
+      contents: read
+    outputs:
+      release_changed: ${{ steps.batch.outputs.release_changed }}
+      publication_ready: ${{ steps.batch.outputs.publication_ready }}
+      release_id: ${{ steps.batch.outputs.release_id }}
+      expected_parent_release_id: ${{ steps.batch.outputs.expected_parent_release_id }}
+      expected_parent_commit: ${{ steps.state_sha.outputs.commit }}
+    steps:
+      - name: Require the protected default branch
+        env:
+          REF_PROTECTED: ${{ github.ref_protected }}
+        run: |
+          set -euo pipefail
+          if [[ "$REF_PROTECTED" != "true" ]]; then
+            echo "Publication stopped: the default branch is not protected." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+      - name: Check out source without retained credentials
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Check out public generated state separately
+        id: state
+        if: (inputs.mode || 'nightly') != 'fixture'
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: generated-content
+          path: generated-content-input
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Record the actual generated-content branch SHA
+        id: state_sha
+        run: |
+          set -euo pipefail
+          if [[ -d generated-content-input ]]; then
+            echo "commit=$(git -C generated-content-input rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          else
+            echo "commit=" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Install frozen dependencies
+        uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+        with:
+          enable-cache: false
+      - run: uv sync --frozen
+      - name: Create permission-restricted private parent only
+        run: |
+          set -euo pipefail
+          install -d -m 700 "$RUNNER_TEMP/ragchew-private"
+          if [[ ! -d generated-content-input ]]; then install -d -m 700 generated-content-input; fi
+          test ! -e candidate-site
+          test ! -e candidate-state
+      - name: Reconcile release IDs before live source access
+        if: (inputs.mode || 'nightly') != 'fixture'
+        run: |
+          uv run ragchew-scotus-static reconcile \
+            --state-dir generated-content-input \
+            --live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}/release/v1/release.json" \
+            --fail-on-split
+      - name: Run reviewed bounded live adapter
+        id: live_batch
+        if: (inputs.mode || 'nightly') != 'fixture'
+        env:
+          RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          set -euo pipefail
+          uv run ragchew-scotus-static batch \
+            --mode "${{ inputs.mode || 'nightly' }}" \
+            --state-dir generated-content-input --candidate-state-dir candidate-state \
+            --output candidate-site --workspace "$RUNNER_TEMP/ragchew-private" \
+            --source-commit "$GITHUB_SHA" --build-epoch "$(git show -s --format=%cI HEAD)" \
+            --github-output "$GITHUB_OUTPUT"
+      - name: Build fixture, validate, and exit
+        id: fixture_batch
+        if: (inputs.mode || 'nightly') == 'fixture'
+        run: |
+          set -euo pipefail
+          uv run ragchew-scotus-static fixture-preview \
+            --fixture tests/fixtures/static/one-case.json \
+            --output candidate-site --source-commit "$GITHUB_SHA" \
+            --build-epoch "$(git show -s --format=%cI HEAD)" \
+            --github-output "$GITHUB_OUTPUT"
+          uv run ragchew-scotus-static validate \
+            --output candidate-site --privacy-scan
+      - name: Select successful batch outputs
+        id: batch
+        if: success()
+        env:
+          LIVE_CHANGED: ${{ steps.live_batch.outputs.release_changed }}
+          LIVE_READY: ${{ steps.live_batch.outputs.publication_ready }}
+          LIVE_RELEASE: ${{ steps.live_batch.outputs.release_id }}
+          LIVE_PARENT: ${{ steps.live_batch.outputs.expected_parent_release_id }}
+          FIXTURE_CHANGED: ${{ steps.fixture_batch.outputs.release_changed }}
+          FIXTURE_READY: ${{ steps.fixture_batch.outputs.publication_ready }}
+          FIXTURE_RELEASE: ${{ steps.fixture_batch.outputs.release_id }}
+          FIXTURE_PARENT: ${{ steps.fixture_batch.outputs.expected_parent_release_id }}
+        run: |
+          set -euo pipefail
+          echo "release_changed=${LIVE_CHANGED:-$FIXTURE_CHANGED}" >> "$GITHUB_OUTPUT"
+          echo "publication_ready=${LIVE_READY:-$FIXTURE_READY}" >> "$GITHUB_OUTPUT"
+          echo "release_id=${LIVE_RELEASE:-$FIXTURE_RELEASE}" >> "$GITHUB_OUTPUT"
+          echo "expected_parent_release_id=${LIVE_PARENT:-$FIXTURE_PARENT}" >> "$GITHUB_OUTPUT"
+      - name: Validate opaque receipts before any upload
+        id: receipts
+        if: always()
+        run: |
+          set -euo pipefail
+          receipt="$RUNNER_TEMP/ragchew-private/public-cost-receipts.json"
+          if [[ -f "$receipt" ]]; then
+            uv run ragchew-scotus-static persist-cost-receipts \
+              --receipts "$receipt" --validate-only
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Upload scanned non-deploy dry-run candidate
+        if: github.event_name == 'workflow_dispatch' && inputs.deploy != true && steps.batch.outcome == 'success' && steps.receipts.outcome == 'success'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: scanned-static-candidate
+          path: candidate-site
+          if-no-files-found: error
+          retention-days: 1
+      - name: Upload exact Pages artifact
+        if: steps.batch.outputs.release_changed == 'true' && steps.batch.outputs.publication_ready == 'true' && steps.receipts.outcome == 'success' && (github.event_name == 'schedule' || inputs.deploy == true)
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
+        with:
+          path: candidate-site
+          retention-days: 1
+      - name: Upload scanned public state for guarded promotion
+        if: steps.batch.outputs.publication_ready == 'true' && steps.receipts.outcome == 'success' && (github.event_name == 'schedule' || inputs.deploy == true)
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: generated-content-candidate
+          path: candidate-state
+          if-no-files-found: error
+          retention-days: 1
+      # A manual deploy=false run validates its candidate and receipts locally, then
+      # discards both state and receipts. This avoids making paid inputs unreplayable
+      # without their candidate; an interrupted dry run may therefore repeat model cost.
+      - name: Upload validated opaque cost receipts
+        if: always() && steps.receipts.outcome == 'success' && steps.receipts.outputs.present == 'true' && (github.event_name == 'schedule' || inputs.deploy == true)
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: opaque-cost-receipts
+          path: ${{ runner.temp }}/ragchew-private/public-cost-receipts.json
+          if-no-files-found: error
+          retention-days: 1
+      - name: Safe build summary
+        if: always()
+        run: |
+          printf 'Build outcome: `%s`\n' "${{ job.status }}" >> "$GITHUB_STEP_SUMMARY"
+          printf 'Live Court/model processing remains fail-closed until every repository gate is enabled.\n' >> "$GITHUB_STEP_SUMMARY"
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.deploy }}" != "true" ]]; then
+            printf 'Non-deploy dry run: candidate state and receipts were not persisted; a crash or rerun may repeat model cost.\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Remove private workspace
+        if: always()
+        run: |
+          chmod -R u+rwX "$RUNNER_TEMP/ragchew-private" 2>/dev/null || true
+          rm -rf "$RUNNER_TEMP/ragchew-private"
+          test ! -e "$RUNNER_TEMP/ragchew-private"
+
+  persist-cost-receipts:
+    name: Persist validated opaque receipts only
+    needs: build
+    if: always() && needs.build.outputs.expected_parent_commit != '' && (github.event_name == 'schedule' || inputs.deploy == true)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    outputs:
+      generated_commit: ${{ steps.current.outputs.commit }}
+    steps:
+      - name: Check out source separately
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.sha }}
+          path: source
+          persist-credentials: false
+      - name: Check out generated-content mutation target separately
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: generated-content
+          path: generated-content
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        continue-on-error: true
+        with:
+          name: opaque-cost-receipts
+          path: receipt
+      - uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+        with:
+          enable-cache: false
+      - run: uv sync --project source --frozen
+      - name: CAS append without changing active release
+        if: hashFiles('receipt/public-cost-receipts.json') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          uv run --project source ragchew-scotus-static persist-cost-receipts \
+            --state-dir generated-content \
+            --receipts receipt/public-cost-receipts.json \
+            --expected-parent-commit "${{ needs.build.outputs.expected_parent_commit }}"
+      - name: Record current generated SHA for serialized promotion
+        id: current
+        run: echo "commit=$(git -C generated-content rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    name: Deploy exact Pages artifact
+    needs: build
+    if: needs.build.outputs.release_changed == 'true' && needs.build.outputs.publication_ready == 'true' && (github.event_name == 'schedule' || inputs.deploy == true)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy with no source or model secrets
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
+
+  promote:
+    name: Promote exact deployed public state
+    needs: [build, persist-cost-receipts, deploy]
+    if: needs.deploy.result == 'success' && needs.persist-cost-receipts.result == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Check out source separately
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.sha }}
+          path: source
+          persist-credentials: false
+      - name: Check out generated-content mutation target separately
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: generated-content
+          path: generated-content
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: generated-content-candidate
+          path: candidate-state
+      - uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+        with:
+          enable-cache: false
+      - run: uv sync --project source --frozen
+      - name: Compare-and-swap exact deployed release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          uv run --project source ragchew-scotus-static promote \
+            --state-dir generated-content --candidate-state-dir candidate-state \
+            --release-id "${{ needs.build.outputs.release_id }}" \
+            --expected-parent-release-id "${{ needs.build.outputs.expected_parent_release_id }}" \
+            --expected-parent-commit "${{ needs.persist-cost-receipts.outputs.generated_commit }}"
+
+  checkpoint-only:
+    name: Promote successful no-change checkpoints
+    needs: [build, persist-cost-receipts]
+    if: needs.build.outputs.release_changed == 'false' && needs.build.outputs.publication_ready == 'true' && needs.persist-cost-receipts.result == 'success' && (github.event_name == 'schedule' || inputs.deploy == true)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Check out source separately
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.sha }}
+          path: source
+          persist-credentials: false
+      - name: Check out generated-content mutation target separately
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: generated-content
+          path: generated-content
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: generated-content-candidate
+          path: candidate-state
+      - uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+        with:
+          enable-cache: false
+      - run: uv sync --project source --frozen
+      - name: Advance only validated discovery checkpoints
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          uv run --project source ragchew-scotus-static promote \
+            --state-dir generated-content --candidate-state-dir candidate-state \
+            --checkpoint-only \
+            --expected-parent-commit "${{ needs.persist-cost-receipts.outputs.generated_commit }}"

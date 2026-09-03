@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
   <title>{% block title %}SCOTUS Legal Briefs{% endblock %}</title>
-  {% block canonical %}{% endblock %}
-  <link rel="stylesheet" href="/static/scotus.css">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="stylesheet" href="{{ urls.asset(css_asset) }}">
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="site-header">
-  <a class="brand" href="/scotus">SCOTUS Legal Briefs</a>
+  <a class="brand" href="{{ urls.section() }}">SCOTUS Legal Briefs</a>
   <nav aria-label="Primary navigation">
-    <a href="/scotus">Cases</a>
-    <a href="/scotus/terms/2025">Current term</a>
-    <a href="/scotus/search">Search</a>
+    <a href="{{ urls.section() }}">Cases</a>
+    {% if current_term %}<a href="{{ urls.section('terms/' + current_term) }}">Current term</a>{% endif %}
+    <a href="{{ urls.section('corrections') }}">Corrections</a>
+    <a href="{{ urls.section('search') }}">Search</a>
   </nav>
 </header>
 <aside class="disclosure" aria-label="Important disclosure">
@@ -24,6 +26,8 @@
 <footer>
   <p>{{ projection.disclosure }}</p>
   <p>Projection updated <time datetime="{{ projection.generated_at.isoformat() }}">{{ projection.generated_at }}</time>.</p>
+  <p><a href="{{ urls.internal('release/v1/release.json').rstrip('/') }}">Release metadata</a> · <a href="{{ urls.data('projection.json') }}">Public projection JSON</a></p>
 </footer>
+{% block scripts %}{% endblock %}
 </body>
 </html>

@@ -1,4 +1,9 @@
-# SCOTUS Legal Briefs operations runbooks
+# SCOTUS Legal Briefs processing runbooks
+
+Production publication/rollback/incident procedures are in
+[`pages-operations.md`](pages-operations.md). Kubernetes, PostgreSQL, and object-store
+steps below apply only to a still-unretired legacy installation or isolated migration;
+GitHub Pages has no such runtime dependencies.
 
 ## Source contract, review, or polling failure
 
@@ -26,22 +31,28 @@ Review only private source ranges and structured model output. Do not weaken zer
 
 ## Publication failure or correction
 
-The prior active SCOTUS projection remains public when activation fails. Disable the SCOTUS publisher/collector CronJobs until the cause is understood. Transcript, order, or opinion changes produce append-only brief revisions with a visible correction/retraction note. Never patch public JSON directly.
-
-Kill switches:
-
-```bash
-kubectl -n ragchew patch cronjob scotus-discovery -p '{"spec":{"suspend":true}}'
-kubectl -n ragchew patch cronjob scotus-publisher -p '{"spec":{"suspend":true}}'
-```
+A failed static cycle leaves the prior Pages release and generated-content active
+pointer unchanged. Disable the scheduled GitHub workflow until the cause is
+understood. A transcript/order/opinion change produces an append-only public case
+revision with a visible correction note. Never patch generated JSON directly. If
+Pages and branch release IDs differ, stop normal publication and follow the
+reconciliation procedure in `pages-operations.md`.
 
 ## Retention or private-access denial
 
-Verify collector/parser object policy and PostgreSQL roles. The public workload must have no object or model credential and must read only `active_scotus_public_projection`. Run retention only after checking active job leases. Preserve hashes, official URLs, page/line provenance, case history, approved claims, brief revisions, and corrections.
+The ephemeral job must remove its entire private workspace unconditionally and must
+not cache or upload it. Preserve only validated public hashes, official URLs,
+sanitary page labels, immutable public revisions, pending reasons, and opaque cost
+receipts. Any retained PostgreSQL/object data belongs to an isolated legacy migration
+and must never be exposed to Pages.
 
-## Backup and recovery
+## Legacy backup and recovery
 
-Run `scripts/backup-postgres.sh` with a restricted DSN and encrypted backup volume. Copied Court PDFs and full extracted transcript text intentionally follow short retention and are excluded from long-term database content after deletion. Restore into an isolated database, validate SCOTUS cases/documents/digests/observations/claims/brief revisions and the active projection, then rotate credentials before cutover. Test restore quarterly.
+`scripts/backup-postgres.sh` is legacy operator tooling, not production Pages backup.
+Use it only with a restricted DSN and encrypted volume during migration. Restore into
+an isolated database, export only retained public projections through the sanitizer,
+then destroy the restore and rotate credentials. Production recovery redeploys an
+immutable validated generated-content release rather than restoring a database.
 
 ## Dormant legacy paths
 

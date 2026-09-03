@@ -5,18 +5,34 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
-from datetime import datetime
-from typing import Protocol
+from datetime import datetime, timedelta
+from enum import StrEnum
+from typing import Literal, Protocol
 from uuid import NAMESPACE_URL, UUID, uuid5
 
 from pydantic import Field
 
 from ragchew.contracts import StrictModel
 from ragchew.proceedings.contracts import DocumentType, UtcDatetime
-from ragchew.proceedings.discovery import DiscoveredProceeding, DocumentDescriptor
+from ragchew.proceedings.discovery import (
+    ConditionalRequest,
+    DiscoveredProceeding,
+    DocumentDescriptor,
+    OfficialSourceAdapter,
+    SourcePollResult,
+)
 from ragchew.proceedings.registry import SourceAuthorizer, SourceRegistry
 from ragchew.scotus.contracts import ScotusDocumentKind
+from ragchew.scotus.public_contracts import public_case_key
+from ragchew.scotus.static_contracts import (
+    ConditionalValidators,
+    ContentIntegrity,
+    CursorState,
+    LogicalSourceState,
+    sha256_hex,
+)
 
 _DOCKET = re.compile(
     r"^(?:[0-9]{1,3}(?:A)?-[0-9A-Z]+(?:\s+ORIG\.)?|"
@@ -28,7 +44,7 @@ _DOCKET = re.compile(
 def normalize_docket(value: str) -> str:
     normalized = " ".join(value.replace("\N{EN DASH}", "-").strip().upper().split())
     if not _DOCKET.fullmatch(normalized):
-        raise ValueError(f"invalid Supreme Court docket number: {value}")
+        raise ValueError("invalid Supreme Court docket number")
     return normalized
 
 
@@ -224,16 +240,425 @@ def _document_kind(document: DocumentDescriptor) -> ScotusDocumentKind:
     return mapping.get(document.document_type, ScotusDocumentKind.OTHER_OFFICIAL)
 
 
-def _candidate_digest(candidate: ScotusArgumentCandidate) -> str:
-    payload = candidate.model_dump(mode="json")
+def _without_retrieval_times(value: object) -> object:
+    """Remove transport-time metadata from a discovery processing fingerprint."""
+    if isinstance(value, dict):
+        return {
+            key: _without_retrieval_times(item)
+            for key, item in value.items()
+            if key not in {"source_updated_at", "retrieved_at", "checked_at", "observed_at"}
+        }
+    if isinstance(value, list):
+        return [_without_retrieval_times(item) for item in value]
+    return value
+
+
+def stable_candidate_fingerprint(candidate: ScotusArgumentCandidate) -> str:
+    """Fingerprint source meaning, excluding volatile retrieval timestamps."""
+    payload = _without_retrieval_times(candidate.model_dump(mode="json"))
     encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
     return hashlib.sha256(encoded).hexdigest()
+
+
+def stable_descriptor_fingerprint(descriptor: DocumentDescriptor) -> str:
+    """Fingerprint a descriptor without its volatile source timestamp."""
+    payload = _without_retrieval_times(descriptor.model_dump(mode="json"))
+    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
+    return hashlib.sha256(encoded).hexdigest()
+
+
+# Private aliases retained for callers written against the MVP implementation.
+def _candidate_digest(candidate: ScotusArgumentCandidate) -> str:
+    return stable_candidate_fingerprint(candidate)
 
 
 def _descriptor_digest(descriptor: DocumentDescriptor) -> str:
-    payload = descriptor.model_dump(mode="json")
-    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
-    return hashlib.sha256(encoded).hexdigest()
+    return stable_descriptor_fingerprint(descriptor)
+
+
+class DiscoveryMode(StrEnum):
+    NIGHTLY = "nightly"
+    BOOTSTRAP = "bootstrap"
+
+
+@dataclass(frozen=True)
+class OneShotDiscoveryResult:
+    candidates: tuple[ScotusArgumentCandidate, ...]
+    checkpoint: LogicalSourceState
+    changed: bool
+    not_modified: bool
+
+
+def discover_once(
+    adapter: object,
+    *,
+    resource_key: str,
+    source_kind: Literal[
+        "argument_index", "case_detail", "docket", "orders", "opinions"
+    ] = "argument_index",
+    checkpoint: LogicalSourceState | None,
+    now: datetime,
+) -> OneShotDiscoveryResult:
+    """Poll one reviewed resource with its public conditional checkpoint.
+
+    A stable digest of sanitized descriptors is used when the endpoint provides no
+    validators. The operation deliberately returns no candidates for 304 or
+    digest-identical responses, so callers cannot accidentally enqueue work.
+    """
+    poll = getattr(adapter, "poll", None)
+    if not callable(poll):
+        raise TypeError("discovery adapter must provide poll(conditional)")
+    conditional = ConditionalRequest(
+        etag=checkpoint.validators.etag if checkpoint else None,
+        last_modified=checkpoint.validators.last_modified if checkpoint else None,
+    )
+    result = poll(conditional)
+    if not isinstance(result, SourcePollResult):
+        raise TypeError("discovery adapter returned an invalid poll result")
+    validators = ConditionalValidators(
+        etag=result.etag or (checkpoint.validators.etag if checkpoint else None),
+        last_modified=(
+            result.last_modified or (checkpoint.validators.last_modified if checkpoint else None)
+        ),
+    )
+    if result.not_modified:
+        if checkpoint is None:
+            raise ValueError("not-modified response requires a prior checkpoint")
+        state = checkpoint.model_copy(update={"validators": validators, "checked_at": now})
+        return OneShotDiscoveryResult((), state, False, True)
+
+    candidates = tuple(
+        candidate_from_proceeding(item, _candidate_term(item, adapter))
+        for item in result.proceedings
+        if item.scheduled_start_at is not None
+    )
+    payload = json.dumps(
+        [
+            _without_retrieval_times(item.model_dump(mode="json"))
+            for item in sorted(candidates, key=_candidate_sort_key)
+        ],
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode()
+    integrity = ContentIntegrity(sha256=sha256_hex(payload), byte_count=len(payload))
+    unchanged = checkpoint is not None and checkpoint.integrity == integrity
+    state = LogicalSourceState(
+        logical_key=resource_key,
+        source_kind=source_kind,
+        official_url=result.endpoint_url,
+        validators=validators,
+        integrity=integrity,
+        checked_at=now,
+    )
+    return OneShotDiscoveryResult(
+        candidates=() if unchanged else tuple(sorted(candidates, key=_candidate_sort_key)),
+        checkpoint=state,
+        changed=not unchanged,
+        not_modified=False,
+    )
+
+
+def _candidate_term(item: DiscoveredProceeding, adapter: object) -> str:
+    term = item.metadata.get("term", getattr(adapter, "term", None))
+    if not isinstance(term, str) or not re.fullmatch(r"\d{4}", term):
+        raise ValueError("discovered Supreme Court item has no valid term")
+    return term
+
+
+def _candidate_sort_key(item: ScotusArgumentCandidate) -> tuple[str, datetime, int, str]:
+    return (item.term, item.argument_date, item.sequence, item.primary_docket)
+
+
+@dataclass(frozen=True)
+class DiscoveryResourceSelection:
+    terms: tuple[str, ...]
+    cursor: CursorState | None
+
+
+def select_discovery_resources(
+    terms: Sequence[str],
+    *,
+    active_term: str,
+    mode: DiscoveryMode,
+    historical_limit: int,
+    bootstrap_term_limit: int,
+    now: datetime,
+    cursor: CursorState | None = None,
+) -> DiscoveryResourceSelection:
+    """Choose index resources before fetching, so routine runs never scan every term."""
+    if historical_limit < 0 or bootstrap_term_limit < 1:
+        raise ValueError("resource selection limits are invalid")
+    unique = tuple(sorted(set(terms), reverse=True))
+    if active_term not in unique:
+        raise ValueError("active term is not configured")
+    historical = tuple(term for term in unique if term != active_term)
+    limit = historical_limit if mode is DiscoveryMode.NIGHTLY else bootstrap_term_limit - 1
+    if not historical or limit <= 0:
+        return DiscoveryResourceSelection((active_term,), cursor)
+    start = (cursor.position if cursor else 0) % len(historical)
+    count = min(limit, len(historical))
+    selected = tuple(historical[(start + offset) % len(historical)] for offset in range(count))
+    raw_position = start + count
+    next_cursor = CursorState(
+        cursor_key=cursor.cursor_key if cursor else f"{mode.value}:resource-recheck",
+        position=raw_position % len(historical),
+        wrapped_count=(cursor.wrapped_count if cursor else 0) + raw_position // len(historical),
+        updated_at=now,
+    )
+    return DiscoveryResourceSelection((active_term, *selected), next_cursor)
+
+
+@dataclass(frozen=True)
+class IncrementalDiscoveryResult:
+    candidates: tuple[ScotusArgumentCandidate, ...]
+    checkpoints: tuple[LogicalSourceState, ...]
+    cursor: CursorState | None
+
+
+class IncrementalDiscoveryOperation:
+    """Reusable bounded operation over term-index adapters and public checkpoints."""
+
+    def __init__(
+        self,
+        adapters: Mapping[str, OfficialSourceAdapter],
+        checkpoints: Mapping[str, LogicalSourceState],
+    ) -> None:
+        self.adapters = dict(adapters)
+        self.checkpoints = dict(checkpoints)
+
+    def run(
+        self,
+        *,
+        active_term: str,
+        mode: DiscoveryMode,
+        historical_limit: int,
+        bootstrap_term_limit: int,
+        now: datetime,
+        cursor: CursorState | None = None,
+    ) -> IncrementalDiscoveryResult:
+        selected = select_discovery_resources(
+            tuple(self.adapters),
+            active_term=active_term,
+            mode=mode,
+            historical_limit=historical_limit,
+            bootstrap_term_limit=bootstrap_term_limit,
+            now=now,
+            cursor=cursor,
+        )
+        updated = dict(self.checkpoints)
+        candidates: list[ScotusArgumentCandidate] = []
+        for term in selected.terms:
+            key = f"argument-index:{term}"
+            result = discover_once(
+                self.adapters[term],
+                resource_key=key,
+                checkpoint=updated.get(key),
+                now=now,
+            )
+            updated[key] = result.checkpoint
+            candidates.extend(result.candidates)
+        return IncrementalDiscoveryResult(
+            candidates=tuple(sorted(candidates, key=_candidate_sort_key)),
+            checkpoints=tuple(updated[key] for key in sorted(updated)),
+            cursor=selected.cursor,
+        )
+
+
+@dataclass(frozen=True)
+class SelectedDiscoveryWork:
+    candidate: ScotusArgumentCandidate
+    priority: int
+    reason: str
+
+
+@dataclass(frozen=True)
+class DiscoverySelection:
+    work: tuple[SelectedDiscoveryWork, ...]
+    cursor: CursorState | None
+    deferred_case_keys: tuple[str, ...] = ()
+    current_cursor: CursorState | None = None
+
+    @property
+    def checkpoint_safe(self) -> bool:
+        """Whether all changed descriptors fit and their source checkpoint may advance."""
+        return not self.deferred_case_keys
+
+
+def select_discovery_work(
+    candidates: Sequence[ScotusArgumentCandidate],
+    *,
+    mode: DiscoveryMode,
+    now: datetime,
+    active_term: str,
+    known_transcript_keys: set[str] | frozenset[str] = frozenset(),
+    nightly_case_limit: int,
+    new_transcript_priority: int,
+    historical_priority: int,
+    historical_limit: int,
+    recent_lookback_days: int,
+    recent_correction_lookback_days: int | None = None,
+    recent_opinion_lookback_days: int | None = None,
+    cursor: CursorState | None = None,
+    current_cursor: CursorState | None = None,
+    bootstrap_term_limit: int | None = None,
+) -> DiscoverySelection:
+    """Select deterministic current work and bounded rotating historical work."""
+    if nightly_case_limit < 0 or historical_limit < 0:
+        raise ValueError("discovery selection limits cannot be negative")
+    ordered = sorted(candidates, key=_candidate_sort_key)
+    correction_cutoff = now - timedelta(
+        days=recent_correction_lookback_days or recent_lookback_days
+    )
+    opinion_cutoff = now - timedelta(days=recent_opinion_lookback_days or recent_lookback_days)
+    current: list[ScotusArgumentCandidate] = []
+    historical: list[ScotusArgumentCandidate] = []
+    allowed_bootstrap_terms = set(
+        sorted({item.term for item in ordered}, reverse=True)[:bootstrap_term_limit]
+        if mode is DiscoveryMode.BOOTSTRAP and bootstrap_term_limit is not None
+        else {item.term for item in ordered}
+    )
+    for item in ordered:
+        if item.term not in allowed_bootstrap_terms:
+            continue
+        is_current = item.term == active_term
+        # Court adapter retrieval timestamps are intentionally not treated as source
+        # changes; the configured windows are based on the stable argument date.
+        is_recent_correction = item.argument_date >= correction_cutoff
+        opinion_times = tuple(
+            item.argument_date
+            for document in item.related_documents
+            if document.document_type is DocumentType.OPINION
+        )
+        is_recent_opinion = any(value >= opinion_cutoff for value in opinion_times)
+        if is_current or is_recent_correction or is_recent_opinion:
+            current.append(item)
+        else:
+            historical.append(item)
+
+    chosen: list[SelectedDiscoveryWork] = []
+    seen: set[str] = set()
+    new_current = sorted(
+        (
+            item
+            for item in current
+            if item.transcript is not None
+            and transcript_logical_key(item) not in known_transcript_keys
+        ),
+        key=_candidate_sort_key,
+    )
+    routine_current = sorted(
+        (item for item in current if item not in new_current),
+        key=_candidate_sort_key,
+    )
+    next_current_cursor = current_cursor
+    if routine_current:
+        start = (current_cursor.position if current_cursor else 0) % len(routine_current)
+        routine_current = [
+            routine_current[(start + offset) % len(routine_current)]
+            for offset in range(len(routine_current))
+        ]
+        new_case_count = len(
+            {candidate_logical_key(item) for item in new_current}
+        )
+        available = max(0, nightly_case_limit - new_case_count)
+        advance = min(available, len(routine_current))
+        raw_position = start + advance
+        next_current_cursor = CursorState(
+            cursor_key=(
+                current_cursor.cursor_key
+                if current_cursor
+                else f"{mode.value}:current-recheck"
+            ),
+            position=raw_position % len(routine_current),
+            wrapped_count=(current_cursor.wrapped_count if current_cursor else 0)
+            + raw_position // len(routine_current),
+            updated_at=now,
+        )
+    current = [*new_current, *routine_current]
+    deferred: list[str] = []
+    for item in current:
+        key = candidate_logical_key(item)
+        if key in seen:
+            continue
+        if len(chosen) >= nightly_case_limit:
+            deferred.append(key)
+            continue
+        seen.add(key)
+        transcript_key = transcript_logical_key(item)
+        is_new = item.transcript is not None and transcript_key not in known_transcript_keys
+        chosen.append(
+            SelectedDiscoveryWork(
+                item,
+                new_transcript_priority if is_new else historical_priority,
+                "new_transcript" if is_new else "current_recheck",
+            )
+        )
+
+    historical_slots = min(historical_limit, max(0, nightly_case_limit - len(chosen)))
+    next_cursor = cursor
+    if historical and historical_slots:
+        start = (cursor.position if cursor is not None else 0) % len(historical)
+        count = min(historical_slots, len(historical))
+        for offset in range(count):
+            item = historical[(start + offset) % len(historical)]
+            key = candidate_logical_key(item)
+            if key not in seen:
+                chosen.append(
+                    SelectedDiscoveryWork(item, historical_priority, "historical_recheck")
+                )
+                seen.add(key)
+        selected_historical = {
+            candidate_logical_key(item.candidate)
+            for item in chosen
+            if item.reason == "historical_recheck"
+        }
+        deferred.extend(
+            candidate_logical_key(item)
+            for item in historical
+            if candidate_logical_key(item) not in selected_historical
+        )
+        raw_position = start + count
+        next_cursor = CursorState(
+            cursor_key=(cursor.cursor_key if cursor else f"{mode.value}:historical"),
+            position=raw_position % len(historical),
+            wrapped_count=(cursor.wrapped_count if cursor else 0) + raw_position // len(historical),
+            updated_at=now,
+        )
+    return DiscoverySelection(
+        tuple(chosen),
+        next_cursor,
+        tuple(sorted(set(deferred))),
+        next_current_cursor,
+    )
+
+
+def candidate_logical_key(candidate: ScotusArgumentCandidate) -> str:
+    return public_case_key(candidate.term, normalize_docket(candidate.primary_docket))
+
+
+def transcript_logical_key(candidate: ScotusArgumentCandidate) -> str:
+    return (
+        f"{candidate_logical_key(candidate)}:transcript:"
+        f"{candidate.argument_date.date().isoformat()}:{candidate.sequence}"
+    )
+
+
+def document_logical_key(candidate: ScotusArgumentCandidate, descriptor: DocumentDescriptor) -> str:
+    """Return identity that survives a corrected document URL or source external ID."""
+    kind = _document_kind(descriptor)
+    if kind is ScotusDocumentKind.TRANSCRIPT:
+        return transcript_logical_key(candidate)
+    if kind is ScotusDocumentKind.DOCKET:
+        docket = descriptor.external_id.split(":", 1)[0]
+        try:
+            docket = normalize_docket(docket).casefold()
+        except ValueError:
+            docket = candidate.primary_docket.casefold()
+        return f"{candidate_logical_key(candidate)}:docket:{docket}"
+    # A case may have multiple orders/opinions. Their Court external ID distinguishes
+    # documents, while URL and retrieval timestamps remain revision metadata.
+    safe_external = hashlib.sha256(descriptor.external_id.encode()).hexdigest()[:24]
+    return f"{candidate_logical_key(candidate)}:{kind.value}:{safe_external}"
 
 
 class ScotusDiscoveryCoordinator:
@@ -287,7 +712,7 @@ class ScotusDiscoveryCoordinator:
                         else None
                     ),
                     kind=_document_kind(descriptor),
-                    external_id=descriptor.external_id,
+                    external_id=document_logical_key(candidate, descriptor),
                     official_url=descriptor.official_url,
                     content_type=descriptor.content_type,
                 )
@@ -303,7 +728,11 @@ class ScotusDiscoveryCoordinator:
         if candidate.transcript is not None and self.store.enqueue_transcript(
             CollectionJob(
                 argument_id=argument_id,
-                external_id=candidate.transcript.external_id,
+                external_id=next(
+                    document.external_id
+                    for document in documents
+                    if document.kind is ScotusDocumentKind.TRANSCRIPT
+                ),
                 input_version=_descriptor_digest(candidate.transcript),
                 priority=priority,
             )
@@ -339,13 +768,9 @@ class ScotusDiscoveryCoordinator:
         priority: int,
     ) -> DiscoveryApplyResult:
         checkpoint = self.store.get_backfill_checkpoint(term)
-        if (
-            checkpoint.examined > 0
-            and (
-                checkpoint.examined > len(candidates)
-                or candidates[checkpoint.examined - 1].primary_docket
-                != checkpoint.last_docket
-            )
+        if checkpoint.examined > 0 and (
+            checkpoint.examined > len(candidates)
+            or candidates[checkpoint.examined - 1].primary_docket != checkpoint.last_docket
         ):
             checkpoint = BackfillCheckpoint(term=term)
         total = DiscoveryApplyResult()
@@ -380,9 +805,7 @@ class ScotusDiscoveryCoordinator:
                     examined=examined,
                     queued=queued,
                     last_docket=(
-                        checkpoint.last_docket
-                        if not candidates
-                        else candidates[-1].primary_docket
+                        checkpoint.last_docket if not candidates else candidates[-1].primary_docket
                     ),
                     complete=True,
                 )

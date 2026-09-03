@@ -4,9 +4,10 @@ from __future__ import annotations
 
 import json
 import re
+from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any, Protocol
-from uuid import UUID, uuid4
+from uuid import NAMESPACE_URL, UUID, uuid4, uuid5
 
 from openai import OpenAI, omit
 from openai.lib._pydantic import to_strict_json_schema
@@ -270,11 +271,21 @@ class DeterministicTranscriptObservationExtractor:
 class OpenAILegalObservationExtractor:
     PROMPT_VERSION = "scotus-legal-extraction-v1"
 
-    def __init__(self, model_name: str, client: OpenAI) -> None:
+    def __init__(
+        self,
+        model_name: str,
+        client: OpenAI,
+        *,
+        maximum_output_tokens: int | None = None,
+        request_executor: Callable[[dict[str, Any]], Any] | None = None,
+    ) -> None:
         self.model_name = model_name
         self.client = client
+        self.maximum_output_tokens = maximum_output_tokens
+        self.request_executor = request_executor
 
-    def extract(self, source: LegalExtractionInput) -> LegalExtractionBatch:
+    def request_arguments(self, source: LegalExtractionInput) -> dict[str, Any]:
+        """Build the exact provider request so budget checks can precede transport."""
         evidence = [
             {
                 "block_id": block.block_id,
@@ -289,10 +300,18 @@ class OpenAILegalObservationExtractor:
             }
             for block in source.blocks
         ]
-        completion = self.client.chat.completions.create(
-            model=self.model_name,
-            temperature=omit if self.model_name.startswith("gpt-5") else 0,
-            messages=[
+        token_limit = {
+            (
+                "max_completion_tokens"
+                if self.model_name.startswith("gpt-5")
+                else "max_tokens"
+            ): self.maximum_output_tokens or omit
+        }
+        return {
+            "model": self.model_name,
+            "temperature": omit if self.model_name.startswith("gpt-5") else 0,
+            **token_limit,
+            "messages": [
                 {
                     "role": "system",
                     "content": (
@@ -306,7 +325,7 @@ class OpenAILegalObservationExtractor:
                 },
                 {"role": "user", "content": json.dumps(evidence, separators=(",", ":"))},
             ],
-            response_format={
+            "response_format": {
                 "type": "json_schema",
                 "json_schema": {
                     "name": "scotus_legal_observations",
@@ -314,11 +333,23 @@ class OpenAILegalObservationExtractor:
                     "schema": to_strict_json_schema(LegalExtractionBatch),
                 },
             },
-        )
+        }
+
+    @staticmethod
+    def parse_completion(completion: Any) -> LegalExtractionBatch:
         content = completion.choices[0].message.content
         if not content:
             raise LegalExtractionError("legal extraction model returned no structured content")
         return LegalExtractionBatch.model_validate_json(content)
+
+    def extract(self, source: LegalExtractionInput) -> LegalExtractionBatch:
+        request = self.request_arguments(source)
+        completion = (
+            self.request_executor(request)
+            if self.request_executor is not None
+            else self.client.chat.completions.create(**request)
+        )
+        return self.parse_completion(completion)
 
 
 _DOCKET = re.compile(r"\b\d{1,3}A?-\d+[A-Z]*\b", re.IGNORECASE)
@@ -683,9 +714,27 @@ class LegalExtractionService:
     def process(self, source: LegalExtractionInput) -> list[LegalObservation]:
         batch = self.extractor.extract(source)
         blocks = {block.block_id: block for block in source.blocks}
-        extraction_id = uuid4()
+        prompt_version = getattr(
+            self.extractor, "PROMPT_VERSION", "deterministic-scotus-extraction-v1"
+        )
+        identity = json.dumps(
+            {
+                "argument_id": str(source.argument_id) if source.argument_id else None,
+                "blocks": [block.block_id for block in source.blocks],
+                "case_id": str(source.case_id),
+                "documents": [str(value) for value in source.document_revision_ids],
+                "model": self.extractor.model_name,
+                "parser_versions": source.parser_versions,
+                "prompt": prompt_version,
+                "schema": self.SCHEMA_VERSION,
+                "vocabulary": self.VOCABULARY_VERSION,
+            },
+            sort_keys=True,
+            separators=(",", ":"),
+        )
+        extraction_id = uuid5(NAMESPACE_URL, f"ragchew:scotus-extraction:{identity}")
         observations: list[LegalObservation] = []
-        for proposed in batch.observations:
+        for index, proposed in enumerate(batch.observations):
             try:
                 evidence = validate_proposed(proposed, blocks)
             except LegalExtractionError:
@@ -698,6 +747,11 @@ class LegalExtractionService:
                 normalized = normalize_legal_citation(normalized or proposed.raw_value)
             observations.append(
                 LegalObservation(
+                    observation_id=uuid5(
+                        NAMESPACE_URL,
+                        f"ragchew:scotus-observation:{extraction_id}:{index}:"
+                        f"{proposed.model_dump_json()}",
+                    ),
                     extraction_revision_id=extraction_id,
                     case_id=source.case_id,
                     argument_id=source.argument_id,
@@ -720,9 +774,6 @@ class LegalExtractionService:
                     supersedes_observation_id=proposed.supersedes_observation_id,
                 )
             )
-        prompt_version = getattr(
-            self.extractor, "PROMPT_VERSION", "deterministic-scotus-extraction-v1"
-        )
         return self.store.save(
             source,
             observations,

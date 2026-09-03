@@ -37,22 +37,20 @@ class ScotusProjectionReader(Protocol):
 def _source_link(
     claim_ids: tuple[UUID, ...], claims: dict[UUID, ScotusApprovedClaim]
 ) -> tuple[PublicSourceLink, ...]:
-    grouped: dict[tuple[str, str, str], list[UUID]] = {}
+    grouped: set[tuple[str, str, str]] = set()
     for claim_id in claim_ids:
         claim = claims.get(claim_id)
         if claim is None:
             raise ValueError("brief references a missing approved claim")
-        key = (claim.public_source_label, claim.official_url, claim.page_label)
-        grouped.setdefault(key, []).append(claim_id)
+        grouped.add((claim.public_source_label, claim.official_url, claim.page_label))
     return tuple(
         PublicSourceLink(
             evidence_type=label,
             label=f"Official Supreme Court {label} — {page}",
             official_url=url,
             page_label=page,
-            claim_ids=tuple(ids),
         )
-        for (label, url, page), ids in sorted(grouped.items())
+        for label, url, page in sorted(grouped)
     )
 
 
@@ -96,9 +94,7 @@ def build_public_case(
             heading=analysis.heading,
             paragraphs=analysis.paragraphs,
             official_detail_url=sessions[analysis.argument_id].official_detail_url,
-            official_transcript_url=(
-                sessions[analysis.argument_id].official_transcript_url
-            ),
+            official_transcript_url=(sessions[analysis.argument_id].official_transcript_url),
             sources=_source_link(analysis.claim_ids, claim_map),
         )
         for analysis in revision.argument_analyses

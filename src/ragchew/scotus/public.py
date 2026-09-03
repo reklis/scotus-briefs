@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import date, datetime
+from datetime import date
 from math import ceil
 from urllib.parse import quote, urlencode
 
@@ -13,47 +13,31 @@ from fastapi.templating import Jinja2Templates
 
 from ragchew.scotus.public_contracts import PublicCaseBrief, ScotusPublicProjection
 from ragchew.scotus.publishing import ScotusProjectionReader
+from ragchew.scotus.static_urls import (
+    StaticUrlPolicy,
+    archive_slug,
+    latest_court_document_date,
+    sort_cases,
+)
 
 _PAGE_SIZE = 20
 
 
-def latest_court_document_date(case: PublicCaseBrief) -> datetime:
-    """Return the latest date established by the Court's argument record."""
-    return max(
-        case.argument_date,
-        *(argument.argument_date for argument in case.arguments),
-    )
-
-
-def sort_cases(cases: tuple[PublicCaseBrief, ...]) -> tuple[PublicCaseBrief, ...]:
-    return tuple(
-        sorted(
-            cases,
-            key=lambda case: (
-                latest_court_document_date(case),
-                max(argument.argument_date for argument in case.arguments),
-                case.term,
-                case.primary_docket,
-            ),
-            reverse=True,
-        )
-    )
-
-
 def public_case_path(case: PublicCaseBrief) -> str:
-    return (
-        f"/scotus/cases/{case.term}/{quote(case.primary_docket, safe='-')}/"
-        f"{case.slug}"
-    )
+    return f"/scotus/cases/{case.term}/{quote(case.primary_docket, safe='-')}/{case.slug}"
 
 
 def create_scotus_public_app(reader: ScotusProjectionReader) -> FastAPI:
     app = FastAPI(title="SCOTUS Legal Briefs", docs_url=None, redoc_url=None)
     app.mount("/static", StaticFiles(directory="static"), name="static")
+    app.mount("/assets", StaticFiles(directory="static"), name="assets")
     templates = Jinja2Templates(directory="templates")
-    templates.env.globals["public_case_path"] = public_case_path
-    templates.env.globals["latest_court_document_date"] = (
-        latest_court_document_date
+    dynamic_urls = StaticUrlPolicy("https://example.invalid", "/", "/scotus/")
+    templates.env.globals.update(
+        public_case_path=public_case_path,
+        latest_court_document_date=latest_court_document_date,
+        archive_slug=archive_slug,
+        public_case_key=lambda term, docket: f"{term}-{docket}",
     )
 
     def projection() -> ScotusPublicProjection:
@@ -80,9 +64,7 @@ def create_scotus_public_app(reader: ScotusProjectionReader) -> FastAPI:
 
         def page_url(value: int) -> str:
             parameters = [
-                (key, item)
-                for key, item in request.query_params.multi_items()
-                if key != "page"
+                (key, item) for key, item in request.query_params.multi_items() if key != "page"
             ]
             parameters.append(("page", str(value)))
             return f"{request.url.path}?{urlencode(parameters)}"
@@ -101,6 +83,13 @@ def create_scotus_public_app(reader: ScotusProjectionReader) -> FastAPI:
                 "total_cases": total_cases,
                 "previous_url": page_url(page - 1) if page > 1 else None,
                 "next_url": page_url(page + 1) if page < page_count else None,
+                "urls": dynamic_urls,
+                "css_asset": "scotus.css",
+                "search_asset": "scotus-search.js",
+                "canonical_url": dynamic_urls.canonical(request.url.path + "/"),
+                "current_term": max((case.term for case in value.cases), default=None),
+                "introduction": "",
+                "archive_links": (),
             },
         )
 
@@ -142,9 +131,7 @@ def create_scotus_public_app(reader: ScotusProjectionReader) -> FastAPI:
             raise HTTPException(404, "term not found")
         value = projection()
         cases = tuple(case for case in value.cases if case.term == term)
-        return render_cases(
-            request, value, cases, f"October Term {term}", page=page
-        )
+        return render_cases(request, value, cases, f"October Term {term}", page=page)
 
     @app.get("/scotus/arguments/{argument_date}", response_class=HTMLResponse)
     def argument_archive(
@@ -156,10 +143,7 @@ def create_scotus_public_app(reader: ScotusProjectionReader) -> FastAPI:
         cases = tuple(
             case
             for case in value.cases
-            if any(
-                session.argument_date.date() == argument_date
-                for session in case.arguments
-            )
+            if any(session.argument_date.date() == argument_date for session in case.arguments)
         )
         return render_cases(
             request,
@@ -199,17 +183,13 @@ def create_scotus_public_app(reader: ScotusProjectionReader) -> FastAPI:
         "/scotus/cases/{term}/{primary_docket}/{slug}",
         response_class=HTMLResponse,
     )
-    def case_page(
-        request: Request, term: str, primary_docket: str, slug: str
-    ) -> HTMLResponse:
+    def case_page(request: Request, term: str, primary_docket: str, slug: str) -> HTMLResponse:
         value = projection()
         selected = next(
             (
                 case
                 for case in value.cases
-                if case.term == term
-                and case.primary_docket == primary_docket
-                and case.slug == slug
+                if case.term == term and case.primary_docket == primary_docket and case.slug == slug
             ),
             None,
         )
@@ -218,7 +198,14 @@ def create_scotus_public_app(reader: ScotusProjectionReader) -> FastAPI:
         return templates.TemplateResponse(
             request,
             "scotus_case.html",
-            {"projection": value, "case": selected, "canonical": public_case_path(selected)},
+            {
+                "projection": value,
+                "case": selected,
+                "urls": dynamic_urls,
+                "css_asset": "scotus.css",
+                "canonical_url": dynamic_urls.canonical(public_case_path(selected) + "/"),
+                "current_term": max((case.term for case in value.cases), default=None),
+            },
         )
 
     return app

@@ -9,99 +9,114 @@ def documents(path: str) -> list[dict[str, object]]:
     return [item for item in yaml.safe_load_all(Path(path).read_text()) if item]
 
 
-def all_workload_containers() -> list[dict[str, object]]:
-    containers: list[dict[str, object]] = []
-    for path in ("deploy/k8s/base/workloads.yaml", "deploy/k8s/base/schedules.yaml"):
-        for document in documents(path):
-            kind = document["kind"]
-            if kind not in {"Deployment", "CronJob"}:
-                continue
-            spec = document["spec"]  # type: ignore[index]
-            if kind == "Deployment":
-                pod = spec["template"]  # type: ignore[index]
-            else:
-                pod = spec["jobTemplate"]["spec"]["template"]  # type: ignore[index]
-            containers.extend(pod["spec"]["containers"])  # type: ignore[index]
-    return containers
-
-
-def test_kubernetes_yaml_parses_and_has_default_deny() -> None:
-    paths = list(Path("deploy/k8s/base").glob("*.yaml"))
-    assert paths
-    for path in paths:
-        assert documents(str(path))
-    policies = documents("deploy/k8s/base/network-policies.yaml")
-    default_deny = next(item for item in policies if item["metadata"]["name"] == "default-deny")  # type: ignore[index]
-    assert default_deny["spec"]["podSelector"] == {}  # type: ignore[index]
-    assert set(default_deny["spec"]["policyTypes"]) == {"Ingress", "Egress"}  # type: ignore[index]
-
-
-def test_all_containers_are_non_privileged_and_resource_bounded() -> None:
-    for container in all_workload_containers():
-        security = container["securityContext"]  # type: ignore[index]
-        assert security["allowPrivilegeEscalation"] is False
-        assert security["readOnlyRootFilesystem"] is True
-        assert security["capabilities"]["drop"] == ["ALL"]
-        resources = container["resources"]  # type: ignore[index]
-        assert resources["requests"] and resources["limits"]
-
-
-def test_public_workload_receives_no_private_source_or_model_secret() -> None:
-    workloads = documents("deploy/k8s/base/workloads.yaml")
-    public = next(
-        item
-        for item in workloads
-        if item.get("kind") == "Deployment"
-        and item["metadata"]["name"] == "public"  # type: ignore[index]
-    )
-    env_from = public["spec"]["template"]["spec"]["containers"][0]["envFrom"]  # type: ignore[index]
-    secret_names = {
-        entry["secretRef"]["name"] for entry in env_from if "secretRef" in entry
-    }
-    assert secret_names == {"ragchew-public-db"}
-    example = Path("deploy/k8s/base/secrets.example.yaml").read_text()
-    assert "replace-me" in example
-    assert "sk-" not in example
-
-
-def test_scotus_uses_official_openai_api_not_internal_model_service() -> None:
-    config = Path("config/scotus.yaml").read_text()
-    environment = Path("deploy/k8s/base/config.yaml").read_text()
-    policies = Path("deploy/k8s/base/network-policies.yaml").read_text()
-    publisher = Path("src/ragchew/scotus/publisher.py").read_text()
-    assert "provider: openai" in config
-    assert "model: gpt-5" in config
-    assert "brief_generation_enabled: false" in config
-    assert "maximum_brief_api_calls_per_run: 1" in config
-    assert "if not config.generation.brief_generation_enabled" in publisher
-    assert "https://api.openai.com/v1" in environment
-    assert "llm.ragchew.svc" not in environment + policies
-    assert "base_url=settings.openai_base_url" not in publisher
-
-
-def test_scotus_deployment_has_no_audio_or_stt_workload() -> None:
-    config = Path("deploy/k8s/base/config.yaml").read_text().lower()
-    workloads = Path("deploy/k8s/base/workloads.yaml").read_text()
-    schedules = Path("deploy/k8s/base/schedules.yaml").read_text()
-    containerfile = Path("Containerfile").read_text().lower()
-    assert "scotus_legal_briefs" in config
-    assert "stt_model" not in config
-    assert "ffmpeg" not in containerfile
-    assert "--extra stt" not in containerfile
-    for command in (
-        "ragchew-scotus-worker",
-        "ragchew-scotus-discover",
-        "ragchew-scotus-publish",
-        "ragchew-scotus-retention",
+def test_active_kustomization_has_no_dynamic_production_resources() -> None:
+    kustomization = yaml.safe_load(Path("deploy/k8s/base/kustomization.yaml").read_text())
+    assert kustomization["resources"] == ["namespace.yaml"]
+    active_documents = []
+    for relative in kustomization["resources"]:
+        active_documents.extend(documents(f"deploy/k8s/base/{relative}"))
+    assert {document["kind"] for document in active_documents} == {"Namespace"}
+    serialized = yaml.safe_dump_all(active_documents).casefold()
+    for obsolete in (
+        "deployment",
+        "service",
+        "ingress",
+        "cronjob",
+        "secret",
+        "fastapi",
+        "postgres",
+        "minio",
+        "ragchew-public",
+        "scotus-analyzer",
     ):
-        assert command in workloads + schedules
-    assert "ragchew-api" not in workloads
-    assert "ragchew-maintenance" not in schedules
+        assert obsolete not in serialized
 
 
-def test_container_runs_as_nonroot_and_ci_has_security_gates() -> None:
+def test_legacy_kubernetes_manifests_are_explicitly_dormant() -> None:
+    readme = Path("deploy/k8s/dormant/README.md").read_text().casefold()
+    assert "not a production overlay" in readme
+    assert "static github pages" in readme
+    for path in Path("deploy/k8s/dormant").glob("*.yaml"):
+        assert path.read_text().startswith("# DORMANT:")
+    assert not (Path("deploy/k8s/base") / "ingress.yaml").exists()
+    assert not (Path("deploy/k8s/base") / "secrets.example.yaml").exists()
+
+
+def test_pages_jobs_never_receive_obsolete_backend_reader_credentials() -> None:
+    workflow = Path(".github/workflows/publish-pages.yml").read_text()
+    deploy = workflow[
+        workflow.index("\n  deploy:\n") : workflow.index("\n  promote:\n")
+    ]
+    for forbidden in (
+        "RAGCHEW_DATABASE_DSN",
+        "RAGCHEW_S3_ENDPOINT",
+        "RAGCHEW_S3_ACCESS_KEY",
+        "RAGCHEW_S3_SECRET_KEY",
+        "OPENAI_API_KEY",
+        "ragchew-public",
+    ):
+        assert forbidden not in deploy
+    assert "pages: write" in deploy
+    assert "id-token: write" in deploy
+    assert "contents: write" not in deploy
+
+
+def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() -> None:
+    workflow = Path(".github/workflows/publish-pages.yml").read_text()
+    assert "services:" not in workflow
+    assert "postgres:" not in workflow and "minio:" not in workflow
+    assert "environment: scotus-publication" in workflow
+    assert "OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}" in workflow
+    assert "ragchew.scotus.live_static:LiveStaticBatchAdapter" in workflow
+    assert "RAGCHEW_SOURCE_USER_AGENT" in workflow
+    assert "github.com/reklis/scotus-briefs" in workflow
+    assert "example.invalid" not in workflow
+    assert "release_id=fixture" not in workflow
+    assert "test ! -e candidate-site" in workflow
+    assert "test ! -e candidate-state" in workflow
+    assert "install -d -m 700 candidate-site" not in workflow
+    assert workflow.index("Validate opaque receipts before any upload") < workflow.index(
+        "Upload validated opaque cost receipts"
+    )
+    receipt_upload = workflow[
+        workflow.index("- name: Upload validated opaque cost receipts") :
+        workflow.index("- name: Safe build summary")
+    ]
+    assert "github.event_name == 'schedule' || inputs.deploy == true" in receipt_upload
+    receipt_job = workflow[
+        workflow.index("\n  persist-cost-receipts:\n") : workflow.index("\n  deploy:\n")
+    ]
+    assert "github.event_name == 'schedule' || inputs.deploy == true" in receipt_job
+    assert "crash or rerun may repeat model cost" in workflow
+    assert "git -C generated-content-input rev-parse HEAD" in workflow
+    assert "path: source" in workflow and "path: generated-content" in workflow
+    assert "needs: [build, persist-cost-receipts, deploy]" in workflow
+    assert "needs: [build, persist-cost-receipts]" in workflow
+    assert "stopped before network/model use" not in workflow
+    assert "Reconcile release IDs before live source access" in workflow
+    assert "Run reviewed bounded live adapter" in workflow
+    assert "if: always()" in workflow and "Remove private workspace" in workflow
+
+
+def test_container_is_nonroot_and_uses_immutable_base_images() -> None:
     containerfile = Path("Containerfile").read_text()
     assert "USER 10001:10001" in containerfile
-    workflow = Path(".github/workflows/ci.yml").read_text()
-    for gate in ("pytest", "mypy", "ruff", "pip-audit", "gitleaks", "trivy"):
-        assert gate in workflow.lower()
+    from_lines = [line for line in containerfile.splitlines() if line.startswith("FROM ")]
+    assert from_lines
+    assert all("@sha256:" in line for line in from_lines)
+
+
+def test_ci_has_frozen_install_and_security_gates() -> None:
+    workflow = Path(".github/workflows/ci.yml").read_text().casefold()
+    assert "uv sync --frozen --dev" in workflow
+    for gate in (
+        "pytest",
+        "mypy",
+        "ruff",
+        "pip-audit",
+        "pip-licenses",
+        "gitleaks",
+        "trivy",
+        "check-public-repository",
+    ):
+        assert gate in workflow

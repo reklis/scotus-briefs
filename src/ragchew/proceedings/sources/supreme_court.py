@@ -323,12 +323,18 @@ class SupremeCourtAdapter:
             if int(self.term) >= 2017:
                 opinion_html = self.fetcher.get(self.opinion_index_url).text()
                 order_html = self.fetcher.get(self.order_index_url).text()
-            session_counts: dict[tuple[str, object], int] = {}
+            sessions_by_url: dict[str, tuple[int, bool]] = {}
+            by_docket: dict[str, list[tuple[datetime, str]]] = {}
+            for docket, _title, argued_at, transcript_url in archived:
+                by_docket.setdefault(docket, []).append((argued_at, transcript_url))
+            for values in by_docket.values():
+                for sequence, (_argued_at, transcript_url) in enumerate(
+                    sorted(values, key=lambda item: (item[0], item[1])), 1
+                ):
+                    sessions_by_url[transcript_url] = (sequence, sequence > 1)
             proceedings: list[DiscoveredProceeding] = []
             for docket, title, argued_at, transcript_url in archived:
-                session_key = (docket, argued_at.date())
-                sequence = session_counts.get(session_key, 0) + 1
-                session_counts[session_key] = sequence
+                sequence, reargument = sessions_by_url[transcript_url]
                 docket_documents: tuple[DocumentDescriptor, ...] = ()
                 if int(self.term) >= 2015 and "ORIG" not in docket:
                     docket_documents = (
@@ -385,6 +391,7 @@ class SupremeCourtAdapter:
                             "transcript_available": True,
                             "archive_index": True,
                             "argument_sequence": sequence,
+                            "reargument": reargument,
                         },
                     )
                 )

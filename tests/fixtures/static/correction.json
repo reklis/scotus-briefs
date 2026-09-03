@@ -1,0 +1,110 @@
+{
+  "_fixture": {
+    "notice": "Entirely invented test data; contains no copied Court text or private pipeline data.",
+    "scenario": "correction",
+    "synthetic": true
+  },
+  "projection": {
+    "cases": [
+      {
+        "argument_date": "2026-08-28T03:17:00Z",
+        "arguments": [
+          {
+            "argument_date": "2026-08-28T03:17:00Z",
+            "heading": "Synthetic argument",
+            "official_detail_url": "https://www.supremecourt.gov/oral_arguments/audio/2025/25-466",
+            "official_transcript_url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2025/25-466.pdf",
+            "paragraphs": [
+              "One invented point.",
+              "A second invented point."
+            ],
+            "reargument": false,
+            "sequence": 1,
+            "sources": [
+              {
+                "evidence_type": "Official transcript",
+                "label": "Official Supreme Court transcript \u2014 file page 5",
+                "official_url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2025/25-466.pdf",
+                "page_label": "file page 5"
+              }
+            ]
+          }
+        ],
+        "caption": "Synthetic Example v. Renamed Agency",
+        "case_history": [
+          {
+            "changed_at": "2026-08-28T03:17:00Z",
+            "explanation": "Synthetic argument event.",
+            "status": "argued"
+          }
+        ],
+        "case_status": "corrected",
+        "dek": "This synthetic fixture contains no Court text.",
+        "dek_sources": [
+          {
+            "evidence_type": "Official transcript",
+            "label": "Official Supreme Court transcript \u2014 file page 5",
+            "official_url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2025/25-466.pdf",
+            "page_label": "file page 5"
+          }
+        ],
+        "maturity": "corrected",
+        "official_detail_url": "https://www.supremecourt.gov/oral_arguments/audio/2025/25-466",
+        "official_disposition_urls": [],
+        "official_docket_url": "https://www.supremecourt.gov/docket/docketfiles/html/public/25-466.html",
+        "primary_docket": "25-466",
+        "revisions": [
+          {
+            "correction_note": null,
+            "created_at": "2026-08-28T03:17:00Z",
+            "maturity": "official_transcript",
+            "revision_number": 1
+          },
+          {
+            "correction_note": "Corrected from revised synthetic source.",
+            "created_at": "2026-08-28T04:17:00Z",
+            "maturity": "corrected",
+            "revision_number": 2
+          }
+        ],
+        "schema_version": "1.0",
+        "sections": [
+          {
+            "heading": "Synthetic overview",
+            "paragraphs": [
+              "This is invented test content."
+            ],
+            "sources": [
+              {
+                "evidence_type": "Official transcript",
+                "label": "Official Supreme Court transcript \u2014 file page 5",
+                "official_url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2025/25-466.pdf",
+                "page_label": "file page 5"
+              }
+            ]
+          }
+        ],
+        "slug": "2025-25-466-synthetic-example-v-renamed-agency",
+        "term": "2025",
+        "title": "A synthetic question",
+        "title_sources": [
+          {
+            "evidence_type": "Official transcript",
+            "label": "Official Supreme Court transcript \u2014 file page 5",
+            "official_url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2025/25-466.pdf",
+            "page_label": "file page 5"
+          }
+        ],
+        "topics": [
+          "Synthetic law"
+        ],
+        "updated_at": "2026-08-28T04:17:00Z"
+      }
+    ],
+    "disclosure": "Automated and delayed legal analysis. Incomplete and non-authoritative; not an official Supreme Court record, not legal advice, and not a prediction of any justice's vote or case outcome. Always consult the linked official Court materials.",
+    "generated_at": "2026-08-28T03:17:00Z",
+    "schema_version": "1.0",
+    "site_name": "SCOTUS Legal Briefs",
+    "watermark": "2026-08-28T03:17:00Z"
+  }
+}

@@ -37,6 +37,7 @@ from ragchew.scotus.public_contracts import (
     PublicBriefRevisionSummary,
     PublicCaseBrief,
     PublicCaseHistoryEvent,
+    public_case_key,
 )
 from ragchew.scotus.publishing import PostgresScotusProjectionStore, build_public_case
 
@@ -125,10 +126,7 @@ def _build_candidate(
     observations = tuple(
         PostgresScotusCorrelationStore._observation(value) for value in observation_rows
     )
-    urls = {
-        value["document_revision_id"]: value["official_url_private"]
-        for value in document_rows
-    }
+    urls = {value["document_revision_id"]: value["official_url_private"] for value in document_rows}
     sessions = tuple(
         CaseArgumentSession(
             argument_id=value["argument_id"],
@@ -146,9 +144,7 @@ def _build_candidate(
         caption=str(row["caption_private"]),
         primary_docket=str(row["primary_docket"]),
         case_status=ScotusCaseStatus(str(row["case_status"])),
-        official_transcript_complete=(
-            row["complete_session_count"] == row["session_count"]
-        ),
+        official_transcript_complete=(row["complete_session_count"] == row["session_count"]),
         parser_complete=(row["complete_session_count"] == row["session_count"]),
         privacy_blocking_failure=False,
         argument_sessions=sessions,
@@ -278,9 +274,7 @@ def _public_cases(repository: PostgresRepository) -> tuple[PublicCaseBrief, ...]
         claims = _claims(repository, revision.claim_ids)
         sessions = _argument_sessions(repository, row["case_id"])
         status = ScotusCaseStatus(row["case_status"])
-        case_history = _case_history(
-            repository, row["case_id"], status, revision.created_at
-        )
+        case_history = _case_history(repository, row["case_id"], status, revision.created_at)
         if not sessions:
             raise RuntimeError("published SCOTUS case has no complete argument sessions")
         with repository.pool.connection() as connection:
@@ -376,14 +370,26 @@ def _complete_generation_attempt(
 def run_once(settings: ServiceSettings, config: ScotusConfig, now: datetime) -> int:
     if not config.generation.brief_generation_enabled:
         LOG.info(
-            "SCOTUS brief generation disabled; no model requests made",
+            "SCOTUS brief generation gate closed; no model requests made",
+            extra={"outcome": "disabled"},
+        )
+        return 0
+    if not config.publication.enabled:
+        LOG.info(
+            "SCOTUS static publication gate closed; no model requests made",
             extra={"outcome": "disabled"},
         )
         return 0
     if config.generation.prompt_version != OpenAILegalBriefGenerator.PROMPT_VERSION:
         raise RuntimeError("configured SCOTUS brief prompt version does not match the code")
+    if settings.openai_base_url.rstrip("/") != "https://api.openai.com/v1":
+        raise RuntimeError("SCOTUS generation requires the official OpenAI API endpoint")
     repository = PostgresRepository(settings.database_dsn)
-    llm = OpenAI(api_key=settings.openai_api_key.get_secret_value())
+    llm = OpenAI(
+        api_key=settings.openai_api_key.get_secret_value(),
+        timeout=config.model_budget.request_timeout_seconds,
+        max_retries=0,
+    )
     generator = OpenAILegalBriefGenerator(
         config.generation.model,
         llm,
@@ -412,9 +418,7 @@ def run_once(settings: ServiceSettings, config: ScotusConfig, now: datetime) -> 
             candidate,
             minimum_confidence=config.generation.minimum_observation_confidence,
         )
-        SCOTUS_BRIEF_POLICY_OUTCOMES.labels(
-            "eligible" if decision.eligible else "denied"
-        ).inc()
+        SCOTUS_BRIEF_POLICY_OUTCOMES.labels("eligible" if decision.eligible else "denied").inc()
         if not decision.eligible:
             continue
         with repository.pool.connection() as connection:
@@ -454,9 +458,12 @@ def run_once(settings: ServiceSettings, config: ScotusConfig, now: datetime) -> 
                 failure_code=str(error)[:200],
             )
             SCOTUS_BRIEF_POLICY_OUTCOMES.labels("generation_validation_denied").inc()
-            LOG.exception(
+            LOG.error(
                 "SCOTUS brief generation failed deterministic validation",
-                extra={"outcome": "denied", "case_id": candidate.case_id},
+                extra={
+                    "outcome": "denied",
+                    "case_key": public_case_key(str(row["term"]), str(row["primary_docket"])),
+                },
             )
             if config.generation.stop_after_brief_validation_failure:
                 break
@@ -490,7 +497,7 @@ def run_once(settings: ServiceSettings, config: ScotusConfig, now: datetime) -> 
             )
             connection.commit()
         changed += 1
-    if changed:
+    if changed and not config.publication.dry_run:
         projection_store = PostgresScotusProjectionStore("", pool=repository.pool)
         projection_store.activate(now, now, _public_cases(repository))
         SCOTUS_LAST_PUBLICATION.set(now.timestamp())

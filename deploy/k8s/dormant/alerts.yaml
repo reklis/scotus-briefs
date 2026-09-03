@@ -1,3 +1,4 @@
+# DORMANT: not referenced by the active Kustomization; local migration reference only.
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata: {name: ragchew-alerts, namespace: ragchew}

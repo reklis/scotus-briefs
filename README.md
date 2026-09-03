@@ -1,35 +1,68 @@
 # SCOTUS Legal Briefs
 
-Ragchew is being focused into **SCOTUS Legal Briefs**: a transcript-first pipeline that turns complete official Supreme Court oral-argument transcripts into evidence-grounded case analysis. The MVP does not download argument audio or run speech-to-text.
+SCOTUS Legal Briefs turns complete official Supreme Court oral-argument transcripts
+into evidence-grounded, plain-language case briefs. Production is a deterministic
+static site at **<https://reklis.github.io/scotus-briefs/>**. Readers need no FastAPI
+service, API, PostgreSQL database, object store, model call, Kubernetes workload, or
+runtime secret.
 
-## Active service boundaries
+The analysis is automated, delayed, incomplete, and non-authoritative. It is not an
+official Court record, legal advice, or a prediction of any justice's vote or case
+outcome. Always consult the linked official Court materials.
 
-- `ragchew.scotus`: versioned case, docket, argument, transcript, legal-observation, claim, and brief contracts.
-- `ragchew.proceedings.sources.supreme_court`: reviewed Court-hosted argument, transcript, docket, order, and opinion discovery.
-- document collector/parser: private PDF retrieval, validation, page/line extraction, speaker turns, and immutable revisions.
-- legal extraction/correlation: typed and attributed questions, contentions, authorities, requested dispositions, orders, and holdings.
-- policy/generation: default-deny approved claims and grounded structured legal briefs.
-- `ragchew.public`: read-only public projections for term, case, search, provenance, and correction pages.
+## Production boundary
 
-Radio capture and non-Supreme government proceeding code remains dormant. All sources, including Supreme Court publication, remain disabled until their private validation gates pass.
+A protected GitHub Actions job runs nightly at 03:17 UTC (and by restricted manual
+dispatch). It checks bounded reviewed Court resources, recomputes an entire changed
+case inside a permission-restricted ephemeral workspace, carries unchanged validated
+case bytes forward, exports a complete project-path-safe site, and runs contract,
+integrity, link, accessibility, and privacy validation. Pages receives only the
+validated static artifact. Any failure leaves the last known-good site active.
+
+The public `generated-content` branch contains only versioned projection/case JSON,
+conditional validators and digests, bounded cursors/pending outcomes, immutable
+public revisions, release manifests, and opaque cost receipts. It never contains
+Court PDFs, source HTML, extracted transcript text, observations/claim ledgers,
+prompts, model responses, object keys, credentials, private logs, or internal UUIDs.
+Official documents are linked, not redistributed.
+
+Live Court/model processing is disabled by default. Source, licensing, origin, secret,
+and launch gates remain fail-closed until the repository owner completes review.
 
 ## Local development
 
-The checked-in Devbox environment provides Python 3.12, uv, Ruff, PostgreSQL 16 tools, Docker/Compose, kubectl, and the MinIO client:
+Install Python 3.12 and [uv](https://docs.astral.sh/uv/):
 
 ```bash
-devbox shell
-devbox run sync
-cp .env.example .env
-devbox run check
+uv sync --frozen --dev
+uv run ruff check .
+uv run mypy
+uv run pytest
 ```
 
-A running Docker daemon is still required for container-backed integration and deployment checks.
+Local preview is fixture-backed and static. It does not contact the Court or a model:
 
-`config/scotus.yaml` is the active non-secret product configuration. It explicitly disables audio download, STT, paid brief generation, and publication. Brief generation has a one-call-per-run default budget when explicitly enabled. `config/proceedings.yaml` and `config/mvp.yaml` retain dormant prior paths.
+```bash
+uv run ragchew-scotus-static fixture-preview \
+  --fixture tests/fixtures/static/one-case.json --output site-output \
+  --build-epoch 2026-08-28T03:17:00Z
+uv run ragchew-scotus-static serve --output site-output --bind 127.0.0.1 --port 8000
+```
 
-See [`docs/scotus-legal-briefs.md`](docs/scotus-legal-briefs.md) for architecture and workflow.
+The exact CLI is also used by `.github/workflows/publish-pages.yml`. Docker Compose,
+legacy FastAPI/database code, and manifests under `deploy/k8s/dormant/` exist only for
+isolated migration or legacy tests; they are not production serving architecture.
 
-## Safety boundary
+## Documentation
 
-Public analysis is automated, delayed, incomplete, non-authoritative, not an official Court record, not legal advice, and not a prediction of any justice's vote or case outcome. Questions are not holdings; advocate assertions remain attributed; final Court action requires official order/opinion evidence. Copied PDFs and full extracted transcript text are private and are not redistributed.
+- [Architecture and privacy boundary](docs/scotus-legal-briefs.md)
+- [Configuration](docs/configuration.md)
+- [Security](docs/security.md) and [private vulnerability reporting](SECURITY.md)
+- [Pages operations and migration](docs/pages-operations.md)
+- [Generated-content and source rights](docs/generated-content-and-source-rights.md)
+- [Repository governance](docs/repository-governance.md)
+- [Supreme Court source review](docs/sources/supreme-court.md)
+- [Contributing](CONTRIBUTING.md)
+
+Repository-authored code and documentation are Apache-2.0. Original generated briefs
+are CC BY 4.0. Official Court and third-party material is excluded; see `NOTICE`.

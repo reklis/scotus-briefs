@@ -6,7 +6,7 @@ import hashlib
 import re
 from dataclasses import dataclass
 from typing import BinaryIO, Protocol
-from uuid import UUID
+from uuid import NAMESPACE_URL, UUID, uuid5
 
 from pydantic import Field
 from pypdf import PdfReader
@@ -142,12 +142,24 @@ def _speaker(label: str) -> tuple[str, SpeakerKind, AdvocateRole | None]:
     return label.title(), SpeakerKind.ADVOCATE, AdvocateRole.UNKNOWN
 
 
-def _config_hash(config: ScotusParserDefaults, backend: PdfTextBackend) -> str:
+def parser_config_hash(config: ScotusParserDefaults, backend: PdfTextBackend) -> str:
     encoded = (
         f"{config.model_dump_json()}:{backend.name}:{backend.version}:"
         "speaker-v1:artifact-v1"
     ).encode()
     return hashlib.sha256(encoded).hexdigest()
+
+
+def deterministic_parse_revision_id(
+    document_revision_id: UUID,
+    config: ScotusParserDefaults,
+    backend: PdfTextBackend,
+) -> UUID:
+    return uuid5(
+        NAMESPACE_URL,
+        f"ragchew:scotus-parse:{document_revision_id}:{backend.name}:"
+        f"{backend.version}:{parser_config_hash(config, backend)}",
+    )
 
 
 class ScotusTranscriptParser:
@@ -189,6 +201,11 @@ class ScotusTranscriptParser:
                         normalized_nonempty += 1
                 lines.append(
                     TranscriptLine(
+                        line_id=uuid5(
+                            NAMESPACE_URL,
+                            f"ragchew:scotus-transcript-line:{parse_revision_id}:"
+                            f"{file_page}:{line_number}",
+                        ),
                         parse_revision_id=parse_revision_id,
                         document_revision_id=document_revision_id,
                         file_page=file_page,
@@ -213,7 +230,7 @@ class ScotusTranscriptParser:
             document_revision_id=document_revision_id,
             parser_name=self.backend.name,
             parser_version=self.backend.version,
-            config_hash=_config_hash(self.config, self.backend),
+            config_hash=parser_config_hash(self.config, self.backend),
             status=ParseStatus.COMPLETE,
             page_count=len(pages),
             ambiguous_pages=ambiguous,
@@ -242,9 +259,7 @@ class ScotusTranscriptParser:
             match = _SPEAKER.match(text)
             if not match and _MALFORMED_SPEAKER.match(text):
                 if seen_official_label:
-                    raise TranscriptParseError(
-                        f"malformed official speaker label: {text[:120]}"
-                    )
+                    raise TranscriptParseError("malformed official speaker label")
                 continue
             if match:
                 seen_official_label = True
@@ -317,6 +332,12 @@ class ScotusTranscriptParser:
             end_line = last.line_number
             turns.append(
                 TranscriptTurn(
+                    turn_id=uuid5(
+                        NAMESPACE_URL,
+                        f"ragchew:scotus-transcript-turn:{parse_revision_id}:{sequence}:"
+                        f"{builder.start_file_page}:{builder.start_line}:"
+                        f"{end_file_page}:{end_line}",
+                    ),
                     parse_revision_id=parse_revision_id,
                     document_revision_id=document_revision_id,
                     sequence=sequence,

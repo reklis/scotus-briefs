@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import time
+from collections.abc import Callable
 from dataclasses import dataclass
+from threading import Lock
 from typing import Protocol
 
 import httpx
@@ -31,9 +33,57 @@ class SourceResponse:
 
 
 class SourceFetcher(Protocol):
-    def get(
-        self, url: str, conditional: ConditionalRequest | None = None
-    ) -> SourceResponse: ...
+    def get(self, url: str, conditional: ConditionalRequest | None = None) -> SourceResponse: ...
+
+
+class RequestRateLimiter:
+    """Serialize request starts behind one shared crawl-delay clock."""
+
+    def __init__(
+        self,
+        minimum_interval_seconds: float,
+        *,
+        monotonic: Callable[[], float] = time.monotonic,
+        sleep: Callable[[float], None] = time.sleep,
+    ) -> None:
+        if minimum_interval_seconds < 0:
+            raise ValueError("request interval cannot be negative")
+        self.minimum_interval_seconds = minimum_interval_seconds
+        self.monotonic = monotonic
+        self.sleep = sleep
+        self._last_request_at: float | None = None
+        self._lock = Lock()
+
+    def wait(self) -> None:
+        with self._lock:
+            if self._last_request_at is not None:
+                remaining = self.minimum_interval_seconds - (
+                    self.monotonic() - self._last_request_at
+                )
+                if remaining > 0:
+                    self.sleep(remaining)
+            self._last_request_at = self.monotonic()
+
+
+class BudgetedSourceFetcher:
+    """Account every adapter request/byte through one run budget."""
+
+    def __init__(
+        self,
+        delegate: SourceFetcher,
+        *,
+        reserve_request: Callable[[], None],
+        record_download: Callable[[int], None],
+    ) -> None:
+        self.delegate = delegate
+        self.reserve_request = reserve_request
+        self.record_download = record_download
+
+    def get(self, url: str, conditional: ConditionalRequest | None = None) -> SourceResponse:
+        self.reserve_request()
+        response = self.delegate.get(url, conditional)
+        self.record_download(len(response.content))
+        return response
 
 
 class HttpxSourceFetcher:
@@ -54,12 +104,15 @@ class HttpxSourceFetcher:
         self.maximum_bytes = maximum_bytes
         self.minimum_interval_seconds = minimum_interval_seconds
         self.timeout_seconds = timeout_seconds
-        self.client = client or httpx.Client(follow_redirects=False)
+        self._owns_client = client is None
+        self.client = client or httpx.Client(follow_redirects=False, trust_env=False)
         self._last_request_at: float | None = None
 
-    def get(
-        self, url: str, conditional: ConditionalRequest | None = None
-    ) -> SourceResponse:
+    def close(self) -> None:
+        if self._owns_client:
+            self.client.close()
+
+    def get(self, url: str, conditional: ConditionalRequest | None = None) -> SourceResponse:
         if self._last_request_at is not None:
             remaining = self.minimum_interval_seconds - (time.monotonic() - self._last_request_at)
             if remaining > 0:
@@ -75,8 +128,7 @@ class HttpxSourceFetcher:
             ) as response:
                 self._last_request_at = time.monotonic()
                 if 300 <= response.status_code < 400:
-                    location = response.headers.get("location", "missing")
-                    raise SourceFetchError(f"unexpected redirect to {location}")
+                    raise SourceFetchError("unexpected redirect from official endpoint")
                 if response.status_code not in {200, 304}:
                     raise SourceFetchError(
                         f"official endpoint returned HTTP {response.status_code}"
@@ -98,4 +150,4 @@ class HttpxSourceFetcher:
                     content=b"".join(chunks),
                 )
         except httpx.HTTPError as error:
-            raise SourceFetchError(f"official endpoint request failed: {error}") from error
+            raise SourceFetchError("official endpoint request failed") from error
