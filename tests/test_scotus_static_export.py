@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pytest
 
+from ragchew.scotus.legacy_export import export_legacy_bootstrap
 from ragchew.scotus.public_contracts import ScotusPublicProjection, public_case_key
 from ragchew.scotus.static_cli import build_parser
 from ragchew.scotus.static_contracts import ReleaseManifest, StaticSearchIndex
@@ -101,6 +102,50 @@ def test_workflow_cli_contract_and_fixture_preview_builds_then_exits(tmp_path: P
         ["validate", "--output", str(output), "--privacy-scan"]
     )
     assert validate_args.function(validate_args) == 0
+
+
+def test_reconcile_allows_missing_live_marker_only_for_initial_empty_bootstrap(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    state = export_legacy_bootstrap(
+        (fixture("empty-bootstrap"),),
+        tmp_path / "state",
+        source_commit=SOURCE_COMMIT,
+        config_sha256=CONFIG_DIGEST,
+        build_epoch=EPOCH,
+        tool_version="empty-bootstrap-v1",
+    )
+
+    def unavailable(*_args: object, **_kwargs: object) -> str:
+        raise ValueError("live release marker could not be validated")
+
+    monkeypatch.setattr("ragchew.scotus.static_cli._live_release_id", unavailable)
+    parser = build_parser()
+    denied = parser.parse_args(
+        [
+            "reconcile",
+            "--state-dir",
+            str(state),
+            "--live-release-url",
+            "https://scotusbriefs.us/release/v1/release.json",
+            "--fail-on-split",
+        ]
+    )
+    with pytest.raises(ValueError, match="live release marker"):
+        denied.function(denied)
+
+    allowed = parser.parse_args(
+        [
+            "reconcile",
+            "--state-dir",
+            str(state),
+            "--live-release-url",
+            "https://scotusbriefs.us/release/v1/release.json",
+            "--fail-on-split",
+            "--allow-missing-live-bootstrap",
+        ]
+    )
+    assert allowed.function(allowed) == 0
 
 
 def test_receipt_upload_validation_rejects_private_payload_with_sanitized_error(

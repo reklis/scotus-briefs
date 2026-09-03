@@ -266,10 +266,35 @@ def _live_release_id(args: argparse.Namespace, urls: StaticUrlPolicy) -> str | N
         raise ValueError("live release marker could not be validated") from None
 
 
+def _is_initial_empty_bootstrap(content: GeneratedContent) -> bool:
+    release = content.release
+    projection = content.projection
+    return bool(
+        release is not None
+        and projection is not None
+        and release.tool_version == "empty-bootstrap-v1"
+        and release.previous_release_id is None
+        and release.case_count == 0
+        and not release.files
+        and not projection.cases
+        and not content.revisions
+        and content.publication.active_release_id == release.release_id
+    )
+
+
 def _reconcile(args: argparse.Namespace) -> int:
     _, urls, _ = _config(args.config)
-    branch = StaticStateStore(args.state).load().publication.active_release_id
-    live = _live_release_id(args, urls)
+    content = StaticStateStore(args.state).load()
+    branch = content.publication.active_release_id
+    try:
+        live = _live_release_id(args, urls)
+    except ValueError:
+        if not args.allow_missing_live_bootstrap or not _is_initial_empty_bootstrap(content):
+            raise
+        live = None
+    if live is None and args.allow_missing_live_bootstrap and _is_initial_empty_bootstrap(content):
+        print("initial_empty_bootstrap")
+        return 0
     validated: set[str] = set()
     for path in args.validated_state:
         release = StaticStateStore(path).load().release
@@ -685,6 +710,11 @@ def build_parser() -> argparse.ArgumentParser:
     )
     reconcile.add_argument("--config", type=Path, default=Path("config/scotus.yaml"))
     reconcile.add_argument("--fail-on-split", action="store_true")
+    reconcile.add_argument(
+        "--allow-missing-live-bootstrap",
+        action="store_true",
+        help="allow an unavailable live marker only for the initial empty bootstrap",
+    )
     reconcile.set_defaults(function=_reconcile)
 
     batch = commands.add_parser("batch", help="run a configured bounded batch adapter")

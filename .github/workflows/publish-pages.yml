@@ -104,11 +104,18 @@ jobs:
           test ! -e candidate-state
       - name: Reconcile release IDs before live source access
         if: (inputs.mode || 'nightly') != 'fixture'
+        env:
+          PUBLICATION_MODE: ${{ inputs.mode || 'nightly' }}
         run: |
+          set -euo pipefail
+          bootstrap_args=()
+          if [[ "$PUBLICATION_MODE" == "bootstrap" ]]; then
+            bootstrap_args+=(--allow-missing-live-bootstrap)
+          fi
           uv run ragchew-scotus-static reconcile \
             --state-dir generated-content-input \
             --live-release-url "${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json" \
-            --fail-on-split
+            --fail-on-split "${bootstrap_args[@]}"
       - name: Run reviewed bounded live adapter
         id: live_batch
         if: (inputs.mode || 'nightly') != 'fixture'
