@@ -84,7 +84,7 @@ jobs:
             echo "commit=" >> "$GITHUB_OUTPUT"
           fi
       - name: Install frozen dependencies
-        uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           enable-cache: false
       - run: uv sync --frozen
@@ -168,7 +168,7 @@ jobs:
           fi
       - name: Upload scanned non-deploy dry-run candidate
         if: github.event_name == 'workflow_dispatch' && inputs.deploy != true && steps.batch.outcome == 'success' && steps.receipts.outcome == 'success'
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: scanned-static-candidate
           path: candidate-site
@@ -177,13 +177,13 @@ jobs:
           retention-days: 1
       - name: Upload exact Pages artifact
         if: steps.batch.outputs.release_changed == 'true' && steps.batch.outputs.publication_ready == 'true' && steps.receipts.outcome == 'success' && (github.event_name == 'schedule' || inputs.deploy == true)
-        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: candidate-site
           retention-days: 1
       - name: Upload scanned public state for guarded promotion
         if: steps.batch.outputs.publication_ready == 'true' && steps.receipts.outcome == 'success' && (github.event_name == 'schedule' || inputs.deploy == true)
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: generated-content-candidate
           path: candidate-state
@@ -194,7 +194,7 @@ jobs:
       # without their candidate; an interrupted dry run may therefore repeat local model work.
       - name: Upload validated opaque cost receipts
         if: always() && steps.receipts.outcome == 'success' && steps.receipts.outputs.present == 'true' && (github.event_name == 'schedule' || inputs.deploy == true)
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: opaque-cost-receipts
           path: ${{ runner.temp }}/ragchew-private/public-cost-receipts.json
@@ -247,7 +247,7 @@ jobs:
         with:
           name: opaque-cost-receipts
           path: receipt
-      - uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           enable-cache: false
       - run: uv sync --project source --frozen
@@ -279,7 +279,7 @@ jobs:
     steps:
       - name: Deploy with no source or model secrets
         id: deployment
-        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
 
   promote:
     name: Promote exact deployed public state
@@ -307,7 +307,7 @@ jobs:
         with:
           name: generated-content-candidate
           path: candidate-state
-      - uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           enable-cache: false
       - run: uv sync --project source --frozen
@@ -347,7 +347,7 @@ jobs:
         with:
           name: generated-content-candidate
           path: candidate-state
-      - uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           enable-cache: false
       - run: uv sync --project source --frozen

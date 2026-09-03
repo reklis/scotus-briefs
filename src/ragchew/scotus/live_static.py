@@ -23,6 +23,7 @@ import httpx
 from openai import (
     APIConnectionError,
     APITimeoutError,
+    DefaultHttpxClient,
     InternalServerError,
     OpenAI,
     RateLimitError,
@@ -1703,7 +1704,7 @@ def _default_ollama_client(settings: ServiceSettings, config: ScotusConfig) -> O
         base_url=settings.ollama_base_url,
         timeout=timeout,
         max_retries=0,
-        http_client=httpx.Client(
+        http_client=DefaultHttpxClient(
             follow_redirects=False,
             timeout=timeout,
             trust_env=False,

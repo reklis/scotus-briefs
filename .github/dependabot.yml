@@ -21,3 +21,7 @@ updates:
       interval: weekly
       day: monday
     open-pull-requests-limit: 5
+    ignore:
+      # Production and development target Python 3.12; keep receiving 3.12 digest updates.
+      - dependency-name: python
+        versions: [">=3.13"]
