@@ -86,7 +86,8 @@ runner_limits:
   maximum_http_requests_per_run: 2000
   maximum_download_bytes_per_run: 5368709120
   maximum_private_disk_bytes: 10737418240
-  maximum_runtime_seconds: 21000
+  # Leave time after processing for receipt upload, candidate validation, and cleanup.
+  maximum_runtime_seconds: 18000
 model_budget:
   maximum_extraction_calls_per_run: 1000
   maximum_brief_calls_per_run: 100
@@ -105,7 +106,8 @@ model_budget:
   maximum_estimated_cost_usd_per_run: "0"
   # Large local-model extraction timed out at 120 seconds during launch validation.
   request_timeout_seconds: 420
-  maximum_transport_attempts: 1
+  # One fully budgeted retry is allowed only for retryable loopback transport failures.
+  maximum_transport_attempts: 2
 licensing:
   code_and_documentation: Apache-2.0
   generated_briefs: CC-BY-4.0
@@ -120,7 +122,7 @@ approvals:
 generation:
   provider: ollama
   model: qwen3.8:27b
-  prompt_version: scotus-brief-plain-language-v14
+  prompt_version: scotus-brief-plain-language-v15
   brief_generation_enabled: true
   maximum_brief_api_calls_per_run: 100
   stop_after_brief_validation_failure: false

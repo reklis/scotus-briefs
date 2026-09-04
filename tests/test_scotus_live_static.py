@@ -202,7 +202,7 @@ class MockOpenAI:
                     "raw_value": "The Court heard argument in the case.",
                     "normalized_value": "The Court heard argument in the case.",
                     "attribution": None,
-                    "speaker_name": opening["speaker"],
+                    "speaker_name": opening["speaker_name"],
                     "speaker_kind": "justice",
                     "identity_basis": "official_transcript_label",
                     "authority_citations": [],
@@ -222,7 +222,7 @@ class MockOpenAI:
                     "raw_value": "The law limits the agency power.",
                     "normalized_value": "The law limits the agency power.",
                     "attribution": "Mr. Smith, counsel",
-                    "speaker_name": advocate["speaker"],
+                    "speaker_name": advocate["speaker_name"],
                     "speaker_kind": "advocate",
                     "identity_basis": "official_transcript_label",
                     "authority_citations": [],
@@ -242,7 +242,7 @@ class MockOpenAI:
                     "raw_value": "A justice asked whether the law permits the action.",
                     "normalized_value": "A justice asked whether the law permits the action.",
                     "attribution": None,
-                    "speaker_name": question["speaker"],
+                    "speaker_name": question["speaker_name"],
                     "speaker_kind": "justice",
                     "identity_basis": "official_transcript_label",
                     "authority_citations": [],
@@ -467,6 +467,15 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
         "scotus_legal_brief",
     ]
     assert all(request["extra_body"] == {"think": False} for request in model.requests)
+    extraction_evidence = json.loads(model.requests[0]["messages"][1]["content"])
+    assert {
+        "speaker_name",
+        "speaker_kind",
+        "identity_basis",
+        "attribution",
+    }.issubset(extraction_evidence[0])
+    brief_schema = model.requests[1]["response_format"]["json_schema"]["schema"]
+    assert "$defs" not in brief_schema
     receipts = CostReceiptBundle.model_validate_json(
         (tmp_path / "private/public-cost-receipts.json").read_bytes()
     )

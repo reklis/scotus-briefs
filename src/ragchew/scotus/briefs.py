@@ -15,7 +15,7 @@ from openai.lib._pydantic import to_strict_json_schema
 from psycopg import Connection
 from psycopg.rows import dict_row
 from psycopg_pool import ConnectionPool
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from ragchew.scotus.contracts import (
     BriefArgumentAnalysis,
@@ -36,7 +36,9 @@ class BriefPolicyError(ValueError):
 
 
 class BriefValidationError(ValueError):
-    pass
+    def __init__(self, message: str, *, safe_code: str | None = None) -> None:
+        super().__init__(message)
+        self.safe_code = safe_code
 
 
 @dataclass(frozen=True)
@@ -98,53 +100,46 @@ class LegalBriefDraft(BaseModel):
     argument_analyses: tuple[DraftArgumentAnalysis, ...] = Field(min_length=1)
 
 
-def _repair_private_schema_payload(
+def _normalize_private_schema_payload(
     payload: object,
     candidate: BriefCandidate,
     claims: tuple[ScotusApprovedClaim, ...],
 ) -> object:
+    """Normalize trusted structure without manufacturing claim coverage."""
     if not isinstance(payload, dict):
         return payload
-    all_ids = [str(claim.claim_id) for claim in claims]
-    allowed = set(all_ids)
+    allowed = {str(claim.claim_id) for claim in claims}
 
-    def supported(values: object, fallback: list[str]) -> list[str]:
-        if isinstance(values, list):
-            result = [value for value in values if isinstance(value, str) and value in allowed]
-            if result:
-                return list(dict.fromkeys(result))
-        return fallback
+    def supported(values: object) -> object:
+        if not isinstance(values, list):
+            return values
+        return list(
+            dict.fromkeys(
+                value for value in values if isinstance(value, str) and value in allowed
+            )
+        )
 
-    payload["title_claim_ids"] = supported(payload.get("title_claim_ids"), all_ids)
-    payload["dek_claim_ids"] = supported(payload.get("dek_claim_ids"), all_ids)
+    payload["title_claim_ids"] = supported(payload.get("title_claim_ids"))
+    payload["dek_claim_ids"] = supported(payload.get("dek_claim_ids"))
     sections = payload.get("sections")
     if isinstance(sections, list):
         for section in sections:
             if isinstance(section, dict):
-                section["claim_ids"] = supported(section.get("claim_ids"), all_ids)
+                section["claim_ids"] = supported(section.get("claim_ids"))
     analyses = payload.get("argument_analyses")
     if isinstance(analyses, list):
         for index, analysis in enumerate(analyses):
             if not isinstance(analysis, dict):
                 continue
+            analysis["claim_ids"] = supported(analysis.get("claim_ids"))
             if index < len(candidate.argument_sessions):
-                session = candidate.argument_sessions[index]
-                analysis["argument_id"] = str(session.argument_id)
-                session_ids = [
-                    str(claim.claim_id)
-                    for claim in claims
-                    if claim.argument_id == session.argument_id
-                ]
-            else:
-                session_ids = all_ids
-            selected = supported(analysis.get("claim_ids"), session_ids or all_ids)
-            analysis["claim_ids"] = list(
-                dict.fromkeys((*selected, *(session_ids or all_ids)))
-            )
+                analysis["argument_id"] = str(
+                    candidate.argument_sessions[index].argument_id
+                )
     return payload
 
 
-def _simple_brief_json_schema() -> dict[str, Any]:
+def simple_brief_json_schema() -> dict[str, Any]:
     string_array = {"type": "array", "items": {"type": "string"}, "minItems": 1}
     section = {
         "type": "object",
@@ -217,7 +212,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v14"
+    PROMPT_VERSION = "scotus-brief-plain-language-v15"
 
     def __init__(
         self,
@@ -332,16 +327,22 @@ class OpenAILegalBriefGenerator:
                         "Explain what each side was asking the Court to do, the reasoning each "
                         "side offered, what assumptions the justices tested, and what a later "
                         "reargument changed or revisited when supported. When the ledger has a "
-                        "question presented, an advocate contention, or a justice question, the "
-                        "output must use at least one claim of each available type. Each argument "
-                        "analysis must cover each available position_group and the questions "
-                        "tested in that session. Different attribution wording can identify the "
+                        "question presented, procedural posture, advocate contention, or justice "
+                        "question, the output must use at least one claim of each available type. "
+                        "Copy every claim ID exactly from the supplied ledger. Cite only claims "
+                        "whose public values support the associated text. In each argument "
+                        "analysis, use only claims carrying that analysis's argument_id. Each "
+                        "argument analysis must cover every available position_group and the "
+                        "questions tested in that session. Different attribution wording can "
+                        "identify the "
                         "same position_group; do not create extra sides from those wording "
                         "changes. "
                         "Do not rank winners. Omit unsupported sections. Attribute each "
                         "side's claims and disputed facts. Never fill in a missing side, argument, "
                         "or fact with what it likely said; state that the approved record does not "
-                        "support the detail. Paraphrase the evidence and do not use quotation "
+                        "support the detail. Do not add a person's name, address, medical detail, "
+                        "identifier, docket, or citation unless it appears in the supporting "
+                        "claim's public value. Paraphrase the evidence and do not use quotation "
                         "marks or direct quotations anywhere in the output. A question is not a "
                         "holding or vote. Describe a requested result as what a side asks the "
                         "Court to do, never as something the Court already did. Identify a "
@@ -392,21 +393,41 @@ class OpenAILegalBriefGenerator:
             if self.request_executor is not None
             else self.client.chat.completions.create(**request)
         )
-        content = completion.choices[0].message.content
+        choices = getattr(completion, "choices", ())
+        if not choices:
+            raise BriefValidationError(
+                "brief model returned no choice", safe_code="empty_choice"
+            )
+        choice = choices[0]
+        if getattr(choice, "finish_reason", None) == "length":
+            raise BriefValidationError(
+                "brief model exhausted its output bound", safe_code="output_truncated"
+            )
+        content = getattr(getattr(choice, "message", None), "content", None)
         if not content:
-            raise BriefValidationError("brief model returned no structured content")
+            raise BriefValidationError(
+                "brief model returned no structured content", safe_code="empty_content"
+            )
         stripped = content.strip()
         if not self.strict_json_schema and stripped.startswith("```"):
             lines = stripped.splitlines()
             if len(lines) >= 3 and lines[-1].strip() == "```":
                 stripped = "\n".join(lines[1:-1])
-        if self.response_schema is not None:
-            payload = _repair_private_schema_payload(
-                json.loads(stripped), candidate, claims
-            )
-            draft = _plain_language_draft(LegalBriefDraft.model_validate(payload))
-        else:
-            draft = _plain_language_draft(LegalBriefDraft.model_validate_json(stripped))
+        try:
+            if self.response_schema is not None:
+                payload = _normalize_private_schema_payload(
+                    json.loads(stripped), candidate, claims
+                )
+                draft = _plain_language_draft(LegalBriefDraft.model_validate(payload))
+            else:
+                draft = _plain_language_draft(
+                    LegalBriefDraft.model_validate_json(stripped)
+                )
+        except (json.JSONDecodeError, ValidationError):
+            raise BriefValidationError(
+                "brief model returned invalid structured content",
+                safe_code="invalid_schema",
+            ) from None
         if len(candidate.argument_sessions) == 1 and draft.argument_analyses:
             session = candidate.argument_sessions[0]
             first = draft.argument_analyses[0]
@@ -420,7 +441,7 @@ class OpenAILegalBriefGenerator:
                                     paragraph
                                     for analysis in draft.argument_analyses
                                     for paragraph in analysis.paragraphs
-                                ),
+                                )[:6],
                                 "claim_ids": tuple(
                                     dict.fromkeys(
                                         claim_id
@@ -1194,15 +1215,21 @@ class BriefGenerationService:
     ) -> LegalBriefRevision:
         if not decision.eligible or not decision.claims or decision.maturity is None:
             raise BriefPolicyError("case is not eligible for legal brief generation")
-        draft = self.generator.generate(candidate, decision.claims, decision.maturity)
-        validate_brief_draft(
-            draft,
-            candidate,
-            decision.claims,
-            public_quotes=self.public_quotes,
-            maximum_sentence_words=self.maximum_sentence_words,
-            maximum_paragraph_words=self.maximum_paragraph_words,
-        )
+        try:
+            draft = self.generator.generate(candidate, decision.claims, decision.maturity)
+            validate_brief_draft(
+                draft,
+                candidate,
+                decision.claims,
+                public_quotes=self.public_quotes,
+                maximum_sentence_words=self.maximum_sentence_words,
+                maximum_paragraph_words=self.maximum_paragraph_words,
+            )
+        except BriefValidationError as error:
+            safe_code = error.safe_code or re.sub(
+                r"[^a-z0-9]+", "_", str(error).casefold()
+            ).strip("_")[:80]
+            raise BriefValidationError(str(error), safe_code=safe_code) from None
         brief_id = uuid5(NAMESPACE_URL, f"ragchew:scotus-case-brief:{candidate.case_id}")
         revision = LegalBriefRevision(
             brief_id=brief_id,

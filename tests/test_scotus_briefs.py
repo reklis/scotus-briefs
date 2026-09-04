@@ -18,6 +18,7 @@ from ragchew.scotus.briefs import (
     LegalBriefDraft,
     OpenAILegalBriefGenerator,
     evaluate_brief_candidate,
+    simple_brief_json_schema,
 )
 from ragchew.scotus.contracts import (
     BriefMaturity,
@@ -502,17 +503,20 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
     class Completions:
         def __init__(self) -> None:
             self.request: dict[str, object] = {}
+            self.content = draft.model_dump_json()
 
         def create(self, **kwargs: object) -> object:
             self.request = kwargs
             return SimpleNamespace(
-                choices=[SimpleNamespace(message=SimpleNamespace(content=draft.model_dump_json()))]
+                choices=[SimpleNamespace(message=SimpleNamespace(content=self.content))]
             )
 
     completions = Completions()
     client = SimpleNamespace(chat=SimpleNamespace(completions=completions))
     generator = OpenAILegalBriefGenerator(
-        "gpt-5", client  # type: ignore[arg-type]
+        "gpt-5",  # type: ignore[arg-type]
+        client,
+        response_schema=simple_brief_json_schema(),
     )
     assert generator.generate(source, decision.claims, decision.maturity) == draft
     assert completions.request["model"] == "gpt-5"
@@ -523,9 +527,19 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
     assert "everyday language" in prompt
     assert "What this case is about" in prompt
     assert "position_group" in prompt
+    assert "procedural posture" in prompt
+    assert "Copy every claim ID exactly" in prompt
     assert "do not use quotation" in prompt
     response_format = completions.request["response_format"]
-    assert json.dumps(response_format).find("json_schema") >= 0
+    serialized_format = json.dumps(response_format)
+    assert "json_schema" in serialized_format
+    assert "$defs" not in serialized_format
+
+    unsupported = draft.model_dump(mode="json")
+    unsupported["title_claim_ids"] = [str(uuid4())]
+    completions.content = json.dumps(unsupported)
+    with pytest.raises(ValueError):
+        generator.generate(source, decision.claims, decision.maturity)
 
 
 def test_sensitive_details_are_minimized_or_suppressed() -> None:

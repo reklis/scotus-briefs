@@ -62,6 +62,7 @@ from ragchew.scotus.briefs import (
     InMemoryBriefRevisionStore,
     OpenAILegalBriefGenerator,
     evaluate_brief_candidate,
+    simple_brief_json_schema,
 )
 from ragchew.scotus.contracts import (
     LegalObservation,
@@ -91,6 +92,7 @@ from ragchew.scotus.documents import (
 from ragchew.scotus.extraction import (
     InMemoryLegalObservationStore,
     LegalEvidenceBlock,
+    LegalExtractionError,
     LegalExtractionInput,
     LegalExtractionService,
     OpenAILegalObservationExtractor,
@@ -1347,6 +1349,7 @@ class LiveStaticCaseProcessor:
         common_blocks: list[LegalEvidenceBlock] = []
         session_blocks: dict[UUID, list[LegalEvidenceBlock]] = {}
         parser_versions: dict[UUID, str] = {}
+        extraction_rejection_codes: list[str] = []
         all_digests = tuple(states[key].integrity.sha256 for key in sorted(states))
 
         for item in documents:
@@ -1440,11 +1443,22 @@ class LiveStaticCaseProcessor:
                     ),
                     request_executor=executor,
                 )
-                observations.extend(
-                    LegalExtractionService(extractor, extraction_store).process(source_input)
-                )
+                service = LegalExtractionService(extractor, extraction_store)
+                observations.extend(service.process(source_input))
+                extraction_rejection_codes.extend(service.rejection_codes)
         if not observations:
-            raise ValueError("no grounded observations survived extraction validation")
+            dominant = (
+                max(
+                    sorted(set(extraction_rejection_codes)),
+                    key=extraction_rejection_codes.count,
+                )
+                if extraction_rejection_codes
+                else "empty_batch"
+            )
+            raise LegalExtractionError(
+                "no grounded observations survived extraction validation",
+                safe_code=f"empty_grounded_case:{dominant}"[:80],
+            )
         observations.sort(key=lambda item: str(item.observation_id))
         return tuple(observations), urls
 
@@ -1539,6 +1553,7 @@ class LiveStaticCaseProcessor:
             self.model_client,
             maximum_sentence_words=self.config.generation.maximum_sentence_words,
             maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
+            response_schema=simple_brief_json_schema(),
             maximum_output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
             request_executor=request,
         )

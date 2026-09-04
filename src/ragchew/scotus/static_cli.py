@@ -422,6 +422,26 @@ def _batch(args: argparse.Namespace) -> int:
         project_base_path=args.project_base_path,
     )
     mode = DiscoveryMode(args.mode)
+    if args.maximum_cases is not None:
+        configured_limit = (
+            config.bootstrap.maximum_cases_per_run
+            if mode is DiscoveryMode.BOOTSTRAP
+            else config.runner_limits.maximum_cases_per_run
+        )
+        if args.maximum_cases < 1 or args.maximum_cases > configured_limit:
+            raise ValueError(
+                "maximum-cases override must be positive and may only reduce the configured bound"
+            )
+        if mode is DiscoveryMode.BOOTSTRAP:
+            bootstrap = config.bootstrap.model_copy(
+                update={"maximum_cases_per_run": args.maximum_cases}
+            )
+            config = config.model_copy(update={"bootstrap": bootstrap})
+        else:
+            runner_limits = config.runner_limits.model_copy(
+                update={"maximum_cases_per_run": args.maximum_cases}
+            )
+            config = config.model_copy(update={"runner_limits": runner_limits})
     state_store = StaticStateStore(args.state)
     original = state_store.load()
     result = adapter.run(
@@ -840,6 +860,11 @@ def build_parser() -> argparse.ArgumentParser:
     batch.add_argument("--build-epoch", default="1970-01-01T00:00:00Z")
     batch.add_argument("--github-output", type=Path)
     batch.add_argument("--authorized-replay", action="store_true")
+    batch.add_argument(
+        "--maximum-cases",
+        type=int,
+        help="reduce the configured case bound for an authorized validation run",
+    )
     batch.add_argument("--fixture", type=Path, default=Path("tests/fixtures/static/one-case.json"))
     batch.set_defaults(function=_batch)
 

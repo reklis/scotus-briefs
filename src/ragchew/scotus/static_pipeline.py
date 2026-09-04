@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 import shutil
 import signal
 import tempfile
@@ -833,7 +834,12 @@ class StaticBatchOrchestrator:
                                 )[:10]
                             ) + "]"
                         else:
+                            safe_code = getattr(error, "safe_code", None)
                             safe_detail = type(error).__name__
+                            if isinstance(safe_code, str) and re.fullmatch(
+                                r"[a-z0-9_:-]{1,80}", safe_code
+                            ):
+                                safe_detail += f"[{safe_code}]"
                         LOG.warning(
                             "SCOTUS bounded case failure; category=%s; detail=%s; cases=%d; "
                             "documents=%d; requests=%d; bytes=%d; extraction_calls=%d; "

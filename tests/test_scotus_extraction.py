@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+from types import SimpleNamespace
 from uuid import uuid4
 
 import pytest
@@ -22,6 +24,7 @@ from ragchew.scotus.extraction import (
     LegalExtractionError,
     LegalExtractionInput,
     LegalExtractionService,
+    OpenAILegalObservationExtractor,
     ProposedEvidence,
     ProposedLegalObservation,
     bounded_contexts,
@@ -123,6 +126,64 @@ def process(
     ).process(source_value)
 
 
+def test_openai_extraction_supplies_and_derives_exact_block_identity() -> None:
+    evidence = block("What text supports the rule?")
+    source_value = source(evidence)
+    item = proposed(evidence, "  What text supports the rule?  ").model_copy(
+        update={
+            "speaker_name": "Invented Name",
+            "speaker_kind": SpeakerKind.ADVOCATE,
+            "identity_basis": SpeakerIdentityBasis.ANONYMOUS,
+            "attribution": "Invented attribution",
+        }
+    )
+    completion = SimpleNamespace(
+        choices=(
+            SimpleNamespace(
+                finish_reason="stop",
+                message=SimpleNamespace(
+                    content=LegalExtractionBatch(observations=[item]).model_dump_json()
+                ),
+            ),
+        )
+    )
+    requests: list[dict[str, object]] = []
+    extractor = OpenAILegalObservationExtractor(
+        "qwen3.8:27b",
+        SimpleNamespace(),
+        request_executor=lambda request: (requests.append(request), completion)[1],
+    )
+
+    batch = extractor.extract(source_value)
+    sent = json.loads(requests[0]["messages"][1]["content"])[0]  # type: ignore[index]
+    assert sent["speaker_name"] == evidence.speaker_name
+    assert sent["speaker_kind"] == evidence.speaker_kind.value
+    assert sent["identity_basis"] == evidence.identity_basis.value
+    normalized = batch.observations[0]
+    assert normalized.speaker_name == evidence.speaker_name
+    assert normalized.speaker_kind is evidence.speaker_kind
+    assert normalized.identity_basis is evidence.identity_basis
+    assert normalized.attribution == evidence.attribution
+    assert process(source_value, normalized)[0].evidence[0].quote_private == (
+        "What text supports the rule?"
+    )
+
+
+def test_openai_extraction_reports_safe_truncation_code() -> None:
+    completion = SimpleNamespace(
+        choices=(
+            SimpleNamespace(
+                finish_reason="length",
+                message=SimpleNamespace(content="private partial output"),
+            ),
+        )
+    )
+    with pytest.raises(LegalExtractionError) as captured:
+        OpenAILegalObservationExtractor.parse_completion(completion)
+    assert captured.value.safe_code == "output_truncated"
+    assert "private partial output" not in str(captured.value)
+
+
 def test_bounded_contexts_never_split_or_overflow_blocks() -> None:
     blocks = (
         block("a" * 10, block_id="a"),
@@ -197,6 +258,19 @@ def test_unsupported_status_identity_citation_and_prediction_fail_closed(
         "Is that rule consistent with Smith v. Jones, 599 U. S. 100?",
     ).model_copy(update=item_update)
     assert process(source(evidence), item) == []
+
+
+def test_rejected_observation_exposes_only_a_fixed_safe_code() -> None:
+    evidence = block("What text supports the rule?")
+    invalid = proposed(evidence, "private invented quote")
+    service = LegalExtractionService(
+        FakeExtractor([invalid]), InMemoryLegalObservationStore()
+    )
+    assert service.process(source(evidence)) == []
+    assert service.rejection_codes == [
+        "evidence_quote_does_not_exactly_match_source_block"
+    ]
+    assert "private invented quote" not in " ".join(service.rejection_codes)
 
 
 def test_transcript_cannot_establish_holding_or_requested_reversal() -> None:

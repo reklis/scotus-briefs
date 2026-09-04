@@ -26,6 +26,11 @@ on:
         required: false
         default: false
         type: boolean
+      maximum_cases:
+        description: Optional lower case bound for a reviewed live validation run (0 uses config)
+        required: false
+        default: 0
+        type: number
 
 concurrency:
   group: scotus-pages-publication
@@ -45,7 +50,7 @@ jobs:
     name: Build and scan candidate
     if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: [self-hosted]
-    timeout-minutes: 360
+    timeout-minutes: 330
     environment: scotus-publication
     permissions:
       contents: read
@@ -55,6 +60,7 @@ jobs:
       release_id: ${{ steps.batch.outputs.release_id }}
       expected_parent_release_id: ${{ steps.batch.outputs.expected_parent_release_id }}
       expected_parent_commit: ${{ steps.state_sha.outputs.commit }}
+      receipts_present: ${{ steps.receipts.outputs.present }}
     steps:
       - name: Clean persistent runner before build
         run: |
@@ -176,15 +182,25 @@ jobs:
             --github-output "$GITHUB_OUTPUT"
       - name: Run reviewed bounded live adapter
         id: live_batch
+        timeout-minutes: 315
         if: (inputs.mode || 'nightly') != 'fixture' && inputs.mode != 'initial-empty' && inputs.mode != 'poc-import'
         env:
           PUBLICATION_MODE: ${{ inputs.mode || 'nightly' }}
           AUTHORIZED_REPLAY: ${{ inputs.authorized_replay || false }}
+          MAXIMUM_CASES: ${{ inputs.maximum_cases || 0 }}
           RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter
           RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
         run: |
           set -euo pipefail
           replay_args=()
+          case_args=()
+          if [[ "$MAXIMUM_CASES" != "0" ]]; then
+            if [[ ! "$MAXIMUM_CASES" =~ ^[1-9][0-9]*$ ]]; then
+              echo "maximum_cases must be zero or a positive integer." >&2
+              exit 1
+            fi
+            case_args+=(--maximum-cases "$MAXIMUM_CASES")
+          fi
           if [[ "$AUTHORIZED_REPLAY" == "true" ]]; then
             if [[ "$PUBLICATION_MODE" != "nightly" || "${{ github.event_name }}" != "workflow_dispatch" ]]; then
               echo "Model replay is allowed only for an explicit manual nightly run." >&2
@@ -197,7 +213,7 @@ jobs:
             --state-dir generated-content-input --candidate-state-dir candidate-state \
             --output candidate-site --workspace "$RUNNER_TEMP/ragchew-private" \
             --source-commit "$GITHUB_SHA" --build-epoch "$(git show -s --format=%cI HEAD)" \
-            --github-output "$GITHUB_OUTPUT" "${replay_args[@]}"
+            --github-output "$GITHUB_OUTPUT" "${replay_args[@]}" "${case_args[@]}"
       - name: Build fixture, validate, and exit
         id: fixture_batch
         if: (inputs.mode || 'nightly') == 'fixture'
@@ -249,6 +265,14 @@ jobs:
           else
             echo "present=false" >> "$GITHUB_OUTPUT"
           fi
+      - name: Upload validated opaque cost receipts
+        if: always() && steps.receipts.outcome == 'success' && steps.receipts.outputs.present == 'true' && (github.event_name == 'schedule' || inputs.deploy == true)
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: opaque-cost-receipts
+          path: ${{ runner.temp }}/ragchew-private/public-cost-receipts.json
+          if-no-files-found: error
+          retention-days: 1
       - name: Upload scanned non-deploy dry-run candidate
         if: github.event_name == 'workflow_dispatch' && inputs.deploy != true && steps.batch.outcome == 'success' && steps.receipts.outcome == 'success'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -275,14 +299,6 @@ jobs:
       # A manual deploy=false run validates its candidate and receipts locally, then
       # discards both state and receipts. This avoids making model inputs unreplayable
       # without their candidate; an interrupted dry run may therefore repeat local model work.
-      - name: Upload validated opaque cost receipts
-        if: always() && steps.receipts.outcome == 'success' && steps.receipts.outputs.present == 'true' && (github.event_name == 'schedule' || inputs.deploy == true)
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: opaque-cost-receipts
-          path: ${{ runner.temp }}/ragchew-private/public-cost-receipts.json
-          if-no-files-found: error
-          retention-days: 1
       - name: Safe build summary
         if: always()
         run: |
@@ -304,7 +320,7 @@ jobs:
   persist-cost-receipts:
     name: Persist validated opaque receipts only
     needs: build
-    if: always() && needs.build.outputs.expected_parent_commit != '' && (github.event_name == 'schedule' || inputs.deploy == true)
+    if: always() && needs.build.outputs.expected_parent_commit != '' && needs.build.outputs.receipts_present == 'true' && (github.event_name == 'schedule' || inputs.deploy == true)
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
@@ -326,7 +342,6 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
-        continue-on-error: true
         with:
           name: opaque-cost-receipts
           path: receipt

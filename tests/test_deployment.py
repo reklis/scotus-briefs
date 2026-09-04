@@ -90,7 +90,13 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "install -d -m 700 candidate-site" not in workflow
     assert workflow.index("Validate opaque receipts before any upload") < workflow.index(
         "Upload validated opaque cost receipts"
-    )
+    ) < workflow.index("Upload exact Pages artifact")
+    assert "    timeout-minutes: 330\n" in workflow
+    live_step = workflow[
+        workflow.index("- name: Run reviewed bounded live adapter") :
+        workflow.index("- name: Build fixture, validate, and exit")
+    ]
+    assert "timeout-minutes: 315" in live_step
     receipt_upload = workflow[
         workflow.index("- name: Upload validated opaque cost receipts") :
         workflow.index("- name: Safe build summary")
@@ -100,6 +106,8 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
         workflow.index("\n  persist-cost-receipts:\n") : workflow.index("\n  deploy:\n")
     ]
     assert "github.event_name == 'schedule' || inputs.deploy == true" in receipt_job
+    assert "needs.build.outputs.receipts_present == 'true'" in receipt_job
+    assert "continue-on-error: true" not in receipt_job
     assert "crash or rerun may repeat zero-cost local model work" in workflow
     assert "git -C generated-content-input rev-parse HEAD" in workflow
     assert "path: source" in workflow and "path: generated-content" in workflow
@@ -116,6 +124,7 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert '"$PUBLICATION_MODE" != "nightly"' in workflow
     assert '"${{ github.event_name }}" != "workflow_dispatch"' in workflow
     assert "replay_args+=(--authorized-replay)" in workflow
+    assert "case_args+=(--maximum-cases \"$MAXIMUM_CASES\")" in workflow
     assert "Run reviewed bounded live adapter" in workflow
     assert "if: always()" in workflow and "Clean persistent runner after build" in workflow
     assert "Clean persistent runner before build" in workflow

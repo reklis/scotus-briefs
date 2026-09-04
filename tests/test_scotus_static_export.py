@@ -62,6 +62,11 @@ def test_workflow_cli_contract_and_fixture_preview_builds_then_exits(tmp_path: P
     parser = build_parser()
     help_text = parser.format_help()
     # Subcommand choices are included in argparse's top-level usage.
+    bounded = parser.parse_args(
+        ["batch", "--mode", "nightly", "--output", str(tmp_path), "--maximum-cases", "1"]
+    )
+    assert bounded.maximum_cases == 1
+
     for command in (
         "fixture-preview",
         "validate",

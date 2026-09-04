@@ -18,8 +18,10 @@ certificate issuance and HTTPS enforcement are still pending.
 The owner enabled generated-case processing on 2026-09-03 and removed the one-case
 throughput throttle after launch testing. A run may now drain up to 100 cases and 1,100
 zero-cost local-model calls, continuing past individual case validation failures. Court
-rate controls, source authorization, a 5-hour-50-minute runtime bound, private-disk and
-retrieval limits, and every per-case publication validator remain mandatory. Accepted
+rate controls, source authorization, a five-hour processing bound, private-disk and
+retrieval limits, and every per-case publication validator remain mandatory. The shorter
+application bound reserves time for receipt upload, candidate validation, and runner cleanup
+inside the 5-hour-30-minute build-job limit. Accepted
 legacy imports with no logical-document checkpoint are excluded from processor-migration
 and rotating redownload work; they re-enter processing only when current Court discovery
 reports a metadata change or an owner explicitly requests a backfill. Prior dry runs
@@ -33,7 +35,14 @@ legacy-checkpoint compatibility fix (`33790480565`) downloaded three documents i
 requests (2,344,867 bytes) and made two zero-cost extraction calls. Grounding validation
 rejected the result before the brief stage, so it did not deploy or promote public content.
 An explicit reviewed replay (`33796212480`) produced the same fail-closed result after
-three documents, 18 requests, 2,362,990 bytes, and two extraction calls.
+three documents, 18 requests, 2,362,990 bytes, and two extraction calls. A later bounded
+run reduced the stale queue from 1,716 entries to 29 genuine new/changed cases and reached
+brief generation, but no attempted case passed final validation before runtime exhaustion.
+Extraction now supplies exact source identity fields, deterministically derives provenance
+from the referenced evidence block, uses smaller evidence windows, and reports only fixed
+safe failure codes. Brief generation uses a simplified strict local-model schema without
+manufacturing claim coverage, and one fully budgeted retry is allowed only for retryable
+loopback transport failures.
 
 ## One-time owner settings
 

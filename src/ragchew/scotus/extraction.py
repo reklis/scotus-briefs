@@ -14,7 +14,7 @@ from openai.lib._pydantic import to_strict_json_schema
 from psycopg import Connection
 from psycopg.rows import dict_row
 from psycopg_pool import ConnectionPool
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from ragchew.scotus.contracts import (
     AdvocateRole,
@@ -32,7 +32,9 @@ from ragchew.scotus.contracts import (
 
 
 class LegalExtractionError(ValueError):
-    pass
+    def __init__(self, message: str, *, safe_code: str | None = None) -> None:
+        super().__init__(message)
+        self.safe_code = safe_code
 
 
 class LegalEvidenceBlock(BaseModel):
@@ -294,7 +296,9 @@ class OpenAILegalObservationExtractor:
                     f"{block.start_file_page}:{block.start_line}-"
                     f"{block.end_file_page}:{block.end_line}"
                 ),
-                "speaker": block.speaker_name,
+                "speaker_name": block.speaker_name,
+                "speaker_kind": block.speaker_kind.value,
+                "identity_basis": block.identity_basis.value,
                 "attribution": block.attribution,
                 "text": block.text_private,
             }
@@ -320,8 +324,11 @@ class OpenAILegalObservationExtractor:
                         "facts. A justice's question is not a vote or holding. Transcript "
                         "evidence cannot establish a Supreme Court order, holding, judgment, "
                         "or disposition. "
-                        "Return one or two independently useful observations, or an empty list "
-                        "when none can satisfy every rule. Copy block_id exactly. Copy quote as "
+                        "Return three or four independently useful observations when the "
+                        "evidence supports them, or fewer (including an empty list) when it "
+                        "does not. Include a question-presented or procedural-posture item and "
+                        "an advocate-contention or justice-question item when supported. Copy "
+                        "block_id exactly. Copy quote as "
                         "one exact, contiguous substring from that block without correcting "
                         "spacing, punctuation, capitalization, or transcription errors. Copy "
                         "speaker_name, speaker_kind, identity_basis, and attribution exactly "
@@ -346,10 +353,31 @@ class OpenAILegalObservationExtractor:
 
     @staticmethod
     def parse_completion(completion: Any) -> LegalExtractionBatch:
-        content = completion.choices[0].message.content
+        choices = getattr(completion, "choices", ())
+        if not choices:
+            raise LegalExtractionError(
+                "legal extraction model returned no choice",
+                safe_code="empty_choice",
+            )
+        choice = choices[0]
+        if getattr(choice, "finish_reason", None) == "length":
+            raise LegalExtractionError(
+                "legal extraction model exhausted its output bound",
+                safe_code="output_truncated",
+            )
+        content = getattr(getattr(choice, "message", None), "content", None)
         if not content:
-            raise LegalExtractionError("legal extraction model returned no structured content")
-        return LegalExtractionBatch.model_validate_json(content)
+            raise LegalExtractionError(
+                "legal extraction model returned no structured content",
+                safe_code="empty_content",
+            )
+        try:
+            return LegalExtractionBatch.model_validate_json(content)
+        except ValidationError:
+            raise LegalExtractionError(
+                "legal extraction model returned invalid structured content",
+                safe_code="invalid_schema",
+            ) from None
 
     def extract(self, source: LegalExtractionInput) -> LegalExtractionBatch:
         request = self.request_arguments(source)
@@ -358,7 +386,23 @@ class OpenAILegalObservationExtractor:
             if self.request_executor is not None
             else self.client.chat.completions.create(**request)
         )
-        return self.parse_completion(completion)
+        batch = self.parse_completion(completion)
+        blocks = {block.block_id: block for block in source.blocks}
+        normalized: list[ProposedLegalObservation] = []
+        for proposed in batch.observations:
+            if len(proposed.evidence) == 1:
+                block = blocks.get(proposed.evidence[0].block_id)
+                if block is not None:
+                    proposed = proposed.model_copy(
+                        update={
+                            "attribution": block.attribution,
+                            "speaker_name": block.speaker_name,
+                            "speaker_kind": block.speaker_kind,
+                            "identity_basis": block.identity_basis,
+                        }
+                    )
+            normalized.append(proposed)
+        return batch.model_copy(update={"observations": normalized})
 
 
 _DOCKET = re.compile(r"\b\d{1,3}A?-\d+[A-Z]*\b", re.IGNORECASE)
@@ -499,7 +543,8 @@ def validate_proposed(
         block = blocks.get(pointer.block_id)
         if block is None:
             raise LegalExtractionError("observation references an unknown evidence block")
-        if pointer.quote not in block.text_private:
+        quote = pointer.quote.strip()
+        if quote not in block.text_private:
             raise LegalExtractionError("evidence quote does not exactly match source block")
         kinds.add(block.document_kind)
         combined_text.append(block.text_private)
@@ -511,7 +556,7 @@ def validate_proposed(
                 start_line=block.start_line,
                 end_file_page=block.end_file_page,
                 end_line=block.end_line,
-                quote_private=pointer.quote,
+                quote_private=quote,
             )
         )
     _validate_status(item, kinds)
@@ -719,6 +764,7 @@ class LegalExtractionService:
     ) -> None:
         self.extractor = extractor
         self.store = store
+        self.rejection_codes: list[str] = []
 
     def process(self, source: LegalExtractionInput) -> list[LegalObservation]:
         batch = self.extractor.extract(source)
@@ -746,9 +792,14 @@ class LegalExtractionService:
         for index, proposed in enumerate(batch.observations):
             try:
                 evidence = validate_proposed(proposed, blocks)
-            except LegalExtractionError:
+            except LegalExtractionError as error:
                 # Reject only the unsupported observation; other independently grounded
-                # observations in the structured batch remain usable.
+                # observations in the structured batch remain usable. Retain only a fixed,
+                # payload-free code for aggregate operational diagnostics.
+                code = error.safe_code or re.sub(
+                    r"[^a-z0-9]+", "_", str(error).casefold()
+                ).strip("_")[:60]
+                self.rejection_codes.append(code or "grounding_rejected")
                 continue
             combined = " ".join(item.quote_private for item in evidence)
             normalized = proposed.normalized_value
