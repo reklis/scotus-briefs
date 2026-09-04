@@ -8,10 +8,13 @@ Nightly schedule: 03:17 UTC (`17 3 * * *`)
 
 The validated empty-state site was first deployed on 2026-09-03. The same day, the
 accepted local POC corpus was recovered through the read-only sanitizer and deployed:
-1,710 active articles, 1,875 immutable revisions, 26 terms, and 2,974 HTML pages. Live
-Pages release `90df36da587af2ebd277111ebf8b056bacf6c3aef55f7ac2620a458fbed7478e`
-matches the protected `generated-content` branch. The root home page is the searchable
-case interface, initially showing results 1–20 of 1,710 in deterministic site order.
+1,710 accepted legacy articles, 1,875 immutable legacy revisions, 26 terms, and 2,974
+HTML pages. The first newly generated case was published on 2026-09-04 through retained
+candidate run `33925733676` and no-reprocessing deployment run `33927868410`. Live Pages
+release `0c4b596b8acbda86bc49b9476c27118b18d2037599f6228824579e32693e7350`
+now contains 1,711 active articles and 2,976 HTML pages and matches the protected
+`generated-content` branch. The root home page is the searchable case interface,
+initially showing results 1–20 of 1,711 in deterministic site order.
 DNS is valid at GitHub; custom-domain
 certificate issuance and HTTPS enforcement are still pending.
 
