@@ -231,7 +231,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v19"
+    PROMPT_VERSION = "scotus-brief-plain-language-v20"
 
     def __init__(
         self,
@@ -337,7 +337,9 @@ class OpenAILegalBriefGenerator:
                     "content": (
                         "Explain this Supreme Court case to a curious reader with no legal "
                         "training. Use only the approved claim ledger and cite claim IDs for "
-                        "every title, summary, and paragraph. Put citations only in the matching "
+                        "every title, summary, and paragraph. Begin the title with the supplied "
+                        "official case caption; never use a generic heading as the title. Put "
+                        "citations only in the matching "
                         "claim_ids arrays, never in public prose. Use direct everyday language, "
                         "active voice, concrete explanations, and short paragraphs. Return five "
                         "sections with one paragraph each and exactly two short paragraphs for "
@@ -503,6 +505,12 @@ class OpenAILegalBriefGenerator:
                     )
                 }
             )
+        if draft.title.strip().casefold() in {
+            "what this case is about",
+            "plain-language guide",
+            "supreme court case explained",
+        }:
+            draft = draft.model_copy(update={"title": candidate.caption})
         return draft
 
 

@@ -555,6 +555,13 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
         "maxItems"
     ] == 1
 
+    completions.content = draft.model_copy(
+        update={"title": "What this case is about"}
+    ).model_dump_json()
+    assert generator.generate(source, decision.claims, decision.maturity).title == (
+        source.caption
+    )
+
     unsupported = draft.model_dump(mode="json")
     unsupported["title_claim_ids"] = [str(uuid4())]
     completions.content = json.dumps(unsupported)

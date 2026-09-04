@@ -43,7 +43,7 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.discovery.backfill_case_limit == 200
     assert config.generation.provider == "ollama"
     assert config.generation.model == "qwen3.8:27b"
-    assert config.generation.prompt_version == "scotus-brief-plain-language-v19"
+    assert config.generation.prompt_version == "scotus-brief-plain-language-v20"
     assert config.generation.brief_generation_enabled is True
     assert config.generation.maximum_brief_api_calls_per_run == 100
     assert config.generation.stop_after_brief_validation_failure is False
