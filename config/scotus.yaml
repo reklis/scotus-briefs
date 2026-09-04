@@ -125,8 +125,8 @@ generation:
   prompt_version: scotus-brief-plain-language-v25
   brief_generation_enabled: true
   maximum_brief_api_calls_per_run: 100
-  # Keep routine runs to one draft while validation tuning remains fail-closed.
-  maximum_brief_validation_attempts_per_case: 1
+  # One fresh draft may correct a fixed-code validation failure; both remain budgeted.
+  maximum_brief_validation_attempts_per_case: 2
   stop_after_brief_validation_failure: false
   audience: general_public
   # Smaller windows improve exact block/quote copying by the local model and stay
