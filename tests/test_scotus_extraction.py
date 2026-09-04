@@ -155,7 +155,9 @@ def test_openai_extraction_supplies_and_derives_exact_block_identity() -> None:
     )
 
     batch = extractor.extract(source_value)
-    sent = json.loads(requests[0]["messages"][1]["content"])[0]  # type: ignore[index]
+    payload = json.loads(requests[0]["messages"][1]["content"])  # type: ignore[index]
+    assert payload["mode"] == "/no_think"
+    sent = payload["evidence"][0]
     assert sent["speaker_name"] == evidence.speaker_name
     assert sent["speaker_kind"] == evidence.speaker_kind.value
     assert sent["identity_basis"] == evidence.identity_basis.value

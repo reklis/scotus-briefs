@@ -180,7 +180,7 @@ class MockOpenAI:
         name = request["response_format"]["json_schema"]["name"]
         user = json.loads(request["messages"][1]["content"])
         content = (
-            self._extraction(user)
+            self._extraction(user["evidence"])
             if name == "scotus_legal_observations"
             else self._brief(user)
         )
@@ -469,13 +469,17 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert all(request["extra_body"] == {"think": False} for request in model.requests)
     assert model.requests[0]["max_tokens"] == 8_000
     assert model.requests[1]["max_tokens"] == 8_000
-    extraction_evidence = json.loads(model.requests[0]["messages"][1]["content"])
+    extraction_payload = json.loads(model.requests[0]["messages"][1]["content"])
+    assert extraction_payload["mode"] == "/no_think"
+    extraction_evidence = extraction_payload["evidence"]
     assert {
         "speaker_name",
         "speaker_kind",
         "identity_basis",
         "attribution",
     }.issubset(extraction_evidence[0])
+    brief_payload = json.loads(model.requests[1]["messages"][1]["content"])
+    assert brief_payload["mode"] == "/no_think"
     brief_schema = model.requests[1]["response_format"]["json_schema"]["schema"]
     assert "$defs" not in brief_schema
     receipts = CostReceiptBundle.model_validate_json(

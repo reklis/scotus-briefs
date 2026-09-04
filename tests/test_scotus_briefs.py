@@ -542,7 +542,10 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
     assert completions.request["temperature"] is omit
     messages = completions.request["messages"]
     prompt = messages[0]["content"]  # type: ignore[index]
+    assert prompt.startswith("/no_think")
     assert "no legal training" in prompt
+    user_payload = json.loads(messages[1]["content"])  # type: ignore[index]
+    assert user_payload["mode"] == "/no_think"
     assert "everyday language" in prompt
     assert "What this case is about" in prompt
     assert "position_group" in prompt

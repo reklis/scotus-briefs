@@ -271,7 +271,7 @@ class DeterministicTranscriptObservationExtractor:
 
 
 class OpenAILegalObservationExtractor:
-    PROMPT_VERSION = "scotus-legal-extraction-v4"
+    PROMPT_VERSION = "scotus-legal-extraction-v5"
 
     def __init__(
         self,
@@ -319,8 +319,9 @@ class OpenAILegalObservationExtractor:
                 {
                     "role": "system",
                     "content": (
-                        "Extract only legal observations explicitly supported by the supplied "
-                        "official Supreme Court evidence. Attribute advocate claims and disputed "
+                        "/no_think\nExtract only legal observations explicitly supported by the "
+                        "supplied official Supreme Court evidence. Attribute advocate claims and "
+                        "disputed "
                         "facts. A justice's question is not a vote or holding. Transcript "
                         "evidence cannot establish a Supreme Court order, holding, judgment, "
                         "or disposition. "
@@ -339,7 +340,13 @@ class OpenAILegalObservationExtractor:
                         "evidence block per observation and quote no more than 30 words."
                     ),
                 },
-                {"role": "user", "content": json.dumps(evidence, separators=(",", ":"))},
+                {
+                    "role": "user",
+                    "content": json.dumps(
+                        {"mode": "/no_think", "evidence": evidence},
+                        separators=(",", ":"),
+                    ),
+                },
             ],
             "response_format": {
                 "type": "json_schema",

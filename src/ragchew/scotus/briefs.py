@@ -231,7 +231,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v23"
+    PROMPT_VERSION = "scotus-brief-plain-language-v24"
 
     def __init__(
         self,
@@ -335,8 +335,8 @@ class OpenAILegalBriefGenerator:
                 {
                     "role": "system",
                     "content": (
-                        "Explain this Supreme Court case to a curious reader with no legal "
-                        "training. Use only the approved claim ledger and cite claim IDs for "
+                        "/no_think\nExplain this Supreme Court case to a curious reader with no "
+                        "legal training. Use only the approved claim ledger and cite claim IDs for "
                         "every title, summary, and paragraph. Begin the title with the supplied "
                         "official case caption; never use a generic heading as the title. Put "
                         "citations only in the matching "
@@ -397,6 +397,7 @@ class OpenAILegalBriefGenerator:
                     "role": "user",
                     "content": json.dumps(
                         {
+                            "mode": "/no_think",
                             "caption": candidate.caption,
                             "docket": candidate.primary_docket,
                             "maturity": maturity.value,
