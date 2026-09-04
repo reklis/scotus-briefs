@@ -534,6 +534,11 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
     serialized_format = json.dumps(response_format)
     assert "json_schema" in serialized_format
     assert "$defs" not in serialized_format
+    schema = response_format["json_schema"]["schema"]  # type: ignore[index]
+    assert schema["properties"]["sections"]["maxItems"] == 7
+    assert schema["properties"]["sections"]["items"]["properties"]["paragraphs"][
+        "maxItems"
+    ] == 1
 
     unsupported = draft.model_dump(mode="json")
     unsupported["title_claim_ids"] = [str(uuid4())]

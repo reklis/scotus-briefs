@@ -140,13 +140,23 @@ def _normalize_private_schema_payload(
 
 
 def simple_brief_json_schema() -> dict[str, Any]:
-    string_array = {"type": "array", "items": {"type": "string"}, "minItems": 1}
+    claim_ids = {
+        "type": "array",
+        "items": {"type": "string", "maxLength": 36},
+        "minItems": 1,
+        "maxItems": 32,
+    }
     section = {
         "type": "object",
         "properties": {
-            "heading": {"type": "string"},
-            "paragraphs": string_array,
-            "claim_ids": string_array,
+            "heading": {"type": "string", "maxLength": 120},
+            "paragraphs": {
+                "type": "array",
+                "items": {"type": "string", "maxLength": 800},
+                "minItems": 1,
+                "maxItems": 1,
+            },
+            "claim_ids": claim_ids,
         },
         "required": ["heading", "paragraphs", "claim_ids"],
         "additionalProperties": False,
@@ -154,14 +164,15 @@ def simple_brief_json_schema() -> dict[str, Any]:
     argument = {
         "type": "object",
         "properties": {
-            "argument_id": {"type": "string"},
-            "heading": {"type": "string"},
+            "argument_id": {"type": "string", "maxLength": 36},
+            "heading": {"type": "string", "maxLength": 120},
             "paragraphs": {
                 "type": "array",
-                "items": {"type": "string"},
+                "items": {"type": "string", "maxLength": 800},
                 "minItems": 2,
+                "maxItems": 2,
             },
-            "claim_ids": string_array,
+            "claim_ids": claim_ids,
         },
         "required": ["argument_id", "heading", "paragraphs", "claim_ids"],
         "additionalProperties": False,
@@ -169,15 +180,21 @@ def simple_brief_json_schema() -> dict[str, Any]:
     return {
         "type": "object",
         "properties": {
-            "title": {"type": "string"},
-            "title_claim_ids": string_array,
-            "dek": {"type": "string"},
-            "dek_claim_ids": string_array,
-            "sections": {"type": "array", "items": section, "minItems": 1},
+            "title": {"type": "string", "maxLength": 180},
+            "title_claim_ids": claim_ids,
+            "dek": {"type": "string", "maxLength": 500},
+            "dek_claim_ids": claim_ids,
+            "sections": {
+                "type": "array",
+                "items": section,
+                "minItems": 4,
+                "maxItems": 7,
+            },
             "argument_analyses": {
                 "type": "array",
                 "items": argument,
                 "minItems": 1,
+                "maxItems": 10,
             },
         },
         "required": [
@@ -212,7 +229,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v15"
+    PROMPT_VERSION = "scotus-brief-plain-language-v16"
 
     def __init__(
         self,
@@ -314,7 +331,9 @@ class OpenAILegalBriefGenerator:
                         "training. Use only the approved claim ledger and cite claim IDs for "
                         "every title, summary, and paragraph. Put citations only in the matching "
                         "claim_ids arrays, never in public prose. Use direct everyday language, "
-                        "active voice, concrete explanations, and short paragraphs. Keep every "
+                        "active voice, concrete explanations, and short paragraphs. Return five "
+                        "sections with one paragraph each and exactly two short paragraphs for "
+                        "each supplied argument session. Keep every "
                         f"sentence at or below {self.maximum_sentence_words} words and every "
                         f"paragraph at or below {self.maximum_paragraph_words} words. Do not "
                         "write like a court filing or law-school outline. Avoid labels such as "
