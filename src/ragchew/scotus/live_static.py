@@ -1579,6 +1579,7 @@ class LiveStaticCaseProcessor:
                 maximum_output_tokens=(
                     self.config.model_budget.maximum_output_tokens_per_call
                 ),
+                reasoning_effort="none",
                 validation_feedback_code=validation_feedback_code,
                 request_executor=request,
             )

@@ -231,7 +231,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v24"
+    PROMPT_VERSION = "scotus-brief-plain-language-v25"
 
     def __init__(
         self,
@@ -243,7 +243,7 @@ class OpenAILegalBriefGenerator:
         strict_json_schema: bool = True,
         response_schema: dict[str, Any] | None = None,
         maximum_output_tokens: int | None = None,
-        reasoning_effort: Literal["low", "medium", "high"] | None = None,
+        reasoning_effort: Literal["none", "low", "medium", "high"] | None = None,
         validation_feedback_code: str | None = None,
         request_executor: Callable[[dict[str, Any]], Any] | None = None,
     ) -> None:
