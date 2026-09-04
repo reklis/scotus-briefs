@@ -99,8 +99,7 @@ model_budget:
   # window reached 131,512 bytes, so retain finite headroom while using smaller
   # evidence windows below.
   maximum_input_tokens_per_call: 150000
-  # Extraction remains stage-capped at 8k; the final bounded brief may use 16k.
-  maximum_output_tokens_per_call: 16000
+  maximum_output_tokens_per_call: 8000
   # The protected local Ollama runtime has no per-token charge.
   input_cost_usd_per_million_tokens: "0"
   output_cost_usd_per_million_tokens: "0"
@@ -123,11 +122,11 @@ approvals:
 generation:
   provider: ollama
   model: qwen3.8:27b
-  prompt_version: scotus-brief-plain-language-v21
+  prompt_version: scotus-brief-plain-language-v22
   brief_generation_enabled: true
   maximum_brief_api_calls_per_run: 100
-  # One fresh draft may correct a fixed-code validation failure; both remain budgeted.
-  maximum_brief_validation_attempts_per_case: 2
+  # Keep routine runs to one draft while validation tuning remains fail-closed.
+  maximum_brief_validation_attempts_per_case: 1
   stop_after_brief_validation_failure: false
   audience: general_public
   # Smaller windows improve exact block/quote copying by the local model and stay

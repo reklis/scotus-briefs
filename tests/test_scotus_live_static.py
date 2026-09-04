@@ -468,7 +468,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     ]
     assert all(request["extra_body"] == {"think": False} for request in model.requests)
     assert model.requests[0]["max_tokens"] == 8_000
-    assert model.requests[1]["max_tokens"] == 16_000
+    assert model.requests[1]["max_tokens"] == 8_000
     extraction_evidence = json.loads(model.requests[0]["messages"][1]["content"])
     assert {
         "speaker_name",
@@ -524,7 +524,21 @@ def test_brief_validation_gets_one_bounded_fixed_code_correction(
             )
 
     model = CorrectingModel()
-    result = run(tmp_path, MemoryStateStore(tmp_path / "state"), CourtFixture(), model)
+    config = live_config()
+    config = config.model_copy(
+        update={
+            "generation": config.generation.model_copy(
+                update={"maximum_brief_validation_attempts_per_case": 2}
+            )
+        }
+    )
+    result = run(
+        tmp_path,
+        MemoryStateStore(tmp_path / "state"),
+        CourtFixture(),
+        model,
+        config=config,
+    )
 
     assert result.publishable
     assert model.brief_calls == 2

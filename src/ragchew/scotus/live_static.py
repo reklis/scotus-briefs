@@ -1603,7 +1603,7 @@ class LiveStaticCaseProcessor:
             except BriefValidationError as error:
                 validation_feedback_code = error.safe_code
                 if validation_feedback_code:
-                    LOG.info(
+                    LOG.warning(
                         "SCOTUS brief correction requested; case=%s; code=%s; attempt=%d",
                         source.case_key,
                         validation_feedback_code,

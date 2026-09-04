@@ -231,7 +231,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v21"
+    PROMPT_VERSION = "scotus-brief-plain-language-v22"
 
     def __init__(
         self,
