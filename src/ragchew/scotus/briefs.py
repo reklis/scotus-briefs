@@ -231,7 +231,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v22"
+    PROMPT_VERSION = "scotus-brief-plain-language-v23"
 
     def __init__(
         self,
@@ -437,10 +437,6 @@ class OpenAILegalBriefGenerator:
                 "brief model returned no choice", safe_code="empty_choice"
             )
         choice = choices[0]
-        if getattr(choice, "finish_reason", None) == "length":
-            raise BriefValidationError(
-                "brief model exhausted its output bound", safe_code="output_truncated"
-            )
         content = getattr(getattr(choice, "message", None), "content", None)
         if not content:
             raise BriefValidationError(
@@ -462,6 +458,11 @@ class OpenAILegalBriefGenerator:
                     LegalBriefDraft.model_validate_json(stripped)
                 )
         except (json.JSONDecodeError, ValidationError):
+            if getattr(choice, "finish_reason", None) == "length":
+                raise BriefValidationError(
+                    "brief model exhausted its output bound",
+                    safe_code="output_truncated",
+                ) from None
             raise BriefValidationError(
                 "brief model returned invalid structured content",
                 safe_code="invalid_schema",

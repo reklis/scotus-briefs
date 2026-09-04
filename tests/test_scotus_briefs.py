@@ -517,11 +517,17 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
         def __init__(self) -> None:
             self.request: dict[str, object] = {}
             self.content = draft.model_dump_json()
+            self.finish_reason = "stop"
 
         def create(self, **kwargs: object) -> object:
             self.request = kwargs
             return SimpleNamespace(
-                choices=[SimpleNamespace(message=SimpleNamespace(content=self.content))]
+                choices=[
+                    SimpleNamespace(
+                        finish_reason=self.finish_reason,
+                        message=SimpleNamespace(content=self.content),
+                    )
+                ]
             )
 
     completions = Completions()
@@ -547,6 +553,9 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
     serialized_format = json.dumps(response_format)
     assert "json_schema" in serialized_format
     assert "$defs" not in serialized_format
+    completions.finish_reason = "length"
+    assert generator.generate(source, decision.claims, decision.maturity) == draft
+    completions.finish_reason = "stop"
     schema = response_format["json_schema"]["schema"]  # type: ignore[index]
     assert schema["properties"]["sections"]["maxItems"] == 5
     assert schema["properties"]["argument_analyses"]["minItems"] == 1

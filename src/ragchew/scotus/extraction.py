@@ -360,11 +360,6 @@ class OpenAILegalObservationExtractor:
                 safe_code="empty_choice",
             )
         choice = choices[0]
-        if getattr(choice, "finish_reason", None) == "length":
-            raise LegalExtractionError(
-                "legal extraction model exhausted its output bound",
-                safe_code="output_truncated",
-            )
         content = getattr(getattr(choice, "message", None), "content", None)
         if not content:
             raise LegalExtractionError(
@@ -374,6 +369,11 @@ class OpenAILegalObservationExtractor:
         try:
             return LegalExtractionBatch.model_validate_json(content)
         except ValidationError:
+            if getattr(choice, "finish_reason", None) == "length":
+                raise LegalExtractionError(
+                    "legal extraction model exhausted its output bound",
+                    safe_code="output_truncated",
+                ) from None
             raise LegalExtractionError(
                 "legal extraction model returned invalid structured content",
                 safe_code="invalid_schema",
