@@ -58,6 +58,7 @@ from ragchew.proceedings.sources.supreme_court import (
 from ragchew.scotus.briefs import (
     BriefCandidate,
     BriefGenerationService,
+    BriefValidationError,
     CaseArgumentSession,
     InMemoryBriefRevisionStore,
     OpenAILegalBriefGenerator,
@@ -1529,48 +1530,79 @@ class LiveStaticCaseProcessor:
         if not decision.eligible:
             raise ValueError("case failed deterministic brief policy")
         all_digests = tuple(states[key].integrity.sha256 for key in sorted(states))
-        request = _BudgetedModelRequest(
-            client=self.model_client,
-            budget=budget,
-            stage="brief",
-            document_digests=all_digests,
-            processor_versions={
-                "endpoint": self.model_endpoint,
-                "extractor": LegalExtractionService.SCHEMA_VERSION,
-                "model": self.config.generation.model,
-                "provider": self.config.generation.provider,
-                "parser": _processor_contract(
-                    self.config, self.model_endpoint
-                ).parser_version,
-                "policy": POLICY_VERSION,
-                "prompt": self.config.generation.prompt_version,
-            },
-            output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
-            authorized_replay=authorized_replay,
-        )
-        generator = OpenAILegalBriefGenerator(
-            self.config.generation.model,
-            self.model_client,
-            maximum_sentence_words=self.config.generation.maximum_sentence_words,
-            maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-            response_schema=simple_brief_json_schema(),
-            maximum_output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
-            request_executor=request,
-        )
         revision_number = len(source.prior.revisions) + 1 if source.prior else 1
         correction_note = _correction_note(source, kinds_changed)
-        revision = BriefGenerationService(
-            generator,
-            InMemoryBriefRevisionStore(),
-            public_quotes=self.config.generation.public_quotes,
-            maximum_sentence_words=self.config.generation.maximum_sentence_words,
-            maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-        ).generate(
-            candidate,
-            decision,
-            revision_number=revision_number,
-            correction_note=correction_note,
-        )
+        validation_feedback_code: str | None = None
+        revision = None
+        for brief_attempt in range(
+            1,
+            self.config.generation.maximum_brief_validation_attempts_per_case + 1,
+        ):
+            request = _BudgetedModelRequest(
+                client=self.model_client,
+                budget=budget,
+                stage="brief",
+                document_digests=all_digests,
+                processor_versions={
+                    "brief_validation_attempt": str(brief_attempt),
+                    "endpoint": self.model_endpoint,
+                    "extractor": LegalExtractionService.SCHEMA_VERSION,
+                    "model": self.config.generation.model,
+                    "provider": self.config.generation.provider,
+                    "parser": _processor_contract(
+                        self.config, self.model_endpoint
+                    ).parser_version,
+                    "policy": POLICY_VERSION,
+                    "prompt": self.config.generation.prompt_version,
+                    **(
+                        {"validation_feedback": validation_feedback_code}
+                        if validation_feedback_code
+                        else {}
+                    ),
+                },
+                output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
+                authorized_replay=authorized_replay,
+            )
+            generator = OpenAILegalBriefGenerator(
+                self.config.generation.model,
+                self.model_client,
+                maximum_sentence_words=self.config.generation.maximum_sentence_words,
+                maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
+                response_schema=simple_brief_json_schema(),
+                maximum_output_tokens=(
+                    self.config.model_budget.maximum_output_tokens_per_call
+                ),
+                validation_feedback_code=validation_feedback_code,
+                request_executor=request,
+            )
+            try:
+                revision = BriefGenerationService(
+                    generator,
+                    InMemoryBriefRevisionStore(),
+                    public_quotes=self.config.generation.public_quotes,
+                    maximum_sentence_words=(
+                        self.config.generation.maximum_sentence_words
+                    ),
+                    maximum_paragraph_words=(
+                        self.config.generation.maximum_paragraph_words
+                    ),
+                ).generate(
+                    candidate,
+                    decision,
+                    revision_number=revision_number,
+                    correction_note=correction_note,
+                )
+                break
+            except BriefValidationError as error:
+                validation_feedback_code = error.safe_code
+                if (
+                    not validation_feedback_code
+                    or brief_attempt
+                    >= self.config.generation.maximum_brief_validation_attempts_per_case
+                ):
+                    raise
+        if revision is None:
+            raise BriefValidationError("brief validation attempts produced no revision")
         history = (
             *(source.prior.case_history if source.prior else ()),
             PublicCaseHistoryEvent(

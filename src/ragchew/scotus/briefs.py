@@ -229,7 +229,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v17"
+    PROMPT_VERSION = "scotus-brief-plain-language-v18"
 
     def __init__(
         self,
@@ -242,6 +242,7 @@ class OpenAILegalBriefGenerator:
         response_schema: dict[str, Any] | None = None,
         maximum_output_tokens: int | None = None,
         reasoning_effort: Literal["low", "medium", "high"] | None = None,
+        validation_feedback_code: str | None = None,
         request_executor: Callable[[dict[str, Any]], Any] | None = None,
     ) -> None:
         self.model_name = model_name
@@ -252,6 +253,11 @@ class OpenAILegalBriefGenerator:
         self.response_schema = response_schema
         self.maximum_output_tokens = maximum_output_tokens
         self.reasoning_effort = reasoning_effort
+        if validation_feedback_code is not None and not re.fullmatch(
+            r"[a-z0-9_:-]{1,80}", validation_feedback_code
+        ):
+            raise ValueError("validation feedback must be a fixed safe code")
+        self.validation_feedback_code = validation_feedback_code
         self.request_executor = request_executor
 
     def generate(
@@ -372,6 +378,14 @@ class OpenAILegalBriefGenerator:
                         "covers the argument record and link readers to the official docket for "
                         "later activity. Never predict the outcome, score "
                         "ideology or tone, or give personalized legal advice."
+                        + (
+                            " A prior independent draft failed the fixed validator code '"
+                            + self.validation_feedback_code
+                            + "'. Produce a fresh draft that specifically satisfies that rule; "
+                            "do not mention the validation attempt in public prose."
+                            if self.validation_feedback_code
+                            else ""
+                        )
                         + format_instruction
                     ),
                 },

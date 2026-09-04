@@ -255,6 +255,7 @@ class ScotusGenerationDefaults(BaseModel):
     prompt_version: str
     brief_generation_enabled: bool = False
     maximum_brief_api_calls_per_run: int = Field(default=1, ge=1, le=100)
+    maximum_brief_validation_attempts_per_case: int = Field(default=1, ge=1, le=3)
     stop_after_brief_validation_failure: bool = True
     audience: Literal["general_public"] = "general_public"
     maximum_context_characters: int = Field(gt=0)

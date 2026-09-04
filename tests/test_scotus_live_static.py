@@ -485,6 +485,58 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert not list((tmp_path / "private").glob("ragchew-*"))
 
 
+def test_brief_validation_gets_one_bounded_fixed_code_correction(
+    tmp_path: Path,
+) -> None:
+    class CorrectingModel(MockOpenAI):
+        def __init__(self) -> None:
+            super().__init__()
+            self.brief_calls = 0
+
+        def create(self, **request: Any) -> object:
+            completion = super().create(**request)
+            if request["response_format"]["json_schema"]["name"] != "scotus_legal_brief":
+                return completion
+            self.brief_calls += 1
+            if self.brief_calls != 1:
+                return completion
+            payload = json.loads(completion.choices[0].message.content)
+            user = json.loads(request["messages"][1]["content"])
+            justice_ids = {
+                claim["claim_id"]
+                for claim in user["claims"]
+                if claim["type"] == "justice_question"
+            }
+            for analysis in payload["argument_analyses"]:
+                analysis["claim_ids"] = [
+                    claim_id
+                    for claim_id in analysis["claim_ids"]
+                    if claim_id not in justice_ids
+                ]
+            return SimpleNamespace(
+                choices=[
+                    SimpleNamespace(
+                        message=SimpleNamespace(content=json.dumps(payload))
+                    )
+                ]
+            )
+
+    model = CorrectingModel()
+    result = run(tmp_path, MemoryStateStore(tmp_path / "state"), CourtFixture(), model)
+
+    assert result.publishable
+    assert model.brief_calls == 2
+    brief_requests = [
+        request
+        for request in model.requests
+        if request["response_format"]["json_schema"]["name"]
+        == "scotus_legal_brief"
+    ]
+    assert "argument_breakdown_omits_justice_question" in brief_requests[1][
+        "messages"
+    ][0]["content"]
+
+
 def test_conditional_304_carries_exact_case_without_model_call(tmp_path: Path) -> None:
     court = CourtFixture()
     first_model = MockOpenAI()
