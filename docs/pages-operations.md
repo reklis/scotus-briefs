@@ -42,7 +42,9 @@ Extraction now supplies exact source identity fields, deterministically derives 
 from the referenced evidence block, uses smaller evidence windows, and reports only fixed
 safe failure codes. Brief generation uses a simplified strict local-model schema without
 manufacturing claim coverage, and one fully budgeted retry is allowed only for retryable
-loopback transport failures.
+loopback transport failures. One-case live dry run `33912374845` then completed end to end
+in 29 minutes, including one fixed-code brief correction, and produced a privacy-scanned
+1,711-case/2,976-page candidate release without deployment.
 
 ## One-time owner settings
 
@@ -171,15 +173,23 @@ temporary workspace, and runs
 data and can never become publication-ready.
 
 A manual `deploy=true` requests deployment but cannot override configuration gates.
-A manual `deploy=false` run still builds, privacy-scans, and validates the candidate and
-opaque receipts locally, but uploads neither candidate state nor receipts and persists
-nothing to `generated-content`. This prevents a discarded candidate from making its
-model inputs unreplayable. The tradeoff is deliberate: a runner crash or later dry-run
-rerun can repeat model calls, though local configured cost is zero, because no durable
-receipt survives. An owner may set `authorized_replay=true` only on an explicit manual
+For focused launch validation, `maximum_cases` may only lower the configured case bound.
+A successful manual `deploy=false` run uploads only the privacy-scanned Pages tree,
+sanitized generated-state candidate, opaque receipts, and fixed handoff metadata for one
+day; it does not deploy or mutate `generated-content`.
+
+To publish that exact candidate without repeating Court downloads, extraction, or brief
+model calls, manually run `deploy-validated-candidate.yml` from the protected default
+branch with the successful source `candidate_run_id`. The GitHub-hosted workflow verifies
+that the source run was a successful protected `publish-pages.yml` run, checks that its
+source commit is an ancestor of the current protected branch, downloads and revalidates
+the exact retained site/state, verifies release and parent identities, CAS-persists its
+opaque receipts, deploys the Pages artifact, and CAS-promotes the matching state. Any
+expired/missing artifact, changed generated-content parent, or validation mismatch stops
+before deployment. An owner may set `authorized_replay=true` only on an explicit manual
 `nightly` run after reviewing a prior failure; replay does not bypass any grounding,
-privacy, completeness, or publication validator. Restrict bootstrap/deploy/replay
-dispatch to owners. Never add PR/fork or arbitrary-ref triggers.
+privacy, completeness, or publication validator. Restrict bootstrap/deploy/replay and
+retained-candidate deployment to owners. Never add PR/fork or arbitrary-ref triggers.
 
 Possible outcomes:
 

@@ -108,7 +108,7 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "github.event_name == 'schedule' || inputs.deploy == true" in receipt_job
     assert "needs.build.outputs.receipts_present == 'true'" in receipt_job
     assert "continue-on-error: true" not in receipt_job
-    assert "crash or rerun may repeat zero-cost local model work" in workflow
+    assert "retained for guarded deployment without model reprocessing" in workflow
     assert "git -C generated-content-input rev-parse HEAD" in workflow
     assert "path: source" in workflow and "path: generated-content" in workflow
     assert "needs: [build, persist-cost-receipts, deploy]" in workflow
@@ -130,6 +130,27 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "Clean persistent runner before build" in workflow
     assert "github.event_name != 'pull_request'" in workflow
     assert "include-hidden-files: true" in workflow
+
+
+def test_retained_candidate_deploy_revalidates_without_spark_or_model() -> None:
+    workflow = Path(
+        ".github/workflows/deploy-validated-candidate.yml"
+    ).read_text()
+    assert "runs-on: ubuntu-24.04" in workflow
+    assert "self-hosted" not in workflow
+    assert "RAGCHEW_OLLAMA_BASE_URL" not in workflow
+    assert "candidate_run_id" in workflow
+    assert "git merge-base --is-ancestor" in workflow
+    assert "ragchew-scotus-static validate" in workflow
+    assert "--privacy-scan" in workflow
+    assert "source_run_id" in workflow
+    assert "expected_parent_commit" in workflow
+    assert "persist-cost-receipts" in workflow
+    assert "actions: read" in workflow
+    assert "pages: write" in workflow
+    assert "id-token: write" in workflow
+    assert "contents: write" in workflow
+    assert "deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128" in workflow
 
 
 def test_container_is_nonroot_and_uses_immutable_base_images() -> None:

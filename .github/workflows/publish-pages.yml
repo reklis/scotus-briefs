@@ -266,7 +266,7 @@ jobs:
             echo "present=false" >> "$GITHUB_OUTPUT"
           fi
       - name: Upload validated opaque cost receipts
-        if: always() && steps.receipts.outcome == 'success' && steps.receipts.outputs.present == 'true' && (github.event_name == 'schedule' || inputs.deploy == true)
+        if: always() && steps.receipts.outcome == 'success' && steps.receipts.outputs.present == 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: opaque-cost-receipts
@@ -289,23 +289,55 @@ jobs:
           path: candidate-site
           retention-days: 1
       - name: Upload scanned public state for guarded promotion
-        if: steps.batch.outputs.publication_ready == 'true' && steps.receipts.outcome == 'success' && (github.event_name == 'schedule' || inputs.deploy == true)
+        if: steps.batch.outputs.publication_ready == 'true' && steps.receipts.outcome == 'success'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: generated-content-candidate
           path: candidate-state
           if-no-files-found: error
           retention-days: 1
-      # A manual deploy=false run validates its candidate and receipts locally, then
-      # discards both state and receipts. This avoids making model inputs unreplayable
-      # without their candidate; an interrupted dry run may therefore repeat local model work.
+      - name: Write sanitized validated-candidate handoff metadata
+        if: steps.batch.outputs.publication_ready == 'true' && steps.receipts.outcome == 'success'
+        env:
+          RELEASE_ID: ${{ steps.batch.outputs.release_id }}
+          EXPECTED_PARENT_RELEASE_ID: ${{ steps.batch.outputs.expected_parent_release_id }}
+          EXPECTED_PARENT_COMMIT: ${{ steps.state_sha.outputs.commit }}
+        run: |
+          set -euo pipefail
+          uv run python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          from ragchew.scotus.static_validation import scan_public_files
+
+          path = Path("candidate-handoff.json")
+          path.write_text(json.dumps({
+              "schema_version": "1.0",
+              "source_run_id": "${{ github.run_id }}",
+              "source_commit": "${{ github.sha }}",
+              "release_id": os.environ["RELEASE_ID"],
+              "expected_parent_release_id": os.environ["EXPECTED_PARENT_RELEASE_ID"],
+              "expected_parent_commit": os.environ["EXPECTED_PARENT_COMMIT"],
+          }, sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8")
+          scan_public_files((path,), labels=(path.name,))
+          PY
+      - name: Upload validated-candidate handoff metadata
+        if: steps.batch.outputs.publication_ready == 'true' && steps.receipts.outcome == 'success'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: validated-candidate-handoff
+          path: candidate-handoff.json
+          if-no-files-found: error
+          retention-days: 1
+      # A manual deploy=false run retains only privacy-scanned public candidate/state,
+      # handoff metadata, and opaque receipts for one day. No private evidence is uploaded.
       - name: Safe build summary
         if: always()
         run: |
           printf 'Build outcome: `%s`\n' "${{ job.status }}" >> "$GITHUB_STEP_SUMMARY"
           printf 'Court/model candidates remain fail-closed unless every configured gate and validator passes.\n' >> "$GITHUB_STEP_SUMMARY"
           if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.deploy }}" != "true" ]]; then
-            printf 'Non-deploy dry run: candidate state and receipts were not persisted; a crash or rerun may repeat zero-cost local model work.\n' >> "$GITHUB_STEP_SUMMARY"
+            printf 'Non-deploy dry run: validated public candidate/state and opaque receipts are retained for guarded deployment without model reprocessing.\n' >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Clean persistent runner after build
         if: always()
