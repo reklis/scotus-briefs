@@ -467,6 +467,8 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
         "scotus_legal_brief",
     ]
     assert all(request["extra_body"] == {"think": False} for request in model.requests)
+    assert model.requests[0]["max_tokens"] == 8_000
+    assert model.requests[1]["max_tokens"] == 16_000
     extraction_evidence = json.loads(model.requests[0]["messages"][1]["content"])
     assert {
         "speaker_name",

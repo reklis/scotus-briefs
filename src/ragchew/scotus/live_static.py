@@ -1394,6 +1394,10 @@ class LiveStaticCaseProcessor:
                     )
 
         extraction_store = InMemoryLegalObservationStore()
+        extraction_output_tokens = min(
+            self.config.model_budget.maximum_output_tokens_per_call,
+            8_000,
+        )
         for session in source.sessions:
             argument_id = deterministic_argument_id(
                 case_id,
@@ -1436,15 +1440,13 @@ class LiveStaticCaseProcessor:
                     stage="extraction",
                     document_digests=all_digests,
                     processor_versions=versions,
-                    output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
+                    output_tokens=extraction_output_tokens,
                     authorized_replay=authorized_replay,
                 )
                 extractor = OpenAILegalObservationExtractor(
                     self.config.generation.model,
                     self.model_client,
-                    maximum_output_tokens=(
-                        self.config.model_budget.maximum_output_tokens_per_call
-                    ),
+                    maximum_output_tokens=extraction_output_tokens,
                     request_executor=executor,
                 )
                 service = LegalExtractionService(extractor, extraction_store)
