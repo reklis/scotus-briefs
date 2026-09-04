@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 import os
 import re
 from collections.abc import Callable, Mapping, Sequence
@@ -141,6 +142,8 @@ from ragchew.scotus.transcript_parser import (
     deterministic_parse_revision_id,
 )
 from ragchew.storage import ObjectMetadata, ObjectStore
+
+LOG = logging.getLogger("ragchew.scotus.live_static")
 
 POLICY_VERSION = "scotus-brief-policy-v1"
 DOCUMENT_TEXT_VERSION = "official-document-text-v1"
@@ -1568,7 +1571,9 @@ class LiveStaticCaseProcessor:
                 self.model_client,
                 maximum_sentence_words=self.config.generation.maximum_sentence_words,
                 maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-                response_schema=simple_brief_json_schema(),
+                response_schema=simple_brief_json_schema(
+                    len(candidate.argument_sessions)
+                ),
                 maximum_output_tokens=(
                     self.config.model_budget.maximum_output_tokens_per_call
                 ),
@@ -1595,6 +1600,13 @@ class LiveStaticCaseProcessor:
                 break
             except BriefValidationError as error:
                 validation_feedback_code = error.safe_code
+                if validation_feedback_code:
+                    LOG.info(
+                        "SCOTUS brief correction requested; case=%s; code=%s; attempt=%d",
+                        source.case_key,
+                        validation_feedback_code,
+                        brief_attempt,
+                    )
                 if (
                     not validation_feedback_code
                     or brief_attempt

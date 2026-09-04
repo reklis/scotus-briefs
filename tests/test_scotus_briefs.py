@@ -548,7 +548,9 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
     assert "json_schema" in serialized_format
     assert "$defs" not in serialized_format
     schema = response_format["json_schema"]["schema"]  # type: ignore[index]
-    assert schema["properties"]["sections"]["maxItems"] == 7
+    assert schema["properties"]["sections"]["maxItems"] == 5
+    assert schema["properties"]["argument_analyses"]["minItems"] == 1
+    assert schema["properties"]["argument_analyses"]["maxItems"] == 1
     assert schema["properties"]["sections"]["items"]["properties"]["paragraphs"][
         "maxItems"
     ] == 1
@@ -558,6 +560,13 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
     completions.content = json.dumps(unsupported)
     with pytest.raises(ValueError):
         generator.generate(source, decision.claims, decision.maturity)
+
+
+def test_local_brief_schema_matches_exact_argument_count() -> None:
+    analyses = simple_brief_json_schema(2)["properties"]["argument_analyses"]
+    assert analyses["minItems"] == analyses["maxItems"] == 2
+    with pytest.raises(ValueError, match="argument count"):
+        simple_brief_json_schema(0)
 
 
 def test_sensitive_details_are_minimized_or_suppressed() -> None:

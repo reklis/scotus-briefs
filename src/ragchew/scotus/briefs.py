@@ -139,7 +139,9 @@ def _normalize_private_schema_payload(
     return payload
 
 
-def simple_brief_json_schema() -> dict[str, Any]:
+def simple_brief_json_schema(argument_count: int = 1) -> dict[str, Any]:
+    if not 1 <= argument_count <= 10:
+        raise ValueError("brief schema argument count must be between one and ten")
     claim_ids = {
         "type": "array",
         "items": {"type": "string", "maxLength": 36},
@@ -187,14 +189,14 @@ def simple_brief_json_schema() -> dict[str, Any]:
             "sections": {
                 "type": "array",
                 "items": section,
-                "minItems": 4,
-                "maxItems": 7,
+                "minItems": 5,
+                "maxItems": 5,
             },
             "argument_analyses": {
                 "type": "array",
                 "items": argument,
-                "minItems": 1,
-                "maxItems": 10,
+                "minItems": argument_count,
+                "maxItems": argument_count,
             },
         },
         "required": [
@@ -229,7 +231,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v18"
+    PROMPT_VERSION = "scotus-brief-plain-language-v19"
 
     def __init__(
         self,
