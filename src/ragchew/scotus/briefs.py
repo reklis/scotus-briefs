@@ -231,7 +231,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v25"
+    PROMPT_VERSION = "scotus-brief-plain-language-v26"
 
     def __init__(
         self,
@@ -256,7 +256,7 @@ class OpenAILegalBriefGenerator:
         self.maximum_output_tokens = maximum_output_tokens
         self.reasoning_effort = reasoning_effort
         if validation_feedback_code is not None and not re.fullmatch(
-            r"[a-z0-9_:-]{1,80}", validation_feedback_code
+            r"[a-z0-9_:-]{1,200}", validation_feedback_code
         ):
             raise ValueError("validation feedback must be a fixed safe code")
         self.validation_feedback_code = validation_feedback_code
@@ -383,9 +383,10 @@ class OpenAILegalBriefGenerator:
                         "later activity. Never predict the outcome, score "
                         "ideology or tone, or give personalized legal advice."
                         + (
-                            " A prior independent draft failed the fixed validator code '"
+                            " Prior independent drafts failed these colon-separated fixed "
+                            "validator codes: '"
                             + self.validation_feedback_code
-                            + "'. Produce a fresh draft that specifically satisfies that rule; "
+                            + "'. Produce a fresh draft that satisfies every listed rule; "
                             "do not mention the validation attempt in public prose."
                             if self.validation_feedback_code
                             else ""

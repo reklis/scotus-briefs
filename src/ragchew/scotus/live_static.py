@@ -1537,12 +1537,17 @@ class LiveStaticCaseProcessor:
         all_digests = tuple(states[key].integrity.sha256 for key in sorted(states))
         revision_number = len(source.prior.revisions) + 1 if source.prior else 1
         correction_note = _correction_note(source, kinds_changed)
-        validation_feedback_code: str | None = None
+        validation_feedback_codes: list[str] = []
         revision = None
         for brief_attempt in range(
             1,
             self.config.generation.maximum_brief_validation_attempts_per_case + 1,
         ):
+            validation_feedback_code = (
+                ":".join(validation_feedback_codes)[:200]
+                if validation_feedback_codes
+                else None
+            )
             request = _BudgetedModelRequest(
                 client=self.model_client,
                 budget=budget,
@@ -1602,20 +1607,23 @@ class LiveStaticCaseProcessor:
                 )
                 break
             except BriefValidationError as error:
-                validation_feedback_code = error.safe_code
-                if validation_feedback_code:
-                    LOG.warning(
-                        "SCOTUS brief correction requested; case=%s; code=%s; attempt=%d",
-                        source.case_key,
-                        validation_feedback_code,
-                        brief_attempt,
-                    )
-                if (
-                    not validation_feedback_code
-                    or brief_attempt
-                    >= self.config.generation.maximum_brief_validation_attempts_per_case
-                ):
+                safe_code = error.safe_code
+                can_retry = bool(
+                    safe_code
+                    and brief_attempt
+                    < self.config.generation.maximum_brief_validation_attempts_per_case
+                )
+                if not can_retry:
                     raise
+                assert safe_code is not None
+                if safe_code not in validation_feedback_codes:
+                    validation_feedback_codes.append(safe_code)
+                LOG.warning(
+                    "SCOTUS brief correction requested; case=%s; code=%s; attempt=%d",
+                    source.case_key,
+                    safe_code,
+                    brief_attempt,
+                )
         if revision is None:
             raise BriefValidationError("brief validation attempts produced no revision")
         history = (
