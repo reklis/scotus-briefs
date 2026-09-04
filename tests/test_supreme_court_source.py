@@ -1,6 +1,8 @@
 from datetime import UTC, datetime
 from pathlib import Path
 
+import pytest
+
 from ragchew.proceedings.contracts import (
     DocumentType,
     ProceedingLifecycle,
@@ -8,10 +10,12 @@ from ragchew.proceedings.contracts import (
 from ragchew.proceedings.discovery import ConditionalRequest
 from ragchew.proceedings.sources.http import SourceResponse
 from ragchew.proceedings.sources.supreme_court import (
+    SlipOpinionKind,
     SupremeCourtAdapter,
     parse_argument_detail,
     parse_argument_index,
     parse_related_opinion_documents,
+    parse_slip_opinion_index,
     parse_transcript_archive_index,
 )
 
@@ -142,6 +146,54 @@ def test_recent_transcript_archive_adds_available_docket_and_disposition_documen
     assert DocumentType.OFFICIAL_TRANSCRIPT in document_types
     assert DocumentType.DOCKET in document_types
     assert DocumentType.OPINION in document_types
+
+
+def test_active_term_slip_opinion_rows_are_strictly_typed() -> None:
+    rows = parse_slip_opinion_index(
+        (FIXTURES / "supreme_court_slip_opinion_index.html").read_text(),
+        "https://www.supremecourt.gov/opinions/slipopinion/25",
+        "2025",
+    )
+
+    assert [(row.release_number, row.primary_docket, row.kind) for row in rows] == [
+        ("44", "25-466", SlipOpinionKind.OPINION),
+        ("17", "25A810", SlipOpinionKind.PER_CURIAM),
+        ("5", "25-588", SlipOpinionKind.PER_CURIAM),
+        ("D1", "141 ORIG.", SlipOpinionKind.DECREE),
+    ]
+    assert rows[0].caption == "Sripetch v. SEC"
+    assert rows[0].publication_date == datetime(2026, 6, 4, tzinfo=UTC)
+    assert rows[0].official_pdf_url == (
+        "https://www.supremecourt.gov/opinions/25pdf/608us2r44_j42l.pdf"
+    )
+    assert rows[0].revision_date is None
+    assert rows[0].revision_reference_url is None
+
+    emergency = rows[1]
+    assert emergency.dockets == ("25A810",)
+    assert emergency.revision_date == datetime(2026, 3, 5, tzinfo=UTC)
+    assert emergency.revision_reference_url == (
+        "https://www.supremecourt.gov/opinions/25pdf/25a810_diff_latest.pdf"
+    )
+    assert rows[2].dockets == ("25-588", "25A85")
+    assert rows[2].consolidated_dockets == ("25A85",)
+
+
+def test_slip_opinion_parser_rejects_ambiguous_or_unofficial_rows() -> None:
+    base_url = "https://www.supremecourt.gov/opinions/slipopinion/25"
+    header = """<tr><th>R-</th><th>Date</th><th>Docket</th><th>Name</th>
+    <th>J.</th><th>Citation</th></tr>"""
+    malformed_docket = f"""<table>{header}<tr><td>1</td><td>1/02/26</td>
+    <td>25A1 plus unknown</td><td><a href='/opinions/25pdf/25a1_test.pdf'>Case</a></td>
+    <td>PC</td><td></td></tr></table>"""
+    unofficial_pdf = f"""<table>{header}<tr><td>1</td><td>1/02/26</td>
+    <td>25A1</td><td><a href='https://example.com/opinion.pdf'>Case</a></td>
+    <td>PC</td><td></td></tr></table>"""
+
+    with pytest.raises(ValueError, match="docket field"):
+        parse_slip_opinion_index(malformed_docket, base_url, "2025")
+    with pytest.raises(ValueError, match="official slip-opinion PDF URL"):
+        parse_slip_opinion_index(unofficial_pdf, base_url, "2025")
 
 
 def test_opinion_parser_requires_same_row_docket_evidence() -> None:
