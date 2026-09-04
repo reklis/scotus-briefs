@@ -302,7 +302,16 @@ def test_attribution_variants_for_one_side_do_not_require_duplicate_coverage() -
         "The opposing side defended the agency's reading.",
         attribution="Respondent",
     )
-    source = candidate(observations=(*candidate().observations, alias, opposing))
+    unknown_side = observation(
+        LegalObservationType.ADVOCATE_CONTENTION,
+        LegalStatus.ASSERTED,
+        ScotusDocumentKind.TRANSCRIPT,
+        "Mr. Rivera addressed a separate implementation question.",
+        attribution="Mr. Rivera",
+    )
+    source = candidate(
+        observations=(*candidate().observations, alias, opposing, unknown_side)
+    )
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
 
     class OneClaimPerSideGenerator(FakeGenerator):
@@ -311,7 +320,8 @@ def test_attribution_variants_for_one_side_do_not_require_duplicate_coverage() -
             selected = tuple(
                 claim.claim_id
                 for claim in claims
-                if claim.source_observation_ids != (alias.observation_id,)
+                if claim.source_observation_ids
+                not in {(alias.observation_id,), (unknown_side.observation_id,)}
             )
             return draft.model_copy(
                 update={
@@ -331,13 +341,16 @@ def test_attribution_variants_for_one_side_do_not_require_duplicate_coverage() -
     revision = BriefGenerationService(
         OneClaimPerSideGenerator(), InMemoryBriefRevisionStore()
     ).generate(source, decision, revision_number=1)
-    assert alias.observation_id not in {
-        observation_id
-        for claim_id in revision.claim_ids
-        for claim in decision.claims
-        if claim.claim_id == claim_id
-        for observation_id in claim.source_observation_ids
-    }
+    omitted = {alias.observation_id, unknown_side.observation_id}
+    assert omitted.isdisjoint(
+        {
+            observation_id
+            for claim_id in revision.claim_ids
+            for claim in decision.claims
+            if claim.claim_id == claim_id
+            for observation_id in claim.source_observation_ids
+        }
+    )
 
 
 def test_generation_allows_explicit_uncertainty_about_when_court_will_rule() -> None:

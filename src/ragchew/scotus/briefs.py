@@ -229,7 +229,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v16"
+    PROMPT_VERSION = "scotus-brief-plain-language-v17"
 
     def __init__(
         self,
@@ -355,7 +355,8 @@ class OpenAILegalBriefGenerator:
                         "questions tested in that session. Different attribution wording can "
                         "identify the "
                         "same position_group; do not create extra sides from those wording "
-                        "changes. "
+                        "changes. A null position_group means the official evidence does not "
+                        "establish that advocate's side; do not infer one. "
                         "Do not rank winners. Omit unsupported sections. Attribute each "
                         "side's claims and disputed facts. Never fill in a missing side, argument, "
                         "or fact with what it likely said; state that the approved record does not "
@@ -603,8 +604,8 @@ def _attribution_parts(value: str | None) -> tuple[str | None, str | None]:
 
 
 def _position_label(value: str | None) -> str | None:
-    role, person = _attribution_parts(value)
-    return role or person
+    role, _ = _attribution_parts(value)
+    return role
 
 
 def _position_claim_groups(
@@ -617,14 +618,12 @@ def _position_claim_groups(
         and claim.attribution
     )
     groups: list[set[UUID]] = []
-    assigned_people: set[str] = set()
     for role in sorted({role for _, role, _ in attributed if role}):
         people = {
             person
             for _, item_role, person in attributed
             if item_role == role and person is not None
         }
-        assigned_people.update(people)
         groups.append(
             {
                 claim.claim_id
@@ -632,22 +631,9 @@ def _position_claim_groups(
                 if item_role == role or (person is not None and person in people)
             }
         )
-    for person in sorted(
-        {person for _, _, person in attributed if person} - assigned_people
-    ):
-        groups.append(
-            {
-                claim.claim_id
-                for claim, _, item_person in attributed
-                if item_person == person
-            }
-        )
-    grouped_ids = set().union(*groups) if groups else set()
-    groups.extend(
-        {claim.claim_id}
-        for claim, role, person in attributed
-        if claim.claim_id not in grouped_ids and role is None and person is None
-    )
+    # A transcript speaker label proves who spoke, not which litigating side that
+    # person represented. Require coverage only for roles stated in official evidence;
+    # never turn each unknown-role advocate into an invented separate side.
     return tuple(groups)
 
 
