@@ -349,6 +349,21 @@ def test_disposition_only_draft_rejects_invention(paragraph: str, safe_code: str
     assert caught.value.safe_code == safe_code
 
 
+def test_disposition_only_draft_rejects_public_processing_jargon() -> None:
+    source = disposition_candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    with pytest.raises(BriefValidationError, match="model or schema instructions"):
+        validate_brief_draft(
+            disposition_draft(
+                decision.claims,
+                paragraph="No further details are provided in the approved claims.",
+            ),
+            source,
+            decision.claims,
+            public_quotes=False,
+        )
+
+
 def test_disposition_only_draft_accepts_supported_plain_action_synonyms() -> None:
     source = disposition_candidate()
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)

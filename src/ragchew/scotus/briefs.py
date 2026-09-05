@@ -240,7 +240,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v30"
+    PROMPT_VERSION = "scotus-brief-plain-language-v31"
 
     def __init__(
         self,
@@ -344,8 +344,9 @@ class OpenAILegalBriefGenerator:
             "approved claims explicitly support it. When describing the Court action, use "
             "the exact action verbs and negation from the cited claim; do not replace "
             "granted, denied, stayed, affirmed, reversed, or vacated with a synonym. Omit "
-            "unavailable detail instead of "
-            "adding filler about a missing record or future details. Focus on supported case "
+            "unavailable detail instead of adding filler about a missing record or future "
+            "details. Never mention approved claims, a claim ledger, evidence availability, "
+            "validators, or the generation process. Focus on supported case "
             "background and the Court's action. "
             if disposition_only
             else (
@@ -592,8 +593,8 @@ _UNSUPPORTED_SPECULATION = re.compile(
 )
 _QUOTATION = re.compile(r"[\"“”]|(?<!\w)'[^'\n]{2,}'(?!\w)")
 _META_OUTPUT = re.compile(
-    r"\bclaim_ids?\b|matching (?:array|field)|required_output_schema|"
-    r"schema instructions?",
+    r"\bclaim_ids?\b|\bapproved claims?\b|\bclaim ledger\b|"
+    r"matching (?:array|field)|required_output_schema|schema instructions?",
     re.IGNORECASE,
 )
 _INTERNAL_CLAIM_MARKER = re.compile(
