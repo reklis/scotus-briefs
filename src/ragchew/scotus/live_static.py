@@ -60,6 +60,7 @@ from ragchew.proceedings.sources.supreme_court import (
 from ragchew.scotus.briefs import (
     BriefCandidate,
     BriefGenerationService,
+    BriefPolicyError,
     BriefValidationError,
     CaseArgumentSession,
     InMemoryBriefRevisionStore,
@@ -1814,7 +1815,14 @@ class LiveStaticCaseProcessor:
             policy_version=POLICY_VERSION,
         )
         if not decision.eligible:
-            raise ValueError("case failed deterministic brief policy")
+            safe_reasons = ":".join(
+                re.sub(r"[^a-z0-9]+", "_", reason.casefold()).strip("_")
+                for reason in decision.reasons
+            )
+            raise BriefPolicyError(
+                "case failed deterministic brief policy",
+                safe_code=f"ineligible:{safe_reasons}"[:80],
+            )
         all_digests = (
             *(states[key].integrity.sha256 for key in sorted(states)),
             *(stable_disposition_fingerprint(item) for item in source.dispositions),

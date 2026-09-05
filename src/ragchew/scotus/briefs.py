@@ -32,7 +32,9 @@ from ragchew.scotus.contracts import (
 
 
 class BriefPolicyError(ValueError):
-    pass
+    def __init__(self, message: str, *, safe_code: str | None = None) -> None:
+        super().__init__(message)
+        self.safe_code = safe_code
 
 
 class BriefValidationError(ValueError):
