@@ -9,12 +9,15 @@ Daily schedule: 03:17 UTC (`17 3 * * *`)
 The validated empty-state site was first deployed on 2026-09-03. The same day, the
 accepted local POC corpus was recovered through the read-only sanitizer and deployed:
 1,710 accepted legacy articles, 1,875 immutable legacy revisions, 26 terms, and 2,974
-HTML pages. The first newly generated case was published on 2026-09-04 through retained
-candidate run `33925733676` and no-reprocessing deployment run `33927868410`. Live Pages
-release `0c4b596b8acbda86bc49b9476c27118b18d2037599f6228824579e32693e7350`
-now contains 1,711 active articles and 2,976 HTML pages and matches the protected
-`generated-content` branch. The root home page is the searchable case interface,
-initially showing results 1–20 of 1,711 in deterministic site order.
+HTML pages. The first newly generated argued case was published on 2026-09-04 through
+retained candidate run `33925733676` and no-reprocessing deployment run `33927868410`.
+The dated-activity migration was deployed by run `33941710362`, and the newest supported
+emergency disposition (`26A274`, published 2026-09-04) was deployed without reprocessing
+by run `33948257689`. Live Pages release
+`cb76a41848d7636a3d9e7f293a8b4506f7da6d237c3940849b13055264977a73` now contains
+1,712 active articles and 3,062 HTML pages and matches the protected `generated-content`
+branch. The root home page is the searchable case interface, initially showing results
+1–20 of 1,712 in authoritative newest-first Court-activity order.
 DNS is valid at GitHub; custom-domain
 certificate issuance and HTTPS enforcement are still pending.
 
@@ -22,9 +25,9 @@ The owner enabled source access, generated-case processing, and publication on
 2026-09-03 and removed the one-case throughput throttle after launch testing. The
 checked-in gates are intentionally enabled; candidates still fail closed through all
 source, model, privacy, completeness, static, and release validators. The live release
-listed above predates the latest-activity schema migration, so do not report the new
-active-term slip-opinion coverage as live until the exact migrated artifact and bounded
-live disposition-only candidate have been validated, deployed, and reconciled.
+uses the latest-activity schema and independently discovers active-term slip opinions.
+Disposition candidates that do not pass every validator remain visible to operations as
+sanitized pending work and never replace or create a public case page.
 
 The supported new source boundary is the configured active term's individual official
 slip-opinion rows, including signed opinions, per-curiam dispositions, decrees, listed

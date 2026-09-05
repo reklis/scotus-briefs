@@ -47,4 +47,4 @@
 - [x] 6.2 Update source, architecture, and Pages operations documentation with supported slip-opinion scope, latest-activity semantics, daily schedule, pending behavior, and freshness monitoring.
 - [x] 6.3 Build and inspect a no-model generated-content date/order migration candidate, then deploy it through the guarded exact-artifact path.
 - [x] 6.4 Run a bounded non-deploying live validation for the newest disposition-only case and inspect all public/state artifacts and sanitized logs.
-- [ ] 6.5 Deploy the retained newest-case candidate without reprocessing, verify all newest-first live surfaces and release/state identity, then process the remaining newest activity under bounded nightly runs.
+- [x] 6.5 Deploy the retained newest-case candidate without reprocessing, verify all newest-first live surfaces and release/state identity, then process the remaining newest activity under bounded nightly runs.
