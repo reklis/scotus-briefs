@@ -51,6 +51,7 @@ from ragchew.proceedings.sources.http import (
     HttpxSourceFetcher,
     RequestRateLimiter,
     SourceFetcher,
+    SourceFetchError,
     SourceResponse,
 )
 from ragchew.proceedings.sources.supreme_court import (
@@ -2575,12 +2576,19 @@ class _DeferredBudgetFetcher:
     def get(self, url: str, conditional: Any = None) -> SourceResponse:
         if self.budget is None:
             raise RuntimeError("source fetcher has no unified run budget")
-        self.budget.reserve_http_request()
-        self.before_request()
         authorized = _AuthorizedFetcher(self.delegate, self.authorizer, self.now)
-        response = authorized.get(url, conditional)
-        self.budget.record_download(len(response.content))
-        return response
+        for attempt in range(2):
+            self.budget.reserve_http_request()
+            self.before_request()
+            try:
+                response = authorized.get(url, conditional)
+            except SourceFetchError:
+                if attempt == 0:
+                    continue
+                raise
+            self.budget.record_download(len(response.content))
+            return response
+        raise RuntimeError("bounded source retry did not return")
 
 
 class _BudgetBindingDiscovery:
