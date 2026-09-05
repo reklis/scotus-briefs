@@ -162,7 +162,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v3"
+POLICY_VERSION = "scotus-brief-policy-v4"
 DOCUMENT_TEXT_VERSION = "official-document-text-v1"
 
 
@@ -1739,9 +1739,12 @@ class LiveStaticCaseProcessor:
                 observations.extend(service.process(source_input))
                 extraction_rejection_codes.extend(service.rejection_codes)
         if not source.sessions and not any(
-            evidence.document_kind is ScotusDocumentKind.DOCKET
+            observation.observation_type is LegalObservationType.PROCEDURAL_POSTURE
+            and any(
+                evidence.document_kind is ScotusDocumentKind.DOCKET
+                for evidence in observation.evidence
+            )
             for observation in observations
-            for evidence in observation.evidence
         ):
             observations.append(
                 _docket_identity_observation(
