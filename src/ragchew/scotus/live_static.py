@@ -165,7 +165,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v7"
+POLICY_VERSION = "scotus-brief-policy-v8"
 DOCUMENT_TEXT_VERSION = "official-document-text-v1"
 
 
@@ -698,6 +698,7 @@ class LiveStaticDiscovery:
             if item.case_key in legacy_case_keys
             and item.attempts == 0
             and item.last_attempted_at is None
+            and item.authoritative_activity_date is None
         }
         changed_case_keys: set[str] = set(migration_case_keys)
         source_changed_case_keys: set[str] = set()
@@ -2194,7 +2195,7 @@ _DETERMINISTIC_COURT_ACTION = re.compile(
     r"\b(?:we (?:hold|conclude|grant|deny|affirm|reverse|vacate|order)|"
     r"(?:this |the )Court (?:holds?|held|orders?|ordered|grants?|granted|denies|denied|"
     r"affirms?|affirmed|reverses?|reversed|vacates?|vacated)|"
-    r"(?:application|petition|motion|stay|judgment) (?:is |are )?"
+    r"(?:application|petition|motion|stay|judgment)\b[^.!?]{0,500}\b(?:is |are )"
     r"(?:granted|denied|affirmed|reversed|vacated|stayed)|it is ordered)\b",
     re.IGNORECASE,
 )

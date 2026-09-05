@@ -711,7 +711,10 @@ def test_disposition_only_case_derives_exact_docket_identity_when_model_omits_it
         _text_pdf(
             "No. 25A810 Emergency Applicant v. Agency.",
             "Emergency Applicant sought relief from Agency.",
-            "The Court granted the application.",
+            (
+                "The Government's application to stay the District Court's injunction "
+                "in this case is granted."
+            ),
         ),
         "application/pdf",
     )
