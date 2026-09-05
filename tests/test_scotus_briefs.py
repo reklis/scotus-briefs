@@ -331,8 +331,8 @@ def test_disposition_name_guard_allows_only_evidence_derived_acronyms() -> None:
             "Acme Corporation sought relief.",
             "unsupported_party_section_paragraph",
         ),
-        ("The Court denied the application.", "unsupported_disposition"),
-        ("The Court did not grant the application.", "unsupported_disposition"),
+        ("The Court denied the application.", "unsupported_court_action"),
+        ("The Court did not grant the application.", "unsupported_court_action"),
         ("More details may emerge later.", "unsupported_filler"),
     ],
 )
@@ -364,6 +364,95 @@ def test_disposition_only_draft_rejects_public_processing_jargon() -> None:
         )
 
 
+def role_aware_disposition_candidate() -> BriefCandidate:
+    source = disposition_candidate()
+    role_observations = tuple(
+        item.model_copy(update={"argument_id": None})
+        for item in (
+            observation(
+                LegalObservationType.REQUESTED_DISPOSITION,
+                LegalStatus.REQUESTED,
+                ScotusDocumentKind.OPINION,
+                "Emergency Applicant asked the Court to reverse the judgment.",
+                attribution="Official opinion",
+                document_id=OPINION_ID,
+            ),
+            observation(
+                LegalObservationType.LOWER_COURT_ACTION,
+                LegalStatus.LOWER_COURT_HELD,
+                ScotusDocumentKind.OPINION,
+                "The district court affirmed the judgment.",
+                attribution="Official opinion",
+                document_id=OPINION_ID,
+            ),
+        )
+    )
+    return replace(source, observations=(*source.observations, *role_observations))
+
+
+@pytest.mark.parametrize(
+    "paragraph",
+    [
+        "Emergency Applicant asked the Court to reverse the judgment.",
+        "The district court affirmed the judgment.",
+        "The Supreme Court granted the application.",
+        (
+            "Emergency Applicant asked the Court to reverse the judgment. "
+            "The district court affirmed the judgment. "
+            "The Supreme Court granted the application."
+        ),
+    ],
+)
+def test_disposition_action_validation_accepts_each_same_role_claim(paragraph: str) -> None:
+    source = role_aware_disposition_candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    validate_brief_draft(
+        disposition_draft(decision.claims, paragraph=paragraph),
+        source,
+        decision.claims,
+        public_quotes=False,
+    )
+
+
+@pytest.mark.parametrize(
+    ("paragraph", "safe_code"),
+    [
+        (
+            "Emergency Applicant asked the Court to affirm the judgment.",
+            "unsupported_requested_action",
+        ),
+        ("The district court granted the application.", "unsupported_lower_court_action"),
+        ("The Supreme Court reversed the judgment.", "unsupported_court_action"),
+    ],
+)
+def test_disposition_action_validation_rejects_actions_from_a_different_role(
+    paragraph: str, safe_code: str
+) -> None:
+    source = role_aware_disposition_candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(
+            disposition_draft(decision.claims, paragraph=paragraph),
+            source,
+            decision.claims,
+            public_quotes=False,
+        )
+    assert caught.value.safe_code == safe_code
+
+
+def test_disposition_action_validation_rejects_an_actorless_action() -> None:
+    source = role_aware_disposition_candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(
+            disposition_draft(decision.claims, paragraph="The application was granted."),
+            source,
+            decision.claims,
+            public_quotes=False,
+        )
+    assert caught.value.safe_code == "unsupported_action_role"
+
+
 def test_disposition_only_draft_accepts_supported_plain_action_synonyms() -> None:
     source = disposition_candidate()
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
@@ -384,6 +473,50 @@ def test_disposition_only_draft_accepts_zero_argument_analyses() -> None:
         decision.claims,
         public_quotes=False,
     )
+
+
+@pytest.mark.parametrize(
+    "paragraph",
+    [
+        "The Court acted without oral argument.",
+        "No oral argument occurred before the Court acted.",
+        "Oral argument was not held before the Court acted.",
+    ],
+)
+def test_disposition_only_draft_accepts_explicitly_negated_oral_argument(
+    paragraph: str,
+) -> None:
+    source = disposition_candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    validate_brief_draft(
+        disposition_draft(decision.claims, paragraph=paragraph),
+        source,
+        decision.claims,
+        public_quotes=False,
+    )
+
+
+@pytest.mark.parametrize(
+    "paragraph",
+    [
+        "Oral argument occurred before the Court acted.",
+        "Without oral argument, counsel argued that the Court should grant relief.",
+        "No oral argument occurred, but a justice asked whether the Court should grant relief.",
+    ],
+)
+def test_disposition_only_draft_rejects_positive_or_mixed_oral_argument(
+    paragraph: str,
+) -> None:
+    source = disposition_candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(
+            disposition_draft(decision.claims, paragraph=paragraph),
+            source,
+            decision.claims,
+            public_quotes=False,
+        )
+    assert caught.value.safe_code == "invented_oral_argument"
 
 
 def test_policy_builds_page_grounded_claims_and_generation_is_idempotent() -> None:
@@ -734,6 +867,56 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
     completions.content = json.dumps(unsupported)
     with pytest.raises(ValueError):
         generator.generate(source, decision.claims, decision.maturity)
+
+
+def test_disposition_generator_uses_compact_positive_role_aware_request() -> None:
+    source = disposition_candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    draft = disposition_draft(
+        decision.claims,
+        paragraph="The Supreme Court granted the application.",
+    )
+
+    class Completions:
+        def __init__(self) -> None:
+            self.request: dict[str, object] = {}
+
+        def create(self, **kwargs: object) -> object:
+            self.request = kwargs
+            return SimpleNamespace(
+                choices=[SimpleNamespace(message=SimpleNamespace(content=draft.model_dump_json()))]
+            )
+
+    completions = Completions()
+    client = SimpleNamespace(chat=SimpleNamespace(completions=completions))
+    generator = OpenAILegalBriefGenerator(
+        "qwen3.8:27b",  # type: ignore[arg-type]
+        client,
+        response_schema=disposition_only_brief_json_schema(),
+    )
+    generated = generator.generate(source, decision.claims, decision.maturity)
+
+    messages = completions.request["messages"]
+    prompt = messages[0]["content"]  # type: ignore[index]
+    user_payload = json.loads(messages[1]["content"])  # type: ignore[index]
+    assert prompt.startswith("/no_think")
+    assert len(prompt.split()) < 170
+    assert "requesting party, the lower court, or the Supreme Court" in prompt
+    assert "Give each action its own sentence" in prompt
+    assert "Never" not in prompt
+    assert "Do not" not in prompt
+    for priming in ("oral argument", "argument session", "transcript", "counsel", "justice"):
+        assert priming not in prompt.casefold()
+    assert "argument_sessions" not in user_payload
+    assert "position_group" not in json.dumps(user_payload)
+    assert user_payload["caption"] == source.caption
+    assert user_payload["docket"] == source.primary_docket
+    assert user_payload["maturity"] == decision.maturity.value
+    schema = completions.request["response_format"]["json_schema"]["schema"]  # type: ignore[index]
+    assert schema["properties"]["argument_analyses"]["minItems"] == 0
+    assert schema["properties"]["argument_analyses"]["maxItems"] == 0
+    assert generated.title == source.caption
+    assert generated.argument_analyses == ()
 
 
 def test_local_brief_schema_matches_exact_argument_count() -> None:

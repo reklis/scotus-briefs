@@ -165,7 +165,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v10"
+POLICY_VERSION = "scotus-brief-policy-v11"
 DOCUMENT_TEXT_VERSION = "official-document-text-v1"
 
 
@@ -1342,6 +1342,10 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
     config_digest = sha256_hex(canonical_json_bytes(config, privacy_check=False))
     parser = f"{config.parser.name}:{config.parser.version}"
     model_identity = _model_identity(config, model_endpoint)
+    prompt_contract = (
+        f"{config.generation.prompt_version};"
+        f"disposition={OpenAILegalBriefGenerator.DISPOSITION_PROMPT_VERSION}"
+    )
     extractor = (
         f"{LegalExtractionService.SCHEMA_VERSION}:{OpenAILegalObservationExtractor.PROMPT_VERSION}"
     )
@@ -1355,7 +1359,7 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
                 "provider": config.generation.provider,
                 "parser": parser,
                 "policy": POLICY_VERSION,
-                "prompt": config.generation.prompt_version,
+                "prompt": prompt_contract,
             },
             privacy_check=False,
         )
@@ -1365,7 +1369,7 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
         extractor_version=extractor,
         policy_version=POLICY_VERSION,
         model=model_identity,
-        prompt_version=config.generation.prompt_version,
+        prompt_version=prompt_contract,
         config_sha256=config_digest,
         composite_sha256=composite,
     )
@@ -1948,7 +1952,11 @@ class LiveStaticCaseProcessor:
                     "provider": self.config.generation.provider,
                     "parser": _processor_contract(self.config, self.model_endpoint).parser_version,
                     "policy": POLICY_VERSION,
-                    "prompt": self.config.generation.prompt_version,
+                    "prompt": (
+                        self.config.generation.prompt_version
+                        if candidate.argument_sessions
+                        else OpenAILegalBriefGenerator.DISPOSITION_PROMPT_VERSION
+                    ),
                     **(
                         {"validation_feedback": validation_feedback_code}
                         if validation_feedback_code

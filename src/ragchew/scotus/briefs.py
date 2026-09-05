@@ -241,6 +241,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-plain-language-v1"
 
     def __init__(
         self,
@@ -278,31 +279,39 @@ class OpenAILegalBriefGenerator:
         maturity: BriefMaturity,
     ) -> LegalBriefDraft:
         sessions = {session.argument_id: session for session in candidate.argument_sessions}
+        disposition_only = not candidate.argument_sessions
         ledger = [
             {
                 "claim_id": str(claim.claim_id),
-                "argument_session": (
-                    {
-                        "argument_id": str(claim.argument_id),
-                        "date": sessions[claim.argument_id].argument_date.date().isoformat(),
-                        "sequence": sessions[claim.argument_id].sequence,
-                        "reargument": sessions[claim.argument_id].reargument,
-                    }
-                    if claim.argument_id in sessions
-                    else None
-                ),
                 "type": claim.observation_type.value,
                 "status": claim.legal_status.value,
                 "certainty": claim.certainty.value,
                 "attribution": claim.attribution,
-                "position_group": _position_label(claim.attribution),
                 "value": claim.public_value,
                 "source": claim.public_source_label,
                 "page": claim.page_label,
+                **(
+                    {
+                        "argument_session": (
+                            {
+                                "argument_id": str(claim.argument_id),
+                                "date": (
+                                    sessions[claim.argument_id].argument_date.date().isoformat()
+                                ),
+                                "sequence": sessions[claim.argument_id].sequence,
+                                "reargument": sessions[claim.argument_id].reargument,
+                            }
+                            if claim.argument_id in sessions
+                            else None
+                        ),
+                        "position_group": _position_label(claim.attribution),
+                    }
+                    if not disposition_only
+                    else {}
+                ),
             }
             for claim in claims
         ]
-        disposition_only = not candidate.argument_sessions
         response_format: Any = (
             {
                 "type": "json_schema",
@@ -320,49 +329,58 @@ class OpenAILegalBriefGenerator:
             if self.strict_json_schema
             else {"type": "json_object"}
         )
-        format_instruction = (
-            " Return one raw JSON object with no Markdown or code fences. The object must have "
-            "exactly these six keys: title, title_claim_ids, dek, dek_claim_ids, sections, and "
-            "argument_analyses. Every section must have exactly heading, paragraphs, and "
-            "claim_ids. Every argument analysis must have exactly argument_id, heading, "
-            "paragraphs, and claim_ids. Use five to seven sections with one short paragraph "
-            "each. Use exactly two short paragraphs per argument analysis. Never emit empty "
-            "text or empty claim_ids arrays."
-            if not self.strict_json_schema
+        format_instruction = ""
+        if not self.strict_json_schema:
+            format_instruction = (
+                " Return one raw JSON object with no Markdown or code fences. The object must "
+                "have exactly these six keys: title, title_claim_ids, dek, dek_claim_ids, "
+                "sections, and argument_analyses. Every section must have exactly heading, "
+                "paragraphs, and claim_ids. "
+                + (
+                    "Set argument_analyses to an empty array. Return two to five sections with "
+                    "one short paragraph each."
+                    if disposition_only
+                    else (
+                        "Every argument analysis must have exactly argument_id, heading, "
+                        "paragraphs, and claim_ids. Use five to seven sections with one short "
+                        "paragraph each. Use exactly two short paragraphs per argument analysis."
+                    )
+                )
+            )
+        feedback_instruction = (
+            " Prior independent drafts failed these colon-separated fixed validator codes: '"
+            + self.validation_feedback_code
+            + "'. Produce a fresh draft that satisfies every listed rule; keep validation "
+            "details out of public prose."
+            if self.validation_feedback_code
             else ""
         )
+        disposition_prompt = (
+            "/no_think\nWrite a compact plain-language account of the supplied Supreme Court "
+            "disposition for a general reader. Use facts only from the approved claim ledger, "
+            "and copy supporting claim IDs into each title, dek, and paragraph's claim_ids "
+            "array. Set the title to exactly the supplied official caption. Return two to five "
+            "supported sections with one short paragraph each. Use direct everyday language, "
+            "active voice, and concrete explanations. "
+            f"Keep each sentence at or below {self.maximum_sentence_words} words and each "
+            f"paragraph at or below {self.maximum_paragraph_words} words. Give each action its "
+            "own sentence and identify its actor as the requesting party, the lower court, or "
+            "the Supreme Court. Match each action and its negation to a cited claim with that "
+            "same role. Use a name only in the exact form found in a cited claim. Paraphrase "
+            "source facts, place citations in claim_ids arrays, and keep prose reader-facing. "
+            "Omit unavailable details and unsupported sections."
+            + feedback_instruction
+            + format_instruction
+        )
         case_mode_instruction = (
-            "This is a disposition-only case with no oral-argument session. Return two to five "
-            "supported sections and emit exactly zero "
-            "argument analyses. Never claim or imply that oral argument occurred, that a "
-            "transcript exists, that counsel made an argument, or that a justice asked or "
-            "tested a question. Set the title to exactly the supplied caption with no "
-            "subtitle. Outside that exact caption, do not create, expand, shorten, or "
-            "abbreviate any person, court, "
-            "agency, organization, law, or party name; use a name only when its exact wording "
-            "appears in the cited approved claim value. Describe a result only when the cited "
-            "approved claims explicitly support it. When describing the Court action, use "
-            "the exact action verbs and negation from the cited claim; do not replace "
-            "granted, denied, stayed, affirmed, reversed, or vacated with a synonym. Omit "
-            "unavailable detail instead of adding filler about a missing record or future "
-            "details. Never mention approved claims, a claim ledger, evidence availability, "
-            "validators, or the generation process. Focus on supported case "
-            "background and the Court's action. "
-            if disposition_only
-            else (
-                "Produce one argument analysis for every supplied argument session, in order. "
-                "Explain what each side was asking the Court to do, the reasoning each side "
-                "offered, what assumptions the justices tested, and what a later reargument "
-                "changed or revisited when supported. "
-            )
+            "Produce one argument analysis for every supplied argument session, in order. "
+            "Explain what each side was asking the Court to do, the reasoning each side "
+            "offered, what assumptions the justices tested, and what a later reargument "
+            "changed or revisited when supported. "
         )
         section_instruction = (
-            "Return two to five supported sections with one short paragraph each. "
-            if disposition_only
-            else (
-                "Return five sections with one paragraph each and exactly two short "
-                "paragraphs for each supplied argument session. "
-            )
+            "Return five sections with one paragraph each and exactly two short "
+            "paragraphs for each supplied argument session. "
         )
         token_limit = {
             (
@@ -377,7 +395,9 @@ class OpenAILegalBriefGenerator:
             messages=[
                 {
                     "role": "system",
-                    "content": (
+                    "content": disposition_prompt
+                    if disposition_only
+                    else (
                         "/no_think\nExplain this Supreme Court case to a curious reader with no "
                         "legal training. Use only the approved claim ledger and cite claim IDs for "
                         "every title, summary, and paragraph. Begin the title with the supplied "
@@ -421,15 +441,7 @@ class OpenAILegalBriefGenerator:
                         "covers the argument record and link readers to the official docket for "
                         "later activity. Never predict the outcome, score "
                         "ideology or tone, or give personalized legal advice."
-                        + (
-                            " Prior independent drafts failed these colon-separated fixed "
-                            "validator codes: '"
-                            + self.validation_feedback_code
-                            + "'. Produce a fresh draft that satisfies every listed rule; "
-                            "do not mention the validation attempt in public prose."
-                            if self.validation_feedback_code
-                            else ""
-                        )
+                        + feedback_instruction
                         + format_instruction
                     ),
                 },
@@ -441,18 +453,30 @@ class OpenAILegalBriefGenerator:
                             "caption": candidate.caption,
                             "docket": candidate.primary_docket,
                             "maturity": maturity.value,
-                            "argument_sessions": [
+                            **(
                                 {
-                                    "argument_id": str(session.argument_id),
-                                    "date": session.argument_date.date().isoformat(),
-                                    "sequence": session.sequence,
-                                    "reargument": session.reargument,
+                                    "argument_sessions": [
+                                        {
+                                            "argument_id": str(session.argument_id),
+                                            "date": session.argument_date.date().isoformat(),
+                                            "sequence": session.sequence,
+                                            "reargument": session.reargument,
+                                        }
+                                        for session in candidate.argument_sessions
+                                    ]
                                 }
-                                for session in candidate.argument_sessions
-                            ],
+                                if not disposition_only
+                                else {}
+                            ),
                             "claims": ledger,
                             **(
-                                {"required_output_schema": (LegalBriefDraft.model_json_schema())}
+                                {
+                                    "required_output_schema": (
+                                        disposition_only_brief_json_schema()
+                                        if disposition_only
+                                        else LegalBriefDraft.model_json_schema()
+                                    )
+                                }
                                 if not self.strict_json_schema
                                 else {}
                             ),
@@ -635,9 +659,12 @@ _STATUTORY_EXPLANATION = re.compile(
     re.IGNORECASE,
 )
 _ADVOCATE_NAME = re.compile(r"^\s*(Mr|Ms|General)\.?\s+([A-Za-z'\u2019\N{EN DASH}-]+)", re.I)
-_REQUESTED_ACTION = re.compile(
-    r"\b(?:ask(?:s|ed)?|request(?:s|ed)?|want(?:s|ed)?|urge(?:s|d)?|should)\b"
-    r"[^.!?]{0,80}\b(?:affirmed|reversed|vacated|ordered)\b",
+_REQUESTED_ACTION_ROLE = re.compile(
+    r"\b(?:ask(?:s|ed|ing)?|request(?:s|ed|ing)?|urge(?:s|d|ing)?|seek(?:s|ing)?|"
+    r"sought|want(?:s|ed|ing)?|should)\b[^.!?]{0,100}"
+    r"\b(?:hold|held|order(?:ed)?|grant(?:ed)?|deny|denied|reject(?:ed)?|"
+    r"allow(?:ed)?|affirm(?:ed)?|uphold|upheld|revers(?:e|ed)|vacat(?:e|ed)|"
+    r"remand(?:ed)?|dismiss(?:ed)?|stay(?:ed)?|enjoin(?:ed)?|block(?:ed)?)\b",
     re.IGNORECASE,
 )
 _UNSUPPORTED_NO_DISPOSITION = re.compile(
@@ -646,11 +673,19 @@ _UNSUPPORTED_NO_DISPOSITION = re.compile(
     r"there (?:is|was) no (?:decision|ruling|opinion|order))\b",
     re.IGNORECASE,
 )
-_LOWER_COURT_ACTION = re.compile(
-    r"\b(?:lower|appeals|appellate|trial|district) court\b[^.!?]{0,80}"
-    r"\b(?:held|ordered|affirmed|reversed|vacated)\b|"
-    r"\b(?:held|ordered|affirmed|reversed|vacated)\b[^.!?]{0,80}"
-    r"\b(?:lower|appeals|appellate|trial|district) court\b",
+_LOWER_COURT_ACTOR = re.compile(
+    r"\b(?:(?:lower|appeals|appellate|trial|district|circuit|state supreme) court|"
+    r"court of appeals)\b",
+    re.IGNORECASE,
+)
+_SUPREME_COURT_ACTOR = re.compile(
+    r"\b(?:the Court(?! of Appeals)|the Supreme Court|Supreme Court of the United States)\b",
+    re.IGNORECASE,
+)
+_EXPLICIT_NEGATED_ORAL_ARGUMENT = re.compile(
+    r"\bwithout (?:an? )?oral arguments?\b|"
+    r"\bno oral arguments? (?:occurred|took place|was held)\b|"
+    r"\boral arguments? (?:did not occur|never occurred|was not held)\b",
     re.IGNORECASE,
 )
 _INVENTED_ORAL_ARGUMENT = re.compile(
@@ -728,10 +763,6 @@ _ACTION_CANONICAL = {
 }
 
 
-def _action_words(value: str) -> set[str]:
-    return {_ACTION_CANONICAL[item.casefold()] for item in _ACTION_WORD.findall(value)}
-
-
 def _action_signatures(value: str) -> set[tuple[str, bool]]:
     signatures: set[tuple[str, bool]] = set()
     for match in _ACTION_WORD.finditer(value):
@@ -744,6 +775,60 @@ def _action_signatures(value: str) -> set[tuple[str, bool]]:
         negated = re.search(r"\b(?:not|never|did not|does not)\b[^.!?]{0,24}$", prefix, re.I)
         signatures.add((action, bool(negated)))
     return signatures
+
+
+_ActionRole = Literal["requested", "lower_court", "supreme_court"]
+_ACTION_ROLE_STATUSES: dict[_ActionRole, frozenset[LegalStatus]] = {
+    "requested": frozenset({LegalStatus.REQUESTED}),
+    "lower_court": frozenset({LegalStatus.LOWER_COURT_HELD}),
+    "supreme_court": frozenset({LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}),
+}
+_ACTION_ROLE_CODES: dict[_ActionRole, str] = {
+    "requested": "unsupported_requested_action",
+    "lower_court": "unsupported_lower_court_action",
+    "supreme_court": "unsupported_court_action",
+}
+
+
+def _action_role(sentence: str) -> _ActionRole | None:
+    if _REQUESTED_ACTION_ROLE.search(sentence):
+        # A request normally names the Supreme Court as the recipient. The requesting
+        # party remains the actor whose proposed action must be checked.
+        return "requested"
+    lower_court = _LOWER_COURT_ACTOR.search(sentence) is not None
+    supreme_court = _SUPREME_COURT_ACTOR.search(sentence) is not None
+    if lower_court == supreme_court:
+        return None
+    return "lower_court" if lower_court else "supreme_court"
+
+
+def _validate_action_sentences(
+    text: str, supporting_claims: tuple[ScotusApprovedClaim, ...]
+) -> None:
+    for match in _SENTENCE.finditer(text):
+        sentence = match.group(0)
+        if not _ACTION_WORD.search(sentence):
+            continue
+        role = _action_role(sentence)
+        if role is None:
+            raise BriefValidationError(
+                "action sentence does not identify one supported actor role",
+                safe_code="unsupported_action_role",
+            )
+        role_support = " ".join(
+            claim.public_value
+            for claim in supporting_claims
+            if claim.legal_status in _ACTION_ROLE_STATUSES[role]
+        )
+        stated = _action_signatures(sentence)
+        supported = _action_signatures(role_support)
+        if not role_support or not stated.issubset(supported):
+            message = {
+                "requested": "text changes or invents the requested action",
+                "lower_court": "text changes or invents the lower-court action",
+                "supreme_court": "text overstates final Court action",
+            }[role]
+            raise BriefValidationError(message, safe_code=_ACTION_ROLE_CODES[role])
 
 
 def _supported_acronyms(value: str) -> set[str]:
@@ -1159,8 +1244,10 @@ def _validate_public_text(
         raise BriefValidationError("public prose contains an internal claim marker")
     if _META_OUTPUT.search(text):
         raise BriefValidationError("public prose contains model or schema instructions")
+    action_text = text
     if not candidate.argument_sessions:
-        if _INVENTED_ORAL_ARGUMENT.search(text):
+        action_text = _EXPLICIT_NEGATED_ORAL_ARGUMENT.sub("", text)
+        if _INVENTED_ORAL_ARGUMENT.search(action_text):
             raise BriefValidationError(
                 "disposition-only brief invents oral argument",
                 safe_code="invented_oral_argument",
@@ -1170,7 +1257,7 @@ def _validate_public_text(
                 "disposition-only brief contains unsupported filler",
                 safe_code="unsupported_filler",
             )
-        if _unsupported_named_phrase(text, support, candidate.caption):
+        if _unsupported_named_phrase(action_text, support, candidate.caption):
             raise BriefValidationError(
                 "disposition-only brief adds an unsupported party",
                 safe_code=f"unsupported_party_{validation_context}",
@@ -1183,53 +1270,8 @@ def _validate_public_text(
     for docket in _DOCKET.findall(text):
         if docket != candidate.primary_docket and docket not in support:
             raise BriefValidationError("text adds an unsupported docket")
-    final_action_text = re.sub(
-        r"\b(?:the Court )?held oral argument\b|"
-        r"\b(?:argument|argument session|session)\s*,?\s*(?:was )?held\b|"
-        r"\b(?:they|counsel|the opposing side|the same side) affirmed\b",
-        "",
-        text,
-        flags=re.IGNORECASE,
-    )
-    final_words = re.search(
-        r"\b(?:held|ordered|affirmed|reversed|vacated)\b", final_action_text, re.I
-    )
     supporting_claims = tuple(claim_map[value] for value in claim_ids)
-    court_action_supported = any(
-        claim.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
-        for claim in supporting_claims
-    )
-    requested_action_supported = _REQUESTED_ACTION.search(text) is not None and any(
-        claim.legal_status is LegalStatus.REQUESTED for claim in supporting_claims
-    )
-    lower_court_action_supported = _LOWER_COURT_ACTION.search(text) is not None and any(
-        claim.legal_status is LegalStatus.LOWER_COURT_HELD for claim in supporting_claims
-    )
-    if final_words and not (
-        court_action_supported or requested_action_supported or lower_court_action_supported
-    ):
-        raise BriefValidationError("text overstates final Court action")
-    stated_actions = _action_words(text)
-    supported_actions = _action_words(support)
-    final_action_support = " ".join(
-        claim.public_value
-        for claim in supporting_claims
-        if claim.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
-    )
-    if stated_actions and final_action_support:
-        # Plain-language prose may mention only one of several supported action verbs
-        # (for example, "granted" without repeating "stay"). Every stated action and
-        # its negation must be supported, but omission is not contradiction.
-        action_inconsistent = not _action_signatures(text).issubset(
-            _action_signatures(final_action_support)
-        )
-    else:
-        action_inconsistent = bool(stated_actions - supported_actions)
-    if action_inconsistent:
-        raise BriefValidationError(
-            "text changes or invents the supported disposition",
-            safe_code="unsupported_disposition",
-        )
+    _validate_action_sentences(action_text, supporting_claims)
     _validate_plain_language(
         text,
         maximum_sentence_words=maximum_sentence_words,
