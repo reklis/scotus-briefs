@@ -903,10 +903,18 @@ class LiveStaticDiscovery:
                     key in pending_by_case,
                 )
             elif key in pending_by_case:
+                pending_item = pending_by_case[key]
+                # Budget-deferred work has never had a case attempt. It remains fresh
+                # Court activity and must compete by authoritative date with newly
+                # rediscovered changes instead of falling behind older source refreshes.
+                unattempted = (
+                    pending_item.attempts == 0
+                    and pending_item.last_attempted_at is None
+                )
                 queue[key] = (
                     self.config.discovery.new_transcript_priority,
-                    "pending_retry",
-                    WorkClass.PENDING_RETRY,
+                    "pending_fresh" if unattempted else "pending_retry",
+                    WorkClass.FRESH_CHANGE if unattempted else WorkClass.PENDING_RETRY,
                     True,
                 )
             else:
