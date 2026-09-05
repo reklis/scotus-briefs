@@ -1105,6 +1105,7 @@ def _validate_public_text(
     claim_map: dict[UUID, ScotusApprovedClaim],
     *,
     public_quotes: bool,
+    validation_context: str = "text",
     maximum_sentence_words: int,
     maximum_paragraph_words: int,
 ) -> None:
@@ -1145,7 +1146,7 @@ def _validate_public_text(
         if _unsupported_named_phrase(text, support, candidate.caption):
             raise BriefValidationError(
                 "disposition-only brief adds an unsupported party",
-                safe_code="unsupported_party",
+                safe_code=f"unsupported_party_{validation_context}",
             )
     if re.search(r"\bthe\s+the\b", text, re.I):
         raise BriefValidationError("public prose contains a repeated article")
@@ -1249,19 +1250,22 @@ def validate_brief_draft(
     if total_words > 1500:
         raise BriefValidationError("brief is too long for a citizen-facing case page")
 
-    def validate(text: str, claim_ids: tuple[UUID, ...]) -> None:
+    def validate(
+        text: str, claim_ids: tuple[UUID, ...], *, context: str
+    ) -> None:
         _validate_public_text(
             text,
             claim_ids,
             candidate,
             claim_map,
             public_quotes=public_quotes,
+            validation_context=context,
             maximum_sentence_words=maximum_sentence_words,
             maximum_paragraph_words=maximum_paragraph_words,
         )
 
-    validate(draft.title, draft.title_claim_ids)
-    validate(draft.dek, draft.dek_claim_ids)
+    validate(draft.title, draft.title_claim_ids, context="title")
+    validate(draft.dek, draft.dek_claim_ids, context="dek")
     used_claim_ids = {
         *draft.title_claim_ids,
         *draft.dek_claim_ids,
@@ -1305,9 +1309,9 @@ def validate_brief_draft(
         if not matching.intersection(used_claim_ids):
             raise BriefValidationError("brief omits an available side's position")
     for section in draft.sections:
-        validate(section.heading, section.claim_ids)
+        validate(section.heading, section.claim_ids, context="section_heading")
         for paragraph in section.paragraphs:
-            validate(paragraph, section.claim_ids)
+            validate(paragraph, section.claim_ids, context="section_paragraph")
     expected_sessions = tuple(session.argument_id for session in candidate.argument_sessions)
     actual_sessions = tuple(item.argument_id for item in draft.argument_analyses)
     if actual_sessions != expected_sessions:
@@ -1339,9 +1343,9 @@ def validate_brief_draft(
         for matching in _position_claim_groups(session_claims):
             if not matching.intersection(analysis_ids):
                 raise BriefValidationError("argument breakdown omits one side")
-        validate(analysis.heading, analysis.claim_ids)
+        validate(analysis.heading, analysis.claim_ids, context="argument_heading")
         for paragraph in analysis.paragraphs:
-            validate(paragraph, analysis.claim_ids)
+            validate(paragraph, analysis.claim_ids, context="argument_paragraph")
 
 
 class InMemoryBriefRevisionStore:

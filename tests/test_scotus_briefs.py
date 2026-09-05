@@ -327,7 +327,10 @@ def test_disposition_name_guard_allows_only_evidence_derived_acronyms() -> None:
     ("paragraph", "safe_code"),
     [
         ("At oral argument, a justice asked about relief.", "invented_oral_argument"),
-        ("Acme Corporation sought relief.", "unsupported_party"),
+        (
+            "Acme Corporation sought relief.",
+            "unsupported_party_section_paragraph",
+        ),
         ("The Court denied the application.", "unsupported_disposition"),
         ("The Court did not grant the application.", "unsupported_disposition"),
         ("More details may emerge later.", "unsupported_filler"),
