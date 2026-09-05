@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import date
 from math import ceil
-from urllib.parse import quote, urlencode
+from urllib.parse import urlencode
 
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse
@@ -24,7 +24,7 @@ _PAGE_SIZE = 20
 
 
 def public_case_path(case: PublicCaseBrief) -> str:
-    return f"/scotus/cases/{case.term}/{quote(case.primary_docket, safe='-')}/{case.slug}"
+    return f"/scotus/cases/{case.term}/{archive_slug(case.primary_docket)}/{case.slug}"
 
 
 def create_scotus_public_app(reader: ScotusProjectionReader) -> FastAPI:
@@ -133,6 +133,78 @@ def create_scotus_public_app(reader: ScotusProjectionReader) -> FastAPI:
         cases = tuple(case for case in value.cases if case.term == term)
         return render_cases(request, value, cases, f"October Term {term}", page=page)
 
+    @app.get("/scotus/statuses/{status_slug}", response_class=HTMLResponse)
+    def status_archive(
+        request: Request, status_slug: str, page: int = Query(default=1, ge=1)
+    ) -> HTMLResponse:
+        value = projection()
+        cases = tuple(
+            case
+            for case in value.cases
+            if archive_slug(case.case_status.value) == status_slug
+        )
+        return render_cases(
+            request,
+            value,
+            cases,
+            f"Status: {status_slug.replace('-', ' ').title()}",
+            page=page,
+        )
+
+    @app.get("/scotus/topics/{topic_slug}", response_class=HTMLResponse)
+    def topic_archive(
+        request: Request, topic_slug: str, page: int = Query(default=1, ge=1)
+    ) -> HTMLResponse:
+        value = projection()
+        cases = tuple(
+            case
+            for case in value.cases
+            if any(archive_slug(topic) == topic_slug for topic in case.topics)
+        )
+        return render_cases(
+            request,
+            value,
+            cases,
+            f"Topic: {topic_slug.replace('-', ' ').title()}",
+            page=page,
+        )
+
+    @app.get("/scotus/corrections", response_class=HTMLResponse)
+    def corrections_archive(
+        request: Request, page: int = Query(default=1, ge=1)
+    ) -> HTMLResponse:
+        value = projection()
+        ordered = sort_cases(
+            tuple(case for case in value.cases if len(case.revisions) > 1)
+        )
+        page_count = ceil(len(ordered) / _PAGE_SIZE) if ordered else 1
+        if page > page_count and page > 1:
+            raise HTTPException(404, "corrections page not found")
+        start = (page - 1) * _PAGE_SIZE
+
+        def page_url(page_number: int) -> str:
+            return f"{request.url.path}?page={page_number}"
+
+        return templates.TemplateResponse(
+            request,
+            "scotus_corrections.html",
+            {
+                "projection": value,
+                "corrected_cases": ordered[start : start + _PAGE_SIZE],
+                "page": page,
+                "page_count": page_count,
+                "page_start": start + 1,
+                "total_cases": len(ordered),
+                "previous_url": page_url(page - 1) if page > 1 else None,
+                "next_url": page_url(page + 1) if page < page_count else None,
+                "urls": dynamic_urls,
+                "css_asset": "scotus.css",
+                "search_asset": "scotus-search.js",
+                "canonical_url": dynamic_urls.canonical(request.url.path + "/"),
+                "current_term": max((case.term for case in value.cases), default=None),
+            },
+        )
+
     @app.get("/scotus/arguments/{argument_date}", response_class=HTMLResponse)
     def argument_archive(
         request: Request,
@@ -157,26 +229,41 @@ def create_scotus_public_app(reader: ScotusProjectionReader) -> FastAPI:
     def search(
         request: Request,
         q: str = Query(default="", max_length=200),
+        status: str | None = None,
+        topic: str | None = None,
         page: int = Query(default=1, ge=1),
     ) -> HTMLResponse:
         value = projection()
         query = " ".join(q.split()).lower()
-        if not query:
-            return render_cases(request, value, (), "Search", q, page)
-        cases = tuple(
-            case
-            for case in value.cases
-            if query
-            in " ".join(
-                (
-                    case.caption,
-                    case.primary_docket,
-                    case.title,
-                    case.dek,
-                    *case.topics,
-                )
-            ).lower()
-        )
+        cases = value.cases
+        if query:
+            cases = tuple(
+                case
+                for case in cases
+                if query
+                in " ".join(
+                    (
+                        case.caption,
+                        case.primary_docket,
+                        case.title,
+                        case.dek,
+                        case.term,
+                        case.case_status.value,
+                        latest_court_document_date(case).date().isoformat(),
+                        *(argument.argument_date.date().isoformat() for argument in case.arguments),
+                        *case.topics,
+                    )
+                ).lower()
+            )
+        if status:
+            cases = tuple(case for case in cases if case.case_status.value == status)
+        if topic:
+            wanted_topic = topic.casefold()
+            cases = tuple(
+                case
+                for case in cases
+                if any(value.casefold() == wanted_topic for value in case.topics)
+            )
         return render_cases(request, value, cases, "Search results", q, page)
 
     @app.get(
@@ -189,7 +276,9 @@ def create_scotus_public_app(reader: ScotusProjectionReader) -> FastAPI:
             (
                 case
                 for case in value.cases
-                if case.term == term and case.primary_docket == primary_docket and case.slug == slug
+                if case.term == term
+                and archive_slug(case.primary_docket) == primary_docket
+                and case.slug == slug
             ),
             None,
         )

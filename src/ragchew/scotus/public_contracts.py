@@ -269,8 +269,10 @@ class PublicCaseBrief(BaseModel):
                 raise ValueError("public argument date must equal the latest real argument date")
             if self.official_detail_url is None:
                 raise ValueError("an argued case requires an official argument detail URL")
-        elif self.argument_date is not None:
-            raise ValueError("a zero-argument case cannot claim an argument date")
+        elif self.argument_date is not None or self.official_detail_url is not None:
+            raise ValueError(
+                "a zero-argument case cannot claim argument metadata or a detail page"
+            )
 
         if not self.arguments and not self.dispositions:
             raise ValueError("a zero-argument case requires a dated official disposition")

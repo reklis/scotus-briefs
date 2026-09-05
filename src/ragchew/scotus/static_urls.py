@@ -8,19 +8,28 @@ from datetime import datetime
 from pathlib import PurePosixPath
 from urllib.parse import quote, urljoin, urlsplit
 
-from ragchew.scotus.public_contracts import PublicCaseBrief
+from ragchew.scotus.public_contracts import (
+    LEGACY_STATIC_PUBLIC_SCHEMA_VERSION,
+    PublicCaseBrief,
+    derive_latest_court_document_date,
+)
 
 
 def latest_court_document_date(case: PublicCaseBrief) -> datetime:
-    """Return the contract-validated latest official Court activity date."""
-    if case.latest_court_document_date is not None:
-        return case.latest_court_document_date
-    # Explicit schema-1.0 compatibility: old URL-only dispositions have no
-    # authoritative date, so only their latest real argument may be used.
-    dates = tuple(item.argument_date for item in case.arguments)
-    if not dates:
-        raise ValueError("legacy public case has no real argument-date fallback")
-    return max(dates)
+    """Recompute the newest official Court activity without using article metadata."""
+    if case.schema_version == LEGACY_STATIC_PUBLIC_SCHEMA_VERSION:
+        # Schema 1.0 had URL-only dispositions. Its only authoritative activity
+        # dates are the dates of real argument sessions.
+        return derive_latest_court_document_date(case.arguments, ())
+    return derive_latest_court_document_date(
+        case.arguments,
+        case.dispositions,
+        legacy_argument_date=(
+            case.argument_date
+            if case.undated_disposition_date_fallback is not None
+            else None
+        ),
+    )
 
 
 def sort_cases(cases: tuple[PublicCaseBrief, ...]) -> tuple[PublicCaseBrief, ...]:

@@ -86,11 +86,29 @@ class _PageParser(HTMLParser):
         self.disclosure_text: list[str] = []
         self._capture_disclosure = 0
         self.redirect_target: str | None = None
+        self.case_cards: list[tuple[str, str, str]] = []
+        self.case_pages: list[tuple[str, str, str]] = []
+        self.pagination_links: list[tuple[str, str]] = []
+        self.argument_history_count = 0
+        self.argument_date_count = 0
+        self.argument_card_count = 0
+        self.latest_activity_times: list[tuple[str, str]] = []
+        self.latest_activity_fields: list[tuple[str, str, str, str]] = []
+        self._latest_activity_datetime: str | None = None
+        self._latest_activity_text: list[str] = []
+        self._activity_field_path: str | None = None
+        self._activity_field_label = ""
+        self._activity_field_time: tuple[str, str] | None = None
+        self.anchors: list[tuple[str, str]] = []
+        self._anchor_href: str | None = None
+        self._anchor_text: list[str] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
         if tag in {"a", "link"} and values.get("href"):
             self.links.append((tag, values["href"] or ""))
+        if tag == "a" and values.get("rel") in {"prev", "next"} and values.get("href"):
+            self.pagination_links.append((values["rel"] or "", values["href"] or ""))
         if tag in {"script", "img"} and values.get("src"):
             self.links.append((tag, values["src"] or ""))
         if tag == "link" and values.get("rel") == "canonical" and values.get("href"):
@@ -102,6 +120,40 @@ class _PageParser(HTMLParser):
             self.landmarks.add(tag)
         if tag == "h1":
             self.h1_count += 1
+        classes = set((values.get("class") or "").split())
+        if tag == "a" and values.get("href"):
+            self._anchor_href = values["href"] or ""
+            self._anchor_text = []
+        if tag == "div" and "latest-court-activity-field" in classes:
+            self._activity_field_path = values.get("data-case-path") or ""
+            self._activity_field_label = ""
+            self._activity_field_time = None
+        activity = (
+            values.get("data-case-path") or values.get("data-case-page"),
+            values.get("data-latest-court-document-date"),
+            values.get("data-argument-session-count"),
+        )
+        activity_record = (
+            activity[0] or "",
+            activity[1] or "",
+            activity[2] or "",
+        )
+        if tag == "article" and "case-card" in classes:
+            self.case_cards.append(activity_record)
+        if tag == "article" and "case-brief" in classes:
+            self.case_pages.append(activity_record)
+        if tag == "section" and "argument-history" in classes:
+            self.argument_history_count += 1
+        if "argument-date" in classes:
+            self.argument_date_count += 1
+        if tag == "article" and "argument-card" in classes:
+            self.argument_card_count += 1
+        if tag == "time" and "latest-court-activity" in classes:
+            if self._latest_activity_datetime is not None:
+                self._latest_activity_datetime = ""
+            else:
+                self._latest_activity_datetime = values.get("datetime") or ""
+            self._latest_activity_text = []
         if (
             values.get("class") == "disclosure"
             or values.get("aria-label") == "Important disclosure"
@@ -113,6 +165,38 @@ class _PageParser(HTMLParser):
                 self.redirect_target = match.group(1).strip()
 
     def handle_endtag(self, tag: str) -> None:
+        if tag == "time" and self._latest_activity_datetime is not None:
+            activity_time = (
+                self._latest_activity_datetime,
+                " ".join(" ".join(self._latest_activity_text).split()),
+            )
+            self.latest_activity_times.append(activity_time)
+            if self._activity_field_path is not None:
+                self._activity_field_time = activity_time
+            self._latest_activity_datetime = None
+            self._latest_activity_text = []
+        if tag == "div" and self._activity_field_path is not None:
+            field_time = self._activity_field_time or ("", "")
+            self.latest_activity_fields.append(
+                (
+                    self._activity_field_path,
+                    self._activity_field_label,
+                    field_time[0],
+                    field_time[1],
+                )
+            )
+            self._activity_field_path = None
+            self._activity_field_label = ""
+            self._activity_field_time = None
+        if tag == "a" and self._anchor_href is not None:
+            self.anchors.append(
+                (
+                    self._anchor_href,
+                    " ".join(" ".join(self._anchor_text).split()),
+                )
+            )
+            self._anchor_href = None
+            self._anchor_text = []
         if tag == "title" and self._in_title:
             self.titles.append("".join(self._title_parts).strip())
             self._in_title = False
@@ -124,6 +208,15 @@ class _PageParser(HTMLParser):
             self._title_parts.append(data)
         if self._capture_disclosure:
             self.disclosure_text.append(data)
+        if self._latest_activity_datetime is not None:
+            self._latest_activity_text.append(data)
+        if self._anchor_href is not None:
+            self._anchor_text.append(data)
+        if (
+            self._activity_field_path is not None
+            and " ".join(data.split()) == "Latest official Court activity"
+        ):
+            self._activity_field_label = "Latest official Court activity"
 
 
 def _fail(message: str) -> NoReturn:
@@ -254,22 +347,13 @@ def validate_static_candidate(
             _fail("search index requires explicit activity-contract migration")
         if search_bytes != canonical_json_bytes(search):
             _fail("search index JSON is not canonical")
-        ordered_cases = sort_cases(projection.cases)
-        if len(search.cases) != len(ordered_cases):
-            _fail("search index case count differs from projection")
-        for entry, public_case in zip(search.cases, ordered_cases, strict=True):
-            expected_latest = latest_court_document_date(public_case).date().isoformat()
-            expected_argument = (
-                public_case.argument_date.date().isoformat()
-                if public_case.argument_date is not None
-                else None
-            )
-            if (
-                entry.path != urls.case(public_case)
-                or entry.latest_court_document_date != expected_latest
-                or entry.argument_date != expected_argument
-            ):
-                _fail("search activity fields or order differ from projection cases")
+        # Rebuild rather than comparing identities as a set: every field and the
+        # exact shared newest-first order are part of the deployed search contract.
+        from ragchew.scotus.static_export import build_search_index
+
+        expected_search = build_search_index(projection, urls)
+        if search != expected_search:
+            _fail("search fields or exact newest-first order differ from projection cases")
         manifest = ReleaseManifest.model_validate_json((candidate / MANIFEST_PATH).read_bytes())
         if (candidate / MANIFEST_PATH).read_bytes() != canonical_json_bytes(manifest):
             _fail("release manifest is not canonical")
@@ -373,7 +457,7 @@ def _validate_file_allowlist(
     if urls.custom_domain is not None:
         fixed.add(CNAME_PATH.as_posix())
     case_directories: set[str] = set()
-    archive_routes = {""}
+    archive_routes = {"", "corrections"}
     for case in projection.cases:
         key = public_case_key(case.term, case.primary_docket)
         fixed.add(f"data/v1/cases/{key}.json")
@@ -429,38 +513,125 @@ def _listing_paths(root: Path, urls: StaticUrlPolicy, route: str) -> tuple[Path,
 def _validate_route_coverage(
     root: Path, urls: StaticUrlPolicy, projection: ScotusPublicProjection
 ) -> None:
-    listings: dict[str, set[str]] = {"": {urls.case(case) for case in projection.cases}}
+    grouped: dict[str, list[PublicCaseBrief]] = {
+        "": list(projection.cases),
+        "corrections": [case for case in projection.cases if len(case.revisions) > 1],
+    }
     for case in projection.cases:
-        case_url = urls.case(case)
-        listings.setdefault(f"terms/{case.term}", set()).add(case_url)
-        listings.setdefault(f"statuses/{archive_slug(case.case_status.value)}", set()).add(case_url)
-        for topic in case.topics:
-            listings.setdefault(f"topics/{archive_slug(topic)}", set()).add(case_url)
-        for argument in case.arguments:
-            date = argument.argument_date.date().isoformat()
-            listings.setdefault(f"arguments/{date}", set()).add(case_url)
-    all_case_urls = {urls.case(case) for case in projection.cases}
-    for route, expected in listings.items():
-        actual: list[str] = []
+        grouped.setdefault(f"terms/{case.term}", []).append(case)
+        grouped.setdefault(f"statuses/{archive_slug(case.case_status.value)}", []).append(case)
+        for topic in set(case.topics):
+            grouped.setdefault(f"topics/{archive_slug(topic)}", []).append(case)
+        for argument_date in {
+            argument.argument_date.date().isoformat() for argument in case.arguments
+        }:
+            grouped.setdefault(f"arguments/{argument_date}", []).append(case)
+
+    listings = {
+        route: sort_cases(tuple(cases)) for route, cases in grouped.items()
+    }
+    case_by_url = {urls.case(case): case for case in projection.cases}
+    all_case_urls = set(case_by_url)
+    for route, expected_cases in listings.items():
+        expected_links = tuple(urls.case(case) for case in expected_cases)
+        expected_cards = tuple(
+            (
+                urls.case(case),
+                latest_court_document_date(case).date().isoformat(),
+                str(len(case.arguments)),
+            )
+            for case in expected_cases
+        )
+        expected_activity_fields = tuple(
+            (
+                urls.case(case),
+                "Latest official Court activity",
+                latest_court_document_date(case).isoformat(),
+                latest_court_document_date(case).date().isoformat(),
+            )
+            for case in expected_cases
+        )
+        actual_links: list[str] = []
+        actual_cards: list[tuple[str, str, str]] = []
+        actual_activity_fields: list[tuple[str, str, str, str]] = []
+        page_card_counts: list[int] = []
         pages = _listing_paths(root, urls, route)
         if not all(path.is_file() for path in pages):
             _fail(f"archive is missing its first page: {route!r}")
-        for page in pages:
+        for page_number, page in enumerate(pages, 1):
             parser = _PageParser()
             parser.feed(page.read_text(encoding="utf-8"))
-            actual.extend(
+            page_links = tuple(
                 link for tag, link in parser.links if tag == "a" and link in all_case_urls
             )
-        if set(actual) != expected or len(actual) != len(set(actual)):
-            _fail(f"archive does not link to every expected case exactly once: {route!r}")
-    corrected = {urls.case(case) for case in projection.cases if len(case.revisions) > 1}
-    parser = _PageParser()
-    parser.feed(
-        (root / urls.output_relative(urls.section("corrections"))).read_text(encoding="utf-8")
-    )
-    actual_corrected = {link for tag, link in parser.links if tag == "a" and link in all_case_urls}
-    if actual_corrected != corrected:
-        _fail("corrections index does not match corrected public cases")
+            actual_links.extend(page_links)
+            actual_cards.extend(parser.case_cards)
+            actual_activity_fields.extend(parser.latest_activity_fields)
+            page_card_counts.append(len(parser.case_cards))
+            expected_pagination: list[tuple[str, str]] = []
+            if page_number > 1:
+                expected_pagination.append(("prev", urls.page(route, page_number - 1)))
+            if page_number < len(pages):
+                expected_pagination.append(("next", urls.page(route, page_number + 1)))
+            if parser.pagination_links != expected_pagination:
+                _fail(f"pagination links are inconsistent for archive {route!r}")
+        if tuple(actual_links) != expected_links:
+            _fail(f"archive case links differ from exact newest-first order: {route!r}")
+        if (
+            tuple(actual_cards) != expected_cards
+            or tuple(actual_activity_fields) != expected_activity_fields
+        ):
+            _fail(f"archive activity markup differs from exact case order: {route!r}")
+        if len(pages) > 1:
+            page_size = page_card_counts[0]
+            if (
+                page_size == 0
+                or any(count != page_size for count in page_card_counts[:-1])
+                or not 0 < page_card_counts[-1] <= page_size
+            ):
+                _fail(f"archive pagination has inconsistent page boundaries: {route!r}")
+
+    for case_url, case in case_by_url.items():
+        page = root / urls.output_relative(case_url)
+        parser = _PageParser()
+        parser.feed(page.read_text(encoding="utf-8"))
+        expected_activity = (
+            case_url,
+            latest_court_document_date(case).date().isoformat(),
+            str(len(case.arguments)),
+        )
+        expected_activity_field = (
+            case_url,
+            "Latest official Court activity",
+            latest_court_document_date(case).isoformat(),
+            latest_court_document_date(case).date().isoformat(),
+        )
+        if (
+            parser.case_pages != [expected_activity]
+            or parser.latest_activity_fields != [expected_activity_field]
+        ):
+            _fail(f"case page activity markup differs from public contract: {case_url}")
+        expected_argument_markup = int(bool(case.arguments))
+        argument_links = tuple(
+            (href, text)
+            for href, text in parser.anchors
+            if any(
+                marker in f"{href} {text}".casefold()
+                for marker in (
+                    "/oral_arguments/",
+                    "oral-argument",
+                    "oral argument",
+                    "transcript",
+                )
+            )
+        )
+        if (
+            parser.argument_history_count != expected_argument_markup
+            or parser.argument_date_count != expected_argument_markup
+            or parser.argument_card_count != len(case.arguments)
+            or (not case.arguments and argument_links)
+        ):
+            _fail(f"case page argument markup differs from real sessions: {case_url}")
 
 
 def _url_to_file(root: Path, urls: StaticUrlPolicy, value: str) -> Path | None:

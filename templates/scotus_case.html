@@ -1,14 +1,14 @@
 {% extends "scotus_base.html" %}
 {% block title %}{{ case.title }} — {{ case.caption }} ({{ case.primary_docket }}) · SCOTUS Legal Briefs{% endblock %}
 {% block content %}
-<article class="case-brief">
+<article class="case-brief" data-case-page="{{ urls.case(case) }}" data-latest-court-document-date="{{ latest_court_document_date(case).date().isoformat() }}" data-argument-session-count="{{ case.arguments|length }}">
   <header>
     <p class="eyebrow">October Term {{ case.term }} · Docket {{ case.primary_docket }}</p>
     <h1>{{ case.title }}</h1><p class="dek">{{ case.dek }}</p>
     <dl class="meta">
       <div><dt>Official caption</dt><dd>{{ case.caption }}</dd></div>
-      {% if case.argument_date %}<div><dt>Argument date</dt><dd><time datetime="{{ case.argument_date.isoformat() }}">{{ case.argument_date.date() }}</time></dd></div>{% endif %}
-      <div><dt>Latest Court document date</dt><dd><time datetime="{{ latest_court_document_date(case).isoformat() }}">{{ latest_court_document_date(case).date() }}</time></dd></div>
+      {% if case.argument_date %}<div class="argument-date"><dt>Latest argument session</dt><dd><time datetime="{{ case.argument_date.isoformat() }}">{{ case.argument_date.date() }}</time></dd></div>{% endif %}
+      <div class="latest-court-activity-field" data-case-path="{{ urls.case(case) }}"><dt>Latest official Court activity</dt><dd><time class="latest-court-activity" datetime="{{ latest_court_document_date(case).isoformat() }}">{{ latest_court_document_date(case).date() }}</time></dd></div>
       <div><dt>Latest verified event</dt><dd>{{ case.case_status.value.replace('_', ' ')|title }}</dd></div>
       <div><dt>Sources analyzed through</dt><dd>{{ case.maturity.value.replace('_', ' ')|title }}</dd></div>
     </dl>
@@ -32,7 +32,7 @@
     <details><summary>Official sources for this section</summary><ul>{% for source in section.sources %}<li><a href="{{ urls.official(source.official_url) }}" rel="external">{{ source.label }}</a> — {{ source.evidence_type }}, {{ source.page_label }}</li>{% endfor %}</ul></details>
   </section>{% endfor %}
   <section aria-labelledby="provenance-heading"><h2 id="provenance-heading">Official Court provenance</h2>
-    <p><a href="{{ urls.official(case.official_docket_url) }}" rel="external">Official docket and case history</a>{% if case.official_detail_url %} · <a href="{{ urls.official(case.official_detail_url) }}" rel="external">Official Supreme Court oral-argument detail page</a>{% endif %}</p>
+    <p><a href="{{ urls.official(case.official_docket_url) }}" rel="external">Official docket and case history</a>{% if case.arguments and case.official_detail_url %} · <a href="{{ urls.official(case.official_detail_url) }}" rel="external">Official Supreme Court oral-argument detail page</a>{% endif %}</p>
     {% if case.dispositions or case.official_disposition_urls %}<h3>Verified official opinions and orders</h3><ul>{% for disposition in case.dispositions %}<li><a href="{{ urls.official(disposition.official_url) }}" rel="external">Official Court {{ disposition.kind.replace('_', ' ') }}</a> — published <time datetime="{{ disposition.publication_date.isoformat() }}">{{ disposition.publication_date.date() }}</time>{% if disposition.revision_date %}; revised <time datetime="{{ disposition.revision_date.isoformat() }}">{{ disposition.revision_date.date() }}</time>{% endif %}</li>{% endfor %}{% for url in case.official_disposition_urls %}<li><a href="{{ urls.official(url) }}" rel="external">Official Court disposition document (date not established)</a></li>{% endfor %}</ul>{% endif %}
     <h3>Title and summary sources</h3><ul>{% for source in case.title_sources %}<li><a href="{{ urls.official(source.official_url) }}" rel="external">{{ source.label }}</a> — {{ source.evidence_type }}, {{ source.page_label }}</li>{% endfor %}{% for source in case.dek_sources %}<li><a href="{{ urls.official(source.official_url) }}" rel="external">{{ source.label }}</a> — {{ source.evidence_type }}, {{ source.page_label }}</li>{% endfor %}</ul>
   </section>

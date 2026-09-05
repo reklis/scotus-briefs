@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import shutil
 import tempfile
@@ -143,8 +144,19 @@ class StaticSiteExporter:
         validate: bool = True,
     ) -> StaticExportResult:
         """Write a deterministic complete tree; never leave a partial destination."""
-        # Round-trip through the strict payload boundary even for already constructed models.
-        projection = validate_projection_payload(projection.model_dump(mode="python"))
+        # Round-trip through canonical JSON even for already constructed models. This
+        # normalizes aware timestamps to UTC and set-like fields before HTML, search,
+        # and public JSON are derived from the exact same projection values.
+        projection_payload = json.loads(canonical_json_bytes(projection))
+        if not isinstance(projection_payload, dict):  # pragma: no cover - model invariant
+            raise StaticExportError("public projection must serialize as an object")
+        for case_payload in projection_payload.get("cases", []):
+            if isinstance(case_payload, dict) and isinstance(case_payload.get("topics"), list):
+                case_payload["topics"] = sorted(
+                    set(case_payload["topics"]),
+                    key=lambda value: (value.casefold(), value),
+                )
+        projection = validate_projection_payload(projection_payload)
         if build_epoch.tzinfo is None or build_epoch.utcoffset() is None:
             raise StaticExportError("build epoch must be timezone-aware")
         build_epoch = build_epoch.astimezone(UTC)
@@ -305,10 +317,8 @@ class StaticSiteExporter:
                     root / self.urls.output_relative(redirect_url), rendered.encode("utf-8")
                 )
 
-        corrected = tuple(case for case in sort_cases(projection.cases) if len(case.revisions) > 1)
-        render(
-            "scotus_corrections.html", self.urls.section("corrections"), corrected_cases=corrected
-        )
+        corrected = tuple(case for case in projection.cases if len(case.revisions) > 1)
+        self._render_corrections(render, corrected)
         render(
             "scotus_search.html",
             self.urls.section("search"),
@@ -410,6 +420,31 @@ class StaticSiteExporter:
                 total_cases=len(ordered),
                 previous_url=self.urls.page(route, page - 1) if page > 1 else None,
                 next_url=self.urls.page(route, page + 1) if page < count else None,
+            )
+
+    def _render_corrections(
+        self,
+        render: Any,
+        cases: tuple[PublicCaseBrief, ...],
+    ) -> None:
+        ordered = sort_cases(cases)
+        count = max(1, ceil(len(ordered) / self.page_size))
+        for page in range(1, count + 1):
+            start = (page - 1) * self.page_size
+            render(
+                "scotus_corrections.html",
+                self.urls.page("corrections", page),
+                corrected_cases=ordered[start : start + self.page_size],
+                page=page,
+                page_count=count,
+                page_start=start + 1,
+                total_cases=len(ordered),
+                previous_url=(
+                    self.urls.page("corrections", page - 1) if page > 1 else None
+                ),
+                next_url=(
+                    self.urls.page("corrections", page + 1) if page < count else None
+                ),
             )
 
     def _archive_links(self, projection: ScotusPublicProjection) -> tuple[tuple[str, str], ...]:

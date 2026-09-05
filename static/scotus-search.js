@@ -39,9 +39,10 @@
     results.replaceChildren();
     selected.items.forEach(function (item) {
       const li = document.createElement("li"), article = document.createElement("article"), heading = document.createElement("h2"), link = document.createElement("a");
+      article.className = "case-card"; article.dataset.casePath = item.path; article.dataset.latestCourtDocumentDate = item.latest_court_document_date; article.dataset.argumentSessionCount = item.argument_date ? "1+" : "0";
       link.href = item.path; link.textContent = item.title; heading.appendChild(link); article.appendChild(heading);
       appendText(article, "p", item.caption + " · Docket " + item.docket, "eyebrow");
-      appendText(article, "p", "Latest Court document " + item.latest_court_document_date + " · October Term " + item.term + " · " + item.status.replace(/_/g, " ") + (item.topics.length ? " · " + item.topics.join(", ") : ""));
+      appendText(article, "p", "Latest official Court activity " + item.latest_court_document_date + " · October Term " + item.term + " · " + item.status.replace(/_/g, " ") + (item.topics.length ? " · " + item.topics.join(", ") : ""));
       li.appendChild(article); results.appendChild(li);
     });
     message.textContent = matches.length ? "Showing " + (((selected.page - 1) * PAGE_SIZE) + 1) + "–" + Math.min(selected.page * PAGE_SIZE, matches.length) + " of " + matches.length + " results." : "No public case briefs match this search.";

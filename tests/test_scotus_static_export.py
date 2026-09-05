@@ -473,5 +473,7 @@ if (search.filterCases(rows, '', 'DECIDED', 'civil rights')[0].path !== '/a/') p
 if (search.pageCases(Array(21).fill(rows[0]), 2).items.length !== 1) process.exit(4);
 const source = require('fs').readFileSync('./static/scotus-search.js','utf8');
 if (source.includes('innerHTML')) process.exit(5);
+const paths = search.filterCases(rows, '', '', '').map((row) => row.path).join(',');
+if (paths !== '/b/,/a/') process.exit(6);
 """
     subprocess.run(["node", "-e", script], check=True)
