@@ -604,7 +604,7 @@ def test_fresh_selection_applies_newest_first_before_case_cap() -> None:
     assert selected.deferred_case_keys == ("2025-25-older",)
 
 
-def test_pending_retry_rank_rotates_least_recently_attempted_without_reordering_fresh() -> None:
+def test_pending_retry_rank_keeps_authoritative_newest_activity_first() -> None:
     older_untried = StaticCaseWork(
         "2025-25-older",
         10,
@@ -634,9 +634,9 @@ def test_pending_retry_rank_rotates_least_recently_attempted_without_reordering_
     )
 
     assert sorted((newest_retried, older_untried, fresh), key=lambda item: item.rank) == [
-        fresh,
-        older_untried,
         newest_retried,
+        older_untried,
+        fresh,
     ]
 
 

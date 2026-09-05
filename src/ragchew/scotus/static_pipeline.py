@@ -584,7 +584,7 @@ class StaticCaseWork:
         )
 
     @property
-    def rank(self) -> tuple[int, int, float, float, int, int, str]:
+    def rank(self) -> tuple[int, float, int, int, float, int, int, str]:
         """Stable newest-first rank, evaluated before any bounded run limit."""
         activity_rank = (
             -self.authoritative_activity_date.timestamp()
@@ -601,11 +601,18 @@ class StaticCaseWork:
             if self.persisted_pending and self.last_attempted_at is not None
             else float("-inf")
         )
+        routine_rank = int(
+            self.work_class
+            in {WorkClass.CURRENT_RECHECK, WorkClass.HISTORICAL_RECHECK}
+        )
         return (
+            # Changed, pending, and migration work precedes unchanged routine probes;
+            # authoritative Court recency is primary within that actionable group.
+            routine_rank,
+            activity_rank,
             fresh_rank,
             int(self.work_class),
             retry_rank,
-            activity_rank,
             pending_rank,
             self.priority,
             self.case_key,
