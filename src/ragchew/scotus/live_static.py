@@ -2391,7 +2391,7 @@ def _default_source_fetcher(settings: ServiceSettings, config: ScotusConfig) -> 
         # Live static publication applies one shared limiter across source pages and
         # document bodies; avoid a second independent clock in this transport.
         minimum_interval_seconds=0,
-        timeout_seconds=config.model_budget.request_timeout_seconds,
+        timeout_seconds=config.discovery.request_timeout_seconds,
     )
 
 
@@ -2399,7 +2399,7 @@ def _default_document_client(settings: ServiceSettings, config: ScotusConfig) ->
     del settings
     return httpx.Client(
         follow_redirects=False,
-        timeout=config.model_budget.request_timeout_seconds,
+        timeout=config.documents.request_timeout_seconds,
         trust_env=False,
     )
 

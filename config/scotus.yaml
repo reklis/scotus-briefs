@@ -42,6 +42,7 @@ discovery:
   new_transcript_priority: 10
   poll_interval_seconds: 900
   crawl_delay_seconds: 1.0
+  request_timeout_seconds: 60
 documents:
   maximum_pdf_bytes: 52428800
   maximum_pages: 500
@@ -49,6 +50,7 @@ documents:
     - application/pdf
     - text/html
   spool_memory_bytes: 8388608
+  request_timeout_seconds: 60
   download_audio: false
   stt_enabled: false
 parser:

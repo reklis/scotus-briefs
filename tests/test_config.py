@@ -39,6 +39,8 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.discovery.terms[0] == "2025"
     assert config.discovery.terms[-1] == "2000"
     assert config.discovery.backfill_case_limit == 200
+    assert config.discovery.request_timeout_seconds == 60
+    assert config.documents.request_timeout_seconds == 60
     assert config.generation.provider == "ollama"
     assert config.generation.model == "qwen3.8:27b"
     assert config.generation.prompt_version == "scotus-brief-plain-language-v31"

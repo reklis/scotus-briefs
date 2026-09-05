@@ -199,6 +199,7 @@ class ScotusDiscoveryDefaults(BaseModel):
     new_transcript_priority: int = Field(ge=0)
     poll_interval_seconds: int = Field(ge=60)
     crawl_delay_seconds: float = Field(ge=1)
+    request_timeout_seconds: int = Field(default=60, ge=10, le=120)
 
     @model_validator(mode="after")
     def validate_terms_and_priority(self) -> Self:
@@ -220,6 +221,7 @@ class ScotusDocumentDefaults(BaseModel):
     maximum_pages: int = Field(gt=0)
     allowed_content_types: list[str] = Field(min_length=1)
     spool_memory_bytes: int = Field(gt=0)
+    request_timeout_seconds: int = Field(default=60, ge=10, le=120)
     download_audio: bool = False
     stt_enabled: bool = False
 
