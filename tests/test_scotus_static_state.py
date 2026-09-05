@@ -31,10 +31,13 @@ from ragchew.scotus.static_contracts import (
     LogicalSourceState,
     ModelAttemptOutcome,
     ModelAttemptReceipt,
+    ModelRetryStatus,
+    PendingModelRetry,
     PendingReason,
     PendingWork,
     PublicationState,
     ReleaseManifest,
+    RetryFailureCode,
     SupportedActivityState,
     assert_public_payload,
     canonical_json_bytes,
@@ -505,6 +508,45 @@ def test_pending_work_is_sanitized_and_reconciliation_is_explicit() -> None:
         reconcile_release_ids(live_release_id=ONE, branch_release_id=ZERO)
         is ReconciliationChoice.REDEPLOY_BRANCH_ACTIVE
     )
+
+
+def test_pending_retry_state_is_nested_sanitized_and_legacy_compatible() -> None:
+    legacy = PendingWork(
+        case_key="2025-25-466",
+        reason=PendingReason.VALIDATION_FAILED,
+        attempts=1,
+        first_seen_at=NOW,
+    )
+    assert b'"retry"' not in canonical_json_bytes(legacy)
+
+    pending = legacy.model_copy(
+        update={
+            "last_attempted_at": NOW,
+            "retry": PendingModelRetry(
+                scope_sha256=ZERO,
+                stage="brief",
+                completed_cycles=1,
+                last_cycle_at=NOW,
+                next_eligible_at=NOW + timedelta(hours=20),
+                status=ModelRetryStatus.PENDING,
+                failure_code=RetryFailureCode.UNSUPPORTED_COURT_ACTION,
+            ),
+        }
+    )
+    serialized = canonical_json_bytes(pending).decode()
+    assert '"scope_sha256":"' + ZERO + '"' in serialized
+    assert '"failure_code":"unsupported_court_action"' in serialized
+    assert "prompt" not in serialized and "model_output" not in serialized
+    assert PendingWork.model_validate_json(serialized) == pending
+
+    with pytest.raises(ValidationError, match="validation failure"):
+        PendingWork.model_validate(
+            {
+                **legacy.model_dump(),
+                "reason": PendingReason.SOURCE_UNAVAILABLE,
+                "retry": pending.retry,
+            }
+        )
 
 
 def test_legacy_publication_bytes_remain_canonical_without_new_default_fields() -> None:

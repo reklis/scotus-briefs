@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
@@ -52,12 +53,20 @@ from ragchew.scotus.static_contracts import (
     LogicalSourceState,
     ModelAttemptOutcome,
     ModelAttemptReceipt,
+    ModelRetryStatus,
+    PendingModelRetry,
+    PendingReason,
+    PendingWork,
+    RetryFailureCode,
     canonical_json_bytes,
 )
 from ragchew.scotus.static_pipeline import (
     BudgetExceeded,
     CaseProcessingResult,
+    ModelOutputFailure,
     PublicationGateDenied,
+    RepeatedModelInput,
+    RetryScopeUnchanged,
     RunWorkspace,
     StaticBatchOrchestrator,
     StaticCaseWork,
@@ -66,8 +75,9 @@ from ragchew.scotus.static_pipeline import (
     UnifiedRunBudget,
     WorkClass,
     call_with_bounded_transport_retries,
+    case_processing_retry_scope,
 )
-from ragchew.scotus.static_state import StaticStateStore
+from ragchew.scotus.static_state import GeneratedContent, StaticStateStore
 from ragchew.scotus.worker import WorkerMode, run_bounded_worker
 
 NOW = datetime(2026, 8, 28, 2, tzinfo=UTC)
@@ -746,9 +756,342 @@ def test_unified_budget_gates_and_counts_every_transport_attempt() -> None:
     assert all(receipt.input_fingerprint == permit.fingerprint for receipt in terminal)
     ledger = CostLedger(updated_at=NOW, receipts=tuple(terminal))
     assert sum(receipt.call_count for receipt in ledger.receipts) == calls
+    replay_budget = UnifiedRunBudget(live_config(), ledger)
+    with pytest.raises(RepeatedModelInput, match="already recorded"):
+        replay_budget.authorize_model_request(
+            stage="brief",
+            document_digests=(DIGEST,),
+            processor_versions={"parser": "1"},
+            input_characters=10,
+            input_tokens=10,
+            output_tokens=10,
+        )
     with pytest.raises(BudgetExceeded, match="brief call budgets"):
         budget.reserve_case()
     assert budget.extraction_calls == 0
+
+
+def test_retry_scope_is_stable_and_resets_only_for_reviewed_inputs() -> None:
+    scope = case_processing_retry_scope(
+        case_key="2025-25-466",
+        case_digest="f" * 64,
+        document_digests=(DIGEST,),
+        disposition_digests=("b" * 64,),
+        processor_digest="c" * 64,
+    )
+    assert scope == case_processing_retry_scope(
+        case_key="2025-25-466",
+        case_digest="f" * 64,
+        document_digests=(DIGEST,),
+        disposition_digests=("b" * 64,),
+        processor_digest="c" * 64,
+    )
+    assert scope != case_processing_retry_scope(
+        case_key="2025-25-466",
+        case_digest="f" * 64,
+        document_digests=("d" * 64,),
+        disposition_digests=("b" * 64,),
+        processor_digest="c" * 64,
+    )
+    assert scope != case_processing_retry_scope(
+        case_key="2025-25-466",
+        case_digest="f" * 64,
+        document_digests=(DIGEST,),
+        disposition_digests=("b" * 64,),
+        processor_digest="e" * 64,
+    )
+    assert scope != case_processing_retry_scope(
+        case_key="2025-25-466",
+        case_digest="0" * 64,
+        document_digests=(DIGEST,),
+        disposition_digests=("b" * 64,),
+        processor_digest="c" * 64,
+    )
+
+
+def test_persisted_model_retry_cycles_are_cooled_bounded_and_scope_exact(
+    tmp_path: Path,
+) -> None:
+    case_key = "2025-25-466"
+    original_scope = case_processing_retry_scope(
+        case_key=case_key,
+        case_digest="f" * 64,
+        document_digests=(DIGEST,),
+        disposition_digests=("b" * 64,),
+        processor_digest="c" * 64,
+    )
+    sanitized_document = LogicalDocumentState(
+        logical_key=f"{case_key}:order:fixture",
+        case_key=case_key,
+        document_kind="order",
+        official_url="https://www.supremecourt.gov/opinions/25pdf/25-466.pdf",
+        revision_number=1,
+        integrity=ContentIntegrity(sha256=DIGEST, byte_count=100),
+        checked_at=NOW,
+    )
+
+    class State(StaticStateStore):
+        def __init__(self) -> None:
+            super().__init__(tmp_path / "state")
+            self.content = GeneratedContent.empty()
+
+        def load(self) -> GeneratedContent:
+            return self.content
+
+    class Discovery:
+        scope: str | None = original_scope
+
+        def discover(self, **_kwargs: object) -> StaticDiscoveryResult:
+            return StaticDiscoveryResult(
+                work=(
+                    StaticCaseWork(
+                        case_key,
+                        1,
+                        (),
+                        "pending_retry",
+                        work_class=WorkClass.PENDING_RETRY,
+                        persisted_pending=True,
+                        retry_scope=self.scope,
+                    ),
+                )
+            )
+
+    class Processor:
+        calls = 0
+        budget_failure = False
+
+        def process(
+            self,
+            work: StaticCaseWork,
+            *,
+            budget: UnifiedRunBudget,
+            **_kwargs: object,
+        ) -> CaseProcessingResult:
+            if work.retry_scope_probe_only:
+                raise RetryScopeUnchanged(())
+            if self.budget_failure:
+                raise BudgetExceeded("synthetic per-case interruption")
+            self.calls += 1
+            actual_scope = work.retry_scope or original_scope
+            permit = budget.authorize_model_request(
+                stage="brief",
+                document_digests=(DIGEST,),
+                processor_versions={"scope": actual_scope},
+                input_characters=10,
+                input_tokens=10,
+                output_tokens=10,
+                authorized_replay=(
+                    work.authorized_retry_scope == actual_scope
+                ),
+            )
+            attempt = permit.reserve_attempt()
+            permit.complete_attempt(
+                attempt,
+                outcome=ModelAttemptOutcome.SUCCEEDED,
+                provider_input_tokens=5,
+                provider_output_tokens=5,
+            )
+            raise ModelOutputFailure(
+                retry_scope=actual_scope,
+                stage="brief",
+                failure_code="unsupported_court_action",
+                documents=(sanitized_document,),
+            )
+
+    state = State()
+    discovery = Discovery()
+    processor = Processor()
+    config = live_config()
+
+    def cycle(instant: datetime, *, scheduled: bool = True) -> PendingWork:
+        receipts: dict[tuple[str, str, int], ModelAttemptReceipt] = {}
+        result = StaticBatchOrchestrator(
+            state_store=state,
+            discovery=discovery,
+            processor=processor,
+            config=config,
+            runner_temp=tmp_path,
+            receipt_sink=lambda item: receipts.__setitem__(
+                (item.stage, item.input_fingerprint, item.attempt_number), item
+            ),
+        ).run(now=instant, scheduled_retries=scheduled)
+        # Mirror production persistence: the sanitized pending checkpoint and terminal
+        # receipt are serialized independently, and the receipt exists before the next run.
+        persisted_pending = PendingWork.model_validate_json(
+            canonical_json_bytes(result.content.publication.pending_work[0])
+        )
+        by_key = {
+            (item.stage, item.input_fingerprint, item.attempt_number): item
+            for item in result.content.cost_ledger.receipts
+        }
+        by_key.update(receipts)
+        persisted_ledger = CostLedger.model_validate_json(
+            canonical_json_bytes(
+                CostLedger(
+                    updated_at=instant,
+                    receipts=tuple(by_key[key] for key in sorted(by_key)),
+                )
+            )
+        )
+        state.content = replace(
+            result.content,
+            publication=result.content.publication.model_copy(
+                update={"pending_work": (persisted_pending,)}
+            ),
+            cost_ledger=persisted_ledger,
+        )
+        return persisted_pending
+
+    first = cycle(NOW, scheduled=False)
+    assert processor.calls == 1
+    assert first.retry is not None
+    assert first.retry.completed_cycles == 1
+    assert first.retry.next_eligible_at == NOW + timedelta(hours=20)
+    assert state.content.publication.documents == (sanitized_document,)
+
+    # New failures may not yet have a durable document checkpoint. An unknown
+    # discovery scope still receives only its exact persisted authorization in-process.
+    discovery.scope = None
+    cooldown = cycle(NOW + timedelta(hours=19))
+    assert processor.calls == 1
+    assert cooldown.retry == first.retry
+
+    processor.budget_failure = True
+    interrupted = cycle(NOW + timedelta(hours=20))
+    assert processor.calls == 1
+    assert interrupted.retry == first.retry
+    processor.budget_failure = False
+
+    second = cycle(NOW + timedelta(hours=20))
+    assert processor.calls == 2
+    assert second.retry is not None and second.retry.completed_cycles == 2
+
+    exhausted = cycle(NOW + timedelta(hours=40))
+    assert processor.calls == 3
+    assert exhausted.retry is not None
+    assert exhausted.retry.completed_cycles == 3
+    assert exhausted.retry.status is ModelRetryStatus.EXHAUSTED
+
+    cycle(NOW + timedelta(hours=60))
+    assert processor.calls == 3
+
+    # A reviewed processor/evidence scope receives a new initial cycle rather than an
+    # authorization to replay the exhausted fingerprint.
+    discovery.scope = case_processing_retry_scope(
+        case_key=case_key,
+        case_digest="f" * 64,
+        document_digests=(DIGEST,),
+        disposition_digests=("b" * 64,),
+        processor_digest="d" * 64,
+    )
+    reset = cycle(NOW + timedelta(hours=61))
+    assert processor.calls == 4
+    assert reset.retry is not None
+    assert reset.retry.scope_sha256 == discovery.scope
+    assert reset.retry.completed_cycles == 1
+
+
+def test_scheduled_retry_case_quota_does_not_expand_model_budgets(tmp_path: Path) -> None:
+    keys = tuple(f"2025-25-{index}" for index in range(100, 106))
+    scopes = {key: f"{index + 1:064x}" for index, key in enumerate(keys)}
+    pending = tuple(
+        PendingWork(
+            case_key=key,
+            reason=PendingReason.VALIDATION_FAILED,
+            attempts=1,
+            first_seen_at=NOW - timedelta(days=1),
+            last_attempted_at=NOW - timedelta(days=1),
+            retry=PendingModelRetry(
+                scope_sha256=scopes[key],
+                stage="brief",
+                completed_cycles=1,
+                last_cycle_at=NOW - timedelta(days=1),
+                next_eligible_at=NOW,
+                status=ModelRetryStatus.PENDING,
+                failure_code=RetryFailureCode.INVALID_SCHEMA,
+            ),
+        )
+        for key in keys
+    )
+
+    class State(StaticStateStore):
+        def __init__(self) -> None:
+            super().__init__(tmp_path / "state")
+            empty = GeneratedContent.empty()
+            self.content = replace(
+                empty,
+                publication=empty.publication.model_copy(
+                    update={"pending_work": pending}
+                ),
+            )
+
+        def load(self) -> GeneratedContent:
+            return self.content
+
+    class Discovery:
+        def discover(self, **_kwargs: object) -> StaticDiscoveryResult:
+            return StaticDiscoveryResult(
+                work=tuple(
+                    StaticCaseWork(
+                        key,
+                        1,
+                        (),
+                        "pending_retry",
+                        work_class=WorkClass.PENDING_RETRY,
+                        persisted_pending=True,
+                        retry_scope=scopes[key],
+                    )
+                    for key in keys
+                )
+            )
+
+    attempted: list[str] = []
+
+    class Processor:
+        def process(self, work: StaticCaseWork, **_kwargs: object) -> CaseProcessingResult:
+            attempted.append(work.case_key)
+            raise ModelOutputFailure(
+                retry_scope=scopes[work.case_key],
+                stage="brief",
+                failure_code="invalid_schema",
+            )
+
+    result = StaticBatchOrchestrator(
+        state_store=State(),
+        discovery=Discovery(),
+        processor=Processor(),
+        config=live_config(),
+        runner_temp=tmp_path,
+    ).run(now=NOW, scheduled_retries=True)
+
+    assert len(attempted) == 5
+    untouched = next(
+        item for item in result.content.publication.pending_work
+        if item.case_key not in attempted
+    )
+    assert untouched.retry is not None and untouched.retry.completed_cycles == 1
+
+
+def test_non_model_failure_does_not_create_automatic_retry_state(tmp_path: Path) -> None:
+    class Discovery:
+        def discover(self, **_kwargs: object) -> StaticDiscoveryResult:
+            return StaticDiscoveryResult(
+                work=(StaticCaseWork("2025-25-466", 1, (), "source_change"),)
+            )
+
+    class Processor:
+        def process(self, *_args: object, **_kwargs: object) -> CaseProcessingResult:
+            raise ValueError("synthetic deterministic failure")
+
+    result = StaticBatchOrchestrator(
+        state_store=StaticStateStore(tmp_path / "empty"),
+        discovery=Discovery(),
+        processor=Processor(),
+        config=live_config(),
+        runner_temp=tmp_path,
+    ).run(now=NOW, scheduled_retries=True)
+
+    assert result.content.publication.pending_work[0].retry is None
 
 
 def test_deferred_batch_work_is_explicit_before_advanced_checkpoints(

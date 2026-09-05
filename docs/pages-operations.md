@@ -217,7 +217,12 @@ source commit is an ancestor of the current protected branch, downloads and reva
 the exact retained site/state, verifies release and parent identities, CAS-persists its
 opaque receipts, deploys the Pages artifact, and CAS-promotes the matching state. Any
 expired/missing artifact, changed generated-content parent, or validation mismatch stops
-before deployment. An owner may set `authorized_replay=true` only on an explicit manual
+before deployment. The nightly schedule automatically passes only the narrow
+`--scheduled-retries` authorization. It applies to a matching sanitized case scope after
+20 hours, allows an initial cycle plus two retry cycles, and admits at most five retry
+cases per run while every existing call/token/runtime budget remains authoritative.
+Accepted cases, non-model failures, exhausted scopes, and manual nightly runs receive no
+such authorization. An owner may set `authorized_replay=true` only on an explicit manual
 `nightly` run after reviewing a prior failure; replay does not bypass any grounding,
 privacy, completeness, or publication validator. Restrict bootstrap/deploy/replay and
 retained-candidate deployment to owners. Never add PR/fork or arbitrary-ref triggers.
@@ -237,9 +242,12 @@ Possible outcomes:
 
 Selection happens after the complete eligible queue is ranked. Fresh new/changed
 activity comes first; unattempted fresh work is ordered by authoritative Court activity
-date newest-first. Persisted pending is explicitly reconsidered, with
-least-recently-attempted retry rotation before activity date so a permanently failing
-newest item cannot starve the backlog. Processor/current rechecks and rotating
+date newest-first. Persisted pending is explicitly reconsidered, but a matching
+model-output retry scope is skipped until its scheduled cooldown and quota permit it;
+exhausted scopes stay pending without model calls; lower-priority integrity probes may
+recognize changed official evidence and create a fresh scope. Eligible retries
+retain least-recently-attempted rotation before activity date so one failing newest item
+cannot starve the backlog. Processor/current rechecks and rotating
 historical work follow. Any changed supported case
 outside a finite case/document/model/runtime budget is retained as deferred pending
 rather than hidden by an advanced source checkpoint.

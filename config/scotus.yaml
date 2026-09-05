@@ -110,6 +110,11 @@ model_budget:
   request_timeout_seconds: 420
   # One fully budgeted retry is allowed only for retryable loopback transport failures.
   maximum_transport_attempts: 2
+model_retry:
+  # One initial generation cycle plus at most two later scheduled cycles per stable scope.
+  automatic_retry_cycles_per_scope: 2
+  minimum_cooldown_hours: 20
+  maximum_retry_cases_per_run: 5
 licensing:
   code_and_documentation: Apache-2.0
   generated_briefs: CC-BY-4.0

@@ -200,12 +200,14 @@ jobs:
         env:
           PUBLICATION_MODE: ${{ inputs.mode || 'nightly' }}
           AUTHORIZED_REPLAY: ${{ inputs.authorized_replay || false }}
+          SCHEDULED_RUN: ${{ github.event_name == 'schedule' }}
           MAXIMUM_CASES: ${{ inputs.maximum_cases || 0 }}
           RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter
           RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
         run: |
           set -euo pipefail
           replay_args=()
+          scheduled_retry_args=()
           case_args=()
           if [[ "$MAXIMUM_CASES" != "0" ]]; then
             if [[ ! "$MAXIMUM_CASES" =~ ^[1-9][0-9]*$ ]]; then
@@ -221,12 +223,20 @@ jobs:
             fi
             replay_args+=(--authorized-replay)
           fi
+          if [[ "$SCHEDULED_RUN" == "true" ]]; then
+            if [[ "$PUBLICATION_MODE" != "nightly" ]]; then
+              echo "Automatic model retries are allowed only on the nightly schedule." >&2
+              exit 1
+            fi
+            scheduled_retry_args+=(--scheduled-retries)
+          fi
           uv run ragchew-scotus-static batch \
             --mode "$PUBLICATION_MODE" \
             --state-dir generated-content-input --candidate-state-dir candidate-state \
             --output candidate-site --workspace "$RUNNER_TEMP/ragchew-private" \
             --source-commit "$GITHUB_SHA" --build-epoch "$(git show -s --format=%cI HEAD)" \
-            --github-output "$GITHUB_OUTPUT" "${replay_args[@]}" "${case_args[@]}"
+            --github-output "$GITHUB_OUTPUT" "${replay_args[@]}" \
+            "${scheduled_retry_args[@]}" "${case_args[@]}"
       - name: Build fixture, validate, and exit
         id: fixture_batch
         if: (inputs.mode || 'nightly') == 'fixture'

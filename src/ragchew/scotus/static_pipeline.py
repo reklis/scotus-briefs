@@ -11,7 +11,7 @@ import tempfile
 import time
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field, replace
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from enum import IntEnum, StrEnum
 from pathlib import Path
@@ -36,9 +36,12 @@ from ragchew.scotus.static_contracts import (
     LogicalSourceState,
     ModelAttemptOutcome,
     ModelAttemptReceipt,
+    ModelRetryStatus,
+    PendingModelRetry,
     PendingReason,
     PendingWork,
     ProcessorFingerprint,
+    RetryFailureCode,
     SupportedActivityState,
     derive_freshness_summary,
     model_input_fingerprint,
@@ -59,6 +62,36 @@ class GlobalBudgetExceeded(BudgetExceeded):
 
 class RepeatedModelInput(RuntimeError):
     """A model input already has a durable attempted/blocked receipt."""
+
+
+class ModelOutputFailure(ValueError):
+    """A sanitized, explicitly retryable local-model generation-cycle failure."""
+
+    def __init__(
+        self,
+        *,
+        retry_scope: str,
+        stage: Literal["extraction", "brief"],
+        failure_code: str,
+        documents: tuple[LogicalDocumentState, ...] = (),
+    ) -> None:
+        if not re.fullmatch(r"[0-9a-f]{64}", retry_scope):
+            raise ValueError("model-output failure retry scope must be SHA-256")
+        if not re.fullmatch(r"[a-z0-9_:-]{1,80}", failure_code):
+            raise ValueError("model-output failure code is not sanitized")
+        super().__init__("local model output failed sanitized validation")
+        self.retry_scope = retry_scope
+        self.stage = stage
+        self.safe_code = failure_code
+        self.documents = documents
+
+
+class RetryScopeUnchanged(RuntimeError):
+    """A source-only exhausted-scope probe found no reviewed input change."""
+
+    def __init__(self, documents: tuple[LogicalDocumentState, ...]) -> None:
+        super().__init__("retry scope remains unchanged")
+        self.documents = documents
 
 
 class PublicationGateDenied(RuntimeError):
@@ -94,6 +127,7 @@ def failure_category(error: BaseException) -> FailureCategory:
             LegalExtractionError,
             BriefPolicyError,
             BriefValidationError,
+            ModelOutputFailure,
             PublicationGateDenied,
             RepeatedModelInput,
         ),
@@ -291,6 +325,8 @@ class UnifiedRunBudget:
     _authorized: set[tuple[str, str]] = field(default_factory=set)
     _next_attempt_numbers: dict[tuple[str, str], int] = field(default_factory=dict)
     _attempt_receipts: dict[tuple[str, str, int], ModelAttemptReceipt] = field(default_factory=dict)
+    automatic_retries_enabled: bool = False
+    broad_replay_authorized: bool = False
 
     def check_runtime(self) -> None:
         if (
@@ -573,6 +609,13 @@ class StaticCaseWork:
     work_class: WorkClass = WorkClass.CURRENT_RECHECK
     persisted_pending: bool = False
     last_attempted_at: datetime | None = None
+    # Discovery may calculate the expected stable scope from sanitized checkpoints.
+    # The orchestrator writes authorization only after policy eligibility checks; the
+    # processor must compare it with current downloaded evidence before replay.
+    retry_scope: str | None = None
+    authorized_retry_scope: str | None = None
+    authorized_retry_stages: frozenset[Literal["extraction", "brief"]] = frozenset()
+    retry_scope_probe_only: bool = False
 
     @property
     def document_count(self) -> int:
@@ -698,6 +741,7 @@ class ProductionBatchAdapter(Protocol):
         mode: DiscoveryMode,
         runner_temp: str | Path,
         authorized_replay: bool,
+        scheduled_retries: bool = False,
     ) -> StaticBatchResult: ...
 
 
@@ -712,8 +756,9 @@ class FailClosedProductionBatchAdapter:
         mode: DiscoveryMode,
         runner_temp: str | Path,
         authorized_replay: bool,
+        scheduled_retries: bool = False,
     ) -> StaticBatchResult:
-        del state_store, config, mode, runner_temp, authorized_replay
+        del state_store, config, mode, runner_temp, authorized_replay, scheduled_retries
         raise ProductionBatchUnavailable(
             "production SCOTUS batch adapter is not configured; stopped before network/model use"
         )
@@ -774,6 +819,7 @@ class StaticBatchOrchestrator:
         mode: DiscoveryMode = DiscoveryMode.NIGHTLY,
         now: datetime | None = None,
         authorized_replay: bool = False,
+        scheduled_retries: bool = False,
     ) -> StaticBatchResult:
         instant = now or datetime.now(UTC)
         original = self.state_store.load()
@@ -782,6 +828,10 @@ class StaticBatchOrchestrator:
             original.cost_ledger,
             mode=mode,
             receipt_sink=self.receipt_sink,
+            automatic_retries_enabled=(
+                scheduled_retries and mode is DiscoveryMode.NIGHTLY
+            ),
+            broad_replay_authorized=authorized_replay,
         )
         workspace = RunWorkspace.create(self.runner_temp, run_id=str(int(instant.timestamp())))
         changed: list[str] = []
@@ -792,6 +842,7 @@ class StaticBatchOrchestrator:
         accepted_documents: dict[str, LogicalDocumentState] = {}
         failed = False
         checkpoints_safe = True
+        authorized_retry_cases = 0
         try:
             with WorkspaceSignalCleanup(workspace):
                 self.services.start(workspace)
@@ -804,7 +855,22 @@ class StaticBatchOrchestrator:
                 checkpoints_safe = discovered.checkpoint_safe
                 for resolved_key in discovered.resolved_pending_case_keys:
                     pending.pop(resolved_key, None)
-                ordered = sorted(discovered.work, key=lambda item: item.rank)
+                pending_by_key = {
+                    item.case_key: item for item in original.publication.pending_work
+                }
+
+                def retry_rank(item: StaticCaseWork) -> int:
+                    pending_item = pending_by_key.get(item.case_key)
+                    retry = pending_item.retry if pending_item is not None else None
+                    return int(
+                        retry is not None
+                        and retry.status is ModelRetryStatus.EXHAUSTED
+                    )
+
+                ordered = sorted(
+                    discovered.work,
+                    key=lambda item: (retry_rank(item), item.rank),
+                )
                 supported_dates = {
                     item.case_key: item.authoritative_activity_date
                     for item in discovered.supported_activity
@@ -825,10 +891,87 @@ class StaticBatchOrchestrator:
                             now=instant,
                             attempted=discovery_failed,
                             authoritative_activity_date=supported_dates.get(deferred_key),
+                            preserve_retry=True,
                         )
                         failed = failed or discovery_failed
                 for index, work in enumerate(ordered):
                     started = time.monotonic()
+                    prior_pending = pending.get(work.case_key)
+                    prior_retry = prior_pending.retry if prior_pending is not None else None
+                    same_retry_scope = bool(
+                        prior_retry is not None
+                        and work.work_class is WorkClass.PENDING_RETRY
+                        and (
+                            work.retry_scope is None
+                            or prior_retry.scope_sha256 == work.retry_scope
+                        )
+                    )
+                    if same_retry_scope and not authorized_replay:
+                        maximum_cycles = (
+                            1 + self.config.model_retry.automatic_retry_cycles_per_scope
+                        )
+                        eligible = bool(
+                            scheduled_retries
+                            and mode is DiscoveryMode.NIGHTLY
+                            and prior_retry is not None
+                            and prior_retry.status is ModelRetryStatus.PENDING
+                            and prior_retry.completed_cycles < maximum_cycles
+                            and instant >= prior_retry.next_eligible_at
+                            and authorized_retry_cases
+                            < self.config.model_retry.maximum_retry_cases_per_run
+                        )
+                        if not eligible:
+                            # Exhausted work gets only a lower-priority source-integrity
+                            # probe, never a model replay. Cooling/manual work is skipped.
+                            if (
+                                scheduled_retries
+                                and mode is DiscoveryMode.NIGHTLY
+                                and prior_retry is not None
+                                and (
+                                    prior_retry.status is ModelRetryStatus.EXHAUSTED
+                                    or prior_retry.completed_cycles >= maximum_cycles
+                                )
+                            ):
+                                work = replace(
+                                    work,
+                                    authorized_retry_scope=prior_retry.scope_sha256,
+                                    retry_scope_probe_only=True,
+                                )
+                            else:
+                                continue
+                        assert prior_retry is not None
+                        if work.retry_scope_probe_only:
+                            pass
+                        else:
+                            work = replace(
+                                work,
+                                authorized_retry_scope=prior_retry.scope_sha256,
+                                authorized_retry_stages=frozenset({"extraction", "brief"}),
+                            )
+                            authorized_retry_cases += 1
+                    elif (
+                        work.work_class is WorkClass.PROCESSOR_MIGRATION
+                        and work.retry_scope is not None
+                    ):
+                        # A reviewed processor scope may leave either stage's concrete
+                        # request unchanged. Authorize both only inside that exact scope.
+                        work = replace(
+                            work,
+                            authorized_retry_scope=work.retry_scope,
+                            authorized_retry_stages=frozenset({"extraction", "brief"}),
+                        )
+                    elif (
+                        prior_retry is not None
+                        and work.retry_scope is not None
+                        and prior_retry.scope_sha256 != work.retry_scope
+                    ):
+                        # Reviewed evidence/processor inputs created a fresh scope. Permit
+                        # only prerequisite requests in that exact current scope.
+                        work = replace(
+                            work,
+                            authorized_retry_scope=work.retry_scope,
+                            authorized_retry_stages=frozenset({"extraction"}),
+                        )
                     try:
                         budget.reserve_case(work.document_count)
                     except BudgetExceeded as error:
@@ -839,6 +982,7 @@ class StaticBatchOrchestrator:
                             now=instant,
                             attempted=False,
                             authoritative_activity_date=work.authoritative_activity_date,
+                            preserve_retry=True,
                         )
                         if isinstance(error, GlobalBudgetExceeded):
                             for deferred in ordered[index + 1 :]:
@@ -851,11 +995,13 @@ class StaticBatchOrchestrator:
                                     authoritative_activity_date=(
                                         deferred.authoritative_activity_date
                                     ),
+                                    preserve_retry=True,
                                 )
                             break
                         # A single oversized case must not consume a case slot or stop
                         # later, smaller independent work while shared capacity remains.
                         continue
+                    model_calls_before = budget.model_calls
                     try:
                         result = self.processor.process(
                             work,
@@ -906,8 +1052,25 @@ class StaticBatchOrchestrator:
                             elapsed_seconds=time.monotonic() - started,
                             counts={"sessions": len(required), "documents": work.document_count},
                         )
+                    except RetryScopeUnchanged as unchanged:
+                        accepted_documents.update(
+                            {item.logical_key: item for item in unchanged.documents}
+                        )
+                        log_stage(
+                            LOG,
+                            case_key=work.case_key,
+                            stage="retry_scope_probe",
+                            status="unchanged",
+                            elapsed_seconds=time.monotonic() - started,
+                        )
                     except Exception as error:
                         category = failure_category(error)
+                        if isinstance(error, ModelOutputFailure):
+                            # Integrity/URL checkpoints are sanitized and are needed to
+                            # reconstruct this exact scope on later scheduled cycles.
+                            accepted_documents.update(
+                                {item.logical_key: item for item in error.documents}
+                            )
                         # Source/disposition index checkpoints describe a complete,
                         # strictly parsed discovery response. A case-local document,
                         # extraction, or draft failure must remain pending without
@@ -925,6 +1088,7 @@ class StaticBatchOrchestrator:
                                 LegalExtractionError,
                                 BriefPolicyError,
                                 BriefValidationError,
+                                ModelOutputFailure,
                                 RepeatedModelInput,
                                 TranscriptParseError,
                             ),
@@ -945,6 +1109,28 @@ class StaticBatchOrchestrator:
                             now=instant,
                             attempted=True,
                             authoritative_activity_date=work.authoritative_activity_date,
+                            model_failure=(
+                                error if isinstance(error, ModelOutputFailure) else None
+                            ),
+                            maximum_cycles=(
+                                1
+                                + self.config.model_retry.automatic_retry_cycles_per_scope
+                            ),
+                            cooldown_hours=self.config.model_retry.minimum_cooldown_hours,
+                            preserve_retry=bool(
+                                same_retry_scope
+                                and budget.model_calls == model_calls_before
+                                and category
+                                in {
+                                    FailureCategory.BUDGET,
+                                    FailureCategory.SOURCE_UNAVAILABLE,
+                                    FailureCategory.SOURCE_INVALID,
+                                }
+                            ),
+                            consumed_retry_cycle=bool(
+                                same_retry_scope
+                                and budget.model_calls > model_calls_before
+                            ),
                         )
                         failed = True
                         log_stage(
@@ -1002,6 +1188,7 @@ class StaticBatchOrchestrator:
                                     authoritative_activity_date=(
                                         deferred.authoritative_activity_date
                                     ),
+                                    preserve_retry=True,
                                 )
                             break
                     budget.check_private_disk(workspace)
@@ -1123,17 +1310,69 @@ def _pending(
     now: datetime,
     attempted: bool,
     authoritative_activity_date: datetime | None = None,
+    model_failure: ModelOutputFailure | None = None,
+    maximum_cycles: int = 3,
+    cooldown_hours: int = 20,
+    preserve_retry: bool = False,
+    consumed_retry_cycle: bool = False,
 ) -> PendingWork:
     activity_date = authoritative_activity_date
     if activity_date is None and previous is not None:
         activity_date = previous.authoritative_activity_date
+    retry: PendingModelRetry | None = (
+        previous.retry if preserve_retry and previous is not None else None
+    )
+    if consumed_retry_cycle and model_failure is None:
+        prior_retry = previous.retry if previous is not None else None
+        if prior_retry is not None:
+            completed_cycles = prior_retry.completed_cycles + 1
+            retry = PendingModelRetry(
+                scope_sha256=prior_retry.scope_sha256,
+                stage=prior_retry.stage,
+                completed_cycles=completed_cycles,
+                last_cycle_at=now,
+                next_eligible_at=now + timedelta(hours=cooldown_hours),
+                status=(
+                    ModelRetryStatus.EXHAUSTED
+                    if completed_cycles >= maximum_cycles
+                    else ModelRetryStatus.PENDING
+                ),
+                failure_code=prior_retry.failure_code,
+            )
+    if model_failure is not None:
+        prior_retry = previous.retry if previous is not None else None
+        completed_cycles = (
+            prior_retry.completed_cycles + 1
+            if prior_retry is not None
+            and prior_retry.scope_sha256 == model_failure.retry_scope
+            else 1
+        )
+        retry = PendingModelRetry(
+            scope_sha256=model_failure.retry_scope,
+            stage=model_failure.stage,
+            completed_cycles=completed_cycles,
+            last_cycle_at=now,
+            next_eligible_at=now + timedelta(hours=cooldown_hours),
+            status=(
+                ModelRetryStatus.EXHAUSTED
+                if completed_cycles >= maximum_cycles
+                else ModelRetryStatus.PENDING
+            ),
+            failure_code=RetryFailureCode(model_failure.safe_code),
+        )
+    pending_reason = (
+        previous.reason
+        if retry is not None and model_failure is None and previous is not None
+        else reason
+    )
     return PendingWork(
         case_key=case_key,
-        reason=reason,
+        reason=pending_reason,
         attempts=(previous.attempts if previous else 0) + int(attempted),
         first_seen_at=previous.first_seen_at if previous else now,
         last_attempted_at=now if attempted else (previous.last_attempted_at if previous else None),
         authoritative_activity_date=activity_date,
+        retry=retry,
     )
 
 
@@ -1171,6 +1410,28 @@ def call_with_bounded_transport_retries[T](
             return result
     assert last_error is not None
     raise last_error
+
+
+def case_processing_retry_scope(
+    *,
+    case_key: str,
+    case_digest: str,
+    document_digests: Sequence[str],
+    disposition_digests: Sequence[str],
+    processor_digest: str,
+) -> str:
+    """Hash stable reviewed case inputs, excluding clocks, run IDs, and request nonces."""
+    digests = tuple(
+        (case_digest, *document_digests, *disposition_digests, processor_digest)
+    )
+    if not re.fullmatch(r"[a-z0-9][a-z0-9._:-]{0,199}", case_key):
+        raise ValueError("retry scopes require a normalized case key")
+    if any(not re.fullmatch(r"[0-9a-f]{64}", item) for item in digests):
+        raise ValueError("retry scopes require SHA-256 input digests")
+    return model_input_fingerprint(
+        tuple(digests),
+        {"case": case_key, "scope_contract": "case-processing-retry-v1"},
+    )
 
 
 def processor_fingerprint(

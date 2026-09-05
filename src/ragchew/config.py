@@ -394,6 +394,16 @@ class ScotusRunnerLimits(BaseModel):
     maximum_runtime_seconds: int = Field(ge=60, le=86_400)
 
 
+class ScotusModelRetryDefaults(BaseModel):
+    """Finite policy for retrying unchanged, sanitized model-output failures."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    automatic_retry_cycles_per_scope: int = Field(default=2, ge=0, le=2)
+    minimum_cooldown_hours: int = Field(default=20, ge=20, le=168)
+    maximum_retry_cases_per_run: int = Field(default=5, ge=0, le=5)
+
+
 class ScotusModelBudget(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -503,6 +513,9 @@ class ScotusConfig(BaseModel):
     bootstrap: ScotusBootstrapDefaults
     runner_limits: ScotusRunnerLimits
     model_budget: ScotusModelBudget
+    # A default keeps older reviewed configuration files valid. Production declares
+    # the values explicitly so retry policy changes remain reviewable.
+    model_retry: ScotusModelRetryDefaults = ScotusModelRetryDefaults()
     licensing: ScotusLicensingDefaults
     approvals: ScotusPublicationApprovals
     publication: ScotusPublicationDefaults

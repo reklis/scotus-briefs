@@ -133,6 +133,10 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert '"$PUBLICATION_MODE" != "nightly"' in workflow
     assert '"${{ github.event_name }}" != "workflow_dispatch"' in workflow
     assert "replay_args+=(--authorized-replay)" in workflow
+    assert "SCHEDULED_RUN: ${{ github.event_name == 'schedule' }}" in workflow
+    assert 'if [[ "$SCHEDULED_RUN" == "true" ]]' in live_step
+    assert "scheduled_retry_args+=(--scheduled-retries)" in live_step
+    assert '"${scheduled_retry_args[@]}"' in live_step
     assert "case_args+=(--maximum-cases \"$MAXIMUM_CASES\")" in workflow
     assert "Run reviewed bounded live adapter" in workflow
     assert "if: always()" in workflow and "Clean persistent runner after build" in workflow

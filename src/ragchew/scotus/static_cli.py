@@ -494,6 +494,8 @@ def _batch(args: argparse.Namespace) -> int:
         project_base_path=args.project_base_path,
     )
     mode = DiscoveryMode(args.mode)
+    if args.scheduled_retries and mode is not DiscoveryMode.NIGHTLY:
+        raise ValueError("scheduled retries are permitted only in nightly mode")
     if args.maximum_cases is not None:
         configured_limit = (
             config.bootstrap.maximum_cases_per_run
@@ -517,13 +519,25 @@ def _batch(args: argparse.Namespace) -> int:
     state_store = StaticStateStore(args.state)
     original = state_store.load()
     require_current_activity_contracts(original)
-    result = adapter.run(
-        state_store=state_store,
-        config=config,
-        mode=mode,
-        runner_temp=args.workspace,
-        authorized_replay=args.authorized_replay,
-    )
+    if args.scheduled_retries:
+        result = adapter.run(
+            state_store=state_store,
+            config=config,
+            mode=mode,
+            runner_temp=args.workspace,
+            authorized_replay=args.authorized_replay,
+            scheduled_retries=True,
+        )
+    else:
+        # Preserve the reviewed adapter API for manual/legacy callers. Only the
+        # scheduled workflow opts into the newly propagated narrow authorization.
+        result = adapter.run(
+            state_store=state_store,
+            config=config,
+            mode=mode,
+            runner_temp=args.workspace,
+            authorized_replay=args.authorized_replay,
+        )
     if not isinstance(result, StaticBatchResult):
         raise RuntimeError("production batch adapter returned an invalid result")
     if not result.checkpointable or result.content.projection is None:
@@ -981,6 +995,11 @@ def build_parser() -> argparse.ArgumentParser:
     batch.add_argument("--build-epoch", default="1970-01-01T00:00:00Z")
     batch.add_argument("--github-output", type=Path)
     batch.add_argument("--authorized-replay", action="store_true")
+    batch.add_argument(
+        "--scheduled-retries",
+        action="store_true",
+        help="authorize only eligible stable-scope nightly retries",
+    )
     batch.add_argument(
         "--maximum-cases",
         type=int,

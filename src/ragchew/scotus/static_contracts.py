@@ -147,6 +147,51 @@ class PendingReason(StrEnum):
     DATE_BACKFILL_UNMATCHED = "date_backfill_unmatched"
 
 
+class ModelRetryStatus(StrEnum):
+    PENDING = "pending"
+    EXHAUSTED = "exhausted"
+
+
+class RetryFailureCode(StrEnum):
+    EMPTY_CHOICE = "empty_choice"
+    EMPTY_CONTENT = "empty_content"
+    OUTPUT_TRUNCATED = "output_truncated"
+    INVALID_SCHEMA = "invalid_schema"
+    EMPTY_GROUNDED_CASE = "empty_grounded_case"
+    UNSUPPORTED_ACTION_ROLE = "unsupported_action_role"
+    UNSUPPORTED_REQUESTED_ACTION = "unsupported_requested_action"
+    UNSUPPORTED_LOWER_COURT_ACTION = "unsupported_lower_court_action"
+    UNSUPPORTED_COURT_ACTION = "unsupported_court_action"
+    INVENTED_ORAL_ARGUMENT = "invented_oral_argument"
+    UNSUPPORTED_FILLER = "unsupported_filler"
+    BRIEF_VALIDATION_FAILED = "brief_validation_failed"
+
+
+class PendingModelRetry(StaticContract):
+    """Sanitized state for one stable case-processing generation scope."""
+
+    scope_sha256: str = Field(pattern=_SHA256_PATTERN)
+    stage: Literal["extraction", "brief"]
+    completed_cycles: int = Field(ge=1, le=100)
+    last_cycle_at: datetime
+    next_eligible_at: datetime
+    status: ModelRetryStatus
+    failure_code: RetryFailureCode
+
+    @field_validator("last_cycle_at", "next_eligible_at")
+    @classmethod
+    def require_aware_retry_dates(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("retry dates must be timezone-aware")
+        return value
+
+    @model_validator(mode="after")
+    def require_ordered_retry_dates(self) -> Self:
+        if self.next_eligible_at < self.last_cycle_at:
+            raise ValueError("retry eligibility cannot precede the completed cycle")
+        return self
+
+
 class PendingWork(StaticContract):
     case_key: str = Field(pattern=_KEY_PATTERN)
     reason: PendingReason
@@ -156,6 +201,9 @@ class PendingWork(StaticContract):
     # The newest official Court date represented by this work item. This is public,
     # allowlisted source metadata and deliberately excludes retrieval/processing times.
     authoritative_activity_date: datetime | None = None
+    # Optional for compatibility with pre-retry state. It contains no prompt, evidence,
+    # rejected prose, internal identity, or arbitrary exception text.
+    retry: PendingModelRetry | None = None
 
     @field_validator("first_seen_at", "last_attempted_at", "authoritative_activity_date")
     @classmethod
@@ -163,6 +211,12 @@ class PendingWork(StaticContract):
         if value is not None and (value.tzinfo is None or value.utcoffset() is None):
             raise ValueError("pending dates must be timezone-aware")
         return value
+
+    @model_validator(mode="after")
+    def retry_requires_validation_failure(self) -> Self:
+        if self.retry is not None and self.reason is not PendingReason.VALIDATION_FAILED:
+            raise ValueError("model retry state requires a validation failure")
+        return self
 
 
 class SupportedActivityState(StaticContract):
@@ -660,6 +714,8 @@ def _json_value(value: Any) -> Any:
         ):
             if "authoritative_activity_date" not in pending.model_fields_set:
                 pending_payload.pop("authoritative_activity_date", None)
+            if pending.retry is None:
+                pending_payload.pop("retry", None)
         return _json_value(payload)
     if isinstance(value, CaseRevisionPointer):
         payload = value.model_dump(mode="python")
@@ -678,6 +734,9 @@ def _json_value(value: Any) -> Any:
         payload = value.model_dump(mode="python")
         if "authoritative_activity_date" not in value.model_fields_set:
             payload.pop("authoritative_activity_date", None)
+        if value.retry is None:
+            # Preserve byte-canonical legacy PendingWork payloads.
+            payload.pop("retry", None)
         return _json_value(payload)
     if isinstance(value, ModelAttemptReceipt):
         payload = value.model_dump(mode="python")

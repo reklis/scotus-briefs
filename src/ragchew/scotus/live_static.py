@@ -97,6 +97,7 @@ from ragchew.scotus.discovery import (
     merge_case_discovery,
     select_discovery_resources,
     select_discovery_work,
+    stable_candidate_fingerprint,
     stable_disposition_fingerprint,
     transcript_logical_key,
 )
@@ -135,6 +136,7 @@ from ragchew.scotus.static_contracts import (
     LogicalDocumentState,
     LogicalSourceState,
     ModelAttemptReceipt,
+    ModelRetryStatus,
     ProcessorFingerprint,
     canonical_json_bytes,
     sha256_hex,
@@ -142,7 +144,9 @@ from ragchew.scotus.static_contracts import (
 from ragchew.scotus.static_pipeline import (
     ArgumentSessionWork,
     CaseProcessingResult,
+    ModelOutputFailure,
     PublicationGateDenied,
+    RetryScopeUnchanged,
     RunWorkspace,
     StaticBatchOrchestrator,
     StaticBatchResult,
@@ -152,6 +156,7 @@ from ragchew.scotus.static_pipeline import (
     UnifiedRunBudget,
     WorkClass,
     call_with_bounded_transport_retries,
+    case_processing_retry_scope,
     failure_category,
 )
 from ragchew.scotus.static_state import GeneratedContent, StaticStateStore
@@ -362,11 +367,6 @@ class _BudgetedModelRequest:
         processor_versions = {
             **self.processor_versions,
             "request": hashlib.sha256(serialized.encode("utf-8")).hexdigest(),
-            **(
-                {"authorized_replay": str(self.budget.started_monotonic)}
-                if self.authorized_replay
-                else {}
-            ),
         }
         permit = self.budget.authorize_model_request(
             stage=self.stage,
@@ -412,6 +412,45 @@ def _request_payload(value: Any) -> Any:
     if isinstance(value, (list, tuple)):
         return [_request_payload(item) for item in value if item is not omit]
     return value
+
+
+_PERSISTED_BRIEF_FAILURE_CODES = frozenset(
+    {
+        "empty_choice",
+        "empty_content",
+        "output_truncated",
+        "invalid_schema",
+        "unsupported_action_role",
+        "unsupported_requested_action",
+        "unsupported_lower_court_action",
+        "unsupported_court_action",
+        "invented_oral_argument",
+        "unsupported_filler",
+    }
+)
+
+_RETRYABLE_EXTRACTION_OUTPUT_CODES = frozenset(
+    {
+        "empty_choice",
+        "empty_content",
+        "output_truncated",
+        "invalid_schema",
+    }
+)
+
+
+def _persisted_brief_failure_code(code: str) -> str:
+    """Map correction detail onto a fixed durable validator vocabulary."""
+    return code if code in _PERSISTED_BRIEF_FAILURE_CODES else "brief_validation_failed"
+
+
+def _persisted_extraction_output_code(code: str | None) -> str | None:
+    """Identify only failures clearly caused by the local model's returned output."""
+    if code in _RETRYABLE_EXTRACTION_OUTPUT_CODES:
+        return code
+    if code and code.startswith("empty_grounded_case:"):
+        return "empty_grounded_case"
+    return None
 
 
 def _retryable_model_error(error: BaseException) -> bool:
@@ -600,7 +639,6 @@ class LiveStaticDiscovery:
         budget: UnifiedRunBudget,
         now: datetime,
     ) -> StaticDiscoveryResult:
-        del budget  # nested fetchers account against this same instance
         self.now = now
         checkpoints = {item.logical_key: item for item in content.publication.sources}
         persisted_pending_case_keys = {
@@ -854,14 +892,9 @@ class LiveStaticDiscovery:
             ),
             None,
         )
-        case_limit = (
-            self.config.bootstrap.maximum_cases_per_run
-            if mode is DiscoveryMode.BOOTSTRAP
-            else self.config.runner_limits.maximum_cases_per_run
-        )
-        # Build every eligible class first. The final case cap is applied once, after
-        # fresh Court changes, authoritative dates, persisted retries, migrations, and
-        # rotating rechecks all have one shared deterministic rank.
+        # Build and rank every eligible class before bounded admission below. Cooling,
+        # exhausted, and over-quota retry work cannot occupy every discovery slot and
+        # starve runnable fresh activity.
         selection = select_discovery_work(
             combined,
             mode=mode,
@@ -901,6 +934,15 @@ class LiveStaticDiscovery:
                     self.config.discovery.new_transcript_priority,
                     "source_change",
                     WorkClass.FRESH_CHANGE,
+                    key in pending_by_case,
+                )
+            elif key in migration_case_keys:
+                # A reviewed processor change creates a new retry scope even when an
+                # older model-output scope is pending or exhausted.
+                queue[key] = (
+                    self.config.discovery.new_transcript_priority,
+                    "processor_migration",
+                    WorkClass.PROCESSOR_MIGRATION,
                     key in pending_by_case,
                 )
             elif key in pending_by_case:
@@ -962,11 +1004,53 @@ class LiveStaticDiscovery:
                 ),
             ).rank,
         )
-        selected = dict(ranked_queue[:case_limit])
+        case_limit = (
+            self.config.bootstrap.maximum_cases_per_run
+            if mode is DiscoveryMode.BOOTSTRAP
+            else self.config.runner_limits.maximum_cases_per_run
+        )
+        runnable_queue: list[tuple[str, tuple[int, str, WorkClass, bool]]] = []
+        exhausted_probes: list[tuple[str, tuple[int, str, WorkClass, bool]]] = []
+        admitted_retries = 0
+        for queue_item in ranked_queue:
+            key, value = queue_item
+            admission_pending = pending_by_case.get(key)
+            retry = admission_pending.retry if admission_pending is not None else None
+            if value[2] is WorkClass.PENDING_RETRY and retry is not None:
+                exhausted = bool(
+                    retry.status is ModelRetryStatus.EXHAUSTED
+                    or retry.completed_cycles
+                    >= 1 + self.config.model_retry.automatic_retry_cycles_per_scope
+                )
+                if exhausted and not budget.broad_replay_authorized:
+                    if budget.automatic_retries_enabled:
+                        exhausted_probes.append(queue_item)
+                    continue
+                if not (
+                    budget.automatic_retries_enabled
+                    or budget.broad_replay_authorized
+                ):
+                    continue
+                if (
+                    not budget.broad_replay_authorized
+                    and retry.next_eligible_at > now
+                ):
+                    continue
+                if (
+                    not budget.broad_replay_authorized
+                    and admitted_retries
+                    >= self.config.model_retry.maximum_retry_cases_per_run
+                ):
+                    continue
+                admitted_retries += 1
+            runnable_queue.append(queue_item)
+        admitted_queue = runnable_queue[:case_limit]
+        admitted_queue.extend(exhausted_probes[: max(0, case_limit - len(admitted_queue))])
+        selected = dict(admitted_queue)
 
         work: list[StaticCaseWork] = []
         invalid_case_keys: set[str] = set()
-        for key, (priority, reason, work_class, persisted_pending) in ranked_queue[:case_limit]:
+        for key, (priority, reason, work_class, persisted_pending) in admitted_queue:
             merged = merged_by_key.get(key)
             if merged is None:
                 invalid_case_keys.add(key)
@@ -1023,6 +1107,23 @@ class LiveStaticDiscovery:
                     (
                         pending_by_case[key].last_attempted_at
                         if key in pending_by_case
+                        else None
+                    ),
+                    retry_scope=(
+                        case_processing_retry_scope(
+                            case_key=key,
+                            case_digest=_case_processing_digest(self.cases[key]),
+                            document_digests=tuple(
+                                item.integrity.sha256 for item in case_documents
+                            ),
+                            disposition_digests=tuple(
+                                stable_disposition_fingerprint(item)
+                                for item in merged.dispositions
+                            ),
+                            processor_digest=processor.composite_sha256,
+                        )
+                        if {item.logical_key for item in case_documents}
+                        == {item.logical_key for item in all_documents}
                         else None
                     ),
                 )
@@ -1334,12 +1435,66 @@ def _case_documents(case: _CaseInput) -> tuple[_PrivateDocument, ...]:
     return tuple(values[key] for key in sorted(values))
 
 
+def _case_processing_digest(source: _CaseInput) -> str:
+    """Hash stable case/model inputs not represented by document content digests."""
+    return sha256_hex(
+        canonical_json_bytes(
+            {
+                "case_key": source.case_key,
+                "caption": source.caption,
+                "primary_docket": source.primary_docket,
+                "sessions": tuple(
+                    stable_candidate_fingerprint(item) for item in source.sessions
+                ),
+                "term": source.term,
+            },
+            privacy_check=False,
+        )
+    )
+
+
 def _model_identity(config: ScotusConfig, model_endpoint: str) -> str:
     return f"{config.generation.provider}:{config.generation.model}@{model_endpoint}"
 
 
 def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorFingerprint:
-    config_digest = sha256_hex(canonical_json_bytes(config, privacy_check=False))
+    # Hash only reviewed inputs that can alter parsing, extraction, or generated prose.
+    # Queue, cooldown, discovery, retention, publication, and deployment policy must not
+    # reset exhausted model scopes.
+    processing_config = {
+        "parser": config.parser,
+        "generation": {
+            "audience": config.generation.audience,
+            "maximum_brief_validation_attempts_per_case": (
+                config.generation.maximum_brief_validation_attempts_per_case
+            ),
+            "maximum_context_characters": (
+                config.generation.maximum_context_characters
+            ),
+            "maximum_paragraph_words": config.generation.maximum_paragraph_words,
+            "maximum_sentence_words": config.generation.maximum_sentence_words,
+            "minimum_observation_confidence": (
+                config.generation.minimum_observation_confidence
+            ),
+            "model": config.generation.model,
+            "prohibit_personalized_legal_advice": (
+                config.generation.prohibit_personalized_legal_advice
+            ),
+            "prohibit_vote_predictions": config.generation.prohibit_vote_predictions,
+            "prompt_version": config.generation.prompt_version,
+            "provider": config.generation.provider,
+            "public_quotes": config.generation.public_quotes,
+            "stop_after_brief_validation_failure": (
+                config.generation.stop_after_brief_validation_failure
+            ),
+        },
+        "maximum_output_tokens_per_call": (
+            config.model_budget.maximum_output_tokens_per_call
+        ),
+    }
+    config_digest = sha256_hex(
+        canonical_json_bytes(processing_config, privacy_check=False)
+    )
     parser = f"{config.parser.name}:{config.parser.version}"
     model_identity = _model_identity(config, model_endpoint)
     prompt_contract = (
@@ -1347,7 +1502,10 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
         f"disposition={OpenAILegalBriefGenerator.DISPOSITION_PROMPT_VERSION}"
     )
     extractor = (
-        f"{LegalExtractionService.SCHEMA_VERSION}:{OpenAILegalObservationExtractor.PROMPT_VERSION}"
+        f"{LegalExtractionService.SCHEMA_VERSION}:"
+        f"{LegalExtractionService.VOCABULARY_VERSION}:"
+        f"{OpenAILegalObservationExtractor.PROMPT_VERSION}:"
+        f"{DOCUMENT_TEXT_VERSION}"
     )
     composite = sha256_hex(
         canonical_json_bytes(
@@ -1552,25 +1710,80 @@ class LiveStaticCaseProcessor:
                 outcomes[key] = fetched
 
             budget.check_private_disk(workspace)
-            observations, document_urls = self._analyze_documents(
-                source,
-                private_documents,
-                outcomes,
-                states,
-                objects,
-                budget,
-                authorized_replay,
+            retry_scope = case_processing_retry_scope(
+                case_key=work.case_key,
+                case_digest=_case_processing_digest(source),
+                document_digests=tuple(
+                    states[key].integrity.sha256 for key in sorted(states)
+                ),
+                disposition_digests=tuple(
+                    stable_disposition_fingerprint(item) for item in source.dispositions
+                ),
+                processor_digest=_processor_contract(
+                    self.config, self.model_endpoint
+                ).composite_sha256,
             )
-            return self._generate_public_case(
-                source,
-                work,
-                observations,
-                document_urls,
-                states,
-                changed_keys,
-                budget,
-                authorized_replay,
+            if (
+                work.retry_scope_probe_only
+                and work.authorized_retry_scope == retry_scope
+            ):
+                raise RetryScopeUnchanged(
+                    tuple(states[key] for key in sorted(states))
+                )
+            exact_scope_authorized = work.authorized_retry_scope == retry_scope
+            extraction_replay = bool(
+                authorized_replay
+                or (
+                    exact_scope_authorized
+                    and "extraction" in work.authorized_retry_stages
+                )
             )
+            brief_replay = bool(
+                authorized_replay
+                or (
+                    exact_scope_authorized
+                    and "brief" in work.authorized_retry_stages
+                )
+            )
+            try:
+                observations, document_urls = self._analyze_documents(
+                    source,
+                    private_documents,
+                    outcomes,
+                    states,
+                    objects,
+                    budget,
+                    extraction_replay,
+                )
+                return self._generate_public_case(
+                    source,
+                    work,
+                    observations,
+                    document_urls,
+                    states,
+                    changed_keys,
+                    budget,
+                    brief_replay,
+                )
+            except BriefValidationError as error:
+                if error.safe_code is None:
+                    raise
+                raise ModelOutputFailure(
+                    retry_scope=retry_scope,
+                    stage="brief",
+                    failure_code=_persisted_brief_failure_code(error.safe_code),
+                    documents=tuple(states[key] for key in sorted(states)),
+                ) from None
+            except LegalExtractionError as error:
+                failure_code = _persisted_extraction_output_code(error.safe_code)
+                if failure_code is None:
+                    raise
+                raise ModelOutputFailure(
+                    retry_scope=retry_scope,
+                    stage="extraction",
+                    failure_code=failure_code,
+                    documents=tuple(states[key] for key in sorted(states)),
+                ) from None
         finally:
             store.accepted.clear()
             store.identity.clear()
@@ -2486,6 +2699,7 @@ class LiveStaticBatchAdapter:
         mode: DiscoveryMode,
         runner_temp: str | Path,
         authorized_replay: bool,
+        scheduled_retries: bool = False,
     ) -> StaticBatchResult:
         _validate_live_gates(config)
         now = self.clock()
@@ -2568,6 +2782,7 @@ class LiveStaticBatchAdapter:
                     mode=mode,
                     now=now,
                     authorized_replay=authorized_replay,
+                    scheduled_retries=scheduled_retries,
                 )
             except Exception as error:
                 category = failure_category(error)
