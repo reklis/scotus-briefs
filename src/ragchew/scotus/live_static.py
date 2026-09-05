@@ -165,7 +165,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v8"
+POLICY_VERSION = "scotus-brief-policy-v9"
 DOCUMENT_TEXT_VERSION = "official-document-text-v1"
 
 
@@ -2192,7 +2192,7 @@ def _document_blocks(
 
 
 _DETERMINISTIC_COURT_ACTION = re.compile(
-    r"\b(?:we (?:hold|conclude|grant|deny|affirm|reverse|vacate|order)|"
+    r"\b(?:we (?:agree and )?(?:hold|conclude|grant|deny|affirm|reverse|vacate|order)|"
     r"(?:this |the )Court (?:holds?|held|orders?|ordered|grants?|granted|denies|denied|"
     r"affirms?|affirmed|reverses?|reversed|vacates?|vacated)|"
     r"(?:application|petition|motion|stay|judgment)\b[^.!?]{0,500}\b(?:is |are )"
