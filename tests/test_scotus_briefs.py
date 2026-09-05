@@ -1,4 +1,5 @@
 import json
+from dataclasses import replace
 from datetime import UTC, datetime
 from types import SimpleNamespace
 from uuid import UUID, uuid4
@@ -17,8 +18,10 @@ from ragchew.scotus.briefs import (
     InMemoryBriefRevisionStore,
     LegalBriefDraft,
     OpenAILegalBriefGenerator,
+    disposition_only_brief_json_schema,
     evaluate_brief_candidate,
     simple_brief_json_schema,
+    validate_brief_draft,
 )
 from ragchew.scotus.contracts import (
     BriefMaturity,
@@ -81,6 +84,7 @@ TRANSCRIPT_ID = uuid4()
 DOCKET_ID = uuid4()
 SECOND_ARGUMENT_ID = uuid4()
 SECOND_TRANSCRIPT_ID = uuid4()
+OPINION_ID = uuid4()
 
 
 def candidate(**overrides: object) -> BriefCandidate:
@@ -204,11 +208,126 @@ def test_policy_requires_complete_transcript_parser_identity_and_sufficient_evid
         ({"caption": ""}, "identity"),
         ({"observations": ()}, "insufficient"),
     ):
-        decision = evaluate_brief_candidate(
-            candidate(**update), minimum_confidence=0.85
-        )
+        decision = evaluate_brief_candidate(candidate(**update), minimum_confidence=0.85)
         assert not decision.eligible
         assert any(reason in value for value in decision.reasons)
+
+
+def disposition_candidate() -> BriefCandidate:
+    observations = tuple(
+        item.model_copy(update={"argument_id": None})
+        for item in (
+            observation(
+                LegalObservationType.PROCEDURAL_POSTURE,
+                LegalStatus.DESCRIBED,
+                ScotusDocumentKind.DOCKET,
+                "Docket 25A810 identifies Emergency Applicant v. Agency.",
+            ),
+            observation(
+                LegalObservationType.CASE_BACKGROUND,
+                LegalStatus.DESCRIBED,
+                ScotusDocumentKind.OPINION,
+                "Emergency Applicant sought relief from Agency.",
+                document_id=OPINION_ID,
+            ),
+            observation(
+                LegalObservationType.HOLDING,
+                LegalStatus.COURT_HELD,
+                ScotusDocumentKind.OPINION,
+                "The Court granted the application.",
+                document_id=OPINION_ID,
+            ),
+        )
+    )
+    return candidate(
+        argument_id=None,
+        caption="Emergency Applicant v. Agency",
+        primary_docket="25A810",
+        case_status=ScotusCaseStatus.DECIDED,
+        official_transcript_complete=False,
+        parser_complete=False,
+        argument_sessions=(),
+        observations=observations,
+        document_urls={
+            DOCKET_ID: "https://www.supremecourt.gov/docket.html",
+            OPINION_ID: "https://www.supremecourt.gov/opinion.pdf",
+        },
+    )
+
+
+def disposition_draft(claims, *, paragraph: str) -> LegalBriefDraft:  # type: ignore[no-untyped-def]
+    claim_ids = tuple(claim.claim_id for claim in claims)
+    return LegalBriefDraft(
+        title="Emergency Applicant v. Agency: Court action",
+        title_claim_ids=claim_ids,
+        dek="The official docket identifies the case.",
+        dek_claim_ids=claim_ids,
+        sections=(
+            DraftSection(
+                heading="What the Court did",
+                paragraphs=(paragraph,),
+                claim_ids=claim_ids,
+            ),
+        ),
+        argument_analyses=(),
+    )
+
+
+def test_disposition_only_policy_requires_docket_and_typed_court_action() -> None:
+    source = disposition_candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    assert decision.eligible
+    assert decision.maturity is BriefMaturity.POST_OPINION
+    assert all(claim.argument_id is None for claim in decision.claims)
+
+    without_docket = replace(
+        source,
+        observations=tuple(
+            item
+            for item in source.observations
+            if all(
+                evidence.document_kind is not ScotusDocumentKind.DOCKET
+                for evidence in item.evidence
+            )
+        ),
+    )
+    rejected = evaluate_brief_candidate(without_docket, minimum_confidence=0.85)
+    assert not rejected.eligible
+    assert "docket evidence" in " ".join(rejected.reasons)
+
+
+@pytest.mark.parametrize(
+    ("paragraph", "safe_code"),
+    [
+        ("At oral argument, a justice asked about relief.", "invented_oral_argument"),
+        ("Acme Corporation sought relief.", "unsupported_party"),
+        ("The Court denied the application.", "unsupported_disposition"),
+        ("The Court did not grant the application.", "unsupported_disposition"),
+        ("More details may emerge later.", "unsupported_filler"),
+    ],
+)
+def test_disposition_only_draft_rejects_invention(paragraph: str, safe_code: str) -> None:
+    source = disposition_candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(
+            disposition_draft(decision.claims, paragraph=paragraph),
+            source,
+            decision.claims,
+            public_quotes=False,
+        )
+    assert caught.value.safe_code == safe_code
+
+
+def test_disposition_only_draft_accepts_zero_argument_analyses() -> None:
+    source = disposition_candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    validate_brief_draft(
+        disposition_draft(decision.claims, paragraph="The Court granted the application."),
+        source,
+        decision.claims,
+        public_quotes=False,
+    )
 
 
 def test_policy_builds_page_grounded_claims_and_generation_is_idempotent() -> None:
@@ -241,9 +360,7 @@ def test_policy_builds_page_grounded_claims_and_generation_is_idempotent() -> No
         ("Smith v. Jones, 599 U.S. 100 controls.", "citation"),
     ],
 )
-def test_generation_rejects_unsafe_or_unsupported_analysis(
-    text: str, message: str
-) -> None:
+def test_generation_rejects_unsafe_or_unsupported_analysis(text: str, message: str) -> None:
     source = candidate()
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
     with pytest.raises(BriefValidationError, match=message):
@@ -281,9 +398,9 @@ def test_requested_and_lower_court_actions_are_not_mistaken_for_supreme_court_ho
 ) -> None:
     source = candidate(observations=(*candidate().observations, item))
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
-    revision = BriefGenerationService(
-        FakeGenerator(text), InMemoryBriefRevisionStore()
-    ).generate(source, decision, revision_number=1)
+    revision = BriefGenerationService(FakeGenerator(text), InMemoryBriefRevisionStore()).generate(
+        source, decision, revision_number=1
+    )
     assert revision.sections[0].paragraphs == (text,)
 
 
@@ -309,9 +426,7 @@ def test_attribution_variants_for_one_side_do_not_require_duplicate_coverage() -
         "Mr. Rivera addressed a separate implementation question.",
         attribution="Mr. Rivera",
     )
-    source = candidate(
-        observations=(*candidate().observations, alias, opposing, unknown_side)
-    )
+    source = candidate(observations=(*candidate().observations, alias, opposing, unknown_side))
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
 
     class OneClaimPerSideGenerator(FakeGenerator):
@@ -360,9 +475,9 @@ def test_generation_allows_explicit_uncertainty_about_when_court_will_rule() -> 
         "The approved record does not say when the Court will rule or what it will decide. "
         "No outcome can be predicted from this argument alone."
     )
-    revision = BriefGenerationService(
-        FakeGenerator(text), InMemoryBriefRevisionStore()
-    ).generate(source, decision, revision_number=1)
+    revision = BriefGenerationService(FakeGenerator(text), InMemoryBriefRevisionStore()).generate(
+        source, decision, revision_number=1
+    )
     assert revision.sections[0].paragraphs == (text,)
 
 
@@ -394,9 +509,7 @@ def test_whole_case_brief_requires_and_analyzes_every_argument_session() -> None
             sequence=2,
             reargument=True,
             official_detail_url="https://www.supremecourt.gov/reargument",
-            official_transcript_url=(
-                "https://www.supremecourt.gov/reargument-transcript.pdf"
-            ),
+            official_transcript_url=("https://www.supremecourt.gov/reargument-transcript.pdf"),
         ),
     )
     source = candidate(
@@ -405,18 +518,14 @@ def test_whole_case_brief_requires_and_analyzes_every_argument_session() -> None
         observations=(*candidate().observations, *second_observations),
         document_urls={
             **candidate().document_urls,
-            SECOND_TRANSCRIPT_ID: (
-                "https://www.supremecourt.gov/reargument-transcript.pdf"
-            ),
+            SECOND_TRANSCRIPT_ID: ("https://www.supremecourt.gov/reargument-transcript.pdf"),
         },
     )
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
     assert decision.eligible
     service = BriefGenerationService(FakeGenerator(), InMemoryBriefRevisionStore())
     revision = service.generate(source, decision, revision_number=1)
-    anchored_to_first = BriefCandidate(
-        **{**source.__dict__, "argument_id": ARGUMENT_ID}
-    )
+    anchored_to_first = BriefCandidate(**{**source.__dict__, "argument_id": ARGUMENT_ID})
     second_revision = service.generate(
         anchored_to_first,
         evaluate_brief_candidate(anchored_to_first, minimum_confidence=0.85),
@@ -443,17 +552,13 @@ def test_whole_case_brief_requires_and_analyzes_every_argument_session() -> None
         def generate(self, candidate, claims, maturity):  # type: ignore[no-untyped-def]
             draft = super().generate(candidate, claims, maturity)
             first = draft.argument_analyses[0]
-            second = draft.argument_analyses[1].model_copy(
-                update={"claim_ids": first.claim_ids}
-            )
-            return draft.model_copy(
-                update={"argument_analyses": (first, second)}
-            )
+            second = draft.argument_analyses[1].model_copy(update={"claim_ids": first.claim_ids})
+            return draft.model_copy(update={"argument_analyses": (first, second)})
 
     with pytest.raises(BriefValidationError, match="different session"):
-        BriefGenerationService(
-            CrossSessionGenerator(), InMemoryBriefRevisionStore()
-        ).generate(source, decision, revision_number=1)
+        BriefGenerationService(CrossSessionGenerator(), InMemoryBriefRevisionStore()).generate(
+            source, decision, revision_number=1
+        )
 
 
 def test_plain_language_rejects_legalese_and_overlong_prose() -> None:
@@ -466,9 +571,9 @@ def test_plain_language_rejects_legalese_and_overlong_prose() -> None:
         ).generate(source, decision, revision_number=1)
     long_sentence = " ".join(["word"] * 31) + "."
     with pytest.raises(BriefValidationError, match="sentence is too long"):
-        BriefGenerationService(
-            FakeGenerator(long_sentence), InMemoryBriefRevisionStore()
-        ).generate(source, decision, revision_number=1)
+        BriefGenerationService(FakeGenerator(long_sentence), InMemoryBriefRevisionStore()).generate(
+            source, decision, revision_number=1
+        )
     with pytest.raises(BriefValidationError, match="unexplained legal concept"):
         BriefGenerationService(
             FakeGenerator("The dispute concerns statutory authority."),
@@ -488,9 +593,7 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
         sections=tuple(
             DraftSection(
                 heading=heading,
-                paragraphs=(
-                    "The case asks whether Congress gave the agency the power to act.",
-                ),
+                paragraphs=("The case asks whether Congress gave the agency the power to act.",),
                 claim_ids=ids,
             )
             for heading in (
@@ -563,16 +666,12 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
     assert schema["properties"]["sections"]["maxItems"] == 5
     assert schema["properties"]["argument_analyses"]["minItems"] == 1
     assert schema["properties"]["argument_analyses"]["maxItems"] == 1
-    assert schema["properties"]["sections"]["items"]["properties"]["paragraphs"][
-        "maxItems"
-    ] == 1
+    assert schema["properties"]["sections"]["items"]["properties"]["paragraphs"]["maxItems"] == 1
 
     completions.content = draft.model_copy(
         update={"title": "What this case is about"}
     ).model_dump_json()
-    assert generator.generate(source, decision.claims, decision.maturity).title == (
-        source.caption
-    )
+    assert generator.generate(source, decision.claims, decision.maturity).title == (source.caption)
 
     unsupported = draft.model_dump(mode="json")
     unsupported["title_claim_ids"] = [str(uuid4())]
@@ -584,8 +683,10 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
 def test_local_brief_schema_matches_exact_argument_count() -> None:
     analyses = simple_brief_json_schema(2)["properties"]["argument_analyses"]
     assert analyses["minItems"] == analyses["maxItems"] == 2
+    disposition_analyses = disposition_only_brief_json_schema()["properties"]["argument_analyses"]
+    assert disposition_analyses["minItems"] == disposition_analyses["maxItems"] == 0
     with pytest.raises(ValueError, match="argument count"):
-        simple_brief_json_schema(0)
+        simple_brief_json_schema(-1)
 
 
 def test_sensitive_details_are_minimized_or_suppressed() -> None:
@@ -622,8 +723,7 @@ def test_sensitive_details_are_minimized_or_suppressed() -> None:
     sealed_source = candidate(observations=(*candidate().observations, sealed))
     sealed_decision = evaluate_brief_candidate(sealed_source, minimum_confidence=0.85)
     assert all(
-        claim.source_observation_ids != (sealed.observation_id,)
-        for claim in sealed_decision.claims
+        claim.source_observation_ids != (sealed.observation_id,) for claim in sealed_decision.claims
     )
 
 
@@ -631,9 +731,7 @@ def test_maturity_follows_official_case_state_and_correction_note() -> None:
     source = candidate(case_status=ScotusCaseStatus.DECIDED)
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
     assert decision.maturity is BriefMaturity.POST_OPINION
-    revision = BriefGenerationService(
-        FakeGenerator(), InMemoryBriefRevisionStore()
-    ).generate(
+    revision = BriefGenerationService(FakeGenerator(), InMemoryBriefRevisionStore()).generate(
         source,
         decision,
         revision_number=2,

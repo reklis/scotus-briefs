@@ -61,9 +61,9 @@ def build_public_case(
     term: str,
     primary_docket: str,
     caption: str,
-    argument_date: datetime,
+    argument_date: datetime | None,
     case_status: ScotusCaseStatus,
-    official_detail_url: str,
+    official_detail_url: str | None,
     revision: LegalBriefRevision,
     claims: tuple[ScotusApprovedClaim, ...],
     argument_sessions: tuple[CaseArgumentSession, ...],
@@ -103,11 +103,13 @@ def build_public_case(
         )
         for analysis in revision.argument_analyses
     )
-    latest_argument_date = max(item.argument_date for item in arguments)
+    latest_argument_date = max(item.argument_date for item in arguments) if arguments else None
+    if not arguments and argument_date is not None:
+        raise ValueError("a disposition-only public case cannot claim an argument date")
+    if bool(arguments) != bool(official_detail_url):
+        raise ValueError("argument detail URL must exist exactly when arguments exist")
     if official_disposition_urls and not allow_legacy_disposition_fallback:
-        raise ValueError(
-            "new public cases require dated structured disposition metadata"
-        )
+        raise ValueError("new public cases require dated structured disposition metadata")
     return PublicCaseBrief(
         slug=public_case_slug(term, primary_docket, caption),
         term=term,
@@ -136,9 +138,7 @@ def build_public_case(
         latest_court_document_date=derive_latest_court_document_date(
             arguments,
             official_dispositions,
-            legacy_argument_date=(
-                latest_argument_date if official_disposition_urls else None
-            ),
+            legacy_argument_date=(latest_argument_date if official_disposition_urls else None),
         ),
         revisions=revision_history,
         updated_at=revision.created_at,

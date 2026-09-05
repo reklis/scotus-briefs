@@ -112,6 +112,27 @@ class LegalStatus(StrEnum):
     UNKNOWN = "unknown"
 
 
+# This is the typed legal-state boundary used by extraction, correlation, and direct
+# contract construction. In particular, a model cannot attach a final Court status to
+# background or party-position prose merely because an opinion block was in context.
+LEGAL_STATUS_BY_OBSERVATION_TYPE: dict[LegalObservationType, LegalStatus] = {
+    LegalObservationType.CASE_BACKGROUND: LegalStatus.DESCRIBED,
+    LegalObservationType.PROCEDURAL_POSTURE: LegalStatus.DESCRIBED,
+    LegalObservationType.QUESTION_PRESENTED: LegalStatus.DESCRIBED,
+    LegalObservationType.ADVOCATE_CONTENTION: LegalStatus.ASSERTED,
+    LegalObservationType.JUSTICE_QUESTION: LegalStatus.QUESTIONED,
+    LegalObservationType.ANSWER: LegalStatus.ANSWERED,
+    LegalObservationType.CONCESSION: LegalStatus.CONCEDED,
+    LegalObservationType.DISPUTED_PREMISE: LegalStatus.DISPUTED,
+    LegalObservationType.AUTHORITY_CITATION: LegalStatus.DESCRIBED,
+    LegalObservationType.DOCTRINAL_THEME: LegalStatus.DESCRIBED,
+    LegalObservationType.REQUESTED_DISPOSITION: LegalStatus.REQUESTED,
+    LegalObservationType.LOWER_COURT_ACTION: LegalStatus.LOWER_COURT_HELD,
+    LegalObservationType.ORDER: LegalStatus.COURT_ORDERED,
+    LegalObservationType.HOLDING: LegalStatus.COURT_HELD,
+}
+
+
 class LegalCertainty(StrEnum):
     DIRECT = "direct"
     ATTRIBUTED = "attributed"
@@ -306,12 +327,21 @@ class LegalObservation(StrictModel):
 
     @model_validator(mode="after")
     def enforce_evidence_status(self) -> Self:
-        final_types = {LegalObservationType.ORDER, LegalObservationType.HOLDING}
-        final_evidence = {ScotusDocumentKind.ORDER, ScotusDocumentKind.OPINION}
-        if self.observation_type in final_types and not any(
-            item.document_kind in final_evidence for item in self.evidence
+        expected_status = LEGAL_STATUS_BY_OBSERVATION_TYPE[self.observation_type]
+        if self.legal_status is not expected_status:
+            raise ValueError("legal status is inconsistent with the observation type")
+        if self.observation_type is LegalObservationType.HOLDING and not all(
+            item.document_kind is ScotusDocumentKind.OPINION for item in self.evidence
         ):
-            raise ValueError("an order or holding requires official order/opinion evidence")
+            raise ValueError(
+                "a holding requires official opinion evidence; other order/opinion "
+                "evidence is insufficient"
+            )
+        if self.observation_type is LegalObservationType.ORDER and not all(
+            item.document_kind in {ScotusDocumentKind.ORDER, ScotusDocumentKind.OPINION}
+            for item in self.evidence
+        ):
+            raise ValueError("an order requires official order/opinion evidence")
         if self.speaker_name and self.identity_basis is SpeakerIdentityBasis.ANONYMOUS:
             raise ValueError("named speaker requires affirmative identity basis")
         attributed = {
@@ -385,7 +415,8 @@ class LegalBriefRevision(StrictModel):
     brief_id: UUID
     revision_id: UUID = Field(default_factory=uuid4)
     case_id: UUID
-    argument_id: UUID
+    # A whole-case disposition brief has no oral-argument anchor.
+    argument_id: UUID | None = None
     revision_number: int = Field(ge=1)
     maturity: BriefMaturity
     title: str = Field(min_length=1, max_length=180)
@@ -393,11 +424,23 @@ class LegalBriefRevision(StrictModel):
     dek: str = Field(min_length=1, max_length=500)
     dek_claim_ids: tuple[UUID, ...] = Field(min_length=1)
     sections: tuple[BriefSection, ...] = Field(min_length=1)
-    argument_analyses: tuple[BriefArgumentAnalysis, ...] = Field(min_length=1)
+    argument_analyses: tuple[BriefArgumentAnalysis, ...] = ()
     claim_ids: tuple[UUID, ...] = Field(min_length=1)
     correction_note: str | None = Field(default=None, max_length=1_000)
     created_at: UtcDatetime
     generator_model: str = Field(min_length=1, max_length=200)
+
+    @model_validator(mode="after")
+    def validate_argument_anchor(self) -> Self:
+        if self.argument_id is None and self.argument_analyses:
+            raise ValueError("disposition-only brief cannot contain argument analyses")
+        if self.argument_id is not None and not self.argument_analyses:
+            raise ValueError("argument-linked brief requires argument analyses")
+        if self.argument_id is not None and self.argument_id not in {
+            item.argument_id for item in self.argument_analyses
+        }:
+            raise ValueError("brief argument anchor must identify a real analysis")
+        return self
 
 
 class PublicCaseProjection(StrictModel):

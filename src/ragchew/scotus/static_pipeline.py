@@ -283,9 +283,7 @@ class UnifiedRunBudget:
     estimated_cost_usd: Decimal = Decimal("0")
     _authorized: set[tuple[str, str]] = field(default_factory=set)
     _next_attempt_numbers: dict[tuple[str, str], int] = field(default_factory=dict)
-    _attempt_receipts: dict[tuple[str, str, int], ModelAttemptReceipt] = field(
-        default_factory=dict
-    )
+    _attempt_receipts: dict[tuple[str, str, int], ModelAttemptReceipt] = field(default_factory=dict)
 
     def check_runtime(self) -> None:
         if (
@@ -412,12 +410,9 @@ class UnifiedRunBudget:
             or self.model_calls + 1 > limits.maximum_total_calls_per_run
         ):
             raise BudgetExceeded("model call budget exhausted")
-        if (
-            permit.stage == "extraction"
-            and (
-                self.brief_calls >= limits.maximum_brief_calls_per_run
-                or self.model_calls + 2 > limits.maximum_total_calls_per_run
-            )
+        if permit.stage == "extraction" and (
+            self.brief_calls >= limits.maximum_brief_calls_per_run
+            or self.model_calls + 2 > limits.maximum_total_calls_per_run
         ):
             raise BudgetExceeded("extraction would consume the required brief call slot")
         if self.input_tokens + permit.input_tokens > limits.maximum_input_tokens_per_run:
@@ -508,10 +503,8 @@ class UnifiedRunBudget:
 
     def _estimated_model_cost(self, input_tokens: int, output_tokens: int) -> Decimal:
         return (
-            Decimal(input_tokens)
-            * self.config.model_budget.input_cost_usd_per_million_tokens
-            + Decimal(output_tokens)
-            * self.config.model_budget.output_cost_usd_per_million_tokens
+            Decimal(input_tokens) * self.config.model_budget.input_cost_usd_per_million_tokens
+            + Decimal(output_tokens) * self.config.model_budget.output_cost_usd_per_million_tokens
         ) / Decimal(1_000_000)
 
     def receipt(
@@ -555,10 +548,19 @@ class StaticCaseWork:
     priority: int
     sessions: tuple[ArgumentSessionWork, ...]
     reason: str
+    # Dockets and dispositions belong to the case. Only transcripts belong to an
+    # argument session. Keeping these identities separate prevents a disposition-only
+    # case from acquiring a fabricated session merely to enter the work queue.
+    case_document_keys: tuple[str, ...] = ()
 
     @property
     def document_count(self) -> int:
-        return len({key for session in self.sessions for key in session.document_keys})
+        return len(
+            {
+                *self.case_document_keys,
+                *(key for session in self.sessions for key in session.document_keys),
+            }
+        )
 
 
 @dataclass(frozen=True)
@@ -765,9 +767,11 @@ class StaticBatchOrchestrator:
                         )
                         required = {session.session_key for session in work.sessions}
                         processed = set(result.processed_session_keys)
+                        processed_documents = {item.logical_key for item in result.documents}
                         if (
                             not result.complete
                             or processed != required
+                            or not set(work.case_document_keys).issubset(processed_documents)
                             or result.case_key != work.case_key
                             or result.public_case is None
                             or public_case_key(
@@ -775,7 +779,10 @@ class StaticBatchOrchestrator:
                             )
                             != work.case_key
                         ):
-                            raise ValueError("changed case did not complete every required session")
+                            raise ValueError(
+                                "changed case did not complete every required session "
+                                "and case document"
+                            )
                         if result.changed:
                             working = self.state_store.merge_accepted_case(
                                 working,
@@ -802,8 +809,13 @@ class StaticBatchOrchestrator:
                             counts={"sessions": len(required), "documents": work.document_count},
                         )
                     except Exception as error:
-                        checkpoints_safe = False
                         category = failure_category(error)
+                        # Source/disposition index checkpoints describe a complete,
+                        # strictly parsed discovery response. A case-local document,
+                        # extraction, or draft failure must remain pending without
+                        # discarding that safe allowlisted discovery metadata.
+                        if isinstance(error, BudgetExceeded):
+                            checkpoints_safe = False
                         reason = {
                             FailureCategory.BUDGET: PendingReason.BUDGET_EXHAUSTED,
                             FailureCategory.SOURCE_UNAVAILABLE: PendingReason.SOURCE_UNAVAILABLE,
@@ -829,12 +841,18 @@ class StaticBatchOrchestrator:
                         if isinstance(error, BudgetExceeded):
                             safe_detail = str(error)
                         elif isinstance(error, ValidationError):
-                            safe_detail = "ValidationError[" + ",".join(
-                                f"{'.'.join(str(part) for part in item['loc'])}:{item['type']}"
-                                for item in error.errors(
-                                    include_url=False, include_context=False, include_input=False
-                                )[:10]
-                            ) + "]"
+                            safe_detail = (
+                                "ValidationError["
+                                + ",".join(
+                                    f"{'.'.join(str(part) for part in item['loc'])}:{item['type']}"
+                                    for item in error.errors(
+                                        include_url=False,
+                                        include_context=False,
+                                        include_input=False,
+                                    )[:10]
+                                )
+                                + "]"
+                            )
                         else:
                             safe_code = getattr(error, "safe_code", None)
                             safe_detail = type(error).__name__
@@ -860,9 +878,7 @@ class StaticBatchOrchestrator:
                             break
                     budget.check_private_disk(workspace)
                 sources = {item.logical_key: item for item in original.publication.sources}
-                documents = {
-                    item.logical_key: item for item in original.publication.documents
-                }
+                documents = {item.logical_key: item for item in original.publication.documents}
                 dispositions = {
                     item.logical_key: item for item in original.publication.dispositions
                 }
@@ -884,8 +900,7 @@ class StaticBatchOrchestrator:
                     # A global fingerprint is a claim about every active case, not the
                     # bounded subset selected in this run.
                     all_active_cases_migrated = all(
-                        pointer.processor_sha256 == target
-                        for pointer in working.publication.cases
+                        pointer.processor_sha256 == target for pointer in working.publication.cases
                     )
                     if all_active_cases_migrated:
                         processor = discovered.processor
@@ -897,9 +912,7 @@ class StaticBatchOrchestrator:
                     pending_work=tuple(pending[key] for key in sorted(pending)),
                     cursors=tuple(cursors[key] for key in sorted(cursors)),
                     processor=processor,
-                    dispositions=tuple(
-                        dispositions[key] for key in sorted(dispositions)
-                    ),
+                    dispositions=tuple(dispositions[key] for key in sorted(dispositions)),
                 )
         finally:
             try:

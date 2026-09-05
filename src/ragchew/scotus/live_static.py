@@ -18,6 +18,7 @@ from datetime import UTC, datetime
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, BinaryIO, Literal, Protocol, cast
+from urllib.parse import quote
 from uuid import NAMESPACE_URL, UUID, uuid5
 
 import httpx
@@ -63,6 +64,7 @@ from ragchew.scotus.briefs import (
     CaseArgumentSession,
     InMemoryBriefRevisionStore,
     OpenAILegalBriefGenerator,
+    disposition_only_brief_json_schema,
     evaluate_brief_candidate,
     simple_brief_json_schema,
 )
@@ -87,6 +89,7 @@ from ragchew.scotus.discovery import (
     merge_case_discovery,
     select_discovery_resources,
     select_discovery_work,
+    stable_disposition_fingerprint,
     transcript_logical_key,
 )
 from ragchew.scotus.documents import (
@@ -160,15 +163,11 @@ class OllamaClientFactory(Protocol):
 
 
 class SourceFetcherFactory(Protocol):
-    def __call__(
-        self, settings: ServiceSettings, config: ScotusConfig
-    ) -> SourceFetcher: ...
+    def __call__(self, settings: ServiceSettings, config: ScotusConfig) -> SourceFetcher: ...
 
 
 class DocumentClientFactory(Protocol):
-    def __call__(
-        self, settings: ServiceSettings, config: ScotusConfig
-    ) -> httpx.Client: ...
+    def __call__(self, settings: ServiceSettings, config: ScotusConfig) -> httpx.Client: ...
 
 
 @dataclass(frozen=True)
@@ -393,11 +392,7 @@ def _request_payload(value: Any) -> Any:
     if value is omit:
         return None
     if isinstance(value, dict):
-        return {
-            key: _request_payload(item)
-            for key, item in value.items()
-            if item is not omit
-        }
+        return {key: _request_payload(item) for key, item in value.items() if item is not omit}
     if isinstance(value, (list, tuple)):
         return [_request_payload(item) for item in value if item is not omit]
     return value
@@ -490,9 +485,7 @@ def _descriptor_for_public_argument(
         ),
     )
     for index, url in enumerate(case.official_disposition_urls, start=1):
-        document_type = (
-            DocumentType.ORDER if "/orders/" in url.casefold() else DocumentType.OPINION
-        )
+        document_type = DocumentType.ORDER if "/orders/" in url.casefold() else DocumentType.OPINION
         shared_by_identity.setdefault(
             (document_type, url),
             DocumentDescriptor(
@@ -637,9 +630,7 @@ class LiveStaticDiscovery:
                 ] = item
                 public_transcript_keys.add(transcript_logical_key(item))
         processor = _processor_contract(self.config, self.model_endpoint)
-        pointer_by_case = {
-            pointer.case_key: pointer for pointer in content.publication.cases
-        }
+        pointer_by_case = {pointer.case_key: pointer for pointer in content.publication.cases}
         # A concrete prior processor fingerprint can be migrated when it changes.
         # Missing fingerprints identify sanitized legacy imports; do not redownload and
         # regenerate those accepted briefs unless current Court metadata actually changes.
@@ -655,6 +646,17 @@ class LiveStaticDiscovery:
             if pointer_by_case.get(case_key) is not None
             and pointer_by_case[case_key].processor_sha256 is not None
             and pointer_by_case[case_key].processor_sha256 != processor.composite_sha256
+        }
+        pending_case_keys = {item.case_key for item in content.publication.pending_work}
+        # Legacy import tooling left zero-attempt budget markers that were never real
+        # source work. Preserve the compatibility cleanup for only that exact shape;
+        # an attempted legacy disposition failure remains mandatory retry work.
+        stale_legacy_pending_case_keys = {
+            item.case_key
+            for item in content.publication.pending_work
+            if item.case_key in legacy_case_keys
+            and item.attempts == 0
+            and item.last_attempted_at is None
         }
         changed_case_keys: set[str] = set(migration_case_keys)
         argument_source_changed_case_keys: set[str] = set()
@@ -681,9 +683,7 @@ class LiveStaticDiscovery:
         combined = tuple(candidates_by_session.values())
         active_term = self.config.discovery.active_term
         prior_dispositions = tuple(
-            item
-            for item in content.publication.dispositions
-            if item.term == active_term
+            item for item in content.publication.dispositions if item.term == active_term
         )
         slip_source_key = f"slip-opinions:{active_term}"
         slip_result = discover_slip_opinions_once(
@@ -700,8 +700,7 @@ class LiveStaticDiscovery:
             item for item in content.publication.dispositions if item.term != active_term
         )
         all_dispositions = slip_result.candidates + tuple(
-            disposition_candidate_from_state(item)
-            for item in other_disposition_states
+            disposition_candidate_from_state(item) for item in other_disposition_states
         )
         durable_primary_dockets = {
             (case.term, case.primary_docket) for case in prior_cases.values()
@@ -720,17 +719,20 @@ class LiveStaticDiscovery:
         merged_by_key = {
             public_case_key(item.term, item.primary_docket): item for item in merged_cases
         }
+        # Pending case-local failures are explicit retry work. Reconsider them even
+        # after a safe conditional index checkpoint returns 304.
+        changed_case_keys.update(
+            pending_case_keys.intersection(merged_by_key)
+            - stale_legacy_pending_case_keys
+        )
         argument_case_keys = {
             candidate_logical_key(argument): key
             for key, case in merged_by_key.items()
             for argument in case.arguments
         }
-        changed_case_keys = {
-            argument_case_keys.get(key, key) for key in changed_case_keys
-        }
+        changed_case_keys = {argument_case_keys.get(key, key) for key in changed_case_keys}
         argument_source_changed_case_keys = {
-            argument_case_keys.get(key, key)
-            for key in argument_source_changed_case_keys
+            argument_case_keys.get(key, key) for key in argument_source_changed_case_keys
         }
         source_changed_case_keys = {
             argument_case_keys.get(key, key) for key in source_changed_case_keys
@@ -752,9 +754,7 @@ class LiveStaticDiscovery:
                 (
                     item.model_copy(
                         update={
-                            "case_key": disposition_case_keys.get(
-                                item.logical_key, item.case_key
-                            )
+                            "case_key": disposition_case_keys.get(item.logical_key, item.case_key)
                         }
                     )
                     for item in (*other_disposition_states, *slip_result.states)
@@ -778,9 +778,7 @@ class LiveStaticDiscovery:
         selection_known = known - {
             transcript_logical_key(item)
             for item in combined
-            if argument_case_keys.get(
-                candidate_logical_key(item), candidate_logical_key(item)
-            )
+            if argument_case_keys.get(candidate_logical_key(item), candidate_logical_key(item))
             in changed_case_keys
         }
         selection_cursor = next(
@@ -815,9 +813,7 @@ class LiveStaticDiscovery:
             historical_priority=self.config.discovery.backfill_priority,
             historical_limit=self.config.discovery.historical_rechecks_per_run,
             recent_lookback_days=self.config.discovery.backfill_lookback_days,
-            recent_correction_lookback_days=(
-                self.config.discovery.recent_correction_lookback_days
-            ),
+            recent_correction_lookback_days=(self.config.discovery.recent_correction_lookback_days),
             recent_opinion_lookback_days=self.config.discovery.recent_opinion_lookback_days,
             cursor=selection_cursor,
             current_cursor=current_cursor,
@@ -849,17 +845,13 @@ class LiveStaticDiscovery:
 
         work: list[StaticCaseWork] = []
         invalid_case_keys: set[str] = set()
-        ordered_selection = sorted(
-            selected.items(), key=lambda item: (item[1][0], item[0])
-        )
+        ordered_selection = sorted(selected.items(), key=lambda item: (item[1][0], item[0]))
         for key, (priority, reason) in ordered_selection:
             merged = merged_by_key.get(key)
             if merged is None:
                 invalid_case_keys.add(key)
                 continue
-            sessions = tuple(
-                item for item in merged.arguments if item.transcript is not None
-            )
+            sessions = tuple(item for item in merged.arguments if item.transcript is not None)
             prior = prior_cases.get(key)
             case_documents = tuple(documents_by_case.get(key, ()))
             self.cases[key] = _CaseInput(
@@ -877,10 +869,6 @@ class LiveStaticDiscovery:
                     for item in case_documents
                 },
             )
-            # Discovery persists and defers real zero-session cases. Task group 3 can
-            # connect this already case-level input to disposition-only processing.
-            if not sessions:
-                continue
             session_work: list[ArgumentSessionWork] = []
             try:
                 all_documents = _case_documents(self.cases[key])
@@ -890,20 +878,27 @@ class LiveStaticDiscovery:
                 invalid_case_keys.add(key)
                 self.cases.pop(key, None)
                 continue
-            shared = tuple(
+            case_document_keys = tuple(
                 item.logical_key
                 for item in all_documents
                 if item.kind is not ScotusDocumentKind.TRANSCRIPT
             )
-            for index, session in enumerate(sessions):
-                keys = (transcript_logical_key(session), *(shared if index == 0 else ()))
+            for session in sessions:
                 session_work.append(
                     ArgumentSessionWork(
                         session_key=_session_key(session),
-                        document_keys=tuple(dict.fromkeys(keys)),
+                        document_keys=(transcript_logical_key(session),),
                     )
                 )
-            work.append(StaticCaseWork(key, priority, tuple(session_work), reason))
+            work.append(
+                StaticCaseWork(
+                    key,
+                    priority,
+                    tuple(session_work),
+                    reason,
+                    case_document_keys,
+                )
+            )
 
         cursors = tuple(
             item
@@ -921,9 +916,7 @@ class LiveStaticDiscovery:
         deferred_case_keys = tuple(
             sorted((changed_case_keys - runnable_case_keys) | invalid_case_keys)
         )
-        changed_deferred = bool(
-            set(deferred_case_keys) & argument_source_changed_case_keys
-        )
+        changed_deferred = bool(set(deferred_case_keys) & argument_source_changed_case_keys)
         source_states = (*incremental.checkpoints, slip_result.checkpoint, *related_sources)
         return StaticDiscoveryResult(
             work=tuple(work),
@@ -941,10 +934,7 @@ class LiveStaticDiscovery:
             processor=processor,
             deferred_case_keys=deferred_case_keys,
             resolved_pending_case_keys=tuple(
-                sorted(
-                    (legacy_case_keys - changed_case_keys)
-                    | remapped_pending_case_keys
-                )
+                sorted(stale_legacy_pending_case_keys | remapped_pending_case_keys)
             ),
             checkpoint_safe=not changed_deferred,
         )
@@ -974,8 +964,7 @@ class LiveStaticDiscovery:
                 )
                 response = adapter.fetcher.get(url, conditional)
                 validators = ConditionalValidators(
-                    etag=response.headers.get("etag")
-                    or (prior.validators.etag if prior else None),
+                    etag=response.headers.get("etag") or (prior.validators.etag if prior else None),
                     last_modified=response.headers.get("last-modified")
                     or (prior.validators.last_modified if prior else None),
                 )
@@ -983,9 +972,7 @@ class LiveStaticDiscovery:
                     if prior is None:
                         raise ValueError("related index returned 304 without a checkpoint")
                     states.append(
-                        prior.model_copy(
-                            update={"validators": validators, "checked_at": now}
-                        )
+                        prior.model_copy(update={"validators": validators, "checked_at": now})
                     )
                     continue
                 integrity = ContentIntegrity(
@@ -1021,9 +1008,9 @@ class LiveStaticDiscovery:
                         for item in candidate.related_documents
                         if item.document_type is document_type
                     )
-                    if prior_same_kind and not _descriptor_urls(
-                        prior_same_kind
-                    ).issubset(_descriptor_urls(discovered)):
+                    if prior_same_kind and not _descriptor_urls(prior_same_kind).issubset(
+                        _descriptor_urls(discovered)
+                    ):
                         # Recompute against only the current official-index descriptors.
                         # The prior public case remains active unless that replacement
                         # independently passes every case and release validator.
@@ -1037,9 +1024,7 @@ class LiveStaticDiscovery:
                         related_documents = _merge_descriptors(
                             candidate.related_documents, discovered
                         )
-                    updated = candidate.model_copy(
-                        update={"related_documents": related_documents}
-                    )
+                    updated = candidate.model_copy(update={"related_documents": related_documents})
                     if _candidate_metadata_changed(candidate, updated):
                         changed_cases.add(candidate_logical_key(candidate))
                     candidates[identity] = updated
@@ -1080,12 +1065,9 @@ def _candidate_metadata_changed(
 def _merge_descriptors(
     old: Sequence[DocumentDescriptor], new: Sequence[DocumentDescriptor]
 ) -> tuple[DocumentDescriptor, ...]:
-    documents = {
-        (item.document_type, item.official_url): item for item in (*old, *new)
-    }
+    documents = {(item.document_type, item.official_url): item for item in (*old, *new)}
     return tuple(
-        documents[key]
-        for key in sorted(documents, key=lambda value: (value[0].value, value[1]))
+        documents[key] for key in sorted(documents, key=lambda value: (value[0].value, value[1]))
     )
 
 
@@ -1113,9 +1095,18 @@ def _session_key(candidate: ScotusArgumentCandidate) -> str:
     )
 
 
+def _official_docket_url(primary_docket: str) -> str:
+    return (
+        "https://www.supremecourt.gov/docket/docketfiles/html/public/"
+        f"{quote(primary_docket, safe='-')}.html"
+    )
+
+
 def _case_documents(case: _CaseInput) -> tuple[_PrivateDocument, ...]:
     values: dict[str, _PrivateDocument] = {}
     case_id = deterministic_case_id(case.term, case.primary_docket)
+    if not case.sessions and not case.dispositions:
+        raise ValueError("a zero-session case requires an official disposition")
     for session in case.sessions:
         argument_id = deterministic_argument_id(
             case_id,
@@ -1146,6 +1137,23 @@ def _case_documents(case: _CaseInput) -> tuple[_PrivateDocument, ...]:
                 descriptor=descriptor,
                 argument_id=argument_id if kind is ScotusDocumentKind.TRANSCRIPT else None,
             )
+    if not any(item.kind is ScotusDocumentKind.DOCKET for item in values.values()):
+        docket_url = _official_docket_url(case.primary_docket)
+        descriptor = DocumentDescriptor(
+            external_id=f"{case.case_key}:docket:case",
+            document_type=DocumentType.DOCKET,
+            official_url=docket_url,
+            access_method=SourceAccessMethod.OFFICIAL_PAGE,
+            content_type="text/html",
+        )
+        key = case.document_logical_keys.get(
+            (DocumentType.DOCKET, docket_url), f"{case.case_key}:docket:case"
+        )
+        values[key] = _PrivateDocument(
+            logical_key=key,
+            descriptor=descriptor,
+            argument_id=None,
+        )
     for disposition in case.dispositions:
         descriptor = disposition.descriptor
         key = case.document_logical_keys.get(
@@ -1169,8 +1177,7 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
     parser = f"{config.parser.name}:{config.parser.version}"
     model_identity = _model_identity(config, model_endpoint)
     extractor = (
-        f"{LegalExtractionService.SCHEMA_VERSION}:"
-        f"{OpenAILegalObservationExtractor.PROMPT_VERSION}"
+        f"{LegalExtractionService.SCHEMA_VERSION}:{OpenAILegalObservationExtractor.PROMPT_VERSION}"
     )
     composite = sha256_hex(
         canonical_json_bytes(
@@ -1240,8 +1247,7 @@ class LiveStaticCaseProcessor:
             raise RuntimeError("case processing started before discovery")
         case_id = deterministic_case_id(source.term, source.primary_docket)
         prior_documents = {
-            item.logical_key: item
-            for item in self._content_documents(work.case_key)
+            item.logical_key: item for item in self._content_documents(work.case_key)
         }
         store = InMemoryDocumentIngestionStore()
         objects = _LocalObjectStore(workspace.private_path("downloads", work.case_key))
@@ -1264,9 +1270,7 @@ class LiveStaticCaseProcessor:
             states: dict[str, LogicalDocumentState] = {}
             changed_keys: set[str] = set()
             private_documents = _case_documents(source)
-            required_transcripts = {
-                transcript_logical_key(session) for session in source.sessions
-            }
+            required_transcripts = {transcript_logical_key(session) for session in source.sessions}
             found_transcripts = {
                 item.logical_key
                 for item in private_documents
@@ -1359,9 +1363,7 @@ class LiveStaticCaseProcessor:
                     or fetched.byte_count is None
                     or fetched.revision_number is None
                 ):
-                    raise DocumentCollectionError(
-                        "current document body has incomplete integrity"
-                    )
+                    raise DocumentCollectionError("current document body has incomplete integrity")
                 prior = prior_documents.get(key)
                 refreshed = states[key].model_copy(
                     update={
@@ -1410,17 +1412,12 @@ class LiveStaticCaseProcessor:
     def _content_documents(self, case_key: str) -> tuple[LogicalDocumentState, ...]:
         # Discovery received the immutable content and retained only public case input.
         # Document checkpoints are injected by the adapter immediately before running.
-        return tuple(
-            item
-            for item in getattr(self, "_documents", ())
-            if item.case_key == case_key
-        )
+        return tuple(item for item in getattr(self, "_documents", ()) if item.case_key == case_key)
 
     def set_public_state(self, content: GeneratedContent) -> None:
         self._documents = content.publication.documents
         self._processor_case_fingerprints = {
-            pointer.case_key: pointer.processor_sha256
-            for pointer in content.publication.cases
+            pointer.case_key: pointer.processor_sha256 for pointer in content.publication.cases
         }
 
     @staticmethod
@@ -1442,9 +1439,7 @@ class LiveStaticCaseProcessor:
                 revision_number=item.revision_number,
                 official_url=item.official_url,
                 content_type=(
-                    "text/html"
-                    if kind is ScotusDocumentKind.DOCKET
-                    else "application/pdf"
+                    "text/html" if kind is ScotusDocumentKind.DOCKET else "application/pdf"
                 ),
                 byte_count=item.integrity.byte_count,
                 sha256=item.integrity.sha256,
@@ -1467,11 +1462,15 @@ class LiveStaticCaseProcessor:
         case_id = deterministic_case_id(source.term, source.primary_docket)
         observations: list[LegalObservation] = []
         urls: dict[UUID, str] = {}
-        common_blocks: list[LegalEvidenceBlock] = []
+        docket_blocks: list[LegalEvidenceBlock] = []
+        action_blocks: list[LegalEvidenceBlock] = []
         session_blocks: dict[UUID, list[LegalEvidenceBlock]] = {}
         parser_versions: dict[UUID, str] = {}
         extraction_rejection_codes: list[str] = []
-        all_digests = tuple(states[key].integrity.sha256 for key in sorted(states))
+        all_digests = (
+            *(states[key].integrity.sha256 for key in sorted(states)),
+            *(stable_disposition_fingerprint(item) for item in source.dispositions),
+        )
 
         for item in documents:
             outcome = outcomes[item.logical_key]
@@ -1500,15 +1499,17 @@ class LiveStaticCaseProcessor:
                         f"{parsed.parser_name}:{parsed.parser_version}:{parsed.config_hash}"
                     )
                 else:
-                    common_blocks.extend(
-                        _document_blocks(
-                            file,
-                            revision_id=revision_id,
-                            kind=item.kind,
-                            official_url=item.descriptor.official_url,
-                            primary_docket=source.primary_docket,
-                        )
+                    parsed_blocks = _document_blocks(
+                        file,
+                        revision_id=revision_id,
+                        kind=item.kind,
+                        official_url=item.descriptor.official_url,
+                        primary_docket=source.primary_docket,
                     )
+                    if item.kind is ScotusDocumentKind.DOCKET:
+                        docket_blocks.extend(parsed_blocks)
+                    else:
+                        action_blocks.extend(parsed_blocks)
 
         extraction_store = InMemoryLegalObservationStore()
         extraction_output_tokens = min(
@@ -1522,7 +1523,7 @@ class LiveStaticCaseProcessor:
                 sequence=session.sequence,
                 reargument=session.reargument,
             )
-            blocks = tuple((*session_blocks.get(argument_id, ()), *common_blocks))
+            blocks = tuple((*session_blocks.get(argument_id, ()), *docket_blocks))
             if not session_blocks.get(argument_id):
                 raise ValueError("required transcript did not produce evidence blocks")
             for index, window in enumerate(
@@ -1547,6 +1548,61 @@ class LiveStaticCaseProcessor:
                     "model": self.config.generation.model,
                     "provider": self.config.generation.provider,
                     "parser": parser_versions[argument_id],
+                    "prompt": OpenAILegalObservationExtractor.PROMPT_VERSION,
+                    "policy": POLICY_VERSION,
+                    "window": str(index),
+                }
+                executor = _BudgetedModelRequest(
+                    client=self.model_client,
+                    budget=budget,
+                    stage="extraction",
+                    document_digests=all_digests,
+                    processor_versions=versions,
+                    output_tokens=extraction_output_tokens,
+                    authorized_replay=authorized_replay,
+                )
+                extractor = OpenAILegalObservationExtractor(
+                    self.config.generation.model,
+                    self.model_client,
+                    maximum_output_tokens=extraction_output_tokens,
+                    request_executor=executor,
+                )
+                service = LegalExtractionService(extractor, extraction_store)
+                observations.extend(service.process(source_input))
+                extraction_rejection_codes.extend(service.rejection_codes)
+        if not source.sessions or action_blocks:
+            document_kinds = {item.kind for item in documents}
+            if ScotusDocumentKind.DOCKET not in document_kinds:
+                raise DocumentCollectionError(
+                    "disposition-only case is missing its official docket"
+                )
+            if not document_kinds.intersection(
+                {ScotusDocumentKind.ORDER, ScotusDocumentKind.OPINION}
+            ):
+                raise DocumentCollectionError(
+                    "disposition-only case is missing an official disposition"
+                )
+            for index, window in enumerate(
+                bounded_contexts(
+                    tuple((*docket_blocks, *action_blocks)),
+                    self.config.generation.maximum_context_characters,
+                )
+            ):
+                source_input = LegalExtractionInput(
+                    case_id=case_id,
+                    argument_id=None,
+                    blocks=window,
+                    parser_versions=(DOCUMENT_TEXT_VERSION, f"window:{index}"),
+                    document_revision_ids=tuple(
+                        dict.fromkeys(block.document_revision_id for block in window)
+                    ),
+                )
+                versions = {
+                    "endpoint": self.model_endpoint,
+                    "extractor": LegalExtractionService.SCHEMA_VERSION,
+                    "model": self.config.generation.model,
+                    "provider": self.config.generation.provider,
+                    "parser": DOCUMENT_TEXT_VERSION,
                     "prompt": OpenAILegalObservationExtractor.PROMPT_VERSION,
                     "policy": POLICY_VERSION,
                     "window": str(index),
@@ -1621,18 +1677,19 @@ class LiveStaticCaseProcessor:
             cast(datetime, self.discovery.now),
             reargued=any(item.reargument for item in sessions),
         )
-        kinds_changed = {
-            ScotusDocumentKind(states[key].document_kind) for key in changed_keys
-        }
+        kinds_changed = {ScotusDocumentKind(states[key].document_kind) for key in changed_keys}
         status = correlated.aggregate.status
-        if any(item.reargument for item in sessions):
-            status = ScotusCaseStatus.REARGUED
-        elif source.prior is not None and ScotusDocumentKind.TRANSCRIPT in kinds_changed:
+        if (
+            status not in {ScotusCaseStatus.DECIDED, ScotusCaseStatus.ORDER_ISSUED}
+            and source.prior is not None
+            and ScotusDocumentKind.TRANSCRIPT in kinds_changed
+            and not any(item.reargument for item in sessions)
+        ):
             status = ScotusCaseStatus.CORRECTED
 
         candidate = BriefCandidate(
             case_id=case_id,
-            argument_id=sessions[-1].argument_id,
+            argument_id=sessions[-1].argument_id if sessions else None,
             caption=source.caption,
             primary_docket=source.primary_docket,
             case_status=status,
@@ -1651,7 +1708,10 @@ class LiveStaticCaseProcessor:
         )
         if not decision.eligible:
             raise ValueError("case failed deterministic brief policy")
-        all_digests = tuple(states[key].integrity.sha256 for key in sorted(states))
+        all_digests = (
+            *(states[key].integrity.sha256 for key in sorted(states)),
+            *(stable_disposition_fingerprint(item) for item in source.dispositions),
+        )
         revision_number = len(source.prior.revisions) + 1 if source.prior else 1
         correction_note = _correction_note(source, kinds_changed)
         validation_feedback_codes: list[str] = []
@@ -1661,9 +1721,7 @@ class LiveStaticCaseProcessor:
             self.config.generation.maximum_brief_validation_attempts_per_case + 1,
         ):
             validation_feedback_code = (
-                ":".join(validation_feedback_codes)[:200]
-                if validation_feedback_codes
-                else None
+                ":".join(validation_feedback_codes)[:200] if validation_feedback_codes else None
             )
             request = _BudgetedModelRequest(
                 client=self.model_client,
@@ -1676,9 +1734,7 @@ class LiveStaticCaseProcessor:
                     "extractor": LegalExtractionService.SCHEMA_VERSION,
                     "model": self.config.generation.model,
                     "provider": self.config.generation.provider,
-                    "parser": _processor_contract(
-                        self.config, self.model_endpoint
-                    ).parser_version,
+                    "parser": _processor_contract(self.config, self.model_endpoint).parser_version,
                     "policy": POLICY_VERSION,
                     "prompt": self.config.generation.prompt_version,
                     **(
@@ -1695,12 +1751,12 @@ class LiveStaticCaseProcessor:
                 self.model_client,
                 maximum_sentence_words=self.config.generation.maximum_sentence_words,
                 maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-                response_schema=simple_brief_json_schema(
-                    len(candidate.argument_sessions)
+                response_schema=(
+                    simple_brief_json_schema(len(candidate.argument_sessions))
+                    if candidate.argument_sessions
+                    else disposition_only_brief_json_schema()
                 ),
-                maximum_output_tokens=(
-                    self.config.model_budget.maximum_output_tokens_per_call
-                ),
+                maximum_output_tokens=(self.config.model_budget.maximum_output_tokens_per_call),
                 reasoning_effort="none",
                 validation_feedback_code=validation_feedback_code,
                 request_executor=request,
@@ -1710,12 +1766,8 @@ class LiveStaticCaseProcessor:
                     generator,
                     InMemoryBriefRevisionStore(),
                     public_quotes=self.config.generation.public_quotes,
-                    maximum_sentence_words=(
-                        self.config.generation.maximum_sentence_words
-                    ),
-                    maximum_paragraph_words=(
-                        self.config.generation.maximum_paragraph_words
-                    ),
+                    maximum_sentence_words=(self.config.generation.maximum_sentence_words),
+                    maximum_paragraph_words=(self.config.generation.maximum_paragraph_words),
                 ).generate(
                     candidate,
                     decision,
@@ -1760,9 +1812,7 @@ class LiveStaticCaseProcessor:
                 correction_note=correction_note,
             ),
         )
-        typed_disposition_urls = {
-            item.official_url for item in source.dispositions
-        }
+        typed_disposition_urls = {item.official_url for item in source.dispositions}
         retained_legacy_urls = (
             set(source.prior.official_disposition_urls)
             if source.prior is not None
@@ -1803,9 +1853,9 @@ class LiveStaticCaseProcessor:
             term=source.term,
             primary_docket=source.primary_docket,
             caption=source.caption,
-            argument_date=max(item.argument_date for item in sessions),
+            argument_date=(max(item.argument_date for item in sessions) if sessions else None),
             case_status=status,
-            official_detail_url=source.sessions[-1].official_detail_url,
+            official_detail_url=(source.sessions[-1].official_detail_url if sessions else None),
             revision=revision,
             claims=decision.claims,
             argument_sessions=sessions,
@@ -1877,7 +1927,14 @@ def _document_blocks(
     if kind is ScotusDocumentKind.DOCKET:
         parser = _TextCollector()
         parser.feed(file.read().decode("utf-8", "replace"))
-        pages = ("\n".join(parser.values),)
+        docket_text = "\n".join(parser.values)
+        normalized = " ".join(
+            docket_text.replace("\N{EN DASH}", "-").replace("\N{EM DASH}", "-").upper().split()
+        )
+        docket = " ".join(primary_docket.upper().split())
+        if re.search(rf"(?<![0-9A-Z]){re.escape(docket)}(?![0-9A-Z])", normalized) is None:
+            raise DocumentCollectionError("official docket page does not identify the case docket")
+        pages = (docket_text,)
     else:
         file.seek(0)
         reader = PdfReader(file, strict=True)
@@ -1945,12 +2002,28 @@ def _public_metadata_changed(source: _CaseInput) -> bool:
         )
         for item in prior.arguments
     )
-    return current != published
+    current_dispositions = tuple(
+        (
+            item.kind.value,
+            item.official_url,
+            item.publication_date,
+            item.revision_date,
+        )
+        for item in source.dispositions
+    )
+    published_dispositions = tuple(
+        (
+            item.kind,
+            item.official_url,
+            item.publication_date,
+            item.revision_date,
+        )
+        for item in prior.dispositions
+    )
+    return current != published or current_dispositions != published_dispositions
 
 
-def _correction_note(
-    source: _CaseInput, changed: set[ScotusDocumentKind]
-) -> str | None:
+def _correction_note(source: _CaseInput, changed: set[ScotusDocumentKind]) -> str | None:
     if source.prior is None:
         return None
     if ScotusDocumentKind.OPINION in changed:
@@ -1976,9 +2049,7 @@ def _history_explanation(status: ScotusCaseStatus, update: bool) -> str:
     return "The Court held oral argument and published an official transcript."
 
 
-def _default_source_fetcher(
-    settings: ServiceSettings, config: ScotusConfig
-) -> SourceFetcher:
+def _default_source_fetcher(settings: ServiceSettings, config: ScotusConfig) -> SourceFetcher:
     return HttpxSourceFetcher(
         user_agent=settings.source_user_agent,
         maximum_bytes=config.documents.maximum_pdf_bytes,
@@ -1989,9 +2060,7 @@ def _default_source_fetcher(
     )
 
 
-def _default_document_client(
-    settings: ServiceSettings, config: ScotusConfig
-) -> httpx.Client:
+def _default_document_client(settings: ServiceSettings, config: ScotusConfig) -> httpx.Client:
     del settings
     return httpx.Client(
         follow_redirects=False,
@@ -2092,9 +2161,7 @@ class LiveStaticBatchAdapter:
             # budget wrapper accounts every attempted response body.
             # The orchestrator creates the budget, so adapters are rebound during the
             # discover call through this small proxy.
-            crawl_limiter = self.rate_limiter_factory(
-                config.discovery.crawl_delay_seconds
-            )
+            crawl_limiter = self.rate_limiter_factory(config.discovery.crawl_delay_seconds)
             budget_proxy = _DeferredBudgetFetcher(
                 raw_fetcher,
                 authorizer,
@@ -2146,12 +2213,16 @@ class LiveStaticBatchAdapter:
             except Exception as error:
                 category = failure_category(error)
                 if isinstance(error, ValidationError):
-                    detail = "ValidationError[" + ",".join(
-                        f"{'.'.join(str(part) for part in item['loc'])}:{item['type']}"
-                        for item in error.errors(
-                            include_url=False, include_context=False, include_input=False
-                        )[:10]
-                    ) + "]"
+                    detail = (
+                        "ValidationError["
+                        + ",".join(
+                            f"{'.'.join(str(part) for part in item['loc'])}:{item['type']}"
+                            for item in error.errors(
+                                include_url=False, include_context=False, include_input=False
+                            )[:10]
+                        )
+                        + "]"
+                    )
                 else:
                     detail = type(error).__name__
                 raise RuntimeError(

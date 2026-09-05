@@ -11,6 +11,7 @@ from typing import Any, cast
 import httpx
 import pytest
 from pypdf import PdfWriter
+from pypdf.generic import DecodedStreamObject, DictionaryObject, NameObject
 
 from ragchew.config import ProceedingsConfig, ScotusConfig, ServiceSettings
 from ragchew.proceedings.contracts import DocumentType
@@ -57,6 +58,34 @@ def _pdf(pages: int) -> bytes:
     return output.getvalue()
 
 
+def _text_pdf(*lines: str) -> bytes:
+    writer = PdfWriter()
+    page = writer.add_blank_page(width=612, height=792)
+    font = DictionaryObject(
+        {
+            NameObject("/Type"): NameObject("/Font"),
+            NameObject("/Subtype"): NameObject("/Type1"),
+            NameObject("/BaseFont"): NameObject("/Helvetica"),
+        }
+    )
+    page[NameObject("/Resources")] = DictionaryObject(
+        {NameObject("/Font"): DictionaryObject({NameObject("/F1"): writer._add_object(font)})}
+    )
+    escaped = [line.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)") for line in lines]
+    commands = ["BT /F1 12 Tf 72 720 Td"]
+    for index, line in enumerate(escaped):
+        if index:
+            commands.append("0 -18 Td")
+        commands.append(f"({line}) Tj")
+    commands.append("ET")
+    stream = DecodedStreamObject()
+    stream.set_data(" ".join(commands).encode("ascii"))
+    page[NameObject("/Contents")] = writer._add_object(stream)
+    output = io.BytesIO()
+    writer.write(output)
+    return output.getvalue()
+
+
 class MemoryStateStore(StaticStateStore):
     def __init__(self, root: Path, content: GeneratedContent | None = None) -> None:
         super().__init__(root)
@@ -86,7 +115,8 @@ class CourtFixture:
             ),
             "/docket/docketfiles/html/public/25-1.html": (
                 '"docket-1"',
-                b"<!doctype html><html><body>Whether the law limits agency power.</body></html>",
+                b"<!doctype html><html><body>Docket 25-1. "
+                b"Whether the law limits agency power.</body></html>",
                 "text/html",
             ),
         }
@@ -114,9 +144,7 @@ class CourtFixture:
             f"{rows}</table>"
         ).encode()
 
-    def source_get(
-        self, url: str, conditional: ConditionalRequest | None = None
-    ) -> SourceResponse:
+    def source_get(self, url: str, conditional: ConditionalRequest | None = None) -> SourceResponse:
         self.source_requests.append((url, conditional))
         if "argument_transcript" in url:
             if conditional and conditional.etag == self.index_etag:
@@ -167,9 +195,7 @@ class FixtureSourceFetcher:
         self.court = court
         self.closed = False
 
-    def get(
-        self, url: str, conditional: ConditionalRequest | None = None
-    ) -> SourceResponse:
+    def get(self, url: str, conditional: ConditionalRequest | None = None) -> SourceResponse:
         return self.court.source_get(url, conditional)
 
     def close(self) -> None:
@@ -202,9 +228,7 @@ class MockOpenAI:
     def __init__(self) -> None:
         self.chat = SimpleNamespace(completions=self)
         self.models = SimpleNamespace(
-            list=lambda: SimpleNamespace(
-                data=[SimpleNamespace(id="qwen3.8:27b")]
-            )
+            list=lambda: SimpleNamespace(data=[SimpleNamespace(id="qwen3.8:27b")])
         )
         self.requests: list[dict[str, Any]] = []
         self.closed = False
@@ -224,6 +248,70 @@ class MockOpenAI:
 
     @staticmethod
     def _extraction(evidence: list[dict[str, Any]]) -> dict[str, object]:
+        if not any("hear argument" in item["text"] for item in evidence):
+            docket = next(item for item in evidence if item["kind"] == "docket")
+            opinion = next(item for item in evidence if item["kind"] == "opinion")
+            return {
+                "observations": [
+                    {
+                        "observation_type": "procedural_posture",
+                        "legal_status": "described",
+                        "certainty": "direct",
+                        "raw_value": "The official docket identifies this emergency application.",
+                        "normalized_value": (
+                            "The official docket identifies this emergency application."
+                        ),
+                        "attribution": docket["attribution"],
+                        "speaker_name": None,
+                        "speaker_kind": "unknown",
+                        "identity_basis": "anonymous",
+                        "authority_citations": [],
+                        "confidence": 1,
+                        "evidence": [{"block_id": docket["block_id"], "quote": "Docket 25A810"}],
+                        "supersedes_observation_id": None,
+                    },
+                    {
+                        "observation_type": "case_background",
+                        "legal_status": "described",
+                        "certainty": "direct",
+                        "raw_value": "Emergency Applicant sought relief from Agency.",
+                        "normalized_value": "Emergency Applicant sought relief from Agency.",
+                        "attribution": opinion["attribution"],
+                        "speaker_name": None,
+                        "speaker_kind": "unknown",
+                        "identity_basis": "anonymous",
+                        "authority_citations": [],
+                        "confidence": 1,
+                        "evidence": [
+                            {
+                                "block_id": opinion["block_id"],
+                                "quote": "Emergency Applicant sought relief from Agency.",
+                            }
+                        ],
+                        "supersedes_observation_id": None,
+                    },
+                    {
+                        "observation_type": "holding",
+                        "legal_status": "court_held",
+                        "certainty": "direct",
+                        "raw_value": "The Court granted the application.",
+                        "normalized_value": "The Court granted the application.",
+                        "attribution": opinion["attribution"],
+                        "speaker_name": None,
+                        "speaker_kind": "unknown",
+                        "identity_basis": "anonymous",
+                        "authority_citations": [],
+                        "confidence": 1,
+                        "evidence": [
+                            {
+                                "block_id": opinion["block_id"],
+                                "quote": "The Court granted the application.",
+                            }
+                        ],
+                        "supersedes_observation_id": None,
+                    },
+                ]
+            }
         opening = next(item for item in evidence if "hear argument" in item["text"])
         advocate = next(item for item in evidence if "limits the agency" in item["text"])
         question = next(item for item in evidence if "Does the law" in item["text"])
@@ -296,6 +384,29 @@ class MockOpenAI:
     def _brief(user: dict[str, Any]) -> dict[str, object]:
         claims = user["claims"]
         all_ids = [claim["claim_id"] for claim in claims]
+        if not user["argument_sessions"]:
+            return {
+                "title": f"{user['caption']}: The Court granted the application",
+                "title_claim_ids": all_ids,
+                "dek": (
+                    "The official docket identifies the case, and the Court granted "
+                    "the application."
+                ),
+                "dek_claim_ids": all_ids,
+                "sections": [
+                    {
+                        "heading": "What the case is about",
+                        "paragraphs": ["The official docket identifies the case."],
+                        "claim_ids": all_ids,
+                    },
+                    {
+                        "heading": "What the Court did",
+                        "paragraphs": ["The Court granted the application."],
+                        "claim_ids": all_ids,
+                    },
+                ],
+                "argument_analyses": [],
+            }
         analyses = []
         for position, session in enumerate(user["argument_sessions"], 1):
             session_ids = [
@@ -348,9 +459,7 @@ def live_config() -> ScotusConfig:
     return config.model_copy(
         update={
             "enabled": True,
-            "generation": config.generation.model_copy(
-                update={"brief_generation_enabled": True}
-            ),
+            "generation": config.generation.model_copy(update={"brief_generation_enabled": True}),
             "publication": config.publication.model_copy(update={"enabled": True}),
             "approvals": approvals,
             "discovery": config.discovery.model_copy(
@@ -363,9 +472,7 @@ def live_config() -> ScotusConfig:
 def proceedings_config() -> ProceedingsConfig:
     config = ProceedingsConfig.from_yaml("config/proceedings.yaml")
     sources = dict(config.sources)
-    sources["supreme_court"] = sources["supreme_court"].model_copy(
-        update={"enabled": True}
-    )
+    sources["supreme_court"] = sources["supreme_court"].model_copy(update={"enabled": True})
     return config.model_copy(update={"sources": sources})
 
 
@@ -427,9 +534,7 @@ def test_live_adapter_checks_all_gates_before_factories_or_traffic(tmp_path: Pat
         raise AssertionError
 
     adapter = LiveStaticBatchAdapter(settings_factory=settings)
-    config = ScotusConfig.from_yaml("config/scotus.yaml").model_copy(
-        update={"enabled": False}
-    )
+    config = ScotusConfig.from_yaml("config/scotus.yaml").model_copy(update={"enabled": False})
     with pytest.raises(PublicationGateDenied):
         adapter.run(
             state_store=StaticStateStore(tmp_path / "state"),
@@ -526,7 +631,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert not list((tmp_path / "private").glob("ragchew-*"))
 
 
-def test_disposition_only_discovery_is_persisted_pending_without_model_call(
+def test_disposition_only_emergency_opinion_publishes_without_argument(
     tmp_path: Path,
 ) -> None:
     court = CourtFixture()
@@ -541,20 +646,166 @@ def test_disposition_only_discovery_is_persisted_pending_without_model_call(
             "25a810_example.pdf",
         )
     ]
+    court.documents["/docket/docketfiles/html/public/25A810.html"] = (
+        '"docket-a810"',
+        b"<!doctype html><html><body>Docket 25A810. Emergency Applicant v. Agency.</body></html>",
+        "text/html",
+    )
+    court.documents["/opinions/25pdf/25a810_example.pdf"] = (
+        '"opinion-a810"',
+        _text_pdf(
+            "No. 25A810 Emergency Applicant v. Agency.",
+            "Emergency Applicant sought relief from Agency.",
+            "The Court granted the application.",
+        ),
+        "application/pdf",
+    )
     model = MockOpenAI()
     result = run(tmp_path, MemoryStateStore(tmp_path / "state"), court, model)
 
-    assert result.no_public_change
-    assert result.pending_case_keys == ("2025-25a810",)
-    assert model.requests == []
+    assert result.publishable
+    assert result.pending_case_keys == ()
+    assert result.changed_case_keys == ("2025-25a810",)
+    assert result.content.projection is not None
+    case = result.content.projection.cases[0]
+    assert case.arguments == ()
+    assert case.argument_date is None
+    assert case.official_detail_url is None
+    assert case.case_status.value == "decided"
+    assert case.latest_court_document_date == datetime(2026, 3, 4, tzinfo=UTC)
+    assert [item.kind for item in case.dispositions] == ["per_curiam"]
+    names = [request["response_format"]["json_schema"]["name"] for request in model.requests]
+    assert names == ["scotus_legal_observations", "scotus_legal_brief"]
+    brief_schema = model.requests[-1]["response_format"]["json_schema"]["schema"]
+    assert brief_schema["properties"]["argument_analyses"]["maxItems"] == 0
     disposition = result.content.publication.dispositions[0]
     assert disposition.primary_docket == "25A810"
     assert disposition.publication_date == datetime(2026, 3, 4, tzinfo=UTC)
-    assert disposition.case_key == result.pending_case_keys[0]
+    assert disposition.case_key == result.changed_case_keys[0]
     slip_requests = [url for url, _ in court.source_requests if "slipopinion" in url]
-    assert slip_requests == [
-        "https://www.supremecourt.gov/opinions/slipopinion/25"
+    assert slip_requests == ["https://www.supremecourt.gov/opinions/slipopinion/25"]
+
+
+def test_disposition_revision_date_recomputes_immutable_public_revision(
+    tmp_path: Path,
+) -> None:
+    court = CourtFixture()
+    court.rows = []
+    court.slip_rows = [
+        (
+            "17",
+            "3/04/26",
+            "25A810",
+            "Emergency Applicant v. Agency",
+            "PC",
+            "25a810_example.pdf",
+        )
     ]
+    court.documents["/docket/docketfiles/html/public/25A810.html"] = (
+        '"docket-a810"',
+        b"<!doctype html><body>Docket 25A810. Emergency Applicant v. Agency.</body>",
+        "text/html",
+    )
+    court.documents["/opinions/25pdf/25a810_example.pdf"] = (
+        '"opinion-a810"',
+        _text_pdf(
+            "No. 25A810 Emergency Applicant v. Agency.",
+            "Emergency Applicant sought relief from Agency.",
+            "The Court granted the application.",
+        ),
+        "application/pdf",
+    )
+    store = MemoryStateStore(tmp_path / "state")
+    first = run(tmp_path, store, court, MockOpenAI())
+    store.content = first.content
+    original = first.content.revisions[("2025-25a810", 1)].serialized
+    first_receipts = CostReceiptBundle.model_validate_json(
+        (tmp_path / "private/public-cost-receipts.json").read_bytes()
+    )
+
+    court.slip_etag = '"slip-2"'
+    court.slip_html = lambda: (
+        b"<!doctype html><table><tr><th>R-</th><th>Date</th><th>Docket</th>"
+        b"<th>Name</th><th>J.</th><th>Citation</th></tr><tr><td>17</td>"
+        b"<td>3/04/26</td><td>25A810</td><td>"
+        b"<a href='/opinions/25pdf/25a810_example.pdf'>Emergency Applicant v. Agency</a>"
+        b"<br><b>Revisions</b>: <a href='/opinions/25pdf/25a810_diff.pdf'>3/05/26</a>"
+        b"</td><td>PC</td><td></td></tr></table>"
+    )
+    revised = run(tmp_path, store, court, MockOpenAI())
+
+    assert revised.changed_case_keys == ("2025-25a810",)
+    assert revised.content.projection is not None
+    case = revised.content.projection.cases[0]
+    assert [item.revision_number for item in case.revisions] == [1, 2]
+    assert case.dispositions[0].revision_date == datetime(2026, 3, 5, tzinfo=UTC)
+    assert case.latest_court_document_date == datetime(2026, 3, 5, tzinfo=UTC)
+    assert revised.content.revisions[("2025-25a810", 1)].serialized == original
+    revised_receipts = CostReceiptBundle.model_validate_json(
+        (tmp_path / "private/public-cost-receipts.json").read_bytes()
+    )
+    assert {item.input_fingerprint for item in revised_receipts.receipts}.isdisjoint(
+        {item.input_fingerprint for item in first_receipts.receipts}
+    )
+    assert not list((tmp_path / "private").glob("ragchew-*"))
+
+
+def test_disposition_failure_is_case_local_and_preserves_pending_metadata(
+    tmp_path: Path,
+) -> None:
+    court = CourtFixture()
+    court.rows = []
+    court.slip_rows = [
+        ("16", "3/03/26", "25A800", "Missing v. Agency", "PC", "25a800.pdf"),
+        (
+            "17",
+            "3/04/26",
+            "25A810",
+            "Emergency Applicant v. Agency",
+            "PC",
+            "25a810_example.pdf",
+        ),
+    ]
+    court.documents["/opinions/25pdf/25a800.pdf"] = (
+        '"opinion-a800"',
+        _text_pdf("No. 25A800 Missing v. Agency.", "The Court denied relief."),
+        "application/pdf",
+    )
+    court.documents["/docket/docketfiles/html/public/25A810.html"] = (
+        '"docket-a810"',
+        b"<!doctype html><body>Docket 25A810. Emergency Applicant v. Agency.</body>",
+        "text/html",
+    )
+    court.documents["/opinions/25pdf/25a810_example.pdf"] = (
+        '"opinion-a810"',
+        _text_pdf(
+            "No. 25A810 Emergency Applicant v. Agency.",
+            "Emergency Applicant sought relief from Agency.",
+            "The Court granted the application.",
+        ),
+        "application/pdf",
+    )
+
+    store = MemoryStateStore(tmp_path / "state")
+    result = run(tmp_path, store, court, MockOpenAI())
+
+    assert result.publishable
+    assert result.changed_case_keys == ("2025-25a810",)
+    assert result.pending_case_keys == ("2025-25a800",)
+    assert {item.case_key for item in result.content.publication.dispositions} == {
+        "2025-25a800",
+        "2025-25a810",
+    }
+    assert not list((tmp_path / "private").glob("ragchew-*"))
+
+    store.content = result.content
+    court.document_requests.clear()
+    retried = run(tmp_path, store, court, MockOpenAI())
+    assert retried.pending_case_keys == ("2025-25a800",)
+    assert any(
+        request.url.path == "/docket/docketfiles/html/public/25A800.html"
+        for request in court.document_requests
+    )
 
 
 def test_first_slip_poll_ignores_legacy_generic_opinion_checkpoint(
@@ -597,18 +848,14 @@ def test_first_slip_poll_ignores_legacy_generic_opinion_checkpoint(
         "slip-opinions:2025",
     }
     slip_conditional = next(
-        conditional
-        for url, conditional in court.source_requests
-        if "slipopinion" in url
+        conditional for url, conditional in court.source_requests if "slipopinion" in url
     )
     assert slip_conditional == ConditionalRequest()
 
 
 def test_live_discovery_canonicalizes_multi_primary_consolidation() -> None:
     court = CourtFixture()
-    court.rows.append(
-        ("25A85", "Emergency Application", "4/21/26", "25A85.pdf")
-    )
+    court.rows.append(("25A85", "Emergency Application", "4/21/26", "25A85.pdf"))
     court.slip_rows = [
         (
             "5",
@@ -663,22 +910,14 @@ def test_brief_validation_gets_one_bounded_fixed_code_correction(
             payload = json.loads(completion.choices[0].message.content)
             user = json.loads(request["messages"][1]["content"])
             justice_ids = {
-                claim["claim_id"]
-                for claim in user["claims"]
-                if claim["type"] == "justice_question"
+                claim["claim_id"] for claim in user["claims"] if claim["type"] == "justice_question"
             }
             for analysis in payload["argument_analyses"]:
                 analysis["claim_ids"] = [
-                    claim_id
-                    for claim_id in analysis["claim_ids"]
-                    if claim_id not in justice_ids
+                    claim_id for claim_id in analysis["claim_ids"] if claim_id not in justice_ids
                 ]
             return SimpleNamespace(
-                choices=[
-                    SimpleNamespace(
-                        message=SimpleNamespace(content=json.dumps(payload))
-                    )
-                ]
+                choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(payload)))]
             )
 
     model = CorrectingModel()
@@ -703,12 +942,11 @@ def test_brief_validation_gets_one_bounded_fixed_code_correction(
     brief_requests = [
         request
         for request in model.requests
-        if request["response_format"]["json_schema"]["name"]
-        == "scotus_legal_brief"
+        if request["response_format"]["json_schema"]["name"] == "scotus_legal_brief"
     ]
-    assert "argument_breakdown_omits_justice_question" in brief_requests[1][
-        "messages"
-    ][0]["content"]
+    assert (
+        "argument_breakdown_omits_justice_question" in brief_requests[1]["messages"][0]["content"]
+    )
 
 
 def test_conditional_304_carries_exact_case_without_model_call(tmp_path: Path) -> None:
@@ -894,12 +1132,8 @@ def test_prior_reconstruction_preserves_typed_document_identity(tmp_path: Path) 
     case = case.model_copy(update={"official_disposition_urls": (order_url,)})
 
     candidate = _descriptor_for_public_argument(case, 0, (transcript, order))
-    assert [item.official_url for item in candidate.docket_documents] == [
-        case.official_docket_url
-    ]
-    assert [item.document_type for item in candidate.related_documents] == [
-        DocumentType.ORDER
-    ]
+    assert [item.official_url for item in candidate.docket_documents] == [case.official_docket_url]
+    assert [item.document_type for item in candidate.related_documents] == [DocumentType.ORDER]
     source = _CaseInput(
         case_key=public_case_key(case.term, case.primary_docket),
         term=case.term,
@@ -909,9 +1143,7 @@ def test_prior_reconstruction_preserves_typed_document_identity(tmp_path: Path) 
         dispositions=(),
         prior=case,
         document_logical_keys={
-            (DocumentType.OFFICIAL_TRANSCRIPT, transcript.official_url): (
-                transcript.logical_key
-            ),
+            (DocumentType.OFFICIAL_TRANSCRIPT, transcript.official_url): (transcript.logical_key),
             (DocumentType.ORDER, order_url): order.logical_key,
         },
     )
@@ -975,7 +1207,7 @@ def test_processor_migration_resumes_bounded_cases_before_global_promotion(
     )
     court.documents["/docket/docketfiles/html/public/25-2.html"] = (
         '"docket-2"',
-        b"<!doctype html><html><body>Second synthetic docket.</body></html>",
+        b"<!doctype html><html><body>Docket 25-2. Second synthetic docket.</body></html>",
         "text/html",
     )
     second = run(tmp_path, store, court, MockOpenAI())
@@ -988,17 +1220,13 @@ def test_processor_migration_resumes_bounded_cases_before_global_promotion(
     migrating = base.model_copy(
         update={
             "parser": base.parser.model_copy(update={"version": "2"}),
-            "runner_limits": base.runner_limits.model_copy(
-                update={"maximum_cases_per_run": 1}
-            ),
+            "runner_limits": base.runner_limits.model_copy(update={"maximum_cases_per_run": 1}),
         }
     )
     partial = run(tmp_path, store, court, MockOpenAI(), config=migrating)
     assert partial.content.publication.processor == old_processor
     assert len(partial.pending_case_keys) == 1
-    fingerprints = {
-        pointer.processor_sha256 for pointer in partial.content.publication.cases
-    }
+    fingerprints = {pointer.processor_sha256 for pointer in partial.content.publication.cases}
     assert len(fingerprints) == 2
 
     store.content = partial.content
@@ -1006,6 +1234,6 @@ def test_processor_migration_resumes_bounded_cases_before_global_promotion(
     assert completed.pending_case_keys == ()
     promoted = completed.content.publication.processor
     assert promoted is not None and promoted != old_processor
-    assert {
-        pointer.processor_sha256 for pointer in completed.content.publication.cases
-    } == {promoted.composite_sha256}
+    assert {pointer.processor_sha256 for pointer in completed.content.publication.cases} == {
+        promoted.composite_sha256
+    }

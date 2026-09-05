@@ -17,6 +17,7 @@ from psycopg_pool import ConnectionPool
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from ragchew.scotus.contracts import (
+    LEGAL_STATUS_BY_OBSERVATION_TYPE,
     AdvocateRole,
     LegalCertainty,
     LegalEvidenceRange,
@@ -113,9 +114,7 @@ class LegalObservationStore(Protocol):
     ) -> list[LegalObservation]: ...
 
 
-def transcript_turn_block(
-    turn: TranscriptTurn, official_url: str
-) -> LegalEvidenceBlock:
+def transcript_turn_block(turn: TranscriptTurn, official_url: str) -> LegalEvidenceBlock:
     return LegalEvidenceBlock(
         block_id=f"turn:{turn.turn_id}",
         document_revision_id=turn.document_revision_id,
@@ -271,7 +270,7 @@ class DeterministicTranscriptObservationExtractor:
 
 
 class OpenAILegalObservationExtractor:
-    PROMPT_VERSION = "scotus-legal-extraction-v5"
+    PROMPT_VERSION = "scotus-legal-extraction-v6"
 
     def __init__(
         self,
@@ -306,11 +305,24 @@ class OpenAILegalObservationExtractor:
         ]
         token_limit = {
             (
-                "max_completion_tokens"
-                if self.model_name.startswith("gpt-5")
-                else "max_tokens"
+                "max_completion_tokens" if self.model_name.startswith("gpt-5") else "max_tokens"
             ): self.maximum_output_tokens or omit
         }
+        disposition_only = source.argument_id is None
+        mode_instruction = (
+            "This case has no oral-argument session. Extract docket identity or case "
+            "background when explicit, and extract a holding only from opinion evidence "
+            "or an order only from order/opinion evidence. For a holding or order, copy the "
+            "exact quoted Court-action sentence into raw_value and either copy it unchanged "
+            "into normalized_value or use null. Do not invent an oral argument, "
+            "advocate exchange, justice question, party, requested result, winner, or "
+            "disposition wording. "
+            if disposition_only
+            else (
+                "Include a question-presented or procedural-posture item and an "
+                "advocate-contention or justice-question item when supported. "
+            )
+        )
         return {
             "model": self.model_name,
             "temperature": omit if self.model_name.startswith("gpt-5") else 0,
@@ -321,23 +333,21 @@ class OpenAILegalObservationExtractor:
                     "content": (
                         "/no_think\nExtract only legal observations explicitly supported by the "
                         "supplied official Supreme Court evidence. Attribute advocate claims and "
-                        "disputed "
-                        "facts. A justice's question is not a vote or holding. Transcript "
+                        "disputed facts. A justice's question is not a vote or holding. Transcript "
                         "evidence cannot establish a Supreme Court order, holding, judgment, "
                         "or disposition. "
                         "Return three or four independently useful observations when the "
                         "evidence supports them, or fewer (including an empty list) when it "
-                        "does not. Include a question-presented or procedural-posture item and "
-                        "an advocate-contention or justice-question item when supported. Copy "
-                        "block_id exactly. Copy quote as "
-                        "one exact, contiguous substring from that block without correcting "
-                        "spacing, punctuation, capitalization, or transcription errors. Copy "
-                        "speaker_name, speaker_kind, identity_basis, and attribution exactly "
-                        "from the block; use null, unknown, or anonymous when the block does "
-                        "not supply them. Leave authority_citations empty unless each citation "
-                        "appears verbatim in the same evidence block. Keep raw_value and "
-                        "normalized_value to one sentence of at most 40 words each. Use one "
-                        "evidence block per observation and quote no more than 30 words."
+                        "does not. "
+                        + mode_instruction
+                        + "Copy block_id exactly. Copy quote as one exact, contiguous substring "
+                        "from that block without correcting spacing, punctuation, capitalization, "
+                        "or transcription errors. Copy speaker_name, speaker_kind, identity_basis, "
+                        "and attribution exactly from the block; use null, unknown, or anonymous "
+                        "when the block does not supply them. Leave authority_citations empty "
+                        "unless each citation appears verbatim in the same evidence block. Keep "
+                        "raw_value and normalized_value to one sentence of at most 40 words each. "
+                        "Use one evidence block per observation and quote no more than 30 words."
                     ),
                 },
                 {
@@ -418,10 +428,54 @@ _CASE_CITATION = re.compile(
 )
 _STATUTE = re.compile(r"\b\d+\s+U\.\s*S\.\s*C\.\s*§?\s*\d+[A-Za-z0-9().-]*\b", re.I)
 _VOTE_PREDICTION = re.compile(
-    "\\b(?:will|likely to|expected to)\\s+(?:vote|rule|hold)|"
-    "\\b\\d\\s*[-\\N{EN DASH}]\\s*\\d\\b",
+    "\\b(?:will|likely to|expected to)\\s+(?:vote|rule|hold)|\\b\\d\\s*[-\\N{EN DASH}]\\s*\\d\\b",
     re.IGNORECASE,
 )
+_GROUNDED_ACTION = re.compile(
+    r"\b(?:hold|held|order|ordered|grant|granted|deny|denied|affirm|affirmed|"
+    r"reverse|reversed|vacate|vacated|remand|remanded|dismiss|dismissed|stay|"
+    r"stayed|enjoin|enjoined)\b",
+    re.IGNORECASE,
+)
+_ACTION_ROOT = {
+    "held": "hold",
+    "ordered": "order",
+    "granted": "grant",
+    "denied": "deny",
+    "affirmed": "affirm",
+    "reversed": "reverse",
+    "vacated": "vacate",
+    "remanded": "remand",
+    "dismissed": "dismiss",
+    "stayed": "stay",
+    "enjoined": "enjoin",
+}
+_GROUNDED_NAME = re.compile(
+    r"\b[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}-]+"
+    r"(?:\s+(?:[A-Z]\.|[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}-]+)){1,3}\b"
+)
+_LOWER_COURT_ACTION = re.compile(
+    r"\b(?:court of appeals|district court|lower court|state court)\b"
+    r"[^.!?]{0,100}\b(?:held|ordered|granted|denied|affirmed|reversed|vacated)\b",
+    re.IGNORECASE,
+)
+_SUPREME_COURT_ACTION = re.compile(
+    r"\b(?:we (?:hold|conclude|grant|deny|affirm|reverse|vacate|order)|"
+    r"(?:this |the )Court (?:holds?|held|orders?|ordered|grants?|granted|denies|denied|"
+    r"affirms?|affirmed|reverses?|reversed|vacates?|vacated)|"
+    r"(?:application|petition|motion|stay|judgment) (?:is |are )?"
+    r"(?:granted|denied|affirmed|reversed|vacated|stayed)|it is ordered)\b",
+    re.IGNORECASE,
+)
+
+
+def _action_roots(value: str) -> set[str]:
+    return {
+        _ACTION_ROOT.get(match.casefold(), match.casefold())
+        for match in _GROUNDED_ACTION.findall(value)
+    }
+
+
 _SENSITIVITY: tuple[tuple[ScotusSensitivity, re.Pattern[str]], ...] = (
     (ScotusSensitivity.MINOR, re.compile(r"\b(?:minor|child|juvenile)\b", re.I)),
     (ScotusSensitivity.VICTIM, re.compile(r"\b(?:victim|survivor)\b", re.I)),
@@ -437,7 +491,11 @@ _SENSITIVITY: tuple[tuple[ScotusSensitivity, re.Pattern[str]], ...] = (
     (
         ScotusSensitivity.PRIVATE_NAME,
         re.compile(
-            r"\b(?:minor|victim|patient)\s+[A-Z][a-z]+\s+[A-Z][a-z]+\b"
+            r"\b(?:minor|child|juvenile|victim|survivor|patient)\b.{0,80}"
+            r"\b[A-Z][a-z]+\s+[A-Z][a-z]+\b|"
+            r"\b[A-Z][a-z]+\s+[A-Z][a-z]+\b.{0,80}"
+            r"\b(?:minor|child|juvenile|victim|survivor|patient)\b",
+            re.I,
         ),
     ),
 )
@@ -511,41 +569,53 @@ def find_supported_legal_references(text: str) -> tuple[str, ...]:
 
 
 def sensitivity_labels(text: str) -> tuple[ScotusSensitivity, ...]:
-    return tuple(label for label, pattern in _SENSITIVITY if pattern.search(text))
+    labels: set[ScotusSensitivity] = {
+        label
+        for label, pattern in _SENSITIVITY
+        if label is not ScotusSensitivity.PRIVATE_NAME and pattern.search(text)
+    }
+    protected_context = labels.intersection(
+        {
+            ScotusSensitivity.MINOR,
+            ScotusSensitivity.VICTIM,
+            ScotusSensitivity.MEDICAL,
+        }
+    )
+    if protected_context and _GROUNDED_NAME.search(text):
+        labels.add(ScotusSensitivity.PRIVATE_NAME)
+    return tuple(label for label in ScotusSensitivity if label in labels)
 
 
 def _validate_status(item: ProposedLegalObservation, kinds: set[ScotusDocumentKind]) -> None:
+    expected = LEGAL_STATUS_BY_OBSERVATION_TYPE[item.observation_type]
+    if item.legal_status is not expected:
+        raise LegalExtractionError(
+            "observation type and legal status are inconsistent",
+            safe_code="inconsistent_observation_status",
+        )
     if (
-        item.observation_type is LegalObservationType.JUSTICE_QUESTION
-        and item.legal_status is not LegalStatus.QUESTIONED
+        item.observation_type is LegalObservationType.HOLDING
+        and ScotusDocumentKind.OPINION not in kinds
     ):
-        raise LegalExtractionError("justice question must retain questioned status")
-    if (
-        item.observation_type is LegalObservationType.REQUESTED_DISPOSITION
-        and item.legal_status is not LegalStatus.REQUESTED
+        raise LegalExtractionError("holding requires official opinion evidence")
+    if item.observation_type is LegalObservationType.ORDER and not kinds.intersection(
+        {ScotusDocumentKind.ORDER, ScotusDocumentKind.OPINION}
     ):
-        raise LegalExtractionError("requested disposition must retain requested status")
-    if item.observation_type is LegalObservationType.HOLDING:
-        if item.legal_status is not LegalStatus.COURT_HELD:
-            raise LegalExtractionError("holding must use Court-held status")
-        if ScotusDocumentKind.OPINION not in kinds:
-            raise LegalExtractionError("holding requires official opinion evidence")
-    if item.observation_type is LegalObservationType.ORDER:
-        if item.legal_status is not LegalStatus.COURT_ORDERED:
-            raise LegalExtractionError("order must use Court-ordered status")
-        if not kinds.intersection({ScotusDocumentKind.ORDER, ScotusDocumentKind.OPINION}):
-            raise LegalExtractionError("Court order requires order/opinion evidence")
-    final_statuses = {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
-    if item.legal_status in final_statuses and kinds == {ScotusDocumentKind.TRANSCRIPT}:
-        raise LegalExtractionError("transcript evidence cannot establish final Court action")
+        raise LegalExtractionError("Court order requires order/opinion evidence")
 
 
 def validate_proposed(
     item: ProposedLegalObservation, blocks: dict[str, LegalEvidenceBlock]
 ) -> tuple[LegalEvidenceRange, ...]:
+    if len(item.evidence) != 1:
+        raise LegalExtractionError(
+            "each observation requires exactly one evidence quote",
+            safe_code="multiple_evidence_quotes",
+        )
     evidence: list[LegalEvidenceRange] = []
     kinds: set[ScotusDocumentKind] = set()
     combined_text: list[str] = []
+    combined_quotes: list[str] = []
     for pointer in item.evidence:
         block = blocks.get(pointer.block_id)
         if block is None:
@@ -555,6 +625,7 @@ def validate_proposed(
             raise LegalExtractionError("evidence quote does not exactly match source block")
         kinds.add(block.document_kind)
         combined_text.append(block.text_private)
+        combined_quotes.append(quote)
         evidence.append(
             LegalEvidenceRange(
                 document_revision_id=block.document_revision_id,
@@ -568,15 +639,56 @@ def validate_proposed(
         )
     _validate_status(item, kinds)
     text = " ".join(combined_text)
+    quoted_text = " ".join(combined_quotes)
+    proposed_text = item.normalized_value or item.raw_value
+    if _action_roots(proposed_text) - _action_roots(quoted_text):
+        raise LegalExtractionError(
+            "proposed legal action is absent from quoted evidence",
+            safe_code="unsupported_legal_action",
+        )
+    if item.observation_type in {
+        LegalObservationType.HOLDING,
+        LegalObservationType.ORDER,
+    }:
+        if (
+            item.raw_value.strip() != quoted_text.strip()
+            or (
+                item.normalized_value is not None
+                and item.normalized_value.strip() != item.raw_value.strip()
+            )
+        ):
+            raise LegalExtractionError(
+                "final Court action must remain exact quoted evidence",
+                safe_code="nonextractive_court_action",
+            )
+        if _LOWER_COURT_ACTION.search(quoted_text) or not _SUPREME_COURT_ACTION.search(
+            quoted_text
+        ):
+            raise LegalExtractionError(
+                "final action is not attributed to the Supreme Court",
+                safe_code="unsupported_court_attribution",
+            )
+    identity_support = " ".join(
+        value
+        for value in (quoted_text, item.speaker_name, item.attribution)
+        if value is not None
+    ).casefold()
+    if any(
+        name.casefold() not in identity_support
+        for name in _GROUNDED_NAME.findall(proposed_text)
+        if name.casefold() not in {"the court", "supreme court"}
+    ):
+        raise LegalExtractionError(
+            "proposed named party is absent from evidence",
+            safe_code="unsupported_named_party",
+        )
     normalized_text = normalize_legal_citation(text).lower()
     for citation in item.authority_citations:
         if normalize_legal_citation(citation).lower() not in normalized_text:
             raise LegalExtractionError("authority citation is absent from evidence")
     if item.speaker_name:
         referenced_ids = {pointer.block_id for pointer in item.evidence}
-        matching = [
-            block for block in blocks.values() if block.block_id in referenced_ids
-        ]
+        matching = [block for block in blocks.values() if block.block_id in referenced_ids]
         if not any(block.speaker_name == item.speaker_name for block in matching):
             raise LegalExtractionError("speaker name is not supported by evidence identity")
         if item.identity_basis is SpeakerIdentityBasis.ANONYMOUS:
@@ -766,9 +878,7 @@ class LegalExtractionService:
     SCHEMA_VERSION = "scotus-observation-v1"
     VOCABULARY_VERSION = "scotus-legal-v1"
 
-    def __init__(
-        self, extractor: LegalObservationExtractor, store: LegalObservationStore
-    ) -> None:
+    def __init__(self, extractor: LegalObservationExtractor, store: LegalObservationStore) -> None:
         self.extractor = extractor
         self.store = store
         self.rejection_codes: list[str] = []
@@ -803,12 +913,18 @@ class LegalExtractionService:
                 # Reject only the unsupported observation; other independently grounded
                 # observations in the structured batch remain usable. Retain only a fixed,
                 # payload-free code for aggregate operational diagnostics.
-                code = error.safe_code or re.sub(
-                    r"[^a-z0-9]+", "_", str(error).casefold()
-                ).strip("_")[:60]
+                code = (
+                    error.safe_code
+                    or re.sub(r"[^a-z0-9]+", "_", str(error).casefold()).strip("_")[:60]
+                )
                 self.rejection_codes.append(code or "grounding_rejected")
                 continue
             combined = " ".join(item.quote_private for item in evidence)
+            referenced_source_text = " ".join(
+                blocks[pointer.block_id].text_private
+                for pointer in proposed.evidence
+                if pointer.block_id in blocks
+            )
             normalized = proposed.normalized_value
             if proposed.observation_type is LegalObservationType.AUTHORITY_CITATION:
                 normalized = normalize_legal_citation(normalized or proposed.raw_value)
@@ -832,12 +948,22 @@ class LegalExtractionService:
                     speaker_kind=proposed.speaker_kind,
                     identity_basis=proposed.identity_basis,
                     authority_citations=tuple(
-                        normalize_legal_citation(value)
-                        for value in proposed.authority_citations
+                        normalize_legal_citation(value) for value in proposed.authority_citations
                     ),
                     confidence=proposed.confidence,
                     evidence=evidence,
-                    sensitivity=sensitivity_labels(combined),
+                    sensitivity=sensitivity_labels(
+                        " ".join(
+                            value
+                            for value in (
+                                combined,
+                                proposed.raw_value,
+                                proposed.normalized_value,
+                                referenced_source_text,
+                            )
+                            if value
+                        )
+                    ),
                     supersedes_observation_id=proposed.supersedes_observation_id,
                 )
             )

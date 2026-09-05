@@ -144,6 +144,43 @@ def test_reargument_and_transcript_correction_are_append_only_states() -> None:
     }
 
 
+def test_typed_final_court_action_outranks_reargument_and_correction() -> None:
+    case_id = uuid4()
+    prior = uuid4()
+    order = observation(
+        LegalObservationType.ORDER,
+        LegalStatus.COURT_ORDERED,
+        ScotusDocumentKind.OPINION,
+        case_id=case_id,
+        value="The Court denied the application.",
+        supersedes=prior,
+    )
+    ordered = ScotusCorrelationEngine().correlate(
+        case_id,
+        ScotusCaseStatus.REARGUED,
+        (order,),
+        NOW,
+        reargued=True,
+    )
+    assert ordered.aggregate.status is ScotusCaseStatus.ORDER_ISSUED
+
+    holding = observation(
+        LegalObservationType.HOLDING,
+        LegalStatus.COURT_HELD,
+        ScotusDocumentKind.OPINION,
+        case_id=case_id,
+        value="The Court held that the statute controls.",
+    )
+    decided = ScotusCorrelationEngine().correlate(
+        case_id,
+        ScotusCaseStatus.ORDER_ISSUED,
+        (order, holding),
+        NOW,
+        reargued=True,
+    )
+    assert decided.aggregate.status is ScotusCaseStatus.DECIDED
+
+
 def test_issue_grouping_uses_authorities_and_question_identity() -> None:
     case_id = uuid4()
     first = observation(
@@ -193,14 +230,8 @@ def test_similar_captions_cannot_merge_distinct_case_ids_and_replay_is_determini
         case_id=second_case,
         value="The court of appeals affirmed.",
     )
-    first = engine.correlate(
-        first_case, ScotusCaseStatus.DOCKETED, (first_observation,), NOW
-    )
-    second = engine.correlate(
-        second_case, ScotusCaseStatus.DOCKETED, (second_observation,), NOW
-    )
-    replay = engine.replay(
-        first_case, ScotusCaseStatus.DOCKETED, (first_observation,), NOW
-    )
+    first = engine.correlate(first_case, ScotusCaseStatus.DOCKETED, (first_observation,), NOW)
+    second = engine.correlate(second_case, ScotusCaseStatus.DOCKETED, (second_observation,), NOW)
+    replay = engine.replay(first_case, ScotusCaseStatus.DOCKETED, (first_observation,), NOW)
     assert first.aggregate.case_id != second.aggregate.case_id
     assert replay == first

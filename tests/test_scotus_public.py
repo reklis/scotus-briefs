@@ -26,6 +26,7 @@ from ragchew.scotus.public import (
 from ragchew.scotus.public_contracts import (
     PublicBriefRevisionSummary,
     PublicCaseHistoryEvent,
+    PublicDisposition,
     PublicSourceLink,
     public_case_slug,
 )
@@ -165,6 +166,85 @@ def public_case(*, correction: bool = False):  # type: ignore[no-untyped-def]
         ),
         revision_history=history,
         topics=("Administrative law", "Statutory interpretation"),
+    )
+
+
+def disposition_public_case():  # type: ignore[no-untyped-def]
+    claims = tuple(
+        item.model_copy(
+            update={
+                "argument_id": None,
+                "official_url": "https://www.supremecourt.gov/opinions/25pdf/25a810.pdf",
+                "public_source_label": "Official Opinion",
+            }
+        )
+        for item in (
+            claim(
+                "Docket 25A810 identifies Emergency Applicant v. Agency.",
+                LegalObservationType.PROCEDURAL_POSTURE,
+            ),
+            claim(
+                "The Court granted the application.",
+                LegalObservationType.HOLDING,
+                status=LegalStatus.COURT_HELD,
+            ),
+        )
+    )
+    ids = tuple(item.claim_id for item in claims)
+    revision = LegalBriefRevision(
+        brief_id=uuid4(),
+        case_id=CASE_ID,
+        argument_id=None,
+        revision_number=1,
+        maturity=BriefMaturity.POST_OPINION,
+        title="Emergency Applicant v. Agency: Court action",
+        title_claim_ids=ids,
+        dek="The Court granted the application.",
+        dek_claim_ids=ids,
+        sections=(
+            BriefSection(
+                heading="What the Court did",
+                paragraphs=("The Court granted the application.",),
+                claim_ids=ids,
+            ),
+        ),
+        argument_analyses=(),
+        claim_ids=ids,
+        created_at=NOW,
+        generator_model="brief-test",
+    )
+    disposition_date = datetime(2026, 3, 4, tzinfo=UTC)
+    return build_public_case(
+        term="2025",
+        primary_docket="25A810",
+        caption="Emergency Applicant v. Agency",
+        argument_date=None,
+        case_status=ScotusCaseStatus.DECIDED,
+        official_detail_url=None,
+        revision=revision,
+        claims=claims,
+        argument_sessions=(),
+        case_history=(
+            PublicCaseHistoryEvent(
+                status=ScotusCaseStatus.DECIDED,
+                changed_at=NOW,
+                explanation="An official Supreme Court opinion was added.",
+            ),
+        ),
+        revision_history=(
+            PublicBriefRevisionSummary(
+                revision_number=1,
+                maturity=BriefMaturity.POST_OPINION,
+                created_at=NOW,
+            ),
+        ),
+        official_dispositions=(
+            PublicDisposition(
+                kind="per_curiam",
+                official_url="https://www.supremecourt.gov/opinions/25pdf/25a810.pdf",
+                publication_date=disposition_date,
+            ),
+        ),
     )
 
 
@@ -319,6 +399,27 @@ def test_case_page_has_accessible_structure_sources_canonical_and_disclosures() 
     assert "not an official supreme court record" in lowered
     assert "not legal advice" in lowered
     assert "correction:" in lowered
+
+
+def test_disposition_only_page_is_complete_without_argument_markup() -> None:
+    case = disposition_public_case()
+    store = InMemoryScotusProjectionStore()
+    store.activate(NOW, NOW, (case,))
+    client = TestClient(create_scotus_public_app(store))
+
+    response = client.get(public_case_path(case))
+    assert response.status_code == 200
+    assert "Emergency Applicant v. Agency" in response.text
+    assert "published <time" in response.text
+    assert "2026-03-04" in response.text
+    assert "Official docket and case history" in response.text
+    assert "The arguments, in order" not in response.text
+    assert "Argument date" not in response.text
+    assert "official transcript" not in response.text.casefold()
+    assert "oral-argument detail" not in response.text
+    archive = client.get("/scotus/arguments/2026-03-04")
+    assert archive.status_code == 200
+    assert case.title not in archive.text
 
 
 def test_multiple_arguments_render_once_in_chronological_case_history() -> None:

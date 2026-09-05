@@ -36,6 +36,7 @@ from ragchew.scotus.extraction import (
     normalize_docket_list,
     normalize_docket_reference,
     normalize_legal_citation,
+    sensitivity_labels,
 )
 
 
@@ -299,6 +300,62 @@ def test_transcript_cannot_establish_holding_or_requested_reversal() -> None:
     assert observations[0].legal_status is LegalStatus.REQUESTED
 
 
+def test_opinion_rejects_invented_action_and_named_party_despite_real_quote() -> None:
+    evidence = block(
+        "The Court granted relief to Example Agency.",
+        kind=ScotusDocumentKind.OPINION,
+        speaker_name=None,
+    )
+    invented_action = proposed(
+        evidence,
+        "The Court granted relief to Example Agency.",
+        observation_type=LegalObservationType.HOLDING,
+        status=LegalStatus.COURT_HELD,
+        raw_value="The Court denied relief to Example Agency.",
+        speaker_name=None,
+    )
+    service = LegalExtractionService(
+        FakeExtractor([invented_action]), InMemoryLegalObservationStore()
+    )
+    assert service.process(source(evidence)) == []
+    assert service.rejection_codes == ["unsupported_legal_action"]
+
+    invented_party = invented_action.model_copy(
+        update={
+            "observation_type": LegalObservationType.CASE_BACKGROUND,
+            "legal_status": LegalStatus.DESCRIBED,
+            "raw_value": "Acme Corporation requested review.",
+            "normalized_value": None,
+        }
+    )
+    service = LegalExtractionService(
+        FakeExtractor([invented_party]), InMemoryLegalObservationStore()
+    )
+    assert service.process(source(evidence)) == []
+    assert service.rejection_codes == ["unsupported_named_party"]
+
+
+def test_lower_court_action_in_opinion_cannot_become_supreme_court_holding() -> None:
+    evidence = block(
+        "The Court of Appeals denied relief.",
+        kind=ScotusDocumentKind.OPINION,
+        speaker_name=None,
+    )
+    item = proposed(
+        evidence,
+        "The Court of Appeals denied relief.",
+        observation_type=LegalObservationType.HOLDING,
+        status=LegalStatus.COURT_HELD,
+        raw_value="The Court of Appeals denied relief.",
+        speaker_name=None,
+    )
+    service = LegalExtractionService(
+        FakeExtractor([item]), InMemoryLegalObservationStore()
+    )
+    assert service.process(source(evidence)) == []
+    assert service.rejection_codes == ["unsupported_court_attribution"]
+
+
 def test_opinion_can_support_holding() -> None:
     evidence = block(
         "We hold that the statute does not authorize the action.",
@@ -310,7 +367,7 @@ def test_opinion_can_support_holding() -> None:
         "We hold that the statute does not authorize the action.",
         observation_type=LegalObservationType.HOLDING,
         status=LegalStatus.COURT_HELD,
-        raw_value="The Court held that the statute does not authorize the action.",
+        raw_value="We hold that the statute does not authorize the action.",
         speaker_name=None,
     )
     assert process(source(evidence), item)[0].legal_status is LegalStatus.COURT_HELD
@@ -364,7 +421,13 @@ def test_normalization_reference_detection_and_sensitivity() -> None:
         ScotusSensitivity.MINOR,
         ScotusSensitivity.MEDICAL,
         ScotusSensitivity.HOME_ADDRESS,
+        ScotusSensitivity.PRIVATE_NAME,
     }
+
+    middle_name = sensitivity_labels(
+        "The record identifies Jane A. Doe as a minor and protected victim."
+    )
+    assert ScotusSensitivity.PRIVATE_NAME in middle_name
 
 
 def test_extraction_replay_is_idempotent() -> None:

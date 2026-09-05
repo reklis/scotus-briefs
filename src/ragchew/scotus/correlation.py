@@ -126,36 +126,30 @@ class ScotusCorrelationEngine:
         *,
         reargued: bool,
     ) -> ScotusCaseStatus:
-        if prior is ScotusCaseStatus.DECIDED:
-            return prior
         has_holding = any(
             item.observation_type is LegalObservationType.HOLDING
             and item.legal_status is LegalStatus.COURT_HELD
             and any(
-                evidence.document_kind is ScotusDocumentKind.OPINION
-                for evidence in item.evidence
+                evidence.document_kind is ScotusDocumentKind.OPINION for evidence in item.evidence
             )
             for item in observations
         )
-        if has_holding:
+        if has_holding or prior is ScotusCaseStatus.DECIDED:
             return ScotusCaseStatus.DECIDED
-        has_correction = any(item.supersedes_observation_id for item in observations)
-        if has_correction:
-            return ScotusCaseStatus.CORRECTED
-        if prior is ScotusCaseStatus.ORDER_ISSUED:
-            return prior
         has_order = any(
             item.observation_type is LegalObservationType.ORDER
             and item.legal_status is LegalStatus.COURT_ORDERED
             and any(
-                evidence.document_kind
-                in {ScotusDocumentKind.ORDER, ScotusDocumentKind.OPINION}
+                evidence.document_kind in {ScotusDocumentKind.ORDER, ScotusDocumentKind.OPINION}
                 for evidence in item.evidence
             )
             for item in observations
         )
-        if has_order:
+        if has_order or prior is ScotusCaseStatus.ORDER_ISSUED:
             return ScotusCaseStatus.ORDER_ISSUED
+        has_correction = any(item.supersedes_observation_id for item in observations)
+        if has_correction:
+            return ScotusCaseStatus.CORRECTED
         if reargued:
             return ScotusCaseStatus.REARGUED
         if any(

@@ -11,7 +11,6 @@ from typing import Any, Literal, Protocol
 from uuid import NAMESPACE_URL, UUID, uuid5
 
 from openai import OpenAI, omit
-from openai.lib._pydantic import to_strict_json_schema
 from psycopg import Connection
 from psycopg.rows import dict_row
 from psycopg_pool import ConnectionPool
@@ -27,6 +26,7 @@ from ragchew.scotus.contracts import (
     LegalStatus,
     ScotusApprovedClaim,
     ScotusCaseStatus,
+    ScotusDocumentKind,
     ScotusSensitivity,
 )
 
@@ -54,7 +54,7 @@ class CaseArgumentSession:
 @dataclass(frozen=True)
 class BriefCandidate:
     case_id: UUID
-    argument_id: UUID
+    argument_id: UUID | None
     caption: str
     primary_docket: str
     case_status: ScotusCaseStatus
@@ -97,7 +97,9 @@ class LegalBriefDraft(BaseModel):
     dek: str = Field(min_length=1, max_length=500)
     dek_claim_ids: tuple[UUID, ...] = Field(min_length=1)
     sections: tuple[DraftSection, ...] = Field(min_length=1)
-    argument_analyses: tuple[DraftArgumentAnalysis, ...] = Field(min_length=1)
+    # The disposition-only schema fixes this collection at zero. Argument cases are
+    # still checked against every real session by ``validate_brief_draft``.
+    argument_analyses: tuple[DraftArgumentAnalysis, ...] = ()
 
 
 def _normalize_private_schema_payload(
@@ -114,9 +116,7 @@ def _normalize_private_schema_payload(
         if not isinstance(values, list):
             return values
         return list(
-            dict.fromkeys(
-                value for value in values if isinstance(value, str) and value in allowed
-            )
+            dict.fromkeys(value for value in values if isinstance(value, str) and value in allowed)
         )
 
     payload["title_claim_ids"] = supported(payload.get("title_claim_ids"))
@@ -133,15 +133,13 @@ def _normalize_private_schema_payload(
                 continue
             analysis["claim_ids"] = supported(analysis.get("claim_ids"))
             if index < len(candidate.argument_sessions):
-                analysis["argument_id"] = str(
-                    candidate.argument_sessions[index].argument_id
-                )
+                analysis["argument_id"] = str(candidate.argument_sessions[index].argument_id)
     return payload
 
 
 def simple_brief_json_schema(argument_count: int = 1) -> dict[str, Any]:
-    if not 1 <= argument_count <= 10:
-        raise ValueError("brief schema argument count must be between one and ten")
+    if not 0 <= argument_count <= 10:
+        raise ValueError("brief schema argument count must be between zero and ten")
     claim_ids = {
         "type": "array",
         "items": {"type": "string", "maxLength": 36},
@@ -211,6 +209,15 @@ def simple_brief_json_schema(argument_count: int = 1) -> dict[str, Any]:
     }
 
 
+def disposition_only_brief_json_schema() -> dict[str, Any]:
+    """Return the strict zero-analysis schema for a case with no real argument."""
+    schema = simple_brief_json_schema(0)
+    sections = schema["properties"]["sections"]
+    sections["minItems"] = 2
+    sections["maxItems"] = 5
+    return schema
+
+
 class LegalBriefGenerator(Protocol):
     model_name: str
 
@@ -231,7 +238,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v26"
+    PROMPT_VERSION = "scotus-brief-plain-language-v27"
 
     def __init__(
         self,
@@ -268,9 +275,7 @@ class OpenAILegalBriefGenerator:
         claims: tuple[ScotusApprovedClaim, ...],
         maturity: BriefMaturity,
     ) -> LegalBriefDraft:
-        sessions = {
-            session.argument_id: session for session in candidate.argument_sessions
-        }
+        sessions = {session.argument_id: session for session in candidate.argument_sessions}
         ledger = [
             {
                 "claim_id": str(claim.claim_id),
@@ -295,6 +300,7 @@ class OpenAILegalBriefGenerator:
             }
             for claim in claims
         ]
+        disposition_only = not candidate.argument_sessions
         response_format: Any = (
             {
                 "type": "json_schema",
@@ -302,7 +308,11 @@ class OpenAILegalBriefGenerator:
                     "name": "scotus_legal_brief",
                     "strict": True,
                     "schema": self.response_schema
-                    or to_strict_json_schema(LegalBriefDraft),
+                    or (
+                        disposition_only_brief_json_schema()
+                        if disposition_only
+                        else simple_brief_json_schema(len(candidate.argument_sessions))
+                    ),
                 },
             }
             if self.strict_json_schema
@@ -319,11 +329,34 @@ class OpenAILegalBriefGenerator:
             if not self.strict_json_schema
             else ""
         )
+        case_mode_instruction = (
+            "This is a disposition-only case with no oral-argument session. Return two to five "
+            "supported sections and emit exactly zero "
+            "argument analyses. Never claim or imply that oral argument occurred, that a "
+            "transcript exists, that counsel made an argument, or that a justice asked or "
+            "tested a question. Use party names and describe a result only when the cited "
+            "approved claims explicitly support them. Omit unavailable detail instead of "
+            "adding filler about a missing record or future details. Focus on supported case "
+            "background and the Court's action. "
+            if disposition_only
+            else (
+                "Produce one argument analysis for every supplied argument session, in order. "
+                "Explain what each side was asking the Court to do, the reasoning each side "
+                "offered, what assumptions the justices tested, and what a later reargument "
+                "changed or revisited when supported. "
+            )
+        )
+        section_instruction = (
+            "Return two to five supported sections with one short paragraph each. "
+            if disposition_only
+            else (
+                "Return five sections with one paragraph each and exactly two short "
+                "paragraphs for each supplied argument session. "
+            )
+        )
         token_limit = {
             (
-                "max_completion_tokens"
-                if self.model_name.startswith("gpt-5")
-                else "max_tokens"
+                "max_completion_tokens" if self.model_name.startswith("gpt-5") else "max_tokens"
             ): self.maximum_output_tokens or omit
         }
         request: dict[str, Any] = dict(
@@ -341,21 +374,17 @@ class OpenAILegalBriefGenerator:
                         "official case caption; never use a generic heading as the title. Put "
                         "citations only in the matching "
                         "claim_ids arrays, never in public prose. Use direct everyday language, "
-                        "active voice, concrete explanations, and short paragraphs. Return five "
-                        "sections with one paragraph each and exactly two short paragraphs for "
-                        "each supplied argument session. Keep every "
-                        f"sentence at or below {self.maximum_sentence_words} words and every "
+                        "active voice, concrete explanations, and short paragraphs. "
+                        + section_instruction
+                        + f"Keep every sentence at or below {self.maximum_sentence_words} words "
+                        "and every "
                         f"paragraph at or below {self.maximum_paragraph_words} words. Do not "
                         "write like a court filing or law-school outline. Avoid labels such as "
                         "petitioner and respondent when a party name or plain description works. "
                         "If a legal concept is unavoidable, explain immediately what it means "
                         "for this case. Prefer headings such as 'What this case is about', 'How "
-                        "the case got here', 'What each side wants', 'What each side says', 'What "
-                        "the justices asked', 'Why it matters', and 'What happens next'. Produce "
-                        "one argument analysis for every supplied argument session, in order. "
-                        "Explain what each side was asking the Court to do, the reasoning each "
-                        "side offered, what assumptions the justices tested, and what a later "
-                        "reargument changed or revisited when supported. When the ledger has a "
+                        "the case got here', 'What the Court did', 'Why it matters', and 'What "
+                        "happens next'. " + case_mode_instruction + "When the ledger has a "
                         "question presented, procedural posture, advocate contention, or justice "
                         "question, the output must use at least one claim of each available type. "
                         "Copy every claim ID exactly from the supplied ledger. Cite only claims "
@@ -369,8 +398,8 @@ class OpenAILegalBriefGenerator:
                         "establish that advocate's side; do not infer one. "
                         "Do not rank winners. Omit unsupported sections. Attribute each "
                         "side's claims and disputed facts. Never fill in a missing side, argument, "
-                        "or fact with what it likely said; state that the approved record does not "
-                        "support the detail. Do not add a person's name, address, medical detail, "
+                        "or fact with what it likely said; omit unsupported detail. Do not add a "
+                        "person's name, address, medical detail, "
                         "identifier, docket, or citation unless it appears in the supporting "
                         "claim's public value. Paraphrase the evidence and do not use quotation "
                         "marks or direct quotations anywhere in the output. A question is not a "
@@ -413,11 +442,7 @@ class OpenAILegalBriefGenerator:
                             ],
                             "claims": ledger,
                             **(
-                                {
-                                    "required_output_schema": (
-                                        LegalBriefDraft.model_json_schema()
-                                    )
-                                }
+                                {"required_output_schema": (LegalBriefDraft.model_json_schema())}
                                 if not self.strict_json_schema
                                 else {}
                             ),
@@ -435,9 +460,7 @@ class OpenAILegalBriefGenerator:
         )
         choices = getattr(completion, "choices", ())
         if not choices:
-            raise BriefValidationError(
-                "brief model returned no choice", safe_code="empty_choice"
-            )
+            raise BriefValidationError("brief model returned no choice", safe_code="empty_choice")
         choice = choices[0]
         content = getattr(getattr(choice, "message", None), "content", None)
         if not content:
@@ -451,14 +474,10 @@ class OpenAILegalBriefGenerator:
                 stripped = "\n".join(lines[1:-1])
         try:
             if self.response_schema is not None:
-                payload = _normalize_private_schema_payload(
-                    json.loads(stripped), candidate, claims
-                )
+                payload = _normalize_private_schema_payload(json.loads(stripped), candidate, claims)
                 draft = _plain_language_draft(LegalBriefDraft.model_validate(payload))
             else:
-                draft = _plain_language_draft(
-                    LegalBriefDraft.model_validate_json(stripped)
-                )
+                draft = _plain_language_draft(LegalBriefDraft.model_validate_json(stripped))
         except (json.JSONDecodeError, ValidationError):
             if getattr(choice, "finish_reason", None) == "length":
                 raise BriefValidationError(
@@ -517,11 +536,10 @@ class OpenAILegalBriefGenerator:
         return draft
 
 
-_ADDRESS = re.compile(
-    r"\b\d{1,5}\s+[A-Z][A-Za-z ]+\s(?:Street|Road|Avenue|Drive)\b"
-)
+_ADDRESS = re.compile(r"\b\d{1,5}\s+[A-Z][A-Za-z ]+\s(?:Street|Road|Avenue|Drive)\b")
 _PRIVATE_NAME = re.compile(
-    r"\b(?:minor|victim|patient)\s+[A-Z][a-z]+\s+[A-Z][a-z]+\b"
+    r"\b[A-Z][A-Za-z'\N{RIGHT SINGLE QUOTATION MARK}-]+"
+    r"(?:\s+(?:[A-Z]\.|[A-Z][A-Za-z'\N{RIGHT SINGLE QUOTATION MARK}-]+)){1,3}\b"
 )
 _PREDICTION = re.compile(
     r"\b(?:likely to|expected to|appears poised to)\s+(?:vote|rule|hold|win|lose)|"
@@ -587,9 +605,7 @@ _STATUTORY_EXPLANATION = re.compile(
     r"\bCongress\b.*\b(?:power|permission|allowed|allows|gave|gives|granted)\b",
     re.IGNORECASE,
 )
-_ADVOCATE_NAME = re.compile(
-    r"^\s*(Mr|Ms|General)\.?\s+([A-Za-z'\u2019\N{EN DASH}-]+)", re.I
-)
+_ADVOCATE_NAME = re.compile(r"^\s*(Mr|Ms|General)\.?\s+([A-Za-z'\u2019\N{EN DASH}-]+)", re.I)
 _REQUESTED_ACTION = re.compile(
     r"\b(?:ask(?:s|ed)?|request(?:s|ed)?|want(?:s|ed)?|urge(?:s|d)?|should)\b"
     r"[^.!?]{0,80}\b(?:affirmed|reversed|vacated|ordered)\b",
@@ -608,6 +624,115 @@ _LOWER_COURT_ACTION = re.compile(
     r"\b(?:lower|appeals|appellate|trial|district) court\b",
     re.IGNORECASE,
 )
+_INVENTED_ORAL_ARGUMENT = re.compile(
+    r"\b(?:oral argument|argument session|argument transcript|official transcript|"
+    r"counsel (?:argued|said|told|urged)|(?:a |the )?justice(?:s)? "
+    r"(?:asked|questioned|tested)|during argument|at argument)\b",
+    re.IGNORECASE,
+)
+_UNSUPPORTED_FILLER = re.compile(
+    r"\b(?:the (?:approved )?record does not (?:say|support)|"
+    r"details? (?:are|is) (?:not available|unavailable|unknown)|"
+    r"more details? may (?:emerge|follow)|information is unavailable)\b",
+    re.IGNORECASE,
+)
+_NAMED_PHRASE = re.compile(
+    r"\b[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}-]+"
+    r"(?:\s+[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}-]+)+\b"
+)
+_CAPITALIZED_WORD = re.compile(r"\b[A-Z][A-Za-z'\N{RIGHT SINGLE QUOTATION MARK}-]{2,}\b")
+_CAPITALIZED_EXEMPT = {
+    "a",
+    "an",
+    "court",
+    "docket",
+    "how",
+    "official",
+    "supreme",
+    "the",
+    "this",
+    "what",
+    "why",
+}
+_ACTION_WORD = re.compile(
+    r"\b(?:hold|held|order(?:ed)?|grant(?:ed)?|deny|denied|reject(?:ed)?|"
+    r"allow(?:ed)?|affirm(?:ed)?|"
+    r"uphold|upheld|revers(?:e|ed)|vacat(?:e|ed)|remand(?:ed)?|dismiss(?:ed)?|"
+    r"stay(?:ed)?|enjoin(?:ed)?|block(?:ed)?|prevail(?:ed)?|won|lost)\b",
+    re.IGNORECASE,
+)
+_ACTION_CANONICAL = {
+    "hold": "hold",
+    "held": "hold",
+    "order": "order",
+    "ordered": "order",
+    "grant": "grant",
+    "granted": "grant",
+    "deny": "deny",
+    "denied": "deny",
+    "reject": "reject",
+    "rejected": "reject",
+    "allow": "allow",
+    "allowed": "allow",
+    "affirm": "affirm",
+    "affirmed": "affirm",
+    "uphold": "uphold",
+    "upheld": "uphold",
+    "reverse": "reverse",
+    "reversed": "reverse",
+    "vacate": "vacate",
+    "vacated": "vacate",
+    "remand": "remand",
+    "remanded": "remand",
+    "dismiss": "dismiss",
+    "dismissed": "dismiss",
+    "stay": "stay",
+    "stayed": "stay",
+    "enjoin": "enjoin",
+    "enjoined": "enjoin",
+    "block": "block",
+    "blocked": "block",
+    "prevail": "prevail",
+    "prevailed": "prevail",
+    "won": "win",
+    "lost": "lose",
+}
+
+
+def _action_words(value: str) -> set[str]:
+    return {_ACTION_CANONICAL[item.casefold()] for item in _ACTION_WORD.findall(value)}
+
+
+def _action_signatures(value: str) -> set[tuple[str, bool]]:
+    signatures: set[tuple[str, bool]] = set()
+    for match in _ACTION_WORD.finditer(value):
+        prefix = value[max(0, match.start() - 35) : match.start()]
+        negated = re.search(r"\b(?:not|never|did not|does not)\b[^.!?]{0,24}$", prefix, re.I)
+        signatures.add((_ACTION_CANONICAL[match.group(0).casefold()], bool(negated)))
+    return signatures
+
+
+def _unsupported_named_phrase(text: str, support: str, caption: str) -> bool:
+    allowed = f"{support} {caption}".casefold()
+    generic_prefixes = (
+        "what ",
+        "how ",
+        "why ",
+        "official ",
+        "supreme court",
+        "the court",
+    )
+    for match in _NAMED_PHRASE.findall(text):
+        lowered = match.casefold()
+        if lowered.startswith(generic_prefixes):
+            continue
+        if lowered not in allowed:
+            return True
+    return any(
+        word.casefold() not in _CAPITALIZED_EXEMPT
+        and word.casefold() not in allowed
+        for word in _CAPITALIZED_WORD.findall(text)
+    )
 
 
 def _attribution_parts(value: str | None) -> tuple[str | None, str | None]:
@@ -623,9 +748,7 @@ def _attribution_parts(value: str | None) -> tuple[str | None, str | None]:
         role = "respondent"
     name_match = _ADVOCATE_NAME.match(value)
     person = (
-        f"{name_match.group(1).casefold()} {name_match.group(2).casefold()}"
-        if name_match
-        else None
+        f"{name_match.group(1).casefold()} {name_match.group(2).casefold()}" if name_match else None
     )
     return role, person
 
@@ -641,8 +764,7 @@ def _position_claim_groups(
     attributed = tuple(
         (claim, *_attribution_parts(claim.attribution))
         for claim in claims
-        if claim.observation_type is LegalObservationType.ADVOCATE_CONTENTION
-        and claim.attribution
+        if claim.observation_type is LegalObservationType.ADVOCATE_CONTENTION and claim.attribution
     )
     groups: list[set[UUID]] = []
     for role in sorted({role for _, role, _ in attributed if role}):
@@ -715,9 +837,7 @@ def _plain_language_text(text: str) -> str:
         sentence = sentence_match.group(0)
         if len(_WORD.findall(sentence)) > 30 and " and to " in sentence:
             left, right = sentence.split(" and to ", 1)
-            sentence = (
-                f"{left.rstrip(' ,')}. The same side also seeks to {right.lstrip()}"
-            )
+            sentence = f"{left.rstrip(' ,')}. The same side also seeks to {right.lstrip()}"
         shortened.append(_split_long_sentence(sentence))
     return "".join(shortened)
 
@@ -725,9 +845,7 @@ def _plain_language_text(text: str) -> str:
 def _plain_language_draft(draft: LegalBriefDraft) -> LegalBriefDraft:
     grouped_sections: dict[str, DraftSection] = {}
     for section in draft.sections:
-        heading = re.sub(
-            r",?\s+continued$", "", _plain_language_text(section.heading), flags=re.I
-        )
+        heading = re.sub(r",?\s+continued$", "", _plain_language_text(section.heading), flags=re.I)
         paragraphs = tuple(
             value
             for paragraph in section.paragraphs
@@ -744,12 +862,8 @@ def _plain_language_draft(draft: LegalBriefDraft) -> LegalBriefDraft:
         else:
             grouped_sections[heading.casefold()] = existing.model_copy(
                 update={
-                    "paragraphs": tuple(
-                        dict.fromkeys((*existing.paragraphs, *paragraphs))
-                    )[:3],
-                    "claim_ids": tuple(
-                        dict.fromkeys((*existing.claim_ids, *section.claim_ids))
-                    ),
+                    "paragraphs": tuple(dict.fromkeys((*existing.paragraphs, *paragraphs)))[:3],
+                    "claim_ids": tuple(dict.fromkeys((*existing.claim_ids, *section.claim_ids))),
                 }
             )
     return draft.model_copy(
@@ -804,7 +918,19 @@ def _sanitize(value: str, sensitivity: tuple[ScotusSensitivity, ...]) -> str | N
     if ScotusSensitivity.PRIVATE_NAME in labels:
         sanitized = _PRIVATE_NAME.sub("a private individual", sanitized)
     if ScotusSensitivity.MINOR in labels:
-        sanitized = re.sub(r"\b(?:the )?minor\b", "a minor", sanitized, flags=re.I)
+        sanitized = re.sub(
+            r"\b(?:the )?(?:minor|child|juvenile)\b",
+            "a minor",
+            sanitized,
+            flags=re.I,
+        )
+    if ScotusSensitivity.VICTIM in labels:
+        sanitized = re.sub(
+            r"\b(?:the )?(?:victim|survivor)\b",
+            "a protected individual",
+            sanitized,
+            flags=re.I,
+        )
     if ScotusSensitivity.MEDICAL in labels:
         sanitized = re.sub(
             r"\b(?:diagnosis|medical treatment|treatment details)\b",
@@ -835,16 +961,18 @@ def evaluate_brief_candidate(
     policy_version: str = "scotus-brief-policy-v1",
 ) -> BriefPolicyDecision:
     reasons: list[str] = []
-    if not candidate.official_transcript_complete:
+    if candidate.argument_sessions and not candidate.official_transcript_complete:
         reasons.append("complete official transcript is required")
-    if not candidate.parser_complete:
+    if candidate.argument_sessions and not candidate.parser_complete:
         reasons.append("transcript parser did not complete safely")
     if candidate.privacy_blocking_failure:
         reasons.append("blocking privacy review failure")
     if not candidate.caption.strip() or not candidate.primary_docket.strip():
         reasons.append("case identity is incomplete")
-    if not candidate.argument_sessions:
-        reasons.append("case has no complete argument session")
+    if candidate.argument_sessions and candidate.argument_id is None:
+        reasons.append("argument case is missing its real argument anchor")
+    if not candidate.argument_sessions and candidate.argument_id is not None:
+        reasons.append("disposition-only case cannot have an argument anchor")
     eligible_observations = tuple(
         item for item in candidate.observations if item.confidence >= minimum_confidence
     )
@@ -858,6 +986,20 @@ def evaluate_brief_candidate(
     } - observed_sessions
     if missing_sessions:
         reasons.append("one or more argument sessions lack grounded observations")
+    if not candidate.argument_sessions:
+        if any(item.argument_id is not None for item in eligible_observations):
+            reasons.append("disposition-only evidence cannot reference an argument session")
+        evidence_kinds = {
+            evidence.document_kind for item in eligible_observations for evidence in item.evidence
+        }
+        if ScotusDocumentKind.DOCKET not in evidence_kinds:
+            reasons.append("disposition-only case lacks grounded docket evidence")
+        if not any(
+            item.observation_type in {LegalObservationType.HOLDING, LegalObservationType.ORDER}
+            and item.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
+            for item in eligible_observations
+        ):
+            reasons.append("disposition-only case lacks typed Court action evidence")
     claim_types = {item.observation_type for item in eligible_observations}
     if not claim_types.intersection(
         {LegalObservationType.QUESTION_PRESENTED, LegalObservationType.PROCEDURAL_POSTURE}
@@ -868,6 +1010,7 @@ def evaluate_brief_candidate(
             LegalObservationType.ADVOCATE_CONTENTION,
             LegalObservationType.JUSTICE_QUESTION,
             LegalObservationType.HOLDING,
+            LegalObservationType.ORDER,
         }
     ):
         reasons.append("no grounded argument, question, or holding")
@@ -955,6 +1098,22 @@ def _validate_public_text(
         raise BriefValidationError("public prose contains an internal claim marker")
     if _META_OUTPUT.search(text):
         raise BriefValidationError("public prose contains model or schema instructions")
+    if not candidate.argument_sessions:
+        if _INVENTED_ORAL_ARGUMENT.search(text):
+            raise BriefValidationError(
+                "disposition-only brief invents oral argument",
+                safe_code="invented_oral_argument",
+            )
+        if _UNSUPPORTED_FILLER.search(text):
+            raise BriefValidationError(
+                "disposition-only brief contains unsupported filler",
+                safe_code="unsupported_filler",
+            )
+        if _unsupported_named_phrase(text, support, candidate.caption):
+            raise BriefValidationError(
+                "disposition-only brief adds an unsupported party",
+                safe_code="unsupported_party",
+            )
     if re.search(r"\bthe\s+the\b", text, re.I):
         raise BriefValidationError("public prose contains a repeated article")
     for citation in _CITATION.findall(text):
@@ -983,15 +1142,30 @@ def _validate_public_text(
         claim.legal_status is LegalStatus.REQUESTED for claim in supporting_claims
     )
     lower_court_action_supported = _LOWER_COURT_ACTION.search(text) is not None and any(
-        claim.legal_status is LegalStatus.LOWER_COURT_HELD
-        for claim in supporting_claims
+        claim.legal_status is LegalStatus.LOWER_COURT_HELD for claim in supporting_claims
     )
     if final_words and not (
-        court_action_supported
-        or requested_action_supported
-        or lower_court_action_supported
+        court_action_supported or requested_action_supported or lower_court_action_supported
     ):
         raise BriefValidationError("text overstates final Court action")
+    stated_actions = _action_words(text)
+    supported_actions = _action_words(support)
+    final_action_support = " ".join(
+        claim.public_value
+        for claim in supporting_claims
+        if claim.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
+    )
+    if stated_actions and final_action_support:
+        action_inconsistent = _action_signatures(text) != _action_signatures(
+            final_action_support
+        )
+    else:
+        action_inconsistent = bool(stated_actions - supported_actions)
+    if action_inconsistent:
+        raise BriefValidationError(
+            "text changes or invents the supported disposition",
+            safe_code="unsupported_disposition",
+        )
     _validate_plain_language(
         text,
         maximum_sentence_words=maximum_sentence_words,
@@ -1059,21 +1233,37 @@ def validate_brief_draft(
         *draft.title_claim_ids,
         *draft.dek_claim_ids,
         *(claim_id for section in draft.sections for claim_id in section.claim_ids),
-        *(
-            claim_id
-            for analysis in draft.argument_analyses
-            for claim_id in analysis.claim_ids
-        ),
+        *(claim_id for analysis in draft.argument_analyses for claim_id in analysis.claim_ids),
     }
+    if not candidate.argument_sessions:
+        final_claim_ids = {
+            claim.claim_id
+            for claim in claims
+            if claim.observation_type in {LegalObservationType.HOLDING, LegalObservationType.ORDER}
+        }
+        docket_claim_ids = {
+            claim.claim_id
+            for claim in claims
+            if any(
+                observation.observation_id in claim.source_observation_ids
+                and any(
+                    evidence.document_kind is ScotusDocumentKind.DOCKET
+                    for evidence in observation.evidence
+                )
+                for observation in candidate.observations
+            )
+        }
+        if not final_claim_ids.intersection(used_claim_ids):
+            raise BriefValidationError("disposition-only brief omits the Court action")
+        if not docket_claim_ids.intersection(used_claim_ids):
+            raise BriefValidationError("disposition-only brief omits docket provenance")
     for required_type in (
         LegalObservationType.QUESTION_PRESENTED,
         LegalObservationType.PROCEDURAL_POSTURE,
         LegalObservationType.ADVOCATE_CONTENTION,
         LegalObservationType.JUSTICE_QUESTION,
     ):
-        matching = {
-            claim.claim_id for claim in claims if claim.observation_type is required_type
-        }
+        matching = {claim.claim_id for claim in claims if claim.observation_type is required_type}
         if matching and not matching.intersection(used_claim_ids):
             raise BriefValidationError(
                 f"brief omits available citizen context: {required_type.value}"
@@ -1085,9 +1275,7 @@ def validate_brief_draft(
         validate(section.heading, section.claim_ids)
         for paragraph in section.paragraphs:
             validate(paragraph, section.claim_ids)
-    expected_sessions = tuple(
-        session.argument_id for session in candidate.argument_sessions
-    )
+    expected_sessions = tuple(session.argument_id for session in candidate.argument_sessions)
     actual_sessions = tuple(item.argument_id for item in draft.argument_analyses)
     if actual_sessions != expected_sessions:
         raise BriefValidationError(
@@ -1099,9 +1287,7 @@ def validate_brief_draft(
             for claim_id in analysis.claim_ids
             if claim_id in claim_map
         ):
-            raise BriefValidationError(
-                "argument analysis uses a claim from a different session"
-            )
+            raise BriefValidationError("argument analysis uses a claim from a different session")
         analysis_ids = set(analysis.claim_ids)
         session_claims = tuple(
             claim for claim in claims if claim.argument_id == analysis.argument_id
@@ -1116,9 +1302,7 @@ def validate_brief_draft(
                 if claim.observation_type is required_type
             }
             if matching and not matching.intersection(analysis_ids):
-                raise BriefValidationError(
-                    f"argument breakdown omits {required_type.value}"
-                )
+                raise BriefValidationError(f"argument breakdown omits {required_type.value}")
         for matching in _position_claim_groups(session_claims):
             if not matching.intersection(analysis_ids):
                 raise BriefValidationError("argument breakdown omits one side")
@@ -1258,9 +1442,9 @@ class BriefGenerationService:
                 maximum_paragraph_words=self.maximum_paragraph_words,
             )
         except BriefValidationError as error:
-            safe_code = error.safe_code or re.sub(
-                r"[^a-z0-9]+", "_", str(error).casefold()
-            ).strip("_")[:80]
+            safe_code = (
+                error.safe_code or re.sub(r"[^a-z0-9]+", "_", str(error).casefold()).strip("_")[:80]
+            )
             raise BriefValidationError(str(error), safe_code=safe_code) from None
         brief_id = uuid5(NAMESPACE_URL, f"ragchew:scotus-case-brief:{candidate.case_id}")
         revision = LegalBriefRevision(
