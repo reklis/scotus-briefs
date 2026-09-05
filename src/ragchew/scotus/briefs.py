@@ -240,7 +240,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v28"
+    PROMPT_VERSION = "scotus-brief-plain-language-v29"
 
     def __init__(
         self,
@@ -336,8 +336,9 @@ class OpenAILegalBriefGenerator:
             "supported sections and emit exactly zero "
             "argument analyses. Never claim or imply that oral argument occurred, that a "
             "transcript exists, that counsel made an argument, or that a justice asked or "
-            "tested a question. Begin the title with the exact supplied caption. Outside that "
-            "exact caption, do not create, expand, shorten, or abbreviate any person, court, "
+            "tested a question. Set the title to exactly the supplied caption with no "
+            "subtitle. Outside that exact caption, do not create, expand, shorten, or "
+            "abbreviate any person, court, "
             "agency, organization, law, or party name; use a name only when its exact wording "
             "appears in the cited approved claim value. Describe a result only when the cited "
             "approved claims explicitly support it. Omit unavailable detail instead of "
@@ -532,11 +533,13 @@ class OpenAILegalBriefGenerator:
                     )
                 }
             )
-        if draft.title.strip().casefold() in {
+        if disposition_only or draft.title.strip().casefold() in {
             "what this case is about",
             "plain-language guide",
             "supreme court case explained",
         }:
+            # The official caption is the only deterministic zero-session title that
+            # cannot introduce an unsupported organization, acronym, or party label.
             draft = draft.model_copy(update={"title": candidate.caption})
         return draft
 
