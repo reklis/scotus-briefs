@@ -874,7 +874,7 @@ def test_disposition_generator_uses_compact_positive_role_aware_request() -> Non
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
     draft = disposition_draft(
         decision.claims,
-        paragraph="The Supreme Court granted the application.",
+        paragraph="The docket identifies the emergency application.",
     )
 
     class Completions:
@@ -900,9 +900,9 @@ def test_disposition_generator_uses_compact_positive_role_aware_request() -> Non
     prompt = messages[0]["content"]  # type: ignore[index]
     user_payload = json.loads(messages[1]["content"])  # type: ignore[index]
     assert prompt.startswith("/no_think")
-    assert len(prompt.split()) < 170
-    assert "requesting party, the lower court, or the Supreme Court" in prompt
-    assert "Give each action its own sentence" in prompt
+    assert len(prompt.split()) < 140
+    assert "only the supplied case background and legal issue" in prompt
+    assert "adds procedural history and the official outcome" in prompt
     assert "Never" not in prompt
     assert "Do not" not in prompt
     for priming in ("oral argument", "argument session", "transcript", "counsel", "justice"):
@@ -912,18 +912,30 @@ def test_disposition_generator_uses_compact_positive_role_aware_request() -> Non
     assert user_payload["caption"] == source.caption
     assert user_payload["docket"] == source.primary_docket
     assert user_payload["maturity"] == decision.maturity.value
+    assert all(
+        claim["status"] not in {"requested", "lower_court_held", "court_held", "court_ordered"}
+        for claim in user_payload["claims"]
+    )
     schema = completions.request["response_format"]["json_schema"]["schema"]  # type: ignore[index]
     assert schema["properties"]["argument_analyses"]["minItems"] == 0
     assert schema["properties"]["argument_analyses"]["maxItems"] == 0
     assert generated.title == source.caption
+    assert generated.dek == (
+        "The Supreme Court action states: The Court granted the application."
+    )
+    assert generated.sections[0].heading == "Official Court action"
+    assert generated.sections[0].paragraphs == (generated.dek,)
     assert generated.argument_analyses == ()
 
 
 def test_local_brief_schema_matches_exact_argument_count() -> None:
     analyses = simple_brief_json_schema(2)["properties"]["argument_analyses"]
     assert analyses["minItems"] == analyses["maxItems"] == 2
-    disposition_analyses = disposition_only_brief_json_schema()["properties"]["argument_analyses"]
+    disposition_schema = disposition_only_brief_json_schema()["properties"]
+    disposition_analyses = disposition_schema["argument_analyses"]
     assert disposition_analyses["minItems"] == disposition_analyses["maxItems"] == 0
+    assert disposition_schema["sections"]["minItems"] == 1
+    assert disposition_schema["sections"]["maxItems"] == 4
     with pytest.raises(ValueError, match="argument count"):
         simple_brief_json_schema(-1)
 

@@ -386,24 +386,16 @@ class MockOpenAI:
         all_ids = [claim["claim_id"] for claim in claims]
         if not user.get("argument_sessions"):
             return {
-                "title": f"{user['caption']}: The Court granted the application",
+                "title": user["caption"],
                 "title_claim_ids": all_ids,
-                "dek": (
-                    "The official docket identifies the case, and the Court granted "
-                    "the application."
-                ),
+                "dek": "The official docket identifies the case.",
                 "dek_claim_ids": all_ids,
                 "sections": [
                     {
                         "heading": "What the case is about",
                         "paragraphs": ["The official docket identifies the case."],
                         "claim_ids": all_ids,
-                    },
-                    {
-                        "heading": "What the Court did",
-                        "paragraphs": ["The Court granted the application."],
-                        "claim_ids": all_ids,
-                    },
+                    }
                 ],
                 "argument_analyses": [],
             }
@@ -601,9 +593,9 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     processor = result.content.publication.processor
     assert processor is not None
     assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
-    assert processor.policy_version == "scotus-brief-policy-v11"
+    assert processor.policy_version == "scotus-brief-policy-v12"
     assert processor.prompt_version == (
-        "scotus-brief-plain-language-v31;disposition=scotus-disposition-plain-language-v1"
+        "scotus-brief-plain-language-v31;disposition=scotus-disposition-plain-language-v2"
     )
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",
@@ -686,7 +678,13 @@ def test_disposition_only_emergency_opinion_publishes_without_argument(
     assert brief_schema["properties"]["argument_analyses"]["maxItems"] == 0
     brief_prompt = brief_request["messages"][0]["content"]
     brief_payload = json.loads(brief_request["messages"][1]["content"])
-    assert "requesting party, the lower court, or the Supreme Court" in brief_prompt
+    assert "only the supplied case background and legal issue" in brief_prompt
+    assert "adds procedural history and the official outcome" in brief_prompt
+    assert all(
+        claim["status"]
+        not in {"requested", "lower_court_held", "court_held", "court_ordered"}
+        for claim in brief_payload["claims"]
+    )
     assert "argument_sessions" not in brief_payload
     assert "position_group" not in json.dumps(brief_payload)
     assert all(

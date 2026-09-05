@@ -139,6 +139,88 @@ def _normalize_private_schema_payload(
     return payload
 
 
+def _compose_disposition_draft(
+    draft: LegalBriefDraft,
+    candidate: BriefCandidate,
+    claims: tuple[ScotusApprovedClaim, ...],
+    *,
+    maximum_sentence_words: int,
+    maximum_paragraph_words: int,
+) -> LegalBriefDraft:
+    """Attach formal Court action from an approved source-exact claim, not model prose."""
+    action_claims = tuple(
+        claim
+        for claim in claims
+        if claim.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
+    )
+    if not action_claims:
+        raise BriefPolicyError(
+            "disposition lacks a deterministic Court-action claim",
+            safe_code="missing_court_action",
+        )
+    action_claim = min(
+        action_claims,
+        key=lambda claim: (
+            -len(_action_signatures(claim.public_value)),
+            len(claim.public_value.split()),
+            str(claim.claim_id),
+        ),
+    )
+    action_text = f"The Supreme Court action states: {action_claim.public_value}"
+    if len(action_text) > 500:
+        raise BriefPolicyError(
+            "deterministic Court-action text exceeds the public summary bound",
+            safe_code="court_action_too_long",
+        )
+    try:
+        _validate_plain_language(
+            action_text,
+            maximum_sentence_words=maximum_sentence_words,
+            maximum_paragraph_words=maximum_paragraph_words,
+        )
+    except BriefValidationError as error:
+        raise BriefPolicyError(
+            "deterministic Court-action text exceeds a public language bound",
+            safe_code="court_action_too_long",
+        ) from error
+    title_claim = next(
+        (
+            claim
+            for claim in claims
+            if claim.legal_status is LegalStatus.DESCRIBED
+            and candidate.primary_docket.casefold() in claim.public_value.casefold()
+        ),
+        action_claim,
+    )
+    safe_headings = (
+        "What this case is about",
+        "The legal issue",
+        "Why this case reached the Court",
+        "Case background",
+    )
+    background_sections = tuple(
+        section.model_copy(update={"heading": safe_headings[index]})
+        for index, section in enumerate(draft.sections[:4])
+    )
+    return draft.model_copy(
+        update={
+            "title": candidate.caption,
+            "title_claim_ids": (title_claim.claim_id,),
+            "dek": action_text,
+            "dek_claim_ids": (action_claim.claim_id,),
+            "sections": (
+                DraftSection(
+                    heading="Official Court action",
+                    paragraphs=(action_text,),
+                    claim_ids=(action_claim.claim_id,),
+                ),
+                *background_sections,
+            ),
+            "argument_analyses": (),
+        }
+    )
+
+
 def simple_brief_json_schema(argument_count: int = 1) -> dict[str, Any]:
     if not 0 <= argument_count <= 10:
         raise ValueError("brief schema argument count must be between zero and ten")
@@ -212,11 +294,12 @@ def simple_brief_json_schema(argument_count: int = 1) -> dict[str, Any]:
 
 
 def disposition_only_brief_json_schema() -> dict[str, Any]:
-    """Return the strict zero-analysis schema for a case with no real argument."""
+    """Return the strict background-only schema for a case with no real argument."""
     schema = simple_brief_json_schema(0)
     sections = schema["properties"]["sections"]
-    sections["minItems"] = 2
-    sections["maxItems"] = 5
+    # A deterministic source-exact Court-action section is added after parsing.
+    sections["minItems"] = 1
+    sections["maxItems"] = 4
     return schema
 
 
@@ -241,7 +324,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-plain-language-v1"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-plain-language-v2"
 
     def __init__(
         self,
@@ -280,6 +363,26 @@ class OpenAILegalBriefGenerator:
     ) -> LegalBriefDraft:
         sessions = {session.argument_id: session for session in candidate.argument_sessions}
         disposition_only = not candidate.argument_sessions
+        model_claims = (
+            tuple(
+                claim
+                for claim in claims
+                if claim.legal_status
+                not in {
+                    LegalStatus.REQUESTED,
+                    LegalStatus.LOWER_COURT_HELD,
+                    LegalStatus.COURT_HELD,
+                    LegalStatus.COURT_ORDERED,
+                }
+            )
+            if disposition_only
+            else claims
+        )
+        if disposition_only and not model_claims:
+            raise BriefPolicyError(
+                "disposition has no non-action fact for model explanation",
+                safe_code="missing_background_claim",
+            )
         ledger = [
             {
                 "claim_id": str(claim.claim_id),
@@ -310,7 +413,7 @@ class OpenAILegalBriefGenerator:
                     else {}
                 ),
             }
-            for claim in claims
+            for claim in model_claims
         ]
         response_format: Any = (
             {
@@ -337,7 +440,7 @@ class OpenAILegalBriefGenerator:
                 "sections, and argument_analyses. Every section must have exactly heading, "
                 "paragraphs, and claim_ids. "
                 + (
-                    "Set argument_analyses to an empty array. Return two to five sections with "
+                    "Set argument_analyses to an empty array. Return one to four sections with "
                     "one short paragraph each."
                     if disposition_only
                     else (
@@ -356,19 +459,16 @@ class OpenAILegalBriefGenerator:
             else ""
         )
         disposition_prompt = (
-            "/no_think\nWrite a compact plain-language account of the supplied Supreme Court "
-            "disposition for a general reader. Use facts only from the approved claim ledger, "
-            "and copy supporting claim IDs into each title, dek, and paragraph's claim_ids "
-            "array. Set the title to exactly the supplied official caption. Return two to five "
-            "supported sections with one short paragraph each. Use direct everyday language, "
-            "active voice, and concrete explanations. "
+            "/no_think\nExplain only the supplied case background and legal issue for a general "
+            "reader. The application adds procedural history and the official outcome from "
+            "source-exact fields after this response. Copy supporting IDs into every title, "
+            "dek, and paragraph's claim_ids array. Set the title to exactly the supplied "
+            "official caption. Return one to four supported sections with one short paragraph "
+            "each. Use direct everyday language, active voice, and concrete explanations. "
             f"Keep each sentence at or below {self.maximum_sentence_words} words and each "
-            f"paragraph at or below {self.maximum_paragraph_words} words. Give each action its "
-            "own sentence and identify its actor as the requesting party, the lower court, or "
-            "the Supreme Court. Match each action and its negation to a cited claim with that "
-            "same role. Use a name only in the exact form found in a cited claim. Paraphrase "
-            "source facts, place citations in claim_ids arrays, and keep prose reader-facing. "
-            "Omit unavailable details and unsupported sections."
+            f"paragraph at or below {self.maximum_paragraph_words} words. Use a name only in "
+            "the exact form found in a cited fact. Paraphrase supplied facts, place citations "
+            "only in claim_ids arrays, and omit unavailable details."
             + feedback_instruction
             + format_instruction
         )
@@ -508,7 +608,9 @@ class OpenAILegalBriefGenerator:
                 stripped = "\n".join(lines[1:-1])
         try:
             if self.response_schema is not None:
-                payload = _normalize_private_schema_payload(json.loads(stripped), candidate, claims)
+                payload = _normalize_private_schema_payload(
+                    json.loads(stripped), candidate, model_claims
+                )
                 draft = _plain_language_draft(LegalBriefDraft.model_validate(payload))
             else:
                 draft = _plain_language_draft(LegalBriefDraft.model_validate_json(stripped))
@@ -562,23 +664,12 @@ class OpenAILegalBriefGenerator:
                 }
             )
         if disposition_only:
-            safe_headings = (
-                "What the Court did",
-                "What this case is about",
-                "Why this case reached the Court",
-                "What the order means",
-                "What happens next",
-            )
-            # Caption and navigation headings are deterministic metadata, not generated
-            # factual prose. Keeping names out of headings avoids model-created aliases.
-            draft = draft.model_copy(
-                update={
-                    "title": candidate.caption,
-                    "sections": tuple(
-                        section.model_copy(update={"heading": safe_headings[index]})
-                        for index, section in enumerate(draft.sections)
-                    ),
-                }
+            draft = _compose_disposition_draft(
+                draft,
+                candidate,
+                claims,
+                maximum_sentence_words=self.maximum_sentence_words,
+                maximum_paragraph_words=self.maximum_paragraph_words,
             )
         elif draft.title.strip().casefold() in {
             "what this case is about",
@@ -791,6 +882,10 @@ _ACTION_ROLE_CODES: dict[_ActionRole, str] = {
 
 
 def _action_role(sentence: str) -> _ActionRole | None:
+    if sentence.strip().casefold().startswith("the supreme court action states:"):
+        # This prefix is emitted only by deterministic composition from one approved
+        # COURT_HELD/COURT_ORDERED claim; lower-court names may occur in its object.
+        return "supreme_court"
     if _REQUESTED_ACTION_ROLE.search(sentence):
         # A request normally names the Supreme Court as the recipient. The requesting
         # party remains the actor whose proposed action must be checked.
@@ -855,6 +950,7 @@ def _unsupported_named_phrase(text: str, support: str, caption: str) -> bool:
         "official ",
         "supreme court",
         "the court",
+        "the supreme court",
     )
     for match in _NAMED_PHRASE.findall(text):
         lowered = match.casefold()
