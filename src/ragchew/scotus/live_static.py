@@ -334,6 +334,7 @@ class _BudgetedModelRequest:
         processor_versions: Mapping[str, str],
         output_tokens: int,
         authorized_replay: bool,
+        maximum_attempts: int | None = None,
     ) -> None:
         self.client = client
         self.budget = budget
@@ -342,6 +343,7 @@ class _BudgetedModelRequest:
         self.processor_versions = processor_versions
         self.output_tokens = output_tokens
         self.authorized_replay = authorized_replay
+        self.maximum_attempts = maximum_attempts
 
     def __call__(self, request: dict[str, Any]) -> Any:
         # Ollama reasoning can consume the whole output/time budget before emitting the
@@ -378,7 +380,10 @@ class _BudgetedModelRequest:
         return call_with_bounded_transport_retries(
             lambda: self.client.chat.completions.create(**provider_request),
             permit=permit,
-            maximum_attempts=self.budget.config.model_budget.maximum_transport_attempts,
+            maximum_attempts=(
+                self.maximum_attempts
+                or self.budget.config.model_budget.maximum_transport_attempts
+            ),
             retryable=_retryable_model_error,
             response_usage=_model_response_usage,
         )
@@ -1769,6 +1774,7 @@ class LiveStaticCaseProcessor:
                     processor_versions=versions,
                     output_tokens=extraction_output_tokens,
                     authorized_replay=authorized_replay,
+                    maximum_attempts=1,
                 )
                 extractor = OpenAILegalObservationExtractor(
                     self.config.generation.model,
@@ -1942,6 +1948,7 @@ class LiveStaticCaseProcessor:
                 },
                 output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
                 authorized_replay=authorized_replay,
+                maximum_attempts=(1 if not candidate.argument_sessions else None),
             )
             generator = OpenAILegalBriefGenerator(
                 self.config.generation.model,
