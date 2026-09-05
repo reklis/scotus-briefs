@@ -240,7 +240,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v29"
+    PROMPT_VERSION = "scotus-brief-plain-language-v30"
 
     def __init__(
         self,
@@ -341,7 +341,10 @@ class OpenAILegalBriefGenerator:
             "abbreviate any person, court, "
             "agency, organization, law, or party name; use a name only when its exact wording "
             "appears in the cited approved claim value. Describe a result only when the cited "
-            "approved claims explicitly support it. Omit unavailable detail instead of "
+            "approved claims explicitly support it. When describing the Court action, use "
+            "the exact action verbs and negation from the cited claim; do not replace "
+            "granted, denied, stayed, affirmed, reversed, or vacated with a synonym. Omit "
+            "unavailable detail instead of "
             "adding filler about a missing record or future details. Focus on supported case "
             "background and the Court's action. "
             if disposition_only
@@ -533,13 +536,30 @@ class OpenAILegalBriefGenerator:
                     )
                 }
             )
-        if disposition_only or draft.title.strip().casefold() in {
+        if disposition_only:
+            safe_headings = (
+                "What the Court did",
+                "What this case is about",
+                "Why this case reached the Court",
+                "What the order means",
+                "What happens next",
+            )
+            # Caption and navigation headings are deterministic metadata, not generated
+            # factual prose. Keeping names out of headings avoids model-created aliases.
+            draft = draft.model_copy(
+                update={
+                    "title": candidate.caption,
+                    "sections": tuple(
+                        section.model_copy(update={"heading": safe_headings[index]})
+                        for index, section in enumerate(draft.sections)
+                    ),
+                }
+            )
+        elif draft.title.strip().casefold() in {
             "what this case is about",
             "plain-language guide",
             "supreme court case explained",
         }:
-            # The official caption is the only deterministic zero-session title that
-            # cannot introduce an unsupported organization, acronym, or party label.
             draft = draft.model_copy(update={"title": candidate.caption})
         return draft
 
