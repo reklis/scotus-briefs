@@ -698,14 +698,14 @@ _ACTION_CANONICAL = {
     "granted": "grant",
     "deny": "deny",
     "denied": "deny",
-    "reject": "reject",
-    "rejected": "reject",
-    "allow": "allow",
-    "allowed": "allow",
+    "reject": "deny",
+    "rejected": "deny",
+    "allow": "grant",
+    "allowed": "grant",
     "affirm": "affirm",
     "affirmed": "affirm",
-    "uphold": "uphold",
-    "upheld": "uphold",
+    "uphold": "affirm",
+    "upheld": "affirm",
     "reverse": "reverse",
     "reversed": "reverse",
     "vacate": "vacate",
@@ -716,10 +716,10 @@ _ACTION_CANONICAL = {
     "dismissed": "dismiss",
     "stay": "stay",
     "stayed": "stay",
-    "enjoin": "enjoin",
-    "enjoined": "enjoin",
-    "block": "block",
-    "blocked": "block",
+    "enjoin": "stay",
+    "enjoined": "stay",
+    "block": "stay",
+    "blocked": "stay",
     "prevail": "prevail",
     "prevailed": "prevail",
     "won": "win",
@@ -734,9 +734,14 @@ def _action_words(value: str) -> set[str]:
 def _action_signatures(value: str) -> set[tuple[str, bool]]:
     signatures: set[tuple[str, bool]] = set()
     for match in _ACTION_WORD.finditer(value):
+        action = _ACTION_CANONICAL[match.group(0).casefold()]
+        if action == "order":
+            # "Ordered" wraps the operative granted/denied/stayed action and is
+            # not independently contradictory.
+            continue
         prefix = value[max(0, match.start() - 35) : match.start()]
         negated = re.search(r"\b(?:not|never|did not|does not)\b[^.!?]{0,24}$", prefix, re.I)
-        signatures.add((_ACTION_CANONICAL[match.group(0).casefold()], bool(negated)))
+        signatures.add((action, bool(negated)))
     return signatures
 
 

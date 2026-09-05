@@ -349,6 +349,17 @@ def test_disposition_only_draft_rejects_invention(paragraph: str, safe_code: str
     assert caught.value.safe_code == safe_code
 
 
+def test_disposition_only_draft_accepts_supported_plain_action_synonyms() -> None:
+    source = disposition_candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    validate_brief_draft(
+        disposition_draft(decision.claims, paragraph="The Court allowed the application."),
+        source,
+        decision.claims,
+        public_quotes=False,
+    )
+
+
 def test_disposition_only_draft_accepts_zero_argument_analyses() -> None:
     source = disposition_candidate()
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
