@@ -1210,8 +1210,11 @@ def _validate_public_text(
         if claim.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
     )
     if stated_actions and final_action_support:
-        action_inconsistent = _action_signatures(text) != _action_signatures(
-            final_action_support
+        # Plain-language prose may mention only one of several supported action verbs
+        # (for example, "granted" without repeating "stay"). Every stated action and
+        # its negation must be supported, but omission is not contradiction.
+        action_inconsistent = not _action_signatures(text).issubset(
+            _action_signatures(final_action_support)
         )
     else:
         action_inconsistent = bool(stated_actions - supported_actions)
