@@ -70,7 +70,11 @@ from ragchew.scotus.briefs import (
     simple_brief_json_schema,
 )
 from ragchew.scotus.contracts import (
+    LegalCertainty,
+    LegalEvidenceRange,
     LegalObservation,
+    LegalObservationType,
+    LegalStatus,
     ScotusCaseStatus,
     ScotusDocumentKind,
 )
@@ -1733,6 +1737,18 @@ class LiveStaticCaseProcessor:
                 service = LegalExtractionService(extractor, extraction_store)
                 observations.extend(service.process(source_input))
                 extraction_rejection_codes.extend(service.rejection_codes)
+        if not source.sessions and not any(
+            evidence.document_kind is ScotusDocumentKind.DOCKET
+            for observation in observations
+            for evidence in observation.evidence
+        ):
+            observations.append(
+                _docket_identity_observation(
+                    case_id=case_id,
+                    primary_docket=source.primary_docket,
+                    blocks=tuple(docket_blocks),
+                )
+            )
         if not observations:
             dominant = (
                 max(
@@ -1815,8 +1831,19 @@ class LiveStaticCaseProcessor:
             policy_version=POLICY_VERSION,
         )
         if not decision.eligible:
+            reason_codes = {
+                "insufficient grounded legal observations": "observation_count",
+                "disposition-only case lacks grounded docket evidence": "missing_docket",
+                "disposition-only case lacks typed Court action evidence": "missing_court_action",
+                "no grounded question presented or procedural posture": "missing_procedure",
+                "no grounded argument, question, or holding": "missing_legal_action",
+                "insufficient claims after sensitivity minimization": "claim_count",
+            }
             safe_reasons = ":".join(
-                re.sub(r"[^a-z0-9]+", "_", reason.casefold()).strip("_")
+                reason_codes.get(
+                    reason,
+                    re.sub(r"[^a-z0-9]+", "_", reason.casefold()).strip("_")[:24],
+                )
                 for reason in decision.reasons
             )
             raise BriefPolicyError(
@@ -2091,6 +2118,66 @@ def _document_blocks(
     if not blocks:
         raise DocumentCollectionError("official document has no parseable text")
     return tuple(blocks)
+
+
+def _docket_identity_observation(
+    *,
+    case_id: UUID,
+    primary_docket: str,
+    blocks: tuple[LegalEvidenceBlock, ...],
+) -> LegalObservation:
+    """Create one source-exact docket identity observation without model inference."""
+    pattern = re.compile(re.escape(primary_docket), re.IGNORECASE)
+    matches = tuple(
+        (block, match.group(0))
+        for block in blocks
+        if block.document_kind is ScotusDocumentKind.DOCKET
+        for match in [pattern.search(block.text_private)]
+        if match is not None
+    )
+    if not matches:
+        raise LegalExtractionError(
+            "official docket block does not contain the primary docket",
+            safe_code="missing_exact_docket_identity",
+        )
+    block, quote = matches[0]
+    extraction_id = uuid5(
+        NAMESPACE_URL,
+        f"ragchew:scotus-deterministic-docket-extraction:{case_id}:{block.block_id}",
+    )
+    return LegalObservation(
+        observation_id=uuid5(
+            NAMESPACE_URL,
+            f"ragchew:scotus-deterministic-docket-observation:{case_id}:{block.block_id}",
+        ),
+        extraction_revision_id=extraction_id,
+        case_id=case_id,
+        argument_id=None,
+        observation_type=LegalObservationType.PROCEDURAL_POSTURE,
+        legal_status=LegalStatus.DESCRIBED,
+        certainty=LegalCertainty.DIRECT,
+        raw_value_private=quote,
+        normalized_value_private=quote,
+        attribution=block.attribution,
+        speaker_name=block.speaker_name,
+        speaker_kind=block.speaker_kind,
+        identity_basis=block.identity_basis,
+        authority_citations=(),
+        confidence=1.0,
+        evidence=(
+            LegalEvidenceRange(
+                document_revision_id=block.document_revision_id,
+                document_kind=block.document_kind,
+                start_file_page=block.start_file_page,
+                start_line=block.start_line,
+                end_file_page=block.end_file_page,
+                end_line=block.end_line,
+                quote_private=quote,
+            ),
+        ),
+        sensitivity=(),
+        supersedes_observation_id=None,
+    )
 
 
 def _public_metadata_changed(source: _CaseInput) -> bool:

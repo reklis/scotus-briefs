@@ -273,6 +273,22 @@ def disposition_draft(claims, *, paragraph: str) -> LegalBriefDraft:  # type: ig
     )
 
 
+def test_disposition_only_policy_accepts_two_independent_required_facts() -> None:
+    source = disposition_candidate()
+    two_fact_source = replace(
+        source,
+        observations=tuple(
+            item
+            for item in source.observations
+            if item.observation_type
+            in {LegalObservationType.PROCEDURAL_POSTURE, LegalObservationType.HOLDING}
+        ),
+    )
+    decision = evaluate_brief_candidate(two_fact_source, minimum_confidence=0.85)
+    assert decision.eligible
+    assert len(decision.claims) == 2
+
+
 def test_disposition_only_policy_requires_docket_and_typed_court_action() -> None:
     source = disposition_candidate()
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)

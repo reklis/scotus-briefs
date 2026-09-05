@@ -686,6 +686,58 @@ def test_disposition_only_emergency_opinion_publishes_without_argument(
     assert slip_requests == ["https://www.supremecourt.gov/opinions/slipopinion/25"]
 
 
+def test_disposition_only_case_derives_exact_docket_identity_when_model_omits_it(
+    tmp_path: Path,
+) -> None:
+    court = CourtFixture()
+    court.rows = []
+    court.slip_rows = [
+        (
+            "17",
+            "3/04/26",
+            "25A810",
+            "Emergency Applicant v. Agency",
+            "PC",
+            "25a810_example.pdf",
+        )
+    ]
+    court.documents["/docket/docketfiles/html/public/25A810.html"] = (
+        '"docket-a810"',
+        b"<!doctype html><body>Docket 25A810. Emergency Applicant v. Agency.</body>",
+        "text/html",
+    )
+    court.documents["/opinions/25pdf/25a810_example.pdf"] = (
+        '"opinion-a810"',
+        _text_pdf(
+            "No. 25A810 Emergency Applicant v. Agency.",
+            "Emergency Applicant sought relief from Agency.",
+            "The Court granted the application.",
+        ),
+        "application/pdf",
+    )
+
+    class OpinionOnlyModel(MockOpenAI):
+        @staticmethod
+        def _extraction(evidence: list[dict[str, Any]]) -> dict[str, object]:
+            batch = MockOpenAI._extraction(evidence)
+            batch["observations"] = [
+                item
+                for item in cast(list[dict[str, Any]], batch["observations"])
+                if item["observation_type"] == "holding"
+            ]
+            return batch
+
+    result = run(
+        tmp_path,
+        MemoryStateStore(tmp_path / "state"),
+        court,
+        OpinionOnlyModel(),
+    )
+    assert result.publishable
+    assert result.content.projection is not None
+    assert result.content.projection.cases[0].arguments == ()
+
+
 def test_disposition_revision_date_recomputes_immutable_public_revision(
     tmp_path: Path,
 ) -> None:

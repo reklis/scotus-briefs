@@ -978,7 +978,8 @@ def evaluate_brief_candidate(
     eligible_observations = tuple(
         item for item in candidate.observations if item.confidence >= minimum_confidence
     )
-    if len(eligible_observations) < 3:
+    minimum_observations = 3 if candidate.argument_sessions else 2
+    if len(eligible_observations) < minimum_observations:
         reasons.append("insufficient grounded legal observations")
     observed_sessions = {
         item.argument_id for item in eligible_observations if item.argument_id is not None
@@ -1057,7 +1058,8 @@ def evaluate_brief_candidate(
                 policy_version=policy_version,
             )
         )
-    if len(claims) < 3:
+    minimum_claims = 3 if candidate.argument_sessions else 2
+    if len(claims) < minimum_claims:
         return BriefPolicyDecision(
             False,
             ("insufficient claims after sensitivity minimization",),
