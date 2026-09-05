@@ -76,10 +76,15 @@ from ragchew.scotus.discovery import (
     DiscoveryMode,
     IncrementalDiscoveryOperation,
     ScotusArgumentCandidate,
+    ScotusDispositionCandidate,
     candidate_logical_key,
     deterministic_argument_id,
     deterministic_case_id,
+    discover_slip_opinions_once,
+    disposition_candidate_from_state,
+    disposition_logical_key,
     document_logical_key,
+    merge_case_discovery,
     select_discovery_resources,
     select_discovery_work,
     transcript_logical_key,
@@ -172,6 +177,7 @@ class _CaseInput:
     primary_docket: str
     caption: str
     sessions: tuple[ScotusArgumentCandidate, ...]
+    dispositions: tuple[ScotusDispositionCandidate, ...]
     prior: PublicCaseBrief | None
     document_logical_keys: Mapping[tuple[DocumentType, str], str]
 
@@ -650,6 +656,7 @@ class LiveStaticDiscovery:
             and pointer_by_case[case_key].processor_sha256 != processor.composite_sha256
         }
         changed_case_keys: set[str] = set(migration_case_keys)
+        argument_source_changed_case_keys: set[str] = set()
         source_changed_case_keys: set[str] = set()
         for item in incremental.candidates:
             key = candidate_logical_key(item)
@@ -657,6 +664,7 @@ class LiveStaticDiscovery:
             previous = candidates_by_session.get(identity)
             if previous is None or _candidate_metadata_changed(previous, item):
                 changed_case_keys.add(key)
+                argument_source_changed_case_keys.add(key)
                 source_changed_case_keys.add(key)
             candidates_by_session[identity] = _merge_candidate(previous, item)
 
@@ -667,8 +675,101 @@ class LiveStaticDiscovery:
             now=now,
         )
         changed_case_keys.update(related_changes)
+        argument_source_changed_case_keys.update(related_changes)
         source_changed_case_keys.update(related_changes)
         combined = tuple(candidates_by_session.values())
+        active_term = self.config.discovery.active_term
+        prior_dispositions = tuple(
+            item
+            for item in content.publication.dispositions
+            if item.term == active_term
+        )
+        slip_source_key = f"slip-opinions:{active_term}"
+        slip_result = discover_slip_opinions_once(
+            self.adapters[active_term],
+            resource_key=slip_source_key,
+            # This distinct identity intentionally avoids legacy ``opinions:<term>``
+            # checkpoints, whose ETag could otherwise yield a first-run 304 before
+            # any typed disposition rows had been retained.
+            checkpoint=checkpoints.get(slip_source_key),
+            prior_states=prior_dispositions,
+            now=now,
+        )
+        other_disposition_states = tuple(
+            item for item in content.publication.dispositions if item.term != active_term
+        )
+        all_dispositions = slip_result.candidates + tuple(
+            disposition_candidate_from_state(item)
+            for item in other_disposition_states
+        )
+        durable_primary_dockets = {
+            (case.term, case.primary_docket) for case in prior_cases.values()
+        }
+        for state in content.publication.dispositions:
+            durable_primary_dockets.update(
+                (state.term, docket)
+                for docket in (state.primary_docket, *state.consolidated_dockets)
+                if public_case_key(state.term, docket) == state.case_key
+            )
+        merged_cases = merge_case_discovery(
+            combined,
+            all_dispositions,
+            preferred_primary_dockets=tuple(sorted(durable_primary_dockets)),
+        )
+        merged_by_key = {
+            public_case_key(item.term, item.primary_docket): item for item in merged_cases
+        }
+        argument_case_keys = {
+            candidate_logical_key(argument): key
+            for key, case in merged_by_key.items()
+            for argument in case.arguments
+        }
+        changed_case_keys = {
+            argument_case_keys.get(key, key) for key in changed_case_keys
+        }
+        argument_source_changed_case_keys = {
+            argument_case_keys.get(key, key)
+            for key in argument_source_changed_case_keys
+        }
+        source_changed_case_keys = {
+            argument_case_keys.get(key, key) for key in source_changed_case_keys
+        }
+        disposition_case_keys = {
+            disposition_logical_key(disposition): key
+            for key, case in merged_by_key.items()
+            for disposition in case.dispositions
+        }
+        changed_disposition_case_keys = {
+            disposition_case_keys[key]
+            for key in slip_result.changed_logical_keys
+            if key in disposition_case_keys
+        }
+        changed_case_keys.update(changed_disposition_case_keys)
+        source_changed_case_keys.update(changed_disposition_case_keys)
+        disposition_states = tuple(
+            sorted(
+                (
+                    item.model_copy(
+                        update={
+                            "case_key": disposition_case_keys.get(
+                                item.logical_key, item.case_key
+                            )
+                        }
+                    )
+                    for item in (*other_disposition_states, *slip_result.states)
+                ),
+                key=lambda item: item.logical_key,
+            )
+        )
+        prior_disposition_case_keys = {
+            item.logical_key: item.case_key for item in content.publication.dispositions
+        }
+        remapped_pending_case_keys = {
+            prior_disposition_case_keys[item.logical_key]
+            for item in disposition_states
+            if item.logical_key in prior_disposition_case_keys
+            and prior_disposition_case_keys[item.logical_key] != item.case_key
+        }
         known = {
             *(item.logical_key for item in content.publication.documents),
             *public_transcript_keys,
@@ -676,7 +777,10 @@ class LiveStaticDiscovery:
         selection_known = known - {
             transcript_logical_key(item)
             for item in combined
-            if candidate_logical_key(item) in changed_case_keys
+            if argument_case_keys.get(
+                candidate_logical_key(item), candidate_logical_key(item)
+            )
+            in changed_case_keys
         }
         selection_cursor = next(
             (
@@ -734,7 +838,8 @@ class LiveStaticDiscovery:
         for selected_item in selection.work:
             if len(selected) >= case_limit:
                 break
-            key = candidate_logical_key(selected_item.candidate)
+            raw_key = candidate_logical_key(selected_item.candidate)
+            key = argument_case_keys.get(raw_key, raw_key)
             if key in legacy_case_keys and key not in source_changed_case_keys:
                 continue
             selected_prior = selected.get(key)
@@ -747,26 +852,22 @@ class LiveStaticDiscovery:
             selected.items(), key=lambda item: (item[1][0], item[0])
         )
         for key, (priority, reason) in ordered_selection:
-            sessions = tuple(
-                sorted(
-                    (
-                        candidate
-                        for (case_key, _date, _sequence), candidate in candidates_by_session.items()
-                        if case_key == key and candidate.transcript is not None
-                    ),
-                    key=lambda item: (item.argument_date, item.sequence),
-                )
-            )
-            if not sessions:
+            merged = merged_by_key.get(key)
+            if merged is None:
+                invalid_case_keys.add(key)
                 continue
+            sessions = tuple(
+                item for item in merged.arguments if item.transcript is not None
+            )
             prior = prior_cases.get(key)
             case_documents = tuple(documents_by_case.get(key, ()))
             self.cases[key] = _CaseInput(
                 case_key=key,
-                term=sessions[-1].term,
-                primary_docket=sessions[-1].primary_docket,
-                caption=sessions[-1].caption,
+                term=merged.term,
+                primary_docket=merged.primary_docket,
+                caption=merged.caption,
                 sessions=sessions,
+                dispositions=merged.dispositions,
                 prior=prior,
                 document_logical_keys={
                     (_descriptor_from_document_state(item).document_type, item.official_url): (
@@ -775,6 +876,10 @@ class LiveStaticDiscovery:
                     for item in case_documents
                 },
             )
+            # Discovery persists and defers real zero-session cases. Task group 3 can
+            # connect this already case-level input to disposition-only processing.
+            if not sessions:
+                continue
             session_work: list[ArgumentSessionWork] = []
             try:
                 all_documents = _case_documents(self.cases[key])
@@ -815,21 +920,17 @@ class LiveStaticDiscovery:
         deferred_case_keys = tuple(
             sorted((changed_case_keys - runnable_case_keys) | invalid_case_keys)
         )
-        changed_deferred = bool(set(deferred_case_keys) & source_changed_case_keys)
+        changed_deferred = bool(
+            set(deferred_case_keys) & argument_source_changed_case_keys
+        )
+        source_states = (*incremental.checkpoints, slip_result.checkpoint, *related_sources)
         return StaticDiscoveryResult(
             work=tuple(work),
             sources=tuple(
-                {
-                    item.logical_key: item
-                    for item in (*incremental.checkpoints, *related_sources)
-                }[key]
-                for key in sorted(
-                    {
-                        item.logical_key
-                        for item in (*incremental.checkpoints, *related_sources)
-                    }
-                )
+                {item.logical_key: item for item in source_states}[key]
+                for key in sorted({item.logical_key for item in source_states})
             ),
+            dispositions=disposition_states,
             cursors=tuple(
                 sorted(
                     {item.cursor_key: item for item in cursors}.values(),
@@ -839,7 +940,10 @@ class LiveStaticDiscovery:
             processor=processor,
             deferred_case_keys=deferred_case_keys,
             resolved_pending_case_keys=tuple(
-                sorted(legacy_case_keys - changed_case_keys)
+                sorted(
+                    (legacy_case_keys - changed_case_keys)
+                    | remapped_pending_case_keys
+                )
             ),
             checkpoint_safe=not changed_deferred,
         )
@@ -856,8 +960,9 @@ class LiveStaticDiscovery:
         changed_cases: set[str] = set()
         for term in terms:
             adapter = self.adapters[term]
+            # Slip opinions have their own strict first-class poll above. Only the
+            # relating-to-orders index still uses argument-associated row parsing.
             for source_kind, document_type, url in (
-                ("opinions", DocumentType.OPINION, adapter.opinion_index_url),
                 ("orders", DocumentType.ORDER, adapter.order_index_url),
             ):
                 logical_key = f"{source_kind}:{term}"
@@ -1040,6 +1145,17 @@ def _case_documents(case: _CaseInput) -> tuple[_PrivateDocument, ...]:
                 descriptor=descriptor,
                 argument_id=argument_id if kind is ScotusDocumentKind.TRANSCRIPT else None,
             )
+    for disposition in case.dispositions:
+        descriptor = disposition.descriptor
+        key = case.document_logical_keys.get(
+            (descriptor.document_type, descriptor.official_url),
+            disposition_logical_key(disposition),
+        )
+        values[key] = _PrivateDocument(
+            logical_key=key,
+            descriptor=descriptor,
+            argument_id=None,
+        )
     return tuple(values[key] for key in sorted(values))
 
 

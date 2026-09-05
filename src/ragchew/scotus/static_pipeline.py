@@ -31,6 +31,7 @@ from ragchew.scotus.public_contracts import PublicCaseBrief, public_case_key
 from ragchew.scotus.static_contracts import (
     CostLedger,
     CursorState,
+    DispositionDiscoveryState,
     LogicalDocumentState,
     LogicalSourceState,
     ModelAttemptOutcome,
@@ -579,6 +580,7 @@ class StaticDiscoveryResult:
     work: tuple[StaticCaseWork, ...] = ()
     sources: tuple[LogicalSourceState, ...] = ()
     documents: tuple[LogicalDocumentState, ...] = ()
+    dispositions: tuple[DispositionDiscoveryState, ...] = ()
     cursors: tuple[CursorState, ...] = ()
     processor: ProcessorFingerprint | None = None
     # Cases discovered as changed but omitted by a bounded selection remain explicit
@@ -861,6 +863,9 @@ class StaticBatchOrchestrator:
                 documents = {
                     item.logical_key: item for item in original.publication.documents
                 }
+                dispositions = {
+                    item.logical_key: item for item in original.publication.dispositions
+                }
                 cursors = {item.cursor_key: item for item in original.publication.cursors}
                 # Completed case checkpoints are safe independently of whether a later
                 # case was deferred. Source/cursor checkpoints remain all-or-nothing so
@@ -869,6 +874,9 @@ class StaticBatchOrchestrator:
                 if checkpoints_safe:
                     sources.update({item.logical_key: item for item in discovered.sources})
                     documents.update({item.logical_key: item for item in discovered.documents})
+                    dispositions.update(
+                        {item.logical_key: item for item in discovered.dispositions}
+                    )
                     cursors.update({item.cursor_key: item for item in discovered.cursors})
                 processor = original.publication.processor
                 if discovered.processor is not None and checkpoints_safe:
@@ -889,6 +897,9 @@ class StaticBatchOrchestrator:
                     pending_work=tuple(pending[key] for key in sorted(pending)),
                     cursors=tuple(cursors[key] for key in sorted(cursors)),
                     processor=processor,
+                    dispositions=tuple(
+                        dispositions[key] for key in sorted(dispositions)
+                    ),
                 )
         finally:
             try:

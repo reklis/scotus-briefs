@@ -1,4 +1,4 @@
-"""Transcript-first Supreme Court case and argument discovery."""
+"""Supreme Court case, argument-session, and disposition discovery."""
 
 from __future__ import annotations
 
@@ -12,10 +12,10 @@ from enum import StrEnum
 from typing import Literal, Protocol
 from uuid import NAMESPACE_URL, UUID, uuid5
 
-from pydantic import Field
+from pydantic import Field, field_validator, model_validator
 
 from ragchew.contracts import StrictModel
-from ragchew.proceedings.contracts import DocumentType, UtcDatetime
+from ragchew.proceedings.contracts import DocumentType, SourceAccessMethod, UtcDatetime
 from ragchew.proceedings.discovery import (
     ConditionalRequest,
     DiscoveredProceeding,
@@ -24,12 +24,18 @@ from ragchew.proceedings.discovery import (
     SourcePollResult,
 )
 from ragchew.proceedings.registry import SourceAuthorizer, SourceRegistry
+from ragchew.proceedings.sources.supreme_court import (
+    SlipOpinionEntry,
+    SlipOpinionKind,
+    SlipOpinionPollResult,
+)
 from ragchew.scotus.contracts import ScotusDocumentKind
 from ragchew.scotus.public_contracts import public_case_key
 from ragchew.scotus.static_contracts import (
     ConditionalValidators,
     ContentIntegrity,
     CursorState,
+    DispositionDiscoveryState,
     LogicalSourceState,
     sha256_hex,
 )
@@ -80,6 +86,68 @@ class ScotusArgumentCandidate(StrictModel):
     docket_documents: tuple[DocumentDescriptor, ...] = ()
     related_documents: tuple[DocumentDescriptor, ...] = ()
     source_metadata: dict[str, object] = Field(default_factory=dict)
+
+
+class ScotusDispositionCandidate(StrictModel):
+    """Typed case-level work from one supported slip-opinion index row."""
+
+    term: str = Field(pattern=r"^\d{4}$")
+    primary_docket: str
+    consolidated_dockets: tuple[str, ...] = ()
+    caption: str = Field(min_length=1, max_length=500)
+    release_number: str = Field(pattern=r"^(?:D)?\d+$")
+    kind: SlipOpinionKind
+    publication_date: UtcDatetime
+    official_url: str
+    revision_date: UtcDatetime | None = None
+    revision_reference_url: str | None = None
+
+    @field_validator("primary_docket", mode="before")
+    @classmethod
+    def normalize_primary_docket(cls, value: object) -> str:
+        if not isinstance(value, str):
+            raise ValueError("disposition docket must be text")
+        return normalize_docket(value)
+
+    @field_validator("consolidated_dockets", mode="before")
+    @classmethod
+    def normalize_consolidated_dockets(cls, value: object) -> tuple[str, ...]:
+        if not isinstance(value, (tuple, list)):
+            raise ValueError("disposition consolidated dockets must be a sequence")
+        return tuple(normalize_docket(str(docket)) for docket in value)
+
+    @model_validator(mode="after")
+    def validate_disposition(self) -> ScotusDispositionCandidate:
+        if self.primary_docket in self.consolidated_dockets or len(
+            self.consolidated_dockets
+        ) != len(set(self.consolidated_dockets)):
+            raise ValueError("disposition dockets must be unique")
+        if self.revision_date is not None and self.revision_date <= self.publication_date:
+            raise ValueError("disposition revision date must follow publication")
+        if (self.revision_date is None) != (self.revision_reference_url is None):
+            raise ValueError("disposition revision date and reference must appear together")
+        return self
+
+    @property
+    def descriptor(self) -> DocumentDescriptor:
+        return DocumentDescriptor(
+            external_id=disposition_logical_key(self),
+            document_type=DocumentType.OPINION,
+            official_url=self.official_url,
+            access_method=SourceAccessMethod.OFFICIAL_PAGE,
+            content_type="application/pdf",
+        )
+
+
+class ScotusCaseDiscoveryCandidate(StrictModel):
+    """Merged discovery unit; arguments are deliberately optional."""
+
+    term: str = Field(pattern=r"^\d{4}$")
+    primary_docket: str
+    consolidated_dockets: tuple[str, ...] = ()
+    caption: str = Field(min_length=1, max_length=500)
+    arguments: tuple[ScotusArgumentCandidate, ...] = ()
+    dispositions: tuple[ScotusDispositionCandidate, ...] = ()
 
 
 class DiscoveredDocument(StrictModel):
@@ -267,6 +335,195 @@ def stable_descriptor_fingerprint(descriptor: DocumentDescriptor) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
+def disposition_logical_key(candidate: ScotusDispositionCandidate) -> str:
+    """Identity a Court row independently of its mutable URL or bytes."""
+    docket = re.sub(
+        r"[^a-z0-9]+", "-", normalize_docket(candidate.primary_docket).casefold()
+    ).strip("-")
+    return f"slip:{candidate.term}:{docket}:{candidate.release_number.casefold()}"
+
+
+def stable_disposition_fingerprint(candidate: ScotusDispositionCandidate) -> str:
+    payload = candidate.model_dump(mode="json")
+    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def disposition_candidate_from_entry(entry: SlipOpinionEntry) -> ScotusDispositionCandidate:
+    return ScotusDispositionCandidate(
+        term=entry.term,
+        primary_docket=entry.primary_docket,
+        consolidated_dockets=entry.consolidated_dockets,
+        caption=entry.caption,
+        release_number=entry.release_number,
+        kind=entry.kind,
+        publication_date=entry.publication_date,
+        official_url=entry.official_pdf_url,
+        revision_date=entry.revision_date,
+        revision_reference_url=entry.revision_reference_url,
+    )
+
+
+def disposition_state(
+    candidate: ScotusDispositionCandidate, *, case_key: str | None = None
+) -> DispositionDiscoveryState:
+    return DispositionDiscoveryState(
+        logical_key=disposition_logical_key(candidate),
+        case_key=case_key or candidate_logical_key(candidate),
+        term=candidate.term,
+        primary_docket=candidate.primary_docket,
+        consolidated_dockets=candidate.consolidated_dockets,
+        caption=candidate.caption,
+        release_number=candidate.release_number,
+        kind=candidate.kind.value,
+        official_url=candidate.official_url,
+        publication_date=candidate.publication_date,
+        revision_date=candidate.revision_date,
+        revision_reference_url=candidate.revision_reference_url,
+        metadata_sha256=stable_disposition_fingerprint(candidate),
+    )
+
+
+def disposition_candidate_from_state(
+    state: DispositionDiscoveryState,
+) -> ScotusDispositionCandidate:
+    return ScotusDispositionCandidate(
+        term=state.term,
+        primary_docket=state.primary_docket,
+        consolidated_dockets=state.consolidated_dockets,
+        caption=state.caption,
+        release_number=state.release_number,
+        kind=SlipOpinionKind(state.kind),
+        publication_date=state.publication_date,
+        official_url=state.official_url,
+        revision_date=state.revision_date,
+        revision_reference_url=state.revision_reference_url,
+    )
+
+
+def _discovery_dockets(
+    candidate: ScotusArgumentCandidate | ScotusDispositionCandidate,
+) -> frozenset[str]:
+    return frozenset(
+        normalize_docket(value)
+        for value in (candidate.primary_docket, *candidate.consolidated_dockets)
+    )
+
+
+def merge_case_discovery(
+    arguments: Sequence[ScotusArgumentCandidate],
+    dispositions: Sequence[ScotusDispositionCandidate],
+    *,
+    preferred_primary_dockets: Sequence[tuple[str, str]] = (),
+) -> tuple[ScotusCaseDiscoveryCandidate, ...]:
+    """Join independent streams while retaining an already-durable primary docket."""
+    items: list[ScotusArgumentCandidate | ScotusDispositionCandidate] = [
+        *arguments,
+        *dispositions,
+    ]
+    if not items:
+        return ()
+    parents = list(range(len(items)))
+
+    def find(index: int) -> int:
+        while parents[index] != index:
+            parents[index] = parents[parents[index]]
+            index = parents[index]
+        return index
+
+    def union(left: int, right: int) -> None:
+        left_root, right_root = find(left), find(right)
+        if left_root != right_root:
+            parents[right_root] = left_root
+
+    owners: dict[tuple[str, str], int] = {}
+    for index, item in enumerate(items):
+        for docket in _discovery_dockets(item):
+            identity = (item.term, docket)
+            previous = owners.get(identity)
+            if previous is not None:
+                union(previous, index)
+            else:
+                owners[identity] = index
+
+    grouped: dict[int, list[ScotusArgumentCandidate | ScotusDispositionCandidate]] = {}
+    for index, item in enumerate(items):
+        grouped.setdefault(find(index), []).append(item)
+
+    preferred = {
+        (term, normalize_docket(docket))
+        for term, docket in preferred_primary_dockets
+    }
+    merged: list[ScotusCaseDiscoveryCandidate] = []
+    for values in grouped.values():
+        sessions = tuple(
+            sorted(
+                (item for item in values if isinstance(item, ScotusArgumentCandidate)),
+                key=_candidate_sort_key,
+            )
+        )
+        case_dispositions = tuple(
+            sorted(
+                (item for item in values if isinstance(item, ScotusDispositionCandidate)),
+                key=lambda item: (
+                    item.publication_date,
+                    item.revision_date or item.publication_date,
+                    disposition_logical_key(item),
+                ),
+            )
+        )
+        all_dockets = sorted({docket for item in values for docket in _discovery_dockets(item)})
+        durable_primaries = {
+            docket for docket in all_dockets if (values[0].term, docket) in preferred
+        }
+        argument_primaries = {
+            normalize_docket(item.primary_docket) for item in sessions
+        }
+        if durable_primaries:
+            primary = min(durable_primaries)
+        elif len(argument_primaries) == 1:
+            primary = next(iter(argument_primaries))
+        elif argument_primaries:
+            # A consolidated disposition can bridge argument rows that previously
+            # appeared under separate primary dockets. Prefer the Court row's primary
+            # when possible, then use a stable normalized-docket tie-break.
+            disposition_primaries = {
+                item.primary_docket for item in case_dispositions
+            }
+            primary = min(
+                (argument_primaries & disposition_primaries) or argument_primaries
+            )
+        else:
+            primary = min(
+                case_dispositions,
+                key=lambda item: (item.publication_date, disposition_logical_key(item)),
+            ).primary_docket
+        latest_caption_source = max(
+            values,
+            key=lambda item: (
+                item.argument_date
+                if isinstance(item, ScotusArgumentCandidate)
+                else item.revision_date or item.publication_date,
+                item.caption,
+            ),
+        )
+        merged.append(
+            ScotusCaseDiscoveryCandidate(
+                term=values[0].term,
+                primary_docket=primary,
+                consolidated_dockets=tuple(
+                    docket for docket in all_dockets if docket != primary
+                ),
+                caption=latest_caption_source.caption,
+                arguments=sessions,
+                dispositions=case_dispositions,
+            )
+        )
+    return tuple(
+        sorted(merged, key=lambda item: (item.term, normalize_docket(item.primary_docket)))
+    )
+
+
 # Private aliases retained for callers written against the MVP implementation.
 def _candidate_digest(candidate: ScotusArgumentCandidate) -> str:
     return stable_candidate_fingerprint(candidate)
@@ -287,6 +544,100 @@ class OneShotDiscoveryResult:
     checkpoint: LogicalSourceState
     changed: bool
     not_modified: bool
+
+
+@dataclass(frozen=True)
+class SlipOpinionDiscoveryResult:
+    candidates: tuple[ScotusDispositionCandidate, ...]
+    states: tuple[DispositionDiscoveryState, ...]
+    changed_logical_keys: tuple[str, ...]
+    checkpoint: LogicalSourceState
+    changed: bool
+    not_modified: bool
+
+
+def discover_slip_opinions_once(
+    adapter: object,
+    *,
+    resource_key: str,
+    checkpoint: LogicalSourceState | None,
+    prior_states: Sequence[DispositionDiscoveryState],
+    now: datetime,
+) -> SlipOpinionDiscoveryResult:
+    """Conditionally discover and retain first-class active-term dispositions."""
+    poll = getattr(adapter, "poll_slip_opinions", None)
+    if not callable(poll):
+        raise TypeError("discovery adapter must provide poll_slip_opinions(conditional)")
+    conditional = ConditionalRequest(
+        etag=checkpoint.validators.etag if checkpoint else None,
+        last_modified=checkpoint.validators.last_modified if checkpoint else None,
+    )
+    result = poll(conditional)
+    if not isinstance(result, SlipOpinionPollResult):
+        raise TypeError("discovery adapter returned an invalid slip-opinion result")
+    validators = ConditionalValidators(
+        etag=result.etag or (checkpoint.validators.etag if checkpoint else None),
+        last_modified=(
+            result.last_modified
+            or (checkpoint.validators.last_modified if checkpoint else None)
+        ),
+    )
+    retained = {item.logical_key: item for item in prior_states}
+    if result.not_modified:
+        if checkpoint is None:
+            raise ValueError("not-modified slip index requires a prior checkpoint")
+        checkpoint_state = checkpoint.model_copy(
+            update={"validators": validators, "checked_at": now}
+        )
+        candidates = tuple(
+            disposition_candidate_from_state(retained[key]) for key in sorted(retained)
+        )
+        return SlipOpinionDiscoveryResult(
+            candidates,
+            tuple(retained[key] for key in sorted(retained)),
+            (),
+            checkpoint_state,
+            False,
+            True,
+        )
+
+    current = tuple(disposition_candidate_from_entry(entry) for entry in result.entries)
+    payload = json.dumps(
+        [
+            candidate.model_dump(mode="json")
+            for candidate in sorted(current, key=disposition_logical_key)
+        ],
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode()
+    integrity = ContentIntegrity(sha256=sha256_hex(payload), byte_count=len(payload))
+    changed_keys: list[str] = []
+    for candidate in current:
+        observed = disposition_state(candidate)
+        previous = retained.get(observed.logical_key)
+        if previous is None or previous.metadata_sha256 != observed.metadata_sha256:
+            changed_keys.append(observed.logical_key)
+        retained[observed.logical_key] = observed
+    checkpoint_state = LogicalSourceState(
+        logical_key=resource_key,
+        source_kind="opinions",
+        official_url=result.endpoint_url,
+        validators=validators,
+        integrity=integrity,
+        checked_at=now,
+    )
+    unchanged = checkpoint is not None and checkpoint.integrity == integrity
+    candidates = tuple(
+        disposition_candidate_from_state(retained[key]) for key in sorted(retained)
+    )
+    return SlipOpinionDiscoveryResult(
+        candidates=candidates,
+        states=tuple(retained[key] for key in sorted(retained)),
+        changed_logical_keys=tuple(sorted(changed_keys)),
+        checkpoint=checkpoint_state,
+        changed=not unchanged,
+        not_modified=False,
+    )
 
 
 def discover_once(
@@ -632,7 +983,9 @@ def select_discovery_work(
     )
 
 
-def candidate_logical_key(candidate: ScotusArgumentCandidate) -> str:
+def candidate_logical_key(
+    candidate: ScotusArgumentCandidate | ScotusDispositionCandidate,
+) -> str:
     return public_case_key(candidate.term, normalize_docket(candidate.primary_docket))
 
 

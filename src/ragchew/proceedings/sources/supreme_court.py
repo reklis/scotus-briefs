@@ -1,4 +1,4 @@
-"""Supreme Court archived oral-argument source adapter."""
+"""Supreme Court oral-argument and slip-opinion source adapter."""
 
 from __future__ import annotations
 
@@ -80,6 +80,18 @@ class SlipOpinionEntry:
     @property
     def consolidated_dockets(self) -> tuple[str, ...]:
         return self.dockets[1:]
+
+
+@dataclass(frozen=True)
+class SlipOpinionPollResult:
+    """Conditional result for the independent active-term slip index."""
+
+    endpoint_url: str
+    retrieved_at: datetime
+    entries: tuple[SlipOpinionEntry, ...] = ()
+    not_modified: bool = False
+    etag: str | None = None
+    last_modified: str | None = None
 
 
 @dataclass(frozen=True)
@@ -564,6 +576,30 @@ class SupremeCourtAdapter:
             ),
         )
 
+    def poll_slip_opinions(
+        self, conditional: ConditionalRequest
+    ) -> SlipOpinionPollResult:
+        """Poll and strictly parse this term's slip index independently of arguments."""
+        now = self.clock()
+        response = self.fetcher.get(self.opinion_index_url, conditional)
+        if response.status_code == 304:
+            return SlipOpinionPollResult(
+                endpoint_url=self.opinion_index_url,
+                retrieved_at=now,
+                not_modified=True,
+                etag=response.headers.get("etag"),
+                last_modified=response.headers.get("last-modified"),
+            )
+        return SlipOpinionPollResult(
+            endpoint_url=self.opinion_index_url,
+            retrieved_at=now,
+            entries=parse_slip_opinion_index(
+                response.text(), self.opinion_index_url, self.term
+            ),
+            etag=response.headers.get("etag"),
+            last_modified=response.headers.get("last-modified"),
+        )
+
     def poll(self, conditional: ConditionalRequest) -> SourcePollResult:
         now = self.clock()
         response = self.fetcher.get(self.index_url, conditional)
@@ -581,11 +617,6 @@ class SupremeCourtAdapter:
             archived = parse_transcript_archive_index(
                 response.text(), self.index_url, self.term
             )
-            opinion_html = ""
-            order_html = ""
-            if int(self.term) >= 2017:
-                opinion_html = self.fetcher.get(self.opinion_index_url).text()
-                order_html = self.fetcher.get(self.order_index_url).text()
             sessions_by_url: dict[str, tuple[int, bool]] = {}
             by_docket: dict[str, list[tuple[datetime, str]]] = {}
             for docket, _title, argued_at, transcript_url in archived:
@@ -634,18 +665,6 @@ class SupremeCourtAdapter:
                                 content_type="application/pdf",
                             ),
                             *docket_documents,
-                            *parse_related_opinion_documents(
-                                opinion_html,
-                                self.opinion_index_url,
-                                docket,
-                                document_type=DocumentType.OPINION,
-                            ),
-                            *parse_related_opinion_documents(
-                                order_html,
-                                self.order_index_url,
-                                docket,
-                                document_type=DocumentType.ORDER,
-                            ),
                         ),
                         metadata={
                             "time_precision": "date",
@@ -670,12 +689,6 @@ class SupremeCourtAdapter:
             )
         parsed = parse_argument_index(response.text(), self.index_url)
         cutoff = now - timedelta(days=self.detail_lookback_days)
-        has_recent_arguments = any(argued_at >= cutoff for _, _, argued_at, _ in parsed)
-        opinion_html = ""
-        order_html = ""
-        if has_recent_arguments:
-            opinion_html = self.fetcher.get(self.opinion_index_url).text()
-            order_html = self.fetcher.get(self.order_index_url).text()
         items: list[DiscoveredProceeding] = []
         detail_requests = 0
         for docket, title, argued_at, detail_url in parsed:
@@ -686,21 +699,6 @@ class SupremeCourtAdapter:
                 detail_requests += 1
                 discovered_media, documents = parse_argument_detail(
                     detail_response.text(), detail_url, docket, self.term
-                )
-                documents = (
-                    *documents,
-                    *parse_related_opinion_documents(
-                        opinion_html,
-                        self.opinion_index_url,
-                        docket,
-                        document_type=DocumentType.OPINION,
-                    ),
-                    *parse_related_opinion_documents(
-                        order_html,
-                        self.order_index_url,
-                        docket,
-                        document_type=DocumentType.ORDER,
-                    ),
                 )
                 audio_available = discovered_media is not None
             transcript_available = any(

@@ -154,6 +154,61 @@ class PendingWork(StaticContract):
     last_attempted_at: datetime | None = None
 
 
+class DispositionDiscoveryState(StaticContract):
+    """Allowlisted durable metadata for one independently discovered slip disposition."""
+
+    logical_key: str = Field(pattern=_KEY_PATTERN)
+    case_key: str = Field(pattern=_KEY_PATTERN)
+    term: str = Field(pattern=r"^\d{4}$")
+    primary_docket: str = Field(min_length=1, max_length=100)
+    consolidated_dockets: tuple[str, ...] = ()
+    caption: str = Field(min_length=1, max_length=500)
+    release_number: str = Field(pattern=r"^(?:D)?\d+$")
+    kind: Literal["opinion", "per_curiam", "decree"]
+    official_url: str
+    publication_date: datetime
+    revision_date: datetime | None = None
+    revision_reference_url: str | None = None
+    metadata_sha256: str = Field(pattern=_SHA256_PATTERN)
+
+    @model_validator(mode="after")
+    def validate_metadata(self) -> Self:
+        if len(set(self.consolidated_dockets)) != len(self.consolidated_dockets):
+            raise ValueError("disposition consolidated dockets must be unique")
+        if self.primary_docket in self.consolidated_dockets:
+            raise ValueError("disposition primary docket cannot be consolidated")
+        if self.revision_date is not None and self.revision_date <= self.publication_date:
+            raise ValueError("disposition revision date must follow publication")
+        if (self.revision_date is None) != (self.revision_reference_url is None):
+            raise ValueError("disposition revision date and reference must appear together")
+        LogicalSourceState.require_official_url(self.official_url)
+        urls = (self.official_url,) + (
+            (self.revision_reference_url,) if self.revision_reference_url is not None else ()
+        )
+        expected_path = rf"https://www\.supremecourt\.gov/opinions/{self.term[-2:]}pdf/[^/?#]+\.pdf"
+        if any(re.fullmatch(expected_path, url, re.IGNORECASE) is None for url in urls):
+            raise ValueError("disposition URL is outside its term's slip-opinion path")
+        if self.revision_reference_url is not None:
+            LogicalSourceState.require_official_url(self.revision_reference_url)
+            if "diff" not in self.revision_reference_url.rsplit("/", 1)[-1].casefold():
+                raise ValueError("disposition revision reference must be a diff PDF")
+        normalized_docket = " ".join(
+            self.primary_docket.replace("\N{EN DASH}", "-").strip().casefold().split()
+        )
+        docket_key = re.sub(r"[^a-z0-9]+", "-", normalized_docket).strip("-")
+        expected_key = f"slip:{self.term}:{docket_key}:{self.release_number.casefold()}"
+        if self.logical_key != expected_key:
+            raise ValueError("disposition logical key does not match its official identity")
+        payload = self.model_dump(
+            mode="json",
+            exclude={"logical_key", "case_key", "metadata_sha256"},
+        )
+        encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
+        if hashlib.sha256(encoded).hexdigest() != self.metadata_sha256:
+            raise ValueError("disposition metadata digest does not match its fields")
+        return self
+
+
 class CursorState(StaticContract):
     cursor_key: str = Field(pattern=_KEY_PATTERN)
     position: int = Field(ge=0)
@@ -177,6 +232,7 @@ class PublicationState(StaticContract):
     updated_at: datetime
     sources: tuple[LogicalSourceState, ...] = ()
     documents: tuple[LogicalDocumentState, ...] = ()
+    dispositions: tuple[DispositionDiscoveryState, ...] = ()
     cases: tuple[CaseRevisionPointer, ...] = ()
     pending_work: tuple[PendingWork, ...] = ()
     cursors: tuple[CursorState, ...] = ()
@@ -186,6 +242,9 @@ class PublicationState(StaticContract):
     def require_stable_collections(self) -> Self:
         _require_unique_sorted(self.sources, lambda value: value.logical_key, "source")
         _require_unique_sorted(self.documents, lambda value: value.logical_key, "document")
+        _require_unique_sorted(
+            self.dispositions, lambda value: value.logical_key, "disposition"
+        )
         _require_unique_sorted(self.cases, lambda value: value.case_key, "case")
         _require_unique_sorted(self.pending_work, lambda value: value.case_key, "pending case")
         _require_unique_sorted(self.cursors, lambda value: value.cursor_key, "cursor")
@@ -408,6 +467,13 @@ def _json_value(value: Any) -> Any:
         payload = value.model_dump(mode="python")
         payload["topics"] = sorted(set(payload["topics"]), key=str.casefold)
         payload["official_disposition_urls"] = sorted(set(payload["official_disposition_urls"]))
+        return _json_value(payload)
+    if isinstance(value, PublicationState):
+        payload = value.model_dump(mode="python")
+        if not value.dispositions:
+            # Preserve canonical schema-1.0 bytes until first-class disposition
+            # discovery has durable metadata to add.
+            payload.pop("dispositions")
         return _json_value(payload)
     if isinstance(value, CaseRevisionPointer):
         payload = value.model_dump(mode="python")

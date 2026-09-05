@@ -20,6 +20,7 @@ from ragchew.scotus.public_contracts import PublicCaseBrief, ScotusPublicProject
 from ragchew.scotus.static_contracts import (
     CostLedger,
     CursorState,
+    DispositionDiscoveryState,
     LogicalDocumentState,
     LogicalSourceState,
     ModelAttemptReceipt,
@@ -338,6 +339,7 @@ class StaticStateStore:
         pending_work: tuple[PendingWork, ...],
         cursors: tuple[CursorState, ...],
         processor: ProcessorFingerprint | None,
+        dispositions: tuple[DispositionDiscoveryState, ...] | None = None,
     ) -> GeneratedContent:
         """Apply sanitized checkpoints without changing the active release pointer."""
         publication = PublicationState(
@@ -345,6 +347,11 @@ class StaticStateStore:
             updated_at=updated_at,
             sources=sources,
             documents=documents,
+            dispositions=(
+                content.publication.dispositions
+                if dispositions is None
+                else dispositions
+            ),
             cases=content.publication.cases,
             pending_work=pending_work,
             cursors=cursors,

@@ -16,9 +16,11 @@ from ragchew.config import ProceedingsConfig, ScotusConfig, ServiceSettings
 from ragchew.proceedings.contracts import DocumentType
 from ragchew.proceedings.discovery import ConditionalRequest
 from ragchew.proceedings.sources.http import RequestRateLimiter, SourceResponse
+from ragchew.proceedings.sources.supreme_court import SupremeCourtAdapter
 from ragchew.scotus.discovery import DiscoveryMode
 from ragchew.scotus.live_static import (
     LiveStaticBatchAdapter,
+    LiveStaticDiscovery,
     _case_documents,
     _CaseInput,
     _default_ollama_client,
@@ -26,12 +28,20 @@ from ragchew.scotus.live_static import (
 )
 from ragchew.scotus.public_contracts import public_case_key
 from ragchew.scotus.static_contracts import (
+    ConditionalValidators,
+    ContentIntegrity,
+    CostLedger,
     CostReceiptBundle,
+    LogicalSourceState,
     ModelAttemptOutcome,
     PendingReason,
     PendingWork,
 )
-from ragchew.scotus.static_pipeline import PublicationGateDenied, StaticBatchResult
+from ragchew.scotus.static_pipeline import (
+    PublicationGateDenied,
+    StaticBatchResult,
+    UnifiedRunBudget,
+)
 from ragchew.scotus.static_state import GeneratedContent, StaticStateStore
 from ragchew.scotus.transcript_parser import TranscriptParseError
 
@@ -65,7 +75,9 @@ class MemoryStateStore(StaticStateStore):
 class CourtFixture:
     def __init__(self) -> None:
         self.index_etag = '"index-1"'
+        self.slip_etag = '"slip-1"'
         self.rows = [("25-1", "Example v. Agency", "4/20/26", "25-1.pdf")]
+        self.slip_rows: list[tuple[str, str, str, str, str, str]] = []
         self.documents: dict[str, tuple[str, bytes, str]] = {
             "/pdfs/transcripts/2025/25-1.pdf": (
                 '"transcript-1"',
@@ -89,6 +101,19 @@ class CourtFixture:
         )
         return f"<!doctype html><html><body><table>{rows}</table></body></html>".encode()
 
+    def slip_html(self) -> bytes:
+        rows = "".join(
+            f"<tr><td>{release}</td><td>{date}</td><td>{docket}</td>"
+            f"<td><a href='/opinions/25pdf/{filename}'>{caption}</a></td>"
+            f"<td>{author}</td><td></td></tr>"
+            for release, date, docket, caption, author, filename in self.slip_rows
+        )
+        return (
+            "<!doctype html><table><tr><th>R-</th><th>Date</th>"
+            "<th>Docket</th><th>Name</th><th>J.</th><th>Citation</th></tr>"
+            f"{rows}</table>"
+        ).encode()
+
     def source_get(
         self, url: str, conditional: ConditionalRequest | None = None
     ) -> SourceResponse:
@@ -101,6 +126,15 @@ class CourtFixture:
                 url,
                 {"content-type": "text/html", "etag": self.index_etag},
                 self.index_html(),
+            )
+        if "slipopinion" in url:
+            if conditional and conditional.etag == self.slip_etag:
+                return SourceResponse(304, url, {"etag": self.slip_etag}, b"")
+            return SourceResponse(
+                200,
+                url,
+                {"content-type": "text/html", "etag": self.slip_etag},
+                self.slip_html(),
             )
         return SourceResponse(
             200,
@@ -492,6 +526,125 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert not list((tmp_path / "private").glob("ragchew-*"))
 
 
+def test_disposition_only_discovery_is_persisted_pending_without_model_call(
+    tmp_path: Path,
+) -> None:
+    court = CourtFixture()
+    court.rows = []
+    court.slip_rows = [
+        (
+            "17",
+            "3/04/26",
+            "25A810",
+            "Emergency Applicant v. Agency",
+            "PC",
+            "25a810_example.pdf",
+        )
+    ]
+    model = MockOpenAI()
+    result = run(tmp_path, MemoryStateStore(tmp_path / "state"), court, model)
+
+    assert result.no_public_change
+    assert result.pending_case_keys == ("2025-25a810",)
+    assert model.requests == []
+    disposition = result.content.publication.dispositions[0]
+    assert disposition.primary_docket == "25A810"
+    assert disposition.publication_date == datetime(2026, 3, 4, tzinfo=UTC)
+    assert disposition.case_key == result.pending_case_keys[0]
+    slip_requests = [url for url, _ in court.source_requests if "slipopinion" in url]
+    assert slip_requests == [
+        "https://www.supremecourt.gov/opinions/slipopinion/25"
+    ]
+
+
+def test_first_slip_poll_ignores_legacy_generic_opinion_checkpoint(
+    tmp_path: Path,
+) -> None:
+    court = CourtFixture()
+    court.rows = []
+    court.slip_rows = [
+        (
+            "17",
+            "3/04/26",
+            "25A810",
+            "Emergency Applicant v. Agency",
+            "PC",
+            "25a810_example.pdf",
+        )
+    ]
+    legacy = LogicalSourceState(
+        logical_key="opinions:2025",
+        source_kind="opinions",
+        official_url="https://www.supremecourt.gov/opinions/slipopinion/25",
+        validators=ConditionalValidators(etag=court.slip_etag),
+        integrity=ContentIntegrity(sha256="a" * 64, byte_count=1),
+        checked_at=NOW,
+    )
+    content = GeneratedContent.empty()
+    content = replace(
+        content,
+        publication=content.publication.model_copy(update={"sources": (legacy,)}),
+    )
+    store = MemoryStateStore(tmp_path / "state", content)
+
+    result = run(tmp_path, store, court, MockOpenAI())
+
+    assert len(result.content.publication.dispositions) == 1
+    assert {item.logical_key for item in result.content.publication.sources} == {
+        "argument-index:2025",
+        "opinions:2025",
+        "orders:2025",
+        "slip-opinions:2025",
+    }
+    slip_conditional = next(
+        conditional
+        for url, conditional in court.source_requests
+        if "slipopinion" in url
+    )
+    assert slip_conditional == ConditionalRequest()
+
+
+def test_live_discovery_canonicalizes_multi_primary_consolidation() -> None:
+    court = CourtFixture()
+    court.rows.append(
+        ("25A85", "Emergency Application", "4/21/26", "25A85.pdf")
+    )
+    court.slip_rows = [
+        (
+            "5",
+            "6/04/26",
+            "25-1 and 25A85",
+            "Consolidated Case",
+            "PC",
+            "25-1_consolidated.pdf",
+        )
+    ]
+    config = live_config()
+    adapter = SupremeCourtAdapter(
+        FixtureSourceFetcher(court),
+        term="2025",
+        clock=lambda: NOW,
+        transcript_archive=True,
+    )
+    discovery = LiveStaticDiscovery(
+        adapters={"2025": adapter},
+        config=config,
+        model_endpoint="http://127.0.0.1:11434/v1",
+    )
+    result = discovery.discover(
+        mode=DiscoveryMode.NIGHTLY,
+        content=GeneratedContent.empty(),
+        budget=UnifiedRunBudget(config, CostLedger(updated_at=NOW)),
+        now=NOW,
+    )
+
+    assert [item.case_key for item in result.work] == ["2025-25-1"]
+    assert len(result.work[0].sessions) == 2
+    assert result.deferred_case_keys == ()
+    assert result.checkpoint_safe
+    assert result.dispositions[0].case_key == "2025-25-1"
+
+
 def test_brief_validation_gets_one_bounded_fixed_code_correction(
     tmp_path: Path,
 ) -> None:
@@ -753,6 +906,7 @@ def test_prior_reconstruction_preserves_typed_document_identity(tmp_path: Path) 
         primary_docket=case.primary_docket,
         caption=case.caption,
         sessions=(candidate,),
+        dispositions=(),
         prior=case,
         document_logical_keys={
             (DocumentType.OFFICIAL_TRANSCRIPT, transcript.official_url): (

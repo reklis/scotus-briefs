@@ -115,10 +115,8 @@ def test_archive_adapter_emits_direct_transcript_documents_without_audio() -> No
     assert [url for url, _ in fetcher.requests] == [index_url]
 
 
-def test_recent_transcript_archive_adds_available_docket_and_disposition_documents() -> None:
+def test_transcript_archive_does_not_redundantly_fetch_disposition_indices() -> None:
     index_url = "https://www.supremecourt.gov/oral_arguments/argument_transcript/2025"
-    opinion_url = "https://www.supremecourt.gov/opinions/slipopinion/25"
-    order_url = "https://www.supremecourt.gov/opinions/relatingtoorders/25"
     archive = SourceResponse(
         status_code=200,
         url=index_url,
@@ -129,13 +127,7 @@ def test_recent_transcript_archive_adds_available_docket_and_disposition_documen
             b'25-466</a></td></tr></table>'
         ),
     )
-    fetcher = FakeFetcher(
-        {
-            index_url: archive,
-            opinion_url: response(opinion_url, "supreme_court_opinions.html"),
-            order_url: response(order_url, "supreme_court_orders.html"),
-        }
-    )
+    fetcher = FakeFetcher({index_url: archive})
     result = SupremeCourtAdapter(
         fetcher,
         term="2025",
@@ -143,9 +135,11 @@ def test_recent_transcript_archive_adds_available_docket_and_disposition_documen
         transcript_archive=True,
     ).poll(ConditionalRequest())
     document_types = {item.document_type for item in result.proceedings[0].documents}
-    assert DocumentType.OFFICIAL_TRANSCRIPT in document_types
-    assert DocumentType.DOCKET in document_types
-    assert DocumentType.OPINION in document_types
+    assert document_types == {
+        DocumentType.OFFICIAL_TRANSCRIPT,
+        DocumentType.DOCKET,
+    }
+    assert [url for url, _conditional in fetcher.requests] == [index_url]
 
 
 def test_active_term_slip_opinion_rows_are_strictly_typed() -> None:
@@ -177,6 +171,35 @@ def test_active_term_slip_opinion_rows_are_strictly_typed() -> None:
     )
     assert rows[2].dockets == ("25-588", "25A85")
     assert rows[2].consolidated_dockets == ("25A85",)
+
+
+def test_slip_opinion_adapter_uses_conditional_request_and_fails_closed() -> None:
+    url = "https://www.supremecourt.gov/opinions/slipopinion/25"
+    fetcher = FakeFetcher(
+        {
+            url: response(
+                url,
+                "supreme_court_slip_opinion_index.html",
+                etag='"slip-v2"',
+            )
+        }
+    )
+    adapter = SupremeCourtAdapter(fetcher, term="2025", clock=lambda: NOW)
+    result = adapter.poll_slip_opinions(ConditionalRequest(etag='"slip-v1"'))
+    assert result.etag == '"slip-v2"'
+    assert len(result.entries) == 4
+    assert fetcher.requests == [(url, ConditionalRequest(etag='"slip-v1"'))]
+
+    malformed = SourceResponse(
+        status_code=200,
+        url=url,
+        headers={"content-type": "text/html"},
+        content=b"<table><tr><td>not a supported row</td></tr></table>",
+    )
+    with pytest.raises(ValueError, match="header"):
+        SupremeCourtAdapter(
+            FakeFetcher({url: malformed}), term="2025", clock=lambda: NOW
+        ).poll_slip_opinions(ConditionalRequest())
 
 
 def test_slip_opinion_parser_rejects_ambiguous_or_unofficial_rows() -> None:
@@ -238,8 +261,6 @@ def test_opinion_parser_does_not_match_a_longer_docket_number() -> None:
 def test_adapter_emits_recent_archive_transcript_and_docket_descriptors() -> None:
     index_url = "https://www.supremecourt.gov/oral_arguments/argument_audio/2025"
     detail_url = "https://www.supremecourt.gov/oral_arguments/audio/2025/25-466"
-    opinion_url = "https://www.supremecourt.gov/opinions/slipopinion/25"
-    order_url = "https://www.supremecourt.gov/opinions/relatingtoorders/25"
     fetcher = FakeFetcher(
         {
             index_url: response(
@@ -248,8 +269,6 @@ def test_adapter_emits_recent_archive_transcript_and_docket_descriptors() -> Non
                 etag='"argument-index-v1"',
             ),
             detail_url: response(detail_url, "supreme_court_argument_detail.html"),
-            opinion_url: response(opinion_url, "supreme_court_opinions.html"),
-            order_url: response(order_url, "supreme_court_orders.html"),
         }
     )
     adapter = SupremeCourtAdapter(fetcher, term="2025", clock=lambda: NOW)
@@ -264,9 +283,8 @@ def test_adapter_emits_recent_archive_transcript_and_docket_descriptors() -> Non
     assert {document.document_type for document in recent.documents} == {
         DocumentType.DOCKET,
         DocumentType.OFFICIAL_TRANSCRIPT,
-        DocumentType.OPINION,
-        DocumentType.ORDER,
     }
+    assert [url for url, _conditional in fetcher.requests] == [index_url, detail_url]
     older = result.proceedings[1]
     assert older.lifecycle is ProceedingLifecycle.ARCHIVE_PENDING
     assert older.media == ()

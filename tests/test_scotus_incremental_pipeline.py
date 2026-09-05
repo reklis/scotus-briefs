@@ -19,10 +19,19 @@ from ragchew.proceedings.discovery import (
     DocumentDescriptor,
     SourcePollResult,
 )
+from ragchew.proceedings.sources.supreme_court import (
+    SlipOpinionEntry,
+    SlipOpinionKind,
+    SlipOpinionPollResult,
+)
 from ragchew.scotus.discovery import (
     DiscoveryMode,
     ScotusArgumentCandidate,
+    ScotusDispositionCandidate,
     discover_once,
+    discover_slip_opinions_once,
+    disposition_state,
+    merge_case_discovery,
     select_discovery_resources,
     select_discovery_work,
     stable_candidate_fingerprint,
@@ -38,10 +47,12 @@ from ragchew.scotus.static_contracts import (
     ConditionalValidators,
     ContentIntegrity,
     CostLedger,
+    DispositionDiscoveryState,
     LogicalDocumentState,
     LogicalSourceState,
     ModelAttemptOutcome,
     ModelAttemptReceipt,
+    canonical_json_bytes,
 )
 from ragchew.scotus.static_pipeline import (
     BudgetExceeded,
@@ -114,6 +125,18 @@ class Adapter:
         return self.result
 
 
+class SlipAdapter:
+    def __init__(self, result: SlipOpinionPollResult) -> None:
+        self.result = result
+        self.conditional: ConditionalRequest | None = None
+
+    def poll_slip_opinions(
+        self, conditional: ConditionalRequest
+    ) -> SlipOpinionPollResult:
+        self.conditional = conditional
+        return self.result
+
+
 def source_state() -> LogicalSourceState:
     return LogicalSourceState(
         logical_key="argument-index:2025",
@@ -145,6 +168,309 @@ def test_discover_once_sends_checkpoint_and_304_creates_no_work() -> None:
     assert adapter.conditional == ConditionalRequest(etag='"v1"')
     assert result.not_modified and not result.changed and result.candidates == ()
     assert result.checkpoint.integrity == source_state().integrity
+
+
+def slip_entry(
+    *,
+    revision_date: datetime | None = None,
+    revision_reference_url: str | None = None,
+) -> SlipOpinionEntry:
+    return SlipOpinionEntry(
+        term="2025",
+        release_number="17",
+        dockets=("25A810",),
+        caption="Emergency Applicant v. Agency",
+        kind=SlipOpinionKind.PER_CURIAM,
+        publication_date=datetime(2026, 3, 4, tzinfo=UTC),
+        official_pdf_url=(
+            "https://www.supremecourt.gov/opinions/25pdf/25a810_example.pdf"
+        ),
+        revision_date=revision_date,
+        revision_reference_url=revision_reference_url,
+    )
+
+
+def slip_source_state() -> LogicalSourceState:
+    return LogicalSourceState(
+        logical_key="slip-opinions:2025",
+        source_kind="opinions",
+        official_url="https://www.supremecourt.gov/opinions/slipopinion/25",
+        validators=ConditionalValidators(etag='"slip-v1"'),
+        integrity=ContentIntegrity(sha256="b" * 64, byte_count=10),
+        checked_at=NOW - timedelta(days=1),
+    )
+
+
+def test_slip_poll_creates_and_conditionally_retains_zero_session_candidate() -> None:
+    adapter = SlipAdapter(
+        SlipOpinionPollResult(
+            endpoint_url=slip_source_state().official_url,
+            retrieved_at=NOW,
+            entries=(slip_entry(),),
+            etag='"slip-v1"',
+        )
+    )
+    first = discover_slip_opinions_once(
+        adapter,
+        resource_key="slip-opinions:2025",
+        checkpoint=None,
+        prior_states=(),
+        now=NOW,
+    )
+    assert first.changed_logical_keys == ("slip:2025:25a810:17",)
+    merged = merge_case_discovery((), first.candidates)
+    assert len(merged) == 1
+    assert merged[0].arguments == ()
+    assert merged[0].dispositions == first.candidates
+
+    not_modified_adapter = SlipAdapter(
+        SlipOpinionPollResult(
+            endpoint_url=slip_source_state().official_url,
+            retrieved_at=NOW + timedelta(days=1),
+            not_modified=True,
+            etag='"slip-v1"',
+        )
+    )
+    second = discover_slip_opinions_once(
+        not_modified_adapter,
+        resource_key="slip-opinions:2025",
+        checkpoint=first.checkpoint,
+        prior_states=first.states,
+        now=NOW + timedelta(days=1),
+    )
+    assert not_modified_adapter.conditional == ConditionalRequest(etag='"slip-v1"')
+    assert second.not_modified
+    assert second.changed_logical_keys == ()
+    assert second.candidates == first.candidates
+    assert second.states == first.states
+
+
+def test_slip_revision_changes_metadata_but_missing_row_never_deletes() -> None:
+    first_adapter = SlipAdapter(
+        SlipOpinionPollResult(
+            endpoint_url=slip_source_state().official_url,
+            retrieved_at=NOW,
+            entries=(slip_entry(),),
+            etag='"slip-v1"',
+        )
+    )
+    first = discover_slip_opinions_once(
+        first_adapter,
+        resource_key="slip-opinions:2025",
+        checkpoint=None,
+        prior_states=(),
+        now=NOW,
+    )
+    revised_adapter = SlipAdapter(
+        SlipOpinionPollResult(
+            endpoint_url=slip_source_state().official_url,
+            retrieved_at=NOW + timedelta(days=1),
+            entries=(
+                slip_entry(
+                    revision_date=datetime(2026, 3, 5, tzinfo=UTC),
+                    revision_reference_url=(
+                        "https://www.supremecourt.gov/opinions/25pdf/"
+                        "25a810_diff_latest.pdf"
+                    ),
+                ),
+            ),
+            etag='"slip-v2"',
+        )
+    )
+    revised = discover_slip_opinions_once(
+        revised_adapter,
+        resource_key="slip-opinions:2025",
+        checkpoint=first.checkpoint,
+        prior_states=first.states,
+        now=NOW + timedelta(days=1),
+    )
+    assert revised.changed_logical_keys == first.changed_logical_keys
+    assert revised.states[0].logical_key == first.states[0].logical_key
+    assert revised.states[0].metadata_sha256 != first.states[0].metadata_sha256
+
+    missing_adapter = SlipAdapter(
+        SlipOpinionPollResult(
+            endpoint_url=slip_source_state().official_url,
+            retrieved_at=NOW + timedelta(days=2),
+            entries=(),
+            etag='"slip-v3"',
+        )
+    )
+    missing = discover_slip_opinions_once(
+        missing_adapter,
+        resource_key="slip-opinions:2025",
+        checkpoint=revised.checkpoint,
+        prior_states=revised.states,
+        now=NOW + timedelta(days=2),
+    )
+    assert missing.changed_logical_keys == ()
+    assert missing.candidates == revised.candidates
+    assert missing.states == revised.states
+
+
+def test_unchanged_200_slip_response_creates_no_changed_work() -> None:
+    first_adapter = SlipAdapter(
+        SlipOpinionPollResult(
+            endpoint_url=slip_source_state().official_url,
+            retrieved_at=NOW,
+            entries=(slip_entry(),),
+            etag='"slip-v1"',
+        )
+    )
+    first = discover_slip_opinions_once(
+        first_adapter,
+        resource_key="slip-opinions:2025",
+        checkpoint=None,
+        prior_states=(),
+        now=NOW,
+    )
+    unchanged = discover_slip_opinions_once(
+        SlipAdapter(
+            SlipOpinionPollResult(
+                endpoint_url=slip_source_state().official_url,
+                retrieved_at=NOW + timedelta(hours=1),
+                entries=(slip_entry(),),
+                etag='"slip-v2"',
+            )
+        ),
+        resource_key="slip-opinions:2025",
+        checkpoint=first.checkpoint,
+        prior_states=first.states,
+        now=NOW + timedelta(hours=1),
+    )
+    assert not unchanged.changed
+    assert unchanged.changed_logical_keys == ()
+    assert unchanged.states == first.states
+    assert unchanged.checkpoint.validators.etag == '"slip-v2"'
+
+
+def test_slip_index_failure_cannot_mutate_prior_disposition_state() -> None:
+    prior = (disposition_discovery_state(),)
+
+    class FailingSlipAdapter:
+        def poll_slip_opinions(
+            self, _conditional: ConditionalRequest
+        ) -> SlipOpinionPollResult:
+            raise ConnectionError("synthetic index failure")
+
+    with pytest.raises(ConnectionError):
+        discover_slip_opinions_once(
+            FailingSlipAdapter(),
+            resource_key="slip-opinions:2025",
+            checkpoint=slip_source_state(),
+            prior_states=prior,
+            now=NOW,
+        )
+    assert prior == (disposition_discovery_state(),)
+
+
+def test_disposition_merges_on_consolidated_normalized_docket() -> None:
+    argument = candidate("25A85")
+    disposition = ScotusDispositionCandidate(
+        term="2025",
+        primary_docket="25-588",
+        consolidated_dockets=("25a85",),
+        caption="Consolidated Case",
+        release_number="5",
+        kind=SlipOpinionKind.PER_CURIAM,
+        publication_date=NOW,
+        official_url="https://www.supremecourt.gov/opinions/25pdf/25-588_example.pdf",
+    )
+    merged = merge_case_discovery((argument,), (disposition,))
+    assert len(merged) == 1
+    assert merged[0].primary_docket == "25A85"
+    assert merged[0].consolidated_dockets == ("25-588",)
+    assert merged[0].arguments == (argument,)
+    assert merged[0].dispositions == (disposition,)
+    retained = merge_case_discovery(
+        (argument,),
+        (disposition,),
+        preferred_primary_dockets=(("2025", "25-588"),),
+    )
+    assert retained[0].primary_docket == "25-588"
+
+
+def test_consolidated_disposition_deterministically_joins_two_argument_primaries() -> None:
+    primary = candidate("25-588")
+    emergency = candidate("25A85")
+    disposition = ScotusDispositionCandidate(
+        term="2025",
+        primary_docket="25-588",
+        consolidated_dockets=("25A85",),
+        caption="Consolidated Case",
+        release_number="5",
+        kind=SlipOpinionKind.PER_CURIAM,
+        publication_date=NOW,
+        official_url="https://www.supremecourt.gov/opinions/25pdf/25-588_example.pdf",
+    )
+    merged = merge_case_discovery((emergency, primary), (disposition,))
+    assert len(merged) == 1
+    assert merged[0].primary_docket == "25-588"
+    assert {item.primary_docket for item in merged[0].arguments} == {
+        "25-588",
+        "25A85",
+    }
+
+
+def disposition_discovery_state() -> DispositionDiscoveryState:
+    return disposition_state(
+        ScotusDispositionCandidate(
+            term="2025",
+            primary_docket="25A810",
+            caption="Emergency Applicant v. Agency",
+            release_number="17",
+            kind=SlipOpinionKind.PER_CURIAM,
+            official_url=(
+                "https://www.supremecourt.gov/opinions/25pdf/25a810_example.pdf"
+            ),
+            publication_date=NOW,
+        )
+    )
+
+
+def test_disposition_state_is_strict_sanitized_metadata() -> None:
+    state = disposition_discovery_state()
+    payload = canonical_json_bytes(state).decode()
+    assert '"caption":"Emergency Applicant v. Agency"' in payload
+    assert "source_body" not in payload
+    with pytest.raises(ValueError):
+        DispositionDiscoveryState.model_validate(
+            {**state.model_dump(), "source_body": "private HTML"}
+        )
+
+
+def test_bounded_zero_session_checkpoint_persists_candidate_and_pending(
+    tmp_path: Path,
+) -> None:
+    disposition = disposition_discovery_state()
+    advanced = slip_source_state().model_copy(update={"checked_at": NOW})
+
+    class Discovery:
+        def discover(self, **_kwargs: object) -> StaticDiscoveryResult:
+            return StaticDiscoveryResult(
+                sources=(advanced,),
+                dispositions=(disposition,),
+                deferred_case_keys=(disposition.case_key,),
+                checkpoint_safe=True,
+            )
+
+    class Processor:
+        def process(self, *_args: object, **_kwargs: object) -> CaseProcessingResult:
+            raise AssertionError("zero-session discovery must remain pending")
+
+    result = StaticBatchOrchestrator(
+        state_store=StaticStateStore(tmp_path / "empty"),
+        discovery=Discovery(),
+        processor=Processor(),
+        config=ScotusConfig.from_yaml("config/scotus.yaml"),
+        runner_temp=tmp_path,
+    ).run(now=NOW)
+
+    assert result.no_public_change
+    assert result.content.publication.sources == (advanced,)
+    assert result.content.publication.dispositions == (disposition,)
+    assert result.pending_case_keys == (disposition.case_key,)
+    assert result.content.publication.pending_work[0].attempts == 0
 
 
 def test_stable_fingerprint_ignores_retrieval_times() -> None:

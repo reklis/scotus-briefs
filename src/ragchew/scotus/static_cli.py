@@ -625,6 +625,7 @@ def _promote(args: argparse.Namespace) -> int:
             pending_work=candidate.publication.pending_work,
             cursors=candidate.publication.cursors,
             processor=candidate.publication.processor,
+            dispositions=candidate.publication.dispositions,
         )
     else:
         release_id = _optional_id(args.release_id)
