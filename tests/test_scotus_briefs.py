@@ -18,6 +18,7 @@ from ragchew.scotus.briefs import (
     InMemoryBriefRevisionStore,
     LegalBriefDraft,
     OpenAILegalBriefGenerator,
+    _unsupported_named_phrase,
     disposition_only_brief_json_schema,
     evaluate_brief_candidate,
     simple_brief_json_schema,
@@ -310,6 +311,16 @@ def test_disposition_only_policy_requires_docket_and_typed_court_action() -> Non
     rejected = evaluate_brief_candidate(without_docket, minimum_confidence=0.85)
     assert not rejected.eligible
     assert "docket evidence" in " ".join(rejected.reasons)
+
+
+def test_disposition_name_guard_allows_only_evidence_derived_acronyms() -> None:
+    support = "The Federal Communications Commission action is stayed."
+    assert not _unsupported_named_phrase(
+        "The FCC action is stayed.", support, "Committee v. Brown"
+    )
+    assert _unsupported_named_phrase(
+        "The FTC action is stayed.", support, "Committee v. Brown"
+    )
 
 
 @pytest.mark.parametrize(

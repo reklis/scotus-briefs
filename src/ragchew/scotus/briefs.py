@@ -720,8 +720,23 @@ def _action_signatures(value: str) -> set[tuple[str, bool]]:
     return signatures
 
 
+def _supported_acronyms(value: str) -> set[str]:
+    stop_words = {"and", "for", "in", "of", "the", "to", "v"}
+    acronyms: set[str] = set()
+    for phrase in _NAMED_PHRASE.findall(value):
+        words = re.findall(r"[A-Za-z]+", phrase)
+        acronym = "".join(
+            word[0] for word in words if word.casefold() not in stop_words
+        ).casefold()
+        if len(acronym) >= 2:
+            acronyms.add(acronym)
+    return acronyms
+
+
 def _unsupported_named_phrase(text: str, support: str, caption: str) -> bool:
-    allowed = f"{support} {caption}".casefold()
+    allowed_value = f"{support} {caption}"
+    allowed = allowed_value.casefold()
+    allowed_acronyms = _supported_acronyms(allowed_value)
     generic_prefixes = (
         "what ",
         "how ",
@@ -734,11 +749,19 @@ def _unsupported_named_phrase(text: str, support: str, caption: str) -> bool:
         lowered = match.casefold()
         if lowered.startswith(generic_prefixes):
             continue
+        phrase_words = re.findall(r"[A-Za-z]+", match)
+        if phrase_words and all(
+            word.casefold() in _CAPITALIZED_EXEMPT
+            or (word.isupper() and word.casefold() in allowed_acronyms)
+            for word in phrase_words
+        ):
+            continue
         if lowered not in allowed:
             return True
     return any(
         word.casefold() not in _CAPITALIZED_EXEMPT
         and word.casefold() not in allowed
+        and not (word.isupper() and word.casefold() in allowed_acronyms)
         for word in _CAPITALIZED_WORD.findall(text)
     )
 
