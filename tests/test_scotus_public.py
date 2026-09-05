@@ -234,6 +234,7 @@ def test_case_index_sorts_by_court_document_date_not_article_update() -> None:
             "slug": "2025-25-1002-argued",
             "title": "Recently argued",
             "argument_date": latest_argument.argument_date,
+            "latest_court_document_date": latest_argument.argument_date,
             "arguments": (latest_argument,),
         }
     )
@@ -247,6 +248,7 @@ def test_case_index_sorts_by_court_document_date_not_article_update() -> None:
             "title": "Recently decided",
             "case_status": ScotusCaseStatus.DECIDED,
             "argument_date": decision_argument.argument_date,
+            "latest_court_document_date": decision_argument.argument_date,
             "arguments": (decision_argument,),
             "case_history": (
                 PublicCaseHistoryEvent(
@@ -274,6 +276,7 @@ def test_case_index_uses_twenty_item_pages_and_preserves_filters() -> None:
                 "slug": f"2025-25-{1000 + index}-case-{index}",
                 "title": f"Paging case {index}",
                 "argument_date": NOW + timedelta(minutes=index),
+                "latest_court_document_date": NOW + timedelta(minutes=index),
                 "arguments": (
                     base.arguments[0].model_copy(
                         update={"argument_date": NOW + timedelta(minutes=index)}
@@ -336,7 +339,11 @@ def test_multiple_arguments_render_once_in_chronological_case_history() -> None:
         }
     )
     whole_case = case.model_copy(
-        update={"arguments": (first, second), "argument_date": second.argument_date}
+        update={
+            "arguments": (first, second),
+            "argument_date": second.argument_date,
+            "latest_court_document_date": second.argument_date,
+        }
     )
     store = InMemoryScotusProjectionStore()
     store.activate(NOW, NOW, (whole_case,))

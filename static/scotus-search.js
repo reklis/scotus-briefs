@@ -3,7 +3,7 @@
 (function (root) {
   const PAGE_SIZE = 20;
   function normalize(value) { return String(value || "").trim().replace(/\s+/g, " ").toLocaleLowerCase("en-US"); }
-  function searchable(item) { return normalize([item.title, item.caption, item.docket, item.term, item.argument_date, item.status].concat(item.topics).join(" ")); }
+  function searchable(item) { return normalize([item.title, item.caption, item.docket, item.term, item.latest_court_document_date, item.argument_date, item.status].concat(item.topics).join(" ")); }
   function filterCases(cases, query, status, topic) {
     const needle = normalize(query), wantedStatus = normalize(status), wantedTopic = normalize(topic);
     return cases.filter(function (item) {
@@ -41,7 +41,7 @@
       const li = document.createElement("li"), article = document.createElement("article"), heading = document.createElement("h2"), link = document.createElement("a");
       link.href = item.path; link.textContent = item.title; heading.appendChild(link); article.appendChild(heading);
       appendText(article, "p", item.caption + " · Docket " + item.docket, "eyebrow");
-      appendText(article, "p", "October Term " + item.term + " · " + item.status.replace(/_/g, " ") + (item.topics.length ? " · " + item.topics.join(", ") : ""));
+      appendText(article, "p", "Latest Court document " + item.latest_court_document_date + " · October Term " + item.term + " · " + item.status.replace(/_/g, " ") + (item.topics.length ? " · " + item.topics.join(", ") : ""));
       li.appendChild(article); results.appendChild(li);
     });
     message.textContent = matches.length ? "Showing " + (((selected.page - 1) * PAGE_SIZE) + 1) + "–" + Math.min(selected.page * PAGE_SIZE, matches.length) + " of " + matches.length + " results." : "No public case briefs match this search.";

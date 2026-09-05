@@ -23,6 +23,10 @@ import httpx
 from pydantic import ValidationError
 
 from ragchew.config import ScotusConfig
+from ragchew.scotus.activity_migration import (
+    migrate_activity_contracts,
+    require_current_activity_contracts,
+)
 from ragchew.scotus.discovery import DiscoveryMode
 from ragchew.scotus.public_contracts import ScotusPublicProjection
 from ragchew.scotus.static_contracts import (
@@ -44,7 +48,7 @@ from ragchew.scotus.static_state import (
     GeneratedContent,
     ReconciliationChoice,
     StaticStateStore,
-    generated_content_digest,
+    generated_public_content_digest,
     reconcile_release_ids,
 )
 from ragchew.scotus.static_urls import StaticUrlPolicy
@@ -233,6 +237,7 @@ def _publish_empty_bootstrap(args: argparse.Namespace) -> int:
             "publication_ready": True,
             "release_id": export.manifest.release_id,
             "expected_parent_release_id": parent,
+            "expected_parent_digest": generated_public_content_digest(content),
         },
     )
     print(f"built validated empty bootstrap release {export.manifest.release_id}")
@@ -272,6 +277,7 @@ def _render_import_candidate(args: argparse.Namespace) -> int:
             "publication_ready": True,
             "release_id": release.release_id,
             "expected_parent_release_id": expected_parent,
+            "expected_parent_digest": generated_public_content_digest(parent),
         },
     )
     print(f"rendered validated import release {release.release_id}")
@@ -398,6 +404,70 @@ def _load_adapter(specification: str | None) -> ProductionBatchAdapter:
     return cast(ProductionBatchAdapter, candidate)
 
 
+def _migrate_activity(args: argparse.Namespace) -> int:
+    """Build a no-model dated-activity migration candidate from reviewed state."""
+    _, urls, config_digest = _config(args.config)
+    original = StaticStateStore(args.state).load()
+    expected_parent = _optional_id(args.expected_parent_release_id)
+    if original.publication.active_release_id != expected_parent:
+        raise CompareAndSwapConflict("activity migration parent release changed")
+    migrated = migrate_activity_contracts(
+        original,
+        migrated_at=_epoch(args.build_epoch),
+    )
+    if migrated.content is original:
+        assert original.release is not None
+        _write_outputs(
+            args.github_output,
+            {
+                "release_changed": False,
+                "release_id": original.release.release_id,
+                "expected_parent_release_id": original.release.previous_release_id,
+                "expected_parent_digest": generated_public_content_digest(original),
+                "migrated_cases": "0",
+                "exact_backfills": "0",
+                "unmatched_backfills": str(len(migrated.unmatched_case_keys)),
+            },
+        )
+        print("activity contracts already current")
+        return 0
+    assert migrated.content.projection is not None
+    exported = StaticSiteExporter(urls).export(
+        migrated.content.projection,
+        args.output,
+        source_commit=args.source_commit,
+        build_epoch=_epoch(args.build_epoch),
+        config_sha256=config_digest,
+        previous_release_id=migrated.parent_release_id,
+        legacy_slugs={
+            pointer.case_key: pointer.legacy_slugs
+            for pointer in migrated.content.publication.cases
+        },
+    )
+    finalized = StaticStateStore(args.state).finalize_candidate(
+        args.candidate_state,
+        migrated.content,
+        exported.manifest,
+    )
+    validate_static_candidate(args.output, urls, state_root=args.candidate_state)
+    _write_outputs(
+        args.github_output,
+        {
+            "release_changed": True,
+            "release_id": exported.manifest.release_id,
+            "expected_parent_release_id": migrated.parent_release_id,
+            "expected_parent_digest": generated_public_content_digest(original),
+            "migrated_cases": str(len(migrated.migrated_case_keys)),
+            "exact_backfills": str(len(migrated.exact_backfill_case_keys)),
+            "unmatched_backfills": str(len(migrated.unmatched_case_keys)),
+        },
+    )
+    if finalized.release is None:
+        raise RuntimeError("activity migration did not finalize a release")
+    print(f"built validated activity migration {finalized.release.release_id}")
+    return 0
+
+
 def _batch(args: argparse.Namespace) -> int:
     if args.mode == "fixture":
         fixture_args = argparse.Namespace(
@@ -444,6 +514,7 @@ def _batch(args: argparse.Namespace) -> int:
             config = config.model_copy(update={"runner_limits": runner_limits})
     state_store = StaticStateStore(args.state)
     original = state_store.load()
+    require_current_activity_contracts(original)
     result = adapter.run(
         state_store=state_store,
         config=config,
@@ -503,6 +574,7 @@ def _batch(args: argparse.Namespace) -> int:
             "publication_ready": publication_ready,
             "release_id": export.manifest.release_id,
             "expected_parent_release_id": result.parent_release_id,
+            "expected_parent_digest": generated_public_content_digest(original),
         },
     )
     print(f"built validated batch release {export.manifest.release_id}")
@@ -630,12 +702,15 @@ def _promote(args: argparse.Namespace) -> int:
     else:
         release_id = _optional_id(args.release_id)
         expected_parent = _optional_id(args.expected_parent_release_id)
+        expected_parent_digest = args.expected_parent_digest
+        if expected_parent_digest is None:
+            raise CompareAndSwapConflict("build-time parent digest is required")
         if candidate.release is None or candidate.release.release_id != release_id:
             raise CompareAndSwapConflict("candidate release ID differs from deployed release")
         store.require_release_parent(
             candidate,
             expected_parent_release_id=expected_parent,
-            expected_parent_digest=generated_content_digest(active),
+            expected_parent_digest=expected_parent_digest,
         )
         # A receipts-only mutation may have landed after the build. Never overwrite it
         # with the older candidate ledger during release promotion.
@@ -815,6 +890,22 @@ def build_parser() -> argparse.ArgumentParser:
     imported.add_argument("--github-output", type=Path)
     imported.set_defaults(function=_render_import_candidate)
 
+    migration = commands.add_parser(
+        "migrate-activity-contracts",
+        help="build a no-model generated-content migration to dated Court activity",
+    )
+    migration.add_argument("--state-dir", dest="state", type=Path, required=True)
+    migration.add_argument(
+        "--candidate-state-dir", dest="candidate_state", type=Path, required=True
+    )
+    migration.add_argument("--output", type=Path, required=True)
+    migration.add_argument("--config", type=Path, default=Path("config/scotus.yaml"))
+    migration.add_argument("--source-commit", required=True)
+    migration.add_argument("--build-epoch", required=True)
+    migration.add_argument("--expected-parent-release-id", required=True)
+    migration.add_argument("--github-output", type=Path)
+    migration.set_defaults(function=_migrate_activity)
+
     preview = commands.add_parser("preview", help="serve an existing or fixture-backed static tree")
     preview.add_argument("--directory", type=Path)
     preview.add_argument(
@@ -884,6 +975,7 @@ def build_parser() -> argparse.ArgumentParser:
     promote.add_argument("--candidate-state-dir", dest="candidate_state", type=Path, required=True)
     promote.add_argument("--release-id")
     promote.add_argument("--expected-parent-release-id")
+    promote.add_argument("--expected-parent-digest")
     promote.add_argument("--expected-parent-commit", required=True)
     promote.add_argument("--checkpoint-only", action="store_true")
     promote.add_argument("--github-output", type=Path)

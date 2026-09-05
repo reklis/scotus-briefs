@@ -111,6 +111,7 @@ from ragchew.scotus.public_contracts import (
     PublicBriefRevisionSummary,
     PublicCaseBrief,
     PublicCaseHistoryEvent,
+    PublicDisposition,
     ScotusPublicProjection,
     public_case_key,
 )
@@ -1759,20 +1760,50 @@ class LiveStaticCaseProcessor:
                 correction_note=correction_note,
             ),
         )
+        typed_disposition_urls = {
+            item.official_url for item in source.dispositions
+        }
+        retained_legacy_urls = (
+            set(source.prior.official_disposition_urls)
+            if source.prior is not None
+            and source.prior.undated_disposition_date_fallback is not None
+            else set()
+        )
         disposition_urls = tuple(
             sorted(
                 {
                     item.descriptor.official_url
                     for item in _case_documents(source)
                     if item.kind in {ScotusDocumentKind.ORDER, ScotusDocumentKind.OPINION}
+                    and item.descriptor.official_url not in typed_disposition_urls
+                    and item.descriptor.official_url in retained_legacy_urls
                 }
+            )
+        )
+        official_dispositions = tuple(
+            sorted(
+                (
+                    PublicDisposition(
+                        kind=item.kind.value,
+                        official_url=item.official_url,
+                        publication_date=item.publication_date,
+                        revision_date=item.revision_date,
+                    )
+                    for item in source.dispositions
+                ),
+                key=lambda item: (
+                    item.publication_date,
+                    item.revision_date or item.publication_date,
+                    item.kind,
+                    item.official_url,
+                ),
             )
         )
         public = build_public_case(
             term=source.term,
             primary_docket=source.primary_docket,
             caption=source.caption,
-            argument_date=sessions[0].argument_date,
+            argument_date=max(item.argument_date for item in sessions),
             case_status=status,
             official_detail_url=source.sessions[-1].official_detail_url,
             revision=revision,
@@ -1781,6 +1812,8 @@ class LiveStaticCaseProcessor:
             case_history=history,
             revision_history=revision_history,
             official_disposition_urls=disposition_urls,
+            official_dispositions=official_dispositions,
+            allow_legacy_disposition_fallback=bool(disposition_urls),
             topics=source.prior.topics if source.prior else (),
         )
         return CaseProcessingResult(

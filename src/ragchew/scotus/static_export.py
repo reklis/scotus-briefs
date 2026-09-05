@@ -59,7 +59,14 @@ def build_search_index(
                 caption=case.caption,
                 docket=case.primary_docket,
                 term=case.term,
-                argument_date=case.argument_date.date().isoformat(),
+                latest_court_document_date=(
+                    latest_court_document_date(case).date().isoformat()
+                ),
+                argument_date=(
+                    case.argument_date.date().isoformat()
+                    if case.argument_date is not None
+                    else None
+                ),
                 status=case.case_status.value,
                 topics=tuple(sorted(set(case.topics), key=lambda value: (value.casefold(), value))),
             )

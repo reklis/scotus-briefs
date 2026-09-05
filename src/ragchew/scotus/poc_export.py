@@ -469,12 +469,22 @@ class PostgresPocBriefReader:
                     )
                 case_status = events[-1].status
                 source = partial(_source_links, case_id=case_id, provenance=provenance)
+                legacy_disposition_urls = tuple(
+                    sorted(
+                        {
+                            url
+                            for available_at, url in dispositions.get(case_id, [])
+                            if available_at <= value.created_at
+                        }
+                    )
+                )
                 public_case = PublicCaseBrief(
                     slug=public_case_slug(value.term, value.primary_docket, value.caption),
                     term=value.term,
                     primary_docket=value.primary_docket,
                     caption=value.caption,
                     argument_date=analyses_sessions[-1].argument_date,
+                    latest_court_document_date=analyses_sessions[-1].argument_date,
                     case_status=case_status,
                     maturity=value.maturity,
                     title=_public_text(value.body.title) or value.body.title,
@@ -516,14 +526,9 @@ class PostgresPocBriefReader:
                         "https://www.supremecourt.gov/docket/docketfiles/html/public/"
                         f"{quote(value.primary_docket, safe='-')}.html"
                     ),
-                    official_disposition_urls=tuple(
-                        sorted(
-                            {
-                                url
-                                for available_at, url in dispositions.get(case_id, [])
-                                if available_at <= value.created_at
-                            }
-                        )
+                    official_disposition_urls=legacy_disposition_urls,
+                    undated_disposition_date_fallback=(
+                        "latest_argument_date" if legacy_disposition_urls else None
                     ),
                     revisions=summaries[: value.revision_number],
                     updated_at=value.created_at,
@@ -626,7 +631,19 @@ def build_poc_generated_content(
         disclosure=parent.projection.disclosure,
         site_name=parent.projection.site_name,
     )
-    publication = working.publication.model_copy(update={"updated_at": build_epoch})
+    publication = working.publication.model_copy(
+        update={
+            "schema_version": "1.1",
+            "updated_at": build_epoch,
+            "undated_disposition_case_keys": tuple(
+                sorted(
+                    public_case_key(case.term, case.primary_docket)
+                    for case in active_cases
+                    if case.undated_disposition_date_fallback is not None
+                )
+            ),
+        }
+    )
     candidate = replace(working, projection=projection, publication=publication)
     assert_public_payload(projection.model_dump(mode="python"))
     try:

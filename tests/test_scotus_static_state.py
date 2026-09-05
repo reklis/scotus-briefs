@@ -44,7 +44,7 @@ from ragchew.scotus.static_state import (
     ReconciliationChoice,
     StaticStateError,
     StaticStateStore,
-    generated_content_digest,
+    generated_public_content_digest,
     reconcile_release_ids,
 )
 
@@ -79,6 +79,7 @@ def case(*, revision: int = 1, caption: str = "Synthetic Example v. Agency") -> 
         primary_docket="25-466",
         caption=caption,
         argument_date=NOW,
+        latest_court_document_date=NOW,
         case_status=(ScotusCaseStatus.CORRECTED if revision > 1 else ScotusCaseStatus.ARGUED),
         maturity=(BriefMaturity.CORRECTED if revision > 1 else BriefMaturity.OFFICIAL_TRANSCRIPT),
         title="A synthetic question",
@@ -144,8 +145,8 @@ def test_public_contract_is_versioned_and_has_no_private_uuids() -> None:
             ScotusPublicProjection(watermark=NOW, generated_at=NOW, cases=(case(),))
         )
     )
-    assert payload["schema_version"] == "1.0"
-    assert payload["cases"][0]["schema_version"] == "1.0"
+    assert payload["schema_version"] == "1.1"
+    assert payload["cases"][0]["schema_version"] == "1.1"
     serialized = json.dumps(payload).casefold()
     assert "claim_id" not in serialized
     assert "document_id" not in serialized
@@ -184,7 +185,7 @@ def test_canonical_serialization_normalizes_utc_and_checks_privacy() -> None:
     first = canonical_json_bytes(state)
     second = canonical_json_bytes(PublicationState.model_validate_json(first))
     assert first == second
-    assert first.endswith(b"\n") and b'"schema_version":"1.0"' in first
+    assert first.endswith(b"\n") and b'"schema_version":"1.1"' in first
     with pytest.raises(ValueError, match="forbidden public field"):
         assert_public_payload({"nested": {"transcript_text": "private"}})
     with pytest.raises(ValueError, match="UUID"):
@@ -354,7 +355,7 @@ def test_cost_and_release_compare_and_swap_conflicts(tmp_path: Path) -> None:
     )
     root = builder.write_candidate(tmp_path / "active", content)
     store = StaticStateStore(root)
-    expected_parent = generated_content_digest(store.load())
+    expected_parent = generated_public_content_digest(store.load())
     candidate = with_release(content, ONE, ZERO)
     store.require_release_parent(
         candidate,
@@ -379,7 +380,19 @@ def test_cost_and_release_compare_and_swap_conflicts(tmp_path: Path) -> None:
     with pytest.raises(CompareAndSwapConflict):
         store.append_cost_receipt(receipt, expected_digest=expected)
 
-    with pytest.raises(CompareAndSwapConflict, match="branch state"):
+    # A receipts-only append is intentionally mergeable and does not invalidate the
+    # build's public-parent token.
+    store.require_release_parent(
+        candidate,
+        expected_parent_release_id=ZERO,
+        expected_parent_digest=expected_parent,
+    )
+    publication_path = root / StaticStateStore.PUBLICATION_PATH
+    changed_publication = store.load().publication.model_copy(
+        update={"updated_at": NOW + timedelta(minutes=1)}
+    )
+    publication_path.write_bytes(canonical_json_bytes(changed_publication))
+    with pytest.raises(CompareAndSwapConflict, match="public state"):
         store.require_release_parent(
             candidate,
             expected_parent_release_id=ZERO,
@@ -393,7 +406,7 @@ def test_cost_and_release_compare_and_swap_conflicts(tmp_path: Path) -> None:
         store.require_release_parent(
             wrong_parent,
             expected_parent_release_id=ZERO,
-            expected_parent_digest=generated_content_digest(store.load()),
+            expected_parent_digest=generated_public_content_digest(store.load()),
         )
 
 

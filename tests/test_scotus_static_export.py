@@ -69,6 +69,7 @@ def test_workflow_cli_contract_and_fixture_preview_builds_then_exits(tmp_path: P
 
     for command in (
         "fixture-preview",
+        "migrate-activity-contracts",
         "validate",
         "reconcile",
         "batch",
@@ -372,6 +373,7 @@ def test_search_index_is_strict_minimal_and_deterministically_ordered(tmp_path: 
         "caption",
         "docket",
         "term",
+        "latest_court_document_date",
         "argument_date",
         "status",
         "topics",
@@ -462,7 +464,7 @@ const search = require('./static/scotus-search.js');
 const rows = [
  {title:'<img onerror=alert(1)> Tax',caption:'Alpha',docket:'2',term:'2025',
   argument_date:'2026-01-02',status:'argued',topics:['Tax'],path:'/b/'},
- {title:'Other',caption:'Beta',docket:'1',term:'2024',argument_date:'2025-01-02',
+ {title:'Other',caption:'Beta',docket:'1',term:'2024',latest_court_document_date:'2025-02-01',argument_date:'2025-01-02',
   status:'decided',topics:['Civil Rights'],path:'/a/'}
 ];
 if (search.normalize('  ALPHA   Beta ') !== 'alpha beta') process.exit(1);

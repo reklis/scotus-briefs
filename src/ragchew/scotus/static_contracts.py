@@ -21,10 +21,10 @@ from ragchew.scotus.public_contracts import (
     public_case_key,
 )
 
-STATE_SCHEMA_VERSION = "1.0"
-RELEASE_SCHEMA_VERSION = "1.0"
-COST_SCHEMA_VERSION = "1.0"
-CASE_REVISION_SCHEMA_VERSION = "1.0"
+STATE_SCHEMA_VERSION: Literal["1.1"] = "1.1"
+RELEASE_SCHEMA_VERSION: Literal["1.0"] = "1.0"
+COST_SCHEMA_VERSION: Literal["1.0"] = "1.0"
+CASE_REVISION_SCHEMA_VERSION: Literal["1.1"] = "1.1"
 _SHA256_PATTERN = r"^[0-9a-f]{64}$"
 _KEY_PATTERN = r"^[a-z0-9][a-z0-9._:-]{0,199}$"
 _RELEASE_ID_PATTERN = _SHA256_PATTERN
@@ -144,6 +144,7 @@ class PendingReason(StrEnum):
     SOURCE_INVALID = "source_invalid"
     PROCESSING_FAILED = "processing_failed"
     VALIDATION_FAILED = "validation_failed"
+    DATE_BACKFILL_UNMATCHED = "date_backfill_unmatched"
 
 
 class PendingWork(StaticContract):
@@ -227,12 +228,15 @@ class ProcessorFingerprint(StaticContract):
 
 
 class PublicationState(StaticContract):
-    schema_version: Literal["1.0"] = "1.0"
+    # Schema 1.0 is accepted only so an immutable generated-content parent can be
+    # validated and passed to the explicit activity-contract migration.
+    schema_version: Literal["1.0", "1.1"] = STATE_SCHEMA_VERSION
     active_release_id: str | None = Field(default=None, pattern=_RELEASE_ID_PATTERN)
     updated_at: datetime
     sources: tuple[LogicalSourceState, ...] = ()
     documents: tuple[LogicalDocumentState, ...] = ()
     dispositions: tuple[DispositionDiscoveryState, ...] = ()
+    undated_disposition_case_keys: tuple[str, ...] = ()
     cases: tuple[CaseRevisionPointer, ...] = ()
     pending_work: tuple[PendingWork, ...] = ()
     cursors: tuple[CursorState, ...] = ()
@@ -245,6 +249,15 @@ class PublicationState(StaticContract):
         _require_unique_sorted(
             self.dispositions, lambda value: value.logical_key, "disposition"
         )
+        if self.undated_disposition_case_keys != tuple(
+            sorted(set(self.undated_disposition_case_keys))
+        ):
+            raise ValueError("undated disposition case keys must be unique and sorted")
+        if any(
+            re.fullmatch(_KEY_PATTERN, key) is None
+            for key in self.undated_disposition_case_keys
+        ):
+            raise ValueError("undated disposition case key is invalid")
         _require_unique_sorted(self.cases, lambda value: value.case_key, "case")
         _require_unique_sorted(self.pending_work, lambda value: value.case_key, "pending case")
         _require_unique_sorted(self.cursors, lambda value: value.cursor_key, "cursor")
@@ -252,7 +265,8 @@ class PublicationState(StaticContract):
 
 
 class PublicCaseRevisionRecord(StaticContract):
-    schema_version: Literal["1.0"] = "1.0"
+    # Historical 1.0 records remain valid at their original path and exact bytes.
+    schema_version: Literal["1.0", "1.1"] = CASE_REVISION_SCHEMA_VERSION
     case_key: str = Field(pattern=_KEY_PATTERN)
     revision_number: int = Field(ge=1)
     accepted_at: datetime
@@ -262,6 +276,8 @@ class PublicCaseRevisionRecord(StaticContract):
 
     @model_validator(mode="after")
     def validate_record(self) -> Self:
+        if self.schema_version != self.case.schema_version:
+            raise ValueError("revision record and public case schema versions differ")
         if self.case_key != public_case_key(self.case.term, self.case.primary_docket):
             raise ValueError("revision case key does not match the public case")
         if self.case.revisions[-1].revision_number != self.revision_number:
@@ -371,7 +387,10 @@ class StaticSearchEntry(StaticContract):
     caption: str = Field(min_length=1, max_length=300)
     docket: str = Field(min_length=1, max_length=100)
     term: str = Field(pattern=r"^\d{4}$")
-    argument_date: str = Field(pattern=r"^\d{4}-\d{2}-\d{2}$")
+    latest_court_document_date: str | None = Field(
+        default=None, pattern=r"^\d{4}-\d{2}-\d{2}$"
+    )
+    argument_date: str | None = Field(default=None, pattern=r"^\d{4}-\d{2}-\d{2}$")
     status: str = Field(min_length=1, max_length=100)
     topics: tuple[str, ...] = ()
 
@@ -386,7 +405,7 @@ class StaticSearchEntry(StaticContract):
 
 
 class StaticSearchIndex(StaticContract):
-    schema_version: Literal["1.0"] = "1.0"
+    schema_version: Literal["1.0", "1.1"] = "1.1"
     cases: tuple[StaticSearchEntry, ...]
 
     @model_validator(mode="after")
@@ -394,6 +413,15 @@ class StaticSearchIndex(StaticContract):
         paths = tuple(item.path for item in self.cases)
         if len(paths) != len(set(paths)):
             raise ValueError("search index contains duplicate case paths")
+        if self.schema_version == "1.0":
+            if any(
+                item.latest_court_document_date is not None
+                or item.argument_date is None
+                for item in self.cases
+            ):
+                raise ValueError("schema-1.0 search entries require legacy argument dates only")
+        elif any(item.latest_court_document_date is None for item in self.cases):
+            raise ValueError("current search entries require latest Court document dates")
         return self
 
 
@@ -467,13 +495,20 @@ def _json_value(value: Any) -> Any:
         payload = value.model_dump(mode="python")
         payload["topics"] = sorted(set(payload["topics"]), key=str.casefold)
         payload["official_disposition_urls"] = sorted(set(payload["official_disposition_urls"]))
+        if value.schema_version == "1.0":
+            # Compatibility serialization is deliberately version-aware so loading and
+            # carrying an accepted V1 revision cannot rewrite one historical byte.
+            payload.pop("dispositions")
+            payload.pop("latest_court_document_date")
+            payload.pop("undated_disposition_date_fallback")
         return _json_value(payload)
     if isinstance(value, PublicationState):
         payload = value.model_dump(mode="python")
-        if not value.dispositions:
-            # Preserve canonical schema-1.0 bytes until first-class disposition
-            # discovery has durable metadata to add.
-            payload.pop("dispositions")
+        if value.schema_version == "1.0":
+            if not value.dispositions:
+                # Preserve canonical pre-discovery schema-1.0 state bytes.
+                payload.pop("dispositions")
+            payload.pop("undated_disposition_case_keys")
         return _json_value(payload)
     if isinstance(value, CaseRevisionPointer):
         payload = value.model_dump(mode="python")
@@ -481,6 +516,12 @@ def _json_value(value: Any) -> Any:
             # Keep pre-provenance schema-1.0 pointers byte-canonical while treating
             # the omitted provenance as stale during migration.
             payload.pop("processor_sha256")
+        return _json_value(payload)
+    if isinstance(value, StaticSearchIndex):
+        payload = value.model_dump(mode="python")
+        if value.schema_version == "1.0":
+            for entry in payload["cases"]:
+                entry.pop("latest_court_document_date")
         return _json_value(payload)
     if isinstance(value, ModelAttemptReceipt):
         payload = value.model_dump(mode="python")
@@ -501,6 +542,15 @@ def _json_value(value: Any) -> Any:
         return value.value
     if isinstance(value, Mapping):
         mapping_items = dict(value)
+        if (
+            mapping_items.get("schema_version") == "1.0"
+            and {"primary_docket", "arguments", "revisions"}.issubset(mapping_items)
+        ):
+            # Nested V1 cases (notably inside immutable revision records) need the
+            # same version-aware omission as a top-level PublicCaseBrief.
+            mapping_items.pop("dispositions", None)
+            mapping_items.pop("latest_court_document_date", None)
+            mapping_items.pop("undated_disposition_date_fallback", None)
         if {
             "case_key",
             "active_revision",
@@ -672,6 +722,14 @@ def assert_public_payload(payload: Any) -> None:
 
 
 def validate_projection_payload(payload: Mapping[str, Any]) -> ScotusPublicProjection:
-    projection = ScotusPublicProjection.model_validate(payload)
+    """Read either reviewed public schema explicitly; callers decide when to migrate V1."""
+    projection = ScotusPublicProjection.model_validate(payload, strict=False)
     assert_public_payload(projection.model_dump(mode="python"))
     return projection
+
+
+def validate_search_payload(payload: Mapping[str, Any]) -> StaticSearchIndex:
+    """Read the legacy/current search contract without silently changing its version."""
+    search = StaticSearchIndex.model_validate(payload, strict=False)
+    assert_public_payload(search.model_dump(mode="python"))
+    return search

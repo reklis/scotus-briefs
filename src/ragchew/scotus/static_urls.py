@@ -12,23 +12,29 @@ from ragchew.scotus.public_contracts import PublicCaseBrief
 
 
 def latest_court_document_date(case: PublicCaseBrief) -> datetime:
-    """Return the latest date established by an argument record."""
-    return max(case.argument_date, *(item.argument_date for item in case.arguments))
+    """Return the contract-validated latest official Court activity date."""
+    if case.latest_court_document_date is not None:
+        return case.latest_court_document_date
+    # Explicit schema-1.0 compatibility: old URL-only dispositions have no
+    # authoritative date, so only their latest real argument may be used.
+    dates = tuple(item.argument_date for item in case.arguments)
+    if not dates:
+        raise ValueError("legacy public case has no real argument-date fallback")
+    return max(dates)
 
 
 def sort_cases(cases: tuple[PublicCaseBrief, ...]) -> tuple[PublicCaseBrief, ...]:
     """Use one stable newest-first order for archives and search."""
+    # Stable identity tie-breaks are ascending; only official activity is descending.
     return tuple(
         sorted(
             cases,
             key=lambda case: (
-                latest_court_document_date(case),
-                max(item.argument_date for item in case.arguments),
-                case.term,
+                -latest_court_document_date(case).timestamp(),
+                -int(case.term),
                 case.primary_docket.casefold(),
                 case.slug,
             ),
-            reverse=True,
         )
     )
 

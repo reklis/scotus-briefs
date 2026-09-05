@@ -14,6 +14,7 @@ from xml.etree import ElementTree
 from pydantic import ValidationError
 
 from ragchew.scotus.public_contracts import (
+    STATIC_PUBLIC_SCHEMA_VERSION,
     PublicCaseBrief,
     ScotusPublicProjection,
     public_case_key,
@@ -21,15 +22,20 @@ from ragchew.scotus.public_contracts import (
 from ragchew.scotus.static_contracts import (
     ReleaseFile,
     ReleaseManifest,
-    StaticSearchIndex,
     assert_public_payload,
     canonical_json_bytes,
     sha256_hex,
     validate_projection_payload,
+    validate_search_payload,
 )
 from ragchew.scotus.static_export import CNAME_PATH, MANIFEST_PATH, content_release_id
 from ragchew.scotus.static_state import StaticStateStore
-from ragchew.scotus.static_urls import StaticUrlPolicy, archive_slug
+from ragchew.scotus.static_urls import (
+    StaticUrlPolicy,
+    archive_slug,
+    latest_court_document_date,
+    sort_cases,
+)
 
 _UUID = re.compile(
     rb"(?i)(?<![0-9a-f])[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?![0-9a-f])"
@@ -218,6 +224,8 @@ def validate_static_candidate(
         if not isinstance(projection_payload, dict):
             _fail("public projection JSON must be an object")
         projection = validate_projection_payload(projection_payload)
+        if projection.schema_version != STATIC_PUBLIC_SCHEMA_VERSION:
+            _fail("public projection requires explicit activity-contract migration")
         if projection_bytes != canonical_json_bytes(projection):
             _fail("public projection JSON is not canonical")
         projection_cases = {
@@ -238,15 +246,30 @@ def validate_static_candidate(
             ] or path.read_bytes() != canonical_json_bytes(public_case):
                 _fail(f"per-case JSON differs from projection: {path.name}")
         search_bytes = (candidate / "data/v1/search.json").read_bytes()
-        search = StaticSearchIndex.model_validate_json(search_bytes)
-        assert_public_payload(search.model_dump(mode="python"))
+        search_payload = json.loads(search_bytes)
+        if not isinstance(search_payload, dict):
+            _fail("search index JSON must be an object")
+        search = validate_search_payload(search_payload)
+        if search.schema_version != "1.1":
+            _fail("search index requires explicit activity-contract migration")
         if search_bytes != canonical_json_bytes(search):
             _fail("search index JSON is not canonical")
-        if len(search.cases) != len(projection.cases):
+        ordered_cases = sort_cases(projection.cases)
+        if len(search.cases) != len(ordered_cases):
             _fail("search index case count differs from projection")
-        expected_search_paths = {urls.case(case) for case in projection.cases}
-        if {item.path for item in search.cases} != expected_search_paths:
-            _fail("search index paths differ from projection cases")
+        for entry, public_case in zip(search.cases, ordered_cases, strict=True):
+            expected_latest = latest_court_document_date(public_case).date().isoformat()
+            expected_argument = (
+                public_case.argument_date.date().isoformat()
+                if public_case.argument_date is not None
+                else None
+            )
+            if (
+                entry.path != urls.case(public_case)
+                or entry.latest_court_document_date != expected_latest
+                or entry.argument_date != expected_argument
+            ):
+                _fail("search activity fields or order differ from projection cases")
         manifest = ReleaseManifest.model_validate_json((candidate / MANIFEST_PATH).read_bytes())
         if (candidate / MANIFEST_PATH).read_bytes() != canonical_json_bytes(manifest):
             _fail("release manifest is not canonical")
@@ -299,7 +322,10 @@ def validate_static_candidate(
         _fail("robots policy does not match configured project path and sitemap")
 
     if state_root is not None:
+        from ragchew.scotus.activity_migration import require_current_activity_contracts
+
         state = StaticStateStore(state_root).load()
+        require_current_activity_contracts(state)
         if state.projection != projection:
             _fail("generated state projection differs from the static candidate")
         if state.release is None or state.release.release_id != manifest.release_id:

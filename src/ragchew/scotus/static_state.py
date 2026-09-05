@@ -78,8 +78,9 @@ class ReconciliationChoice(StrEnum):
     STOP_UNKNOWN_LIVE = "stop_unknown_live"
 
 
-def generated_content_digest(content: GeneratedContent) -> str:
-    """Return a CAS token covering every active generated-content byte."""
+def _generated_content_digest(
+    content: GeneratedContent, *, include_cost_ledger: bool
+) -> str:
     payload = {
         "projection": (
             sha256_hex(canonical_json_bytes(content.projection))
@@ -87,14 +88,25 @@ def generated_content_digest(content: GeneratedContent) -> str:
             else None
         ),
         "publication": contract_digest(content.publication),
-        "cost_ledger": contract_digest(content.cost_ledger),
         "release": contract_digest(content.release) if content.release is not None else None,
         "revisions": {
             f"{case_key}:{number}": sha256_hex(stored.serialized)
             for (case_key, number), stored in sorted(content.revisions.items())
         },
     }
+    if include_cost_ledger:
+        payload["cost_ledger"] = contract_digest(content.cost_ledger)
     return sha256_hex(canonical_json_bytes(payload))
+
+
+def generated_content_digest(content: GeneratedContent) -> str:
+    """Return a CAS token covering every active generated-content byte."""
+    return _generated_content_digest(content, include_cost_ledger=True)
+
+
+def generated_public_content_digest(content: GeneratedContent) -> str:
+    """Return the build-parent CAS token while permitting receipts-only appends."""
+    return _generated_content_digest(content, include_cost_ledger=False)
 
 
 def reconcile_release_ids(
@@ -352,6 +364,17 @@ class StaticStateStore:
                 if dispositions is None
                 else dispositions
             ),
+            undated_disposition_case_keys=tuple(
+                sorted(
+                    public_case_key(case.term, case.primary_docket)
+                    for case in (
+                        content.projection.cases
+                        if content.projection is not None
+                        else ()
+                    )
+                    if case.undated_disposition_date_fallback is not None
+                )
+            ),
             cases=content.publication.cases,
             pending_work=pending_work,
             cursors=cursors,
@@ -424,8 +447,8 @@ class StaticStateStore:
     ) -> None:
         """Check branch and candidate parents before a no-secret promotion step."""
         active_content = self.load()
-        if generated_content_digest(active_content) != expected_parent_digest:
-            raise CompareAndSwapConflict("generated-content branch state changed")
+        if generated_public_content_digest(active_content) != expected_parent_digest:
+            raise CompareAndSwapConflict("generated-content branch public state changed")
         active = active_content.publication.active_release_id
         if active != expected_parent_release_id:
             raise CompareAndSwapConflict("active generated-content release changed")

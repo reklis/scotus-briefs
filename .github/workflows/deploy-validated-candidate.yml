@@ -27,6 +27,7 @@ jobs:
     outputs:
       release_id: ${{ steps.verify.outputs.release_id }}
       expected_parent_release_id: ${{ steps.verify.outputs.expected_parent_release_id }}
+      expected_parent_digest: ${{ steps.verify.outputs.expected_parent_digest }}
       expected_parent_commit: ${{ steps.verify.outputs.expected_parent_commit }}
     steps:
       - name: Check out protected current source
@@ -103,15 +104,19 @@ jobs:
           handoff = json.loads(Path("handoff/candidate-handoff.json").read_text())
           expected_keys = {
               "schema_version", "source_run_id", "source_commit", "release_id",
-              "expected_parent_release_id", "expected_parent_commit",
+              "expected_parent_release_id", "expected_parent_digest",
+              "expected_parent_commit",
           }
-          if set(handoff) != expected_keys or handoff["schema_version"] != "1.0":
+          if set(handoff) != expected_keys or handoff["schema_version"] != "1.1":
               raise SystemExit("invalid candidate handoff contract")
           if handoff["source_run_id"] != os.environ["CANDIDATE_RUN_ID"]:
               raise SystemExit("candidate handoff run mismatch")
           if handoff["source_commit"] != os.environ["SOURCE_COMMIT"]:
               raise SystemExit("candidate handoff source mismatch")
           commit = handoff["expected_parent_commit"]
+          digest = handoff["expected_parent_digest"]
+          if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+              raise SystemExit("invalid candidate parent digest")
           if not isinstance(commit, str) or not re.fullmatch(r"[0-9a-f]{40}", commit):
               raise SystemExit("invalid candidate parent commit")
           manifest = ReleaseManifest.model_validate_json(
@@ -131,6 +136,7 @@ jobs:
                   "expected_parent_release_id="
                   f"{handoff['expected_parent_release_id']}\n"
               )
+              stream.write(f"expected_parent_digest={digest}\n")
               stream.write(f"expected_parent_commit={commit}\n")
           PY
       - name: Upload exact revalidated Pages artifact
@@ -243,4 +249,5 @@ jobs:
             --state-dir generated-content --candidate-state-dir candidate-state \
             --release-id "${{ needs.prepare.outputs.release_id }}" \
             --expected-parent-release-id "${{ needs.prepare.outputs.expected_parent_release_id }}" \
+            --expected-parent-digest "${{ needs.prepare.outputs.expected_parent_digest }}" \
             --expected-parent-commit "${{ needs.persist-cost-receipts.outputs.generated_commit }}"

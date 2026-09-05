@@ -24,8 +24,10 @@ from ragchew.scotus.public_contracts import (
     PublicBriefSection,
     PublicCaseBrief,
     PublicCaseHistoryEvent,
+    PublicDisposition,
     PublicSourceLink,
     ScotusPublicProjection,
+    derive_latest_court_document_date,
     public_case_slug,
 )
 
@@ -68,6 +70,8 @@ def build_public_case(
     case_history: tuple[PublicCaseHistoryEvent, ...],
     revision_history: tuple[PublicBriefRevisionSummary, ...],
     official_disposition_urls: tuple[str, ...] = (),
+    official_dispositions: tuple[PublicDisposition, ...] = (),
+    allow_legacy_disposition_fallback: bool = False,
     topics: tuple[str, ...] = (),
 ) -> PublicCaseBrief:
     claim_map = {claim.claim_id: claim for claim in claims}
@@ -99,12 +103,17 @@ def build_public_case(
         )
         for analysis in revision.argument_analyses
     )
+    latest_argument_date = max(item.argument_date for item in arguments)
+    if official_disposition_urls and not allow_legacy_disposition_fallback:
+        raise ValueError(
+            "new public cases require dated structured disposition metadata"
+        )
     return PublicCaseBrief(
         slug=public_case_slug(term, primary_docket, caption),
         term=term,
         primary_docket=primary_docket,
         caption=caption,
-        argument_date=argument_date,
+        argument_date=latest_argument_date,
         case_status=case_status,
         maturity=revision.maturity,
         title=revision.title,
@@ -120,6 +129,17 @@ def build_public_case(
             f"{quote(primary_docket, safe='-')}.html"
         ),
         official_disposition_urls=official_disposition_urls,
+        undated_disposition_date_fallback=(
+            "latest_argument_date" if official_disposition_urls else None
+        ),
+        dispositions=official_dispositions,
+        latest_court_document_date=derive_latest_court_document_date(
+            arguments,
+            official_dispositions,
+            legacy_argument_date=(
+                latest_argument_date if official_disposition_urls else None
+            ),
+        ),
         revisions=revision_history,
         updated_at=revision.created_at,
         topics=topics,

@@ -59,6 +59,7 @@ jobs:
       publication_ready: ${{ steps.batch.outputs.publication_ready }}
       release_id: ${{ steps.batch.outputs.release_id }}
       expected_parent_release_id: ${{ steps.batch.outputs.expected_parent_release_id }}
+      expected_parent_digest: ${{ steps.batch.outputs.expected_parent_digest }}
       expected_parent_commit: ${{ steps.state_sha.outputs.commit }}
       receipts_present: ${{ steps.receipts.outputs.present }}
     steps:
@@ -234,24 +235,29 @@ jobs:
           LIVE_READY: ${{ steps.live_batch.outputs.publication_ready }}
           LIVE_RELEASE: ${{ steps.live_batch.outputs.release_id }}
           LIVE_PARENT: ${{ steps.live_batch.outputs.expected_parent_release_id }}
+          LIVE_PARENT_DIGEST: ${{ steps.live_batch.outputs.expected_parent_digest }}
           IMPORT_CHANGED: ${{ steps.import_batch.outputs.release_changed }}
           IMPORT_READY: ${{ steps.import_batch.outputs.publication_ready }}
           IMPORT_RELEASE: ${{ steps.import_batch.outputs.release_id }}
           IMPORT_PARENT: ${{ steps.import_batch.outputs.expected_parent_release_id }}
+          IMPORT_PARENT_DIGEST: ${{ steps.import_batch.outputs.expected_parent_digest }}
           EMPTY_CHANGED: ${{ steps.empty_batch.outputs.release_changed }}
           EMPTY_READY: ${{ steps.empty_batch.outputs.publication_ready }}
           EMPTY_RELEASE: ${{ steps.empty_batch.outputs.release_id }}
           EMPTY_PARENT: ${{ steps.empty_batch.outputs.expected_parent_release_id }}
+          EMPTY_PARENT_DIGEST: ${{ steps.empty_batch.outputs.expected_parent_digest }}
           FIXTURE_CHANGED: ${{ steps.fixture_batch.outputs.release_changed }}
           FIXTURE_READY: ${{ steps.fixture_batch.outputs.publication_ready }}
           FIXTURE_RELEASE: ${{ steps.fixture_batch.outputs.release_id }}
           FIXTURE_PARENT: ${{ steps.fixture_batch.outputs.expected_parent_release_id }}
+          FIXTURE_PARENT_DIGEST: ${{ steps.fixture_batch.outputs.expected_parent_digest }}
         run: |
           set -euo pipefail
           echo "release_changed=${LIVE_CHANGED:-${IMPORT_CHANGED:-${EMPTY_CHANGED:-$FIXTURE_CHANGED}}}" >> "$GITHUB_OUTPUT"
           echo "publication_ready=${LIVE_READY:-${IMPORT_READY:-${EMPTY_READY:-$FIXTURE_READY}}}" >> "$GITHUB_OUTPUT"
           echo "release_id=${LIVE_RELEASE:-${IMPORT_RELEASE:-${EMPTY_RELEASE:-$FIXTURE_RELEASE}}}" >> "$GITHUB_OUTPUT"
           echo "expected_parent_release_id=${LIVE_PARENT:-${IMPORT_PARENT:-${EMPTY_PARENT:-$FIXTURE_PARENT}}}" >> "$GITHUB_OUTPUT"
+          echo "expected_parent_digest=${LIVE_PARENT_DIGEST:-${IMPORT_PARENT_DIGEST:-${EMPTY_PARENT_DIGEST:-$FIXTURE_PARENT_DIGEST}}}" >> "$GITHUB_OUTPUT"
       - name: Validate opaque receipts before any upload
         id: receipts
         if: always()
@@ -301,6 +307,7 @@ jobs:
         env:
           RELEASE_ID: ${{ steps.batch.outputs.release_id }}
           EXPECTED_PARENT_RELEASE_ID: ${{ steps.batch.outputs.expected_parent_release_id }}
+          EXPECTED_PARENT_DIGEST: ${{ steps.batch.outputs.expected_parent_digest }}
           EXPECTED_PARENT_COMMIT: ${{ steps.state_sha.outputs.commit }}
         run: |
           set -euo pipefail
@@ -312,11 +319,12 @@ jobs:
 
           path = Path("candidate-handoff.json")
           path.write_text(json.dumps({
-              "schema_version": "1.0",
+              "schema_version": "1.1",
               "source_run_id": "${{ github.run_id }}",
               "source_commit": "${{ github.sha }}",
               "release_id": os.environ["RELEASE_ID"],
               "expected_parent_release_id": os.environ["EXPECTED_PARENT_RELEASE_ID"],
+              "expected_parent_digest": os.environ["EXPECTED_PARENT_DIGEST"],
               "expected_parent_commit": os.environ["EXPECTED_PARENT_COMMIT"],
           }, sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8")
           scan_public_files((path,), labels=(path.name,))
@@ -449,6 +457,7 @@ jobs:
             --state-dir generated-content --candidate-state-dir candidate-state \
             --release-id "${{ needs.build.outputs.release_id }}" \
             --expected-parent-release-id "${{ needs.build.outputs.expected_parent_release_id }}" \
+            --expected-parent-digest "${{ needs.build.outputs.expected_parent_digest }}" \
             --expected-parent-commit "${{ needs.persist-cost-receipts.outputs.generated_commit }}"
 
   checkpoint-only:
