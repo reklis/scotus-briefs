@@ -778,6 +778,7 @@ def _unsupported_named_phrase(text: str, support: str, caption: str) -> bool:
         phrase_words = re.findall(r"[A-Za-z]+", match)
         if phrase_words and all(
             word.casefold() in _CAPITALIZED_EXEMPT
+            or word.casefold() in allowed
             or (word.isupper() and word.casefold() in allowed_acronyms)
             for word in phrase_words
         ):

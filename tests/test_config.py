@@ -47,7 +47,7 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.generation.brief_generation_enabled is True
     assert config.generation.maximum_brief_api_calls_per_run == 100
     assert config.generation.stop_after_brief_validation_failure is False
-    assert config.generation.maximum_brief_validation_attempts_per_case == 3
+    assert config.generation.maximum_brief_validation_attempts_per_case == 5
     assert config.generation.audience == "general_public"
     assert config.generation.maximum_sentence_words == 30
     assert config.publication.case_page_requires_official_transcript is True
