@@ -13,11 +13,14 @@ HTML pages. The first newly generated argued case was published on 2026-09-04 th
 retained candidate run `33925733676` and no-reprocessing deployment run `33927868410`.
 The dated-activity migration was deployed by run `33941710362`, and the newest supported
 emergency disposition (`26A274`, published 2026-09-04) was deployed without reprocessing
-by run `33948257689`. Live Pages release
-`cb76a41848d7636a3d9e7f293a8b4506f7da6d237c3940849b13055264977a73` now contains
-1,712 active articles and 3,062 HTML pages and matches the protected `generated-content`
-branch. The root home page is the searchable case interface, initially showing results
-1–20 of 1,712 in authoritative newest-first Court-activity order.
+by run `33948257689`. Reduced-prompt probes showed that local generative outcome prose
+remained unreliable, so validated run `33997185734` used Ollama only for grounded
+observation extraction and compiled disposition briefs deterministically from approved
+claims. Deployment run `33998731478` promoted its exact retained artifacts. Live Pages
+release `bf5544da93e96d64ada181e17a841773a2547acd4f0d3cbe5ca08c32c3617968` now contains
+1,714 active articles and 3,064 HTML pages and matches the protected `generated-content`
+branch. `26A274`, `26A203`, and `26A124` are the first three search results in authoritative
+newest-first Court-activity order.
 DNS is valid at GitHub; custom-domain
 certificate issuance and HTTPS enforcement are still pending.
 
@@ -69,9 +72,12 @@ run reduced the stale queue from 1,716 entries to 29 genuine new/changed cases a
 brief generation, but no attempted case passed final validation before runtime exhaustion.
 Extraction now supplies exact source identity fields, deterministically derives provenance
 from the referenced evidence block, uses smaller evidence windows, and reports only fixed
-safe failure codes. Brief generation uses a simplified strict local-model schema without
-manufacturing claim coverage, and one fully budgeted retry is allowed only for retryable
-loopback transport failures. One-case live dry run `33912374845` then completed end to end
+safe failure codes. Argued-case brief generation uses a simplified strict local-model schema without
+manufacturing claim coverage. Disposition-only cases use Ollama for structured extraction
+but compile public outcome prose deterministically from approved source-exact claims. One
+fully budgeted transport retry remains limited to retryable loopback failures, while
+scheduled model-output retries use exact stable scopes, a 20-hour cooldown, and finite
+per-scope and per-run limits. One-case live dry run `33912374845` then completed end to end
 in 29 minutes, including one fixed-code brief correction, and produced a privacy-scanned
 1,711-case/2,976-page candidate release without deployment.
 

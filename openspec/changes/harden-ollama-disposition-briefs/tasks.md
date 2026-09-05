@@ -23,5 +23,5 @@
 ## 4. Validation and Release
 
 - [x] 4.1 Run the complete unit, integration, typing, lint, privacy, repository-policy, and workflow validation suites.
-- [ ] 4.2 Run `26A274`, `26A203`, and `26A124` under reduced non-deploying bounds and inspect the retained candidate and sanitized diagnostics.
-- [ ] 4.3 Deploy the exact retained candidate only if every gate passes, verify newest-first production surfaces and state identity, then document bounded backlog operations.
+- [x] 4.2 Run `26A274`, `26A203`, and `26A124` under reduced non-deploying bounds and inspect the retained candidate and sanitized diagnostics.
+- [x] 4.3 Deploy the exact retained candidate only if every gate passes, verify newest-first production surfaces and state identity, then document bounded backlog operations.
