@@ -4,7 +4,7 @@ Disposition-only Supreme Court cases are discovered correctly but repeatedly rem
 
 ## What Changes
 
-- Replace the broad argument-oriented disposition prompt with a small, positive, disposition-specific instruction set and schema.
+- Remove probabilistic disposition-outcome prose from the production path; retain Ollama for strictly grounded observation extraction and compile the public disposition brief deterministically from approved claims.
 - Make Court-action validation role-aware so lower-court actions, requested relief, and Supreme Court dispositions are checked against the corresponding approved claims.
 - Reject actual invented argument content without rejecting truthful negated statements, while avoiding forbidden-term priming in the disposition prompt.
 - Preserve deterministic caption, docket, publication date, status, and Court-action facts outside model discretion.
@@ -14,7 +14,7 @@ Disposition-only Supreme Court cases are discovered correctly but repeatedly rem
 ## Capabilities
 
 ### New Capabilities
-- `ollama-disposition-generation`: Grounded, bounded, retryable local-model generation for Supreme Court cases that have an official disposition but no oral-argument session.
+- `ollama-disposition-generation`: Grounded, bounded Ollama extraction plus deterministic public-brief compilation for Supreme Court cases that have an official disposition but no oral-argument session.
 
 ### Modified Capabilities
 

@@ -593,9 +593,9 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     processor = result.content.publication.processor
     assert processor is not None
     assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
-    assert processor.policy_version == "scotus-brief-policy-v12"
+    assert processor.policy_version == "scotus-brief-policy-v13"
     assert processor.prompt_version == (
-        "scotus-brief-plain-language-v31;disposition=scotus-disposition-plain-language-v2"
+        "scotus-brief-plain-language-v31;disposition=scotus-disposition-plain-language-v2;disposition_compiler=scotus-deterministic-disposition-v1"
     )
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",
@@ -671,25 +671,10 @@ def test_disposition_only_emergency_opinion_publishes_without_argument(
     assert case.latest_court_document_date == datetime(2026, 3, 4, tzinfo=UTC)
     assert [item.kind for item in case.dispositions] == ["per_curiam"]
     names = [request["response_format"]["json_schema"]["name"] for request in model.requests]
-    assert names == ["scotus_legal_observations", "scotus_legal_brief"]
-    brief_request = model.requests[-1]
-    brief_schema = brief_request["response_format"]["json_schema"]["schema"]
-    assert brief_schema["properties"]["argument_analyses"]["minItems"] == 0
-    assert brief_schema["properties"]["argument_analyses"]["maxItems"] == 0
-    brief_prompt = brief_request["messages"][0]["content"]
-    brief_payload = json.loads(brief_request["messages"][1]["content"])
-    assert "only the supplied case background and legal issue" in brief_prompt
-    assert "adds procedural history and the official outcome" in brief_prompt
-    assert all(
-        claim["status"]
-        not in {"requested", "lower_court_held", "court_held", "court_ordered"}
-        for claim in brief_payload["claims"]
-    )
-    assert "argument_sessions" not in brief_payload
-    assert "position_group" not in json.dumps(brief_payload)
-    assert all(
-        value not in brief_prompt.casefold()
-        for value in ("oral argument", "transcript", "counsel", "justice")
+    assert names == ["scotus_legal_observations"]
+    assert case.sections[0].heading == "Official Court action"
+    assert case.sections[0].paragraphs == (
+        "The Supreme Court action states: The Court granted the application.",
     )
     disposition = result.content.publication.dispositions[0]
     assert disposition.primary_docket == "25A810"

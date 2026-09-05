@@ -188,7 +188,10 @@ def _compose_disposition_draft(
             claim
             for claim in claims
             if claim.legal_status is LegalStatus.DESCRIBED
-            and candidate.primary_docket.casefold() in claim.public_value.casefold()
+            and (
+                candidate.primary_docket.casefold() in claim.public_value.casefold()
+                or "/docket/" in claim.official_url.casefold()
+            )
         ),
         action_claim,
     )
@@ -312,6 +315,106 @@ class LegalBriefGenerator(Protocol):
         claims: tuple[ScotusApprovedClaim, ...],
         maturity: BriefMaturity,
     ) -> LegalBriefDraft: ...
+
+
+class DeterministicDispositionBriefGenerator:
+    """Compile a disposition brief from approved facts without generative outcome prose."""
+
+    VERSION = "scotus-deterministic-disposition-v1"
+
+    def __init__(
+        self,
+        source_model: str,
+        *,
+        maximum_sentence_words: int,
+        maximum_paragraph_words: int,
+    ) -> None:
+        self.model_name = f"{source_model}+{self.VERSION}"
+        self.maximum_sentence_words = maximum_sentence_words
+        self.maximum_paragraph_words = maximum_paragraph_words
+
+    def generate(
+        self,
+        candidate: BriefCandidate,
+        claims: tuple[ScotusApprovedClaim, ...],
+        maturity: BriefMaturity,
+    ) -> LegalBriefDraft:
+        del maturity
+        if candidate.argument_sessions:
+            raise BriefPolicyError("deterministic disposition compiler requires zero sessions")
+        docket_claim = next(
+            (
+                claim
+                for claim in claims
+                if claim.legal_status is LegalStatus.DESCRIBED
+                and (
+                    candidate.primary_docket.casefold() in claim.public_value.casefold()
+                    or "/docket/" in claim.official_url.casefold()
+                )
+            ),
+            None,
+        )
+        if docket_claim is None:
+            raise BriefPolicyError(
+                "disposition lacks deterministic docket support",
+                safe_code="missing_docket",
+            )
+        docket_text = f"Official docket: {candidate.primary_docket}."
+        sections = [
+            DraftSection(
+                heading="Case record",
+                paragraphs=(docket_text,),
+                claim_ids=(docket_claim.claim_id,),
+            )
+        ]
+        claim_map = {claim.claim_id: claim for claim in claims}
+        for claim in claims:
+            if len(sections) >= 4 or claim.claim_id == docket_claim.claim_id:
+                continue
+            if claim.legal_status in {
+                LegalStatus.REQUESTED,
+                LegalStatus.LOWER_COURT_HELD,
+                LegalStatus.COURT_HELD,
+                LegalStatus.COURT_ORDERED,
+            }:
+                continue
+            if _ACTION_WORD.search(claim.public_value) or _QUOTATION.search(claim.public_value):
+                continue
+            try:
+                _validate_public_text(
+                    claim.public_value,
+                    (claim.claim_id,),
+                    candidate,
+                    claim_map,
+                    public_quotes=False,
+                    validation_context="deterministic_background",
+                    maximum_sentence_words=self.maximum_sentence_words,
+                    maximum_paragraph_words=self.maximum_paragraph_words,
+                )
+            except BriefValidationError:
+                continue
+            sections.append(
+                DraftSection(
+                    heading="Case background",
+                    paragraphs=(claim.public_value,),
+                    claim_ids=(claim.claim_id,),
+                )
+            )
+        base = LegalBriefDraft(
+            title=candidate.caption,
+            title_claim_ids=(docket_claim.claim_id,),
+            dek=docket_text,
+            dek_claim_ids=(docket_claim.claim_id,),
+            sections=tuple(sections),
+            argument_analyses=(),
+        )
+        return _compose_disposition_draft(
+            base,
+            candidate,
+            claims,
+            maximum_sentence_words=self.maximum_sentence_words,
+            maximum_paragraph_words=self.maximum_paragraph_words,
+        )
 
 
 class BriefRevisionStore(Protocol):

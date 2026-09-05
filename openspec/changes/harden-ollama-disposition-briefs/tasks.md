@@ -9,6 +9,7 @@
 - [x] 2.1 Classify action-bearing sentences as requested, lower-court, or Supreme Court actions and validate against same-role cited claims.
 - [x] 2.2 Permit narrowly explicit negated oral-argument statements while continuing to reject positive or mixed invented proceedings.
 - [x] 2.3 Add bidirectional regression tests for requested, lower-court, and Court actions plus negated and invented oral-argument language.
+- [x] 2.4 Replace production disposition prose generation with a deterministic compiler over approved docket, Court-action, and bounded background claims.
 
 ## 3. Bounded Retry State
 

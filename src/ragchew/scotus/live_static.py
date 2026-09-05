@@ -64,9 +64,9 @@ from ragchew.scotus.briefs import (
     BriefPolicyError,
     BriefValidationError,
     CaseArgumentSession,
+    DeterministicDispositionBriefGenerator,
     InMemoryBriefRevisionStore,
     OpenAILegalBriefGenerator,
-    disposition_only_brief_json_schema,
     evaluate_brief_candidate,
     simple_brief_json_schema,
 )
@@ -170,7 +170,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v12"
+POLICY_VERSION = "scotus-brief-policy-v13"
 DOCUMENT_TEXT_VERSION = "official-document-text-v1"
 
 
@@ -1499,7 +1499,8 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
     model_identity = _model_identity(config, model_endpoint)
     prompt_contract = (
         f"{config.generation.prompt_version};"
-        f"disposition={OpenAILegalBriefGenerator.DISPOSITION_PROMPT_VERSION}"
+        f"disposition={OpenAILegalBriefGenerator.DISPOSITION_PROMPT_VERSION};"
+        f"disposition_compiler={DeterministicDispositionBriefGenerator.VERSION}"
     )
     extractor = (
         f"{LegalExtractionService.SCHEMA_VERSION}:"
@@ -2137,96 +2138,117 @@ class LiveStaticCaseProcessor:
                 "case failed deterministic brief policy",
                 safe_code=f"ineligible:{safe_reasons}"[:80],
             )
-        all_digests = (
-            *(states[key].integrity.sha256 for key in sorted(states)),
-            *(stable_disposition_fingerprint(item) for item in source.dispositions),
-        )
         revision_number = len(source.prior.revisions) + 1 if source.prior else 1
         correction_note = _correction_note(source, kinds_changed)
-        validation_feedback_codes: list[str] = []
         revision = None
-        for brief_attempt in range(
-            1,
-            self.config.generation.maximum_brief_validation_attempts_per_case + 1,
-        ):
-            validation_feedback_code = (
-                ":".join(validation_feedback_codes)[:200] if validation_feedback_codes else None
-            )
-            request = _BudgetedModelRequest(
-                client=self.model_client,
-                budget=budget,
-                stage="brief",
-                document_digests=all_digests,
-                processor_versions={
-                    "brief_validation_attempt": str(brief_attempt),
-                    "endpoint": self.model_endpoint,
-                    "extractor": LegalExtractionService.SCHEMA_VERSION,
-                    "model": self.config.generation.model,
-                    "provider": self.config.generation.provider,
-                    "parser": _processor_contract(self.config, self.model_endpoint).parser_version,
-                    "policy": POLICY_VERSION,
-                    "prompt": (
-                        self.config.generation.prompt_version
-                        if candidate.argument_sessions
-                        else OpenAILegalBriefGenerator.DISPOSITION_PROMPT_VERSION
-                    ),
-                    **(
-                        {"validation_feedback": validation_feedback_code}
-                        if validation_feedback_code
-                        else {}
-                    ),
-                },
-                output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
-                authorized_replay=authorized_replay,
-                maximum_attempts=(1 if not candidate.argument_sessions else None),
-            )
-            generator = OpenAILegalBriefGenerator(
-                self.config.generation.model,
-                self.model_client,
+        if not candidate.argument_sessions:
+            revision = BriefGenerationService(
+                DeterministicDispositionBriefGenerator(
+                    self.config.generation.model,
+                    maximum_sentence_words=self.config.generation.maximum_sentence_words,
+                    maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
+                ),
+                InMemoryBriefRevisionStore(),
+                public_quotes=self.config.generation.public_quotes,
                 maximum_sentence_words=self.config.generation.maximum_sentence_words,
                 maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-                response_schema=(
-                    simple_brief_json_schema(len(candidate.argument_sessions))
-                    if candidate.argument_sessions
-                    else disposition_only_brief_json_schema()
-                ),
-                maximum_output_tokens=(self.config.model_budget.maximum_output_tokens_per_call),
-                reasoning_effort="none",
-                validation_feedback_code=validation_feedback_code,
-                request_executor=request,
+            ).generate(
+                candidate,
+                decision,
+                revision_number=revision_number,
+                correction_note=correction_note,
             )
-            try:
-                revision = BriefGenerationService(
-                    generator,
-                    InMemoryBriefRevisionStore(),
-                    public_quotes=self.config.generation.public_quotes,
-                    maximum_sentence_words=(self.config.generation.maximum_sentence_words),
-                    maximum_paragraph_words=(self.config.generation.maximum_paragraph_words),
-                ).generate(
-                    candidate,
-                    decision,
-                    revision_number=revision_number,
-                    correction_note=correction_note,
+        else:
+            all_digests = (
+                *(states[key].integrity.sha256 for key in sorted(states)),
+                *(stable_disposition_fingerprint(item) for item in source.dispositions),
+            )
+            validation_feedback_codes: list[str] = []
+            for brief_attempt in range(
+                1,
+                self.config.generation.maximum_brief_validation_attempts_per_case + 1,
+            ):
+                validation_feedback_code = (
+                    ":".join(validation_feedback_codes)[:200]
+                    if validation_feedback_codes
+                    else None
                 )
-                break
-            except BriefValidationError as error:
-                safe_code = error.safe_code
-                can_retry = bool(
-                    safe_code
-                    and brief_attempt
-                    < self.config.generation.maximum_brief_validation_attempts_per_case
+                request = _BudgetedModelRequest(
+                    client=self.model_client,
+                    budget=budget,
+                    stage="brief",
+                    document_digests=all_digests,
+                    processor_versions={
+                        "brief_validation_attempt": str(brief_attempt),
+                        "endpoint": self.model_endpoint,
+                        "extractor": LegalExtractionService.SCHEMA_VERSION,
+                        "model": self.config.generation.model,
+                        "provider": self.config.generation.provider,
+                        "parser": _processor_contract(
+                            self.config, self.model_endpoint
+                        ).parser_version,
+                        "policy": POLICY_VERSION,
+                        "prompt": self.config.generation.prompt_version,
+                        **(
+                            {"validation_feedback": validation_feedback_code}
+                            if validation_feedback_code
+                            else {}
+                        ),
+                    },
+                    output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
+                    authorized_replay=authorized_replay,
                 )
-                if not can_retry:
-                    raise
-                assert safe_code is not None
-                if safe_code not in validation_feedback_codes:
-                    validation_feedback_codes.append(safe_code)
-                LOG.warning(
-                    "SCOTUS brief correction requested; case=%s; code=%s; attempt=%d",
-                    source.case_key,
-                    safe_code,
-                    brief_attempt,
+                generator = OpenAILegalBriefGenerator(
+                    self.config.generation.model,
+                    self.model_client,
+                    maximum_sentence_words=self.config.generation.maximum_sentence_words,
+                    maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
+                    response_schema=simple_brief_json_schema(
+                        len(candidate.argument_sessions)
+                    ),
+                    maximum_output_tokens=(
+                        self.config.model_budget.maximum_output_tokens_per_call
+                    ),
+                    reasoning_effort="none",
+                    validation_feedback_code=validation_feedback_code,
+                    request_executor=request,
                 )
+                try:
+                    revision = BriefGenerationService(
+                        generator,
+                        InMemoryBriefRevisionStore(),
+                        public_quotes=self.config.generation.public_quotes,
+                        maximum_sentence_words=(
+                            self.config.generation.maximum_sentence_words
+                        ),
+                        maximum_paragraph_words=(
+                            self.config.generation.maximum_paragraph_words
+                        ),
+                    ).generate(
+                        candidate,
+                        decision,
+                        revision_number=revision_number,
+                        correction_note=correction_note,
+                    )
+                    break
+                except BriefValidationError as error:
+                    safe_code = error.safe_code
+                    can_retry = bool(
+                        safe_code
+                        and brief_attempt
+                        < self.config.generation.maximum_brief_validation_attempts_per_case
+                    )
+                    if not can_retry:
+                        raise
+                    assert safe_code is not None
+                    if safe_code not in validation_feedback_codes:
+                        validation_feedback_codes.append(safe_code)
+                    LOG.warning(
+                        "SCOTUS brief correction requested; case=%s; code=%s; attempt=%d",
+                        source.case_key,
+                        safe_code,
+                        brief_attempt,
+                    )
         if revision is None:
             raise BriefValidationError("brief validation attempts produced no revision")
         history = (

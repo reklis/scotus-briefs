@@ -1,11 +1,11 @@
 ## ADDED Requirements
 
 ### Requirement: Disposition-specific local-model contract
-The system SHALL use a compact positive instruction set and a disposition-only structured schema whenever an official disposition has no oral-argument session, and SHALL omit argument-analysis fields and argument-oriented prompt priming.
+The system SHALL use Ollama only for bounded structured observation extraction whenever an official disposition has no oral-argument session, and SHALL compile the public brief deterministically from approved claims without a generative brief request or fabricated argument-analysis fields.
 
 #### Scenario: Zero-session disposition generation
 - **WHEN** a case has one or more validated official dispositions and no oral-argument session
-- **THEN** the Ollama request requires only grounded disposition sections, emits no argument analyses, and does not enumerate absent argument behaviors in its prompt
+- **THEN** Ollama extracts grounded observations, deterministic code emits the source-supported public brief with zero argument analyses, and no generative disposition-brief call occurs
 
 ### Requirement: Deterministic official identity and action
 The system SHALL derive the official caption, docket, publication date, status, and typed Court-action support deterministically from validated Court sources rather than permitting model prose to redefine those facts.
@@ -37,11 +37,11 @@ The system SHALL reject claims that an argument, transcript, counsel statement, 
 - **THEN** validation rejects the draft with a fixed sanitized code
 
 ### Requirement: Actionable sanitized corrections
-The system SHALL provide corrective drafts only accumulated fixed validator codes that identify the failed role or absent-proceeding rule, SHALL never reuse rejected prose, and SHALL keep every correction within existing call, token, runtime, and case budgets.
+The system SHALL provide corrective generation only for retryable structured extraction failures using fixed validator codes, SHALL never reuse rejected output, and SHALL keep every attempt within existing call, token, runtime, and case budgets.
 
-#### Scenario: Correctable disposition draft
-- **WHEN** a disposition draft fails role-aware semantic validation and another configured attempt fits all budgets
-- **THEN** a fresh draft receives only the accumulated fixed codes and the original sanitized approved-claim ledger
+#### Scenario: Correctable disposition extraction
+- **WHEN** structured disposition extraction fails with a retryable fixed model-output code and another configured cycle fits all budgets
+- **THEN** a fresh bounded extraction cycle receives only reviewed instructions and no rejected model output
 
 ### Requirement: Bounded automatic nightly retry
 The system SHALL permit scheduled nightly retry of an unchanged failed local-model case only under a stable retry scope, after a cooldown, and within finite per-scope and per-run generation limits. Accepted cases and non-model failures SHALL NOT receive automatic model retries.

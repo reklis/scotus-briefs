@@ -7,8 +7,8 @@ All source documents, extraction text, prompts, observations, and rejected respo
 ## Goals / Non-Goals
 
 **Goals:**
-- Make disposition-only prompting small, positive, and structurally distinct from argued-case prompting.
-- Keep official identity and Court-action facts deterministic.
+- Limit disposition-only Ollama work to bounded structured observation extraction.
+- Compile public disposition briefs from deterministic identity and approved source-exact claims.
 - Validate requested, lower-court, and Supreme Court actions against claims of the same role.
 - Eliminate false oral-argument failures without accepting invented proceedings.
 - Permit finite scheduled retry cycles for model-output failures while preserving auditable no-duplicate accounting.
@@ -23,15 +23,15 @@ All source documents, extraction text, prompts, observations, and rejected respo
 
 ## Decisions
 
-### Use a genuinely separate disposition prompt
+### Remove generative disposition prose from production
 
-The disposition request will use affirmative instructions: write only facts in cited claims, attach every action to its actor, and omit unavailable proceedings. It will not list oral-argument phrases to avoid. Its schema remains strict and fixes `argument_analyses` at zero.
+Two reduced-prompt live probes still produced unsupported or actorless action prose for all three representative emergency matters. Production therefore uses Ollama only for structured, evidence-quote-validated observation extraction. A deterministic compiler selects the approved docket and Supreme Court action claims, emits a source-exact action block, adds only independently validated background claims that fit public language bounds, and fixes argument analyses at zero. The standalone compact disposition prompt remains regression-covered but is not invoked by the production disposition path.
 
-Alternative: retain the shared prompt and add more prohibitions. Rejected because repeated negative instructions are already echoed by the local model and make the contract harder to follow.
+Alternative: retain the shared prompt or add more prohibitions. Rejected because both the original and reduced prompts were echoed or semantically violated by the local model. A larger model remains a future option, not a publication prerequisite.
 
 ### Keep formal facts outside model discretion
 
-Caption normalization, docket, dates, status, official links, and approved action claims remain deterministic. The model may explain those claims but cannot supply authoritative values. Rendering continues to use the official caption if a generated title is generic or noncanonical.
+Caption normalization, docket, dates, status, official links, and approved action claims remain deterministic. For disposition-only cases, the deterministic compiler—not the model—owns title, dek, sections, citations, and the formal Court outcome. Ollama contributes only observations that survive exact evidence and policy validation.
 
 Alternative: require verbatim generated action text. Rejected because it produces brittle prose and still delegates a formal field to a probabilistic component.
 
@@ -71,7 +71,7 @@ Retry state travels with `PendingWork`; no raw response or prompt is retained. C
 
 1. Add tests for role-aware actions, negated/positive oral-argument language, stable retry scopes, cooldown, and exhaustion.
 2. Add backward-compatible retry state and configuration defaults.
-3. deploy the new prompt, validator, policy, and scope fingerprints with publication disabled in a reduced three-case run.
+3. Deploy the deterministic disposition compiler, validator, policy, and scope fingerprints with publication disabled in a reduced three-case run.
 4. Inspect sanitized outputs and retained candidate; deploy only if all gates pass.
 5. Run the normal nightly queue with bounded automatic retries and monitor fixed-code outcomes.
 6. Roll back source code if needed; prior public release and compatible pending state remain valid.
