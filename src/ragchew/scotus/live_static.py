@@ -83,8 +83,10 @@ from ragchew.scotus.correlation import ScotusCorrelationEngine
 from ragchew.scotus.discovery import (
     DiscoveryMode,
     IncrementalDiscoveryOperation,
+    IncrementalDiscoveryResult,
     ScotusArgumentCandidate,
     ScotusDispositionCandidate,
+    SlipOpinionDiscoveryResult,
     candidate_logical_key,
     deterministic_argument_id,
     deterministic_case_id,
@@ -623,16 +625,26 @@ class LiveStaticDiscovery:
         for term in resources.terms:
             if term in pending_terms:
                 argument_checkpoints.pop(f"argument-index:{term}", None)
-        incremental = IncrementalDiscoveryOperation(
-            self.adapters, argument_checkpoints
-        ).run(
-            active_term=self.config.discovery.active_term,
-            mode=mode,
-            historical_limit=self.config.discovery.historical_rechecks_per_run,
-            bootstrap_term_limit=self.config.bootstrap.maximum_terms_per_run,
-            now=now,
-            cursor=cursor,
-        )
+        try:
+            incremental = IncrementalDiscoveryOperation(
+                self.adapters, argument_checkpoints
+            ).run(
+                active_term=self.config.discovery.active_term,
+                mode=mode,
+                historical_limit=self.config.discovery.historical_rechecks_per_run,
+                bootstrap_term_limit=self.config.bootstrap.maximum_terms_per_run,
+                now=now,
+                cursor=cursor,
+            )
+        except SourceFetchError:
+            # A transient argument-index outage must not block already known pending
+            # dispositions. Keep every prior checkpoint unchanged and retry next night.
+            LOG.warning("SCOTUS discovery resource unavailable; resource=argument-index")
+            incremental = IncrementalDiscoveryResult(
+                candidates=(),
+                checkpoints=tuple(checkpoints[key] for key in sorted(checkpoints)),
+                cursor=resources.cursor,
+            )
         prior_cases = {
             public_case_key(case.term, case.primary_docket): case
             for case in (content.projection.cases if content.projection else ())
@@ -707,16 +719,37 @@ class LiveStaticDiscovery:
             item for item in content.publication.dispositions if item.term == active_term
         )
         slip_source_key = f"slip-opinions:{active_term}"
-        slip_result = discover_slip_opinions_once(
-            self.adapters[active_term],
-            resource_key=slip_source_key,
-            # This distinct identity intentionally avoids legacy ``opinions:<term>``
-            # checkpoints, whose ETag could otherwise yield a first-run 304 before
-            # any typed disposition rows had been retained.
-            checkpoint=checkpoints.get(slip_source_key),
-            prior_states=prior_dispositions,
-            now=now,
-        )
+        try:
+            slip_result = discover_slip_opinions_once(
+                self.adapters[active_term],
+                resource_key=slip_source_key,
+                # This distinct identity intentionally avoids legacy ``opinions:<term>``
+                # checkpoints, whose ETag could otherwise yield a first-run 304 before
+                # any typed disposition rows had been retained.
+                checkpoint=checkpoints.get(slip_source_key),
+                prior_states=prior_dispositions,
+                now=now,
+            )
+        except SourceFetchError:
+            prior_slip_checkpoint = checkpoints.get(slip_source_key)
+            if prior_slip_checkpoint is None:
+                raise
+            LOG.warning("SCOTUS discovery resource unavailable; resource=slip-opinions")
+            slip_result = SlipOpinionDiscoveryResult(
+                candidates=tuple(
+                    disposition_candidate_from_state(item)
+                    for item in sorted(
+                        prior_dispositions, key=lambda value: value.logical_key
+                    )
+                ),
+                states=tuple(
+                    sorted(prior_dispositions, key=lambda value: value.logical_key)
+                ),
+                changed_logical_keys=(),
+                checkpoint=prior_slip_checkpoint,
+                changed=False,
+                not_modified=True,
+            )
         other_disposition_states = tuple(
             item for item in content.publication.dispositions if item.term != active_term
         )
@@ -1074,7 +1107,14 @@ class LiveStaticDiscovery:
                     etag=prior.validators.etag if prior else None,
                     last_modified=prior.validators.last_modified if prior else None,
                 )
-                response = adapter.fetcher.get(url, conditional)
+                try:
+                    response = adapter.fetcher.get(url, conditional)
+                except SourceFetchError:
+                    LOG.warning(
+                        "SCOTUS discovery resource unavailable; resource=%s-index",
+                        source_kind,
+                    )
+                    continue
                 validators = ConditionalValidators(
                     etag=response.headers.get("etag") or (prior.validators.etag if prior else None),
                     last_modified=response.headers.get("last-modified")
