@@ -122,7 +122,7 @@ approvals:
 generation:
   provider: ollama
   model: qwen3.8:27b
-  prompt_version: scotus-brief-plain-language-v27
+  prompt_version: scotus-brief-plain-language-v28
   brief_generation_enabled: true
   maximum_brief_api_calls_per_run: 100
   # One fresh draft may correct a fixed-code validation failure; both remain budgeted.

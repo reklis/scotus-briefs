@@ -240,7 +240,7 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v27"
+    PROMPT_VERSION = "scotus-brief-plain-language-v28"
 
     def __init__(
         self,
@@ -336,8 +336,11 @@ class OpenAILegalBriefGenerator:
             "supported sections and emit exactly zero "
             "argument analyses. Never claim or imply that oral argument occurred, that a "
             "transcript exists, that counsel made an argument, or that a justice asked or "
-            "tested a question. Use party names and describe a result only when the cited "
-            "approved claims explicitly support them. Omit unavailable detail instead of "
+            "tested a question. Begin the title with the exact supplied caption. Outside that "
+            "exact caption, do not create, expand, shorten, or abbreviate any person, court, "
+            "agency, organization, law, or party name; use a name only when its exact wording "
+            "appears in the cited approved claim value. Describe a result only when the cited "
+            "approved claims explicitly support it. Omit unavailable detail instead of "
             "adding filler about a missing record or future details. Focus on supported case "
             "background and the Court's action. "
             if disposition_only
