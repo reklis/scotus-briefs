@@ -10,7 +10,7 @@ on:
         required: true
         default: fixture
         type: choice
-        options: [fixture, nightly, bootstrap, initial-empty, poc-import]
+        options: [fixture, nightly, bootstrap, activity-migration, initial-empty, poc-import]
       deploy:
         description: Request deployment after all configured gates and validations pass
         required: true
@@ -114,6 +114,7 @@ jobs:
           enable-cache: false
       - run: uv sync --frozen
       - name: Preflight exact local Ollama model
+        if: (inputs.mode || 'nightly') != 'activity-migration'
         env:
           RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
         run: |
@@ -141,12 +142,12 @@ jobs:
           canonical_release_url="${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json"
           live_args=(--live-release-url "$canonical_release_url")
           if [[ -n "$EXPECTED_LIVE_RELEASE_ID" ]]; then
-            if [[ "$PUBLICATION_MODE" != "poc-import" && "$PUBLICATION_MODE" != "nightly" ]] || [[ ! "$EXPECTED_LIVE_RELEASE_ID" =~ ^[0-9a-f]{64}$ ]]; then
-              echo "A supplied live release ID is permitted only for a protected pre-TLS import or nightly run." >&2
+            if [[ "$PUBLICATION_MODE" != "poc-import" && "$PUBLICATION_MODE" != "nightly" && "$PUBLICATION_MODE" != "activity-migration" ]] || [[ ! "$EXPECTED_LIVE_RELEASE_ID" =~ ^[0-9a-f]{64}$ ]]; then
+              echo "A supplied live release ID is permitted only for a protected pre-TLS import, activity migration, or nightly run." >&2
               exit 1
             fi
             live_args=(--live-release-id "$EXPECTED_LIVE_RELEASE_ID")
-          elif [[ "$PUBLICATION_MODE" == "nightly" ]]; then
+          elif [[ "$PUBLICATION_MODE" == "nightly" || "$PUBLICATION_MODE" == "activity-migration" ]]; then
             marker="$RUNNER_TEMP/live-release.json"
             if ! curl --proto '=https' --fail --silent --show-error --connect-timeout 5 \
               --max-time 30 --output "$marker" "$canonical_release_url"; then
@@ -181,10 +182,21 @@ jobs:
             --output candidate-site --source-commit "$GITHUB_SHA" \
             --build-epoch "$(git show -s --format=%cI HEAD)" \
             --github-output "$GITHUB_OUTPUT"
+      - name: Build no-model activity-contract migration
+        id: migration_batch
+        if: inputs.mode == 'activity-migration'
+        run: |
+          set -euo pipefail
+          uv run ragchew-scotus-static migrate-activity-contracts \
+            --state-dir generated-content-input --candidate-state-dir candidate-state \
+            --output candidate-site --source-commit "$GITHUB_SHA" \
+            --build-epoch "$(git show -s --format=%cI HEAD)" \
+            --expected-parent-release-id "$(uv run python -c 'import json; print(json.load(open("generated-content-input/release/v1/release.json"))["release_id"])')" \
+            --github-output "$GITHUB_OUTPUT"
       - name: Run reviewed bounded live adapter
         id: live_batch
         timeout-minutes: 315
-        if: (inputs.mode || 'nightly') != 'fixture' && inputs.mode != 'initial-empty' && inputs.mode != 'poc-import'
+        if: (inputs.mode || 'nightly') != 'fixture' && inputs.mode != 'initial-empty' && inputs.mode != 'poc-import' && inputs.mode != 'activity-migration'
         env:
           PUBLICATION_MODE: ${{ inputs.mode || 'nightly' }}
           AUTHORIZED_REPLAY: ${{ inputs.authorized_replay || false }}
@@ -246,6 +258,11 @@ jobs:
           EMPTY_RELEASE: ${{ steps.empty_batch.outputs.release_id }}
           EMPTY_PARENT: ${{ steps.empty_batch.outputs.expected_parent_release_id }}
           EMPTY_PARENT_DIGEST: ${{ steps.empty_batch.outputs.expected_parent_digest }}
+          MIGRATION_CHANGED: ${{ steps.migration_batch.outputs.release_changed }}
+          MIGRATION_READY: ${{ steps.migration_batch.outputs.publication_ready }}
+          MIGRATION_RELEASE: ${{ steps.migration_batch.outputs.release_id }}
+          MIGRATION_PARENT: ${{ steps.migration_batch.outputs.expected_parent_release_id }}
+          MIGRATION_PARENT_DIGEST: ${{ steps.migration_batch.outputs.expected_parent_digest }}
           FIXTURE_CHANGED: ${{ steps.fixture_batch.outputs.release_changed }}
           FIXTURE_READY: ${{ steps.fixture_batch.outputs.publication_ready }}
           FIXTURE_RELEASE: ${{ steps.fixture_batch.outputs.release_id }}
@@ -253,11 +270,11 @@ jobs:
           FIXTURE_PARENT_DIGEST: ${{ steps.fixture_batch.outputs.expected_parent_digest }}
         run: |
           set -euo pipefail
-          echo "release_changed=${LIVE_CHANGED:-${IMPORT_CHANGED:-${EMPTY_CHANGED:-$FIXTURE_CHANGED}}}" >> "$GITHUB_OUTPUT"
-          echo "publication_ready=${LIVE_READY:-${IMPORT_READY:-${EMPTY_READY:-$FIXTURE_READY}}}" >> "$GITHUB_OUTPUT"
-          echo "release_id=${LIVE_RELEASE:-${IMPORT_RELEASE:-${EMPTY_RELEASE:-$FIXTURE_RELEASE}}}" >> "$GITHUB_OUTPUT"
-          echo "expected_parent_release_id=${LIVE_PARENT:-${IMPORT_PARENT:-${EMPTY_PARENT:-$FIXTURE_PARENT}}}" >> "$GITHUB_OUTPUT"
-          echo "expected_parent_digest=${LIVE_PARENT_DIGEST:-${IMPORT_PARENT_DIGEST:-${EMPTY_PARENT_DIGEST:-$FIXTURE_PARENT_DIGEST}}}" >> "$GITHUB_OUTPUT"
+          echo "release_changed=${LIVE_CHANGED:-${IMPORT_CHANGED:-${EMPTY_CHANGED:-${MIGRATION_CHANGED:-$FIXTURE_CHANGED}}}}" >> "$GITHUB_OUTPUT"
+          echo "publication_ready=${LIVE_READY:-${IMPORT_READY:-${EMPTY_READY:-${MIGRATION_READY:-$FIXTURE_READY}}}}" >> "$GITHUB_OUTPUT"
+          echo "release_id=${LIVE_RELEASE:-${IMPORT_RELEASE:-${EMPTY_RELEASE:-${MIGRATION_RELEASE:-$FIXTURE_RELEASE}}}}" >> "$GITHUB_OUTPUT"
+          echo "expected_parent_release_id=${LIVE_PARENT:-${IMPORT_PARENT:-${EMPTY_PARENT:-${MIGRATION_PARENT:-$FIXTURE_PARENT}}}}" >> "$GITHUB_OUTPUT"
+          echo "expected_parent_digest=${LIVE_PARENT_DIGEST:-${IMPORT_PARENT_DIGEST:-${EMPTY_PARENT_DIGEST:-${MIGRATION_PARENT_DIGEST:-$FIXTURE_PARENT_DIGEST}}}}" >> "$GITHUB_OUTPUT"
       - name: Validate opaque receipts before any upload
         id: receipts
         if: always()

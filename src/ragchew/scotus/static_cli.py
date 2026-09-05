@@ -421,6 +421,7 @@ def _migrate_activity(args: argparse.Namespace) -> int:
             args.github_output,
             {
                 "release_changed": False,
+                "publication_ready": True,
                 "release_id": original.release.release_id,
                 "expected_parent_release_id": original.release.previous_release_id,
                 "expected_parent_digest": generated_public_content_digest(original),
@@ -454,6 +455,7 @@ def _migrate_activity(args: argparse.Namespace) -> int:
         args.github_output,
         {
             "release_changed": True,
+            "publication_ready": True,
             "release_id": exported.manifest.release_id,
             "expected_parent_release_id": migrated.parent_release_id,
             "expected_parent_digest": generated_public_content_digest(original),

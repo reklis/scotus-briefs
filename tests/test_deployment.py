@@ -71,6 +71,10 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1" in workflow
     assert "qwen3.8:27b" in workflow
     assert "ragchew.scotus.live_static:LiveStaticBatchAdapter" in workflow
+    assert "options: [fixture, nightly, bootstrap, activity-migration" in workflow
+    assert "Build no-model activity-contract migration" in workflow
+    assert "migrate-activity-contracts" in workflow
+    assert "inputs.mode != 'activity-migration'" in workflow
     assert "RAGCHEW_SOURCE_USER_AGENT" in workflow
     assert "github.com/reklis/scotus-briefs" in workflow
     assert "  CANONICAL_ORIGIN: https://scotusbriefs.us\n" in workflow
