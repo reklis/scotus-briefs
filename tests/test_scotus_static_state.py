@@ -25,8 +25,10 @@ from ragchew.scotus.public_contracts import (
 from ragchew.scotus.static_contracts import (
     CaseRevisionPointer,
     ConditionalValidators,
+    ContentIntegrity,
     CostLedger,
     FreshnessSummary,
+    LogicalSourceState,
     ModelAttemptOutcome,
     ModelAttemptReceipt,
     PendingReason,
@@ -181,6 +183,34 @@ def test_contracts_reject_unknown_schema_urls_digests_and_validators() -> None:
             {**source().model_dump(), "official_url": "https://example.test/source"}
         )
     assert public_case_key("2025", "25-466") == "2025-25-466"
+
+
+def test_publication_source_checkpoints_round_trip_in_logical_key_order() -> None:
+    later_checked_first = LogicalSourceState(
+        logical_key="argument-index:2025",
+        source_kind="argument_index",
+        official_url=(
+            "https://www.supremecourt.gov/oral_arguments/argument_transcript/2025"
+        ),
+        validators=ConditionalValidators(etag='"argument"'),
+        integrity=ContentIntegrity(sha256=ZERO, byte_count=1),
+        checked_at=NOW + timedelta(days=1),
+    )
+    earlier_checked_last = LogicalSourceState(
+        logical_key="slip-opinions:2025",
+        source_kind="opinions",
+        official_url="https://www.supremecourt.gov/opinions/slipopinion/25",
+        validators=ConditionalValidators(etag='"slip"'),
+        integrity=ContentIntegrity(sha256=ONE, byte_count=1),
+        checked_at=NOW,
+    )
+    state = PublicationState(
+        updated_at=NOW,
+        sources=(later_checked_first, earlier_checked_last),
+    )
+    serialized = canonical_json_bytes(state)
+    loaded = PublicationState.model_validate_json(serialized)
+    assert loaded.sources == state.sources
 
 
 def test_canonical_serialization_normalizes_utc_and_checks_privacy() -> None:

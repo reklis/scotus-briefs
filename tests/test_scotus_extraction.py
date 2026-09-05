@@ -132,6 +132,11 @@ def test_openai_extraction_supplies_and_derives_exact_block_identity() -> None:
     source_value = source(evidence)
     item = proposed(evidence, "  What text supports the rule?  ").model_copy(
         update={
+            "evidence": (
+                ProposedEvidence(
+                    block_id="evidence-1", quote="  What text supports the rule?  "
+                ),
+            ),
             "speaker_name": "Invented Name",
             "speaker_kind": SpeakerKind.ADVOCATE,
             "identity_basis": SpeakerIdentityBasis.ANONYMOUS,
@@ -159,6 +164,7 @@ def test_openai_extraction_supplies_and_derives_exact_block_identity() -> None:
     payload = json.loads(requests[0]["messages"][1]["content"])  # type: ignore[index]
     assert payload["mode"] == "/no_think"
     sent = payload["evidence"][0]
+    assert sent["block_id"] == "evidence-1"
     assert sent["speaker_name"] == evidence.speaker_name
     assert sent["speaker_kind"] == evidence.speaker_kind.value
     assert sent["identity_basis"] == evidence.identity_basis.value
@@ -170,6 +176,47 @@ def test_openai_extraction_supplies_and_derives_exact_block_identity() -> None:
     assert process(source_value, normalized)[0].evidence[0].quote_private == (
         "What text supports the rule?"
     )
+
+
+def test_openai_extraction_repairs_only_a_uniquely_exact_unknown_block_id() -> None:
+    unique = block("The Court grants the application.", block_id="opinion-real")
+    other = block("Unrelated docket background.", block_id="docket-real")
+    source_value = source(unique, other)
+    item = proposed(unique, "The Court grants the application.").model_copy(
+        update={
+            "evidence": (
+                ProposedEvidence(
+                    block_id="invented-id", quote="The Court grants the application."
+                ),
+            )
+        }
+    )
+    completion = SimpleNamespace(
+        choices=(
+            SimpleNamespace(
+                finish_reason="stop",
+                message=SimpleNamespace(
+                    content=LegalExtractionBatch(observations=[item]).model_dump_json()
+                ),
+            ),
+        )
+    )
+    extractor = OpenAILegalObservationExtractor(
+        "qwen3.8:27b",
+        SimpleNamespace(),
+        request_executor=lambda _request: completion,
+    )
+    repaired = extractor.extract(source_value).observations[0]
+    assert repaired.evidence[0].block_id == unique.block_id
+    assert process(source_value, repaired)
+
+    ambiguous_source = source(
+        unique,
+        block("The Court grants the application.", block_id="duplicate"),
+    )
+    unrepaired = extractor.extract(ambiguous_source).observations[0]
+    assert unrepaired.evidence[0].block_id == "invented-id"
+    assert process(ambiguous_source, unrepaired) == []
 
 
 def test_openai_extraction_reports_safe_truncation_code() -> None:

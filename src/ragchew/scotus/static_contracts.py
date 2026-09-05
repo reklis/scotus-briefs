@@ -725,7 +725,6 @@ def _json_value(value: Any) -> Any:
         for key in (
             "dek_sources",
             "official_disposition_urls",
-            "sources",
             "title_sources",
             "topics",
         ):
@@ -733,6 +732,23 @@ def _json_value(value: Any) -> Any:
             if isinstance(items, list):
                 normalized[key] = sorted(
                     items,
+                    key=lambda item: json.dumps(
+                        item, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+                    ).casefold(),
+                )
+        sources = normalized.get("sources")
+        if isinstance(sources, list):
+            # Public paragraph provenance is content-sorted. Publication-state source
+            # checkpoints instead have a strict logical-key order. Applying the former
+            # rule globally produced bytes that the strict state reader rejected whenever
+            # checkpoint timestamps happened to sort ahead of their logical identities.
+            if all(isinstance(item, dict) and "logical_key" in item for item in sources):
+                normalized["sources"] = sorted(
+                    sources, key=lambda item: str(item["logical_key"])
+                )
+            else:
+                normalized["sources"] = sorted(
+                    sources,
                     key=lambda item: json.dumps(
                         item, ensure_ascii=False, sort_keys=True, separators=(",", ":")
                     ).casefold(),

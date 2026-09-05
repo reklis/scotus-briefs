@@ -270,7 +270,7 @@ class DeterministicTranscriptObservationExtractor:
 
 
 class OpenAILegalObservationExtractor:
-    PROMPT_VERSION = "scotus-legal-extraction-v6"
+    PROMPT_VERSION = "scotus-legal-extraction-v7"
 
     def __init__(
         self,
@@ -289,7 +289,10 @@ class OpenAILegalObservationExtractor:
         """Build the exact provider request so budget checks can precede transport."""
         evidence = [
             {
-                "block_id": block.block_id,
+                # Short deterministic aliases are easier for local structured-output
+                # models to copy exactly than UUID-bearing internal block identities.
+                # They are translated back before grounding validation and never persist.
+                "block_id": f"evidence-{index}",
                 "kind": block.document_kind.value,
                 "page_lines": (
                     f"{block.start_file_page}:{block.start_line}-"
@@ -301,7 +304,7 @@ class OpenAILegalObservationExtractor:
                 "attribution": block.attribution,
                 "text": block.text_private,
             }
-            for block in source.blocks
+            for index, block in enumerate(source.blocks, start=1)
         ]
         token_limit = {
             (
@@ -405,13 +408,31 @@ class OpenAILegalObservationExtractor:
         )
         batch = self.parse_completion(completion)
         blocks = {block.block_id: block for block in source.blocks}
+        aliases = {
+            f"evidence-{index}": block
+            for index, block in enumerate(source.blocks, start=1)
+        }
         normalized: list[ProposedLegalObservation] = []
         for proposed in batch.observations:
             if len(proposed.evidence) == 1:
-                block = blocks.get(proposed.evidence[0].block_id)
+                pointer = proposed.evidence[0]
+                block = aliases.get(pointer.block_id) or blocks.get(pointer.block_id)
+                if block is None:
+                    # A wrong identifier can be repaired without inference only when the
+                    # model's exact quote occurs in exactly one supplied evidence block.
+                    quote = pointer.quote.strip()
+                    matches = tuple(
+                        candidate
+                        for candidate in source.blocks
+                        if quote and quote in candidate.text_private
+                    )
+                    block = matches[0] if len(matches) == 1 else None
                 if block is not None:
                     proposed = proposed.model_copy(
                         update={
+                            "evidence": (
+                                pointer.model_copy(update={"block_id": block.block_id}),
+                            ),
                             "attribution": block.attribution,
                             "speaker_name": block.speaker_name,
                             "speaker_kind": block.speaker_kind,
