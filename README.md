@@ -1,8 +1,10 @@
 # SCOTUS Legal Briefs
 
 SCOTUS Legal Briefs turns complete official Supreme Court oral-argument transcripts
-into evidence-grounded, plain-language case briefs. Production is a deterministic
-static site at **<https://scotusbriefs.us/>**. Readers need no FastAPI
+and supported, individually listed active-term slip opinions into evidence-grounded,
+plain-language case briefs. A supported disposition may produce a complete case with
+no oral-argument session; the site never fabricates argument metadata. Production is
+a deterministic static site at **<https://scotusbriefs.us/>**. Readers need no FastAPI
 service, API, PostgreSQL database, object store, model call, Kubernetes workload, or
 runtime secret.
 
@@ -12,26 +14,40 @@ outcome. Always consult the linked official Court materials.
 
 ## Production boundary
 
-A protected self-hosted GitHub Actions job runs nightly at 03:17 UTC (and by
+A protected self-hosted GitHub Actions job runs daily at 03:17 UTC (and by
 restricted manual dispatch). Its aarch64 Spark runner uses the loopback-only Ollama
 model `qwen3.8:27b`; no model credential or remote model endpoint is accepted. It
-checks bounded reviewed Court resources, recomputes an entire changed
-case inside a permission-restricted ephemeral workspace, carries unchanged validated
+independently checks the active term's reviewed official slip-opinion index as well as
+bounded argument and historical resources, then recomputes an entire changed case
+inside a permission-restricted ephemeral workspace. Fresh changes are attempted
+newest-first under finite limits; failed or deferred cases remain explicit pending
+work and do not block unrelated complete cases while shared budgets permit. The job carries unchanged validated
 case bytes forward, exports a complete root-hosted site with its custom-domain
 `CNAME`, and runs contract, integrity, link, accessibility, and privacy validation.
-Pages receives only the validated static artifact. Any failure leaves the last
+Pages receives only the validated static artifact. A global failure leaves the last
 known-good site active.
 
-The public `generated-content` branch contains only versioned projection/case JSON,
-conditional validators and digests, bounded cursors/pending outcomes, immutable
-public revisions, release manifests, and opaque model-attempt/zero-cost receipts. It never contains
-Court PDFs, source HTML, extracted transcript text, observations/claim ledgers,
-prompts, model responses, object keys, credentials, private logs, or internal UUIDs.
-Official documents are linked, not redistributed.
+Every case-list and search surface uses the same newest-first order based on the
+maximum official argument, disposition-publication, or listed disposition-revision
+date—not retrieval, build, or article time. Argument-date archives remain
+session-specific while ordering matching cases by that overall activity date.
+Initial slip-opinion scope is individual active-term opinion, per-curiam, and decree
+rows, including emergency `A` dockets and consolidated dockets. It does not expand
+omnibus order lists into synthetic cases.
 
-Live Court/model processing is disabled by default. Source, licensing, origin,
-model-runtime, and launch gates remain fail-closed until the repository owner
-completes review.
+The public `generated-content` branch contains only versioned projection/case JSON,
+conditional validators and digests, dated official activity, bounded cursors and
+sanitized pending/freshness outcomes, immutable public revisions, release manifests,
+and opaque model-attempt/zero-cost receipts. It never contains Court PDFs, source
+HTML, extracted transcript text, observations/claim ledgers, prompts, model responses,
+object keys, credentials, private logs, or internal UUIDs. Official documents are
+linked, not redistributed.
+
+The owner enabled bounded live Court/model processing and publication on 2026-09-03;
+the checked-in source, generation, approval, and publication switches are therefore
+on. Those switches do not bypass per-case grounding, privacy, completeness, budget,
+static-release, or source-access checks: each candidate still fails closed, and an
+unreviewed source or runtime change must stop publication.
 
 ## Local development
 

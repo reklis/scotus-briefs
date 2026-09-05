@@ -13,7 +13,10 @@ Verified:
 - retention can remove a copied-object location while preserving digest/provenance;
 - correction provenance remains append-only after restore;
 - SCOTUS alerts render in the Kubernetes manifest;
-- source and public publication kill switches remain false;
+- source and public publication kill switches were false for this dated verification;
 - Kubernetes resources and network policies render successfully.
+
+The kill-switch result above records the repository state on 2026-08-28, not its
+current launch status; bounded production was owner-authorized on 2026-09-03.
 
 During this verification, the prior backup scripts' `--no-privileges` option was found to strip restored public/private ACLs. Backup and restore now preserve ACLs while continuing to omit environment-specific ownership. The failed check was rerun from a fresh database and passed.

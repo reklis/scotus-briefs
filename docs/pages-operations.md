@@ -2,7 +2,7 @@
 
 Production repository: `reklis/scotus-briefs`  
 Canonical site: <https://scotusbriefs.us/>
-Nightly schedule: 03:17 UTC (`17 3 * * *`)
+Daily schedule: 03:17 UTC (`17 3 * * *`)
 
 ## Current launch status
 
@@ -18,9 +18,30 @@ initially showing results 1–20 of 1,711 in deterministic site order.
 DNS is valid at GitHub; custom-domain
 certificate issuance and HTTPS enforcement are still pending.
 
-The owner enabled generated-case processing on 2026-09-03 and removed the one-case
-throughput throttle after launch testing. A run may now drain up to 100 cases and 1,100
-zero-cost local-model calls, continuing past individual case validation failures. Court
+The owner enabled source access, generated-case processing, and publication on
+2026-09-03 and removed the one-case throughput throttle after launch testing. The
+checked-in gates are intentionally enabled; candidates still fail closed through all
+source, model, privacy, completeness, static, and release validators. The live release
+listed above predates the latest-activity schema migration, so do not report the new
+active-term slip-opinion coverage as live until the exact migrated artifact and bounded
+live disposition-only candidate have been validated, deployed, and reconciled.
+
+The supported new source boundary is the configured active term's individual official
+slip-opinion rows, including signed opinions, per-curiam dispositions, decrees, listed
+revisions, emergency `A` dockets, and consolidated dockets. These rows are discovered
+independently of arguments and may produce a case with no oral-argument session. The
+pipeline does not expand omnibus order lists or every certiorari denial into cases.
+
+After the activity migration, every public case's latest Court document date is the
+maximum official argument, disposition-publication, or listed disposition-revision
+date. Retrieval/build/article times never participate. Root and SCOTUS home pages,
+filtered and unfiltered search, general/term/status/topic/corrections listings, and
+pagination all preserve the same deterministic newest-first case order. Argument-date
+archives remain session-specific but order their matching cases by latest overall
+activity.
+
+A run may now drain up to 100 cases and 1,100 zero-cost local-model calls, continuing
+past individual case validation failures. Court
 rate controls, source authorization, a five-hour processing bound, private-disk and
 retrieval limits, and every per-case publication validator remain mandatory. The shorter
 application bound reserves time for receipt upload, candidate validation, and runner cleanup
@@ -30,8 +51,10 @@ and rotating redownload work; they re-enter processing only when current Court d
 reports a metadata change or an owner explicitly requests a backfill. Prior dry runs
 confirmed the Court and loopback
 Ollama paths but failed closed on extraction/runtime validation. Those same grounding,
-privacy, completeness, static, and release validators remain mandatory: an unsuccessful
-run cannot replace the migrated accepted POC corpus or advance its active release. A
+privacy, completeness, static, and release validators remain mandatory: a global
+candidate failure cannot replace the migrated accepted POC corpus or advance its active
+release, while a case-local failure remains pending and does not block unrelated
+validated successes. A
 schedule-equivalent cycle (`33789697197`) completed successfully through pre-TLS
 reconciliation and checkpoint promotion. The first cycle to select model work after the
 legacy-checkpoint compatibility fix (`33790480565`) downloaded three documents in 18
@@ -68,10 +91,11 @@ in 29 minutes, including one fixed-code brief correction, and produced a privacy
    DNS is managed separately by the owner; this repository change makes no DNS changes.
 6. Protect `generated-content` against human/direct updates while permitting the
    workflow's guarded `contents:write` promotion.
-7. Keep the processing, model-generation, generated-case launch approval, and live
+7. During initial setup, keep processing, model-generation, launch approval, and live
    publication switches fail-closed through fixture and live-no-deploy review. Record
-   foundational source/license/origin/runtime approvals independently. Enabling new
-   generated-case publication is a separate final owner action.
+   source/license/origin/runtime approvals independently. The owner completed this step
+   for bounded production on 2026-09-03; any future source/runtime expansion or revoked
+   approval must close the affected gate again.
 
 These repository/environment/secret/protection operations cannot be completed by a
 local checkout.
@@ -167,13 +191,14 @@ or from a working tree containing private inputs.
 
 ## Routine and manual runs
 
-The pinned workflow cannot run its build for pull requests. On the protected default
-branch it cleans the persistent self-hosted workspace, preflights local Ollama and the
-exact `qwen3.8:27b` model, reconciles live and branch release IDs, creates a mode-0700
-temporary workspace, and runs
-`uv run ragchew-scotus-static`. `nightly` uses routine current/recent/rotating limits;
-`bootstrap` manually drains a bounded historical slice; `fixture` uses invented local
-data and can never become publication-ready.
+The pinned workflow cannot run its build for pull requests. Every day at 03:17 UTC,
+the protected default-branch schedule cleans the persistent self-hosted workspace,
+preflights local Ollama and the exact `qwen3.8:27b` model, reconciles live and branch
+release IDs, creates a mode-0700 temporary workspace, and runs
+`uv run ragchew-scotus-static`. `nightly` independently polls the active-term slip
+index and uses routine current/recent/rotating limits; `bootstrap` manually drains a
+bounded historical slice; `fixture` uses invented local data and can never become
+publication-ready.
 
 A manual `deploy=true` requests deployment but cannot override configuration gates.
 For focused launch validation, `maximum_cases` may only lower the configured case bound.
@@ -197,20 +222,40 @@ retained-candidate deployment to owners. Never add PR/fork or arbitrary-ref trig
 Possible outcomes:
 
 - **no-op:** no public bytes changed; Pages deploy is skipped and validated discovery
-  checkpoints may advance;
-- **pending:** a bounded budget or transient source/processing failure preserved the
-  existing case and recorded only a coarse reason;
-- **candidate denied:** validation/privacy/integrity failure; no deploy or promotion;
+  checkpoints and pending metadata may advance;
+- **pending:** a bounded budget or case-local source/processing failure preserved the
+  existing case and recorded only an allowlisted reason and official activity date;
+  unrelated complete cases continue while shared budgets permit;
+- **candidate denied:** a global validation/privacy/integrity failure; no deploy or
+  promotion;
 - **deployed:** exact Pages artifact succeeded, then exact state was CAS-promoted;
 - **split:** Pages deploy succeeded but promotion failed; normal publication stops for
   reconciliation.
 
+Selection happens after the complete eligible queue is ranked. Fresh new/changed
+activity comes first; unattempted fresh work is ordered by authoritative Court activity
+date newest-first. Persisted pending is explicitly reconsidered, with
+least-recently-attempted retry rotation before activity date so a permanently failing
+newest item cannot starve the backlog. Processor/current rechecks and rotating
+historical work follow. Any changed supported case
+outside a finite case/document/model/runtime budget is retained as deferred pending
+rather than hidden by an advanced source checkpoint.
+
 Monitor workflow conclusion/duration, Court request and byte counts, selected/pending
 case counts, model attempted calls/tokens (with zero estimated local cost), pre/post
-cleanup status, release ID,
-and Pages availability. Logs and summaries must remain sanitized. Artifacts retain
-only scanned public candidates/opaque receipts for one day; private workspace is never
-uploaded.
+cleanup status, release ID, and Pages availability. For every successful live batch,
+inspect the safe `Freshness:` summary: counts and newest official activity dates for
+`discovered`, `published`, `deferred`, `failed`, and combined `pending`. The same
+recomputable fields are stored in `state/v1/publication.json`. Investigate a widening
+discovered-to-published date gap or growing pending count, but do not bypass finite
+budgets; validation fails if any supported discovery is neither current in the
+projection nor explicit pending, or if freshness totals/dates disagree with state.
+
+Logs and summaries may contain only allowlisted case keys/dockets, official dates and
+URLs, fixed reason codes, counts, digests, and timings—not source/index bodies,
+captions, prompts, model output, rejected prose, credentials, or private paths.
+Artifacts retain only scanned public candidates/opaque receipts for one day; the
+private workspace is never uploaded.
 
 ## Reconciliation and rollback
 
@@ -224,7 +269,11 @@ Rollback means select a prior immutable validated release, validate its manifest
 file digests, including the exact root `CNAME`, redeploy those exact bytes, then
 CAS-update active/previous pointers. Never regenerate, patch, or amend an old release.
 Verify root/SCOTUS/case/archive/search/correction/404 routes, canonical URLs, official
-links, disclosure, release ID, custom-domain routing, and branch/Page agreement.
+links, disclosure, release ID, custom-domain routing, and branch/Page agreement. For an
+activity migration or disposition deployment, also compare the exact case-path order on
+root, SCOTUS, search, term, status, topic, corrections, and paginated listings; verify a
+zero-session page has no argument date/analysis/transcript link; and reconcile the
+workflow freshness counts/newest dates with `state/v1/publication.json`.
 
 ## Incidents and legacy retirement
 

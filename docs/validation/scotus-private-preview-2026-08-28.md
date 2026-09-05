@@ -31,4 +31,9 @@ No newly posted transcript exists in the recorded fixtures and the validation wi
 
 ## Launch result
 
-Fixture safety gates pass, but `config/scotus.yaml` retains both `enabled: false` and `publication.enabled: false`. The checked-in launch evaluator verifies this fail-closed state while live discovery is unvalidated. The last safe projection remains stored and is not replaced after failed validation.
+At the time of this 2026-08-28 fixture report, safety gates passed but
+`config/scotus.yaml` retained both `enabled: false` and `publication.enabled: false`.
+The then-current launch evaluator verified that fail-closed state while live discovery
+was unvalidated. This is historical evidence, not the repository's current launch
+status; bounded production was owner-authorized on 2026-09-03. Failed validation still
+leaves the last safe projection active.

@@ -16,19 +16,27 @@ workloads are legacy migration/local-test code. They are not deployed to readers
 
 ## Nightly changed-case processing
 
-At 03:17 UTC a protected, serialized, non-cancelling workflow:
+Daily at 03:17 UTC (`17 3 * * *`) a protected, serialized, non-cancelling workflow:
 
 1. reads the validated public state from `generated-content` and reconciles its active
    release ID with Pages;
-2. conditionally checks the current term/recent correction window and a bounded
+2. independently and conditionally polls the active term's official slip-opinion index,
+   checks current/recent argument and correction resources, and checks a bounded
    rotating historical slice using a descriptive GitHub project user agent;
-3. selects work under request, byte, document, case, disk, runtime, model-call/token,
-   and zero-local-cost limits;
-4. downloads required official documents into a mode-0700 runner workspace and fully
-   recomputes every required argument session for each changed case;
-5. merges only complete accepted cases while preserving unchanged case bytes and
-   recording incomplete work as coarse public pending state;
-6. exports and validates a fresh candidate, deploys that exact Pages artifact, then
+3. builds one queue before applying limits: fresh Court changes first; unattempted
+   fresh work is authoritative-date newest-first, while persisted retries use
+   least-recently-attempted rotation before date to prevent starvation; processor/
+   current rechecks and rotating historical work follow with stable tie-breaks;
+4. selects work under request, byte, document, case, disk, runtime, model-call/token,
+   and zero-local-cost limits, then downloads required official documents into a
+   mode-0700 runner workspace;
+5. fully recomputes each changed case, requiring complete transcripts for every real
+   argument session but allowing a grounded dated disposition to support a zero-session
+   case when the complete disposition and required docket metadata pass validation;
+6. merges only complete accepted cases while preserving unchanged case bytes, records
+   every failed or unselected supported activity as sanitized pending work, and
+   continues after case-local failures while shared budgets permit;
+7. exports and validates a fresh candidate, deploys that exact Pages artifact, then
    compare-and-swap promotes the exact generated state.
 
 No Docker services run in publication. Court documents and model material stay only
@@ -36,7 +44,38 @@ in the self-hosted runner's mode-0700 workspace. Cleanup runs before and after e
 build, including after failure. Deploy, receipt, and promotion jobs remain
 GitHub-hosted and receive no Court/model/database/object credentials. A
 no-content-change run skips Pages deployment and may advance only validated discovery
-checkpoints. A failed cycle leaves the previous release untouched.
+checkpoints and pending metadata. A global safety failure leaves the previous release
+untouched; a case-local failure does not prevent an unrelated complete validated case
+from being deployed.
+
+## Supported activity and public ordering
+
+Initial independent disposition scope is every strictly parsed individual row on the
+configured active term's official `/opinions/slipopinion/{two-digit-term}` table: signed
+opinions,
+per-curiam dispositions, and decrees, including emergency `A` dockets, consolidated
+dockets, original publication dates, and listed revision dates. Exact normalized docket
+identity joins these rows to argued cases; a row can also create a disposition-only case.
+A missing row in a later poll never means deletion or retraction. The
+`relatingtoorders` index remains an exact-docket related-document source for known
+argued cases. The system does **not** inspect an omnibus order list to create a case for
+each listed matter, and it does not expand lower-court documents or every certiorari
+denial into public cases.
+
+Each current public case exposes `latest_court_document_date`, recomputed as the maximum
+of its real argument dates, disposition publication dates, and disposition revision
+dates. Retrieval, HTTP, processing, build, article, and model timestamps are excluded.
+An explicitly migrated URL-only legacy disposition uses its latest real argument date
+until an exact reviewed index match supplies the disposition date; the migration never
+guesses. Contract and release validation reject inconsistent derived dates.
+
+The shared case ordering is descending latest Court document date, followed by stable
+term/docket/slug tie-breakers. The exporter supplies that exact order to the root and
+SCOTUS home pages, free-text and unfiltered search, general case listings, term/status/
+topic/corrections archives, and every paginated form. Browser-side filtering preserves
+the generated relative order. Argument-date archives still select sessions by argument
+date, but their matching cases are ordered by latest overall Court activity. Arguments
+and revision history within an individual case remain chronological.
 
 ## Public generated state
 
@@ -52,9 +91,18 @@ release/v1/release.json
 
 Case identity is stable term plus normalized docket; accepted case revisions are
 append-only. Canonical JSON is UTF-8, sorted, schema-versioned, UTC-normalized, and
-newline-terminated. Public state may retain official URLs, HTTP validators, content
-digests/counts, bounded cursors, processor fingerprints, release pointers, sanitized
-pending reasons, and opaque model-attempt receipts with zero local cost.
+newline-terminated. Public state may retain official URLs, official activity dates,
+HTTP validators, content digests/counts, bounded cursors, processor fingerprints,
+release pointers, sanitized pending reasons, freshness outcomes, and opaque
+model-attempt receipts with zero local cost.
+
+`state/v1/publication.json` records a recomputable freshness summary with case counts
+and newest official activity dates for discovered, published, deferred, failed, and
+combined pending work. Promotion validation requires every supported discovery to be
+current in the projection or represented by dated pending metadata, and rejects a
+summary that disagrees with those allowlisted records. This exposes finite-budget or
+failure staleness without adding captions, source bodies, prompts, rejected prose, or
+model payloads to the freshness record or operational summary.
 
 It must not retain Court/source bodies, PDFs/media, extracted transcript text,
 evidence windows, observations, claims/claim IDs, prompts, model output, object keys,
@@ -65,8 +113,11 @@ whole-bundle textual scan enforce this boundary before any upload.
 
 Only reviewed `www.supremecourt.gov` methods are eligible. A transcript establishes
 attributed speech, not a vote or holding. Only an official order/opinion can establish
-a Court disposition. Changed source bytes allocate a new logical document revision;
-one missing or malformed response never retracts an existing brief.
+a Court disposition. An argued case keeps every real session and its complete
+transcript requirement; a disposition-only page omits argument dates, analyses, and
+transcript links rather than fabricating them. Changed source bytes allocate a new
+logical document revision; one missing or malformed response never retracts an
+existing brief.
 
 Model inputs are bounded evidence windows for extraction and sanitized approved
 claims for brief generation. Calls use the exact local Ollama model `qwen3.8:27b` at
