@@ -26,15 +26,18 @@ from ragchew.scotus.static_contracts import (
     CaseRevisionPointer,
     ConditionalValidators,
     CostLedger,
+    FreshnessSummary,
     ModelAttemptOutcome,
     ModelAttemptReceipt,
     PendingReason,
     PendingWork,
     PublicationState,
     ReleaseManifest,
+    SupportedActivityState,
     assert_public_payload,
     canonical_json_bytes,
     contract_digest,
+    derive_freshness_summary,
     model_input_fingerprint,
     sha256_hex,
 )
@@ -472,3 +475,84 @@ def test_pending_work_is_sanitized_and_reconciliation_is_explicit() -> None:
         reconcile_release_ids(live_release_id=ONE, branch_release_id=ZERO)
         is ReconciliationChoice.REDEPLOY_BRANCH_ACTIVE
     )
+
+
+def test_legacy_publication_bytes_remain_canonical_without_new_default_fields() -> None:
+    payload = json.loads(
+        Path("tests/fixtures/static/pending-work.json").read_text(encoding="utf-8")
+    )["publication_state"]
+    payload.pop("freshness", None)
+    for item in payload["pending_work"]:
+        item.pop("authoritative_activity_date", None)
+    expected = (
+        json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        + "\n"
+    ).encode()
+
+    publication = PublicationState.model_validate_json(json.dumps(payload))
+
+    assert "freshness" not in publication.model_fields_set
+    assert canonical_json_bytes(publication) == expected
+
+
+def test_supported_activity_cannot_disappear_from_projection_and_pending(
+    tmp_path: Path,
+) -> None:
+    store = StaticStateStore(tmp_path / "active")
+    content = store.merge_accepted_case(
+        GeneratedContent.empty(), case(), watermark=NOW, generated_at=NOW
+    )
+    supported = (
+        SupportedActivityState(
+            case_key="2025-25-999",
+            authoritative_activity_date=NOW + timedelta(days=2),
+        ),
+    )
+    publication = content.publication.model_copy(
+        update={
+            "supported_activity": supported,
+            "freshness": derive_freshness_summary(
+                content.projection,
+                (),
+                (),
+                supported,
+            ),
+        }
+    )
+    invalid = replace(content, publication=publication)
+
+    with pytest.raises(StaticStateError, match="neither published nor explicitly pending"):
+        store.write_candidate(tmp_path / "invalid", invalid)
+
+
+def test_freshness_summary_is_sanitized_exhaustive_and_recomputable() -> None:
+    public_case = case()
+    projection = ScotusPublicProjection(
+        watermark=NOW,
+        generated_at=NOW,
+        cases=(public_case,),
+    )
+    pending = PendingWork(
+        case_key="2025-25-999",
+        reason=PendingReason.VALIDATION_FAILED,
+        attempts=1,
+        first_seen_at=NOW,
+        last_attempted_at=NOW,
+        authoritative_activity_date=NOW + timedelta(days=2),
+    )
+
+    summary = derive_freshness_summary(projection, (), (pending,))
+
+    assert summary.discovered_count == 2
+    assert summary.published_count == 1
+    assert summary.failed_count == 1
+    assert summary.pending_count == 1
+    assert summary.newest_discovered_activity_date == NOW + timedelta(days=2)
+    serialized = canonical_json_bytes(summary).decode()
+    assert "caption" not in serialized and "prompt" not in serialized
+    with pytest.raises(ValidationError, match="cover every discovered"):
+        FreshnessSummary(
+            discovered_count=2,
+            published_count=1,
+            pending_count=0,
+        )

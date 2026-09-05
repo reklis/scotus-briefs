@@ -21,6 +21,7 @@ from ragchew.scotus.static_contracts import (
     CostLedger,
     CursorState,
     DispositionDiscoveryState,
+    FreshnessSummary,
     LogicalDocumentState,
     LogicalSourceState,
     ModelAttemptReceipt,
@@ -29,8 +30,10 @@ from ragchew.scotus.static_contracts import (
     PublicationState,
     PublicCaseRevisionRecord,
     ReleaseManifest,
+    SupportedActivityState,
     canonical_json_bytes,
     contract_digest,
+    derive_freshness_summary,
     sha256_hex,
     validate_projection_payload,
 )
@@ -352,6 +355,8 @@ class StaticStateStore:
         cursors: tuple[CursorState, ...],
         processor: ProcessorFingerprint | None,
         dispositions: tuple[DispositionDiscoveryState, ...] | None = None,
+        freshness: FreshnessSummary | None = None,
+        supported_activity: tuple[SupportedActivityState, ...] | None = None,
     ) -> GeneratedContent:
         """Apply sanitized checkpoints without changing the active release pointer."""
         publication = PublicationState(
@@ -377,6 +382,12 @@ class StaticStateStore:
             ),
             cases=content.publication.cases,
             pending_work=pending_work,
+            supported_activity=(
+                content.publication.supported_activity
+                if supported_activity is None
+                else supported_activity
+            ),
+            freshness=(content.publication.freshness if freshness is None else freshness),
             cursors=cursors,
             processor=processor,
         )
@@ -517,6 +528,56 @@ class StaticStateStore:
                 previous = content.revisions[(case_key, number - 1)].record.case_sha256
                 if content.revisions[(case_key, number)].record.previous_case_sha256 != previous:
                     raise StaticStateError("case revision digest chain is broken")
+        pending_by_case = {
+            item.case_key: item for item in content.publication.pending_work
+        }
+        for supported in content.publication.supported_activity:
+            case = projection_cases.get(supported.case_key)
+            published_date = case.latest_court_document_date if case is not None else None
+            pending = pending_by_case.get(supported.case_key)
+            if published_date is not None and published_date >= (
+                supported.authoritative_activity_date
+            ):
+                continue
+            if (
+                pending is None
+                or pending.authoritative_activity_date is None
+                or pending.authoritative_activity_date
+                < supported.authoritative_activity_date
+            ):
+                raise StaticStateError(
+                    "supported activity is neither published nor explicitly pending"
+                )
+        for disposition in content.publication.dispositions:
+            case = projection_cases.get(disposition.case_key)
+            reflected = case is not None and any(
+                item.official_url == disposition.official_url
+                and item.publication_date == disposition.publication_date
+                and item.revision_date == disposition.revision_date
+                for item in case.dispositions
+            )
+            if not reflected:
+                pending = pending_by_case.get(disposition.case_key)
+                activity = disposition.revision_date or disposition.publication_date
+                if (
+                    pending is None
+                    or pending.authoritative_activity_date is None
+                    or pending.authoritative_activity_date < activity
+                ):
+                    raise StaticStateError(
+                        "supported disposition is neither published nor explicitly pending"
+                    )
+        expected_freshness = derive_freshness_summary(
+            content.projection,
+            content.publication.dispositions,
+            content.publication.pending_work,
+            content.publication.supported_activity,
+        )
+        if (
+            "freshness" in content.publication.model_fields_set
+            and content.publication.freshness != expected_freshness
+        ):
+            raise StaticStateError("publication freshness summary is inconsistent")
         if content.release is not None:
             projection_digest = sha256_hex(canonical_json_bytes(content.projection))
             if content.release.projection_sha256 != projection_digest:

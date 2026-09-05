@@ -24,7 +24,9 @@ from ragchew.scotus.static_contracts import (
     PendingWork,
     PublicationState,
     PublicCaseRevisionRecord,
+    SupportedActivityState,
     canonical_json_bytes,
+    derive_freshness_summary,
     sha256_hex,
 )
 from ragchew.scotus.static_state import (
@@ -340,6 +342,24 @@ def migrate_activity_contracts(
                 first_seen_at=migrated_at,
             ),
         )
+    pending_values = tuple(pending[key] for key in sorted(pending))
+    supported_dates = {
+        public_case_key(case.term, case.primary_docket): case.latest_court_document_date
+        for case in projection.cases
+        if case.latest_court_document_date is not None
+    }
+    for state in states:
+        activity = state.revision_date or state.publication_date
+        previous = supported_dates.get(state.case_key)
+        if previous is None or activity > previous:
+            supported_dates[state.case_key] = activity
+    supported_activity = tuple(
+        SupportedActivityState(
+            case_key=key,
+            authoritative_activity_date=supported_dates[key],
+        )
+        for key in sorted(supported_dates)
+    )
     publication_payload = content.publication.model_dump(mode="python")
     publication_payload.update(
         {
@@ -348,7 +368,14 @@ def migrate_activity_contracts(
             "dispositions": states,
             "undated_disposition_case_keys": tuple(sorted(unmatched)),
             "cases": tuple(current_pointers[key] for key in sorted(current_pointers)),
-            "pending_work": tuple(pending[key] for key in sorted(pending)),
+            "pending_work": pending_values,
+            "supported_activity": supported_activity,
+            "freshness": derive_freshness_summary(
+                projection,
+                states,
+                pending_values,
+                supported_activity,
+            ),
         }
     )
     publication = PublicationState.model_validate(publication_payload)

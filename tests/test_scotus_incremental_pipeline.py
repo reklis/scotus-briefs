@@ -62,7 +62,9 @@ from ragchew.scotus.static_pipeline import (
     StaticBatchOrchestrator,
     StaticCaseWork,
     StaticDiscoveryResult,
+    SupportedCaseActivity,
     UnifiedRunBudget,
+    WorkClass,
     call_with_bounded_transport_retries,
 )
 from ragchew.scotus.static_state import StaticStateStore
@@ -580,6 +582,64 @@ def test_current_term_rechecks_rotate_when_all_transcripts_are_known() -> None:
     assert first.work[0].candidate != second.work[0].candidate
 
 
+def test_fresh_selection_applies_newest_first_before_case_cap() -> None:
+    older = candidate("25-older", days_ago=5)
+    newest = candidate("25-newest", days_ago=1)
+
+    selected = select_discovery_work(
+        (older, newest),
+        mode=DiscoveryMode.NIGHTLY,
+        now=NOW,
+        active_term="2025",
+        nightly_case_limit=1,
+        new_transcript_priority=10,
+        historical_priority=100,
+        historical_limit=0,
+        recent_lookback_days=30,
+    )
+
+    assert tuple(item.candidate.primary_docket for item in selected.work) == (
+        "25-newest",
+    )
+    assert selected.deferred_case_keys == ("2025-25-older",)
+
+
+def test_pending_retry_rank_rotates_least_recently_attempted_without_reordering_fresh() -> None:
+    older_untried = StaticCaseWork(
+        "2025-25-older",
+        10,
+        (),
+        "pending_retry",
+        authoritative_activity_date=NOW - timedelta(days=10),
+        work_class=WorkClass.PENDING_RETRY,
+        persisted_pending=True,
+    )
+    newest_retried = StaticCaseWork(
+        "2025-25-newest",
+        10,
+        (),
+        "pending_retry",
+        authoritative_activity_date=NOW,
+        work_class=WorkClass.PENDING_RETRY,
+        persisted_pending=True,
+        last_attempted_at=NOW - timedelta(days=1),
+    )
+    fresh = StaticCaseWork(
+        "2025-25-fresh",
+        10,
+        (),
+        "source_change",
+        authoritative_activity_date=NOW - timedelta(days=20),
+        work_class=WorkClass.FRESH_CHANGE,
+    )
+
+    assert sorted((newest_retried, older_untried, fresh), key=lambda item: item.rank) == [
+        fresh,
+        older_untried,
+        newest_retried,
+    ]
+
+
 def test_document_revision_plan_accepts_same_or_new_url_by_logical_identity() -> None:
     prior = LogicalDocumentState(
         logical_key="2025:25-1:transcript:2026-01-01:1",
@@ -691,7 +751,7 @@ def test_unified_budget_gates_and_counts_every_transport_attempt() -> None:
     assert budget.extraction_calls == 0
 
 
-def test_deferred_batch_work_cannot_be_hidden_by_advanced_checkpoints(
+def test_deferred_batch_work_is_explicit_before_advanced_checkpoints(
     tmp_path: Path,
 ) -> None:
     projection_payload = json.loads(
@@ -734,7 +794,7 @@ def test_deferred_batch_work_cannot_be_hidden_by_advanced_checkpoints(
     ).run(now=NOW)
     assert result.changed_case_keys == (first_key,)
     assert result.pending_case_keys == (deferred_key,)
-    assert result.content.publication.sources == ()
+    assert result.content.publication.sources == (advanced,)
 
 
 def test_case_validation_failure_does_not_block_later_complete_case(
@@ -784,6 +844,76 @@ def test_case_validation_failure_does_not_block_later_complete_case(
     assert result.pending_case_keys == (first_key,)
     assert result.content.projection is not None
     assert result.content.projection.cases == (second_case,)
+
+
+def test_case_local_limit_failure_continues_to_later_fitting_work(
+    tmp_path: Path,
+) -> None:
+    projection_payload = json.loads(
+        Path("tests/fixtures/static/one-case.json").read_text(encoding="utf-8")
+    )["projection"]
+    first_case = ScotusPublicProjection.model_validate(projection_payload).cases[0]
+    first_key = public_case_key(first_case.term, first_case.primary_docket)
+    second_docket = "25-997"
+    second_key = public_case_key(first_case.term, second_docket)
+    second_case = first_case.model_copy(
+        update={
+            "primary_docket": second_docket,
+            "caption": "Later Fitting Case v. Agency",
+            "slug": public_case_slug(
+                first_case.term, second_docket, "Later Fitting Case v. Agency"
+            ),
+        }
+    )
+    observed: list[str] = []
+
+    class Discovery:
+        def discover(self, **_kwargs: object) -> StaticDiscoveryResult:
+            return StaticDiscoveryResult(
+                work=(
+                    StaticCaseWork(
+                        first_key,
+                        1,
+                        (),
+                        "source_change",
+                        authoritative_activity_date=NOW,
+                        work_class=WorkClass.FRESH_CHANGE,
+                    ),
+                    StaticCaseWork(
+                        second_key,
+                        1,
+                        (),
+                        "source_change",
+                        authoritative_activity_date=NOW - timedelta(days=1),
+                        work_class=WorkClass.FRESH_CHANGE,
+                    ),
+                ),
+                supported_activity=(
+                    SupportedCaseActivity(first_key, NOW),
+                    SupportedCaseActivity(second_key, NOW - timedelta(days=1)),
+                ),
+            )
+
+    class Processor:
+        def process(self, work: StaticCaseWork, **_kwargs: object) -> CaseProcessingResult:
+            observed.append(work.case_key)
+            if work.case_key == first_key:
+                raise BudgetExceeded("single case exceeds per-call input limit")
+            return CaseProcessingResult(second_key, (), second_case)
+
+    result = StaticBatchOrchestrator(
+        state_store=StaticStateStore(tmp_path / "empty"),
+        discovery=Discovery(),
+        processor=Processor(),
+        config=ScotusConfig.from_yaml("config/scotus.yaml"),
+        runner_temp=tmp_path,
+    ).run(now=NOW)
+
+    assert observed == [first_key, second_key]
+    assert result.changed_case_keys == (second_key,)
+    assert result.pending_case_keys == (first_key,)
+    assert result.content.publication.freshness.failed_count == 0
+    assert result.content.publication.freshness.deferred_count == 1
 
 
 def test_bounded_worker_empty_queue_drains_without_sleep() -> None:

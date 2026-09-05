@@ -720,6 +720,17 @@ def _candidate_sort_key(item: ScotusArgumentCandidate) -> tuple[str, datetime, i
     return (item.term, item.argument_date, item.sequence, item.primary_docket)
 
 
+def _newest_candidate_sort_key(
+    item: ScotusArgumentCandidate,
+) -> tuple[float, str, str, int]:
+    return (
+        -item.argument_date.timestamp(),
+        item.term,
+        item.primary_docket,
+        item.sequence,
+    )
+
+
 @dataclass(frozen=True)
 class DiscoveryResourceSelection:
     terms: tuple[str, ...]
@@ -895,11 +906,11 @@ def select_discovery_work(
             if item.transcript is not None
             and transcript_logical_key(item) not in known_transcript_keys
         ),
-        key=_candidate_sort_key,
+        key=_newest_candidate_sort_key,
     )
     routine_current = sorted(
         (item for item in current if item not in new_current),
-        key=_candidate_sort_key,
+        key=_newest_candidate_sort_key,
     )
     next_current_cursor = current_cursor
     if routine_current:

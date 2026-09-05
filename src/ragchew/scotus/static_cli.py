@@ -524,7 +524,7 @@ def _batch(args: argparse.Namespace) -> int:
     )
     if not isinstance(result, StaticBatchResult):
         raise RuntimeError("production batch adapter returned an invalid result")
-    if not result.publishable or result.content.projection is None:
+    if not result.checkpointable or result.content.projection is None:
         selected = set(result.pending_case_keys)
         reason_counts: dict[str, int] = {}
         for pending in result.content.publication.pending_work:
@@ -567,6 +567,11 @@ def _batch(args: argparse.Namespace) -> int:
     if finalized.release is None:
         raise RuntimeError("finalized generated state has no release")
     publication_ready = _live_publication_ready(config)
+    freshness = finalized.publication.freshness
+
+    def safe_date(value: datetime | None) -> str:
+        return value.date().isoformat() if value is not None else "none"
+
     _write_outputs(
         args.github_output,
         {
@@ -575,6 +580,26 @@ def _batch(args: argparse.Namespace) -> int:
             "release_id": export.manifest.release_id,
             "expected_parent_release_id": result.parent_release_id,
             "expected_parent_digest": generated_public_content_digest(original),
+            "discovered_count": str(freshness.discovered_count),
+            "published_count": str(freshness.published_count),
+            "deferred_count": str(freshness.deferred_count),
+            "failed_count": str(freshness.failed_count),
+            "pending_count": str(freshness.pending_count),
+            "newest_discovered_activity_date": safe_date(
+                freshness.newest_discovered_activity_date
+            ),
+            "newest_published_activity_date": safe_date(
+                freshness.newest_published_activity_date
+            ),
+            "newest_deferred_activity_date": safe_date(
+                freshness.newest_deferred_activity_date
+            ),
+            "newest_failed_activity_date": safe_date(
+                freshness.newest_failed_activity_date
+            ),
+            "newest_pending_activity_date": safe_date(
+                freshness.newest_pending_activity_date
+            ),
         },
     )
     print(f"built validated batch release {export.manifest.release_id}")
@@ -698,6 +723,8 @@ def _promote(args: argparse.Namespace) -> int:
             cursors=candidate.publication.cursors,
             processor=candidate.publication.processor,
             dispositions=candidate.publication.dispositions,
+            freshness=candidate.publication.freshness,
+            supported_activity=candidate.publication.supported_activity,
         )
     else:
         release_id = _optional_id(args.release_id)

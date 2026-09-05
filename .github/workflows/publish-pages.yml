@@ -341,8 +341,23 @@ jobs:
       # handoff metadata, and opaque receipts for one day. No private evidence is uploaded.
       - name: Safe build summary
         if: always()
+        env:
+          DISCOVERED_COUNT: ${{ steps.live_batch.outputs.discovered_count || '0' }}
+          PUBLISHED_COUNT: ${{ steps.live_batch.outputs.published_count || '0' }}
+          DEFERRED_COUNT: ${{ steps.live_batch.outputs.deferred_count || '0' }}
+          FAILED_COUNT: ${{ steps.live_batch.outputs.failed_count || '0' }}
+          PENDING_COUNT: ${{ steps.live_batch.outputs.pending_count || '0' }}
+          NEWEST_DISCOVERED: ${{ steps.live_batch.outputs.newest_discovered_activity_date || 'none' }}
+          NEWEST_PUBLISHED: ${{ steps.live_batch.outputs.newest_published_activity_date || 'none' }}
+          NEWEST_DEFERRED: ${{ steps.live_batch.outputs.newest_deferred_activity_date || 'none' }}
+          NEWEST_FAILED: ${{ steps.live_batch.outputs.newest_failed_activity_date || 'none' }}
+          NEWEST_PENDING: ${{ steps.live_batch.outputs.newest_pending_activity_date || 'none' }}
         run: |
           printf 'Build outcome: `%s`\n' "${{ job.status }}" >> "$GITHUB_STEP_SUMMARY"
+          printf 'Freshness: discovered=%s (newest=%s), published=%s (newest=%s), deferred=%s (newest=%s), failed=%s (newest=%s), pending=%s (newest=%s).\n' \
+            "$DISCOVERED_COUNT" "$NEWEST_DISCOVERED" "$PUBLISHED_COUNT" "$NEWEST_PUBLISHED" \
+            "$DEFERRED_COUNT" "$NEWEST_DEFERRED" "$FAILED_COUNT" "$NEWEST_FAILED" \
+            "$PENDING_COUNT" "$NEWEST_PENDING" >> "$GITHUB_STEP_SUMMARY"
           printf 'Court/model candidates remain fail-closed unless every configured gate and validator passes.\n' >> "$GITHUB_STEP_SUMMARY"
           if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.deploy }}" != "true" ]]; then
             printf 'Non-deploy dry run: validated public candidate/state and opaque receipts are retained for guarded deployment without model reprocessing.\n' >> "$GITHUB_STEP_SUMMARY"
@@ -360,7 +375,7 @@ jobs:
   persist-cost-receipts:
     name: Persist validated opaque receipts only
     needs: build
-    if: always() && needs.build.outputs.expected_parent_commit != '' && needs.build.outputs.receipts_present == 'true' && (github.event_name == 'schedule' || inputs.deploy == true)
+    if: always() && needs.build.outputs.expected_parent_commit != '' && (github.event_name == 'schedule' || inputs.deploy == true)
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
@@ -382,6 +397,7 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        if: needs.build.outputs.receipts_present == 'true'
         with:
           name: opaque-cost-receipts
           path: receipt
@@ -390,7 +406,7 @@ jobs:
           enable-cache: false
       - run: uv sync --project source --frozen
       - name: CAS append without changing active release
-        if: hashFiles('receipt/public-cost-receipts.json') != ''
+        if: needs.build.outputs.receipts_present == 'true' && hashFiles('receipt/public-cost-receipts.json') != ''
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -404,8 +420,8 @@ jobs:
 
   deploy:
     name: Deploy exact Pages artifact
-    needs: build
-    if: needs.build.outputs.release_changed == 'true' && needs.build.outputs.publication_ready == 'true' && (github.event_name == 'schedule' || inputs.deploy == true)
+    needs: [build, persist-cost-receipts]
+    if: always() && needs.build.result == 'success' && needs.build.outputs.release_changed == 'true' && needs.build.outputs.publication_ready == 'true' && (needs.persist-cost-receipts.result == 'success' || needs.build.outputs.expected_parent_commit == '') && (github.event_name == 'schedule' || inputs.deploy == true)
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     environment:

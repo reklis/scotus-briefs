@@ -107,6 +107,11 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     ]
     assert "github.event_name == 'schedule' || inputs.deploy == true" in receipt_job
     assert "needs.build.outputs.receipts_present == 'true'" in receipt_job
+    assert (
+        "needs.build.outputs.expected_parent_commit != '' && "
+        "(github.event_name == 'schedule' || inputs.deploy == true)"
+    ) in receipt_job
+    assert "if: needs.build.outputs.receipts_present == 'true'" in receipt_job
     assert "continue-on-error: true" not in receipt_job
     assert "retained for guarded deployment without model reprocessing" in workflow
     assert "git -C generated-content-input rev-parse HEAD" in workflow
@@ -130,6 +135,17 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "Clean persistent runner before build" in workflow
     assert "github.event_name != 'pull_request'" in workflow
     assert "include-hidden-files: true" in workflow
+    assert "needs: [build, persist-cost-receipts]" in workflow
+    assert "needs.persist-cost-receipts.result == 'success'" in workflow
+    assert "Freshness: discovered=%s" in workflow
+    for safe_field in (
+        "newest_discovered_activity_date",
+        "newest_published_activity_date",
+        "newest_deferred_activity_date",
+        "newest_failed_activity_date",
+        "newest_pending_activity_date",
+    ):
+        assert safe_field in workflow
 
 
 def test_retained_candidate_deploy_revalidates_without_spark_or_model() -> None:

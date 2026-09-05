@@ -1109,6 +1109,44 @@ def test_failure_and_model_budget_exhaustion_keep_prior_case_active(
     assert blocked.pending_case_keys == ("2025-25-1",)
 
 
+def test_pending_new_argument_is_reconsidered_after_index_checkpoint_304(
+    tmp_path: Path,
+) -> None:
+    court = CourtFixture()
+    store = MemoryStateStore(tmp_path / "state")
+    first = run(tmp_path, store, court, MockOpenAI())
+    store.content = first.content
+    court.rows.append(("25-2", "Second v. Agency", "4/21/26", "25-2.pdf"))
+    court.index_etag = '"index-2"'
+    court.documents["/pdfs/transcripts/2025/25-2.pdf"] = (
+        '"transcript-2"',
+        _pdf(1),
+        "application/pdf",
+    )
+    court.documents["/docket/docketfiles/html/public/25-2.html"] = (
+        '"docket-2"',
+        b"<!doctype html><body>Docket 25-2. Second v. Agency.</body>",
+        "text/html",
+    )
+
+    failed = run(tmp_path, store, court, MockOpenAI(), backend=FailingBackend)
+    assert failed.pending_case_keys == ("2025-25-2",)
+    assert failed.checkpointable
+    store.content = failed.content
+    court.source_requests.clear()
+
+    retried = run(tmp_path, store, court, MockOpenAI())
+
+    assert retried.pending_case_keys == ()
+    assert "2025-25-2" in retried.changed_case_keys
+    _, conditional = next(
+        request
+        for request in court.source_requests
+        if request[0].endswith("/oral_arguments/argument_transcript/2025")
+    )
+    assert conditional == ConditionalRequest()
+
+
 def test_prior_reconstruction_preserves_typed_document_identity(tmp_path: Path) -> None:
     court = CourtFixture()
     store = MemoryStateStore(tmp_path / "state")

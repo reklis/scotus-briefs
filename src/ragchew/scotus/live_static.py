@@ -139,7 +139,9 @@ from ragchew.scotus.static_pipeline import (
     StaticBatchResult,
     StaticCaseWork,
     StaticDiscoveryResult,
+    SupportedCaseActivity,
     UnifiedRunBudget,
+    WorkClass,
     call_with_bounded_transport_retries,
     failure_category,
 )
@@ -587,6 +589,9 @@ class LiveStaticDiscovery:
         del budget  # nested fetchers account against this same instance
         self.now = now
         checkpoints = {item.logical_key: item for item in content.publication.sources}
+        persisted_pending_case_keys = {
+            item.case_key for item in content.publication.pending_work
+        }
         cursor_key = f"{mode.value}:resource-recheck"
         cursor = next(
             (item for item in content.publication.cursors if item.cursor_key == cursor_key),
@@ -601,7 +606,19 @@ class LiveStaticDiscovery:
             now=now,
             cursor=cursor,
         )
-        incremental = IncrementalDiscoveryOperation(self.adapters, checkpoints).run(
+        # Pending argument work must remain reconstructable after a prior conditional
+        # checkpoint. Re-fetch only selected pending terms unconditionally; source
+        # bodies remain ephemeral and the same shared transport budget applies.
+        argument_checkpoints = dict(checkpoints)
+        pending_terms = {
+            case_key.split("-", 1)[0] for case_key in persisted_pending_case_keys
+        }
+        for term in resources.terms:
+            if term in pending_terms:
+                argument_checkpoints.pop(f"argument-index:{term}", None)
+        incremental = IncrementalDiscoveryOperation(
+            self.adapters, argument_checkpoints
+        ).run(
             active_term=self.config.discovery.active_term,
             mode=mode,
             historical_limit=self.config.discovery.historical_rechecks_per_run,
@@ -647,7 +664,7 @@ class LiveStaticDiscovery:
             and pointer_by_case[case_key].processor_sha256 is not None
             and pointer_by_case[case_key].processor_sha256 != processor.composite_sha256
         }
-        pending_case_keys = {item.case_key for item in content.publication.pending_work}
+        pending_case_keys = persisted_pending_case_keys
         # Legacy import tooling left zero-attempt budget markers that were never real
         # source work. Preserve the compatibility cleanup for only that exact shape;
         # an attempted legacy disposition failure remains mandatory retry work.
@@ -659,7 +676,6 @@ class LiveStaticDiscovery:
             and item.last_attempted_at is None
         }
         changed_case_keys: set[str] = set(migration_case_keys)
-        argument_source_changed_case_keys: set[str] = set()
         source_changed_case_keys: set[str] = set()
         for item in incremental.candidates:
             key = candidate_logical_key(item)
@@ -667,7 +683,6 @@ class LiveStaticDiscovery:
             previous = candidates_by_session.get(identity)
             if previous is None or _candidate_metadata_changed(previous, item):
                 changed_case_keys.add(key)
-                argument_source_changed_case_keys.add(key)
                 source_changed_case_keys.add(key)
             candidates_by_session[identity] = _merge_candidate(previous, item)
 
@@ -678,7 +693,6 @@ class LiveStaticDiscovery:
             now=now,
         )
         changed_case_keys.update(related_changes)
-        argument_source_changed_case_keys.update(related_changes)
         source_changed_case_keys.update(related_changes)
         combined = tuple(candidates_by_session.values())
         active_term = self.config.discovery.active_term
@@ -731,9 +745,6 @@ class LiveStaticDiscovery:
             for argument in case.arguments
         }
         changed_case_keys = {argument_case_keys.get(key, key) for key in changed_case_keys}
-        argument_source_changed_case_keys = {
-            argument_case_keys.get(key, key) for key in argument_source_changed_case_keys
-        }
         source_changed_case_keys = {
             argument_case_keys.get(key, key) for key in source_changed_case_keys
         }
@@ -802,13 +813,16 @@ class LiveStaticDiscovery:
             if mode is DiscoveryMode.BOOTSTRAP
             else self.config.runner_limits.maximum_cases_per_run
         )
+        # Build every eligible class first. The final case cap is applied once, after
+        # fresh Court changes, authoritative dates, persisted retries, migrations, and
+        # rotating rechecks all have one shared deterministic rank.
         selection = select_discovery_work(
             combined,
             mode=mode,
             now=now,
             active_term=self.config.discovery.active_term,
             known_transcript_keys=selection_known,
-            nightly_case_limit=case_limit,
+            nightly_case_limit=len(combined),
             new_transcript_priority=self.config.discovery.new_transcript_priority,
             historical_priority=self.config.discovery.backfill_priority,
             historical_limit=self.config.discovery.historical_rechecks_per_run,
@@ -819,34 +833,86 @@ class LiveStaticDiscovery:
             current_cursor=current_cursor,
             bootstrap_term_limit=self.config.bootstrap.maximum_terms_per_run,
         )
-        selected: dict[str, tuple[int, str]] = {}
-        # Changed and stale-processor cases outrank rotating rechecks. Because each
-        # successful migration updates its case pointer, this bounded deterministic
-        # prefix drains across later runs even for terms outside bootstrap polling.
-        ordered_changes = (
-            *sorted(source_changed_case_keys),
-            *sorted(changed_case_keys - source_changed_case_keys),
-        )
-        for key in ordered_changes:
-            if len(selected) >= case_limit:
-                break
-            reason = "source_change" if key in source_changed_case_keys else "processor_migration"
-            selected[key] = (self.config.discovery.new_transcript_priority, reason)
+        activity_by_case = {
+            key: max(
+                (
+                    *(argument.argument_date for argument in merged.arguments),
+                    *(
+                        disposition.revision_date or disposition.publication_date
+                        for disposition in merged.dispositions
+                    ),
+                )
+            )
+            for key, merged in merged_by_key.items()
+        }
+        pending_by_case = {
+            item.case_key: item for item in content.publication.pending_work
+        }
+        queue: dict[str, tuple[int, str, WorkClass, bool]] = {}
+        for key in changed_case_keys:
+            if key in source_changed_case_keys:
+                queue[key] = (
+                    self.config.discovery.new_transcript_priority,
+                    "source_change",
+                    WorkClass.FRESH_CHANGE,
+                    key in pending_by_case,
+                )
+            elif key in pending_by_case:
+                queue[key] = (
+                    self.config.discovery.new_transcript_priority,
+                    "pending_retry",
+                    WorkClass.PENDING_RETRY,
+                    True,
+                )
+            else:
+                queue[key] = (
+                    self.config.discovery.new_transcript_priority,
+                    "processor_migration",
+                    WorkClass.PROCESSOR_MIGRATION,
+                    False,
+                )
         for selected_item in selection.work:
-            if len(selected) >= case_limit:
-                break
             raw_key = candidate_logical_key(selected_item.candidate)
             key = argument_case_keys.get(raw_key, raw_key)
             if key in legacy_case_keys and key not in source_changed_case_keys:
                 continue
-            selected_prior = selected.get(key)
-            value = (selected_item.priority, selected_item.reason)
-            selected[key] = min(selected_prior, value) if selected_prior else value
+            work_class = (
+                WorkClass.HISTORICAL_RECHECK
+                if selected_item.reason == "historical_recheck"
+                else WorkClass.CURRENT_RECHECK
+            )
+            candidate_value = (
+                selected_item.priority,
+                selected_item.reason,
+                work_class,
+                key in pending_by_case,
+            )
+            existing = queue.get(key)
+            if existing is None or candidate_value[2] < existing[2]:
+                queue[key] = candidate_value
+
+        ranked_queue = sorted(
+            queue.items(),
+            key=lambda item: StaticCaseWork(
+                case_key=item[0],
+                priority=item[1][0],
+                sessions=(),
+                reason=item[1][1],
+                authoritative_activity_date=activity_by_case.get(item[0]),
+                work_class=item[1][2],
+                persisted_pending=item[1][3],
+                last_attempted_at=(
+                    pending_by_case[item[0]].last_attempted_at
+                    if item[0] in pending_by_case
+                    else None
+                ),
+            ).rank,
+        )
+        selected = dict(ranked_queue[:case_limit])
 
         work: list[StaticCaseWork] = []
         invalid_case_keys: set[str] = set()
-        ordered_selection = sorted(selected.items(), key=lambda item: (item[1][0], item[0]))
-        for key, (priority, reason) in ordered_selection:
+        for key, (priority, reason, work_class, persisted_pending) in ranked_queue[:case_limit]:
             merged = merged_by_key.get(key)
             if merged is None:
                 invalid_case_keys.add(key)
@@ -897,15 +963,48 @@ class LiveStaticDiscovery:
                     tuple(session_work),
                     reason,
                     case_document_keys,
+                    activity_by_case[key],
+                    work_class,
+                    persisted_pending,
+                    (
+                        pending_by_case[key].last_attempted_at
+                        if key in pending_by_case
+                        else None
+                    ),
                 )
             )
 
+        selected_keys = set(selected)
+        historical_rechecks = {
+            argument_case_keys.get(
+                candidate_logical_key(item.candidate),
+                candidate_logical_key(item.candidate),
+            )
+            for item in selection.work
+            if item.reason == "historical_recheck"
+        }
+        current_rechecks = {
+            argument_case_keys.get(
+                candidate_logical_key(item.candidate),
+                candidate_logical_key(item.candidate),
+            )
+            for item in selection.work
+            if item.reason == "current_recheck"
+        }
         cursors = tuple(
             item
             for item in (
                 incremental.cursor,
-                selection.cursor,
-                selection.current_cursor,
+                (
+                    selection.cursor
+                    if historical_rechecks <= selected_keys
+                    else selection_cursor
+                ),
+                (
+                    selection.current_cursor
+                    if current_rechecks <= selected_keys
+                    else current_cursor
+                ),
             )
             if item is not None
         )
@@ -916,7 +1015,6 @@ class LiveStaticDiscovery:
         deferred_case_keys = tuple(
             sorted((changed_case_keys - runnable_case_keys) | invalid_case_keys)
         )
-        changed_deferred = bool(set(deferred_case_keys) & argument_source_changed_case_keys)
         source_states = (*incremental.checkpoints, slip_result.checkpoint, *related_sources)
         return StaticDiscoveryResult(
             work=tuple(work),
@@ -933,10 +1031,17 @@ class LiveStaticDiscovery:
             ),
             processor=processor,
             deferred_case_keys=deferred_case_keys,
+            failed_case_keys=tuple(sorted(invalid_case_keys)),
             resolved_pending_case_keys=tuple(
                 sorted(stale_legacy_pending_case_keys | remapped_pending_case_keys)
             ),
-            checkpoint_safe=not changed_deferred,
+            # Every omitted changed case is now explicit pending work with its official
+            # activity date, so complete strict source checkpoints cannot hide it.
+            checkpoint_safe=True,
+            supported_activity=tuple(
+                SupportedCaseActivity(key, activity_by_case[key])
+                for key in sorted(activity_by_case)
+            ),
         )
 
     def _poll_related_indices(
@@ -2248,6 +2353,7 @@ class LiveStaticBatchAdapter:
                     pending_case_keys=result.pending_case_keys,
                     publishable=result.publishable,
                     no_public_change=result.no_public_change,
+                    checkpointable=result.checkpointable,
                 )
             return result
         finally:

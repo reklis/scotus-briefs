@@ -153,6 +153,79 @@ class PendingWork(StaticContract):
     attempts: int = Field(ge=0)
     first_seen_at: datetime
     last_attempted_at: datetime | None = None
+    # The newest official Court date represented by this work item. This is public,
+    # allowlisted source metadata and deliberately excludes retrieval/processing times.
+    authoritative_activity_date: datetime | None = None
+
+    @field_validator("first_seen_at", "last_attempted_at", "authoritative_activity_date")
+    @classmethod
+    def require_aware_pending_dates(cls, value: datetime | None) -> datetime | None:
+        if value is not None and (value.tzinfo is None or value.utcoffset() is None):
+            raise ValueError("pending dates must be timezone-aware")
+        return value
+
+
+class SupportedActivityState(StaticContract):
+    """Newest allowlisted official activity observed for a normalized case."""
+
+    case_key: str = Field(pattern=_KEY_PATTERN)
+    authoritative_activity_date: datetime
+
+    @field_validator("authoritative_activity_date")
+    @classmethod
+    def require_aware_activity_date(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("supported activity date must be timezone-aware")
+        return value
+
+
+class FreshnessSummary(StaticContract):
+    """Sanitized, recomputable coverage and outcome totals for supported activity."""
+
+    newest_discovered_activity_date: datetime | None = None
+    newest_published_activity_date: datetime | None = None
+    newest_deferred_activity_date: datetime | None = None
+    newest_failed_activity_date: datetime | None = None
+    newest_pending_activity_date: datetime | None = None
+    discovered_count: int = Field(default=0, ge=0)
+    published_count: int = Field(default=0, ge=0)
+    deferred_count: int = Field(default=0, ge=0)
+    failed_count: int = Field(default=0, ge=0)
+    pending_count: int = Field(default=0, ge=0)
+
+    @field_validator(
+        "newest_discovered_activity_date",
+        "newest_published_activity_date",
+        "newest_deferred_activity_date",
+        "newest_failed_activity_date",
+        "newest_pending_activity_date",
+    )
+    @classmethod
+    def require_aware_activity_dates(cls, value: datetime | None) -> datetime | None:
+        if value is not None and (value.tzinfo is None or value.utcoffset() is None):
+            raise ValueError("freshness dates must be timezone-aware")
+        return value
+
+    @model_validator(mode="after")
+    def dates_match_counts(self) -> Self:
+        pairs = (
+            (self.newest_discovered_activity_date, self.discovered_count, "discovered"),
+            (self.newest_published_activity_date, self.published_count, "published"),
+            (self.newest_deferred_activity_date, self.deferred_count, "deferred"),
+            (self.newest_failed_activity_date, self.failed_count, "failed"),
+            (self.newest_pending_activity_date, self.pending_count, "pending"),
+        )
+        for date, count, label in pairs:
+            # Legacy pending markers can predate authoritative activity dates. New
+            # discovery must supply dates, but compatibility reads may have a nonzero
+            # count without one; a date with a zero count is never coherent.
+            if date is not None and count == 0:
+                raise ValueError(f"newest {label} date cannot be present when count is zero")
+        if self.deferred_count + self.failed_count != self.pending_count:
+            raise ValueError("freshness pending count must equal deferred plus failed counts")
+        if self.published_count + self.pending_count != self.discovered_count:
+            raise ValueError("freshness outcomes must cover every discovered case")
+        return self
 
 
 class DispositionDiscoveryState(StaticContract):
@@ -239,6 +312,8 @@ class PublicationState(StaticContract):
     undated_disposition_case_keys: tuple[str, ...] = ()
     cases: tuple[CaseRevisionPointer, ...] = ()
     pending_work: tuple[PendingWork, ...] = ()
+    supported_activity: tuple[SupportedActivityState, ...] = ()
+    freshness: FreshnessSummary = FreshnessSummary()
     cursors: tuple[CursorState, ...] = ()
     processor: ProcessorFingerprint | None = None
 
@@ -260,8 +335,74 @@ class PublicationState(StaticContract):
             raise ValueError("undated disposition case key is invalid")
         _require_unique_sorted(self.cases, lambda value: value.case_key, "case")
         _require_unique_sorted(self.pending_work, lambda value: value.case_key, "pending case")
+        _require_unique_sorted(
+            self.supported_activity,
+            lambda value: value.case_key,
+            "supported activity case",
+        )
         _require_unique_sorted(self.cursors, lambda value: value.cursor_key, "cursor")
         return self
+
+
+def derive_freshness_summary(
+    projection: ScotusPublicProjection | None,
+    dispositions: tuple[DispositionDiscoveryState, ...],
+    pending_work: tuple[PendingWork, ...],
+    supported_activity: tuple[SupportedActivityState, ...] = (),
+) -> FreshnessSummary:
+    """Recompute sanitized newest dates and exhaustive case-level outcomes."""
+    published_dates = {
+        public_case_key(case.term, case.primary_docket): case.latest_court_document_date
+        for case in (projection.cases if projection is not None else ())
+        if case.latest_court_document_date is not None
+    }
+    discovered_dates: dict[str, datetime] = {
+        item.case_key: item.authoritative_activity_date for item in supported_activity
+    }
+    for key, published_activity in published_dates.items():
+        previous = discovered_dates.get(key)
+        if previous is None or published_activity > previous:
+            discovered_dates[key] = published_activity
+    for disposition in dispositions:
+        disposition_activity: datetime = (
+            disposition.revision_date or disposition.publication_date
+        )
+        previous = discovered_dates.get(disposition.case_key)
+        if previous is None or disposition_activity > previous:
+            discovered_dates[disposition.case_key] = disposition_activity
+    pending = {item.case_key: item for item in pending_work}
+    for item in pending_work:
+        pending_activity = item.authoritative_activity_date
+        previous = discovered_dates.get(item.case_key)
+        if pending_activity is not None and (
+            previous is None or pending_activity > previous
+        ):
+            discovered_dates[item.case_key] = pending_activity
+
+    discovered_keys = set(discovered_dates) | set(pending)
+    pending_keys = set(pending)
+    current_published_keys = discovered_keys - pending_keys
+    deferred_keys = {
+        key for key, item in pending.items() if item.reason is PendingReason.BUDGET_EXHAUSTED
+    }
+    failed_keys = pending_keys - deferred_keys
+
+    def newest(keys: set[str], dates: Mapping[str, datetime]) -> datetime | None:
+        values = tuple(dates[key] for key in keys if key in dates)
+        return max(values, default=None)
+
+    return FreshnessSummary(
+        newest_discovered_activity_date=newest(discovered_keys, discovered_dates),
+        newest_published_activity_date=newest(current_published_keys, published_dates),
+        newest_deferred_activity_date=newest(deferred_keys, discovered_dates),
+        newest_failed_activity_date=newest(failed_keys, discovered_dates),
+        newest_pending_activity_date=newest(pending_keys, discovered_dates),
+        discovered_count=len(discovered_keys),
+        published_count=len(current_published_keys),
+        deferred_count=len(deferred_keys),
+        failed_count=len(failed_keys),
+        pending_count=len(pending_keys),
+    )
 
 
 class PublicCaseRevisionRecord(StaticContract):
@@ -509,6 +650,16 @@ def _json_value(value: Any) -> Any:
                 # Preserve canonical pre-discovery schema-1.0 state bytes.
                 payload.pop("dispositions")
             payload.pop("undated_disposition_case_keys")
+        if "freshness" not in value.model_fields_set:
+            payload.pop("freshness", None)
+        if "supported_activity" not in value.model_fields_set:
+            payload.pop("supported_activity", None)
+        pending_payloads = payload.get("pending_work", ())
+        for pending, pending_payload in zip(
+            value.pending_work, pending_payloads, strict=True
+        ):
+            if "authoritative_activity_date" not in pending.model_fields_set:
+                pending_payload.pop("authoritative_activity_date", None)
         return _json_value(payload)
     if isinstance(value, CaseRevisionPointer):
         payload = value.model_dump(mode="python")
@@ -522,6 +673,11 @@ def _json_value(value: Any) -> Any:
         if value.schema_version == "1.0":
             for entry in payload["cases"]:
                 entry.pop("latest_court_document_date")
+        return _json_value(payload)
+    if isinstance(value, PendingWork):
+        payload = value.model_dump(mode="python")
+        if "authoritative_activity_date" not in value.model_fields_set:
+            payload.pop("authoritative_activity_date", None)
         return _json_value(payload)
     if isinstance(value, ModelAttemptReceipt):
         payload = value.model_dump(mode="python")

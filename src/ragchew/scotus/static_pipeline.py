@@ -13,7 +13,7 @@ from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field, replace
 from datetime import UTC, datetime
 from decimal import Decimal
-from enum import StrEnum
+from enum import IntEnum, StrEnum
 from pathlib import Path
 from types import FrameType
 from typing import Any, Literal, Protocol
@@ -39,15 +39,22 @@ from ragchew.scotus.static_contracts import (
     PendingReason,
     PendingWork,
     ProcessorFingerprint,
+    SupportedActivityState,
+    derive_freshness_summary,
     model_input_fingerprint,
 )
 from ragchew.scotus.static_state import GeneratedContent, StaticStateStore
+from ragchew.scotus.transcript_parser import TranscriptParseError
 
 LOG = logging.getLogger("ragchew.scotus.static_pipeline")
 
 
 class BudgetExceeded(RuntimeError):
-    """A configured non-safety run limit was reached."""
+    """The current case cannot fit a configured bounded resource limit."""
+
+
+class GlobalBudgetExceeded(BudgetExceeded):
+    """Shared capacity is exhausted such that no later queue item can safely run."""
 
 
 class RepeatedModelInput(RuntimeError):
@@ -290,7 +297,7 @@ class UnifiedRunBudget:
             time.monotonic() - self.started_monotonic
             > self.config.runner_limits.maximum_runtime_seconds
         ):
-            raise BudgetExceeded("runtime budget exhausted")
+            raise GlobalBudgetExceeded("runtime budget exhausted")
 
     def reserve_case(self, documents: int = 0) -> None:
         self.check_runtime()
@@ -300,7 +307,7 @@ class UnifiedRunBudget:
             else self.config.runner_limits.maximum_cases_per_run
         )
         if self.selected_cases + 1 > case_limit:
-            raise BudgetExceeded("case budget exhausted")
+            raise GlobalBudgetExceeded("case budget exhausted")
         if (
             self.selected_documents + documents
             > self.config.runner_limits.maximum_documents_per_run
@@ -315,7 +322,9 @@ class UnifiedRunBudget:
                 or self.brief_calls >= limits.maximum_brief_calls_per_run
                 or self.model_calls + 2 > limits.maximum_total_calls_per_run
             ):
-                raise BudgetExceeded("case cannot fit extraction and brief call budgets")
+                raise GlobalBudgetExceeded(
+                    "case cannot fit extraction and brief call budgets"
+                )
         self.selected_cases += 1
         self.selected_documents += documents
 
@@ -327,7 +336,7 @@ class UnifiedRunBudget:
             else self.config.runner_limits.maximum_http_requests_per_run
         )
         if self.http_requests + 1 > request_limit:
-            raise BudgetExceeded("HTTP request budget exhausted")
+            raise GlobalBudgetExceeded("HTTP request budget exhausted")
         self.http_requests += 1
 
     def record_download(self, byte_count: int) -> None:
@@ -344,7 +353,7 @@ class UnifiedRunBudget:
 
     def check_private_disk(self, workspace: RunWorkspace) -> None:
         if workspace.disk_bytes() > self.config.runner_limits.maximum_private_disk_bytes:
-            raise BudgetExceeded("private disk budget exhausted")
+            raise GlobalBudgetExceeded("private disk budget exhausted")
 
     def authorize_model_request(
         self,
@@ -409,7 +418,7 @@ class UnifiedRunBudget:
             stage_calls + 1 > stage_maximum
             or self.model_calls + 1 > limits.maximum_total_calls_per_run
         ):
-            raise BudgetExceeded("model call budget exhausted")
+            raise GlobalBudgetExceeded("model call budget exhausted")
         if permit.stage == "extraction" and (
             self.brief_calls >= limits.maximum_brief_calls_per_run
             or self.model_calls + 2 > limits.maximum_total_calls_per_run
@@ -542,6 +551,14 @@ class ArgumentSessionWork:
     document_keys: tuple[str, ...]
 
 
+class WorkClass(IntEnum):
+    FRESH_CHANGE = 0
+    PENDING_RETRY = 1
+    PROCESSOR_MIGRATION = 2
+    CURRENT_RECHECK = 3
+    HISTORICAL_RECHECK = 4
+
+
 @dataclass(frozen=True)
 class StaticCaseWork:
     case_key: str
@@ -552,6 +569,10 @@ class StaticCaseWork:
     # argument session. Keeping these identities separate prevents a disposition-only
     # case from acquiring a fabricated session merely to enter the work queue.
     case_document_keys: tuple[str, ...] = ()
+    authoritative_activity_date: datetime | None = None
+    work_class: WorkClass = WorkClass.CURRENT_RECHECK
+    persisted_pending: bool = False
+    last_attempted_at: datetime | None = None
 
     @property
     def document_count(self) -> int:
@@ -561,6 +582,42 @@ class StaticCaseWork:
                 *(key for session in self.sessions for key in session.document_keys),
             }
         )
+
+    @property
+    def rank(self) -> tuple[int, int, float, float, int, int, str]:
+        """Stable newest-first rank, evaluated before any bounded run limit."""
+        activity_rank = (
+            -self.authoritative_activity_date.timestamp()
+            if self.authoritative_activity_date is not None
+            else float("inf")
+        )
+        inferred_fresh = self.reason in {"source_change", "new_transcript", "changed"}
+        fresh_rank = int(not (self.work_class is WorkClass.FRESH_CHANGE or inferred_fresh))
+        pending_rank = int(not self.persisted_pending)
+        # Once a fresh case has had its first attempt, least-recently-attempted retry
+        # rotation prevents one persistently failing newest case from starving backlog.
+        retry_rank = (
+            self.last_attempted_at.timestamp()
+            if self.persisted_pending and self.last_attempted_at is not None
+            else float("-inf")
+        )
+        return (
+            fresh_rank,
+            int(self.work_class),
+            retry_rank,
+            activity_rank,
+            pending_rank,
+            self.priority,
+            self.case_key,
+        )
+
+
+@dataclass(frozen=True)
+class SupportedCaseActivity:
+    """Allowlisted identity/date used to prove discovery coverage before checkpointing."""
+
+    case_key: str
+    authoritative_activity_date: datetime
 
 
 @dataclass(frozen=True)
@@ -588,12 +645,17 @@ class StaticDiscoveryResult:
     # Cases discovered as changed but omitted by a bounded selection remain explicit
     # pending work instead of disappearing behind an unadvanced source checkpoint.
     deferred_case_keys: tuple[str, ...] = ()
+    # Cases that failed sanitized case-local work construction before a processor call.
+    failed_case_keys: tuple[str, ...] = ()
     # An adapter may explicitly retire stale pending markers when it can prove they were
     # created only by an obsolete migration policy, not by unresolved source work.
     resolved_pending_case_keys: tuple[str, ...] = ()
     # A discovery adapter must set this false when its own selection limits omit
     # changed descriptors. Advancing a cursor/checkpoint in that case would hide work.
     checkpoint_safe: bool = True
+    # Every supported case observed in this discovery pass. The orchestrator requires
+    # each one to be current in the projection or explicit in pending state.
+    supported_activity: tuple[SupportedCaseActivity, ...] = ()
 
 
 class StaticDiscovery(Protocol):
@@ -672,6 +734,9 @@ class StaticBatchResult:
     pending_case_keys: tuple[str, ...]
     publishable: bool
     no_public_change: bool
+    # A pending/checkpoint-only candidate can be promoted without a Pages deployment
+    # even when no case completed in this run.
+    checkpointable: bool = False
 
 
 class StaticBatchOrchestrator:
@@ -732,32 +797,58 @@ class StaticBatchOrchestrator:
                 checkpoints_safe = discovered.checkpoint_safe
                 for resolved_key in discovered.resolved_pending_case_keys:
                     pending.pop(resolved_key, None)
-                ordered = sorted(discovered.work, key=lambda item: (item.priority, item.case_key))
+                ordered = sorted(discovered.work, key=lambda item: item.rank)
+                supported_dates = {
+                    item.case_key: item.authoritative_activity_date
+                    for item in discovered.supported_activity
+                }
                 selected_keys = {item.case_key for item in ordered}
+                failed_discovery_keys = set(discovered.failed_case_keys)
                 for deferred_key in discovered.deferred_case_keys:
                     if deferred_key not in selected_keys:
+                        discovery_failed = deferred_key in failed_discovery_keys
                         pending[deferred_key] = _pending(
                             pending.get(deferred_key),
                             case_key=deferred_key,
-                            reason=PendingReason.BUDGET_EXHAUSTED,
+                            reason=(
+                                PendingReason.VALIDATION_FAILED
+                                if discovery_failed
+                                else PendingReason.BUDGET_EXHAUSTED
+                            ),
                             now=instant,
-                            attempted=False,
+                            attempted=discovery_failed,
+                            authoritative_activity_date=supported_dates.get(deferred_key),
                         )
+                        failed = failed or discovery_failed
                 for index, work in enumerate(ordered):
                     started = time.monotonic()
                     try:
                         budget.reserve_case(work.document_count)
-                    except BudgetExceeded:
-                        checkpoints_safe = False
-                        for deferred in ordered[index:]:
-                            pending[deferred.case_key] = _pending(
-                                pending.get(deferred.case_key),
-                                case_key=deferred.case_key,
-                                reason=PendingReason.BUDGET_EXHAUSTED,
-                                now=instant,
-                                attempted=False,
-                            )
-                        break
+                    except BudgetExceeded as error:
+                        pending[work.case_key] = _pending(
+                            pending.get(work.case_key),
+                            case_key=work.case_key,
+                            reason=PendingReason.BUDGET_EXHAUSTED,
+                            now=instant,
+                            attempted=False,
+                            authoritative_activity_date=work.authoritative_activity_date,
+                        )
+                        if isinstance(error, GlobalBudgetExceeded):
+                            for deferred in ordered[index + 1 :]:
+                                pending[deferred.case_key] = _pending(
+                                    pending.get(deferred.case_key),
+                                    case_key=deferred.case_key,
+                                    reason=PendingReason.BUDGET_EXHAUSTED,
+                                    now=instant,
+                                    attempted=False,
+                                    authoritative_activity_date=(
+                                        deferred.authoritative_activity_date
+                                    ),
+                                )
+                            break
+                        # A single oversized case must not consume a case slot or stop
+                        # later, smaller independent work while shared capacity remains.
+                        continue
                     try:
                         result = self.processor.process(
                             work,
@@ -814,8 +905,26 @@ class StaticBatchOrchestrator:
                         # strictly parsed discovery response. A case-local document,
                         # extraction, or draft failure must remain pending without
                         # discarding that safe allowlisted discovery metadata.
-                        if isinstance(error, BudgetExceeded):
-                            checkpoints_safe = False
+                        if not isinstance(
+                            error,
+                            (
+                                BudgetExceeded,
+                                TimeoutError,
+                                ConnectionError,
+                                SourceFetchError,
+                                DocumentCollectionError,
+                                ValidationError,
+                                ValueError,
+                                LegalExtractionError,
+                                BriefPolicyError,
+                                BriefValidationError,
+                                RepeatedModelInput,
+                                TranscriptParseError,
+                            ),
+                        ):
+                            # Unknown defects and explicit authorization/publication
+                            # safety failures are global fail-closed conditions.
+                            raise
                         reason = {
                             FailureCategory.BUDGET: PendingReason.BUDGET_EXHAUSTED,
                             FailureCategory.SOURCE_UNAVAILABLE: PendingReason.SOURCE_UNAVAILABLE,
@@ -828,6 +937,7 @@ class StaticBatchOrchestrator:
                             reason=reason,
                             now=instant,
                             attempted=True,
+                            authoritative_activity_date=work.authoritative_activity_date,
                         )
                         failed = True
                         log_stage(
@@ -874,7 +984,18 @@ class StaticBatchOrchestrator:
                             budget.brief_calls,
                             budget.model_calls,
                         )
-                        if isinstance(error, BudgetExceeded):
+                        if isinstance(error, GlobalBudgetExceeded):
+                            for deferred in ordered[index + 1 :]:
+                                pending[deferred.case_key] = _pending(
+                                    pending.get(deferred.case_key),
+                                    case_key=deferred.case_key,
+                                    reason=PendingReason.BUDGET_EXHAUSTED,
+                                    now=instant,
+                                    attempted=False,
+                                    authoritative_activity_date=(
+                                        deferred.authoritative_activity_date
+                                    ),
+                                )
                             break
                     budget.check_private_disk(workspace)
                 sources = {item.logical_key: item for item in original.publication.sources}
@@ -883,9 +1004,8 @@ class StaticBatchOrchestrator:
                     item.logical_key: item for item in original.publication.dispositions
                 }
                 cursors = {item.cursor_key: item for item in original.publication.cursors}
-                # Completed case checkpoints are safe independently of whether a later
-                # case was deferred. Source/cursor checkpoints remain all-or-nothing so
-                # they cannot hide omitted discovery work.
+                # Strict source checkpoints remain safe when later case work is explicit
+                # pending. Only discovery itself may declare a checkpoint unsafe.
                 documents.update(accepted_documents)
                 if checkpoints_safe:
                     sources.update({item.logical_key: item for item in discovered.sources})
@@ -904,15 +1024,69 @@ class StaticBatchOrchestrator:
                     )
                     if all_active_cases_migrated:
                         processor = discovered.processor
+                projection_activity = {
+                    public_case_key(case.term, case.primary_docket): (
+                        case.latest_court_document_date
+                    )
+                    for case in (
+                        working.projection.cases if working.projection is not None else ()
+                    )
+                }
+                for activity in discovered.supported_activity:
+                    published_date = projection_activity.get(activity.case_key)
+                    pending_item = pending.get(activity.case_key)
+                    if published_date is not None and published_date >= (
+                        activity.authoritative_activity_date
+                    ):
+                        continue
+                    if (
+                        pending_item is None
+                        or pending_item.authoritative_activity_date is None
+                        or pending_item.authoritative_activity_date
+                        < activity.authoritative_activity_date
+                    ):
+                        raise RuntimeError(
+                            "supported discovery is neither published nor explicitly pending"
+                        )
+                disposition_values = tuple(
+                    dispositions[key] for key in sorted(dispositions)
+                )
+                pending_values = tuple(pending[key] for key in sorted(pending))
+                supported_activity = {
+                    item.case_key: item
+                    for item in original.publication.supported_activity
+                }
+                for item in discovered.supported_activity:
+                    previous = supported_activity.get(item.case_key)
+                    if (
+                        previous is None
+                        or item.authoritative_activity_date
+                        > previous.authoritative_activity_date
+                    ):
+                        supported_activity[item.case_key] = SupportedActivityState(
+                            case_key=item.case_key,
+                            authoritative_activity_date=item.authoritative_activity_date,
+                        )
+                supported_values = tuple(
+                    supported_activity[key] for key in sorted(supported_activity)
+                )
+                freshness = derive_freshness_summary(
+                    working.projection,
+                    disposition_values,
+                    pending_values,
+                    supported_values,
+                )
                 working = self.state_store.update_publication_state(
                     working,
                     updated_at=instant,
                     sources=tuple(sources[key] for key in sorted(sources)),
                     documents=tuple(documents[key] for key in sorted(documents)),
-                    pending_work=tuple(pending[key] for key in sorted(pending)),
+                    pending_work=pending_values,
                     cursors=tuple(cursors[key] for key in sorted(cursors)),
                     processor=processor,
-                    dispositions=tuple(dispositions[key] for key in sorted(dispositions)),
+                    dispositions=disposition_values,
+                    freshness=freshness,
+                    supported_activity=supported_values,
                 )
         finally:
             try:
@@ -930,6 +1104,7 @@ class StaticBatchOrchestrator:
             pending_case_keys=tuple(sorted(pending)),
             publishable=bool(changed) or not failed,
             no_public_change=not changed,
+            checkpointable=True,
         )
 
 
@@ -940,13 +1115,18 @@ def _pending(
     reason: PendingReason,
     now: datetime,
     attempted: bool,
+    authoritative_activity_date: datetime | None = None,
 ) -> PendingWork:
+    activity_date = authoritative_activity_date
+    if activity_date is None and previous is not None:
+        activity_date = previous.authoritative_activity_date
     return PendingWork(
         case_key=case_key,
         reason=reason,
         attempts=(previous.attempts if previous else 0) + int(attempted),
         first_seen_at=previous.first_seen_at if previous else now,
         last_attempted_at=now if attempted else (previous.last_attempted_at if previous else None),
+        authoritative_activity_date=activity_date,
     )
 
 
