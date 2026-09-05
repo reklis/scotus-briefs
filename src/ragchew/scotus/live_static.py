@@ -113,6 +113,7 @@ from ragchew.scotus.extraction import (
     OpenAILegalObservationExtractor,
     bounded_contexts,
     document_text_block,
+    sensitivity_labels,
     transcript_turn_block,
 )
 from ragchew.scotus.public_contracts import (
@@ -161,7 +162,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v1"
+POLICY_VERSION = "scotus-brief-policy-v2"
 DOCUMENT_TEXT_VERSION = "official-document-text-v1"
 
 
@@ -1749,6 +1750,16 @@ class LiveStaticCaseProcessor:
                     blocks=tuple(docket_blocks),
                 )
             )
+        if not source.sessions and not any(
+            observation.observation_type
+            in {LegalObservationType.HOLDING, LegalObservationType.ORDER}
+            and observation.legal_status
+            in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
+            for observation in observations
+        ):
+            observations.append(
+                _court_action_observation(case_id=case_id, blocks=tuple(action_blocks))
+            )
         if not observations:
             dominant = (
                 max(
@@ -2118,6 +2129,84 @@ def _document_blocks(
     if not blocks:
         raise DocumentCollectionError("official document has no parseable text")
     return tuple(blocks)
+
+
+_DETERMINISTIC_COURT_ACTION = re.compile(
+    r"\b(?:we (?:hold|conclude|grant|deny|affirm|reverse|vacate|order)|"
+    r"(?:this |the )Court (?:holds?|held|orders?|ordered|grants?|granted|denies|denied|"
+    r"affirms?|affirmed|reverses?|reversed|vacates?|vacated)|"
+    r"(?:application|petition|motion|stay|judgment) (?:is |are )?"
+    r"(?:granted|denied|affirmed|reversed|vacated|stayed)|it is ordered)\b",
+    re.IGNORECASE,
+)
+_DETERMINISTIC_HOLDING = re.compile(
+    r"\b(?:we (?:hold|conclude)|(?:this |the )Court (?:holds?|held))\b",
+    re.IGNORECASE,
+)
+
+
+def _court_action_observation(
+    *, case_id: UUID, blocks: tuple[LegalEvidenceBlock, ...]
+) -> LegalObservation:
+    """Derive only an explicit, source-exact Supreme Court action sentence."""
+    for block in blocks:
+        if block.document_kind is not ScotusDocumentKind.OPINION:
+            continue
+        for sentence in re.split(r"(?<=[.!?])\s+", block.text_private):
+            sentence = " ".join(sentence.split())
+            if not sentence or _DETERMINISTIC_COURT_ACTION.search(sentence) is None:
+                continue
+            # Extremely long PDF extraction runs can join unrelated columns or
+            # footnotes. Refuse them rather than truncating or changing the source.
+            if len(sentence.split()) > 80 or len(sentence) > 2_000:
+                continue
+            holding = _DETERMINISTIC_HOLDING.search(sentence) is not None
+            observation_type = (
+                LegalObservationType.HOLDING if holding else LegalObservationType.ORDER
+            )
+            legal_status = LegalStatus.COURT_HELD if holding else LegalStatus.COURT_ORDERED
+            extraction_id = uuid5(
+                NAMESPACE_URL,
+                f"ragchew:scotus-deterministic-action-extraction:{case_id}:{block.block_id}",
+            )
+            return LegalObservation(
+                observation_id=uuid5(
+                    NAMESPACE_URL,
+                    f"ragchew:scotus-deterministic-action-observation:"
+                    f"{case_id}:{block.block_id}:{sentence}",
+                ),
+                extraction_revision_id=extraction_id,
+                case_id=case_id,
+                argument_id=None,
+                observation_type=observation_type,
+                legal_status=legal_status,
+                certainty=LegalCertainty.DIRECT,
+                raw_value_private=sentence,
+                normalized_value_private=sentence,
+                attribution=block.attribution,
+                speaker_name=block.speaker_name,
+                speaker_kind=block.speaker_kind,
+                identity_basis=block.identity_basis,
+                authority_citations=(),
+                confidence=1.0,
+                evidence=(
+                    LegalEvidenceRange(
+                        document_revision_id=block.document_revision_id,
+                        document_kind=block.document_kind,
+                        start_file_page=block.start_file_page,
+                        start_line=block.start_line,
+                        end_file_page=block.end_file_page,
+                        end_line=block.end_line,
+                        quote_private=sentence,
+                    ),
+                ),
+                sensitivity=sensitivity_labels(sentence),
+                supersedes_observation_id=None,
+            )
+    raise LegalExtractionError(
+        "official disposition has no explicit supported Court action sentence",
+        safe_code="missing_exact_court_action",
+    )
 
 
 def _docket_identity_observation(

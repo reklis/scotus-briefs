@@ -716,14 +716,14 @@ def test_disposition_only_case_derives_exact_docket_identity_when_model_omits_it
         "application/pdf",
     )
 
-    class OpinionOnlyModel(MockOpenAI):
+    class BackgroundOnlyModel(MockOpenAI):
         @staticmethod
         def _extraction(evidence: list[dict[str, Any]]) -> dict[str, object]:
             batch = MockOpenAI._extraction(evidence)
             batch["observations"] = [
                 item
                 for item in cast(list[dict[str, Any]], batch["observations"])
-                if item["observation_type"] == "holding"
+                if item["observation_type"] == "case_background"
             ]
             return batch
 
@@ -731,7 +731,7 @@ def test_disposition_only_case_derives_exact_docket_identity_when_model_omits_it
         tmp_path,
         MemoryStateStore(tmp_path / "state"),
         court,
-        OpinionOnlyModel(),
+        BackgroundOnlyModel(),
     )
     assert result.publishable
     assert result.content.projection is not None
