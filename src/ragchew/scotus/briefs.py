@@ -1035,7 +1035,11 @@ def _supported_acronyms(value: str) -> set[str]:
 
 def _unsupported_named_phrase(text: str, support: str, caption: str) -> bool:
     allowed_value = f"{support} {caption}"
-    allowed = allowed_value.casefold()
+    allowed = allowed_value.casefold().replace("\u2019", "'")
+
+    def canonical_word(value: str) -> str:
+        lowered = value.casefold().replace("\u2019", "'")
+        return lowered.removesuffix("'s")
     allowed_acronyms = _supported_acronyms(allowed_value)
     generic_prefixes = (
         "what ",
@@ -1052,9 +1056,10 @@ def _unsupported_named_phrase(text: str, support: str, caption: str) -> bool:
             continue
         phrase_words = re.findall(r"[A-Za-z]+", match)
         if phrase_words and all(
-            word.casefold() in _CAPITALIZED_EXEMPT
-            or word.casefold() in allowed
-            or (word.isupper() and word.casefold() in allowed_acronyms)
+            canonical_word(word) in _CAPITALIZED_EXEMPT
+            or canonical_word(word) in allowed
+            or canonical_word(word) == "s"
+            or (word.isupper() and canonical_word(word) in allowed_acronyms)
             for word in phrase_words
         ):
             continue
@@ -1065,10 +1070,11 @@ def _unsupported_named_phrase(text: str, support: str, caption: str) -> bool:
         prefix = text[: match.start()].rstrip()
         if not prefix or prefix[-1:] in ".!?":
             continue
+        canonical = canonical_word(word)
         if (
-            word.casefold() not in _CAPITALIZED_EXEMPT
-            and word.casefold() not in allowed
-            and not (word.isupper() and word.casefold() in allowed_acronyms)
+            canonical not in _CAPITALIZED_EXEMPT
+            and canonical not in allowed
+            and not (word.isupper() and canonical in allowed_acronyms)
         ):
             return True
     return False
