@@ -2083,7 +2083,7 @@ class LiveStaticCaseProcessor:
                 f"{code}={extraction_rejection_codes.count(code)}"
                 for code in sorted(set(extraction_rejection_codes))
             ) or "none"
-            LOG.info(
+            LOG.warning(
                 "SCOTUS disposition extraction summary; case=%s; roles=%s; rejections=%s",
                 source.case_key,
                 role_summary,

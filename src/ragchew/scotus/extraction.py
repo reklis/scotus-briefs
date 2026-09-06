@@ -271,7 +271,7 @@ class DeterministicTranscriptObservationExtractor:
 
 
 class OpenAILegalObservationExtractor:
-    PROMPT_VERSION = "scotus-legal-extraction-v8"
+    PROMPT_VERSION = "scotus-legal-extraction-v9"
 
     def __init__(
         self,
@@ -314,11 +314,14 @@ class OpenAILegalObservationExtractor:
         }
         disposition_only = source.argument_id is None
         mode_instruction = (
-            "This case has no oral-argument session. Return up to eight independently useful "
-            "observations. Prioritize separate observations for case background; requested relief "
-            "or lower-court action; the controlling legal issue; and the Court's reasoning. "
-            "Include separately attributed opinions when explicit. Preserve the supplied "
-            "attribution exactly so dissent and concurrence roles remain distinct. For every "
+            "This case has no oral-argument session. Return no more than four independently useful "
+            "observations. Prioritize exactly these core roles when explicit: one case_background; "
+            "one requested_disposition or lower_court_action; one question_presented for the legal "
+            "issue; and one doctrinal_theme from a different passage explaining the Court's "
+            "reasoning. Do not return a holding or order; the pipeline derives the source-exact "
+            "Court action separately. After core roles, include separately attributed reasoning "
+            "only when space remains. Preserve the supplied attribution exactly so dissent and "
+            "concurrence roles remain distinct. For every "
             "non-action observation, copy one exact source passage into both quote and raw_value "
             "and set normalized_value to null. Extract a holding only from opinion evidence or an "
             "order only from order/opinion evidence. For a holding or order, copy the exact quoted "
