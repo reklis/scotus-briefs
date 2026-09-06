@@ -848,6 +848,15 @@ _NAMED_PHRASE = re.compile(
     r"(?:\s+[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}-]+)+\b"
 )
 _CAPITALIZED_WORD = re.compile(r"\b[A-Z][A-Za-z'\N{RIGHT SINGLE QUOTATION MARK}-]{2,}\b")
+_ENTITY_SUFFIXES = {
+    "association",
+    "committee",
+    "company",
+    "corporation",
+    "inc",
+    "llc",
+    "organization",
+}
 _CAPITALIZED_EXEMPT = {
     "a",
     "an",
@@ -1074,7 +1083,12 @@ def _unsupported_named_phrase(text: str, support: str, caption: str) -> bool:
         )
         if not unknown_words or identity_words or lowered in allowed:
             continue
-        return True
+        if any(
+            (word.isupper() and len(word) > 1)
+            or canonical_word(word) in _ENTITY_SUFFIXES
+            for word in unknown_words
+        ):
+            return True
     return False
 
 
