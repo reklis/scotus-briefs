@@ -637,7 +637,16 @@ def test_existing_argument_brief_adds_disposition_metadata_without_model_replay(
     assert first.publishable
     assert first.content.projection is not None
     accepted_sections = first.content.projection.cases[0].sections
-    store.content = first.content
+    legacy_publication = first.content.publication.model_copy(
+        update={
+            "cases": tuple(
+                pointer.model_copy(update={"processor_sha256": None})
+                for pointer in first.content.publication.cases
+            )
+        }
+    )
+    store.content = replace(first.content, publication=legacy_publication)
+    court.document_requests.clear()
 
     court.slip_etag = '"slip-2"'
     court.slip_rows = [
@@ -671,6 +680,7 @@ def test_existing_argument_brief_adds_disposition_metadata_without_model_replay(
     assert case.dispositions[0].official_url.endswith("/25-1_example.pdf")
     assert [item.revision_number for item in case.revisions] == [1, 2]
     assert update_model.requests == []
+    assert not any("transcripts" in request.url.path for request in court.document_requests)
 
 
 def test_disposition_only_emergency_opinion_publishes_without_argument(

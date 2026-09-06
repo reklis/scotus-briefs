@@ -1599,14 +1599,32 @@ class LiveStaticCaseProcessor:
             outcomes: dict[str, Any] = {}
             states: dict[str, LogicalDocumentState] = {}
             changed_keys: set[str] = set()
-            private_documents = _case_documents(source)
+            all_private_documents = _case_documents(source)
+            legacy_metadata_only = bool(
+                source.prior is not None
+                and source.dispositions
+                and _public_metadata_changed(source)
+                and self._processor_case_fingerprints.get(work.case_key) is None
+            )
+            # A migrated accepted brief already proves its argument projection. A newly
+            # discovered opinion requires current docket/opinion integrity, not a fresh
+            # download of every historical transcript merely to add official metadata.
+            private_documents = (
+                tuple(
+                    item
+                    for item in all_private_documents
+                    if item.kind is not ScotusDocumentKind.TRANSCRIPT
+                )
+                if legacy_metadata_only
+                else all_private_documents
+            )
             required_transcripts = {transcript_logical_key(session) for session in source.sessions}
             found_transcripts = {
                 item.logical_key
                 for item in private_documents
                 if item.kind is ScotusDocumentKind.TRANSCRIPT
             }
-            if found_transcripts != required_transcripts:
+            if not legacy_metadata_only and found_transcripts != required_transcripts:
                 raise DocumentCollectionError("case does not have every required transcript")
 
             for item in private_documents:
