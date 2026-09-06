@@ -947,6 +947,7 @@ def test_disposition_generator_uses_compact_positive_role_aware_request() -> Non
     assert "complete plain-English citizen's guide" in prompt
     assert "operative Supreme Court action" in prompt
     assert "interim relief, not a final merits judgment" in prompt
+    assert "Every action sentence must name its" in prompt
     assert "What separate opinions said" in prompt
     for priming in ("oral argument", "argument session", "transcript", "counsel"):
         assert priming not in prompt.casefold()

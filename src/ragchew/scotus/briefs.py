@@ -258,7 +258,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v3"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v4"
 
     def __init__(
         self,
@@ -392,7 +392,9 @@ class OpenAILegalBriefGenerator:
             "support it. Never use a separate-opinion claim as the Court's action, legal issue, "
             "or reasoning. Use one short paragraph per section. Copy supporting claim IDs into "
             "the title, dek, and each paragraph's claim_ids array; cite only claims that answer "
-            "that section. Use direct everyday language, active voice, and concrete explanations. "
+            "that section. Every action sentence must name its party, lower court, or Supreme "
+            "Court actor; never use only a pronoun. Use direct everyday language, active voice, "
+            "and concrete explanations. "
             f"Keep each sentence at or below {self.maximum_sentence_words} words and each "
             f"paragraph at or below {self.maximum_paragraph_words} words. Use a name only in "
             "the exact form found in a cited claim. Paraphrase instead of quoting, put citations "
