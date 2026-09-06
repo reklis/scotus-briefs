@@ -14,6 +14,13 @@ The system SHALL derive the official caption, docket, publication date, status, 
 - **WHEN** model prose states a Supreme Court action that is not supported by a cited `COURT_HELD` or `COURT_ORDERED` claim
 - **THEN** validation rejects the draft with a fixed sanitized code and publishes no replacement
 
+### Requirement: Existing brief disposition updates
+The system SHALL preserve accepted public prose when a validated new disposition applies to an existing argued case and SHALL attach its official date, link, maturity, status, and history without replaying unchanged transcripts or invoking Ollama.
+
+#### Scenario: Opinion follows an accepted argument brief
+- **WHEN** strict discovery finds a new or revised official disposition for a case with an accepted brief and no transcript bytes changed
+- **THEN** the system creates an immutable metadata revision, keeps the accepted sections and argument analyses unchanged, and orders the case by the disposition date without a model request
+
 ### Requirement: Role-aware action grounding
 The system SHALL validate each action statement against claims for its identified actor role, distinguishing requested relief, lower-court action, and Supreme Court action.
 

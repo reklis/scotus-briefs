@@ -593,7 +593,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     processor = result.content.publication.processor
     assert processor is not None
     assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
-    assert processor.policy_version == "scotus-brief-policy-v13"
+    assert processor.policy_version == "scotus-brief-policy-v14"
     assert processor.prompt_version == (
         "scotus-brief-plain-language-v31;disposition=scotus-disposition-plain-language-v2;disposition_compiler=scotus-deterministic-disposition-v1"
     )
@@ -625,6 +625,52 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert all(receipt.outcome is ModelAttemptOutcome.SUCCEEDED for receipt in receipts.receipts)
     assert sum(receipt.call_count for receipt in receipts.receipts) == len(model.requests)
     assert not list((tmp_path / "private").glob("ragchew-*"))
+
+
+def test_existing_argument_brief_adds_disposition_metadata_without_model_replay(
+    tmp_path: Path,
+) -> None:
+    court = CourtFixture()
+    store = MemoryStateStore(tmp_path / "state")
+    first_model = MockOpenAI()
+    first = run(tmp_path, store, court, first_model)
+    assert first.publishable
+    assert first.content.projection is not None
+    accepted_sections = first.content.projection.cases[0].sections
+    store.content = first.content
+
+    court.slip_etag = '"slip-2"'
+    court.slip_rows = [
+        (
+            "21",
+            "6/30/26",
+            "25-1",
+            "Example v. Agency",
+            "K",
+            "25-1_example.pdf",
+        )
+    ]
+    court.documents["/opinions/25pdf/25-1_example.pdf"] = (
+        '"opinion-25-1"',
+        _text_pdf(
+            "No. 25-1 Example v. Agency.",
+            "The Court affirmed the judgment.",
+        ),
+        "application/pdf",
+    )
+    update_model = MockOpenAI()
+    updated = run(tmp_path, store, court, update_model)
+
+    assert updated.publishable
+    assert updated.changed_case_keys == ("2025-25-1",)
+    assert updated.content.projection is not None
+    case = updated.content.projection.cases[0]
+    assert case.sections == accepted_sections
+    assert case.latest_court_document_date == datetime(2026, 6, 30, tzinfo=UTC)
+    assert case.case_status.value == "decided"
+    assert case.dispositions[0].official_url.endswith("/25-1_example.pdf")
+    assert [item.revision_number for item in case.revisions] == [1, 2]
+    assert update_model.requests == []
 
 
 def test_disposition_only_emergency_opinion_publishes_without_argument(
@@ -772,10 +818,6 @@ def test_disposition_revision_date_recomputes_immutable_public_revision(
     first = run(tmp_path, store, court, MockOpenAI())
     store.content = first.content
     original = first.content.revisions[("2025-25a810", 1)].serialized
-    first_receipts = CostReceiptBundle.model_validate_json(
-        (tmp_path / "private/public-cost-receipts.json").read_bytes()
-    )
-
     court.slip_etag = '"slip-2"'
     court.slip_html = lambda: (
         b"<!doctype html><table><tr><th>R-</th><th>Date</th><th>Docket</th>"
@@ -785,7 +827,8 @@ def test_disposition_revision_date_recomputes_immutable_public_revision(
         b"<br><b>Revisions</b>: <a href='/opinions/25pdf/25a810_diff.pdf'>3/05/26</a>"
         b"</td><td>PC</td><td></td></tr></table>"
     )
-    revised = run(tmp_path, store, court, MockOpenAI())
+    revised_model = MockOpenAI()
+    revised = run(tmp_path, store, court, revised_model)
 
     assert revised.changed_case_keys == ("2025-25a810",)
     assert revised.content.projection is not None
@@ -794,12 +837,7 @@ def test_disposition_revision_date_recomputes_immutable_public_revision(
     assert case.dispositions[0].revision_date == datetime(2026, 3, 5, tzinfo=UTC)
     assert case.latest_court_document_date == datetime(2026, 3, 5, tzinfo=UTC)
     assert revised.content.revisions[("2025-25a810", 1)].serialized == original
-    revised_receipts = CostReceiptBundle.model_validate_json(
-        (tmp_path / "private/public-cost-receipts.json").read_bytes()
-    )
-    assert {item.input_fingerprint for item in revised_receipts.receipts}.isdisjoint(
-        {item.input_fingerprint for item in first_receipts.receipts}
-    )
+    assert revised_model.requests == []
     assert not list((tmp_path / "private").glob("ragchew-*"))
 
 

@@ -7,7 +7,7 @@ Disposition-only Supreme Court cases are discovered correctly but repeatedly rem
 - Remove probabilistic disposition-outcome prose from the production path; retain Ollama for strictly grounded observation extraction and compile the public disposition brief deterministically from approved claims.
 - Make Court-action validation role-aware so lower-court actions, requested relief, and Supreme Court dispositions are checked against the corresponding approved claims.
 - Reject actual invented argument content without rejecting truthful negated statements, while avoiding forbidden-term priming in the disposition prompt.
-- Preserve deterministic caption, docket, publication date, status, and Court-action facts outside model discretion.
+- Preserve deterministic caption, docket, publication date, status, and Court-action facts outside model discretion, and update existing accepted argument briefs without replaying unchanged transcripts or model prose.
 - Introduce bounded, auditable nightly retry generations for failed local-model inputs without unbounded duplicate calls.
 - Add regression fixtures for `26A274`, `26A203`, and `26A124`, then validate a small retained candidate before draining the backlog.
 

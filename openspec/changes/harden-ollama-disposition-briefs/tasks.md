@@ -10,6 +10,7 @@
 - [x] 2.2 Permit narrowly explicit negated oral-argument statements while continuing to reject positive or mixed invented proceedings.
 - [x] 2.3 Add bidirectional regression tests for requested, lower-court, and Court actions plus negated and invented oral-argument language.
 - [x] 2.4 Replace production disposition prose generation with a deterministic compiler over approved docket, Court-action, and bounded background claims.
+- [x] 2.5 Preserve existing accepted argument briefs and attach validated disposition metadata without unchanged transcript replay or model generation.
 
 ## 3. Bounded Retry State
 

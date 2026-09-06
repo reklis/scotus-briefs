@@ -35,6 +35,12 @@ Caption normalization, docket, dates, status, official links, and approved actio
 
 Alternative: require verbatim generated action text. Rejected because it produces brittle prose and still delegates a formal field to a probabilistic component.
 
+### Preserve accepted argued briefs for metadata-only disposition updates
+
+When strict slip discovery adds or revises a disposition for an existing accepted argued case and no transcript content changed, the processor reuses the accepted public prose and argument analyses. It adds only typed official disposition metadata, derives the latest Court date and docket-based status deterministically, appends an immutable metadata revision, and updates integrity checkpoints. It does not retrieve unchanged transcript bodies or call Ollama.
+
+Alternative: regenerate the entire case from every transcript and opinion. Rejected after a three-case backlog run spent more than two hours on unchanged material before cancellation.
+
 ### Validate actions per sentence and legal role
 
 Each action-bearing sentence is classified as requested relief, lower-court action, or Supreme Court action from narrow actor markers. Its canonical verb and negation are compared with cited claims carrying `REQUESTED`, `LOWER_COURT_HELD`, or `COURT_HELD`/`COURT_ORDERED`, respectively. Ambiguous unsupported action statements fail closed. This avoids comparing a lower-court verb with the Supreme Court result merely because both appear in one paragraph.

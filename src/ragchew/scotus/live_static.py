@@ -71,6 +71,7 @@ from ragchew.scotus.briefs import (
     simple_brief_json_schema,
 )
 from ragchew.scotus.contracts import (
+    BriefMaturity,
     LegalCertainty,
     LegalEvidenceRange,
     LegalObservation,
@@ -170,7 +171,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v13"
+POLICY_VERSION = "scotus-brief-policy-v14"
 DOCUMENT_TEXT_VERSION = "official-document-text-v1"
 
 
@@ -1663,6 +1664,24 @@ class LiveStaticCaseProcessor:
                     documents=tuple(states[key] for key in sorted(states)),
                 )
 
+            # A newly listed disposition is authoritative public metadata. Preserve an
+            # already accepted argument brief and attach its validated Court date/link
+            # without replaying unchanged transcripts or asking Ollama to rewrite prose.
+            if (
+                source.prior is not None
+                and source.dispositions
+                and _public_metadata_changed(source)
+                and ScotusDocumentKind.TRANSCRIPT
+                not in {ScotusDocumentKind(states[key].document_kind) for key in changed_keys}
+            ):
+                return CaseProcessingResult(
+                    case_key=work.case_key,
+                    processed_session_keys=tuple(item.session_key for item in work.sessions),
+                    public_case=_deterministic_disposition_metadata_update(source, now),
+                    changed=True,
+                    documents=tuple(states[key] for key in sorted(states)),
+                )
+
             # A changed case must be parsed from all current documents. A 304 probe has
             # no body, so retrieve that accepted revision unconditionally into this run.
             by_key = {item.logical_key: item for item in private_documents}
@@ -2569,6 +2588,93 @@ def _docket_identity_observation(
         ),
         sensitivity=(),
         supersedes_observation_id=None,
+    )
+
+
+def _deterministic_disposition_metadata_update(
+    source: _CaseInput, now: datetime
+) -> PublicCaseBrief:
+    """Attach official disposition metadata while preserving accepted public prose."""
+    prior = source.prior
+    if prior is None or not source.dispositions:
+        raise ValueError("metadata-only disposition update requires a prior case and disposition")
+    dispositions = tuple(
+        sorted(
+            (
+                PublicDisposition(
+                    kind=item.kind.value,
+                    official_url=item.official_url,
+                    publication_date=item.publication_date,
+                    revision_date=item.revision_date,
+                )
+                for item in source.dispositions
+            ),
+            key=lambda item: (
+                item.publication_date,
+                item.revision_date or item.publication_date,
+                item.kind,
+                item.official_url,
+            ),
+        )
+    )
+    latest = max(
+        (
+            *(item.argument_date for item in prior.arguments),
+            *(item.publication_date for item in dispositions),
+            *(
+                item.revision_date
+                for item in dispositions
+                if item.revision_date is not None
+            ),
+        )
+    )
+    emergency_docket = re.fullmatch(
+        r"\d+A\d+", source.primary_docket.replace("-", ""), re.IGNORECASE
+    )
+    status = (
+        ScotusCaseStatus.DECIDED
+        if prior.case_status is ScotusCaseStatus.DECIDED or emergency_docket is None
+        else ScotusCaseStatus.ORDER_ISSUED
+    )
+    maturity = (
+        BriefMaturity.POST_OPINION
+        if status is ScotusCaseStatus.DECIDED
+        else BriefMaturity.POST_ORDER
+    )
+    typed_urls = {item.official_url for item in dispositions}
+    legacy_urls = tuple(
+        sorted(url for url in prior.official_disposition_urls if url not in typed_urls)
+    )
+    return prior.model_copy(
+        update={
+            "caption": source.caption,
+            "case_status": status,
+            "maturity": maturity,
+            "latest_court_document_date": latest,
+            "case_history": (
+                *prior.case_history,
+                PublicCaseHistoryEvent(
+                    status=status,
+                    changed_at=now,
+                    explanation=_history_explanation(status, True),
+                ),
+            ),
+            "official_disposition_urls": legacy_urls,
+            "undated_disposition_date_fallback": (
+                prior.undated_disposition_date_fallback if legacy_urls else None
+            ),
+            "dispositions": dispositions,
+            "revisions": (
+                *prior.revisions,
+                PublicBriefRevisionSummary(
+                    revision_number=len(prior.revisions) + 1,
+                    maturity=maturity,
+                    created_at=now,
+                    correction_note="Official disposition metadata updated.",
+                ),
+            ),
+            "updated_at": now,
+        }
     )
 
 
