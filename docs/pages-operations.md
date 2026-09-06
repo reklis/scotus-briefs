@@ -16,11 +16,14 @@ emergency disposition (`26A274`, published 2026-09-04) was deployed without repr
 by run `33948257689`. Reduced-prompt probes showed that local generative outcome prose
 remained unreliable, so validated run `33997185734` used Ollama only for grounded
 observation extraction and compiled disposition briefs deterministically from approved
-claims. Deployment run `33998731478` promoted its exact retained artifacts. Live Pages
-release `bf5544da93e96d64ada181e17a841773a2547acd4f0d3cbe5ca08c32c3617968` now contains
-1,714 active articles and 3,064 HTML pages and matches the protected `generated-content`
-branch. `26A274`, `26A203`, and `26A124` are the first three search results in authoritative
-newest-first Court-activity order.
+claims. Deployment run `33998731478` promoted its exact retained artifacts. A subsequent
+metadata-only run `34007116890` preserved accepted argument prose while adding three
+validated dispositions without transcript replay or model calls; deployment run
+`34007518375` promoted those exact artifacts. Live Pages release
+`37ce85efb5f454a0f919cc50aded3862c127e80c91703f8d2a49af870b72933b` contains 1,714
+active articles and 3,064 HTML pages and matches the protected `generated-content`
+branch. Search now begins with `26A274`, `26A203`, `26A124`, `25-332` (July 7), `25-365`
+(July 1), and `24-43` (June 30) in authoritative newest-first Court-activity order.
 DNS is valid at GitHub; custom-domain
 certificate issuance and HTTPS enforcement are still pending.
 
