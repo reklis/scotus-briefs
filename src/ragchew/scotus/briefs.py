@@ -839,8 +839,20 @@ def _action_role(sentence: str) -> _ActionRole | None:
         # A request normally names the Supreme Court as the recipient. The requesting
         # party remains the actor whose proposed action must be checked.
         return "requested"
-    lower_court = _LOWER_COURT_ACTOR.search(sentence) is not None
-    supreme_court = _SUPREME_COURT_ACTOR.search(sentence) is not None
+    action = _ACTION_WORD.search(sentence)
+    if action is None:
+        return None
+    lower_match = _LOWER_COURT_ACTOR.search(sentence)
+    supreme_match = _SUPREME_COURT_ACTOR.search(sentence)
+    actors_before_action: list[tuple[int, _ActionRole]] = []
+    if lower_match is not None and lower_match.start() < action.start():
+        actors_before_action.append((lower_match.start(), "lower_court"))
+    if supreme_match is not None and supreme_match.start() < action.start():
+        actors_before_action.append((supreme_match.start(), "supreme_court"))
+    if actors_before_action:
+        return max(actors_before_action)[1]
+    lower_court = lower_match is not None
+    supreme_court = supreme_match is not None
     if lower_court == supreme_court:
         return None
     return "lower_court" if lower_court else "supreme_court"

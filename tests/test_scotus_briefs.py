@@ -1099,8 +1099,8 @@ def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
             DraftSection(
                 heading="What the Supreme Court did",
                 paragraphs=(
-                    "The Supreme Court stayed the injunction temporarily while the appeal "
-                    "continues.",
+                    "The Supreme Court stayed the lower court's injunction temporarily while "
+                    "the appeal continues.",
                 ),
                 claim_ids=by_type[LegalObservationType.ORDER],
             ),
