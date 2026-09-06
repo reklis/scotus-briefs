@@ -139,91 +139,6 @@ def _normalize_private_schema_payload(
     return payload
 
 
-def _compose_disposition_draft(
-    draft: LegalBriefDraft,
-    candidate: BriefCandidate,
-    claims: tuple[ScotusApprovedClaim, ...],
-    *,
-    maximum_sentence_words: int,
-    maximum_paragraph_words: int,
-) -> LegalBriefDraft:
-    """Attach formal Court action from an approved source-exact claim, not model prose."""
-    action_claims = tuple(
-        claim
-        for claim in claims
-        if claim.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
-    )
-    if not action_claims:
-        raise BriefPolicyError(
-            "disposition lacks a deterministic Court-action claim",
-            safe_code="missing_court_action",
-        )
-    action_claim = min(
-        action_claims,
-        key=lambda claim: (
-            -len(_action_signatures(claim.public_value)),
-            len(claim.public_value.split()),
-            str(claim.claim_id),
-        ),
-    )
-    action_text = f"The Supreme Court action states: {action_claim.public_value}"
-    if len(action_text) > 500:
-        raise BriefPolicyError(
-            "deterministic Court-action text exceeds the public summary bound",
-            safe_code="court_action_too_long",
-        )
-    try:
-        _validate_plain_language(
-            action_text,
-            maximum_sentence_words=maximum_sentence_words,
-            maximum_paragraph_words=maximum_paragraph_words,
-        )
-    except BriefValidationError as error:
-        raise BriefPolicyError(
-            "deterministic Court-action text exceeds a public language bound",
-            safe_code="court_action_too_long",
-        ) from error
-    title_claim = next(
-        (
-            claim
-            for claim in claims
-            if claim.legal_status is LegalStatus.DESCRIBED
-            and (
-                candidate.primary_docket.casefold() in claim.public_value.casefold()
-                or "/docket/" in claim.official_url.casefold()
-            )
-        ),
-        action_claim,
-    )
-    safe_headings = (
-        "What this case is about",
-        "The legal issue",
-        "Why this case reached the Court",
-        "Case background",
-    )
-    background_sections = tuple(
-        section.model_copy(update={"heading": safe_headings[index]})
-        for index, section in enumerate(draft.sections[:4])
-    )
-    return draft.model_copy(
-        update={
-            "title": candidate.caption,
-            "title_claim_ids": (title_claim.claim_id,),
-            "dek": action_text,
-            "dek_claim_ids": (action_claim.claim_id,),
-            "sections": (
-                DraftSection(
-                    heading="Official Court action",
-                    paragraphs=(action_text,),
-                    claim_ids=(action_claim.claim_id,),
-                ),
-                *background_sections,
-            ),
-            "argument_analyses": (),
-        }
-    )
-
-
 def simple_brief_json_schema(argument_count: int = 1) -> dict[str, Any]:
     if not 0 <= argument_count <= 10:
         raise ValueError("brief schema argument count must be between zero and ten")
@@ -296,13 +211,29 @@ def simple_brief_json_schema(argument_count: int = 1) -> dict[str, Any]:
     }
 
 
+DISPOSITION_GUIDE_HEADINGS = (
+    "What this case is about",
+    "Why this case reached the Court",
+    "The legal issue",
+    "What the Supreme Court did",
+    "Why the Court did it",
+)
+DISPOSITION_SEPARATE_OPINIONS_HEADING = "What separate opinions said"
+
+
 def disposition_only_brief_json_schema() -> dict[str, Any]:
-    """Return the strict background-only schema for a case with no real argument."""
+    """Return the strict citizen-guide schema for a case with no real argument."""
     schema = simple_brief_json_schema(0)
     sections = schema["properties"]["sections"]
-    # A deterministic source-exact Court-action section is added after parsing.
-    sections["minItems"] = 1
-    sections["maxItems"] = 4
+    sections["minItems"] = len(DISPOSITION_GUIDE_HEADINGS)
+    sections["maxItems"] = len(DISPOSITION_GUIDE_HEADINGS) + 1
+    sections["items"]["properties"]["heading"] = {
+        "type": "string",
+        "enum": [
+            *DISPOSITION_GUIDE_HEADINGS,
+            DISPOSITION_SEPARATE_OPINIONS_HEADING,
+        ],
+    }
     return schema
 
 
@@ -317,106 +248,6 @@ class LegalBriefGenerator(Protocol):
     ) -> LegalBriefDraft: ...
 
 
-class DeterministicDispositionBriefGenerator:
-    """Compile a disposition brief from approved facts without generative outcome prose."""
-
-    VERSION = "scotus-deterministic-disposition-v1"
-
-    def __init__(
-        self,
-        source_model: str,
-        *,
-        maximum_sentence_words: int,
-        maximum_paragraph_words: int,
-    ) -> None:
-        self.model_name = f"{source_model}+{self.VERSION}"
-        self.maximum_sentence_words = maximum_sentence_words
-        self.maximum_paragraph_words = maximum_paragraph_words
-
-    def generate(
-        self,
-        candidate: BriefCandidate,
-        claims: tuple[ScotusApprovedClaim, ...],
-        maturity: BriefMaturity,
-    ) -> LegalBriefDraft:
-        del maturity
-        if candidate.argument_sessions:
-            raise BriefPolicyError("deterministic disposition compiler requires zero sessions")
-        docket_claim = next(
-            (
-                claim
-                for claim in claims
-                if claim.legal_status is LegalStatus.DESCRIBED
-                and (
-                    candidate.primary_docket.casefold() in claim.public_value.casefold()
-                    or "/docket/" in claim.official_url.casefold()
-                )
-            ),
-            None,
-        )
-        if docket_claim is None:
-            raise BriefPolicyError(
-                "disposition lacks deterministic docket support",
-                safe_code="missing_docket",
-            )
-        docket_text = f"Official docket: {candidate.primary_docket}."
-        sections = [
-            DraftSection(
-                heading="Case record",
-                paragraphs=(docket_text,),
-                claim_ids=(docket_claim.claim_id,),
-            )
-        ]
-        claim_map = {claim.claim_id: claim for claim in claims}
-        for claim in claims:
-            if len(sections) >= 4 or claim.claim_id == docket_claim.claim_id:
-                continue
-            if claim.legal_status in {
-                LegalStatus.REQUESTED,
-                LegalStatus.LOWER_COURT_HELD,
-                LegalStatus.COURT_HELD,
-                LegalStatus.COURT_ORDERED,
-            }:
-                continue
-            if _ACTION_WORD.search(claim.public_value) or _QUOTATION.search(claim.public_value):
-                continue
-            try:
-                _validate_public_text(
-                    claim.public_value,
-                    (claim.claim_id,),
-                    candidate,
-                    claim_map,
-                    public_quotes=False,
-                    validation_context="deterministic_background",
-                    maximum_sentence_words=self.maximum_sentence_words,
-                    maximum_paragraph_words=self.maximum_paragraph_words,
-                )
-            except BriefValidationError:
-                continue
-            sections.append(
-                DraftSection(
-                    heading="Case background",
-                    paragraphs=(claim.public_value,),
-                    claim_ids=(claim.claim_id,),
-                )
-            )
-        base = LegalBriefDraft(
-            title=candidate.caption,
-            title_claim_ids=(docket_claim.claim_id,),
-            dek=docket_text,
-            dek_claim_ids=(docket_claim.claim_id,),
-            sections=tuple(sections),
-            argument_analyses=(),
-        )
-        return _compose_disposition_draft(
-            base,
-            candidate,
-            claims,
-            maximum_sentence_words=self.maximum_sentence_words,
-            maximum_paragraph_words=self.maximum_paragraph_words,
-        )
-
-
 class BriefRevisionStore(Protocol):
     def save(
         self,
@@ -427,7 +258,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-plain-language-v2"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v3"
 
     def __init__(
         self,
@@ -466,26 +297,11 @@ class OpenAILegalBriefGenerator:
     ) -> LegalBriefDraft:
         sessions = {session.argument_id: session for session in candidate.argument_sessions}
         disposition_only = not candidate.argument_sessions
-        model_claims = (
-            tuple(
-                claim
-                for claim in claims
-                if claim.legal_status
-                not in {
-                    LegalStatus.REQUESTED,
-                    LegalStatus.LOWER_COURT_HELD,
-                    LegalStatus.COURT_HELD,
-                    LegalStatus.COURT_ORDERED,
-                }
-            )
-            if disposition_only
-            else claims
-        )
-        if disposition_only and not model_claims:
-            raise BriefPolicyError(
-                "disposition has no non-action fact for model explanation",
-                safe_code="missing_background_claim",
-            )
+        # A citizen guide needs the complete typed claim ledger. Requested relief,
+        # lower-court action, and Supreme Court action remain distinct through their
+        # legal statuses and the role-aware validator; hiding them produced fragmentary
+        # disposition pages that could not explain the procedural path or operative relief.
+        model_claims = claims
         ledger = [
             {
                 "claim_id": str(claim.claim_id),
@@ -543,8 +359,9 @@ class OpenAILegalBriefGenerator:
                 "sections, and argument_analyses. Every section must have exactly heading, "
                 "paragraphs, and claim_ids. "
                 + (
-                    "Set argument_analyses to an empty array. Return one to four sections with "
-                    "one short paragraph each."
+                    "Set argument_analyses to an empty array. Return the five required citizen-"
+                    "guide sections, plus the optional separate-opinions section when supported, "
+                    "with one short paragraph each."
                     if disposition_only
                     else (
                         "Every argument analysis must have exactly argument_id, heading, "
@@ -562,16 +379,24 @@ class OpenAILegalBriefGenerator:
             else ""
         )
         disposition_prompt = (
-            "/no_think\nExplain only the supplied case background and legal issue for a general "
-            "reader. The application adds procedural history and the official outcome from "
-            "source-exact fields after this response. Copy supporting IDs into every title, "
-            "dek, and paragraph's claim_ids array. Set the title to exactly the supplied "
-            "official caption. Return one to four supported sections with one short paragraph "
-            "each. Use direct everyday language, active voice, and concrete explanations. "
+            "/no_think\nBuild a complete plain-English citizen's guide to this Supreme Court "
+            "case using only the supplied approved claims. Set the title to exactly the official "
+            "caption. Explain the subject, procedural path, legal issue, operative Supreme Court "
+            "action, its immediate effect, and the Court's supported reasoning. Distinguish what "
+            "a party requested, what a lower court did, and what the Supreme Court did. Describe "
+            "an emergency stay as interim relief, not a final merits judgment, when the claims "
+            "support that distinction. Return exactly these five sections in this order: 'What "
+            "this case is about', 'Why this case reached the Court', 'The legal issue', 'What the "
+            "Supreme Court did', and 'Why the Court did it'. Add 'What separate opinions said' "
+            "as a sixth section only when explicitly attributed dissent or concurrence claims "
+            "support it. Never use a separate-opinion claim as the Court's action, legal issue, "
+            "or reasoning. Use one short paragraph per section. Copy supporting claim IDs into "
+            "the title, dek, and each paragraph's claim_ids array; cite only claims that answer "
+            "that section. Use direct everyday language, active voice, and concrete explanations. "
             f"Keep each sentence at or below {self.maximum_sentence_words} words and each "
             f"paragraph at or below {self.maximum_paragraph_words} words. Use a name only in "
-            "the exact form found in a cited fact. Paraphrase supplied facts, place citations "
-            "only in claim_ids arrays, and omit unavailable details."
+            "the exact form found in a cited claim. Paraphrase instead of quoting, put citations "
+            "only in claim_ids arrays, omit unsupported details, and return no argument analyses."
             + feedback_instruction
             + format_instruction
         )
@@ -767,12 +592,31 @@ class OpenAILegalBriefGenerator:
                 }
             )
         if disposition_only:
-            draft = _compose_disposition_draft(
-                draft,
-                candidate,
-                claims,
-                maximum_sentence_words=self.maximum_sentence_words,
-                maximum_paragraph_words=self.maximum_paragraph_words,
+            docket_claim = next(
+                (
+                    claim
+                    for claim in claims
+                    if claim.legal_status is LegalStatus.DESCRIBED
+                    and (
+                        candidate.primary_docket.casefold() in claim.public_value.casefold()
+                        or "/docket/" in claim.official_url.casefold()
+                    )
+                ),
+                None,
+            )
+            if docket_claim is None:
+                raise BriefPolicyError(
+                    "disposition lacks deterministic docket support",
+                    safe_code="missing_docket",
+                )
+            # Official identity is metadata, not model discretion. The model still owns
+            # the citizen-facing summary and sections, which are validated below.
+            draft = draft.model_copy(
+                update={
+                    "title": candidate.caption,
+                    "title_claim_ids": (docket_claim.claim_id,),
+                    "argument_analyses": (),
+                }
             )
         elif draft.title.strip().casefold() in {
             "what this case is about",
@@ -912,13 +756,13 @@ _CAPITALIZED_EXEMPT = {
     "what",
     "why",
 }
-_ACTION_WORD = re.compile(
-    r"\b(?:hold|held|order(?:ed)?|grant(?:ed)?|deny|denied|reject(?:ed)?|"
-    r"allow(?:ed)?|affirm(?:ed)?|"
-    r"uphold|upheld|revers(?:e|ed)|vacat(?:e|ed)|remand(?:ed)?|dismiss(?:ed)?|"
-    r"stay(?:ed)?|enjoin(?:ed)?|block(?:ed)?|prevail(?:ed)?|won|lost)\b",
-    re.IGNORECASE,
+_ACTION_WORD_PATTERN = (
+    r"hold|held|order(?:ed)?|grant(?:ed)?|deny|denied|reject(?:ed)?|"
+    r"allow(?:ed)?|affirm(?:ed)?|uphold|upheld|revers(?:e|ed)|vacat(?:e|ed)|"
+    r"remand(?:ed)?|dismiss(?:ed)?|stay(?:ed)?|enjoin(?:ed)?|block(?:ed)?|"
+    r"prevail(?:ed)?|won|lost"
 )
+_ACTION_WORD = re.compile(rf"\b(?:{_ACTION_WORD_PATTERN})\b", re.IGNORECASE)
 _ACTION_CANONICAL = {
     "hold": "hold",
     "held": "hold",
@@ -1343,6 +1187,60 @@ def evaluate_brief_candidate(
             for item in eligible_observations
         ):
             reasons.append("disposition-only case lacks typed Court action evidence")
+        if not any(
+            item.observation_type is LegalObservationType.CASE_BACKGROUND
+            and not _is_separate_opinion_material(
+                item.attribution,
+                item.normalized_value_private or item.raw_value_private,
+            )
+            for item in eligible_observations
+        ):
+            reasons.append("disposition-only case lacks case background")
+        if not any(
+            item.observation_type
+            in {LegalObservationType.REQUESTED_DISPOSITION, LegalObservationType.LOWER_COURT_ACTION}
+            and not _is_separate_opinion_material(
+                item.attribution,
+                item.normalized_value_private or item.raw_value_private,
+            )
+            for item in eligible_observations
+        ):
+            reasons.append("disposition-only case lacks procedural path")
+        if not any(
+            item.observation_type
+            in {LegalObservationType.QUESTION_PRESENTED, LegalObservationType.DOCTRINAL_THEME}
+            and not _is_separate_opinion_material(
+                item.attribution,
+                item.normalized_value_private or item.raw_value_private,
+            )
+            for item in eligible_observations
+        ):
+            reasons.append("disposition-only case lacks controlling legal issue")
+        controlling_analysis = tuple(
+            item
+            for item in eligible_observations
+            if item.observation_type
+            in {LegalObservationType.QUESTION_PRESENTED, LegalObservationType.DOCTRINAL_THEME}
+            and not _is_separate_opinion_material(
+                item.attribution,
+                item.normalized_value_private or item.raw_value_private,
+            )
+        )
+        reasoning = tuple(
+            item
+            for item in controlling_analysis
+            if item.observation_type is LegalObservationType.DOCTRINAL_THEME
+        )
+        if not any(
+            reason.observation_id != issue.observation_id
+            and (
+                reason.normalized_value_private or reason.raw_value_private
+            ).casefold()
+            != (issue.normalized_value_private or issue.raw_value_private).casefold()
+            for reason in reasoning
+            for issue in controlling_analysis
+        ):
+            reasons.append("disposition-only case lacks independent Court reasoning")
     claim_types = {item.observation_type for item in eligible_observations}
     if not claim_types.intersection(
         {LegalObservationType.QUESTION_PRESENTED, LegalObservationType.PROCEDURAL_POSTURE}
@@ -1478,6 +1376,344 @@ def _validate_public_text(
     )
 
 
+_SEPARATE_OPINION_ATTRIBUTION = re.compile(
+    r"^(?:Justice\s+[^,]+,\s*)?(?:dissenting|concurring)|^separate opinion\b",
+    re.IGNORECASE,
+)
+_SEPARATE_OPINION_VALUE = re.compile(
+    r"^(?:Justice\s+[^,]+(?:'s|\N{RIGHT SINGLE QUOTATION MARK}s)?\s+)?"
+    r"(?:dissent|concurrence|separate opinion)\b|^The\s+(?:dissent|concurrence)\b",
+    re.IGNORECASE,
+)
+_INTERIM_EFFECT = re.compile(
+    r"\b(?:interim|temporary|temporarily|pending|while [^.!?]{0,50}\bappeal|until)\b",
+    re.IGNORECASE,
+)
+_OPERATIVE_OBJECT_PATTERN = (
+    r"application|appeal|decree|execution|injunction|judgment|mandate|order|petition|"
+    r"prosecution|release|removal|rule|stay"
+)
+_OPERATIVE_OBJECT = re.compile(rf"\b(?:{_OPERATIVE_OBJECT_PATTERN})\b", re.IGNORECASE)
+
+
+def _is_separate_opinion_material(attribution: str | None, value: str) -> bool:
+    return bool(
+        (attribution and _SEPARATE_OPINION_ATTRIBUTION.search(attribution))
+        or _SEPARATE_OPINION_VALUE.search(value)
+    )
+
+
+def _is_separate_opinion_claim(claim: ScotusApprovedClaim) -> bool:
+    return _is_separate_opinion_material(claim.attribution, claim.public_value)
+
+
+_GUIDE_WORD = re.compile(r"[A-Za-z][A-Za-z'-]+")
+_GUIDE_STOP_WORDS = frozenset(
+    {
+        "about",
+        "after",
+        "again",
+        "also",
+        "because",
+        "before",
+        "being",
+        "case",
+        "court",
+        "from",
+        "have",
+        "into",
+        "issue",
+        "legal",
+        "said",
+        "that",
+        "their",
+        "there",
+        "these",
+        "they",
+        "this",
+        "those",
+        "under",
+        "what",
+        "when",
+        "where",
+        "which",
+        "while",
+        "with",
+        "would",
+    }
+)
+
+
+def _action_object_pairs(value: str) -> set[tuple[str, str]]:
+    pairs: set[tuple[str, str]] = set()
+    for action_match in _ACTION_WORD.finditer(value):
+        action = _ACTION_CANONICAL.get(action_match.group(0).casefold())
+        if action is None or action == "order":
+            continue
+        sentence_end = min(
+            (
+                position
+                for mark in ".!?"
+                if (position := value.find(mark, action_match.end())) >= 0
+            ),
+            default=len(value),
+        )
+        following = _OPERATIVE_OBJECT.search(
+            value,
+            action_match.end(),
+            min(sentence_end, action_match.end() + 60),
+        )
+        if following is not None:
+            pairs.add((action, following.group(0).casefold()))
+            continue
+        prefix_start = max(0, action_match.start() - 60)
+        prefix = value[prefix_start : action_match.start()]
+        if re.search(
+            r"\b(?:is|was|were|be|been)\b(?:\s+\w+){0,2}\s*$",
+            prefix,
+            re.IGNORECASE,
+        ):
+            preceding = tuple(_OPERATIVE_OBJECT.finditer(prefix))
+            if preceding:
+                pairs.add((action, preceding[-1].group(0).casefold()))
+    return pairs
+
+
+def _guide_content_words(value: str) -> set[str]:
+    words: set[str] = set()
+    for match in _GUIDE_WORD.finditer(value):
+        word = match.group(0).casefold().strip("'-")
+        if len(word) < 4 or word in _GUIDE_STOP_WORDS:
+            continue
+        words.add(_ACTION_CANONICAL.get(word, word))
+    return words
+
+
+_GUIDE_NEGATION = re.compile(
+    r"\b(?:no|not|never|without|lack|lacks|lacked|fail|fails|failed)\b",
+    re.IGNORECASE,
+)
+
+
+def _guide_paragraph_has_support(
+    paragraph: str, supporting_claims: tuple[ScotusApprovedClaim, ...]
+) -> bool:
+    sentences = tuple(
+        match.group(0).strip() for match in _SENTENCE.finditer(paragraph) if match.group(0).strip()
+    )
+    if not sentences:
+        return False
+    for sentence in sentences:
+        grounded_sentence = _EXPLICIT_NEGATED_ORAL_ARGUMENT.sub("", sentence)
+        sentence_words = _guide_content_words(grounded_sentence)
+        sentence_negated = _GUIDE_NEGATION.search(grounded_sentence) is not None
+        supported = False
+        for claim in supporting_claims:
+            support_words = _guide_content_words(claim.public_value)
+            required_overlap = min(2, len(support_words))
+            if (
+                required_overlap > 0
+                and len(sentence_words & support_words) >= required_overlap
+                and sentence_negated
+                == (_GUIDE_NEGATION.search(claim.public_value) is not None)
+            ):
+                supported = True
+                break
+        if not supported:
+            return False
+    return True
+
+
+def _validate_disposition_guide_structure(
+    draft: LegalBriefDraft,
+    claims: tuple[ScotusApprovedClaim, ...],
+) -> None:
+    """Require a coherent reader contract, not merely grounded fragments."""
+    actual = tuple(section.heading.strip() for section in draft.sections)
+    expected = DISPOSITION_GUIDE_HEADINGS
+    if actual not in {
+        expected,
+        (*expected, DISPOSITION_SEPARATE_OPINIONS_HEADING),
+    }:
+        raise BriefValidationError(
+            "disposition guide has incomplete or misordered sections",
+            safe_code="invalid_guide_structure",
+        )
+
+    claim_map = {claim.claim_id: claim for claim in claims}
+    by_heading = {section.heading.strip(): section for section in draft.sections}
+    separate_ids = {
+        claim.claim_id for claim in claims if _is_separate_opinion_claim(claim)
+    }
+    for heading in DISPOSITION_GUIDE_HEADINGS:
+        section = by_heading[heading]
+        if separate_ids.intersection(section.claim_ids):
+            raise BriefValidationError(
+                "a main guide section relies on separate-opinion material",
+                safe_code="separate_opinion_in_main_guide",
+            )
+
+    required_types: dict[str, frozenset[LegalObservationType]] = {
+        "What this case is about": frozenset({LegalObservationType.CASE_BACKGROUND}),
+        "Why this case reached the Court": frozenset(
+            {
+                LegalObservationType.PROCEDURAL_POSTURE,
+                LegalObservationType.REQUESTED_DISPOSITION,
+                LegalObservationType.LOWER_COURT_ACTION,
+            }
+        ),
+        "The legal issue": frozenset(
+            {
+                LegalObservationType.QUESTION_PRESENTED,
+                LegalObservationType.DOCTRINAL_THEME,
+            }
+        ),
+        "What the Supreme Court did": frozenset(
+            {LegalObservationType.HOLDING, LegalObservationType.ORDER}
+        ),
+        "Why the Court did it": frozenset(
+            {LegalObservationType.HOLDING, LegalObservationType.DOCTRINAL_THEME}
+        ),
+    }
+    required_statuses: dict[str, frozenset[LegalStatus]] = {
+        "What the Supreme Court did": frozenset(
+            {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
+        ),
+    }
+    for heading, allowed_types in required_types.items():
+        cited = tuple(
+            claim_map[claim_id]
+            for claim_id in by_heading[heading].claim_ids
+            if claim_id in claim_map
+        )
+        statuses = required_statuses.get(heading)
+        relevant = tuple(
+            claim
+            for claim in cited
+            if claim.observation_type in allowed_types
+            and (statuses is None or claim.legal_status in statuses)
+        )
+        if not relevant:
+            raise BriefValidationError(
+                "disposition guide section lacks role-appropriate support",
+                safe_code=(
+                    "unsupported_guide_section_"
+                    + re.sub(r"[^a-z0-9]+", "_", heading.casefold()).strip("_")
+                )[:80],
+            )
+        if any(
+            not _guide_paragraph_has_support(paragraph, relevant)
+            for paragraph in by_heading[heading].paragraphs
+        ):
+            raise BriefValidationError(
+                "disposition guide paragraph does not express its cited support",
+                safe_code=(
+                    "ungrounded_guide_section_"
+                    + re.sub(r"[^a-z0-9]+", "_", heading.casefold()).strip("_")
+                )[:80],
+            )
+
+    issue_claims = tuple(
+        claim_map[claim_id]
+        for claim_id in by_heading["The legal issue"].claim_ids
+        if claim_id in claim_map
+        and claim_map[claim_id].observation_type
+        in {LegalObservationType.QUESTION_PRESENTED, LegalObservationType.DOCTRINAL_THEME}
+    )
+    reasoning_claims = tuple(
+        claim_map[claim_id]
+        for claim_id in by_heading["Why the Court did it"].claim_ids
+        if claim_id in claim_map
+        and claim_map[claim_id].observation_type
+        in {LegalObservationType.HOLDING, LegalObservationType.DOCTRINAL_THEME}
+    )
+    issue_values = {claim.public_value.casefold() for claim in issue_claims}
+    reasoning_values = {claim.public_value.casefold() for claim in reasoning_claims}
+    if (
+        {claim.claim_id for claim in issue_claims}
+        & {claim.claim_id for claim in reasoning_claims}
+        or issue_values & reasoning_values
+    ):
+        raise BriefValidationError(
+            "legal issue and Court reasoning require independent support",
+            safe_code="nonindependent_court_reasoning",
+        )
+
+    separate = by_heading.get(DISPOSITION_SEPARATE_OPINIONS_HEADING)
+    if separate is not None:
+        separate_support = tuple(
+            claim_map[claim_id]
+            for claim_id in separate.claim_ids
+            if claim_id in separate_ids and claim_id in claim_map
+        )
+        if not separate_support:
+            raise BriefValidationError(
+                "separate-opinions section lacks separately attributed support",
+                safe_code="unsupported_separate_opinions_section",
+            )
+        if any(
+            not _guide_paragraph_has_support(paragraph, separate_support)
+            for paragraph in separate.paragraphs
+        ):
+            raise BriefValidationError(
+                "separate-opinions paragraph does not express its cited support",
+                safe_code="ungrounded_separate_opinions_section",
+            )
+
+    action_section = by_heading["What the Supreme Court did"]
+    action_claims = tuple(
+        claim_map[claim_id]
+        for claim_id in action_section.claim_ids
+        if claim_id in claim_map
+        and claim_map[claim_id].legal_status
+        in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
+    )
+    action_text = " ".join(action_section.paragraphs)
+    if _ACTION_WORD.search(action_text) is None:
+        raise BriefValidationError(
+            "Supreme Court action section does not state an action",
+            safe_code="missing_supreme_court_action_prose",
+        )
+    source_states_stay = any(
+        re.search(r"\bstay(?:ed)?\b", claim.public_value, re.IGNORECASE)
+        for claim in action_claims
+    )
+    generated_states_stay = re.search(
+        r"\bstay(?:ed)?\b", action_text, re.IGNORECASE
+    ) is not None
+    if source_states_stay and (
+        not generated_states_stay or _INTERIM_EFFECT.search(action_text) is None
+    ):
+        raise BriefValidationError(
+            "stay summary omits its interim procedural effect",
+            safe_code="incomplete_interim_stay_effect",
+        )
+    supported_action_objects = {
+        pair
+        for claim in claims
+        if claim.legal_status
+        in {
+            LegalStatus.REQUESTED,
+            LegalStatus.LOWER_COURT_HELD,
+            LegalStatus.COURT_HELD,
+            LegalStatus.COURT_ORDERED,
+        }
+        and not _is_separate_opinion_claim(claim)
+        for pair in _action_object_pairs(claim.public_value)
+    }
+    generated_action_objects = _action_object_pairs(
+        _EXPLICIT_NEGATED_ORAL_ARGUMENT.sub("", action_text)
+    )
+    if supported_action_objects and (
+        not generated_action_objects
+        or not generated_action_objects.issubset(supported_action_objects)
+    ):
+        raise BriefValidationError(
+            "Supreme Court action section changes or omits the operative object",
+            safe_code="unsupported_supreme_court_action_object",
+        )
+
+
 def validate_brief_draft(
     draft: LegalBriefDraft,
     candidate: BriefCandidate,
@@ -1583,6 +1819,8 @@ def validate_brief_draft(
         validate(section.heading, section.claim_ids, context="section_heading")
         for paragraph in section.paragraphs:
             validate(paragraph, section.claim_ids, context="section_paragraph")
+    if not candidate.argument_sessions:
+        _validate_disposition_guide_structure(draft, claims)
     expected_sessions = tuple(session.argument_id for session in candidate.argument_sessions)
     actual_sessions = tuple(item.argument_id for item in draft.argument_analyses)
     if actual_sessions != expected_sessions:

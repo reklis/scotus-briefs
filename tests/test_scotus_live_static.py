@@ -26,6 +26,7 @@ from ragchew.scotus.live_static import (
     _CaseInput,
     _default_ollama_client,
     _descriptor_for_public_argument,
+    _opinion_page_attribution,
 )
 from ragchew.scotus.public_contracts import public_case_key
 from ragchew.scotus.static_contracts import (
@@ -291,6 +292,68 @@ class MockOpenAI:
                         "supersedes_observation_id": None,
                     },
                     {
+                        "observation_type": "requested_disposition",
+                        "legal_status": "requested",
+                        "certainty": "direct",
+                        "raw_value": "Emergency Applicant sought relief from Agency.",
+                        "normalized_value": "Emergency Applicant sought relief from Agency.",
+                        "attribution": opinion["attribution"],
+                        "speaker_name": None,
+                        "speaker_kind": "unknown",
+                        "identity_basis": "anonymous",
+                        "authority_citations": [],
+                        "confidence": 1,
+                        "evidence": [
+                            {
+                                "block_id": opinion["block_id"],
+                                "quote": "Emergency Applicant sought relief from Agency.",
+                            }
+                        ],
+                        "supersedes_observation_id": None,
+                    },
+                    {
+                        "observation_type": "question_presented",
+                        "legal_status": "described",
+                        "certainty": "direct",
+                        "raw_value": "Emergency Applicant sought relief from Agency.",
+                        "normalized_value": "The legal issue concerns emergency relief.",
+                        "attribution": opinion["attribution"],
+                        "speaker_name": None,
+                        "speaker_kind": "unknown",
+                        "identity_basis": "anonymous",
+                        "authority_citations": [],
+                        "confidence": 1,
+                        "evidence": [
+                            {
+                                "block_id": opinion["block_id"],
+                                "quote": "Emergency Applicant sought relief from Agency.",
+                            }
+                        ],
+                        "supersedes_observation_id": None,
+                    },
+                    {
+                        "observation_type": "doctrinal_theme",
+                        "legal_status": "described",
+                        "certainty": "direct",
+                        "raw_value": "Emergency Applicant sought relief from Agency.",
+                        "normalized_value": (
+                            "The Court reasoned that emergency relief was warranted."
+                        ),
+                        "attribution": opinion["attribution"],
+                        "speaker_name": None,
+                        "speaker_kind": "unknown",
+                        "identity_basis": "anonymous",
+                        "authority_citations": [],
+                        "confidence": 1,
+                        "evidence": [
+                            {
+                                "block_id": opinion["block_id"],
+                                "quote": "Emergency Applicant sought relief from Agency.",
+                            }
+                        ],
+                        "supersedes_observation_id": None,
+                    },
+                    {
                         "observation_type": "holding",
                         "legal_status": "court_held",
                         "certainty": "direct",
@@ -385,17 +448,81 @@ class MockOpenAI:
         claims = user["claims"]
         all_ids = [claim["claim_id"] for claim in claims]
         if not user.get("argument_sessions"):
+            ids_by_type = {
+                claim_type: [
+                    claim["claim_id"]
+                    for claim in claims
+                    if claim["type"] == claim_type
+                ]
+                for claim_type in {
+                    "case_background",
+                    "procedural_posture",
+                    "requested_disposition",
+                    "lower_court_action",
+                    "doctrinal_theme",
+                    "question_presented",
+                    "holding",
+                    "order",
+                }
+            }
+            background_ids = ids_by_type["case_background"]
+            path_ids = [
+                *ids_by_type["procedural_posture"],
+                *ids_by_type["requested_disposition"],
+                *ids_by_type["lower_court_action"],
+            ]
+            issue_ids = ids_by_type["question_presented"] or ids_by_type[
+                "doctrinal_theme"
+            ][:1]
+            reasoning_ids = [
+                claim_id
+                for claim_id in ids_by_type["doctrinal_theme"]
+                if claim_id not in issue_ids
+            ]
+            action_ids = [*ids_by_type["holding"], *ids_by_type["order"]]
+            action_values = " ".join(
+                claim["value"] for claim in claims if claim["claim_id"] in action_ids
+            ).casefold()
+            action_paragraph = (
+                "The Supreme Court stayed the injunction temporarily while the case continues."
+                if "stay" in action_values
+                else "The Supreme Court granted the application."
+            )
             return {
                 "title": user["caption"],
-                "title_claim_ids": all_ids,
-                "dek": "The official docket identifies the case.",
-                "dek_claim_ids": all_ids,
+                "title_claim_ids": ids_by_type["procedural_posture"],
+                "dek": "The case concerns emergency relief from an Agency action.",
+                "dek_claim_ids": background_ids,
                 "sections": [
                     {
-                        "heading": "What the case is about",
-                        "paragraphs": ["The official docket identifies the case."],
-                        "claim_ids": all_ids,
-                    }
+                        "heading": "What this case is about",
+                        "paragraphs": ["Emergency Applicant sought relief from Agency."],
+                        "claim_ids": background_ids,
+                    },
+                    {
+                        "heading": "Why this case reached the Court",
+                        "paragraphs": [
+                            "Emergency Applicant asked the Supreme Court for emergency relief."
+                        ],
+                        "claim_ids": path_ids,
+                    },
+                    {
+                        "heading": "The legal issue",
+                        "paragraphs": ["The legal issue concerns emergency relief."],
+                        "claim_ids": issue_ids,
+                    },
+                    {
+                        "heading": "What the Supreme Court did",
+                        "paragraphs": [action_paragraph],
+                        "claim_ids": action_ids,
+                    },
+                    {
+                        "heading": "Why the Court did it",
+                        "paragraphs": [
+                            "The Court reasoned that emergency relief was warranted."
+                        ],
+                        "claim_ids": reasoning_ids,
+                    },
                 ],
                 "argument_analyses": [],
             }
@@ -539,6 +666,36 @@ def test_live_adapter_checks_all_gates_before_factories_or_traffic(tmp_path: Pat
     assert not list(tmp_path.iterdir())
 
 
+def test_opinion_page_attribution_tracks_court_and_separate_opinions() -> None:
+    assert _opinion_page_attribution("PER CURIAM\nThe Court explains its decision.") == (
+        "Opinion of the Court"
+    )
+    assert _opinion_page_attribution(
+        "JACKSON, J., dissenting\nI would deny relief.",
+        "Opinion of the Court",
+    ) == "Justice Jackson, dissenting"
+    assert _opinion_page_attribution(
+        "JUSTICE KAGAN, dissenting\nI would deny relief.",
+        "Opinion of the Court",
+    ) == "Justice Kagan, dissenting"
+    assert _opinion_page_attribution(
+        "JUSTICE KAGAN, with whom JUSTICE SOTOMAYOR joins, dissenting\nReasoning.",
+        "Opinion of the Court",
+    ) == "Justice Kagan, dissenting"
+    assert _opinion_page_attribution(
+        "CHIEF JUSTICE ROBERTS, dissenting\nReasoning.",
+        "Opinion of the Court",
+    ) == "Justice Roberts, dissenting"
+    assert _opinion_page_attribution(
+        "JACKSON, J., dissenting\nThe analysis continues.",
+        "Justice Jackson, dissenting",
+    ) == "Justice Jackson, dissenting"
+    assert _opinion_page_attribution(
+        "SOTOMAYOR, J., concurring in part and dissenting in part\nSeparate reasoning.",
+        "Justice Jackson, dissenting",
+    ) == "Justice Sotomayor, concurring in part and dissenting in part"
+
+
 def test_default_ollama_sdk_client_is_loopback_and_ignores_proxy_environment() -> None:
     client = _default_ollama_client(
         ServiceSettings(_env_file=None),
@@ -593,9 +750,9 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     processor = result.content.publication.processor
     assert processor is not None
     assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
-    assert processor.policy_version == "scotus-brief-policy-v13"
+    assert processor.policy_version == "scotus-brief-policy-v14"
     assert processor.prompt_version == (
-        "scotus-brief-plain-language-v31;disposition=scotus-disposition-plain-language-v2;disposition_compiler=scotus-deterministic-disposition-v1"
+        "scotus-brief-plain-language-v31;disposition=scotus-disposition-citizen-guide-v3"
     )
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",
@@ -727,10 +884,19 @@ def test_disposition_only_emergency_opinion_publishes_without_argument(
     assert case.latest_court_document_date == datetime(2026, 3, 4, tzinfo=UTC)
     assert [item.kind for item in case.dispositions] == ["per_curiam"]
     names = [request["response_format"]["json_schema"]["name"] for request in model.requests]
-    assert names == ["scotus_legal_observations"]
-    assert case.sections[0].heading == "Official Court action"
-    assert case.sections[0].paragraphs == (
-        "The Supreme Court action states: The Court granted the application.",
+    assert names == ["scotus_legal_observations", "scotus_legal_brief"]
+    brief_request = model.requests[-1]
+    brief_schema = brief_request["response_format"]["json_schema"]["schema"]
+    assert brief_schema["properties"]["argument_analyses"]["maxItems"] == 0
+    assert tuple(section.heading for section in case.sections) == (
+        "What this case is about",
+        "Why this case reached the Court",
+        "The legal issue",
+        "What the Supreme Court did",
+        "Why the Court did it",
+    )
+    assert case.sections[3].paragraphs == (
+        "The Supreme Court granted the application.",
     )
     disposition = result.content.publication.dispositions[0]
     assert disposition.primary_docket == "25A810"
@@ -780,7 +946,8 @@ def test_disposition_only_case_derives_exact_docket_identity_when_model_omits_it
             batch["observations"] = [
                 item
                 for item in cast(list[dict[str, Any]], batch["observations"])
-                if item["observation_type"] == "case_background"
+                if item["observation_type"]
+                not in {"procedural_posture", "holding", "order"}
             ]
             return batch
 
@@ -1048,6 +1215,125 @@ def test_brief_validation_gets_one_bounded_fixed_code_correction(
     assert (
         "argument_breakdown_omits_justice_question" in brief_requests[1]["messages"][0]["content"]
     )
+
+
+def test_disposition_guide_validation_retries_with_fixed_structure_code(
+    tmp_path: Path,
+) -> None:
+    court = CourtFixture()
+    court.rows = []
+    court.slip_rows = [
+        (
+            "17",
+            "3/04/26",
+            "25A810",
+            "Emergency Applicant v. Agency",
+            "PC",
+            "25a810_example.pdf",
+        )
+    ]
+    court.documents["/docket/docketfiles/html/public/25A810.html"] = (
+        '"docket-a810"',
+        b"<!doctype html><body>Docket 25A810. Emergency Applicant v. Agency.</body>",
+        "text/html",
+    )
+    court.documents["/opinions/25pdf/25a810_example.pdf"] = (
+        '"opinion-a810"',
+        _text_pdf(
+            "No. 25A810 Emergency Applicant v. Agency.",
+            "Emergency Applicant sought relief from Agency.",
+            "The Court granted the application.",
+        ),
+        "application/pdf",
+    )
+
+    class CorrectingDispositionModel(MockOpenAI):
+        def __init__(self) -> None:
+            super().__init__()
+            self.brief_calls = 0
+
+        def create(self, **request: Any) -> object:
+            completion = super().create(**request)
+            if request["response_format"]["json_schema"]["name"] != "scotus_legal_brief":
+                return completion
+            self.brief_calls += 1
+            if self.brief_calls != 1:
+                return completion
+            payload = json.loads(completion.choices[0].message.content)
+            payload["sections"][1], payload["sections"][2] = (
+                payload["sections"][2],
+                payload["sections"][1],
+            )
+            return SimpleNamespace(
+                choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(payload)))]
+            )
+
+    model = CorrectingDispositionModel()
+    config = live_config().model_copy(
+        update={
+            "generation": live_config().generation.model_copy(
+                update={"maximum_brief_validation_attempts_per_case": 2}
+            )
+        }
+    )
+    result = run(
+        tmp_path,
+        MemoryStateStore(tmp_path / "state"),
+        court,
+        model,
+        config=config,
+    )
+
+    assert result.publishable
+    assert model.brief_calls == 2
+    brief_requests = [
+        request
+        for request in model.requests
+        if request["response_format"]["json_schema"]["name"] == "scotus_legal_brief"
+    ]
+    assert "invalid_guide_structure" in brief_requests[1]["messages"][0]["content"]
+
+
+def test_unchanged_disposition_reuses_guide_without_model_call(tmp_path: Path) -> None:
+    court = CourtFixture()
+    court.rows = []
+    court.slip_rows = [
+        (
+            "17",
+            "3/04/26",
+            "25A810",
+            "Emergency Applicant v. Agency",
+            "PC",
+            "25a810_example.pdf",
+        )
+    ]
+    court.documents["/docket/docketfiles/html/public/25A810.html"] = (
+        '"docket-a810"',
+        b"<!doctype html><body>Docket 25A810. Emergency Applicant v. Agency.</body>",
+        "text/html",
+    )
+    court.documents["/opinions/25pdf/25a810_example.pdf"] = (
+        '"opinion-a810"',
+        _text_pdf(
+            "No. 25A810 Emergency Applicant v. Agency.",
+            "Emergency Applicant sought relief from Agency.",
+            "The Court granted the application.",
+        ),
+        "application/pdf",
+    )
+    store = MemoryStateStore(tmp_path / "state")
+    first = run(tmp_path, store, court, MockOpenAI())
+    assert first.publishable
+    store.content = first.content
+    court.document_requests.clear()
+
+    model = MockOpenAI()
+    unchanged = run(tmp_path, store, court, model)
+
+    assert unchanged.publishable and unchanged.no_public_change
+    assert unchanged.changed_case_keys == ()
+    assert model.requests == []
+    assert court.document_requests == []
 
 
 def test_conditional_304_carries_exact_case_without_model_call(tmp_path: Path) -> None:

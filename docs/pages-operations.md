@@ -33,7 +33,11 @@ checked-in gates are intentionally enabled; candidates still fail closed through
 source, model, privacy, completeness, static, and release validators. The live release
 uses the latest-activity schema and independently discovers active-term slip opinions.
 Disposition candidates that do not pass every validator remain visible to operations as
-sanitized pending work and never replace or create a public case page.
+sanitized pending work and never replace or create a public case page. The next disposition
+processor revision replaces the fragment compiler with a bounded citizen-guide writing pass.
+It requires exact ordered reader-facing sections, typed support for each section, a complete
+interim effect for stays, and strict separation of dissent or concurrence material from the
+Court's action and reasoning.
 
 The supported new source boundary is the configured active term's individual official
 slip-opinion rows, including signed opinions, per-curiam dispositions, decrees, listed
@@ -76,9 +80,12 @@ brief generation, but no attempted case passed final validation before runtime e
 Extraction now supplies exact source identity fields, deterministically derives provenance
 from the referenced evidence block, uses smaller evidence windows, and reports only fixed
 safe failure codes. Argued-case brief generation uses a simplified strict local-model schema without
-manufacturing claim coverage. Disposition-only cases use Ollama for structured extraction
-but compile public outcome prose deterministically from approved source-exact claims. One
-fully budgeted transport retry remains limited to retryable loopback failures, while
+manufacturing claim coverage. Disposition-only cases use Ollama first for structured
+observation extraction and then for one coherent, schema-constrained citizen-guide writing
+pass over the approved typed claims. Requested relief, lower-court actions, Supreme Court
+actions, controlling reasoning, and explicitly marked separate opinions remain role-separated;
+a grounded fragment under the wrong heading fails validation. One fully budgeted transport
+retry remains limited to retryable loopback failures, while
 scheduled model-output retries use exact stable scopes, a 20-hour cooldown, and finite
 per-scope and per-run limits. One-case live dry run `33912374845` then completed end to end
 in 29 minutes, including one fixed-code brief correction, and produced a privacy-scanned
@@ -214,6 +221,13 @@ publication-ready.
 
 A manual `deploy=true` requests deployment but cannot override configuration gates.
 For focused launch validation, `maximum_cases` may only lower the configured case bound.
+To verify the disposition-guide correction, first run protected `nightly` processing with
+`deploy=false`, `maximum_cases=3`, and reviewed `authorized_replay=true` only if an unchanged
+prior failure requires it. Download the retained candidate, confirm that `26A124` is revision 2
+at its existing slug, and inspect its sanitized JSON for all five required sections, the interim
+stay effect, and any separate-opinion section. Then run the normal candidate validator with
+`--privacy-scan`; promote only that exact candidate through the no-reprocessing deployment
+workflow.
 A successful manual `deploy=false` run uploads only the privacy-scanned Pages tree,
 sanitized generated-state candidate, opaque receipts, and fixed handoff metadata for one
 day; it does not deploy or mutate `generated-content`.

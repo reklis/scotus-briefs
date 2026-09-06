@@ -120,7 +120,15 @@ logical document revision; one missing or malformed response never retracts an
 existing brief.
 
 Model inputs are bounded evidence windows for extraction and sanitized approved
-claims for brief generation. Calls use the exact local Ollama model `qwen3.8:27b` at
+claims for brief generation. Every changed case follows the same simple sequence: discover
+and download unseen official documents, parse them transiently, analyze all accepted case
+documents into typed grounded claims, and write one coherent plain-English citizen guide.
+Disposition-only guides have five exact ordered sections covering the subject, procedural
+path, legal issue, Supreme Court action, and Court reasoning, plus a separate-opinions
+section only when explicitly attributed claims support it. Section-role validation rejects
+otherwise grounded fragments under the wrong heading, dissent-led descriptions of the
+Court, and stays that omit their interim procedural effect.
+Calls use the exact local Ollama model `qwen3.8:27b` at
 the typed loopback-only `http://127.0.0.1:11434/v1` endpoint. The OpenAI SDK is only
 an Ollama-compatible transport with a non-secret placeholder key; JSON-schema chat
 completions remain mandatory. Exact model inventory is verified before evidence or

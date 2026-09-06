@@ -64,9 +64,9 @@ from ragchew.scotus.briefs import (
     BriefPolicyError,
     BriefValidationError,
     CaseArgumentSession,
-    DeterministicDispositionBriefGenerator,
     InMemoryBriefRevisionStore,
     OpenAILegalBriefGenerator,
+    disposition_only_brief_json_schema,
     evaluate_brief_candidate,
     simple_brief_json_schema,
 )
@@ -171,7 +171,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v13"
+POLICY_VERSION = "scotus-brief-policy-v14"
 DOCUMENT_TEXT_VERSION = "official-document-text-v1"
 
 
@@ -1500,8 +1500,7 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
     model_identity = _model_identity(config, model_endpoint)
     prompt_contract = (
         f"{config.generation.prompt_version};"
-        f"disposition={OpenAILegalBriefGenerator.DISPOSITION_PROMPT_VERSION};"
-        f"disposition_compiler={DeterministicDispositionBriefGenerator.VERSION}"
+        f"disposition={OpenAILegalBriefGenerator.DISPOSITION_PROMPT_VERSION}"
     )
     extractor = (
         f"{LegalExtractionService.SCHEMA_VERSION}:"
@@ -2160,6 +2159,10 @@ class LiveStaticCaseProcessor:
                 "insufficient grounded legal observations": "observation_count",
                 "disposition-only case lacks grounded docket evidence": "missing_docket",
                 "disposition-only case lacks typed Court action evidence": "missing_court_action",
+                "disposition-only case lacks case background": "missing_background",
+                "disposition-only case lacks procedural path": "missing_procedural_path",
+                "disposition-only case lacks controlling legal issue": "missing_legal_issue",
+                "disposition-only case lacks Court reasoning": "missing_court_reasoning",
                 "no grounded question presented or procedural posture": "missing_procedure",
                 "no grounded argument, question, or holding": "missing_legal_action",
                 "insufficient claims after sensitivity minimization": "claim_count",
@@ -2178,114 +2181,105 @@ class LiveStaticCaseProcessor:
         revision_number = len(source.prior.revisions) + 1 if source.prior else 1
         correction_note = _correction_note(source, kinds_changed)
         revision = None
+        all_digests = (
+            *(states[key].integrity.sha256 for key in sorted(states)),
+            *(stable_disposition_fingerprint(item) for item in source.dispositions),
+        )
+        validation_feedback_codes: list[str] = []
+        maximum_brief_attempts = self.config.generation.maximum_brief_validation_attempts_per_case
         if not candidate.argument_sessions:
-            revision = BriefGenerationService(
-                DeterministicDispositionBriefGenerator(
-                    self.config.generation.model,
-                    maximum_sentence_words=self.config.generation.maximum_sentence_words,
-                    maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-                ),
-                InMemoryBriefRevisionStore(),
-                public_quotes=self.config.generation.public_quotes,
+            # One fresh correction is enough for the small fixed guide contract. Do not
+            # let one malformed emergency guide consume the run's shared brief budget.
+            maximum_brief_attempts = min(maximum_brief_attempts, 2)
+        for brief_attempt in range(1, maximum_brief_attempts + 1):
+            validation_feedback_code = (
+                ":".join(validation_feedback_codes)[:200]
+                if validation_feedback_codes
+                else None
+            )
+            prompt_version = (
+                self.config.generation.prompt_version
+                if candidate.argument_sessions
+                else OpenAILegalBriefGenerator.DISPOSITION_PROMPT_VERSION
+            )
+            request = _BudgetedModelRequest(
+                client=self.model_client,
+                budget=budget,
+                stage="brief",
+                document_digests=all_digests,
+                processor_versions={
+                    "brief_validation_attempt": str(brief_attempt),
+                    "endpoint": self.model_endpoint,
+                    "extractor": LegalExtractionService.SCHEMA_VERSION,
+                    "model": self.config.generation.model,
+                    "provider": self.config.generation.provider,
+                    "parser": _processor_contract(
+                        self.config, self.model_endpoint
+                    ).parser_version,
+                    "policy": POLICY_VERSION,
+                    "prompt": prompt_version,
+                    **(
+                        {"validation_feedback": validation_feedback_code}
+                        if validation_feedback_code
+                        else {}
+                    ),
+                },
+                output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
+                authorized_replay=authorized_replay,
+            )
+            response_schema = (
+                simple_brief_json_schema(len(candidate.argument_sessions))
+                if candidate.argument_sessions
+                else disposition_only_brief_json_schema()
+            )
+            generator = OpenAILegalBriefGenerator(
+                self.config.generation.model,
+                self.model_client,
                 maximum_sentence_words=self.config.generation.maximum_sentence_words,
                 maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-            ).generate(
-                candidate,
-                decision,
-                revision_number=revision_number,
-                correction_note=correction_note,
+                response_schema=response_schema,
+                maximum_output_tokens=(
+                    self.config.model_budget.maximum_output_tokens_per_call
+                ),
+                reasoning_effort="none",
+                validation_feedback_code=validation_feedback_code,
+                request_executor=request,
             )
-        else:
-            all_digests = (
-                *(states[key].integrity.sha256 for key in sorted(states)),
-                *(stable_disposition_fingerprint(item) for item in source.dispositions),
-            )
-            validation_feedback_codes: list[str] = []
-            for brief_attempt in range(
-                1,
-                self.config.generation.maximum_brief_validation_attempts_per_case + 1,
-            ):
-                validation_feedback_code = (
-                    ":".join(validation_feedback_codes)[:200]
-                    if validation_feedback_codes
-                    else None
-                )
-                request = _BudgetedModelRequest(
-                    client=self.model_client,
-                    budget=budget,
-                    stage="brief",
-                    document_digests=all_digests,
-                    processor_versions={
-                        "brief_validation_attempt": str(brief_attempt),
-                        "endpoint": self.model_endpoint,
-                        "extractor": LegalExtractionService.SCHEMA_VERSION,
-                        "model": self.config.generation.model,
-                        "provider": self.config.generation.provider,
-                        "parser": _processor_contract(
-                            self.config, self.model_endpoint
-                        ).parser_version,
-                        "policy": POLICY_VERSION,
-                        "prompt": self.config.generation.prompt_version,
-                        **(
-                            {"validation_feedback": validation_feedback_code}
-                            if validation_feedback_code
-                            else {}
-                        ),
-                    },
-                    output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
-                    authorized_replay=authorized_replay,
-                )
-                generator = OpenAILegalBriefGenerator(
-                    self.config.generation.model,
-                    self.model_client,
-                    maximum_sentence_words=self.config.generation.maximum_sentence_words,
-                    maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-                    response_schema=simple_brief_json_schema(
-                        len(candidate.argument_sessions)
+            try:
+                revision = BriefGenerationService(
+                    generator,
+                    InMemoryBriefRevisionStore(),
+                    public_quotes=self.config.generation.public_quotes,
+                    maximum_sentence_words=(
+                        self.config.generation.maximum_sentence_words
                     ),
-                    maximum_output_tokens=(
-                        self.config.model_budget.maximum_output_tokens_per_call
+                    maximum_paragraph_words=(
+                        self.config.generation.maximum_paragraph_words
                     ),
-                    reasoning_effort="none",
-                    validation_feedback_code=validation_feedback_code,
-                    request_executor=request,
+                ).generate(
+                    candidate,
+                    decision,
+                    revision_number=revision_number,
+                    correction_note=correction_note,
                 )
-                try:
-                    revision = BriefGenerationService(
-                        generator,
-                        InMemoryBriefRevisionStore(),
-                        public_quotes=self.config.generation.public_quotes,
-                        maximum_sentence_words=(
-                            self.config.generation.maximum_sentence_words
-                        ),
-                        maximum_paragraph_words=(
-                            self.config.generation.maximum_paragraph_words
-                        ),
-                    ).generate(
-                        candidate,
-                        decision,
-                        revision_number=revision_number,
-                        correction_note=correction_note,
-                    )
-                    break
-                except BriefValidationError as error:
-                    safe_code = error.safe_code
-                    can_retry = bool(
-                        safe_code
-                        and brief_attempt
-                        < self.config.generation.maximum_brief_validation_attempts_per_case
-                    )
-                    if not can_retry:
-                        raise
-                    assert safe_code is not None
-                    if safe_code not in validation_feedback_codes:
-                        validation_feedback_codes.append(safe_code)
-                    LOG.warning(
-                        "SCOTUS brief correction requested; case=%s; code=%s; attempt=%d",
-                        source.case_key,
-                        safe_code,
-                        brief_attempt,
-                    )
+                break
+            except BriefValidationError as error:
+                safe_code = error.safe_code
+                can_retry = bool(
+                    safe_code
+                    and brief_attempt < maximum_brief_attempts
+                )
+                if not can_retry:
+                    raise
+                assert safe_code is not None
+                if safe_code not in validation_feedback_codes:
+                    validation_feedback_codes.append(safe_code)
+                LOG.warning(
+                    "SCOTUS brief correction requested; case=%s; code=%s; attempt=%d",
+                    source.case_key,
+                    safe_code,
+                    brief_attempt,
+                )
         if revision is None:
             raise BriefValidationError("brief validation attempts produced no revision")
         history = (
@@ -2408,6 +2402,28 @@ def _pending_document(
     )
 
 
+_SEPARATE_OPINION_PAGE = re.compile(
+    r"^\s*(?:(?:CHIEF\s+)?JUSTICE\s+)?([A-Z][A-Z'-]{1,40})"
+    r"(?:,\s*(?:C\.\s*)?J\.)?,\s*"
+    r"(?:with\s+whom[^\n]{1,160}?,\s*)?"
+    r"(dissenting|concurring(?:\s+in\s+(?:part|the\s+judgment))?"
+    r"(?:\s+and\s+dissenting\s+in\s+part)?)\b",
+    re.IGNORECASE | re.MULTILINE,
+)
+
+
+def _opinion_page_attribution(text: str, previous: str | None = None) -> str:
+    """Carry the Court/separate-opinion role across extracted PDF pages."""
+    match = _SEPARATE_OPINION_PAGE.search(text)
+    if match is not None:
+        author = " ".join(match.group(1).split()).title()
+        role = " ".join(match.group(2).split()).casefold()
+        return f"Justice {author}, {role}"
+    if re.search(r"\b(?:PER CURIAM|Opinion of the Court)\b", text, re.IGNORECASE):
+        return "Opinion of the Court"
+    return previous or "Opinion of the Court"
+
+
 def _document_blocks(
     file: BinaryIO,
     *,
@@ -2443,7 +2459,10 @@ def _document_blocks(
             if re.search(rf"(?<![0-9A-Z]){re.escape(docket)}(?![0-9A-Z])", normalized) is None:
                 raise DocumentCollectionError("official opinion does not identify the case docket")
     blocks: list[LegalEvidenceBlock] = []
+    opinion_attribution: str | None = None
     for page_number, text in enumerate(pages, 1):
+        if kind is ScotusDocumentKind.OPINION:
+            opinion_attribution = _opinion_page_attribution(text, opinion_attribution)
         lines = [" ".join(line.split()) for line in text.splitlines() if line.strip()]
         for start in range(0, len(lines), 80):
             selected = lines[start : start + 80]
@@ -2464,6 +2483,7 @@ def _document_blocks(
                         end_line=start + len(selected),
                         text=chunk,
                         label=f"Official {kind.value} page {page_number} part {part + 1}",
+                        attribution=opinion_attribution,
                     )
                 )
     if not blocks:

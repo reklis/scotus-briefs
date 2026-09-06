@@ -19,6 +19,7 @@ from ragchew.scotus.briefs import (
     LegalBriefDraft,
     OpenAILegalBriefGenerator,
     _unsupported_named_phrase,
+    _validate_action_sentences,
     disposition_only_brief_json_schema,
     evaluate_brief_candidate,
     simple_brief_json_schema,
@@ -228,7 +229,29 @@ def disposition_candidate() -> BriefCandidate:
                 LegalObservationType.CASE_BACKGROUND,
                 LegalStatus.DESCRIBED,
                 ScotusDocumentKind.OPINION,
-                "Emergency Applicant sought relief from Agency.",
+                "Emergency Applicant challenged an Agency action.",
+                document_id=OPINION_ID,
+            ),
+            observation(
+                LegalObservationType.REQUESTED_DISPOSITION,
+                LegalStatus.REQUESTED,
+                ScotusDocumentKind.OPINION,
+                "Emergency Applicant asked the Supreme Court to grant emergency relief.",
+                attribution="Official opinion",
+                document_id=OPINION_ID,
+            ),
+            observation(
+                LegalObservationType.QUESTION_PRESENTED,
+                LegalStatus.DESCRIBED,
+                ScotusDocumentKind.OPINION,
+                "The legal issue is whether emergency relief is available.",
+                document_id=OPINION_ID,
+            ),
+            observation(
+                LegalObservationType.DOCTRINAL_THEME,
+                LegalStatus.DESCRIBED,
+                ScotusDocumentKind.OPINION,
+                "The Court reasoned that emergency relief was warranted.",
                 document_id=OPINION_ID,
             ),
             observation(
@@ -257,24 +280,60 @@ def disposition_candidate() -> BriefCandidate:
 
 
 def disposition_draft(claims, *, paragraph: str) -> LegalBriefDraft:  # type: ignore[no-untyped-def]
-    claim_ids = tuple(claim.claim_id for claim in claims)
+    def ids(*types: LegalObservationType) -> tuple[UUID, ...]:
+        return tuple(claim.claim_id for claim in claims if claim.observation_type in types)
+
+    background_ids = ids(LegalObservationType.CASE_BACKGROUND)
+    path_ids = ids(
+        LegalObservationType.PROCEDURAL_POSTURE,
+        LegalObservationType.REQUESTED_DISPOSITION,
+        LegalObservationType.LOWER_COURT_ACTION,
+    )
+    question_ids = ids(LegalObservationType.QUESTION_PRESENTED)
+    doctrinal_ids = ids(LegalObservationType.DOCTRINAL_THEME)
+    issue_ids = question_ids or doctrinal_ids[:1]
+    reasoning_ids = tuple(claim_id for claim_id in doctrinal_ids if claim_id not in issue_ids)
+    action_ids = ids(LegalObservationType.HOLDING, LegalObservationType.ORDER)
+    docket_ids = ids(LegalObservationType.PROCEDURAL_POSTURE)
     return LegalBriefDraft(
-        title="Emergency Applicant v. Agency: Court action",
-        title_claim_ids=claim_ids,
-        dek="The official docket identifies the case.",
-        dek_claim_ids=claim_ids,
+        title="Emergency Applicant v. Agency",
+        title_claim_ids=docket_ids,
+        dek="Emergency Applicant challenged an Agency action.",
+        dek_claim_ids=background_ids,
         sections=(
             DraftSection(
-                heading="What the Court did",
+                heading="What this case is about",
+                paragraphs=("Emergency Applicant challenged an Agency action.",),
+                claim_ids=background_ids,
+            ),
+            DraftSection(
+                heading="Why this case reached the Court",
+                paragraphs=(
+                    "Emergency Applicant asked the Supreme Court to grant emergency relief.",
+                ),
+                claim_ids=path_ids,
+            ),
+            DraftSection(
+                heading="The legal issue",
+                paragraphs=("The legal issue is whether emergency relief is available.",),
+                claim_ids=issue_ids,
+            ),
+            DraftSection(
+                heading="What the Supreme Court did",
                 paragraphs=(paragraph,),
-                claim_ids=claim_ids,
+                claim_ids=(*action_ids, *path_ids),
+            ),
+            DraftSection(
+                heading="Why the Court did it",
+                paragraphs=("The Court reasoned that emergency relief was warranted.",),
+                claim_ids=reasoning_ids,
             ),
         ),
         argument_analyses=(),
     )
 
 
-def test_disposition_only_policy_accepts_two_independent_required_facts() -> None:
+def test_disposition_only_policy_rejects_two_facts_that_cannot_build_a_guide() -> None:
     source = disposition_candidate()
     two_fact_source = replace(
         source,
@@ -286,8 +345,12 @@ def test_disposition_only_policy_accepts_two_independent_required_facts() -> Non
         ),
     )
     decision = evaluate_brief_candidate(two_fact_source, minimum_confidence=0.85)
-    assert decision.eligible
-    assert len(decision.claims) == 2
+    assert not decision.eligible
+    reasons = " ".join(decision.reasons)
+    assert "case background" in reasons
+    assert "procedural path" in reasons
+    assert "controlling legal issue" in reasons
+    assert "Court reasoning" in reasons
 
 
 def test_disposition_only_policy_requires_docket_and_typed_court_action() -> None:
@@ -406,12 +469,7 @@ def role_aware_disposition_candidate() -> BriefCandidate:
 def test_disposition_action_validation_accepts_each_same_role_claim(paragraph: str) -> None:
     source = role_aware_disposition_candidate()
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
-    validate_brief_draft(
-        disposition_draft(decision.claims, paragraph=paragraph),
-        source,
-        decision.claims,
-        public_quotes=False,
-    )
+    _validate_action_sentences(paragraph, decision.claims)
 
 
 @pytest.mark.parametrize(
@@ -431,12 +489,7 @@ def test_disposition_action_validation_rejects_actions_from_a_different_role(
     source = role_aware_disposition_candidate()
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
     with pytest.raises(BriefValidationError) as caught:
-        validate_brief_draft(
-            disposition_draft(decision.claims, paragraph=paragraph),
-            source,
-            decision.claims,
-            public_quotes=False,
-        )
+        _validate_action_sentences(paragraph, decision.claims)
     assert caught.value.safe_code == safe_code
 
 
@@ -444,24 +497,14 @@ def test_disposition_action_validation_rejects_an_actorless_action() -> None:
     source = role_aware_disposition_candidate()
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
     with pytest.raises(BriefValidationError) as caught:
-        validate_brief_draft(
-            disposition_draft(decision.claims, paragraph="The application was granted."),
-            source,
-            decision.claims,
-            public_quotes=False,
-        )
+        _validate_action_sentences("The application was granted.", decision.claims)
     assert caught.value.safe_code == "unsupported_action_role"
 
 
 def test_disposition_only_draft_accepts_supported_plain_action_synonyms() -> None:
     source = disposition_candidate()
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
-    validate_brief_draft(
-        disposition_draft(decision.claims, paragraph="The Court allowed the application."),
-        source,
-        decision.claims,
-        public_quotes=False,
-    )
+    _validate_action_sentences("The Court allowed the application.", decision.claims)
 
 
 def test_disposition_only_draft_accepts_zero_argument_analyses() -> None:
@@ -478,9 +521,9 @@ def test_disposition_only_draft_accepts_zero_argument_analyses() -> None:
 @pytest.mark.parametrize(
     "paragraph",
     [
-        "The Court acted without oral argument.",
-        "No oral argument occurred before the Court acted.",
-        "Oral argument was not held before the Court acted.",
+        "The Court granted the application without oral argument.",
+        "No oral argument occurred before the Court granted the application.",
+        "Oral argument was not held before the Court granted the application.",
     ],
 )
 def test_disposition_only_draft_accepts_explicitly_negated_oral_argument(
@@ -874,7 +917,7 @@ def test_disposition_generator_uses_compact_positive_role_aware_request() -> Non
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
     draft = disposition_draft(
         decision.claims,
-        paragraph="The docket identifies the emergency application.",
+        paragraph="The Supreme Court granted the application.",
     )
 
     class Completions:
@@ -900,32 +943,269 @@ def test_disposition_generator_uses_compact_positive_role_aware_request() -> Non
     prompt = messages[0]["content"]  # type: ignore[index]
     user_payload = json.loads(messages[1]["content"])  # type: ignore[index]
     assert prompt.startswith("/no_think")
-    assert len(prompt.split()) < 140
-    assert "only the supplied case background and legal issue" in prompt
-    assert "adds procedural history and the official outcome" in prompt
-    assert "Never" not in prompt
-    assert "Do not" not in prompt
-    for priming in ("oral argument", "argument session", "transcript", "counsel", "justice"):
+    assert len(prompt.split()) < 260
+    assert "complete plain-English citizen's guide" in prompt
+    assert "operative Supreme Court action" in prompt
+    assert "interim relief, not a final merits judgment" in prompt
+    assert "What separate opinions said" in prompt
+    for priming in ("oral argument", "argument session", "transcript", "counsel"):
         assert priming not in prompt.casefold()
     assert "argument_sessions" not in user_payload
     assert "position_group" not in json.dumps(user_payload)
     assert user_payload["caption"] == source.caption
     assert user_payload["docket"] == source.primary_docket
     assert user_payload["maturity"] == decision.maturity.value
-    assert all(
-        claim["status"] not in {"requested", "lower_court_held", "court_held", "court_ordered"}
-        for claim in user_payload["claims"]
-    )
+    assert {
+        "described",
+        "requested",
+        "court_held",
+    }.issubset({claim["status"] for claim in user_payload["claims"]})
     schema = completions.request["response_format"]["json_schema"]["schema"]  # type: ignore[index]
     assert schema["properties"]["argument_analyses"]["minItems"] == 0
     assert schema["properties"]["argument_analyses"]["maxItems"] == 0
     assert generated.title == source.caption
-    assert generated.dek == (
-        "The Supreme Court action states: The Court granted the application."
+    assert generated.dek == "Emergency Applicant challenged an Agency action."
+    assert tuple(section.heading for section in generated.sections) == (
+        "What this case is about",
+        "Why this case reached the Court",
+        "The legal issue",
+        "What the Supreme Court did",
+        "Why the Court did it",
     )
-    assert generated.sections[0].heading == "Official Court action"
-    assert generated.sections[0].paragraphs == (generated.dek,)
     assert generated.argument_analyses == ()
+
+
+def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
+    observations = tuple(
+        item.model_copy(update={"argument_id": None})
+        for item in (
+            observation(
+                LegalObservationType.PROCEDURAL_POSTURE,
+                LegalStatus.DESCRIBED,
+                ScotusDocumentKind.DOCKET,
+                "Docket 26A124 identifies Trump v. California.",
+            ),
+            observation(
+                LegalObservationType.CASE_BACKGROUND,
+                LegalStatus.DESCRIBED,
+                ScotusDocumentKind.OPINION,
+                "The President directed federal agencies to change election administration "
+                "practices challenged by several states.",
+                document_id=OPINION_ID,
+            ),
+            observation(
+                LegalObservationType.LOWER_COURT_ACTION,
+                LegalStatus.LOWER_COURT_HELD,
+                ScotusDocumentKind.OPINION,
+                "The district court blocked the federal directives.",
+                document_id=OPINION_ID,
+            ),
+            observation(
+                LegalObservationType.REQUESTED_DISPOSITION,
+                LegalStatus.REQUESTED,
+                ScotusDocumentKind.OPINION,
+                "The Government asked the Supreme Court to stay the injunction during its appeal.",
+                attribution="The Government",
+                document_id=OPINION_ID,
+            ),
+            observation(
+                LegalObservationType.DOCTRINAL_THEME,
+                LegalStatus.DESCRIBED,
+                ScotusDocumentKind.OPINION,
+                "The controlling issue is whether the states showed a concrete immediate "
+                "injury and brought a dispute ready for judicial review.",
+                document_id=OPINION_ID,
+            ),
+            observation(
+                LegalObservationType.ORDER,
+                LegalStatus.COURT_ORDERED,
+                ScotusDocumentKind.OPINION,
+                "The Supreme Court stayed the injunction pending appeal.",
+                document_id=OPINION_ID,
+            ),
+            observation(
+                LegalObservationType.DOCTRINAL_THEME,
+                LegalStatus.DESCRIBED,
+                ScotusDocumentKind.OPINION,
+                "The Court concluded that the states had not shown an immediate injury ready "
+                "for judicial review.",
+                attribution="Opinion of the Court",
+                document_id=OPINION_ID,
+            ),
+            observation(
+                LegalObservationType.DOCTRINAL_THEME,
+                LegalStatus.DESCRIBED,
+                ScotusDocumentKind.OPINION,
+                "Justice Jackson said the states already faced immediate election administration "
+                "costs.",
+                attribution="Justice Jackson, dissenting",
+                document_id=OPINION_ID,
+            ),
+        )
+    )
+    source = replace(
+        disposition_candidate(),
+        caption="Trump v. California",
+        primary_docket="26A124",
+        observations=observations,
+    )
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    assert decision.eligible
+    by_type = {
+        observation_type: tuple(
+            claim.claim_id
+            for claim in decision.claims
+            if claim.observation_type is observation_type
+        )
+        for observation_type in LegalObservationType
+    }
+    majority_issue_id, majority_reason_id, dissent_id = by_type[
+        LegalObservationType.DOCTRINAL_THEME
+    ]
+    draft = LegalBriefDraft(
+        title="Trump v. California",
+        title_claim_ids=by_type[LegalObservationType.PROCEDURAL_POSTURE],
+        dek="The case concerns federal election directives challenged by several states.",
+        dek_claim_ids=by_type[LegalObservationType.CASE_BACKGROUND],
+        sections=(
+            DraftSection(
+                heading="What this case is about",
+                paragraphs=(
+                    "The President directed federal agencies to change election administration "
+                    "practices challenged by several states.",
+                ),
+                claim_ids=by_type[LegalObservationType.CASE_BACKGROUND],
+            ),
+            DraftSection(
+                heading="Why this case reached the Court",
+                paragraphs=(
+                    "The district court blocked the federal directives. The Government asked "
+                    "the Supreme Court to stay that injunction during its appeal.",
+                ),
+                claim_ids=(
+                    *by_type[LegalObservationType.LOWER_COURT_ACTION],
+                    *by_type[LegalObservationType.REQUESTED_DISPOSITION],
+                ),
+            ),
+            DraftSection(
+                heading="The legal issue",
+                paragraphs=(
+                    "The issue is whether the states showed an immediate injury and brought a "
+                    "dispute ready for judicial review.",
+                ),
+                claim_ids=(majority_issue_id,),
+            ),
+            DraftSection(
+                heading="What the Supreme Court did",
+                paragraphs=(
+                    "The Supreme Court stayed the injunction temporarily while the appeal "
+                    "continues.",
+                ),
+                claim_ids=by_type[LegalObservationType.ORDER],
+            ),
+            DraftSection(
+                heading="Why the Court did it",
+                paragraphs=(
+                    "The Court concluded that the states had not yet shown an immediate injury "
+                    "ready for judicial review.",
+                ),
+                claim_ids=(majority_reason_id,),
+            ),
+            DraftSection(
+                heading="What separate opinions said",
+                paragraphs=(
+                    "Justice Jackson said in dissent that the states already faced immediate "
+                    "election administration costs.",
+                ),
+                claim_ids=(dissent_id,),
+            ),
+        ),
+        argument_analyses=(),
+    )
+
+    validate_brief_draft(draft, source, decision.claims, public_quotes=False)
+
+    dissent_led = draft.model_copy(
+        update={
+            "sections": tuple(
+                section.model_copy(update={"claim_ids": (dissent_id,)})
+                if section.heading == "The legal issue"
+                else section
+                for section in draft.sections
+            )
+        }
+    )
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(dissent_led, source, decision.claims, public_quotes=False)
+    assert caught.value.safe_code == "separate_opinion_in_main_guide"
+
+    incomplete_stay = draft.model_copy(
+        update={
+            "sections": tuple(
+                section.model_copy(
+                    update={"paragraphs": ("The Supreme Court stayed the injunction.",)}
+                )
+                if section.heading == "What the Supreme Court did"
+                else section
+                for section in draft.sections
+            )
+        }
+    )
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(incomplete_stay, source, decision.claims, public_quotes=False)
+    assert caught.value.safe_code == "incomplete_interim_stay_effect"
+
+    wrong_stay_object = draft.model_copy(
+        update={
+            "sections": tuple(
+                section.model_copy(
+                    update={
+                        "paragraphs": (
+                            "The Supreme Court temporarily stayed the appeal.",
+                        )
+                    }
+                )
+                if section.heading == "What the Supreme Court did"
+                else section
+                for section in draft.sections
+            )
+        }
+    )
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(wrong_stay_object, source, decision.claims, public_quotes=False)
+    assert caught.value.safe_code == "unsupported_supreme_court_action_object"
+
+    actionless = draft.model_copy(
+        update={
+            "sections": tuple(
+                section.model_copy(
+                    update={"paragraphs": ("The case concerns emergency relief.",)}
+                )
+                if section.heading == "What the Supreme Court did"
+                else section
+                for section in draft.sections
+            )
+        }
+    )
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(actionless, source, decision.claims, public_quotes=False)
+    assert caught.value.safe_code == "ungrounded_guide_section_what_the_supreme_court_did"
+
+    invented_reason = draft.model_copy(
+        update={
+            "sections": tuple(
+                section.model_copy(
+                    update={"paragraphs": ("The election policy was popular nationwide.",)}
+                )
+                if section.heading == "Why the Court did it"
+                else section
+                for section in draft.sections
+            )
+        }
+    )
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(invented_reason, source, decision.claims, public_quotes=False)
+    assert caught.value.safe_code == "ungrounded_guide_section_why_the_court_did_it"
 
 
 def test_local_brief_schema_matches_exact_argument_count() -> None:
@@ -934,8 +1214,16 @@ def test_local_brief_schema_matches_exact_argument_count() -> None:
     disposition_schema = disposition_only_brief_json_schema()["properties"]
     disposition_analyses = disposition_schema["argument_analyses"]
     assert disposition_analyses["minItems"] == disposition_analyses["maxItems"] == 0
-    assert disposition_schema["sections"]["minItems"] == 1
-    assert disposition_schema["sections"]["maxItems"] == 4
+    assert disposition_schema["sections"]["minItems"] == 5
+    assert disposition_schema["sections"]["maxItems"] == 6
+    assert disposition_schema["sections"]["items"]["properties"]["heading"]["enum"] == [
+        "What this case is about",
+        "Why this case reached the Court",
+        "The legal issue",
+        "What the Supreme Court did",
+        "Why the Court did it",
+        "What separate opinions said",
+    ]
     with pytest.raises(ValueError, match="argument count"):
         simple_brief_json_schema(-1)
 

@@ -142,6 +142,7 @@ def document_text_block(
     end_line: int,
     text: str,
     label: str,
+    attribution: str | None = None,
 ) -> LegalEvidenceBlock:
     return LegalEvidenceBlock(
         block_id=f"{kind.value}:{document_revision_id}:{file_page}:{start_line}:{label}",
@@ -153,7 +154,7 @@ def document_text_block(
         end_file_page=file_page,
         end_line=end_line,
         text_private=text,
-        attribution=label,
+        attribution=attribution or label,
     )
 
 
@@ -313,13 +314,16 @@ class OpenAILegalObservationExtractor:
         }
         disposition_only = source.argument_id is None
         mode_instruction = (
-            "This case has no oral-argument session. Extract docket identity or case "
-            "background when explicit, and extract a holding only from opinion evidence "
-            "or an order only from order/opinion evidence. For a holding or order, copy the "
-            "exact quoted Court-action sentence into raw_value and either copy it unchanged "
-            "into normalized_value or use null. Do not invent an oral argument, "
-            "advocate exchange, justice question, party, requested result, winner, or "
-            "disposition wording. "
+            "This case has no oral-argument session. Extract independently useful facts about "
+            "the case background, procedural path, requested relief, lower-court action, legal "
+            "issue, controlling Court reasoning, and separate opinions whenever explicit in "
+            "the supplied evidence. Preserve the supplied attribution; when it identifies a "
+            "dissent or concurrence, make that separate-opinion role explicit in normalized_value. "
+            "Extract a holding only from opinion evidence or an order only from order/opinion "
+            "evidence. For a holding or order, copy the exact quoted Court-action sentence into "
+            "raw_value and either copy it unchanged into normalized_value or use null. Do not "
+            "invent an oral argument, advocate exchange, justice question, party, requested "
+            "result, winner, or disposition wording. "
             if disposition_only
             else (
                 "Include a question-presented or procedural-posture item and an "
