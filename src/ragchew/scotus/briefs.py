@@ -1472,8 +1472,19 @@ def _validate_public_text(
         raise BriefValidationError("tone, sentiment, or ideological scoring is prohibited")
     if _LEGAL_ADVICE.search(text):
         raise BriefValidationError("personalized legal advice is prohibited")
-    if _UNSUPPORTED_SPECULATION.search(text):
-        raise BriefValidationError("unsupported speculative language is prohibited")
+    speculative_terms = {
+        match.group(0).casefold() for match in _UNSUPPORTED_SPECULATION.finditer(text)
+    }
+    speculation_support = support
+    if not candidate.argument_sessions:
+        speculation_support = " ".join(
+            claim.public_value for claim in claim_map.values()
+        )
+    if any(term not in speculation_support.casefold() for term in speculative_terms):
+        raise BriefValidationError(
+            "unsupported speculative language is prohibited",
+            safe_code="unsupported_speculation",
+        )
     if not public_quotes and _QUOTATION.search(text):
         raise BriefValidationError("public transcript quotations are disabled")
     if _INTERNAL_CLAIM_MARKER.search(text):
