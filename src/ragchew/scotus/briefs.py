@@ -1055,28 +1055,26 @@ def _unsupported_named_phrase(text: str, support: str, caption: str) -> bool:
         if lowered.startswith(generic_prefixes):
             continue
         phrase_words = re.findall(r"[A-Za-z]+", match)
-        if phrase_words and all(
-            canonical_word(word) in _CAPITALIZED_EXEMPT
-            or canonical_word(word) in allowed
-            or canonical_word(word) == "s"
-            or (word.isupper() and canonical_word(word) in allowed_acronyms)
+        unknown_words = tuple(
+            word
             for word in phrase_words
-        ):
+            if canonical_word(word) not in _CAPITALIZED_EXEMPT
+            and canonical_word(word) not in allowed
+            and canonical_word(word) != "s"
+            and not (word.isupper() and canonical_word(word) in allowed_acronyms)
+        )
+        identity_words = tuple(
+            word
+            for word in phrase_words
+            if (
+                canonical_word(word) not in _CAPITALIZED_EXEMPT
+                and canonical_word(word) in allowed
+            )
+            or (word.isupper() and canonical_word(word) in allowed_acronyms)
+        )
+        if not unknown_words or identity_words or lowered in allowed:
             continue
-        if lowered not in allowed:
-            return True
-    for match in _CAPITALIZED_WORD.finditer(text):
-        word = match.group(0)
-        prefix = text[: match.start()].rstrip()
-        if not prefix or prefix[-1:] in ".!?":
-            continue
-        canonical = canonical_word(word)
-        if (
-            canonical not in _CAPITALIZED_EXEMPT
-            and canonical not in allowed
-            and not (word.isupper() and canonical in allowed_acronyms)
-        ):
-            return True
+        return True
     return False
 
 

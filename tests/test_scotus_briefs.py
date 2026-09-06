@@ -389,6 +389,16 @@ def test_disposition_name_guard_allows_only_evidence_derived_acronyms() -> None:
         "The Government action is stayed.",
         "Committee v. Brown",
     )
+    assert not _unsupported_named_phrase(
+        "Trump Administration officials requested relief.",
+        "Trump requested relief.",
+        "Trump v. California",
+    )
+    assert _unsupported_named_phrase(
+        "The Acme Corporation requested relief.",
+        "The Government requested relief.",
+        "Committee v. Brown",
+    )
 
 
 @pytest.mark.parametrize(
