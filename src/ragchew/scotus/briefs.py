@@ -1506,7 +1506,8 @@ def _validate_public_text(
         if docket != candidate.primary_docket and docket not in support:
             raise BriefValidationError("text adds an unsupported docket")
     supporting_claims = tuple(claim_map[value] for value in claim_ids)
-    _validate_action_sentences(action_text, supporting_claims)
+    if candidate.argument_sessions:
+        _validate_action_sentences(action_text, supporting_claims)
     _validate_plain_language(
         text,
         maximum_sentence_words=maximum_sentence_words,
@@ -1739,7 +1740,7 @@ def _validate_disposition_guide_structure(
                     + re.sub(r"[^a-z0-9]+", "_", heading.casefold()).strip("_")
                 )[:80],
             )
-        if any(
+        if heading != "What the Supreme Court did" and any(
             not _guide_paragraph_has_support(paragraph, relevant)
             for paragraph in by_heading[heading].paragraphs
         ):
@@ -1777,6 +1778,15 @@ def _validate_disposition_guide_structure(
             safe_code="nonindependent_court_reasoning",
         )
 
+    path_section = by_heading["Why this case reached the Court"]
+    path_claims = tuple(
+        claim_map[claim_id]
+        for claim_id in path_section.claim_ids
+        if claim_id in claim_map
+    )
+    for paragraph in path_section.paragraphs:
+        _validate_action_sentences(paragraph, path_claims)
+
     separate = by_heading.get(DISPOSITION_SEPARATE_OPINIONS_HEADING)
     if separate is not None:
         separate_support = tuple(
@@ -1799,15 +1809,30 @@ def _validate_disposition_guide_structure(
             )
 
     action_section = by_heading["What the Supreme Court did"]
-    action_claims = tuple(
+    action_support = tuple(
         claim_map[claim_id]
         for claim_id in action_section.claim_ids
         if claim_id in claim_map
-        and claim_map[claim_id].legal_status
-        in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
+    )
+    action_claims = tuple(
+        claim
+        for claim in action_support
+        if claim.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
     )
     action_text = " ".join(action_section.paragraphs)
-    if _ACTION_WORD.search(action_text) is None:
+    grounded_action_text = _EXPLICIT_NEGATED_ORAL_ARGUMENT.sub("", action_text)
+    _validate_action_sentences(grounded_action_text, action_support)
+    if any(
+        not _guide_paragraph_has_support(
+            _EXPLICIT_NEGATED_ORAL_ARGUMENT.sub("", paragraph), action_claims
+        )
+        for paragraph in action_section.paragraphs
+    ):
+        raise BriefValidationError(
+            "disposition guide paragraph does not express its cited support",
+            safe_code="ungrounded_guide_section_what_the_supreme_court_did",
+        )
+    if _ACTION_WORD.search(grounded_action_text) is None:
         raise BriefValidationError(
             "Supreme Court action section does not state an action",
             safe_code="missing_supreme_court_action_prose",
