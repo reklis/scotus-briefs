@@ -221,6 +221,63 @@ DISPOSITION_GUIDE_HEADINGS = (
 DISPOSITION_SEPARATE_OPINIONS_HEADING = "What separate opinions said"
 
 
+def _normalize_disposition_support(
+    draft: LegalBriefDraft,
+    claims: tuple[ScotusApprovedClaim, ...],
+) -> LegalBriefDraft:
+    controlling = tuple(claim for claim in claims if not _is_separate_opinion_claim(claim))
+
+    def ids(*types: LegalObservationType) -> tuple[UUID, ...]:
+        return tuple(
+            claim.claim_id for claim in controlling if claim.observation_type in types
+        )
+
+    docket_ids = tuple(
+        claim.claim_id
+        for claim in controlling
+        if claim.public_source_label.casefold() == "docket"
+        or "/docket/" in claim.official_url.casefold()
+    )
+    question_ids = ids(LegalObservationType.QUESTION_PRESENTED)
+    doctrine_ids = ids(LegalObservationType.DOCTRINAL_THEME)
+    support_by_heading = {
+        "What this case is about": ids(LegalObservationType.CASE_BACKGROUND),
+        "Why this case reached the Court": ids(
+            LegalObservationType.PROCEDURAL_POSTURE,
+            LegalObservationType.REQUESTED_DISPOSITION,
+            LegalObservationType.LOWER_COURT_ACTION,
+        ),
+        "The legal issue": question_ids or doctrine_ids[:1],
+        "What the Supreme Court did": ids(
+            LegalObservationType.HOLDING,
+            LegalObservationType.ORDER,
+            LegalObservationType.REQUESTED_DISPOSITION,
+            LegalObservationType.LOWER_COURT_ACTION,
+        ),
+        "Why the Court did it": doctrine_ids,
+        DISPOSITION_SEPARATE_OPINIONS_HEADING: tuple(
+            claim.claim_id for claim in claims if _is_separate_opinion_claim(claim)
+        ),
+    }
+    sections = tuple(
+        section.model_copy(
+            update={
+                "claim_ids": support_by_heading.get(
+                    section.heading.strip(), section.claim_ids
+                )
+            }
+        )
+        for section in draft.sections
+    )
+    return draft.model_copy(
+        update={
+            "title_claim_ids": docket_ids or draft.title_claim_ids,
+            "dek_claim_ids": tuple(claim.claim_id for claim in controlling),
+            "sections": sections,
+        }
+    )
+
+
 def disposition_only_brief_json_schema() -> dict[str, Any]:
     """Return the strict citizen-guide schema for a case with no real argument."""
     schema = simple_brief_json_schema(0)
@@ -258,7 +315,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v4"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v5"
 
     def __init__(
         self,
@@ -544,6 +601,8 @@ class OpenAILegalBriefGenerator:
                 draft = _plain_language_draft(LegalBriefDraft.model_validate(payload))
             else:
                 draft = _plain_language_draft(LegalBriefDraft.model_validate_json(stripped))
+            if disposition_only:
+                draft = _normalize_disposition_support(draft, model_claims)
         except (json.JSONDecodeError, ValidationError):
             if getattr(choice, "finish_reason", None) == "length":
                 raise BriefValidationError(
