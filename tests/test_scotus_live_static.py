@@ -593,7 +593,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     processor = result.content.publication.processor
     assert processor is not None
     assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
-    assert processor.policy_version == "scotus-brief-policy-v14"
+    assert processor.policy_version == "scotus-brief-policy-v13"
     assert processor.prompt_version == (
         "scotus-brief-plain-language-v31;disposition=scotus-disposition-plain-language-v2;disposition_compiler=scotus-deterministic-disposition-v1"
     )
