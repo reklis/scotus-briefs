@@ -7,6 +7,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any, cast
+from uuid import uuid4
 
 import httpx
 import pytest
@@ -18,7 +19,15 @@ from ragchew.proceedings.contracts import DocumentType
 from ragchew.proceedings.discovery import ConditionalRequest
 from ragchew.proceedings.sources.http import RequestRateLimiter, SourceResponse
 from ragchew.proceedings.sources.supreme_court import SupremeCourtAdapter
+from ragchew.scotus.contracts import (
+    LegalObservationType,
+    LegalStatus,
+    ScotusDocumentKind,
+    SpeakerIdentityBasis,
+    SpeakerKind,
+)
 from ragchew.scotus.discovery import DiscoveryMode
+from ragchew.scotus.extraction import LegalEvidenceBlock
 from ragchew.scotus.live_static import (
     LiveStaticBatchAdapter,
     LiveStaticDiscovery,
@@ -27,6 +36,7 @@ from ragchew.scotus.live_static import (
     _default_ollama_client,
     _descriptor_for_public_argument,
     _opinion_page_attribution,
+    _procedural_path_observation,
 )
 from ragchew.scotus.public_contracts import public_case_key
 from ragchew.scotus.static_contracts import (
@@ -693,6 +703,39 @@ def test_opinion_page_attribution_tracks_court_and_separate_opinions() -> None:
         "SOTOMAYOR, J., concurring in part and dissenting in part\nSeparate reasoning.",
         "Justice Jackson, dissenting",
     ) == "Justice Sotomayor, concurring in part and dissenting in part"
+
+
+def test_procedural_path_fallback_uses_only_controlling_exact_source_text() -> None:
+    block = LegalEvidenceBlock(
+        block_id="opinion-page-1",
+        document_revision_id=uuid4(),
+        document_kind=ScotusDocumentKind.OPINION,
+        official_url="https://www.supremecourt.gov/opinion.pdf",
+        start_file_page=1,
+        start_line=1,
+        end_file_page=1,
+        end_line=4,
+        text_private="The District Court entered an injunction against the policy.",
+        speaker_name=None,
+        speaker_kind=SpeakerKind.UNKNOWN,
+        identity_basis=SpeakerIdentityBasis.ANONYMOUS,
+        attribution="Opinion of the Court",
+    )
+
+    observation = _procedural_path_observation(case_id=uuid4(), blocks=(block,))
+
+    assert observation is not None
+    assert observation.observation_type is LegalObservationType.LOWER_COURT_ACTION
+    assert observation.legal_status is LegalStatus.LOWER_COURT_HELD
+    assert observation.raw_value_private == block.text_private
+    assert observation.evidence[0].quote_private == block.text_private
+    assert (
+        _procedural_path_observation(
+            case_id=uuid4(),
+            blocks=(block.model_copy(update={"attribution": "Justice Kagan, dissenting"}),),
+        )
+        is None
+    )
 
 
 def test_default_ollama_sdk_client_is_loopback_and_ignores_proxy_environment() -> None:

@@ -71,6 +71,7 @@ from ragchew.scotus.briefs import (
     simple_brief_json_schema,
 )
 from ragchew.scotus.contracts import (
+    LEGAL_STATUS_BY_OBSERVATION_TYPE,
     BriefMaturity,
     LegalCertainty,
     LegalEvidenceRange,
@@ -172,7 +173,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
 POLICY_VERSION = "scotus-brief-policy-v14"
-DOCUMENT_TEXT_VERSION = "official-document-text-v1"
+DOCUMENT_TEXT_VERSION = "official-document-text-v2"
 
 
 class OllamaClientFactory(Protocol):
@@ -2065,6 +2066,20 @@ class LiveStaticCaseProcessor:
             )
         if not source.sessions and not any(
             observation.observation_type
+            in {
+                LegalObservationType.REQUESTED_DISPOSITION,
+                LegalObservationType.LOWER_COURT_ACTION,
+            }
+            for observation in observations
+        ):
+            path_observation = _procedural_path_observation(
+                case_id=case_id,
+                blocks=tuple(action_blocks),
+            )
+            if path_observation is not None:
+                observations.append(path_observation)
+        if not source.sessions and not any(
+            observation.observation_type
             in {LegalObservationType.HOLDING, LegalObservationType.ORDER}
             and observation.legal_status
             in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
@@ -2509,6 +2524,17 @@ def _document_blocks(
     return tuple(blocks)
 
 
+_DETERMINISTIC_LOWER_COURT_PATH = re.compile(
+    r"\b(?:district court|court of appeals|lower court|three-judge court)\b"
+    r"[^.!?]{0,500}\b(?:blocked|dismissed|enjoined|entered|granted|held|issued|denied|"
+    r"reversed|stayed|vacated)\b",
+    re.IGNORECASE,
+)
+_DETERMINISTIC_REQUEST_PATH = re.compile(
+    r"\b(?:applicant|government|petitioner|respondent|state|states)\b"
+    r"[^.!?]{0,500}\b(?:asked|asks|filed|requested|requests|sought|seeks)\b",
+    re.IGNORECASE,
+)
 _DETERMINISTIC_COURT_ACTION = re.compile(
     r"\b(?:we (?:agree and )?(?:hold|conclude|grant|deny|affirm|reverse|vacate|order)|"
     r"(?:this |the )Court (?:holds?|held|orders?|ordered|grants?|granted|denies|denied|"
@@ -2521,6 +2547,71 @@ _DETERMINISTIC_HOLDING = re.compile(
     r"\b(?:we (?:hold|conclude)|(?:this |the )Court (?:holds?|held))\b",
     re.IGNORECASE,
 )
+
+
+def _procedural_path_observation(
+    *, case_id: UUID, blocks: tuple[LegalEvidenceBlock, ...]
+) -> LegalObservation | None:
+    """Derive one explicit lower-court action or party request from controlling pages."""
+    for block in blocks:
+        if block.document_kind is not ScotusDocumentKind.OPINION or re.search(
+            r"\b(?:concurring|dissenting|separate opinion)\b",
+            block.attribution or "",
+            re.IGNORECASE,
+        ):
+            continue
+        for sentence in re.split(r"(?<=[.!?])\s+", block.text_private):
+            sentence = " ".join(sentence.split())
+            pattern_and_role = (
+                (_DETERMINISTIC_LOWER_COURT_PATH, LegalObservationType.LOWER_COURT_ACTION),
+                (_DETERMINISTIC_REQUEST_PATH, LegalObservationType.REQUESTED_DISPOSITION),
+            )
+            role = next(
+                (role for pattern, role in pattern_and_role if pattern.search(sentence)),
+                None,
+            )
+            if role is None or len(sentence.split()) > 80 or len(sentence) > 2_000:
+                continue
+            status = LEGAL_STATUS_BY_OBSERVATION_TYPE[role]
+            extraction_id = uuid5(
+                NAMESPACE_URL,
+                f"ragchew:scotus-deterministic-path-extraction:{case_id}:{block.block_id}",
+            )
+            return LegalObservation(
+                observation_id=uuid5(
+                    NAMESPACE_URL,
+                    f"ragchew:scotus-deterministic-path-observation:"
+                    f"{case_id}:{block.block_id}:{role.value}:{sentence}",
+                ),
+                extraction_revision_id=extraction_id,
+                case_id=case_id,
+                argument_id=None,
+                observation_type=role,
+                legal_status=status,
+                certainty=LegalCertainty.DIRECT,
+                raw_value_private=sentence,
+                normalized_value_private=sentence,
+                attribution=block.attribution,
+                speaker_name=block.speaker_name,
+                speaker_kind=block.speaker_kind,
+                identity_basis=block.identity_basis,
+                authority_citations=(),
+                confidence=1.0,
+                evidence=(
+                    LegalEvidenceRange(
+                        document_revision_id=block.document_revision_id,
+                        document_kind=block.document_kind,
+                        start_file_page=block.start_file_page,
+                        start_line=block.start_line,
+                        end_file_page=block.end_file_page,
+                        end_line=block.end_line,
+                        quote_private=sentence,
+                    ),
+                ),
+                sensitivity=sensitivity_labels(sentence),
+                supersedes_observation_id=None,
+            )
+    return None
 
 
 def _court_action_observation(
