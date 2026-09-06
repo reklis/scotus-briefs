@@ -2073,6 +2073,22 @@ class LiveStaticCaseProcessor:
             observations.append(
                 _court_action_observation(case_id=case_id, blocks=tuple(action_blocks))
             )
+        if not source.sessions:
+            role_summary = ",".join(
+                f"{kind.value}={sum(item.observation_type is kind for item in observations)}"
+                for kind in LegalObservationType
+                if any(item.observation_type is kind for item in observations)
+            ) or "none"
+            rejection_summary = ",".join(
+                f"{code}={extraction_rejection_codes.count(code)}"
+                for code in sorted(set(extraction_rejection_codes))
+            ) or "none"
+            LOG.info(
+                "SCOTUS disposition extraction summary; case=%s; roles=%s; rejections=%s",
+                source.case_key,
+                role_summary,
+                rejection_summary,
+            )
         if not observations:
             dominant = (
                 max(
@@ -2162,7 +2178,9 @@ class LiveStaticCaseProcessor:
                 "disposition-only case lacks case background": "missing_background",
                 "disposition-only case lacks procedural path": "missing_procedural_path",
                 "disposition-only case lacks controlling legal issue": "missing_legal_issue",
-                "disposition-only case lacks Court reasoning": "missing_court_reasoning",
+                "disposition-only case lacks independent Court reasoning": (
+                    "missing_court_reasoning"
+                ),
                 "no grounded question presented or procedural posture": "missing_procedure",
                 "no grounded argument, question, or holding": "missing_legal_action",
                 "insufficient claims after sensitivity minimization": "claim_count",

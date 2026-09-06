@@ -271,7 +271,7 @@ class DeterministicTranscriptObservationExtractor:
 
 
 class OpenAILegalObservationExtractor:
-    PROMPT_VERSION = "scotus-legal-extraction-v7"
+    PROMPT_VERSION = "scotus-legal-extraction-v8"
 
     def __init__(
         self,
@@ -314,16 +314,17 @@ class OpenAILegalObservationExtractor:
         }
         disposition_only = source.argument_id is None
         mode_instruction = (
-            "This case has no oral-argument session. Extract independently useful facts about "
-            "the case background, procedural path, requested relief, lower-court action, legal "
-            "issue, controlling Court reasoning, and separate opinions whenever explicit in "
-            "the supplied evidence. Preserve the supplied attribution; when it identifies a "
-            "dissent or concurrence, make that separate-opinion role explicit in normalized_value. "
-            "Extract a holding only from opinion evidence or an order only from order/opinion "
-            "evidence. For a holding or order, copy the exact quoted Court-action sentence into "
-            "raw_value and either copy it unchanged into normalized_value or use null. Do not "
-            "invent an oral argument, advocate exchange, justice question, party, requested "
-            "result, winner, or disposition wording. "
+            "This case has no oral-argument session. Return up to eight independently useful "
+            "observations. Prioritize separate observations for case background; requested relief "
+            "or lower-court action; the controlling legal issue; and the Court's reasoning. "
+            "Include separately attributed opinions when explicit. Preserve the supplied "
+            "attribution exactly so dissent and concurrence roles remain distinct. For every "
+            "non-action observation, copy one exact source passage into both quote and raw_value "
+            "and set normalized_value to null. Extract a holding only from opinion evidence or an "
+            "order only from order/opinion evidence. For a holding or order, copy the exact quoted "
+            "Court-action sentence into raw_value and either copy it unchanged into "
+            "normalized_value or use null. Do not invent an oral argument, advocate exchange, "
+            "justice question, party, requested result, winner, or disposition wording. "
             if disposition_only
             else (
                 "Include a question-presented or procedural-posture item and an "
@@ -343,9 +344,14 @@ class OpenAILegalObservationExtractor:
                         "disputed facts. A justice's question is not a vote or holding. Transcript "
                         "evidence cannot establish a Supreme Court order, holding, judgment, "
                         "or disposition. "
-                        "Return three or four independently useful observations when the "
-                        "evidence supports them, or fewer (including an empty list) when it "
-                        "does not. "
+                        + (
+                            "Return fewer observations, including an empty list, when the supplied "
+                            "evidence does not support the requested roles. "
+                            if disposition_only
+                            else "Return three or four independently useful observations when the "
+                            "evidence supports them, or fewer (including an empty list) when it "
+                            "does not. "
+                        )
                         + mode_instruction
                         + "Copy block_id exactly. Copy quote as one exact, contiguous substring "
                         "from that block without correcting spacing, punctuation, capitalization, "

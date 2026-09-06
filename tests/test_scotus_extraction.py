@@ -178,6 +178,31 @@ def test_openai_extraction_supplies_and_derives_exact_block_identity() -> None:
     )
 
 
+def test_disposition_extraction_prioritizes_extractable_guide_roles() -> None:
+    evidence = block(
+        "The district court entered an injunction.",
+        kind=ScotusDocumentKind.OPINION,
+        speaker_name=None,
+    )
+    source_value = source(evidence)
+    source_value = LegalExtractionInput(
+        case_id=source_value.case_id,
+        argument_id=None,
+        blocks=source_value.blocks,
+        parser_versions=source_value.parser_versions,
+        document_revision_ids=source_value.document_revision_ids,
+    )
+    extractor = OpenAILegalObservationExtractor("qwen3.8:27b", SimpleNamespace())
+
+    request = extractor.request_arguments(source_value)
+    system_prompt = request["messages"][0]["content"]
+
+    assert "Return up to eight independently useful observations" in system_prompt
+    assert "copy one exact source passage into both quote and raw_value" in system_prompt
+    assert "set normalized_value to null" in system_prompt
+    assert "Court's reasoning" in system_prompt
+
+
 def test_openai_extraction_repairs_only_a_uniquely_exact_unknown_block_id() -> None:
     unique = block("The Court grants the application.", block_id="opinion-real")
     other = block("Unrelated docket background.", block_id="docket-real")
