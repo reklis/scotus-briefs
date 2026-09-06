@@ -172,7 +172,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v16"
+POLICY_VERSION = "scotus-brief-policy-v17"
 DOCUMENT_TEXT_VERSION = "official-document-text-v3"
 
 
@@ -2093,9 +2093,25 @@ class LiveStaticCaseProcessor:
                 blocks=tuple(action_blocks),
                 excluded_values=existing_analysis_values,
             ):
-                if not any(
-                    item.observation_type is analysis_observation.observation_type
+                same_type = tuple(
+                    item
                     for item in observations
+                    if item.observation_type is analysis_observation.observation_type
+                )
+                opposite_values = {
+                    (item.normalized_value_private or item.raw_value_private).casefold()
+                    for item in observations
+                    if item.observation_type
+                    in {
+                        LegalObservationType.QUESTION_PRESENTED,
+                        LegalObservationType.DOCTRINAL_THEME,
+                    }
+                    and item.observation_type is not analysis_observation.observation_type
+                }
+                if not same_type or all(
+                    (item.normalized_value_private or item.raw_value_private).casefold()
+                    in opposite_values
+                    for item in same_type
                 ):
                     observations.append(analysis_observation)
                     existing_analysis_values.add(

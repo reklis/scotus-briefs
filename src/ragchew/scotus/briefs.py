@@ -238,8 +238,52 @@ def _normalize_disposition_support(
         if claim.public_source_label.casefold() == "docket"
         or "/docket/" in claim.official_url.casefold()
     )
-    question_ids = ids(LegalObservationType.QUESTION_PRESENTED)
-    doctrine_ids = ids(LegalObservationType.DOCTRINAL_THEME)
+    question_claims = tuple(
+        claim
+        for claim in controlling
+        if claim.observation_type is LegalObservationType.QUESTION_PRESENTED
+    )
+    doctrine_claims = tuple(
+        claim
+        for claim in controlling
+        if claim.observation_type is LegalObservationType.DOCTRINAL_THEME
+    )
+    independent_pair = next(
+        (
+            (question, doctrine)
+            for question in question_claims
+            for doctrine in doctrine_claims
+            if question.public_value.casefold() != doctrine.public_value.casefold()
+        ),
+        None,
+    )
+    issue_ids: tuple[UUID, ...]
+    reasoning_ids: tuple[UUID, ...]
+    if independent_pair is not None:
+        issue_ids = (independent_pair[0].claim_id,)
+        reasoning_ids = (independent_pair[1].claim_id,)
+    else:
+        distinct_doctrines = tuple(
+            dict.fromkeys(claim.public_value.casefold() for claim in doctrine_claims)
+        )
+        issue_ids = (
+            (question_claims[0].claim_id,)
+            if question_claims
+            else tuple(
+                claim.claim_id
+                for claim in doctrine_claims
+                if claim.public_value.casefold() == distinct_doctrines[0]
+            )[:1]
+            if distinct_doctrines
+            else ()
+        )
+        reasoning_ids = tuple(
+            claim.claim_id
+            for claim in doctrine_claims
+            if distinct_doctrines
+            and claim.public_value.casefold() == distinct_doctrines[-1]
+            and claim.claim_id not in issue_ids
+        )[:1]
     support_by_heading = {
         "What this case is about": ids(LegalObservationType.CASE_BACKGROUND),
         "Why this case reached the Court": ids(
@@ -247,14 +291,14 @@ def _normalize_disposition_support(
             LegalObservationType.REQUESTED_DISPOSITION,
             LegalObservationType.LOWER_COURT_ACTION,
         ),
-        "The legal issue": question_ids or doctrine_ids[:1],
+        "The legal issue": issue_ids,
         "What the Supreme Court did": ids(
             LegalObservationType.HOLDING,
             LegalObservationType.ORDER,
             LegalObservationType.REQUESTED_DISPOSITION,
             LegalObservationType.LOWER_COURT_ACTION,
         ),
-        "Why the Court did it": doctrine_ids,
+        "Why the Court did it": reasoning_ids,
         DISPOSITION_SEPARATE_OPINIONS_HEADING: tuple(
             claim.claim_id for claim in claims if _is_separate_opinion_claim(claim)
         ),
@@ -1427,7 +1471,12 @@ def _validate_public_text(
                 "disposition-only brief contains unsupported filler",
                 safe_code="unsupported_filler",
             )
-        if _unsupported_named_phrase(action_text, support, candidate.caption):
+        case_name_support = " ".join(
+            claim.public_value for claim in claim_map.values()
+        )
+        if _unsupported_named_phrase(
+            action_text, case_name_support, candidate.caption
+        ):
             raise BriefValidationError(
                 "disposition-only brief adds an unsupported party",
                 safe_code=f"unsupported_party_{validation_context}",
