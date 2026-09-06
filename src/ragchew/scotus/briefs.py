@@ -1046,12 +1046,18 @@ def _unsupported_named_phrase(text: str, support: str, caption: str) -> bool:
             continue
         if lowered not in allowed:
             return True
-    return any(
-        word.casefold() not in _CAPITALIZED_EXEMPT
-        and word.casefold() not in allowed
-        and not (word.isupper() and word.casefold() in allowed_acronyms)
-        for word in _CAPITALIZED_WORD.findall(text)
-    )
+    for match in _CAPITALIZED_WORD.finditer(text):
+        word = match.group(0)
+        prefix = text[: match.start()].rstrip()
+        if not prefix or prefix[-1:] in ".!?":
+            continue
+        if (
+            word.casefold() not in _CAPITALIZED_EXEMPT
+            and word.casefold() not in allowed
+            and not (word.isupper() and word.casefold() in allowed_acronyms)
+        ):
+            return True
+    return False
 
 
 def _attribution_parts(value: str | None) -> tuple[str | None, str | None]:
