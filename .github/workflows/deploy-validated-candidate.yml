@@ -168,7 +168,9 @@ jobs:
           path: generated-content
           fetch-depth: 1
           persist-credentials: false
-      - name: Download retained opaque receipts
+      - name: Download retained opaque receipts when present
+        id: receipts
+        continue-on-error: true
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: opaque-cost-receipts
@@ -176,11 +178,14 @@ jobs:
           github-token: ${{ github.token }}
           repository: ${{ github.repository }}
           run-id: ${{ inputs.candidate_run_id }}
-      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+      - if: steps.receipts.outcome == 'success'
+        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           enable-cache: false
-      - run: uv sync --project source --frozen
+      - if: steps.receipts.outcome == 'success'
+        run: uv sync --project source --frozen
       - name: CAS append retained receipts without changing active release
+        if: steps.receipts.outcome == 'success'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

@@ -170,6 +170,9 @@ def test_retained_candidate_deploy_revalidates_without_spark_or_model() -> None:
     assert "source_run_id" in workflow
     assert "expected_parent_commit" in workflow
     assert "persist-cost-receipts" in workflow
+    assert "Download retained opaque receipts when present" in workflow
+    assert "continue-on-error: true" in workflow
+    assert "if: steps.receipts.outcome == 'success'" in workflow
     assert "actions: read" in workflow
     assert "pages: write" in workflow
     assert "id-token: write" in workflow
