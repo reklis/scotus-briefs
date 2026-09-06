@@ -412,6 +412,21 @@ class OpenAILegalObservationExtractor:
                 safe_code="invalid_schema",
             ) from None
 
+    @staticmethod
+    def _recover_source_quote(
+        block: LegalEvidenceBlock,
+        *candidates: str,
+    ) -> str | None:
+        for candidate in candidates:
+            value = candidate.strip()
+            if not value:
+                continue
+            matches = tuple(re.finditer(re.escape(value), block.text_private, re.IGNORECASE))
+            if len(matches) == 1:
+                match = matches[0]
+                return block.text_private[match.start() : match.end()]
+        return None
+
     def extract(self, source: LegalExtractionInput) -> LegalExtractionBatch:
         request = self.request_arguments(source)
         completion = (
@@ -441,17 +456,35 @@ class OpenAILegalObservationExtractor:
                     )
                     block = matches[0] if len(matches) == 1 else None
                 if block is not None:
-                    proposed = proposed.model_copy(
-                        update={
-                            "evidence": (
-                                pointer.model_copy(update={"block_id": block.block_id}),
-                            ),
-                            "attribution": block.attribution,
-                            "speaker_name": block.speaker_name,
-                            "speaker_kind": block.speaker_kind,
-                            "identity_basis": block.identity_basis,
-                        }
+                    exact_quote = self._recover_source_quote(
+                        block,
+                        pointer.quote,
+                        proposed.raw_value,
                     )
+                    pointer_update: dict[str, Any] = {"block_id": block.block_id}
+                    if exact_quote is not None:
+                        pointer_update["quote"] = exact_quote
+                    proposal_update: dict[str, Any] = {
+                        "evidence": (pointer.model_copy(update=pointer_update),),
+                        "legal_status": LEGAL_STATUS_BY_OBSERVATION_TYPE[
+                            proposed.observation_type
+                        ],
+                        "attribution": block.attribution,
+                        "speaker_name": block.speaker_name,
+                        "speaker_kind": block.speaker_kind,
+                        "identity_basis": block.identity_basis,
+                    }
+                    if (
+                        source.argument_id is None
+                        and exact_quote is not None
+                        and proposed.observation_type
+                        not in {LegalObservationType.HOLDING, LegalObservationType.ORDER}
+                    ):
+                        proposal_update.update(
+                            raw_value=exact_quote,
+                            normalized_value=None,
+                        )
+                    proposed = proposed.model_copy(update=proposal_update)
             normalized.append(proposed)
         return batch.model_copy(update={"observations": normalized})
 
@@ -909,7 +942,7 @@ class PostgresLegalObservationStore:
 
 
 class LegalExtractionService:
-    SCHEMA_VERSION = "scotus-observation-v1"
+    SCHEMA_VERSION = "scotus-observation-v2"
     VOCABULARY_VERSION = "scotus-legal-v1"
 
     def __init__(self, extractor: LegalObservationExtractor, store: LegalObservationStore) -> None:

@@ -205,6 +205,59 @@ def test_disposition_extraction_prioritizes_extractable_guide_roles() -> None:
     assert "Court's reasoning" in system_prompt
 
 
+def test_disposition_extraction_derives_status_and_exact_source_value() -> None:
+    evidence = block(
+        "The District Court entered an injunction.",
+        kind=ScotusDocumentKind.OPINION,
+        speaker_name=None,
+    )
+    source_value = source(evidence)
+    source_value = LegalExtractionInput(
+        case_id=source_value.case_id,
+        argument_id=None,
+        blocks=source_value.blocks,
+        parser_versions=source_value.parser_versions,
+        document_revision_ids=source_value.document_revision_ids,
+    )
+    item = proposed(
+        evidence,
+        "the district court entered an injunction.",
+        observation_type=LegalObservationType.LOWER_COURT_ACTION,
+        status=LegalStatus.DESCRIBED,
+        raw_value="the district court entered an injunction.",
+        speaker_name=None,
+    ).model_copy(update={"evidence": (ProposedEvidence(
+        block_id="evidence-1",
+        quote="the district court entered an injunction.",
+    ),)})
+    completion = SimpleNamespace(
+        choices=(
+            SimpleNamespace(
+                finish_reason="stop",
+                message=SimpleNamespace(
+                    content=LegalExtractionBatch(observations=[item]).model_dump_json()
+                ),
+            ),
+        )
+    )
+    extractor = OpenAILegalObservationExtractor(
+        "qwen3.8:27b",
+        SimpleNamespace(),
+        request_executor=lambda _request: completion,
+    )
+
+    batch = extractor.extract(source_value)
+    repaired = batch.observations[0]
+
+    assert repaired.legal_status is LegalStatus.LOWER_COURT_HELD
+    assert repaired.raw_value == evidence.text_private
+    assert repaired.normalized_value is None
+    assert repaired.evidence[0].quote == evidence.text_private
+    assert LegalExtractionService(
+        FakeExtractor([repaired]), InMemoryLegalObservationStore()
+    ).process(source_value)
+
+
 def test_openai_extraction_repairs_only_a_uniquely_exact_unknown_block_id() -> None:
     unique = block("The Court grants the application.", block_id="opinion-real")
     other = block("Unrelated docket background.", block_id="docket-real")

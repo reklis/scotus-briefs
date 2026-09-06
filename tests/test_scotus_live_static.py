@@ -60,6 +60,7 @@ def _pdf(pages: int) -> bytes:
 
 
 def _text_pdf(*lines: str) -> bytes:
+    lines = (*lines, "The Court explained its reasoning for the result.")
     writer = PdfWriter()
     page = writer.add_blank_page(width=612, height=792)
     font = DictionaryObject(
@@ -335,10 +336,8 @@ class MockOpenAI:
                         "observation_type": "doctrinal_theme",
                         "legal_status": "described",
                         "certainty": "direct",
-                        "raw_value": "Emergency Applicant sought relief from Agency.",
-                        "normalized_value": (
-                            "The Court reasoned that emergency relief was warranted."
-                        ),
+                        "raw_value": "The Court explained its reasoning for the result.",
+                        "normalized_value": "The Court explained its reasoning for the result.",
                         "attribution": opinion["attribution"],
                         "speaker_name": None,
                         "speaker_kind": "unknown",
@@ -348,7 +347,7 @@ class MockOpenAI:
                         "evidence": [
                             {
                                 "block_id": opinion["block_id"],
-                                "quote": "Emergency Applicant sought relief from Agency.",
+                                "quote": "The Court explained its reasoning for the result.",
                             }
                         ],
                         "supersedes_observation_id": None,
@@ -519,7 +518,7 @@ class MockOpenAI:
                     {
                         "heading": "Why the Court did it",
                         "paragraphs": [
-                            "The Court reasoned that emergency relief was warranted."
+                            "The Court explained its reasoning for the result."
                         ],
                         "claim_ids": reasoning_ids,
                     },
