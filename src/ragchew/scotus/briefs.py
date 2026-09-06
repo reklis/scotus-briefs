@@ -1691,23 +1691,23 @@ def _guide_paragraph_has_support(
     )
     if not sentences:
         return False
+    paragraph_words = _guide_content_words(paragraph)
+    all_support_words = set().union(
+        *(_guide_content_words(claim.public_value) for claim in supporting_claims)
+    )
+    paragraph_overlap = min(2, len(all_support_words))
+    if paragraph_overlap == 0 or len(paragraph_words & all_support_words) < paragraph_overlap:
+        return False
     for sentence in sentences:
         grounded_sentence = _EXPLICIT_NEGATED_ORAL_ARGUMENT.sub("", sentence)
         sentence_words = _guide_content_words(grounded_sentence)
         sentence_negated = _GUIDE_NEGATION.search(grounded_sentence) is not None
-        supported = False
-        for claim in supporting_claims:
-            support_words = _guide_content_words(claim.public_value)
-            required_overlap = min(2, len(support_words))
-            if (
-                required_overlap > 0
-                and len(sentence_words & support_words) >= required_overlap
-                and sentence_negated
-                == (_GUIDE_NEGATION.search(claim.public_value) is not None)
-            ):
-                supported = True
-                break
-        if not supported:
+        if not any(
+            sentence_words & _guide_content_words(claim.public_value)
+            and sentence_negated
+            == (_GUIDE_NEGATION.search(claim.public_value) is not None)
+            for claim in supporting_claims
+        ):
             return False
     return True
 
