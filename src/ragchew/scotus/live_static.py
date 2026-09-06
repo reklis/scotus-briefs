@@ -173,7 +173,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
 POLICY_VERSION = "scotus-brief-policy-v15"
-DOCUMENT_TEXT_VERSION = "official-document-text-v2"
+DOCUMENT_TEXT_VERSION = "official-document-text-v3"
 
 
 class OllamaClientFactory(Protocol):
@@ -2078,6 +2078,29 @@ class LiveStaticCaseProcessor:
             )
             if path_observation is not None:
                 observations.append(path_observation)
+        if not source.sessions:
+            existing_analysis_values = {
+                (item.normalized_value_private or item.raw_value_private).casefold()
+                for item in observations
+                if item.observation_type
+                in {
+                    LegalObservationType.QUESTION_PRESENTED,
+                    LegalObservationType.DOCTRINAL_THEME,
+                }
+            }
+            for analysis_observation in _legal_analysis_observations(
+                case_id=case_id,
+                blocks=tuple(action_blocks),
+                excluded_values=existing_analysis_values,
+            ):
+                if not any(
+                    item.observation_type is analysis_observation.observation_type
+                    for item in observations
+                ):
+                    observations.append(analysis_observation)
+                    existing_analysis_values.add(
+                        analysis_observation.raw_value_private.casefold()
+                    )
         if not source.sessions and not any(
             observation.observation_type
             in {LegalObservationType.HOLDING, LegalObservationType.ORDER}
@@ -2524,6 +2547,16 @@ def _document_blocks(
     return tuple(blocks)
 
 
+_DETERMINISTIC_LEGAL_ISSUE = re.compile(
+    r"\b(?:constitutional|doctrine|issue|jurisdiction|question|ripeness|standing|"
+    r"statutory)\b",
+    re.IGNORECASE,
+)
+_DETERMINISTIC_COURT_REASON = re.compile(
+    r"\b(?:because|cannot|does not|forbids?|lacks? standing|not ripe|prohibits?|"
+    r"requires?|therefore|thus|likely to (?:prevail|succeed))\b",
+    re.IGNORECASE,
+)
 _DETERMINISTIC_LOWER_COURT_PATH = re.compile(
     r"\b(?:district court|court of appeals|lower court|three-judge court)\b"
     r"[^.!?]{0,500}\b(?:blocked|dismissed|enjoined|entered|granted|held|issued|denied|"
@@ -2547,6 +2580,120 @@ _DETERMINISTIC_HOLDING = re.compile(
     r"\b(?:we (?:hold|conclude)|(?:this |the )Court (?:holds?|held))\b",
     re.IGNORECASE,
 )
+
+
+def _exact_analysis_observation(
+    *,
+    case_id: UUID,
+    block: LegalEvidenceBlock,
+    sentence: str,
+    observation_type: LegalObservationType,
+) -> LegalObservation:
+    status = LEGAL_STATUS_BY_OBSERVATION_TYPE[observation_type]
+    extraction_id = uuid5(
+        NAMESPACE_URL,
+        f"ragchew:scotus-deterministic-analysis-extraction:{case_id}:{block.block_id}",
+    )
+    return LegalObservation(
+        observation_id=uuid5(
+            NAMESPACE_URL,
+            f"ragchew:scotus-deterministic-analysis-observation:"
+            f"{case_id}:{block.block_id}:{observation_type.value}:{sentence}",
+        ),
+        extraction_revision_id=extraction_id,
+        case_id=case_id,
+        argument_id=None,
+        observation_type=observation_type,
+        legal_status=status,
+        certainty=LegalCertainty.DIRECT,
+        raw_value_private=sentence,
+        normalized_value_private=sentence,
+        attribution=block.attribution,
+        speaker_name=block.speaker_name,
+        speaker_kind=block.speaker_kind,
+        identity_basis=block.identity_basis,
+        authority_citations=(),
+        confidence=1.0,
+        evidence=(
+            LegalEvidenceRange(
+                document_revision_id=block.document_revision_id,
+                document_kind=block.document_kind,
+                start_file_page=block.start_file_page,
+                start_line=block.start_line,
+                end_file_page=block.end_file_page,
+                end_line=block.end_line,
+                quote_private=sentence,
+            ),
+        ),
+        sensitivity=sensitivity_labels(sentence),
+        supersedes_observation_id=None,
+    )
+
+
+def _legal_analysis_observations(
+    *,
+    case_id: UUID,
+    blocks: tuple[LegalEvidenceBlock, ...],
+    excluded_values: set[str],
+) -> tuple[LegalObservation, ...]:
+    """Derive exact issue/reason passages only from controlling opinion pages."""
+    candidates: list[tuple[LegalEvidenceBlock, str]] = []
+    for block in blocks:
+        if block.document_kind is not ScotusDocumentKind.OPINION or re.search(
+            r"\b(?:concurring|dissenting|separate opinion)\b",
+            block.attribution or "",
+            re.IGNORECASE,
+        ):
+            continue
+        for sentence in re.split(r"(?<=[.!?])\s+", block.text_private):
+            sentence = " ".join(sentence.split())
+            if (
+                sentence
+                and len(sentence.split()) <= 80
+                and len(sentence) <= 2_000
+                and sentence.casefold() not in excluded_values
+            ):
+                candidates.append((block, sentence))
+    issue = next(
+        (
+            (block, sentence)
+            for block, sentence in candidates
+            if _DETERMINISTIC_LEGAL_ISSUE.search(sentence)
+            and _DETERMINISTIC_LOWER_COURT_PATH.search(sentence) is None
+        ),
+        None,
+    )
+    used = {issue[1].casefold()} if issue is not None else set()
+    reason = next(
+        (
+            (block, sentence)
+            for block, sentence in candidates
+            if sentence.casefold() not in used
+            and _DETERMINISTIC_COURT_REASON.search(sentence)
+            and _DETERMINISTIC_LOWER_COURT_PATH.search(sentence) is None
+        ),
+        None,
+    )
+    result: list[LegalObservation] = []
+    if issue is not None:
+        result.append(
+            _exact_analysis_observation(
+                case_id=case_id,
+                block=issue[0],
+                sentence=issue[1],
+                observation_type=LegalObservationType.QUESTION_PRESENTED,
+            )
+        )
+    if reason is not None:
+        result.append(
+            _exact_analysis_observation(
+                case_id=case_id,
+                block=reason[0],
+                sentence=reason[1],
+                observation_type=LegalObservationType.DOCTRINAL_THEME,
+            )
+        )
+    return tuple(result)
 
 
 def _procedural_path_observation(

@@ -35,6 +35,7 @@ from ragchew.scotus.live_static import (
     _CaseInput,
     _default_ollama_client,
     _descriptor_for_public_argument,
+    _legal_analysis_observations,
     _opinion_page_attribution,
     _procedural_path_observation,
 )
@@ -703,6 +704,49 @@ def test_opinion_page_attribution_tracks_court_and_separate_opinions() -> None:
         "SOTOMAYOR, J., concurring in part and dissenting in part\nSeparate reasoning.",
         "Justice Jackson, dissenting",
     ) == "Justice Sotomayor, concurring in part and dissenting in part"
+
+
+def test_legal_analysis_fallback_uses_distinct_controlling_exact_sentences() -> None:
+    text = (
+        "Standing and ripeness are the controlling doctrines. "
+        "Article III prohibits courts from deciding hypothetical disputes."
+    )
+    block = LegalEvidenceBlock(
+        block_id="opinion-page-2",
+        document_revision_id=uuid4(),
+        document_kind=ScotusDocumentKind.OPINION,
+        official_url="https://www.supremecourt.gov/opinion.pdf",
+        start_file_page=2,
+        start_line=1,
+        end_file_page=2,
+        end_line=4,
+        text_private=text,
+        speaker_name=None,
+        speaker_kind=SpeakerKind.UNKNOWN,
+        identity_basis=SpeakerIdentityBasis.ANONYMOUS,
+        attribution="Opinion of the Court",
+    )
+
+    observations = _legal_analysis_observations(
+        case_id=uuid4(), blocks=(block,), excluded_values=set()
+    )
+
+    assert tuple(item.observation_type for item in observations) == (
+        LegalObservationType.QUESTION_PRESENTED,
+        LegalObservationType.DOCTRINAL_THEME,
+    )
+    assert tuple(item.raw_value_private for item in observations) == tuple(
+        item.evidence[0].quote_private for item in observations
+    )
+    assert len({item.raw_value_private for item in observations}) == 2
+    assert (
+        _legal_analysis_observations(
+            case_id=uuid4(),
+            blocks=(block.model_copy(update={"attribution": "Justice Kagan, dissenting"}),),
+            excluded_values=set(),
+        )
+        == ()
+    )
 
 
 def test_procedural_path_fallback_uses_only_controlling_exact_source_text() -> None:
