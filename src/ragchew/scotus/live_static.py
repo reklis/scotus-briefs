@@ -172,7 +172,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v17"
+POLICY_VERSION = "scotus-brief-policy-v18"
 DOCUMENT_TEXT_VERSION = "official-document-text-v3"
 
 
@@ -2087,6 +2087,12 @@ class LiveStaticCaseProcessor:
                     LegalObservationType.QUESTION_PRESENTED,
                     LegalObservationType.DOCTRINAL_THEME,
                 }
+                and re.search(
+                    r"\b(?:concurring|dissenting|separate opinion)\b",
+                    item.attribution or "",
+                    re.IGNORECASE,
+                )
+                is None
             }
             for analysis_observation in _legal_analysis_observations(
                 case_id=case_id,
@@ -2097,6 +2103,12 @@ class LiveStaticCaseProcessor:
                     item
                     for item in observations
                     if item.observation_type is analysis_observation.observation_type
+                    and re.search(
+                        r"\b(?:concurring|dissenting|separate opinion)\b",
+                        item.attribution or "",
+                        re.IGNORECASE,
+                    )
+                    is None
                 )
                 opposite_values = {
                     (item.normalized_value_private or item.raw_value_private).casefold()
@@ -2107,6 +2119,12 @@ class LiveStaticCaseProcessor:
                         LegalObservationType.DOCTRINAL_THEME,
                     }
                     and item.observation_type is not analysis_observation.observation_type
+                    and re.search(
+                        r"\b(?:concurring|dissenting|separate opinion)\b",
+                        item.attribution or "",
+                        re.IGNORECASE,
+                    )
+                    is None
                 }
                 if not same_type or all(
                     (item.normalized_value_private or item.raw_value_private).casefold()
