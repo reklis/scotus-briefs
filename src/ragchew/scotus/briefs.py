@@ -355,7 +355,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v10"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v11"
 
     def __init__(
         self,
@@ -609,7 +609,6 @@ class OpenAILegalBriefGenerator:
                                 if not disposition_only
                                 else {}
                             ),
-                            "claims": ledger,
                             **(
                                 {
                                     "section_plan": [
@@ -626,7 +625,7 @@ class OpenAILegalBriefGenerator:
                                     ]
                                 }
                                 if disposition_only
-                                else {}
+                                else {"claims": ledger}
                             ),
                             **(
                                 {
