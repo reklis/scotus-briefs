@@ -173,7 +173,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v42"
+POLICY_VERSION = "scotus-brief-policy-v43"
 DOCUMENT_TEXT_VERSION = "official-document-text-v3"
 
 
@@ -2127,10 +2127,26 @@ class LiveStaticCaseProcessor:
                     )
                     is None
                 }
-                if not same_type or all(
-                    (item.normalized_value_private or item.raw_value_private).casefold()
-                    in opposite_values
-                    for item in same_type
+                if (
+                    not same_type
+                    or all(
+                        (item.normalized_value_private or item.raw_value_private).casefold()
+                        in opposite_values
+                        for item in same_type
+                    )
+                    or (
+                        analysis_observation.observation_type
+                        is LegalObservationType.DOCTRINAL_THEME
+                        and len(same_type) < 2
+                        and all(
+                            (
+                                item.normalized_value_private
+                                or item.raw_value_private
+                            ).casefold()
+                            != analysis_observation.raw_value_private.casefold()
+                            for item in same_type
+                        )
+                    )
                 ):
                     observations.append(analysis_observation)
                     existing_analysis_values.add(
@@ -2586,19 +2602,20 @@ def _document_blocks(
 
 
 _DETERMINISTIC_LEGAL_ISSUE = re.compile(
-    r"\b(?:constitutional|doctrine|issue|jurisdiction|question|ripeness|standing|"
-    r"statutory)\b",
+    r"\b(?:constitutional|doctrine|issue|jurisdiction|justiciab\w*|question|ripeness|"
+    r"standing|statutory)\b",
     re.IGNORECASE,
 )
 _DETERMINISTIC_COURT_REASON = re.compile(
-    r"\b(?:because|cannot|does not|forbids?|lacks? standing|not ripe|prohibits?|"
-    r"requires?|therefore|thus|likely to (?:prevail|succeed))\b",
+    r"\b(?:because|cannot|does not|forbids?|lacks? standing|no (?:concrete harm|standing)|"
+    r"not ripe|prohibits?|requires?|speculat\w*|therefore|thus|without concrete harm|"
+    r"likely to (?:prevail|succeed))\b",
     re.IGNORECASE,
 )
 _DETERMINISTIC_LOWER_COURT_PATH = re.compile(
     r"\b(?:district court|court of appeals|lower court|three-judge court)\b"
     r"[^.!?]{0,500}\b(?:blocked|dismissed|enjoined|entered|granted|held|issued|denied|"
-    r"reversed|stayed|vacated)\b",
+    r"rejected|reversed|stayed|vacated)\b",
     re.IGNORECASE,
 )
 _DETERMINISTIC_REQUEST_PATH = re.compile(
@@ -2702,15 +2719,33 @@ def _legal_analysis_observations(
         None,
     )
     used = {issue[1].casefold()} if issue is not None else set()
-    reason = next(
-        (
-            (block, sentence)
-            for block, sentence in candidates
-            if sentence.casefold() not in used
-            and _DETERMINISTIC_COURT_REASON.search(sentence)
-            and _DETERMINISTIC_LOWER_COURT_PATH.search(sentence) is None
-        ),
-        None,
+    reason_candidates = tuple(
+        (index, block, sentence)
+        for index, (block, sentence) in enumerate(candidates)
+        if sentence.casefold() not in used
+        and _DETERMINISTIC_COURT_REASON.search(sentence)
+        and _DETERMINISTIC_LOWER_COURT_PATH.search(sentence) is None
+    )
+
+    def reason_score(sentence: str) -> int:
+        return (
+            4 * bool(re.search(r"\b(?:jurisdiction|ripeness|standing)\b", sentence, re.I))
+            + 3 * bool(re.search(r"\b(?:concrete|harm|injury)\b", sentence, re.I))
+            + 2
+            * bool(re.search(r"\blikely to (?:prevail|succeed)\b", sentence, re.I))
+            + bool(_DETERMINISTIC_COURT_REASON.search(sentence))
+        )
+
+    reason = (
+        (selected[1], selected[2])
+        if reason_candidates
+        and (
+            selected := max(
+                reason_candidates,
+                key=lambda item: (reason_score(item[2]), -item[0]),
+            )
+        )
+        else None
     )
     result: list[LegalObservation] = []
     if issue is not None:
