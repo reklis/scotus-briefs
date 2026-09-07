@@ -295,12 +295,28 @@ def _normalize_disposition_support(
     separate_support_ids = set(
         support_by_heading[DISPOSITION_SEPARATE_OPINIONS_HEADING]
     )
+    claim_map = {claim.claim_id: claim for claim in claims}
+    background_support = tuple(
+        claim_map[claim_id]
+        for claim_id in support_by_heading["What this case is about"]
+    )
     sections = tuple(
         section.model_copy(
             update={
+                "paragraphs": (
+                    (draft.dek,)
+                    if section.heading.strip() == "What this case is about"
+                    and background_support
+                    and any(
+                        not _guide_paragraph_has_support(paragraph, background_support)
+                        for paragraph in section.paragraphs
+                    )
+                    and _guide_paragraph_has_support(draft.dek, background_support)
+                    else section.paragraphs
+                ),
                 "claim_ids": support_by_heading.get(
                     section.heading.strip(), section.claim_ids
-                )
+                ),
             }
         )
         for section in draft.sections
