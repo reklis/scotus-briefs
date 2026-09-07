@@ -1695,7 +1695,7 @@ def _guide_paragraph_has_support(
     all_support_words = set().union(
         *(_guide_content_words(claim.public_value) for claim in supporting_claims)
     )
-    paragraph_overlap = min(2, len(all_support_words))
+    paragraph_overlap = min(1, len(all_support_words))
     if paragraph_overlap == 0 or len(paragraph_words & all_support_words) < paragraph_overlap:
         return False
     for sentence in sentences:
