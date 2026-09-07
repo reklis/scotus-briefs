@@ -221,10 +221,9 @@ DISPOSITION_GUIDE_HEADINGS = (
 DISPOSITION_SEPARATE_OPINIONS_HEADING = "What separate opinions said"
 
 
-def _normalize_disposition_support(
-    draft: LegalBriefDraft,
+def _disposition_support_by_heading(
     claims: tuple[ScotusApprovedClaim, ...],
-) -> LegalBriefDraft:
+) -> dict[str, tuple[UUID, ...]]:
     controlling = tuple(claim for claim in claims if not _is_separate_opinion_claim(claim))
 
     def ids(*types: LegalObservationType) -> tuple[UUID, ...]:
@@ -232,12 +231,6 @@ def _normalize_disposition_support(
             claim.claim_id for claim in controlling if claim.observation_type in types
         )
 
-    docket_ids = tuple(
-        claim.claim_id
-        for claim in controlling
-        if claim.public_source_label.casefold() == "docket"
-        or "/docket/" in claim.official_url.casefold()
-    )
     question_claims = tuple(
         claim
         for claim in controlling
@@ -248,43 +241,21 @@ def _normalize_disposition_support(
         for claim in controlling
         if claim.observation_type is LegalObservationType.DOCTRINAL_THEME
     )
-    independent_pair = next(
-        (
-            (question, doctrine)
-            for question in question_claims
-            for doctrine in doctrine_claims
-            if question.public_value.casefold() != doctrine.public_value.casefold()
-        ),
-        None,
+    issue_ids = tuple(claim.claim_id for claim in question_claims)
+    if not issue_ids and doctrine_claims:
+        issue_ids = (doctrine_claims[0].claim_id,)
+    issue_values = {
+        claim.public_value.casefold()
+        for claim in controlling
+        if claim.claim_id in issue_ids
+    }
+    reasoning_ids = tuple(
+        claim.claim_id
+        for claim in doctrine_claims
+        if claim.claim_id not in issue_ids
+        and claim.public_value.casefold() not in issue_values
     )
-    issue_ids: tuple[UUID, ...]
-    reasoning_ids: tuple[UUID, ...]
-    if independent_pair is not None:
-        issue_ids = (independent_pair[0].claim_id,)
-        reasoning_ids = (independent_pair[1].claim_id,)
-    else:
-        distinct_doctrines = tuple(
-            dict.fromkeys(claim.public_value.casefold() for claim in doctrine_claims)
-        )
-        issue_ids = (
-            (question_claims[0].claim_id,)
-            if question_claims
-            else tuple(
-                claim.claim_id
-                for claim in doctrine_claims
-                if claim.public_value.casefold() == distinct_doctrines[0]
-            )[:1]
-            if distinct_doctrines
-            else ()
-        )
-        reasoning_ids = tuple(
-            claim.claim_id
-            for claim in doctrine_claims
-            if distinct_doctrines
-            and claim.public_value.casefold() == distinct_doctrines[-1]
-            and claim.claim_id not in issue_ids
-        )[:1]
-    support_by_heading = {
+    return {
         "What this case is about": ids(LegalObservationType.CASE_BACKGROUND),
         "Why this case reached the Court": ids(
             LegalObservationType.PROCEDURAL_POSTURE,
@@ -303,6 +274,20 @@ def _normalize_disposition_support(
             claim.claim_id for claim in claims if _is_separate_opinion_claim(claim)
         ),
     }
+
+
+def _normalize_disposition_support(
+    draft: LegalBriefDraft,
+    claims: tuple[ScotusApprovedClaim, ...],
+) -> LegalBriefDraft:
+    controlling = tuple(claim for claim in claims if not _is_separate_opinion_claim(claim))
+    docket_ids = tuple(
+        claim.claim_id
+        for claim in controlling
+        if claim.public_source_label.casefold() == "docket"
+        or "/docket/" in claim.official_url.casefold()
+    )
+    support_by_heading = _disposition_support_by_heading(claims)
     sections = tuple(
         section.model_copy(
             update={
@@ -359,7 +344,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v7"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v8"
 
     def __init__(
         self,
@@ -435,6 +420,9 @@ class OpenAILegalBriefGenerator:
             }
             for claim in model_claims
         ]
+        disposition_section_plan = (
+            _disposition_support_by_heading(claims) if disposition_only else {}
+        )
         response_format: Any = (
             {
                 "type": "json_schema",
@@ -607,6 +595,22 @@ class OpenAILegalBriefGenerator:
                                 else {}
                             ),
                             "claims": ledger,
+                            **(
+                                {
+                                    "section_plan": [
+                                        {
+                                            "heading": heading,
+                                            "claim_ids": [
+                                                str(claim_id) for claim_id in claim_ids
+                                            ],
+                                        }
+                                        for heading, claim_ids in disposition_section_plan.items()
+                                        if claim_ids
+                                    ]
+                                }
+                                if disposition_only
+                                else {}
+                            ),
                             **(
                                 {
                                     "required_output_schema": (

@@ -836,9 +836,9 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     processor = result.content.publication.processor
     assert processor is not None
     assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
-    assert processor.policy_version == "scotus-brief-policy-v29"
+    assert processor.policy_version == "scotus-brief-policy-v30"
     assert processor.prompt_version == (
-        "scotus-brief-plain-language-v31;disposition=scotus-disposition-citizen-guide-v7"
+        "scotus-brief-plain-language-v31;disposition=scotus-disposition-citizen-guide-v8"
     )
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",
