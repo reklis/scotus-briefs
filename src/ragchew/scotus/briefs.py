@@ -430,7 +430,12 @@ def _normalize_disposition_support(
             issue_context = " ".join(claim.public_value for claim in issue_support)
             if re.search(r"\bjusticiab\w*\b", issue_context, re.IGNORECASE):
                 issue_sentences = [
-                    "The legal issue was whether the States' suit was justiciable."
+                    (
+                        "The legal issue was whether the States lacked a justiciable "
+                        "dispute because the Order did not injure them."
+                    )
+                    if _GUIDE_NEGATION.search(issue_context)
+                    else "The legal issue was whether the States' suit was justiciable."
                 ]
                 if re.search(r"\bstanding\b", issue_context, re.IGNORECASE) and re.search(
                     r"\b(?:concrete|injury)\b", issue_context, re.IGNORECASE
