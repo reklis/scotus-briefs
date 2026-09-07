@@ -348,7 +348,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v9"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v10"
 
     def __init__(
         self,
@@ -489,7 +489,7 @@ class OpenAILegalBriefGenerator:
             "action, its immediate effect, and the Court's supported reasoning. Distinguish what "
             "a party requested, what a lower court did, and what the Supreme Court did. Describe "
             "an emergency stay as interim relief, not a final merits judgment, when the claims "
-            "support that distinction. Return exactly these five sections in this order: 'What "
+            "support that distinction. Follow section_plan exactly. Return these sections: 'What "
             "this case is about', 'Why this case reached the Court', 'The legal issue', 'What the "
             "Supreme Court did', and 'Why the Court did it'. Add 'What separate opinions said' "
             "as a sixth section only when explicitly attributed dissent or concurrence claims "
@@ -608,8 +608,10 @@ class OpenAILegalBriefGenerator:
                                     "section_plan": [
                                         {
                                             "heading": heading,
-                                            "claim_ids": [
-                                                str(claim_id) for claim_id in claim_ids
+                                            "claims": [
+                                                item
+                                                for item in ledger
+                                                if UUID(str(item["claim_id"])) in claim_ids
                                             ],
                                         }
                                         for heading, claim_ids in disposition_section_plan.items()

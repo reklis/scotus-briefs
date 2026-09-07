@@ -971,11 +971,16 @@ def test_disposition_generator_uses_compact_positive_role_aware_request() -> Non
     assert user_payload["caption"] == source.caption
     assert user_payload["docket"] == source.primary_docket
     assert user_payload["maturity"] == decision.maturity.value
+    planned_claims = [
+        claim
+        for section in user_payload["section_plan"]
+        for claim in section["claims"]
+    ]
     assert {
         "described",
         "requested",
         "court_held",
-    }.issubset({claim["status"] for claim in user_payload["claims"]})
+    }.issubset({claim["status"] for claim in planned_claims})
     schema = completions.request["response_format"]["json_schema"]["schema"]  # type: ignore[index]
     assert schema["properties"]["argument_analyses"]["minItems"] == 0
     assert schema["properties"]["argument_analyses"]["maxItems"] == 0
