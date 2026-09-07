@@ -1451,6 +1451,9 @@ def _split_long_sentence(sentence: str) -> str:
             ("; ", ""),
             (", and ", "And "),
             (", but ", "But "),
+            (" because ", "Because "),
+            (" while ", "While "),
+            (" and ", "And "),
             (", ", ""),
         ):
             start = 0
