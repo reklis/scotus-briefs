@@ -359,7 +359,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v6"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v7"
 
     def __init__(
         self,
@@ -479,6 +479,13 @@ class OpenAILegalBriefGenerator:
             if self.validation_feedback_code
             else ""
         )
+        if disposition_only and "ungrounded_guide_section_" in (
+            self.validation_feedback_code or ""
+        ):
+            feedback_instruction += (
+                " For each ungrounded section, rewrite its paragraph around a short, unquoted "
+                "exact phrase from the public_value of a role-appropriate cited claim."
+            )
         disposition_prompt = (
             "/no_think\nBuild a complete plain-English citizen's guide to this Supreme Court "
             "case using only the supplied approved claims. Set the title to exactly the official "
