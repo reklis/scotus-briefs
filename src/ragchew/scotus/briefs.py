@@ -1684,8 +1684,38 @@ def _guide_content_words(value: str) -> set[str]:
         word = match.group(0).casefold().strip("'-")
         if len(word) < 4 or word in _GUIDE_STOP_WORDS:
             continue
-        words.add(_ACTION_CANONICAL.get(word, word))
+        canonical = _ACTION_CANONICAL.get(word, word)
+        words.add(_GUIDE_CANONICAL.get(canonical, canonical))
     return words
+
+
+_GUIDE_CANONICAL = {
+    "allowed": "grant",
+    "asked": "request",
+    "asks": "request",
+    "blocked": "block",
+    "blocking": "block",
+    "came": "request",
+    "challenged": "challenge",
+    "concerns": "subject",
+    "deployed": "deploy",
+    "deployment": "deploy",
+    "dispute": "subject",
+    "enjoined": "block",
+    "halted": "stay",
+    "litigation": "challenge",
+    "lawsuit": "challenge",
+    "mobilized": "deploy",
+    "paused": "stay",
+    "power": "authority",
+    "prevented": "block",
+    "reached": "request",
+    "rejected": "deny",
+    "relief": "request",
+    "sought": "request",
+    "suspended": "stay",
+    "troops": "forces",
+}
 
 
 _GUIDE_NEGATION = re.compile(
