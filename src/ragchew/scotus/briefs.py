@@ -341,6 +341,11 @@ def _unquoted_claim_fallback(value: str) -> str:
         flags=re.IGNORECASE,
     )
     without_trailing_citation = re.sub(
+        r"^the States\b",
+        "The States",
+        without_trailing_citation,
+    )
+    without_trailing_citation = re.sub(
         r"^One is standing,\s+which requires\b",
         "Standing requires",
         without_trailing_citation,
@@ -397,18 +402,26 @@ def _normalize_disposition_support(
     }
     replacement_paragraphs: dict[str, tuple[str, ...]] = {}
     background_section = original_by_heading.get("What this case is about")
-    if (
-        background_section is not None
-        and background_support
-        and any(
+    if background_section is not None and background_support:
+        background_text = " ".join(background_section.paragraphs)
+        background_is_court_action = (
+            re.search(r"\bsupreme court\b", background_text, re.IGNORECASE) is not None
+            and _ACTION_WORD.search(background_text) is not None
+        )
+        if background_is_court_action or any(
             not _guide_paragraph_has_support(paragraph, background_support)
             for paragraph in background_section.paragraphs
-        )
-    ):
-        background_text = draft.dek
-        if not _guide_paragraph_has_support(background_text, background_support):
+        ):
+            background_candidates = tuple(
+                claim
+                for claim in background_support
+                if not (
+                    re.search(r"\bsupreme court\b", claim.public_value, re.IGNORECASE)
+                    and _ACTION_WORD.search(claim.public_value)
+                )
+            ) or background_support
             strongest_background = max(
-                background_support,
+                background_candidates,
                 key=lambda claim: (
                     sum(
                         bool(re.search(pattern, claim.public_value, re.IGNORECASE))
@@ -424,10 +437,9 @@ def _normalize_disposition_support(
                     len(claim.public_value),
                 ),
             )
-            background_text = _unquoted_claim_fallback(
-                strongest_background.public_value
+            replacement_paragraphs["What this case is about"] = (
+                _unquoted_claim_fallback(strongest_background.public_value),
             )
-        replacement_paragraphs["What this case is about"] = (background_text,)
     issue_section = original_by_heading.get("The legal issue")
     if issue_section is not None and issue_support:
         issue_paragraph = " ".join(issue_section.paragraphs)
