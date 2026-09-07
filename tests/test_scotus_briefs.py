@@ -1141,6 +1141,52 @@ def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
 
     validate_brief_draft(draft, source, decision.claims, public_quotes=False)
 
+    ambiguous_dissent = draft.model_copy(
+        update={
+            "sections": tuple(
+                section.model_copy(
+                    update={
+                        "paragraphs": (
+                            "Justice Jackson, dissenting, stated that the states had not shown "
+                            "an immediate injury ready for judicial review.",
+                        )
+                    }
+                )
+                if section.heading == "What separate opinions said"
+                else section
+                for section in draft.sections
+            )
+        }
+    )
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(
+            ambiguous_dissent, source, decision.claims, public_quotes=False
+        )
+    assert caught.value.safe_code == "ambiguous_separate_opinion_attribution"
+
+    unattributed_dissent_detail = draft.model_copy(
+        update={
+            "sections": tuple(
+                section.model_copy(
+                    update={
+                        "paragraphs": (
+                            "The states already faced immediate election administration costs. "
+                            "A proposed rule changed ballot envelope standards.",
+                        )
+                    }
+                )
+                if section.heading == "What separate opinions said"
+                else section
+                for section in draft.sections
+            )
+        }
+    )
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(
+            unattributed_dissent_detail, source, decision.claims, public_quotes=False
+        )
+    assert caught.value.safe_code == "ambiguous_separate_opinion_attribution"
+
     dissent_led = draft.model_copy(
         update={
             "sections": tuple(

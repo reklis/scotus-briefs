@@ -271,7 +271,11 @@ def _disposition_support_by_heading(
         ),
         "Why the Court did it": reasoning_ids,
         DISPOSITION_SEPARATE_OPINIONS_HEADING: tuple(
-            claim.claim_id for claim in claims if _is_separate_opinion_claim(claim)
+            claim.claim_id
+            for claim in claims
+            if _is_separate_opinion_claim(claim)
+            and claim.observation_type
+            in {LegalObservationType.HOLDING, LegalObservationType.DOCTRINAL_THEME}
         ),
     }
 
@@ -344,7 +348,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v8"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v9"
 
     def __init__(
         self,
@@ -467,12 +471,16 @@ class OpenAILegalBriefGenerator:
             if self.validation_feedback_code
             else ""
         )
-        if disposition_only and "ungrounded_guide_section_" in (
-            self.validation_feedback_code or ""
-        ):
+        feedback_code = self.validation_feedback_code or ""
+        if disposition_only and "ungrounded_guide_section_" in feedback_code:
             feedback_instruction += (
                 " For each ungrounded section, rewrite its paragraph around a short, unquoted "
                 "exact phrase from the public_value of a role-appropriate cited claim."
+            )
+        if disposition_only and "ambiguous_separate_opinion_attribution" in feedback_code:
+            feedback_instruction += (
+                " In the separate-opinions section, name the opinion author in every sentence "
+                "and distinguish the author's own view from any description of the Court."
             )
         disposition_prompt = (
             "/no_think\nBuild a complete plain-English citizen's guide to this Supreme Court "
@@ -1584,6 +1592,15 @@ _SEPARATE_OPINION_VALUE = re.compile(
     r"(?:dissent|concurrence|separate opinion)\b|^The\s+(?:dissent|concurrence)\b",
     re.IGNORECASE,
 )
+_SEPARATE_SENTENCE_ATTRIBUTION = re.compile(
+    r"\b(?:Chief\s+Justice|Justice)\s+[A-Z][A-Za-z'\N{RIGHT SINGLE QUOTATION MARK}-]+\b|"
+    r"\b(?:the\s+)?(?:dissent|concurrence|separate opinion)\b",
+    re.IGNORECASE,
+)
+_SEPARATE_CONTROLLING_REPORT = re.compile(
+    r"\b(?:agreed|joined|majority|per curiam|the Court)\b",
+    re.IGNORECASE,
+)
 _INTERIM_EFFECT = re.compile(
     r"\b(?:interim|temporary|temporarily|pending|while [^.!?]{0,50}\bappeal|until)\b",
     re.IGNORECASE,
@@ -1920,6 +1937,35 @@ def _validate_disposition_guide_structure(
                 "separate-opinions section lacks separately attributed support",
                 safe_code="unsupported_separate_opinions_section",
             )
+        controlling_reason_ids = set(
+            _disposition_support_by_heading(controlling)["Why the Court did it"]
+        )
+        controlling_reasons = tuple(
+            claim for claim in controlling if claim.claim_id in controlling_reason_ids
+        )
+        for paragraph in separate.paragraphs:
+            for match in _SENTENCE.finditer(paragraph):
+                sentence = match.group(0).strip()
+                if not _SEPARATE_SENTENCE_ATTRIBUTION.search(sentence):
+                    raise BriefValidationError(
+                        "separate-opinion sentence lacks explicit attribution",
+                        safe_code="ambiguous_separate_opinion_attribution",
+                    )
+                sentence_words = _guide_content_words(sentence)
+                sentence_negated = _GUIDE_NEGATION.search(sentence) is not None
+                if (
+                    not _SEPARATE_CONTROLLING_REPORT.search(sentence)
+                    and any(
+                        sentence_words & _guide_content_words(claim.public_value)
+                        and sentence_negated
+                        == (_GUIDE_NEGATION.search(claim.public_value) is not None)
+                        for claim in controlling_reasons
+                    )
+                ):
+                    raise BriefValidationError(
+                        "separate opinion ambiguously adopts controlling reasoning",
+                        safe_code="ambiguous_separate_opinion_attribution",
+                    )
         if any(
             not _guide_paragraph_has_support(paragraph, separate_support)
             for paragraph in separate.paragraphs
