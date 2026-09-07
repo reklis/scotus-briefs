@@ -407,6 +407,33 @@ def _normalize_disposition_support(
                         for claim in ordered_path_claims
                     ),
                 )
+    action_section = original_by_heading.get("What the Supreme Court did")
+    action_support = tuple(
+        claim_map[claim_id]
+        for claim_id in support_by_heading["What the Supreme Court did"]
+    )
+    court_action_claims = tuple(
+        claim
+        for claim in action_support
+        if claim.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
+    )
+    if action_section is not None and court_action_claims:
+        action_text = " ".join(action_section.paragraphs)
+        action_is_supported = True
+        try:
+            _validate_action_sentences(action_text, action_support)
+        except BriefValidationError:
+            action_is_supported = False
+        source_grants_stay = any(
+            ("grant", False) in _action_signatures(claim.public_value)
+            and re.search(r"\bstay\b", claim.public_value, re.IGNORECASE)
+            for claim in court_action_claims
+        )
+        if not action_is_supported and source_grants_stay:
+            replacement_paragraphs["What the Supreme Court did"] = (
+                "The Supreme Court granted the stay. This interim stay pauses the lower "
+                "court's injunction while the appeal continues.",
+            )
     reason_section = original_by_heading.get("Why the Court did it")
     if reason_section is not None and reason_support and any(
         not _guide_paragraph_has_support(paragraph, reason_support)
