@@ -310,28 +310,109 @@ def _normalize_disposition_support(
     issue_support = tuple(
         claim_map[claim_id] for claim_id in support_by_heading["The legal issue"]
     )
+    path_support = tuple(
+        claim_map[claim_id]
+        for claim_id in support_by_heading["Why this case reached the Court"]
+    )
+    reason_support = tuple(
+        claim_map[claim_id]
+        for claim_id in support_by_heading["Why the Court did it"]
+    )
+    original_by_heading = {
+        section.heading.strip(): section for section in draft.sections
+    }
+    replacement_paragraphs: dict[str, tuple[str, ...]] = {}
+    background_section = original_by_heading.get("What this case is about")
+    if (
+        background_section is not None
+        and background_support
+        and any(
+            not _guide_paragraph_has_support(paragraph, background_support)
+            for paragraph in background_section.paragraphs
+        )
+        and _guide_paragraph_has_support(draft.dek, background_support)
+    ):
+        replacement_paragraphs["What this case is about"] = (draft.dek,)
+    issue_section = original_by_heading.get("The legal issue")
+    if issue_section is not None and issue_support and any(
+        not _guide_paragraph_has_support(paragraph, issue_support)
+        for paragraph in issue_section.paragraphs
+    ):
+        issue_text = re.sub(
+            r"^(?:As a result|In doing so),\s*",
+            "",
+            issue_support[0].public_value,
+            flags=re.IGNORECASE,
+        )
+        replacement_paragraphs["The legal issue"] = (
+            _plain_language_text(issue_text),
+        )
+    path_section = original_by_heading.get("Why this case reached the Court")
+    if path_section is not None and path_support:
+        path_roles = {
+            role
+            for paragraph in path_section.paragraphs
+            for sentence in _SENTENCE.findall(paragraph)
+            if _ACTION_WORD.search(sentence)
+            and (role := _action_role(sentence)) is not None
+        }
+        required_path_roles = {
+            role
+            for role, statuses in (
+                ("requested", {LegalStatus.REQUESTED}),
+                ("lower_court", {LegalStatus.LOWER_COURT_HELD}),
+            )
+            if any(claim.legal_status in statuses for claim in path_support)
+        }
+        if not required_path_roles.issubset(path_roles):
+            ordered_path_claims = tuple(
+                claim
+                for status in (LegalStatus.LOWER_COURT_HELD, LegalStatus.REQUESTED)
+                for claim in path_support
+                if claim.legal_status is status
+            )
+            if ordered_path_claims:
+                replacement_paragraphs["Why this case reached the Court"] = (
+                    " ".join(
+                        _plain_language_text(claim.public_value)
+                        for claim in ordered_path_claims
+                    ),
+                )
+    reason_section = original_by_heading.get("Why the Court did it")
+    if reason_section is not None and reason_support and any(
+        not _guide_paragraph_has_support(paragraph, reason_support)
+        for paragraph in reason_section.paragraphs
+    ):
+        strongest_reason = max(
+            reason_support,
+            key=lambda claim: (
+                4
+                * bool(
+                    re.search(
+                        r"\b(?:jurisdiction|ripeness|standing)\b",
+                        claim.public_value,
+                        re.IGNORECASE,
+                    )
+                )
+                + 3
+                * bool(
+                    re.search(
+                        r"\b(?:concrete|harm|injury)\b",
+                        claim.public_value,
+                        re.IGNORECASE,
+                    )
+                ),
+                -len(claim.public_value),
+            ),
+        )
+        replacement_paragraphs["Why the Court did it"] = (
+            _plain_language_text(strongest_reason.public_value),
+        )
     sections = tuple(
         section.model_copy(
             update={
-                "paragraphs": (
-                    (draft.dek,)
-                    if section.heading.strip() == "What this case is about"
-                    and background_support
-                    and any(
-                        not _guide_paragraph_has_support(paragraph, background_support)
-                        for paragraph in section.paragraphs
-                    )
-                    and _guide_paragraph_has_support(draft.dek, background_support)
-                    else (
-                        (_plain_language_text(issue_support[0].public_value),)
-                        if section.heading.strip() == "The legal issue"
-                        and issue_support
-                        and any(
-                            not _guide_paragraph_has_support(paragraph, issue_support)
-                            for paragraph in section.paragraphs
-                        )
-                        else section.paragraphs
-                    )
+                "paragraphs": replacement_paragraphs.get(
+                    section.heading.strip(), section.paragraphs
                 ),
                 "claim_ids": support_by_heading.get(
                     section.heading.strip(), section.claim_ids
