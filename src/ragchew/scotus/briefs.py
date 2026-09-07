@@ -1934,7 +1934,10 @@ def _validate_disposition_guide_structure(
                     + re.sub(r"[^a-z0-9]+", "_", heading.casefold()).strip("_")
                 )[:80],
             )
-        if heading != "What the Supreme Court did":
+        if heading not in {
+            "Why this case reached the Court",
+            "What the Supreme Court did",
+        }:
             unsupported = tuple(
                 paragraph
                 for paragraph in by_heading[heading].paragraphs
@@ -2004,6 +2007,16 @@ def _validate_disposition_guide_structure(
     )
     for paragraph in path_section.paragraphs:
         _validate_action_sentences(paragraph, path_claims)
+    path_text = " ".join(path_section.paragraphs)
+    path_is_grounded = all(
+        _guide_paragraph_has_support(paragraph, path_claims)
+        for paragraph in path_section.paragraphs
+    )
+    if not path_is_grounded and _ACTION_WORD.search(path_text) is None:
+        raise BriefValidationError(
+            "procedural-path section lacks grounded prose or a supported action",
+            safe_code="ungrounded_guide_section_why_this_case_reached_the_court",
+        )
 
     separate = by_heading.get(DISPOSITION_SEPARATE_OPINIONS_HEADING)
     if separate is not None:
