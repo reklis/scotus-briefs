@@ -1684,7 +1684,10 @@ _GUIDE_NEGATION = re.compile(
 
 
 def _guide_paragraph_has_support(
-    paragraph: str, supporting_claims: tuple[ScotusApprovedClaim, ...]
+    paragraph: str,
+    supporting_claims: tuple[ScotusApprovedClaim, ...],
+    *,
+    enforce_negation: bool = True,
 ) -> bool:
     sentences = tuple(
         match.group(0).strip() for match in _SENTENCE.finditer(paragraph) if match.group(0).strip()
@@ -1704,8 +1707,11 @@ def _guide_paragraph_has_support(
         sentence_negated = _GUIDE_NEGATION.search(grounded_sentence) is not None
         if not any(
             sentence_words & _guide_content_words(claim.public_value)
-            and sentence_negated
-            == (_GUIDE_NEGATION.search(claim.public_value) is not None)
+            and (
+                not enforce_negation
+                or sentence_negated
+                == (_GUIDE_NEGATION.search(claim.public_value) is not None)
+            )
             for claim in supporting_claims
         ):
             return False
@@ -1789,17 +1795,27 @@ def _validate_disposition_guide_structure(
                     + re.sub(r"[^a-z0-9]+", "_", heading.casefold()).strip("_")
                 )[:80],
             )
-        if heading != "What the Supreme Court did" and any(
-            not _guide_paragraph_has_support(paragraph, relevant)
-            for paragraph in by_heading[heading].paragraphs
-        ):
-            raise BriefValidationError(
-                "disposition guide paragraph does not express its cited support",
-                safe_code=(
-                    "ungrounded_guide_section_"
-                    + re.sub(r"[^a-z0-9]+", "_", heading.casefold()).strip("_")
-                )[:80],
+        if heading != "What the Supreme Court did":
+            unsupported = tuple(
+                paragraph
+                for paragraph in by_heading[heading].paragraphs
+                if not _guide_paragraph_has_support(paragraph, relevant)
             )
+            if unsupported:
+                safe_heading = re.sub(
+                    r"[^a-z0-9]+", "_", heading.casefold()
+                ).strip("_")
+                polarity_only = all(
+                    _guide_paragraph_has_support(
+                        paragraph, relevant, enforce_negation=False
+                    )
+                    for paragraph in unsupported
+                )
+                suffix = "_polarity" if polarity_only else ""
+                raise BriefValidationError(
+                    "disposition guide paragraph does not express its cited support",
+                    safe_code=f"ungrounded_guide_section_{safe_heading}{suffix}"[:80],
+                )
 
     issue_claims = tuple(
         claim_map[claim_id]
