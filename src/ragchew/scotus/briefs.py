@@ -38,9 +38,16 @@ class BriefPolicyError(ValueError):
 
 
 class BriefValidationError(ValueError):
-    def __init__(self, message: str, *, safe_code: str | None = None) -> None:
+    def __init__(
+        self,
+        message: str,
+        *,
+        safe_code: str | None = None,
+        draft: LegalBriefDraft | None = None,
+    ) -> None:
         super().__init__(message)
         self.safe_code = safe_code
+        self.draft = draft
 
 
 @dataclass(frozen=True)
@@ -371,7 +378,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v11"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v12"
 
     def __init__(
         self,
@@ -385,6 +392,7 @@ class OpenAILegalBriefGenerator:
         maximum_output_tokens: int | None = None,
         reasoning_effort: Literal["none", "low", "medium", "high"] | None = None,
         validation_feedback_code: str | None = None,
+        correction_draft: LegalBriefDraft | None = None,
         request_executor: Callable[[dict[str, Any]], Any] | None = None,
     ) -> None:
         self.model_name = model_name
@@ -400,6 +408,7 @@ class OpenAILegalBriefGenerator:
         ):
             raise ValueError("validation feedback must be a fixed safe code")
         self.validation_feedback_code = validation_feedback_code
+        self.correction_draft = correction_draft
         self.request_executor = request_executor
 
     def generate(
@@ -504,6 +513,11 @@ class OpenAILegalBriefGenerator:
             feedback_instruction += (
                 " In the separate-opinions section, name the opinion author in every sentence "
                 "and distinguish the author's own view from any description of the Court."
+            )
+        if disposition_only and self.correction_draft is not None:
+            feedback_instruction += (
+                " Preserve the valid prior_draft sections and rewrite only the section named by "
+                "the validator code."
             )
         disposition_prompt = (
             "/no_think\nBuild a complete plain-English citizen's guide to this Supreme Court "
@@ -612,6 +626,15 @@ class OpenAILegalBriefGenerator:
                             "maturity": maturity.value,
                             **(
                                 {
+                                    "prior_draft": self.correction_draft.model_dump(
+                                        mode="json"
+                                    )
+                                }
+                                if disposition_only and self.correction_draft is not None
+                                else {}
+                            ),
+                            **(
+                                {
                                     "argument_sessions": [
                                         {
                                             "argument_id": str(session.argument_id),
@@ -690,6 +713,39 @@ class OpenAILegalBriefGenerator:
                 draft = _plain_language_draft(LegalBriefDraft.model_validate_json(stripped))
             if disposition_only:
                 draft = _normalize_disposition_support(draft, model_claims)
+                feedback_code = self.validation_feedback_code or ""
+                target_heading = next(
+                    (
+                        heading
+                        for heading in DISPOSITION_GUIDE_HEADINGS
+                        if (
+                            "ungrounded_guide_section_"
+                            + re.sub(
+                                r"[^a-z0-9]+", "_", heading.casefold()
+                            ).strip("_")
+                        )
+                        in feedback_code
+                    ),
+                    None,
+                )
+                if self.correction_draft is not None and target_heading is not None:
+                    previous_by_heading = {
+                        section.heading.strip(): section
+                        for section in self.correction_draft.sections
+                    }
+                    fresh_by_heading = {
+                        section.heading.strip(): section for section in draft.sections
+                    }
+                    draft = self.correction_draft.model_copy(
+                        update={
+                            "sections": tuple(
+                                fresh_by_heading[heading]
+                                if heading == target_heading
+                                else previous_by_heading[heading]
+                                for heading in DISPOSITION_GUIDE_HEADINGS
+                            )
+                        }
+                    )
         except (json.JSONDecodeError, ValidationError):
             if getattr(choice, "finish_reason", None) == "length":
                 raise BriefValidationError(
@@ -2331,6 +2387,7 @@ class BriefGenerationService:
     ) -> LegalBriefRevision:
         if not decision.eligible or not decision.claims or decision.maturity is None:
             raise BriefPolicyError("case is not eligible for legal brief generation")
+        draft: LegalBriefDraft | None = None
         try:
             draft = self.generator.generate(candidate, decision.claims, decision.maturity)
             validate_brief_draft(
@@ -2345,7 +2402,10 @@ class BriefGenerationService:
             safe_code = (
                 error.safe_code or re.sub(r"[^a-z0-9]+", "_", str(error).casefold()).strip("_")[:80]
             )
-            raise BriefValidationError(str(error), safe_code=safe_code) from None
+            raise BriefValidationError(
+                str(error), safe_code=safe_code, draft=draft
+            ) from None
+        assert draft is not None
         brief_id = uuid5(NAMESPACE_URL, f"ragchew:scotus-case-brief:{candidate.case_id}")
         revision = LegalBriefRevision(
             brief_id=brief_id,

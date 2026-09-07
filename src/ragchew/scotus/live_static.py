@@ -65,6 +65,7 @@ from ragchew.scotus.briefs import (
     BriefValidationError,
     CaseArgumentSession,
     InMemoryBriefRevisionStore,
+    LegalBriefDraft,
     OpenAILegalBriefGenerator,
     disposition_only_brief_json_schema,
     evaluate_brief_candidate,
@@ -172,7 +173,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v38"
+POLICY_VERSION = "scotus-brief-policy-v39"
 DOCUMENT_TEXT_VERSION = "official-document-text-v3"
 
 
@@ -2276,6 +2277,7 @@ class LiveStaticCaseProcessor:
             *(stable_disposition_fingerprint(item) for item in source.dispositions),
         )
         validation_feedback_codes: list[str] = []
+        correction_draft: LegalBriefDraft | None = None
         maximum_brief_attempts = self.config.generation.maximum_brief_validation_attempts_per_case
         if not candidate.argument_sessions:
             # One fresh correction is enough for the small fixed guide contract. Do not
@@ -2333,6 +2335,7 @@ class LiveStaticCaseProcessor:
                 ),
                 reasoning_effort="none",
                 validation_feedback_code=validation_feedback_code,
+                correction_draft=correction_draft,
                 request_executor=request,
             )
             try:
@@ -2362,6 +2365,7 @@ class LiveStaticCaseProcessor:
                 if not can_retry:
                     raise
                 assert safe_code is not None
+                correction_draft = error.draft
                 if safe_code not in validation_feedback_codes:
                     validation_feedback_codes.append(safe_code)
                 LOG.warning(
