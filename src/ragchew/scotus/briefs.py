@@ -477,11 +477,33 @@ def _normalize_disposition_support(
                 if claim.legal_status is status
             )
             if ordered_path_claims:
+                path_sentences: list[str] = []
+                for claim in ordered_path_claims:
+                    value = claim.public_value
+                    if (
+                        claim.legal_status is LegalStatus.LOWER_COURT_HELD
+                        and re.search(r"\bdistrict court\b", value, re.IGNORECASE)
+                        and re.search(r"\benjoin\w*\b", value, re.IGNORECASE)
+                        and re.search(r"\bgovernment\b", value, re.IGNORECASE)
+                        and re.search(r"\border\b", value, re.IGNORECASE)
+                    ):
+                        path_sentences.append(
+                            "The District Court enjoined the Government from "
+                            "implementing the Order."
+                        )
+                    elif (
+                        claim.legal_status is LegalStatus.REQUESTED
+                        and re.search(r"\bgovernment\b", value, re.IGNORECASE)
+                        and re.search(r"\bstay\b", value, re.IGNORECASE)
+                        and re.search(r"\binjunction\b", value, re.IGNORECASE)
+                    ):
+                        path_sentences.append(
+                            "The Government asked the Supreme Court to stay the injunction."
+                        )
+                    else:
+                        path_sentences.append(_unquoted_claim_fallback(value))
                 replacement_paragraphs["Why this case reached the Court"] = (
-                    " ".join(
-                        _unquoted_claim_fallback(claim.public_value)
-                        for claim in ordered_path_claims
-                    ),
+                    " ".join(path_sentences),
                 )
     action_section = original_by_heading.get("What the Supreme Court did")
     action_support = tuple(

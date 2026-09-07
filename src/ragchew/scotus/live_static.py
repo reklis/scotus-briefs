@@ -173,7 +173,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v53"
+POLICY_VERSION = "scotus-brief-policy-v54"
 DOCUMENT_TEXT_VERSION = "official-document-text-v3"
 
 
@@ -2132,7 +2132,9 @@ class LiveStaticCaseProcessor:
                     is None
                 }
                 if (
-                    not same_type
+                    analysis_observation.observation_type
+                    is LegalObservationType.QUESTION_PRESENTED
+                    or not same_type
                     or all(
                         (item.normalized_value_private or item.raw_value_private).casefold()
                         in opposite_values
