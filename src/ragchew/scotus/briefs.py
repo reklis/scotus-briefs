@@ -494,22 +494,34 @@ def _normalize_disposition_support(
     if reason_section is not None and reason_support:
         reason_text = " ".join(reason_section.paragraphs)
         reason_context = " ".join(claim.public_value for claim in reason_support)
-        reason_needs_fallback = any(
-            not _guide_paragraph_has_support(paragraph, reason_support)
-            for paragraph in reason_section.paragraphs
-        ) or (
-            re.search(
-                r"\b(?:the )?order (?:imposes no obligations|causes? no concrete harm)",
+        reason_needs_fallback = (
+            any(
+                not _guide_paragraph_has_support(paragraph, reason_support)
+                for paragraph in reason_section.paragraphs
+            )
+            or re.search(
+                r"\b(?:directive|order|provision) fails? to meet "
+                r"(?:this|the) (?:legal|standing) standard\b",
                 reason_text,
                 re.IGNORECASE,
             )
             is not None
-            and re.search(
-                r"\b(?:the )?order (?:imposes no obligations|causes? no concrete harm)",
-                reason_context,
-                re.IGNORECASE,
+            or (
+                re.search(
+                    r"\b(?:the )?order "
+                    r"(?:imposes no obligations|causes? no concrete harm)",
+                    reason_text,
+                    re.IGNORECASE,
+                )
+                is not None
+                and re.search(
+                    r"\b(?:the )?order "
+                    r"(?:imposes no obligations|causes? no concrete harm)",
+                    reason_context,
+                    re.IGNORECASE,
+                )
+                is None
             )
-            is None
         )
         if reason_needs_fallback:
             if (
@@ -525,19 +537,17 @@ def _normalize_disposition_support(
                     "concrete harm from that provision.",
                 )
             else:
-                strongest_reason = max(
+                ordered_reasons = sorted(
                     reason_support,
                     key=lambda claim: (
-                        4
-                        * bool(
+                        bool(
                             re.search(
                                 r"\b(?:jurisdiction|ripeness|standing)\b",
                                 claim.public_value,
                                 re.IGNORECASE,
                             )
-                        )
-                        + 3
-                        * bool(
+                        ),
+                        bool(
                             re.search(
                                 r"\b(?:concrete|harm|injury)\b",
                                 claim.public_value,
@@ -546,9 +556,13 @@ def _normalize_disposition_support(
                         ),
                         -len(claim.public_value),
                     ),
+                    reverse=True,
                 )
                 replacement_paragraphs["Why the Court did it"] = (
-                    _unquoted_claim_fallback(strongest_reason.public_value),
+                    " ".join(
+                        _unquoted_claim_fallback(claim.public_value)
+                        for claim in ordered_reasons[:2]
+                    ),
                 )
     sections = tuple(
         section.model_copy(
