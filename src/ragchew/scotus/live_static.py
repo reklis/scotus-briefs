@@ -173,7 +173,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v52"
+POLICY_VERSION = "scotus-brief-policy-v53"
 DOCUMENT_TEXT_VERSION = "official-document-text-v3"
 
 
@@ -2795,6 +2795,10 @@ def _procedural_path_observations(
                 sentence = " ".join(sentence.split())
                 if (
                     pattern.search(sentence)
+                    and not (
+                        role is LegalObservationType.LOWER_COURT_ACTION
+                        and _DETERMINISTIC_COURT_ACTION.search(sentence)
+                    )
                     and len(sentence.split()) <= 80
                     and len(sentence) <= 2_000
                 ):

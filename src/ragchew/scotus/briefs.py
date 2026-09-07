@@ -313,11 +313,39 @@ def _disposition_support_by_heading(
 
 
 def _unquoted_claim_fallback(value: str) -> str:
-    without_double_quotes = value.translate(str.maketrans("", "", '\"\u201c\u201d'))
+    without_double_quotes = value.translate(
+        str.maketrans("", "", '\"\u2018\u2019\u201c\u201d')
+    )
     without_standalone_quotes = re.sub(
         r"(?<!\w)'([^'\n]{2,})'(?!\w)", r"\1", without_double_quotes
     )
-    return _plain_language_text(without_standalone_quotes)
+    without_pdf_wraps = re.sub(
+        r"(?<=[A-Za-z])-\s+(?=[a-z])", "", without_standalone_quotes
+    )
+    without_trailing_citation = re.sub(
+        r"\s+[A-Z][A-Za-z.&'\u2019 -]{1,60}\s+v\.\s*(?:[A-Z].*)?$",
+        "",
+        without_pdf_wraps,
+    )
+    without_trailing_citation = re.sub(
+        r"^One is standing,\s+which requires\b",
+        "Standing requires",
+        without_trailing_citation,
+        flags=re.IGNORECASE,
+    )
+    without_trailing_citation = re.sub(
+        r"^It imposes no obligations\b",
+        "The challenged provision imposes no obligations",
+        without_trailing_citation,
+        flags=re.IGNORECASE,
+    )
+    without_trailing_citation = re.sub(
+        r"\bfrom it(?=\s*[.!?]?$)",
+        "from that provision",
+        without_trailing_citation,
+        flags=re.IGNORECASE,
+    )
+    return _plain_language_text(without_trailing_citation)
 
 
 def _normalize_disposition_support(
