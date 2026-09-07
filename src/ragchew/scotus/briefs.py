@@ -466,18 +466,18 @@ def _normalize_disposition_support(
             if re.search(r"\bjusticiab\w*\b", issue_context, re.IGNORECASE):
                 issue_sentences = [
                     (
-                        "The legal issue was whether the States lacked a justiciable "
-                        "dispute because the Order did not injure them."
+                        "The legal issue was whether there was a dispute the Court could decide "
+                        "because the Order did not harm the States."
                     )
                     if _GUIDE_NEGATION.search(issue_context)
-                    else "The legal issue was whether the States' suit was justiciable."
+                    else "The legal issue was whether the Court could decide the States' suit."
                 ]
                 if re.search(r"\bstanding\b", issue_context, re.IGNORECASE) and re.search(
                     r"\b(?:concrete|injury)\b", issue_context, re.IGNORECASE
                 ):
                     issue_sentences.append(
-                        "One part of that issue was whether the States had a concrete "
-                        "injury for standing."
+                        "One part was whether the States suffered concrete harm that gave them "
+                        "the right to bring the case."
                     )
                 replacement_paragraphs["The legal issue"] = (
                     " ".join(issue_sentences),
@@ -528,8 +528,7 @@ def _normalize_disposition_support(
                         and re.search(r"\border\b", value, re.IGNORECASE)
                     ):
                         path_sentences.append(
-                            "The District Court enjoined the Government from "
-                            "implementing the Order."
+                            "The District Court blocked the Government from carrying out the Order."
                         )
                     elif (
                         claim.legal_status is LegalStatus.REQUESTED
@@ -538,7 +537,8 @@ def _normalize_disposition_support(
                         and re.search(r"\binjunction\b", value, re.IGNORECASE)
                     ):
                         path_sentences.append(
-                            "The Government asked the Supreme Court to stay the injunction."
+                            "The Government asked the Supreme Court for a stay, meaning a "
+                            "temporary pause of the lower court's blocking order."
                         )
                     else:
                         path_sentences.append(_unquoted_claim_fallback(value))
@@ -577,8 +577,8 @@ def _normalize_disposition_support(
             or not generated_has_interim_effect
         ):
             replacement_paragraphs["What the Supreme Court did"] = (
-                "The Supreme Court granted the stay. This interim stay pauses the lower "
-                "court's injunction while the appeal continues.",
+                "The Supreme Court granted a stay of the injunction, meaning it temporarily "
+                "paused the lower court's blocking order while the appeal continues.",
             )
     reason_section = original_by_heading.get("Why the Court did it")
     if reason_section is not None and reason_support:
@@ -723,8 +723,8 @@ class BriefRevisionStore(Protocol):
 
 
 class OpenAILegalBriefGenerator:
-    PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v13"
+    PROMPT_VERSION = "scotus-brief-plain-language-v32"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v14"
 
     def __init__(
         self,
@@ -852,8 +852,13 @@ class OpenAILegalBriefGenerator:
         feedback_code = self.validation_feedback_code or ""
         if disposition_only and "ungrounded_guide_section_" in feedback_code:
             feedback_instruction += (
-                " For each ungrounded section, rewrite its paragraph around a short, unquoted "
-                "exact phrase from the public_value of a role-appropriate cited claim."
+                " For each ungrounded section, preserve the case-specific people, event, action, "
+                "and result from a role-appropriate cited claim, but translate its legal wording."
+            )
+        if "unexplained_legal_term_" in feedback_code:
+            feedback_instruction += (
+                " Replace the named legal term with ordinary words. If accuracy requires the "
+                "term, define it immediately by saying what it does in this case."
             )
         if disposition_only and "ambiguous_separate_opinion_attribution" in feedback_code:
             feedback_instruction += (
@@ -866,8 +871,8 @@ class OpenAILegalBriefGenerator:
             "unsupported_supreme_court_action",
         }:
             feedback_instruction += (
-                " In the affected action sentence, reuse the exact supported actor, action verb, "
-                "and object from the matching typed claim."
+                " In the affected action sentence, preserve the supported actor, result, and "
+                "operative object from the matching typed claim, using an ordinary-language verb."
             )
         if disposition_only and self.correction_draft is not None:
             feedback_instruction += (
@@ -889,8 +894,12 @@ class OpenAILegalBriefGenerator:
             "or reasoning. Use one short paragraph per section. Copy supporting claim IDs into "
             "the title, dek, and each paragraph's claim_ids array; cite only claims that answer "
             "that section. Every action sentence must name its party, lower court, or Supreme "
-            "Court actor; never use only a pronoun. Each sentence must reuse one exact content "
-            "word from cited support, and each paragraph must reuse two. "
+            "Court actor; never use only a pronoun. Ground each sentence in the same case-specific "
+            "people, event, action, or result as its cited support. Your main job is translation, "
+            "not compression: do not copy the Court's legal register. Prefer 'right to bring the "
+            "case' to 'standing', 'power to hear the case' to 'jurisdiction', and 'sent the case "
+            "back' to 'remanded'. If a precise legal term is essential, use it once and "
+            "immediately say what it means here. A reader must not need a law dictionary. "
             f"Keep each sentence at or below {self.maximum_sentence_words} words and each "
             f"paragraph at or below {self.maximum_paragraph_words} words. Use a name only in "
             "the exact form found in a cited claim. Paraphrase instead of quoting, put citations "
@@ -930,21 +939,28 @@ class OpenAILegalBriefGenerator:
                         "official case caption; never use a generic heading as the title. Put "
                         "citations only in the matching "
                         "claim_ids arrays, never in public prose. Use direct everyday language, "
-                        "active voice, concrete explanations, and short paragraphs. "
+                        "active voice, concrete explanations, and short paragraphs. Your main job "
+                        "is to translate the source, not shorten it while keeping lawyer language. "
+                        "Prefer 'right to bring the case' to 'standing', 'power to hear the case' "
+                        "to 'jurisdiction', and 'sent the case back' to 'remanded'. Avoid doctrine "
+                        "names and courtroom shorthand when ordinary words are accurate. If a "
+                        "precise legal term is essential, use it once and immediately explain what "
+                        "it changes for the people or government in this case. A reader must not "
+                        "need a law dictionary. "
                         + section_instruction
                         + f"Keep every sentence at or below {self.maximum_sentence_words} words "
                         "and every "
                         f"paragraph at or below {self.maximum_paragraph_words} words. Do not "
                         "write like a court filing or law-school outline. Avoid labels such as "
                         "petitioner and respondent when a party name or plain description works. "
-                        "If a legal concept is unavoidable, explain immediately what it means "
-                        "for this case. Prefer headings such as 'What this case is about', 'How "
+                        "Prefer headings such as 'What this case is about', 'How "
                         "the case got here', 'What the Court did', 'Why it matters', and 'What "
                         "happens next'. " + case_mode_instruction + "When the ledger has a "
                         "question presented, procedural posture, advocate contention, or justice "
                         "question, the output must use at least one claim of each available type. "
                         "Copy every claim ID exactly from the supplied ledger. Cite only claims "
-                        "whose public values support the associated text. In each argument "
+                        "whose public values support the associated text, but do not mirror their "
+                        "legal phrasing merely to show support. In each argument "
                         "analysis, use only claims carrying that analysis's argument_id. Each "
                         "argument analysis must cover every available position_group and the "
                         "questions tested in that session. Different attribution wording can "
@@ -957,9 +973,10 @@ class OpenAILegalBriefGenerator:
                         "or fact with what it likely said; omit unsupported detail. Do not add a "
                         "person's name, address, medical detail, "
                         "identifier, docket, or citation unless it appears in the supporting "
-                        "claim's public value. Paraphrase the evidence and do not use quotation "
-                        "marks or direct quotations anywhere in the output. A question is not a "
-                        "holding or vote. Describe a requested result as what a side asks the "
+                        "claim's public value. Translate and paraphrase the evidence; do not use "
+                        "quotation marks or direct quotations anywhere in the output. A question "
+                        "is not a holding or vote. Describe a requested result as what a side asks "
+                        "the "
                         "Court to do, never as something the Court already did. Identify a "
                         "lower-court result explicitly as the lower court's action. Never infer "
                         "that no ruling exists merely because no disposition is supplied. When "
@@ -1261,13 +1278,190 @@ _STATUTORY_EXPLANATION = re.compile(
     r"\bCongress\b.*\b(?:power|permission|allowed|allows|gave|gives|granted)\b",
     re.IGNORECASE,
 )
+# A legal term may appear only when the same public text gives readers enough ordinary
+# language to understand what the term does in this case. These pairs intentionally
+# target concepts found in published drafts rather than trying to be a legal dictionary.
+_READER_LEGAL_TERMS: tuple[tuple[str, re.Pattern[str], re.Pattern[str]], ...] = (
+    (
+        "standing",
+        re.compile(r"\b(?:Article III )?standing\b", re.I),
+        re.compile(
+            r"\b(?:right|allowed|permission) to (?:bring|file|pursue|start|sue)\b|"
+            r"\bmust (?:first )?show\b[^.!?]{0,60}\b(?:harm|injury)\b|"
+            r"\b(?:harm|injury)\b[^.!?]{0,60}\b(?:right to sue|bring the case)\b",
+            re.I,
+        ),
+    ),
+    (
+        "jurisdiction",
+        re.compile(r"\bjurisdiction(?:al)?\b", re.I),
+        re.compile(
+            r"\b(?:power|authority|allowed)\b[^.!?]{0,45}\b(?:hear|decide|review)\b|"
+            r"\b(?:hear|decide|review)\b[^.!?]{0,45}\b(?:power|authority)\b",
+            re.I,
+        ),
+    ),
+    (
+        "justiciability",
+        re.compile(r"\bjusticiab(?:le|ility)\b|\bjudicial review\b", re.I),
+        re.compile(
+            r"\b(?:court|judge|justices) (?:can|could|may|is allowed to) "
+            r"(?:hear|decide|review)\b|\breview by a court\b|\bready for a court to decide\b",
+            re.I,
+        ),
+    ),
+    (
+        "injunction",
+        re.compile(r"\binjunct(?:ion|ive)\b", re.I),
+        re.compile(
+            r"\bcourt order\b[^.!?]{0,55}\b(?:block|stop|require|prevent)\w*\b|"
+            r"\blower court's blocking order\b|"
+            r"\border (?:that|which)\b[^.!?]{0,45}\b(?:block|stop|require|prevent)\w*\b",
+            re.I,
+        ),
+    ),
+    (
+        "vacatur",
+        re.compile(r"\bvacat(?:e|ed|es|ing|ur)\b", re.I),
+        re.compile(r"\b(?:cancel|set aside|throw|threw|erase|erased)\b", re.I),
+    ),
+    (
+        "remand",
+        re.compile(r"\bremand(?:ed|s|ing)?\b", re.I),
+        re.compile(r"\b(?:send|sent|return|returned)\b[^.!?]{0,55}\blower court\b", re.I),
+    ),
+    (
+        "mootness",
+        re.compile(r"\bmoot(?:ness|ed)?\b", re.I),
+        re.compile(
+            r"\bno longer\b[^.!?]{0,55}\b(?:live|matter|need|decision|resolve)\b|"
+            r"\bnothing (?:meaningful )?left (?:to decide|for the court)\b",
+            re.I,
+        ),
+    ),
+    (
+        "preemption",
+        re.compile(r"\bpreempt(?:ion|ed|s|ive)?\b", re.I),
+        re.compile(
+            r"\bfederal law\b[^.!?]{0,55}\b(?:override\w*|take priority|control\w*|block\w*)\b|"
+            r"\b(?:override\w*|takes priority over)\b[^.!?]{0,35}\bstate law\b",
+            re.I,
+        ),
+    ),
+    (
+        "habeas",
+        re.compile(r"\bhabeas(?: corpus)?\b", re.I),
+        re.compile(
+            r"\bchallenge\b[^.!?]{0,55}\b(?:custody|detention|imprisonment|prison)\b|"
+            r"\bask\b[^.!?]{0,55}\b(?:release|freed)\b",
+            re.I,
+        ),
+    ),
+    (
+        "sovereign_immunity",
+        re.compile(r"\b(?:tribal |state )?sovereign immunity\b", re.I),
+        re.compile(
+            r"\bprotect\w*\b[^.!?]{0,45}\bfrom being sued\b|"
+            r"\b(?:cannot|can not) be sued\b",
+            re.I,
+        ),
+    ),
+    (
+        "tolling",
+        re.compile(r"\btoll(?:ed|ing|s)?\b", re.I),
+        re.compile(r"\b(?:clock|deadline)\b[^.!?]{0,45}\b(?:pause|stop|extend)\w*\b", re.I),
+    ),
+    (
+        "due_process",
+        re.compile(r"\bdue process\b", re.I),
+        re.compile(
+            r"\bfair (?:process|procedure|hearing|treatment)\b|"
+            r"\bnotice\b[^.!?]{0,45}\b(?:chance|opportunity)\b|\bchance to be heard\b",
+            re.I,
+        ),
+    ),
+    (
+        "equal_protection",
+        re.compile(r"\bequal protection\b", re.I),
+        re.compile(r"\btreat\w*\b[^.!?]{0,45}\bequal\w*\b|\bsame legal protection\b", re.I),
+    ),
+    (
+        "heightened_scrutiny",
+        re.compile(r"\b(?:strict|intermediate) scrutiny\b|\brational basis review\b", re.I),
+        re.compile(
+            r"\b(?:most|more) demanding test\b|\bstrong(?:est|er) reason\b|"
+            r"\bclosely fit\b|\breasonably related\b",
+            re.I,
+        ),
+    ),
+    (
+        "certiorari",
+        re.compile(r"\bcertiorari\b|\bcert\.\b", re.I),
+        re.compile(r"\b(?:ask|asked|agreed)\b[^.!?]{0,45}\b(?:hear|review)\b", re.I),
+    ),
+    (
+        "per_curiam",
+        re.compile(r"\bper curiam\b", re.I),
+        re.compile(r"\b(?:unsigned|court as a whole|no named author)\b", re.I),
+    ),
+    (
+        "domicile",
+        re.compile(r"\bdomicile\b", re.I),
+        re.compile(r"\b(?:permanent|legal) home\b", re.I),
+    ),
+    (
+        "principal_officer",
+        re.compile(r"\bprincipal officer\b", re.I),
+        re.compile(
+            r"\b(?:senior|high-ranking|top) (?:government )?official\b|\bagency leader\b",
+            re.I,
+        ),
+    ),
+    (
+        "foundling",
+        re.compile(r"\bfoundlings?\b", re.I),
+        re.compile(
+            r"\b(?:abandoned child|child(?:ren)? whose parents? (?:are|is) unknown)\b",
+            re.I,
+        ),
+    ),
+    (
+        "separation_of_powers",
+        re.compile(r"\bseparation of powers\b", re.I),
+        re.compile(
+            r"\b(?:Congress|president|executive|legislative|branch)\b[^.!?]{0,75}"
+            r"\b(?:control|power|authority|limit|independent)\w*\b|"
+            r"\b(?:control|power|authority|limit)\w*\b[^.!?]{0,75}"
+            r"\b(?:Congress|president|executive|legislative|branch)\b",
+            re.I,
+        ),
+    ),
+    (
+        "precedent",
+        re.compile(r"\bprecedent\b", re.I),
+        re.compile(r"\bearlier (?:case|decision|ruling|rule)\b", re.I),
+    ),
+    (
+        "merits",
+        re.compile(r"\bmerits\b", re.I),
+        re.compile(
+            r"\b(?:final|underlying)\b[^.!?]{0,45}\b(?:decision|dispute|issue|question)\b|"
+            r"\bwho is (?:legally )?(?:right|wrong)\b",
+            re.I,
+        ),
+    ),
+)
 _ADVOCATE_NAME = re.compile(r"^\s*(Mr|Ms|General)\.?\s+([A-Za-z'\u2019\N{EN DASH}-]+)", re.I)
 _REQUESTED_ACTION_ROLE = re.compile(
     r"\b(?:ask(?:s|ed|ing)?|request(?:s|ed|ing)?|urge(?:s|d|ing)?|seek(?:s|ing)?|"
     r"sought|want(?:s|ed|ing)?|should)\b[^.!?]{0,100}"
     r"\b(?:hold|held|order(?:ed)?|grant(?:ed)?|deny|denied|reject(?:ed)?|"
-    r"allow(?:ed)?|affirm(?:ed)?|uphold|upheld|revers(?:e|ed)|vacat(?:e|ed)|"
-    r"remand(?:ed)?|dismiss(?:ed)?|stay(?:ed)?|enjoin(?:ed)?|block(?:ed)?)\b",
+    r"allow(?:ed)?|affirm(?:ed)?|uphold|upheld|revers(?:e|ed)|"
+    r"vacat(?:e|ed)|cancel(?:ed)?|remand(?:ed)?|"
+    r"(?:send(?:s|ing)?|sent)\s+(?:the\s+)?case\s+back|"
+    r"return(?:s|ed|ing)?\s+(?:the\s+)?case\s+to\s+(?:a|the)\s+lower\s+court|"
+    r"dismiss(?:ed)?|stay(?:ed)?|"
+    r"pause(?:d)?|enjoin(?:ed)?|block(?:ed)?)\b",
     re.IGNORECASE,
 )
 _UNSUPPORTED_NO_DISPOSITION = re.compile(
@@ -1363,7 +1557,10 @@ _CAPITALIZED_EXEMPT = {
 _ACTION_WORD_PATTERN = (
     r"hold|held|order(?:ed)?|grant(?:ed)?|deny|denied|reject(?:ed)?|"
     r"allow(?:ed)?|affirm(?:ed)?|uphold|upheld|revers(?:e|ed)|vacat(?:e|ed)|"
-    r"remand(?:ed)?|dismiss(?:ed)?|stay(?:ed)?|enjoin(?:ed)?|block(?:ed)?|"
+    r"cancel(?:ed)?|remand(?:ed)?|"
+    r"(?:send(?:s|ing)?|sent)\s+(?:the\s+)?case\s+back|"
+    r"return(?:s|ed|ing)?\s+(?:the\s+)?case\s+to\s+(?:a|the)\s+lower\s+court|"
+    r"dismiss(?:ed)?|stay(?:ed)?|pause(?:d)?|enjoin(?:ed)?|block(?:ed)?|"
     r"prevail(?:ed)?|won|lost"
 )
 _ACTION_WORD = re.compile(rf"\b(?:{_ACTION_WORD_PATTERN})\b", re.IGNORECASE)
@@ -1388,12 +1585,16 @@ _ACTION_CANONICAL = {
     "reversed": "reverse",
     "vacate": "vacate",
     "vacated": "vacate",
+    "cancel": "vacate",
+    "canceled": "vacate",
     "remand": "remand",
     "remanded": "remand",
     "dismiss": "dismiss",
     "dismissed": "dismiss",
     "stay": "stay",
     "stayed": "stay",
+    "pause": "stay",
+    "paused": "stay",
     "enjoin": "stay",
     "enjoined": "stay",
     "block": "stay",
@@ -1405,10 +1606,22 @@ _ACTION_CANONICAL = {
 }
 
 
+def _canonical_action(value: str) -> str | None:
+    normalized = value.casefold()
+    action = _ACTION_CANONICAL.get(normalized)
+    if action is not None:
+        return action
+    if "case" in normalized and ("back" in normalized or "lower court" in normalized):
+        return "remand"
+    return None
+
+
 def _action_signatures(value: str) -> set[tuple[str, bool]]:
     signatures: set[tuple[str, bool]] = set()
     for match in _ACTION_WORD.finditer(value):
-        action = _ACTION_CANONICAL[match.group(0).casefold()]
+        action = _canonical_action(match.group(0))
+        if action is None:
+            continue
         if action == "order":
             # "Ordered" wraps the operative granted/denied/stayed action and is
             # not independently contradictory.
@@ -1651,7 +1864,16 @@ def _plain_language_text(text: str) -> str:
     )
     result = re.sub(r"\bthe\s+the\s+", "the ", result, flags=re.IGNORECASE)
     for pattern, replacement in _PLAIN_LANGUAGE_REPLACEMENTS:
-        result = pattern.sub(replacement, result)
+        def preserve_initial_case(
+            match: re.Match[str], value: str = replacement
+        ) -> str:
+            return (
+                value[:1].upper() + value[1:]
+                if match.group(0)[:1].isupper()
+                else value
+            )
+
+        result = pattern.sub(preserve_initial_case, result)
     result = re.sub(r"\bthe\s+the\s+", "the ", result, flags=re.IGNORECASE)
     result = re.sub(
         r"\bthe justices will vote and issue\b",
@@ -1730,9 +1952,25 @@ def _validate_plain_language(
     ):
         raise BriefValidationError("plain-language sentence is too long")
     if _LEGALESE.search(text):
-        raise BriefValidationError("brief contains unexplained legalese")
+        raise BriefValidationError(
+            "brief contains unexplained legalese",
+            safe_code="unexplained_legalese",
+        )
     if _STATUTORY_AUTHORITY.search(text) and not _STATUTORY_EXPLANATION.search(text):
-        raise BriefValidationError("brief contains an unexplained legal concept")
+        raise BriefValidationError(
+            "brief contains an unexplained legal concept",
+            safe_code="unexplained_legal_term_statutory_authority",
+        )
+    sentences = tuple(match.group(0) for match in _SENTENCE.finditer(text))
+    for label, term, explanation in _READER_LEGAL_TERMS:
+        if any(
+            term.search(sentence) and not explanation.search(sentence)
+            for sentence in sentences
+        ):
+            raise BriefValidationError(
+                f"brief contains unexplained legal term: {label.replace('_', ' ')}",
+                safe_code=f"unexplained_legal_term_{label}",
+            )
 
 
 def _sanitize(value: str, sensitivity: tuple[ScotusSensitivity, ...]) -> str | None:
@@ -2114,7 +2352,7 @@ _GUIDE_STOP_WORDS = frozenset(
 def _action_object_pairs(value: str) -> set[tuple[str, str]]:
     pairs: set[tuple[str, str]] = set()
     for action_match in _ACTION_WORD.finditer(value):
-        action = _ACTION_CANONICAL.get(action_match.group(0).casefold())
+        action = _canonical_action(action_match.group(0))
         if action is None or action == "order":
             continue
         sentence_end = min(

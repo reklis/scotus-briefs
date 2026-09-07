@@ -58,10 +58,12 @@ past individual case validation failures. Court
 rate controls, source authorization, a five-hour processing bound, private-disk and
 retrieval limits, and every per-case publication validator remain mandatory. The shorter
 application bound reserves time for receipt upload, candidate validation, and runner cleanup
-inside the 5-hour-30-minute build-job limit. Accepted
-legacy imports with no logical-document checkpoint are excluded from processor-migration
-and rotating redownload work; they re-enter processing only when current Court discovery
-reports a metadata change or an owner explicitly requests a backfill. Prior dry runs
+inside the 5-hour-30-minute build-job limit. Accepted legacy imports with no processor
+fingerprint now enter the bounded processor-migration queue. This is required because a
+missing fingerprint cannot prove that
+old public prose meets the current plain-language editorial standard. Each migrated case is
+redownloaded from the official Court source and must pass the same model, grounding, privacy,
+and publication gates as a new case; failures retain the last-known-good page. Prior dry runs
 confirmed the Court and loopback
 Ollama paths but failed closed on extraction/runtime validation. Those same grounding,
 privacy, completeness, static, and release validators remain mandatory: a global

@@ -713,16 +713,17 @@ class LiveStaticDiscovery:
                 public_transcript_keys.add(transcript_logical_key(item))
         processor = _processor_contract(self.config, self.model_endpoint)
         pointer_by_case = {pointer.case_key: pointer for pointer in content.publication.cases}
-        # A concrete prior processor fingerprint can be migrated when it changes.
-        # Missing fingerprints identify sanitized legacy imports; do not redownload and
-        # regenerate those accepted briefs unless current Court metadata actually changes.
+        # A changed processor contract must rewrite every active brief, including sanitized
+        # legacy imports whose missing fingerprint cannot prove they meet the current editorial
+        # standard. The bounded queue migrates those imports gradually without bypassing any
+        # source, model, grounding, or publication gate.
         legacy_case_keys = {
             case_key
             for case_key in prior_cases
             if pointer_by_case.get(case_key) is not None
             and pointer_by_case[case_key].processor_sha256 is None
         }
-        migration_case_keys = {
+        migration_case_keys = legacy_case_keys | {
             case_key
             for case_key in prior_cases
             if pointer_by_case.get(case_key) is not None

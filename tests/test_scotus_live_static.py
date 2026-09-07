@@ -498,7 +498,8 @@ class MockOpenAI:
                 claim["value"] for claim in claims if claim["claim_id"] in action_ids
             ).casefold()
             action_paragraph = (
-                "The Supreme Court stayed the injunction temporarily while the case continues."
+                "The Supreme Court stayed the injunction, a court order that prevented an "
+                "action, temporarily while the case continues."
                 if "stay" in action_values
                 else "The Supreme Court granted the application."
             )
@@ -842,7 +843,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
     assert processor.policy_version == "scotus-brief-policy-v58"
     assert processor.prompt_version == (
-        "scotus-brief-plain-language-v31;disposition=scotus-disposition-citizen-guide-v13"
+        "scotus-brief-plain-language-v32;disposition=scotus-disposition-citizen-guide-v14"
     )
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",
@@ -1504,7 +1505,7 @@ def test_reargument_reprocesses_every_session_under_one_case_budget(tmp_path: Pa
     assert names.count("scotus_legal_brief") == 1
 
 
-def test_legacy_case_without_document_checkpoints_is_not_automatically_reprocessed(
+def test_legacy_case_without_processor_fingerprint_enters_editorial_migration(
     tmp_path: Path,
 ) -> None:
     court = CourtFixture()
@@ -1532,14 +1533,20 @@ def test_legacy_case_without_document_checkpoints_is_not_automatically_reprocess
     )
     store.content = legacy
 
-    result = run(tmp_path, store, court, MockOpenAI())
+    model = MockOpenAI()
+    result = run(tmp_path, store, court, model)
 
     assert result.publishable
-    assert result.no_public_change
-    assert result.changed_case_keys == ()
-    assert result.content.publication.documents == ()
+    assert result.changed_case_keys == ("2025-25-1",)
+    assert len(result.content.publication.documents) == 2
     assert result.content.publication.pending_work == ()
-    assert result.content.projection == first.content.projection
+    assert result.content.publication.cases[0].processor_sha256 is not None
+    assert result.content.projection is not None
+    assert len(result.content.projection.cases[0].revisions) == 2
+    assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
+        "scotus_legal_observations",
+        "scotus_legal_brief",
+    ]
 
 
 def test_failure_and_model_budget_exhaustion_keep_prior_case_active(

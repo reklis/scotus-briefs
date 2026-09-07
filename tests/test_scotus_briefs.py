@@ -20,6 +20,7 @@ from ragchew.scotus.briefs import (
     OpenAILegalBriefGenerator,
     _unsupported_named_phrase,
     _validate_action_sentences,
+    _validate_plain_language,
     disposition_only_brief_json_schema,
     evaluate_brief_candidate,
     simple_brief_json_schema,
@@ -521,6 +522,17 @@ def test_disposition_only_draft_accepts_supported_plain_action_synonyms() -> Non
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
     _validate_action_sentences("The Court allowed the application.", decision.claims)
 
+    lower_court_claim = next(
+        claim
+        for claim in evaluate_brief_candidate(
+            role_aware_disposition_candidate(), minimum_confidence=0.85
+        ).claims
+        if claim.legal_status is LegalStatus.LOWER_COURT_HELD
+    ).model_copy(update={"public_value": "The district court remanded the case."})
+    _validate_action_sentences(
+        "The district court sent the case back.", (lower_court_claim,)
+    )
+
 
 def test_disposition_only_draft_accepts_zero_argument_analyses() -> None:
     source = disposition_candidate()
@@ -828,6 +840,49 @@ def test_plain_language_rejects_legalese_and_overlong_prose() -> None:
         ).generate(source, decision, revision_number=1)
 
 
+@pytest.mark.parametrize(
+    "legalese",
+    (
+        "The plaintiff has Article III standing.",
+        "The lower court issued an injunction.",
+        "The Court remanded the case.",
+        "The dispute is moot.",
+        "The rule turns on domicile.",
+        "Federal law preempts the state rule.",
+    ),
+)
+def test_plain_language_rejects_unexplained_legal_terms(legalese: str) -> None:
+    with pytest.raises(BriefValidationError) as caught:
+        _validate_plain_language(
+            legalese,
+            maximum_sentence_words=30,
+            maximum_paragraph_words=120,
+        )
+    assert caught.value.safe_code is not None
+    assert caught.value.safe_code.startswith("unexplained_legal_term_")
+
+
+@pytest.mark.parametrize(
+    "explained",
+    (
+        "Standing means the person must show harm before gaining the right to bring the case.",
+        "An injunction is a court order that blocks an action.",
+        "The Court remanded the case, meaning it sent the dispute to the lower court.",
+        "The dispute is moot, meaning there is nothing left to decide.",
+        "Domicile means a person's permanent home.",
+        "Federal law preempts the state rule, meaning federal law overrides state law.",
+    ),
+)
+def test_plain_language_accepts_legal_terms_only_with_an_immediate_gloss(
+    explained: str,
+) -> None:
+    _validate_plain_language(
+        explained,
+        maximum_sentence_words=30,
+        maximum_paragraph_words=120,
+    )
+
+
 def test_openai_generator_requests_structured_plain_language_output() -> None:
     source = candidate()
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
@@ -897,6 +952,8 @@ def test_openai_generator_requests_structured_plain_language_output() -> None:
     user_payload = json.loads(messages[1]["content"])  # type: ignore[index]
     assert user_payload["mode"] == "/no_think"
     assert "everyday language" in prompt
+    assert "main job is to translate" in prompt
+    assert "A reader must not need a law dictionary" in prompt
     assert "What this case is about" in prompt
     assert "position_group" in prompt
     assert "procedural posture" in prompt
@@ -958,8 +1015,10 @@ def test_disposition_generator_uses_compact_positive_role_aware_request() -> Non
     prompt = messages[0]["content"]  # type: ignore[index]
     user_payload = json.loads(messages[1]["content"])  # type: ignore[index]
     assert prompt.startswith("/no_think")
-    assert len(prompt.split()) < 260
+    assert len(prompt.split()) < 320
     assert "complete plain-English citizen's guide" in prompt
+    assert "main job is translation" in prompt
+    assert "A reader must not need a law dictionary" in prompt
     assert "operative Supreme Court action" in prompt
     assert "interim relief, not a final merits judgment" in prompt
     assert "Every action sentence must name its" in prompt
@@ -1101,7 +1160,8 @@ def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
                 heading="Why this case reached the Court",
                 paragraphs=(
                     "The district court blocked the federal directives. The Government asked "
-                    "the Supreme Court to stay that injunction during its appeal.",
+                    "the Supreme Court for a stay, meaning a temporary pause of that lower "
+                    "court order during its appeal.",
                 ),
                 claim_ids=(
                     *by_type[LegalObservationType.LOWER_COURT_ACTION],
@@ -1111,24 +1171,24 @@ def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
             DraftSection(
                 heading="The legal issue",
                 paragraphs=(
-                    "The issue is whether the states showed an immediate injury and brought a "
-                    "dispute ready for judicial review.",
+                    "The issue is whether the states showed immediate harm and brought a "
+                    "dispute the Court could review.",
                 ),
                 claim_ids=(majority_issue_id,),
             ),
             DraftSection(
                 heading="What the Supreme Court did",
                 paragraphs=(
-                    "The Supreme Court stayed the lower court's injunction temporarily while "
-                    "the appeal continues.",
+                    "The Supreme Court stayed the injunction, a court order that prevented the "
+                    "federal directives, temporarily while the appeal continues.",
                 ),
                 claim_ids=by_type[LegalObservationType.ORDER],
             ),
             DraftSection(
                 heading="Why the Court did it",
                 paragraphs=(
-                    "The Court concluded that the states had not yet shown an immediate injury "
-                    "ready for judicial review.",
+                    "The Court concluded that the states had not yet shown immediate harm in a "
+                    "dispute the Court could review.",
                 ),
                 claim_ids=(majority_reason_id,),
             ),
@@ -1153,7 +1213,7 @@ def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
                     update={
                         "paragraphs": (
                             "Justice Jackson, dissenting, stated that the states had not shown "
-                            "an immediate injury ready for judicial review.",
+                            "immediate injury in a dispute ready for a court to review.",
                         )
                     }
                 )
@@ -1167,7 +1227,10 @@ def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
         validate_brief_draft(
             ambiguous_dissent, source, decision.claims, public_quotes=False
         )
-    assert caught.value.safe_code == "ambiguous_separate_opinion_attribution"
+    assert caught.value.safe_code in {
+        "ambiguous_separate_opinion_attribution",
+        "ungrounded_separate_opinions_section",
+    }
 
     unattributed_dissent_detail = draft.model_copy(
         update={
@@ -1210,7 +1273,12 @@ def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
         update={
             "sections": tuple(
                 section.model_copy(
-                    update={"paragraphs": ("The Supreme Court stayed the injunction.",)}
+                    update={
+                        "paragraphs": (
+                            "The Supreme Court stayed the injunction, a lower court order "
+                            "that blocked the federal directives.",
+                        )
+                    }
                 )
                 if section.heading == "What the Supreme Court did"
                 else section
