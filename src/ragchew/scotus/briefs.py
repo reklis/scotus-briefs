@@ -1776,6 +1776,7 @@ def _validate_disposition_guide_structure(
         )
 
     claim_map = {claim.claim_id: claim for claim in claims}
+    controlling = tuple(claim for claim in claims if not _is_separate_opinion_claim(claim))
     by_heading = {section.heading.strip(): section for section in draft.sections}
     separate_ids = {
         claim.claim_id for claim in claims if _is_separate_opinion_claim(claim)
@@ -1853,6 +1854,20 @@ def _validate_disposition_guide_structure(
                     for paragraph in unsupported
                 )
                 suffix = "_polarity" if polarity_only else ""
+                if not polarity_only:
+                    matching_types = sorted(
+                        {
+                            claim.observation_type.value
+                            for paragraph in unsupported
+                            for claim in controlling
+                            if claim not in relevant
+                            and _guide_paragraph_has_support(
+                                paragraph, (claim,), enforce_negation=False
+                            )
+                        }
+                    )
+                    if matching_types:
+                        suffix = f"_matches_{matching_types[0]}"
                 raise BriefValidationError(
                     "disposition guide paragraph does not express its cited support",
                     safe_code=f"ungrounded_guide_section_{safe_heading}{suffix}"[:80],

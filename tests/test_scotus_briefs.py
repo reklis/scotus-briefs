@@ -1221,7 +1221,9 @@ def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
     )
     with pytest.raises(BriefValidationError) as caught:
         validate_brief_draft(invented_reason, source, decision.claims, public_quotes=False)
-    assert caught.value.safe_code == "ungrounded_guide_section_why_the_court_did_it"
+    assert caught.value.safe_code == (
+        "ungrounded_guide_section_why_the_court_did_it_matches_case_background"
+    )
 
 
 def test_local_brief_schema_matches_exact_argument_count() -> None:
