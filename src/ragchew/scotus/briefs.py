@@ -1451,6 +1451,7 @@ def _split_long_sentence(sentence: str) -> str:
             ("; ", ""),
             (", and ", "And "),
             (", but ", "But "),
+            (", ", ""),
         ):
             start = 0
             while (index := value.find(separator, start)) >= 0:
