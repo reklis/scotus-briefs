@@ -65,6 +65,7 @@ from ragchew.scotus.briefs import (
     BriefValidationError,
     CaseArgumentSession,
     InMemoryBriefRevisionStore,
+    LegalBriefDraft,
     OpenAILegalBriefGenerator,
     disposition_only_brief_json_schema,
     evaluate_brief_candidate,
@@ -172,7 +173,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v34"
+POLICY_VERSION = "scotus-brief-policy-v56"
 DOCUMENT_TEXT_VERSION = "official-document-text-v3"
 
 
@@ -2064,20 +2065,24 @@ class LiveStaticCaseProcessor:
                     blocks=tuple(docket_blocks),
                 )
             )
-        if not source.sessions and not any(
-            observation.observation_type
-            in {
-                LegalObservationType.REQUESTED_DISPOSITION,
-                LegalObservationType.LOWER_COURT_ACTION,
+        if not source.sessions:
+            existing_path_roles = {
+                observation.observation_type
+                for observation in observations
+                if observation.observation_type
+                in {
+                    LegalObservationType.REQUESTED_DISPOSITION,
+                    LegalObservationType.LOWER_COURT_ACTION,
+                }
             }
-            for observation in observations
-        ):
-            path_observation = _procedural_path_observation(
-                case_id=case_id,
-                blocks=tuple(action_blocks),
+            observations.extend(
+                observation
+                for observation in _procedural_path_observations(
+                    case_id=case_id,
+                    blocks=tuple(action_blocks),
+                )
+                if observation.observation_type not in existing_path_roles
             )
-            if path_observation is not None:
-                observations.append(path_observation)
         if not source.sessions:
             existing_analysis_values = {
                 (item.normalized_value_private or item.raw_value_private).casefold()
@@ -2126,10 +2131,28 @@ class LiveStaticCaseProcessor:
                     )
                     is None
                 }
-                if not same_type or all(
-                    (item.normalized_value_private or item.raw_value_private).casefold()
-                    in opposite_values
-                    for item in same_type
+                if (
+                    analysis_observation.observation_type
+                    is LegalObservationType.QUESTION_PRESENTED
+                    or not same_type
+                    or all(
+                        (item.normalized_value_private or item.raw_value_private).casefold()
+                        in opposite_values
+                        for item in same_type
+                    )
+                    or (
+                        analysis_observation.observation_type
+                        is LegalObservationType.DOCTRINAL_THEME
+                        and len(same_type) < 2
+                        and all(
+                            (
+                                item.normalized_value_private
+                                or item.raw_value_private
+                            ).casefold()
+                            != analysis_observation.raw_value_private.casefold()
+                            for item in same_type
+                        )
+                    )
                 ):
                     observations.append(analysis_observation)
                     existing_analysis_values.add(
@@ -2276,6 +2299,7 @@ class LiveStaticCaseProcessor:
             *(stable_disposition_fingerprint(item) for item in source.dispositions),
         )
         validation_feedback_codes: list[str] = []
+        correction_draft: LegalBriefDraft | None = None
         maximum_brief_attempts = self.config.generation.maximum_brief_validation_attempts_per_case
         if not candidate.argument_sessions:
             # One fresh correction is enough for the small fixed guide contract. Do not
@@ -2333,6 +2357,7 @@ class LiveStaticCaseProcessor:
                 ),
                 reasoning_effort="none",
                 validation_feedback_code=validation_feedback_code,
+                correction_draft=correction_draft,
                 request_executor=request,
             )
             try:
@@ -2362,6 +2387,7 @@ class LiveStaticCaseProcessor:
                 if not can_retry:
                     raise
                 assert safe_code is not None
+                correction_draft = error.draft
                 if safe_code not in validation_feedback_codes:
                     validation_feedback_codes.append(safe_code)
                 LOG.warning(
@@ -2582,19 +2608,20 @@ def _document_blocks(
 
 
 _DETERMINISTIC_LEGAL_ISSUE = re.compile(
-    r"\b(?:constitutional|doctrine|issue|jurisdiction|question|ripeness|standing|"
-    r"statutory)\b",
+    r"\b(?:constitutional|doctrine|issue|jurisdiction|justiciab\w*|question|ripeness|"
+    r"standing|statutory)\b",
     re.IGNORECASE,
 )
 _DETERMINISTIC_COURT_REASON = re.compile(
-    r"\b(?:because|cannot|does not|forbids?|lacks? standing|not ripe|prohibits?|"
-    r"requires?|therefore|thus|likely to (?:prevail|succeed))\b",
+    r"\b(?:because|cannot|does not|forbids?|lacks? standing|no (?:concrete harm|standing)|"
+    r"not ripe|prohibits?|requires?|speculat\w*|therefore|thus|without concrete harm|"
+    r"likely to (?:prevail|succeed))\b",
     re.IGNORECASE,
 )
 _DETERMINISTIC_LOWER_COURT_PATH = re.compile(
     r"\b(?:district court|court of appeals|lower court|three-judge court)\b"
     r"[^.!?]{0,500}\b(?:blocked|dismissed|enjoined|entered|granted|held|issued|denied|"
-    r"reversed|stayed|vacated)\b",
+    r"rejected|reversed|stayed|vacated)\b",
     re.IGNORECASE,
 )
 _DETERMINISTIC_REQUEST_PATH = re.compile(
@@ -2688,25 +2715,72 @@ def _legal_analysis_observations(
                 and sentence.casefold() not in excluded_values
             ):
                 candidates.append((block, sentence))
-    issue = next(
-        (
-            (block, sentence)
-            for block, sentence in candidates
-            if _DETERMINISTIC_LEGAL_ISSUE.search(sentence)
-            and _DETERMINISTIC_LOWER_COURT_PATH.search(sentence) is None
-        ),
-        None,
+    issue_candidates = tuple(
+        (index, block, sentence)
+        for index, (block, sentence) in enumerate(candidates)
+        if _DETERMINISTIC_LEGAL_ISSUE.search(sentence)
+        and _DETERMINISTIC_LOWER_COURT_PATH.search(sentence) is None
+    )
+
+    def issue_score(sentence: str) -> int:
+        return (
+            6 * bool(re.search(r"\bjusticiab\w*\b", sentence, re.IGNORECASE))
+            + 5 * bool(re.search(r"\bjurisdiction\b", sentence, re.IGNORECASE))
+            + 4
+            * bool(
+                re.search(r"\b(?:standing|ripeness)\b", sentence, re.IGNORECASE)
+            )
+            + bool(re.search(r"\b(?:constitutional|statutory)\b", sentence, re.IGNORECASE))
+        )
+
+    issue = (
+        (selected_issue[1], selected_issue[2])
+        if issue_candidates
+        and (
+            selected_issue := max(
+                issue_candidates,
+                key=lambda item: (issue_score(item[2]), -item[0]),
+            )
+        )
+        else None
     )
     used = {issue[1].casefold()} if issue is not None else set()
-    reason = next(
-        (
-            (block, sentence)
-            for block, sentence in candidates
-            if sentence.casefold() not in used
-            and _DETERMINISTIC_COURT_REASON.search(sentence)
-            and _DETERMINISTIC_LOWER_COURT_PATH.search(sentence) is None
-        ),
-        None,
+    reason_candidates = tuple(
+        (index, block, sentence)
+        for index, (block, sentence) in enumerate(candidates)
+        if sentence.casefold() not in used
+        and _DETERMINISTIC_COURT_REASON.search(sentence)
+        and _DETERMINISTIC_LOWER_COURT_PATH.search(sentence) is None
+    )
+
+    def reason_score(sentence: str) -> int:
+        return (
+            7
+            * bool(
+                re.search(
+                    r"\b(?:does not regulate|imposes no obligations|lack(?:s)? standing|"
+                    r"no concrete harm|not ripe)\b",
+                    sentence,
+                    re.IGNORECASE,
+                )
+            )
+            + 4 * bool(re.search(r"\b(?:jurisdiction|ripeness|standing)\b", sentence, re.I))
+            + 3 * bool(re.search(r"\b(?:concrete|harm|injury)\b", sentence, re.I))
+            + 2
+            * bool(re.search(r"\blikely to (?:prevail|succeed)\b", sentence, re.I))
+            + bool(_DETERMINISTIC_COURT_REASON.search(sentence))
+        )
+
+    reason = (
+        (selected[1], selected[2])
+        if reason_candidates
+        and (
+            selected := max(
+                reason_candidates,
+                key=lambda item: (reason_score(item[2]), -item[0]),
+            )
+        )
+        else None
     )
     result: list[LegalObservation] = []
     if issue is not None:
@@ -2730,35 +2804,48 @@ def _legal_analysis_observations(
     return tuple(result)
 
 
-def _procedural_path_observation(
+def _procedural_path_observations(
     *, case_id: UUID, blocks: tuple[LegalEvidenceBlock, ...]
-) -> LegalObservation | None:
-    """Derive one explicit lower-court action or party request from controlling pages."""
-    for block in blocks:
-        if block.document_kind is not ScotusDocumentKind.OPINION or re.search(
-            r"\b(?:concurring|dissenting|separate opinion)\b",
-            block.attribution or "",
-            re.IGNORECASE,
-        ):
-            continue
-        for sentence in re.split(r"(?<=[.!?])\s+", block.text_private):
-            sentence = " ".join(sentence.split())
-            pattern_and_role = (
-                (_DETERMINISTIC_LOWER_COURT_PATH, LegalObservationType.LOWER_COURT_ACTION),
-                (_DETERMINISTIC_REQUEST_PATH, LegalObservationType.REQUESTED_DISPOSITION),
-            )
-            role = next(
-                (role for pattern, role in pattern_and_role if pattern.search(sentence)),
-                None,
-            )
-            if role is None or len(sentence.split()) > 80 or len(sentence) > 2_000:
+) -> tuple[LegalObservation, ...]:
+    """Derive one explicit controlling passage for each available path role."""
+    result: list[LegalObservation] = []
+    pattern_and_role = (
+        (_DETERMINISTIC_LOWER_COURT_PATH, LegalObservationType.LOWER_COURT_ACTION),
+        (_DETERMINISTIC_REQUEST_PATH, LegalObservationType.REQUESTED_DISPOSITION),
+    )
+    for pattern, role in pattern_and_role:
+        selected: tuple[LegalEvidenceBlock, str] | None = None
+        for block in blocks:
+            if block.document_kind is not ScotusDocumentKind.OPINION or re.search(
+                r"\b(?:concurring|dissenting|separate opinion)\b",
+                block.attribution or "",
+                re.IGNORECASE,
+            ):
                 continue
-            status = LEGAL_STATUS_BY_OBSERVATION_TYPE[role]
-            extraction_id = uuid5(
-                NAMESPACE_URL,
-                f"ragchew:scotus-deterministic-path-extraction:{case_id}:{block.block_id}",
-            )
-            return LegalObservation(
+            for sentence in re.split(r"(?<=[.!?])\s+", block.text_private):
+                sentence = " ".join(sentence.split())
+                if (
+                    pattern.search(sentence)
+                    and not (
+                        role is LegalObservationType.LOWER_COURT_ACTION
+                        and _DETERMINISTIC_COURT_ACTION.search(sentence)
+                    )
+                    and len(sentence.split()) <= 80
+                    and len(sentence) <= 2_000
+                ):
+                    selected = (block, sentence)
+                    break
+            if selected is not None:
+                break
+        if selected is None:
+            continue
+        block, sentence = selected
+        extraction_id = uuid5(
+            NAMESPACE_URL,
+            f"ragchew:scotus-deterministic-path-extraction:{case_id}:{block.block_id}",
+        )
+        result.append(
+            LegalObservation(
                 observation_id=uuid5(
                     NAMESPACE_URL,
                     f"ragchew:scotus-deterministic-path-observation:"
@@ -2768,7 +2855,7 @@ def _procedural_path_observation(
                 case_id=case_id,
                 argument_id=None,
                 observation_type=role,
-                legal_status=status,
+                legal_status=LEGAL_STATUS_BY_OBSERVATION_TYPE[role],
                 certainty=LegalCertainty.DIRECT,
                 raw_value_private=sentence,
                 normalized_value_private=sentence,
@@ -2792,7 +2879,16 @@ def _procedural_path_observation(
                 sensitivity=sensitivity_labels(sentence),
                 supersedes_observation_id=None,
             )
-    return None
+        )
+    return tuple(result)
+
+
+def _procedural_path_observation(
+    *, case_id: UUID, blocks: tuple[LegalEvidenceBlock, ...]
+) -> LegalObservation | None:
+    """Return the first deterministic path role for compatibility callers."""
+    observations = _procedural_path_observations(case_id=case_id, blocks=blocks)
+    return observations[0] if observations else None
 
 
 def _court_action_observation(
