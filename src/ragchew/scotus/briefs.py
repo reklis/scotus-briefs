@@ -292,6 +292,9 @@ def _normalize_disposition_support(
         or "/docket/" in claim.official_url.casefold()
     )
     support_by_heading = _disposition_support_by_heading(claims)
+    separate_support_ids = set(
+        support_by_heading[DISPOSITION_SEPARATE_OPINIONS_HEADING]
+    )
     sections = tuple(
         section.model_copy(
             update={
@@ -301,6 +304,10 @@ def _normalize_disposition_support(
             }
         )
         for section in draft.sections
+        if not (
+            section.heading.strip() == DISPOSITION_SEPARATE_OPINIONS_HEADING
+            and not set(section.claim_ids).issubset(separate_support_ids)
+        )
     )
     return draft.model_copy(
         update={
