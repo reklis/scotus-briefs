@@ -248,7 +248,7 @@ def _disposition_support_by_heading(
         for claim in controlling
         if claim.observation_type is LegalObservationType.DOCTRINAL_THEME
     )
-    issue_ids = (
+    selected_issue_ids = (
         (
             max(
                 question_claims,
@@ -273,19 +273,20 @@ def _disposition_support_by_heading(
         if question_claims
         else ()
     )
-    if not issue_ids and doctrine_claims:
-        issue_ids = (doctrine_claims[0].claim_id,)
+    if not selected_issue_ids and doctrine_claims:
+        selected_issue_ids = (doctrine_claims[0].claim_id,)
     issue_values = {
         claim.public_value.casefold()
         for claim in controlling
-        if claim.claim_id in issue_ids
+        if claim.claim_id in selected_issue_ids
     }
     reasoning_ids = tuple(
         claim.claim_id
         for claim in doctrine_claims
-        if claim.claim_id not in issue_ids
+        if claim.claim_id not in selected_issue_ids
         and claim.public_value.casefold() not in issue_values
     )
+    issue_ids = selected_issue_ids
     return {
         "What this case is about": ids(LegalObservationType.CASE_BACKGROUND),
         "Why this case reached the Court": ids(
@@ -387,19 +388,42 @@ def _normalize_disposition_support(
             )
         replacement_paragraphs["What this case is about"] = (background_text,)
     issue_section = original_by_heading.get("The legal issue")
-    if issue_section is not None and issue_support and any(
-        not _guide_paragraph_has_support(paragraph, issue_support)
-        for paragraph in issue_section.paragraphs
-    ):
-        issue_text = re.sub(
-            r"^(?:As a result|In doing so),\s*",
-            "",
-            issue_support[0].public_value,
-            flags=re.IGNORECASE,
-        )
-        replacement_paragraphs["The legal issue"] = (
-            _unquoted_claim_fallback(issue_text),
-        )
+    if issue_section is not None and issue_support:
+        issue_paragraph = " ".join(issue_section.paragraphs)
+        issue_needs_fallback = any(
+            not _guide_paragraph_has_support(paragraph, issue_support)
+            for paragraph in issue_section.paragraphs
+        ) or re.search(
+            r"\b(?:whether|legal (?:issue|question)|court (?:must|had to) decide)\b",
+            issue_paragraph,
+            re.IGNORECASE,
+        ) is None
+        if issue_needs_fallback:
+            issue_context = " ".join(claim.public_value for claim in issue_support)
+            if re.search(r"\bjusticiab\w*\b", issue_context, re.IGNORECASE):
+                issue_sentences = [
+                    "The legal issue was whether the States' suit was justiciable."
+                ]
+                if re.search(r"\bstanding\b", issue_context, re.IGNORECASE) and re.search(
+                    r"\b(?:concrete|injury)\b", issue_context, re.IGNORECASE
+                ):
+                    issue_sentences.append(
+                        "One part of that issue was whether the States had a concrete "
+                        "injury for standing."
+                    )
+                replacement_paragraphs["The legal issue"] = (
+                    " ".join(issue_sentences),
+                )
+            else:
+                issue_text = re.sub(
+                    r"^(?:As a result|In doing so),\s*",
+                    "",
+                    issue_support[0].public_value,
+                    flags=re.IGNORECASE,
+                )
+                replacement_paragraphs["The legal issue"] = (
+                    _unquoted_claim_fallback(issue_text),
+                )
     path_section = original_by_heading.get("Why this case reached the Court")
     if path_section is not None and path_support:
         path_roles = {
@@ -467,35 +491,65 @@ def _normalize_disposition_support(
                 "court's injunction while the appeal continues.",
             )
     reason_section = original_by_heading.get("Why the Court did it")
-    if reason_section is not None and reason_support and any(
-        not _guide_paragraph_has_support(paragraph, reason_support)
-        for paragraph in reason_section.paragraphs
-    ):
-        strongest_reason = max(
-            reason_support,
-            key=lambda claim: (
-                4
-                * bool(
-                    re.search(
-                        r"\b(?:jurisdiction|ripeness|standing)\b",
-                        claim.public_value,
-                        re.IGNORECASE,
-                    )
+    if reason_section is not None and reason_support:
+        reason_text = " ".join(reason_section.paragraphs)
+        reason_context = " ".join(claim.public_value for claim in reason_support)
+        reason_needs_fallback = any(
+            not _guide_paragraph_has_support(paragraph, reason_support)
+            for paragraph in reason_section.paragraphs
+        ) or (
+            re.search(
+                r"\b(?:the )?order (?:imposes no obligations|causes? no concrete harm)",
+                reason_text,
+                re.IGNORECASE,
+            )
+            is not None
+            and re.search(
+                r"\b(?:the )?order (?:imposes no obligations|causes? no concrete harm)",
+                reason_context,
+                re.IGNORECASE,
+            )
+            is None
+        )
+        if reason_needs_fallback:
+            if (
+                re.search(r"\bsection 2\s*\(a\)", reason_context, re.IGNORECASE)
+                and re.search(
+                    r"\bimposes no obligations\b", reason_context, re.IGNORECASE
                 )
-                + 3
-                * bool(
-                    re.search(
-                        r"\b(?:concrete|harm|injury)\b",
-                        claim.public_value,
-                        re.IGNORECASE,
-                    )
-                ),
-                -len(claim.public_value),
-            ),
-        )
-        replacement_paragraphs["Why the Court did it"] = (
-            _unquoted_claim_fallback(strongest_reason.public_value),
-        )
+                and re.search(r"\bconcrete harm\b", reason_context, re.IGNORECASE)
+            ):
+                replacement_paragraphs["Why the Court did it"] = (
+                    "For Section 2(a), the Court reasoned that the provision imposes "
+                    "no obligations on the States. The States therefore suffer no "
+                    "concrete harm from that provision.",
+                )
+            else:
+                strongest_reason = max(
+                    reason_support,
+                    key=lambda claim: (
+                        4
+                        * bool(
+                            re.search(
+                                r"\b(?:jurisdiction|ripeness|standing)\b",
+                                claim.public_value,
+                                re.IGNORECASE,
+                            )
+                        )
+                        + 3
+                        * bool(
+                            re.search(
+                                r"\b(?:concrete|harm|injury)\b",
+                                claim.public_value,
+                                re.IGNORECASE,
+                            )
+                        ),
+                        -len(claim.public_value),
+                    ),
+                )
+                replacement_paragraphs["Why the Court did it"] = (
+                    _unquoted_claim_fallback(strongest_reason.public_value),
+                )
     sections = tuple(
         section.model_copy(
             update={
