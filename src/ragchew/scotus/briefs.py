@@ -429,7 +429,15 @@ def _normalize_disposition_support(
             and re.search(r"\bstay\b", claim.public_value, re.IGNORECASE)
             for claim in court_action_claims
         )
-        if not action_is_supported and source_grants_stay:
+        generated_states_stay = re.search(
+            r"\bstay(?:ed)?\b", action_text, re.IGNORECASE
+        ) is not None
+        generated_has_interim_effect = _INTERIM_EFFECT.search(action_text) is not None
+        if source_grants_stay and (
+            not action_is_supported
+            or not generated_states_stay
+            or not generated_has_interim_effect
+        ):
             replacement_paragraphs["What the Supreme Court did"] = (
                 "The Supreme Court granted the stay. This interim stay pauses the lower "
                 "court's injunction while the appeal continues.",
