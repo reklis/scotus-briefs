@@ -328,6 +328,19 @@ def _unquoted_claim_fallback(value: str) -> str:
         without_pdf_wraps,
     )
     without_trailing_citation = re.sub(
+        r"^(?:\d+\s+)?(?:TRUMP\s+v\.\s+)?CALIFORNIA\s+Per Curiam"
+        r"(?:\s+[A-Z])?\s+",
+        "",
+        without_trailing_citation,
+        flags=re.IGNORECASE,
+    )
+    without_trailing_citation = re.sub(
+        r"^cannot manufacture standing\b",
+        "The States cannot manufacture standing",
+        without_trailing_citation,
+        flags=re.IGNORECASE,
+    )
+    without_trailing_citation = re.sub(
         r"^One is standing,\s+which requires\b",
         "Standing requires",
         without_trailing_citation,
@@ -418,14 +431,24 @@ def _normalize_disposition_support(
     issue_section = original_by_heading.get("The legal issue")
     if issue_section is not None and issue_support:
         issue_paragraph = " ".join(issue_section.paragraphs)
-        issue_needs_fallback = any(
-            not _guide_paragraph_has_support(paragraph, issue_support)
-            for paragraph in issue_section.paragraphs
-        ) or re.search(
-            r"\b(?:whether|legal (?:issue|question)|court (?:must|had to) decide)\b",
-            issue_paragraph,
-            re.IGNORECASE,
-        ) is None
+        issue_needs_fallback = (
+            any(
+                not _guide_paragraph_has_support(paragraph, issue_support)
+                for paragraph in issue_section.paragraphs
+            )
+            or re.search(
+                r"\b(?:whether|legal (?:issue|question)|court (?:must|had to) decide)\b",
+                issue_paragraph,
+                re.IGNORECASE,
+            )
+            is None
+            or re.search(
+                r"\bdoctrines?\b[^.!?]{0,80}\b(?:block|bar|foreclose)\w*\b",
+                issue_paragraph,
+                re.IGNORECASE,
+            )
+            is not None
+        )
         if issue_needs_fallback:
             issue_context = " ".join(claim.public_value for claim in issue_support)
             if re.search(r"\bjusticiab\w*\b", issue_context, re.IGNORECASE):
