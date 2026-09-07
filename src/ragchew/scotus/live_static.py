@@ -173,7 +173,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v41"
+POLICY_VERSION = "scotus-brief-policy-v42"
 DOCUMENT_TEXT_VERSION = "official-document-text-v3"
 
 

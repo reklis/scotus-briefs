@@ -307,6 +307,9 @@ def _normalize_disposition_support(
         claim_map[claim_id]
         for claim_id in support_by_heading["What this case is about"]
     )
+    issue_support = tuple(
+        claim_map[claim_id] for claim_id in support_by_heading["The legal issue"]
+    )
     sections = tuple(
         section.model_copy(
             update={
@@ -319,7 +322,16 @@ def _normalize_disposition_support(
                         for paragraph in section.paragraphs
                     )
                     and _guide_paragraph_has_support(draft.dek, background_support)
-                    else section.paragraphs
+                    else (
+                        (_plain_language_text(issue_support[0].public_value),)
+                        if section.heading.strip() == "The legal issue"
+                        and issue_support
+                        and any(
+                            not _guide_paragraph_has_support(paragraph, issue_support)
+                            for paragraph in section.paragraphs
+                        )
+                        else section.paragraphs
+                    )
                 ),
                 "claim_ids": support_by_heading.get(
                     section.heading.strip(), section.claim_ids
