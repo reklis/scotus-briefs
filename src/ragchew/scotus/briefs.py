@@ -556,6 +556,13 @@ def _normalize_disposition_support(
                 re.IGNORECASE,
             )
             is not None
+            or re.search(
+                r"\b(?:state|states|government|applicant|respondent|petitioner|agency|"
+                r"order|directive|provision|section|injunction)\b",
+                reason_text,
+                re.IGNORECASE,
+            )
+            is None
             or (
                 re.search(
                     r"\b(?:the )?order "

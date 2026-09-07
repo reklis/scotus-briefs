@@ -173,7 +173,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v54"
+POLICY_VERSION = "scotus-brief-policy-v55"
 DOCUMENT_TEXT_VERSION = "official-document-text-v3"
 
 
@@ -2715,14 +2715,34 @@ def _legal_analysis_observations(
                 and sentence.casefold() not in excluded_values
             ):
                 candidates.append((block, sentence))
-    issue = next(
-        (
-            (block, sentence)
-            for block, sentence in candidates
-            if _DETERMINISTIC_LEGAL_ISSUE.search(sentence)
-            and _DETERMINISTIC_LOWER_COURT_PATH.search(sentence) is None
-        ),
-        None,
+    issue_candidates = tuple(
+        (index, block, sentence)
+        for index, (block, sentence) in enumerate(candidates)
+        if _DETERMINISTIC_LEGAL_ISSUE.search(sentence)
+        and _DETERMINISTIC_LOWER_COURT_PATH.search(sentence) is None
+    )
+
+    def issue_score(sentence: str) -> int:
+        return (
+            6 * bool(re.search(r"\bjusticiab\w*\b", sentence, re.IGNORECASE))
+            + 5 * bool(re.search(r"\bjurisdiction\b", sentence, re.IGNORECASE))
+            + 4
+            * bool(
+                re.search(r"\b(?:standing|ripeness)\b", sentence, re.IGNORECASE)
+            )
+            + bool(re.search(r"\b(?:constitutional|statutory)\b", sentence, re.IGNORECASE))
+        )
+
+    issue = (
+        (selected_issue[1], selected_issue[2])
+        if issue_candidates
+        and (
+            selected_issue := max(
+                issue_candidates,
+                key=lambda item: (issue_score(item[2]), -item[0]),
+            )
+        )
+        else None
     )
     used = {issue[1].casefold()} if issue is not None else set()
     reason_candidates = tuple(
@@ -2735,7 +2755,16 @@ def _legal_analysis_observations(
 
     def reason_score(sentence: str) -> int:
         return (
-            4 * bool(re.search(r"\b(?:jurisdiction|ripeness|standing)\b", sentence, re.I))
+            7
+            * bool(
+                re.search(
+                    r"\b(?:does not regulate|imposes no obligations|lack(?:s)? standing|"
+                    r"no concrete harm|not ripe)\b",
+                    sentence,
+                    re.IGNORECASE,
+                )
+            )
+            + 4 * bool(re.search(r"\b(?:jurisdiction|ripeness|standing)\b", sentence, re.I))
             + 3 * bool(re.search(r"\b(?:concrete|harm|injury)\b", sentence, re.I))
             + 2
             * bool(re.search(r"\blikely to (?:prevail|succeed)\b", sentence, re.I))
