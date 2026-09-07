@@ -1993,7 +1993,7 @@ def _validate_disposition_guide_structure(
     _validate_action_sentences(grounded_action_text, action_support)
     if any(
         not _guide_paragraph_has_support(
-            _EXPLICIT_NEGATED_ORAL_ARGUMENT.sub("", paragraph), action_claims
+            _EXPLICIT_NEGATED_ORAL_ARGUMENT.sub("", paragraph), action_support
         )
         for paragraph in action_section.paragraphs
     ):
