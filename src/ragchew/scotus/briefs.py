@@ -248,7 +248,31 @@ def _disposition_support_by_heading(
         for claim in controlling
         if claim.observation_type is LegalObservationType.DOCTRINAL_THEME
     )
-    issue_ids = tuple(claim.claim_id for claim in question_claims)
+    issue_ids = (
+        (
+            max(
+                question_claims,
+                key=lambda claim: (
+                    sum(
+                        bool(
+                            re.search(
+                                pattern, claim.public_value, re.IGNORECASE
+                            )
+                        )
+                        for pattern in (
+                            r"\bjurisdiction\b",
+                            r"\bjusticiab\w*\b",
+                            r"\bripeness\b",
+                            r"\bstanding\b",
+                        )
+                    ),
+                    -len(claim.public_value),
+                ),
+            ).claim_id,
+        )
+        if question_claims
+        else ()
+    )
     if not issue_ids and doctrine_claims:
         issue_ids = (doctrine_claims[0].claim_id,)
     issue_values = {
@@ -1450,6 +1474,12 @@ def _split_long_sentence(sentence: str) -> str:
 
 def _plain_language_text(text: str) -> str:
     result = _INTERNAL_CLAIM_MARKER.sub("", text)
+    result = re.sub(
+        r"-\s+(?=(?:ding|ing|ed|tion|ment|ly|able|ible|ous|ive|al|ity|ies|er|est)\b)",
+        "",
+        result,
+        flags=re.IGNORECASE,
+    )
     result = re.sub(r"\bthe\s+the\s+", "the ", result, flags=re.IGNORECASE)
     for pattern, replacement in _PLAIN_LANGUAGE_REPLACEMENTS:
         result = pattern.sub(replacement, result)
