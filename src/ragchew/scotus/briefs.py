@@ -378,7 +378,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v12"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v13"
 
     def __init__(
         self,
@@ -513,6 +513,15 @@ class OpenAILegalBriefGenerator:
             feedback_instruction += (
                 " In the separate-opinions section, name the opinion author in every sentence "
                 "and distinguish the author's own view from any description of the Court."
+            )
+        if disposition_only and feedback_code in {
+            "unsupported_lower_court_action",
+            "unsupported_requested_action",
+            "unsupported_supreme_court_action",
+        }:
+            feedback_instruction += (
+                " In the affected action sentence, reuse the exact supported actor, action verb, "
+                "and object from the matching typed claim."
             )
         if disposition_only and self.correction_draft is not None:
             feedback_instruction += (
@@ -728,6 +737,12 @@ class OpenAILegalBriefGenerator:
                     ),
                     None,
                 )
+                if target_heading is None:
+                    target_heading = {
+                        "unsupported_lower_court_action": "Why this case reached the Court",
+                        "unsupported_requested_action": "Why this case reached the Court",
+                        "unsupported_supreme_court_action": "What the Supreme Court did",
+                    }.get(feedback_code)
                 if self.correction_draft is not None and target_heading is not None:
                     previous_by_heading = {
                         section.heading.strip(): section
