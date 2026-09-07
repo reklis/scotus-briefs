@@ -455,7 +455,11 @@ class MockOpenAI:
 
     @staticmethod
     def _brief(user: dict[str, Any]) -> dict[str, object]:
-        claims = user["claims"]
+        claims = user.get("claims") or [
+            claim
+            for section in user.get("section_plan", [])
+            for claim in section["claims"]
+        ]
         all_ids = [claim["claim_id"] for claim in claims]
         if not user.get("argument_sessions"):
             ids_by_type = {
@@ -836,9 +840,9 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     processor = result.content.publication.processor
     assert processor is not None
     assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
-    assert processor.policy_version == "scotus-brief-policy-v34"
+    assert processor.policy_version == "scotus-brief-policy-v56"
     assert processor.prompt_version == (
-        "scotus-brief-plain-language-v31;disposition=scotus-disposition-citizen-guide-v10"
+        "scotus-brief-plain-language-v31;disposition=scotus-disposition-citizen-guide-v13"
     )
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",

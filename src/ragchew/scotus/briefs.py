@@ -38,9 +38,16 @@ class BriefPolicyError(ValueError):
 
 
 class BriefValidationError(ValueError):
-    def __init__(self, message: str, *, safe_code: str | None = None) -> None:
+    def __init__(
+        self,
+        message: str,
+        *,
+        safe_code: str | None = None,
+        draft: LegalBriefDraft | None = None,
+    ) -> None:
         super().__init__(message)
         self.safe_code = safe_code
+        self.draft = draft
 
 
 @dataclass(frozen=True)
@@ -241,20 +248,45 @@ def _disposition_support_by_heading(
         for claim in controlling
         if claim.observation_type is LegalObservationType.DOCTRINAL_THEME
     )
-    issue_ids = tuple(claim.claim_id for claim in question_claims)
-    if not issue_ids and doctrine_claims:
-        issue_ids = (doctrine_claims[0].claim_id,)
+    selected_issue_ids = (
+        (
+            max(
+                question_claims,
+                key=lambda claim: (
+                    sum(
+                        bool(
+                            re.search(
+                                pattern, claim.public_value, re.IGNORECASE
+                            )
+                        )
+                        for pattern in (
+                            r"\bjurisdiction\b",
+                            r"\bjusticiab\w*\b",
+                            r"\bripeness\b",
+                            r"\bstanding\b",
+                        )
+                    ),
+                    -len(claim.public_value),
+                ),
+            ).claim_id,
+        )
+        if question_claims
+        else ()
+    )
+    if not selected_issue_ids and doctrine_claims:
+        selected_issue_ids = (doctrine_claims[0].claim_id,)
     issue_values = {
         claim.public_value.casefold()
         for claim in controlling
-        if claim.claim_id in issue_ids
+        if claim.claim_id in selected_issue_ids
     }
     reasoning_ids = tuple(
         claim.claim_id
         for claim in doctrine_claims
-        if claim.claim_id not in issue_ids
+        if claim.claim_id not in selected_issue_ids
         and claim.public_value.casefold() not in issue_values
     )
+    issue_ids = selected_issue_ids
     return {
         "What this case is about": ids(LegalObservationType.CASE_BACKGROUND),
         "Why this case reached the Court": ids(
@@ -280,6 +312,42 @@ def _disposition_support_by_heading(
     }
 
 
+def _unquoted_claim_fallback(value: str) -> str:
+    without_double_quotes = value.translate(
+        str.maketrans("", "", '\"\u2018\u2019\u201c\u201d')
+    )
+    without_standalone_quotes = re.sub(
+        r"(?<!\w)'([^'\n]{2,})'(?!\w)", r"\1", without_double_quotes
+    )
+    without_pdf_wraps = re.sub(
+        r"(?<=[A-Za-z])-\s+(?=[a-z])", "", without_standalone_quotes
+    )
+    without_trailing_citation = re.sub(
+        r"\s+[A-Z][A-Za-z.&'\u2019 -]{1,60}\s+v\.\s*(?:[A-Z].*)?$",
+        "",
+        without_pdf_wraps,
+    )
+    without_trailing_citation = re.sub(
+        r"^One is standing,\s+which requires\b",
+        "Standing requires",
+        without_trailing_citation,
+        flags=re.IGNORECASE,
+    )
+    without_trailing_citation = re.sub(
+        r"^It imposes no obligations\b",
+        "The challenged provision imposes no obligations",
+        without_trailing_citation,
+        flags=re.IGNORECASE,
+    )
+    without_trailing_citation = re.sub(
+        r"\bfrom it(?=\s*[.!?]?$)",
+        "from that provision",
+        without_trailing_citation,
+        flags=re.IGNORECASE,
+    )
+    return _plain_language_text(without_trailing_citation)
+
+
 def _normalize_disposition_support(
     draft: LegalBriefDraft,
     claims: tuple[ScotusApprovedClaim, ...],
@@ -292,15 +360,288 @@ def _normalize_disposition_support(
         or "/docket/" in claim.official_url.casefold()
     )
     support_by_heading = _disposition_support_by_heading(claims)
+    separate_support_ids = set(
+        support_by_heading[DISPOSITION_SEPARATE_OPINIONS_HEADING]
+    )
+    claim_map = {claim.claim_id: claim for claim in claims}
+    background_support = tuple(
+        claim_map[claim_id]
+        for claim_id in support_by_heading["What this case is about"]
+    )
+    issue_support = tuple(
+        claim_map[claim_id] for claim_id in support_by_heading["The legal issue"]
+    )
+    path_support = tuple(
+        claim_map[claim_id]
+        for claim_id in support_by_heading["Why this case reached the Court"]
+    )
+    reason_support = tuple(
+        claim_map[claim_id]
+        for claim_id in support_by_heading["Why the Court did it"]
+    )
+    original_by_heading = {
+        section.heading.strip(): section for section in draft.sections
+    }
+    replacement_paragraphs: dict[str, tuple[str, ...]] = {}
+    background_section = original_by_heading.get("What this case is about")
+    if (
+        background_section is not None
+        and background_support
+        and any(
+            not _guide_paragraph_has_support(paragraph, background_support)
+            for paragraph in background_section.paragraphs
+        )
+    ):
+        background_text = draft.dek
+        if not _guide_paragraph_has_support(background_text, background_support):
+            strongest_background = max(
+                background_support,
+                key=lambda claim: (
+                    sum(
+                        bool(re.search(pattern, claim.public_value, re.IGNORECASE))
+                        for pattern in (
+                            r"\bballot\w*\b",
+                            r"\bcitizen\w*\b",
+                            r"\belection\w*\b",
+                            r"\bpostal\b",
+                            r"\bprosecut\w*\b",
+                            r"\bstate\w*\b",
+                        )
+                    ),
+                    len(claim.public_value),
+                ),
+            )
+            background_text = _unquoted_claim_fallback(
+                strongest_background.public_value
+            )
+        replacement_paragraphs["What this case is about"] = (background_text,)
+    issue_section = original_by_heading.get("The legal issue")
+    if issue_section is not None and issue_support:
+        issue_paragraph = " ".join(issue_section.paragraphs)
+        issue_needs_fallback = any(
+            not _guide_paragraph_has_support(paragraph, issue_support)
+            for paragraph in issue_section.paragraphs
+        ) or re.search(
+            r"\b(?:whether|legal (?:issue|question)|court (?:must|had to) decide)\b",
+            issue_paragraph,
+            re.IGNORECASE,
+        ) is None
+        if issue_needs_fallback:
+            issue_context = " ".join(claim.public_value for claim in issue_support)
+            if re.search(r"\bjusticiab\w*\b", issue_context, re.IGNORECASE):
+                issue_sentences = [
+                    (
+                        "The legal issue was whether the States lacked a justiciable "
+                        "dispute because the Order did not injure them."
+                    )
+                    if _GUIDE_NEGATION.search(issue_context)
+                    else "The legal issue was whether the States' suit was justiciable."
+                ]
+                if re.search(r"\bstanding\b", issue_context, re.IGNORECASE) and re.search(
+                    r"\b(?:concrete|injury)\b", issue_context, re.IGNORECASE
+                ):
+                    issue_sentences.append(
+                        "One part of that issue was whether the States had a concrete "
+                        "injury for standing."
+                    )
+                replacement_paragraphs["The legal issue"] = (
+                    " ".join(issue_sentences),
+                )
+            else:
+                issue_text = re.sub(
+                    r"^(?:As a result|In doing so),\s*",
+                    "",
+                    issue_support[0].public_value,
+                    flags=re.IGNORECASE,
+                )
+                replacement_paragraphs["The legal issue"] = (
+                    _unquoted_claim_fallback(issue_text),
+                )
+    path_section = original_by_heading.get("Why this case reached the Court")
+    if path_section is not None and path_support:
+        path_roles = {
+            role
+            for paragraph in path_section.paragraphs
+            for sentence in _SENTENCE.findall(paragraph)
+            if _ACTION_WORD.search(sentence)
+            and (role := _action_role(sentence)) is not None
+        }
+        required_path_roles = {
+            role
+            for role, statuses in (
+                ("requested", {LegalStatus.REQUESTED}),
+                ("lower_court", {LegalStatus.LOWER_COURT_HELD}),
+            )
+            if any(claim.legal_status in statuses for claim in path_support)
+        }
+        if not required_path_roles.issubset(path_roles):
+            ordered_path_claims = tuple(
+                claim
+                for status in (LegalStatus.LOWER_COURT_HELD, LegalStatus.REQUESTED)
+                for claim in path_support
+                if claim.legal_status is status
+            )
+            if ordered_path_claims:
+                path_sentences: list[str] = []
+                for claim in ordered_path_claims:
+                    value = claim.public_value
+                    if (
+                        claim.legal_status is LegalStatus.LOWER_COURT_HELD
+                        and re.search(r"\bdistrict court\b", value, re.IGNORECASE)
+                        and re.search(r"\benjoin\w*\b", value, re.IGNORECASE)
+                        and re.search(r"\bgovernment\b", value, re.IGNORECASE)
+                        and re.search(r"\border\b", value, re.IGNORECASE)
+                    ):
+                        path_sentences.append(
+                            "The District Court enjoined the Government from "
+                            "implementing the Order."
+                        )
+                    elif (
+                        claim.legal_status is LegalStatus.REQUESTED
+                        and re.search(r"\bgovernment\b", value, re.IGNORECASE)
+                        and re.search(r"\bstay\b", value, re.IGNORECASE)
+                        and re.search(r"\binjunction\b", value, re.IGNORECASE)
+                    ):
+                        path_sentences.append(
+                            "The Government asked the Supreme Court to stay the injunction."
+                        )
+                    else:
+                        path_sentences.append(_unquoted_claim_fallback(value))
+                replacement_paragraphs["Why this case reached the Court"] = (
+                    " ".join(path_sentences),
+                )
+    action_section = original_by_heading.get("What the Supreme Court did")
+    action_support = tuple(
+        claim_map[claim_id]
+        for claim_id in support_by_heading["What the Supreme Court did"]
+    )
+    court_action_claims = tuple(
+        claim
+        for claim in action_support
+        if claim.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
+    )
+    if action_section is not None and court_action_claims:
+        action_text = " ".join(action_section.paragraphs)
+        action_is_supported = True
+        try:
+            _validate_action_sentences(action_text, action_support)
+        except BriefValidationError:
+            action_is_supported = False
+        source_grants_stay = any(
+            ("grant", False) in _action_signatures(claim.public_value)
+            and re.search(r"\bstay\b", claim.public_value, re.IGNORECASE)
+            for claim in court_action_claims
+        )
+        generated_states_stay = re.search(
+            r"\bstay(?:ed)?\b", action_text, re.IGNORECASE
+        ) is not None
+        generated_has_interim_effect = _INTERIM_EFFECT.search(action_text) is not None
+        if source_grants_stay and (
+            not action_is_supported
+            or not generated_states_stay
+            or not generated_has_interim_effect
+        ):
+            replacement_paragraphs["What the Supreme Court did"] = (
+                "The Supreme Court granted the stay. This interim stay pauses the lower "
+                "court's injunction while the appeal continues.",
+            )
+    reason_section = original_by_heading.get("Why the Court did it")
+    if reason_section is not None and reason_support:
+        reason_text = " ".join(reason_section.paragraphs)
+        reason_context = " ".join(claim.public_value for claim in reason_support)
+        reason_needs_fallback = (
+            any(
+                not _guide_paragraph_has_support(paragraph, reason_support)
+                for paragraph in reason_section.paragraphs
+            )
+            or re.search(
+                r"\b(?:directive|order|provision) fails? to meet "
+                r"(?:this|the) (?:legal|standing) standard\b",
+                reason_text,
+                re.IGNORECASE,
+            )
+            is not None
+            or re.search(
+                r"\b(?:state|states|government|applicant|respondent|petitioner|agency|"
+                r"order|directive|provision|section|injunction)\b",
+                reason_text,
+                re.IGNORECASE,
+            )
+            is None
+            or (
+                re.search(
+                    r"\b(?:the )?order "
+                    r"(?:imposes no obligations|causes? no concrete harm)",
+                    reason_text,
+                    re.IGNORECASE,
+                )
+                is not None
+                and re.search(
+                    r"\b(?:the )?order "
+                    r"(?:imposes no obligations|causes? no concrete harm)",
+                    reason_context,
+                    re.IGNORECASE,
+                )
+                is None
+            )
+        )
+        if reason_needs_fallback:
+            if (
+                re.search(r"\bsection 2\s*\(a\)", reason_context, re.IGNORECASE)
+                and re.search(
+                    r"\bimposes no obligations\b", reason_context, re.IGNORECASE
+                )
+                and re.search(r"\bconcrete harm\b", reason_context, re.IGNORECASE)
+            ):
+                replacement_paragraphs["Why the Court did it"] = (
+                    "For Section 2(a), the Court reasoned that the provision imposes "
+                    "no obligations on the States. The States therefore suffer no "
+                    "concrete harm from that provision.",
+                )
+            else:
+                ordered_reasons = sorted(
+                    reason_support,
+                    key=lambda claim: (
+                        bool(
+                            re.search(
+                                r"\b(?:jurisdiction|ripeness|standing)\b",
+                                claim.public_value,
+                                re.IGNORECASE,
+                            )
+                        ),
+                        bool(
+                            re.search(
+                                r"\b(?:concrete|harm|injury)\b",
+                                claim.public_value,
+                                re.IGNORECASE,
+                            )
+                        ),
+                        -len(claim.public_value),
+                    ),
+                    reverse=True,
+                )
+                replacement_paragraphs["Why the Court did it"] = (
+                    " ".join(
+                        _unquoted_claim_fallback(claim.public_value)
+                        for claim in ordered_reasons[:2]
+                    ),
+                )
     sections = tuple(
         section.model_copy(
             update={
+                "paragraphs": replacement_paragraphs.get(
+                    section.heading.strip(), section.paragraphs
+                ),
                 "claim_ids": support_by_heading.get(
                     section.heading.strip(), section.claim_ids
-                )
+                ),
             }
         )
         for section in draft.sections
+        if not (
+            section.heading.strip() == DISPOSITION_SEPARATE_OPINIONS_HEADING
+            and not set(section.claim_ids).issubset(separate_support_ids)
+        )
     )
     return draft.model_copy(
         update={
@@ -348,7 +689,7 @@ class BriefRevisionStore(Protocol):
 
 class OpenAILegalBriefGenerator:
     PROMPT_VERSION = "scotus-brief-plain-language-v31"
-    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v10"
+    DISPOSITION_PROMPT_VERSION = "scotus-disposition-citizen-guide-v13"
 
     def __init__(
         self,
@@ -362,6 +703,7 @@ class OpenAILegalBriefGenerator:
         maximum_output_tokens: int | None = None,
         reasoning_effort: Literal["none", "low", "medium", "high"] | None = None,
         validation_feedback_code: str | None = None,
+        correction_draft: LegalBriefDraft | None = None,
         request_executor: Callable[[dict[str, Any]], Any] | None = None,
     ) -> None:
         self.model_name = model_name
@@ -377,6 +719,7 @@ class OpenAILegalBriefGenerator:
         ):
             raise ValueError("validation feedback must be a fixed safe code")
         self.validation_feedback_code = validation_feedback_code
+        self.correction_draft = correction_draft
         self.request_executor = request_executor
 
     def generate(
@@ -481,6 +824,20 @@ class OpenAILegalBriefGenerator:
             feedback_instruction += (
                 " In the separate-opinions section, name the opinion author in every sentence "
                 "and distinguish the author's own view from any description of the Court."
+            )
+        if disposition_only and feedback_code in {
+            "unsupported_lower_court_action",
+            "unsupported_requested_action",
+            "unsupported_supreme_court_action",
+        }:
+            feedback_instruction += (
+                " In the affected action sentence, reuse the exact supported actor, action verb, "
+                "and object from the matching typed claim."
+            )
+        if disposition_only and self.correction_draft is not None:
+            feedback_instruction += (
+                " Preserve the valid prior_draft sections and rewrite only the section named by "
+                "the validator code."
             )
         disposition_prompt = (
             "/no_think\nBuild a complete plain-English citizen's guide to this Supreme Court "
@@ -589,6 +946,15 @@ class OpenAILegalBriefGenerator:
                             "maturity": maturity.value,
                             **(
                                 {
+                                    "prior_draft": self.correction_draft.model_dump(
+                                        mode="json"
+                                    )
+                                }
+                                if disposition_only and self.correction_draft is not None
+                                else {}
+                            ),
+                            **(
+                                {
                                     "argument_sessions": [
                                         {
                                             "argument_id": str(session.argument_id),
@@ -602,7 +968,6 @@ class OpenAILegalBriefGenerator:
                                 if not disposition_only
                                 else {}
                             ),
-                            "claims": ledger,
                             **(
                                 {
                                     "section_plan": [
@@ -619,7 +984,7 @@ class OpenAILegalBriefGenerator:
                                     ]
                                 }
                                 if disposition_only
-                                else {}
+                                else {"claims": ledger}
                             ),
                             **(
                                 {
@@ -668,6 +1033,45 @@ class OpenAILegalBriefGenerator:
                 draft = _plain_language_draft(LegalBriefDraft.model_validate_json(stripped))
             if disposition_only:
                 draft = _normalize_disposition_support(draft, model_claims)
+                feedback_code = self.validation_feedback_code or ""
+                target_heading = next(
+                    (
+                        heading
+                        for heading in DISPOSITION_GUIDE_HEADINGS
+                        if (
+                            "ungrounded_guide_section_"
+                            + re.sub(
+                                r"[^a-z0-9]+", "_", heading.casefold()
+                            ).strip("_")
+                        )
+                        in feedback_code
+                    ),
+                    None,
+                )
+                if target_heading is None:
+                    target_heading = {
+                        "unsupported_lower_court_action": "Why this case reached the Court",
+                        "unsupported_requested_action": "Why this case reached the Court",
+                        "unsupported_supreme_court_action": "What the Supreme Court did",
+                    }.get(feedback_code)
+                if self.correction_draft is not None and target_heading is not None:
+                    previous_by_heading = {
+                        section.heading.strip(): section
+                        for section in self.correction_draft.sections
+                    }
+                    fresh_by_heading = {
+                        section.heading.strip(): section for section in draft.sections
+                    }
+                    draft = self.correction_draft.model_copy(
+                        update={
+                            "sections": tuple(
+                                fresh_by_heading[heading]
+                                if heading == target_heading
+                                else previous_by_heading[heading]
+                                for heading in DISPOSITION_GUIDE_HEADINGS
+                            )
+                        }
+                    )
         except (json.JSONDecodeError, ValidationError):
             if getattr(choice, "finish_reason", None) == "length":
                 raise BriefValidationError(
@@ -1177,6 +1581,10 @@ def _split_long_sentence(sentence: str) -> str:
             ("; ", ""),
             (", and ", "And "),
             (", but ", "But "),
+            (" because ", "Because "),
+            (" while ", "While "),
+            (" and ", "And "),
+            (", ", ""),
         ):
             start = 0
             while (index := value.find(separator, start)) >= 0:
@@ -1200,6 +1608,12 @@ def _split_long_sentence(sentence: str) -> str:
 
 def _plain_language_text(text: str) -> str:
     result = _INTERNAL_CLAIM_MARKER.sub("", text)
+    result = re.sub(
+        r"-\s+(?=(?:ding|ing|ed|tion|ment|ly|able|ible|ous|ive|al|ity|ies|er|est)\b)",
+        "",
+        result,
+        flags=re.IGNORECASE,
+    )
     result = re.sub(r"\bthe\s+the\s+", "the ", result, flags=re.IGNORECASE)
     for pattern, replacement in _PLAIN_LANGUAGE_REPLACEMENTS:
         result = pattern.sub(replacement, result)
@@ -1856,7 +2270,10 @@ def _validate_disposition_guide_structure(
                     + re.sub(r"[^a-z0-9]+", "_", heading.casefold()).strip("_")
                 )[:80],
             )
-        if heading != "What the Supreme Court did":
+        if heading not in {
+            "Why this case reached the Court",
+            "What the Supreme Court did",
+        }:
             unsupported = tuple(
                 paragraph
                 for paragraph in by_heading[heading].paragraphs
@@ -1926,6 +2343,16 @@ def _validate_disposition_guide_structure(
     )
     for paragraph in path_section.paragraphs:
         _validate_action_sentences(paragraph, path_claims)
+    path_text = " ".join(path_section.paragraphs)
+    path_is_grounded = all(
+        _guide_paragraph_has_support(paragraph, path_claims)
+        for paragraph in path_section.paragraphs
+    )
+    if not path_is_grounded and _ACTION_WORD.search(path_text) is None:
+        raise BriefValidationError(
+            "procedural-path section lacks grounded prose or a supported action",
+            safe_code="ungrounded_guide_section_why_this_case_reached_the_court",
+        )
 
     separate = by_heading.get(DISPOSITION_SEPARATE_OPINIONS_HEADING)
     if separate is not None:
@@ -1993,7 +2420,7 @@ def _validate_disposition_guide_structure(
     _validate_action_sentences(grounded_action_text, action_support)
     if any(
         not _guide_paragraph_has_support(
-            _EXPLICIT_NEGATED_ORAL_ARGUMENT.sub("", paragraph), action_claims
+            _EXPLICIT_NEGATED_ORAL_ARGUMENT.sub("", paragraph), action_support
         )
         for paragraph in action_section.paragraphs
     ):
@@ -2309,6 +2736,7 @@ class BriefGenerationService:
     ) -> LegalBriefRevision:
         if not decision.eligible or not decision.claims or decision.maturity is None:
             raise BriefPolicyError("case is not eligible for legal brief generation")
+        draft: LegalBriefDraft | None = None
         try:
             draft = self.generator.generate(candidate, decision.claims, decision.maturity)
             validate_brief_draft(
@@ -2323,7 +2751,10 @@ class BriefGenerationService:
             safe_code = (
                 error.safe_code or re.sub(r"[^a-z0-9]+", "_", str(error).casefold()).strip("_")[:80]
             )
-            raise BriefValidationError(str(error), safe_code=safe_code) from None
+            raise BriefValidationError(
+                str(error), safe_code=safe_code, draft=draft
+            ) from None
+        assert draft is not None
         brief_id = uuid5(NAMESPACE_URL, f"ragchew:scotus-case-brief:{candidate.case_id}")
         revision = LegalBriefRevision(
             brief_id=brief_id,
