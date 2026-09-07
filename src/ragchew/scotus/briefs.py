@@ -287,6 +287,14 @@ def _disposition_support_by_heading(
     }
 
 
+def _unquoted_claim_fallback(value: str) -> str:
+    without_double_quotes = value.translate(str.maketrans("", "", '\"\u201c\u201d'))
+    without_standalone_quotes = re.sub(
+        r"(?<!\w)'([^'\n]{2,})'(?!\w)", r"\1", without_double_quotes
+    )
+    return _plain_language_text(without_standalone_quotes)
+
+
 def _normalize_disposition_support(
     draft: LegalBriefDraft,
     claims: tuple[ScotusApprovedClaim, ...],
@@ -330,9 +338,30 @@ def _normalize_disposition_support(
             not _guide_paragraph_has_support(paragraph, background_support)
             for paragraph in background_section.paragraphs
         )
-        and _guide_paragraph_has_support(draft.dek, background_support)
     ):
-        replacement_paragraphs["What this case is about"] = (draft.dek,)
+        background_text = draft.dek
+        if not _guide_paragraph_has_support(background_text, background_support):
+            strongest_background = max(
+                background_support,
+                key=lambda claim: (
+                    sum(
+                        bool(re.search(pattern, claim.public_value, re.IGNORECASE))
+                        for pattern in (
+                            r"\bballot\w*\b",
+                            r"\bcitizen\w*\b",
+                            r"\belection\w*\b",
+                            r"\bpostal\b",
+                            r"\bprosecut\w*\b",
+                            r"\bstate\w*\b",
+                        )
+                    ),
+                    len(claim.public_value),
+                ),
+            )
+            background_text = _unquoted_claim_fallback(
+                strongest_background.public_value
+            )
+        replacement_paragraphs["What this case is about"] = (background_text,)
     issue_section = original_by_heading.get("The legal issue")
     if issue_section is not None and issue_support and any(
         not _guide_paragraph_has_support(paragraph, issue_support)
@@ -345,7 +374,7 @@ def _normalize_disposition_support(
             flags=re.IGNORECASE,
         )
         replacement_paragraphs["The legal issue"] = (
-            _plain_language_text(issue_text),
+            _unquoted_claim_fallback(issue_text),
         )
     path_section = original_by_heading.get("Why this case reached the Court")
     if path_section is not None and path_support:
@@ -374,7 +403,7 @@ def _normalize_disposition_support(
             if ordered_path_claims:
                 replacement_paragraphs["Why this case reached the Court"] = (
                     " ".join(
-                        _plain_language_text(claim.public_value)
+                        _unquoted_claim_fallback(claim.public_value)
                         for claim in ordered_path_claims
                     ),
                 )
@@ -406,7 +435,7 @@ def _normalize_disposition_support(
             ),
         )
         replacement_paragraphs["Why the Court did it"] = (
-            _plain_language_text(strongest_reason.public_value),
+            _unquoted_claim_fallback(strongest_reason.public_value),
         )
     sections = tuple(
         section.model_copy(
