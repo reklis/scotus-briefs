@@ -252,11 +252,25 @@ class MockOpenAI:
         self.requests.append(request)
         name = request["response_format"]["json_schema"]["name"]
         user = json.loads(request["messages"][1]["content"])
-        content = (
-            self._extraction(user["evidence"])
-            if name == "scotus_legal_observations"
-            else self._brief(user)
-        )
+        if name == "scotus_legal_observations":
+            content = self._extraction(user["evidence"])
+        elif name == "compact_reader_guide":
+            content = self._compact_brief(user)
+        elif name == "reader_guide_field_repair":
+            claims = user["support_packet"]["claims"]
+            support = " ".join(claim["value"] for claim in claims)
+            if "injunction" in support.casefold() and "stay" in support.casefold():
+                content = {
+                    "text": (
+                        "The Supreme Court temporarily stayed the District Court's injunction, "
+                        "a court "
+                        "order that blocks government action, while the case continues."
+                    )
+                }
+            else:
+                content = {"text": support}
+        else:
+            content = self._brief(user)
         return SimpleNamespace(
             choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(content)))]
         )
@@ -456,20 +470,42 @@ class MockOpenAI:
         }
 
     @staticmethod
+    def _compact_brief(user: dict[str, Any]) -> dict[str, object]:
+        def prose(claims: list[dict[str, Any]]) -> str:
+            return " ".join(dict.fromkeys(str(claim["value"]) for claim in claims))
+
+        return {
+            "dek": prose(user["summary"]),
+            "section_paragraphs": [
+                prose(
+                    [
+                        claim
+                        for claim in section["claims"]
+                        if len(str(claim["value"])) > 10
+                        and not str(claim["value"]).casefold().startswith("docket ")
+                    ]
+                    or section["claims"]
+                )
+                for section in user["sections"]
+            ],
+            "argument_paragraphs": [
+                [
+                    prose(argument["claims"][::2]),
+                    prose(argument["claims"][1::2] or argument["claims"][:1]),
+                ]
+                for argument in user["arguments"]
+            ],
+        }
+
+    @staticmethod
     def _brief(user: dict[str, Any]) -> dict[str, object]:
         claims = user.get("claims") or [
-            claim
-            for section in user.get("section_plan", [])
-            for claim in section["claims"]
+            claim for section in user.get("section_plan", []) for claim in section["claims"]
         ]
         all_ids = [claim["claim_id"] for claim in claims]
         if not user.get("argument_sessions"):
             ids_by_type = {
-                claim_type: [
-                    claim["claim_id"]
-                    for claim in claims
-                    if claim["type"] == claim_type
-                ]
+                claim_type: [claim["claim_id"] for claim in claims if claim["type"] == claim_type]
                 for claim_type in {
                     "case_background",
                     "procedural_posture",
@@ -487,13 +523,9 @@ class MockOpenAI:
                 *ids_by_type["requested_disposition"],
                 *ids_by_type["lower_court_action"],
             ]
-            issue_ids = ids_by_type["question_presented"] or ids_by_type[
-                "doctrinal_theme"
-            ][:1]
+            issue_ids = ids_by_type["question_presented"] or ids_by_type["doctrinal_theme"][:1]
             reasoning_ids = [
-                claim_id
-                for claim_id in ids_by_type["doctrinal_theme"]
-                if claim_id not in issue_ids
+                claim_id for claim_id in ids_by_type["doctrinal_theme"] if claim_id not in issue_ids
             ]
             action_ids = [*ids_by_type["holding"], *ids_by_type["order"]]
             action_values = " ".join(
@@ -535,9 +567,7 @@ class MockOpenAI:
                     },
                     {
                         "heading": "Why the Court did it",
-                        "paragraphs": [
-                            "The Court explained its reasoning for the result."
-                        ],
+                        "paragraphs": ["The Court explained its reasoning for the result."],
                         "claim_ids": reasoning_ids,
                     },
                 ],
@@ -690,9 +720,7 @@ def _replace_active_case(content: GeneratedContent, case: PublicCaseBrief) -> Ge
     projection = content.projection.model_copy(
         update={
             "cases": tuple(
-                case
-                if public_case_key(item.term, item.primary_docket) == case_key
-                else item
+                case if public_case_key(item.term, item.primary_docket) == case_key else item
                 for item in content.projection.cases
             )
         }
@@ -731,30 +759,48 @@ def test_opinion_page_attribution_tracks_court_and_separate_opinions() -> None:
     assert _opinion_page_attribution("PER CURIAM\nThe Court explains its decision.") == (
         "Opinion of the Court"
     )
-    assert _opinion_page_attribution(
-        "JACKSON, J., dissenting\nI would deny relief.",
-        "Opinion of the Court",
-    ) == "Justice Jackson, dissenting"
-    assert _opinion_page_attribution(
-        "JUSTICE KAGAN, dissenting\nI would deny relief.",
-        "Opinion of the Court",
-    ) == "Justice Kagan, dissenting"
-    assert _opinion_page_attribution(
-        "JUSTICE KAGAN, with whom JUSTICE SOTOMAYOR joins, dissenting\nReasoning.",
-        "Opinion of the Court",
-    ) == "Justice Kagan, dissenting"
-    assert _opinion_page_attribution(
-        "CHIEF JUSTICE ROBERTS, dissenting\nReasoning.",
-        "Opinion of the Court",
-    ) == "Justice Roberts, dissenting"
-    assert _opinion_page_attribution(
-        "JACKSON, J., dissenting\nThe analysis continues.",
-        "Justice Jackson, dissenting",
-    ) == "Justice Jackson, dissenting"
-    assert _opinion_page_attribution(
-        "SOTOMAYOR, J., concurring in part and dissenting in part\nSeparate reasoning.",
-        "Justice Jackson, dissenting",
-    ) == "Justice Sotomayor, concurring in part and dissenting in part"
+    assert (
+        _opinion_page_attribution(
+            "JACKSON, J., dissenting\nI would deny relief.",
+            "Opinion of the Court",
+        )
+        == "Justice Jackson, dissenting"
+    )
+    assert (
+        _opinion_page_attribution(
+            "JUSTICE KAGAN, dissenting\nI would deny relief.",
+            "Opinion of the Court",
+        )
+        == "Justice Kagan, dissenting"
+    )
+    assert (
+        _opinion_page_attribution(
+            "JUSTICE KAGAN, with whom JUSTICE SOTOMAYOR joins, dissenting\nReasoning.",
+            "Opinion of the Court",
+        )
+        == "Justice Kagan, dissenting"
+    )
+    assert (
+        _opinion_page_attribution(
+            "CHIEF JUSTICE ROBERTS, dissenting\nReasoning.",
+            "Opinion of the Court",
+        )
+        == "Justice Roberts, dissenting"
+    )
+    assert (
+        _opinion_page_attribution(
+            "JACKSON, J., dissenting\nThe analysis continues.",
+            "Justice Jackson, dissenting",
+        )
+        == "Justice Jackson, dissenting"
+    )
+    assert (
+        _opinion_page_attribution(
+            "SOTOMAYOR, J., concurring in part and dissenting in part\nSeparate reasoning.",
+            "Justice Jackson, dissenting",
+        )
+        == "Justice Sotomayor, concurring in part and dissenting in part"
+    )
 
 
 def test_legal_analysis_fallback_uses_distinct_controlling_exact_sentences() -> None:
@@ -887,13 +933,14 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     processor = result.content.publication.processor
     assert processor is not None
     assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
-    assert processor.policy_version == "scotus-brief-policy-v58"
+    assert processor.policy_version == "scotus-brief-policy-v59"
     assert processor.prompt_version == (
-        "scotus-brief-plain-language-v32;disposition=scotus-disposition-citizen-guide-v14"
+        "scotus-reader-guide-compact-v1;repair=scotus-reader-guide-field-repair-v1;"
+        "planner=reader-guide-plan-v1;reader_prose=scotus-reader-prose-v1"
     )
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",
-        "scotus_legal_brief",
+        "compact_reader_guide",
     ]
     assert all(request["extra_body"] == {"think": False} for request in model.requests)
     assert model.requests[0]["max_tokens"] == 8_000
@@ -909,7 +956,9 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
         "attribution",
     }.issubset(extraction_evidence[0])
     brief_payload = json.loads(model.requests[1]["messages"][1]["content"])
-    assert brief_payload["mode"] == "/no_think"
+    assert brief_payload["task"] == "translate approved facts into everyday language"
+    assert "caption" not in brief_payload
+    assert "docket" not in brief_payload
     brief_schema = model.requests[1]["response_format"]["json_schema"]["schema"]
     assert "$defs" not in brief_schema
     receipts = CostReceiptBundle.model_validate_json(
@@ -961,9 +1010,11 @@ def test_status_changing_opinion_rewrites_complete_argument_case(tmp_path: Path)
         _text_pdf(
             "No. 25-1 Example v. Agency.",
             "The Court affirmed the judgment.",
+            "The Court explained that the law permits the agency action.",
         ),
         "application/pdf",
     )
+
     class OpinionAwareModel(MockOpenAI):
         @staticmethod
         def _extraction(evidence: list[dict[str, Any]]) -> dict[str, object]:
@@ -991,7 +1042,33 @@ def test_status_changing_opinion_rewrites_complete_argument_case(tmp_path: Path)
                             }
                         ],
                         "supersedes_observation_id": None,
-                    }
+                    },
+                    {
+                        "observation_type": "doctrinal_theme",
+                        "legal_status": "described",
+                        "certainty": "direct",
+                        "raw_value": (
+                            "The Court explained that the law permits the agency action."
+                        ),
+                        "normalized_value": (
+                            "The Court explained that the law permits the agency action."
+                        ),
+                        "attribution": opinion["attribution"],
+                        "speaker_name": opinion["speaker_name"],
+                        "speaker_kind": opinion["speaker_kind"],
+                        "identity_basis": opinion["identity_basis"],
+                        "authority_citations": [],
+                        "confidence": 1,
+                        "evidence": [
+                            {
+                                "block_id": opinion["block_id"],
+                                "quote": (
+                                    "The Court explained that the law permits the agency action."
+                                ),
+                            }
+                        ],
+                        "supersedes_observation_id": None,
+                    },
                 ]
             }
 
@@ -1015,9 +1092,8 @@ def test_status_changing_opinion_rewrites_complete_argument_case(tmp_path: Path)
         for paragraph in section.paragraphs
     )
     assert [
-        request["response_format"]["json_schema"]["name"]
-        for request in update_model.requests
-    ] == ["scotus_legal_observations", "scotus_legal_observations", "scotus_legal_brief"]
+        request["response_format"]["json_schema"]["name"] for request in update_model.requests
+    ] == ["scotus_legal_observations", "scotus_legal_observations", "compact_reader_guide"]
     assert any("transcripts" in request.url.path for request in court.document_requests)
 
 
@@ -1029,9 +1105,7 @@ def test_failed_opinion_rewrite_keeps_complete_prior_argument_case(tmp_path: Pat
     prior = first.content.projection.cases[0]
     store.content = first.content
     court.slip_etag = '"slip-2"'
-    court.slip_rows = [
-        ("21", "6/30/26", "25-1", "Example v. Agency", "K", "25-1_example.pdf")
-    ]
+    court.slip_rows = [("21", "6/30/26", "25-1", "Example v. Agency", "K", "25-1_example.pdf")]
     court.documents["/opinions/25pdf/25-1_example.pdf"] = (
         '"opinion-25-1"',
         _text_pdf("No. 25-1 Example v. Agency.", "The Court affirmed the judgment."),
@@ -1094,10 +1168,10 @@ def test_disposition_only_emergency_opinion_publishes_without_argument(
     assert case.latest_court_document_date == datetime(2026, 3, 4, tzinfo=UTC)
     assert [item.kind for item in case.dispositions] == ["per_curiam"]
     names = [request["response_format"]["json_schema"]["name"] for request in model.requests]
-    assert names == ["scotus_legal_observations", "scotus_legal_brief"]
+    assert names == ["scotus_legal_observations", "compact_reader_guide"]
     brief_request = model.requests[-1]
     brief_schema = brief_request["response_format"]["json_schema"]["schema"]
-    assert brief_schema["properties"]["argument_analyses"]["maxItems"] == 0
+    assert brief_schema["properties"]["argument_paragraphs"]["maxItems"] == 0
     assert tuple(section.heading for section in case.sections) == (
         "What this case is about",
         "Why this case reached the Court",
@@ -1105,9 +1179,7 @@ def test_disposition_only_emergency_opinion_publishes_without_argument(
         "What the Supreme Court did",
         "Why the Court did it",
     )
-    assert case.sections[3].paragraphs == (
-        "The Supreme Court granted the application.",
-    )
+    assert case.sections[3].paragraphs == ("The Court granted the application.",)
     disposition = result.content.publication.dispositions[0]
     assert disposition.primary_docket == "25A810"
     assert disposition.publication_date == datetime(2026, 3, 4, tzinfo=UTC)
@@ -1156,8 +1228,7 @@ def test_disposition_only_case_derives_exact_docket_identity_when_model_omits_it
             batch["observations"] = [
                 item
                 for item in cast(list[dict[str, Any]], batch["observations"])
-                if item["observation_type"]
-                not in {"procedural_posture", "holding", "order"}
+                if item["observation_type"] not in {"procedural_posture", "holding", "order"}
             ]
             return batch
 
@@ -1378,7 +1449,7 @@ def test_live_discovery_canonicalizes_multi_primary_consolidation() -> None:
     assert result.dispositions[0].case_key == "2025-25-1"
 
 
-def test_brief_validation_gets_one_bounded_fixed_code_correction(
+def test_brief_validation_gets_one_bounded_private_field_correction(
     tmp_path: Path,
 ) -> None:
     class CorrectingModel(MockOpenAI):
@@ -1388,20 +1459,14 @@ def test_brief_validation_gets_one_bounded_fixed_code_correction(
 
         def create(self, **request: Any) -> object:
             completion = super().create(**request)
-            if request["response_format"]["json_schema"]["name"] != "scotus_legal_brief":
+            name = request["response_format"]["json_schema"]["name"]
+            if name not in {"compact_reader_guide", "reader_guide_field_repair"}:
                 return completion
             self.brief_calls += 1
-            if self.brief_calls != 1:
+            if name != "compact_reader_guide":
                 return completion
             payload = json.loads(completion.choices[0].message.content)
-            user = json.loads(request["messages"][1]["content"])
-            justice_ids = {
-                claim["claim_id"] for claim in user["claims"] if claim["type"] == "justice_question"
-            }
-            for analysis in payload["argument_analyses"]:
-                analysis["claim_ids"] = [
-                    claim_id for claim_id in analysis["claim_ids"] if claim_id not in justice_ids
-                ]
+            payload["dek"] = "The approved record says the Court heard argument."
             return SimpleNamespace(
                 choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(payload)))]
             )
@@ -1425,17 +1490,29 @@ def test_brief_validation_gets_one_bounded_fixed_code_correction(
 
     assert result.publishable
     assert model.brief_calls == 2
-    brief_requests = [
+    repair_request = next(
         request
         for request in model.requests
-        if request["response_format"]["json_schema"]["name"] == "scotus_legal_brief"
-    ]
-    assert (
-        "argument_breakdown_omits_justice_question" in brief_requests[1]["messages"][0]["content"]
+        if request["response_format"]["json_schema"]["name"] == "reader_guide_field_repair"
     )
+    repair_payload = json.loads(repair_request["messages"][1]["content"])
+    assert repair_payload["field_path"] == {
+        "kind": "dek",
+        "section_index": None,
+        "argument_index": None,
+        "paragraph_index": None,
+    }
+    assert set(repair_payload) == {
+        "field_path",
+        "rejected_text",
+        "support_packet",
+        "diagnostic",
+        "fixed_claim_ids",
+    }
+    assert repair_payload["diagnostic"]["rule"] == "internal_process_language"
 
 
-def test_disposition_guide_validation_retries_with_fixed_structure_code(
+def test_disposition_action_validation_repairs_only_rejected_field(
     tmp_path: Path,
 ) -> None:
     court = CourtFixture()
@@ -1472,15 +1549,21 @@ def test_disposition_guide_validation_retries_with_fixed_structure_code(
 
         def create(self, **request: Any) -> object:
             completion = super().create(**request)
-            if request["response_format"]["json_schema"]["name"] != "scotus_legal_brief":
+            name = request["response_format"]["json_schema"]["name"]
+            if name not in {"compact_reader_guide", "reader_guide_field_repair"}:
                 return completion
             self.brief_calls += 1
-            if self.brief_calls != 1:
+            if name != "compact_reader_guide":
                 return completion
             payload = json.loads(completion.choices[0].message.content)
-            payload["sections"][1], payload["sections"][2] = (
-                payload["sections"][2],
-                payload["sections"][1],
+            user = json.loads(request["messages"][1]["content"])
+            action_index = next(
+                index
+                for index, section in enumerate(user["sections"])
+                if section["purpose"] == "court_action"
+            )
+            payload["section_paragraphs"][action_index] = (
+                "The Supreme Court denied the application."
             )
             return SimpleNamespace(
                 choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(payload)))]
@@ -1504,12 +1587,14 @@ def test_disposition_guide_validation_retries_with_fixed_structure_code(
 
     assert result.publishable
     assert model.brief_calls == 2
-    brief_requests = [
+    repair_request = next(
         request
         for request in model.requests
-        if request["response_format"]["json_schema"]["name"] == "scotus_legal_brief"
-    ]
-    assert "invalid_guide_structure" in brief_requests[1]["messages"][0]["content"]
+        if request["response_format"]["json_schema"]["name"] == "reader_guide_field_repair"
+    )
+    repair_payload = json.loads(repair_request["messages"][1]["content"])
+    assert repair_payload["diagnostic"]["rule"] == "unsupported_court_action"
+    assert repair_payload["rejected_text"] == "The Supreme Court denied the application."
 
 
 def test_unchanged_disposition_reuses_guide_without_model_call(tmp_path: Path) -> None:
@@ -1629,7 +1714,7 @@ def test_reargument_reprocesses_every_session_under_one_case_budget(tmp_path: Pa
     assert case.revisions[-1].correction_note
     names = [request["response_format"]["json_schema"]["name"] for request in model.requests]
     assert names.count("scotus_legal_observations") == 2
-    assert names.count("scotus_legal_brief") == 1
+    assert names.count("compact_reader_guide") == 1
 
 
 @pytest.mark.parametrize("stale_processor", [None, "f" * 64])
@@ -1690,9 +1775,7 @@ def test_unselected_stale_processor_fingerprints_do_not_enqueue_complete_corpus(
     assert result.publishable
     assert result.changed_case_keys == ()
     assert result.pending_case_keys == ()
-    assert {item.processor_sha256 for item in result.content.publication.cases} == {
-        stale_processor
-    }
+    assert {item.processor_sha256 for item in result.content.publication.cases} == {stale_processor}
     assert result.content.projection is not None
     assert all(len(case.revisions) == 1 for case in result.content.projection.cases)
     assert model.requests == []

@@ -289,7 +289,11 @@ def test_planner_fails_closed_when_required_purpose_is_unsupported() -> None:
     incomplete = tuple(
         item
         for item in argued_claims()
-        if item.observation_type is not LegalObservationType.QUESTION_PRESENTED
+        if item.observation_type
+        not in {
+            LegalObservationType.QUESTION_PRESENTED,
+            LegalObservationType.JUSTICE_QUESTION,
+        }
     )
     with pytest.raises(ReaderGuidePlanningError) as caught:
         ReaderGuidePlanner().plan(

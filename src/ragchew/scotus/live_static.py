@@ -66,10 +66,9 @@ from ragchew.scotus.briefs import (
     CaseArgumentSession,
     InMemoryBriefRevisionStore,
     LegalBriefDraft,
-    OpenAILegalBriefGenerator,
-    disposition_only_brief_json_schema,
     evaluate_brief_candidate,
-    simple_brief_json_schema,
+    validate_brief_draft,
+    validate_brief_text_field,
 )
 from ragchew.scotus.contracts import (
     LEGAL_STATUS_BY_OBSERVATION_TYPE,
@@ -79,6 +78,7 @@ from ragchew.scotus.contracts import (
     LegalObservation,
     LegalObservationType,
     LegalStatus,
+    ScotusApprovedClaim,
     ScotusCaseStatus,
     ScotusDocumentKind,
 )
@@ -137,6 +137,19 @@ from ragchew.scotus.public_contracts import (
     public_case_key,
 )
 from ragchew.scotus.publishing import build_public_case
+from ragchew.scotus.reader_guides import (
+    READER_GUIDE_PLAN_VERSION,
+    CompactReaderGuideWriter,
+    ProcessLocalFieldDiagnostic,
+    ReaderGuideFieldKind,
+    ReaderGuideFieldPath,
+    ReaderGuidePlan,
+    ReaderGuidePlanner,
+    ReaderGuidePurpose,
+    ReaderGuideWritingError,
+    TargetedReaderGuideRepairer,
+)
+from ragchew.scotus.reader_prose import load_reader_prose_policy
 from ragchew.scotus.static_contracts import (
     ConditionalValidators,
     ContentIntegrity,
@@ -181,7 +194,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v58"
+POLICY_VERSION = "scotus-brief-policy-v59"
 DOCUMENT_TEXT_VERSION = "official-document-text-v3"
 
 
@@ -392,8 +405,7 @@ class _BudgetedModelRequest:
             lambda: self.client.chat.completions.create(**provider_request),
             permit=permit,
             maximum_attempts=(
-                self.maximum_attempts
-                or self.budget.config.model_budget.maximum_transport_attempts
+                self.maximum_attempts or self.budget.config.model_budget.maximum_transport_attempts
             ),
             retryable=_retryable_model_error,
             response_usage=_model_response_usage,
@@ -437,6 +449,8 @@ _PERSISTED_BRIEF_FAILURE_CODES = frozenset(
         "unsupported_court_action",
         "invented_oral_argument",
         "unsupported_filler",
+        "internal_process_language",
+        "repair_exhausted",
     }
 )
 
@@ -451,8 +465,22 @@ _RETRYABLE_EXTRACTION_OUTPUT_CODES = frozenset(
 
 
 def _persisted_brief_failure_code(code: str) -> str:
-    """Map correction detail onto a fixed durable validator vocabulary."""
-    return code if code in _PERSISTED_BRIEF_FAILURE_CODES else "brief_validation_failed"
+    """Map process-local correction detail onto the fixed durable vocabulary."""
+    if code in _PERSISTED_BRIEF_FAILURE_CODES:
+        return code
+    if code.startswith(("unexplained_legal_term_", "unexplained_legalese_")):
+        return "unexplained_legal_term"
+    if code == "reader_prose_readability":
+        return "readability_failed"
+    if code in {"irrelevant_reader_section"} or code.startswith("ungrounded_guide_section_"):
+        return "section_relevance_failed"
+    if code in {"unsupported_no_decision", "unsupported_filler"}:
+        return "unsupported_absence"
+    if code in {"unsupported_future_event", "unsupported_speculation"}:
+        return "unsupported_prediction"
+    if code in {"repeated_reader_prose"}:
+        return "repeated_fragment"
+    return "brief_validation_failed"
 
 
 def _persisted_extraction_output_code(code: str | None) -> str | None:
@@ -616,10 +644,7 @@ def _source_from_config(config: ProceedingsConfig) -> OfficialSource:
 
 
 def _validate_live_gates(config: ScotusConfig) -> None:
-    if (
-        config.editorial_backfill.rollout_stage is not None
-        and not config.publication.dry_run
-    ):
+    if config.editorial_backfill.rollout_stage is not None and not config.publication.dry_run:
         raise PublicationGateDenied("editorial rollout must remain publication-disabled")
     if not config.enabled:
         raise PublicationGateDenied("SCOTUS live processing gate is closed")
@@ -627,7 +652,7 @@ def _validate_live_gates(config: ScotusConfig) -> None:
         raise PublicationGateDenied("brief-generation and publication gates are closed")
     if not config.approvals.all_live_gates_approved():
         raise PublicationGateDenied("live publication approvals are incomplete")
-    if config.generation.prompt_version != OpenAILegalBriefGenerator.PROMPT_VERSION:
+    if config.generation.prompt_version != CompactReaderGuideWriter.PROMPT_VERSION:
         raise PublicationGateDenied("configured brief prompt version is not implemented")
 
 
@@ -657,9 +682,7 @@ class LiveStaticDiscovery:
     ) -> StaticDiscoveryResult:
         self.now = now
         checkpoints = {item.logical_key: item for item in content.publication.sources}
-        persisted_pending_case_keys = {
-            item.case_key for item in content.publication.pending_work
-        }
+        persisted_pending_case_keys = {item.case_key for item in content.publication.pending_work}
         cursor_key = f"{mode.value}:resource-recheck"
         cursor = next(
             (item for item in content.publication.cursors if item.cursor_key == cursor_key),
@@ -678,16 +701,12 @@ class LiveStaticDiscovery:
         # checkpoint. Re-fetch only selected pending terms unconditionally; source
         # bodies remain ephemeral and the same shared transport budget applies.
         argument_checkpoints = dict(checkpoints)
-        pending_terms = {
-            case_key.split("-", 1)[0] for case_key in persisted_pending_case_keys
-        }
+        pending_terms = {case_key.split("-", 1)[0] for case_key in persisted_pending_case_keys}
         for term in resources.terms:
             if term in pending_terms:
                 argument_checkpoints.pop(f"argument-index:{term}", None)
         try:
-            incremental = IncrementalDiscoveryOperation(
-                self.adapters, argument_checkpoints
-            ).run(
+            incremental = IncrementalDiscoveryOperation(self.adapters, argument_checkpoints).run(
                 active_term=self.config.discovery.active_term,
                 mode=mode,
                 historical_limit=self.config.discovery.historical_rechecks_per_run,
@@ -795,13 +814,9 @@ class LiveStaticDiscovery:
             slip_result = SlipOpinionDiscoveryResult(
                 candidates=tuple(
                     disposition_candidate_from_state(item)
-                    for item in sorted(
-                        prior_dispositions, key=lambda value: value.logical_key
-                    )
+                    for item in sorted(prior_dispositions, key=lambda value: value.logical_key)
                 ),
-                states=tuple(
-                    sorted(prior_dispositions, key=lambda value: value.logical_key)
-                ),
+                states=tuple(sorted(prior_dispositions, key=lambda value: value.logical_key)),
                 changed_logical_keys=(),
                 checkpoint=prior_slip_checkpoint,
                 changed=False,
@@ -833,8 +848,7 @@ class LiveStaticDiscovery:
         # Pending case-local failures are explicit retry work. Reconsider them even
         # after a safe conditional index checkpoint returns 304.
         changed_case_keys.update(
-            pending_case_keys.intersection(merged_by_key)
-            - stale_processor_pending_case_keys
+            pending_case_keys.intersection(merged_by_key) - stale_processor_pending_case_keys
         )
         argument_case_keys = {
             candidate_logical_key(argument): key
@@ -937,9 +951,7 @@ class LiveStaticDiscovery:
             )
             for key, merged in merged_by_key.items()
         }
-        pending_by_case = {
-            item.case_key: item for item in content.publication.pending_work
-        }
+        pending_by_case = {item.case_key: item for item in content.publication.pending_work}
         backfill_state: EditorialBackfillState | None = None
         configured_stage = self.config.editorial_backfill.rollout_stage
         if self.config.editorial_backfill.enabled and configured_stage is not None:
@@ -967,9 +979,8 @@ class LiveStaticDiscovery:
             for key, case in prior_cases.items():
                 if key not in stale_processor_case_keys and key not in resume_keys:
                     continue
-                if (
-                    key not in resume_keys
-                    and (key in source_changed_case_keys or key in pending_by_case)
+                if key not in resume_keys and (
+                    key in source_changed_case_keys or key in pending_by_case
                 ):
                     continue
                 try:
@@ -981,8 +992,7 @@ class LiveStaticDiscovery:
                 and previous_backfill.processor_sha256 == processor.composite_sha256
                 and previous_backfill.rollout_stage is EditorialRolloutStage.BATCH_100
                 and rollout_stage is EditorialRolloutStage.BATCH_100
-                and previous_backfill.attempted_count
-                == len(previous_backfill.selected_case_keys)
+                and previous_backfill.attempted_count == len(previous_backfill.selected_case_keys)
                 and content.publication.canary_report is not None
                 and content.publication.canary_report.reviewer_decision.value == "approved"
                 and any(
@@ -998,9 +1008,7 @@ class LiveStaticDiscovery:
                 advance_completed=advance_completed,
             )
             migration_case_keys = {
-                key
-                for key in backfill_state.selected_case_keys
-                if key in stale_processor_case_keys
+                key for key in backfill_state.selected_case_keys if key in stale_processor_case_keys
             }
             changed_case_keys.update(migration_case_keys)
         queue: dict[str, tuple[int, str, WorkClass, bool]] = {}
@@ -1016,10 +1024,7 @@ class LiveStaticDiscovery:
                 pending_item = pending_by_case.get(key)
                 attempted_failure = bool(
                     pending_item is not None
-                    and (
-                        pending_item.attempts > 0
-                        or pending_item.last_attempted_at is not None
-                    )
+                    and (pending_item.attempts > 0 or pending_item.last_attempted_at is not None)
                 )
                 # Once selected migration work fails, it re-enters the ordinary finite
                 # retry policy instead of receiving automatic processor authorization.
@@ -1038,10 +1043,7 @@ class LiveStaticDiscovery:
                 # Budget-deferred work has never had a case attempt. It remains fresh
                 # Court activity and must compete by authoritative date with newly
                 # rediscovered changes instead of falling behind older source refreshes.
-                unattempted = (
-                    pending_item.attempts == 0
-                    and pending_item.last_attempted_at is None
-                )
+                unattempted = pending_item.attempts == 0 and pending_item.last_attempted_at is None
                 queue[key] = (
                     self.config.discovery.new_transcript_priority,
                     "pending_fresh" if unattempted else "pending_retry",
@@ -1077,20 +1079,22 @@ class LiveStaticDiscovery:
 
         ranked_queue = sorted(
             queue.items(),
-            key=lambda item: StaticCaseWork(
-                case_key=item[0],
-                priority=item[1][0],
-                sessions=(),
-                reason=item[1][1],
-                authoritative_activity_date=activity_by_case.get(item[0]),
-                work_class=item[1][2],
-                persisted_pending=item[1][3],
-                last_attempted_at=(
-                    pending_by_case[item[0]].last_attempted_at
-                    if item[0] in pending_by_case
-                    else None
-                ),
-            ).rank,
+            key=lambda item: (
+                StaticCaseWork(
+                    case_key=item[0],
+                    priority=item[1][0],
+                    sessions=(),
+                    reason=item[1][1],
+                    authoritative_activity_date=activity_by_case.get(item[0]),
+                    work_class=item[1][2],
+                    persisted_pending=item[1][3],
+                    last_attempted_at=(
+                        pending_by_case[item[0]].last_attempted_at
+                        if item[0] in pending_by_case
+                        else None
+                    ),
+                ).rank
+            ),
         )
         case_limit = (
             self.config.bootstrap.maximum_cases_per_run
@@ -1125,8 +1129,7 @@ class LiveStaticDiscovery:
                         and admission_pending.attempts
                         < 1 + self.config.model_retry.automatic_retry_cycles_per_scope
                         and now >= eligible_at
-                        and admitted_retries
-                        < self.config.model_retry.maximum_retry_cases_per_run
+                        and admitted_retries < self.config.model_retry.maximum_retry_cases_per_run
                     ):
                         continue
                     admitted_retries += 1
@@ -1140,20 +1143,13 @@ class LiveStaticDiscovery:
                         if budget.automatic_retries_enabled:
                             exhausted_probes.append(queue_item)
                         continue
-                    if not (
-                        budget.automatic_retries_enabled
-                        or budget.broad_replay_authorized
-                    ):
+                    if not (budget.automatic_retries_enabled or budget.broad_replay_authorized):
+                        continue
+                    if not budget.broad_replay_authorized and retry.next_eligible_at > now:
                         continue
                     if (
                         not budget.broad_replay_authorized
-                        and retry.next_eligible_at > now
-                    ):
-                        continue
-                    if (
-                        not budget.broad_replay_authorized
-                        and admitted_retries
-                        >= self.config.model_retry.maximum_retry_cases_per_run
+                        and admitted_retries >= self.config.model_retry.maximum_retry_cases_per_run
                     ):
                         continue
                     admitted_retries += 1
@@ -1218,11 +1214,7 @@ class LiveStaticDiscovery:
                     activity_by_case[key],
                     work_class,
                     persisted_pending,
-                    (
-                        pending_by_case[key].last_attempted_at
-                        if key in pending_by_case
-                        else None
-                    ),
+                    (pending_by_case[key].last_attempted_at if key in pending_by_case else None),
                     retry_scope=(
                         case_processing_retry_scope(
                             case_key=key,
@@ -1231,8 +1223,7 @@ class LiveStaticDiscovery:
                                 item.integrity.sha256 for item in case_documents
                             ),
                             disposition_digests=tuple(
-                                stable_disposition_fingerprint(item)
-                                for item in merged.dispositions
+                                stable_disposition_fingerprint(item) for item in merged.dispositions
                             ),
                             processor_digest=processor.composite_sha256,
                         )
@@ -1264,16 +1255,8 @@ class LiveStaticDiscovery:
             item
             for item in (
                 incremental.cursor,
-                (
-                    selection.cursor
-                    if historical_rechecks <= selected_keys
-                    else selection_cursor
-                ),
-                (
-                    selection.current_cursor
-                    if current_rechecks <= selected_keys
-                    else current_cursor
-                ),
+                (selection.cursor if historical_rechecks <= selected_keys else selection_cursor),
+                (selection.current_cursor if current_rechecks <= selected_keys else current_cursor),
             )
             if item is not None
         )
@@ -1561,9 +1544,7 @@ def _case_processing_digest(source: _CaseInput) -> str:
                 "case_key": source.case_key,
                 "caption": source.caption,
                 "primary_docket": source.primary_docket,
-                "sessions": tuple(
-                    stable_candidate_fingerprint(item) for item in source.sessions
-                ),
+                "sessions": tuple(stable_candidate_fingerprint(item) for item in source.sessions),
                 "term": source.term,
             },
             privacy_check=False,
@@ -1586,14 +1567,10 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
             "maximum_brief_validation_attempts_per_case": (
                 config.generation.maximum_brief_validation_attempts_per_case
             ),
-            "maximum_context_characters": (
-                config.generation.maximum_context_characters
-            ),
+            "maximum_context_characters": (config.generation.maximum_context_characters),
             "maximum_paragraph_words": config.generation.maximum_paragraph_words,
             "maximum_sentence_words": config.generation.maximum_sentence_words,
-            "minimum_observation_confidence": (
-                config.generation.minimum_observation_confidence
-            ),
+            "minimum_observation_confidence": (config.generation.minimum_observation_confidence),
             "model": config.generation.model,
             "prohibit_personalized_legal_advice": (
                 config.generation.prohibit_personalized_legal_advice
@@ -1606,18 +1583,16 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
                 config.generation.stop_after_brief_validation_failure
             ),
         },
-        "maximum_output_tokens_per_call": (
-            config.model_budget.maximum_output_tokens_per_call
-        ),
+        "maximum_output_tokens_per_call": (config.model_budget.maximum_output_tokens_per_call),
     }
-    config_digest = sha256_hex(
-        canonical_json_bytes(processing_config, privacy_check=False)
-    )
+    config_digest = sha256_hex(canonical_json_bytes(processing_config, privacy_check=False))
     parser = f"{config.parser.name}:{config.parser.version}"
     model_identity = _model_identity(config, model_endpoint)
     prompt_contract = (
         f"{config.generation.prompt_version};"
-        f"disposition={OpenAILegalBriefGenerator.DISPOSITION_PROMPT_VERSION}"
+        f"repair={TargetedReaderGuideRepairer.PROMPT_VERSION};"
+        f"planner={READER_GUIDE_PLAN_VERSION};"
+        f"reader_prose={load_reader_prose_policy().version}"
     )
     extractor = (
         f"{LegalExtractionService.SCHEMA_VERSION}:"
@@ -1648,6 +1623,178 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
         prompt_version=prompt_contract,
         config_sha256=config_digest,
         composite_sha256=composite,
+    )
+
+
+class _PreparedDraftGenerator:
+    """Feed an already validated private draft through the existing revision assembler."""
+
+    def __init__(self, model_name: str, draft: LegalBriefDraft) -> None:
+        self.model_name = model_name
+        self._draft = draft
+
+    def generate(
+        self,
+        candidate: BriefCandidate,
+        claims: tuple[ScotusApprovedClaim, ...],
+        maturity: BriefMaturity,
+    ) -> LegalBriefDraft:
+        del candidate, claims, maturity
+        return self._draft
+
+
+def _validation_code(error: BriefValidationError) -> str:
+    return error.safe_code or re.sub(r"[^a-z0-9]+", "_", str(error).casefold()).strip("_")[:80]
+
+
+def _planned_field_paths(
+    plan: ReaderGuidePlan, draft: LegalBriefDraft
+) -> tuple[ReaderGuideFieldPath, ...]:
+    paths: list[ReaderGuideFieldPath] = [ReaderGuideFieldPath(kind=ReaderGuideFieldKind.DEK)]
+    paths.extend(
+        ReaderGuideFieldPath(
+            kind=ReaderGuideFieldKind.SECTION_PARAGRAPH,
+            section_index=section_index,
+            paragraph_index=paragraph_index,
+        )
+        for section_index, section in enumerate(draft.sections)
+        for paragraph_index in range(len(section.paragraphs))
+    )
+    paths.extend(
+        ReaderGuideFieldPath(
+            kind=ReaderGuideFieldKind.ARGUMENT_PARAGRAPH,
+            argument_index=argument_index,
+            paragraph_index=paragraph_index,
+        )
+        for argument_index, analysis in enumerate(draft.argument_analyses)
+        for paragraph_index in range(len(analysis.paragraphs))
+    )
+    if len(draft.sections) != len(plan.sections) or len(draft.argument_analyses) != len(
+        plan.arguments
+    ):
+        return ()
+    return tuple(paths)
+
+
+def _field_value_and_claims(
+    plan: ReaderGuidePlan,
+    draft: LegalBriefDraft,
+    path: ReaderGuideFieldPath,
+) -> tuple[str, tuple[UUID, ...], str]:
+    if path.kind is ReaderGuideFieldKind.DEK:
+        return draft.dek, draft.dek_claim_ids, "dek"
+    if path.kind is ReaderGuideFieldKind.SECTION_PARAGRAPH:
+        assert path.section_index is not None and path.paragraph_index is not None
+        section = draft.sections[path.section_index]
+        return section.paragraphs[path.paragraph_index], section.claim_ids, "section_paragraph"
+    assert path.argument_index is not None and path.paragraph_index is not None
+    analysis = draft.argument_analyses[path.argument_index]
+    return analysis.paragraphs[path.paragraph_index], analysis.claim_ids, "argument_paragraph"
+
+
+def _purpose_repair_path(
+    plan: ReaderGuidePlan, purpose: ReaderGuidePurpose
+) -> ReaderGuideFieldPath | None:
+    return next(
+        (
+            ReaderGuideFieldPath(
+                kind=ReaderGuideFieldKind.SECTION_PARAGRAPH,
+                section_index=index,
+                paragraph_index=0,
+            )
+            for index, section in enumerate(plan.sections)
+            if section.purpose is purpose
+        ),
+        None,
+    )
+
+
+def _locate_reader_repair_path(
+    plan: ReaderGuidePlan,
+    draft: LegalBriefDraft,
+    error: BriefValidationError,
+    candidate: BriefCandidate,
+    claims: tuple[ScotusApprovedClaim, ...],
+    *,
+    public_quotes: bool,
+    maximum_sentence_words: int,
+    maximum_paragraph_words: int,
+) -> ReaderGuideFieldPath | None:
+    code = _validation_code(error)
+    purpose = None
+    if code in {
+        "unsupported_requested_action",
+        "unsupported_lower_court_action",
+    }:
+        purpose = ReaderGuidePurpose.PROCEDURAL_PATH
+    elif code in {
+        "unsupported_court_action",
+        "unsupported_supreme_court_action",
+        "unsupported_supreme_court_action_object",
+        "incomplete_interim_stay_effect",
+        "missing_supreme_court_action_prose",
+    }:
+        purpose = ReaderGuidePurpose.COURT_ACTION
+    elif code == "ambiguous_separate_opinion_attribution":
+        purpose = ReaderGuidePurpose.SEPARATE_OPINIONS
+    elif code.startswith("ungrounded_guide_section_"):
+        slug = code.removeprefix("ungrounded_guide_section_")
+        purpose = next(
+            (
+                section.purpose
+                for section in plan.sections
+                if re.sub(r"[^a-z0-9]+", "_", section.heading.casefold()).strip("_") == slug
+            ),
+            None,
+        )
+    if purpose is not None:
+        return _purpose_repair_path(plan, purpose)
+
+    for path in _planned_field_paths(plan, draft):
+        text, claim_ids, context = _field_value_and_claims(plan, draft, path)
+        try:
+            validate_brief_text_field(
+                text,
+                claim_ids,
+                candidate,
+                claims,
+                context=cast(Any, context),
+                public_quotes=public_quotes,
+                maximum_sentence_words=maximum_sentence_words,
+                maximum_paragraph_words=maximum_paragraph_words,
+            )
+        except BriefValidationError as field_error:
+            if _validation_code(field_error) == code:
+                return path
+    return None
+
+
+def _repair_diagnostic(
+    path: ReaderGuideFieldPath, error: BriefValidationError
+) -> ProcessLocalFieldDiagnostic:
+    code = _validation_code(error)
+    term_prefixes = ("unexplained_legal_term_", "unexplained_legalese_")
+    offending_term = next(
+        (
+            code.removeprefix(prefix).replace("_", " ")
+            for prefix in term_prefixes
+            if code.startswith(prefix)
+        ),
+        None,
+    )
+    transformation = (
+        "Use ordinary words or explain the named term in the same sentence while preserving "
+        "the supplied actors, action, object, status, and claim scope."
+        if offending_term
+        else "Rewrite this field to satisfy the fixed rule while preserving every supplied fact, "
+        "actor, action, object, status, and claim citation."
+    )
+    return ProcessLocalFieldDiagnostic(
+        path=path,
+        safe_code=code,
+        rule=code,
+        offending_term=offending_term,
+        required_transformation=transformation,
     )
 
 
@@ -1851,9 +1998,7 @@ class LiveStaticCaseProcessor:
             retry_scope = case_processing_retry_scope(
                 case_key=work.case_key,
                 case_digest=_case_processing_digest(source),
-                document_digests=tuple(
-                    states[key].integrity.sha256 for key in sorted(states)
-                ),
+                document_digests=tuple(states[key].integrity.sha256 for key in sorted(states)),
                 disposition_digests=tuple(
                     stable_disposition_fingerprint(item) for item in source.dispositions
                 ),
@@ -1861,27 +2006,16 @@ class LiveStaticCaseProcessor:
                     self.config, self.model_endpoint
                 ).composite_sha256,
             )
-            if (
-                work.retry_scope_probe_only
-                and work.authorized_retry_scope == retry_scope
-            ):
-                raise RetryScopeUnchanged(
-                    tuple(states[key] for key in sorted(states))
-                )
+            if work.retry_scope_probe_only and work.authorized_retry_scope == retry_scope:
+                raise RetryScopeUnchanged(tuple(states[key] for key in sorted(states)))
             exact_scope_authorized = work.authorized_retry_scope == retry_scope
             extraction_replay = bool(
                 authorized_replay
-                or (
-                    exact_scope_authorized
-                    and "extraction" in work.authorized_retry_stages
-                )
+                or (exact_scope_authorized and "extraction" in work.authorized_retry_stages)
             )
             brief_replay = bool(
                 authorized_replay
-                or (
-                    exact_scope_authorized
-                    and "brief" in work.authorized_retry_stages
-                )
+                or (exact_scope_authorized and "brief" in work.authorized_retry_stages)
             )
             try:
                 observations, document_urls = self._analyze_documents(
@@ -2231,8 +2365,7 @@ class LiveStaticCaseProcessor:
                     is None
                 }
                 if (
-                    analysis_observation.observation_type
-                    is LegalObservationType.QUESTION_PRESENTED
+                    analysis_observation.observation_type is LegalObservationType.QUESTION_PRESENTED
                     or not same_type
                     or all(
                         (item.normalized_value_private or item.raw_value_private).casefold()
@@ -2244,39 +2377,39 @@ class LiveStaticCaseProcessor:
                         is LegalObservationType.DOCTRINAL_THEME
                         and len(same_type) < 2
                         and all(
-                            (
-                                item.normalized_value_private
-                                or item.raw_value_private
-                            ).casefold()
+                            (item.normalized_value_private or item.raw_value_private).casefold()
                             != analysis_observation.raw_value_private.casefold()
                             for item in same_type
                         )
                     )
                 ):
                     observations.append(analysis_observation)
-                    existing_analysis_values.add(
-                        analysis_observation.raw_value_private.casefold()
-                    )
+                    existing_analysis_values.add(analysis_observation.raw_value_private.casefold())
         if not source.sessions and not any(
             observation.observation_type
             in {LegalObservationType.HOLDING, LegalObservationType.ORDER}
-            and observation.legal_status
-            in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
+            and observation.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
             for observation in observations
         ):
             observations.append(
                 _court_action_observation(case_id=case_id, blocks=tuple(action_blocks))
             )
         if not source.sessions:
-            role_summary = ",".join(
-                f"{kind.value}={sum(item.observation_type is kind for item in observations)}"
-                for kind in LegalObservationType
-                if any(item.observation_type is kind for item in observations)
-            ) or "none"
-            rejection_summary = ",".join(
-                f"{code}={extraction_rejection_codes.count(code)}"
-                for code in sorted(set(extraction_rejection_codes))
-            ) or "none"
+            role_summary = (
+                ",".join(
+                    f"{kind.value}={sum(item.observation_type is kind for item in observations)}"
+                    for kind in LegalObservationType
+                    if any(item.observation_type is kind for item in observations)
+                )
+                or "none"
+            )
+            rejection_summary = (
+                ",".join(
+                    f"{code}={extraction_rejection_codes.count(code)}"
+                    for code in sorted(set(extraction_rejection_codes))
+                )
+                or "none"
+            )
             LOG.warning(
                 "SCOTUS disposition extraction summary; case=%s; roles=%s; rejections=%s",
                 source.case_key,
@@ -2392,111 +2525,190 @@ class LiveStaticCaseProcessor:
             )
         revision_number = len(source.prior.revisions) + 1 if source.prior else 1
         correction_note = _correction_note(source, kinds_changed)
-        revision = None
+        assert decision.maturity is not None
+        plan = ReaderGuidePlanner().plan(candidate, decision.claims, decision.maturity)
         all_digests = (
             *(states[key].integrity.sha256 for key in sorted(states)),
             *(stable_disposition_fingerprint(item) for item in source.dispositions),
         )
-        validation_feedback_codes: list[str] = []
-        correction_draft: LegalBriefDraft | None = None
         maximum_brief_attempts = self.config.generation.maximum_brief_validation_attempts_per_case
-        if not candidate.argument_sessions:
-            # One fresh correction is enough for the small fixed guide contract. Do not
-            # let one malformed emergency guide consume the run's shared brief budget.
-            maximum_brief_attempts = min(maximum_brief_attempts, 2)
-        for brief_attempt in range(1, maximum_brief_attempts + 1):
-            validation_feedback_code = (
-                ":".join(validation_feedback_codes)[:200]
-                if validation_feedback_codes
-                else None
-            )
-            prompt_version = (
-                self.config.generation.prompt_version
-                if candidate.argument_sessions
-                else OpenAILegalBriefGenerator.DISPOSITION_PROMPT_VERSION
-            )
-            request = _BudgetedModelRequest(
+
+        def budgeted_request(
+            *, attempt: int, prompt: str, validation_code: str | None = None
+        ) -> _BudgetedModelRequest:
+            return _BudgetedModelRequest(
                 client=self.model_client,
                 budget=budget,
                 stage="brief",
                 document_digests=all_digests,
                 processor_versions={
-                    "brief_validation_attempt": str(brief_attempt),
+                    "brief_validation_attempt": str(attempt),
                     "endpoint": self.model_endpoint,
                     "extractor": LegalExtractionService.SCHEMA_VERSION,
                     "model": self.config.generation.model,
+                    "planner": READER_GUIDE_PLAN_VERSION,
                     "provider": self.config.generation.provider,
-                    "parser": _processor_contract(
-                        self.config, self.model_endpoint
-                    ).parser_version,
+                    "parser": _processor_contract(self.config, self.model_endpoint).parser_version,
                     "policy": POLICY_VERSION,
-                    "prompt": prompt_version,
+                    "prompt": prompt,
+                    "reader_prose": load_reader_prose_policy().version,
                     **(
-                        {"validation_feedback": validation_feedback_code}
-                        if validation_feedback_code
+                        {"validation_feedback": validation_code}
+                        if validation_code is not None
                         else {}
                     ),
                 },
                 output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
                 authorized_replay=authorized_replay,
             )
-            response_schema = (
-                simple_brief_json_schema(len(candidate.argument_sessions))
-                if candidate.argument_sessions
-                else disposition_only_brief_json_schema()
-            )
-            generator = OpenAILegalBriefGenerator(
+
+        try:
+            draft = CompactReaderGuideWriter(
                 self.config.generation.model,
-                self.model_client,
-                maximum_sentence_words=self.config.generation.maximum_sentence_words,
-                maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-                response_schema=response_schema,
-                maximum_output_tokens=(
-                    self.config.model_budget.maximum_output_tokens_per_call
+                budgeted_request(
+                    attempt=1,
+                    prompt=CompactReaderGuideWriter.PROMPT_VERSION,
                 ),
-                reasoning_effort="none",
-                validation_feedback_code=validation_feedback_code,
-                correction_draft=correction_draft,
-                request_executor=request,
-            )
+                maximum_output_tokens=(self.config.model_budget.maximum_output_tokens_per_call),
+            ).generate(plan)
+        except ReaderGuideWritingError as error:
+            raise BriefValidationError(str(error), safe_code=error.safe_code) from None
+
+        repaired_paths: set[ReaderGuideFieldPath] = set()
+        attempt = 1
+        while True:
             try:
-                revision = BriefGenerationService(
-                    generator,
-                    InMemoryBriefRevisionStore(),
-                    public_quotes=self.config.generation.public_quotes,
-                    maximum_sentence_words=(
-                        self.config.generation.maximum_sentence_words
-                    ),
-                    maximum_paragraph_words=(
-                        self.config.generation.maximum_paragraph_words
-                    ),
-                ).generate(
+                validate_brief_draft(
+                    draft,
                     candidate,
-                    decision,
-                    revision_number=revision_number,
-                    correction_note=correction_note,
+                    decision.claims,
+                    public_quotes=self.config.generation.public_quotes,
+                    maximum_sentence_words=self.config.generation.maximum_sentence_words,
+                    maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
                 )
                 break
             except BriefValidationError as error:
-                safe_code = error.safe_code
-                can_retry = bool(
-                    safe_code
-                    and brief_attempt < maximum_brief_attempts
+                path = _locate_reader_repair_path(
+                    plan,
+                    draft,
+                    error,
+                    candidate,
+                    decision.claims,
+                    public_quotes=self.config.generation.public_quotes,
+                    maximum_sentence_words=self.config.generation.maximum_sentence_words,
+                    maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
                 )
-                if not can_retry:
-                    raise
-                assert safe_code is not None
-                correction_draft = error.draft
-                if safe_code not in validation_feedback_codes:
-                    validation_feedback_codes.append(safe_code)
+                if path is None or path in repaired_paths or attempt >= maximum_brief_attempts:
+                    LOG.warning(
+                        "SCOTUS reader-guide repair unavailable; case=%s; code=%s; "
+                        "path_found=%s; attempt=%d",
+                        source.case_key,
+                        _validation_code(error),
+                        path is not None,
+                        attempt,
+                    )
+                    raise BriefValidationError(
+                        "reader-guide field repair budget was exhausted",
+                        safe_code="repair_exhausted",
+                        draft=draft,
+                    ) from None
+                attempt += 1
+                diagnostic = _repair_diagnostic(path, error)
+                repairer = TargetedReaderGuideRepairer(
+                    self.config.generation.model,
+                    budgeted_request(
+                        attempt=attempt,
+                        prompt=TargetedReaderGuideRepairer.PROMPT_VERSION,
+                        validation_code=diagnostic.safe_code,
+                    ),
+                    maximum_output_tokens=(self.config.model_budget.maximum_output_tokens_per_call),
+                )
+
+                _, _, repair_context = _field_value_and_claims(plan, draft, path)
+
+                def validate_field(
+                    text: str,
+                    claim_ids: tuple[UUID, ...],
+                    *,
+                    context: str = repair_context,
+                ) -> None:
+                    validate_brief_text_field(
+                        text,
+                        claim_ids,
+                        candidate,
+                        decision.claims,
+                        context=cast(Any, context),
+                        public_quotes=self.config.generation.public_quotes,
+                        maximum_sentence_words=(self.config.generation.maximum_sentence_words),
+                        maximum_paragraph_words=(self.config.generation.maximum_paragraph_words),
+                    )
+
+                def validate_guide(repaired: LegalBriefDraft) -> None:
+                    try:
+                        validate_brief_draft(
+                            repaired,
+                            candidate,
+                            decision.claims,
+                            public_quotes=self.config.generation.public_quotes,
+                            maximum_sentence_words=(self.config.generation.maximum_sentence_words),
+                            maximum_paragraph_words=(
+                                self.config.generation.maximum_paragraph_words
+                            ),
+                        )
+                    except BriefValidationError as next_error:
+                        raise BriefValidationError(
+                            str(next_error),
+                            safe_code=_validation_code(next_error),
+                            draft=repaired,
+                        ) from None
+
+                try:
+                    draft = repairer.repair(
+                        plan,
+                        draft,
+                        diagnostic,
+                        validate_field=validate_field,
+                        validate_guide=validate_guide,
+                    )
+                except BriefValidationError as repair_error:
+                    repaired_paths.add(path)
+                    if repair_error.draft is None:
+                        LOG.warning(
+                            "SCOTUS reader-guide repaired field rejected; case=%s; code=%s",
+                            source.case_key,
+                            _validation_code(repair_error),
+                        )
+                        raise BriefValidationError(
+                            "reader-guide field repair failed validation",
+                            safe_code="repair_exhausted",
+                            draft=draft,
+                        ) from None
+                    draft = repair_error.draft
+                except ReaderGuideWritingError as repair_error:
+                    raise BriefValidationError(
+                        str(repair_error), safe_code=repair_error.safe_code, draft=draft
+                    ) from None
+                else:
+                    repaired_paths.add(path)
                 LOG.warning(
-                    "SCOTUS brief correction requested; case=%s; code=%s; attempt=%d",
+                    "SCOTUS brief field correction requested; case=%s; code=%s; attempt=%d",
                     source.case_key,
-                    safe_code,
-                    brief_attempt,
+                    diagnostic.safe_code,
+                    attempt,
                 )
-        if revision is None:
-            raise BriefValidationError("brief validation attempts produced no revision")
+
+        revision = BriefGenerationService(
+            _PreparedDraftGenerator(self.config.generation.model, draft),
+            InMemoryBriefRevisionStore(),
+            public_quotes=self.config.generation.public_quotes,
+            maximum_sentence_words=self.config.generation.maximum_sentence_words,
+            maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
+        ).generate(
+            candidate,
+            decision,
+            revision_number=revision_number,
+            correction_note=correction_note,
+        )
         history = (
             *(source.prior.case_history if source.prior else ()),
             PublicCaseHistoryEvent(
@@ -2825,10 +3037,7 @@ def _legal_analysis_observations(
         return (
             6 * bool(re.search(r"\bjusticiab\w*\b", sentence, re.IGNORECASE))
             + 5 * bool(re.search(r"\bjurisdiction\b", sentence, re.IGNORECASE))
-            + 4
-            * bool(
-                re.search(r"\b(?:standing|ripeness)\b", sentence, re.IGNORECASE)
-            )
+            + 4 * bool(re.search(r"\b(?:standing|ripeness)\b", sentence, re.IGNORECASE))
             + bool(re.search(r"\b(?:constitutional|statutory)\b", sentence, re.IGNORECASE))
         )
 
@@ -2865,8 +3074,7 @@ def _legal_analysis_observations(
             )
             + 4 * bool(re.search(r"\b(?:jurisdiction|ripeness|standing)\b", sentence, re.I))
             + 3 * bool(re.search(r"\b(?:concrete|harm|injury)\b", sentence, re.I))
-            + 2
-            * bool(re.search(r"\blikely to (?:prevail|succeed)\b", sentence, re.I))
+            + 2 * bool(re.search(r"\blikely to (?:prevail|succeed)\b", sentence, re.I))
             + bool(_DETERMINISTIC_COURT_REASON.search(sentence))
         )
 
@@ -3199,11 +3407,7 @@ def _deterministic_disposition_metadata_update(
         (
             *(item.argument_date for item in prior.arguments),
             *(item.publication_date for item in dispositions),
-            *(
-                item.revision_date
-                for item in dispositions
-                if item.revision_date is not None
-            ),
+            *(item.revision_date for item in dispositions if item.revision_date is not None),
         )
     )
     typed_urls = {item.official_url for item in dispositions}

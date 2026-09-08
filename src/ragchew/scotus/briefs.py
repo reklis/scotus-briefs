@@ -2104,6 +2104,11 @@ def _validate_public_text(
         if citation not in support:
             raise BriefValidationError("text adds an unsupported citation")
     for docket in _DOCKET.findall(text):
+        # Argument headings are assembled from the real session date. The docket
+        # pattern also matches the month-day suffix in an ISO date (for example,
+        # ``04-20``), so that deterministic metadata is not model-added docket prose.
+        if validation_context == "argument_heading":
+            continue
         if docket != candidate.primary_docket and docket not in support:
             raise BriefValidationError("text adds an unsupported docket")
     supporting_claims = tuple(claim_map[value] for value in claim_ids)
@@ -2349,6 +2354,7 @@ def _section_purpose_types(heading: str) -> frozenset[LegalObservationType] | No
                 {
                     LegalObservationType.QUESTION_PRESENTED,
                     LegalObservationType.DOCTRINAL_THEME,
+                    LegalObservationType.JUSTICE_QUESTION,
                 }
             ),
         ),
@@ -2655,6 +2661,37 @@ def _validate_disposition_guide_structure(
             "Supreme Court action section changes or omits the operative object",
             safe_code="unsupported_supreme_court_action_object",
         )
+
+
+def validate_brief_text_field(
+    text: str,
+    claim_ids: tuple[UUID, ...],
+    candidate: BriefCandidate,
+    claims: tuple[ScotusApprovedClaim, ...],
+    *,
+    context: Literal[
+        "title",
+        "dek",
+        "section_heading",
+        "section_paragraph",
+        "argument_heading",
+        "argument_paragraph",
+    ],
+    public_quotes: bool,
+    maximum_sentence_words: int = 30,
+    maximum_paragraph_words: int = 120,
+) -> None:
+    """Validate one planned public field for process-local targeted repair."""
+    _validate_public_text(
+        text,
+        claim_ids,
+        candidate,
+        {claim.claim_id: claim for claim in claims},
+        public_quotes=public_quotes,
+        validation_context=context,
+        maximum_sentence_words=maximum_sentence_words,
+        maximum_paragraph_words=maximum_paragraph_words,
+    )
 
 
 def validate_brief_draft(

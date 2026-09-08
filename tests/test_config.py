@@ -43,7 +43,7 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.documents.request_timeout_seconds == 60
     assert config.generation.provider == "ollama"
     assert config.generation.model == "qwen3.8:27b"
-    assert config.generation.prompt_version == "scotus-brief-plain-language-v32"
+    assert config.generation.prompt_version == "scotus-reader-guide-compact-v1"
     assert config.generation.brief_generation_enabled is True
     assert config.generation.maximum_brief_api_calls_per_run == 100
     assert config.generation.stop_after_brief_validation_failure is False
@@ -137,16 +137,12 @@ def test_scotus_static_config_rejects_incompatible_model_budgets() -> None:
 def test_scotus_editorial_backfill_rejects_disabled_or_over_ceiling_stage() -> None:
     config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
     values = config.model_dump()
-    values["editorial_backfill"].update(
-        {"enabled": False, "rollout_stage": "canary_10"}
-    )
+    values["editorial_backfill"].update({"enabled": False, "rollout_stage": "canary_10"})
     with pytest.raises(ValidationError, match="requires the backfill gate"):
         ScotusConfig.model_validate(values)
 
     values = config.model_dump()
-    values["editorial_backfill"].update(
-        {"maximum_stage": "batch_25", "rollout_stage": "batch_100"}
-    )
+    values["editorial_backfill"].update({"maximum_stage": "batch_25", "rollout_stage": "batch_100"})
     with pytest.raises(ValidationError, match="reviewed stage ceiling"):
         ScotusConfig.model_validate(values)
 

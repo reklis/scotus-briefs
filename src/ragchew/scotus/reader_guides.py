@@ -498,7 +498,18 @@ def _actor_for_action(
         return CanonicalActorRole.REQUESTING_PARTY, claim.attribution or "requesting party"
     explicit = _explicit_actor(sentence, action_start)
     if explicit is not None:
-        return explicit
+        passive_court_action = bool(
+            claim.legal_status in {LegalStatus.COURT_ORDERED, LegalStatus.COURT_HELD}
+            and explicit[0] is CanonicalActorRole.LOWER_COURT
+            and re.search(
+                r"\b(?:application|petition|request)\b[^.!?]{0,120}\b(?:is|was)\s+"
+                r"(?:granted|denied|dismissed)\b",
+                sentence,
+                re.I,
+            )
+        )
+        if not passive_court_action:
+            return explicit
     if claim.legal_status is LegalStatus.LOWER_COURT_HELD:
         return CanonicalActorRole.LOWER_COURT, "lower court"
     if claim.legal_status in {LegalStatus.COURT_ORDERED, LegalStatus.COURT_HELD}:
@@ -850,15 +861,22 @@ class ReaderGuidePlanner:
 
         controlling = tuple(claim for claim in claims if not _is_separate_claim(claim))
         separate = tuple(claim for claim in claims if _is_separate_claim(claim))
-        expects_disposition = maturity in {
-            BriefMaturity.POST_ORDER,
-            BriefMaturity.POST_OPINION,
-            BriefMaturity.CORRECTED,
-        } or candidate.case_status in {
+        expects_disposition = candidate.case_status in {
             ScotusCaseStatus.ORDER_ISSUED,
             ScotusCaseStatus.DECIDED,
-            ScotusCaseStatus.CORRECTED,
-        }
+        } or any(
+            claim.observation_type
+            in {
+                LegalObservationType.HOLDING,
+                LegalObservationType.ORDER,
+            }
+            and claim.legal_status
+            in {
+                LegalStatus.COURT_HELD,
+                LegalStatus.COURT_ORDERED,
+            }
+            for claim in controlling
+        )
         sections: list[ReaderGuideSectionPacket] = []
 
         def add_section(
@@ -944,9 +962,22 @@ class ReaderGuidePlanner:
         issue_types = (
             LegalObservationType.QUESTION_PRESENTED,
             LegalObservationType.DOCTRINAL_THEME,
+            *((LegalObservationType.JUSTICE_QUESTION,) if sessions else ()),
         )
-        issue_candidates = _deduplicate(
+        issue_pool = _deduplicate(
             claim for claim in controlling if claim.observation_type in issue_types
+        )
+        issue_candidates = next(
+            (
+                tuple(claim for claim in issue_pool if claim.observation_type is preferred_type)[:1]
+                for preferred_type in (
+                    LegalObservationType.QUESTION_PRESENTED,
+                    LegalObservationType.JUSTICE_QUESTION,
+                    LegalObservationType.DOCTRINAL_THEME,
+                )
+                if any(claim.observation_type is preferred_type for claim in issue_pool)
+            ),
+            (),
         )
         issue = add_section(
             ReaderGuidePurpose.LEGAL_ISSUE,
@@ -954,7 +985,10 @@ class ReaderGuidePlanner:
             if expects_disposition and not sessions
             else "The main legal question",
             issue_types,
-            (LegalStatus.DESCRIBED,),
+            (
+                LegalStatus.DESCRIBED,
+                *((LegalStatus.QUESTIONED,) if sessions else ()),
+            ),
             (lambda claim: claim.observation_type in issue_types,),
             issue_candidates[:1],
         )
@@ -1372,16 +1406,27 @@ class CompactReaderGuideWriter:
 
     PROMPT_VERSION = "scotus-reader-guide-compact-v1"
 
-    def __init__(self, model_name: str, request_executor: RequestExecutor) -> None:
+    def __init__(
+        self,
+        model_name: str,
+        request_executor: RequestExecutor,
+        *,
+        maximum_output_tokens: int = 8_000,
+    ) -> None:
         if not model_name or len(model_name) > 200:
             raise ValueError("writer model name is invalid")
+        if not 1 <= maximum_output_tokens <= 100_000:
+            raise ValueError("writer output-token bound is invalid")
         self.model_name = model_name
         self.request_executor = request_executor
+        self.maximum_output_tokens = maximum_output_tokens
 
     def build_request(self, plan: ReaderGuidePlan) -> dict[str, Any]:
         return {
             "model": self.model_name,
             "temperature": 0,
+            "max_tokens": self.maximum_output_tokens,
+            "reasoning_effort": "none",
             "messages": [
                 {
                     "role": "system",
@@ -1501,11 +1546,20 @@ class TargetedReaderGuideRepairer:
 
     PROMPT_VERSION = "scotus-reader-guide-field-repair-v1"
 
-    def __init__(self, model_name: str, request_executor: RequestExecutor) -> None:
+    def __init__(
+        self,
+        model_name: str,
+        request_executor: RequestExecutor,
+        *,
+        maximum_output_tokens: int = 8_000,
+    ) -> None:
         if not model_name or len(model_name) > 200:
             raise ValueError("repair model name is invalid")
+        if not 1 <= maximum_output_tokens <= 100_000:
+            raise ValueError("repair output-token bound is invalid")
         self.model_name = model_name
         self.request_executor = request_executor
+        self.maximum_output_tokens = maximum_output_tokens
 
     def build_request(
         self,
@@ -1518,6 +1572,8 @@ class TargetedReaderGuideRepairer:
         return {
             "model": self.model_name,
             "temperature": 0,
+            "max_tokens": self.maximum_output_tokens,
+            "reasoning_effort": "none",
             "messages": [
                 {
                     "role": "system",
