@@ -18,13 +18,16 @@ from pydantic import ValidationError
 
 from ragchew.scotus.public_contracts import PublicCaseBrief, ScotusPublicProjection, public_case_key
 from ragchew.scotus.static_contracts import (
+    CanaryAggregate,
     CostLedger,
     CursorState,
     DispositionDiscoveryState,
+    EditorialBackfillState,
     FreshnessSummary,
     LogicalDocumentState,
     LogicalSourceState,
     ModelAttemptReceipt,
+    PendingReason,
     PendingWork,
     ProcessorFingerprint,
     PublicationState,
@@ -39,6 +42,13 @@ from ragchew.scotus.static_contracts import (
 )
 
 _EPOCH = datetime(1970, 1, 1, tzinfo=UTC)
+
+
+class _PreserveOptionalState:
+    pass
+
+
+_PRESERVE_OPTIONAL_STATE = _PreserveOptionalState()
 
 
 class StaticStateError(RuntimeError):
@@ -357,6 +367,12 @@ class StaticStateStore:
         dispositions: tuple[DispositionDiscoveryState, ...] | None = None,
         freshness: FreshnessSummary | None = None,
         supported_activity: tuple[SupportedActivityState, ...] | None = None,
+        editorial_backfill: EditorialBackfillState | _PreserveOptionalState | None = (
+            _PRESERVE_OPTIONAL_STATE
+        ),
+        canary_report: CanaryAggregate | _PreserveOptionalState | None = (
+            _PRESERVE_OPTIONAL_STATE
+        ),
     ) -> GeneratedContent:
         """Apply sanitized checkpoints without changing the active release pointer."""
         publication = PublicationState(
@@ -390,6 +406,16 @@ class StaticStateStore:
             freshness=(content.publication.freshness if freshness is None else freshness),
             cursors=cursors,
             processor=processor,
+            editorial_backfill=(
+                content.publication.editorial_backfill
+                if isinstance(editorial_backfill, _PreserveOptionalState)
+                else editorial_backfill
+            ),
+            canary_report=(
+                content.publication.canary_report
+                if isinstance(canary_report, _PreserveOptionalState)
+                else canary_report
+            ),
         )
         return replace(content, publication=publication)
 
@@ -567,6 +593,42 @@ class StaticStateStore:
                     raise StaticStateError(
                         "supported disposition is neither published nor explicitly pending"
                     )
+        backfill = content.publication.editorial_backfill
+        if backfill is not None and backfill.selected_case_keys:
+            selected = set(backfill.selected_case_keys)
+            accepted = {
+                key
+                for key in selected
+                if key in pointers
+                and pointers[key].processor_sha256 == backfill.processor_sha256
+            }
+            failed = {
+                key
+                for key in selected
+                if key in pending_by_case
+                and pending_by_case[key].reason is not PendingReason.BUDGET_EXHAUSTED
+            }
+            deferred = {
+                key
+                for key in selected
+                if key in pending_by_case
+                and pending_by_case[key].reason is PendingReason.BUDGET_EXHAUSTED
+            }
+            if accepted & (failed | deferred) or failed & deferred:
+                raise StaticStateError(
+                    "editorial backfill case outcomes must be mutually exclusive"
+                )
+            if (
+                len(accepted) != backfill.accepted_count
+                or len(failed) != backfill.failed_count
+                or selected != accepted | failed | deferred
+            ):
+                raise StaticStateError(
+                    "editorial backfill selection or aggregate counts are inconsistent"
+                )
+            if len(accepted | failed) != backfill.attempted_count:
+                raise StaticStateError("editorial backfill attempted count is inconsistent")
+
         expected_freshness = derive_freshness_summary(
             content.projection,
             content.publication.dispositions,

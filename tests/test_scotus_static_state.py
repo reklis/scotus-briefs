@@ -23,10 +23,15 @@ from ragchew.scotus.public_contracts import (
     public_case_slug,
 )
 from ragchew.scotus.static_contracts import (
+    CanaryAggregate,
+    CanaryFailureCount,
+    CanaryReviewerDecision,
     CaseRevisionPointer,
     ConditionalValidators,
     ContentIntegrity,
     CostLedger,
+    EditorialBackfillState,
+    EditorialRolloutStage,
     FreshnessSummary,
     LogicalSourceState,
     ModelAttemptOutcome,
@@ -35,6 +40,7 @@ from ragchew.scotus.static_contracts import (
     PendingModelRetry,
     PendingReason,
     PendingWork,
+    ProcessorFingerprint,
     PublicationState,
     ReleaseManifest,
     RetryFailureCode,
@@ -565,6 +571,146 @@ def test_legacy_publication_bytes_remain_canonical_without_new_default_fields() 
 
     assert "freshness" not in publication.model_fields_set
     assert canonical_json_bytes(publication) == expected
+
+
+def test_editorial_backfill_and_canary_are_sanitized_and_legacy_optional() -> None:
+    legacy = PublicationState(updated_at=NOW)
+    serialized_legacy = canonical_json_bytes(legacy)
+    assert b'"editorial_backfill"' not in serialized_legacy
+    assert b'"canary_report"' not in serialized_legacy
+    assert PublicationState.model_validate_json(serialized_legacy) == legacy
+
+    backfill = EditorialBackfillState(
+        processor_sha256=ZERO,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        newest_first_rank_boundary=2,
+        selected_case_keys=("2025-25-466", "2025-25-999"),
+        attempted_count=2,
+        accepted_count=1,
+        failed_count=1,
+    )
+    report = CanaryAggregate(
+        processor_sha256=ZERO,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        case_keys=backfill.selected_case_keys,
+        attempted_count=2,
+        accepted_count=1,
+        failed_count=1,
+        failure_code_counts=(
+            CanaryFailureCount(code=RetryFailureCode.READER_LANGUAGE_FAILED, count=1),
+        ),
+        runtime_seconds=123,
+        model_call_count=3,
+        reviewer_decision=CanaryReviewerDecision.REJECTED,
+    )
+    state = PublicationState(
+        updated_at=NOW,
+        editorial_backfill=backfill,
+        canary_report=report,
+    )
+    serialized = canonical_json_bytes(state)
+    assert PublicationState.model_validate_json(serialized) == state
+    assert b"reader_language_failed" in serialized
+    assert b"prompt" not in serialized and b"rejected_prose" not in serialized
+
+    with pytest.raises(ValidationError, match="canary report requires"):
+        PublicationState(updated_at=NOW, canary_report=report)
+    with pytest.raises(ValidationError, match="counts must match"):
+        PublicationState(
+            updated_at=NOW,
+            editorial_backfill=backfill,
+            canary_report=report.model_copy(update={"attempted_count": 1, "accepted_count": 0}),
+        )
+    with pytest.raises(ValidationError, match="extra_forbidden"):
+        EditorialBackfillState.model_validate(
+            {**backfill.model_dump(), "detailed_diagnostic": "rewrite this paragraph"}
+        )
+    with pytest.raises(ValueError, match="forbidden public field"):
+        assert_public_payload({"section_packet": {"text": "private"}})
+
+
+def test_backfill_counts_reports_and_selected_outcomes_fail_closed(
+    tmp_path: Path,
+) -> None:
+    with pytest.raises(ValidationError, match="accepted plus failed"):
+        EditorialBackfillState(
+            processor_sha256=ZERO,
+            rollout_stage=EditorialRolloutStage.CANARY_10,
+            newest_first_rank_boundary=1,
+            selected_case_keys=("2025-25-466",),
+            attempted_count=1,
+            accepted_count=1,
+            failed_count=1,
+        )
+    with pytest.raises(ValidationError, match="failure-code counts"):
+        CanaryAggregate(
+            processor_sha256=ZERO,
+            rollout_stage=EditorialRolloutStage.CANARY_10,
+            case_keys=("2025-25-466",),
+            attempted_count=1,
+            accepted_count=0,
+            failed_count=1,
+            runtime_seconds=1,
+            model_call_count=1,
+        )
+
+    store = StaticStateStore(tmp_path / "active")
+    content = store.merge_accepted_case(
+        GeneratedContent.empty(),
+        case(),
+        watermark=NOW,
+        generated_at=NOW,
+        processor_sha256=ZERO,
+    )
+    processor = ProcessorFingerprint(
+        parser_version="reader-v1",
+        extractor_version="reader-v1",
+        policy_version="reader-v1",
+        model="fixture",
+        prompt_version="reader-v1",
+        config_sha256=ZERO,
+        composite_sha256=ONE,
+    )
+    backfill = EditorialBackfillState(
+        processor_sha256=ONE,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        newest_first_rank_boundary=1,
+        selected_case_keys=("2025-25-466",),
+        attempted_count=1,
+        accepted_count=1,
+        failed_count=0,
+    )
+    invalid = replace(
+        content,
+        publication=content.publication.model_copy(
+            update={"processor": processor, "editorial_backfill": backfill}
+        ),
+    )
+    with pytest.raises(StaticStateError, match="aggregate counts"):
+        store.write_candidate(tmp_path / "invalid-backfill", invalid)
+
+    successful_backfill = backfill.model_copy(update={"processor_sha256": ZERO})
+    successful = replace(
+        content,
+        publication=content.publication.model_copy(
+            update={"processor": processor, "editorial_backfill": successful_backfill}
+        ),
+    )
+    store._validate_consistency(successful)
+
+    cleared = store.update_publication_state(
+        successful,
+        updated_at=NOW,
+        sources=(),
+        documents=(),
+        pending_work=(),
+        cursors=(),
+        processor=processor,
+        editorial_backfill=None,
+        canary_report=None,
+    )
+    assert cleared.publication.editorial_backfill is None
+    assert cleared.publication.canary_report is None
 
 
 def test_supported_activity_cannot_disappear_from_projection_and_pending(

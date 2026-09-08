@@ -153,6 +153,8 @@ class ModelRetryStatus(StrEnum):
 
 
 class RetryFailureCode(StrEnum):
+    """The complete allowlist of safe, non-diagnostic persisted failure codes."""
+
     EMPTY_CHOICE = "empty_choice"
     EMPTY_CONTENT = "empty_content"
     OUTPUT_TRUNCATED = "output_truncated"
@@ -165,6 +167,16 @@ class RetryFailureCode(StrEnum):
     INVENTED_ORAL_ARGUMENT = "invented_oral_argument"
     UNSUPPORTED_FILLER = "unsupported_filler"
     BRIEF_VALIDATION_FAILED = "brief_validation_failed"
+    READER_LANGUAGE_FAILED = "reader_language_failed"
+    UNEXPLAINED_LEGAL_TERM = "unexplained_legal_term"
+    READABILITY_FAILED = "readability_failed"
+    SECTION_RELEVANCE_FAILED = "section_relevance_failed"
+    INTERNAL_PROCESS_LANGUAGE = "internal_process_language"
+    UNSUPPORTED_ABSENCE = "unsupported_absence"
+    UNSUPPORTED_PREDICTION = "unsupported_prediction"
+    EXCESSIVE_LENGTH = "excessive_length"
+    REPEATED_FRAGMENT = "repeated_fragment"
+    REPAIR_EXHAUSTED = "repair_exhausted"
 
 
 class PendingModelRetry(StaticContract):
@@ -354,6 +366,110 @@ class ProcessorFingerprint(StaticContract):
     composite_sha256: str = Field(pattern=_SHA256_PATTERN)
 
 
+class EditorialRolloutStage(StrEnum):
+    CANARY_10 = "canary_10"
+    BATCH_25 = "batch_25"
+    BATCH_100 = "batch_100"
+
+    @property
+    def limit(self) -> int:
+        return {
+            EditorialRolloutStage.CANARY_10: 10,
+            EditorialRolloutStage.BATCH_25: 25,
+            EditorialRolloutStage.BATCH_100: 100,
+        }[self]
+
+
+class EditorialBackfillState(StaticContract):
+    """Sanitized cursor for one bounded, processor-scoped editorial migration."""
+
+    schema_version: Literal["1.0"] = "1.0"
+    processor_sha256: str = Field(pattern=_SHA256_PATTERN)
+    rollout_stage: EditorialRolloutStage
+    newest_first_rank_boundary: int = Field(ge=0, le=1_000_000)
+    selected_case_keys: tuple[str, ...] = Field(default=(), max_length=100)
+    attempted_count: int = Field(default=0, ge=0, le=100)
+    accepted_count: int = Field(default=0, ge=0, le=100)
+    failed_count: int = Field(default=0, ge=0, le=100)
+
+    @field_validator("selected_case_keys")
+    @classmethod
+    def validate_selected_case_keys(cls, values: tuple[str, ...]) -> tuple[str, ...]:
+        if len(values) != len(set(values)):
+            raise ValueError("backfill selected case keys must be unique")
+        if any(re.fullmatch(_KEY_PATTERN, value) is None for value in values):
+            raise ValueError("backfill selected case key is invalid")
+        return values
+
+    @model_validator(mode="after")
+    def validate_cursor_counts(self) -> Self:
+        selected_count = len(self.selected_case_keys)
+        if selected_count > self.rollout_stage.limit:
+            raise ValueError("backfill selection exceeds its rollout-stage limit")
+        if selected_count and self.newest_first_rank_boundary < selected_count:
+            raise ValueError("backfill rank boundary cannot precede its selected cases")
+        if self.attempted_count != self.accepted_count + self.failed_count:
+            raise ValueError("backfill attempted count must equal accepted plus failed")
+        if not selected_count and self.attempted_count:
+            raise ValueError("backfill attempts require an accounted selected case set")
+        if self.attempted_count > selected_count:
+            raise ValueError("backfill attempts cannot exceed selected cases")
+        if self.attempted_count > self.newest_first_rank_boundary:
+            raise ValueError("backfill attempts cannot exceed its rank boundary")
+        return self
+
+
+class CanaryReviewerDecision(StrEnum):
+    PENDING = "pending"
+    APPROVED = "approved"
+    REJECTED = "rejected"
+
+
+class CanaryFailureCount(StaticContract):
+    code: RetryFailureCode
+    count: int = Field(ge=1, le=100)
+
+
+class CanaryAggregate(StaticContract):
+    """Public-safe counts and opaque identities from a publication-disabled run."""
+
+    schema_version: Literal["1.0"] = "1.0"
+    processor_sha256: str = Field(pattern=_SHA256_PATTERN)
+    rollout_stage: EditorialRolloutStage
+    case_keys: tuple[str, ...] = Field(min_length=1, max_length=100)
+    attempted_count: int = Field(ge=0, le=100)
+    accepted_count: int = Field(ge=0, le=100)
+    failed_count: int = Field(ge=0, le=100)
+    failure_code_counts: tuple[CanaryFailureCount, ...] = Field(default=(), max_length=32)
+    runtime_seconds: int = Field(ge=0, le=86_400)
+    model_call_count: int = Field(ge=0, le=10_000)
+    reviewer_decision: CanaryReviewerDecision = CanaryReviewerDecision.PENDING
+
+    @field_validator("case_keys")
+    @classmethod
+    def validate_case_keys(cls, values: tuple[str, ...]) -> tuple[str, ...]:
+        if len(values) != len(set(values)):
+            raise ValueError("canary case keys must be unique")
+        if any(re.fullmatch(_KEY_PATTERN, value) is None for value in values):
+            raise ValueError("canary case key is invalid")
+        return values
+
+    @model_validator(mode="after")
+    def validate_aggregate_counts(self) -> Self:
+        if len(self.case_keys) > self.rollout_stage.limit:
+            raise ValueError("canary case set exceeds its rollout-stage limit")
+        if self.attempted_count != self.accepted_count + self.failed_count:
+            raise ValueError("canary attempted count must equal accepted plus failed")
+        if self.attempted_count > len(self.case_keys):
+            raise ValueError("canary attempts cannot exceed its case set")
+        codes = tuple(item.code.value for item in self.failure_code_counts)
+        if codes != tuple(sorted(set(codes))):
+            raise ValueError("canary failure codes must be unique and sorted")
+        if sum(item.count for item in self.failure_code_counts) != self.failed_count:
+            raise ValueError("canary failure-code counts must equal failed count")
+        return self
+
+
 class PublicationState(StaticContract):
     # Schema 1.0 is accepted only so an immutable generated-content parent can be
     # validated and passed to the explicit activity-contract migration.
@@ -370,6 +486,10 @@ class PublicationState(StaticContract):
     freshness: FreshnessSummary = FreshnessSummary()
     cursors: tuple[CursorState, ...] = ()
     processor: ProcessorFingerprint | None = None
+    # Optional defaults keep pre-editorial-backfill generated state readable and
+    # byte-canonical. These contracts contain only opaque/sanitized state.
+    editorial_backfill: EditorialBackfillState | None = None
+    canary_report: CanaryAggregate | None = None
 
     @model_validator(mode="after")
     def require_stable_collections(self) -> Self:
@@ -395,6 +515,27 @@ class PublicationState(StaticContract):
             "supported activity case",
         )
         _require_unique_sorted(self.cursors, lambda value: value.cursor_key, "cursor")
+        if self.canary_report is not None:
+            if self.editorial_backfill is None:
+                raise ValueError("canary report requires active editorial backfill state")
+            if (
+                self.canary_report.processor_sha256
+                != self.editorial_backfill.processor_sha256
+                or self.canary_report.rollout_stage
+                is not self.editorial_backfill.rollout_stage
+            ):
+                raise ValueError("canary report must match the active editorial backfill")
+            if self.canary_report.case_keys != self.editorial_backfill.selected_case_keys:
+                raise ValueError("canary report must cover the exact backfill selection")
+            if (
+                self.canary_report.attempted_count
+                != self.editorial_backfill.attempted_count
+                or self.canary_report.accepted_count
+                != self.editorial_backfill.accepted_count
+                or self.canary_report.failed_count
+                != self.editorial_backfill.failed_count
+            ):
+                raise ValueError("canary report counts must match the active editorial backfill")
         return self
 
 
@@ -708,6 +849,10 @@ def _json_value(value: Any) -> Any:
             payload.pop("freshness", None)
         if "supported_activity" not in value.model_fields_set:
             payload.pop("supported_activity", None)
+        if value.editorial_backfill is None:
+            payload.pop("editorial_backfill", None)
+        if value.canary_report is None:
+            payload.pop("canary_report", None)
         pending_payloads = payload.get("pending_work", ())
         for pending, pending_payload in zip(
             value.pending_work, pending_payloads, strict=True
@@ -866,8 +1011,12 @@ def model_input_fingerprint(
 
 
 _FORBIDDEN_KEYS = {
+    "actionslot",
+    "actionslots",
     "approvedclaim",
     "approvedclaims",
+    "argumentpacket",
+    "argumentpackets",
     "claimid",
     "claimids",
     "claimledger",
@@ -875,6 +1024,11 @@ _FORBIDDEN_KEYS = {
     "credentials",
     "documentid",
     "documentrevisionid",
+    "fieldpath",
+    "offendingterm",
+    "operativeobject",
+    "detaileddiagnostic",
+    "diagnostic",
     "evidencewindow",
     "extractedtext",
     "internalid",
@@ -889,9 +1043,19 @@ _FORBIDDEN_KEYS = {
     "modelresponse",
     "rawmodeloutput",
     "rawresponse",
+    "plainlanguageguidance",
+    "readerclaim",
+    "readerclaims",
+    "readerguideplan",
+    "rejectedprose",
+    "rejectedtext",
+    "repairinstruction",
+    "requiredtransformation",
     "responsebody",
     "rawvalueprivate",
     "signedurl",
+    "sectionpacket",
+    "sectionpackets",
     "sourcebody",
     "sourcehtml",
     "sourcepayload",

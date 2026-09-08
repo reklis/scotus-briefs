@@ -741,6 +741,8 @@ def _promote(args: argparse.Namespace) -> int:
             dispositions=candidate.publication.dispositions,
             freshness=candidate.publication.freshness,
             supported_activity=candidate.publication.supported_activity,
+            editorial_backfill=candidate.publication.editorial_backfill,
+            canary_report=candidate.publication.canary_report,
         )
     else:
         release_id = _optional_id(args.release_id)
