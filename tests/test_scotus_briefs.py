@@ -6,6 +6,7 @@ from uuid import UUID, uuid4
 
 import pytest
 from openai import omit
+from pydantic import ValidationError
 
 from ragchew.scotus.briefs import (
     BriefCandidate,
@@ -37,6 +38,7 @@ from ragchew.scotus.contracts import (
     ScotusDocumentKind,
     ScotusSensitivity,
 )
+from ragchew.scotus.reader_prose import ReaderProsePolicy, load_reader_prose_policy
 
 NOW = datetime(2026, 8, 28, 2, tzinfo=UTC)
 
@@ -379,12 +381,8 @@ def test_disposition_only_policy_requires_docket_and_typed_court_action() -> Non
 
 def test_disposition_name_guard_allows_only_evidence_derived_acronyms() -> None:
     support = "The Federal Communications Commission action is stayed."
-    assert not _unsupported_named_phrase(
-        "The FCC action is stayed.", support, "Committee v. Brown"
-    )
-    assert _unsupported_named_phrase(
-        "The FTC action is stayed.", support, "Committee v. Brown"
-    )
+    assert not _unsupported_named_phrase("The FCC action is stayed.", support, "Committee v. Brown")
+    assert _unsupported_named_phrase("The FTC action is stayed.", support, "Committee v. Brown")
     assert not _unsupported_named_phrase(
         "The Government\u2019s action is stayed.",
         "The Government action is stayed.",
@@ -529,9 +527,47 @@ def test_disposition_only_draft_accepts_supported_plain_action_synonyms() -> Non
         ).claims
         if claim.legal_status is LegalStatus.LOWER_COURT_HELD
     ).model_copy(update={"public_value": "The district court remanded the case."})
-    _validate_action_sentences(
-        "The district court sent the case back.", (lower_court_claim,)
+    _validate_action_sentences("The district court sent the case back.", (lower_court_claim,))
+
+
+def test_action_validation_accepts_reviewed_ordinary_equivalents_and_preserves_slots() -> None:
+    source = evaluate_brief_candidate(role_aware_disposition_candidate(), minimum_confidence=0.85)
+    court_claim = next(
+        claim for claim in source.claims if claim.legal_status is LegalStatus.COURT_HELD
     )
+    vacatur = court_claim.model_copy(
+        update={"public_value": "The Supreme Court vacated the judgment."}
+    )
+    _validate_action_sentences(
+        "The Supreme Court cancelled the judgment.",
+        (vacatur,),
+    )
+    remand = court_claim.model_copy(update={"public_value": "The Supreme Court remanded the case."})
+    _validate_action_sentences(
+        "The Supreme Court sent the case back to the lower court.",
+        (remand,),
+    )
+    stay = court_claim.model_copy(
+        update={"public_value": "The Supreme Court stayed the injunction pending appeal."}
+    )
+    _validate_action_sentences(
+        "The Supreme Court temporarily paused the lower court's blocking order while "
+        "the appeal continues.",
+        (stay,),
+    )
+
+    with pytest.raises(BriefValidationError) as wrong_object:
+        _validate_action_sentences(
+            "The Supreme Court cancelled the appeal.",
+            (vacatur,),
+        )
+    assert wrong_object.value.safe_code == "unsupported_supreme_court_action_object"
+    with pytest.raises(BriefValidationError) as wrong_polarity:
+        _validate_action_sentences(
+            "The Supreme Court did not cancel the judgment.",
+            (vacatur,),
+        )
+    assert wrong_polarity.value.safe_code == "unsupported_court_action"
 
 
 def test_disposition_only_draft_accepts_zero_argument_analyses() -> None:
@@ -727,13 +763,42 @@ def test_attribution_variants_for_one_side_do_not_require_duplicate_coverage() -
     )
 
 
-def test_generation_allows_explicit_uncertainty_about_when_court_will_rule() -> None:
+@pytest.mark.parametrize(
+    ("text", "safe_code"),
+    (
+        (
+            "The approved record does not say when the Court will rule.",
+            "unsupported_future_event",
+        ),
+        ("The Supreme Court has not issued a decision.", "unsupported_no_decision"),
+        ("The model extracted these claims from the schema.", "internal_process_language"),
+        ("The ruling will clarify the law next year.", "unsupported_future_event"),
+        ("The decision will affect every agency.", "unsupported_future_event"),
+        ("The Court will decide what happens next.", "unsupported_future_event"),
+    ),
+)
+def test_generation_rejects_process_absence_and_unsupported_future_language(
+    text: str, safe_code: str
+) -> None:
     source = candidate()
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
-    text = (
-        "The approved record does not say when the Court will rule or what it will decide. "
-        "No outcome can be predicted from this argument alone."
+    with pytest.raises(BriefValidationError) as caught:
+        BriefGenerationService(FakeGenerator(text), InMemoryBriefRevisionStore()).generate(
+            source, decision, revision_number=1
+        )
+    assert caught.value.safe_code == safe_code
+
+
+def test_generation_accepts_a_future_event_established_by_an_approved_claim() -> None:
+    known_future = observation(
+        LegalObservationType.PROCEDURAL_POSTURE,
+        LegalStatus.DESCRIBED,
+        ScotusDocumentKind.DOCKET,
+        "Congress set a deadline that will affect agency permits next year.",
     )
+    source = candidate(observations=(*candidate().observations, known_future))
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    text = "Congress set a deadline that will affect agency permits next year."
     revision = BriefGenerationService(FakeGenerator(text), InMemoryBriefRevisionStore()).generate(
         source, decision, revision_number=1
     )
@@ -881,6 +946,159 @@ def test_plain_language_accepts_legal_terms_only_with_an_immediate_gloss(
         maximum_sentence_words=30,
         maximum_paragraph_words=120,
     )
+
+
+@pytest.mark.parametrize(
+    ("label", "unexplained", "explained"),
+    (
+        (
+            "waiver",
+            "The agency relied on waiver.",
+            "Waiver means the agency gave up its right to object.",
+        ),
+        (
+            "pretext",
+            "The stated reason was pretextual.",
+            "The reason was pretextual, meaning the stated reason was not the real reason.",
+        ),
+        (
+            "rebuttal",
+            "The filing was a rebuttal.",
+            "The rebuttal was an answer to the other side's argument.",
+        ),
+        (
+            "finality",
+            "The dispute concerns finality.",
+            "Finality asks whether the judgment is final.",
+        ),
+        (
+            "habeas",
+            "The prisoner filed for habeas corpus.",
+            "Habeas corpus is a challenge to imprisonment.",
+        ),
+        (
+            "sovereign_immunity",
+            "The state asserted sovereign immunity.",
+            "Sovereign immunity protects the state from being sued.",
+        ),
+        ("tolling", "The law allows tolling.", "Tolling means the deadline pauses."),
+        (
+            "due_process",
+            "The policy denies due process.",
+            "Due process requires fair process here.",
+        ),
+        (
+            "equal_protection",
+            "The case raises equal protection.",
+            "Equal protection requires the law to treat people equally.",
+        ),
+        (
+            "scrutiny",
+            "The court used strict scrutiny.",
+            "Strict scrutiny is the most demanding test.",
+        ),
+        (
+            "certiorari",
+            "The party sought certiorari.",
+            "Certiorari is a request asking the Court to review the case.",
+        ),
+        (
+            "procedural_history",
+            "The procedural history is lengthy.",
+            "Procedural history means the steps that brought the case through court.",
+        ),
+    ),
+)
+def test_reviewed_corpus_terms_require_same_sentence_case_specific_glosses(
+    label: str, unexplained: str, explained: str
+) -> None:
+    with pytest.raises(BriefValidationError) as caught:
+        _validate_plain_language(
+            unexplained,
+            maximum_sentence_words=30,
+            maximum_paragraph_words=120,
+        )
+    assert caught.value.safe_code == f"unexplained_legal_term_{label}"
+    _validate_plain_language(
+        explained,
+        maximum_sentence_words=30,
+        maximum_paragraph_words=120,
+    )
+
+
+def test_reader_term_gloss_must_be_in_the_same_sentence() -> None:
+    with pytest.raises(BriefValidationError) as caught:
+        _validate_plain_language(
+            "The court lacked jurisdiction. It had no power to hear the case.",
+            maximum_sentence_words=30,
+            maximum_paragraph_words=120,
+        )
+    assert caught.value.safe_code == "unexplained_legal_term_jurisdiction"
+
+
+def test_reader_prose_resource_is_versioned_complete_and_reviewed() -> None:
+    policy = load_reader_prose_policy()
+    assert policy.version == "scotus-reader-prose-v1"
+    labels = {term.label for term in policy.terms}
+    assert {
+        "waiver",
+        "pretext",
+        "rebuttal",
+        "finality",
+        "standing",
+        "jurisdiction",
+        "injunction",
+        "vacatur",
+        "remand",
+        "habeas",
+        "sovereign_immunity",
+        "procedural_history",
+    }.issubset(labels)
+    assert all(term.ordinary_alternatives for term in policy.terms)
+    assert any(
+        action.canonical == "vacate" and action.ordinary for action in policy.action_equivalents
+    )
+
+
+def test_reader_prose_resource_validation_fails_closed() -> None:
+    payload = load_reader_prose_policy().model_dump(mode="json")
+    payload["terms"] = [term for term in payload["terms"] if term["label"] != "waiver"]
+    with pytest.raises(ValidationError, match="missing required terms"):
+        ReaderProsePolicy.model_validate(payload)
+
+    invalid_pattern = load_reader_prose_policy().model_dump(mode="json")
+    invalid_pattern["process_patterns"][0] = "["
+    with pytest.raises(ValidationError, match="invalid reader-prose regular expression"):
+        ReaderProsePolicy.model_validate(invalid_pattern)
+
+
+def test_headings_cannot_rely_on_inline_legal_glosses() -> None:
+    with pytest.raises(BriefValidationError) as caught:
+        _validate_plain_language(
+            "Jurisdiction means power to hear the case",
+            maximum_sentence_words=30,
+            maximum_paragraph_words=120,
+            allow_term_explanations=False,
+        )
+    assert caught.value.safe_code == "unexplained_legal_term_jurisdiction"
+
+
+def test_plain_language_rejects_repetition_and_unreadable_prose() -> None:
+    with pytest.raises(BriefValidationError) as repeated:
+        _validate_plain_language(
+            "The agency changed the rule. The agency changed the rule.",
+            maximum_sentence_words=30,
+            maximum_paragraph_words=120,
+        )
+    assert repeated.value.safe_code == "repeated_reader_prose"
+    with pytest.raises(BriefValidationError) as unreadable:
+        _validate_plain_language(
+            "Notwithstanding multifarious constitutional considerations, institutional "
+            "adjudication necessitates extraordinarily sophisticated interpretive methodologies.",
+            maximum_sentence_words=30,
+            maximum_paragraph_words=120,
+        )
+    assert unreadable.value.safe_code == "reader_prose_readability"
 
 
 def test_openai_generator_requests_structured_plain_language_output() -> None:
@@ -1031,9 +1249,7 @@ def test_disposition_generator_uses_compact_positive_role_aware_request() -> Non
     assert user_payload["docket"] == source.primary_docket
     assert user_payload["maturity"] == decision.maturity.value
     planned_claims = [
-        claim
-        for section in user_payload["section_plan"]
-        for claim in section["claims"]
+        claim for section in user_payload["section_plan"] for claim in section["claims"]
     ]
     assert {
         "described",
@@ -1224,9 +1440,7 @@ def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
         }
     )
     with pytest.raises(BriefValidationError) as caught:
-        validate_brief_draft(
-            ambiguous_dissent, source, decision.claims, public_quotes=False
-        )
+        validate_brief_draft(ambiguous_dissent, source, decision.claims, public_quotes=False)
     assert caught.value.safe_code in {
         "ambiguous_separate_opinion_attribution",
         "ungrounded_separate_opinions_section",
@@ -1294,11 +1508,7 @@ def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
         update={
             "sections": tuple(
                 section.model_copy(
-                    update={
-                        "paragraphs": (
-                            "The Supreme Court temporarily stayed the appeal.",
-                        )
-                    }
+                    update={"paragraphs": ("The Supreme Court temporarily stayed the appeal.",)}
                 )
                 if section.heading == "What the Supreme Court did"
                 else section
@@ -1313,9 +1523,7 @@ def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
     actionless = draft.model_copy(
         update={
             "sections": tuple(
-                section.model_copy(
-                    update={"paragraphs": ("The case concerns emergency relief.",)}
-                )
+                section.model_copy(update={"paragraphs": ("The case concerns emergency relief.",)})
                 if section.heading == "What the Supreme Court did"
                 else section
                 for section in draft.sections

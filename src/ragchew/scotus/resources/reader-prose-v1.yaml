@@ -1,0 +1,213 @@
+version: scotus-reader-prose-v1
+terms:
+  - label: standing
+    patterns: ['\b(?:Article III )?standing\b']
+    ordinary_alternatives: [right to bring the case, required concrete harm]
+    explanation_patterns:
+      - '\b(?:right|allowed|permission) to (?:bring|file|pursue|start|sue)\b'
+      - '\bmust (?:first )?show\b[^.!?]{0,60}\b(?:harm|injury)\b'
+      - '\b(?:harm|injury)\b[^.!?]{0,60}\b(?:right to sue|bring the case)\b'
+  - label: jurisdiction
+    patterns: ['\bjurisdiction(?:al)?\b']
+    ordinary_alternatives: [power to hear the case, authority to decide the dispute]
+    explanation_patterns:
+      - '\b(?:power|authority|allowed)\b[^.!?]{0,45}\b(?:hear|decide|review)\b'
+      - '\b(?:hear|decide|review)\b[^.!?]{0,45}\b(?:power|authority)\b'
+  - label: justiciability
+    patterns: ['\bjusticiab(?:le|ility)\b', '\bjudicial review\b']
+    ordinary_alternatives: [a dispute a court can decide, ready for a court to decide]
+    explanation_patterns:
+      - '\b(?:court|judge|justices) (?:can|could|may|is allowed to) (?:hear|decide|review)\b'
+      - '\breview by a court\b'
+      - '\bready for a court to decide\b'
+  - label: injunction
+    patterns: ['\binjunct(?:ion|ive)\b']
+    ordinary_alternatives: [court order that blocks an action, court order requiring an action]
+    explanation_patterns:
+      - '\bcourt order\b[^.!?]{0,55}\b(?:block|stop|require|prevent)\w*\b'
+      - '\blower court''s blocking order\b'
+      - '\border (?:that|which)\b[^.!?]{0,45}\b(?:block|stop|require|prevent)\w*\b'
+  - label: vacatur
+    patterns: ['\bvacat(?:e|ed|es|ing|ur)\b']
+    ordinary_alternatives: [cancelled the judgment, set the decision aside]
+    explanation_patterns: ['\b(?:cancel|cancelled|canceled|set aside|throw|threw|erase|erased)\b']
+  - label: remand
+    patterns: ['\bremand(?:ed|s|ing)?\b']
+    ordinary_alternatives: [sent the case back to the lower court]
+    explanation_patterns: ['\b(?:send|sent|return|returned)\b[^.!?]{0,55}\blower court\b']
+  - label: mootness
+    patterns: ['\bmoot(?:ness|ed)?\b']
+    ordinary_alternatives: [nothing meaningful remains for the court to decide]
+    explanation_patterns:
+      - '\bno longer\b[^.!?]{0,55}\b(?:live|matter|need|decision|resolve)\b'
+      - '\bnothing (?:meaningful )?left (?:to decide|for the court)\b'
+  - label: preemption
+    patterns: ['\bpreempt(?:ion|ed|s|ive)?\b']
+    ordinary_alternatives: [federal law overrides state law]
+    explanation_patterns:
+      - '\bfederal law\b[^.!?]{0,55}\b(?:override\w*|take priority|control\w*|block\w*)\b'
+      - '\b(?:override\w*|takes priority over)\b[^.!?]{0,35}\bstate law\b'
+  - label: habeas
+    patterns: ['\bhabeas(?: corpus)?\b']
+    ordinary_alternatives: [challenge to imprisonment or detention, request for release from custody]
+    explanation_patterns:
+      - '\bchallenge\b[^.!?]{0,55}\b(?:custody|detention|imprisonment|prison)\b'
+      - '\bask\w*\b[^.!?]{0,55}\b(?:release|freed)\b'
+  - label: sovereign_immunity
+    patterns: ['\b(?:tribal |state )?sovereign immunity\b']
+    ordinary_alternatives: [protection from being sued]
+    explanation_patterns:
+      - '\bprotect\w*\b[^.!?]{0,45}\bfrom being sued\b'
+      - '\b(?:cannot|can not) be sued\b'
+  - label: tolling
+    patterns: ['\btoll(?:ed|ing|s)?\b']
+    ordinary_alternatives: [paused the deadline, stopped the legal clock]
+    explanation_patterns: ['\b(?:clock|deadline)\b[^.!?]{0,45}\b(?:pause|stop|extend)\w*\b']
+  - label: due_process
+    patterns: ['\bdue process\b']
+    ordinary_alternatives: [fair process, notice and a chance to be heard]
+    explanation_patterns:
+      - '\bfair (?:process|procedure|hearing|treatment)\b'
+      - '\bnotice\b[^.!?]{0,45}\b(?:chance|opportunity)\b'
+      - '\bchance to be heard\b'
+  - label: equal_protection
+    patterns: ['\bequal protection\b']
+    ordinary_alternatives: [equal treatment under the law, the same legal protection]
+    explanation_patterns:
+      - '\btreat\w*\b[^.!?]{0,45}\bequal\w*\b'
+      - '\bsame legal protection\b'
+  - label: scrutiny
+    patterns: ['\b(?:strict|intermediate) scrutiny\b', '\brational basis review\b']
+    ordinary_alternatives: [the most demanding test, a more demanding test, a reasonable connection test]
+    explanation_patterns:
+      - '\b(?:most|more) demanding test\b'
+      - '\bstrong(?:est|er) reason\b'
+      - '\bclosely fit\b'
+      - '\breasonably related\b'
+  - label: certiorari
+    patterns: ['\bcertiorari\b', '\bcert\.(?=\s|$)']
+    ordinary_alternatives: [request that the Court hear the case, agreement to review the case]
+    explanation_patterns: ['\b(?:ask|asked|asking|agreed)\b[^.!?]{0,45}\b(?:hear|review)\b']
+  - label: per_curiam
+    patterns: ['\bper curiam\b']
+    ordinary_alternatives: [unsigned opinion, opinion with no named author]
+    explanation_patterns: ['\b(?:unsigned|court as a whole|no named author)\b']
+  - label: domicile
+    patterns: ['\bdomicile\b']
+    ordinary_alternatives: [permanent home, legal home]
+    explanation_patterns: ['\b(?:permanent|legal) home\b']
+  - label: waiver
+    patterns: ['\bwaiv(?:e|ed|er|ing)\b']
+    ordinary_alternatives: [gave up a right, chose not to object, lost the ability to object]
+    explanation_patterns:
+      - '\b(?:give|gave|given|giving) up\b[^.!?]{0,45}\b(?:right|argument|objection)\b'
+      - '\b(?:chose|choose|decided) not to\b[^.!?]{0,45}\b(?:object|argue|enforce)\b'
+      - '\blost\b[^.!?]{0,45}\b(?:right|ability) to\b'
+  - label: pretext
+    patterns: ['\bpretext(?:ual)?\b']
+    ordinary_alternatives: [stated reason was not the real reason, excuse hiding the real reason]
+    explanation_patterns:
+      - '\b(?:stated|given) reason\b[^.!?]{0,55}\bnot (?:the )?(?:real|actual) reason\b'
+      - '\b(?:excuse|cover)\b[^.!?]{0,55}\b(?:real|actual) reason\b'
+  - label: rebuttal
+    patterns: ['\brebut(?:tal|ted|ting|s)?\b']
+    ordinary_alternatives: [answer to the other side, evidence that counters an argument]
+    explanation_patterns:
+      - '\b(?:answer|response) to\b[^.!?]{0,45}\b(?:other side|argument|evidence)\b'
+      - '\b(?:counter|answer|respond to)\w*\b[^.!?]{0,45}\b(?:argument|evidence|claim)\b'
+  - label: finality
+    patterns: ['\bfinality\b']
+    ordinary_alternatives: [whether the decision is final, whether the case is over]
+    explanation_patterns:
+      - '\b(?:decision|judgment|order) (?:is|was) final\b'
+      - '\b(?:ends?|ended|over)\b[^.!?]{0,45}\b(?:case|court proceedings|dispute)\b'
+      - '\bnothing left\b[^.!?]{0,45}\b(?:court|decide|resolve)\b'
+  - label: procedural_history
+    patterns: ['\bprocedural history\b']
+    ordinary_alternatives: [steps that brought the case here, what earlier courts did]
+    explanation_patterns:
+      - '\b(?:steps|events|decisions)\b[^.!?]{0,60}\b(?:brought|reached|through)\b[^.!?]{0,35}\b(?:case|court)\b'
+      - '\bwhat (?:the )?earlier courts? did\b'
+  - label: principal_officer
+    patterns: ['\bprincipal officer\b']
+    ordinary_alternatives: [senior government official, agency leader]
+    explanation_patterns: ['\b(?:senior|high-ranking|top) (?:government )?official\b', '\bagency leader\b']
+  - label: foundling
+    patterns: ['\bfoundlings?\b']
+    ordinary_alternatives: [abandoned child whose parents are unknown]
+    explanation_patterns: ['\b(?:abandoned child|child(?:ren)? whose parents? (?:are|is) unknown)\b']
+  - label: separation_of_powers
+    patterns: ['\bseparation of powers\b']
+    ordinary_alternatives: [how government branches divide and limit their power]
+    explanation_patterns:
+      - '\b(?:Congress|president|executive|legislative|branch)\b[^.!?]{0,75}\b(?:control|power|authority|limit|independent)\w*\b'
+      - '\b(?:control|power|authority|limit)\w*\b[^.!?]{0,75}\b(?:Congress|president|executive|legislative|branch)\b'
+  - label: precedent
+    patterns: ['\bprecedent\b']
+    ordinary_alternatives: [earlier decision that supplies the rule]
+    explanation_patterns: ['\bearlier (?:case|decision|ruling|rule)\b']
+  - label: merits
+    patterns: ['\bmerits\b']
+    ordinary_alternatives: [underlying dispute, who is legally right]
+    explanation_patterns:
+      - '\b(?:final|underlying)\b[^.!?]{0,45}\b(?:decision|dispute|issue|question)\b'
+      - '\bwho is (?:legally )?(?:right|wrong)\b'
+  - label: statutory_authority
+    patterns: ['\bstatutory authority\b']
+    ordinary_alternatives: [power Congress gave the agency]
+    explanation_patterns:
+      - '\b(?:power|permission|allowed|allows|gave|gives|granted)\b[^.!?]{0,50}\bCongress\b'
+      - '\bCongress\b[^.!?]{0,50}\b(?:power|permission|allowed|allows|gave|gives|granted)\b'
+forbidden_phrases:
+  - {label: arguendo, pattern: '\barguendo\b', ordinary_alternative: for the sake of argument}
+  - {label: inter_alia, pattern: '\binter alia\b', ordinary_alternative: among other things}
+  - {label: hereinafter, pattern: '\bhereinafter\b', ordinary_alternative: later called}
+  - {label: aforementioned, pattern: '\baforementioned\b', ordinary_alternative: earlier}
+  - {label: pursuant_to, pattern: '\bpursuant to\b', ordinary_alternative: under}
+  - {label: sub_judice, pattern: '\bsub judice\b', ordinary_alternative: still before a court}
+  - {label: ab_initio, pattern: '\bab initio\b', ordinary_alternative: from the beginning}
+  - {label: instant_case, pattern: '\bthe instant case\b', ordinary_alternative: this case}
+  - {label: procedural_posture, pattern: '\bprocedural posture\b', ordinary_alternative: how the case got here}
+  - {label: question_presented, pattern: '\bquestion presented\b', ordinary_alternative: main legal question}
+  - {label: requested_disposition, pattern: '\brequested disposition\b', ordinary_alternative: result the side requested}
+  - {label: petitioner, pattern: '\bpetitioners?\b', ordinary_alternative: side that brought the case}
+  - {label: respondent, pattern: '\brespondents?\b', ordinary_alternative: opposing side}
+process_patterns:
+  - '\bapproved (?:record|claims?|evidence)\b'
+  - '\bclaims? (?:ledger|packet|identifier|id)\b'
+  - '\bclaim_ids?\b'
+  - '\bclaims?\b'
+  - '\b(?:extraction|extractor|model|prompt|schema)\b'
+  - '\bmatching (?:array|field)\b'
+  - '\brequired_output_schema\b'
+  - '\b(?:processing|pipeline) (?:details?|record|output|instructions?)\b'
+action_equivalents:
+  - {canonical: hold, pattern: '\bhold\b', ordinary: false}
+  - {canonical: hold, pattern: '\bheld\b', ordinary: false}
+  - {canonical: order, pattern: '\border(?:ed)?\b', ordinary: false}
+  - {canonical: grant, pattern: '\bgrant(?:ed)?\b', ordinary: false}
+  - {canonical: grant, pattern: '\ballow(?:ed)?\b', ordinary: true}
+  - {canonical: approve, pattern: '\bapprov(?:e|ed)\b', ordinary: true}
+  - {canonical: deny, pattern: '\bden(?:y|ied)\b', ordinary: false}
+  - {canonical: deny, pattern: '\breject(?:ed)?\b', ordinary: true}
+  - {canonical: affirm, pattern: '\baffirm(?:ed)?\b', ordinary: false}
+  - {canonical: affirm, pattern: '\b(?:uphold|upheld)\b', ordinary: true}
+  - {canonical: affirm, pattern: '\bleft (?:the )?(?:judgment|decision|order) in place\b', ordinary: true}
+  - {canonical: reverse, pattern: '\brevers(?:e|ed)\b', ordinary: false}
+  - {canonical: reverse, pattern: '\boverturn(?:ed)?\b', ordinary: true}
+  - {canonical: vacate, pattern: '\bvacat(?:e|ed)\b', ordinary: false}
+  - {canonical: vacate, pattern: '\bcancel(?:(?:l)?ed)?\b', ordinary: true}
+  - {canonical: vacate, pattern: '\bset (?:the )?(?:judgment|decision|order) aside\b', ordinary: true}
+  - {canonical: remand, pattern: '\bremand(?:ed)?\b', ordinary: false}
+  - {canonical: remand, pattern: '\b(?:send(?:s|ing)?|sent) (?:the )?case back\b', ordinary: true}
+  - {canonical: remand, pattern: '\breturn(?:s|ed|ing)? (?:the )?case to (?:a|the) lower court\b', ordinary: true}
+  - {canonical: dismiss, pattern: '\bdismiss(?:ed)?\b', ordinary: false}
+  - {canonical: dismiss, pattern: '\b(?:throw|threw) (?:the )?case out\b', ordinary: true}
+  - {canonical: stay, pattern: '\bstay(?:ed)?\b', ordinary: false}
+  - {canonical: stay, pattern: '\btemporarily paus(?:e|ed)\b', ordinary: true}
+  - {canonical: stay, pattern: '\bpaus(?:e|ed)\b', ordinary: true}
+  - {canonical: block, pattern: '\benjoin(?:ed)?\b', ordinary: false}
+  - {canonical: block, pattern: '\bblock(?:ed)?\b', ordinary: true}
+  - {canonical: prevail, pattern: '\bprevail(?:ed)?\b', ordinary: false}
+  - {canonical: win, pattern: '\bwon\b', ordinary: true}
+  - {canonical: lose, pattern: '\blost\b', ordinary: true}
