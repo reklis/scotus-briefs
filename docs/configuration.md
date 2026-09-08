@@ -27,6 +27,23 @@ the backlog. Processor/current rechecks and rotating historical work follow. Bud
 exhaustion creates dated sanitized pending work; it does not create a partial case or
 silently drop discovered supported activity.
 
+### Editorial backfill controls
+
+`editorial_backfill.enabled` is the reviewed feature gate and `maximum_stage` is the
+largest stage an operator may request. `rollout_stage: null` deliberately selects no
+legacy processor migration. A protected manual dispatch may choose `canary_10`,
+`batch_25`, or `batch_100`; the CLI applies the stage as a selection ceiling and takes
+the minimum of that ceiling and every configured nightly/bootstrap case budget. It
+never raises a configured resource limit. `--maximum-cases` can lower the resulting
+bound again.
+
+A processor change resets selection and must begin at `canary_10`. The exact selected
+case keys and newest-first rank boundary are persisted in sanitized state. Runtime-
+deferred selected cases resume from that set, failed cases use the finite normal retry
+rotation, and stale processor cases outside the selection never enter `PendingWork`.
+Every measured stage forces `publication.dry_run=true`, so it can produce a validated
+side-by-side candidate but cannot become deployment-ready before its own review.
+
 The source user agent used by protected automation is:
 
 ```text

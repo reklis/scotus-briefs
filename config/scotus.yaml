@@ -110,6 +110,12 @@ model_budget:
   request_timeout_seconds: 420
   # One fully budgeted retry is allowed only for retryable loopback transport failures.
   maximum_transport_attempts: 2
+editorial_backfill:
+  # Operators must explicitly choose a reviewed stage; the CLI may only lower existing
+  # case/model ceilings. A canary always forces publication-disabled dry-run behavior.
+  enabled: true
+  rollout_stage: null
+  maximum_stage: batch_100
 model_retry:
   # One initial generation cycle plus at most two later scheduled cycles per stable scope.
   automatic_retry_cycles_per_scope: 2

@@ -394,6 +394,25 @@ class ScotusRunnerLimits(BaseModel):
     maximum_runtime_seconds: int = Field(ge=60, le=86_400)
 
 
+class ScotusEditorialBackfillDefaults(BaseModel):
+    """Reviewed ceiling and optional active stage for editorial migration work."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    enabled: bool = False
+    rollout_stage: Literal["canary_10", "batch_25", "batch_100"] | None = None
+    maximum_stage: Literal["canary_10", "batch_25", "batch_100"] = "batch_100"
+
+    @model_validator(mode="after")
+    def require_enabled_stage(self) -> Self:
+        if self.rollout_stage is not None and not self.enabled:
+            raise ValueError("editorial rollout stage requires the backfill gate")
+        order = {"canary_10": 0, "batch_25": 1, "batch_100": 2}
+        if self.rollout_stage is not None and order[self.rollout_stage] > order[self.maximum_stage]:
+            raise ValueError("editorial rollout stage exceeds the reviewed stage ceiling")
+        return self
+
+
 class ScotusModelRetryDefaults(BaseModel):
     """Finite policy for retrying unchanged, sanitized model-output failures."""
 
@@ -513,6 +532,9 @@ class ScotusConfig(BaseModel):
     bootstrap: ScotusBootstrapDefaults
     runner_limits: ScotusRunnerLimits
     model_budget: ScotusModelBudget
+    # Optional defaults preserve older reviewed files. A stage is activated only by a
+    # reviewed configuration or a CLI override that cannot raise any resource ceiling.
+    editorial_backfill: ScotusEditorialBackfillDefaults = ScotusEditorialBackfillDefaults()
     # A default keeps older reviewed configuration files valid. Production declares
     # the values explicitly so retry policy changes remain reviewable.
     model_retry: ScotusModelRetryDefaults = ScotusModelRetryDefaults()
@@ -543,6 +565,11 @@ class ScotusConfig(BaseModel):
             raise ValueError("bootstrap case limit exceeds minimum extraction-call capacity")
         if not self.publication.enabled and not self.publication.dry_run:
             raise ValueError("publication must be enabled before dry-run mode can be disabled")
+        if (
+            self.editorial_backfill.rollout_stage is not None
+            and not self.publication.dry_run
+        ):
+            raise ValueError("an active editorial rollout stage must disable publication")
         if (
             self.publication.enabled
             and not self.publication.dry_run

@@ -31,6 +31,12 @@ on:
         required: false
         default: 0
         type: number
+      editorial_rollout_stage:
+        description: Reviewed publication-disabled editorial migration stage
+        required: true
+        default: disabled
+        type: choice
+        options: [disabled, canary_10, batch_25, batch_100]
 
 concurrency:
   group: scotus-pages-publication
@@ -202,6 +208,8 @@ jobs:
           AUTHORIZED_REPLAY: ${{ inputs.authorized_replay || false }}
           SCHEDULED_RUN: ${{ github.event_name == 'schedule' }}
           MAXIMUM_CASES: ${{ inputs.maximum_cases || 0 }}
+          EDITORIAL_ROLLOUT_STAGE: ${{ inputs.editorial_rollout_stage || 'disabled' }}
+          DEPLOY_REQUESTED: ${{ inputs.deploy || false }}
           RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter
           RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
         run: |
@@ -209,6 +217,18 @@ jobs:
           replay_args=()
           scheduled_retry_args=()
           case_args=()
+          editorial_args=()
+          if [[ "$EDITORIAL_ROLLOUT_STAGE" != "disabled" ]]; then
+            if [[ "${{ github.event_name }}" != "workflow_dispatch" || "$PUBLICATION_MODE" != "nightly" ]]; then
+              echo "Editorial rollout stages require an explicit protected manual nightly run." >&2
+              exit 1
+            fi
+            if [[ "$DEPLOY_REQUESTED" == "true" ]]; then
+              echo "Measured editorial stages are publication-disabled; rerun with deploy=false." >&2
+              exit 1
+            fi
+            editorial_args+=(--editorial-rollout-stage "$EDITORIAL_ROLLOUT_STAGE")
+          fi
           if [[ "$MAXIMUM_CASES" != "0" ]]; then
             if [[ ! "$MAXIMUM_CASES" =~ ^[1-9][0-9]*$ ]]; then
               echo "maximum_cases must be zero or a positive integer." >&2
@@ -236,7 +256,7 @@ jobs:
             --output candidate-site --workspace "$RUNNER_TEMP/ragchew-private" \
             --source-commit "$GITHUB_SHA" --build-epoch "$(git show -s --format=%cI HEAD)" \
             --github-output "$GITHUB_OUTPUT" "${replay_args[@]}" \
-            "${scheduled_retry_args[@]}" "${case_args[@]}"
+            "${scheduled_retry_args[@]}" "${case_args[@]}" "${editorial_args[@]}"
       - name: Build fixture, validate, and exit
         id: fixture_batch
         if: (inputs.mode || 'nightly') == 'fixture'
@@ -312,6 +332,15 @@ jobs:
         with:
           name: scanned-static-candidate
           path: candidate-site
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 1
+      - name: Upload sanitized publication-disabled editorial candidate state
+        if: github.event_name == 'workflow_dispatch' && inputs.editorial_rollout_stage != 'disabled' && inputs.deploy != true && steps.batch.outcome == 'success' && steps.receipts.outcome == 'success'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: sanitized-editorial-candidate-state
+          path: candidate-state
           if-no-files-found: error
           include-hidden-files: true
           retention-days: 1

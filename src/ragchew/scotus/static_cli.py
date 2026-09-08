@@ -31,6 +31,7 @@ from ragchew.scotus.discovery import DiscoveryMode
 from ragchew.scotus.public_contracts import ScotusPublicProjection
 from ragchew.scotus.static_contracts import (
     CostReceiptBundle,
+    EditorialRolloutStage,
     ReleaseManifest,
     canonical_json_bytes,
     contract_digest,
@@ -470,6 +471,43 @@ def _migrate_activity(args: argparse.Namespace) -> int:
     return 0
 
 
+def _with_editorial_rollout(config: ScotusConfig, value: str) -> ScotusConfig:
+    """Apply a reviewed stage without increasing any configured case budget."""
+    if not config.editorial_backfill.enabled:
+        raise ValueError("editorial rollout requires the reviewed configuration gate")
+    stage = EditorialRolloutStage(value)
+    stage_order = list(EditorialRolloutStage)
+    maximum_stage = EditorialRolloutStage(config.editorial_backfill.maximum_stage)
+    if stage_order.index(stage) > stage_order.index(maximum_stage):
+        raise ValueError("editorial rollout exceeds the configured reviewed stage")
+    editorial = config.editorial_backfill.model_copy(update={"rollout_stage": stage.value})
+    bootstrap = config.bootstrap.model_copy(
+        update={
+            "maximum_cases_per_run": min(
+                config.bootstrap.maximum_cases_per_run, stage.limit
+            )
+        }
+    )
+    runner_limits = config.runner_limits.model_copy(
+        update={
+            "maximum_cases_per_run": min(
+                config.runner_limits.maximum_cases_per_run, stage.limit
+            )
+        }
+    )
+    # Every measured stage is built publication-disabled. Only an exact candidate
+    # carrying a later sanitized approval may enter the separate promotion path.
+    publication = config.publication.model_copy(update={"dry_run": True})
+    return config.model_copy(
+        update={
+            "editorial_backfill": editorial,
+            "bootstrap": bootstrap,
+            "runner_limits": runner_limits,
+            "publication": publication,
+        }
+    )
+
+
 def _batch(args: argparse.Namespace) -> int:
     if args.mode == "fixture":
         fixture_args = argparse.Namespace(
@@ -494,6 +532,10 @@ def _batch(args: argparse.Namespace) -> int:
         project_base_path=args.project_base_path,
     )
     mode = DiscoveryMode(args.mode)
+    if args.editorial_rollout_stage is not None:
+        if mode is not DiscoveryMode.NIGHTLY:
+            raise ValueError("editorial rollout is permitted only in nightly mode")
+        config = _with_editorial_rollout(config, args.editorial_rollout_stage)
     if args.scheduled_retries and mode is not DiscoveryMode.NIGHTLY:
         raise ValueError("scheduled retries are permitted only in nightly mode")
     if args.maximum_cases is not None:
@@ -615,6 +657,11 @@ def _batch(args: argparse.Namespace) -> int:
             ),
             "newest_pending_activity_date": safe_date(
                 freshness.newest_pending_activity_date
+            ),
+            "editorial_rollout_stage": (
+                finalized.publication.editorial_backfill.rollout_stage.value
+                if finalized.publication.editorial_backfill is not None
+                else None
             ),
         },
     )
@@ -1006,6 +1053,13 @@ def build_parser() -> argparse.ArgumentParser:
         "--maximum-cases",
         type=int,
         help="reduce the configured case bound for an authorized validation run",
+    )
+    batch.add_argument(
+        "--editorial-rollout-stage",
+        choices=tuple(stage.value for stage in EditorialRolloutStage),
+        help=(
+            "select a reviewed bounded editorial stage; canary_10 always disables publication"
+        ),
     )
     batch.add_argument("--fixture", type=Path, default=Path("tests/fixtures/static/one-case.json"))
     batch.set_defaults(function=_batch)

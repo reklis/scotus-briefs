@@ -241,6 +241,45 @@ at its existing slug, and inspect its sanitized JSON for all five required secti
 stay effect, and any separate-opinion section. Then run the normal candidate validator with
 `--privacy-scan`; promote only that exact candidate through the no-reprocessing deployment
 workflow.
+### Measured editorial rollout
+
+Start a new reader-guide processor only with a protected manual `nightly` dispatch:
+
+1. Choose `editorial_rollout_stage=canary_10`, `deploy=false`, and leave
+   `maximum_cases=0` unless an even smaller diagnostic run is intentionally required.
+   The workflow rejects a canary deploy request and the CLI independently forces dry-run
+   publication. It retains the scanned site and separately named sanitized editorial
+   state for one day; neither artifact contains source text, prompts, rejected output,
+   or field diagnostics.
+2. Review the deterministic manifest side by side with each active legacy page and the
+   linked official Court materials. The manifest is newest-first and, where available,
+   includes a disposition-only case, an argued case, and a case decided after argument.
+   Record only case keys, fixed failure-code counts, aggregate runtime/model calls, and
+   the reviewer fields in `CanaryAggregate`—never copy model/source text into state or
+   logs.
+3. Approval requires at least eight accepted rewrites that reviewers judge improved;
+   zero accepted factual, status, actor, chronology, or prediction errors; no degraded
+   legacy page; and successful privacy and release validation. A rejected or incomplete
+   canary leaves the live release unchanged. If the ten-case threshold fails, stop; a
+   model replacement requires its own source/privacy/cost/runtime approval rather than
+   a stage override.
+4. After recording an approved aggregate, advance exactly one stage to `batch_25` and
+   repeat the measured review with at least 80 percent improved accepted rewrites. Only
+   its approved exact-processor and exact-candidate report may advance to `batch_100`.
+   Every measured stage remains publication-disabled while under review. One hundred is
+   a selection ceiling, not permission to exceed lower case,
+   document, request, token, call, disk, or runtime limits.
+5. Promote only the exact retained, privacy-scanned candidate that was reviewed. Re-run
+   validation but not Court/model processing. Roll back by redeploying the prior
+   immutable release and restoring its generated-content parent; do not edit historical
+   revision bodies or move the backfill cursor by hand.
+
+The contract helpers reject skipped stage transitions, processor/report mismatches, and
+an `approved` decision that does not satisfy the automated threshold fields. The current
+workflow intentionally does not automatically convert a pending review artifact into an
+approved deployable artifact; recording the manual decision and promoting it remains a
+protected operator step.
+
 A successful manual `deploy=false` run uploads only the privacy-scanned Pages tree,
 sanitized generated-state candidate, opaque receipts, and fixed handoff metadata for one
 day; it does not deploy or mutate `generated-content`.

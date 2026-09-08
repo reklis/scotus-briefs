@@ -14,7 +14,7 @@ import os
 import re
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, BinaryIO, Literal, Protocol, cast
@@ -111,6 +111,11 @@ from ragchew.scotus.documents import (
     PendingDocument,
     ScotusDocumentCollector,
 )
+from ragchew.scotus.editorial_backfill import (
+    EditorialCandidate,
+    require_stage_advancement,
+    start_or_resume_backfill,
+)
 from ragchew.scotus.extraction import (
     InMemoryLegalObservationStore,
     LegalEvidenceBlock,
@@ -136,6 +141,8 @@ from ragchew.scotus.static_contracts import (
     ConditionalValidators,
     ContentIntegrity,
     CostReceiptBundle,
+    EditorialBackfillState,
+    EditorialRolloutStage,
     LogicalDocumentState,
     LogicalSourceState,
     ModelAttemptReceipt,
@@ -609,6 +616,11 @@ def _source_from_config(config: ProceedingsConfig) -> OfficialSource:
 
 
 def _validate_live_gates(config: ScotusConfig) -> None:
+    if (
+        config.editorial_backfill.rollout_stage is not None
+        and not config.publication.dry_run
+    ):
+        raise PublicationGateDenied("editorial rollout must remain publication-disabled")
     if not config.enabled:
         raise PublicationGateDenied("SCOTUS live processing gate is closed")
     if not config.generation.brief_generation_enabled or not config.publication.enabled:
@@ -718,35 +730,28 @@ class LiveStaticDiscovery:
         # case is runnable migration work. Until the bounded editorial-backfill cursor selects
         # an explicit slice, those cases stay active and out of PendingWork. A known, different
         # processor fingerprint remains an explicit processor migration scope.
-        legacy_case_keys = {
+        stale_processor_case_keys = {
             case_key
             for case_key in prior_cases
             if pointer_by_case.get(case_key) is not None
-            and pointer_by_case[case_key].processor_sha256 is None
-        }
-        migration_case_keys = {
-            case_key
-            for case_key in prior_cases
-            if pointer_by_case.get(case_key) is not None
-            and pointer_by_case[case_key].processor_sha256 is not None
             and pointer_by_case[case_key].processor_sha256 != processor.composite_sha256
         }
+        migration_case_keys: set[str] = set()
         pending_case_keys = persisted_pending_case_keys
-        # The withdrawn global migration left zero-attempt budget markers for legacy
+        # The withdrawn global migration left zero-attempt budget markers for stale
         # pointers whether or not it copied the active case's activity date into them.
         # They are not evidence of selected source work. Fresh rediscovered activity is
-        # independently added to source_changed_case_keys below; attempted failures and
-        # retry scopes remain mandatory work.
-        stale_legacy_pending_case_keys = {
+        # independently added below; attempted failures and retry scopes remain work.
+        stale_processor_pending_case_keys = {
             item.case_key
             for item in content.publication.pending_work
-            if item.case_key in legacy_case_keys
+            if item.case_key in stale_processor_case_keys
             and item.reason is PendingReason.BUDGET_EXHAUSTED
             and item.attempts == 0
             and item.last_attempted_at is None
             and item.retry is None
         }
-        changed_case_keys: set[str] = set(migration_case_keys)
+        changed_case_keys: set[str] = set()
         source_changed_case_keys: set[str] = set()
         for item in incremental.candidates:
             key = candidate_logical_key(item)
@@ -829,7 +834,7 @@ class LiveStaticDiscovery:
         # after a safe conditional index checkpoint returns 304.
         changed_case_keys.update(
             pending_case_keys.intersection(merged_by_key)
-            - stale_legacy_pending_case_keys
+            - stale_processor_pending_case_keys
         )
         argument_case_keys = {
             candidate_logical_key(argument): key
@@ -935,6 +940,69 @@ class LiveStaticDiscovery:
         pending_by_case = {
             item.case_key: item for item in content.publication.pending_work
         }
+        backfill_state: EditorialBackfillState | None = None
+        configured_stage = self.config.editorial_backfill.rollout_stage
+        if self.config.editorial_backfill.enabled and configured_stage is not None:
+            rollout_stage = EditorialRolloutStage(configured_stage)
+            previous_backfill = content.publication.editorial_backfill
+            if previous_backfill is not None:
+                if previous_backfill.processor_sha256 == processor.composite_sha256:
+                    require_stage_advancement(
+                        previous_backfill,
+                        content.publication.canary_report,
+                        rollout_stage,
+                    )
+                elif rollout_stage is not EditorialRolloutStage.CANARY_10:
+                    raise ValueError("a new editorial processor must begin at canary_10")
+            elif rollout_stage is not EditorialRolloutStage.CANARY_10:
+                raise ValueError("editorial rollout must begin at canary_10")
+            resume_keys = (
+                set(previous_backfill.selected_case_keys)
+                if previous_backfill is not None
+                and previous_backfill.processor_sha256 == processor.composite_sha256
+                and previous_backfill.rollout_stage is rollout_stage
+                else set()
+            )
+            editorial_candidates: list[EditorialCandidate] = []
+            for key, case in prior_cases.items():
+                if key not in stale_processor_case_keys and key not in resume_keys:
+                    continue
+                if (
+                    key not in resume_keys
+                    and (key in source_changed_case_keys or key in pending_by_case)
+                ):
+                    continue
+                try:
+                    editorial_candidates.append(EditorialCandidate.from_public_case(case))
+                except ValueError:
+                    continue
+            advance_completed = bool(
+                previous_backfill is not None
+                and previous_backfill.processor_sha256 == processor.composite_sha256
+                and previous_backfill.rollout_stage is EditorialRolloutStage.BATCH_100
+                and rollout_stage is EditorialRolloutStage.BATCH_100
+                and previous_backfill.attempted_count
+                == len(previous_backfill.selected_case_keys)
+                and content.publication.canary_report is not None
+                and content.publication.canary_report.reviewer_decision.value == "approved"
+                and any(
+                    item.case_key not in previous_backfill.selected_case_keys
+                    for item in editorial_candidates
+                )
+            )
+            backfill_state = start_or_resume_backfill(
+                candidates=editorial_candidates,
+                processor_sha256=processor.composite_sha256,
+                rollout_stage=rollout_stage,
+                previous=previous_backfill,
+                advance_completed=advance_completed,
+            )
+            migration_case_keys = {
+                key
+                for key in backfill_state.selected_case_keys
+                if key in stale_processor_case_keys
+            }
+            changed_case_keys.update(migration_case_keys)
         queue: dict[str, tuple[int, str, WorkClass, bool]] = {}
         for key in changed_case_keys:
             if key in source_changed_case_keys:
@@ -945,13 +1013,25 @@ class LiveStaticDiscovery:
                     key in pending_by_case,
                 )
             elif key in migration_case_keys:
-                # A reviewed processor change creates a new retry scope even when an
-                # older model-output scope is pending or exhausted.
+                pending_item = pending_by_case.get(key)
+                attempted_failure = bool(
+                    pending_item is not None
+                    and (
+                        pending_item.attempts > 0
+                        or pending_item.last_attempted_at is not None
+                    )
+                )
+                # Once selected migration work fails, it re-enters the ordinary finite
+                # retry policy instead of receiving automatic processor authorization.
                 queue[key] = (
                     self.config.discovery.new_transcript_priority,
-                    "processor_migration",
-                    WorkClass.PROCESSOR_MIGRATION,
-                    key in pending_by_case,
+                    "pending_retry" if attempted_failure else "processor_migration",
+                    (
+                        WorkClass.PENDING_RETRY
+                        if attempted_failure
+                        else WorkClass.PROCESSOR_MIGRATION
+                    ),
+                    pending_item is not None,
                 )
             elif key in pending_by_case:
                 pending_item = pending_by_case[key]
@@ -978,7 +1058,7 @@ class LiveStaticDiscovery:
         for selected_item in selection.work:
             raw_key = candidate_logical_key(selected_item.candidate)
             key = argument_case_keys.get(raw_key, raw_key)
-            if key in legacy_case_keys and key not in source_changed_case_keys:
+            if key in stale_processor_case_keys and key not in source_changed_case_keys:
                 continue
             work_class = (
                 WorkClass.HISTORICAL_RECHECK
@@ -1024,33 +1104,59 @@ class LiveStaticDiscovery:
             key, value = queue_item
             admission_pending = pending_by_case.get(key)
             retry = admission_pending.retry if admission_pending is not None else None
-            if value[2] is WorkClass.PENDING_RETRY and retry is not None:
-                exhausted = bool(
-                    retry.status is ModelRetryStatus.EXHAUSTED
-                    or retry.completed_cycles
-                    >= 1 + self.config.model_retry.automatic_retry_cycles_per_scope
-                )
-                if exhausted and not budget.broad_replay_authorized:
-                    if budget.automatic_retries_enabled:
-                        exhausted_probes.append(queue_item)
-                    continue
-                if not (
-                    budget.automatic_retries_enabled
-                    or budget.broad_replay_authorized
-                ):
-                    continue
-                if (
-                    not budget.broad_replay_authorized
-                    and retry.next_eligible_at > now
-                ):
-                    continue
-                if (
-                    not budget.broad_replay_authorized
-                    and admitted_retries
-                    >= self.config.model_retry.maximum_retry_cases_per_run
-                ):
-                    continue
-                admitted_retries += 1
+            if value[2] is WorkClass.PENDING_RETRY:
+                if retry is None:
+                    # Non-model case failures have no replay scope, but still receive
+                    # the same finite scheduled cooldown/quota instead of every-run replay.
+                    last_attempt = (
+                        admission_pending.last_attempted_at
+                        if admission_pending is not None
+                        else None
+                    )
+                    eligible_at = (
+                        last_attempt
+                        + timedelta(hours=self.config.model_retry.minimum_cooldown_hours)
+                        if last_attempt is not None
+                        else now
+                    )
+                    if not budget.broad_replay_authorized and not (
+                        budget.automatic_retries_enabled
+                        and admission_pending is not None
+                        and admission_pending.attempts
+                        < 1 + self.config.model_retry.automatic_retry_cycles_per_scope
+                        and now >= eligible_at
+                        and admitted_retries
+                        < self.config.model_retry.maximum_retry_cases_per_run
+                    ):
+                        continue
+                    admitted_retries += 1
+                else:
+                    exhausted = bool(
+                        retry.status is ModelRetryStatus.EXHAUSTED
+                        or retry.completed_cycles
+                        >= 1 + self.config.model_retry.automatic_retry_cycles_per_scope
+                    )
+                    if exhausted and not budget.broad_replay_authorized:
+                        if budget.automatic_retries_enabled:
+                            exhausted_probes.append(queue_item)
+                        continue
+                    if not (
+                        budget.automatic_retries_enabled
+                        or budget.broad_replay_authorized
+                    ):
+                        continue
+                    if (
+                        not budget.broad_replay_authorized
+                        and retry.next_eligible_at > now
+                    ):
+                        continue
+                    if (
+                        not budget.broad_replay_authorized
+                        and admitted_retries
+                        >= self.config.model_retry.maximum_retry_cases_per_run
+                    ):
+                        continue
+                    admitted_retries += 1
             runnable_queue.append(queue_item)
         admitted_queue = runnable_queue[:case_limit]
         admitted_queue.extend(exhausted_probes[: max(0, case_limit - len(admitted_queue))])
@@ -1193,10 +1299,14 @@ class LiveStaticDiscovery:
                 )
             ),
             processor=processor,
+            editorial_backfill=backfill_state,
             deferred_case_keys=deferred_case_keys,
             failed_case_keys=tuple(sorted(invalid_case_keys)),
             resolved_pending_case_keys=tuple(
-                sorted(stale_legacy_pending_case_keys | remapped_pending_case_keys)
+                sorted(
+                    (stale_processor_pending_case_keys - migration_case_keys)
+                    | remapped_pending_case_keys
+                )
             ),
             # Every omitted changed case is now explicit pending work with its official
             # activity date, so complete strict source checkpoints cannot hide it.

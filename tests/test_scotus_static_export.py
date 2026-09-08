@@ -8,9 +8,10 @@ from pathlib import Path
 
 import pytest
 
+from ragchew.config import ScotusConfig
 from ragchew.scotus.legacy_export import export_legacy_bootstrap
 from ragchew.scotus.public_contracts import ScotusPublicProjection, public_case_key
-from ragchew.scotus.static_cli import build_parser
+from ragchew.scotus.static_cli import _with_editorial_rollout, build_parser
 from ragchew.scotus.static_contracts import ReleaseManifest, StaticSearchIndex
 from ragchew.scotus.static_export import StaticExportError, StaticSiteExporter
 from ragchew.scotus.static_pipeline import ProductionBatchUnavailable
@@ -58,6 +59,21 @@ def tree_bytes(root: Path) -> dict[str, bytes]:
     }
 
 
+def test_editorial_rollout_cli_override_only_reduces_budgets_and_disables_canary() -> None:
+    config = ScotusConfig.from_yaml("config/scotus.yaml")
+
+    canary = _with_editorial_rollout(config, "canary_10")
+    assert canary.runner_limits.maximum_cases_per_run == 10
+    assert canary.bootstrap.maximum_cases_per_run == 10
+    assert canary.publication.dry_run is True
+    assert canary.editorial_backfill.rollout_stage == "canary_10"
+
+    batch = _with_editorial_rollout(config, "batch_100")
+    assert batch.runner_limits.maximum_cases_per_run <= config.runner_limits.maximum_cases_per_run
+    assert batch.bootstrap.maximum_cases_per_run <= config.bootstrap.maximum_cases_per_run
+    assert batch.publication.dry_run is True
+
+
 def test_workflow_cli_contract_and_fixture_preview_builds_then_exits(tmp_path: Path) -> None:
     parser = build_parser()
     help_text = parser.format_help()
@@ -66,6 +82,18 @@ def test_workflow_cli_contract_and_fixture_preview_builds_then_exits(tmp_path: P
         ["batch", "--mode", "nightly", "--output", str(tmp_path), "--maximum-cases", "1"]
     )
     assert bounded.maximum_cases == 1
+    editorial = parser.parse_args(
+        [
+            "batch",
+            "--mode",
+            "nightly",
+            "--output",
+            str(tmp_path),
+            "--editorial-rollout-stage",
+            "canary_10",
+        ]
+    )
+    assert editorial.editorial_rollout_stage == "canary_10"
 
     for command in (
         "fixture-preview",

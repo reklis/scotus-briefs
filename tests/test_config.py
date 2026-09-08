@@ -62,6 +62,9 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.model_budget.maximum_extraction_calls_per_run == 1000
     assert config.model_budget.maximum_brief_calls_per_run == 100
     assert config.model_budget.maximum_total_calls_per_run == 1100
+    assert config.editorial_backfill.enabled is True
+    assert config.editorial_backfill.rollout_stage is None
+    assert config.editorial_backfill.maximum_stage == "batch_100"
     assert config.model_budget.input_cost_usd_per_million_tokens == Decimal("0")
     assert config.model_budget.output_cost_usd_per_million_tokens == Decimal("0")
     assert config.model_budget.maximum_estimated_cost_usd_per_run == Decimal("0")
@@ -128,6 +131,28 @@ def test_scotus_static_config_rejects_incompatible_model_budgets() -> None:
     values = config.model_dump()
     values["bootstrap"]["maximum_cases_per_run"] = 101
     with pytest.raises(ValidationError, match="brief-call capacity"):
+        ScotusConfig.model_validate(values)
+
+
+def test_scotus_editorial_backfill_rejects_disabled_or_over_ceiling_stage() -> None:
+    config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
+    values = config.model_dump()
+    values["editorial_backfill"].update(
+        {"enabled": False, "rollout_stage": "canary_10"}
+    )
+    with pytest.raises(ValidationError, match="requires the backfill gate"):
+        ScotusConfig.model_validate(values)
+
+    values = config.model_dump()
+    values["editorial_backfill"].update(
+        {"maximum_stage": "batch_25", "rollout_stage": "batch_100"}
+    )
+    with pytest.raises(ValidationError, match="reviewed stage ceiling"):
+        ScotusConfig.model_validate(values)
+
+    values = config.model_dump()
+    values["editorial_backfill"]["rollout_stage"] = "canary_10"
+    with pytest.raises(ValidationError, match="must disable publication"):
         ScotusConfig.model_validate(values)
 
 

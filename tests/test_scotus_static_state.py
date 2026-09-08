@@ -698,6 +698,26 @@ def test_backfill_counts_reports_and_selected_outcomes_fail_closed(
     )
     store._validate_consistency(successful)
 
+    stale_report = CanaryAggregate(
+        processor_sha256=ZERO,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        candidate_sha256=ONE,
+        case_keys=successful_backfill.selected_case_keys,
+        attempted_count=1,
+        accepted_count=1,
+        failed_count=0,
+        runtime_seconds=1,
+        model_call_count=1,
+    )
+    stale_candidate = replace(
+        successful,
+        publication=successful.publication.model_copy(
+            update={"canary_report": stale_report}
+        ),
+    )
+    with pytest.raises(StaticStateError, match="not bound to this projection"):
+        store._validate_consistency(stale_candidate)
+
     cleared = store.update_publication_state(
         successful,
         updated_at=NOW,

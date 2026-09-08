@@ -138,6 +138,10 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "scheduled_retry_args+=(--scheduled-retries)" in live_step
     assert '"${scheduled_retry_args[@]}"' in live_step
     assert "case_args+=(--maximum-cases \"$MAXIMUM_CASES\")" in workflow
+    assert "options: [disabled, canary_10, batch_25, batch_100]" in workflow
+    assert 'editorial_args+=(--editorial-rollout-stage "$EDITORIAL_ROLLOUT_STAGE")' in workflow
+    assert "Measured editorial stages are publication-disabled" in workflow
+    assert "sanitized-editorial-candidate-state" in workflow
     assert "Run reviewed bounded live adapter" in workflow
     assert "if: always()" in workflow and "Clean persistent runner after build" in workflow
     assert "Clean persistent runner before build" in workflow

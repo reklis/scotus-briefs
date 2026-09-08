@@ -177,6 +177,11 @@ class RetryFailureCode(StrEnum):
     EXCESSIVE_LENGTH = "excessive_length"
     REPEATED_FRAGMENT = "repeated_fragment"
     REPAIR_EXHAUSTED = "repair_exhausted"
+    SOURCE_UNAVAILABLE = "source_unavailable"
+    SOURCE_INVALID = "source_invalid"
+    PROCESSING_FAILED = "processing_failed"
+    VALIDATION_FAILED = "validation_failed"
+    DATE_BACKFILL_UNMATCHED = "date_backfill_unmatched"
 
 
 class PendingModelRetry(StaticContract):
@@ -436,6 +441,7 @@ class CanaryAggregate(StaticContract):
     schema_version: Literal["1.0"] = "1.0"
     processor_sha256: str = Field(pattern=_SHA256_PATTERN)
     rollout_stage: EditorialRolloutStage
+    candidate_sha256: str | None = Field(default=None, pattern=_SHA256_PATTERN)
     case_keys: tuple[str, ...] = Field(min_length=1, max_length=100)
     attempted_count: int = Field(ge=0, le=100)
     accepted_count: int = Field(ge=0, le=100)
@@ -443,7 +449,28 @@ class CanaryAggregate(StaticContract):
     failure_code_counts: tuple[CanaryFailureCount, ...] = Field(default=(), max_length=32)
     runtime_seconds: int = Field(ge=0, le=86_400)
     model_call_count: int = Field(ge=0, le=10_000)
+    improved_count: int = Field(default=0, ge=0, le=100)
+    factual_error_count: int = Field(default=0, ge=0, le=100)
+    status_error_count: int = Field(default=0, ge=0, le=100)
+    actor_error_count: int = Field(default=0, ge=0, le=100)
+    chronology_error_count: int = Field(default=0, ge=0, le=100)
+    prediction_error_count: int = Field(default=0, ge=0, le=100)
+    degraded_legacy_count: int = Field(default=0, ge=0, le=100)
+    privacy_validation_passed: bool = False
+    release_validation_passed: bool = False
     reviewer_decision: CanaryReviewerDecision = CanaryReviewerDecision.PENDING
+
+    @property
+    def accepted_error_count(self) -> int:
+        return sum(
+            (
+                self.factual_error_count,
+                self.status_error_count,
+                self.actor_error_count,
+                self.chronology_error_count,
+                self.prediction_error_count,
+            )
+        )
 
     @field_validator("case_keys")
     @classmethod
@@ -462,11 +489,37 @@ class CanaryAggregate(StaticContract):
             raise ValueError("canary attempted count must equal accepted plus failed")
         if self.attempted_count > len(self.case_keys):
             raise ValueError("canary attempts cannot exceed its case set")
+        if self.improved_count > self.accepted_count:
+            raise ValueError("canary improved count cannot exceed accepted count")
+        if any(
+            count > self.accepted_count
+            for count in (
+                self.factual_error_count,
+                self.status_error_count,
+                self.actor_error_count,
+                self.chronology_error_count,
+                self.prediction_error_count,
+            )
+        ):
+            raise ValueError("canary error-category count cannot exceed accepted count")
+        if self.degraded_legacy_count > len(self.case_keys):
+            raise ValueError("canary degraded count cannot exceed its case set")
         codes = tuple(item.code.value for item in self.failure_code_counts)
         if codes != tuple(sorted(set(codes))):
             raise ValueError("canary failure codes must be unique and sorted")
         if sum(item.count for item in self.failure_code_counts) != self.failed_count:
             raise ValueError("canary failure-code counts must equal failed count")
+        required_improvements = (len(self.case_keys) * 4 + 4) // 5
+        if self.reviewer_decision is CanaryReviewerDecision.APPROVED and (
+            self.attempted_count != len(self.case_keys)
+            or self.improved_count < required_improvements
+            or self.candidate_sha256 is None
+            or self.accepted_error_count
+            or self.degraded_legacy_count
+            or not self.privacy_validation_passed
+            or not self.release_validation_passed
+        ):
+            raise ValueError("approved canary report does not meet advancement thresholds")
         return self
 
 

@@ -26,12 +26,15 @@ from ragchew.proceedings.sources.http import SourceFetchError
 from ragchew.scotus.briefs import BriefPolicyError, BriefValidationError
 from ragchew.scotus.discovery import DiscoveryMode
 from ragchew.scotus.documents import DocumentCollectionError
+from ragchew.scotus.editorial_backfill import aggregate_canary_report
 from ragchew.scotus.extraction import LegalExtractionError
 from ragchew.scotus.public_contracts import PublicCaseBrief, public_case_key
 from ragchew.scotus.static_contracts import (
+    CanaryAggregate,
     CostLedger,
     CursorState,
     DispositionDiscoveryState,
+    EditorialBackfillState,
     LogicalDocumentState,
     LogicalSourceState,
     ModelAttemptOutcome,
@@ -43,8 +46,10 @@ from ragchew.scotus.static_contracts import (
     ProcessorFingerprint,
     RetryFailureCode,
     SupportedActivityState,
+    canonical_json_bytes,
     derive_freshness_summary,
     model_input_fingerprint,
+    sha256_hex,
 )
 from ragchew.scotus.static_state import GeneratedContent, StaticStateStore
 from ragchew.scotus.transcript_parser import TranscriptParseError
@@ -627,7 +632,7 @@ class StaticCaseWork:
         )
 
     @property
-    def rank(self) -> tuple[int, float, int, int, float, int, int, str]:
+    def rank(self) -> tuple[int, int, int, float, float, int, int, str]:
         """Stable newest-first rank, evaluated before any bounded run limit."""
         activity_rank = (
             -self.authoritative_activity_date.timestamp()
@@ -649,13 +654,13 @@ class StaticCaseWork:
             in {WorkClass.CURRENT_RECHECK, WorkClass.HISTORICAL_RECHECK}
         )
         return (
-            # Changed, pending, and migration work precedes unchanged routine probes;
-            # authoritative Court recency is primary within that actionable group.
-            routine_rank,
-            activity_rank,
+            # Fresh Court changes always lead. Eligible retries rotate by oldest
+            # attempt before processor migration; routine probes remain last.
             fresh_rank,
+            routine_rank,
             int(self.work_class),
             retry_rank,
+            activity_rank,
             pending_rank,
             self.priority,
             self.case_key,
@@ -692,6 +697,7 @@ class StaticDiscoveryResult:
     dispositions: tuple[DispositionDiscoveryState, ...] = ()
     cursors: tuple[CursorState, ...] = ()
     processor: ProcessorFingerprint | None = None
+    editorial_backfill: EditorialBackfillState | None = None
     # Cases discovered as changed but omitted by a bounded selection remain explicit
     # pending work instead of disappearing behind an unadvanced source checkpoint.
     deferred_case_keys: tuple[str, ...] = ()
@@ -1270,6 +1276,51 @@ class StaticBatchOrchestrator:
                     pending_values,
                     supported_values,
                 )
+                editorial_backfill = discovered.editorial_backfill
+                canary_report: CanaryAggregate | None = original.publication.canary_report
+                if editorial_backfill is None:
+                    editorial_backfill = original.publication.editorial_backfill
+                elif editorial_backfill is not None:
+                    selected = set(editorial_backfill.selected_case_keys)
+                    accepted = frozenset(
+                        pointer.case_key
+                        for pointer in working.publication.cases
+                        if pointer.case_key in selected
+                        and pointer.processor_sha256 == editorial_backfill.processor_sha256
+                    )
+                    failed_selected = {
+                        key
+                        for key in selected
+                        if key in pending
+                        and pending[key].reason is not PendingReason.BUDGET_EXHAUSTED
+                    }
+                    editorial_backfill = editorial_backfill.model_copy(
+                        update={
+                            "attempted_count": len(accepted | failed_selected),
+                            "accepted_count": len(accepted),
+                            "failed_count": len(failed_selected),
+                        }
+                    )
+                    if selected:
+                        if working.projection is None:
+                            raise RuntimeError(
+                                "editorial backfill requires a public projection"
+                            )
+                        canary_report = aggregate_canary_report(
+                            backfill=editorial_backfill,
+                            pending_by_case=pending,
+                            accepted_case_keys=accepted,
+                            runtime_seconds=max(
+                                0, int(time.monotonic() - budget.started_monotonic)
+                            ),
+                            model_call_count=budget.model_calls,
+                            candidate_sha256=sha256_hex(
+                                canonical_json_bytes(working.projection)
+                            ),
+                            previous=original.publication.canary_report,
+                        )
+                    else:
+                        canary_report = None
                 working = self.state_store.update_publication_state(
                     working,
                     updated_at=instant,
@@ -1281,6 +1332,8 @@ class StaticBatchOrchestrator:
                     dispositions=disposition_values,
                     freshness=freshness,
                     supported_activity=supported_values,
+                    editorial_backfill=editorial_backfill,
+                    canary_report=canary_report,
                 )
         finally:
             try:

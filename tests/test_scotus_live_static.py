@@ -1287,7 +1287,8 @@ def test_disposition_failure_is_case_local_and_preserves_pending_metadata(
     court.document_requests.clear()
     retried = run(tmp_path, store, court, MockOpenAI())
     assert retried.pending_case_keys == ("2025-25a800",)
-    assert any(
+    # Unchanged non-model failures do not bypass the finite scheduled cooldown.
+    assert not any(
         request.url.path == "/docket/docketfiles/html/public/25A800.html"
         for request in court.document_requests
     )
@@ -1631,8 +1632,10 @@ def test_reargument_reprocesses_every_session_under_one_case_budget(tmp_path: Pa
     assert names.count("scotus_legal_brief") == 1
 
 
-def test_missing_legacy_processor_fingerprints_do_not_enqueue_complete_corpus(
+@pytest.mark.parametrize("stale_processor", [None, "f" * 64])
+def test_unselected_stale_processor_fingerprints_do_not_enqueue_complete_corpus(
     tmp_path: Path,
+    stale_processor: str | None,
 ) -> None:
     court = CourtFixture()
     court.rows.append(("25-2", "Second v. Agency", "4/21/26", "25-2.pdf"))
@@ -1656,7 +1659,7 @@ def test_missing_legacy_processor_fingerprints_do_not_enqueue_complete_corpus(
         publication=first.content.publication.model_copy(
             update={
                 "cases": tuple(
-                    item.model_copy(update={"processor_sha256": None})
+                    item.model_copy(update={"processor_sha256": stale_processor})
                     for item in first.content.publication.cases
                 ),
                 # This is the exact zero-attempt marker emitted by the failed global
@@ -1687,7 +1690,9 @@ def test_missing_legacy_processor_fingerprints_do_not_enqueue_complete_corpus(
     assert result.publishable
     assert result.changed_case_keys == ()
     assert result.pending_case_keys == ()
-    assert {item.processor_sha256 for item in result.content.publication.cases} == {None}
+    assert {item.processor_sha256 for item in result.content.publication.cases} == {
+        stale_processor
+    }
     assert result.content.projection is not None
     assert all(len(case.revisions) == 1 for case in result.content.projection.cases)
     assert model.requests == []
@@ -1864,39 +1869,58 @@ def test_processor_migration_resumes_bounded_cases_before_global_promotion(
     first = run(tmp_path, store, court, MockOpenAI())
     store.content = first.content
 
-    court.rows.append(("25-2", "Second v. Agency", "4/21/26", "25-2.pdf"))
+    for index in range(2, 11):
+        court.rows.append(
+            (
+                f"25-{index}",
+                f"Example {index} v. Agency",
+                f"4/{19 + index}/26",
+                f"25-{index}.pdf",
+            )
+        )
+        court.documents[f"/pdfs/transcripts/2025/25-{index}.pdf"] = (
+            f'"transcript-{index}"',
+            _pdf(1),
+            "application/pdf",
+        )
+        court.documents[f"/docket/docketfiles/html/public/25-{index}.html"] = (
+            f'"docket-{index}"',
+            f"<!doctype html><body>Docket 25-{index}. Synthetic docket.</body>".encode(),
+            "text/html",
+        )
     court.index_etag = '"index-2"'
-    court.documents["/pdfs/transcripts/2025/25-2.pdf"] = (
-        '"transcript-2"',
-        _pdf(1),
-        "application/pdf",
-    )
-    court.documents["/docket/docketfiles/html/public/25-2.html"] = (
-        '"docket-2"',
-        b"<!doctype html><html><body>Docket 25-2. Second synthetic docket.</body></html>",
-        "text/html",
-    )
     second = run(tmp_path, store, court, MockOpenAI())
     store.content = second.content
     old_processor = second.content.publication.processor
     assert old_processor is not None
-    assert len(second.content.publication.cases) == 2
+    assert len(second.content.publication.cases) == 10
 
     base = live_config()
     migrating = base.model_copy(
         update={
             "parser": base.parser.model_copy(update={"version": "2"}),
             "runner_limits": base.runner_limits.model_copy(update={"maximum_cases_per_run": 1}),
+            "editorial_backfill": base.editorial_backfill.model_copy(
+                update={"rollout_stage": "canary_10"}
+            ),
+            "publication": base.publication.model_copy(update={"dry_run": True}),
         }
     )
     partial = run(tmp_path, store, court, MockOpenAI(), config=migrating)
     assert partial.content.publication.processor == old_processor
-    assert len(partial.pending_case_keys) == 1
+    assert len(partial.pending_case_keys) == 9
     fingerprints = {pointer.processor_sha256 for pointer in partial.content.publication.cases}
     assert len(fingerprints) == 2
 
     store.content = partial.content
-    completed = run(tmp_path, store, court, MockOpenAI(), config=migrating)
+    completion_config = migrating.model_copy(
+        update={
+            "runner_limits": migrating.runner_limits.model_copy(
+                update={"maximum_cases_per_run": 10}
+            )
+        }
+    )
+    completed = run(tmp_path, store, court, MockOpenAI(), config=completion_config)
     assert completed.pending_case_keys == ()
     promoted = completed.content.publication.processor
     assert promoted is not None and promoted != old_processor
