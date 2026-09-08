@@ -58,20 +58,31 @@ past individual case validation failures. Court
 rate controls, source authorization, a five-hour processing bound, private-disk and
 retrieval limits, and every per-case publication validator remain mandatory. The shorter
 application bound reserves time for receipt upload, candidate validation, and runner cleanup
-inside the 5-hour-30-minute build-job limit. Accepted legacy imports with no processor
-fingerprint now enter the bounded processor-migration queue. This is required because a
-missing fingerprint cannot prove that
-old public prose meets the current plain-language editorial standard. Each migrated case is
-redownloaded from the official Court source and must pass the same model, grounding, privacy,
-and publication gates as a new case; failures retain the last-known-good page. Prior dry runs
-confirmed the Court and loopback
-Ollama paths but failed closed on extraction/runtime validation. Those same grounding,
-privacy, completeness, static, and release validators remain mandatory: a global
-candidate failure cannot replace the migrated accepted POC corpus or advance its active
-release, while a case-local failure remains pending and does not block unrelated
-validated successes. A
-schedule-equivalent cycle (`33789697197`) completed successfully through pre-TLS
-reconciliation and checkpoint promotion. The first cycle to select model work after the
+inside the 5-hour-30-minute build-job limit. A missing processor fingerprint on an accepted
+legacy import does **not** by itself create migration or pending work. Until the reviewed,
+bounded editorial-backfill cursor selects a case, that page remains active and outside
+`PendingWork`; zero-attempt `budget_exhausted` markers produced solely by the withdrawn
+global migration are cleaned as stale compatibility state. A selected source change or
+future bounded backfill must still pass the same source, model, grounding, privacy, and
+publication gates as a new case, and failure retains the complete last-known-good page.
+
+Publication-disabled run `34147702102` tested a maximum-100 plain-language migration and
+reached the five-hour bound after 62 case attempts. It accepted zero rewrites of existing
+pages. One newly admitted candidate page failed manual editorial review for unexplained
+courtroom terminology and unsupported future-outcome language. The experiment also marked all 1,710 legacy pages `budget_exhausted` merely because their
+processor fingerprints were absent, including pages that were never selected. The candidate was neither deployed nor promoted, so the live
+release and generated-content parent remained unchanged. Only this sanitized run ID,
+counts, fixed outcome categories, duration bound, and decision are recorded; generated
+prose, official document text, prompts, model responses, and other private inputs were not
+retained in this runbook.
+
+Prior dry runs confirmed the Court and loopback Ollama paths but failed closed on
+extraction/runtime validation. Those same grounding, privacy, completeness, static, and
+release validators remain mandatory: a global candidate failure cannot replace the
+accepted POC corpus or advance its active release, while a case-local failure remains
+pending and does not block unrelated validated successes. A schedule-equivalent cycle
+(`33789697197`) completed successfully through pre-TLS reconciliation and checkpoint
+promotion. The first cycle to select model work after the
 legacy-checkpoint compatibility fix (`33790480565`) downloaded three documents in 18
 requests (2,344,867 bytes) and made two zero-cost extraction calls. Grounding validation
 rejected the result before the brief stage, so it did not deploy or promote public content.
@@ -272,10 +283,11 @@ model-output retry scope is skipped until its scheduled cooldown and quota permi
 exhausted scopes stay pending without model calls; lower-priority integrity probes may
 recognize changed official evidence and create a fresh scope. Eligible retries
 retain least-recently-attempted rotation before activity date so one failing newest item
-cannot starve the backlog. Processor/current rechecks and rotating
-historical work follow. Any changed supported case
-outside a finite case/document/model/runtime budget is retained as deferred pending
-rather than hidden by an advanced source checkpoint.
+cannot starve the backlog. Known-fingerprint processor/current rechecks and rotating
+historical work follow. Missing legacy fingerprints remain outside the queue unless a bounded
+editorial-backfill selection explicitly admits them. Any changed supported case outside a finite
+case/document/model/runtime budget is retained as deferred pending rather than hidden by an
+advanced source checkpoint.
 
 Monitor workflow conclusion/duration, Court request and byte counts, selected/pending
 case counts, model attempted calls/tokens (with zero estimated local cost), pre/post

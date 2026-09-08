@@ -39,7 +39,7 @@ from ragchew.scotus.live_static import (
     _opinion_page_attribution,
     _procedural_path_observation,
 )
-from ragchew.scotus.public_contracts import public_case_key
+from ragchew.scotus.public_contracts import PublicCaseBrief, public_case_key
 from ragchew.scotus.static_contracts import (
     ConditionalValidators,
     ContentIntegrity,
@@ -49,13 +49,15 @@ from ragchew.scotus.static_contracts import (
     ModelAttemptOutcome,
     PendingReason,
     PendingWork,
+    canonical_json_bytes,
+    sha256_hex,
 )
 from ragchew.scotus.static_pipeline import (
     PublicationGateDenied,
     StaticBatchResult,
     UnifiedRunBudget,
 )
-from ragchew.scotus.static_state import GeneratedContent, StaticStateStore
+from ragchew.scotus.static_state import GeneratedContent, StaticStateStore, StoredCaseRevision
 from ragchew.scotus.transcript_parser import TranscriptParseError
 
 NOW = datetime(2026, 8, 28, 2, tzinfo=UTC)
@@ -659,6 +661,50 @@ def run(
     )
 
 
+def _replace_active_case(content: GeneratedContent, case: PublicCaseBrief) -> GeneratedContent:
+    """Replace one test fixture's active revision while preserving state integrity."""
+    assert content.projection is not None
+    case_key = public_case_key(case.term, case.primary_docket)
+    revision_key = (case_key, case.revisions[-1].revision_number)
+    stored = content.revisions[revision_key]
+    digest = sha256_hex(canonical_json_bytes(case, privacy_check=False))
+    record = stored.record.__class__.model_validate(
+        {
+            **stored.record.model_dump(mode="python"),
+            "case_sha256": digest,
+            "case": case,
+        }
+    )
+    revisions = dict(content.revisions)
+    revisions[revision_key] = StoredCaseRevision(record, canonical_json_bytes(record))
+    publication = content.publication.model_copy(
+        update={
+            "cases": tuple(
+                pointer.model_copy(update={"active_case_sha256": digest})
+                if pointer.case_key == case_key
+                else pointer
+                for pointer in content.publication.cases
+            )
+        }
+    )
+    projection = content.projection.model_copy(
+        update={
+            "cases": tuple(
+                case
+                if public_case_key(item.term, item.primary_docket) == case_key
+                else item
+                for item in content.projection.cases
+            )
+        }
+    )
+    return replace(
+        content,
+        projection=projection,
+        publication=publication,
+        revisions=revisions,
+    )
+
+
 def test_live_adapter_checks_all_gates_before_factories_or_traffic(tmp_path: Path) -> None:
     called = False
 
@@ -875,25 +921,28 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert not list((tmp_path / "private").glob("ragchew-*"))
 
 
-def test_existing_argument_brief_adds_disposition_metadata_without_model_replay(
-    tmp_path: Path,
-) -> None:
+def test_status_changing_opinion_rewrites_complete_argument_case(tmp_path: Path) -> None:
     court = CourtFixture()
     store = MemoryStateStore(tmp_path / "state")
-    first_model = MockOpenAI()
-    first = run(tmp_path, store, court, first_model)
+    first = run(tmp_path, store, court, MockOpenAI())
     assert first.publishable
     assert first.content.projection is not None
-    accepted_sections = first.content.projection.cases[0].sections
-    legacy_publication = first.content.publication.model_copy(
+    prior = first.content.projection.cases[0]
+    prospective = prior.model_copy(
         update={
-            "cases": tuple(
-                pointer.model_copy(update={"processor_sha256": None})
-                for pointer in first.content.publication.cases
+            "sections": (
+                prior.sections[0].model_copy(
+                    update={
+                        "paragraphs": (
+                            "The parties await the Supreme Court's decision about agency power.",
+                        )
+                    }
+                ),
             )
         }
     )
-    store.content = replace(first.content, publication=legacy_publication)
+    assert "await" in prospective.sections[0].paragraphs[0]
+    store.content = _replace_active_case(first.content, prospective)
     court.document_requests.clear()
 
     court.slip_etag = '"slip-2"'
@@ -915,20 +964,90 @@ def test_existing_argument_brief_adds_disposition_metadata_without_model_replay(
         ),
         "application/pdf",
     )
-    update_model = MockOpenAI()
+    class OpinionAwareModel(MockOpenAI):
+        @staticmethod
+        def _extraction(evidence: list[dict[str, Any]]) -> dict[str, object]:
+            opinion = next((item for item in evidence if item["kind"] == "opinion"), None)
+            if opinion is None:
+                return MockOpenAI._extraction(evidence)
+            return {
+                "observations": [
+                    {
+                        "observation_type": "holding",
+                        "legal_status": "court_held",
+                        "certainty": "direct",
+                        "raw_value": "The Court affirmed the judgment.",
+                        "normalized_value": "The Court affirmed the judgment.",
+                        "attribution": opinion["attribution"],
+                        "speaker_name": opinion["speaker_name"],
+                        "speaker_kind": opinion["speaker_kind"],
+                        "identity_basis": opinion["identity_basis"],
+                        "authority_citations": [],
+                        "confidence": 1,
+                        "evidence": [
+                            {
+                                "block_id": opinion["block_id"],
+                                "quote": "The Court affirmed the judgment.",
+                            }
+                        ],
+                        "supersedes_observation_id": None,
+                    }
+                ]
+            }
+
+    update_model = OpinionAwareModel()
     updated = run(tmp_path, store, court, update_model)
 
     assert updated.publishable
     assert updated.changed_case_keys == ("2025-25-1",)
     assert updated.content.projection is not None
     case = updated.content.projection.cases[0]
-    assert case.sections == accepted_sections
     assert case.latest_court_document_date == datetime(2026, 6, 30, tzinfo=UTC)
     assert case.case_status.value == "decided"
+    assert case.maturity.value == "post_opinion"
+    assert case.case_history[-1].status.value == "decided"
+    assert case.revisions[-1].maturity.value == "post_opinion"
     assert case.dispositions[0].official_url.endswith("/25-1_example.pdf")
     assert [item.revision_number for item in case.revisions] == [1, 2]
-    assert update_model.requests == []
-    assert not any("transcripts" in request.url.path for request in court.document_requests)
+    assert all(
+        "await" not in paragraph.casefold()
+        for section in case.sections
+        for paragraph in section.paragraphs
+    )
+    assert [
+        request["response_format"]["json_schema"]["name"]
+        for request in update_model.requests
+    ] == ["scotus_legal_observations", "scotus_legal_observations", "scotus_legal_brief"]
+    assert any("transcripts" in request.url.path for request in court.document_requests)
+
+
+def test_failed_opinion_rewrite_keeps_complete_prior_argument_case(tmp_path: Path) -> None:
+    court = CourtFixture()
+    store = MemoryStateStore(tmp_path / "state")
+    first = run(tmp_path, store, court, MockOpenAI())
+    assert first.content.projection is not None
+    prior = first.content.projection.cases[0]
+    store.content = first.content
+    court.slip_etag = '"slip-2"'
+    court.slip_rows = [
+        ("21", "6/30/26", "25-1", "Example v. Agency", "K", "25-1_example.pdf")
+    ]
+    court.documents["/opinions/25pdf/25-1_example.pdf"] = (
+        '"opinion-25-1"',
+        _text_pdf("No. 25-1 Example v. Agency.", "The Court affirmed the judgment."),
+        "application/pdf",
+    )
+
+    failed = run(tmp_path, store, court, MockOpenAI(), backend=FailingBackend)
+
+    assert failed.content.projection is not None
+    assert failed.content.projection.cases[0] == prior
+    assert failed.changed_case_keys == ()
+    assert failed.pending_case_keys == ("2025-25-1",)
+    assert failed.content.publication.dispositions[0].case_key == "2025-25-1"
+    assert failed.content.publication.dispositions[0].publication_date == datetime(
+        2026, 6, 30, tzinfo=UTC
+    )
 
 
 def test_disposition_only_emergency_opinion_publishes_without_argument(
@@ -1085,6 +1204,8 @@ def test_disposition_revision_date_recomputes_immutable_public_revision(
     store = MemoryStateStore(tmp_path / "state")
     first = run(tmp_path, store, court, MockOpenAI())
     store.content = first.content
+    assert first.content.projection is not None
+    prior_case = first.content.projection.cases[0]
     original = first.content.revisions[("2025-25a810", 1)].serialized
     court.slip_etag = '"slip-2"'
     court.slip_html = lambda: (
@@ -1104,6 +1225,11 @@ def test_disposition_revision_date_recomputes_immutable_public_revision(
     assert [item.revision_number for item in case.revisions] == [1, 2]
     assert case.dispositions[0].revision_date == datetime(2026, 3, 5, tzinfo=UTC)
     assert case.latest_court_document_date == datetime(2026, 3, 5, tzinfo=UTC)
+    assert case.case_status is prior_case.case_status
+    assert case.maturity is prior_case.maturity
+    assert case.title == prior_case.title
+    assert case.dek == prior_case.dek
+    assert case.sections == prior_case.sections
     assert revised.content.revisions[("2025-25a810", 1)].serialized == original
     assert revised_model.requests == []
     assert not list((tmp_path / "private").glob("ragchew-*"))
@@ -1505,28 +1631,50 @@ def test_reargument_reprocesses_every_session_under_one_case_budget(tmp_path: Pa
     assert names.count("scotus_legal_brief") == 1
 
 
-def test_legacy_case_without_processor_fingerprint_enters_editorial_migration(
+def test_missing_legacy_processor_fingerprints_do_not_enqueue_complete_corpus(
     tmp_path: Path,
 ) -> None:
     court = CourtFixture()
+    court.rows.append(("25-2", "Second v. Agency", "4/21/26", "25-2.pdf"))
+    court.documents["/pdfs/transcripts/2025/25-2.pdf"] = (
+        '"transcript-2"',
+        _pdf(1),
+        "application/pdf",
+    )
+    court.documents["/docket/docketfiles/html/public/25-2.html"] = (
+        '"docket-2"',
+        b"<!doctype html><body>Docket 25-2. Whether the law limits agency power.</body>",
+        "text/html",
+    )
     store = MemoryStateStore(tmp_path / "state")
     first = run(tmp_path, store, court, MockOpenAI())
+    assert first.content.projection is not None
+    case_keys = tuple(item.case_key for item in first.content.publication.cases)
+    assert len(case_keys) == 2
     legacy = replace(
         first.content,
         publication=first.content.publication.model_copy(
             update={
-                "documents": (),
                 "cases": tuple(
                     item.model_copy(update={"processor_sha256": None})
                     for item in first.content.publication.cases
                 ),
-                "pending_work": (
+                # This is the exact zero-attempt marker emitted by the failed global
+                # migration experiment; safe-baseline discovery cleans it rather than
+                # treating it as selected editorial work.
+                "pending_work": tuple(
                     PendingWork(
-                        case_key="2025-25-1",
+                        case_key=case_key,
                         reason=PendingReason.BUDGET_EXHAUSTED,
                         attempts=0,
                         first_seen_at=NOW,
-                    ),
+                        authoritative_activity_date=next(
+                            case.latest_court_document_date
+                            for case in first.content.projection.cases
+                            if public_case_key(case.term, case.primary_docket) == case_key
+                        ),
+                    )
+                    for case_key in case_keys
                 ),
             }
         ),
@@ -1537,16 +1685,12 @@ def test_legacy_case_without_processor_fingerprint_enters_editorial_migration(
     result = run(tmp_path, store, court, model)
 
     assert result.publishable
-    assert result.changed_case_keys == ("2025-25-1",)
-    assert len(result.content.publication.documents) == 2
-    assert result.content.publication.pending_work == ()
-    assert result.content.publication.cases[0].processor_sha256 is not None
+    assert result.changed_case_keys == ()
+    assert result.pending_case_keys == ()
+    assert {item.processor_sha256 for item in result.content.publication.cases} == {None}
     assert result.content.projection is not None
-    assert len(result.content.projection.cases[0].revisions) == 2
-    assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
-        "scotus_legal_observations",
-        "scotus_legal_brief",
-    ]
+    assert all(len(case.revisions) == 1 for case in result.content.projection.cases)
+    assert model.requests == []
 
 
 def test_failure_and_model_budget_exhaustion_keep_prior_case_active(

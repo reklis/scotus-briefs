@@ -140,6 +140,7 @@ from ragchew.scotus.static_contracts import (
     LogicalSourceState,
     ModelAttemptReceipt,
     ModelRetryStatus,
+    PendingReason,
     ProcessorFingerprint,
     canonical_json_bytes,
     sha256_hex,
@@ -713,17 +714,17 @@ class LiveStaticDiscovery:
                 public_transcript_keys.add(transcript_logical_key(item))
         processor = _processor_contract(self.config, self.model_endpoint)
         pointer_by_case = {pointer.case_key: pointer for pointer in content.publication.cases}
-        # A changed processor contract must rewrite every active brief, including sanitized
-        # legacy imports whose missing fingerprint cannot prove they meet the current editorial
-        # standard. The bounded queue migrates those imports gradually without bypassing any
-        # source, model, grounding, or publication gate.
+        # A missing legacy fingerprint is unknown provenance, not proof that every imported
+        # case is runnable migration work. Until the bounded editorial-backfill cursor selects
+        # an explicit slice, those cases stay active and out of PendingWork. A known, different
+        # processor fingerprint remains an explicit processor migration scope.
         legacy_case_keys = {
             case_key
             for case_key in prior_cases
             if pointer_by_case.get(case_key) is not None
             and pointer_by_case[case_key].processor_sha256 is None
         }
-        migration_case_keys = legacy_case_keys | {
+        migration_case_keys = {
             case_key
             for case_key in prior_cases
             if pointer_by_case.get(case_key) is not None
@@ -731,16 +732,19 @@ class LiveStaticDiscovery:
             and pointer_by_case[case_key].processor_sha256 != processor.composite_sha256
         }
         pending_case_keys = persisted_pending_case_keys
-        # Legacy import tooling left zero-attempt budget markers that were never real
-        # source work. Preserve the compatibility cleanup for only that exact shape;
-        # an attempted legacy disposition failure remains mandatory retry work.
+        # The withdrawn global migration left zero-attempt budget markers for legacy
+        # pointers whether or not it copied the active case's activity date into them.
+        # They are not evidence of selected source work. Fresh rediscovered activity is
+        # independently added to source_changed_case_keys below; attempted failures and
+        # retry scopes remain mandatory work.
         stale_legacy_pending_case_keys = {
             item.case_key
             for item in content.publication.pending_work
             if item.case_key in legacy_case_keys
+            and item.reason is PendingReason.BUDGET_EXHAUSTED
             and item.attempts == 0
             and item.last_attempted_at is None
-            and item.authoritative_activity_date is None
+            and item.retry is None
         }
         changed_case_keys: set[str] = set(migration_case_keys)
         source_changed_case_keys: set[str] = set()
@@ -1602,31 +1606,18 @@ class LiveStaticCaseProcessor:
             states: dict[str, LogicalDocumentState] = {}
             changed_keys: set[str] = set()
             all_private_documents = _case_documents(source)
-            legacy_metadata_only = bool(
-                source.prior is not None
-                and source.dispositions
-                and _public_metadata_changed(source)
-                and self._processor_case_fingerprints.get(work.case_key) is None
-            )
-            # A migrated accepted brief already proves its argument projection. A newly
-            # discovered opinion requires current docket/opinion integrity, not a fresh
-            # download of every historical transcript merely to add official metadata.
-            private_documents = (
-                tuple(
-                    item
-                    for item in all_private_documents
-                    if item.kind is not ScotusDocumentKind.TRANSCRIPT
-                )
-                if legacy_metadata_only
-                else all_private_documents
-            )
+            metadata_only_candidate = _metadata_only_disposition_candidate(source)
+            # Collect every current case document before deciding this is only a metadata
+            # correction. If opinion/order bytes changed, processing must already have all
+            # argument sessions available for the opinion-aware rewrite.
+            private_documents = all_private_documents
             required_transcripts = {transcript_logical_key(session) for session in source.sessions}
             found_transcripts = {
                 item.logical_key
                 for item in private_documents
                 if item.kind is ScotusDocumentKind.TRANSCRIPT
             }
-            if not legacy_metadata_only and found_transcripts != required_transcripts:
+            if found_transcripts != required_transcripts:
                 raise DocumentCollectionError("case does not have every required transcript")
 
             for item in private_documents:
@@ -1684,15 +1675,12 @@ class LiveStaticCaseProcessor:
                     documents=tuple(states[key] for key in sorted(states)),
                 )
 
-            # A newly listed disposition is authoritative public metadata. Preserve an
-            # already accepted argument brief and attach its validated Court date/link
-            # without replaying unchanged transcripts or asking Ollama to rewrite prose.
-            if (
-                source.prior is not None
-                and source.dispositions
-                and _public_metadata_changed(source)
-                and ScotusDocumentKind.TRANSCRIPT
-                not in {ScotusDocumentKind(states[key].document_kind) for key in changed_keys}
+            # Metadata-only reuse is narrow: the case must already have the same typed
+            # disposition roles and final status/maturity, and every collected document must
+            # have the prior accepted bytes. New or changed opinion/order content therefore
+            # continues through parsing, extraction, writing, and full-case validation.
+            if metadata_only_candidate and _metadata_only_documents_unchanged(
+                prior_documents, states
             ):
                 return CaseProcessingResult(
                     case_key=work.case_key,
@@ -3016,13 +3004,68 @@ def _docket_identity_observation(
     )
 
 
+def _metadata_only_disposition_candidate(source: _CaseInput) -> bool:
+    """Return whether discovery changed only metadata for an existing final disposition."""
+    prior = source.prior
+    if prior is None or not source.dispositions or not prior.dispositions:
+        return False
+    if prior.caption != source.caption or not _public_metadata_changed(source):
+        return False
+    current_sessions = tuple(
+        (
+            item.argument_date,
+            item.sequence,
+            item.reargument,
+            item.official_detail_url,
+            cast(DocumentDescriptor, item.transcript).official_url,
+        )
+        for item in source.sessions
+    )
+    prior_sessions = tuple(
+        (
+            item.argument_date,
+            item.sequence,
+            item.reargument,
+            item.official_detail_url,
+            item.official_transcript_url,
+        )
+        for item in prior.arguments
+    )
+    if current_sessions != prior_sessions:
+        return False
+    if tuple(sorted(item.kind.value for item in source.dispositions)) != tuple(
+        sorted(item.kind for item in prior.dispositions)
+    ):
+        return False
+    return (
+        prior.case_status is ScotusCaseStatus.DECIDED
+        and prior.maturity is BriefMaturity.POST_OPINION
+    ) or (
+        prior.case_status is ScotusCaseStatus.ORDER_ISSUED
+        and prior.maturity is BriefMaturity.POST_ORDER
+    )
+
+
+def _metadata_only_documents_unchanged(
+    prior: Mapping[str, LogicalDocumentState],
+    current: Mapping[str, LogicalDocumentState],
+) -> bool:
+    """Require prior accepted bytes for every document used by a metadata-only update."""
+    return bool(current) and all(
+        item.logical_key in prior
+        and prior[item.logical_key].integrity == item.integrity
+        and prior[item.logical_key].document_kind == item.document_kind
+        for item in current.values()
+    )
+
+
 def _deterministic_disposition_metadata_update(
     source: _CaseInput, now: datetime
 ) -> PublicCaseBrief:
-    """Attach official disposition metadata while preserving accepted public prose."""
+    """Correct disposition metadata without changing accepted status, maturity, or prose."""
     prior = source.prior
-    if prior is None or not source.dispositions:
-        raise ValueError("metadata-only disposition update requires a prior case and disposition")
+    if prior is None or not _metadata_only_disposition_candidate(source):
+        raise ValueError("metadata-only disposition update is not semantically safe")
     dispositions = tuple(
         sorted(
             (
@@ -3053,35 +3096,19 @@ def _deterministic_disposition_metadata_update(
             ),
         )
     )
-    emergency_docket = re.fullmatch(
-        r"\d+A\d+", source.primary_docket.replace("-", ""), re.IGNORECASE
-    )
-    status = (
-        ScotusCaseStatus.DECIDED
-        if prior.case_status is ScotusCaseStatus.DECIDED or emergency_docket is None
-        else ScotusCaseStatus.ORDER_ISSUED
-    )
-    maturity = (
-        BriefMaturity.POST_OPINION
-        if status is ScotusCaseStatus.DECIDED
-        else BriefMaturity.POST_ORDER
-    )
     typed_urls = {item.official_url for item in dispositions}
     legacy_urls = tuple(
         sorted(url for url in prior.official_disposition_urls if url not in typed_urls)
     )
     return prior.model_copy(
         update={
-            "caption": source.caption,
-            "case_status": status,
-            "maturity": maturity,
             "latest_court_document_date": latest,
             "case_history": (
                 *prior.case_history,
                 PublicCaseHistoryEvent(
-                    status=status,
+                    status=prior.case_status,
                     changed_at=now,
-                    explanation=_history_explanation(status, True),
+                    explanation="Official disposition metadata was corrected.",
                 ),
             ),
             "official_disposition_urls": legacy_urls,
@@ -3093,7 +3120,7 @@ def _deterministic_disposition_metadata_update(
                 *prior.revisions,
                 PublicBriefRevisionSummary(
                     revision_number=len(prior.revisions) + 1,
-                    maturity=maturity,
+                    maturity=prior.maturity,
                     created_at=now,
                     correction_note="Official disposition metadata updated.",
                 ),
