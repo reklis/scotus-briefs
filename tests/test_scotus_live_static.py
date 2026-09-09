@@ -933,6 +933,10 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     processor = result.content.publication.processor
     assert processor is not None
     assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
+    assert processor.extractor_version == (
+        "scotus-observation-v2:scotus-legal-v1:scotus-legal-extraction-v10:"
+        "official-document-text-v3"
+    )
     assert processor.policy_version == "scotus-brief-policy-v59"
     assert processor.prompt_version == (
         "scotus-reader-guide-compact-v1;repair=scotus-reader-guide-field-repair-v1;"
@@ -945,7 +949,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert all(request["extra_body"] == {"think": False} for request in model.requests)
     assert model.requests[0]["max_tokens"] == 8_000
     assert model.requests[1]["max_tokens"] == 8_000
-    assert model.requests[1]["reasoning_effort"] == "none"
+    assert all(request["reasoning_effort"] == "none" for request in model.requests)
     extraction_payload = json.loads(model.requests[0]["messages"][1]["content"])
     assert extraction_payload["mode"] == "/no_think"
     extraction_evidence = extraction_payload["evidence"]

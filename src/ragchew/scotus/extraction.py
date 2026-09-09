@@ -271,7 +271,7 @@ class DeterministicTranscriptObservationExtractor:
 
 
 class OpenAILegalObservationExtractor:
-    PROMPT_VERSION = "scotus-legal-extraction-v9"
+    PROMPT_VERSION = "scotus-legal-extraction-v10"
 
     def __init__(
         self,
@@ -338,6 +338,10 @@ class OpenAILegalObservationExtractor:
             "model": self.model_name,
             "temperature": omit if self.model_name.startswith("gpt-5") else 0,
             **token_limit,
+            # Ollama's OpenAI-compatible endpoint may ignore `think: false` and spend
+            # the complete output allowance on hidden reasoning. This standard field
+            # is honored by the reviewed model and leaves room for the required JSON.
+            "reasoning_effort": "none",
             "messages": [
                 {
                     "role": "system",

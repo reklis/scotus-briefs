@@ -197,6 +197,7 @@ def test_disposition_extraction_prioritizes_extractable_guide_roles() -> None:
     request = extractor.request_arguments(source_value)
     system_prompt = request["messages"][0]["content"]
 
+    assert request["reasoning_effort"] == "none"
     assert "Return no more than four independently useful observations" in system_prompt
     assert "one case_background" in system_prompt
     assert "Do not return a holding or order" in system_prompt
