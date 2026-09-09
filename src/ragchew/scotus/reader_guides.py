@@ -38,7 +38,7 @@ from ragchew.scotus.contracts import (
     ScotusCaseStatus,
 )
 
-READER_GUIDE_PLAN_VERSION = "reader-guide-plan-v1"
+READER_GUIDE_PLAN_VERSION = "reader-guide-plan-v2"
 MAX_PLAN_SECTIONS = 10
 MAX_ARGUMENT_PACKETS = 10
 MAX_PACKET_CLAIMS = 16
@@ -211,7 +211,7 @@ class ReaderGuideArgumentPacket(StrictModel):
 class ReaderGuidePlan(StrictModel):
     """Bounded private plan; this object must never enter generated public state."""
 
-    plan_version: Literal["reader-guide-plan-v1"] = "reader-guide-plan-v1"
+    plan_version: Literal["reader-guide-plan-v2"] = "reader-guide-plan-v2"
     case_id: UUID
     caption: str = Field(min_length=1, max_length=500)
     primary_docket: str = Field(min_length=1, max_length=40)
@@ -285,8 +285,14 @@ _CERTAINTY_ORDER = {
 }
 _TYPE_ORDER = {value: index for index, value in enumerate(LegalObservationType)}
 _SPACE = re.compile(r"\s+")
-_SEPARATE_OPINION = re.compile(
-    r"\b(?:dissent(?:ing)?|concurr(?:ence|ing)|separate opinion)\b", re.I
+_SEPARATE_OPINION_ATTRIBUTION = re.compile(
+    r"^(?:Justice\s+[^,]+,\s*)?(?:dissenting|concurring)|^separate opinion\b",
+    re.I,
+)
+_SEPARATE_OPINION_VALUE = re.compile(
+    r"^(?:Justice\s+[^,]+(?:'s|\N{RIGHT SINGLE QUOTATION MARK}s)?\s+)?"
+    r"(?:dissent|concurrence|separate opinion)\b|^The\s+(?:dissent|concurrence)\b",
+    re.I,
 )
 
 
@@ -1290,8 +1296,12 @@ class ReaderGuidePlanner:
 
 
 def _is_separate_claim(claim: ScotusApprovedClaim) -> bool:
-    return (
-        _SEPARATE_OPINION.search(f"{claim.attribution or ''} {claim.public_value[:80]}") is not None
+    return bool(
+        (
+            claim.attribution
+            and _SEPARATE_OPINION_ATTRIBUTION.search(claim.attribution)
+        )
+        or _SEPARATE_OPINION_VALUE.search(claim.public_value)
     )
 
 

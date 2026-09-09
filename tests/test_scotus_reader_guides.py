@@ -547,6 +547,34 @@ def test_disposition_without_supported_reasoning_fails_closed() -> None:
     assert caught.value.safe_code == "unsupported_court_reasoning"
 
 
+def test_controlling_action_is_not_discarded_when_it_mentions_a_dissent() -> None:
+    claims = tuple(
+        item.model_copy(
+            update={
+                "public_value": (
+                    "The Supreme Court vacated the judgment and remanded the case, over a "
+                    "dissenting opinion."
+                )
+            }
+        )
+        if item.observation_type is LegalObservationType.ORDER
+        else item
+        for item in disposition_claims()
+    )
+
+    plan = ReaderGuidePlanner().plan(
+        candidate(status=ScotusCaseStatus.DECIDED),
+        claims,
+        BriefMaturity.POST_OPINION,
+    )
+
+    action = next(item for item in plan.sections if item.purpose is ReaderGuidePurpose.COURT_ACTION)
+    assert {slot.action for slot in action.action_slots} == {
+        CanonicalAction.VACATE,
+        CanonicalAction.REMAND,
+    }
+
+
 def test_sparse_disposition_and_separate_opinion_get_distinct_packets() -> None:
     plan = ReaderGuidePlanner().plan(
         candidate(status=ScotusCaseStatus.DECIDED),

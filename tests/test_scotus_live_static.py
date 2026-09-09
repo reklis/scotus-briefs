@@ -940,7 +940,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert processor.policy_version == "scotus-brief-policy-v59"
     assert processor.prompt_version == (
         "scotus-reader-guide-compact-v1;repair=scotus-reader-guide-field-repair-v1;"
-        "planner=reader-guide-plan-v1;reader_prose=scotus-reader-prose-v1"
+        "planner=reader-guide-plan-v2;reader_prose=scotus-reader-prose-v1"
     )
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",
