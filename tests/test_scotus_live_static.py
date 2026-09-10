@@ -33,6 +33,7 @@ from ragchew.scotus.live_static import (
     LiveStaticDiscovery,
     _case_documents,
     _CaseInput,
+    _court_action_observation,
     _default_ollama_client,
     _descriptor_for_public_argument,
     _legal_analysis_observations,
@@ -846,6 +847,39 @@ def test_legal_analysis_fallback_uses_distinct_controlling_exact_sentences() -> 
     )
 
 
+def test_court_action_fallback_skips_separate_opinions_and_recognizes_final_action() -> None:
+    controlling = LegalEvidenceBlock(
+        block_id="opinion-page-2",
+        document_revision_id=uuid4(),
+        document_kind=ScotusDocumentKind.OPINION,
+        official_url="https://www.supremecourt.gov/opinion.pdf",
+        start_file_page=2,
+        start_line=1,
+        end_file_page=2,
+        end_line=1,
+        text_private="The Court affirmed the judgment.",
+        attribution="Opinion of the Court",
+    )
+    separate = controlling.model_copy(
+        update={
+            "block_id": "opinion-page-1",
+            "start_file_page": 1,
+            "end_file_page": 1,
+            "text_private": "The Court reversed the judgment.",
+            "attribution": "Justice Kagan, dissenting",
+        }
+    )
+
+    observation = _court_action_observation(
+        case_id=uuid4(),
+        blocks=(separate, controlling),
+    )
+
+    assert observation.observation_type is LegalObservationType.HOLDING
+    assert observation.legal_status is LegalStatus.COURT_HELD
+    assert observation.raw_value_private == controlling.text_private
+
+
 def test_procedural_path_fallback_uses_only_controlling_exact_source_text() -> None:
     block = LegalEvidenceBlock(
         block_id="opinion-page-1",
@@ -935,7 +969,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
     assert processor.extractor_version == (
         "scotus-observation-v2:scotus-legal-v1:scotus-legal-extraction-v10:"
-        "official-document-text-v3"
+        "official-document-text-v4"
     )
     assert processor.policy_version == "scotus-brief-policy-v59"
     assert processor.prompt_version == (
@@ -1076,7 +1110,22 @@ def test_status_changing_opinion_rewrites_complete_argument_case(tmp_path: Path)
                 ]
             }
 
-    update_model = OpinionAwareModel()
+    class DeterministicActionModel(OpinionAwareModel):
+        @staticmethod
+        def _extraction(evidence: list[dict[str, Any]]) -> dict[str, object]:
+            payload = OpinionAwareModel._extraction(evidence)
+            if not any(item["kind"] == "opinion" for item in evidence):
+                return payload
+            observations = cast(list[dict[str, Any]], payload["observations"])
+            return {
+                "observations": [
+                    item
+                    for item in observations
+                    if item["observation_type"] not in {"holding", "order"}
+                ]
+            }
+
+    update_model = DeterministicActionModel()
     updated = run(tmp_path, store, court, update_model)
 
     assert updated.publishable

@@ -195,7 +195,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
 POLICY_VERSION = "scotus-brief-policy-v59"
-DOCUMENT_TEXT_VERSION = "official-document-text-v3"
+DOCUMENT_TEXT_VERSION = "official-document-text-v4"
 
 
 class OllamaClientFactory(Protocol):
@@ -2385,10 +2385,16 @@ class LiveStaticCaseProcessor:
                 ):
                     observations.append(analysis_observation)
                     existing_analysis_values.add(analysis_observation.raw_value_private.casefold())
-        if not source.sessions and not any(
+        if action_blocks and not any(
             observation.observation_type
             in {LegalObservationType.HOLDING, LegalObservationType.ORDER}
             and observation.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
+            and re.search(
+                r"\b(?:concurring|dissenting|separate opinion)\b",
+                observation.attribution or "",
+                re.IGNORECASE,
+            )
+            is None
             for observation in observations
         ):
             observations.append(
@@ -2949,7 +2955,10 @@ _DETERMINISTIC_COURT_ACTION = re.compile(
     re.IGNORECASE,
 )
 _DETERMINISTIC_HOLDING = re.compile(
-    r"\b(?:we (?:hold|conclude)|(?:this |the )Court (?:holds?|held))\b",
+    r"\b(?:we (?:hold|conclude|affirm|reverse|vacate)|"
+    r"(?:this |the )Court (?:holds?|held|affirms?|affirmed|reverses?|reversed|"
+    r"vacates?|vacated)|judgment\b[^.!?]{0,120}\b(?:is |was )?"
+    r"(?:affirmed|reversed|vacated))\b",
     re.IGNORECASE,
 )
 
@@ -3203,7 +3212,11 @@ def _court_action_observation(
 ) -> LegalObservation:
     """Derive only an explicit, source-exact Supreme Court action sentence."""
     for block in blocks:
-        if block.document_kind is not ScotusDocumentKind.OPINION:
+        if block.document_kind is not ScotusDocumentKind.OPINION or re.search(
+            r"\b(?:concurring|dissenting|separate opinion)\b",
+            block.attribution or "",
+            re.IGNORECASE,
+        ):
             continue
         for sentence in re.split(r"(?<=[.!?])\s+", block.text_private):
             sentence = " ".join(sentence.split())
