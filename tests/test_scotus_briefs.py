@@ -789,6 +789,22 @@ def test_generation_rejects_process_absence_and_unsupported_future_language(
     assert caught.value.safe_code == safe_code
 
 
+@pytest.mark.parametrize(
+    "text",
+    (
+        "The agency claims that the law limits its power.",
+        "The parties dispute the agency's economic model.",
+    ),
+)
+def test_generation_allows_ordinary_claim_and_model_language(text: str) -> None:
+    source = candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    revision = BriefGenerationService(FakeGenerator(text), InMemoryBriefRevisionStore()).generate(
+        source, decision, revision_number=1
+    )
+    assert revision.sections[0].paragraphs == (text,)
+
+
 def test_generation_accepts_a_future_event_established_by_an_approved_claim() -> None:
     known_future = observation(
         LegalObservationType.PROCEDURAL_POSTURE,
@@ -885,24 +901,29 @@ def test_whole_case_brief_requires_and_analyzes_every_argument_session() -> None
         )
 
 
-def test_plain_language_rejects_legalese_and_overlong_prose() -> None:
-    source = candidate()
-    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
-    with pytest.raises(BriefValidationError, match="legalese"):
-        BriefGenerationService(
-            FakeGenerator("Pursuant to the aforementioned rule, the instant case controls."),
-            InMemoryBriefRevisionStore(),
-        ).generate(source, decision, revision_number=1)
-    long_sentence = " ".join(["word"] * 31) + "."
-    with pytest.raises(BriefValidationError, match="sentence is too long"):
-        BriefGenerationService(FakeGenerator(long_sentence), InMemoryBriefRevisionStore()).generate(
-            source, decision, revision_number=1
+def test_plain_language_warns_on_style_and_rejects_only_severe_length() -> None:
+    assert "lawyer_facing_phrase" in _validate_plain_language(
+        "Pursuant to the aforementioned rule, the instant case controls.",
+        maximum_sentence_words=30,
+        maximum_paragraph_words=120,
+    )
+    slightly_long = " ".join(["word"] * 31) + "."
+    assert _validate_plain_language(
+        slightly_long,
+        maximum_sentence_words=30,
+        maximum_paragraph_words=120,
+    ) == ("preferred_sentence_length",)
+    with pytest.raises(BriefValidationError, match="severe length"):
+        _validate_plain_language(
+            " ".join(["word"] * 61) + ".",
+            maximum_sentence_words=30,
+            maximum_paragraph_words=120,
         )
-    with pytest.raises(BriefValidationError, match="unexplained legal concept"):
-        BriefGenerationService(
-            FakeGenerator("The dispute concerns statutory authority."),
-            InMemoryBriefRevisionStore(),
-        ).generate(source, decision, revision_number=1)
+    assert "unexplained_legal_term" in _validate_plain_language(
+        "The dispute concerns statutory authority.",
+        maximum_sentence_words=30,
+        maximum_paragraph_words=120,
+    )
 
 
 @pytest.mark.parametrize(
@@ -916,15 +937,12 @@ def test_plain_language_rejects_legalese_and_overlong_prose() -> None:
         "Federal law preempts the state rule.",
     ),
 )
-def test_plain_language_rejects_unexplained_legal_terms(legalese: str) -> None:
-    with pytest.raises(BriefValidationError) as caught:
-        _validate_plain_language(
-            legalese,
-            maximum_sentence_words=30,
-            maximum_paragraph_words=120,
-        )
-    assert caught.value.safe_code is not None
-    assert caught.value.safe_code.startswith("unexplained_legal_term_")
+def test_plain_language_warns_on_unexplained_legal_terms(legalese: str) -> None:
+    assert _validate_plain_language(
+        legalese,
+        maximum_sentence_words=30,
+        maximum_paragraph_words=120,
+    ) == ("unexplained_legal_term",)
 
 
 @pytest.mark.parametrize(
@@ -1012,14 +1030,13 @@ def test_plain_language_accepts_legal_terms_only_with_an_immediate_gloss(
 def test_reviewed_corpus_terms_require_same_sentence_case_specific_glosses(
     label: str, unexplained: str, explained: str
 ) -> None:
-    with pytest.raises(BriefValidationError) as caught:
-        _validate_plain_language(
-            unexplained,
-            maximum_sentence_words=30,
-            maximum_paragraph_words=120,
-        )
-    assert caught.value.safe_code == f"unexplained_legal_term_{label}"
-    _validate_plain_language(
+    assert label
+    assert _validate_plain_language(
+        unexplained,
+        maximum_sentence_words=30,
+        maximum_paragraph_words=120,
+    ) == ("unexplained_legal_term",)
+    assert "unexplained_legal_term" not in _validate_plain_language(
         explained,
         maximum_sentence_words=30,
         maximum_paragraph_words=120,
@@ -1027,13 +1044,11 @@ def test_reviewed_corpus_terms_require_same_sentence_case_specific_glosses(
 
 
 def test_reader_term_gloss_must_be_in_the_same_sentence() -> None:
-    with pytest.raises(BriefValidationError) as caught:
-        _validate_plain_language(
-            "The court lacked jurisdiction. It had no power to hear the case.",
-            maximum_sentence_words=30,
-            maximum_paragraph_words=120,
-        )
-    assert caught.value.safe_code == "unexplained_legal_term_jurisdiction"
+    assert "unexplained_legal_term" in _validate_plain_language(
+        "The court lacked jurisdiction. It had no power to hear the case.",
+        maximum_sentence_words=30,
+        maximum_paragraph_words=120,
+    )
 
 
 def test_reader_prose_resource_is_versioned_complete_and_reviewed() -> None:
@@ -1073,32 +1088,26 @@ def test_reader_prose_resource_validation_fails_closed() -> None:
 
 
 def test_headings_cannot_rely_on_inline_legal_glosses() -> None:
-    with pytest.raises(BriefValidationError) as caught:
-        _validate_plain_language(
-            "Jurisdiction means power to hear the case",
-            maximum_sentence_words=30,
-            maximum_paragraph_words=120,
-            allow_term_explanations=False,
-        )
-    assert caught.value.safe_code == "unexplained_legal_term_jurisdiction"
+    assert "unexplained_legal_term" in _validate_plain_language(
+        "Jurisdiction means power to hear the case",
+        maximum_sentence_words=30,
+        maximum_paragraph_words=120,
+        allow_term_explanations=False,
+    )
 
 
-def test_plain_language_rejects_repetition_and_unreadable_prose() -> None:
-    with pytest.raises(BriefValidationError) as repeated:
-        _validate_plain_language(
-            "The agency changed the rule. The agency changed the rule.",
-            maximum_sentence_words=30,
-            maximum_paragraph_words=120,
-        )
-    assert repeated.value.safe_code == "repeated_reader_prose"
-    with pytest.raises(BriefValidationError) as unreadable:
-        _validate_plain_language(
-            "Notwithstanding multifarious constitutional considerations, institutional "
-            "adjudication necessitates extraordinarily sophisticated interpretive methodologies.",
-            maximum_sentence_words=30,
-            maximum_paragraph_words=120,
-        )
-    assert unreadable.value.safe_code == "reader_prose_readability"
+def test_plain_language_warns_on_repetition_and_unreadable_prose() -> None:
+    assert "repeated_fragment" in _validate_plain_language(
+        "The agency changed the rule. The agency changed the rule.",
+        maximum_sentence_words=30,
+        maximum_paragraph_words=120,
+    )
+    assert "readability" in _validate_plain_language(
+        "Notwithstanding multifarious constitutional considerations, institutional "
+        "adjudication necessitates extraordinarily sophisticated interpretive methodologies.",
+        maximum_sentence_words=30,
+        maximum_paragraph_words=120,
+    )
 
 
 def test_openai_generator_requests_structured_plain_language_output() -> None:

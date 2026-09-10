@@ -142,6 +142,9 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert 'editorial_args+=(--editorial-rollout-stage "$EDITORIAL_ROLLOUT_STAGE")' in workflow
     assert "Measured editorial stages are publication-disabled" in workflow
     assert "sanitized-editorial-candidate-state" in workflow
+    assert "sanitized-editorial-review" in workflow
+    assert "--review-artifact sanitized-editorial-review.json" in workflow
+    assert "steps.batch.outputs.editorial_review_only != 'true'" in workflow
     assert "Run reviewed bounded live adapter" in workflow
     assert "if: always()" in workflow and "Clean persistent runner after build" in workflow
     assert "Clean persistent runner before build" in workflow

@@ -146,8 +146,11 @@ generation:
   # comfortably within the conservative per-call byte bound.
   maximum_context_characters: 30000
   minimum_observation_confidence: 0.85
+  # Preferred editorial targets; only the separate severe ceilings reject prose.
   maximum_sentence_words: 30
   maximum_paragraph_words: 120
+  severe_maximum_sentence_words: 60
+  severe_maximum_paragraph_words: 240
   public_quotes: false
   prohibit_vote_predictions: true
   prohibit_personalized_legal_advice: true

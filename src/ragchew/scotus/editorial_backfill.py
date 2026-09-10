@@ -13,8 +13,10 @@ from ragchew.scotus.static_contracts import (
     CanaryAggregate,
     CanaryFailureCount,
     CanaryReviewerDecision,
+    CanaryWarningCount,
     EditorialBackfillState,
     EditorialRolloutStage,
+    EditorialWarningCode,
     PendingReason,
     PendingWork,
     RetryFailureCode,
@@ -134,9 +136,7 @@ def start_or_resume_backfill(
         selected = deterministic_canary_manifest(ordered)
     else:
         selected = ordered[: rollout_stage.limit]
-    ranks = {
-        item.case_key: rank_offset + index + 1 for index, item in enumerate(ordered)
-    }
+    ranks = {item.case_key: rank_offset + index + 1 for index, item in enumerate(ordered)}
     boundary = max(
         (ranks[item.case_key] for item in selected),
         default=rank_offset,
@@ -234,7 +234,8 @@ def aggregate_canary_report(
     accepted_case_keys: frozenset[str],
     runtime_seconds: int,
     model_call_count: int,
-    candidate_sha256: str,
+    candidate_sha256: str | None,
+    warnings_by_case: Mapping[str, Sequence[EditorialWarningCode]] | None = None,
     previous: CanaryAggregate | None = None,
 ) -> CanaryAggregate:
     """Build/update an automatic report using only sanitized state and counters."""
@@ -262,6 +263,25 @@ def aggregate_canary_report(
         counts[code] += 1
     accepted_count = len(set(backfill.selected_case_keys) & accepted_case_keys)
     attempted_count = accepted_count + len(failed_keys)
+    all_hard_failed = (
+        attempted_count == len(backfill.selected_case_keys)
+        and len(failed_keys) == len(backfill.selected_case_keys)
+        and accepted_count == 0
+    )
+    warning_counts: Counter[EditorialWarningCode] = Counter()
+    same_measurement = bool(
+        previous is not None
+        and previous.processor_sha256 == backfill.processor_sha256
+        and previous.rollout_stage is backfill.rollout_stage
+        and previous.case_keys == backfill.selected_case_keys
+        and previous.accepted_count <= accepted_count
+    )
+    if same_measurement and previous is not None:
+        warning_counts.update({item.code: item.count for item in previous.warning_code_counts})
+    for key, warning_codes in (warnings_by_case or {}).items():
+        if key not in accepted_case_keys:
+            continue
+        warning_counts.update(set(warning_codes))
     preserve_review = bool(
         previous is not None
         and previous.processor_sha256 == backfill.processor_sha256
@@ -275,7 +295,7 @@ def aggregate_canary_report(
     return CanaryAggregate(
         processor_sha256=backfill.processor_sha256,
         rollout_stage=backfill.rollout_stage,
-        candidate_sha256=candidate_sha256,
+        candidate_sha256=None if all_hard_failed else candidate_sha256,
         case_keys=backfill.selected_case_keys,
         attempted_count=attempted_count,
         accepted_count=accepted_count,
@@ -284,15 +304,17 @@ def aggregate_canary_report(
             CanaryFailureCount(code=code, count=counts[code])
             for code in sorted(counts, key=lambda item: item.value)
         ),
+        warning_code_counts=tuple(
+            CanaryWarningCount(code=code, count=min(accepted_count, warning_counts[code]))
+            for code in sorted(warning_counts, key=lambda item: item.value)
+        ),
         runtime_seconds=min(
             86_400,
-            runtime_seconds
-            + (previous.runtime_seconds if preserve_review and previous else 0),
+            runtime_seconds + (previous.runtime_seconds if preserve_review and previous else 0),
         ),
         model_call_count=min(
             10_000,
-            model_call_count
-            + (previous.model_call_count if preserve_review and previous else 0),
+            model_call_count + (previous.model_call_count if preserve_review and previous else 0),
         ),
         improved_count=previous.improved_count if preserve_review and previous else 0,
         factual_error_count=previous.factual_error_count if preserve_review and previous else 0,
@@ -312,8 +334,12 @@ def aggregate_canary_report(
             previous.release_validation_passed if preserve_review and previous else False
         ),
         reviewer_decision=(
-            previous.reviewer_decision
-            if preserve_review and previous
-            else CanaryReviewerDecision.PENDING
+            CanaryReviewerDecision.REJECTED
+            if all_hard_failed
+            else (
+                previous.reviewer_decision
+                if preserve_review and previous
+                else CanaryReviewerDecision.PENDING
+            )
         ),
     )

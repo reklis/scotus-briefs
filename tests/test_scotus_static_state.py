@@ -26,12 +26,14 @@ from ragchew.scotus.static_contracts import (
     CanaryAggregate,
     CanaryFailureCount,
     CanaryReviewerDecision,
+    CanaryWarningCount,
     CaseRevisionPointer,
     ConditionalValidators,
     ContentIntegrity,
     CostLedger,
     EditorialBackfillState,
     EditorialRolloutStage,
+    EditorialWarningCode,
     FreshnessSummary,
     LogicalSourceState,
     ModelAttemptOutcome,
@@ -580,6 +582,36 @@ def test_editorial_backfill_and_canary_are_sanitized_and_legacy_optional() -> No
     assert b'"canary_report"' not in serialized_legacy
     assert PublicationState.model_validate_json(serialized_legacy) == legacy
 
+    legacy_report_payload = {
+        "schema_version": "1.0",
+        "processor_sha256": ZERO,
+        "rollout_stage": "canary_10",
+        "candidate_sha256": None,
+        "case_keys": ["2025-25-466"],
+        "attempted_count": 0,
+        "accepted_count": 0,
+        "failed_count": 0,
+        "failure_code_counts": [],
+        "runtime_seconds": 0,
+        "model_call_count": 0,
+        "improved_count": 0,
+        "factual_error_count": 0,
+        "status_error_count": 0,
+        "actor_error_count": 0,
+        "chronology_error_count": 0,
+        "prediction_error_count": 0,
+        "degraded_legacy_count": 0,
+        "privacy_validation_passed": False,
+        "release_validation_passed": False,
+        "reviewer_decision": "pending",
+    }
+    loaded_legacy_report = CanaryAggregate.model_validate_json(
+        json.dumps(legacy_report_payload)
+    )
+    assert canonical_json_bytes(loaded_legacy_report) == (
+        json.dumps(legacy_report_payload, sort_keys=True, separators=(",", ":")) + "\n"
+    ).encode()
+
     backfill = EditorialBackfillState(
         processor_sha256=ZERO,
         rollout_stage=EditorialRolloutStage.CANARY_10,
@@ -599,6 +631,9 @@ def test_editorial_backfill_and_canary_are_sanitized_and_legacy_optional() -> No
         failure_code_counts=(
             CanaryFailureCount(code=RetryFailureCode.READER_LANGUAGE_FAILED, count=1),
         ),
+        warning_code_counts=(
+            CanaryWarningCount(code=EditorialWarningCode.READABILITY, count=1),
+        ),
         runtime_seconds=123,
         model_call_count=3,
         reviewer_decision=CanaryReviewerDecision.REJECTED,
@@ -611,6 +646,7 @@ def test_editorial_backfill_and_canary_are_sanitized_and_legacy_optional() -> No
     serialized = canonical_json_bytes(state)
     assert PublicationState.model_validate_json(serialized) == state
     assert b"reader_language_failed" in serialized
+    assert b'"warning_code_counts":[{"code":"readability","count":1}]' in serialized
     assert b"prompt" not in serialized and b"rejected_prose" not in serialized
 
     with pytest.raises(ValidationError, match="canary report requires"):
@@ -619,7 +655,13 @@ def test_editorial_backfill_and_canary_are_sanitized_and_legacy_optional() -> No
         PublicationState(
             updated_at=NOW,
             editorial_backfill=backfill,
-            canary_report=report.model_copy(update={"attempted_count": 1, "accepted_count": 0}),
+            canary_report=report.model_copy(
+                update={
+                    "attempted_count": 1,
+                    "accepted_count": 0,
+                    "warning_code_counts": (),
+                }
+            ),
         )
     with pytest.raises(ValidationError, match="extra_forbidden"):
         EditorialBackfillState.model_validate(

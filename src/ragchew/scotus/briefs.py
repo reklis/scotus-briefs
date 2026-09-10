@@ -30,6 +30,7 @@ from ragchew.scotus.contracts import (
     ScotusSensitivity,
 )
 from ragchew.scotus.reader_prose import load_reader_prose_policy
+from ragchew.scotus.static_contracts import EditorialWarningCode
 
 
 class BriefPolicyError(ValueError):
@@ -49,6 +50,15 @@ class BriefValidationError(ValueError):
         super().__init__(message)
         self.safe_code = safe_code
         self.draft = draft
+
+
+@dataclass(frozen=True)
+class EditorialFinding:
+    """Process-local detail paired with one fixed public warning category."""
+
+    code: EditorialWarningCode
+    diagnostic_code: str
+    message: str
 
 
 @dataclass(frozen=True)
@@ -1744,44 +1754,79 @@ def _readability_grade(text: str) -> float:
     return 0.39 * (len(words) / len(sentences)) + 11.8 * (syllables / len(words)) - 15.59
 
 
-def _validate_plain_language(
+def _evaluate_plain_language(
     text: str,
     *,
     maximum_sentence_words: int,
     maximum_paragraph_words: int,
+    severe_maximum_sentence_words: int,
+    severe_maximum_paragraph_words: int,
     allow_term_explanations: bool = True,
     check_terminology: bool = True,
-) -> None:
+) -> tuple[EditorialFinding, ...]:
+    """Reject only severe size defects and return fixed editorial findings."""
     words = _WORD.findall(text)
-    if len(words) > maximum_paragraph_words:
-        raise BriefValidationError("plain-language paragraph is too long")
+    if len(words) > severe_maximum_paragraph_words:
+        raise BriefValidationError(
+            "plain-language paragraph exceeds the severe length bound",
+            safe_code="severe_paragraph_length",
+        )
     sentences = tuple(
         match.group(0).strip() for match in _SENTENCE.finditer(text) if match.group(0).strip()
     )
+    if any(len(_WORD.findall(sentence)) > severe_maximum_sentence_words for sentence in sentences):
+        raise BriefValidationError(
+            "plain-language sentence exceeds the severe length bound",
+            safe_code="severe_sentence_length",
+        )
+    findings: list[EditorialFinding] = []
+    if len(words) > maximum_paragraph_words:
+        findings.append(
+            EditorialFinding(
+                EditorialWarningCode.PREFERRED_PARAGRAPH_LENGTH,
+                "preferred_paragraph_length",
+                "plain-language paragraph exceeds the preferred word target",
+            )
+        )
     if any(len(_WORD.findall(sentence)) > maximum_sentence_words for sentence in sentences):
-        raise BriefValidationError("plain-language sentence is too long")
+        findings.append(
+            EditorialFinding(
+                EditorialWarningCode.PREFERRED_SENTENCE_LENGTH,
+                "preferred_sentence_length",
+                "plain-language sentence exceeds the preferred word target",
+            )
+        )
     normalized_sentences = tuple(
         " ".join(_WORD.findall(sentence.casefold())) for sentence in sentences
     )
     if len(normalized_sentences) != len(set(normalized_sentences)):
-        raise BriefValidationError(
-            "plain-language paragraph repeats a sentence",
-            safe_code="repeated_reader_prose",
+        findings.append(
+            EditorialFinding(
+                EditorialWarningCode.REPEATED_FRAGMENT,
+                "repeated_reader_prose",
+                "plain-language paragraph repeats a sentence",
+            )
         )
-    # Very short labels do not produce a meaningful grade. The bound is deliberately
-    # generous enough for case-specific names while rejecting law-review-style prose.
+    # Very short labels do not produce a meaningful grade. This is review guidance,
+    # never a substitute for grounding or correctness validation.
     if len(words) >= 8 and _readability_grade(text) > 20.0:
-        raise BriefValidationError(
-            "reader prose exceeds the deterministic readability bound",
-            safe_code="reader_prose_readability",
+        findings.append(
+            EditorialFinding(
+                EditorialWarningCode.READABILITY,
+                "reader_prose_readability",
+                "reader prose exceeds the deterministic readability target",
+            )
         )
     if not check_terminology:
-        return
+        return tuple(findings)
     for label, pattern in _FORBIDDEN_READER_PHRASES:
         if pattern.search(text):
-            raise BriefValidationError(
-                f"brief contains unexplained legalese phrase: {label.replace('_', ' ')}",
-                safe_code=f"unexplained_legalese_{label}",
+            findings.append(
+                EditorialFinding(
+                    EditorialWarningCode.LAWYER_FACING_PHRASE,
+                    f"unexplained_legalese_{label}",
+                    f"brief contains lawyer-facing phrase: {label.replace('_', ' ')}",
+                )
             )
     for label, term, explanation in _READER_LEGAL_TERMS:
         if any(
@@ -1789,10 +1834,37 @@ def _validate_plain_language(
             and (not allow_term_explanations or not explanation.search(sentence))
             for sentence in sentences
         ):
-            raise BriefValidationError(
-                f"brief contains unexplained legal concept: {label.replace('_', ' ')}",
-                safe_code=f"unexplained_legal_term_{label}",
+            findings.append(
+                EditorialFinding(
+                    EditorialWarningCode.UNEXPLAINED_LEGAL_TERM,
+                    f"unexplained_legal_term_{label}",
+                    f"brief contains unexplained legal concept: {label.replace('_', ' ')}",
+                )
             )
+    return tuple(findings)
+
+
+def _validate_plain_language(
+    text: str,
+    *,
+    maximum_sentence_words: int,
+    maximum_paragraph_words: int,
+    severe_maximum_sentence_words: int = 60,
+    severe_maximum_paragraph_words: int = 240,
+    allow_term_explanations: bool = True,
+    check_terminology: bool = True,
+) -> tuple[str, ...]:
+    """Backward-compatible entry point returning nonfatal fixed warning codes."""
+    findings = _evaluate_plain_language(
+        text,
+        maximum_sentence_words=maximum_sentence_words,
+        maximum_paragraph_words=maximum_paragraph_words,
+        severe_maximum_sentence_words=severe_maximum_sentence_words,
+        severe_maximum_paragraph_words=severe_maximum_paragraph_words,
+        allow_term_explanations=allow_term_explanations,
+        check_terminology=check_terminology,
+    )
+    return tuple(sorted({finding.code.value for finding in findings}))
 
 
 def _sanitize(value: str, sensitivity: tuple[ScotusSensitivity, ...]) -> str | None:
@@ -2035,7 +2107,9 @@ def _validate_public_text(
     validation_context: str = "text",
     maximum_sentence_words: int,
     maximum_paragraph_words: int,
-) -> None:
+    severe_maximum_sentence_words: int,
+    severe_maximum_paragraph_words: int,
+) -> tuple[EditorialFinding, ...]:
     if any(claim_id not in claim_map for claim_id in claim_ids):
         raise BriefValidationError("text references an unapproved claim")
     support = " ".join(claim_map[value].public_value for value in claim_ids)
@@ -2112,21 +2186,19 @@ def _validate_public_text(
         if docket != candidate.primary_docket and docket not in support:
             raise BriefValidationError("text adds an unsupported docket")
     supporting_claims = tuple(claim_map[value] for value in claim_ids)
-    if candidate.argument_sessions and validation_context in {
-        "dek",
-        "section_paragraph",
-        "argument_paragraph",
-    }:
+    if validation_context in {"dek", "section_paragraph", "argument_paragraph"}:
         _validate_action_sentences(action_text, supporting_claims)
     exact_official_caption = (
         validation_context == "title"
         and not candidate.argument_sessions
         and text == candidate.caption
     )
-    _validate_plain_language(
+    return _evaluate_plain_language(
         text,
         maximum_sentence_words=maximum_sentence_words,
         maximum_paragraph_words=maximum_paragraph_words,
+        severe_maximum_sentence_words=severe_maximum_sentence_words,
+        severe_maximum_paragraph_words=severe_maximum_paragraph_words,
         allow_term_explanations=validation_context
         not in {"title", "section_heading", "argument_heading"},
         check_terminology=not exact_official_caption,
@@ -2383,22 +2455,24 @@ def _section_purpose_types(heading: str) -> frozenset[LegalObservationType] | No
     )
 
 
-def _validate_section_relevance(
+def _section_relevance_finding(
     section: DraftSection, claim_map: dict[UUID, ScotusApprovedClaim]
-) -> None:
+) -> EditorialFinding | None:
     purpose_types = _section_purpose_types(section.heading)
     if purpose_types is None:
-        return
+        return None
     purpose_support = tuple(
         claim_map[claim_id]
         for claim_id in section.claim_ids
         if claim_id in claim_map and claim_map[claim_id].observation_type in purpose_types
     )
     if not purpose_support:
-        raise BriefValidationError(
-            "section prose is irrelevant to its stated reader purpose",
-            safe_code="irrelevant_reader_section",
+        return EditorialFinding(
+            EditorialWarningCode.SECTION_RELEVANCE,
+            "irrelevant_reader_section",
+            "section prose may not focus on its stated reader purpose",
         )
+    return None
 
 
 def _validate_disposition_guide_structure(
@@ -2663,6 +2737,41 @@ def _validate_disposition_guide_structure(
         )
 
 
+def evaluate_brief_text_field(
+    text: str,
+    claim_ids: tuple[UUID, ...],
+    candidate: BriefCandidate,
+    claims: tuple[ScotusApprovedClaim, ...],
+    *,
+    context: Literal[
+        "title",
+        "dek",
+        "section_heading",
+        "section_paragraph",
+        "argument_heading",
+        "argument_paragraph",
+    ],
+    public_quotes: bool,
+    maximum_sentence_words: int = 30,
+    maximum_paragraph_words: int = 120,
+    severe_maximum_sentence_words: int = 60,
+    severe_maximum_paragraph_words: int = 240,
+) -> tuple[EditorialFinding, ...]:
+    """Run hard field gates, then return process-local editorial detail."""
+    return _validate_public_text(
+        text,
+        claim_ids,
+        candidate,
+        {claim.claim_id: claim for claim in claims},
+        public_quotes=public_quotes,
+        validation_context=context,
+        maximum_sentence_words=maximum_sentence_words,
+        maximum_paragraph_words=maximum_paragraph_words,
+        severe_maximum_sentence_words=severe_maximum_sentence_words,
+        severe_maximum_paragraph_words=severe_maximum_paragraph_words,
+    )
+
+
 def validate_brief_text_field(
     text: str,
     claim_ids: tuple[UUID, ...],
@@ -2680,18 +2789,23 @@ def validate_brief_text_field(
     public_quotes: bool,
     maximum_sentence_words: int = 30,
     maximum_paragraph_words: int = 120,
-) -> None:
-    """Validate one planned public field for process-local targeted repair."""
-    _validate_public_text(
+    severe_maximum_sentence_words: int = 60,
+    severe_maximum_paragraph_words: int = 240,
+) -> tuple[str, ...]:
+    """Validate one field and return its fixed, nonfatal editorial warnings."""
+    findings = evaluate_brief_text_field(
         text,
         claim_ids,
         candidate,
-        {claim.claim_id: claim for claim in claims},
+        claims,
+        context=context,
         public_quotes=public_quotes,
-        validation_context=context,
         maximum_sentence_words=maximum_sentence_words,
         maximum_paragraph_words=maximum_paragraph_words,
+        severe_maximum_sentence_words=severe_maximum_sentence_words,
+        severe_maximum_paragraph_words=severe_maximum_paragraph_words,
     )
+    return tuple(sorted({finding.code.value for finding in findings}))
 
 
 def validate_brief_draft(
@@ -2702,8 +2816,11 @@ def validate_brief_draft(
     public_quotes: bool,
     maximum_sentence_words: int = 30,
     maximum_paragraph_words: int = 120,
-) -> None:
+    severe_maximum_sentence_words: int = 60,
+    severe_maximum_paragraph_words: int = 240,
+) -> tuple[str, ...]:
     claim_map = {claim.claim_id: claim for claim in claims}
+    editorial_findings: list[EditorialFinding] = []
     if not draft.sections:
         raise BriefValidationError("brief has no supported sections")
     if len(draft.sections) > 8:
@@ -2738,15 +2855,19 @@ def validate_brief_draft(
         raise BriefValidationError("brief is too long for a citizen-facing case page")
 
     def validate(text: str, claim_ids: tuple[UUID, ...], *, context: str) -> None:
-        _validate_public_text(
-            text,
-            claim_ids,
-            candidate,
-            claim_map,
-            public_quotes=public_quotes,
-            validation_context=context,
-            maximum_sentence_words=maximum_sentence_words,
-            maximum_paragraph_words=maximum_paragraph_words,
+        editorial_findings.extend(
+            _validate_public_text(
+                text,
+                claim_ids,
+                candidate,
+                claim_map,
+                public_quotes=public_quotes,
+                validation_context=context,
+                maximum_sentence_words=maximum_sentence_words,
+                maximum_paragraph_words=maximum_paragraph_words,
+                severe_maximum_sentence_words=severe_maximum_sentence_words,
+                severe_maximum_paragraph_words=severe_maximum_paragraph_words,
+            )
         )
 
     validate(draft.title, draft.title_claim_ids, context="title")
@@ -2798,7 +2919,9 @@ def validate_brief_draft(
         for paragraph in section.paragraphs:
             validate(paragraph, section.claim_ids, context="section_paragraph")
         if candidate.argument_sessions:
-            _validate_section_relevance(section, claim_map)
+            relevance = _section_relevance_finding(section, claim_map)
+            if relevance is not None:
+                editorial_findings.append(relevance)
     if not candidate.argument_sessions:
         _validate_disposition_guide_structure(draft, claims)
     expected_sessions = tuple(session.argument_id for session in candidate.argument_sessions)
@@ -2835,6 +2958,7 @@ def validate_brief_draft(
         validate(analysis.heading, analysis.claim_ids, context="argument_heading")
         for paragraph in analysis.paragraphs:
             validate(paragraph, analysis.claim_ids, context="argument_paragraph")
+    return tuple(sorted({finding.code.value for finding in editorial_findings}))
 
 
 class InMemoryBriefRevisionStore:
@@ -2940,12 +3064,16 @@ class BriefGenerationService:
         public_quotes: bool = False,
         maximum_sentence_words: int = 30,
         maximum_paragraph_words: int = 120,
+        severe_maximum_sentence_words: int = 60,
+        severe_maximum_paragraph_words: int = 240,
     ) -> None:
         self.generator = generator
         self.store = store
         self.public_quotes = public_quotes
         self.maximum_sentence_words = maximum_sentence_words
         self.maximum_paragraph_words = maximum_paragraph_words
+        self.severe_maximum_sentence_words = severe_maximum_sentence_words
+        self.severe_maximum_paragraph_words = severe_maximum_paragraph_words
 
     def generate(
         self,
@@ -2967,6 +3095,8 @@ class BriefGenerationService:
                 public_quotes=self.public_quotes,
                 maximum_sentence_words=self.maximum_sentence_words,
                 maximum_paragraph_words=self.maximum_paragraph_words,
+                severe_maximum_sentence_words=self.severe_maximum_sentence_words,
+                severe_maximum_paragraph_words=self.severe_maximum_paragraph_words,
             )
         except BriefValidationError as error:
             safe_code = (

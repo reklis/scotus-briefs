@@ -1568,6 +1568,55 @@ def test_brief_validation_gets_one_bounded_private_field_correction(
     assert repair_payload["diagnostic"]["rule"] == "internal_process_language"
 
 
+@pytest.mark.parametrize("repair_text", [None, "The Supreme Court reversed the judgment."])
+def test_style_repair_failure_restores_warning_bearing_original(
+    tmp_path: Path, repair_text: str | None
+) -> None:
+    original = "The case concerns statutory authority."
+
+    class StyleRepairModel(MockOpenAI):
+        def create(self, **request: Any) -> object:
+            completion = super().create(**request)
+            name = request["response_format"]["json_schema"]["name"]
+            if name == "compact_reader_guide":
+                payload = json.loads(completion.choices[0].message.content)
+                payload["dek"] = original
+                return SimpleNamespace(
+                    choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(payload)))]
+                )
+            if name == "reader_guide_field_repair":
+                user = json.loads(request["messages"][1]["content"])
+                return SimpleNamespace(
+                    choices=[
+                        SimpleNamespace(
+                            message=SimpleNamespace(
+                                content=json.dumps({"text": repair_text or user["rejected_text"]})
+                            )
+                        )
+                    ]
+                )
+            return completion
+
+    config = live_config().model_copy(
+        update={
+            "generation": live_config().generation.model_copy(
+                update={"maximum_brief_validation_attempts_per_case": 2}
+            )
+        }
+    )
+    result = run(
+        tmp_path,
+        MemoryStateStore(tmp_path / "state"),
+        CourtFixture(),
+        StyleRepairModel(),
+        config=config,
+    )
+
+    assert result.publishable
+    assert result.content.projection is not None
+    assert result.content.projection.cases[0].dek == original
+
+
 def test_term_repair_diagnostic_uses_reviewed_ordinary_alternative() -> None:
     diagnostic = _repair_diagnostic(
         ReaderGuideFieldPath(kind=ReaderGuideFieldKind.DEK),

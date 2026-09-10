@@ -403,6 +403,8 @@ def run_once(settings: ServiceSettings, config: ScotusConfig, now: datetime) -> 
         public_quotes=config.generation.public_quotes,
         maximum_sentence_words=config.generation.maximum_sentence_words,
         maximum_paragraph_words=config.generation.maximum_paragraph_words,
+        severe_maximum_sentence_words=(config.generation.severe_maximum_sentence_words),
+        severe_maximum_paragraph_words=(config.generation.severe_maximum_paragraph_words),
     )
     changed = 0
     api_calls = 0

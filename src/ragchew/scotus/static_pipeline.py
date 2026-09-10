@@ -35,6 +35,7 @@ from ragchew.scotus.static_contracts import (
     CursorState,
     DispositionDiscoveryState,
     EditorialBackfillState,
+    EditorialWarningCode,
     LogicalDocumentState,
     LogicalSourceState,
     ModelAttemptOutcome,
@@ -683,6 +684,7 @@ class CaseProcessingResult:
     failure: FailureCategory | None = None
     changed: bool = True
     documents: tuple[LogicalDocumentState, ...] = ()
+    editorial_warning_codes: tuple[EditorialWarningCode, ...] = ()
 
     @property
     def complete(self) -> bool:
@@ -846,6 +848,7 @@ class StaticBatchOrchestrator:
         }
         working = original
         accepted_documents: dict[str, LogicalDocumentState] = {}
+        accepted_warnings: dict[str, tuple[EditorialWarningCode, ...]] = {}
         failed = False
         checkpoints_safe = True
         authorized_retry_cases = 0
@@ -1046,6 +1049,9 @@ class StaticBatchOrchestrator:
                                 ),
                             )
                             changed.append(work.case_key)
+                        accepted_warnings[work.case_key] = tuple(
+                            sorted(set(result.editorial_warning_codes), key=lambda item: item.value)
+                        )
                         accepted_documents.update(
                             {item.logical_key: item for item in result.documents}
                         )
@@ -1317,6 +1323,7 @@ class StaticBatchOrchestrator:
                             candidate_sha256=sha256_hex(
                                 canonical_json_bytes(working.projection)
                             ),
+                            warnings_by_case=accepted_warnings,
                             previous=original.publication.canary_report,
                         )
                     else:

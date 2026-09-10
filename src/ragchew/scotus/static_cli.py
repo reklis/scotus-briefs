@@ -622,6 +622,27 @@ def _batch(args: argparse.Namespace) -> int:
         candidate_store.write_candidate(args.candidate_state, result.content)
         finalized = result.content
     validate_static_candidate(args.output, urls, state_root=args.candidate_state)
+    report = finalized.publication.canary_report
+    review_only = bool(
+        report is not None
+        and report.candidate_sha256 is None
+        and report.accepted_count == 0
+        and report.failed_count == len(report.case_keys)
+        and report.attempted_count == len(report.case_keys)
+    )
+    if args.review_artifact is not None and report is not None:
+        review_payload = {
+            "schema_version": "1.0",
+            "manifest": {
+                "processor_sha256": report.processor_sha256,
+                "rollout_stage": report.rollout_stage,
+                "case_keys": report.case_keys,
+            },
+            "report": report,
+        }
+        args.review_artifact.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+        args.review_artifact.write_bytes(canonical_json_bytes(review_payload))
+        scan_public_files((args.review_artifact,), labels=(args.review_artifact.name,))
     if finalized.release is None:
         raise RuntimeError("finalized generated state has no release")
     publication_ready = _live_publication_ready(config)
@@ -663,6 +684,7 @@ def _batch(args: argparse.Namespace) -> int:
                 if finalized.publication.editorial_backfill is not None
                 else None
             ),
+            "editorial_review_only": review_only,
         },
     )
     print(f"built validated batch release {export.manifest.release_id}")
@@ -1060,6 +1082,11 @@ def build_parser() -> argparse.ArgumentParser:
         help=(
             "select a reviewed bounded editorial stage; canary_10 always disables publication"
         ),
+    )
+    batch.add_argument(
+        "--review-artifact",
+        type=Path,
+        help="write a privacy-scanned sanitized editorial manifest and aggregate report",
     )
     batch.add_argument("--fixture", type=Path, default=Path("tests/fixtures/static/one-case.json"))
     batch.set_defaults(function=_batch)

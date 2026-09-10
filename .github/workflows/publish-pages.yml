@@ -254,6 +254,7 @@ jobs:
             --mode "$PUBLICATION_MODE" \
             --state-dir generated-content-input --candidate-state-dir candidate-state \
             --output candidate-site --workspace "$RUNNER_TEMP/ragchew-private" \
+            --review-artifact sanitized-editorial-review.json \
             --source-commit "$GITHUB_SHA" --build-epoch "$(git show -s --format=%cI HEAD)" \
             --github-output "$GITHUB_OUTPUT" "${replay_args[@]}" \
             "${scheduled_retry_args[@]}" "${case_args[@]}" "${editorial_args[@]}"
@@ -278,6 +279,7 @@ jobs:
           LIVE_RELEASE: ${{ steps.live_batch.outputs.release_id }}
           LIVE_PARENT: ${{ steps.live_batch.outputs.expected_parent_release_id }}
           LIVE_PARENT_DIGEST: ${{ steps.live_batch.outputs.expected_parent_digest }}
+          LIVE_REVIEW_ONLY: ${{ steps.live_batch.outputs.editorial_review_only }}
           IMPORT_CHANGED: ${{ steps.import_batch.outputs.release_changed }}
           IMPORT_READY: ${{ steps.import_batch.outputs.publication_ready }}
           IMPORT_RELEASE: ${{ steps.import_batch.outputs.release_id }}
@@ -305,6 +307,7 @@ jobs:
           echo "release_id=${LIVE_RELEASE:-${IMPORT_RELEASE:-${EMPTY_RELEASE:-${MIGRATION_RELEASE:-$FIXTURE_RELEASE}}}}" >> "$GITHUB_OUTPUT"
           echo "expected_parent_release_id=${LIVE_PARENT:-${IMPORT_PARENT:-${EMPTY_PARENT:-${MIGRATION_PARENT:-$FIXTURE_PARENT}}}}" >> "$GITHUB_OUTPUT"
           echo "expected_parent_digest=${LIVE_PARENT_DIGEST:-${IMPORT_PARENT_DIGEST:-${EMPTY_PARENT_DIGEST:-${MIGRATION_PARENT_DIGEST:-$FIXTURE_PARENT_DIGEST}}}}" >> "$GITHUB_OUTPUT"
+          echo "editorial_review_only=${LIVE_REVIEW_ONLY:-false}" >> "$GITHUB_OUTPUT"
       - name: Validate opaque receipts before any upload
         id: receipts
         if: always()
@@ -326,8 +329,16 @@ jobs:
           path: ${{ runner.temp }}/ragchew-private/public-cost-receipts.json
           if-no-files-found: error
           retention-days: 1
+      - name: Upload sanitized editorial manifest and aggregate report
+        if: github.event_name == 'workflow_dispatch' && inputs.editorial_rollout_stage != 'disabled' && inputs.deploy != true && steps.batch.outcome == 'success' && steps.receipts.outcome == 'success'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: sanitized-editorial-review
+          path: sanitized-editorial-review.json
+          if-no-files-found: error
+          retention-days: 1
       - name: Upload scanned non-deploy dry-run candidate
-        if: github.event_name == 'workflow_dispatch' && inputs.deploy != true && steps.batch.outcome == 'success' && steps.receipts.outcome == 'success'
+        if: github.event_name == 'workflow_dispatch' && inputs.deploy != true && steps.batch.outcome == 'success' && steps.receipts.outcome == 'success' && steps.batch.outputs.editorial_review_only != 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: scanned-static-candidate
@@ -336,7 +347,7 @@ jobs:
           include-hidden-files: true
           retention-days: 1
       - name: Upload sanitized publication-disabled editorial candidate state
-        if: github.event_name == 'workflow_dispatch' && inputs.editorial_rollout_stage != 'disabled' && inputs.deploy != true && steps.batch.outcome == 'success' && steps.receipts.outcome == 'success'
+        if: github.event_name == 'workflow_dispatch' && inputs.editorial_rollout_stage != 'disabled' && inputs.deploy != true && steps.batch.outcome == 'success' && steps.receipts.outcome == 'success' && steps.batch.outputs.editorial_review_only != 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: sanitized-editorial-candidate-state

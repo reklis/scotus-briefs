@@ -435,6 +435,23 @@ class CanaryFailureCount(StaticContract):
     count: int = Field(ge=1, le=100)
 
 
+class EditorialWarningCode(StrEnum):
+    """Fixed public-safe categories for nonfatal reader-prose findings."""
+
+    UNEXPLAINED_LEGAL_TERM = "unexplained_legal_term"
+    LAWYER_FACING_PHRASE = "lawyer_facing_phrase"
+    PREFERRED_SENTENCE_LENGTH = "preferred_sentence_length"
+    PREFERRED_PARAGRAPH_LENGTH = "preferred_paragraph_length"
+    READABILITY = "readability"
+    REPEATED_FRAGMENT = "repeated_fragment"
+    SECTION_RELEVANCE = "section_relevance"
+
+
+class CanaryWarningCount(StaticContract):
+    code: EditorialWarningCode
+    count: int = Field(ge=1, le=100)
+
+
 class CanaryAggregate(StaticContract):
     """Public-safe counts and opaque identities from a publication-disabled run."""
 
@@ -447,6 +464,9 @@ class CanaryAggregate(StaticContract):
     accepted_count: int = Field(ge=0, le=100)
     failed_count: int = Field(ge=0, le=100)
     failure_code_counts: tuple[CanaryFailureCount, ...] = Field(default=(), max_length=32)
+    # Optional so legacy measured state remains byte-canonical when loaded and
+    # serialized. Counts represent accepted cases bearing each fixed warning.
+    warning_code_counts: tuple[CanaryWarningCount, ...] = Field(default=(), max_length=16)
     runtime_seconds: int = Field(ge=0, le=86_400)
     model_call_count: int = Field(ge=0, le=10_000)
     improved_count: int = Field(default=0, ge=0, le=100)
@@ -509,6 +529,11 @@ class CanaryAggregate(StaticContract):
             raise ValueError("canary failure codes must be unique and sorted")
         if sum(item.count for item in self.failure_code_counts) != self.failed_count:
             raise ValueError("canary failure-code counts must equal failed count")
+        warning_codes = tuple(item.code.value for item in self.warning_code_counts)
+        if warning_codes != tuple(sorted(set(warning_codes))):
+            raise ValueError("canary warning codes must be unique and sorted")
+        if any(item.count > self.accepted_count for item in self.warning_code_counts):
+            raise ValueError("canary warning-code count cannot exceed accepted count")
         required_improvements = (len(self.case_keys) * 4 + 4) // 5
         if self.reviewer_decision is CanaryReviewerDecision.APPROVED and (
             self.attempted_count != len(self.case_keys)
@@ -891,6 +916,12 @@ def _json_value(value: Any) -> Any:
             payload.pop("latest_court_document_date")
             payload.pop("undated_disposition_date_fallback")
         return _json_value(payload)
+    if isinstance(value, CanaryAggregate):
+        payload = value.model_dump(mode="python")
+        if "warning_code_counts" not in value.model_fields_set:
+            # Adding warning aggregates must not rewrite an immutable legacy report.
+            payload.pop("warning_code_counts", None)
+        return _json_value(payload)
     if isinstance(value, PublicationState):
         payload = value.model_dump(mode="python")
         if value.schema_version == "1.0":
@@ -906,6 +937,8 @@ def _json_value(value: Any) -> Any:
             payload.pop("editorial_backfill", None)
         if value.canary_report is None:
             payload.pop("canary_report", None)
+        elif "warning_code_counts" not in value.canary_report.model_fields_set:
+            payload["canary_report"].pop("warning_code_counts", None)
         pending_payloads = payload.get("pending_work", ())
         for pending, pending_payload in zip(
             value.pending_work, pending_payloads, strict=True

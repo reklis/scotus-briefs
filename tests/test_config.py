@@ -50,6 +50,8 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.generation.maximum_brief_validation_attempts_per_case == 5
     assert config.generation.audience == "general_public"
     assert config.generation.maximum_sentence_words == 30
+    assert config.generation.severe_maximum_sentence_words == 60
+    assert config.generation.severe_maximum_paragraph_words == 240
     assert config.publication.case_page_requires_official_transcript is True
     assert config.repository.owner == "reklis"
     assert config.repository.name == "scotus-briefs"

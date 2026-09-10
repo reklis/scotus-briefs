@@ -19,6 +19,7 @@ from ragchew.scotus.static_contracts import (
     CanaryAggregate,
     CanaryReviewerDecision,
     EditorialRolloutStage,
+    EditorialWarningCode,
     PendingReason,
     PendingWork,
 )
@@ -48,9 +49,7 @@ def test_canary_manifest_is_deterministic_newest_first_and_lifecycle_complete() 
 
     assert len(manifest) == 10
     assert {item.kind for item in manifest} == set(CanaryCaseKind)
-    assert [item.case_key for item in manifest] == [
-        f"2025-25-{index:03d}" for index in range(10)
-    ]
+    assert [item.case_key for item in manifest] == [f"2025-25-{index:03d}" for index in range(10)]
 
 
 def test_canary_manifest_adds_missing_available_kind_deterministically() -> None:
@@ -97,9 +96,7 @@ def test_backfill_slice_is_bounded_resumable_and_resets_for_processor() -> None:
         candidates=tuple(reversed(candidates())),
         processor_sha256=PROCESSOR,
         rollout_stage=EditorialRolloutStage.BATCH_25,
-        previous=initial.model_copy(
-            update={"attempted_count": 1, "accepted_count": 1}
-        ),
+        previous=initial.model_copy(update={"attempted_count": 1, "accepted_count": 1}),
     )
     advanced = start_or_resume_backfill(
         candidates=candidates(),
@@ -158,6 +155,55 @@ def test_automatic_report_excludes_runtime_deferred_from_attempts() -> None:
     assert report.accepted_count == report.failed_count == 1
     assert [item.code.value for item in report.failure_code_counts] == ["validation_failed"]
     assert report.reviewer_decision is CanaryReviewerDecision.PENDING
+
+
+def test_warning_bearing_candidate_and_all_hard_failed_report_are_retained() -> None:
+    backfill = start_or_resume_backfill(
+        candidates=candidates(10),
+        processor_sha256=PROCESSOR,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        previous=None,
+    )
+    accepted = aggregate_canary_report(
+        backfill=backfill,
+        pending_by_case={},
+        accepted_case_keys=frozenset({backfill.selected_case_keys[0]}),
+        runtime_seconds=10,
+        model_call_count=1,
+        candidate_sha256="c" * 64,
+        warnings_by_case={
+            backfill.selected_case_keys[0]: (
+                EditorialWarningCode.PREFERRED_SENTENCE_LENGTH,
+                EditorialWarningCode.PREFERRED_SENTENCE_LENGTH,
+            )
+        },
+    )
+    assert [(item.code.value, item.count) for item in accepted.warning_code_counts] == [
+        ("preferred_sentence_length", 1)
+    ]
+    assert accepted.candidate_sha256 == "c" * 64
+
+    pending = {
+        key: PendingWork(
+            case_key=key,
+            reason=PendingReason.VALIDATION_FAILED,
+            attempts=1,
+            first_seen_at=NOW,
+            last_attempted_at=NOW,
+        )
+        for key in backfill.selected_case_keys
+    }
+    failed = aggregate_canary_report(
+        backfill=backfill.model_copy(update={"attempted_count": 10, "failed_count": 10}),
+        pending_by_case=pending,
+        accepted_case_keys=frozenset(),
+        runtime_seconds=20,
+        model_call_count=10,
+        candidate_sha256="d" * 64,
+    )
+    assert failed.candidate_sha256 is None
+    assert failed.reviewer_decision is CanaryReviewerDecision.REJECTED
+    assert failed.case_keys == backfill.selected_case_keys
 
 
 def test_advancement_requires_all_measured_canary_gates() -> None:

@@ -262,11 +262,23 @@ class ScotusGenerationDefaults(BaseModel):
     audience: Literal["general_public"] = "general_public"
     maximum_context_characters: int = Field(gt=0)
     minimum_observation_confidence: float = Field(ge=0, le=1)
+    # Existing maximums are preferred editorial targets. The optional severe
+    # bounds keep older configuration readable while retaining a hard ceiling.
     maximum_sentence_words: int = Field(ge=10, le=40)
     maximum_paragraph_words: int = Field(ge=30, le=200)
+    severe_maximum_sentence_words: int = Field(default=60, ge=10, le=100)
+    severe_maximum_paragraph_words: int = Field(default=240, ge=30, le=500)
     public_quotes: bool = False
     prohibit_vote_predictions: bool = True
     prohibit_personalized_legal_advice: bool = True
+
+    @model_validator(mode="after")
+    def severe_bounds_exceed_preferred_bounds(self) -> Self:
+        if self.severe_maximum_sentence_words < self.maximum_sentence_words:
+            raise ValueError("severe sentence bound cannot be below the preferred bound")
+        if self.severe_maximum_paragraph_words < self.maximum_paragraph_words:
+            raise ValueError("severe paragraph bound cannot be below the preferred bound")
+        return self
 
 
 def _normalized_url_path(value: str) -> str:

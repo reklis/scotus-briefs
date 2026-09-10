@@ -595,10 +595,12 @@ class StaticStateStore:
                     )
         backfill = content.publication.editorial_backfill
         report = content.publication.canary_report
-        if report is not None:
+        if report is not None and report.candidate_sha256 is not None:
             projection_sha256 = sha256_hex(canonical_json_bytes(content.projection))
             if report.candidate_sha256 != projection_sha256:
                 raise StaticStateError("canary report is not bound to this projection")
+        if report is not None and report.candidate_sha256 is None and report.accepted_count:
+            raise StaticStateError("accepted canary report requires a candidate projection")
         if backfill is not None and backfill.selected_case_keys:
             selected = set(backfill.selected_case_keys)
             accepted = {
