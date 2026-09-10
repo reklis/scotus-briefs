@@ -194,7 +194,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v59"
+POLICY_VERSION = "scotus-brief-policy-v60"
 DOCUMENT_TEXT_VERSION = "official-document-text-v4"
 
 
@@ -2600,7 +2600,7 @@ class LiveStaticCaseProcessor:
             )
             raise BriefValidationError(str(error), safe_code=error.safe_code) from None
 
-        repaired_paths: set[ReaderGuideFieldPath] = set()
+        repaired_scopes: set[tuple[ReaderGuideFieldPath, str]] = set()
         attempt = 1
         while True:
             try:
@@ -2624,12 +2624,18 @@ class LiveStaticCaseProcessor:
                     maximum_sentence_words=self.config.generation.maximum_sentence_words,
                     maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
                 )
-                if path is None or path in repaired_paths or attempt >= maximum_brief_attempts:
+                validation_code = _validation_code(error)
+                repair_scope = (path, validation_code) if path is not None else None
+                if (
+                    path is None
+                    or repair_scope in repaired_scopes
+                    or attempt >= maximum_brief_attempts
+                ):
                     LOG.warning(
                         "SCOTUS reader-guide repair unavailable; case=%s; code=%s; "
                         "path_found=%s; attempt=%d",
                         source.case_key,
-                        _validation_code(error),
+                        validation_code,
                         path is not None,
                         attempt,
                     )
@@ -2697,7 +2703,7 @@ class LiveStaticCaseProcessor:
                         validate_guide=validate_guide,
                     )
                 except BriefValidationError as repair_error:
-                    repaired_paths.add(path)
+                    repaired_scopes.add((path, diagnostic.safe_code))
                     if repair_error.draft is None:
                         LOG.warning(
                             "SCOTUS reader-guide repaired field rejected; case=%s; code=%s",
@@ -2720,7 +2726,7 @@ class LiveStaticCaseProcessor:
                         str(repair_error), safe_code=repair_error.safe_code, draft=draft
                     ) from None
                 else:
-                    repaired_paths.add(path)
+                    repaired_scopes.add((path, diagnostic.safe_code))
                 LOG.warning(
                     "SCOTUS brief field correction requested; case=%s; code=%s; attempt=%d",
                     source.case_key,

@@ -974,7 +974,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
         "scotus-observation-v2:scotus-legal-v1:scotus-legal-extraction-v10:"
         "official-document-text-v4"
     )
-    assert processor.policy_version == "scotus-brief-policy-v59"
+    assert processor.policy_version == "scotus-brief-policy-v60"
     assert processor.prompt_version == (
         "scotus-reader-guide-compact-v1;repair=scotus-reader-guide-field-repair-v2;"
         "planner=reader-guide-plan-v3;reader_prose=scotus-reader-prose-v1"

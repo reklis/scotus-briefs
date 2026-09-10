@@ -741,6 +741,52 @@ def test_targeted_repair_sends_one_field_and_preserves_every_valid_byte() -> Non
     )
 
 
+def test_repair_returns_private_rejected_draft_for_a_distinct_bounded_correction() -> None:
+    plan = ReaderGuidePlanner().plan(
+        candidate(session(ARGUMENT_ID, NOW, 1)),
+        argued_claims(),
+        BriefMaturity.OFFICIAL_TRANSCRIPT,
+    )
+    original = CompactReaderGuideWriter(
+        "local-test",
+        lambda request: {
+            "dek": "Original summary.",
+            "section_paragraphs": ["Original paragraph."] * len(plan.sections),
+            "argument_paragraphs": [["Original side.", "Original questions."]],
+        },
+    ).generate(plan)
+    path = ReaderGuideFieldPath(kind=ReaderGuideFieldKind.DEK)
+    diagnostic = ProcessLocalFieldDiagnostic(
+        path=path,
+        safe_code="unexplained_legal_term_jurisdiction",
+        rule="Explain the legal term.",
+        offending_term="jurisdiction",
+        required_transformation="Explain which court has power to hear the case.",
+    )
+
+    with pytest.raises(BriefValidationError) as caught:
+        TargetedReaderGuideRepairer(
+            "local-test",
+            lambda request: {"text": "A changed but still invalid summary."},
+        ).repair(
+            plan,
+            original,
+            diagnostic,
+            validate_field=lambda text, ids: (_ for _ in ()).throw(
+                BriefValidationError(
+                    "the repair changed an action",
+                    safe_code="unsupported_lower_court_action",
+                )
+            ),
+            validate_guide=lambda draft: None,
+        )
+
+    assert caught.value.safe_code == "unsupported_lower_court_action"
+    assert caught.value.draft is not None
+    assert caught.value.draft.dek == "A changed but still invalid summary."
+    assert caught.value.draft.sections == original.sections
+
+
 def test_repair_rejects_tampered_citations_and_strict_schema_overflow() -> None:
     plan = ReaderGuidePlanner().plan(
         candidate(session(ARGUMENT_ID, NOW, 1)),

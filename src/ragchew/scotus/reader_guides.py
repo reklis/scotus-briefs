@@ -1678,8 +1678,12 @@ class TargetedReaderGuideRepairer:
         try:
             validate_field(text, claim_ids)
             validate_guide(repaired)
-        except BriefValidationError:
-            raise
+        except BriefValidationError as error:
+            raise BriefValidationError(
+                str(error),
+                safe_code=error.safe_code,
+                draft=repaired,
+            ) from None
         except ValueError as error:
             raise ReaderGuideWritingError(
                 "repaired guide failed deterministic validation",
