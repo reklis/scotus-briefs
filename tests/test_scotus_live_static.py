@@ -19,6 +19,7 @@ from ragchew.proceedings.contracts import DocumentType
 from ragchew.proceedings.discovery import ConditionalRequest
 from ragchew.proceedings.sources.http import RequestRateLimiter, SourceResponse
 from ragchew.proceedings.sources.supreme_court import SupremeCourtAdapter
+from ragchew.scotus.briefs import BriefValidationError
 from ragchew.scotus.contracts import (
     LegalObservationType,
     LegalStatus,
@@ -39,8 +40,10 @@ from ragchew.scotus.live_static import (
     _legal_analysis_observations,
     _opinion_page_attribution,
     _procedural_path_observation,
+    _repair_diagnostic,
 )
 from ragchew.scotus.public_contracts import PublicCaseBrief, public_case_key
+from ragchew.scotus.reader_guides import ReaderGuideFieldKind, ReaderGuideFieldPath
 from ragchew.scotus.static_contracts import (
     ConditionalValidators,
     ContentIntegrity,
@@ -973,8 +976,8 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     )
     assert processor.policy_version == "scotus-brief-policy-v59"
     assert processor.prompt_version == (
-        "scotus-reader-guide-compact-v1;repair=scotus-reader-guide-field-repair-v1;"
-        "planner=reader-guide-plan-v2;reader_prose=scotus-reader-prose-v1"
+        "scotus-reader-guide-compact-v1;repair=scotus-reader-guide-field-repair-v2;"
+        "planner=reader-guide-plan-v3;reader_prose=scotus-reader-prose-v1"
     )
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",
@@ -1563,6 +1566,21 @@ def test_brief_validation_gets_one_bounded_private_field_correction(
         "fixed_claim_ids",
     }
     assert repair_payload["diagnostic"]["rule"] == "internal_process_language"
+
+
+def test_term_repair_diagnostic_uses_reviewed_ordinary_alternative() -> None:
+    diagnostic = _repair_diagnostic(
+        ReaderGuideFieldPath(kind=ReaderGuideFieldKind.DEK),
+        BriefValidationError(
+            "a legal term lacks an immediate explanation",
+            safe_code="unexplained_legal_term_separation_of_powers",
+        ),
+    )
+
+    assert diagnostic.offending_term == "separation of powers"
+    assert "how government branches divide and limit their power" in (
+        diagnostic.required_transformation
+    )
 
 
 def test_disposition_action_validation_repairs_only_rejected_field(

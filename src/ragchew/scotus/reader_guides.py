@@ -37,8 +37,9 @@ from ragchew.scotus.contracts import (
     ScotusApprovedClaim,
     ScotusCaseStatus,
 )
+from ragchew.scotus.reader_prose import load_reader_prose_policy
 
-READER_GUIDE_PLAN_VERSION = "reader-guide-plan-v2"
+READER_GUIDE_PLAN_VERSION = "reader-guide-plan-v3"
 MAX_PLAN_SECTIONS = 10
 MAX_ARGUMENT_PACKETS = 10
 MAX_PACKET_CLAIMS = 16
@@ -190,6 +191,7 @@ class ReaderGuideArgumentPacket(StrictModel):
     positions: tuple[ReaderGuidePositionPacket, ...] = Field(default=(), max_length=8)
     justice_question_claim_ids: tuple[UUID, ...] = Field(default=(), max_length=8)
     action_slots: tuple[CanonicalActionSlot, ...] = Field(default=(), max_length=MAX_ACTION_SLOTS)
+    plain_language_guidance: tuple[str, ...] = Field(default=(), max_length=16)
 
     @model_validator(mode="after")
     def claims_belong_to_exact_session(self) -> Self:
@@ -211,7 +213,7 @@ class ReaderGuideArgumentPacket(StrictModel):
 class ReaderGuidePlan(StrictModel):
     """Bounded private plan; this object must never enter generated public state."""
 
-    plan_version: Literal["reader-guide-plan-v2"] = "reader-guide-plan-v2"
+    plan_version: Literal["reader-guide-plan-v3"] = "reader-guide-plan-v3"
     case_id: UUID
     caption: str = Field(min_length=1, max_length=500)
     primary_docket: str = Field(min_length=1, max_length=40)
@@ -661,22 +663,20 @@ def _is_reasoning_claim(claim: ScotusApprovedClaim) -> bool:
 
 
 def _contains_term_guidance(claims: Iterable[ScotusApprovedClaim]) -> tuple[str, ...]:
+    """Select reviewed ordinary-language guidance for terms present in a packet."""
+    text = " ".join(claim.public_value for claim in claims)
     guidance: list[str] = []
-    terms = (
-        ("jurisdiction", "Explain which court has power to hear or decide this case."),
-        ("standing", "Explain the concrete harm that gives a side the right to bring this case."),
-        ("injunction", "Explain the case-specific court order that blocks or requires an action."),
-        ("vacat", "Use ordinary words such as cancelled or set aside when accurate."),
-        ("remand", "Use sent the case back to the lower court when accurate."),
-        ("stay", "Explain what is temporarily paused and for how long."),
-        ("habeas", "Explain the request for a court to review a person's detention."),
-        ("waiver", "Explain which right or argument a person gave up and how."),
-        ("pretext", "Explain the claimed false reason and the alleged real reason."),
-    )
-    text = " ".join(claim.public_value for claim in claims).casefold()
-    for term, instruction in terms:
-        if term in text:
-            guidance.append(instruction)
+    for term in load_reader_prose_policy().terms:
+        if not any(re.search(pattern, text, re.IGNORECASE) for pattern in term.patterns):
+            continue
+        ordinary = term.ordinary_alternatives[0]
+        label = term.label.replace("_", " ")
+        guidance.append(
+            f'Prefer ordinary wording such as "{ordinary}"; if "{label}" is necessary, '
+            "explain that meaning in the same sentence."
+        )
+        if len(guidance) == 16:
+            break
     return tuple(guidance)
 
 
@@ -1292,6 +1292,7 @@ class ReaderGuidePlanner:
                 and claim.claim_id in selected_ids
             )[:8],
             action_slots=build_canonical_action_slots(selected),
+            plain_language_guidance=_contains_term_guidance(selected),
         )
 
 
@@ -1370,6 +1371,11 @@ def compact_reader_guide_payload(plan: ReaderGuidePlan) -> dict[str, object]:
                 **(
                     {"actions": [_writer_slot(slot) for slot in argument.action_slots]}
                     if argument.action_slots
+                    else {}
+                ),
+                **(
+                    {"terms": list(argument.plain_language_guidance)}
+                    if argument.plain_language_guidance
                     else {}
                 ),
             }
@@ -1554,7 +1560,7 @@ GuideValidator = Callable[[LegalBriefDraft], None]
 class TargetedReaderGuideRepairer:
     """Repair exactly one field, then validate the field and complete assembled guide."""
 
-    PROMPT_VERSION = "scotus-reader-guide-field-repair-v1"
+    PROMPT_VERSION = "scotus-reader-guide-field-repair-v2"
 
     def __init__(
         self,
@@ -1848,6 +1854,7 @@ def _repair_context(
                 position.model_dump(mode="json") for position in argument_packet.positions
             ],
             "actions": [_writer_slot(slot) for slot in argument_packet.action_slots],
+            "terms": list(argument_packet.plain_language_guidance),
         },
     )
 

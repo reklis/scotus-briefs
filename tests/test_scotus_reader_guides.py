@@ -36,6 +36,7 @@ from ragchew.scotus.reader_guides import (
     ReaderGuideWritingError,
     TargetedReaderGuideRepairer,
     build_canonical_action_slots,
+    compact_reader_guide_payload,
 )
 
 NOW = datetime(2026, 9, 8, tzinfo=UTC)
@@ -482,6 +483,37 @@ def test_action_slots_separate_actors_and_ignore_noun_uses() -> None:
     assert stay.effect is ActionEffect.INTERIM
     assert dismiss.effect is ActionEffect.FINAL
     assert len([item for item in clauses if item.action is CanonicalAction.REVERSE]) == 1
+
+
+def test_planner_supplies_reviewed_term_guidance_to_sections_and_arguments() -> None:
+    claims = tuple(
+        item.model_copy(
+            update={
+                "public_value": (
+                    "The petitioner said separation of powers limits which branch may remove "
+                    "the official."
+                )
+            }
+        )
+        if item.observation_type is LegalObservationType.ADVOCATE_CONTENTION
+        and item.attribution == "Counsel for petitioner"
+        else item
+        for item in argued_claims()
+    )
+
+    plan = ReaderGuidePlanner().plan(
+        candidate(session(ARGUMENT_ID, NOW, 1)),
+        claims,
+        BriefMaturity.OFFICIAL_TRANSCRIPT,
+    )
+
+    guidance = (
+        *(item for section in plan.sections for item in section.plain_language_guidance),
+        *(item for argument in plan.arguments for item in argument.plain_language_guidance),
+    )
+    assert any("how government branches divide and limit their power" in item for item in guidance)
+    payload = compact_reader_guide_payload(plan)
+    assert any("terms" in argument for argument in payload["arguments"])
 
 
 def test_reargument_packets_are_chronological_and_never_mix_sessions() -> None:

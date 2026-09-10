@@ -1774,20 +1774,35 @@ def _repair_diagnostic(
 ) -> ProcessLocalFieldDiagnostic:
     code = _validation_code(error)
     term_prefixes = ("unexplained_legal_term_", "unexplained_legalese_")
-    offending_term = next(
+    offending_label = next(
         (
-            code.removeprefix(prefix).replace("_", " ")
+            code.removeprefix(prefix)
             for prefix in term_prefixes
             if code.startswith(prefix)
         ),
         None,
     )
+    offending_term = offending_label.replace("_", " ") if offending_label else None
+    policy_term = next(
+        (
+            term
+            for term in load_reader_prose_policy().terms
+            if term.label == offending_label
+        ),
+        None,
+    )
     transformation = (
-        "Use ordinary words or explain the named term in the same sentence while preserving "
-        "the supplied actors, action, object, status, and claim scope."
-        if offending_term
-        else "Rewrite this field to satisfy the fixed rule while preserving every supplied fact, "
-        "actor, action, object, status, and claim citation."
+        f'Prefer ordinary wording such as "{policy_term.ordinary_alternatives[0]}" or explain '
+        f'"{offending_term}" with that case-specific meaning in the same sentence. Preserve the '
+        "supplied actors, action, object, status, and claim scope."
+        if policy_term is not None
+        else (
+            "Use ordinary words or explain the named term in the same sentence while preserving "
+            "the supplied actors, action, object, status, and claim scope."
+            if offending_term
+            else "Rewrite this field to satisfy the fixed rule while preserving every supplied "
+            "fact, actor, action, object, status, and claim citation."
+        )
     )
     return ProcessLocalFieldDiagnostic(
         path=path,
