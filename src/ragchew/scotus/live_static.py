@@ -2593,6 +2593,11 @@ class LiveStaticCaseProcessor:
                 maximum_output_tokens=(self.config.model_budget.maximum_output_tokens_per_call),
             ).generate(plan)
         except ReaderGuideWritingError as error:
+            LOG.warning(
+                "SCOTUS reader-guide writer response rejected; case=%s; code=%s",
+                source.case_key,
+                error.safe_code,
+            )
             raise BriefValidationError(str(error), safe_code=error.safe_code) from None
 
         repaired_paths: set[ReaderGuideFieldPath] = set()
@@ -2706,6 +2711,11 @@ class LiveStaticCaseProcessor:
                         ) from None
                     draft = repair_error.draft
                 except ReaderGuideWritingError as repair_error:
+                    LOG.warning(
+                        "SCOTUS reader-guide repair response rejected; case=%s; code=%s",
+                        source.case_key,
+                        repair_error.safe_code,
+                    )
                     raise BriefValidationError(
                         str(repair_error), safe_code=repair_error.safe_code, draft=draft
                     ) from None
