@@ -58,6 +58,7 @@ from ragchew.scotus.static_contracts import (
     PendingReason,
     PendingWork,
     RetryFailureCode,
+    SupportedActivityState,
     canonical_json_bytes,
 )
 from ragchew.scotus.static_pipeline import (
@@ -1138,6 +1139,60 @@ def test_deferred_batch_work_is_explicit_before_advanced_checkpoints(
     assert result.changed_case_keys == (first_key,)
     assert result.pending_case_keys == (deferred_key,)
     assert result.content.publication.sources == (advanced,)
+
+
+def test_older_rediscovery_cannot_regress_pending_activity_date(
+    tmp_path: Path,
+) -> None:
+    case_key = "2025-25-999"
+    older = NOW - timedelta(days=1)
+    pending = PendingWork(
+        case_key=case_key,
+        reason=PendingReason.BUDGET_EXHAUSTED,
+        attempts=0,
+        first_seen_at=older,
+        authoritative_activity_date=NOW,
+    )
+    empty = GeneratedContent.empty()
+    content = replace(
+        empty,
+        publication=empty.publication.model_copy(
+            update={
+                "pending_work": (pending,),
+                "supported_activity": (SupportedActivityState(
+                    case_key=case_key,
+                    authoritative_activity_date=NOW,
+                ),),
+            }
+        ),
+    )
+
+    class State(StaticStateStore):
+        def load(self) -> GeneratedContent:
+            return content
+
+    class Discovery:
+        def discover(self, **_kwargs: object) -> StaticDiscoveryResult:
+            return StaticDiscoveryResult(
+                deferred_case_keys=(case_key,),
+                supported_activity=(SupportedCaseActivity(case_key, older),),
+            )
+
+    class Processor:
+        def process(self, *_args: object, **_kwargs: object) -> CaseProcessingResult:
+            raise AssertionError("deferred work must not be processed")
+
+    result = StaticBatchOrchestrator(
+        state_store=State(tmp_path / "state"),
+        discovery=Discovery(),
+        processor=Processor(),
+        config=ScotusConfig.from_yaml("config/scotus.yaml"),
+        runner_temp=tmp_path,
+    ).run(now=NOW)
+
+    retained = result.content.publication.pending_work[0]
+    assert retained.authoritative_activity_date == NOW
+    StaticStateStore(tmp_path / "validator")._validate_consistency(result.content)
 
 
 def test_case_validation_failure_does_not_block_later_complete_case(

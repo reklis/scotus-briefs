@@ -1377,8 +1377,13 @@ def _pending(
     consumed_retry_cycle: bool = False,
 ) -> PendingWork:
     activity_date = authoritative_activity_date
-    if activity_date is None and previous is not None:
-        activity_date = previous.authoritative_activity_date
+    previous_activity_date = (
+        previous.authoritative_activity_date if previous is not None else None
+    )
+    if previous_activity_date is not None and (
+        activity_date is None or previous_activity_date > activity_date
+    ):
+        activity_date = previous_activity_date
     retry: PendingModelRetry | None = (
         previous.retry if preserve_retry and previous is not None else None
     )
