@@ -1081,6 +1081,10 @@ class LiveStaticDiscovery:
         ranked_queue = sorted(
             queue.items(),
             key=lambda item: (
+                # An explicit publication-disabled measured stage reserves its bounded
+                # slots for the fixed review manifest. Fresh activity remains
+                # fail-closed as deferred pending work rather than starving the canary.
+                int(bool(migration_case_keys) and item[0] not in migration_case_keys),
                 StaticCaseWork(
                     case_key=item[0],
                     priority=item[1][0],
@@ -1094,7 +1098,7 @@ class LiveStaticDiscovery:
                         if item[0] in pending_by_case
                         else None
                     ),
-                ).rank
+                ).rank,
             ),
         )
         case_limit = (

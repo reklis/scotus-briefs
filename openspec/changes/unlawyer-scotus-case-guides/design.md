@@ -89,7 +89,7 @@ Metadata-only reuse remains allowed for a corrected official URL or date that do
 
 ### Use a resumable bounded editorial backfill
 
-A versioned `EditorialBackfillState` in sanitized publication state will identify the target processor fingerprint, rollout stage, newest-first rank boundary, and aggregate attempted/accepted/failed counts. Discovery will select no more than the current stage limit after fresh source changes and eligible retries. Cases beyond that selected slice are not added to `PendingWork`; they remain discoverable through the cursor for the next accepted cycle.
+A versioned `EditorialBackfillState` in sanitized publication state will identify the target processor fingerprint, rollout stage, newest-first rank boundary, and aggregate attempted/accepted/failed counts. Discovery will select no more than the current stage limit independently of fresh source changes and eligible retries. During an explicit publication-disabled measured stage, bounded admission reserves its slots for that fixed review manifest; unrelated fresh activity remains fail-closed as explicit pending work instead of starving the measurement. Cases beyond the editorial selected slice are not added to `PendingWork`; they remain discoverable through the cursor for the next accepted cycle.
 
 Accepted cases acquire the target processor fingerprint. Failed cases retain a normal bounded retry scope but do not prevent the cursor from reaching older cases. A processor change starts a new backfill identity without modifying historical revisions. State and candidate validation will reject inconsistent cursor counts, unknown fields, or a cursor that skips an unaccounted selected case.
 

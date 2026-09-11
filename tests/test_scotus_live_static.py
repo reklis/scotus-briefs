@@ -2134,6 +2134,21 @@ def test_processor_migration_resumes_bounded_cases_before_global_promotion(
     assert old_processor is not None
     assert len(second.content.publication.cases) == 10
 
+    fresh_docket = "25-11"
+    fresh_key = public_case_key("2025", fresh_docket)
+    court.rows.append((fresh_docket, "Fresh Case v. Agency", "4/30/26", "25-11.pdf"))
+    court.documents["/pdfs/transcripts/2025/25-11.pdf"] = (
+        '"transcript-11"',
+        _pdf(1),
+        "application/pdf",
+    )
+    court.documents["/docket/docketfiles/html/public/25-11.html"] = (
+        '"docket-11"',
+        b"<!doctype html><body>Docket 25-11. Synthetic docket.</body>",
+        "text/html",
+    )
+    court.index_etag = '"index-3"'
+
     base = live_config()
     migrating = base.model_copy(
         update={
@@ -2147,7 +2162,13 @@ def test_processor_migration_resumes_bounded_cases_before_global_promotion(
     )
     partial = run(tmp_path, store, court, MockOpenAI(), config=migrating)
     assert partial.content.publication.processor == old_processor
-    assert len(partial.pending_case_keys) == 9
+    assert len(partial.pending_case_keys) == 10
+    assert fresh_key in partial.pending_case_keys
+    assert partial.changed_case_keys != (fresh_key,)
+    assert partial.content.publication.editorial_backfill is not None
+    assert partial.changed_case_keys[0] in set(
+        partial.content.publication.editorial_backfill.selected_case_keys
+    )
     fingerprints = {pointer.processor_sha256 for pointer in partial.content.publication.cases}
     assert len(fingerprints) == 2
 
