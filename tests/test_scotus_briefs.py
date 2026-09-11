@@ -433,7 +433,7 @@ def test_disposition_only_draft_rejects_public_processing_jargon() -> None:
         validate_brief_draft(
             disposition_draft(
                 decision.claims,
-                paragraph="No further details are provided in the approved claims.",
+                paragraph="The claim_id was copied from the required_output_schema.",
             ),
             source,
             decision.claims,
@@ -794,6 +794,8 @@ def test_generation_rejects_process_absence_and_unsupported_future_language(
     (
         "The agency claims that the law limits its power.",
         "The parties dispute the agency's economic model.",
+        "The parties dispute whether an economic model generated useful evidence.",
+        "The dispute concerns approved insurance claims and benefit claims.",
     ),
 )
 def test_generation_allows_ordinary_claim_and_model_language(text: str) -> None:

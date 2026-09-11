@@ -173,25 +173,24 @@ forbidden_phrases:
   - {label: petitioner, pattern: '\bpetitioners?\b', ordinary_alternative: side that brought the case}
   - {label: respondent, pattern: '\brespondents?\b', ordinary_alternative: opposing side}
 process_patterns:
-  - '\bapproved (?:record|claims?|evidence)\b'
   - '\bclaims? (?:ledger|packet|identifier|id)\b'
   - '\bclaim_ids?\b'
   - '\b(?:language model|model (?:output|response)|system prompt|required(?:_output| output) schema)\b'
-  - '\b(?:extraction|extractor|model|prompt|schema)\b[^.!?]{0,80}\b(?:claims?|evidence|packet|field|output|response|instructions?|generated|extracted)\b'
-  - '\bmodel\b[^.!?]{0,40}\b(?:wrote|generated|returned|produced)\b'
+  - '\bmodel (?:extracted|generated) (?:these |the )?(?:claims?|fields?|output)\b'
   - '\b(?:the|this|system|writer) prompt\b'
   - '\b(?:json|output|response|validation) schema\b'
-  - '\b(?:text|claim|evidence|document|data) extraction\b'
+  - '\b(?:text|claim|document|data) extraction (?:pipeline|output|field)\b'
   - '\bmatching (?:array|field)\b'
   - '\brequired_output_schema\b'
-  - '\b(?:processing|pipeline) (?:details?|record|output|instructions?)\b'
+  - '\b(?:processing|generation|extraction) pipeline\b'
+  - '\bpipeline (?:details?|record|output|instructions?)\b'
 action_equivalents:
   - {canonical: hold, pattern: '\bhold\b', ordinary: false}
   - {canonical: hold, pattern: '\bheld\b', ordinary: false}
   - {canonical: order, pattern: '\border(?:ed)?\b', ordinary: false}
   - {canonical: grant, pattern: '\bgrant(?:ed)?\b', ordinary: false}
   - {canonical: grant, pattern: '\ballow(?:ed)?\b', ordinary: true}
-  - {canonical: approve, pattern: '\bapprov(?:e|ed)\b', ordinary: true}
+  - {canonical: approve, pattern: '\bapprov(?:e|ed)\b(?!\s+(?:insurance|benefit)(?:\s+and\s+(?:insurance|benefit))?\s+claims?\b)', ordinary: true}
   - {canonical: deny, pattern: '\bden(?:y|ied)\b', ordinary: false}
   - {canonical: deny, pattern: '\breject(?:ed)?\b', ordinary: true}
   - {canonical: affirm, pattern: '\baffirm(?:ed)?\b', ordinary: false}

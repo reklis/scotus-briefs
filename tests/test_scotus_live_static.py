@@ -1522,7 +1522,7 @@ def test_brief_validation_gets_one_bounded_private_field_correction(
             if name != "compact_reader_guide":
                 return completion
             payload = json.loads(completion.choices[0].message.content)
-            payload["dek"] = "The approved record says the Court heard argument."
+            payload["dek"] = "The language model output says the Court heard argument."
             return SimpleNamespace(
                 choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(payload)))]
             )
@@ -1568,9 +1568,16 @@ def test_brief_validation_gets_one_bounded_private_field_correction(
     assert repair_payload["diagnostic"]["rule"] == "internal_process_language"
 
 
-@pytest.mark.parametrize("repair_text", [None, "The Supreme Court reversed the judgment."])
-def test_style_repair_failure_restores_warning_bearing_original(
-    tmp_path: Path, repair_text: str | None
+@pytest.mark.parametrize(
+    "repair_text",
+    [
+        "The Supreme Court reversed the judgment.",
+        "The case does not concern statutory authority.",
+        "The case concerns statutory authority and a tax exemption.",
+    ],
+)
+def test_style_warning_retains_original_without_requesting_unprovable_repair(
+    tmp_path: Path, repair_text: str
 ) -> None:
     original = "The case concerns statutory authority."
 
@@ -1585,12 +1592,11 @@ def test_style_repair_failure_restores_warning_bearing_original(
                     choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(payload)))]
                 )
             if name == "reader_guide_field_repair":
-                user = json.loads(request["messages"][1]["content"])
                 return SimpleNamespace(
                     choices=[
                         SimpleNamespace(
                             message=SimpleNamespace(
-                                content=json.dumps({"text": repair_text or user["rejected_text"]})
+                                content=json.dumps({"text": repair_text})
                             )
                         )
                     ]
@@ -1604,17 +1610,22 @@ def test_style_repair_failure_restores_warning_bearing_original(
             )
         }
     )
+    model = StyleRepairModel()
     result = run(
         tmp_path,
         MemoryStateStore(tmp_path / "state"),
         CourtFixture(),
-        StyleRepairModel(),
+        model,
         config=config,
     )
 
     assert result.publishable
     assert result.content.projection is not None
     assert result.content.projection.cases[0].dek == original
+    assert all(
+        request["response_format"]["json_schema"]["name"] != "reader_guide_field_repair"
+        for request in model.requests
+    )
 
 
 def test_term_repair_diagnostic_uses_reviewed_ordinary_alternative() -> None:

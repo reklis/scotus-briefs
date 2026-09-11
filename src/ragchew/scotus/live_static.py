@@ -64,11 +64,9 @@ from ragchew.scotus.briefs import (
     BriefPolicyError,
     BriefValidationError,
     CaseArgumentSession,
-    EditorialFinding,
     InMemoryBriefRevisionStore,
     LegalBriefDraft,
     evaluate_brief_candidate,
-    evaluate_brief_text_field,
     validate_brief_draft,
     validate_brief_text_field,
 )
@@ -170,7 +168,6 @@ from ragchew.scotus.static_contracts import (
 )
 from ragchew.scotus.static_pipeline import (
     ArgumentSessionWork,
-    BudgetExceeded,
     CaseProcessingResult,
     ModelOutputFailure,
     PublicationGateDenied,
@@ -1781,38 +1778,6 @@ def _locate_reader_repair_path(
     return None
 
 
-def _locate_editorial_repair(
-    plan: ReaderGuidePlan,
-    draft: LegalBriefDraft,
-    candidate: BriefCandidate,
-    claims: tuple[ScotusApprovedClaim, ...],
-    *,
-    public_quotes: bool,
-    maximum_sentence_words: int,
-    maximum_paragraph_words: int,
-    severe_maximum_sentence_words: int,
-    severe_maximum_paragraph_words: int,
-) -> tuple[ReaderGuideFieldPath, EditorialFinding] | None:
-    """Find one optional style repair without turning its warning into a hard error."""
-    for path in _planned_field_paths(plan, draft):
-        text, claim_ids, context = _field_value_and_claims(plan, draft, path)
-        findings = evaluate_brief_text_field(
-            text,
-            claim_ids,
-            candidate,
-            claims,
-            context=cast(Any, context),
-            public_quotes=public_quotes,
-            maximum_sentence_words=maximum_sentence_words,
-            maximum_paragraph_words=maximum_paragraph_words,
-            severe_maximum_sentence_words=severe_maximum_sentence_words,
-            severe_maximum_paragraph_words=severe_maximum_paragraph_words,
-        )
-        if findings:
-            return path, findings[0]
-    return None
-
-
 def _repair_diagnostic(
     path: ReaderGuideFieldPath, error: BriefValidationError
 ) -> ProcessLocalFieldDiagnostic:
@@ -2794,8 +2759,9 @@ class LiveStaticCaseProcessor:
                     attempt,
                 )
 
-        # Editorial repair is best-effort. A hard-valid original remains the fallback
-        # for an unchanged, invalid, exhausted, or meaning-changing style response.
+        # Style-only findings cannot prove semantic equivalence. Keep the original
+        # hard-valid draft and its warnings rather than risking changes to supported
+        # facts or polarity. Hard-error repairs above remain bounded and unchanged.
         editorial_warning_codes = validate_brief_draft(
             draft,
             candidate,
@@ -2806,120 +2772,6 @@ class LiveStaticCaseProcessor:
             severe_maximum_sentence_words=(self.config.generation.severe_maximum_sentence_words),
             severe_maximum_paragraph_words=(self.config.generation.severe_maximum_paragraph_words),
         )
-        while editorial_warning_codes and attempt < maximum_brief_attempts:
-            located = _locate_editorial_repair(
-                plan,
-                draft,
-                candidate,
-                decision.claims,
-                public_quotes=self.config.generation.public_quotes,
-                maximum_sentence_words=self.config.generation.maximum_sentence_words,
-                maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-                severe_maximum_sentence_words=(
-                    self.config.generation.severe_maximum_sentence_words
-                ),
-                severe_maximum_paragraph_words=(
-                    self.config.generation.severe_maximum_paragraph_words
-                ),
-            )
-            if located is None:
-                break
-            path, finding = located
-            diagnostic = _repair_diagnostic(
-                path,
-                BriefValidationError(finding.message, safe_code=finding.diagnostic_code),
-            )
-            attempt += 1
-            repairer = TargetedReaderGuideRepairer(
-                self.config.generation.model,
-                budgeted_request(
-                    attempt=attempt,
-                    prompt=TargetedReaderGuideRepairer.PROMPT_VERSION,
-                    validation_code=diagnostic.safe_code,
-                ),
-                maximum_output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
-            )
-            original_draft = draft
-            _, _, repair_context = _field_value_and_claims(plan, draft, path)
-
-            def validate_style_field(
-                text: str,
-                claim_ids: tuple[UUID, ...],
-                *,
-                context: str = repair_context,
-            ) -> None:
-                validate_brief_text_field(
-                    text,
-                    claim_ids,
-                    candidate,
-                    decision.claims,
-                    context=cast(Any, context),
-                    public_quotes=self.config.generation.public_quotes,
-                    maximum_sentence_words=self.config.generation.maximum_sentence_words,
-                    maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-                    severe_maximum_sentence_words=(
-                        self.config.generation.severe_maximum_sentence_words
-                    ),
-                    severe_maximum_paragraph_words=(
-                        self.config.generation.severe_maximum_paragraph_words
-                    ),
-                )
-
-            def validate_style_guide(repaired: LegalBriefDraft) -> None:
-                validate_brief_draft(
-                    repaired,
-                    candidate,
-                    decision.claims,
-                    public_quotes=self.config.generation.public_quotes,
-                    maximum_sentence_words=self.config.generation.maximum_sentence_words,
-                    maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-                    severe_maximum_sentence_words=(
-                        self.config.generation.severe_maximum_sentence_words
-                    ),
-                    severe_maximum_paragraph_words=(
-                        self.config.generation.severe_maximum_paragraph_words
-                    ),
-                )
-
-            try:
-                repaired = repairer.repair(
-                    plan,
-                    draft,
-                    diagnostic,
-                    validate_field=validate_style_field,
-                    validate_guide=validate_style_guide,
-                )
-                remaining = validate_brief_draft(
-                    repaired,
-                    candidate,
-                    decision.claims,
-                    public_quotes=self.config.generation.public_quotes,
-                    maximum_sentence_words=self.config.generation.maximum_sentence_words,
-                    maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-                    severe_maximum_sentence_words=(
-                        self.config.generation.severe_maximum_sentence_words
-                    ),
-                    severe_maximum_paragraph_words=(
-                        self.config.generation.severe_maximum_paragraph_words
-                    ),
-                )
-                if finding.code.value in remaining:
-                    break
-                draft = repaired
-                editorial_warning_codes = remaining
-            except (
-                BriefValidationError,
-                ReaderGuideWritingError,
-                BudgetExceeded,
-                TimeoutError,
-                ConnectionError,
-                APIConnectionError,
-                APITimeoutError,
-                InternalServerError,
-                RateLimitError,
-            ):
-                draft = original_draft
-                break
 
         revision = BriefGenerationService(
             _PreparedDraftGenerator(self.config.generation.model, draft),

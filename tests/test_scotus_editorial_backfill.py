@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 
 import pytest
@@ -15,6 +16,7 @@ from ragchew.scotus.editorial_backfill import (
     require_stage_advancement,
     start_or_resume_backfill,
 )
+from ragchew.scotus.static_cli import _require_promotable_measurement
 from ragchew.scotus.static_contracts import (
     CanaryAggregate,
     CanaryReviewerDecision,
@@ -22,7 +24,9 @@ from ragchew.scotus.static_contracts import (
     EditorialWarningCode,
     PendingReason,
     PendingWork,
+    PublicationState,
 )
+from ragchew.scotus.static_state import CompareAndSwapConflict, GeneratedContent
 
 NOW = datetime(2026, 9, 1, tzinfo=UTC)
 PROCESSOR = "a" * 64
@@ -157,6 +161,43 @@ def test_automatic_report_excludes_runtime_deferred_from_attempts() -> None:
     assert report.reviewer_decision is CanaryReviewerDecision.PENDING
 
 
+def test_resumed_report_accumulates_runtime_calls_and_warnings_as_progress_changes() -> None:
+    backfill = start_or_resume_backfill(
+        candidates=candidates(10),
+        processor_sha256=PROCESSOR,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        previous=None,
+    )
+    first_key, second_key = backfill.selected_case_keys[:2]
+    first = aggregate_canary_report(
+        backfill=backfill,
+        pending_by_case={},
+        accepted_case_keys=frozenset({first_key}),
+        runtime_seconds=10,
+        model_call_count=2,
+        candidate_sha256="c" * 64,
+        warnings_by_case={first_key: (EditorialWarningCode.READABILITY,)},
+    )
+
+    resumed = aggregate_canary_report(
+        backfill=backfill,
+        pending_by_case={},
+        accepted_case_keys=frozenset({first_key, second_key}),
+        runtime_seconds=15,
+        model_call_count=3,
+        candidate_sha256="d" * 64,
+        warnings_by_case={second_key: (EditorialWarningCode.READABILITY,)},
+        previous=first,
+    )
+
+    assert resumed.attempted_count == 2
+    assert resumed.runtime_seconds == 25
+    assert resumed.model_call_count == 5
+    assert [(item.code, item.count) for item in resumed.warning_code_counts] == [
+        (EditorialWarningCode.READABILITY, 2)
+    ]
+
+
 def test_warning_bearing_candidate_and_all_hard_failed_report_are_retained() -> None:
     backfill = start_or_resume_backfill(
         candidates=candidates(10),
@@ -204,6 +245,70 @@ def test_warning_bearing_candidate_and_all_hard_failed_report_are_retained() -> 
     assert failed.candidate_sha256 is None
     assert failed.reviewer_decision is CanaryReviewerDecision.REJECTED
     assert failed.case_keys == backfill.selected_case_keys
+
+
+def test_cli_promotion_rejects_failed_or_rejected_measurement_before_mode_branch() -> None:
+    backfill = start_or_resume_backfill(
+        candidates=candidates(10),
+        processor_sha256=PROCESSOR,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        previous=None,
+    )
+    pending = {
+        key: PendingWork(
+            case_key=key,
+            reason=PendingReason.VALIDATION_FAILED,
+            attempts=1,
+            first_seen_at=NOW,
+            last_attempted_at=NOW,
+        )
+        for key in backfill.selected_case_keys
+    }
+    report = aggregate_canary_report(
+        backfill=backfill,
+        pending_by_case=pending,
+        accepted_case_keys=frozenset(),
+        runtime_seconds=20,
+        model_call_count=10,
+        candidate_sha256="d" * 64,
+    )
+    failed_backfill = backfill.model_copy(
+        update={"attempted_count": 10, "failed_count": 10}
+    )
+    candidate = replace(
+        GeneratedContent.empty(),
+        publication=PublicationState(
+            updated_at=NOW,
+            editorial_backfill=failed_backfill,
+            canary_report=report,
+        ),
+    )
+
+    with pytest.raises(CompareAndSwapConflict, match="cannot be promoted"):
+        _require_promotable_measurement(candidate)
+
+    accepted_key = backfill.selected_case_keys[0]
+    rejected = aggregate_canary_report(
+        backfill=backfill,
+        pending_by_case={},
+        accepted_case_keys=frozenset({accepted_key}),
+        runtime_seconds=20,
+        model_call_count=10,
+        candidate_sha256="d" * 64,
+    ).model_copy(update={"reviewer_decision": CanaryReviewerDecision.REJECTED})
+    rejected_candidate = replace(
+        GeneratedContent.empty(),
+        publication=PublicationState(
+            updated_at=NOW,
+            editorial_backfill=backfill.model_copy(
+                update={"attempted_count": 1, "accepted_count": 1}
+            ),
+            canary_report=rejected,
+        ),
+    )
+
+    with pytest.raises(CompareAndSwapConflict, match="cannot be promoted"):
+        _require_promotable_measurement(rejected_candidate)
 
 
 def test_advancement_requires_all_measured_canary_gates() -> None:

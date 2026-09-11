@@ -30,6 +30,7 @@ from ragchew.scotus.activity_migration import (
 from ragchew.scotus.discovery import DiscoveryMode
 from ragchew.scotus.public_contracts import ScotusPublicProjection
 from ragchew.scotus.static_contracts import (
+    CanaryReviewerDecision,
     CostReceiptBundle,
     EditorialRolloutStage,
     ReleaseManifest,
@@ -784,11 +785,26 @@ def _persist_cost_receipts(args: argparse.Namespace) -> int:
     return 0
 
 
+def _require_promotable_measurement(candidate: GeneratedContent) -> None:
+    """Reject terminal failed measurements in every promotion mode."""
+    report = candidate.publication.canary_report
+    if report is None:
+        return
+    all_failed = (
+        report.attempted_count == len(report.case_keys)
+        and report.failed_count == len(report.case_keys)
+        and report.accepted_count == 0
+    )
+    if all_failed or report.reviewer_decision is CanaryReviewerDecision.REJECTED:
+        raise CompareAndSwapConflict("rejected canary measurement cannot be promoted")
+
+
 def _promote(args: argparse.Namespace) -> int:
     expected_commit = _require_git_parent(args.state, args.expected_parent_commit)
     store = StaticStateStore(args.state)
     active = store.load()
     candidate = StaticStateStore(args.candidate_state).load()
+    _require_promotable_measurement(candidate)
     if args.checkpoint_only:
         if (
             candidate.release != active.release

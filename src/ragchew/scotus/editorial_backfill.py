@@ -310,11 +310,11 @@ def aggregate_canary_report(
         ),
         runtime_seconds=min(
             86_400,
-            runtime_seconds + (previous.runtime_seconds if preserve_review and previous else 0),
+            runtime_seconds + (previous.runtime_seconds if same_measurement and previous else 0),
         ),
         model_call_count=min(
             10_000,
-            model_call_count + (previous.model_call_count if preserve_review and previous else 0),
+            model_call_count + (previous.model_call_count if same_measurement and previous else 0),
         ),
         improved_count=previous.improved_count if preserve_review and previous else 0,
         factual_error_count=previous.factual_error_count if preserve_review and previous else 0,

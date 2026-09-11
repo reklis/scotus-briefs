@@ -83,6 +83,23 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.launch.maximum_status_upgrades == 0
 
 
+@pytest.mark.parametrize(
+    ("severe_field", "preferred_field"),
+    (
+        ("severe_maximum_sentence_words", "maximum_sentence_words"),
+        ("severe_maximum_paragraph_words", "maximum_paragraph_words"),
+    ),
+)
+def test_scotus_severe_prose_bounds_must_strictly_exceed_preferred_bounds(
+    severe_field: str, preferred_field: str
+) -> None:
+    values = ScotusConfig.from_yaml(Path("config/scotus.yaml")).model_dump()
+    values["generation"][severe_field] = values["generation"][preferred_field]
+
+    with pytest.raises(ValidationError, match="must exceed the preferred bound"):
+        ScotusConfig.model_validate(values)
+
+
 def test_scotus_config_rejects_audio_or_stt() -> None:
     config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
     values = config.model_dump()

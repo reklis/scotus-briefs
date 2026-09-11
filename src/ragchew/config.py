@@ -274,10 +274,10 @@ class ScotusGenerationDefaults(BaseModel):
 
     @model_validator(mode="after")
     def severe_bounds_exceed_preferred_bounds(self) -> Self:
-        if self.severe_maximum_sentence_words < self.maximum_sentence_words:
-            raise ValueError("severe sentence bound cannot be below the preferred bound")
-        if self.severe_maximum_paragraph_words < self.maximum_paragraph_words:
-            raise ValueError("severe paragraph bound cannot be below the preferred bound")
+        if self.severe_maximum_sentence_words <= self.maximum_sentence_words:
+            raise ValueError("severe sentence bound must exceed the preferred bound")
+        if self.severe_maximum_paragraph_words <= self.maximum_paragraph_words:
+            raise ValueError("severe paragraph bound must exceed the preferred bound")
         return self
 
 
