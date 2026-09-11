@@ -1055,7 +1055,7 @@ def test_reader_term_gloss_must_be_in_the_same_sentence() -> None:
 
 def test_reader_prose_resource_is_versioned_complete_and_reviewed() -> None:
     policy = load_reader_prose_policy()
-    assert policy.version == "scotus-reader-prose-v1"
+    assert policy.version == "scotus-reader-prose-v2"
     labels = {term.label for term in policy.terms}
     assert {
         "waiver",

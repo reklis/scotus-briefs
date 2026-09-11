@@ -165,5 +165,5 @@ class ReaderProsePolicy(BaseModel):
 @lru_cache(maxsize=1)
 def load_reader_prose_policy() -> ReaderProsePolicy:
     """Load and validate the policy shipped with this package exactly once."""
-    resource = files("ragchew.scotus").joinpath("resources/reader-prose-v1.yaml")
+    resource = files("ragchew.scotus").joinpath("resources/reader-prose-v2.yaml")
     return ReaderProsePolicy.model_validate(yaml.safe_load(resource.read_text(encoding="utf-8")))

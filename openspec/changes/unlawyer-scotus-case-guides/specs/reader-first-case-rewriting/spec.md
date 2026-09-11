@@ -31,38 +31,50 @@ The writer SHALL receive compact approved section packets and SHALL translate th
 - **THEN** the writer does not satisfy grounding merely by copying that wording and instead preserves the supported people, event, rule, action, and result in ordinary language
 
 ### Requirement: Targeted private repair
-When a draft field fails validation, the system SHALL preserve valid fields and MAY request a bounded repair of only the rejected field using its section packet, rejected text, and a concrete process-local diagnostic. Every repaired field MUST pass the complete grounding, legal-role, status, privacy, reader-language, and length policy before assembly.
+When a draft field fails a hard correctness rule, the system SHALL preserve valid fields and MAY request a bounded repair of only the rejected field using its section packet, rejected text, and a concrete process-local diagnostic. The system MAY also request a bounded repair for an editorial warning. Every repaired field MUST pass grounding, legal-role, status, action, chronology, prediction, privacy, and severe-bound validation before assembly, and the system SHALL reevaluate editorial warnings after repair.
 
 #### Scenario: One paragraph contains unexplained jurisdiction language
-- **WHEN** one paragraph fails because it uses `jurisdiction` without explaining a court's power to hear the case
-- **THEN** the repair request contains only that field and its support packet and leaves all previously valid fields byte-for-byte unchanged
+- **WHEN** one paragraph uses `jurisdiction` without explaining a court's power to hear the case but otherwise passes every hard correctness rule
+- **THEN** the system records an editorial warning and may send a repair request containing only that field and its support packet while leaving all other fields byte-for-byte unchanged
 
-#### Scenario: Repair changes the Court action
-- **WHEN** a stylistic repair changes the actor, canonical action, operative object, negation, or procedural effect
-- **THEN** action validation rejects the repair even if its language is easier to read
+#### Scenario: Style repair changes the Court action
+- **WHEN** a repair requested only for editorial quality changes the actor, canonical action, operative object, negation, or procedural effect
+- **THEN** action validation rejects the repair and restores the original hard-valid field with its editorial warning
 
-#### Scenario: Repair budget is exhausted
-- **WHEN** the writer cannot repair all invalid fields within configured field, case, call, token, or runtime limits
-- **THEN** no partial draft is published and the last-known-good public case remains active
+#### Scenario: Correctness repair budget is exhausted
+- **WHEN** the writer cannot repair every hard correctness failure within configured field, case, call, token, or runtime limits
+- **THEN** no partial draft is accepted and the last-known-good public case remains active
+
+#### Scenario: Editorial repair budget is exhausted
+- **WHEN** an original field passes every hard correctness rule but its editorial repair is unchanged, invalid, or exhausts the repair budget
+- **THEN** the original field remains in the publication-disabled candidate with its fixed editorial-warning code
 
 ### Requirement: Versioned reader-prose gate
-Every newly generated or changed public title, summary, section paragraph, and argument paragraph MUST pass a versioned deterministic reader-prose policy. The policy SHALL reject unexplained legal terminology, lawyer-facing phrases, processing commentary, unsupported no-decision statements, unsupported future predictions, excessive length, repeated fragments, and prose irrelevant to its section purpose.
+Every newly generated or changed public title, summary, section paragraph, and argument paragraph MUST be evaluated by a versioned deterministic reader-prose policy that distinguishes hard correctness failures from editorial warnings. The policy SHALL reject unsupported facts, actions, status, chronology, no-decision statements, future predictions, private or actual processing disclosures, empty prose, and configured severe length violations. It SHALL record fixed warnings for unexplained legal terminology, lawyer-facing phrases, preferred sentence-length excess, deterministic readability, repeated fragments, and nonmaterial section-focus defects that remain inside hard bounds. An editorial warning alone MUST NOT discard an otherwise hard-valid publication-disabled candidate.
 
 #### Scenario: Unexplained courtroom shorthand
-- **WHEN** candidate prose uses terms such as waiver, pretext, rebuttal, finality, standing, jurisdiction, habeas, vacatur, or sovereign immunity without a same-sentence case-specific explanation
-- **THEN** publication is rejected with a fixed safe code identifying the reader-language rule
+- **WHEN** hard-valid candidate prose uses terms such as waiver, pretext, rebuttal, finality, standing, jurisdiction, habeas, vacatur, or sovereign immunity without a same-sentence case-specific explanation
+- **THEN** the system records a fixed editorial-warning code and retains the prose for side-by-side review
 
 #### Scenario: Explained central concept
 - **WHEN** a central legal term is followed in the same sentence by an accurate ordinary-language explanation grounded in the cited claims
-- **THEN** the term does not fail the reader-language rule by itself
+- **THEN** the term produces no reader-language warning by itself
+
+#### Scenario: Sentence exceeds the preferred target
+- **WHEN** an accurate sentence exceeds the configured preferred word target but remains within the configured severe bound
+- **THEN** the system records an editorial warning rather than rejecting the candidate
 
 #### Scenario: Unsupported future impact
 - **WHEN** prose says that the Court will decide, clarify, establish, guide, affect, or change something without an approved claim establishing that future event
 - **THEN** publication is rejected as unsupported prediction
 
-#### Scenario: Internal process prose
-- **WHEN** prose refers to the approved record, claims, extraction, model, prompt, schema, or unavailable processing details
+#### Scenario: Actual internal process prose
+- **WHEN** prose refers to an approved evidence packet, extraction, model, prompt, schema, claim identifier, or unavailable processing detail
 - **THEN** publication is rejected even when the statement is literally true about the pipeline
+
+#### Scenario: Ordinary use of claim
+- **WHEN** prose says that a party claims or disputes a case fact without referring to pipeline records, identifiers, packets, or processing
+- **THEN** the word `claim` does not trigger the internal-process rule
 
 #### Scenario: Official caption contains a legal term
 - **WHEN** a disposition-only title is deterministically fixed to the exact official caption
@@ -118,27 +130,35 @@ The system SHALL maintain a versioned sanitized editorial-backfill cursor and SH
 - **THEN** the system starts a distinct backfill identity and does not treat briefs from the prior identity as migrated
 
 ### Requirement: Measured canary promotion
-Editorial backfill SHALL begin with a publication-disabled fixed ten-case canary and MUST NOT advance to larger stages without a reviewed result. Advancement requires at least eight accepted improved rewrites, zero accepted factual/legal-status/actor/chronology/prediction errors, no degraded legacy page, and successful privacy and release validation.
+Editorial backfill SHALL begin with a publication-disabled fixed ten-case canary and MUST NOT advance to larger stages without a reviewed result. A rewrite is eligible for side-by-side review when it passes every hard correctness rule, even if it has fixed editorial warnings. Advancement requires at least eight accepted improved rewrites, zero accepted factual/legal-status/actor/chronology/prediction errors, no degraded legacy page, and successful privacy and release validation. Editorial-warning counts SHALL be included in the sanitized review aggregate and SHALL inform the improved/degraded decision without independently overriding that decision.
 
 #### Scenario: Canary meets threshold
-- **WHEN** at least eight of ten fixed cases produce accepted improvements, all accepted cases are accurate, and manual review approves the exact candidate
+- **WHEN** at least eight of ten fixed cases produce hard-valid improvements, all accepted cases are accurate, any editorial warnings have been manually reviewed, and manual review approves the exact candidate
 - **THEN** the exact retained candidate is eligible for guarded promotion and the next backfill stage may increase to 25
 
 #### Scenario: Canary misses threshold
 - **WHEN** fewer than eight cases improve or any accepted case contains a factual, status, actor, chronology, or prediction error
 - **THEN** the live release remains unchanged and rollout cannot advance
 
+#### Scenario: Every attempt fails hard validation
+- **WHEN** every case in a publication-disabled measured stage fails a hard source, planning, correctness, privacy, or severe-bound rule
+- **THEN** the system retains a privacy-scanned sanitized manifest and aggregate failure report with no candidate prose, marks the review rejected, and leaves the live release unchanged
+
 #### Scenario: Twenty-five-case stage succeeds
 - **WHEN** a reviewed 25-case stage satisfies the same automated and manual quality requirements
 - **THEN** the next stage may select up to 100 cases without overriding any runtime or model budget
 
 ### Requirement: Private writing boundary
-Official source text, parsed text, section packets, detailed diagnostics, rejected prose, prompts, and raw model responses MUST remain in the permission-restricted run workspace and memory. Public state, logs, receipts, handoff metadata, and artifacts SHALL contain only existing allowlisted public content, fixed safe codes, sanitized case identifiers, aggregate canary results, and opaque fingerprints.
+Official source text, parsed text, section packets, detailed diagnostics, rejected prose, prompts, and raw model responses MUST remain in the permission-restricted run workspace and memory. Public state, logs, receipts, handoff metadata, and artifacts SHALL contain only existing allowlisted public content, fixed safe failure and editorial-warning codes, sanitized case identifiers, aggregate canary results, and opaque fingerprints.
 
 #### Scenario: Paragraph repair occurs
 - **WHEN** the system sends rejected prose and a detailed correction instruction to the writer
 - **THEN** neither value appears in logs, persisted retry state, cost receipts, generated-content state, or uploaded artifacts
 
-#### Scenario: Failed canary is retained for review
-- **WHEN** a publication-disabled canary produces a validated public candidate
+#### Scenario: Canary candidate is retained for review
+- **WHEN** a publication-disabled canary produces a hard-valid public candidate with or without editorial warnings
 - **THEN** only the privacy-scanned public site/state, opaque receipts, fixed handoff metadata, and sanitized aggregate review data are retained
+
+#### Scenario: All-failed canary report is retained
+- **WHEN** a publication-disabled canary produces no hard-valid public rewrite
+- **THEN** only the sanitized manifest, aggregate fixed-code report, opaque receipts, and fixed reviewer decision are retained while all source and model material is cleaned

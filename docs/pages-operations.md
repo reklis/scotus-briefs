@@ -76,6 +76,25 @@ counts, fixed outcome categories, duration bound, and decision are recorded; gen
 prose, official document text, prompts, model responses, and other private inputs were not
 retained in this runbook.
 
+Protected publication-disabled `canary_10` run `34471623129` tested processor
+`05cc59467f1e094a29493d72803f9307553fe52cbcdc38686e7051e4992a1d6a` from
+source commit `b378bfd27592b37de7f72c130219817f8c740ab9` after the compact-writer
+prompt and bounded-repair updates. It completed all ten bounded case attempts in
+5,912 seconds and made 154 zero-cost local-model calls. Zero rewrites were accepted:
+the sanitized terminal counts were `brief_validation_failed=2`,
+`repair_exhausted=4`, `source_invalid=1`, and `validation_failed=3`. Review of all
+ten sanitized outcomes found no accepted candidate prose to compare with the active
+pages or their linked official-source meaning; every active page therefore remained
+the review baseline. The opaque receipt bundle passed contract/privacy validation,
+but the all-failed batch emitted no candidate site, candidate state, candidate digest,
+or release-validation result. No deploy or promotion job ran, and the live release
+and generated-content parent remained unchanged. The reviewer decision is `rejected`:
+zero improved accepted rewrites is below the required eight, and the missing bound
+candidate and release validation independently prevent advancement. Do not run
+`batch_25` or `batch_100`; qualifying a replacement model requires a separate reviewed
+change. No generated prose, official document text, prompts, model responses, rejected
+fields, or private diagnostics from this canary are recorded here.
+
 Prior dry runs confirmed the Court and loopback Ollama paths but failed closed on
 extraction/runtime validation. Those same grounding, privacy, completeness, static, and
 release validators remain mandatory: a global candidate failure cannot replace the
@@ -248,19 +267,24 @@ Start a new reader-guide processor only with a protected manual `nightly` dispat
 1. Choose `editorial_rollout_stage=canary_10`, `deploy=false`, and leave
    `maximum_cases=0` unless an even smaller diagnostic run is intentionally required.
    The workflow rejects a canary deploy request and the CLI independently forces dry-run
-   publication. It retains the scanned site and separately named sanitized editorial
-   state for one day; neither artifact contains source text, prompts, rejected output,
-   or field diagnostics.
+   publication. It always retains `sanitized-editorial-review`, containing only the
+   fixed manifest and aggregate report, for one day. A hard-valid candidate additionally
+   retains the scanned site and separately named sanitized editorial state. An all-hard-
+   failed run retains no candidate site/state. None of these artifacts contains source
+   text, prompts, rejected output, field paths, or detailed diagnostics.
 2. Review the deterministic manifest side by side with each active legacy page and the
    linked official Court materials. The manifest is newest-first and, where available,
    includes a disposition-only case, an argued case, and a case decided after argument.
-   Record only case keys, fixed failure-code counts, aggregate runtime/model calls, and
-   the reviewer fields in `CanaryAggregate`—never copy model/source text into state or
-   logs.
-3. Approval requires at least eight accepted rewrites that reviewers judge improved;
-   zero accepted factual, status, actor, chronology, or prediction errors; no degraded
-   legacy page; and successful privacy and release validation. A rejected or incomplete
-   canary leaves the live release unchanged. If the ten-case threshold fails, stop; a
+   Reader-language, preferred-length, readability, repetition, and nonmaterial section-
+   focus findings are fixed editorial warnings rather than factual acceptance failures.
+   Record only case keys, fixed failure/warning-code counts, aggregate runtime/model
+   calls, and the reviewer fields in `CanaryAggregate`—never copy model/source text into
+   state or logs.
+3. Approval requires at least eight hard-valid accepted rewrites that reviewers judge
+   improved after considering every warning; zero accepted factual, status, actor,
+   chronology, or prediction errors; no degraded legacy page; and successful privacy
+   and release validation. A rejected, all-hard-failed, or incomplete canary leaves the
+   live release unchanged. If the ten-case threshold fails, stop; a
    model replacement requires its own source/privacy/cost/runtime approval rather than
    a stage override.
 4. After recording an approved aggregate, advance exactly one stage to `batch_25` and
@@ -280,9 +304,11 @@ workflow intentionally does not automatically convert a pending review artifact 
 approved deployable artifact; recording the manual decision and promoting it remains a
 protected operator step.
 
-A successful manual `deploy=false` run uploads only the privacy-scanned Pages tree,
-sanitized generated-state candidate, opaque receipts, and fixed handoff metadata for one
-day; it does not deploy or mutate `generated-content`.
+A successful manual `deploy=false` run uploads only the sanitized editorial review,
+privacy-scanned Pages tree, sanitized generated-state candidate, opaque receipts, and
+fixed handoff metadata for one day; it does not deploy or mutate `generated-content`.
+When every measured case fails hard, only the sanitized editorial review and opaque
+receipts are retained; no candidate or handoff is eligible for promotion.
 
 To publish that exact candidate without repeating Court downloads, extraction, or brief
 model calls, manually run `deploy-validated-candidate.yml` from the protected default

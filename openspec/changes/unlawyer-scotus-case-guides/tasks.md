@@ -58,11 +58,21 @@
 - [x] 8.2 Add a sanitized canary report containing case keys, accepted/failure counts, fixed failure-code counts, runtime/call aggregates, processor identity, and reviewer decision.
 - [x] 8.3 Enforce advancement thresholds of at least eight improved accepted rewrites, zero accepted factual/status/actor/chronology/prediction errors, no degraded legacy page, and successful privacy/release validation.
 - [x] 8.4 Document side-by-side review, exact-candidate promotion, rollback, and the rule that model replacement requires separate approval if the ten-case threshold fails.
-- [ ] 8.5 Run the protected publication-disabled ten-case canary, inspect every sanitized result against its active page and official-source meaning, and record the reviewed outcome.
-- [ ] 8.6 Only after approval, promote the exact canary candidate and repeat the measured gate at 25 cases and then at an up-to-100-case selection ceiling.
+- [x] 8.5 Run the protected publication-disabled ten-case canary, inspect every sanitized result against its active page and official-source meaning, and record the reviewed outcome.
 
 ## 9. Verification
 
 - [x] 9.1 Run focused SCOTUS brief, live-static, static-state, static-validation, activity, and workflow-policy tests.
 - [x] 9.2 Run the complete test suite, formatting, lint, type checks, OpenSpec validation, and public-repository/privacy checks.
 - [x] 9.3 Confirm a failed or partially completed run leaves private work cleaned, the prior live release intact, and only selected unfinished cases represented as pending.
+
+## 10. Validation calibration after the rejected canary
+
+- [x] 10.1 Split reader-prose evaluation into hard correctness failures and fixed editorial warnings, with separate preferred and severe sentence/paragraph bounds.
+- [x] 10.2 Narrow process-language matching to actual pipeline disclosures, allow ordinary party `claim` language, and classify terminology, readability, repetition, preferred-length, and nonmaterial section-focus findings as warnings.
+- [x] 10.3 Make style-only repair optional and restore the original hard-valid field with its warning when a repair is unchanged, invalid, exhausts its budget, or changes supported meaning.
+- [x] 10.4 Extend sanitized measured-run state with optional fixed warning-code counts and retain a privacy-scanned manifest and aggregate report when every canary attempt fails hard.
+- [x] 10.5 Add regressions shaped like canary `34471623129`, including slightly long accurate sentences, ordinary `claim` usage, meaning-changing and unchanged style repairs, warning-bearing candidates, and all-failed report retention.
+- [x] 10.6 Advance validation-policy and processor identities and repeat focused tests, the complete suite, formatting, lint, typing, OpenSpec validation, and public-repository/privacy checks.
+- [ ] 10.7 Run a fresh protected publication-disabled ten-case canary, inspect every hard-valid candidate and warning against its active page and official-source meaning, and record the reviewed outcome.
+- [ ] 10.8 Only after approval, promote the exact recalibrated canary candidate and repeat the measured gate at 25 cases and then at an up-to-100-case selection ceiling.
