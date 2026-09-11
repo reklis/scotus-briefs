@@ -203,6 +203,10 @@ class OllamaClientFactory(Protocol):
     def __call__(self, settings: ServiceSettings, config: ScotusConfig) -> Any: ...
 
 
+class OllamaInventoryFactory(Protocol):
+    def __call__(self, settings: ServiceSettings, config: ScotusConfig) -> Mapping[str, Any]: ...
+
+
 class SourceFetcherFactory(Protocol):
     def __call__(self, settings: ServiceSettings, config: ScotusConfig) -> SourceFetcher: ...
 
@@ -1569,7 +1573,10 @@ def _case_processing_digest(source: _CaseInput) -> str:
 
 
 def _model_identity(config: ScotusConfig, model_endpoint: str) -> str:
-    return f"{config.generation.provider}:{config.generation.model}@{model_endpoint}"
+    return (
+        f"{config.generation.provider}:{config.generation.model}"
+        f"@sha256:{config.generation.model_digest}@{model_endpoint}"
+    )
 
 
 def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorFingerprint:
@@ -1590,6 +1597,7 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
             "severe_maximum_sentence_words": (config.generation.severe_maximum_sentence_words),
             "minimum_observation_confidence": (config.generation.minimum_observation_confidence),
             "model": config.generation.model,
+            "model_digest": config.generation.model_digest,
             "prohibit_personalized_legal_advice": (
                 config.generation.prohibit_personalized_legal_advice
             ),
@@ -1625,6 +1633,7 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
                 "endpoint": model_endpoint,
                 "extractor": extractor,
                 "model": config.generation.model,
+                "model_digest": config.generation.model_digest,
                 "provider": config.generation.provider,
                 "parser": parser,
                 "policy": POLICY_VERSION,
@@ -2232,6 +2241,7 @@ class LiveStaticCaseProcessor:
                     "endpoint": self.model_endpoint,
                     "extractor": LegalExtractionService.SCHEMA_VERSION,
                     "model": self.config.generation.model,
+                    "model_digest": self.config.generation.model_digest,
                     "provider": self.config.generation.provider,
                     "parser": parser_versions[argument_id],
                     "session": str(session.sequence),
@@ -2288,6 +2298,7 @@ class LiveStaticCaseProcessor:
                     "endpoint": self.model_endpoint,
                     "extractor": LegalExtractionService.SCHEMA_VERSION,
                     "model": self.config.generation.model,
+                    "model_digest": self.config.generation.model_digest,
                     "provider": self.config.generation.provider,
                     "parser": DOCUMENT_TEXT_VERSION,
                     "session": "none",
@@ -2583,6 +2594,7 @@ class LiveStaticCaseProcessor:
                     "endpoint": self.model_endpoint,
                     "extractor": LegalExtractionService.SCHEMA_VERSION,
                     "model": self.config.generation.model,
+                    "model_digest": self.config.generation.model_digest,
                     "planner": READER_GUIDE_PLAN_VERSION,
                     "provider": self.config.generation.provider,
                     "parser": _processor_contract(self.config, self.model_endpoint).parser_version,
@@ -3667,14 +3679,39 @@ def _default_ollama_client(settings: ServiceSettings, config: ScotusConfig) -> O
     )
 
 
-def _verify_exact_ollama_model(client: Any, expected_model: str) -> None:
+def _default_ollama_inventory(
+    settings: ServiceSettings, config: ScotusConfig
+) -> Mapping[str, Any]:
+    """Read immutable model identities from Ollama's native loopback inventory."""
+    tags_url = f"{settings.ollama_base_url.removesuffix('/v1')}/api/tags"
+    with httpx.Client(
+        follow_redirects=False,
+        timeout=min(config.model_budget.request_timeout_seconds, 30),
+        trust_env=False,
+    ) as client:
+        response = client.get(tags_url)
+        response.raise_for_status()
+        payload = response.json()
+    if not isinstance(payload, Mapping):
+        raise ValueError("Ollama inventory is not an object")
+    return payload
+
+
+def _verify_exact_ollama_model(
+    inventory: Mapping[str, Any], expected_model: str, expected_digest: str
+) -> None:
     try:
-        available = client.models.list()
-        model_ids = {item.id for item in available.data if isinstance(item.id, str)}
-    except Exception:
+        models = inventory["models"]
+        if not isinstance(models, list):
+            raise TypeError
+        entries = tuple(item for item in models if isinstance(item, Mapping))
+    except (KeyError, TypeError):
         raise PublicationGateDenied("local Ollama model preflight failed") from None
-    if expected_model not in model_ids:
-        raise PublicationGateDenied("configured local Ollama model is not installed")
+    matching_tags = tuple(item for item in entries if item.get("name") == expected_model)
+    if not matching_tags:
+        raise PublicationGateDenied("configured local Ollama model tag is not installed")
+    if not any(item.get("digest") == expected_digest for item in matching_tags):
+        raise PublicationGateDenied("configured local Ollama model digest does not match")
 
 
 class LiveStaticBatchAdapter:
@@ -3688,6 +3725,7 @@ class LiveStaticBatchAdapter:
         source_fetcher_factory: SourceFetcherFactory = _default_source_fetcher,
         document_client_factory: DocumentClientFactory = _default_document_client,
         ollama_client_factory: OllamaClientFactory = _default_ollama_client,
+        ollama_inventory_factory: OllamaInventoryFactory = _default_ollama_inventory,
         parser_backend_factory: Callable[[], PdfTextBackend] = PypdfTextBackend,
         rate_limiter_factory: Callable[[float], RequestRateLimiter] = RequestRateLimiter,
         clock: Callable[[], datetime] | None = None,
@@ -3698,6 +3736,7 @@ class LiveStaticBatchAdapter:
         self.source_fetcher_factory = source_fetcher_factory
         self.document_client_factory = document_client_factory
         self.ollama_client_factory = ollama_client_factory
+        self.ollama_inventory_factory = ollama_inventory_factory
         self.parser_backend_factory = parser_backend_factory
         self.rate_limiter_factory = rate_limiter_factory
         self.clock = clock or (lambda: datetime.now(UTC))
@@ -3739,8 +3778,18 @@ class LiveStaticBatchAdapter:
             raw_fetcher = self.source_fetcher_factory(settings, config)
             document_client = self.document_client_factory(settings, config)
             model_client = self.ollama_client_factory(settings, config)
-            # Inventory is checked before Court evidence retrieval or chat completion.
-            _verify_exact_ollama_model(model_client, config.generation.model)
+            # Native inventory carries Ollama's content digest; the OpenAI-compatible
+            # model listing does not. Require tag and digest before Court traffic or a
+            # chat completion, and never select another installed model as a fallback.
+            try:
+                inventory = self.ollama_inventory_factory(settings, config)
+            except Exception:
+                raise PublicationGateDenied("local Ollama model preflight failed") from None
+            _verify_exact_ollama_model(
+                inventory,
+                config.generation.model,
+                config.generation.model_digest,
+            )
             # The wrapper authorizes each nested index/opinion/order request and the
             # budget wrapper accounts every attempted response body.
             # The orchestrator creates the budget, so adapters are rebound during the

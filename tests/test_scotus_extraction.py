@@ -155,7 +155,7 @@ def test_openai_extraction_supplies_and_derives_exact_block_identity() -> None:
     )
     requests: list[dict[str, object]] = []
     extractor = OpenAILegalObservationExtractor(
-        "qwen3.8:27b",
+        "cogito:70b",
         SimpleNamespace(),
         request_executor=lambda request: (requests.append(request), completion)[1],
     )
@@ -178,6 +178,44 @@ def test_openai_extraction_supplies_and_derives_exact_block_identity() -> None:
     )
 
 
+def test_cogito_protocol_uses_strict_nested_schema_and_keeps_exact_court_action() -> None:
+    evidence = block(
+        "The Court denied Example Agency's application.",
+        kind=ScotusDocumentKind.OPINION,
+        speaker_name=None,
+    )
+    source_value = source(evidence)
+    extractor = OpenAILegalObservationExtractor("cogito:70b", SimpleNamespace())
+    response_format = extractor.request_arguments(source_value)["response_format"]
+    assert response_format["json_schema"]["strict"] is True
+    schema = response_format["json_schema"]["schema"]
+    observation_schema = schema["$defs"]["ProposedLegalObservation"]
+    evidence_schema = schema["$defs"]["ProposedEvidence"]
+    assert schema["additionalProperties"] is False
+    assert observation_schema["additionalProperties"] is False
+    assert evidence_schema["additionalProperties"] is False
+    assert set(observation_schema["required"]) == set(observation_schema["properties"])
+    assert set(evidence_schema["required"]) == set(evidence_schema["properties"])
+
+    exact_action = proposed(
+        evidence,
+        evidence.text_private,
+        observation_type=LegalObservationType.HOLDING,
+        status=LegalStatus.COURT_HELD,
+        raw_value=evidence.text_private,
+        speaker_name=None,
+    )
+    accepted = process(source_value, exact_action)
+    assert len(accepted) == 1
+    assert accepted[0].raw_value_private == evidence.text_private
+    assert accepted[0].legal_status is LegalStatus.COURT_HELD
+
+    unsupported_winner = exact_action.model_copy(
+        update={"raw_value": "The Court will rule for Example Agency."}
+    )
+    assert process(source_value, unsupported_winner) == []
+
+
 def test_disposition_extraction_prioritizes_extractable_guide_roles() -> None:
     evidence = block(
         "The district court entered an injunction.",
@@ -192,7 +230,7 @@ def test_disposition_extraction_prioritizes_extractable_guide_roles() -> None:
         parser_versions=source_value.parser_versions,
         document_revision_ids=source_value.document_revision_ids,
     )
-    extractor = OpenAILegalObservationExtractor("qwen3.8:27b", SimpleNamespace())
+    extractor = OpenAILegalObservationExtractor("cogito:70b", SimpleNamespace())
 
     request = extractor.request_arguments(source_value)
     system_prompt = request["messages"][0]["content"]
@@ -242,7 +280,7 @@ def test_disposition_extraction_derives_status_and_exact_source_value() -> None:
         )
     )
     extractor = OpenAILegalObservationExtractor(
-        "qwen3.8:27b",
+        "cogito:70b",
         SimpleNamespace(),
         request_executor=lambda _request: completion,
     )
@@ -283,7 +321,7 @@ def test_openai_extraction_repairs_only_a_uniquely_exact_unknown_block_id() -> N
         )
     )
     extractor = OpenAILegalObservationExtractor(
-        "qwen3.8:27b",
+        "cogito:70b",
         SimpleNamespace(),
         request_executor=lambda _request: completion,
     )

@@ -149,8 +149,17 @@ def check() -> list[str]:
         failures.append("SCOTUS canonical origin must be https://scotusbriefs.us")
     if static.get("project_base_path") != "/" or static.get("section_path") != "/scotus/":
         failures.append("SCOTUS custom-domain paths must be root project and /scotus/ section")
-    if generation.get("provider") != "ollama" or generation.get("model") != "qwen3.8:27b":
-        failures.append("SCOTUS generation must use reviewed Ollama model qwen3.8:27b")
+    reviewed_model = "cogito:70b"
+    reviewed_digest = "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
+    if (
+        generation.get("provider") != "ollama"
+        or generation.get("model") != reviewed_model
+        or generation.get("model_digest") != reviewed_digest
+    ):
+        failures.append(
+            "SCOTUS generation must use reviewed Ollama model "
+            f"{reviewed_model}@sha256:{reviewed_digest}"
+        )
     model_budget = config.get("model_budget", {})
     zero_cost_fields = (
         "input_cost_usd_per_million_tokens",
@@ -180,8 +189,16 @@ def check() -> list[str]:
         failures.append("Pages build must run only on the self-hosted runner")
     if "OPENAI_API_KEY" in workflow or "secrets." in build:
         failures.append("self-hosted Pages build must not receive model secrets")
-    if "http://127.0.0.1:11434" not in build or "qwen3.8:27b" not in build:
-        failures.append("Pages build must preflight exact local Ollama model qwen3.8:27b")
+    if (
+        "http://127.0.0.1:11434/api/tags" not in build
+        or reviewed_model not in workflow
+        or reviewed_digest not in workflow
+        or 'item.get("name") == config.generation.model' not in build
+        or 'item.get("digest") == config.generation.model_digest' not in build
+    ):
+        failures.append("Pages build must preflight the exact reviewed Ollama tag and digest")
+    if re.search(r"\bollama\s+(?:pull|run|create|cp)\b", build):
+        failures.append("Pages build must not pull, create, or fall back to another Ollama model")
     if "pull_request:" in workflow or "github.event_name != 'pull_request'" not in build:
         failures.append("Pages build must never run for pull requests")
     if "services:" in workflow:

@@ -69,7 +69,11 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "runs-on: [self-hosted]" in workflow
     assert "OPENAI_API_KEY" not in workflow
     assert "RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1" in workflow
-    assert "qwen3.8:27b" in workflow
+    assert "cogito:70b" in workflow
+    assert "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb" in workflow
+    assert 'item.get("name") == config.generation.model' in workflow
+    assert 'item.get("digest") == config.generation.model_digest' in workflow
+    assert "ollama pull" not in workflow
     assert "ragchew.scotus.live_static:LiveStaticBatchAdapter" in workflow
     assert "options: [fixture, nightly, bootstrap, activity-migration" in workflow
     assert "Build no-model activity-contract migration" in workflow

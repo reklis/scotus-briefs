@@ -42,7 +42,10 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.discovery.request_timeout_seconds == 60
     assert config.documents.request_timeout_seconds == 60
     assert config.generation.provider == "ollama"
-    assert config.generation.model == "qwen3.8:27b"
+    assert config.generation.model == "cogito:70b"
+    assert config.generation.model_digest == (
+        "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
+    )
     assert config.generation.prompt_version == "scotus-reader-guide-compact-v1"
     assert config.generation.brief_generation_enabled is True
     assert config.generation.maximum_brief_api_calls_per_run == 100
@@ -195,9 +198,14 @@ def test_scotus_live_publication_requires_every_approval() -> None:
 
 def test_scotus_config_requires_reviewed_ollama_provider_and_exact_model() -> None:
     config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
-    for provider, model in (("openai", "qwen3.8:27b"), ("ollama", "qwen3:27b")):
+    mutations = (
+        {"provider": "openai"},
+        {"model": "cogito:latest"},
+        {"model_digest": "f" * 64},
+    )
+    for mutation in mutations:
         values = config.model_dump()
-        values["generation"].update({"provider": provider, "model": model})
+        values["generation"].update(mutation)
         with pytest.raises(ValidationError):
             ScotusConfig.model_validate(values)
 

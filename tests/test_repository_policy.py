@@ -50,7 +50,11 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter" in text
     assert "runs-on: [self-hosted]" in text
     assert "RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1" in text
-    assert "qwen3.8:27b" in text
+    assert "cogito:70b" in text
+    assert "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb" in text
+    assert 'item.get("name") == config.generation.model' in text
+    assert 'item.get("digest") == config.generation.model_digest' in text
+    assert "ollama pull" not in text
     assert "  CANONICAL_ORIGIN: https://scotusbriefs.us\n" in text
     assert "  PROJECT_BASE_PATH: /\n" in text
     assert (
@@ -94,6 +98,10 @@ def test_generated_case_publication_is_explicitly_live_and_bounded() -> None:
     assert config["publication"]["enabled"] is True
     assert config["publication"]["dry_run"] is False
     assert config["generation"]["brief_generation_enabled"] is True
+    assert config["generation"]["model"] == "cogito:70b"
+    assert config["generation"]["model_digest"] == (
+        "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
+    )
     assert config["approvals"]["launch_approved"] is True
     assert config["runner_limits"]["maximum_cases_per_run"] == 100
     assert config["generation"]["maximum_brief_api_calls_per_run"] == 100

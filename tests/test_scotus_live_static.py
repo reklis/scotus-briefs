@@ -70,6 +70,7 @@ from ragchew.scotus.static_state import GeneratedContent, StaticStateStore, Stor
 from ragchew.scotus.transcript_parser import TranscriptParseError
 
 NOW = datetime(2026, 8, 28, 2, tzinfo=UTC)
+MODEL_DIGEST = "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
 
 
 def _pdf(pages: int) -> bytes:
@@ -249,11 +250,17 @@ class FailingBackend(FixtureBackend):
 
 
 class MockOpenAI:
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        *,
+        model_name: str = "cogito:70b",
+        model_digest: str = MODEL_DIGEST,
+    ) -> None:
         self.chat = SimpleNamespace(completions=self)
         self.models = SimpleNamespace(
-            list=lambda: SimpleNamespace(data=[SimpleNamespace(id="qwen3.8:27b")])
+            list=lambda: SimpleNamespace(data=[SimpleNamespace(id=model_name)])
         )
+        self.inventory = {"models": [{"name": model_name, "digest": model_digest}]}
         self.requests: list[dict[str, Any]] = []
         self.closed = False
 
@@ -676,6 +683,7 @@ def build_adapter(
             follow_redirects=False,
         ),
         ollama_client_factory=lambda _settings, _config: model,
+        ollama_inventory_factory=lambda _settings, _config: model.inventory,
         parser_backend_factory=backend,
         rate_limiter_factory=rate_limiter_factory,
         clock=lambda: NOW,
@@ -936,16 +944,32 @@ def test_default_ollama_sdk_client_is_loopback_and_ignores_proxy_environment() -
         client.close()
 
 
+@pytest.mark.parametrize(
+    ("inventory", "message"),
+    (
+        (
+            {"models": [{"name": "another:70b", "digest": MODEL_DIGEST}]},
+            "tag is not installed",
+        ),
+        (
+            {
+                "models": [
+                    {"name": "cogito:70b", "digest": "f" * 64},
+                    {"name": "fallback:70b", "digest": MODEL_DIGEST},
+                ]
+            },
+            "digest does not match",
+        ),
+    ),
+)
 def test_live_adapter_requires_exact_local_model_before_court_traffic(
-    tmp_path: Path,
+    tmp_path: Path, inventory: dict[str, object], message: str
 ) -> None:
     court = CourtFixture()
     model = MockOpenAI()
-    model.models = SimpleNamespace(
-        list=lambda: SimpleNamespace(data=[SimpleNamespace(id="qwen3.8:14b")])
-    )
+    model.inventory = inventory
     adapter = build_adapter(court, model)
-    with pytest.raises(PublicationGateDenied, match="not installed"):
+    with pytest.raises(PublicationGateDenied, match=message):
         adapter.run(
             state_store=MemoryStateStore(tmp_path / "state"),
             config=live_config(),
@@ -955,6 +979,7 @@ def test_live_adapter_requires_exact_local_model_before_court_traffic(
         )
     assert court.source_requests == []
     assert court.document_requests == []
+    assert model.requests == []
     assert model.closed
 
 
@@ -974,7 +999,9 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert len(result.content.publication.documents) == 2
     processor = result.content.publication.processor
     assert processor is not None
-    assert processor.model == "ollama:qwen3.8:27b@http://127.0.0.1:11434/v1"
+    assert processor.model == (
+        f"ollama:cogito:70b@sha256:{MODEL_DIGEST}@http://127.0.0.1:11434/v1"
+    )
     assert processor.extractor_version == (
         "scotus-observation-v2:scotus-legal-v1:scotus-legal-extraction-v10:"
         "official-document-text-v4"
@@ -1014,6 +1041,57 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert all(receipt.outcome is ModelAttemptOutcome.SUCCEEDED for receipt in receipts.receipts)
     assert sum(receipt.call_count for receipt in receipts.receipts) == len(model.requests)
     assert not list((tmp_path / "private").glob("ragchew-*"))
+
+
+def test_model_digest_changes_processor_and_request_fingerprints_only(
+    tmp_path: Path,
+) -> None:
+    first = run(
+        tmp_path / "first",
+        MemoryStateStore(tmp_path / "first-state"),
+        CourtFixture(),
+        MockOpenAI(),
+    )
+    drift_digest = "f" * 64
+    drift_config = live_config().model_copy(
+        update={
+            "generation": live_config().generation.model_copy(
+                update={"model_digest": drift_digest}
+            )
+        }
+    )
+    second = run(
+        tmp_path / "second",
+        MemoryStateStore(tmp_path / "second-state"),
+        CourtFixture(),
+        MockOpenAI(model_digest=drift_digest),
+        config=drift_config,
+    )
+
+    first_processor = first.content.publication.processor
+    second_processor = second.content.publication.processor
+    assert first_processor is not None and second_processor is not None
+    assert first_processor.config_sha256 != second_processor.config_sha256
+    assert first_processor.composite_sha256 != second_processor.composite_sha256
+    assert first_processor.model != second_processor.model
+    assert first_processor.prompt_version == second_processor.prompt_version
+    assert first_processor.policy_version == second_processor.policy_version
+
+    first_receipts = CostReceiptBundle.model_validate_json(
+        (tmp_path / "first/private/public-cost-receipts.json").read_bytes()
+    )
+    second_receipts = CostReceiptBundle.model_validate_json(
+        (tmp_path / "second/private/public-cost-receipts.json").read_bytes()
+    )
+    assert [item.stage for item in first_receipts.receipts] == [
+        item.stage for item in second_receipts.receipts
+    ]
+    assert all(
+        first_item.input_fingerprint != second_item.input_fingerprint
+        for first_item, second_item in zip(
+            first_receipts.receipts, second_receipts.receipts, strict=True
+        )
+    )
 
 
 def test_status_changing_opinion_rewrites_complete_argument_case(tmp_path: Path) -> None:

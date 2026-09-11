@@ -48,6 +48,8 @@ permissions:
 env:
   CANONICAL_ORIGIN: https://scotusbriefs.us
   PROJECT_BASE_PATH: /
+  REVIEWED_OLLAMA_MODEL: cogito:70b
+  REVIEWED_OLLAMA_MODEL_DIGEST: 8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb
   RAGCHEW_SOURCE_USER_AGENT: >-
     ragchew-scotus-briefs/1.0 (+https://github.com/reklis/scotus-briefs; contact=https://github.com/reklis)
 
@@ -127,7 +129,7 @@ jobs:
           set -euo pipefail
           curl --fail --silent --show-error --connect-timeout 5 --max-time 30 \
             http://127.0.0.1:11434/api/tags | \
-            uv run python -c 'import json,sys; names={m.get("name") for m in json.load(sys.stdin).get("models", [])}; raise SystemExit(0 if "qwen3.8:27b" in names else "required exact Ollama model qwen3.8:27b is not installed")'
+            uv run python -c 'import json,os,sys; from ragchew.config import ScotusConfig; config=ScotusConfig.from_yaml("config/scotus.yaml"); expected=(os.environ["REVIEWED_OLLAMA_MODEL"], os.environ["REVIEWED_OLLAMA_MODEL_DIGEST"]); configured=(config.generation.model, config.generation.model_digest); models=json.load(sys.stdin).get("models", []); exact=configured == expected and any(isinstance(item, dict) and item.get("name") == config.generation.model and item.get("digest") == config.generation.model_digest for item in models); raise SystemExit(0 if exact else f"required exact Ollama model {expected[0]}@sha256:{expected[1]} is not installed")'
       - name: Create permission-restricted private parent only
         run: |
           set -euo pipefail

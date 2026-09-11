@@ -253,7 +253,10 @@ class ScotusGenerationDefaults(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     provider: Literal["ollama"]
-    model: Literal["qwen3.8:27b"]
+    model: Literal["cogito:70b"]
+    model_digest: Literal[
+        "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
+    ]
     prompt_version: str
     brief_generation_enabled: bool = False
     maximum_brief_api_calls_per_run: int = Field(default=1, ge=1, le=100)
