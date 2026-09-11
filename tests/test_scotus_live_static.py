@@ -3,7 +3,7 @@ from __future__ import annotations
 import io
 import json
 from dataclasses import replace
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any, cast
@@ -39,10 +39,15 @@ from ragchew.scotus.live_static import (
     _descriptor_for_public_argument,
     _legal_analysis_observations,
     _opinion_page_attribution,
+    _outstanding_supported_case_keys,
     _procedural_path_observation,
     _repair_diagnostic,
 )
-from ragchew.scotus.public_contracts import PublicCaseBrief, public_case_key
+from ragchew.scotus.public_contracts import (
+    PublicCaseBrief,
+    ScotusPublicProjection,
+    public_case_key,
+)
 from ragchew.scotus.reader_guides import ReaderGuideFieldKind, ReaderGuideFieldPath
 from ragchew.scotus.static_contracts import (
     ConditionalValidators,
@@ -1464,6 +1469,26 @@ def test_first_slip_poll_ignores_legacy_generic_opinion_checkpoint(
         conditional for url, conditional in court.source_requests if "slipopinion" in url
     )
     assert slip_conditional == ConditionalRequest()
+
+
+def test_supported_activity_newer_than_public_projection_is_deferred() -> None:
+    projection_payload = json.loads(
+        Path("tests/fixtures/static/one-case.json").read_text(encoding="utf-8")
+    )["projection"]
+    public_case = ScotusPublicProjection.model_validate(projection_payload).cases[0]
+    case_key = public_case_key(public_case.term, public_case.primary_docket)
+    latest = public_case.latest_court_document_date
+    assert latest is not None
+
+    assert _outstanding_supported_case_keys({case_key: public_case}, {case_key: latest}) == set()
+    assert _outstanding_supported_case_keys(
+        {case_key: public_case},
+        {case_key: latest + timedelta(days=1), "2025-25-999": latest},
+    ) == {case_key, "2025-25-999"}
+    legacy = public_case.model_copy(update={"latest_court_document_date": None})
+    assert _outstanding_supported_case_keys({case_key: legacy}, {case_key: latest}) == {
+        case_key
+    }
 
 
 def test_live_discovery_canonicalizes_multi_primary_consolidation() -> None:

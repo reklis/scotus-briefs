@@ -1263,10 +1263,21 @@ class LiveStaticDiscovery:
         )
         # Source checkpoints describe complete index responses. Case-level rotation may
         # intentionally leave document rechecks for later and does not make that source
-        # response unsafe; changed source cases, however, must all fit this run.
+        # response unsafe. Every changed case must fit this run or become pending. Also
+        # retain any reconstructable supported activity newer than the active public case
+        # as pending even when an adapter-specific change detector omitted it from the
+        # queue; otherwise a completed strict poll could advance with hidden stale work.
         runnable_case_keys = {item.case_key for item in work}
+        outstanding_supported_case_keys = _outstanding_supported_case_keys(
+            prior_cases,
+            activity_by_case,
+        )
         deferred_case_keys = tuple(
-            sorted((changed_case_keys - runnable_case_keys) | invalid_case_keys)
+            sorted(
+                (changed_case_keys - runnable_case_keys)
+                | (outstanding_supported_case_keys - runnable_case_keys)
+                | invalid_case_keys
+            )
         )
         source_states = (*incremental.checkpoints, slip_result.checkpoint, *related_sources)
         return StaticDiscoveryResult(
@@ -3601,6 +3612,20 @@ def _history_explanation(status: ScotusCaseStatus, update: bool) -> str:
     if status is ScotusCaseStatus.CORRECTED or update:
         return "The brief was updated after revised official Court material."
     return "The Court held oral argument and published an official transcript."
+
+
+def _outstanding_supported_case_keys(
+    prior_cases: Mapping[str, PublicCaseBrief],
+    activity_by_case: Mapping[str, datetime],
+) -> set[str]:
+    """Return reconstructable source activity not represented by active public cases."""
+    outstanding: set[str] = set()
+    for key, activity_date in activity_by_case.items():
+        prior = prior_cases.get(key)
+        latest = prior.latest_court_document_date if prior is not None else None
+        if latest is None or latest < activity_date:
+            outstanding.add(key)
+    return outstanding
 
 
 def _default_source_fetcher(settings: ServiceSettings, config: ScotusConfig) -> SourceFetcher:
