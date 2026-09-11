@@ -889,8 +889,22 @@ class StaticBatchOrchestrator:
                 for deferred_key in discovered.deferred_case_keys:
                     if deferred_key not in selected_keys:
                         discovery_failed = deferred_key in failed_discovery_keys
+                        previous_pending = pending.get(deferred_key)
+                        activity_date = supported_dates.get(deferred_key)
+                        if previous_pending is None:
+                            resolved_pending = pending_by_key.get(deferred_key)
+                            resolved_activity_date = (
+                                resolved_pending.authoritative_activity_date
+                                if resolved_pending is not None
+                                else None
+                            )
+                            if resolved_activity_date is not None and (
+                                activity_date is None
+                                or resolved_activity_date > activity_date
+                            ):
+                                activity_date = resolved_activity_date
                         pending[deferred_key] = _pending(
-                            pending.get(deferred_key),
+                            previous_pending,
                             case_key=deferred_key,
                             reason=(
                                 PendingReason.VALIDATION_FAILED
@@ -899,7 +913,7 @@ class StaticBatchOrchestrator:
                             ),
                             now=instant,
                             attempted=discovery_failed,
-                            authoritative_activity_date=supported_dates.get(deferred_key),
+                            authoritative_activity_date=activity_date,
                             preserve_retry=True,
                         )
                         failed = failed or discovery_failed

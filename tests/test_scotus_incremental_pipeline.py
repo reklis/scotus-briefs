@@ -1175,6 +1175,7 @@ def test_older_rediscovery_cannot_regress_pending_activity_date(
         def discover(self, **_kwargs: object) -> StaticDiscoveryResult:
             return StaticDiscoveryResult(
                 deferred_case_keys=(case_key,),
+                resolved_pending_case_keys=(case_key,),
                 supported_activity=(SupportedCaseActivity(case_key, older),),
             )
 
