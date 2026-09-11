@@ -74,5 +74,5 @@
 - [x] 10.4 Extend sanitized measured-run state with optional fixed warning-code counts and retain a privacy-scanned manifest and aggregate report when every canary attempt fails hard.
 - [x] 10.5 Add regressions shaped like canary `34471623129`, including slightly long accurate sentences, ordinary `claim` usage, meaning-changing and unchanged style repairs, warning-bearing candidates, and all-failed report retention.
 - [x] 10.6 Advance validation-policy and processor identities and repeat focused tests, the complete suite, formatting, lint, typing, OpenSpec validation, and public-repository/privacy checks.
-- [ ] 10.7 Run a fresh protected publication-disabled ten-case canary, inspect every hard-valid candidate and warning against its active page and official-source meaning, and record the reviewed outcome.
+- [x] 10.7 Run a fresh protected publication-disabled ten-case canary, inspect every hard-valid candidate and warning against its active page and official-source meaning, and record the reviewed outcome.
 - [ ] 10.8 Only after approval, promote the exact recalibrated canary candidate and repeat the measured gate at 25 cases and then at an up-to-100-case selection ceiling.

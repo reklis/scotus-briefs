@@ -95,6 +95,28 @@ candidate and release validation independently prevent advancement. Do not run
 change. No generated prose, official document text, prompts, model responses, rejected
 fields, or private diagnostics from this canary are recorded here.
 
+Recalibrated protected publication-disabled `canary_10` run
+[`34579544086`](https://github.com/reklis/scotus-briefs/actions/runs/34579544086)
+then completed the fixed ten-case manifest from source commit
+`54db2f25d47e6621b31b559d3f736ca5e65f2c1e` with processor
+`141734d69e0f6d83a299cc91773a640d5505bac3e73eed1a276791743c98f47e`.
+All ten cases were attempted, zero were accepted, and ten failed hard. The fixed counts
+were `brief_validation_failed=3`, `repair_exhausted=4`, and `validation_failed=3`;
+warning counts were empty because no hard-valid candidate survived. The resumed aggregate
+recorded 8,393 seconds and 222 zero-cost model calls across manifest checkpointing and
+completion. Its privacy-scanned report has a null candidate digest and a `rejected`
+decision. With no hard-valid candidate or warning, the active-page and official-meaning
+comparison set was empty. The workflow retained only `sanitized-editorial-review` and
+opaque receipts, uploaded no site/state/handoff candidate, skipped every promotion and
+deployment job, and left the live release unchanged.
+
+Publication-disabled preflight `34568888532` and incomplete measurement `34572290550`
+were used only to checkpoint fresh Court activity and establish the fixed manifest through
+the no-public-change guard; neither changed Pages or counted as canary evidence. The
+completed recalibrated canary remains below the required eight improved rewrites. Do not
+run `batch_25` or `batch_100`; task 10.8 remains blocked, and further model or generation-
+policy work requires a separate reviewed change.
+
 Prior dry runs confirmed the Court and loopback Ollama paths but failed closed on
 extraction/runtime validation. Those same grounding, privacy, completeness, static, and
 release validators remain mandatory: a global candidate failure cannot replace the
