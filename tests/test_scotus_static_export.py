@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import shutil
 import subprocess
+from dataclasses import replace
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -12,9 +13,21 @@ from ragchew.config import ScotusConfig
 from ragchew.scotus.legacy_export import export_legacy_bootstrap
 from ragchew.scotus.public_contracts import ScotusPublicProjection, public_case_key
 from ragchew.scotus.static_cli import _with_editorial_rollout, build_parser
-from ragchew.scotus.static_contracts import ReleaseManifest, StaticSearchIndex
+from ragchew.scotus.static_contracts import (
+    CanaryAggregate,
+    CanaryFailureCount,
+    EditorialBackfillState,
+    EditorialRolloutStage,
+    ReleaseManifest,
+    RetryFailureCode,
+    StaticSearchIndex,
+)
 from ragchew.scotus.static_export import StaticExportError, StaticSiteExporter
-from ragchew.scotus.static_pipeline import ProductionBatchUnavailable
+from ragchew.scotus.static_pipeline import (
+    ProductionBatchUnavailable,
+    StaticBatchResult,
+)
+from ragchew.scotus.static_state import StaticStateStore
 from ragchew.scotus.static_urls import StaticUrlPolicy
 from ragchew.scotus.static_validation import StaticValidationError, validate_static_candidate
 
@@ -223,6 +236,104 @@ def test_reconcile_allows_missing_live_marker_only_for_initial_empty_bootstrap(
         StaticUrlPolicy("https://scotusbriefs.us", "/", "/scotus/"),
         state_root=tmp_path / "candidate-state",
     )
+
+
+def test_all_failed_editorial_batch_writes_only_sanitized_review(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    state = export_legacy_bootstrap(
+        (fixture("one-case"),),
+        tmp_path / "state",
+        source_commit=SOURCE_COMMIT,
+        config_sha256=CONFIG_DIGEST,
+        build_epoch=EPOCH,
+        tool_version="all-failed-review-test-v1",
+    )
+    original = StaticStateStore(state).load()
+    processor_sha256 = "c" * 64
+    case_keys = tuple(f"2025-25-{900 + index}" for index in range(10))
+    backfill = EditorialBackfillState(
+        processor_sha256=processor_sha256,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        newest_first_rank_boundary=10,
+        selected_case_keys=case_keys,
+        attempted_count=10,
+        accepted_count=0,
+        failed_count=10,
+    )
+    report = CanaryAggregate(
+        processor_sha256=processor_sha256,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        case_keys=case_keys,
+        attempted_count=10,
+        accepted_count=0,
+        failed_count=10,
+        failure_code_counts=(
+            CanaryFailureCount(code=RetryFailureCode.BRIEF_VALIDATION_FAILED, count=10),
+        ),
+        runtime_seconds=100,
+        model_call_count=151,
+    )
+    content = replace(
+        original,
+        publication=original.publication.model_copy(
+            update={"editorial_backfill": backfill, "canary_report": report}
+        ),
+    )
+    result = StaticBatchResult(
+        content=content,
+        parent_release_id=original.publication.active_release_id,
+        changed_case_keys=(),
+        pending_case_keys=case_keys,
+        publishable=False,
+        no_public_change=True,
+        checkpointable=True,
+    )
+
+    class Adapter:
+        def run(self, **_kwargs: object) -> StaticBatchResult:
+            return result
+
+    monkeypatch.setattr("ragchew.scotus.static_cli._load_adapter", lambda _spec: Adapter())
+    candidate_state = tmp_path / "candidate-state"
+    candidate_site = tmp_path / "candidate-site"
+    review = tmp_path / "sanitized-editorial-review.json"
+    github_output = tmp_path / "github-output"
+    args = build_parser().parse_args(
+        [
+            "batch",
+            "--mode",
+            "nightly",
+            "--state-dir",
+            str(state),
+            "--candidate-state-dir",
+            str(candidate_state),
+            "--output",
+            str(candidate_site),
+            "--workspace",
+            str(tmp_path / "private"),
+            "--editorial-rollout-stage",
+            "canary_10",
+            "--review-artifact",
+            str(review),
+            "--github-output",
+            str(github_output),
+        ]
+    )
+
+    assert args.function(args) == 0
+    assert not candidate_state.exists()
+    assert not candidate_site.exists()
+    payload = json.loads(review.read_text(encoding="utf-8"))
+    assert payload["manifest"]["case_keys"] == list(case_keys)
+    assert payload["report"]["candidate_sha256"] is None
+    outputs = dict(
+        line.split("=", 1)
+        for line in github_output.read_text(encoding="utf-8").splitlines()
+    )
+    assert outputs["publication_ready"] == "false"
+    assert outputs["editorial_review_only"] == "true"
 
 
 def test_receipt_upload_validation_rejects_private_payload_with_sanitized_error(

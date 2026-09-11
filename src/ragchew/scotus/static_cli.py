@@ -30,9 +30,11 @@ from ragchew.scotus.activity_migration import (
 from ragchew.scotus.discovery import DiscoveryMode
 from ragchew.scotus.public_contracts import ScotusPublicProjection
 from ragchew.scotus.static_contracts import (
+    CanaryAggregate,
     CanaryReviewerDecision,
     CostReceiptBundle,
     EditorialRolloutStage,
+    FreshnessSummary,
     ReleaseManifest,
     canonical_json_bytes,
     contract_digest,
@@ -583,6 +585,27 @@ def _batch(args: argparse.Namespace) -> int:
         )
     if not isinstance(result, StaticBatchResult):
         raise RuntimeError("production batch adapter returned an invalid result")
+    report = result.content.publication.canary_report
+    review_only = _is_all_failed_editorial_review(report)
+    if review_only:
+        assert report is not None
+        _write_editorial_review_artifact(args.review_artifact, report)
+        freshness = result.content.publication.freshness
+        _write_outputs(
+            args.github_output,
+            {
+                "release_changed": False,
+                "publication_ready": False,
+                "release_id": original.publication.active_release_id,
+                "expected_parent_release_id": result.parent_release_id,
+                "expected_parent_digest": generated_public_content_digest(original),
+                **_freshness_outputs(freshness),
+                "editorial_rollout_stage": report.rollout_stage.value,
+                "editorial_review_only": True,
+            },
+        )
+        print("built sanitized all-failed editorial review")
+        return 0
     if not result.checkpointable or result.content.projection is None:
         selected = set(result.pending_case_keys)
         reason_counts: dict[str, int] = {}
@@ -624,33 +647,13 @@ def _batch(args: argparse.Namespace) -> int:
         finalized = result.content
     validate_static_candidate(args.output, urls, state_root=args.candidate_state)
     report = finalized.publication.canary_report
-    review_only = bool(
-        report is not None
-        and report.candidate_sha256 is None
-        and report.accepted_count == 0
-        and report.failed_count == len(report.case_keys)
-        and report.attempted_count == len(report.case_keys)
-    )
-    if args.review_artifact is not None and report is not None:
-        review_payload = {
-            "schema_version": "1.0",
-            "manifest": {
-                "processor_sha256": report.processor_sha256,
-                "rollout_stage": report.rollout_stage,
-                "case_keys": report.case_keys,
-            },
-            "report": report,
-        }
-        args.review_artifact.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
-        args.review_artifact.write_bytes(canonical_json_bytes(review_payload))
-        scan_public_files((args.review_artifact,), labels=(args.review_artifact.name,))
+    review_only = _is_all_failed_editorial_review(report)
+    if report is not None:
+        _write_editorial_review_artifact(args.review_artifact, report)
     if finalized.release is None:
         raise RuntimeError("finalized generated state has no release")
     publication_ready = _live_publication_ready(config)
     freshness = finalized.publication.freshness
-
-    def safe_date(value: datetime | None) -> str:
-        return value.date().isoformat() if value is not None else "none"
 
     _write_outputs(
         args.github_output,
@@ -660,26 +663,7 @@ def _batch(args: argparse.Namespace) -> int:
             "release_id": export.manifest.release_id,
             "expected_parent_release_id": result.parent_release_id,
             "expected_parent_digest": generated_public_content_digest(original),
-            "discovered_count": str(freshness.discovered_count),
-            "published_count": str(freshness.published_count),
-            "deferred_count": str(freshness.deferred_count),
-            "failed_count": str(freshness.failed_count),
-            "pending_count": str(freshness.pending_count),
-            "newest_discovered_activity_date": safe_date(
-                freshness.newest_discovered_activity_date
-            ),
-            "newest_published_activity_date": safe_date(
-                freshness.newest_published_activity_date
-            ),
-            "newest_deferred_activity_date": safe_date(
-                freshness.newest_deferred_activity_date
-            ),
-            "newest_failed_activity_date": safe_date(
-                freshness.newest_failed_activity_date
-            ),
-            "newest_pending_activity_date": safe_date(
-                freshness.newest_pending_activity_date
-            ),
+            **_freshness_outputs(freshness),
             "editorial_rollout_stage": (
                 finalized.publication.editorial_backfill.rollout_stage.value
                 if finalized.publication.editorial_backfill is not None
@@ -690,6 +674,60 @@ def _batch(args: argparse.Namespace) -> int:
     )
     print(f"built validated batch release {export.manifest.release_id}")
     return 0
+
+
+def _is_all_failed_editorial_review(report: CanaryAggregate | None) -> bool:
+    return bool(
+        report is not None
+        and report.candidate_sha256 is None
+        and report.accepted_count == 0
+        and report.failed_count == len(report.case_keys)
+        and report.attempted_count == len(report.case_keys)
+    )
+
+
+def _write_editorial_review_artifact(
+    path: Path | None,
+    report: CanaryAggregate,
+) -> None:
+    if path is None:
+        return
+    review_payload = {
+        "schema_version": "1.0",
+        "manifest": {
+            "processor_sha256": report.processor_sha256,
+            "rollout_stage": report.rollout_stage,
+            "case_keys": report.case_keys,
+        },
+        "report": report,
+    }
+    path.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+    path.write_bytes(canonical_json_bytes(review_payload))
+    scan_public_files((path,), labels=(path.name,))
+
+
+def _freshness_outputs(freshness: FreshnessSummary) -> dict[str, str]:
+    def safe_date(value: datetime | None) -> str:
+        return value.date().isoformat() if value is not None else "none"
+
+    return {
+        "discovered_count": str(freshness.discovered_count),
+        "published_count": str(freshness.published_count),
+        "deferred_count": str(freshness.deferred_count),
+        "failed_count": str(freshness.failed_count),
+        "pending_count": str(freshness.pending_count),
+        "newest_discovered_activity_date": safe_date(
+            freshness.newest_discovered_activity_date
+        ),
+        "newest_published_activity_date": safe_date(
+            freshness.newest_published_activity_date
+        ),
+        "newest_deferred_activity_date": safe_date(
+            freshness.newest_deferred_activity_date
+        ),
+        "newest_failed_activity_date": safe_date(freshness.newest_failed_activity_date),
+        "newest_pending_activity_date": safe_date(freshness.newest_pending_activity_date),
+    }
 
 
 def _export_batch_candidate(

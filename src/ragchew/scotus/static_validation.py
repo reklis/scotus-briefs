@@ -69,7 +69,6 @@ _FORBIDDEN_TEXT = (
     b"operative_object",
     b"plain_language_guidance",
     b"field_path",
-    b"diagnostic",
     b"rejected_prose",
     b"rejected_text",
     b"repair_instruction",
@@ -80,6 +79,9 @@ _FORBIDDEN_TEXT = (
     b"model_response",
     b"raw_response",
     b"stack_trace",
+)
+_FORBIDDEN_PRIVATE_FIELD = re.compile(
+    rb"(?im)(?:[\"']diagnostic[\"']\s*:|(?:^|[\s,{])diagnostic\s*[=:])"
 )
 _FORBIDDEN_SUFFIXES = {".pdf", ".doc", ".docx", ".wav", ".mp3", ".mp4", ".sqlite", ".db"}
 
@@ -258,6 +260,7 @@ def scan_public_files(paths: Iterable[Path], *, labels: Iterable[str] = ()) -> N
         if (
             _SECRET.search(encoded)
             or _UUID.search(encoded)
+            or _FORBIDDEN_PRIVATE_FIELD.search(encoded)
             or any(value.lower() in lowered for value in _FORBIDDEN_TEXT)
         ):
             _fail("upload or log label contains forbidden private material")
@@ -268,6 +271,7 @@ def scan_public_files(paths: Iterable[Path], *, labels: Iterable[str] = ()) -> N
         if (
             _SECRET.search(name)
             or _UUID.search(name)
+            or _FORBIDDEN_PRIVATE_FIELD.search(name)
             or any(marker.lower() in name for marker in _FORBIDDEN_TEXT)
         ):
             _fail(f"forbidden private marker in public path: {path}")
@@ -277,7 +281,9 @@ def scan_public_files(paths: Iterable[Path], *, labels: Iterable[str] = ()) -> N
         lowered = value.lower()
         if _SECRET.search(value) or _UUID.search(value):
             _fail(f"credential or internal UUID detected: {path}")
-        if any(marker.lower() in lowered for marker in _FORBIDDEN_TEXT):
+        if _FORBIDDEN_PRIVATE_FIELD.search(value) or any(
+            marker.lower() in lowered for marker in _FORBIDDEN_TEXT
+        ):
             _fail(f"forbidden private payload or legacy route detected: {path}")
 
 
