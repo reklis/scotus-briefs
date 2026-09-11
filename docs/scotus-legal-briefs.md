@@ -128,15 +128,30 @@ path, legal issue, Supreme Court action, and Court reasoning, plus a separate-op
 section only when explicitly attributed claims support it. Section-role validation rejects
 otherwise grounded fragments under the wrong heading, dissent-led descriptions of the
 Court, and stays that omit their interim procedural effect.
-Calls use the exact local Ollama model `qwen3.8:27b` at
-the typed loopback-only `http://127.0.0.1:11434/v1` endpoint. The OpenAI SDK is only
-an Ollama-compatible transport with a non-secret placeholder key; JSON-schema chat
-completions remain mandatory. Exact model inventory is verified before evidence or
-completion traffic. Explicit timeout/retry limits and one shared attempted-call
-ledger remain in force, while all configured rates and maximum estimated cost are
-zero. Unchanged source/parser/provider/endpoint/model/prompt/config fingerprints
-cannot buy another attempt without an authorized replay. The workflow logs only case
-keys, stages, coarse outcomes, counts, digests, and timings.
+Calls use only the exact local Apache-2.0 Ollama model `cogito:70b`, with full
+reviewed content digest
+`8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`, at the typed
+loopback-only `http://127.0.0.1:11434/v1` endpoint. The OpenAI SDK is only an
+Ollama-compatible transport with a non-secret placeholder key; strict JSON-schema
+chat completions and the non-thinking request mode remain mandatory. Before Court or
+model work, inventory must contain one entry matching both tag and digest. Missing or
+drifted content stops the run; automation does not install, pull, choose another local
+model, or use a hosted-provider fallback.
+
+The 2026-09-11 production-protocol qualification used only repository-authored
+synthetic public evidence. It returned schema-valid grounded fields in 25 cold-start
+seconds, with 72 prompt tokens, 43 completion tokens, and 115 total tokens; it
+identified the exact Court action and object and declined to predict an unsupported
+winner. These are fixed aggregate facts, not publication approval. No probe prompt or
+response was retained in documentation, state, artifacts, or logs.
+
+Explicit timeout/retry limits and one shared attempted-call ledger remain in force,
+while all configured rates and maximum estimated cost are zero. Unchanged
+source/parser/provider/endpoint/model/prompt/config fingerprints cannot buy another
+attempt without an authorized replay. The model digest participates in configuration-
+derived processor and request identity, while prompt and validation-policy versions
+remain fixed for the replacement comparison. The workflow logs only case keys, stages,
+coarse outcomes, counts, digests, and timings.
 
 ## Development and migration
 

@@ -72,9 +72,14 @@ build runs on the self-hosted Spark runner and accepts only
 `RAGCHEW_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1`. That typed setting rejects remote
 hosts, credentials, query strings, and non-`/v1` paths. The OpenAI SDK is used only as
 Ollama's compatible JSON-schema chat client, with a non-secret placeholder key. The
-exact installed model `qwen3.8:27b` is checked before evidence or completion traffic.
-Deploy, receipt persistence, and promotion stay on GitHub-hosted Ubuntu and receive no
-model setting or secret. Pages has no runtime environment at all.
+only reviewed model is the Apache-2.0 `cogito:70b` content with full Ollama digest
+`8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`.
+Before any Court retrieval or completion traffic, preflight requires one installed
+inventory entry matching both the exact tag and full digest. A missing model or tag
+drift fails closed: automation never installs or pulls a model, selects another local
+model, or falls back to a hosted provider. Deploy, receipt persistence, and promotion
+stay on GitHub-hosted Ubuntu and receive no model setting or secret. Pages has no
+runtime environment at all.
 
 `.env.example` therefore contains no reader database/object-store credentials.
 `RAGCHEW_DATABASE_DSN` is accepted only when an operator explicitly runs the one-time

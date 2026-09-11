@@ -15,9 +15,12 @@ outcome. Always consult the linked official Court materials.
 ## Production boundary
 
 A protected self-hosted GitHub Actions job runs daily at 03:17 UTC (and by
-restricted manual dispatch). Its aarch64 Spark runner uses the loopback-only Ollama
-model `qwen3.8:27b`; no model credential or remote model endpoint is accepted. It
-independently checks the active term's reviewed official slip-opinion index as well as
+restricted manual dispatch). Its aarch64 Spark runner uses only the reviewed
+Apache-2.0 Ollama model `cogito:70b`, pinned to full content digest
+`8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`, through a
+loopback-only endpoint. Preflight requires both the tag and digest before Court or
+model work; no model credential, hosted provider, remote endpoint, pull, or fallback
+model is accepted. It independently checks the active term's reviewed official slip-opinion index as well as
 bounded argument and historical resources, then recomputes an entire changed case
 inside a permission-restricted ephemeral workspace. Fresh changes are attempted
 newest-first under finite limits; failed or deferred cases remain explicit pending

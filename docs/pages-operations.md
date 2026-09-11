@@ -76,7 +76,8 @@ counts, fixed outcome categories, duration bound, and decision are recorded; gen
 prose, official document text, prompts, model responses, and other private inputs were not
 retained in this runbook.
 
-Protected publication-disabled `canary_10` run `34471623129` tested processor
+Historical Qwen `qwen3.8:27b` publication-disabled `canary_10` run
+`34471623129` tested processor
 `05cc59467f1e094a29493d72803f9307553fe52cbcdc38686e7051e4992a1d6a` from
 source commit `b378bfd27592b37de7f72c130219817f8c740ab9` after the compact-writer
 prompt and bounded-repair updates. It completed all ten bounded case attempts in
@@ -95,8 +96,8 @@ candidate and release validation independently prevent advancement. Do not run
 change. No generated prose, official document text, prompts, model responses, rejected
 fields, or private diagnostics from this canary are recorded here.
 
-Recalibrated protected publication-disabled `canary_10` run
-[`34579544086`](https://github.com/reklis/scotus-briefs/actions/runs/34579544086)
+The recalibrated historical Qwen `qwen3.8:27b` publication-disabled `canary_10`
+run [`34579544086`](https://github.com/reklis/scotus-briefs/actions/runs/34579544086)
 then completed the fixed ten-case manifest from source commit
 `54db2f25d47e6621b31b559d3f736ca5e65f2c1e` with processor
 `141734d69e0f6d83a299cc91773a640d5505bac3e73eed1a276791743c98f47e`.
@@ -116,6 +117,19 @@ the no-public-change guard; neither changed Pages or counted as canary evidence.
 completed recalibrated canary remains below the required eight improved rewrites. Do not
 run `batch_25` or `batch_100`; task 10.8 remains blocked, and further model or generation-
 policy work requires a separate reviewed change.
+
+The reviewed replacement is the Apache-2.0 model `cogito:70b`, pinned to full Ollama
+content digest
+`8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`.
+A 2026-09-11 production-protocol probe using only repository-authored synthetic public
+evidence returned strict schema-valid grounded fields in 25 cold-start seconds (72
+prompt tokens, 43 completion tokens, 115 total tokens), identified the exact Court
+action and object, and declined to predict an unsupported winner. Only those fixed
+expected outcomes and aggregate timing/token facts are recorded; no probe prompt or
+response is retained. This qualification is not publication approval and does not
+relax any runtime, grounding, privacy, validation, or rollout gate. Tag or digest drift
+stops before Court retrieval; there is no model pull, alternate-model selection, or
+hosted-provider fallback.
 
 Prior dry runs confirmed the Court and loopback Ollama paths but failed closed on
 extraction/runtime validation. Those same grounding, privacy, completeness, static, and
@@ -157,8 +171,10 @@ in 29 minutes, including one fixed-code brief correction, and produced a privacy
 4. Register the aarch64 Spark runner with the repository. The installed runner is
    `spark`, pinned at version `2.337.0`, runs as the non-root `gdxspark` system service,
    and advertises `self-hosted`, `Linux`, `ARM64`, and `spark`; the workflow assumes only
-   `self-hosted`. Run Ollama as a host service listening only on `127.0.0.1:11434`,
-   install exact model `qwen3.8:27b`, and do not expose the port to a network.
+   `self-hosted`. Run Ollama as a host service listening only on `127.0.0.1:11434`.
+   Install the reviewed Apache-2.0 model `cogito:70b` whose full Ollama content digest
+   is `8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`, and do not
+   expose the port to a network. Protected automation must never pull or install it.
 5. Configure Pages for GitHub Actions with custom domain `scotusbriefs.us`, enforce
    HTTPS after GitHub accepts the domain, and protect `github-pages`. It has no secrets.
    DNS is managed separately by the owner; this repository change makes no DNS changes.
@@ -266,8 +282,9 @@ or from a working tree containing private inputs.
 
 The pinned workflow cannot run its build for pull requests. Every day at 03:17 UTC,
 the protected default-branch schedule cleans the persistent self-hosted workspace,
-preflights local Ollama and the exact `qwen3.8:27b` model, reconciles live and branch
-release IDs, creates a mode-0700 temporary workspace, and runs
+preflights local Ollama for exact tag `cogito:70b` and full content digest
+`8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`, reconciles
+live and branch release IDs, creates a mode-0700 temporary workspace, and runs
 `uv run ragchew-scotus-static`. `nightly` independently polls the active-term slip
 index and uses routine current/recent/rotating limits; `bootstrap` manually drains a
 bounded historical slice; `fixture` uses invented local data and can never become
@@ -284,19 +301,29 @@ stay effect, and any separate-opinion section. Then run the normal candidate val
 workflow.
 ### Measured editorial rollout
 
-Start a new reader-guide processor only with a protected manual `nightly` dispatch:
+Start a new reader-guide processor only with a protected manual `nightly` dispatch.
+For the Cogito replacement, preserve prompt, validation-policy, and budget settings and
+reconstruct exactly the ten case keys from rejected Qwen run `34579544086`, in its
+recorded order. All ten must remain eligible. If any key cannot be reconstructed safely,
+stop without substituting a case; unrelated fresh Court activity remains explicit
+pending work and cannot consume a reserved measured slot. The new processor starts with
+a fresh candidate identity, aggregate counts, warning counts, candidate digest, and
+reviewer fields; no Qwen decision or count carries over.
 
 1. Choose `editorial_rollout_stage=canary_10`, `deploy=false`, and leave
-   `maximum_cases=0` unless an even smaller diagnostic run is intentionally required.
-   The workflow rejects a canary deploy request and the CLI independently forces dry-run
-   publication. It always retains `sanitized-editorial-review`, containing only the
+   `maximum_cases=0`. A smaller run is diagnostic only and cannot qualify as the Cogito
+   comparison canary. The workflow rejects a canary deploy request and the CLI
+   independently forces dry-run publication. It always retains `sanitized-editorial-review`, containing only the
    fixed manifest and aggregate report, for one day. A hard-valid candidate additionally
    retains the scanned site and separately named sanitized editorial state. An all-hard-
    failed run retains no candidate site/state. None of these artifacts contains source
    text, prompts, rejected output, field paths, or detailed diagnostics.
-2. Review the deterministic manifest side by side with each active legacy page and the
-   linked official Court materials. The manifest is newest-first and, where available,
-   includes a disposition-only case, an argued case, and a case decided after argument.
+2. Confirm that the Cogito manifest exactly matches the prior rejected ten-case
+   comparison manifest, including order, then review it side by side with each active
+   legacy page and the linked official Court materials. A normal first-stage manifest
+   is newest-first and, where available, includes a disposition-only case, an argued
+   case, and a case decided after argument; the Cogito replacement does not rerank or
+   substitute the fixed comparison set.
    Reader-language, preferred-length, readability, repetition, and nonmaterial section-
    focus findings are fixed editorial warnings rather than factual acceptance failures.
    Record only case keys, fixed failure/warning-code counts, aggregate runtime/model
@@ -400,9 +427,14 @@ candidate, CAS-promote that exact state. If branch active is the last known-good
 redeploy its exact site artifact. Stop for an unknown live ID; do not generate over a
 split.
 
-Rollback means select a prior immutable validated release, validate its manifest and
-file digests, including the exact root `CNAME`, redeploy those exact bytes, then
-CAS-update active/previous pointers. Never regenerate, patch, or amend an old release.
+Before Cogito approval, rollback is configuration-only because no candidate may have
+been promoted: leave the live release unchanged and revert the reviewed model
+configuration rather than editing public state. After any approved promotion, select
+the prior immutable validated release, validate its manifest and file digests,
+including the exact root `CNAME`, redeploy those exact bytes, then CAS-update
+active/previous pointers. Resuming generation under a prior model requires a separately
+validated processor migration; never change a model tag or digest implicitly. Never
+regenerate, patch, or amend an old release.
 Verify root/SCOTUS/case/archive/search/correction/404 routes, canonical URLs, official
 links, disclosure, release ID, custom-domain routing, and branch/Page agreement. For an
 activity migration or disposition deployment, also compare the exact case-path order on

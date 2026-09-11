@@ -33,15 +33,19 @@ responses. Changed access conditions set `review_required`. Missing or malformed
 material cannot remove an existing public case.
 
 Only bounded evidence windows or sanitized approved claims may be sent to the exact
-local Ollama model `qwen3.8:27b`. The OpenAI SDK targets Ollama's compatible `/v1`
-interface with a non-secret placeholder key, disabled environment proxies/redirects,
-and preserved JSON-schema chat completions. Both workflow and adapter verify the exact
-installed model before model input is sent. Attempt and token limits are checked before
-sending; configured local model rates and maximum cost are zero. Logs and summaries
-contain only public case keys, stages, coarse
-status/error categories, safe counts/digests/timings, and release IDs—never response
-bodies, transcript text, prompts/model payloads, signed URLs, credentials, or private
-stack traces.
+local Apache-2.0 Ollama model `cogito:70b`, pinned to full content digest
+`8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`.
+The OpenAI SDK targets Ollama's compatible `/v1` interface with a non-secret placeholder
+key, disabled environment proxies/redirects, and preserved JSON-schema chat
+completions. Before Court retrieval or model input, the protected workflow requires an
+installed inventory entry matching both tag and digest, and the adapter continues to
+require the exact model ID. Missing content or identity drift stops the run; there is
+no install, pull, alternate-model, remote-endpoint, or hosted-provider fallback.
+Attempt and token limits are checked before sending; configured local model rates and
+maximum cost are zero. Logs and summaries contain only public case keys, stages,
+coarse status/error categories, safe counts/digests/timings, and release IDs—never
+response bodies, transcript text, prompts/model payloads, signed URLs, credentials, or
+private stack traces.
 
 ## Public-state boundary
 
