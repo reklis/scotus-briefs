@@ -1095,6 +1095,56 @@ def test_non_model_failure_does_not_create_automatic_retry_state(tmp_path: Path)
     assert result.content.publication.pending_work[0].retry is None
 
 
+def test_validation_after_a_model_attempt_retains_sanitized_retry_proof(
+    tmp_path: Path,
+) -> None:
+    class Discovery:
+        def discover(self, **_kwargs: object) -> StaticDiscoveryResult:
+            return StaticDiscoveryResult(
+                work=(
+                    StaticCaseWork(
+                        "2025-25-467",
+                        1,
+                        (),
+                        "source_change",
+                        retry_scope=DIGEST,
+                    ),
+                )
+            )
+
+    class Processor:
+        def process(
+            self, _work: StaticCaseWork, **kwargs: object
+        ) -> CaseProcessingResult:
+            budget = kwargs["budget"]
+            assert isinstance(budget, UnifiedRunBudget)
+            permit = budget.authorize_model_request(
+                stage="extraction",
+                document_digests=(DIGEST,),
+                processor_versions={"parser": "1"},
+                input_characters=1,
+                input_tokens=1,
+                output_tokens=1,
+            )
+            attempt = permit.reserve_attempt()
+            permit.complete_attempt(attempt, outcome=ModelAttemptOutcome.FAILED)
+            raise ValueError("synthetic post-model validation failure")
+
+    result = StaticBatchOrchestrator(
+        state_store=StaticStateStore(tmp_path / "empty"),
+        discovery=Discovery(),
+        processor=Processor(),
+        config=live_config(),
+        runner_temp=tmp_path,
+    ).run(now=NOW, scheduled_retries=False)
+
+    retry = result.content.publication.pending_work[0].retry
+    assert retry is not None
+    assert retry.scope_sha256 == DIGEST
+    assert retry.stage == "extraction"
+    assert retry.failure_code is RetryFailureCode.VALIDATION_FAILED
+
+
 def test_deferred_batch_work_is_explicit_before_advanced_checkpoints(
     tmp_path: Path,
 ) -> None:

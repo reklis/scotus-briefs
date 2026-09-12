@@ -1024,6 +1024,7 @@ class StaticBatchOrchestrator:
                         # later, smaller independent work while shared capacity remains.
                         continue
                     model_calls_before = budget.model_calls
+                    brief_calls_before = budget.brief_calls
                     try:
                         result = self.processor.process(
                             work,
@@ -1136,6 +1137,18 @@ class StaticBatchOrchestrator:
                             authoritative_activity_date=work.authoritative_activity_date,
                             model_failure=(
                                 error if isinstance(error, ModelOutputFailure) else None
+                            ),
+                            model_failure_scope=(
+                                work.retry_scope
+                                if not isinstance(error, ModelOutputFailure)
+                                and category is FailureCategory.VALIDATION
+                                and budget.model_calls > model_calls_before
+                                else None
+                            ),
+                            model_failure_stage=(
+                                "brief"
+                                if budget.brief_calls > brief_calls_before
+                                else "extraction"
                             ),
                             maximum_cycles=(
                                 1
@@ -1390,6 +1403,8 @@ def _pending(
     attempted: bool,
     authoritative_activity_date: datetime | None = None,
     model_failure: ModelOutputFailure | None = None,
+    model_failure_scope: str | None = None,
+    model_failure_stage: Literal["extraction", "brief"] = "extraction",
     maximum_cycles: int = 3,
     cooldown_hours: int = 20,
     preserve_retry: bool = False,
@@ -1423,17 +1438,28 @@ def _pending(
                 ),
                 failure_code=prior_retry.failure_code,
             )
-    if model_failure is not None:
+    if model_failure is not None or model_failure_scope is not None:
+        retry_scope = (
+            model_failure.retry_scope if model_failure is not None else model_failure_scope
+        )
+        assert retry_scope is not None
+        failure_stage = (
+            model_failure.stage if model_failure is not None else model_failure_stage
+        )
+        failure_code = (
+            RetryFailureCode(model_failure.safe_code)
+            if model_failure is not None
+            else RetryFailureCode.VALIDATION_FAILED
+        )
         prior_retry = previous.retry if previous is not None else None
         completed_cycles = (
             prior_retry.completed_cycles + 1
-            if prior_retry is not None
-            and prior_retry.scope_sha256 == model_failure.retry_scope
+            if prior_retry is not None and prior_retry.scope_sha256 == retry_scope
             else 1
         )
         retry = PendingModelRetry(
-            scope_sha256=model_failure.retry_scope,
-            stage=model_failure.stage,
+            scope_sha256=retry_scope,
+            stage=failure_stage,
             completed_cycles=completed_cycles,
             last_cycle_at=now,
             next_eligible_at=now + timedelta(hours=cooldown_hours),
@@ -1442,7 +1468,7 @@ def _pending(
                 if completed_cycles >= maximum_cycles
                 else ModelRetryStatus.PENDING
             ),
-            failure_code=RetryFailureCode(model_failure.safe_code),
+            failure_code=failure_code,
         )
     pending_reason = (
         previous.reason
