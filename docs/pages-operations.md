@@ -126,8 +126,12 @@ evidence returned strict schema-valid grounded fields in 25 cold-start seconds (
 prompt tokens, 43 completion tokens, 115 total tokens), identified the exact Court
 action and object, and declined to predict an unsupported winner. Only those fixed
 expected outcomes and aggregate timing/token facts are recorded; no probe prompt or
-response is retained. This qualification is not publication approval and does not
-relax any runtime, grounding, privacy, validation, or rollout gate. Tag or digest drift
+response is retained. A post-implementation protected Spark probe on 2026-09-12 again
+passed the nested strict-schema protocol in 19.852 seconds with 71 prompt tokens and 45
+completion tokens (116 total), the exact pinned digest, grounded actor/action/object,
+and no unsupported winner prediction; likewise, no prompt or response was retained.
+This qualification is not publication approval and does not relax any runtime,
+grounding, privacy, validation, or rollout gate. Tag or digest drift
 stops before Court retrieval, and native digest checks immediately before and after each
 completion reject any output produced across a mutable-tag change. There is no model
 pull, alternate-model selection, or hosted-provider fallback. Checked-in publication

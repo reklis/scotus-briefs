@@ -19,6 +19,6 @@
 ## 4. Verification and Protected Rollout
 
 - [x] 4.1 Run focused tests, the complete suite, formatting/lint, typing, OpenSpec strict validation, public-repository/privacy checks, and verify the package/workflow contains no stale production Qwen identity.
-- [ ] 4.2 Repeat a bounded synthetic production-protocol probe on the protected Spark runner and record only fixed expected fields, aggregate timing/token counts, model tag, and digest.
+- [x] 4.2 Repeat a bounded synthetic production-protocol probe on the protected Spark runner and record only fixed expected fields, aggregate timing/token counts, model tag, and digest.
 - [ ] 4.3 Run a protected publication-disabled ten-case Cogito canary against the exact comparison manifest, inspect every hard-valid candidate and warning against its active page and official-source meaning, and record the reviewed outcome.
 - [ ] 4.4 Only after qualifying approval, promote the exact reviewed candidate and proceed sequentially through the existing 25-case and up-to-100-case measured gates; otherwise stop with the live release unchanged.
