@@ -1093,6 +1093,7 @@ def test_non_model_failure_does_not_create_automatic_retry_state(tmp_path: Path)
     ).run(now=NOW, scheduled_retries=True)
 
     assert result.content.publication.pending_work[0].retry is None
+    assert result.content.publication.pending_work[0].model_attempted is False
 
 
 def test_validation_after_a_model_attempt_retains_sanitized_retry_proof(
@@ -1138,7 +1139,9 @@ def test_validation_after_a_model_attempt_retains_sanitized_retry_proof(
         runner_temp=tmp_path,
     ).run(now=NOW, scheduled_retries=False)
 
-    retry = result.content.publication.pending_work[0].retry
+    pending = result.content.publication.pending_work[0]
+    assert pending.model_attempted is True
+    retry = pending.retry
     assert retry is not None
     assert retry.scope_sha256 == DIGEST
     assert retry.stage == "extraction"

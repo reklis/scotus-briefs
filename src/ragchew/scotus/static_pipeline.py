@@ -1138,6 +1138,7 @@ class StaticBatchOrchestrator:
                             model_failure=(
                                 error if isinstance(error, ModelOutputFailure) else None
                             ),
+                            model_attempted=budget.model_calls > model_calls_before,
                             model_failure_scope=(
                                 work.retry_scope
                                 if not isinstance(error, ModelOutputFailure)
@@ -1403,6 +1404,7 @@ def _pending(
     attempted: bool,
     authoritative_activity_date: datetime | None = None,
     model_failure: ModelOutputFailure | None = None,
+    model_attempted: bool = False,
     model_failure_scope: str | None = None,
     model_failure_stage: Literal["extraction", "brief"] = "extraction",
     maximum_cycles: int = 3,
@@ -1482,6 +1484,12 @@ def _pending(
         first_seen_at=previous.first_seen_at if previous else now,
         last_attempted_at=now if attempted else (previous.last_attempted_at if previous else None),
         authoritative_activity_date=activity_date,
+        model_attempted=bool(
+            model_attempted
+            or model_failure is not None
+            or consumed_retry_cycle
+            or (preserve_retry and previous is not None and previous.model_attempted)
+        ),
         retry=retry,
     )
 

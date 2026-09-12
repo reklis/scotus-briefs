@@ -102,6 +102,7 @@ def _arm(
             attempts=1,
             first_seen_at=NOW,
             last_attempted_at=NOW,
+            model_attempted=True,
             retry=PendingModelRetry(
                 scope_sha256=f"{index:x}" * 64,
                 stage="brief",
@@ -162,6 +163,17 @@ def test_all_hard_validation_failures_still_form_a_complete_model_control() -> N
     config = _config("control")
     parent = GeneratedContent.empty()
     control, report = _arm(config, failure_code=RetryFailureCode.VALIDATION_FAILED)
+    control = replace(
+        control,
+        publication=control.publication.model_copy(
+            update={
+                "pending_work": tuple(
+                    item.model_copy(update={"retry": None})
+                    for item in control.publication.pending_work
+                )
+            }
+        ),
+    )
 
     baseline = build_contemporaneous_canary_baseline(
         parent=parent,
@@ -216,7 +228,7 @@ def test_control_requires_retry_outcome_and_documents_for_every_manifest_case() 
         update={"pending_work": control.publication.pending_work[:-1]}
     )
     incomplete = replace(control, publication=publication)
-    with pytest.raises(ValueError, match="model-failure retry state"):
+    with pytest.raises(ValueError, match="require a model attempt"):
         build_contemporaneous_canary_baseline(
             parent=GeneratedContent.empty(), control=incomplete, report=report, config=config
         )

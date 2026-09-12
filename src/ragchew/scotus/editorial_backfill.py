@@ -356,13 +356,16 @@ def _require_complete_arm(
         if key in accepted:
             continue
         pending = pending_by_case.get(key)
-        if (
-            pending is None
-            or pending.retry is None
-            or pending.retry.failure_code in non_model_codes
-        ):
-            raise ValueError("paired canary nonaccepted outcomes require model-failure retry state")
-        retry_counts[pending.retry.failure_code] += 1
+        if pending is None or not pending.model_attempted:
+            raise ValueError("paired canary nonaccepted outcomes require a model attempt")
+        failure_code = (
+            pending.retry.failure_code
+            if pending.retry is not None
+            else RetryFailureCode.VALIDATION_FAILED
+        )
+        if failure_code in non_model_codes:
+            raise ValueError("paired canary nonaccepted outcomes require model failures")
+        retry_counts[failure_code] += 1
     report_counts = Counter({item.code: item.count for item in report.failure_code_counts})
     if retry_counts != report_counts:
         raise ValueError("paired canary retry outcomes do not match its report")

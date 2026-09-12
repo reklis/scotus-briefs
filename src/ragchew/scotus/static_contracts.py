@@ -218,6 +218,10 @@ class PendingWork(StaticContract):
     # The newest official Court date represented by this work item. This is public,
     # allowlisted source metadata and deliberately excludes retrieval/processing times.
     authoritative_activity_date: datetime | None = None
+    # True only when this pending outcome followed at least one accounted local-model
+    # attempt. This source-text-free bit distinguishes bounded model-derived outcomes
+    # even when incomplete documents prevent construction of a retry scope.
+    model_attempted: bool = False
     # Optional for compatibility with pre-retry state. It contains no prompt, evidence,
     # rejected prose, internal identity, or arbitrary exception text.
     retry: PendingModelRetry | None = None
@@ -994,6 +998,8 @@ def _json_value(value: Any) -> Any:
         ):
             if "authoritative_activity_date" not in pending.model_fields_set:
                 pending_payload.pop("authoritative_activity_date", None)
+            if "model_attempted" not in pending.model_fields_set:
+                pending_payload.pop("model_attempted", None)
             if pending.retry is None:
                 pending_payload.pop("retry", None)
         return _json_value(payload)
@@ -1014,6 +1020,8 @@ def _json_value(value: Any) -> Any:
         payload = value.model_dump(mode="python")
         if "authoritative_activity_date" not in value.model_fields_set:
             payload.pop("authoritative_activity_date", None)
+        if "model_attempted" not in value.model_fields_set:
+            payload.pop("model_attempted", None)
         if value.retry is None:
             # Preserve byte-canonical legacy PendingWork payloads.
             payload.pop("retry", None)
