@@ -1337,7 +1337,13 @@ class StaticBatchOrchestrator:
                                 canonical_json_bytes(working.projection)
                             ),
                             warnings_by_case=accepted_warnings,
-                            previous=original.publication.canary_report,
+                            previous=(
+                                None
+                                if self.config.editorial_backfill.rollout_stage
+                                == "canary_10"
+                                and self.config.editorial_backfill.replacement_canary_case_keys
+                                else original.publication.canary_report
+                            ),
                         )
                     else:
                         canary_report = None

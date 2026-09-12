@@ -46,23 +46,27 @@ Replacing the model SHALL NOT relax source authorization, grounding, actor/actio
 - **THEN** official source text, prompts, responses, diagnostics, and rejected prose remain transient and are absent from logs, artifacts, generated state, and public files
 
 ### Requirement: Comparable publication-disabled replacement canary
-The system SHALL begin the new processor at a protected publication-disabled ten-case canary and SHALL reuse the rejected recalibrated manifest in the same order when all ten cases remain safely reconstructable.
+The system SHALL begin with a protected publication-disabled paired ten-case canary that runs exact reviewed `qwen3.8:27b` control content and exact Cogito candidate content independently from the same generated-content parent and SHALL reuse the rejected recalibrated manifest in the same order.
 
-#### Scenario: Prior manifest remains eligible
-- **WHEN** the replacement processor starts `canary_10` and every configured prior manifest case is still available with unchanged durable metadata and official document bytes
-- **THEN** the measured run uses exactly those ten case keys in the recorded order, reserves bounded slots only for them, and keeps unrelated fresh activity explicit pending
+#### Scenario: Contemporaneous control completes
+- **WHEN** every configured manifest case is safely reconstructable and exact Qwen control processing accounts for all ten outcomes using current official evidence
+- **THEN** the system emits a privacy-scanned sanitized baseline binding the original parent, manifest order, unchanged protocol/budgets, per-case document identities and integrity, disposition metadata, and control report without retaining source text, prompts, responses, diagnostics, or rejected prose
+
+#### Scenario: Cogito evidence matches control
+- **WHEN** Cogito independently processes the fixed manifest from the original parent and its evidence, protocol, budget, and parent digests equal the complete control baseline
+- **THEN** the system may retain the publication-disabled Cogito candidate and binds its report to that exact baseline
 
 #### Scenario: Prior processor state is reset
-- **WHEN** the configured manifest transitions to the replacement processor
-- **THEN** old attempt, retry, aggregate, warning, candidate, and reviewer state does not count toward the replacement measurement, while any new failure follows the existing finite retry policy
+- **WHEN** either paired arm starts
+- **THEN** old attempt, retry, aggregate, warning, candidate, and reviewer state does not count toward that arm, while new failures remain bounded by the existing policy
 
-#### Scenario: Prior manifest cannot be reconstructed
-- **WHEN** any prior manifest case is missing, ambiguous, source-invalid before selection, or cannot be safely reconstructed
-- **THEN** the canary fails closed instead of substituting another case
+#### Scenario: Comparison cannot be completed
+- **WHEN** any manifest case is missing or substituted, a control outcome is unaccounted, a non-model control failure occurs, evidence or protocol differs between arms, either model identity drifts, or the parent changes
+- **THEN** the paired canary fails closed and retains no promotable Cogito candidate
 
 #### Scenario: Canary has hard-valid candidates
-- **WHEN** one or more manifest cases produce hard-valid reader guides
-- **THEN** the workflow retains only privacy-scanned candidate/review artifacts, remains publication-disabled, and requires side-by-side review of every candidate and warning against the active page and official-source meaning
+- **WHEN** one or more Cogito manifest cases produce hard-valid reader guides under a complete matching control baseline
+- **THEN** the workflow retains only privacy-scanned comparison/candidate/review artifacts, remains publication-disabled, and requires side-by-side review of every candidate and warning against the control, active page, and official-source meaning
 
 #### Scenario: Canary has no hard-valid candidate
 - **WHEN** all ten replacement-model rewrites fail hard

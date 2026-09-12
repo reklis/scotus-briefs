@@ -52,11 +52,13 @@ Tests and the protected preflight will cover the OpenAI-compatible strict `json_
 
 The replacement changes model identity only. Existing compact writer, planner, field repair, hard/error tiers, warning codes, source allowlists, transient workspace, zero-cost ledger, transport limits, and five-hour bound remain unchanged. This isolates the model comparison and prevents a larger model from bypassing correctness controls.
 
-### Reuse the rejected canary manifest or fail closed
+### Reuse the rejected manifest with a contemporaneous Qwen control
 
-The reviewed prior order is pinned in typed configuration. When the prior `canary_10` state belongs to a different processor and all ten public cases remain eligible, the new processor starts with exactly those case keys in that order. Old processor attempts, retry scopes, aggregate counts, warnings, candidate identity, and reviewer state are reset. Each admitted case must retain the durable comparison metadata and official document bytes; drift fails before model work. If any key cannot be reconstructed safely, the measured run stops rather than silently substituting a more favorable case. Fresh unrelated Court activity remains explicit pending work and cannot consume reserved measured slots. A new replacement-model failure may re-enter only the existing finite scheduled retry policy.
+The reviewed prior order is pinned in typed configuration. The historical all-failed Qwen run deliberately retained no candidate state, so its final per-case document checkpoints are not recoverable; run `34662688685` confirmed that the earlier durable checkpoint cannot stand in for those inputs. The replacement therefore uses a paired publication-disabled measurement from one unchanged generated-content parent: first exact installed `qwen3.8:27b` content digest `22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643` establishes a sanitized current-evidence baseline, then Cogito independently processes the same manifest from the original parent. The control digest recorded here must match the installed reviewed content before Court work.
 
-### Treat the new canary as a fresh approval decision
+Both arms use exactly the configured ten keys in order and derive configurations that differ only by explicit model role, tag, and digest. They run as sequential protected jobs so each retains the unchanged five-hour runtime budget; the Cogito job cannot start until the Qwen job has uploaded its complete sanitized binding. Old attempts, retry scopes, aggregate counts, warnings, candidate identity, and reviewer state reset independently. The control baseline retains only the parent digest, fixed manifest, protocol digest, document identity/integrity digest, and sanitized control report digest. Cogito output is retained only if all ten control outcomes are accounted for, every nonaccepted control case is a bounded model-output failure, and its current document identities, SHA-256 values, byte counts, and disposition metadata exactly match the control baseline. Drift aborts the complete Cogito candidate. Receipts remain validated and uploadable after either arm fails, while private workspaces are still removed. If any key cannot be reconstructed safely, the paired run stops rather than substituting a case. Fresh unrelated Court activity remains explicit pending work and cannot consume measured slots.
+
+### Treat the Cogito arm as a fresh approval decision
 
 The new processor receives a fresh aggregate report and candidate digest. Prior reviewer counts and decisions do not carry over. The run uses `deploy=false`; an all-hard-failed result retains only the privacy-scanned report and opaque receipts. Promotion and 25/100-case stages remain unavailable unless at least eight cases are accepted and judged improved, accepted error counts are zero, no legacy page is degraded, and privacy/release validation pass.
 
@@ -67,7 +69,8 @@ The new processor receives a fresh aggregate report and candidate digest. Prior 
 - **[Ollama tag changes in place]** → Require the reviewed full digest before client construction and around every completion, reject output on drift, and include the digest in configuration-derived fingerprints.
 - **[Schema support differs between a tiny probe and full prompts]** → Add representative nested-schema tests, retain strict parsing/repair limits, and require the ten-case canary.
 - **[Larger model increases memory pressure on the persistent runner]** → Run only under existing workflow concurrency, retain bounded context/output, and verify cleanup plus an empty `ollama ps` state after operational review.
-- **[Old and new canaries are not comparable]** → Reuse the exact prior manifest or fail closed; keep all non-model policy inputs unchanged.
+- **[Historical Qwen evidence is irrecoverable]** → Run a contemporaneous Qwen control and Cogito arm from the same parent, bind Cogito to the sanitized current-evidence digest, and discard both on drift.
+- **[Paired run approaches runner limits]** → Give each arm the unchanged per-run budgets, keep publication disabled, and allow no partial measurement or stage advancement.
 
 ## Migration Plan
 
@@ -75,8 +78,9 @@ The new processor receives a fresh aggregate report and candidate digest. Prior 
 2. Update typed configuration, runtime/workflow preflight, repository checks, tests, and documentation for exact `cogito:70b` identity. Do not install or pull models in CI.
 3. Confirm the resulting processor/request fingerprint differs from the rejected Qwen processor while prompts and policy versions remain fixed.
 4. Run focused schema and latency probes, the full suite, typing, lint, OpenSpec, privacy, repository-policy, and workflow validation.
-5. Run a protected `deploy=false` `canary_10` against the exact prior manifest and manually inspect every hard-valid candidate and warning against its active page and official-source meaning.
-6. If rejected, retain the sanitized report, leave the live release unchanged, and stop. If approved, promote only the exact reviewed candidate and proceed through the existing measured 25/100 gates.
+5. Run a protected `deploy=false` paired `canary_10`: preflight both exact local identities, run Qwen control and Cogito independently from the same parent, and retain only a privacy-scanned baseline, reports, receipts, and hard-valid public candidates.
+6. Require exact evidence/protocol/parent bindings, then manually inspect every hard-valid Cogito candidate and warning against the contemporaneous control, active page, and official-source meaning.
+7. If rejected or incomplete, retain the sanitized report, leave the live release unchanged, and stop. If approved, promote only the exact reviewed Cogito candidate and proceed through the existing measured 25/100 gates.
 
 Rollback before approval is configuration-only because no public state is promoted. After any approved promotion, rollback uses the existing immutable prior release and requires a separately validated processor migration; changing the model tag or digest never occurs implicitly.
 

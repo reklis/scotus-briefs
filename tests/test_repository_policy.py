@@ -54,8 +54,12 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1" in text
     assert "cogito:70b" in text
     assert "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb" in text
-    assert 'item.get("name") == config.generation.model' in text
-    assert 'item.get("digest") == config.generation.model_digest' in text
+    assert "qwen3.8:27b" in text
+    assert "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643" in text
+    assert "required={production}" in text
+    assert "required |= {control}" in text
+    assert "--replacement-comparison-role control" in text
+    assert "--replacement-comparison-role candidate" in text
     assert "ollama pull" not in text
     assert "  CANONICAL_ORIGIN: https://scotusbriefs.us\n" in text
     assert "  PROJECT_BASE_PATH: /\n" in text

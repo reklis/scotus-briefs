@@ -574,8 +574,13 @@ class CanaryAggregate(StaticContract):
             self.attempted_count != len(self.case_keys)
             or self.improved_count < required_improvements
             or self.candidate_sha256 is None
-            or self.comparison_baseline_sha256 is None
-            or self.control_report_sha256 is None
+            or (
+                self.rollout_stage is EditorialRolloutStage.CANARY_10
+                and (
+                    self.comparison_baseline_sha256 is None
+                    or self.control_report_sha256 is None
+                )
+            )
             or self.accepted_error_count
             or self.degraded_legacy_count
             or not self.privacy_validation_passed

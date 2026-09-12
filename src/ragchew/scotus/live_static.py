@@ -661,6 +661,14 @@ def _source_from_config(config: ProceedingsConfig) -> OfficialSource:
 
 
 def _validate_live_gates(config: ScotusConfig) -> None:
+    if config.generation.runtime_role == "control" and (
+        config.editorial_backfill.rollout_stage != EditorialRolloutStage.CANARY_10.value
+        or len(config.editorial_backfill.replacement_canary_case_keys) != 10
+        or not config.publication.dry_run
+    ):
+        raise PublicationGateDenied(
+            "Qwen control is limited to the publication-disabled paired canary"
+        )
     if config.editorial_backfill.rollout_stage is not None and not config.publication.dry_run:
         raise PublicationGateDenied("editorial rollout must remain publication-disabled")
     if not config.enabled:
@@ -975,7 +983,16 @@ class LiveStaticDiscovery:
         configured_stage = self.config.editorial_backfill.rollout_stage
         if self.config.editorial_backfill.enabled and configured_stage is not None:
             rollout_stage = EditorialRolloutStage(configured_stage)
-            previous_backfill = content.publication.editorial_backfill
+            configured_replacement_manifest = (
+                self.config.editorial_backfill.replacement_canary_case_keys
+            )
+            fresh_replacement_arm = bool(
+                rollout_stage is EditorialRolloutStage.CANARY_10
+                and configured_replacement_manifest
+                and self.config.generation.runtime_role in {"control", "production"}
+            )
+            durable_backfill = content.publication.editorial_backfill
+            previous_backfill = None if fresh_replacement_arm else durable_backfill
             if previous_backfill is not None:
                 if previous_backfill.processor_sha256 == processor.composite_sha256:
                     require_stage_advancement(
@@ -994,13 +1011,11 @@ class LiveStaticDiscovery:
                 and previous_backfill.rollout_stage is rollout_stage
                 else set()
             )
-            configured_replacement_manifest = (
-                self.config.editorial_backfill.replacement_canary_case_keys
-            )
             if (
-                previous_backfill is not None
+                durable_backfill is not None
+                and not fresh_replacement_arm
                 and configured_replacement_manifest
-                and previous_backfill.selected_case_keys
+                and durable_backfill.selected_case_keys
                 != tuple(configured_replacement_manifest)
             ):
                 raise ValueError("active canary does not match the reviewed replacement manifest")
@@ -1013,7 +1028,8 @@ class LiveStaticDiscovery:
             replacement_manifest_key_set = set(replacement_manifest_keys)
             reset_replacement_pending_case_keys = (
                 replacement_manifest_key_set
-                if previous_backfill is None
+                if fresh_replacement_arm
+                or previous_backfill is None
                 or previous_backfill.processor_sha256 != processor.composite_sha256
                 else set()
             )
@@ -1024,7 +1040,6 @@ class LiveStaticDiscovery:
                     if (
                         replacement_case is None
                         or key not in merged_by_key
-                        or key in source_changed_case_keys
                     ):
                         raise ValueError(
                             "replacement canary manifest cannot be safely reconstructed"

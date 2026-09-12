@@ -1003,6 +1003,46 @@ def test_live_adapter_requires_exact_local_model_before_court_traffic(
     assert not model.closed
 
 
+def test_qwen_control_cannot_run_outside_publication_disabled_canary(
+    tmp_path: Path,
+) -> None:
+    court = CourtFixture()
+    model = MockOpenAI(
+        model_name="qwen3.8:27b",
+        model_digest=(
+            "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"
+        ),
+    )
+    base = live_config()
+    generation = type(base.generation).model_validate(
+        {
+            **base.generation.model_dump(mode="python"),
+            "runtime_role": "control",
+            "model": "qwen3.8:27b",
+            "model_digest": (
+                "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"
+            ),
+        }
+    )
+    invalid = base.model_copy(
+        update={
+            "generation": generation,
+            "publication": base.publication.model_copy(update={"dry_run": True}),
+        }
+    )
+
+    with pytest.raises(PublicationGateDenied, match="Qwen control is limited"):
+        build_adapter(court, model).run(
+            state_store=MemoryStateStore(tmp_path / "state"),
+            config=invalid,
+            mode=DiscoveryMode.NIGHTLY,
+            runner_temp=tmp_path / "private",
+            authorized_replay=False,
+        )
+    assert court.source_requests == []
+    assert model.requests == []
+
+
 def test_model_preflight_precedes_every_court_and_model_client_factory(
     tmp_path: Path,
 ) -> None:

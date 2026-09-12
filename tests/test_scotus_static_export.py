@@ -8,6 +8,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 import pytest
+import yaml
 
 from ragchew.config import ScotusConfig
 from ragchew.scotus.legacy_export import export_legacy_bootstrap
@@ -300,11 +301,19 @@ def test_all_failed_editorial_batch_writes_only_sanitized_review(
     candidate_site = tmp_path / "candidate-site"
     review = tmp_path / "sanitized-editorial-review.json"
     github_output = tmp_path / "github-output"
+    config_path = tmp_path / "scotus.yaml"
+    config_values = ScotusConfig.from_yaml(Path("config/scotus.yaml")).model_dump(
+        mode="json"
+    )
+    config_values["editorial_backfill"]["replacement_canary_case_keys"] = []
+    config_path.write_text(yaml.safe_dump(config_values))
     args = build_parser().parse_args(
         [
             "batch",
             "--mode",
             "nightly",
+            "--config",
+            str(config_path),
             "--state-dir",
             str(state),
             "--candidate-state-dir",

@@ -28,10 +28,16 @@ from ragchew.scotus.activity_migration import (
     require_current_activity_contracts,
 )
 from ragchew.scotus.discovery import DiscoveryMode
+from ragchew.scotus.editorial_backfill import (
+    build_contemporaneous_canary_baseline,
+    derive_canary_protocol_digest,
+    validate_candidate_against_baseline,
+)
 from ragchew.scotus.public_contracts import ScotusPublicProjection
 from ragchew.scotus.static_contracts import (
     CanaryAggregate,
     CanaryReviewerDecision,
+    ContemporaneousCanaryBaseline,
     CostReceiptBundle,
     EditorialRolloutStage,
     FreshnessSummary,
@@ -180,7 +186,10 @@ def _validate(args: argparse.Namespace) -> int:
     if args.require_approved_measurement:
         if args.state is None:
             raise ValueError("approved measurement validation requires candidate state")
-        _require_promotable_measurement(StaticStateStore(args.state).load())
+        _require_promotable_measurement(
+            StaticStateStore(args.state).load(),
+            comparison_baseline=_load_comparison_baseline(args.comparison_baseline),
+        )
     print(f"validated {manifest.release_id} ({manifest.page_count} pages)")
     return 0
 
@@ -515,6 +524,26 @@ def _with_editorial_rollout(config: ScotusConfig, value: str) -> ScotusConfig:
     )
 
 
+def _with_replacement_comparison_role(
+    config: ScotusConfig, role: str
+) -> ScotusConfig:
+    generation_values = config.generation.model_dump(mode="python")
+    if role == "control":
+        generation_values.update(
+            {
+                "runtime_role": "control",
+                "model": config.editorial_backfill.control_model,
+                "model_digest": config.editorial_backfill.control_model_digest,
+            }
+        )
+    elif role == "candidate":
+        generation_values.update({"runtime_role": "production"})
+    else:
+        raise ValueError("replacement comparison role must be control or candidate")
+    generation = type(config.generation).model_validate(generation_values)
+    return config.model_copy(update={"generation": generation})
+
+
 def _batch(args: argparse.Namespace) -> int:
     if args.mode == "fixture":
         fixture_args = argparse.Namespace(
@@ -543,6 +572,26 @@ def _batch(args: argparse.Namespace) -> int:
         if mode is not DiscoveryMode.NIGHTLY:
             raise ValueError("editorial rollout is permitted only in nightly mode")
         config = _with_editorial_rollout(config, args.editorial_rollout_stage)
+    comparison_role = args.replacement_comparison_role
+    paired_canary = bool(
+        args.editorial_rollout_stage == EditorialRolloutStage.CANARY_10.value
+        and config.editorial_backfill.replacement_canary_case_keys
+    )
+    if paired_canary and comparison_role is None:
+        raise ValueError("replacement canary requires an explicit paired comparison role")
+    if comparison_role is not None:
+        if not paired_canary:
+            raise ValueError("replacement comparison is limited to the fixed canary_10 stage")
+        if (
+            args.authorized_replay
+            or args.scheduled_retries
+            or args.maximum_cases is not None
+            or args.comparison_baseline is None
+        ):
+            raise ValueError(
+                "paired comparison forbids replay, retries, case overrides, or a missing baseline"
+            )
+        config = _with_replacement_comparison_role(config, comparison_role)
     if args.scheduled_retries and mode is not DiscoveryMode.NIGHTLY:
         raise ValueError("scheduled retries are permitted only in nightly mode")
     if args.maximum_cases is not None:
@@ -568,6 +617,23 @@ def _batch(args: argparse.Namespace) -> int:
     state_store = StaticStateStore(args.state)
     original = state_store.load()
     require_current_activity_contracts(original)
+    comparison_baseline: ContemporaneousCanaryBaseline | None = None
+    if comparison_role == "candidate":
+        try:
+            comparison_baseline = ContemporaneousCanaryBaseline.model_validate_json(
+                args.comparison_baseline.read_bytes()
+            )
+        except (OSError, ValidationError, ValueError):
+            raise ValueError("replacement control baseline is missing or invalid") from None
+        if (
+            comparison_baseline.parent_public_content_sha256
+            != generated_public_content_digest(original)
+            or comparison_baseline.case_keys
+            != config.editorial_backfill.replacement_canary_case_keys
+            or comparison_baseline.protocol_sha256
+            != derive_canary_protocol_digest(config)
+        ):
+            raise ValueError("replacement control baseline does not match candidate inputs")
     if args.scheduled_retries:
         result = adapter.run(
             state_store=state_store,
@@ -590,6 +656,39 @@ def _batch(args: argparse.Namespace) -> int:
     if not isinstance(result, StaticBatchResult):
         raise RuntimeError("production batch adapter returned an invalid result")
     report = result.content.publication.canary_report
+    if comparison_role == "control":
+        if report is None:
+            raise ValueError("replacement control did not produce a canary report")
+        baseline = build_contemporaneous_canary_baseline(
+            parent=original,
+            control=result.content,
+            report=report,
+            config=config,
+        )
+        assert args.comparison_baseline is not None
+        args.comparison_baseline.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+        args.comparison_baseline.write_bytes(canonical_json_bytes(baseline))
+        scan_public_files(
+            (args.comparison_baseline,), labels=(args.comparison_baseline.name,)
+        )
+    elif comparison_role == "candidate":
+        if report is None or comparison_baseline is None:
+            raise ValueError("replacement candidate lacks its control baseline or report")
+        bound_report = validate_candidate_against_baseline(
+            comparison_baseline,
+            parent=original,
+            candidate=result.content,
+            report=report,
+            config=config,
+        )
+        publication = result.content.publication.model_copy(
+            update={"canary_report": bound_report}
+        )
+        result = replace(
+            result,
+            content=replace(result.content, publication=publication),
+        )
+        report = bound_report
     review_only = _is_all_failed_editorial_review(report)
     if review_only:
         assert report is not None
@@ -827,12 +926,28 @@ def _persist_cost_receipts(args: argparse.Namespace) -> int:
     return 0
 
 
+def _load_comparison_baseline(
+    path: Path | None,
+) -> ContemporaneousCanaryBaseline | None:
+    if path is None:
+        return None
+    try:
+        return ContemporaneousCanaryBaseline.model_validate_json(path.read_bytes())
+    except (OSError, ValidationError, ValueError):
+        raise CompareAndSwapConflict("comparison baseline is missing or invalid") from None
+
+
 def _require_promotable_measurement(
-    candidate: GeneratedContent, *, checkpoint_only: bool = False
+    candidate: GeneratedContent,
+    *,
+    checkpoint_only: bool = False,
+    comparison_baseline: ContemporaneousCanaryBaseline | None = None,
 ) -> None:
-    """Require positive review before public promotion; retain safe checkpoints."""
+    """Require positive review and exact comparison binding before promotion."""
     report = candidate.publication.canary_report
     if report is None:
+        if candidate.publication.editorial_backfill is not None:
+            raise CompareAndSwapConflict("measured candidate is missing its canary report")
         return
     all_failed = (
         report.attempted_count == len(report.case_keys)
@@ -843,6 +958,17 @@ def _require_promotable_measurement(
         raise CompareAndSwapConflict("rejected canary measurement cannot be promoted")
     if not checkpoint_only and report.reviewer_decision is not CanaryReviewerDecision.APPROVED:
         raise CompareAndSwapConflict("canary measurement requires reviewed approval")
+    if (
+        not checkpoint_only
+        and report.rollout_stage is EditorialRolloutStage.CANARY_10
+        and (
+            comparison_baseline is None
+            or contract_digest(comparison_baseline) != report.comparison_baseline_sha256
+            or comparison_baseline.control_report_sha256 != report.control_report_sha256
+            or comparison_baseline.case_keys != report.case_keys
+        )
+    ):
+        raise CompareAndSwapConflict("approved canary comparison binding is invalid")
 
 
 def _promote(args: argparse.Namespace) -> int:
@@ -850,7 +976,11 @@ def _promote(args: argparse.Namespace) -> int:
     store = StaticStateStore(args.state)
     active = store.load()
     candidate = StaticStateStore(args.candidate_state).load()
-    _require_promotable_measurement(candidate, checkpoint_only=args.checkpoint_only)
+    _require_promotable_measurement(
+        candidate,
+        checkpoint_only=args.checkpoint_only,
+        comparison_baseline=_load_comparison_baseline(args.comparison_baseline),
+    )
     if args.checkpoint_only:
         if (
             candidate.release != active.release
@@ -1022,6 +1152,7 @@ def build_parser() -> argparse.ArgumentParser:
     validate.add_argument("--state", "--state-dir", dest="state", type=Path)
     validate.add_argument("--privacy-scan", action="store_true")
     validate.add_argument("--require-approved-measurement", action="store_true")
+    validate.add_argument("--comparison-baseline", type=Path)
     validate.set_defaults(function=_validate)
 
     fixture = commands.add_parser(
@@ -1151,6 +1282,16 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         help="write a privacy-scanned sanitized editorial manifest and aggregate report",
     )
+    batch.add_argument(
+        "--replacement-comparison-role",
+        choices=("control", "candidate"),
+        help="run one arm of the fixed paired replacement canary",
+    )
+    batch.add_argument(
+        "--comparison-baseline",
+        type=Path,
+        help="write or verify the sanitized contemporaneous control baseline",
+    )
     batch.add_argument("--fixture", type=Path, default=Path("tests/fixtures/static/one-case.json"))
     batch.set_defaults(function=_batch)
 
@@ -1172,6 +1313,7 @@ def build_parser() -> argparse.ArgumentParser:
     promote.add_argument("--expected-parent-digest")
     promote.add_argument("--expected-parent-commit", required=True)
     promote.add_argument("--checkpoint-only", action="store_true")
+    promote.add_argument("--comparison-baseline", type=Path)
     promote.add_argument("--github-output", type=Path)
     promote.set_defaults(function=_promote)
     return parser

@@ -288,15 +288,8 @@ def _require_exact_arm_identity(
         or config.generation.model_digest != expected_digest
     ):
         raise ValueError(f"paired canary requires exact {runtime_role} model identity")
-    processor = content.publication.processor
-    expected_identity_prefix = (
-        f"ollama:{expected_model}@sha256:{expected_digest}@"
-    )
-    if (
-        processor is None
-        or processor.composite_sha256 != report.processor_sha256
-        or not processor.model.startswith(expected_identity_prefix)
-    ):
+    backfill = content.publication.editorial_backfill
+    if backfill is None or backfill.processor_sha256 != report.processor_sha256:
         raise ValueError(f"paired canary report requires exact {runtime_role} processor identity")
 
 
@@ -356,7 +349,6 @@ def _require_complete_arm(
         RetryFailureCode.SOURCE_UNAVAILABLE,
         RetryFailureCode.SOURCE_INVALID,
         RetryFailureCode.PROCESSING_FAILED,
-        RetryFailureCode.VALIDATION_FAILED,
         RetryFailureCode.DATE_BACKFILL_UNMATCHED,
     }
     retry_counts: Counter[RetryFailureCode] = Counter()

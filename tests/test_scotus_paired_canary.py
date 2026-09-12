@@ -15,6 +15,7 @@ from ragchew.scotus.editorial_backfill import (
     validate_candidate_against_baseline,
     validate_contemporaneous_canary_baseline,
 )
+from ragchew.scotus.static_cli import _require_promotable_measurement
 from ragchew.scotus.static_contracts import (
     CanaryAggregate,
     CanaryFailureCount,
@@ -31,6 +32,7 @@ from ragchew.scotus.static_contracts import (
     PublicationState,
     RetryFailureCode,
     canonical_json_bytes,
+    contract_digest,
 )
 from ragchew.scotus.static_state import GeneratedContent
 
@@ -48,7 +50,12 @@ def _config(role: str) -> ScotusConfig:
     return ScotusConfig.model_validate(values)
 
 
-def _arm(config: ScotusConfig, *, drift: bool = False) -> tuple[GeneratedContent, CanaryAggregate]:
+def _arm(
+    config: ScotusConfig,
+    *,
+    drift: bool = False,
+    failure_code: RetryFailureCode = RetryFailureCode.INVALID_SCHEMA,
+) -> tuple[GeneratedContent, CanaryAggregate]:
     keys = config.editorial_backfill.replacement_canary_case_keys
     processor_digest = "a" * 64 if config.generation.runtime_role == "control" else "b" * 64
     backfill = EditorialBackfillState(
@@ -67,7 +74,7 @@ def _arm(config: ScotusConfig, *, drift: bool = False) -> tuple[GeneratedContent
         accepted_count=0,
         failed_count=10,
         failure_code_counts=(
-            CanaryFailureCount(code=RetryFailureCode.INVALID_SCHEMA, count=10),
+            CanaryFailureCount(code=failure_code, count=10),
         ),
         runtime_seconds=20,
         model_call_count=10,
@@ -102,7 +109,7 @@ def _arm(config: ScotusConfig, *, drift: bool = False) -> tuple[GeneratedContent
                 last_cycle_at=NOW,
                 next_eligible_at=NOW + timedelta(hours=20),
                 status=ModelRetryStatus.PENDING,
-                failure_code=RetryFailureCode.INVALID_SCHEMA,
+                failure_code=failure_code,
             ),
         )
         for index, key in enumerate(keys, start=1)
@@ -149,6 +156,23 @@ def test_contemporaneous_baseline_is_sanitized_and_binds_complete_control() -> N
     validate_contemporaneous_canary_baseline(
         baseline, parent=parent, control=control, report=report, config=config
     )
+
+
+def test_all_hard_validation_failures_still_form_a_complete_model_control() -> None:
+    config = _config("control")
+    parent = GeneratedContent.empty()
+    control, report = _arm(config, failure_code=RetryFailureCode.VALIDATION_FAILED)
+
+    baseline = build_contemporaneous_canary_baseline(
+        parent=parent,
+        control=control,
+        report=report,
+        config=config,
+    )
+
+    assert baseline.case_keys == config.editorial_backfill.replacement_canary_case_keys
+    assert report.attempted_count == 10
+    assert report.failed_count == 10
 
 
 def test_candidate_requires_same_parent_protocol_evidence_and_exact_cogito() -> None:
@@ -230,3 +254,48 @@ def test_approved_report_requires_both_comparison_bindings() -> None:
     )
     approved = CanaryAggregate.model_validate(payload)
     assert approved.reviewer_decision is CanaryReviewerDecision.APPROVED
+
+
+def test_approved_candidate_requires_the_exact_control_baseline_at_promotion() -> None:
+    parent = GeneratedContent.empty()
+    control_config = _config("control")
+    control, control_report = _arm(control_config)
+    baseline = build_contemporaneous_canary_baseline(
+        parent=parent,
+        control=control,
+        report=control_report,
+        config=control_config,
+    )
+    candidate_config = _config("production")
+    candidate, report = _arm(candidate_config)
+    approved = CanaryAggregate.model_validate(
+        {
+            **report.model_dump(mode="python"),
+            "candidate_sha256": "c" * 64,
+            "comparison_baseline_sha256": contract_digest(baseline),
+            "control_report_sha256": baseline.control_report_sha256,
+            "accepted_count": 10,
+            "failed_count": 0,
+            "failure_code_counts": (),
+            "improved_count": 8,
+            "privacy_validation_passed": True,
+            "release_validation_passed": True,
+            "reviewer_decision": CanaryReviewerDecision.APPROVED,
+        }
+    )
+    backfill = candidate.publication.editorial_backfill
+    assert backfill is not None
+    publication = candidate.publication.model_copy(
+        update={
+            "pending_work": (),
+            "editorial_backfill": backfill.model_copy(
+                update={"accepted_count": 10, "failed_count": 0}
+            ),
+            "canary_report": approved,
+        }
+    )
+    promotable = replace(candidate, publication=publication)
+
+    with pytest.raises(RuntimeError, match="comparison binding"):
+        _require_promotable_measurement(promotable)
+    _require_promotable_measurement(promotable, comparison_baseline=baseline)

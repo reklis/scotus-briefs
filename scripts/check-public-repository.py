@@ -151,15 +151,19 @@ def check() -> list[str]:
         failures.append("SCOTUS custom-domain paths must be root project and /scotus/ section")
     reviewed_model = "cogito:70b"
     reviewed_digest = "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
-    replacement_manifest = config.get("editorial_backfill", {}).get(
-        "replacement_canary_case_keys", []
-    )
+    editorial = config.get("editorial_backfill", {})
+    control_model = "qwen3.8:27b"
+    control_digest = "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"
+    replacement_manifest = editorial.get("replacement_canary_case_keys", [])
     if replacement_manifest and publication.get("dry_run") is not True:
         failures.append("replacement model must remain publication-disabled before approval")
     if (
         generation.get("provider") != "ollama"
+        or generation.get("runtime_role") != "production"
         or generation.get("model") != reviewed_model
         or generation.get("model_digest") != reviewed_digest
+        or editorial.get("control_model") != control_model
+        or editorial.get("control_model_digest") != control_digest
     ):
         failures.append(
             "SCOTUS generation must use reviewed Ollama model "
@@ -181,6 +185,9 @@ def check() -> list[str]:
         failures.append("local Ollama cost rates and maximum must remain zero")
 
     workflow = Path(".github/workflows/publish-pages.yml").read_text(encoding="utf-8")
+    control = workflow[
+        workflow.index("\n  paired-control:\n") : workflow.index("\n  build:\n")
+    ]
     build = workflow[
         workflow.index("\n  build:\n") : workflow.index("\n  persist-cost-receipts:\n")
     ]
@@ -190,19 +197,24 @@ def check() -> list[str]:
         or '${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json' not in workflow
     ):
         failures.append("Pages workflow must publish and reconcile the scotusbriefs.us root")
-    if "runs-on: [self-hosted]" not in build:
-        failures.append("Pages build must run only on the self-hosted runner")
-    if "OPENAI_API_KEY" in workflow or "secrets." in build:
-        failures.append("self-hosted Pages build must not receive model secrets")
+    if "runs-on: [self-hosted]" not in build or "runs-on: [self-hosted]" not in control:
+        failures.append("Pages paired builds must run only on the self-hosted runner")
+    if "OPENAI_API_KEY" in workflow or "secrets." in build or "secrets." in control:
+        failures.append("self-hosted Pages builds must not receive model secrets")
     if (
         "http://127.0.0.1:11434/api/tags" not in build
         or reviewed_model not in workflow
         or reviewed_digest not in workflow
-        or 'item.get("name") == config.generation.model' not in build
-        or 'item.get("digest") == config.generation.model_digest' not in build
+        or control_model not in workflow
+        or control_digest not in workflow
+        or "required={production}" not in build
+        or "required |= {control}" not in build
+        or "--replacement-comparison-role control" not in control
+        or "--replacement-comparison-role candidate" not in build
+        or "needs: [paired-control]" not in build
     ):
-        failures.append("Pages build must preflight the exact reviewed Ollama tag and digest")
-    if re.search(r"\bollama\s+(?:pull|run|create|cp)\b", build):
+        failures.append("Pages build must preflight and pair exact reviewed Ollama identities")
+    if re.search(r"\bollama\s+(?:pull|run|create|cp)\b", control + build):
         failures.append("Pages build must not pull, create, or fall back to another Ollama model")
     if "--require-approved-measurement" not in build:
         failures.append("Pages build must require reviewer approval before publication")
@@ -211,13 +223,15 @@ def check() -> list[str]:
     if "services:" in workflow:
         failures.append("Pages publication must not start Docker services")
     if not all(
-        name in build
+        name in control + build
         for name in (
+            "Clean persistent runner before control",
+            "Clean persistent runner after control",
             "Clean persistent runner before build",
             "Clean persistent runner after build",
         )
     ):
-        failures.append("self-hosted Pages build requires pre/post persistent-runner cleanup")
+        failures.append("self-hosted Pages builds require pre/post persistent-runner cleanup")
     hosted_jobs = workflow[workflow.index("\n  persist-cost-receipts:\n") :]
     if "runs-on: [self-hosted]" in hosted_jobs or hosted_jobs.count(
         "runs-on: ubuntu-24.04"

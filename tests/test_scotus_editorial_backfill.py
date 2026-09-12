@@ -395,6 +395,13 @@ def test_cli_promotion_rejects_failed_or_rejected_measurement_before_mode_branch
     with pytest.raises(CompareAndSwapConflict, match="cannot be promoted"):
         _require_promotable_measurement(candidate)
 
+    missing_report = replace(
+        GeneratedContent.empty(),
+        publication=PublicationState(updated_at=NOW, editorial_backfill=backfill),
+    )
+    with pytest.raises(CompareAndSwapConflict, match="missing its canary report"):
+        _require_promotable_measurement(missing_report)
+
     accepted_key = backfill.selected_case_keys[0]
     rejected = aggregate_canary_report(
         backfill=backfill,

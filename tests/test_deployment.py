@@ -71,8 +71,10 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1" in workflow
     assert "cogito:70b" in workflow
     assert "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb" in workflow
-    assert 'item.get("name") == config.generation.model' in workflow
-    assert 'item.get("digest") == config.generation.model_digest' in workflow
+    assert "qwen3.8:27b" in workflow
+    assert "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643" in workflow
+    assert "required={production}" in workflow
+    assert "required |= {control}" in workflow
     assert "ollama pull" not in workflow
     assert "ragchew.scotus.live_static:LiveStaticBatchAdapter" in workflow
     assert "options: [fixture, nightly, bootstrap, activity-migration" in workflow
@@ -99,12 +101,28 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert workflow.index("Validate opaque receipts before any upload") < workflow.index(
         "Upload validated opaque cost receipts"
     ) < workflow.index("Upload exact Pages artifact")
-    assert "    timeout-minutes: 330\n" in workflow
+    assert "    timeout-minutes: 360\n" in workflow
+    control_job = workflow[
+        workflow.index("\n  paired-control:\n") : workflow.index("\n  build:\n")
+    ]
     live_step = workflow[
         workflow.index("- name: Run reviewed bounded live adapter") :
         workflow.index("- name: Build fixture, validate, and exit")
     ]
-    assert "timeout-minutes: 315" in live_step
+    assert "timeout-minutes: 315" in control_job
+    assert "timeout-minutes: 345" in live_step
+    assert "--replacement-comparison-role control" in control_job
+    assert "--replacement-comparison-role candidate" in live_step
+    assert workflow.index("--replacement-comparison-role control") < workflow.index(
+        "--replacement-comparison-role candidate"
+    )
+    assert "contemporaneous-control-baseline.json" in control_job
+    assert "paired-control-input/contemporaneous-control-baseline.json" in live_step
+    assert "CostReceiptBundle(receipts=receipts)" in live_step
+    assert "sanitized-contemporaneous-control" in workflow
+    assert "scanned-qwen-control-candidate" in workflow
+    assert "ragchew-qwen-control" in workflow
+    assert "ragchew-cogito-candidate" in workflow
     receipt_upload = workflow[
         workflow.index("- name: Upload validated opaque cost receipts") :
         workflow.index("- name: Safe build summary")

@@ -8,7 +8,7 @@ The recalibrated `qwen3.8:27b` canary attempted all ten cases but produced zero 
 - Pin the reviewed installed Ollama content digest `8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb` as well as the model tag so mutable tag drift fails before Court or model work.
 - Advance the processor/model identity without changing prompts or validation policy, allowing the model effect to be measured independently and preventing unchanged-input receipt collisions.
 - Add exact-tag/digest, strict JSON-schema, latency/budget, fingerprint, workflow-policy, and fail-closed availability regressions.
-- Run a protected publication-disabled ten-case canary, preferably reusing the rejected recalibrated manifest for direct comparison, and retain only sanitized review artifacts. Do not promote or run 25/100-case stages unless the new candidate receives reviewed approval under the existing threshold.
+- Because the completed historical Qwen run did not retain its final document checkpoints, run a contemporaneous publication-disabled Qwen control and Cogito candidate from the same generated-content parent and bind both to identical current document digests for the exact rejected ten-case manifest. Retain only sanitized comparison/review artifacts. Do not promote or run 25/100-case stages unless the Cogito candidate receives reviewed approval under the existing threshold.
 
 ## Capabilities
 
@@ -21,4 +21,4 @@ None.
 
 ## Impact
 
-This affects the typed SCOTUS generation configuration, processor fingerprinting and live Ollama preflight, the protected Pages workflow, repository policy checks, model-adapter/config/workflow tests, and operations/security/model documentation. It changes no public URL or JSON schema, adds no external dependency or credential, sends no private material off the Spark host, and authorizes no publication by itself.
+This affects the typed SCOTUS generation/control configuration, processor fingerprinting and live Ollama preflight, sanitized generated-state comparison contracts, the protected Pages workflow, repository policy checks, model-adapter/config/workflow tests, and operations/security/model documentation. It changes no public URL, adds no external dependency or credential, sends no private material off the Spark host, and authorizes no publication by itself.
