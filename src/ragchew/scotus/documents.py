@@ -35,6 +35,24 @@ class DocumentCollectionError(RuntimeError):
     """Raised when an official document cannot be accepted safely."""
 
 
+_AKAMAI_TELEMETRY_MARKER = b"https://s.go-mpulse.net/boomerang/"
+_AKAMAI_TELEMETRY_SCRIPT = re.compile(
+    rb'<script>!function\(e\)\{var n="https://s\.go-mpulse\.net/boomerang/";.*?</script>',
+    re.DOTALL,
+)
+
+
+def canonicalize_docket_html(content: bytes) -> bytes:
+    """Remove only the Court edge's nondeterministic, non-content telemetry script."""
+    if _AKAMAI_TELEMETRY_MARKER not in content:
+        return content
+    matches = tuple(_AKAMAI_TELEMETRY_SCRIPT.finditer(content))
+    if len(matches) != 1:
+        raise DocumentCollectionError("docket telemetry wrapper is malformed or ambiguous")
+    match = matches[0]
+    return content[: match.start()] + content[match.end() :]
+
+
 class PendingDocument(StrictModel):
     document_revision_id: UUID
     case_id: UUID
@@ -604,6 +622,15 @@ class ScotusDocumentCollector:
         if content_type == "application/pdf":
             page_count = _validate_pdf(file, self.config.documents.maximum_pages)
         else:
+            file.seek(0)
+            html = file.read()
+            if document.kind is ScotusDocumentKind.DOCKET:
+                html = canonicalize_docket_html(html)
+            file.seek(0)
+            file.truncate()
+            file.write(html)
+            byte_count = len(html)
+            digest = hashlib.sha256(html)
             _validate_html(file)
             page_count = None
         sha256 = digest.hexdigest()

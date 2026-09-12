@@ -321,22 +321,29 @@ For the Cogito replacement, preserve prompt, validation-policy, and budget setti
 reconstruct exactly the ten case keys from rejected Qwen run `34579544086`, in its
 recorded order. `config/scotus.yaml` pins that reviewed order as
 `editorial_backfill.replacement_canary_case_keys`; changing or reranking it requires
-review. All ten must remain eligible, and their current official document bytes must
-match the durable comparison cases before model work. If any key cannot be reconstructed
-safely, stop without substituting a case; unrelated fresh Court activity remains
-explicit pending work and cannot consume a reserved measured slot. The new processor
-starts with a fresh candidate identity, aggregate counts, warning counts, candidate
-digest, and reviewer fields; no Qwen decision, retry scope, attempt, or count carries
-over. Any new Cogito failure then follows the ordinary finite cooldown and retry limits.
+review. Because the rejected historical run did not retain its final evidence checkpoints,
+the protected workflow first runs exact pinned Qwen as a publication-disabled control and
+then runs exact pinned Cogito independently from the same generated-content parent. Both
+arms must account for all ten cases under the same protocol and current evidence digest.
+Court docket pages are hashed and analyzed after removing only the nondeterministic Akamai
+Boomerang telemetry script; malformed or ambiguous telemetry markup fails closed, while any
+change to the remaining official docket content still changes the evidence digest. If any key
+cannot be reconstructed safely, or any canonical document identity, bytes, byte count, or
+disposition metadata differs between arms, stop without substituting a case. Unrelated fresh
+Court activity remains explicit pending work and cannot consume a reserved measured slot.
+Each arm starts with fresh candidate identity, aggregate counts, warning counts, candidate
+digest, and reviewer fields; no prior decision, retry scope, attempt, or count carries over.
+Any new Cogito failure then follows the ordinary finite cooldown and retry limits.
 
 1. Choose `editorial_rollout_stage=canary_10`, `deploy=false`, and leave
-   `maximum_cases=0`. A smaller run is diagnostic only and cannot qualify as the Cogito
-   comparison canary. The workflow rejects a canary deploy request and the CLI
-   independently forces dry-run publication. It always retains `sanitized-editorial-review`, containing only the
-   fixed manifest and aggregate report, for one day. A hard-valid candidate additionally
-   retains the scanned site and separately named sanitized editorial state. An all-hard-
-   failed run retains no candidate site/state. None of these artifacts contains source
-   text, prompts, rejected output, field paths, or detailed diagnostics.
+   `maximum_cases=0`. The workflow rejects a canary deploy request and the CLI independently
+   forces dry-run publication. Separate sequential protected jobs preserve each arm's fixed
+   runtime budget. The complete Qwen arm uploads only its sanitized comparison binding,
+   report, opaque receipts, and any privacy-scanned hard-valid public candidate; Cogito cannot
+   start without that binding. Cogito independently revalidates the parent, manifest,
+   protocol, evidence, model identity, and control-report digest. Receipts remain uploadable
+   after a failed arm, and each private workspace is removed. None of these artifacts contains
+   source text, prompts, rejected output, field paths, or detailed diagnostics.
 2. Confirm that the Cogito manifest exactly matches the prior rejected ten-case
    comparison manifest, including order, then review it side by side with each active
    legacy page and the linked official Court materials. A normal first-stage manifest

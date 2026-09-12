@@ -30,7 +30,10 @@ Neither receives build secrets or obsolete reader credentials.
 Source access is fail-closed to reviewed HTTPS `www.supremecourt.gov` hosts/paths,
 no-redirect retrieval, conditional requests, one-second minimum pacing, and bounded
 responses. Changed access conditions set `review_required`. Missing or malformed
-material cannot remove an existing public case.
+material cannot remove an existing public case. Before hashing and analyzing Court docket
+HTML, ingestion removes only the recognized nondeterministic Akamai Boomerang telemetry
+script. The remaining official content stays byte-sensitive; absent telemetry is accepted
+unchanged, while malformed or multiple telemetry wrappers fail closed.
 
 Only bounded evidence windows or sanitized approved claims may be sent to the exact
 local Apache-2.0 Ollama model `cogito:70b`, pinned to full content digest

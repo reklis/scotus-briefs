@@ -22,9 +22,11 @@ from ragchew.proceedings.contracts import (
 from ragchew.proceedings.registry import InMemorySourceRegistry, SourceAuthorizer
 from ragchew.scotus.contracts import ScotusDocumentKind, SpeakerKind
 from ragchew.scotus.documents import (
+    DocumentCollectionError,
     InMemoryDocumentIngestionStore,
     PendingDocument,
     ScotusDocumentCollector,
+    canonicalize_docket_html,
 )
 from ragchew.scotus.static_contracts import (
     ConditionalValidators,
@@ -40,6 +42,29 @@ from ragchew.scotus.worker import _opinion_names_docket
 from tests.fakes import FakeObjectStore
 
 NOW = datetime(2026, 8, 28, 2, tzinfo=UTC)
+
+
+def test_docket_html_canonicalization_removes_only_dynamic_edge_telemetry() -> None:
+    prefix = b"<!doctype html><head>official docket"
+    suffix = b"</head><body>case entries</body>"
+    first = (
+        prefix
+        + b'<script>!function(e){var n="https://s.go-mpulse.net/boomerang/";'
+        + b'var edge="first";</script>'
+        + suffix
+    )
+    second = (
+        prefix
+        + b'<script>!function(e){var n="https://s.go-mpulse.net/boomerang/";'
+        + b'var edge="second";</script>'
+        + suffix
+    )
+
+    assert canonicalize_docket_html(first) == prefix + suffix
+    assert canonicalize_docket_html(second) == prefix + suffix
+    assert canonicalize_docket_html(prefix + suffix) == prefix + suffix
+    with pytest.raises(DocumentCollectionError, match="malformed or ambiguous"):
+        canonicalize_docket_html(first + second)
 
 
 def pdf_bytes(pages: int = 1, *, encrypted: bool = False, empty_password: bool = False) -> bytes:

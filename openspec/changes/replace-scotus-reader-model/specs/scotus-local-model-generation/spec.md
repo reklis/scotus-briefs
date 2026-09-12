@@ -56,6 +56,10 @@ The system SHALL begin with a protected publication-disabled paired ten-case can
 - **WHEN** Cogito independently processes the fixed manifest from the original parent and its evidence, protocol, budget, and parent digests equal the complete control baseline
 - **THEN** the system may retain the publication-disabled Cogito candidate and binds its report to that exact baseline
 
+#### Scenario: Dynamic edge telemetry does not create false evidence drift
+- **WHEN** the Court injects its recognized nondeterministic Akamai Boomerang script into a docket page
+- **THEN** the collector removes only that telemetry script before integrity hashing and analysis, preserves every remaining official content byte, and fails closed if the telemetry wrapper is malformed or ambiguous
+
 #### Scenario: Prior processor state is reset
 - **WHEN** either paired arm starts
 - **THEN** old attempt, retry, aggregate, warning, candidate, and reviewer state does not count toward that arm, while new failures remain bounded by the existing policy
