@@ -128,8 +128,11 @@ action and object, and declined to predict an unsupported winner. Only those fix
 expected outcomes and aggregate timing/token facts are recorded; no probe prompt or
 response is retained. This qualification is not publication approval and does not
 relax any runtime, grounding, privacy, validation, or rollout gate. Tag or digest drift
-stops before Court retrieval; there is no model pull, alternate-model selection, or
-hosted-provider fallback.
+stops before Court retrieval, and native digest checks immediately before and after each
+completion reject any output produced across a mutable-tag change. There is no model
+pull, alternate-model selection, or hosted-provider fallback. Checked-in publication
+remains `dry_run: true` for this replacement, so routine schedules and manual runs
+cannot deploy Cogito output before the reviewed canary gate is complete.
 
 Prior dry runs confirmed the Court and loopback Ollama paths but failed closed on
 extraction/runtime validation. Those same grounding, privacy, completeness, static, and
@@ -304,11 +307,15 @@ workflow.
 Start a new reader-guide processor only with a protected manual `nightly` dispatch.
 For the Cogito replacement, preserve prompt, validation-policy, and budget settings and
 reconstruct exactly the ten case keys from rejected Qwen run `34579544086`, in its
-recorded order. All ten must remain eligible. If any key cannot be reconstructed safely,
-stop without substituting a case; unrelated fresh Court activity remains explicit
-pending work and cannot consume a reserved measured slot. The new processor starts with
-a fresh candidate identity, aggregate counts, warning counts, candidate digest, and
-reviewer fields; no Qwen decision or count carries over.
+recorded order. `config/scotus.yaml` pins that reviewed order as
+`editorial_backfill.replacement_canary_case_keys`; changing or reranking it requires
+review. All ten must remain eligible, and their current official document bytes must
+match the durable comparison cases before model work. If any key cannot be reconstructed
+safely, stop without substituting a case; unrelated fresh Court activity remains
+explicit pending work and cannot consume a reserved measured slot. The new processor
+starts with a fresh candidate identity, aggregate counts, warning counts, candidate
+digest, and reviewer fields; no Qwen decision, retry scope, attempt, or count carries
+over. Any new Cogito failure then follows the ordinary finite cooldown and retry limits.
 
 1. Choose `editorial_rollout_stage=canary_10`, `deploy=false`, and leave
    `maximum_cases=0`. A smaller run is diagnostic only and cannot qualify as the Cogito
@@ -342,7 +349,9 @@ reviewer fields; no Qwen decision or count carries over.
    Every measured stage remains publication-disabled while under review. One hundred is
    a selection ceiling, not permission to exceed lower case,
    document, request, token, call, disk, or runtime limits.
-5. Promote only the exact retained, privacy-scanned candidate that was reviewed. Re-run
+5. Promote only the exact retained, privacy-scanned candidate that was reviewed. The
+   promotion command requires an explicit `approved` report for any public promotion;
+   pending checkpoints may preserve safe progress but cannot change the release. Re-run
    validation but not Court/model processing. Roll back by redeploying the prior
    immutable release and restoring its generated-content parent; do not edit historical
    revision bodies or move the backfill cursor by hand.

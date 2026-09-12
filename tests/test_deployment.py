@@ -178,6 +178,10 @@ def test_retained_candidate_deploy_revalidates_without_spark_or_model() -> None:
     assert "git merge-base --is-ancestor" in workflow
     assert "ragchew-scotus-static validate" in workflow
     assert "--privacy-scan" in workflow
+    assert "--require-approved-measurement" in workflow
+    assert workflow.index("--require-approved-measurement") < workflow.index(
+        "upload-pages-artifact@"
+    )
     assert "source_run_id" in workflow
     assert "expected_parent_commit" in workflow
     assert "persist-cost-receipts" in workflow

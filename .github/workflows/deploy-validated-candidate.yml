@@ -92,7 +92,8 @@ jobs:
         run: |
           set -euo pipefail
           uv run ragchew-scotus-static validate \
-            --output candidate-site --state-dir candidate-state --privacy-scan
+            --output candidate-site --state-dir candidate-state --privacy-scan \
+            --require-approved-measurement
           uv run python - <<'PY'
           import json
           import os

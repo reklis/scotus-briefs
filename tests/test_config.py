@@ -70,6 +70,18 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.editorial_backfill.enabled is True
     assert config.editorial_backfill.rollout_stage is None
     assert config.editorial_backfill.maximum_stage == "batch_100"
+    assert config.editorial_backfill.replacement_canary_case_keys == (
+        "2025-26a124",
+        "2025-24-43",
+        "2025-24-38",
+        "2024-24a884",
+        "2024-24-394",
+        "2024-24-304",
+        "2024-24-362",
+        "2024-24-249",
+        "2024-24-320",
+        "2024-24-7",
+    )
     assert config.model_budget.input_cost_usd_per_million_tokens == Decimal("0")
     assert config.model_budget.output_cost_usd_per_million_tokens == Decimal("0")
     assert config.model_budget.maximum_estimated_cost_usd_per_run == Decimal("0")
@@ -82,7 +94,7 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.approvals.launch_approved is True
     assert config.approvals.all_live_gates_approved()
     assert config.publication.enabled is True
-    assert config.publication.dry_run is False
+    assert config.publication.dry_run is True
     assert config.launch.maximum_status_upgrades == 0
 
 
@@ -170,6 +182,7 @@ def test_scotus_editorial_backfill_rejects_disabled_or_over_ceiling_stage() -> N
 
     values = config.model_dump()
     values["editorial_backfill"]["rollout_stage"] = "canary_10"
+    values["publication"]["dry_run"] = False
     with pytest.raises(ValidationError, match="must disable publication"):
         ScotusConfig.model_validate(values)
 

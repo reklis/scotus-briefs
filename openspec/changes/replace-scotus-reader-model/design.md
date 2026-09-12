@@ -40,7 +40,7 @@ Alternative: use Charmander. Rejected until its custom provenance, license, raw 
 
 ### Pin both model tag and immutable Ollama digest
 
-The reviewed configuration and workflow policy will carry both `cogito:70b` and digest `8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`. The protected build will query loopback `/api/tags` and require one entry matching both values before source or model work. The runtime adapter will continue requiring the exact configured model ID. The digest participates in the configuration hash, so processor and request scopes change if reviewed model content changes even under a reused tag.
+The reviewed configuration and workflow policy will carry both `cogito:70b` and digest `8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`. The protected build will query loopback `/api/tags` and require one entry matching both values before source or model work. The runtime adapter will perform the same native tag/digest check before constructing Court/model clients and immediately before and after each completion, rejecting any output that spans mutable-tag drift. The digest participates in the configuration hash, so processor and request scopes change if reviewed model content changes even under a reused tag.
 
 Alternative: pin only the tag as before. Rejected because Ollama tags are mutable and could silently change the measured model.
 
@@ -54,7 +54,7 @@ The replacement changes model identity only. Existing compact writer, planner, f
 
 ### Reuse the rejected canary manifest or fail closed
 
-When the prior `canary_10` state belongs to a different processor and all ten public cases remain eligible, the new processor starts with exactly those case keys in the same order. If any key cannot be reconstructed safely, the measured run stops rather than silently substituting a more favorable case. Fresh unrelated Court activity remains explicit pending work and cannot consume reserved measured slots.
+The reviewed prior order is pinned in typed configuration. When the prior `canary_10` state belongs to a different processor and all ten public cases remain eligible, the new processor starts with exactly those case keys in that order. Old processor attempts, retry scopes, aggregate counts, warnings, candidate identity, and reviewer state are reset. Each admitted case must retain the durable comparison metadata and official document bytes; drift fails before model work. If any key cannot be reconstructed safely, the measured run stops rather than silently substituting a more favorable case. Fresh unrelated Court activity remains explicit pending work and cannot consume reserved measured slots. A new replacement-model failure may re-enter only the existing finite scheduled retry policy.
 
 ### Treat the new canary as a fresh approval decision
 
@@ -64,7 +64,7 @@ The new processor receives a fresh aggregate report and candidate digest. Prior 
 
 - **[70B latency exceeds the five-hour budget]** → Keep current per-request and run bounds, benchmark synthetic requests first, stop with explicit pending work, and do not increase runtime limits in this change.
 - **[Cogito returns fluent but unsupported legal prose]** → Preserve all deterministic grounding, action, chronology, prediction, and source validators without downgrade.
-- **[Ollama tag changes in place]** → Require the reviewed full digest before any source/model activity and include it in configuration-derived fingerprints.
+- **[Ollama tag changes in place]** → Require the reviewed full digest before client construction and around every completion, reject output on drift, and include the digest in configuration-derived fingerprints.
 - **[Schema support differs between a tiny probe and full prompts]** → Add representative nested-schema tests, retain strict parsing/repair limits, and require the ten-case canary.
 - **[Larger model increases memory pressure on the persistent runner]** → Run only under existing workflow concurrency, retain bounded context/output, and verify cleanup plus an empty `ollama ps` state after operational review.
 - **[Old and new canaries are not comparable]** → Reuse the exact prior manifest or fail closed; keep all non-model policy inputs unchanged.

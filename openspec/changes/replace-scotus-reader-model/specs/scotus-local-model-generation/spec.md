@@ -11,6 +11,10 @@ The system SHALL use only loopback Ollama model `cogito:70b` with reviewed conte
 - **WHEN** the configured tag is absent, resolves to different content, or the inventory cannot be validated
 - **THEN** the build fails before Court retrieval or model completion and does not fall back to another installed model
 
+#### Scenario: Mutable tag drifts during generation
+- **WHEN** native Ollama inventory no longer maps `cogito:70b` to the reviewed digest immediately before or after a completion
+- **THEN** the system rejects the response and fails the run without accepting output under the reviewed processor identity
+
 #### Scenario: Processor identity changes
 - **WHEN** the reviewed generation model changes from `qwen3.8:27b` to exact `cogito:70b` content
 - **THEN** processor and request fingerprints differ while unchanged prompt and validation-policy versions remain identifiable
@@ -45,8 +49,12 @@ Replacing the model SHALL NOT relax source authorization, grounding, actor/actio
 The system SHALL begin the new processor at a protected publication-disabled ten-case canary and SHALL reuse the rejected recalibrated manifest in the same order when all ten cases remain safely reconstructable.
 
 #### Scenario: Prior manifest remains eligible
-- **WHEN** the replacement processor starts `canary_10` and every prior manifest case is still available and reconstructable
-- **THEN** the measured run uses exactly those ten case keys in the recorded order, reserves bounded slots for them, and keeps unrelated fresh activity explicit pending
+- **WHEN** the replacement processor starts `canary_10` and every configured prior manifest case is still available with unchanged durable metadata and official document bytes
+- **THEN** the measured run uses exactly those ten case keys in the recorded order, reserves bounded slots only for them, and keeps unrelated fresh activity explicit pending
+
+#### Scenario: Prior processor state is reset
+- **WHEN** the configured manifest transitions to the replacement processor
+- **THEN** old attempt, retry, aggregate, warning, candidate, and reviewer state does not count toward the replacement measurement, while any new failure follows the existing finite retry policy
 
 #### Scenario: Prior manifest cannot be reconstructed
 - **WHEN** any prior manifest case is missing, ambiguous, source-invalid before selection, or cannot be safely reconstructed
@@ -70,3 +78,7 @@ The replacement model SHALL NOT authorize promotion by identity or probe success
 #### Scenario: Replacement canary qualifies
 - **WHEN** all qualification requirements pass and the exact candidate receives recorded reviewer approval
 - **THEN** only that exact candidate may be promoted before sequential measured 25-case and up-to-100-case gates
+
+#### Scenario: Review remains pending
+- **WHEN** a measured candidate has not received explicit recorded approval
+- **THEN** safe checkpoint state may be retained but public promotion is rejected

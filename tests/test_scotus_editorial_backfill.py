@@ -20,6 +20,8 @@ from ragchew.scotus.static_cli import _require_promotable_measurement
 from ragchew.scotus.static_contracts import (
     CanaryAggregate,
     CanaryReviewerDecision,
+    CanaryWarningCount,
+    EditorialBackfillState,
     EditorialRolloutStage,
     EditorialWarningCode,
     PendingReason,
@@ -108,12 +110,13 @@ def test_backfill_slice_is_bounded_resumable_and_resets_for_processor() -> None:
         rollout_stage=EditorialRolloutStage.BATCH_100,
         previous=resumed,
     )
-    reset = start_or_resume_backfill(
-        candidates=candidates(),
-        processor_sha256="b" * 64,
-        rollout_stage=EditorialRolloutStage.CANARY_10,
-        previous=resumed,
-    )
+    with pytest.raises(ValueError, match="reviewed prior canary manifest"):
+        start_or_resume_backfill(
+            candidates=candidates(),
+            processor_sha256="b" * 64,
+            rollout_stage=EditorialRolloutStage.CANARY_10,
+            previous=resumed,
+        )
 
     assert len(initial.selected_case_keys) == 25
     assert initial.selected_case_keys == tuple(f"2025-25-{index:03d}" for index in range(25))
@@ -121,8 +124,115 @@ def test_backfill_slice_is_bounded_resumable_and_resets_for_processor() -> None:
     assert initial.selected_case_keys[0] not in advanced.selected_case_keys
     assert advanced.selected_case_keys[0] == "2025-25-025"
     assert advanced.newest_first_rank_boundary == 120
-    assert reset.processor_sha256 == "b" * 64
-    assert len(reset.selected_case_keys) == 10
+
+
+def test_replacement_manifest_is_pinned_even_without_durable_prior_state() -> None:
+    manifest = tuple(reversed(tuple(item.case_key for item in candidates(10))))
+
+    started = start_or_resume_backfill(
+        candidates=candidates(20),
+        processor_sha256="b" * 64,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        previous=None,
+        replacement_canary_case_keys=manifest,
+    )
+
+    assert started.selected_case_keys == manifest
+    assert started.attempted_count == started.accepted_count == started.failed_count == 0
+
+
+def test_replacement_processor_reuses_exact_canary_order_and_resets_state() -> None:
+    manifest = tuple(reversed(tuple(item.case_key for item in candidates(10))))
+    previous = EditorialBackfillState(
+        processor_sha256=PROCESSOR,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        newest_first_rank_boundary=10,
+        selected_case_keys=manifest,
+        attempted_count=10,
+        failed_count=10,
+    )
+
+    replacement = start_or_resume_backfill(
+        candidates=candidates(20),
+        processor_sha256="b" * 64,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        previous=previous,
+        replacement_canary_case_keys=manifest,
+    )
+
+    assert replacement.processor_sha256 == "b" * 64
+    assert replacement.selected_case_keys == manifest
+    assert replacement.newest_first_rank_boundary == 10
+    assert replacement.attempted_count == 0
+    assert replacement.accepted_count == 0
+    assert replacement.failed_count == 0
+
+
+def test_replacement_processor_fails_if_prior_manifest_case_is_missing() -> None:
+    previous = start_or_resume_backfill(
+        candidates=candidates(10),
+        processor_sha256=PROCESSOR,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        previous=None,
+    )
+    replacement_candidates = (*candidates(9), *candidates(20)[10:])
+
+    with pytest.raises(ValueError, match="no longer discoverable"):
+        start_or_resume_backfill(
+            candidates=replacement_candidates,
+            processor_sha256="b" * 64,
+            rollout_stage=EditorialRolloutStage.CANARY_10,
+            previous=previous,
+            replacement_canary_case_keys=previous.selected_case_keys,
+        )
+
+
+def test_replacement_processor_report_does_not_carry_prior_review() -> None:
+    case_keys = tuple(item.case_key for item in candidates(10))
+    previous = CanaryAggregate(
+        processor_sha256=PROCESSOR,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        candidate_sha256="c" * 64,
+        case_keys=case_keys,
+        attempted_count=10,
+        accepted_count=10,
+        failed_count=0,
+        warning_code_counts=(CanaryWarningCount(code=EditorialWarningCode.READABILITY, count=3),),
+        runtime_seconds=100,
+        model_call_count=50,
+        improved_count=8,
+        degraded_legacy_count=1,
+        privacy_validation_passed=True,
+        release_validation_passed=True,
+        reviewer_decision=CanaryReviewerDecision.REJECTED,
+    )
+    backfill = EditorialBackfillState(
+        processor_sha256="b" * 64,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        newest_first_rank_boundary=10,
+        selected_case_keys=case_keys,
+    )
+
+    replacement = aggregate_canary_report(
+        backfill=backfill,
+        pending_by_case={},
+        accepted_case_keys=frozenset({case_keys[0]}),
+        runtime_seconds=7,
+        model_call_count=2,
+        candidate_sha256="d" * 64,
+        previous=previous,
+    )
+
+    assert replacement.processor_sha256 == "b" * 64
+    assert replacement.attempted_count == replacement.accepted_count == 1
+    assert replacement.runtime_seconds == 7
+    assert replacement.model_call_count == 2
+    assert replacement.warning_code_counts == ()
+    assert replacement.improved_count == 0
+    assert replacement.degraded_legacy_count == 0
+    assert not replacement.privacy_validation_passed
+    assert not replacement.release_validation_passed
+    assert replacement.reviewer_decision is CanaryReviewerDecision.PENDING
 
 
 def test_automatic_report_excludes_runtime_deferred_from_attempts() -> None:
@@ -272,9 +382,7 @@ def test_cli_promotion_rejects_failed_or_rejected_measurement_before_mode_branch
         model_call_count=10,
         candidate_sha256="d" * 64,
     )
-    failed_backfill = backfill.model_copy(
-        update={"attempted_count": 10, "failed_count": 10}
-    )
+    failed_backfill = backfill.model_copy(update={"attempted_count": 10, "failed_count": 10})
     candidate = replace(
         GeneratedContent.empty(),
         publication=PublicationState(
@@ -309,6 +417,19 @@ def test_cli_promotion_rejects_failed_or_rejected_measurement_before_mode_branch
 
     with pytest.raises(CompareAndSwapConflict, match="cannot be promoted"):
         _require_promotable_measurement(rejected_candidate)
+
+    pending_report = rejected.model_copy(
+        update={"reviewer_decision": CanaryReviewerDecision.PENDING}
+    )
+    pending_candidate = replace(
+        rejected_candidate,
+        publication=rejected_candidate.publication.model_copy(
+            update={"canary_report": pending_report}
+        ),
+    )
+    with pytest.raises(CompareAndSwapConflict, match="requires reviewed approval"):
+        _require_promotable_measurement(pending_candidate)
+    _require_promotable_measurement(pending_candidate, checkpoint_only=True)
 
 
 def test_advancement_requires_all_measured_canary_gates() -> None:

@@ -111,11 +111,27 @@ def start_or_resume_backfill(
     rollout_stage: EditorialRolloutStage,
     previous: EditorialBackfillState | None,
     advance_completed: bool = False,
+    replacement_canary_case_keys: Sequence[str] = (),
 ) -> EditorialBackfillState:
     """Create a processor/stage-scoped slice or return its exact unfinished manifest."""
     ordered = _ordered(candidates)
     by_key = {item.case_key: item for item in ordered}
     same_processor = previous is not None and previous.processor_sha256 == processor_sha256
+    expected_replacement_manifest = tuple(replacement_canary_case_keys)
+    if previous is None and expected_replacement_manifest:
+        if (
+            rollout_stage is not EditorialRolloutStage.CANARY_10
+            or len(expected_replacement_manifest) != EditorialRolloutStage.CANARY_10.limit
+        ):
+            raise ValueError("a replacement processor requires the reviewed prior canary manifest")
+        if not set(expected_replacement_manifest) <= set(by_key):
+            raise ValueError("replacement canary manifest is no longer discoverable")
+        return EditorialBackfillState(
+            processor_sha256=processor_sha256,
+            rollout_stage=rollout_stage,
+            newest_first_rank_boundary=len(ordered),
+            selected_case_keys=expected_replacement_manifest,
+        )
     if (
         same_processor
         and previous is not None
@@ -125,6 +141,24 @@ def start_or_resume_backfill(
         if not set(previous.selected_case_keys) <= set(by_key):
             raise ValueError("active backfill selection is no longer discoverable")
         return previous
+
+    if previous is not None and not same_processor:
+        expected_manifest = expected_replacement_manifest
+        if (
+            rollout_stage is not EditorialRolloutStage.CANARY_10
+            or previous.rollout_stage is not EditorialRolloutStage.CANARY_10
+            or len(previous.selected_case_keys) != EditorialRolloutStage.CANARY_10.limit
+            or previous.selected_case_keys != expected_manifest
+        ):
+            raise ValueError("a replacement processor requires the reviewed prior canary manifest")
+        if not set(expected_manifest) <= set(by_key):
+            raise ValueError("replacement canary manifest is no longer discoverable")
+        return EditorialBackfillState(
+            processor_sha256=processor_sha256,
+            rollout_stage=rollout_stage,
+            newest_first_rank_boundary=previous.newest_first_rank_boundary,
+            selected_case_keys=previous.selected_case_keys,
+        )
 
     rank_offset = 0
     if same_processor and previous is not None:

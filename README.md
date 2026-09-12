@@ -19,8 +19,10 @@ restricted manual dispatch). Its aarch64 Spark runner uses only the reviewed
 Apache-2.0 Ollama model `cogito:70b`, pinned to full content digest
 `8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`, through a
 loopback-only endpoint. Preflight requires both the tag and digest before Court or
-model work; no model credential, hosted provider, remote endpoint, pull, or fallback
-model is accepted. It independently checks the active term's reviewed official slip-opinion index as well as
+model work, and the adapter rechecks that digest around every completion; no model
+credential, hosted provider, remote endpoint, pull, or fallback model is accepted.
+Cogito is currently checked in with publication dry-run enabled pending its reviewed
+replacement canary. The job independently checks the active term's reviewed official slip-opinion index as well as
 bounded argument and historical resources, then recomputes an entire changed case
 inside a permission-restricted ephemeral workspace. Fresh changes are attempted
 newest-first under finite limits; failed or deferred cases remain explicit pending

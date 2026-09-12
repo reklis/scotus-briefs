@@ -45,6 +45,8 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "--expected-parent-commit" in text
     assert "--checkpoint-only" in text
     assert "--fail-on-split" in text
+    assert "Require reviewed approval before any publication-ready artifact" in text
+    assert "--require-approved-measurement" in text
     assert "name: github-pages" in text
     assert "environment: scotus-publication" in text
     assert "RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter" in text
@@ -96,7 +98,7 @@ def test_generated_case_publication_is_explicitly_live_and_bounded() -> None:
     config = yaml.safe_load(Path("config/scotus.yaml").read_text())
     assert config["enabled"] is True
     assert config["publication"]["enabled"] is True
-    assert config["publication"]["dry_run"] is False
+    assert config["publication"]["dry_run"] is True
     assert config["generation"]["brief_generation_enabled"] is True
     assert config["generation"]["model"] == "cogito:70b"
     assert config["generation"]["model_digest"] == (

@@ -64,8 +64,11 @@ For a new deployment or any unreviewed source/runtime change, these settings rem
 - static publication.
 
 The owner approved bounded production on 2026-09-03, so the checked-in source,
-generation, approval, and publication switches are currently `true`. This is not a
-validator bypass: a manual workflow dispatch cannot override a closed gate, and every
+generation, approval, and publication switches are currently `true`. The replacement
+model nevertheless remains `publication.dry_run=true` until its exact canary receives
+reviewed approval; schedules and manual dispatch cannot publish Cogito output in this
+state. This is not a validator bypass: a manual workflow dispatch cannot override a
+closed gate, and every
 candidate remains subject to the source, budget, grounding, privacy, completeness, and
 release-integrity checks. The protected `scotus-publication`
 build runs on the self-hosted Spark runner and accepts only
@@ -75,11 +78,19 @@ Ollama's compatible JSON-schema chat client, with a non-secret placeholder key. 
 only reviewed model is the Apache-2.0 `cogito:70b` content with full Ollama digest
 `8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`.
 Before any Court retrieval or completion traffic, preflight requires one installed
-inventory entry matching both the exact tag and full digest. A missing model or tag
-drift fails closed: automation never installs or pulls a model, selects another local
-model, or falls back to a hosted provider. Deploy, receipt persistence, and promotion
-stay on GitHub-hosted Ubuntu and receive no model setting or secret. Pages has no
-runtime environment at all.
+inventory entry matching both the exact tag and full digest. The adapter repeats that
+exact inventory check immediately before and after every completion, rejecting the
+response if the mutable tag changes during a request. A missing model or tag drift fails
+closed: automation never installs or pulls a model, selects another local model, or falls
+back to a hosted provider. Deploy, receipt persistence, and promotion stay on
+GitHub-hosted Ubuntu and receive no model setting or secret. Pages has no runtime
+environment at all.
+
+`editorial_backfill.replacement_canary_case_keys` pins the ten rejected Qwen comparison
+cases in reviewed order. A replacement processor may start `canary_10` only from that
+exact manifest. Old-processor attempt, retry, aggregate, candidate, and reviewer state is
+reset; unrelated fresh work cannot consume a measured slot. Current official document
+bytes must still match each durable comparison case before any Cogito request.
 
 `.env.example` therefore contains no reader database/object-store credentials.
 `RAGCHEW_DATABASE_DSN` is accepted only when an operator explicitly runs the one-time

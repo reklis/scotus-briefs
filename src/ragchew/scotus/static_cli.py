@@ -177,6 +177,10 @@ def _validate(args: argparse.Namespace) -> int:
     # that contract explicit without creating a weaker validation mode.
     if args.privacy_scan:
         scan_public_files(path for path in args.output.rglob("*") if path.is_file())
+    if args.require_approved_measurement:
+        if args.state is None:
+            raise ValueError("approved measurement validation requires candidate state")
+        _require_promotable_measurement(StaticStateStore(args.state).load())
     print(f"validated {manifest.release_id} ({manifest.page_count} pages)")
     return 0
 
@@ -823,8 +827,10 @@ def _persist_cost_receipts(args: argparse.Namespace) -> int:
     return 0
 
 
-def _require_promotable_measurement(candidate: GeneratedContent) -> None:
-    """Reject terminal failed measurements in every promotion mode."""
+def _require_promotable_measurement(
+    candidate: GeneratedContent, *, checkpoint_only: bool = False
+) -> None:
+    """Require positive review before public promotion; retain safe checkpoints."""
     report = candidate.publication.canary_report
     if report is None:
         return
@@ -835,6 +841,8 @@ def _require_promotable_measurement(candidate: GeneratedContent) -> None:
     )
     if all_failed or report.reviewer_decision is CanaryReviewerDecision.REJECTED:
         raise CompareAndSwapConflict("rejected canary measurement cannot be promoted")
+    if not checkpoint_only and report.reviewer_decision is not CanaryReviewerDecision.APPROVED:
+        raise CompareAndSwapConflict("canary measurement requires reviewed approval")
 
 
 def _promote(args: argparse.Namespace) -> int:
@@ -842,7 +850,7 @@ def _promote(args: argparse.Namespace) -> int:
     store = StaticStateStore(args.state)
     active = store.load()
     candidate = StaticStateStore(args.candidate_state).load()
-    _require_promotable_measurement(candidate)
+    _require_promotable_measurement(candidate, checkpoint_only=args.checkpoint_only)
     if args.checkpoint_only:
         if (
             candidate.release != active.release
@@ -1013,6 +1021,7 @@ def build_parser() -> argparse.ArgumentParser:
     validate.add_argument("--config", type=Path, default=Path("config/scotus.yaml"))
     validate.add_argument("--state", "--state-dir", dest="state", type=Path)
     validate.add_argument("--privacy-scan", action="store_true")
+    validate.add_argument("--require-approved-measurement", action="store_true")
     validate.set_defaults(function=_validate)
 
     fixture = commands.add_parser(

@@ -368,6 +368,7 @@ class _BudgetedModelRequest:
         processor_versions: Mapping[str, str],
         output_tokens: int,
         authorized_replay: bool,
+        verify_model_identity: Callable[[], None],
         maximum_attempts: int | None = None,
     ) -> None:
         self.client = client
@@ -377,6 +378,7 @@ class _BudgetedModelRequest:
         self.processor_versions = processor_versions
         self.output_tokens = output_tokens
         self.authorized_replay = authorized_replay
+        self.verify_model_identity = verify_model_identity
         self.maximum_attempts = maximum_attempts
 
     def __call__(self, request: dict[str, Any]) -> Any:
@@ -406,8 +408,18 @@ class _BudgetedModelRequest:
             output_tokens=self.output_tokens,
             authorized_replay=self.authorized_replay,
         )
+
+        def invoke_exact_model() -> Any:
+            self.verify_model_identity()
+            response = self.client.chat.completions.create(**provider_request)
+            # Reject output if the mutable tag changed during the request. Together
+            # with the pre-request check this prevents accepting bytes from content
+            # other than the reviewed digest.
+            self.verify_model_identity()
+            return response
+
         return call_with_bounded_transport_retries(
-            lambda: self.client.chat.completions.create(**provider_request),
+            invoke_exact_model,
             permit=permit,
             maximum_attempts=(
                 self.maximum_attempts or self.budget.config.model_budget.maximum_transport_attempts
@@ -958,6 +970,8 @@ class LiveStaticDiscovery:
         }
         pending_by_case = {item.case_key: item for item in content.publication.pending_work}
         backfill_state: EditorialBackfillState | None = None
+        replacement_manifest_key_set: set[str] = set()
+        reset_replacement_pending_case_keys: set[str] = set()
         configured_stage = self.config.editorial_backfill.rollout_stage
         if self.config.editorial_backfill.enabled and configured_stage is not None:
             rollout_stage = EditorialRolloutStage(configured_stage)
@@ -980,18 +994,61 @@ class LiveStaticDiscovery:
                 and previous_backfill.rollout_stage is rollout_stage
                 else set()
             )
+            configured_replacement_manifest = (
+                self.config.editorial_backfill.replacement_canary_case_keys
+            )
+            if (
+                previous_backfill is not None
+                and configured_replacement_manifest
+                and previous_backfill.selected_case_keys
+                != tuple(configured_replacement_manifest)
+            ):
+                raise ValueError("active canary does not match the reviewed replacement manifest")
+            replacement_manifest_keys = (
+                tuple(configured_replacement_manifest)
+                if rollout_stage is EditorialRolloutStage.CANARY_10
+                and configured_replacement_manifest
+                else ()
+            )
+            replacement_manifest_key_set = set(replacement_manifest_keys)
+            reset_replacement_pending_case_keys = (
+                replacement_manifest_key_set
+                if previous_backfill is None
+                or previous_backfill.processor_sha256 != processor.composite_sha256
+                else set()
+            )
             editorial_candidates: list[EditorialCandidate] = []
-            for key, case in prior_cases.items():
-                if key not in stale_processor_case_keys and key not in resume_keys:
-                    continue
-                if key not in resume_keys and (
-                    key in source_changed_case_keys or key in pending_by_case
-                ):
-                    continue
-                try:
-                    editorial_candidates.append(EditorialCandidate.from_public_case(case))
-                except ValueError:
-                    continue
+            if replacement_manifest_keys:
+                for key in replacement_manifest_keys:
+                    replacement_case = prior_cases.get(key)
+                    if (
+                        replacement_case is None
+                        or key not in merged_by_key
+                        or key in source_changed_case_keys
+                    ):
+                        raise ValueError(
+                            "replacement canary manifest cannot be safely reconstructed"
+                        )
+                    try:
+                        editorial_candidates.append(
+                            EditorialCandidate.from_public_case(replacement_case)
+                        )
+                    except ValueError:
+                        raise ValueError(
+                            "replacement canary manifest cannot be safely reconstructed"
+                        ) from None
+            else:
+                for key, case in prior_cases.items():
+                    if key not in stale_processor_case_keys and key not in resume_keys:
+                        continue
+                    if key not in resume_keys and (
+                        key in source_changed_case_keys or key in pending_by_case
+                    ):
+                        continue
+                    try:
+                        editorial_candidates.append(EditorialCandidate.from_public_case(case))
+                    except ValueError:
+                        continue
             advance_completed = bool(
                 previous_backfill is not None
                 and previous_backfill.processor_sha256 == processor.composite_sha256
@@ -1011,6 +1068,9 @@ class LiveStaticDiscovery:
                 rollout_stage=rollout_stage,
                 previous=previous_backfill,
                 advance_completed=advance_completed,
+                replacement_canary_case_keys=(
+                    self.config.editorial_backfill.replacement_canary_case_keys
+                ),
             )
             migration_case_keys = {
                 key for key in backfill_state.selected_case_keys if key in stale_processor_case_keys
@@ -1028,7 +1088,8 @@ class LiveStaticDiscovery:
             elif key in migration_case_keys:
                 pending_item = pending_by_case.get(key)
                 attempted_failure = bool(
-                    pending_item is not None
+                    key not in reset_replacement_pending_case_keys
+                    and pending_item is not None
                     and (pending_item.attempts > 0 or pending_item.last_attempted_at is not None)
                 )
                 # Once selected migration work fails, it re-enters the ordinary finite
@@ -1082,6 +1143,11 @@ class LiveStaticDiscovery:
             if existing is None or candidate_value[2] < existing[2]:
                 queue[key] = candidate_value
 
+        manifest_position = (
+            {key: index for index, key in enumerate(backfill_state.selected_case_keys)}
+            if backfill_state is not None
+            else {}
+        )
         ranked_queue = sorted(
             queue.items(),
             key=lambda item: (
@@ -1089,6 +1155,7 @@ class LiveStaticDiscovery:
                 # slots for the fixed review manifest. Fresh activity remains
                 # fail-closed as deferred pending work rather than starving the canary.
                 int(bool(migration_case_keys) and item[0] not in migration_case_keys),
+                manifest_position.get(item[0], len(manifest_position)),
                 StaticCaseWork(
                     case_key=item[0],
                     priority=item[1][0],
@@ -1105,6 +1172,10 @@ class LiveStaticDiscovery:
                 ).rank,
             ),
         )
+        if replacement_manifest_key_set:
+            ranked_queue = [
+                item for item in ranked_queue if item[0] in replacement_manifest_key_set
+            ]
         case_limit = (
             self.config.bootstrap.maximum_cases_per_run
             if mode is DiscoveryMode.BOOTSTRAP
@@ -1224,6 +1295,7 @@ class LiveStaticDiscovery:
                     work_class,
                     persisted_pending,
                     (pending_by_case[key].last_attempted_at if key in pending_by_case else None),
+                    require_unchanged_documents=(key in replacement_manifest_key_set),
                     retry_scope=(
                         case_processing_retry_scope(
                             case_key=key,
@@ -1309,6 +1381,7 @@ class LiveStaticDiscovery:
                 sorted(
                     (stale_processor_pending_case_keys - migration_case_keys)
                     | remapped_pending_case_keys
+                    | reset_replacement_pending_case_keys
                 )
             ),
             # Every omitted changed case is now explicit pending work with its official
@@ -1852,6 +1925,7 @@ class LiveStaticCaseProcessor:
         model_endpoint: str,
         user_agent: str,
         before_court_request: Callable[[], None],
+        verify_model_identity: Callable[[], None],
         parser_backend_factory: Callable[[], PdfTextBackend],
     ) -> None:
         self.discovery = discovery
@@ -1862,6 +1936,7 @@ class LiveStaticCaseProcessor:
         self.model_endpoint = model_endpoint
         self.user_agent = user_agent
         self.before_court_request = before_court_request
+        self.verify_model_identity = verify_model_identity
         self.parser_backend_factory = parser_backend_factory
         self._documents: tuple[LogicalDocumentState, ...] = ()
         self._processor_case_fingerprints: dict[str, str | None] = {}
@@ -2033,6 +2108,11 @@ class LiveStaticCaseProcessor:
                 if prior is None or prior.integrity != refreshed.integrity:
                     changed_keys.add(key)
                 outcomes[key] = fetched
+
+            if work.require_unchanged_documents and changed_keys:
+                raise PublicationGateDenied(
+                    "replacement canary document bytes differ from the comparison case"
+                )
 
             budget.check_private_disk(workspace)
             retry_scope = case_processing_retry_scope(
@@ -2257,6 +2337,7 @@ class LiveStaticCaseProcessor:
                     processor_versions=versions,
                     output_tokens=extraction_output_tokens,
                     authorized_replay=authorized_replay,
+                    verify_model_identity=self.verify_model_identity,
                 )
                 extractor = OpenAILegalObservationExtractor(
                     self.config.generation.model,
@@ -2314,6 +2395,7 @@ class LiveStaticCaseProcessor:
                     processor_versions=versions,
                     output_tokens=extraction_output_tokens,
                     authorized_replay=authorized_replay,
+                    verify_model_identity=self.verify_model_identity,
                     maximum_attempts=1,
                 )
                 extractor = OpenAILegalObservationExtractor(
@@ -2609,6 +2691,7 @@ class LiveStaticCaseProcessor:
                 },
                 output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
                 authorized_replay=authorized_replay,
+                verify_model_identity=self.verify_model_identity,
             )
 
         try:
@@ -3679,9 +3762,7 @@ def _default_ollama_client(settings: ServiceSettings, config: ScotusConfig) -> O
     )
 
 
-def _default_ollama_inventory(
-    settings: ServiceSettings, config: ScotusConfig
-) -> Mapping[str, Any]:
+def _default_ollama_inventory(settings: ServiceSettings, config: ScotusConfig) -> Mapping[str, Any]:
     """Read immutable model identities from Ollama's native loopback inventory."""
     tags_url = f"{settings.ollama_base_url.removesuffix('/v1')}/api/tags"
     with httpx.Client(
@@ -3765,9 +3846,26 @@ class LiveStaticBatchAdapter:
         ):
             raise SourceAuthorizationError("Supreme Court source adapter contract changed")
 
-        # No factory capable of network/model use is called until every gate and source
-        # authorization check above succeeds. Construction is inside the cleanup scope
-        # because a persistent self-hosted runner must not retain partial clients.
+        # Native inventory carries Ollama's content digest; the OpenAI-compatible
+        # model listing does not. Check before constructing Court/model clients, then
+        # recheck around every completion because the configured Ollama tag is mutable.
+        def verify_model_identity() -> None:
+            try:
+                inventory = self.ollama_inventory_factory(settings, config)
+            except Exception:
+                raise PublicationGateDenied("local Ollama model preflight failed") from None
+            _verify_exact_ollama_model(
+                inventory,
+                config.generation.model,
+                config.generation.model_digest,
+            )
+
+        verify_model_identity()
+
+        # No Court/model client factory is called until every gate, source
+        # authorization check, and exact model preflight above succeeds. Construction
+        # is inside the cleanup scope because a persistent self-hosted runner must not
+        # retain partial clients.
         raw_fetcher: SourceFetcher | None = None
         document_client: httpx.Client | None = None
         model_client: Any = None
@@ -3778,18 +3876,6 @@ class LiveStaticBatchAdapter:
             raw_fetcher = self.source_fetcher_factory(settings, config)
             document_client = self.document_client_factory(settings, config)
             model_client = self.ollama_client_factory(settings, config)
-            # Native inventory carries Ollama's content digest; the OpenAI-compatible
-            # model listing does not. Require tag and digest before Court traffic or a
-            # chat completion, and never select another installed model as a fallback.
-            try:
-                inventory = self.ollama_inventory_factory(settings, config)
-            except Exception:
-                raise PublicationGateDenied("local Ollama model preflight failed") from None
-            _verify_exact_ollama_model(
-                inventory,
-                config.generation.model,
-                config.generation.model_digest,
-            )
             # The wrapper authorizes each nested index/opinion/order request and the
             # budget wrapper accounts every attempted response body.
             # The orchestrator creates the budget, so adapters are rebound during the
@@ -3824,6 +3910,7 @@ class LiveStaticBatchAdapter:
                 model_endpoint=settings.ollama_base_url,
                 user_agent=settings.source_user_agent,
                 before_court_request=crawl_limiter.wait,
+                verify_model_identity=verify_model_identity,
                 parser_backend_factory=self.parser_backend_factory,
             )
             original = state_store.load()

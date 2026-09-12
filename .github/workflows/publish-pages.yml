@@ -310,6 +310,12 @@ jobs:
           echo "expected_parent_release_id=${LIVE_PARENT:-${IMPORT_PARENT:-${EMPTY_PARENT:-${MIGRATION_PARENT:-$FIXTURE_PARENT}}}}" >> "$GITHUB_OUTPUT"
           echo "expected_parent_digest=${LIVE_PARENT_DIGEST:-${IMPORT_PARENT_DIGEST:-${EMPTY_PARENT_DIGEST:-${MIGRATION_PARENT_DIGEST:-$FIXTURE_PARENT_DIGEST}}}}" >> "$GITHUB_OUTPUT"
           echo "editorial_review_only=${LIVE_REVIEW_ONLY:-false}" >> "$GITHUB_OUTPUT"
+      - name: Require reviewed approval before any publication-ready artifact
+        if: steps.batch.outputs.publication_ready == 'true'
+        run: |
+          uv run ragchew-scotus-static validate \
+            --output candidate-site --state-dir candidate-state --privacy-scan \
+            --require-approved-measurement
       - name: Validate opaque receipts before any upload
         id: receipts
         if: always()

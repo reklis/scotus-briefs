@@ -50,14 +50,22 @@ from ragchew.scotus.public_contracts import (
 )
 from ragchew.scotus.reader_guides import ReaderGuideFieldKind, ReaderGuideFieldPath
 from ragchew.scotus.static_contracts import (
+    CanaryAggregate,
+    CanaryFailureCount,
+    CanaryReviewerDecision,
     ConditionalValidators,
     ContentIntegrity,
     CostLedger,
     CostReceiptBundle,
+    EditorialBackfillState,
+    EditorialRolloutStage,
     LogicalSourceState,
     ModelAttemptOutcome,
+    ModelRetryStatus,
+    PendingModelRetry,
     PendingReason,
     PendingWork,
+    RetryFailureCode,
     canonical_json_bytes,
     sha256_hex,
 )
@@ -642,7 +650,9 @@ def live_config() -> ScotusConfig:
         update={
             "enabled": True,
             "generation": config.generation.model_copy(update={"brief_generation_enabled": True}),
-            "publication": config.publication.model_copy(update={"enabled": True}),
+            "publication": config.publication.model_copy(
+                update={"enabled": True, "dry_run": False}
+            ),
             "approvals": approvals,
             "discovery": config.discovery.model_copy(
                 update={"terms": ["2025"], "historical_rechecks_per_run": 0}
@@ -668,6 +678,8 @@ def build_adapter(
     *,
     backend: type[FixtureBackend] = FixtureBackend,
     rate_limiter_factory: Any = _immediate_rate_limiter,
+    inventory_factory: Any | None = None,
+    clock: Any | None = None,
 ) -> LiveStaticBatchAdapter:
     settings = ServiceSettings(
         ollama_base_url="http://127.0.0.1:11434/v1",
@@ -683,10 +695,14 @@ def build_adapter(
             follow_redirects=False,
         ),
         ollama_client_factory=lambda _settings, _config: model,
-        ollama_inventory_factory=lambda _settings, _config: model.inventory,
+        ollama_inventory_factory=(
+            inventory_factory
+            if inventory_factory is not None
+            else lambda _settings, _config: model.inventory
+        ),
         parser_backend_factory=backend,
         rate_limiter_factory=rate_limiter_factory,
-        clock=lambda: NOW,
+        clock=clock if clock is not None else lambda: NOW,
     )
 
 
@@ -698,13 +714,16 @@ def run(
     *,
     config: ScotusConfig | None = None,
     backend: type[FixtureBackend] = FixtureBackend,
+    scheduled_retries: bool = False,
+    now: datetime = NOW,
 ) -> StaticBatchResult:
-    return build_adapter(court, model, backend=backend).run(
+    return build_adapter(court, model, backend=backend, clock=lambda: now).run(
         state_store=store,
         config=config or live_config(),
         mode=DiscoveryMode.NIGHTLY,
         runner_temp=tmp_path / "private",
         authorized_replay=False,
+        scheduled_retries=scheduled_retries,
     )
 
 
@@ -980,6 +999,72 @@ def test_live_adapter_requires_exact_local_model_before_court_traffic(
     assert court.source_requests == []
     assert court.document_requests == []
     assert model.requests == []
+    # Exact inventory preflight runs before the model-client factory is invoked.
+    assert not model.closed
+
+
+def test_model_preflight_precedes_every_court_and_model_client_factory(
+    tmp_path: Path,
+) -> None:
+    calls: list[str] = []
+    settings = ServiceSettings(
+        ollama_base_url="http://127.0.0.1:11434/v1",
+        proceedings_config_path="unused",
+        source_user_agent="ragchew-test contact=test@example.test",
+    )
+
+    def forbidden_factory(name: str) -> Any:
+        def factory(_settings: ServiceSettings, _config: ScotusConfig) -> Any:
+            calls.append(name)
+            raise AssertionError(f"{name} factory must not run")
+
+        return factory
+
+    adapter = LiveStaticBatchAdapter(
+        settings_factory=lambda: settings,
+        proceedings_loader=lambda _path: proceedings_config(),
+        source_fetcher_factory=forbidden_factory("Court source"),
+        document_client_factory=forbidden_factory("Court document"),
+        ollama_client_factory=forbidden_factory("model client"),
+        ollama_inventory_factory=lambda _settings, _config: {"models": []},
+        clock=lambda: NOW,
+    )
+
+    with pytest.raises(PublicationGateDenied, match="tag is not installed"):
+        adapter.run(
+            state_store=MemoryStateStore(tmp_path / "state"),
+            config=live_config(),
+            mode=DiscoveryMode.NIGHTLY,
+            runner_temp=tmp_path / "private",
+            authorized_replay=False,
+        )
+    assert calls == []
+
+
+def test_model_identity_is_rechecked_after_each_completion(tmp_path: Path) -> None:
+    court = CourtFixture()
+    model = MockOpenAI()
+    inventory_calls = 0
+
+    def mutable_inventory(_settings: ServiceSettings, _config: ScotusConfig) -> Any:
+        nonlocal inventory_calls
+        inventory_calls += 1
+        if inventory_calls < 3:
+            return model.inventory
+        return {"models": [{"name": "cogito:70b", "digest": "f" * 64}]}
+
+    adapter = build_adapter(court, model, inventory_factory=mutable_inventory)
+    with pytest.raises(RuntimeError, match="detail=PublicationGateDenied"):
+        adapter.run(
+            state_store=MemoryStateStore(tmp_path / "state"),
+            config=live_config(),
+            mode=DiscoveryMode.NIGHTLY,
+            runner_temp=tmp_path / "private",
+            authorized_replay=False,
+        )
+
+    assert inventory_calls == 3
+    assert len(model.requests) == 1
     assert model.closed
 
 
@@ -999,9 +1084,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert len(result.content.publication.documents) == 2
     processor = result.content.publication.processor
     assert processor is not None
-    assert processor.model == (
-        f"ollama:cogito:70b@sha256:{MODEL_DIGEST}@http://127.0.0.1:11434/v1"
-    )
+    assert processor.model == (f"ollama:cogito:70b@sha256:{MODEL_DIGEST}@http://127.0.0.1:11434/v1")
     assert processor.extractor_version == (
         "scotus-observation-v2:scotus-legal-v1:scotus-legal-extraction-v10:"
         "official-document-text-v4"
@@ -1055,9 +1138,7 @@ def test_model_digest_changes_processor_and_request_fingerprints_only(
     drift_digest = "f" * 64
     drift_config = live_config().model_copy(
         update={
-            "generation": live_config().generation.model_copy(
-                update={"model_digest": drift_digest}
-            )
+            "generation": live_config().generation.model_copy(update={"model_digest": drift_digest})
         }
     )
     second = run(
@@ -2211,6 +2292,60 @@ def test_processor_migration_resumes_bounded_cases_before_global_promotion(
     old_processor = second.content.publication.processor
     assert old_processor is not None
     assert len(second.content.publication.cases) == 10
+    prior_manifest = tuple(
+        reversed(tuple(pointer.case_key for pointer in second.content.publication.cases))
+    )
+    prior_backfill = EditorialBackfillState(
+        processor_sha256=old_processor.composite_sha256,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        newest_first_rank_boundary=10,
+        selected_case_keys=prior_manifest,
+        attempted_count=10,
+        failed_count=10,
+    )
+    prior_report = CanaryAggregate(
+        processor_sha256=old_processor.composite_sha256,
+        rollout_stage=EditorialRolloutStage.CANARY_10,
+        case_keys=prior_manifest,
+        attempted_count=10,
+        accepted_count=0,
+        failed_count=10,
+        failure_code_counts=(
+            CanaryFailureCount(code=RetryFailureCode.VALIDATION_FAILED, count=10),
+        ),
+        runtime_seconds=500,
+        model_call_count=99,
+        reviewer_decision=CanaryReviewerDecision.REJECTED,
+    )
+    prior_pending = tuple(
+        PendingWork(
+            case_key=key,
+            reason=PendingReason.VALIDATION_FAILED,
+            attempts=3,
+            first_seen_at=NOW,
+            last_attempted_at=NOW,
+            retry=PendingModelRetry(
+                scope_sha256="e" * 64,
+                stage="brief",
+                completed_cycles=3,
+                last_cycle_at=NOW,
+                next_eligible_at=NOW,
+                status=ModelRetryStatus.EXHAUSTED,
+                failure_code=RetryFailureCode.VALIDATION_FAILED,
+            ),
+        )
+        for key in sorted(prior_manifest)
+    )
+    store.content = replace(
+        second.content,
+        publication=second.content.publication.model_copy(
+            update={
+                "editorial_backfill": prior_backfill,
+                "canary_report": prior_report,
+                "pending_work": prior_pending,
+            }
+        ),
+    )
 
     fresh_docket = "25-11"
     fresh_key = public_case_key("2025", fresh_docket)
@@ -2233,20 +2368,48 @@ def test_processor_migration_resumes_bounded_cases_before_global_promotion(
             "parser": base.parser.model_copy(update={"version": "2"}),
             "runner_limits": base.runner_limits.model_copy(update={"maximum_cases_per_run": 1}),
             "editorial_backfill": base.editorial_backfill.model_copy(
-                update={"rollout_stage": "canary_10"}
+                update={
+                    "rollout_stage": "canary_10",
+                    "replacement_canary_case_keys": prior_manifest,
+                }
             ),
             "publication": base.publication.model_copy(update={"dry_run": True}),
         }
     )
-    partial = run(tmp_path, store, court, MockOpenAI(), config=migrating)
+    comparison_docket = prior_manifest[0].removeprefix("2025-")
+    comparison_url = f"/pdfs/transcripts/2025/{comparison_docket}.pdf"
+    original_comparison_document = court.documents[comparison_url]
+    court.documents[comparison_url] = (
+        '"comparison-drift"',
+        _pdf(2),
+        "application/pdf",
+    )
+    replacement_model = MockOpenAI()
+    with pytest.raises(RuntimeError, match="detail=PublicationGateDenied"):
+        run(tmp_path, store, court, replacement_model, config=migrating)
+    assert replacement_model.requests == []
+
+    court.documents[comparison_url] = original_comparison_document
+    partial = run(tmp_path, store, court, replacement_model, config=migrating)
     assert partial.content.publication.processor == old_processor
     assert len(partial.pending_case_keys) == 10
     assert fresh_key in partial.pending_case_keys
-    assert partial.changed_case_keys != (fresh_key,)
-    assert partial.content.publication.editorial_backfill is not None
-    assert partial.changed_case_keys[0] in set(
-        partial.content.publication.editorial_backfill.selected_case_keys
-    )
+    assert partial.changed_case_keys == (prior_manifest[0],)
+    partial_backfill = partial.content.publication.editorial_backfill
+    assert partial_backfill is not None
+    assert partial_backfill.selected_case_keys == prior_manifest
+    assert partial_backfill.attempted_count == partial_backfill.accepted_count == 1
+    assert partial_backfill.failed_count == 0
+    partial_report = partial.content.publication.canary_report
+    assert partial_report is not None
+    assert partial_report.processor_sha256 == partial_backfill.processor_sha256
+    assert partial_report.case_keys == prior_manifest
+    assert partial_report.attempted_count == partial_report.accepted_count == 1
+    assert partial_report.failed_count == 0
+    assert partial_report.failure_code_counts == ()
+    assert partial_report.runtime_seconds < prior_report.runtime_seconds
+    assert partial_report.model_call_count < prior_report.model_call_count
+    assert partial_report.reviewer_decision is CanaryReviewerDecision.PENDING
     fingerprints = {pointer.processor_sha256 for pointer in partial.content.publication.cases}
     assert len(fingerprints) == 2
 
@@ -2259,7 +2422,7 @@ def test_processor_migration_resumes_bounded_cases_before_global_promotion(
         }
     )
     completed = run(tmp_path, store, court, MockOpenAI(), config=completion_config)
-    assert completed.pending_case_keys == ()
+    assert completed.pending_case_keys == (fresh_key,)
     promoted = completed.content.publication.processor
     assert promoted is not None and promoted != old_processor
     assert {pointer.processor_sha256 for pointer in completed.content.publication.cases} == {

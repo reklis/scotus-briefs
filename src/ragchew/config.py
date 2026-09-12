@@ -254,9 +254,7 @@ class ScotusGenerationDefaults(BaseModel):
 
     provider: Literal["ollama"]
     model: Literal["cogito:70b"]
-    model_digest: Literal[
-        "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
-    ]
+    model_digest: Literal["8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"]
     prompt_version: str
     brief_generation_enabled: bool = False
     maximum_brief_api_calls_per_run: int = Field(default=1, ge=1, le=100)
@@ -417,6 +415,18 @@ class ScotusEditorialBackfillDefaults(BaseModel):
     enabled: bool = False
     rollout_stage: Literal["canary_10", "batch_25", "batch_100"] | None = None
     maximum_stage: Literal["canary_10", "batch_25", "batch_100"] = "batch_100"
+    replacement_canary_case_keys: tuple[str, ...] = ()
+
+    @field_validator("replacement_canary_case_keys")
+    @classmethod
+    def validate_replacement_canary_case_keys(cls, values: tuple[str, ...]) -> tuple[str, ...]:
+        if values and len(values) != 10:
+            raise ValueError("replacement canary manifest must contain exactly ten cases")
+        if len(values) != len(set(values)):
+            raise ValueError("replacement canary manifest case keys must be unique")
+        if any(re.fullmatch(r"[a-z0-9][a-z0-9._:-]{0,199}", value) is None for value in values):
+            raise ValueError("replacement canary manifest case key is invalid")
+        return values
 
     @model_validator(mode="after")
     def require_enabled_stage(self) -> Self:

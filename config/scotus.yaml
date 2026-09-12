@@ -116,6 +116,18 @@ editorial_backfill:
   enabled: true
   rollout_stage: null
   maximum_stage: batch_100
+  # Exact rejected recalibrated manifest reused for the reviewed Cogito comparison.
+  replacement_canary_case_keys:
+    - "2025-26a124"
+    - "2025-24-43"
+    - "2025-24-38"
+    - "2024-24a884"
+    - "2024-24-394"
+    - "2024-24-304"
+    - "2024-24-362"
+    - "2024-24-249"
+    - "2024-24-320"
+    - "2024-24-7"
 model_retry:
   # One initial generation cycle plus at most two later scheduled cycles per stable scope.
   automatic_retry_cycles_per_scope: 2
@@ -157,7 +169,8 @@ generation:
   prohibit_personalized_legal_advice: true
 publication:
   enabled: true
-  dry_run: false
+  # Remain publication-disabled until the exact Cogito canary is reviewed and approved.
+  dry_run: true
   site_name: SCOTUS Legal Briefs
   base_path: /scotus
   case_page_requires_official_transcript: true

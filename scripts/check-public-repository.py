@@ -151,6 +151,11 @@ def check() -> list[str]:
         failures.append("SCOTUS custom-domain paths must be root project and /scotus/ section")
     reviewed_model = "cogito:70b"
     reviewed_digest = "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
+    replacement_manifest = config.get("editorial_backfill", {}).get(
+        "replacement_canary_case_keys", []
+    )
+    if replacement_manifest and publication.get("dry_run") is not True:
+        failures.append("replacement model must remain publication-disabled before approval")
     if (
         generation.get("provider") != "ollama"
         or generation.get("model") != reviewed_model
@@ -199,6 +204,8 @@ def check() -> list[str]:
         failures.append("Pages build must preflight the exact reviewed Ollama tag and digest")
     if re.search(r"\bollama\s+(?:pull|run|create|cp)\b", build):
         failures.append("Pages build must not pull, create, or fall back to another Ollama model")
+    if "--require-approved-measurement" not in build:
+        failures.append("Pages build must require reviewer approval before publication")
     if "pull_request:" in workflow or "github.event_name != 'pull_request'" not in build:
         failures.append("Pages build must never run for pull requests")
     if "services:" in workflow:
