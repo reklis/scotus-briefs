@@ -2188,7 +2188,7 @@ class LiveStaticCaseProcessor:
                     failure_code=failure_code,
                     documents=tuple(states[key] for key in sorted(states)),
                 ) from None
-            except ReaderGuidePlanningError:
+            except (BriefPolicyError, ReaderGuidePlanningError):
                 raise ModelOutputFailure(
                     retry_scope=retry_scope,
                     stage="extraction",
