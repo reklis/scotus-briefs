@@ -138,6 +138,14 @@ pull, alternate-model selection, or hosted-provider fallback. Checked-in publica
 remains `dry_run: true` for this replacement, so routine schedules and manual runs
 cannot deploy Cogito output before the reviewed canary gate is complete.
 
+Replacement-canary attempt [`34662688685`](https://github.com/reklis/scotus-briefs/actions/runs/34662688685)
+on 2026-09-12 passed exact Cogito tag/digest preflight, then failed closed before
+any model request because current official document bytes did not match the durable
+comparison case. It retained no receipt, review, site, state, or handoff artifact and
+ran no persistence, promotion, or deployment job. The fixed manifest was not
+substituted or partially measured. A comparable ten-case canary therefore remains
+blocked pending a separately reviewed evidence-baseline decision.
+
 Prior dry runs confirmed the Court and loopback Ollama paths but failed closed on
 extraction/runtime validation. Those same grounding, privacy, completeness, static, and
 release validators remain mandatory: a global candidate failure cannot replace the
