@@ -452,6 +452,37 @@ class CanaryWarningCount(StaticContract):
     count: int = Field(ge=1, le=100)
 
 
+class ContemporaneousCanaryBaseline(StaticContract):
+    """Sanitized binding for one complete current-evidence Qwen control arm."""
+
+    schema_version: Literal["1.0"] = "1.0"
+    parent_public_content_sha256: str = Field(pattern=_SHA256_PATTERN)
+    case_keys: tuple[str, ...] = Field(min_length=10, max_length=10)
+    runtime_role: Literal["control"] = "control"
+    model: Literal["qwen3.8:27b"] = "qwen3.8:27b"
+    model_digest: Literal[
+        "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"
+    ] = "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"
+    protocol_sha256: str = Field(pattern=_SHA256_PATTERN)
+    evidence_sha256: str = Field(pattern=_SHA256_PATTERN)
+    document_count: int = Field(ge=10, le=10_000)
+    processor_sha256: str = Field(pattern=_SHA256_PATTERN)
+    control_report_sha256: str = Field(pattern=_SHA256_PATTERN)
+
+    @field_validator("case_keys")
+    @classmethod
+    def validate_case_keys(cls, values: tuple[str, ...]) -> tuple[str, ...]:
+        if len(values) != len(set(values)):
+            raise ValueError("control baseline case keys must be unique")
+        if any(re.fullmatch(_KEY_PATTERN, value) is None for value in values):
+            raise ValueError("control baseline case key is invalid")
+        return values
+
+
+# A descriptive compatibility alias for callers that name the paired artifact.
+PairedCanaryBaseline = ContemporaneousCanaryBaseline
+
+
 class CanaryAggregate(StaticContract):
     """Public-safe counts and opaque identities from a publication-disabled run."""
 
@@ -459,6 +490,10 @@ class CanaryAggregate(StaticContract):
     processor_sha256: str = Field(pattern=_SHA256_PATTERN)
     rollout_stage: EditorialRolloutStage
     candidate_sha256: str | None = Field(default=None, pattern=_SHA256_PATTERN)
+    # Optional comparison bindings preserve canonical historical pending/rejected
+    # reports while making every newly approved replacement measurement auditable.
+    comparison_baseline_sha256: str | None = Field(default=None, pattern=_SHA256_PATTERN)
+    control_report_sha256: str | None = Field(default=None, pattern=_SHA256_PATTERN)
     case_keys: tuple[str, ...] = Field(min_length=1, max_length=100)
     attempted_count: int = Field(ge=0, le=100)
     accepted_count: int = Field(ge=0, le=100)
@@ -539,6 +574,8 @@ class CanaryAggregate(StaticContract):
             self.attempted_count != len(self.case_keys)
             or self.improved_count < required_improvements
             or self.candidate_sha256 is None
+            or self.comparison_baseline_sha256 is None
+            or self.control_report_sha256 is None
             or self.accepted_error_count
             or self.degraded_legacy_count
             or not self.privacy_validation_passed
@@ -921,6 +958,9 @@ def _json_value(value: Any) -> Any:
         if "warning_code_counts" not in value.model_fields_set:
             # Adding warning aggregates must not rewrite an immutable legacy report.
             payload.pop("warning_code_counts", None)
+        for field in ("comparison_baseline_sha256", "control_report_sha256"):
+            if field not in value.model_fields_set:
+                payload.pop(field, None)
         return _json_value(payload)
     if isinstance(value, PublicationState):
         payload = value.model_dump(mode="python")
@@ -937,8 +977,12 @@ def _json_value(value: Any) -> Any:
             payload.pop("editorial_backfill", None)
         if value.canary_report is None:
             payload.pop("canary_report", None)
-        elif "warning_code_counts" not in value.canary_report.model_fields_set:
-            payload["canary_report"].pop("warning_code_counts", None)
+        else:
+            if "warning_code_counts" not in value.canary_report.model_fields_set:
+                payload["canary_report"].pop("warning_code_counts", None)
+            for field in ("comparison_baseline_sha256", "control_report_sha256"):
+                if field not in value.canary_report.model_fields_set:
+                    payload["canary_report"].pop(field, None)
         pending_payloads = payload.get("pending_work", ())
         for pending, pending_payload in zip(
             value.pending_work, pending_payloads, strict=True

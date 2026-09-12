@@ -1295,7 +1295,6 @@ class LiveStaticDiscovery:
                     work_class,
                     persisted_pending,
                     (pending_by_case[key].last_attempted_at if key in pending_by_case else None),
-                    require_unchanged_documents=(key in replacement_manifest_key_set),
                     retry_scope=(
                         case_processing_retry_scope(
                             case_key=key,
@@ -2108,11 +2107,6 @@ class LiveStaticCaseProcessor:
                 if prior is None or prior.integrity != refreshed.integrity:
                     changed_keys.add(key)
                 outcomes[key] = fetched
-
-            if work.require_unchanged_documents and changed_keys:
-                raise PublicationGateDenied(
-                    "replacement canary document bytes differ from the comparison case"
-                )
 
             budget.check_private_disk(workspace)
             retry_scope = case_processing_retry_scope(

@@ -116,6 +116,9 @@ editorial_backfill:
   enabled: true
   rollout_stage: null
   maximum_stage: batch_100
+  # Exact contemporaneous baseline runtime; mutable tags or other Qwen content fail closed.
+  control_model: qwen3.8:27b
+  control_model_digest: 22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643
   # Exact rejected recalibrated manifest reused for the reviewed Cogito comparison.
   replacement_canary_case_keys:
     - "2025-26a124"
@@ -146,6 +149,7 @@ approvals:
   launch_approved: true
 generation:
   provider: ollama
+  runtime_role: production
   model: cogito:70b
   model_digest: 8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb
   prompt_version: scotus-reader-guide-compact-v1

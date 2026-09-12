@@ -443,6 +443,8 @@ def test_advancement_requires_all_measured_canary_gates() -> None:
         processor_sha256=PROCESSOR,
         rollout_stage=EditorialRolloutStage.CANARY_10,
         candidate_sha256="c" * 64,
+        comparison_baseline_sha256="d" * 64,
+        control_report_sha256="e" * 64,
         case_keys=backfill.selected_case_keys,
         attempted_count=10,
         accepted_count=10,

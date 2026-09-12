@@ -7,7 +7,7 @@ import re
 from datetime import datetime
 from decimal import Decimal
 from pathlib import Path, PurePosixPath
-from typing import Any, Literal, Self
+from typing import Any, Final, Literal, Self
 from urllib.parse import unquote, urlsplit
 
 import yaml
@@ -249,12 +249,30 @@ class ScotusRetentionDefaults(BaseModel):
     failed_download_hours: int = Field(ge=1)
 
 
+SCOTUS_PRODUCTION_MODEL: Final[Literal["cogito:70b"]] = "cogito:70b"
+SCOTUS_PRODUCTION_MODEL_DIGEST: Final[
+    Literal["8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"]
+] = (
+    "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
+)
+SCOTUS_CONTROL_MODEL: Final[Literal["qwen3.8:27b"]] = "qwen3.8:27b"
+SCOTUS_CONTROL_MODEL_DIGEST: Final[
+    Literal["22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"]
+] = (
+    "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"
+)
+
+
 class ScotusGenerationDefaults(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     provider: Literal["ollama"]
-    model: Literal["cogito:70b"]
-    model_digest: Literal["8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"]
+    runtime_role: Literal["production", "control"] = "production"
+    model: Literal["cogito:70b", "qwen3.8:27b"] = SCOTUS_PRODUCTION_MODEL
+    model_digest: Literal[
+        "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb",
+        "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+    ] = SCOTUS_PRODUCTION_MODEL_DIGEST
     prompt_version: str
     brief_generation_enabled: bool = False
     maximum_brief_api_calls_per_run: int = Field(default=1, ge=1, le=100)
@@ -274,7 +292,13 @@ class ScotusGenerationDefaults(BaseModel):
     prohibit_personalized_legal_advice: bool = True
 
     @model_validator(mode="after")
-    def severe_bounds_exceed_preferred_bounds(self) -> Self:
+    def validate_generation_contract(self) -> Self:
+        expected = {
+            "production": (SCOTUS_PRODUCTION_MODEL, SCOTUS_PRODUCTION_MODEL_DIGEST),
+            "control": (SCOTUS_CONTROL_MODEL, SCOTUS_CONTROL_MODEL_DIGEST),
+        }[self.runtime_role]
+        if (self.model, self.model_digest) != expected:
+            raise ValueError("SCOTUS runtime role requires its exact reviewed model identity")
         if self.severe_maximum_sentence_words <= self.maximum_sentence_words:
             raise ValueError("severe sentence bound must exceed the preferred bound")
         if self.severe_maximum_paragraph_words <= self.maximum_paragraph_words:
@@ -416,6 +440,10 @@ class ScotusEditorialBackfillDefaults(BaseModel):
     rollout_stage: Literal["canary_10", "batch_25", "batch_100"] | None = None
     maximum_stage: Literal["canary_10", "batch_25", "batch_100"] = "batch_100"
     replacement_canary_case_keys: tuple[str, ...] = ()
+    control_model: Literal["qwen3.8:27b"] = SCOTUS_CONTROL_MODEL
+    control_model_digest: Literal[
+        "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"
+    ] = SCOTUS_CONTROL_MODEL_DIGEST
 
     @field_validator("replacement_canary_case_keys")
     @classmethod

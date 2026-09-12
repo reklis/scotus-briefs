@@ -2385,9 +2385,21 @@ def test_processor_migration_resumes_bounded_cases_before_global_promotion(
         "application/pdf",
     )
     replacement_model = MockOpenAI()
-    with pytest.raises(RuntimeError, match="detail=PublicationGateDenied"):
-        run(tmp_path, store, court, replacement_model, config=migrating)
-    assert replacement_model.requests == []
+    # A paired control arm must collect current Court evidence. Comparison to the
+    # independent candidate now happens against the sanitized post-run baseline.
+    current_evidence = run(tmp_path, store, court, replacement_model, config=migrating)
+    prior_evidence = {
+        item.logical_key: item.integrity.sha256
+        for item in second.content.publication.documents
+        if item.case_key == prior_manifest[0]
+    }
+    refreshed_evidence = {
+        item.logical_key: item.integrity.sha256
+        for item in current_evidence.content.publication.documents
+        if item.case_key == prior_manifest[0]
+    }
+    assert refreshed_evidence != prior_evidence
+    assert replacement_model.requests
 
     court.documents[comparison_url] = original_comparison_document
     partial = run(tmp_path, store, court, replacement_model, config=migrating)

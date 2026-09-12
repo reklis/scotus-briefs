@@ -42,6 +42,7 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.discovery.request_timeout_seconds == 60
     assert config.documents.request_timeout_seconds == 60
     assert config.generation.provider == "ollama"
+    assert config.generation.runtime_role == "production"
     assert config.generation.model == "cogito:70b"
     assert config.generation.model_digest == (
         "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
@@ -70,6 +71,10 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.editorial_backfill.enabled is True
     assert config.editorial_backfill.rollout_stage is None
     assert config.editorial_backfill.maximum_stage == "batch_100"
+    assert config.editorial_backfill.control_model == "qwen3.8:27b"
+    assert config.editorial_backfill.control_model_digest == (
+        "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"
+    )
     assert config.editorial_backfill.replacement_canary_case_keys == (
         "2025-26a124",
         "2025-24-43",
@@ -215,12 +220,27 @@ def test_scotus_config_requires_reviewed_ollama_provider_and_exact_model() -> No
         {"provider": "openai"},
         {"model": "cogito:latest"},
         {"model_digest": "f" * 64},
+        {"runtime_role": "control"},
+        {"model": "qwen3.8:27b"},
     )
     for mutation in mutations:
         values = config.model_dump()
         values["generation"].update(mutation)
         with pytest.raises(ValidationError):
             ScotusConfig.model_validate(values)
+
+    control_values = config.model_dump()
+    control_values["generation"].update(
+        {
+            "runtime_role": "control",
+            "model": "qwen3.8:27b",
+            "model_digest": (
+                "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"
+            ),
+        }
+    )
+    control = ScotusConfig.model_validate(control_values)
+    assert control.generation.runtime_role == "control"
 
 
 def test_source_user_agent_rejects_placeholder_contact() -> None:

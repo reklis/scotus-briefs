@@ -8,19 +8,31 @@ from dataclasses import dataclass
 from datetime import datetime
 from enum import StrEnum
 
+from ragchew.config import (
+    SCOTUS_CONTROL_MODEL,
+    SCOTUS_CONTROL_MODEL_DIGEST,
+    SCOTUS_PRODUCTION_MODEL,
+    SCOTUS_PRODUCTION_MODEL_DIGEST,
+    ScotusConfig,
+)
 from ragchew.scotus.public_contracts import PublicCaseBrief, public_case_key
 from ragchew.scotus.static_contracts import (
     CanaryAggregate,
     CanaryFailureCount,
     CanaryReviewerDecision,
     CanaryWarningCount,
+    ContemporaneousCanaryBaseline,
     EditorialBackfillState,
     EditorialRolloutStage,
     EditorialWarningCode,
     PendingReason,
     PendingWork,
     RetryFailureCode,
+    canonical_json_bytes,
+    contract_digest,
+    sha256_hex,
 )
+from ragchew.scotus.static_state import GeneratedContent, generated_public_content_digest
 
 
 class CanaryCaseKind(StrEnum):
@@ -183,6 +195,290 @@ def start_or_resume_backfill(
     )
 
 
+def derive_canary_protocol_digest(config: ScotusConfig) -> str:
+    """Hash the complete paired-arm protocol, excluding only model role/identity."""
+    payload = config.model_dump(mode="json")
+    generation = payload["generation"]
+    for field in ("runtime_role", "model", "model_digest"):
+        generation.pop(field)
+    return sha256_hex(canonical_json_bytes(payload, privacy_check=False))
+
+
+def _canary_evidence_payload(
+    content: GeneratedContent,
+    case_keys: Sequence[str],
+) -> tuple[dict[str, object], int]:
+    ordered_keys = tuple(case_keys)
+    if len(ordered_keys) != 10 or len(set(ordered_keys)) != 10:
+        raise ValueError("paired canary evidence requires exactly ten ordered case keys")
+    documents_by_case = {
+        key: tuple(
+            sorted(
+                (item for item in content.publication.documents if item.case_key == key),
+                key=lambda item: item.logical_key,
+            )
+        )
+        for key in ordered_keys
+    }
+    missing = tuple(key for key, documents in documents_by_case.items() if not documents)
+    if missing:
+        raise ValueError("paired canary evidence requires complete documents for every case")
+    dispositions_by_case = {
+        key: tuple(
+            sorted(
+                (item for item in content.publication.dispositions if item.case_key == key),
+                key=lambda item: item.logical_key,
+            )
+        )
+        for key in ordered_keys
+    }
+    cases: list[dict[str, object]] = []
+    document_count = 0
+    for key in ordered_keys:
+        documents = documents_by_case[key]
+        document_count += len(documents)
+        cases.append(
+            {
+                "case_key": key,
+                "documents": tuple(
+                    {
+                        "identity": item.logical_key,
+                        "official_url": item.official_url,
+                        "kind": item.document_kind,
+                        "sha256": item.integrity.sha256,
+                        "byte_count": item.integrity.byte_count,
+                    }
+                    for item in documents
+                ),
+                "dispositions": tuple(
+                    {
+                        "identity": item.logical_key,
+                        "metadata_sha256": item.metadata_sha256,
+                    }
+                    for item in dispositions_by_case[key]
+                ),
+            }
+        )
+    return {"cases": tuple(cases)}, document_count
+
+
+def derive_canary_evidence_digest(
+    content: GeneratedContent,
+    case_keys: Sequence[str],
+) -> str:
+    """Hash only normalized public document integrity and disposition metadata."""
+    payload, _ = _canary_evidence_payload(content, case_keys)
+    return sha256_hex(canonical_json_bytes(payload, privacy_check=False))
+
+
+def _require_exact_arm_identity(
+    *,
+    content: GeneratedContent,
+    report: CanaryAggregate,
+    config: ScotusConfig,
+    runtime_role: str,
+) -> None:
+    expected_model, expected_digest = {
+        "control": (SCOTUS_CONTROL_MODEL, SCOTUS_CONTROL_MODEL_DIGEST),
+        "production": (SCOTUS_PRODUCTION_MODEL, SCOTUS_PRODUCTION_MODEL_DIGEST),
+    }[runtime_role]
+    if (
+        config.generation.runtime_role != runtime_role
+        or config.generation.model != expected_model
+        or config.generation.model_digest != expected_digest
+    ):
+        raise ValueError(f"paired canary requires exact {runtime_role} model identity")
+    processor = content.publication.processor
+    expected_identity_prefix = (
+        f"ollama:{expected_model}@sha256:{expected_digest}@"
+    )
+    if (
+        processor is None
+        or processor.composite_sha256 != report.processor_sha256
+        or not processor.model.startswith(expected_identity_prefix)
+    ):
+        raise ValueError(f"paired canary report requires exact {runtime_role} processor identity")
+
+
+def _require_complete_arm(
+    *,
+    content: GeneratedContent,
+    report: CanaryAggregate,
+    config: ScotusConfig,
+    runtime_role: str,
+) -> tuple[str, int]:
+    manifest = config.editorial_backfill.replacement_canary_case_keys
+    if (
+        len(manifest) != 10
+        or report.rollout_stage is not EditorialRolloutStage.CANARY_10
+        or report.case_keys != manifest
+        or report.attempted_count != 10
+        or report.attempted_count != report.accepted_count + report.failed_count
+    ):
+        raise ValueError("paired canary must account for the exact ordered ten-case manifest")
+    _require_exact_arm_identity(
+        content=content,
+        report=report,
+        config=config,
+        runtime_role=runtime_role,
+    )
+    backfill = content.publication.editorial_backfill
+    embedded_report = content.publication.canary_report
+    if embedded_report != report:
+        raise ValueError("paired canary report is not the arm's retained report")
+    if backfill is None or (
+        backfill.selected_case_keys != manifest
+        or backfill.processor_sha256 != report.processor_sha256
+        or backfill.rollout_stage is not report.rollout_stage
+        or backfill.attempted_count != report.attempted_count
+        or backfill.accepted_count != report.accepted_count
+        or backfill.failed_count != report.failed_count
+    ):
+        raise ValueError("paired canary backfill does not match its report")
+
+    if report.accepted_count:
+        if content.projection is None or report.candidate_sha256 != sha256_hex(
+            canonical_json_bytes(content.projection)
+        ):
+            raise ValueError("paired canary report is not bound to its candidate projection")
+    elif report.candidate_sha256 is not None:
+        raise ValueError("an all-failed paired canary cannot bind a candidate projection")
+
+    accepted = {
+        item.case_key
+        for item in content.publication.cases
+        if item.case_key in manifest and item.processor_sha256 == report.processor_sha256
+    }
+    if len(accepted) != report.accepted_count:
+        raise ValueError("paired canary accepted outcomes do not match its report")
+    pending_by_case = {item.case_key: item for item in content.publication.pending_work}
+    non_model_codes = {
+        RetryFailureCode.SOURCE_UNAVAILABLE,
+        RetryFailureCode.SOURCE_INVALID,
+        RetryFailureCode.PROCESSING_FAILED,
+        RetryFailureCode.VALIDATION_FAILED,
+        RetryFailureCode.DATE_BACKFILL_UNMATCHED,
+    }
+    retry_counts: Counter[RetryFailureCode] = Counter()
+    for key in manifest:
+        if key in accepted:
+            continue
+        pending = pending_by_case.get(key)
+        if (
+            pending is None
+            or pending.retry is None
+            or pending.retry.failure_code in non_model_codes
+        ):
+            raise ValueError("paired canary nonaccepted outcomes require model-failure retry state")
+        retry_counts[pending.retry.failure_code] += 1
+    report_counts = Counter({item.code: item.count for item in report.failure_code_counts})
+    if retry_counts != report_counts:
+        raise ValueError("paired canary retry outcomes do not match its report")
+    payload, document_count = _canary_evidence_payload(content, manifest)
+    evidence_sha256 = sha256_hex(canonical_json_bytes(payload, privacy_check=False))
+    return evidence_sha256, document_count
+
+
+def build_contemporaneous_canary_baseline(
+    *,
+    parent: GeneratedContent,
+    control: GeneratedContent,
+    report: CanaryAggregate,
+    config: ScotusConfig,
+) -> ContemporaneousCanaryBaseline:
+    """Build a source-text-free binding for a complete exact-Qwen control run."""
+    if (
+        config.editorial_backfill.control_model != SCOTUS_CONTROL_MODEL
+        or config.editorial_backfill.control_model_digest != SCOTUS_CONTROL_MODEL_DIGEST
+    ):
+        raise ValueError("editorial control identity is not the reviewed Qwen content")
+    evidence_sha256, document_count = _require_complete_arm(
+        content=control,
+        report=report,
+        config=config,
+        runtime_role="control",
+    )
+    return ContemporaneousCanaryBaseline(
+        parent_public_content_sha256=generated_public_content_digest(parent),
+        case_keys=report.case_keys,
+        runtime_role="control",
+        model=SCOTUS_CONTROL_MODEL,
+        model_digest=SCOTUS_CONTROL_MODEL_DIGEST,
+        protocol_sha256=derive_canary_protocol_digest(config),
+        evidence_sha256=evidence_sha256,
+        document_count=document_count,
+        processor_sha256=report.processor_sha256,
+        control_report_sha256=contract_digest(report),
+    )
+
+
+def validate_contemporaneous_canary_baseline(
+    baseline: ContemporaneousCanaryBaseline,
+    *,
+    parent: GeneratedContent,
+    control: GeneratedContent,
+    report: CanaryAggregate,
+    config: ScotusConfig,
+) -> None:
+    """Rebuild and compare every control baseline binding."""
+    rebuilt = build_contemporaneous_canary_baseline(
+        parent=parent,
+        control=control,
+        report=report,
+        config=config,
+    )
+    if rebuilt != baseline:
+        raise ValueError("contemporaneous control baseline binding does not match")
+
+
+def validate_candidate_against_baseline(
+    baseline: ContemporaneousCanaryBaseline,
+    *,
+    parent: GeneratedContent,
+    candidate: GeneratedContent,
+    report: CanaryAggregate,
+    config: ScotusConfig,
+) -> CanaryAggregate:
+    """Validate the independent Cogito arm and return its comparison-bound report."""
+    if generated_public_content_digest(parent) != baseline.parent_public_content_sha256:
+        raise ValueError("paired canary candidate has a different generated-content parent")
+    if report.case_keys != baseline.case_keys:
+        raise ValueError("paired canary candidate has a different manifest")
+    if derive_canary_protocol_digest(config) != baseline.protocol_sha256:
+        raise ValueError("paired canary candidate has a different protocol")
+    evidence_sha256, document_count = _require_complete_arm(
+        content=candidate,
+        report=report,
+        config=config,
+        runtime_role="production",
+    )
+    if (
+        evidence_sha256 != baseline.evidence_sha256
+        or document_count != baseline.document_count
+    ):
+        raise ValueError("paired canary candidate evidence does not match control")
+    baseline_sha256 = contract_digest(baseline)
+    if report.comparison_baseline_sha256 not in (None, baseline_sha256):
+        raise ValueError("candidate report has a different comparison baseline binding")
+    if report.control_report_sha256 not in (None, baseline.control_report_sha256):
+        raise ValueError("candidate report has a different control report binding")
+    return CanaryAggregate.model_validate(
+        {
+            **report.model_dump(mode="python"),
+            "comparison_baseline_sha256": baseline_sha256,
+            "control_report_sha256": baseline.control_report_sha256,
+        }
+    )
+
+
+# Explicit paired-canary names kept as small aliases for orchestration callers.
+derive_paired_canary_protocol_digest = derive_canary_protocol_digest
+derive_paired_canary_evidence_digest = derive_canary_evidence_digest
+build_control_canary_baseline = build_contemporaneous_canary_baseline
+validate_control_canary_baseline = validate_contemporaneous_canary_baseline
+validate_canary_candidate = validate_candidate_against_baseline
+
+
 def record_canary_review(
     report: CanaryAggregate,
     *,
@@ -330,6 +626,12 @@ def aggregate_canary_report(
         processor_sha256=backfill.processor_sha256,
         rollout_stage=backfill.rollout_stage,
         candidate_sha256=None if all_hard_failed else candidate_sha256,
+        comparison_baseline_sha256=(
+            previous.comparison_baseline_sha256 if preserve_review and previous else None
+        ),
+        control_report_sha256=(
+            previous.control_report_sha256 if preserve_review and previous else None
+        ),
         case_keys=backfill.selected_case_keys,
         attempted_count=attempted_count,
         accepted_count=accepted_count,

@@ -622,10 +622,6 @@ class StaticCaseWork:
     authorized_retry_scope: str | None = None
     authorized_retry_stages: frozenset[Literal["extraction", "brief"]] = frozenset()
     retry_scope_probe_only: bool = False
-    # Replacement canaries compare model behavior only when official document bytes
-    # still match the durable evidence used by the active public case.
-    require_unchanged_documents: bool = False
-
     @property
     def document_count(self) -> int:
         return len(
