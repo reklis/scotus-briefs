@@ -145,6 +145,7 @@ from ragchew.scotus.reader_guides import (
     ReaderGuideFieldPath,
     ReaderGuidePlan,
     ReaderGuidePlanner,
+    ReaderGuidePlanningError,
     ReaderGuidePurpose,
     ReaderGuideWritingError,
     TargetedReaderGuideRepairer,
@@ -163,6 +164,7 @@ from ragchew.scotus.static_contracts import (
     ModelRetryStatus,
     PendingReason,
     ProcessorFingerprint,
+    RetryFailureCode,
     canonical_json_bytes,
     sha256_hex,
 )
@@ -2176,13 +2178,21 @@ class LiveStaticCaseProcessor:
                     documents=tuple(states[key] for key in sorted(states)),
                 ) from None
             except LegalExtractionError as error:
-                failure_code = _persisted_extraction_output_code(error.safe_code)
-                if failure_code is None:
-                    raise
+                failure_code = (
+                    _persisted_extraction_output_code(error.safe_code)
+                    or RetryFailureCode.VALIDATION_FAILED
+                )
                 raise ModelOutputFailure(
                     retry_scope=retry_scope,
                     stage="extraction",
                     failure_code=failure_code,
+                    documents=tuple(states[key] for key in sorted(states)),
+                ) from None
+            except ReaderGuidePlanningError:
+                raise ModelOutputFailure(
+                    retry_scope=retry_scope,
+                    stage="extraction",
+                    failure_code=RetryFailureCode.VALIDATION_FAILED,
                     documents=tuple(states[key] for key in sorted(states)),
                 ) from None
         finally:
