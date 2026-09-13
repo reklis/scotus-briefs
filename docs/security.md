@@ -20,7 +20,12 @@ have explicit timeouts.
 The protected `scotus-publication` build runs on the persistent self-hosted aarch64
 Spark runner. It receives no model secret and can configure only the validated
 `http://127.0.0.1:11434/v1` endpoint. Pre- and post-build cleanup remove prior source,
-candidates, and the mode-0700 private workspace; none is cached or uploaded. No Docker
+candidates, and the mode-0700 private workspace. During the paired canary only, Qwen records
+bounded Court responses in a mode-0700 volatile-memory handoff and Cogito's dependent
+protected job first verifies the exact recorded runner identity and then replays the sequence.
+A mismatched runner fails before candidate work. This handoff is never uploaded, is removed
+after Cogito or a control failure, expires through a detached 24-hour cleanup guard, disappears
+on runner restart, and is scrubbed before later builds. No Docker
 services are started. Deploy receives
 only `pages:write` and `id-token:write`; promotion receives only `contents:write`.
 Neither receives build secrets or obsolete reader credentials.

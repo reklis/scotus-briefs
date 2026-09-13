@@ -53,8 +53,8 @@ The system SHALL begin with a protected publication-disabled paired ten-case can
 - **THEN** the system emits a privacy-scanned sanitized baseline binding the original parent, manifest order, unchanged protocol/budgets, per-case document identities and integrity, disposition metadata, and control report without retaining source text, prompts, responses, diagnostics, or rejected prose
 
 #### Scenario: Cogito evidence matches control
-- **WHEN** Cogito independently processes the fixed manifest from the original parent and its evidence, protocol, budget, and parent digests equal the complete control baseline
-- **THEN** the system may retain the publication-disabled Cogito candidate and binds its report to that exact baseline
+- **WHEN** Cogito independently processes the fixed manifest from the original parent by replaying the exact run-scoped Court response snapshot collected for Qwen and its evidence, protocol, budget, and parent digests equal the complete control baseline
+- **THEN** the system may retain the publication-disabled Cogito candidate, binds its report to that exact baseline, and removes the volatile private response handoff before the candidate job exits
 
 #### Scenario: Dynamic edge telemetry does not create false evidence drift
 - **WHEN** the Court injects its recognized nondeterministic Akamai Boomerang script into a docket page

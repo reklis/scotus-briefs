@@ -12,6 +12,7 @@ import json
 import logging
 import os
 import re
+import stat
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
@@ -3746,7 +3747,295 @@ def _outstanding_supported_case_keys(
     return outstanding
 
 
+class _TransientEvidenceTransport(httpx.BaseTransport):
+    """Record or sequence-exactly replay bounded Court responses in volatile storage."""
+
+    _RESPONSE_HEADERS = frozenset({"content-type", "etag", "last-modified", "location"})
+    _MAXIMUM_MANIFEST_BYTES = 16 * 1024 * 1024
+
+    def __init__(
+        self,
+        path: Path,
+        mode: Literal["record", "replay"],
+        *,
+        maximum_response_bytes: int,
+        maximum_cache_bytes: int,
+    ) -> None:
+        self.path = path
+        self.mode = mode
+        self.maximum_response_bytes = maximum_response_bytes
+        self.maximum_cache_bytes = maximum_cache_bytes
+        self.delegate = httpx.HTTPTransport(retries=0) if mode == "record" else None
+        self.manifest_path = path / "sequence.jsonl"
+        self.cursor_path = path / "replay-cursor"
+        self.path.mkdir(mode=0o700, parents=True, exist_ok=True)
+        self.path.chmod(0o700)
+
+    @staticmethod
+    def _request_key(request: httpx.Request) -> str:
+        payload = {
+            "method": request.method,
+            "url": str(request.url),
+            "if_none_match": request.headers.get("if-none-match"),
+            "if_modified_since": request.headers.get("if-modified-since"),
+            "accept": request.headers.get("accept"),
+            "accept_encoding": request.headers.get("accept-encoding"),
+        }
+        return sha256_hex(canonical_json_bytes(payload, privacy_check=False))
+
+    @staticmethod
+    def _read_bounded(path: Path, maximum_bytes: int) -> bytes:
+        try:
+            descriptor = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
+        except OSError:
+            raise
+        try:
+            metadata = os.fstat(descriptor)
+            if not stat.S_ISREG(metadata.st_mode) or metadata.st_size > maximum_bytes:
+                raise SourceFetchError("paired evidence file exceeds its bound")
+            with os.fdopen(descriptor, "rb", closefd=False) as stream:
+                content = stream.read(maximum_bytes + 1)
+            if len(content) > maximum_bytes:
+                raise SourceFetchError("paired evidence file exceeds its bound")
+            return content
+        finally:
+            os.close(descriptor)
+
+    def _entries(self) -> tuple[dict[str, Any], ...]:
+        try:
+            manifest = self._read_bounded(
+                self.manifest_path, self._MAXIMUM_MANIFEST_BYTES
+            )
+        except FileNotFoundError:
+            return ()
+        except (OSError, SourceFetchError):
+            raise SourceFetchError("paired evidence sequence exceeds configured bounds") from None
+        if self._cache_size() > self.maximum_cache_bytes:
+            raise SourceFetchError("paired evidence sequence exceeds configured bounds")
+        try:
+            entries = tuple(
+                json.loads(line) for line in manifest.decode("utf-8").splitlines()
+            )
+        except (UnicodeDecodeError, ValueError, json.JSONDecodeError):
+            raise SourceFetchError("paired evidence sequence is missing or invalid") from None
+        if not all(isinstance(item, dict) for item in entries):
+            raise SourceFetchError("paired evidence sequence is missing or invalid")
+        return entries
+
+    def _cache_size(self) -> int:
+        try:
+            total = 0
+            for item in self.path.iterdir():
+                metadata = item.lstat()
+                if not stat.S_ISREG(metadata.st_mode):
+                    raise SourceFetchError("paired evidence cache contains a non-file")
+                total += metadata.st_size
+            return total
+        except OSError:
+            raise SourceFetchError("paired evidence cache cannot be measured") from None
+
+    def _append_entry(self, entry: Mapping[str, Any], *, additional_bytes: int = 0) -> None:
+        encoded = canonical_json_bytes(dict(entry), privacy_check=False)
+        if self._cache_size() + additional_bytes + len(encoded) > self.maximum_cache_bytes:
+            raise httpx.ReadError("paired evidence cache exceeds private-disk bound")
+        descriptor = os.open(
+            self.manifest_path,
+            os.O_APPEND | os.O_CREAT | os.O_WRONLY | os.O_NOFOLLOW,
+            0o600,
+        )
+        with os.fdopen(descriptor, "ab") as stream:
+            stream.write(encoded)
+
+    def _record_response(
+        self, request: httpx.Request, response: httpx.Response
+    ) -> httpx.Response:
+        chunks: list[bytes] = []
+        byte_count = 0
+        try:
+            for chunk in response.iter_bytes():
+                byte_count += len(chunk)
+                if byte_count > self.maximum_response_bytes:
+                    raise httpx.ReadError("Court response exceeds evidence-cache bound")
+                chunks.append(chunk)
+            content = b"".join(chunks)
+            index = len(self._entries()) + 1
+            body_path = self.path / f"{index:04d}.body"
+            headers = {
+                name.casefold(): value
+                for name, value in response.headers.items()
+                if name.casefold() in self._RESPONSE_HEADERS
+            }
+            entry = {
+                "request_sha256": self._request_key(request),
+                "outcome": "response",
+                "status_code": response.status_code,
+                "headers": headers,
+                "body_sha256": sha256_hex(content),
+                "byte_count": byte_count,
+            }
+            encoded_entry_size = len(canonical_json_bytes(entry, privacy_check=False))
+            if (
+                self._cache_size() + byte_count + encoded_entry_size
+                > self.maximum_cache_bytes
+            ):
+                raise httpx.ReadError("paired evidence cache exceeds private-disk bound")
+            descriptor = os.open(
+                body_path,
+                os.O_CREAT | os.O_EXCL | os.O_WRONLY | os.O_NOFOLLOW,
+                0o600,
+            )
+            with os.fdopen(descriptor, "wb") as stream:
+                stream.write(content)
+            try:
+                self._append_entry(entry)
+            except Exception:
+                body_path.unlink(missing_ok=True)
+                raise
+            return httpx.Response(
+                response.status_code,
+                headers=headers,
+                content=content,
+                request=request,
+            )
+        finally:
+            response.close()
+
+    def _record_transport_error(self, request: httpx.Request) -> None:
+        self._append_entry(
+            {
+                "request_sha256": self._request_key(request),
+                "outcome": "transport_error",
+                "byte_count": 0,
+            }
+        )
+
+    def _replay_cursor(self, *, missing_is_zero: bool) -> int:
+        try:
+            return int(self._read_bounded(self.cursor_path, 32).decode("ascii"))
+        except FileNotFoundError:
+            if missing_is_zero:
+                return 0
+            raise SourceFetchError("paired evidence replay cursor is missing") from None
+        except SourceFetchError:
+            raise SourceFetchError("paired evidence replay cursor exceeds its bound") from None
+        except (OSError, UnicodeDecodeError, ValueError):
+            raise SourceFetchError("paired evidence replay cursor is invalid") from None
+
+    def _next_replay_entry(self, request: httpx.Request) -> dict[str, Any]:
+        entries = self._entries()
+        cursor = self._replay_cursor(missing_is_zero=True)
+        if cursor >= len(entries):
+            raise SourceFetchError("paired evidence replay has an extra request")
+        entry = entries[cursor]
+        if entry.get("request_sha256") != self._request_key(request):
+            raise SourceFetchError("paired evidence replay request sequence differs")
+        descriptor = os.open(
+            self.cursor_path,
+            os.O_CREAT | os.O_TRUNC | os.O_WRONLY | os.O_NOFOLLOW,
+            0o600,
+        )
+        with os.fdopen(descriptor, "wb") as stream:
+            stream.write(str(cursor + 1).encode("ascii"))
+        return entry
+
+    def handle_request(self, request: httpx.Request) -> httpx.Response:
+        if self.mode == "record":
+            assert self.delegate is not None
+            try:
+                response = self.delegate.handle_request(request)
+            except Exception:
+                self._record_transport_error(request)
+                raise
+            try:
+                return self._record_response(request, response)
+            except Exception:
+                self._record_transport_error(request)
+                raise
+
+        entry = self._next_replay_entry(request)
+        if entry.get("outcome") == "transport_error":
+            raise httpx.ConnectError("recorded Court transport failure", request=request)
+        try:
+            index = self._replay_cursor(missing_is_zero=False)
+            body_path = self.path / f"{index:04d}.body"
+            if self._cache_size() > self.maximum_cache_bytes:
+                raise SourceFetchError("paired evidence replay exceeds configured bounds")
+            content = self._read_bounded(body_path, self.maximum_response_bytes)
+            status_code = int(entry["status_code"])
+            headers = entry["headers"]
+            expected_sha256 = entry["body_sha256"]
+            byte_count = int(entry["byte_count"])
+        except (OSError, KeyError, TypeError, ValueError):
+            raise SourceFetchError("paired evidence replay is missing or invalid") from None
+        if (
+            not isinstance(headers, dict)
+            or not all(
+                isinstance(key, str) and isinstance(value, str)
+                for key, value in headers.items()
+            )
+            or not isinstance(expected_sha256, str)
+            or len(content) != byte_count
+            or sha256_hex(content) != expected_sha256
+            or byte_count > self.maximum_response_bytes
+        ):
+            raise SourceFetchError("paired evidence replay failed integrity validation")
+        return httpx.Response(status_code, headers=headers, content=content, request=request)
+
+    def require_complete_replay(self) -> None:
+        if self.mode != "replay":
+            return
+        cursor = self._replay_cursor(missing_is_zero=False)
+        entries = self._entries()
+        if cursor != len(entries):
+            raise SourceFetchError("paired evidence replay omitted recorded requests")
+        expected_bodies = {
+            f"{index:04d}.body"
+            for index, entry in enumerate(entries, start=1)
+            if entry.get("outcome") == "response"
+        }
+        actual_bodies = {item.name for item in self.path.glob("*.body")}
+        if (
+            actual_bodies != expected_bodies
+            or self._cache_size() > self.maximum_cache_bytes
+        ):
+            raise SourceFetchError("paired evidence replay cache contents differ")
+
+    def close(self) -> None:
+        if self.delegate is not None:
+            self.delegate.close()
+
+
+def _evidence_transport(config: ScotusConfig) -> _TransientEvidenceTransport | None:
+    mode = os.environ.get("RAGCHEW_SCOTUS_EVIDENCE_CACHE_MODE")
+    raw_path = os.environ.get("RAGCHEW_SCOTUS_EVIDENCE_CACHE_PATH")
+    if mode is None and raw_path is None:
+        return None
+    cache_path = Path(raw_path) if raw_path else None
+    if (
+        mode not in {"record", "replay"}
+        or cache_path is None
+        or cache_path.parent != Path("/dev/shm")
+        or re.fullmatch(r"ragchew-scotus-[0-9]+", cache_path.name) is None
+        or not config.publication.dry_run
+        or config.editorial_backfill.rollout_stage != "canary_10"
+        or (mode == "record") != (config.generation.runtime_role == "control")
+    ):
+        raise PublicationGateDenied("transient evidence cache is limited to paired canary arms")
+    return _TransientEvidenceTransport(
+        cache_path,
+        cast(Any, mode),
+        maximum_response_bytes=config.documents.maximum_pdf_bytes,
+        maximum_cache_bytes=config.runner_limits.maximum_private_disk_bytes,
+    )
+
+
 def _default_source_fetcher(settings: ServiceSettings, config: ScotusConfig) -> SourceFetcher:
+    transport = _evidence_transport(config)
+    client = (
+        httpx.Client(follow_redirects=False, trust_env=False, transport=transport)
+        if transport is not None
+        else None
+    )
     return HttpxSourceFetcher(
         user_agent=settings.source_user_agent,
         maximum_bytes=config.documents.maximum_pdf_bytes,
@@ -3754,6 +4043,8 @@ def _default_source_fetcher(settings: ServiceSettings, config: ScotusConfig) -> 
         # document bodies; avoid a second independent clock in this transport.
         minimum_interval_seconds=0,
         timeout_seconds=config.discovery.request_timeout_seconds,
+        client=client,
+        close_client=client is not None,
     )
 
 
@@ -3763,6 +4054,7 @@ def _default_document_client(settings: ServiceSettings, config: ScotusConfig) ->
         follow_redirects=False,
         timeout=config.documents.request_timeout_seconds,
         trust_env=False,
+        transport=_evidence_transport(config),
     )
 
 
@@ -3968,6 +4260,13 @@ class LiveStaticBatchAdapter:
                 raise RuntimeError(
                     f"live SCOTUS batch failed: {category.value}; detail={detail}"
                 ) from None
+            if os.environ.get("RAGCHEW_SCOTUS_EVIDENCE_CACHE_MODE") == "replay":
+                replay_check = _evidence_transport(config)
+                assert replay_check is not None
+                try:
+                    replay_check.require_complete_replay()
+                finally:
+                    replay_check.close()
             if result.content.projection is None:
                 projection = ScotusPublicProjection(
                     watermark=now,

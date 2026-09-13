@@ -66,7 +66,7 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "services:" not in workflow
     assert "postgres:" not in workflow and "minio:" not in workflow
     assert "environment: scotus-publication" in workflow
-    assert "runs-on: [self-hosted]" in workflow
+    assert "runs-on: [self-hosted, spark]" in workflow
     assert "OPENAI_API_KEY" not in workflow
     assert "RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1" in workflow
     assert "cogito:70b" in workflow
@@ -117,12 +117,16 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
         "--replacement-comparison-role candidate"
     )
     assert "contemporaneous-control-baseline.json" in control_job
+    assert "RAGCHEW_SCOTUS_EVIDENCE_CACHE_MODE: record" in control_job
+    assert "RAGCHEW_SCOTUS_EVIDENCE_CACHE_MODE=replay" in live_step
+    assert "Require paired runner affinity before candidate work" in workflow
+    assert 'test "$RUNNER_NAME" = "$CONTROL_RUNNER_NAME"' in workflow
     assert "paired-control-input/contemporaneous-control-baseline.json" in live_step
     assert "CostReceiptBundle(receipts=receipts)" in live_step
     assert "sanitized-contemporaneous-control" in workflow
     assert "scanned-qwen-control-candidate" in workflow
-    assert "ragchew-qwen-control" in workflow
-    assert "ragchew-cogito-candidate" in workflow
+    assert "/dev/shm/ragchew-scotus-$GITHUB_RUN_ID" in workflow
+    assert "rm -rf -- \"/dev/shm/ragchew-scotus-$GITHUB_RUN_ID\"" in workflow
     receipt_upload = workflow[
         workflow.index("- name: Upload validated opaque cost receipts") :
         workflow.index("- name: Safe build summary")

@@ -197,7 +197,10 @@ def check() -> list[str]:
         or '${CANONICAL_ORIGIN}${PROJECT_BASE_PATH}release/v1/release.json' not in workflow
     ):
         failures.append("Pages workflow must publish and reconcile the scotusbriefs.us root")
-    if "runs-on: [self-hosted]" not in build or "runs-on: [self-hosted]" not in control:
+    if (
+        "runs-on: [self-hosted, spark]" not in build
+        or "runs-on: [self-hosted, spark]" not in control
+    ):
         failures.append("Pages paired builds must run only on the self-hosted runner")
     if "OPENAI_API_KEY" in workflow or "secrets." in build or "secrets." in control:
         failures.append("self-hosted Pages builds must not receive model secrets")
@@ -211,6 +214,10 @@ def check() -> list[str]:
         or "required |= {control}" not in build
         or "--replacement-comparison-role control" not in control
         or "--replacement-comparison-role candidate" not in build
+        or "RAGCHEW_SCOTUS_EVIDENCE_CACHE_MODE: record" not in control
+        or "RAGCHEW_SCOTUS_EVIDENCE_CACHE_MODE=replay" not in build
+        or "Require paired runner affinity before candidate work" not in build
+        or 'test "$RUNNER_NAME" = "$CONTROL_RUNNER_NAME"' not in build
         or "needs: [paired-control]" not in build
     ):
         failures.append("Pages build must preflight and pair exact reviewed Ollama identities")
@@ -225,7 +232,7 @@ def check() -> list[str]:
     if not all(
         name in control + build
         for name in (
-            "Clean persistent runner before control",
+            "Clean persistent runner before paired canary",
             "Clean persistent runner after control",
             "Clean persistent runner before build",
             "Clean persistent runner after build",
@@ -233,7 +240,7 @@ def check() -> list[str]:
     ):
         failures.append("self-hosted Pages builds require pre/post persistent-runner cleanup")
     hosted_jobs = workflow[workflow.index("\n  persist-cost-receipts:\n") :]
-    if "runs-on: [self-hosted]" in hosted_jobs or hosted_jobs.count(
+    if "runs-on: [self-hosted" in hosted_jobs or hosted_jobs.count(
         "runs-on: ubuntu-24.04"
     ) != 4:
         failures.append("receipt, deploy, and promotion jobs must remain Ubuntu-hosted")

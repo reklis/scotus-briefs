@@ -50,13 +50,15 @@ def test_docket_html_canonicalization_removes_only_dynamic_edge_telemetry() -> N
     first = (
         prefix
         + b'<script>!function(e){var n="https://s.go-mpulse.net/boomerang/";'
-        + b'var edge="first";</script>'
+        + b'window.BOOMR_API_key="T5V7Y-Q8M8U-BKDFY-XWX7C-XPH3U";'
+        + b'BOOMR.plugins.AK={};var edge="first";</script>'
         + suffix
     )
     second = (
         prefix
         + b'<script>!function(e){var n="https://s.go-mpulse.net/boomerang/";'
-        + b'var edge="second";</script>'
+        + b'window.BOOMR_API_key="T5V7Y-Q8M8U-BKDFY-XWX7C-XPH3U";'
+        + b'BOOMR.plugins.AK={};var edge="second";</script>'
         + suffix
     )
 
@@ -65,6 +67,9 @@ def test_docket_html_canonicalization_removes_only_dynamic_edge_telemetry() -> N
     assert canonicalize_docket_html(prefix + suffix) == prefix + suffix
     with pytest.raises(DocumentCollectionError, match="malformed or ambiguous"):
         canonicalize_docket_html(first + second)
+    unrecognized = first.replace(b"BOOMR.plugins.AK", b"BOOMR.plugins.changed")
+    with pytest.raises(DocumentCollectionError, match="not recognized"):
+        canonicalize_docket_html(unrecognized)
 
 
 def pdf_bytes(pages: int = 1, *, encrypted: bool = False, empty_password: bool = False) -> bytes:

@@ -54,6 +54,21 @@ def test_http_fetcher_sends_conditionals_and_descriptive_user_agent() -> None:
     assert response.headers["etag"] == '"new"'
 
 
+def test_injected_http_client_can_be_explicitly_owned() -> None:
+    client = httpx.Client(
+        transport=httpx.MockTransport(lambda _request: httpx.Response(200))
+    )
+    fetcher = HttpxSourceFetcher(
+        user_agent="ragchew-tests contact=tests@example.com",
+        client=client,
+        close_client=True,
+    )
+
+    fetcher.close()
+
+    assert client.is_closed
+
+
 def test_http_fetcher_rejects_redirects_and_oversized_responses() -> None:
     redirecting = HttpxSourceFetcher(
         user_agent="ragchew-test contact=test@example.test",

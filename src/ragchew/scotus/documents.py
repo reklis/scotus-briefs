@@ -44,12 +44,23 @@ _AKAMAI_TELEMETRY_SCRIPT = re.compile(
 
 def canonicalize_docket_html(content: bytes) -> bytes:
     """Remove only the Court edge's nondeterministic, non-content telemetry script."""
-    if _AKAMAI_TELEMETRY_MARKER not in content:
+    marker_count = content.count(_AKAMAI_TELEMETRY_MARKER)
+    if marker_count == 0:
         return content
+    if marker_count != 1:
+        raise DocumentCollectionError("docket telemetry wrapper is malformed or ambiguous")
     matches = tuple(_AKAMAI_TELEMETRY_SCRIPT.finditer(content))
     if len(matches) != 1:
         raise DocumentCollectionError("docket telemetry wrapper is malformed or ambiguous")
     match = matches[0]
+    script = match.group()
+    if (
+        len(script) > 20_000
+        or script.count(b"<script") != 1
+        or b'window.BOOMR_API_key="T5V7Y-Q8M8U-BKDFY-XWX7C-XPH3U"' not in script
+        or b"BOOMR.plugins.AK" not in script
+    ):
+        raise DocumentCollectionError("docket telemetry wrapper is not recognized")
     return content[: match.start()] + content[match.end() :]
 
 

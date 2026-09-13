@@ -17,7 +17,11 @@ from pypdf.generic import DecodedStreamObject, DictionaryObject, NameObject
 from ragchew.config import ProceedingsConfig, ScotusConfig, ServiceSettings
 from ragchew.proceedings.contracts import DocumentType
 from ragchew.proceedings.discovery import ConditionalRequest
-from ragchew.proceedings.sources.http import RequestRateLimiter, SourceResponse
+from ragchew.proceedings.sources.http import (
+    RequestRateLimiter,
+    SourceFetchError,
+    SourceResponse,
+)
 from ragchew.proceedings.sources.supreme_court import SupremeCourtAdapter
 from ragchew.scotus.briefs import BriefValidationError
 from ragchew.scotus.contracts import (
@@ -42,6 +46,7 @@ from ragchew.scotus.live_static import (
     _outstanding_supported_case_keys,
     _procedural_path_observation,
     _repair_diagnostic,
+    _TransientEvidenceTransport,
 )
 from ragchew.scotus.public_contracts import (
     PublicCaseBrief,
@@ -1001,6 +1006,139 @@ def test_live_adapter_requires_exact_local_model_before_court_traffic(
     assert model.requests == []
     # Exact inventory preflight runs before the model-client factory is invoked.
     assert not model.closed
+
+
+def test_transient_evidence_transport_replays_exact_private_response(
+    tmp_path: Path,
+) -> None:
+    content = b"official current evidence"
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            headers={"content-type": "text/html", "etag": '"current"'},
+            content=content,
+            request=request,
+        )
+
+    recorded = _TransientEvidenceTransport(
+        tmp_path / "cache",
+        "record",
+        maximum_response_bytes=100,
+        maximum_cache_bytes=2_000,
+    )
+    recorded.delegate = httpx.MockTransport(handler)
+    request = httpx.Request("GET", "https://www.supremecourt.gov/test")
+    response = recorded.handle_request(request)
+    assert response.read() == content
+    recorded.close()
+
+    replayed = _TransientEvidenceTransport(
+        tmp_path / "cache",
+        "replay",
+        maximum_response_bytes=100,
+        maximum_cache_bytes=2_000,
+    )
+    replay = replayed.handle_request(request)
+    assert replay.read() == content
+    assert replay.headers["etag"] == '"current"'
+    (tmp_path / "cache" / "replay-cursor").unlink()
+    next((tmp_path / "cache").glob("*.body")).write_bytes(b"tampered")
+    with pytest.raises(SourceFetchError, match="integrity"):
+        _TransientEvidenceTransport(
+            tmp_path / "cache",
+            "replay",
+            maximum_response_bytes=100,
+            maximum_cache_bytes=2_000,
+        ).handle_request(request)
+
+
+def test_transient_evidence_replay_requires_exact_complete_sequence(
+    tmp_path: Path,
+) -> None:
+    cache = tmp_path / "sequence"
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, content=request.url.path.encode(), request=request)
+
+    recorded = _TransientEvidenceTransport(
+        cache, "record", maximum_response_bytes=100, maximum_cache_bytes=2_000
+    )
+    recorded.delegate = httpx.MockTransport(handler)
+    first = httpx.Request("GET", "https://www.supremecourt.gov/first")
+    second = httpx.Request("GET", "https://www.supremecourt.gov/second")
+    recorded.handle_request(first).read()
+    recorded.handle_request(second).read()
+    recorded.close()
+
+    wrong_order = _TransientEvidenceTransport(
+        cache, "replay", maximum_response_bytes=100, maximum_cache_bytes=2_000
+    )
+    with pytest.raises(SourceFetchError, match="sequence differs"):
+        wrong_order.handle_request(second)
+    (cache / "replay-cursor").write_bytes(b"1" * 33)
+    with pytest.raises(SourceFetchError, match="cursor exceeds"):
+        wrong_order.handle_request(first)
+    (cache / "replay-cursor").unlink()
+
+    replayed = _TransientEvidenceTransport(
+        cache, "replay", maximum_response_bytes=100, maximum_cache_bytes=2_000
+    )
+    replayed.handle_request(first).read()
+    with pytest.raises(SourceFetchError, match="omitted"):
+        replayed.require_complete_replay()
+    replayed.handle_request(second).read()
+    replayed.require_complete_replay()
+    with pytest.raises(SourceFetchError, match="extra request"):
+        replayed.handle_request(second)
+
+
+def test_transient_evidence_recording_enforces_response_bound(tmp_path: Path) -> None:
+    recorded = _TransientEvidenceTransport(
+        tmp_path / "bounded",
+        "record",
+        maximum_response_bytes=3,
+        maximum_cache_bytes=1_000,
+    )
+    request = httpx.Request("GET", "https://www.supremecourt.gov/too-large")
+    recorded.delegate = httpx.MockTransport(
+        lambda request: httpx.Response(200, content=b"four", request=request)
+    )
+
+    with pytest.raises(httpx.ReadError, match="response exceeds"):
+        recorded.handle_request(request)
+    assert (tmp_path / "bounded" / "sequence.jsonl").is_file()
+    replayed = _TransientEvidenceTransport(
+        tmp_path / "bounded",
+        "replay",
+        maximum_response_bytes=3,
+        maximum_cache_bytes=1_000,
+    )
+    with pytest.raises(httpx.ConnectError, match="recorded Court"):
+        replayed.handle_request(request)
+    replayed.require_complete_replay()
+
+
+def test_transient_evidence_replays_recorded_transport_failure(tmp_path: Path) -> None:
+    cache = tmp_path / "failure"
+    request = httpx.Request("GET", "https://www.supremecourt.gov/failure")
+
+    def fail(request: httpx.Request) -> httpx.Response:
+        raise httpx.ConnectError("synthetic", request=request)
+
+    recorded = _TransientEvidenceTransport(
+        cache, "record", maximum_response_bytes=100, maximum_cache_bytes=1_000
+    )
+    recorded.delegate = httpx.MockTransport(fail)
+    with pytest.raises(httpx.ConnectError):
+        recorded.handle_request(request)
+
+    replayed = _TransientEvidenceTransport(
+        cache, "replay", maximum_response_bytes=100, maximum_cache_bytes=1_000
+    )
+    with pytest.raises(httpx.ConnectError, match="recorded Court"):
+        replayed.handle_request(request)
+    replayed.require_complete_replay()
 
 
 def test_qwen_control_cannot_run_outside_publication_disabled_canary(

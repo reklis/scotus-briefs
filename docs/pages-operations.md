@@ -185,8 +185,8 @@ in 29 minutes, including one fixed-code brief correction, and produced a privacy
    branch, and require owner approval for manual jobs. Add no model secret.
 4. Register the aarch64 Spark runner with the repository. The installed runner is
    `spark`, pinned at version `2.337.0`, runs as the non-root `gdxspark` system service,
-   and advertises `self-hosted`, `Linux`, `ARM64`, and `spark`; the workflow assumes only
-   `self-hosted`. Run Ollama as a host service listening only on `127.0.0.1:11434`.
+   and advertises `self-hosted`, `Linux`, `ARM64`, and `spark`; both protected paired
+   jobs require `self-hosted` and `spark`. Run Ollama as a host service listening only on `127.0.0.1:11434`.
    Install the reviewed Apache-2.0 model `cogito:70b` whose full Ollama content digest
    is `8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`, and do not
    expose the port to a network. Protected automation must never pull or install it.
@@ -337,12 +337,17 @@ Any new Cogito failure then follows the ordinary finite cooldown and retry limit
 
 1. Choose `editorial_rollout_stage=canary_10`, `deploy=false`, and leave
    `maximum_cases=0`. The workflow rejects a canary deploy request and the CLI independently
-   forces dry-run publication. Separate sequential protected jobs preserve each arm's fixed
-   runtime budget. The complete Qwen arm uploads only its sanitized comparison binding,
-   report, opaque receipts, and any privacy-scanned hard-valid public candidate; Cogito cannot
-   start without that binding. Cogito independently revalidates the parent, manifest,
-   protocol, evidence, model identity, and control-report digest. Receipts remain uploadable
-   after a failed arm, and each private workspace is removed. None of these artifacts contains
+   forces dry-run publication. The arms run in sequential protected jobs with unchanged
+   runtime budgets. Qwen records bounded Court responses only in a mode-0700 volatile-memory
+   handoff; Cogito has no independent Court fetch and replays that exact request sequence,
+   consumes every response, and removes the handoff. The candidate verifies the control's
+   exact runner identity before work; a scheduling mismatch fails closed. The handoff is never
+   uploaded, has a detached 24-hour expiry guard, and stale volatile handoffs are scrubbed
+   before later self-hosted builds. The complete Qwen arm emits only its sanitized
+   comparison binding, report, opaque receipts, and any privacy-scanned hard-valid public
+   candidate; Cogito cannot start without that binding. Cogito independently revalidates the
+   parent, manifest, protocol, evidence, model identity, and control-report digest. Receipts
+   remain uploadable after a failed arm, and each private workspace is removed. None of these artifacts contains
    source text, prompts, rejected output, field paths, or detailed diagnostics.
 2. Confirm that the Cogito manifest exactly matches the prior rejected ten-case
    comparison manifest, including order, then review it side by side with each active

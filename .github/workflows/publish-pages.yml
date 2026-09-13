@@ -59,34 +59,45 @@ jobs:
   paired-control:
     name: Build contemporaneous Qwen control
     if: github.event_name == 'workflow_dispatch' && inputs.editorial_rollout_stage == 'canary_10' && inputs.deploy != true && inputs.mode == 'nightly' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
-    runs-on: [self-hosted]
+    runs-on: [self-hosted, spark]
     timeout-minutes: 330
     environment: scotus-publication
     permissions:
       contents: read
+    outputs:
+      runner_name: ${{ steps.runner_identity.outputs.name }}
     steps:
-      - name: Clean persistent runner before control
+      - name: Record protected runner identity
+        id: runner_identity
+        run: echo "name=$RUNNER_NAME" >> "$GITHUB_OUTPUT"
+      - name: Clean persistent runner before paired canary
         run: |
           set -euo pipefail
+          test "$(findmnt -n -o FSTYPE /dev/shm)" = "tmpfs"
           find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf -- {} +
+          find /dev/shm -mindepth 1 -maxdepth 1 -name 'ragchew-scotus-*' -exec rm -rf -- {} +
           rm -rf "$RUNNER_TEMP/ragchew-qwen-control"
-          install -d -m 700 "$RUNNER_TEMP/ragchew-qwen-control"
-      - name: Require the protected default branch for control
+          install -d -m 700 "$RUNNER_TEMP/ragchew-qwen-control" \
+            "/dev/shm/ragchew-scotus-$GITHUB_RUN_ID"
+          env -u RUNNER_TRACKING_ID nohup sh -c \
+            'sleep 86400; rm -rf -- "$1"' sh \
+            "/dev/shm/ragchew-scotus-$GITHUB_RUN_ID" >/dev/null 2>&1 &
+      - name: Require the protected default branch for paired canary
         env:
           REF_PROTECTED: ${{ github.ref_protected }}
         run: test "$REF_PROTECTED" = true
-      - name: Check out paired-control source
+      - name: Check out paired-canary source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - name: Check out paired-control parent state
+      - name: Check out paired-canary parent state
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: generated-content
           path: generated-content-input
           fetch-depth: 1
           persist-credentials: false
-      - name: Install paired-control dependencies
+      - name: Install paired-canary dependencies
         uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           enable-cache: false
@@ -97,7 +108,7 @@ jobs:
           curl --fail --silent --show-error --connect-timeout 5 --max-time 30 \
             http://127.0.0.1:11434/api/tags | \
             uv run python -c 'import json,os,sys; from ragchew.config import ScotusConfig; config=ScotusConfig.from_yaml("config/scotus.yaml"); models=json.load(sys.stdin).get("models", []); installed={(item.get("name"),item.get("digest")) for item in models if isinstance(item,dict)}; expected={(os.environ["REVIEWED_OLLAMA_MODEL"],os.environ["REVIEWED_OLLAMA_MODEL_DIGEST"]),(os.environ["REVIEWED_CONTROL_OLLAMA_MODEL"],os.environ["REVIEWED_CONTROL_OLLAMA_MODEL_DIGEST"])}; configured={(config.generation.model,config.generation.model_digest),(config.editorial_backfill.control_model,config.editorial_backfill.control_model_digest)}; raise SystemExit(0 if configured == expected and expected <= installed else "paired exact Ollama identities are unavailable")'
-      - name: Reconcile paired-control parent before Court access
+      - name: Reconcile paired-canary parent before Court access
         env:
           EXPECTED_LIVE_RELEASE_ID: ${{ inputs.expected_live_release_id || '' }}
         run: |
@@ -107,7 +118,7 @@ jobs:
             [[ "$EXPECTED_LIVE_RELEASE_ID" =~ ^[0-9a-f]{64}$ ]]
             live_args=(--live-release-id "$EXPECTED_LIVE_RELEASE_ID")
           else
-            marker="$RUNNER_TEMP/control-live-release.json"
+            marker="$RUNNER_TEMP/paired-live-release.json"
             if ! curl --proto '=https' --fail --silent --show-error --connect-timeout 5 \
               --max-time 30 --output "$marker" "$canonical_release_url"; then
               curl --proto '=http' --fail --silent --show-error --connect-timeout 5 \
@@ -119,12 +130,14 @@ jobs:
           fi
           uv run ragchew-scotus-static reconcile \
             --state-dir generated-content-input "${live_args[@]}" --fail-on-split
-      - name: Run exact Qwen control arm
+      - name: Record exact Court snapshot with Qwen control arm
         id: control
         timeout-minutes: 315
         env:
           RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter
           RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
+          RAGCHEW_SCOTUS_EVIDENCE_CACHE_MODE: record
+          RAGCHEW_SCOTUS_EVIDENCE_CACHE_PATH: /dev/shm/ragchew-scotus-${{ github.run_id }}
         run: |
           set -euo pipefail
           uv run ragchew-scotus-static batch \
@@ -158,7 +171,7 @@ jobs:
           if-no-files-found: error
           retention-days: 1
       - name: Upload complete sanitized control binding
-        if: steps.control.outcome == 'success' && steps.control_receipts.outcome == 'success'
+        if: steps.control.outcome == 'success' && steps.control_receipts.outcome == 'success' && hashFiles('contemporaneous-control-baseline.json') != '' && hashFiles('sanitized-control-review.json') != ''
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: paired-control-input
@@ -170,6 +183,9 @@ jobs:
           if-no-files-found: error
           include-hidden-files: true
           retention-days: 1
+      - name: Purge volatile evidence after failed control
+        if: failure() || cancelled()
+        run: rm -rf -- "/dev/shm/ragchew-scotus-$GITHUB_RUN_ID"
       - name: Clean persistent runner after control
         if: always()
         run: |
@@ -184,7 +200,7 @@ jobs:
     needs: [paired-control]
     if: always() && github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && (inputs.editorial_rollout_stage != 'canary_10' || needs.paired-control.result == 'success')
     name: Build and scan candidate
-    runs-on: [self-hosted]
+    runs-on: [self-hosted, spark]
     timeout-minutes: 360
     environment: scotus-publication
     permissions:
@@ -198,10 +214,18 @@ jobs:
       expected_parent_commit: ${{ steps.state_sha.outputs.commit }}
       receipts_present: ${{ steps.receipts.outputs.present }}
     steps:
+      - name: Require paired runner affinity before candidate work
+        if: inputs.editorial_rollout_stage == 'canary_10'
+        env:
+          CONTROL_RUNNER_NAME: ${{ needs.paired-control.outputs.runner_name }}
+        run: test "$RUNNER_NAME" = "$CONTROL_RUNNER_NAME"
       - name: Clean persistent runner before build
         run: |
           set -euo pipefail
+          test "$(findmnt -n -o FSTYPE /dev/shm)" = "tmpfs"
           find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf -- {} +
+          find /dev/shm -mindepth 1 -maxdepth 1 -name 'ragchew-scotus-*' \
+            ! -name "ragchew-scotus-$GITHUB_RUN_ID" -exec rm -rf -- {} +
           rm -rf "$RUNNER_TEMP/ragchew-private" \
             "$RUNNER_TEMP/ragchew-qwen-control" "$RUNNER_TEMP/ragchew-cogito-candidate"
           install -d -m 700 "$RUNNER_TEMP/ragchew-private"
@@ -399,7 +423,9 @@ jobs:
               exit 1
             fi
             install -d -m 700 "$RUNNER_TEMP/ragchew-cogito-candidate"
-            uv run ragchew-scotus-static batch \
+            RAGCHEW_SCOTUS_EVIDENCE_CACHE_MODE=replay \
+              RAGCHEW_SCOTUS_EVIDENCE_CACHE_PATH="/dev/shm/ragchew-scotus-$GITHUB_RUN_ID" \
+              uv run ragchew-scotus-static batch \
               --mode nightly \
               --state-dir generated-content-input --candidate-state-dir candidate-state \
               --output candidate-site --workspace "$RUNNER_TEMP/ragchew-cogito-candidate" \
@@ -652,11 +678,13 @@ jobs:
             "$RUNNER_TEMP/ragchew-qwen-control" \
             "$RUNNER_TEMP/ragchew-cogito-candidate" "$GITHUB_WORKSPACE" 2>/dev/null || true
           rm -rf "$RUNNER_TEMP/ragchew-private" \
-            "$RUNNER_TEMP/ragchew-qwen-control" "$RUNNER_TEMP/ragchew-cogito-candidate"
+            "$RUNNER_TEMP/ragchew-qwen-control" "$RUNNER_TEMP/ragchew-cogito-candidate" \
+            "/dev/shm/ragchew-scotus-$GITHUB_RUN_ID"
           find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf -- {} +
           test ! -e "$RUNNER_TEMP/ragchew-private"
           test ! -e "$RUNNER_TEMP/ragchew-qwen-control"
           test ! -e "$RUNNER_TEMP/ragchew-cogito-candidate"
+          test ! -e "/dev/shm/ragchew-scotus-$GITHUB_RUN_ID"
           test -z "$(find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -print -quit)"
 
   persist-cost-receipts:

@@ -97,6 +97,7 @@ class HttpxSourceFetcher:
         minimum_interval_seconds: float = 1.0,
         timeout_seconds: float = 30,
         client: httpx.Client | None = None,
+        close_client: bool = False,
     ) -> None:
         if not user_agent.strip() or "contact" not in user_agent.lower():
             raise ValueError("source user agent must include contact information")
@@ -104,7 +105,7 @@ class HttpxSourceFetcher:
         self.maximum_bytes = maximum_bytes
         self.minimum_interval_seconds = minimum_interval_seconds
         self.timeout_seconds = timeout_seconds
-        self._owns_client = client is None
+        self._owns_client = client is None or close_client
         self.client = client or httpx.Client(follow_redirects=False, trust_env=False)
         self._last_request_at: float | None = None
 

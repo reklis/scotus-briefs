@@ -50,7 +50,7 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "name: github-pages" in text
     assert "environment: scotus-publication" in text
     assert "RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter" in text
-    assert "runs-on: [self-hosted]" in text
+    assert "runs-on: [self-hosted, spark]" in text
     assert "RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1" in text
     assert "cogito:70b" in text
     assert "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb" in text
@@ -95,7 +95,7 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
 
     hosted_jobs = text[text.index("\n  persist-cost-receipts:\n") :]
     assert hosted_jobs.count("runs-on: ubuntu-24.04") == 4
-    assert "runs-on: [self-hosted]" not in hosted_jobs
+    assert "runs-on: [self-hosted" not in hosted_jobs
 
 
 def test_generated_case_publication_is_explicitly_live_and_bounded() -> None:
