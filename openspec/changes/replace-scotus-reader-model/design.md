@@ -72,6 +72,10 @@ The new processor receives a fresh aggregate report and candidate digest. Prior 
 - **[Historical Qwen evidence is irrecoverable]** → Run a contemporaneous Qwen control and Cogito arm from the same parent, bind Cogito to the sanitized current-evidence digest, and discard both on drift.
 - **[Paired run approaches runner limits]** → Give each arm the unchanged per-run budgets, keep publication disabled, and allow no partial measurement or stage advancement.
 
+## Measured outcome
+
+Protected paired run `34739171464` completed on 2026-09-13 with exact model identities, one 29-document evidence snapshot, the fixed manifest, and no substitutions. Qwen attempted ten and accepted zero; Cogito independently replayed the exact source sequence, attempted ten, and also accepted zero. Cogito produced no hard-valid candidate or warnings, so the result is rejected and not eligible for promotion. No persistence, 25-case, 100-case, or deployment stage ran, and the active release remains unchanged.
+
 ## Migration Plan
 
 1. Record the installed tag, full digest, license, architecture, and successful synthetic probe without retaining model prose beyond fixed expected fields and aggregate timing.

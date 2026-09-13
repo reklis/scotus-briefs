@@ -143,8 +143,26 @@ on 2026-09-12 passed exact Cogito tag/digest preflight, then failed closed befor
 any model request because current official document bytes did not match the durable
 comparison case. It retained no receipt, review, site, state, or handoff artifact and
 ran no persistence, promotion, or deployment job. The fixed manifest was not
-substituted or partially measured. A comparable ten-case canary therefore remains
-blocked pending a separately reviewed evidence-baseline decision.
+substituted or partially measured. That failure led to the reviewed contemporaneous
+paired-control procedure below rather than any weakening of the evidence gate.
+
+Protected paired canary [`34739171464`](https://github.com/reklis/scotus-briefs/actions/runs/34739171464)
+on 2026-09-13 completed both exact ten-case arms from parent public-content digest
+`fd11bb6d57c1404c151127e92c510d2dd8ab3d28b910ead2bd9260a728fa11d3` and one exact
+29-document evidence digest
+`7ad09389c7b536f46e579febac7f986e7ee94f6b7dc2ebccf3bf3f078a96e542`.
+The exact Qwen control attempted ten, accepted zero, failed ten, made 90 accounted model
+calls in 3,219 seconds, and recorded five `brief_validation_failed` plus five
+`validation_failed` outcomes. Exact Cogito attempted ten, accepted zero, failed ten, made
+79 accounted model calls in 15,578 seconds, and recorded one `repair_exhausted` plus nine
+`validation_failed` outcomes. Its report is bound to comparison baseline
+`8c7047e6a1921fbc6aca45288e4a891b56930f57ef2a53c65cce1243298f3594` and control report
+`6fa69bc0db8137801c131feeacc597bf313a22042516c277bcf9ecb0c487340f`.
+There were no hard-valid Cogito candidates or warnings to review, so the measured result is
+`rejected`: no candidate site/state or promotion handoff was uploaded, all persistence and
+deployment jobs were skipped, merged opaque receipts were validated, and both private
+workspaces plus the volatile evidence handoff were removed. The active release remains
+unchanged; no 25-case or 100-case stage is authorized.
 
 Prior dry runs confirmed the Court and loopback Ollama paths but failed closed on
 extraction/runtime validation. Those same grounding, privacy, completeness, static, and
