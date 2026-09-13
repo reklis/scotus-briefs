@@ -5,6 +5,9 @@ COPY src ./src
 RUN uv sync --frozen --no-dev --no-editable
 
 FROM python:3.12-slim-bookworm@sha256:782412e85d0f0984994c290652577d4018aff08145c85b262bb63dc0c7522254
+RUN apt-get update \
+    && apt-get install --yes --no-install-recommends libpcre2-8-0=10.42-1+deb12u1 \
+    && rm -rf /var/lib/apt/lists/*
 RUN groupadd --system --gid 10001 ragchew \
     && useradd --system --uid 10001 --gid 10001 --home-dir /app ragchew
 WORKDIR /app

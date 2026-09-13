@@ -1,0 +1,8 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Reviewed literal name of removable Akamai Boomerang telemetry"
+regexTarget = "line"
+regexes = ['''window\.BOOMR_API_key''']
+paths = ['''^src/ragchew/scotus/documents\.py$''', '''^tests/test_scotus_documents\.py$''']
