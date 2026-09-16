@@ -47,6 +47,7 @@ from ragchew.scotus.live_static import (
     _procedural_path_observation,
     _repair_diagnostic,
     _TransientEvidenceTransport,
+    _verify_exact_ollama_model,
 )
 from ragchew.scotus.public_contracts import (
     PublicCaseBrief,
@@ -275,7 +276,10 @@ class MockOpenAI:
         )
         self.inventory = {
             "models": [{"name": model_name, "digest": model_digest}],
-            "configured_model_details": {"parameters": "num_ctx 32768"},
+            "configured_model_details": {
+                "parameters": "num_ctx 32768",
+                "model_info": {"test.context_length": 262144},
+            },
         }
         self.requests: list[dict[str, Any]] = []
         self.closed = False
@@ -1073,6 +1077,35 @@ def test_live_adapter_requires_exact_local_model_before_court_traffic(
     assert model.requests == []
     # Exact inventory preflight runs before the model-client factory is invoked.
     assert not model.closed
+
+
+def test_control_identity_accepts_explicit_request_context_with_native_capacity() -> None:
+    digest = "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"
+    inventory = {
+        "models": [{"name": "qwen3.8:27b", "digest": digest}],
+        "configured_model_details": {
+            "parameters": "temperature 1",
+            "model_info": {"qwen35.context_length": 262144},
+        },
+    }
+    _verify_exact_ollama_model(
+        inventory,
+        "qwen3.8:27b",
+        digest,
+        32768,
+        require_pinned_context=False,
+    )
+    inventory["configured_model_details"]["model_info"] = {
+        "qwen35.context_length": 8192
+    }
+    with pytest.raises(PublicationGateDenied, match="context does not match"):
+        _verify_exact_ollama_model(
+            inventory,
+            "qwen3.8:27b",
+            digest,
+            32768,
+            require_pinned_context=False,
+        )
 
 
 def test_transient_evidence_transport_replays_exact_private_response(

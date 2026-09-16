@@ -4192,6 +4192,8 @@ def _verify_exact_ollama_model(
     expected_model: str,
     expected_digest: str,
     expected_context_tokens: int,
+    *,
+    require_pinned_context: bool = True,
 ) -> None:
     try:
         models = inventory["models"]
@@ -4210,7 +4212,23 @@ def _verify_exact_ollama_model(
     if not isinstance(parameters, str):
         raise PublicationGateDenied("configured local Ollama model context cannot be verified")
     context_values = re.findall(r"(?m)^\s*num_ctx\s+(\d+)\s*$", parameters)
-    if context_values != [str(expected_context_tokens)]:
+    if require_pinned_context:
+        if context_values != [str(expected_context_tokens)]:
+            raise PublicationGateDenied("configured local Ollama model context does not match")
+        return
+    model_info = details.get("model_info") if isinstance(details, Mapping) else None
+    native_contexts = (
+        tuple(
+            value
+            for key, value in model_info.items()
+            if isinstance(key, str)
+            and key.endswith(".context_length")
+            and isinstance(value, int)
+        )
+        if isinstance(model_info, Mapping)
+        else ()
+    )
+    if not native_contexts or max(native_contexts) < expected_context_tokens:
         raise PublicationGateDenied("configured local Ollama model context does not match")
 
 
@@ -4278,6 +4296,7 @@ class LiveStaticBatchAdapter:
                 config.generation.model,
                 config.generation.model_digest,
                 config.generation.context_window_tokens,
+                require_pinned_context=config.generation.runtime_role != "control",
             )
 
         verify_model_identity()
