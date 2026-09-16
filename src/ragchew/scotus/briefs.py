@@ -39,6 +39,39 @@ class BriefPolicyError(ValueError):
         self.safe_code = safe_code
 
 
+@dataclass(frozen=True)
+class _SafeActionTuple:
+    """Canonical, prose-free action values safe for transient diagnostics."""
+
+    actor: str | None
+    action: str | None
+    operative_object: str | None
+    role: str | None
+    negated: bool | None
+    effect: str | None
+
+
+@dataclass(frozen=True)
+class _ActionValidationDiagnostic:
+    """Process-local action detail that must never contain source or generated prose."""
+
+    field_path: str
+    detected: _SafeActionTuple
+    expected: _SafeActionTuple
+    reason: str
+
+
+class _CanonicalActionSlot(Protocol):
+    """Structural slot interface avoids importing the circular reader-guide module."""
+
+    actor_role: object
+    actor: str
+    action: object
+    operative_object: str
+    negated: bool
+    effect: object
+
+
 class BriefValidationError(ValueError):
     def __init__(
         self,
@@ -46,10 +79,13 @@ class BriefValidationError(ValueError):
         *,
         safe_code: str | None = None,
         draft: LegalBriefDraft | None = None,
+        action_diagnostics: tuple[_ActionValidationDiagnostic, ...] = (),
     ) -> None:
         super().__init__(message)
         self.safe_code = safe_code
         self.draft = draft
+        # Transient structured values only: never attach rejected or supporting prose.
+        self.action_diagnostics = action_diagnostics
 
 
 @dataclass(frozen=True)
@@ -1433,9 +1469,10 @@ def _action_role(sentence: str) -> _ActionRole | None:
     return "lower_court" if lower_court else "supreme_court"
 
 
-def _validate_action_sentences(
+def _validate_action_sentences_legacy(
     text: str, supporting_claims: tuple[ScotusApprovedClaim, ...]
 ) -> None:
+    """Keep the historical claim/regex gate unchanged for callers without slots."""
     for match in _SENTENCE.finditer(text):
         sentence = match.group(0)
         if not _ACTION_WORD.search(sentence):
@@ -1507,6 +1544,312 @@ def _validate_action_sentences(
                 "supreme_court": "text overstates final Court action",
             }[role]
             raise BriefValidationError(message, safe_code=_ACTION_ROLE_CODES[role])
+
+
+_SLOT_ACTION_ALIASES = {
+    "approve": "grant",
+}
+_UNKNOWN_ACTION_PARAPHRASE = re.compile(
+    r"\b(?:gave|give|kept|let|made|received|refused|struck|turned|wiped)\b",
+    re.IGNORECASE,
+)
+_ACTIONLESS_FIELD = re.compile(
+    r"\b(?:concerns?|discuss(?:ed|es)?|background|history|issue)\b",
+    re.IGNORECASE,
+)
+_PARTY_ORDER_ISSUER = re.compile(
+    r"\b(?:agency|applicant|government|party|petitioner|respondent|state)\b"
+    r"[^.!?]{0,50}\b(?:entered|issued|made)\b[^.!?]{0,20}\border\b",
+    re.IGNORECASE,
+)
+_FINAL_EFFECT = re.compile(r"\b(?:final(?:ly)?|permanent(?:ly)?|conclusive(?:ly)?)\b", re.I)
+_FINAL_ACTIONS = frozenset({"affirm", "reverse", "vacate", "remand", "dismiss"})
+
+
+def _enum_text(value: object) -> str:
+    raw = getattr(value, "value", value)
+    return str(raw).casefold()
+
+
+def _safe_action_object(value: str) -> str | None:
+    match = _OPERATIVE_OBJECT.search(value)
+    if match is None:
+        return None
+    return _canonical_action_object(value, match)
+
+
+def _slot_tuple(slot: _CanonicalActionSlot) -> _SafeActionTuple:
+    actor_role = _enum_text(slot.actor_role)
+    role = "request" if actor_role in {"requesting_party", "other_party"} else "ruling"
+    raw_effect = _enum_text(slot.effect)
+    effect: str | None = raw_effect
+    if raw_effect in {"unspecified", "requested"}:
+        effect = "requested" if raw_effect == "requested" else None
+    action = _SLOT_ACTION_ALIASES.get(_enum_text(slot.action), _enum_text(slot.action))
+    return _SafeActionTuple(
+        actor=actor_role,
+        action=action,
+        operative_object=_safe_action_object(slot.operative_object),
+        role=role,
+        negated=slot.negated,
+        effect=effect,
+    )
+
+
+def _detected_action_tuples(sentence: str) -> tuple[_SafeActionTuple, ...]:
+    role = _action_role(sentence)
+    if _PARTY_ORDER_ISSUER.search(sentence):
+        detected_actor = "other_party"
+        detected_role = "ruling"
+    elif role == "requested":
+        detected_actor = "requesting_party"
+        detected_role = "request"
+    elif role in {"lower_court", "supreme_court"}:
+        detected_actor = role
+        detected_role = "ruling"
+    else:
+        detected_actor = None
+        detected_role = None
+
+    pairs = _action_object_pairs(sentence)
+    detected: list[_SafeActionTuple] = []
+    for action_match in _ACTION_WORD.finditer(sentence):
+        action = _canonical_action(action_match.group(0))
+        if action is None:
+            continue
+        action = _SLOT_ACTION_ALIASES.get(action, action)
+        # In slot-aware mode, ORDER is meaningful: it is needed to distinguish a
+        # court issuing an order from a party merely receiving that order.
+        objects = {item_object for item_action, item_object in pairs if item_action == action}
+        if action == "order" and not objects:
+            objects = {"order"}
+        prefix = sentence[max(0, action_match.start() - 45) : action_match.start()]
+        negated = bool(
+            re.search(
+                r"\b(?:not|never|did not|does not|declined to|refused to)\b[^.!?]{0,30}$",
+                prefix,
+                re.I,
+            )
+        )
+        if detected_role == "request":
+            effect = "requested"
+        elif _INTERIM_EFFECT.search(sentence):
+            effect = "interim"
+        elif _FINAL_EFFECT.search(sentence) or action in _FINAL_ACTIONS:
+            effect = "final"
+        else:
+            effect = None
+        detected.append(
+            _SafeActionTuple(
+                actor=detected_actor,
+                action=action,
+                operative_object=next(iter(sorted(objects)), None),
+                role=detected_role,
+                negated=negated,
+                effect=effect,
+            )
+        )
+    return tuple(dict.fromkeys(detected))
+
+
+def _safe_field_path(value: str) -> str:
+    return value if re.fullmatch(r"[a-z0-9_.\[\]-]{1,120}", value) else "unknown"
+
+
+def _slot_error_code(expected: _SafeActionTuple, reason: str) -> str:
+    if reason == "actor_omission":
+        return "unsupported_action_role"
+    if reason == "effect_omission" and expected.effect == "interim":
+        return "incomplete_interim_stay_effect"
+    if reason == "object_conflict" and expected.actor == "supreme_court":
+        return "unsupported_supreme_court_action_object"
+    return {
+        "requesting_party": "unsupported_requested_action",
+        "other_party": "unsupported_requested_action",
+        "lower_court": "unsupported_lower_court_action",
+        "supreme_court": "unsupported_court_action",
+    }.get(expected.actor or "", "missing_required_action_slot")
+
+
+def _tuple_conflict_reason(detected: _SafeActionTuple, expected: _SafeActionTuple) -> str | None:
+    if detected.actor is None:
+        return "actor_omission"
+    if detected.actor != expected.actor or detected.role != expected.role:
+        return "actor_role_conflict"
+    if detected.action != expected.action:
+        return "action_conflict"
+    if detected.negated != expected.negated:
+        return "polarity_conflict"
+    if (
+        detected.operative_object is not None
+        and expected.operative_object is not None
+        and detected.operative_object != expected.operative_object
+    ):
+        return "object_conflict"
+    if expected.effect == "interim" and detected.effect != "interim":
+        return "effect_omission"
+    if (
+        detected.effect is not None
+        and expected.effect is not None
+        and detected.effect != expected.effect
+    ):
+        return "effect_conflict"
+    return None
+
+
+def _validate_action_sentences_with_slots(
+    text: str,
+    canonical_slots: tuple[_CanonicalActionSlot, ...],
+    *,
+    field_path: str,
+) -> tuple[_ActionValidationDiagnostic, ...]:
+    path = _safe_field_path(field_path)
+    expected = tuple(_slot_tuple(slot) for slot in canonical_slots)
+    detected = tuple(
+        action
+        for sentence_match in _SENTENCE.finditer(text)
+        for action in _detected_action_tuples(sentence_match.group(0))
+    )
+    diagnostics: list[_ActionValidationDiagnostic] = []
+    matched: set[int] = set()
+
+    for item in detected:
+        compatible = next(
+            (
+                index
+                for index, slot in enumerate(expected)
+                if _tuple_conflict_reason(item, slot) is None
+            ),
+            None,
+        )
+        if compatible is not None:
+            matched.add(compatible)
+            continue
+        comparison_index = next(
+            (index for index, slot in enumerate(expected) if slot.action == item.action),
+            next(
+                (index for index, slot in enumerate(expected) if slot.actor == item.actor),
+                0 if expected else None,
+            ),
+        )
+        if comparison_index is None:
+            # A supplied empty slot collection deliberately permits no action.
+            empty = _SafeActionTuple(None, None, None, None, None, None)
+            diagnostic = _ActionValidationDiagnostic(path, item, empty, "unexpected_action")
+            raise BriefValidationError(
+                "action statement conflicts with its canonical field slots",
+                safe_code="unsupported_action_role",
+                action_diagnostics=(diagnostic,),
+            )
+        slot = expected[comparison_index]
+        reason = _tuple_conflict_reason(item, slot)
+        assert reason is not None
+        diagnostic = _ActionValidationDiagnostic(path, item, slot, reason)
+        raise BriefValidationError(
+            "action statement conflicts with its canonical field slot",
+            safe_code=_slot_error_code(slot, reason),
+            action_diagnostics=(diagnostic,),
+        )
+
+    unmatched = tuple(slot for index, slot in enumerate(expected) if index not in matched)
+    if not unmatched:
+        return ()
+    if not detected:
+        requested = re.search(
+            r"\b(?:ask(?:s|ed|ing)?|request(?:s|ed|ing)?|seek(?:s|ing)?|sought|wants?)\b",
+            text,
+            re.I,
+        )
+        lower = _LOWER_COURT_ACTOR.search(text)
+        supreme = _SUPREME_COURT_ACTOR.search(text)
+        actor: str | None
+        role: str | None
+        if requested:
+            actor, role = "requesting_party", "request"
+        elif lower and not supreme:
+            actor, role = "lower_court", "ruling"
+        elif supreme and not lower:
+            actor, role = "supreme_court", "ruling"
+        else:
+            actor = role = None
+        ambiguous = _SafeActionTuple(
+            actor,
+            None,
+            _safe_action_object(text),
+            role,
+            None,
+            "interim" if _INTERIM_EFFECT.search(text) else None,
+        )
+        if actor is not None and all(
+            slot.actor != actor or slot.role != role for slot in unmatched
+        ):
+            slot = unmatched[0]
+            diagnostic = _ActionValidationDiagnostic(path, ambiguous, slot, "actor_role_conflict")
+            raise BriefValidationError(
+                "action statement conflicts with its canonical field slot",
+                safe_code=_slot_error_code(slot, diagnostic.reason),
+                action_diagnostics=(diagnostic,),
+            )
+        if text.strip() and not _ACTIONLESS_FIELD.search(text):
+            # Unknown wording is not evidence of contradiction. Return only canonical,
+            # prose-free diagnostics so a process-local caller may choose a bounded repair.
+            return tuple(
+                _ActionValidationDiagnostic(
+                    path,
+                    ambiguous,
+                    slot,
+                    "ambiguous_lexical_paraphrase",
+                )
+                for slot in unmatched
+            )
+    elif _UNKNOWN_ACTION_PARAPHRASE.search(text):
+        return tuple(
+            _ActionValidationDiagnostic(
+                path,
+                _SafeActionTuple(None, None, None, None, None, None),
+                slot,
+                "ambiguous_lexical_paraphrase",
+            )
+            for slot in unmatched
+        )
+
+    diagnostics.extend(
+        _ActionValidationDiagnostic(
+            path,
+            _SafeActionTuple(None, None, None, None, None, None),
+            slot,
+            "required_slot_omission",
+        )
+        for slot in unmatched
+    )
+    raise BriefValidationError(
+        "action field omits a required canonical slot",
+        safe_code="missing_required_action_slot",
+        action_diagnostics=tuple(diagnostics),
+    )
+
+
+def _validate_action_sentences(
+    text: str,
+    supporting_claims: tuple[ScotusApprovedClaim, ...],
+    *,
+    canonical_slots: tuple[_CanonicalActionSlot, ...] | None = None,
+    field_path: str = "unknown",
+) -> tuple[_ActionValidationDiagnostic, ...]:
+    """Validate action prose, using canonical slots when the caller supplies them.
+
+    Claim-only callers retain the exact historical hard gate. Slot-aware callers reject
+    only a demonstrated tuple conflict or required omission; uncertain lexical mapping
+    produces transient structured diagnostics and never stores the prose.
+    """
+    if canonical_slots is None:
+        _validate_action_sentences_legacy(text, supporting_claims)
+        return ()
+    return _validate_action_sentences_with_slots(
+        text,
+        canonical_slots,
+        field_path=field_path,
+    )
 
 
 def _supported_acronyms(value: str) -> set[str]:

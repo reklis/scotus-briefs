@@ -1,0 +1,124 @@
+[
+  {
+    "label": "request ordinary reversal",
+    "dimension": "request_ruling",
+    "text": "The Applicant asked the Supreme Court to overturn the judgment.",
+    "accepted": true,
+    "slot": {"actor_role": "requesting_party", "actor": "Applicant", "action": "reverse", "operative_object": "judgment", "negated": false, "effect": "requested"}
+  },
+  {
+    "label": "request changed to ruling",
+    "dimension": "request_ruling",
+    "text": "The Supreme Court overturned the judgment.",
+    "accepted": false,
+    "reason": "actor_role_conflict",
+    "slot": {"actor_role": "requesting_party", "actor": "Applicant", "action": "reverse", "operative_object": "judgment", "negated": false, "effect": "requested"}
+  },
+  {
+    "label": "lower court ordinary affirmance",
+    "dimension": "court_level",
+    "text": "The appeals court left the judgment in place.",
+    "accepted": true,
+    "slot": {"actor_role": "lower_court", "actor": "appeals court", "action": "affirm", "operative_object": "judgment", "negated": false, "effect": "final"}
+  },
+  {
+    "label": "lower court changed to Supreme Court",
+    "dimension": "court_level",
+    "text": "The Supreme Court left the judgment in place.",
+    "accepted": false,
+    "reason": "actor_role_conflict",
+    "slot": {"actor_role": "lower_court", "actor": "appeals court", "action": "affirm", "operative_object": "judgment", "negated": false, "effect": "final"}
+  },
+  {
+    "label": "Supreme Court ordinary vacatur",
+    "dimension": "supreme_court_action",
+    "text": "The Supreme Court cancelled the judgment.",
+    "accepted": true,
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "vacate", "operative_object": "judgment", "negated": false, "effect": "final"}
+  },
+  {
+    "label": "Supreme Court changed action",
+    "dimension": "supreme_court_action",
+    "text": "The Supreme Court upheld the judgment.",
+    "accepted": false,
+    "reason": "action_conflict",
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "vacate", "operative_object": "judgment", "negated": false, "effect": "final"}
+  },
+  {
+    "label": "preserved negation",
+    "dimension": "negation",
+    "text": "The Supreme Court did not block the injunction.",
+    "accepted": true,
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "block", "operative_object": "injunction", "negated": true, "effect": "unspecified"}
+  },
+  {
+    "label": "dropped negation",
+    "dimension": "negation",
+    "text": "The Supreme Court blocked the injunction.",
+    "accepted": false,
+    "reason": "polarity_conflict",
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "block", "operative_object": "injunction", "negated": true, "effect": "unspecified"}
+  },
+  {
+    "label": "interim stay ordinary wording",
+    "dimension": "effect",
+    "text": "The Supreme Court temporarily paused the injunction while the appeal continues.",
+    "accepted": true,
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "stay", "operative_object": "injunction", "negated": false, "effect": "interim"}
+  },
+  {
+    "label": "interim effect omitted",
+    "dimension": "effect",
+    "text": "The Supreme Court stayed the injunction.",
+    "accepted": false,
+    "reason": "effect_omission",
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "stay", "operative_object": "injunction", "negated": false, "effect": "interim"}
+  },
+  {
+    "label": "final action changed to interim",
+    "dimension": "effect",
+    "text": "The Supreme Court temporarily cancelled the judgment.",
+    "accepted": false,
+    "reason": "effect_conflict",
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "vacate", "operative_object": "judgment", "negated": false, "effect": "final"}
+  },
+  {
+    "label": "order recipient is not issuer",
+    "dimension": "order_issuer_recipient",
+    "text": "The Agency received an order from the district court.",
+    "accepted": true,
+    "slot": {"actor_role": "lower_court", "actor": "district court", "action": "order", "operative_object": "order", "negated": false, "effect": "unspecified"}
+  },
+  {
+    "label": "order recipient changed to issuer",
+    "dimension": "order_issuer_recipient",
+    "text": "The Agency issued an order to the district court.",
+    "accepted": false,
+    "reason": "actor_role_conflict",
+    "slot": {"actor_role": "lower_court", "actor": "district court", "action": "order", "operative_object": "order", "negated": false, "effect": "unspecified"}
+  },
+  {
+    "label": "unknown faithful lexical paraphrase",
+    "dimension": "lexical_ambiguity",
+    "text": "The Supreme Court wiped away the judgment.",
+    "accepted": true,
+    "diagnostic": "ambiguous_lexical_paraphrase",
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "vacate", "operative_object": "judgment", "negated": false, "effect": "final"}
+  },
+  {
+    "label": "unknown wording still exposes role change",
+    "dimension": "lexical_ambiguity",
+    "text": "The Supreme Court wiped away the judgment.",
+    "accepted": false,
+    "reason": "actor_role_conflict",
+    "slot": {"actor_role": "requesting_party", "actor": "Applicant", "action": "vacate", "operative_object": "judgment", "negated": false, "effect": "requested"}
+  },
+  {
+    "label": "required action omitted",
+    "dimension": "omission",
+    "text": "The Supreme Court discussed emergency relief.",
+    "accepted": false,
+    "reason": "required_slot_omission",
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "grant", "operative_object": "relief", "negated": false, "effect": "unspecified"}
+  }
+]

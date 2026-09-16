@@ -1,6 +1,7 @@
 import json
 from dataclasses import replace
 from datetime import UTC, datetime
+from pathlib import Path
 from types import SimpleNamespace
 from uuid import UUID, uuid4
 
@@ -568,6 +569,65 @@ def test_action_validation_accepts_reviewed_ordinary_equivalents_and_preserves_s
             (vacatur,),
         )
     assert wrong_polarity.value.safe_code == "unsupported_court_action"
+
+
+ACTION_PARAPHRASES = json.loads(
+    (Path(__file__).parent / "fixtures" / "scotus_action_paraphrases.json").read_text()
+)
+
+
+@pytest.mark.parametrize(
+    "example",
+    ACTION_PARAPHRASES,
+    ids=[example["label"] for example in ACTION_PARAPHRASES],
+)
+def test_canonical_slot_action_paraphrase_corpus(example: dict[str, object]) -> None:
+    slot = SimpleNamespace(**example["slot"])  # type: ignore[arg-type]
+    if example["accepted"]:
+        diagnostics = _validate_action_sentences(
+            str(example["text"]),
+            (),
+            canonical_slots=(slot,),
+            field_path="sections[3].paragraphs[0]",
+        )
+        expected_diagnostic = example.get("diagnostic")
+        assert [diagnostic.reason for diagnostic in diagnostics] == (
+            [expected_diagnostic] if expected_diagnostic else []
+        )
+        assert all(
+            diagnostic.field_path == "sections[3].paragraphs[0]" for diagnostic in diagnostics
+        )
+        # Diagnostics contain canonical categories only, never generated or source prose.
+        assert str(example["text"]) not in repr(diagnostics)
+        assert slot.actor not in repr(diagnostics)
+        return
+
+    with pytest.raises(BriefValidationError) as caught:
+        _validate_action_sentences(
+            str(example["text"]),
+            (),
+            canonical_slots=(slot,),
+            field_path="sections[3].paragraphs[0]",
+        )
+    assert caught.value.action_diagnostics
+    assert caught.value.action_diagnostics[0].reason == example["reason"]
+    assert caught.value.action_diagnostics[0].field_path == "sections[3].paragraphs[0]"
+    assert str(example["text"]) not in repr(caught.value.action_diagnostics)
+    assert slot.actor not in repr(caught.value.action_diagnostics)
+
+
+def test_canonical_slot_corpus_covers_required_action_dimensions() -> None:
+    assert {
+        "request_ruling",
+        "court_level",
+        "supreme_court_action",
+        "negation",
+        "effect",
+        "order_issuer_recipient",
+        "lexical_ambiguity",
+        "omission",
+    }.issubset({example["dimension"] for example in ACTION_PARAPHRASES})
+    assert {example["accepted"] for example in ACTION_PARAPHRASES} == {True, False}
 
 
 def test_disposition_only_draft_accepts_zero_argument_analyses() -> None:
