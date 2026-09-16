@@ -503,6 +503,13 @@ def _explicit_actor(
     )
     if not matches:
         return None
+    conjunctions = tuple(re.finditer(r"\b(?:and|but)\b", preceding, re.I))
+    if conjunctions:
+        clause_start = conjunctions[-1].end()
+        if not any(match.start() >= clause_start for match, _ in matches):
+            prior_actions = tuple(_ACTION_PATTERN.finditer(sentence, 0, clause_start))
+            if prior_actions:
+                return _explicit_actor(sentence, prior_actions[-1].start())
     # Prefer a court directly acting as the grammatical subject. A court named in
     # another court's possessive object ("lower court's judgment") is not the actor
     # of a later coordinated verb.
@@ -612,7 +619,12 @@ def build_canonical_action_slots(
             for match in _ACTION_PATTERN.finditer(sentence):
                 prefix = sentence[max(0, match.start() - 45) : match.start()]
                 # Bare legal nouns are evidence values, not actions ("application for a stay").
-                if _NOUN_ACTION_PREFIX.search(prefix):
+                # An issuer verb makes ORDER an action even when an article precedes the noun.
+                issued_order = bool(
+                    match.group("action").casefold() == "order"
+                    and re.search(r"\b(?:entered|issued|made)\s+(?:an?\s+)?$", prefix, re.I)
+                )
+                if _NOUN_ACTION_PREFIX.search(prefix) and not issued_order:
                     continue
                 actor = _actor_for_action(claim, sentence, match.start())
                 if actor is None:
@@ -1144,6 +1156,14 @@ class ReaderGuidePlanner:
                     (LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED),
                     (lambda claim: claim.observation_type in action_types,),
                     action_candidates,
+                )
+            if not any(
+                slot.actor_role is CanonicalActorRole.SUPREME_COURT
+                for slot in build_canonical_action_slots(action_claims)
+            ):
+                raise ReaderGuidePlanningError(
+                    "a decided case lacks a canonical Supreme Court action",
+                    safe_code="unsupported_court_action",
                 )
             reasoning_types = (
                 LegalObservationType.DOCTRINAL_THEME,

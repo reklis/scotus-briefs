@@ -739,6 +739,33 @@ def test_canonical_slot_mapping_reaches_exact_draft_field() -> None:
     assert "Respondent" not in repr(caught.value.action_diagnostics)
 
 
+def test_generic_requester_fallback_is_constrained_by_established_alias() -> None:
+    slot = SimpleNamespace(
+        actor_role="requesting_party",
+        actor="requesting party",
+        actor_aliases=("petitioner",),
+        action="reverse",
+        operative_object="judgment",
+        negated=False,
+        effect="requested",
+        timing=None,
+    )
+    _validate_action_sentences(
+        "The Petitioner asked the Supreme Court to overturn the judgment.",
+        (),
+        canonical_slots=(slot,),
+        field_path="sections[0].paragraphs[0]",
+    )
+    with pytest.raises(BriefValidationError) as caught:
+        _validate_action_sentences(
+            "The Respondent asked the Supreme Court to overturn the judgment.",
+            (),
+            canonical_slots=(slot,),
+            field_path="sections[0].paragraphs[0]",
+        )
+    assert caught.value.action_diagnostics[0].reason == "actor_conflict"
+
+
 def test_canonical_slots_require_each_distinct_action_once() -> None:
     lower = SimpleNamespace(
         actor_role="lower_court",
@@ -789,10 +816,17 @@ def test_citizens_guide_profile_has_deterministic_headings_and_no_session_detail
     legacy = FakeGenerator().generate(  # type: ignore[no-untyped-call]
         source, decision.claims, decision.maturity
     )
+    claim_map = {claim.claim_id: claim for claim in decision.claims}
     guide = legacy.model_copy(
         update={
+            "dek": claim_map[legacy.dek_claim_ids[0]].public_value,
             "sections": tuple(
-                section.model_copy(update={"heading": heading})
+                section.model_copy(
+                    update={
+                        "heading": heading,
+                        "paragraphs": (claim_map[section.claim_ids[0]].public_value,),
+                    }
+                )
                 for section, heading in zip(
                     legacy.sections,
                     (

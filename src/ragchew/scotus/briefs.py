@@ -1844,8 +1844,18 @@ def _actor_identity_conflicts(
             for alias in getattr(expected_slot, "actor_aliases", ())
         ),
     }
-    generic = {"court", "lower court", "requesting party", "other party", "party"}
-    if accepted.intersection(generic) or detected in accepted:
+    if detected in accepted:
+        return False
+    actor_role = _enum_text(expected_slot.actor_role)
+    if actor_role == "supreme_court" and detected in {"court", "supreme court"}:
+        return False
+    if actor_role == "lower_court" and detected in {
+        "lower court",
+        "district court",
+        "appeals court",
+        "court of appeals",
+        "state court",
+    }:
         return False
     return bool(expected and detected)
 
@@ -2933,7 +2943,23 @@ def _guide_paragraph_has_support(
     for sentence in sentences:
         grounded_sentence = _EXPLICIT_NEGATED_ORAL_ARGUMENT.sub("", sentence)
         sentence_words = _guide_content_words(grounded_sentence)
+        required_overlap = min(4, max(2, (len(sentence_words) * 3 + 4) // 5))
+        if len(sentence_words & all_support_words) < min(
+            required_overlap, len(all_support_words)
+        ):
+            return False
         sentence_negated = _GUIDE_NEGATION.search(grounded_sentence) is not None
+        position_types = {
+            LegalObservationType.ADVOCATE_CONTENTION,
+            LegalObservationType.REQUESTED_DISPOSITION,
+            LegalObservationType.ANSWER,
+            LegalObservationType.CONCESSION,
+            LegalObservationType.DISPUTED_PREMISE,
+        }
+        if re.search(r"\b(?:argues?|contends?|maintains?|urges?)\b", sentence, re.I) and not any(
+            claim.observation_type in position_types for claim in supporting_claims
+        ):
+            return False
         if not any(
             len(sentence_words & _guide_content_words(claim.public_value))
             >= min(2, len(_guide_content_words(claim.public_value)))

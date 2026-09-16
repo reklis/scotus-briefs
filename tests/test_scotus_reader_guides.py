@@ -507,6 +507,19 @@ def test_action_slots_separate_actors_and_ignore_noun_uses() -> None:
         for item in coordinated
         if item.action in {CanonicalAction.VACATE, CanonicalAction.REMAND}
     } == {CanonicalActorRole.SUPREME_COURT}
+    nonpossessive = build_canonical_action_slots(
+        (
+            claim(
+                LegalObservationType.HOLDING,
+                "The Supreme Court reversed the lower court and remanded the case.",
+            ),
+        )
+    )
+    assert {
+        item.actor_role
+        for item in nonpossessive
+        if item.action in {CanonicalAction.REVERSE, CanonicalAction.REMAND}
+    } == {CanonicalActorRole.SUPREME_COURT}
 
     clauses = build_canonical_action_slots(
         (

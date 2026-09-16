@@ -24,7 +24,7 @@ The candidate is a locally derived Ollama artifact named `ragchew-gpt-oss:120b-3
 - Endpoint: loopback Ollama OpenAI-compatible `/v1`
 - Hosted, mutable-tag, native-context, and alternate-model fallback: prohibited
 
-Before the final probes, Spark reported approximately 116.05–116.06 GiB available memory and no loaded model. During loaded probes, available memory remained between 51.69 and 51.74 GiB. After explicit cleanup it returned to 116.04 GiB, transient request files were removed, and the candidate was unloaded.
+Before the final probes, Spark reported approximately 116.05–116.06 GiB available memory and no loaded model. During loaded probes, available memory remained between 51.68 and 51.77 GiB. After explicit cleanup it returned to 116.03 GiB, transient request files were removed, and the candidate was unloaded.
 
 ## Historical rejected non-thinking protocol
 
@@ -40,8 +40,8 @@ The repository generated synthetic extraction evidence and a synthetic decided-c
 |---|---:|---:|---:|---:|---:|---:|---:|
 | extraction v11 | cold | 27.74 | 636 | 572 | yes | pass | pass |
 | extraction v11 | warm | 16.27 | 638 | 573 | yes | pass | pass |
-| Citizen’s Guide v7 / planner v8 | cold | 21.37 | 916 | 137 | yes | pass | pass, 1 style warning |
-| Citizen’s Guide v7 / planner v8 | warm | 8.18 | 831 | 136 | yes | pass | pass, 2 style warnings |
+| Citizen’s Guide v7 / planner v8 | cold | 21.27 | 916 | 137 | yes | pass | pass, 1 style warning |
+| Citizen’s Guide v7 / planner v8 | warm | 8.10 | 831 | 136 | yes | pass | pass, 2 style warnings |
 
 The final Guide response contained exactly the four applicable planner fields, remained within the 180-word and one-sentence-per-field profile, preserved deterministic metadata outside the model response, and passed field-specific canonical-slot validation. Style warnings are nonfatal and do not authorize model rewriting.
 
