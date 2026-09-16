@@ -61,6 +61,14 @@ The control made 39 receipted model calls: 37 extraction calls and 2 Guide calls
 
 This is a failed qualification attempt, not a completed canary and not evidence for promotion. The fixed manifest must not be substituted or reduced; source availability must be diagnosed or a fresh exact canary must complete before manual Guide review.
 
+### Source-failure diagnosis
+
+A later source-only diagnostic on Spark reconstructed the public canonical transcript, docket, and disposition URLs for all ten fixed cases. It used the repository's exact `HttpxSourceFetcher`, reviewed user agent, one persistent no-redirect client, 50 MiB response limit, 60-second timeout, and one-second shared request interval. All 26 canonical documents returned HTTP 200 through the same host path. Responses totaled 9,094,771 bytes and individually ranged from 37,545 to 891,079 bytes, well below configured response, run-download, and volatile-cache limits. No model was loaded or called. Response bodies remained process-local, the mode-0700 tmpfs checkout and URL packet were removed, and no diagnosis workspace remained.
+
+The six failed case URLs are therefore not stale, redirected, oversized, or permanently unavailable. The historical evidence cache and response bodies were correctly deleted at the end of the failed run, and the earlier sanitized logger collapsed every `SourceFetchError` to its class name, so the exact historical HTTP or transport reason cannot be recovered safely. The observed pattern—six immediate first-document failures after four long-running model cases, followed by complete success through the same persistent source client—is consistent with a transient endpoint or transport failure, not a manifest defect. This remains a diagnosis rather than proof of a specific past status code.
+
+Future source failures now carry only an allowlisted safe reason code (`official_http_<status>`, `official_redirect`, `official_response_too_large`, or `official_transport_error`) into the existing sanitized case-failure log. They still retain no URL, source text, response body, field path, or private diagnostic. This improves a fresh canary's failure classification without weakening source or publication gates.
+
 ## Runtime assessment
 
 Using the slowest valid cold response, 100 sequential cold calls project to about 46.3 minutes of model time before Court I/O, deterministic validation, and bounded retry overhead. This remains below the unchanged five-hour ceiling and does not require a budget increase. The estimate is conservative but synthetic; fixture-backed and fixed ten-case measurements are still required before promotion.

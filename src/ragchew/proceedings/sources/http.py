@@ -16,6 +16,10 @@ from ragchew.proceedings.discovery import ConditionalRequest
 class SourceFetchError(RuntimeError):
     """Raised when an official endpoint violates its reviewed HTTP contract."""
 
+    def __init__(self, message: str, *, safe_code: str = "source_fetch_error") -> None:
+        super().__init__(message)
+        self.safe_code = safe_code
+
 
 @dataclass(frozen=True)
 class SourceResponse:
@@ -129,20 +133,30 @@ class HttpxSourceFetcher:
             ) as response:
                 self._last_request_at = time.monotonic()
                 if 300 <= response.status_code < 400:
-                    raise SourceFetchError("unexpected redirect from official endpoint")
+                    raise SourceFetchError(
+                        "unexpected redirect from official endpoint",
+                        safe_code="official_redirect",
+                    )
                 if response.status_code not in {200, 304}:
                     raise SourceFetchError(
-                        f"official endpoint returned HTTP {response.status_code}"
+                        f"official endpoint returned HTTP {response.status_code}",
+                        safe_code=f"official_http_{response.status_code}",
                     )
                 announced = response.headers.get("content-length")
                 if announced and int(announced) > self.maximum_bytes:
-                    raise SourceFetchError("official response exceeds configured byte limit")
+                    raise SourceFetchError(
+                        "official response exceeds configured byte limit",
+                        safe_code="official_response_too_large",
+                    )
                 chunks: list[bytes] = []
                 received = 0
                 for chunk in response.iter_bytes():
                     received += len(chunk)
                     if received > self.maximum_bytes:
-                        raise SourceFetchError("official response exceeds configured byte limit")
+                        raise SourceFetchError(
+                            "official response exceeds configured byte limit",
+                            safe_code="official_response_too_large",
+                        )
                     chunks.append(chunk)
                 return SourceResponse(
                     status_code=response.status_code,
@@ -151,4 +165,7 @@ class HttpxSourceFetcher:
                     content=b"".join(chunks),
                 )
         except httpx.HTTPError as error:
-            raise SourceFetchError("official endpoint request failed") from error
+            raise SourceFetchError(
+                "official endpoint request failed",
+                safe_code="official_transport_error",
+            ) from error

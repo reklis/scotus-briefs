@@ -82,8 +82,20 @@ def test_http_fetcher_rejects_redirects_and_oversized_responses() -> None:
             follow_redirects=False,
         ),
     )
-    with pytest.raises(SourceFetchError, match="unexpected redirect"):
+    with pytest.raises(SourceFetchError, match="unexpected redirect") as redirect:
         redirecting.get("https://official.example/data")
+    assert redirect.value.safe_code == "official_redirect"
+
+    unavailable = HttpxSourceFetcher(
+        user_agent="ragchew-test contact=test@example.test",
+        minimum_interval_seconds=0,
+        client=httpx.Client(
+            transport=httpx.MockTransport(lambda _request: httpx.Response(429))
+        ),
+    )
+    with pytest.raises(SourceFetchError, match="HTTP 429") as status:
+        unavailable.get("https://official.example/data")
+    assert status.value.safe_code == "official_http_429"
 
     oversized = HttpxSourceFetcher(
         user_agent="ragchew-test contact=test@example.test",
@@ -95,5 +107,6 @@ def test_http_fetcher_rejects_redirects_and_oversized_responses() -> None:
             )
         ),
     )
-    with pytest.raises(SourceFetchError, match="byte limit"):
+    with pytest.raises(SourceFetchError, match="byte limit") as too_large:
         oversized.get("https://official.example/data")
+    assert too_large.value.safe_code == "official_response_too_large"
