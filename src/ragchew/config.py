@@ -259,6 +259,7 @@ SCOTUS_PRODUCTION_MODEL_DIGEST: Final[
 )
 SCOTUS_PRODUCTION_CONTEXT_TOKENS: Final[Literal[32768]] = 32768
 SCOTUS_PRODUCTION_TEMPERATURE: Final[Literal[0]] = 0
+SCOTUS_PRODUCTION_REASONING_LEVEL: Final[Literal["low"]] = "low"
 SCOTUS_CONTROL_MODEL: Final[Literal["qwen3.8:27b"]] = "qwen3.8:27b"
 SCOTUS_CONTROL_MODEL_DIGEST: Final[
     Literal["22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"]
@@ -279,6 +280,7 @@ class ScotusGenerationDefaults(BaseModel):
     ] = SCOTUS_PRODUCTION_MODEL_DIGEST
     context_window_tokens: Literal[32768] = SCOTUS_PRODUCTION_CONTEXT_TOKENS
     temperature: Literal[0] = SCOTUS_PRODUCTION_TEMPERATURE
+    reasoning_level: Literal["low"] = SCOTUS_PRODUCTION_REASONING_LEVEL
     prompt_version: str
     brief_generation_enabled: bool = False
     maximum_brief_api_calls_per_run: int = Field(default=1, ge=1, le=100)

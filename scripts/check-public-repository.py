@@ -153,6 +153,7 @@ def check() -> list[str]:
     reviewed_digest = "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863"
     reviewed_context_tokens = 32768
     reviewed_temperature = 0
+    reviewed_reasoning_level = "low"
     editorial = config.get("editorial_backfill", {})
     control_model = "qwen3.8:27b"
     control_digest = "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"
@@ -175,6 +176,7 @@ def check() -> list[str]:
         or generation.get("model_digest") != reviewed_digest
         or generation.get("context_window_tokens") != reviewed_context_tokens
         or generation.get("temperature") != reviewed_temperature
+        or generation.get("reasoning_level") != reviewed_reasoning_level
         or editorial.get("control_model") != control_model
         or editorial.get("control_model_digest") != control_digest
     ):
@@ -223,6 +225,7 @@ def check() -> list[str]:
         or reviewed_digest not in workflow
         or f"REVIEWED_OLLAMA_CONTEXT_TOKENS: {reviewed_context_tokens}" not in workflow
         or f"REVIEWED_OLLAMA_TEMPERATURE: {reviewed_temperature}" not in workflow
+        or f"REVIEWED_OLLAMA_REASONING_LEVEL: {reviewed_reasoning_level}" not in workflow
         or "http://127.0.0.1:11434/api/show" not in build
         or '"num_ctx"' not in build
         or control_model not in workflow

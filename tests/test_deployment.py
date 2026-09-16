@@ -73,6 +73,7 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863" in workflow
     assert "REVIEWED_OLLAMA_CONTEXT_TOKENS: 32768" in workflow
     assert "REVIEWED_OLLAMA_TEMPERATURE: 0" in workflow
+    assert "REVIEWED_OLLAMA_REASONING_LEVEL: low" in workflow
     assert "http://127.0.0.1:11434/api/show" in workflow
     assert '"num_ctx"' in workflow
     assert "qwen3.8:27b" in workflow

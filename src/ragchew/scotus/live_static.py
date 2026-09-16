@@ -139,6 +139,7 @@ from ragchew.scotus.public_contracts import (
 )
 from ragchew.scotus.publishing import build_public_case
 from ragchew.scotus.reader_guides import (
+    CITIZENS_GUIDE_SCHEMA_VERSION,
     READER_GUIDE_PLAN_VERSION,
     CompactReaderGuideWriter,
     ProcessLocalFieldDiagnostic,
@@ -372,6 +373,7 @@ class _BudgetedModelRequest:
         output_tokens: int,
         context_window_tokens: int,
         temperature: int,
+        reasoning_level: str,
         authorized_replay: bool,
         verify_model_identity: Callable[[], None],
         maximum_attempts: int | None = None,
@@ -384,19 +386,22 @@ class _BudgetedModelRequest:
         self.output_tokens = output_tokens
         self.context_window_tokens = context_window_tokens
         self.temperature = temperature
+        self.reasoning_level = reasoning_level
         self.authorized_replay = authorized_replay
         self.verify_model_identity = verify_model_identity
         self.maximum_attempts = maximum_attempts
 
     def __call__(self, request: dict[str, Any]) -> Any:
-        # Ollama reasoning can consume the whole output/time budget before emitting the
-        # required JSON. Pin every reviewed runtime control on each request rather than
-        # accepting mutable server defaults. These values are part of the request hash.
+        # Disabling GPT-OSS reasoning produced empty final content on the pinned Ollama
+        # build. Pin bounded low reasoning and every reviewed runtime control rather than
+        # accepting mutable server defaults. Only final message content is parsed by the
+        # typed extractors/writers; reasoning fields are never logged or persisted.
         provider_request = {
             **request,
             "temperature": self.temperature,
+            "reasoning_effort": self.reasoning_level,
             "extra_body": {
-                "think": False,
+                "think": self.reasoning_level,
                 "options": {
                     "num_ctx": self.context_window_tokens,
                     "temperature": self.temperature,
@@ -1697,6 +1702,7 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
             "maximum_context_characters": (config.generation.maximum_context_characters),
             "context_window_tokens": config.generation.context_window_tokens,
             "temperature": config.generation.temperature,
+            "reasoning_level": config.generation.reasoning_level,
             "maximum_paragraph_words": config.generation.maximum_paragraph_words,
             "maximum_sentence_words": config.generation.maximum_sentence_words,
             "severe_maximum_paragraph_words": (config.generation.severe_maximum_paragraph_words),
@@ -1722,6 +1728,8 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
     model_identity = _model_identity(config, model_endpoint)
     prompt_contract = (
         f"{config.generation.prompt_version};"
+        f"schema={CITIZENS_GUIDE_SCHEMA_VERSION};"
+        f"reasoning={config.generation.reasoning_level};"
         f"repair={TargetedReaderGuideRepairer.PROMPT_VERSION};"
         f"planner={READER_GUIDE_PLAN_VERSION};"
         f"reader_prose={load_reader_prose_policy().version}"
@@ -2374,6 +2382,7 @@ class LiveStaticCaseProcessor:
                     output_tokens=extraction_output_tokens,
                     context_window_tokens=self.config.generation.context_window_tokens,
                     temperature=self.config.generation.temperature,
+                    reasoning_level=self.config.generation.reasoning_level,
                     authorized_replay=authorized_replay,
                     verify_model_identity=self.verify_model_identity,
                 )
@@ -2434,6 +2443,7 @@ class LiveStaticCaseProcessor:
                     output_tokens=extraction_output_tokens,
                     context_window_tokens=self.config.generation.context_window_tokens,
                     temperature=self.config.generation.temperature,
+                    reasoning_level=self.config.generation.reasoning_level,
                     authorized_replay=authorized_replay,
                     verify_model_identity=self.verify_model_identity,
                     maximum_attempts=1,
@@ -2732,6 +2742,7 @@ class LiveStaticCaseProcessor:
                 output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
                 context_window_tokens=self.config.generation.context_window_tokens,
                 temperature=self.config.generation.temperature,
+                reasoning_level=self.config.generation.reasoning_level,
                 authorized_replay=authorized_replay,
                 verify_model_identity=self.verify_model_identity,
             )

@@ -148,7 +148,8 @@ def test_openai_extraction_supplies_and_derives_exact_block_identity() -> None:
             SimpleNamespace(
                 finish_reason="stop",
                 message=SimpleNamespace(
-                    content=LegalExtractionBatch(observations=[item]).model_dump_json()
+                    content=LegalExtractionBatch(observations=[item]).model_dump_json(),
+                    reasoning="private synthetic reasoning that must be ignored",
                 ),
             ),
         )
@@ -162,13 +163,14 @@ def test_openai_extraction_supplies_and_derives_exact_block_identity() -> None:
 
     batch = extractor.extract(source_value)
     payload = json.loads(requests[0]["messages"][1]["content"])  # type: ignore[index]
-    assert payload["mode"] == "/no_think"
+    assert payload["mode"] == "bounded_low_reasoning"
     sent = payload["evidence"][0]
     assert sent["block_id"] == "evidence-1"
     assert sent["speaker_name"] == evidence.speaker_name
     assert sent["speaker_kind"] == evidence.speaker_kind.value
     assert sent["identity_basis"] == evidence.identity_basis.value
     normalized = batch.observations[0]
+    assert "private synthetic reasoning" not in batch.model_dump_json()
     assert normalized.speaker_name == evidence.speaker_name
     assert normalized.speaker_kind is evidence.speaker_kind
     assert normalized.identity_basis is evidence.identity_basis
@@ -235,7 +237,7 @@ def test_disposition_extraction_prioritizes_extractable_guide_roles() -> None:
     request = extractor.request_arguments(source_value)
     system_prompt = request["messages"][0]["content"]
 
-    assert request["reasoning_effort"] == "none"
+    assert request["reasoning_effort"] == "low"
     assert "Return no more than four independently useful observations" in system_prompt
     assert "one case_background" in system_prompt
     assert "Do not return a holding or order" in system_prompt

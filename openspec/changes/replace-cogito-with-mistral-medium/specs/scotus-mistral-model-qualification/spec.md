@@ -16,7 +16,7 @@ The system SHALL use `ragchew-gpt-oss:120b-32k` for SCOTUS extraction or Citizen
 - **THEN** it SHALL NOT pull a model, select `latest`, use the native-context GPT-OSS tag, contact a hosted provider, or substitute another installed model
 
 ### Requirement: Bounded plain-language Citizen’s Guide
-The system MUST use a versioned strict-schema prompt profile that produces only the applicable planner-controlled Citizen’s Guide fields, limits the complete guide to 180 words, limits each field to one or two short sentences, and uses ordinary language with any unavoidable specialist term explained immediately.
+The system MUST use a versioned strict-schema prompt profile with an explicit low GPT-OSS reasoning level that produces only the applicable planner-controlled Citizen’s Guide fields, limits the complete guide to 180 words, limits each field to one or two short sentences, and uses ordinary language with any unavoidable specialist term explained immediately. Only final schema content may be parsed or retained; model reasoning MUST NOT be logged, persisted, included in diagnostics or receipts, or exposed publicly.
 
 #### Scenario: Decided case has sufficient approved evidence
 - **WHEN** the planner provides approved issue, party-position, Supreme Court outcome, and impact evidence
@@ -25,6 +25,14 @@ The system MUST use a versioned strict-schema prompt profile that produces only 
 #### Scenario: Outcome evidence is unavailable
 - **WHEN** the approved evidence does not establish a Supreme Court outcome
 - **THEN** the writer uses only a planner-approved status statement or omits the inapplicable outcome field according to the existing maturity contract and does not infer who won or what the Court will do
+
+#### Scenario: Bounded low reasoning returns final content
+- **WHEN** the exact GPT-OSS request runs with the reviewed low reasoning level
+- **THEN** reasoning use remains within existing context, output-token, timeout, retry, call, and runtime bounds and only nonempty final strict-schema content enters parsing
+
+#### Scenario: Reasoning or final-content protocol fails
+- **WHEN** final content is empty, reasoning appears in final content or any retained artifact, the schema is malformed, or reasoning consumes the output allowance
+- **THEN** the request fails closed without fallback, Court-evidence advancement, candidate retention, or publication
 
 #### Scenario: Output is verbose or jargon-heavy
 - **WHEN** generated output exceeds the field or total word bounds, includes unexplained legal jargon, or adds excluded detail
@@ -65,7 +73,7 @@ The system MUST instruct GPT-OSS to name the relevant actor, avoid ambiguous cro
 - **THEN** generated prose does not state that the agency issued the order
 
 #### Scenario: Request semantics change
-- **WHEN** the prompt text, schema, model tag, digest, context ceiling, or generation controls change semantically
+- **WHEN** the prompt text, schema, reasoning level, model tag, digest, context ceiling, or generation controls change semantically
 - **THEN** the request-profile version and processor/request fingerprints change and prior qualification does not authorize the new profile
 
 ### Requirement: Canonical action validation with private diagnostics
@@ -85,7 +93,7 @@ The system SHALL hard-reject a generated action statement only for a demonstrate
 
 #### Scenario: Diagnostic lifecycle completes
 - **WHEN** generation, repair, validation, rejection, or process shutdown completes
-- **THEN** source text, prompts, responses, rejected prose, and detailed diagnostics are absent from logs, durable artifacts, generated state, and public files
+- **THEN** source text, prompts, responses, model reasoning, rejected prose, and detailed diagnostics are absent from logs, durable artifacts, generated state, and public files
 
 ### Requirement: Existing hard safety gates remain authoritative
 Adopting GPT-OSS and recalibrating action diagnostics SHALL NOT relax source authorization, claim grounding, unknown-reference, schema, polarity, chronology, legal-status, unsupported prediction, process-disclosure, severe-bound, privacy, transient-workspace, budget, static-release, or publication validation.
@@ -96,7 +104,7 @@ Adopting GPT-OSS and recalibrating action diagnostics SHALL NOT relax source aut
 
 #### Scenario: Private processing ends
 - **WHEN** probing, extraction, generation, repair, validation, rejection, or failure ends
-- **THEN** private Court material and model content are removed according to existing transient-workspace and no-retention policy
+- **THEN** private Court material, model reasoning, and final model content are removed according to existing transient-workspace and no-retention policy
 
 #### Scenario: Reviewer model is unavailable
 - **WHEN** no Granite, MiniCheck, or other reviewer model is installed or running
@@ -106,7 +114,7 @@ Adopting GPT-OSS and recalibrating action diagnostics SHALL NOT relax source aut
 The system SHALL qualify the exact GPT-OSS prompt and artifact with role-sensitive synthetic fixtures, a fixture-backed end-to-end run, and a fixed publication-disabled ten-case canary before promotion, and SHALL require the existing improvement, correctness, privacy, release, and explicit-review thresholds.
 
 #### Scenario: Synthetic qualification passes
-- **WHEN** strict extraction and Citizen’s Guide probes preserve labeled positive paraphrases and reject labeled actor, action, object, court, polarity, status, and order-issuer counterexamples within token, time, memory, and cleanup bounds
+- **WHEN** cold and warm low-reasoning strict extraction and Citizen’s Guide probes return nonempty final schema content, retain no reasoning, preserve labeled positive paraphrases, and reject labeled actor, action, object, court, polarity, status, and order-issuer counterexamples within token, time, memory, and cleanup bounds
 - **THEN** the exact candidate may advance to fixture-backed publication-disabled qualification
 
 #### Scenario: Canary qualifies but approval is pending

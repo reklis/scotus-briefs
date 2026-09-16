@@ -2,7 +2,7 @@
 
 The original candidate, `mistral-medium-3.5:128b`, was rejected after invalid schema output and an unsafe native-context allocation that caused host OOM and reboot. That outcome remains recorded in `docs/validation/scotus-mistral-medium-3.5-qualification-2026-09-15.md`.
 
-Spark now has a locally derived 32K GPT-OSS artifact, `ragchew-gpt-oss:120b-32k`, whose installed Ollama digest is `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`. Its Modelfile pins `num_ctx 32768`; Ollama reports an Apache-2.0 license and approximately 65 GB model size. Bounded probes completed without host pressure and returned strict JSON, but broad prose validation and an experimental Granite reviewer both produced unacceptable false positives. A later Citizen’s Guide probe showed that GPT-OSS can write readable 96- and 103-word summaries, while also demonstrating why the planner must constrain each section: it moved lower-court history into the outcome field and changed the actor that issues a court order.
+Spark now has a locally derived 32K GPT-OSS artifact, `ragchew-gpt-oss:120b-32k`, whose installed Ollama digest is `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`. Its Modelfile pins `num_ctx 32768`; Ollama reports an Apache-2.0 license and approximately 65 GB model size. Bounded default-mode probes returned strict JSON without host pressure, but the subsequently implemented `think=false`/`reasoning_effort="none"` protocol returned empty final content in every cold and warm extraction and guide probe. On 2026-09-16 the owner selected bounded low reasoning with final-content-only retention for the next qualification attempt. Earlier prose probes also showed why the planner must constrain each section: GPT-OSS moved lower-court history into the outcome field and changed the actor that issues a court order.
 
 The current reader-guide architecture already lets deterministic code own case identity, section order, citations, claim IDs, and publication eligibility. This change narrows the model’s job further: GPT-OSS receives field-specific approved evidence and canonical action slots and translates them into short ordinary-language text. There is no reviewer model in the release path.
 
@@ -65,9 +65,19 @@ The writer output cannot choose, reorder, or add claim IDs or action-slot IDs. A
 
 Alternative: give every section the full case packet. Rejected because the probe moved correct facts into incorrect sections and conflated which institution acted.
 
-### Use a versioned role-explicit prompt
+### Use bounded low reasoning and retain only final schema content
 
-The new prompt profile requests only strict schema output and gives field-specific rules. It requires the writer to:
+The exact GPT-OSS request profile sets an explicit low reasoning level rather than disabling reasoning. The output-token, context, timeout, retry, and model-call ceilings remain unchanged and account for reasoning use. Only the assistant’s final schema-content field may enter parsing; reasoning fields are ignored in memory and SHALL NOT be logged, persisted, attached to diagnostics, included in receipts, or exposed publicly. Empty final content, reasoning copied into final content, malformed schema, or budget exhaustion fails closed.
+
+The explicit reasoning level, literal prompt profile, schema version, model tag, digest, context ceiling, temperature, and output ceiling participate in processor and request fingerprints. A reasoning-level or protocol change requires a new profile version and fresh qualification.
+
+Alternative: keep `think=false`. Rejected because all four exact cold/warm probes returned empty final content.
+
+Alternative: retain or inspect reasoning to improve debugging. Rejected because private reasoning is unnecessary for publication and violates the no-retention boundary.
+
+### Use a versioned role-explicit Citizen’s Guide prompt
+
+The prompt requests only strict final schema output and gives field-specific rules. It requires the writer to:
 
 - name the actor rather than use ambiguous phrases such as “the Court agreed,” “it ordered,” or “that decision”;
 - use `argues`, `says`, `asks`, or `wants` for party positions and requests;
@@ -76,8 +86,6 @@ The new prompt profile requests only strict schema output and gives field-specif
 - preserve negation, uncertainty, interim effect, and final effect;
 - omit nonessential details instead of compressing distinct actions into one ambiguous sentence; and
 - return one or two plain sentences for each applicable field within the total word limit.
-
-The literal prompt profile, schema version, model tag, digest, context ceiling, and generation controls participate in processor and request fingerprints. Any semantic change requires a new profile version and fresh qualification.
 
 Alternative: rely on free-form prompting plus a reviewer model. Rejected because Granite both rejected faithful paraphrases and approved changed action roles.
 
@@ -107,6 +115,8 @@ The existing threshold remains at least eight of ten accepted and manually judge
 - **[GPT-OSS moves facts between fields]** → Use field-specific packets, deterministic field ownership, role-explicit prompts, and canonical-slot omission/contradiction checks.
 - **[The writer changes who performs an action]** → Test known actor/action counterexamples and reject demonstrated slot conflicts.
 - **[Validator recalibration admits unsupported prose]** → Keep grounding and demonstrated contradiction hard; add labeled positive and negative paraphrase fixtures before changing rejection behavior.
+- **[Low reasoning consumes the output budget before final JSON]** → Keep the existing output ceiling, test cold and warm final-content presence and schema validity, and fail qualification rather than increasing a budget implicitly.
+- **[Reasoning leaks into logs or artifacts]** → Parse only final content, ignore reasoning fields, retain no response bodies, and cover receipts, diagnostics, failures, and cleanup with privacy tests.
 - **[A 65 GB model affects Spark headroom or latency]** → Keep one exact 32K model loaded at a time, measure cold/warm operation, enforce cleanup, and retain existing request and five-hour bounds.
 - **[Prompt-only improvements overfit two dockets]** → Qualify against a diverse synthetic corpus and fixed ten-case canary, not the probe examples alone.
 - **[Historical change names mention Mistral]** → State the retarget explicitly in every artifact and preserve the Mistral rejection record rather than rewriting history.
@@ -114,7 +124,7 @@ The existing threshold remains at least eight of ten accepted and manually judge
 ## Migration Plan
 
 1. Record the GPT-OSS upstream provenance, Apache-2.0 license, derived Modelfile, exact tag/digest, and approved 32K operating envelope.
-2. Add the versioned Citizen’s Guide prompt and field-specific request contracts without changing production publication settings.
+2. Add the versioned bounded-low-reasoning Citizen’s Guide prompt and field-specific request contracts without changing closed processing or publication settings.
 3. Bind planner-approved claims and canonical action slots to each applicable guide field; keep identity and metadata outside model control.
 4. Recalibrate action diagnostics and add positive paraphrase and negative role-change tests before using acceptance rates for model decisions.
 5. Update exact model configuration, allowlists, fingerprints, preflight, drift checks, and no-pull workflow policy.
@@ -127,3 +137,4 @@ Rollback before approval is configuration-only because publication remains disab
 ## Open Questions
 
 - What smallest labeled paraphrase corpus is sufficient to demonstrate that action-validator false positives fell without increasing false negatives?
+- Does the pinned Ollama build return valid final strict-schema content consistently with the explicit low reasoning control through its OpenAI-compatible endpoint?

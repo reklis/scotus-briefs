@@ -6,11 +6,12 @@ The existing reader-guide writer and validator have produced zero trustworthy ca
 
 - Retarget the rejected Mistral candidate change to exact local `ragchew-gpt-oss:120b-32k`, pinned to its reviewed immutable Ollama digest and bounded 32,768-token context.
 - Replace the general compact-writer instruction with a versioned Citizen’s Guide prompt for four planner-controlled sections: what the case is about, what the sides say, what the Supreme Court did, and why it matters.
+- Use an explicit bounded low reasoning level because `think=false` produced empty GPT-OSS answers; parse and retain only final strict-schema content, never model reasoning.
 - Give each section only its approved claims and applicable canonical action slots; deterministic code continues to own identity, headings, order, citations, claim IDs, and publication eligibility.
 - Require a concise guide of no more than 180 words, one or two short sentences per section, ordinary language, and immediate explanation of any unavoidable legal term.
 - Preserve actor, action, object, court level, attribution, polarity, timing, request-versus-ruling, and interim-versus-final distinctions while allowing omission of nonessential detail.
 - Keep deterministic privacy, grounding, schema, action-slot, status, release, and fail-closed checks authoritative. Granite or another reviewer model is not part of the publication path.
-- Qualify the exact prompt and model with synthetic role-sensitive cases and a publication-disabled measured canary before any production promotion.
+- Requalify the exact low-reasoning prompt and model with cold/warm synthetic role-sensitive cases before fixture-backed or publication-disabled measured use, and require final-content, privacy, and cleanup checks before any production promotion.
 
 ## Capabilities
 

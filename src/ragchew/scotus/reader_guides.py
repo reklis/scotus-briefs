@@ -1505,7 +1505,7 @@ class RequestExecutor(Protocol):
 class CompactReaderGuideWriter:
     """Schema-constrained Citizen's Guide writer; only prose is model-selected."""
 
-    PROMPT_VERSION = "scotus-gpt-oss-citizens-guide-v1"
+    PROMPT_VERSION = "scotus-gpt-oss-citizens-guide-v2"
     SCHEMA_VERSION = CITIZENS_GUIDE_SCHEMA_VERSION
 
     def __init__(
@@ -1528,14 +1528,15 @@ class CompactReaderGuideWriter:
             "model": self.model_name,
             "temperature": 0,
             "max_tokens": self.maximum_output_tokens,
-            "reasoning_effort": "none",
+            "reasoning_effort": "low",
             "messages": [
                 {
                     "role": "system",
                     "content": (
-                        "/no_think\nWrite only the strict JSON schema response, with no reasoning, "
-                        "analysis, markdown, or wrapper text. Write one or two short, ordinary-"
-                        "language sentences for every output field and no more than 180 words "
+                        "Return only final strict-schema JSON, with no reasoning, analysis, "
+                        "markdown, or wrapper text in the final content. "
+                        "Write one or two short, ordinary-language sentences for every output "
+                        "field and no more than 180 words "
                         "across all output fields. Use only the matching field packet; never move "
                         "evidence or actions between fields. Do not select or repeat claim IDs, "
                         "action-slot IDs, legal status, citations, sources, identity, headings, or "
@@ -1564,7 +1565,7 @@ class CompactReaderGuideWriter:
             "response_format": {
                 "type": "json_schema",
                 "json_schema": {
-                    "name": "scotus_citizens_guide_v1",
+                    "name": "scotus_citizens_guide_v2",
                     "strict": True,
                     "schema": compact_reader_guide_schema(plan),
                 },
@@ -1660,7 +1661,7 @@ GuideValidator = Callable[[LegalBriefDraft], None]
 class TargetedReaderGuideRepairer:
     """Repair exactly one field, then validate the field and complete assembled guide."""
 
-    PROMPT_VERSION = "scotus-citizens-guide-field-repair-v3"
+    PROMPT_VERSION = "scotus-guide-repair-v4-low"
 
     def __init__(
         self,
@@ -1689,13 +1690,13 @@ class TargetedReaderGuideRepairer:
             "model": self.model_name,
             "temperature": 0,
             "max_tokens": self.maximum_output_tokens,
-            "reasoning_effort": "none",
+            "reasoning_effort": "low",
             "messages": [
                 {
                     "role": "system",
                     "content": (
-                        "/no_think\nReturn only the strict JSON schema response, with no visible "
-                        "reasoning or wrapper text. Rewrite only the rejected field as one or two "
+                        "Return only final strict-schema JSON, with no reasoning or wrapper text "
+                        "in the final content. Rewrite only the rejected field as one or two "
                         "short ordinary-language sentences so the complete guide remains at most "
                         "180 words. Use only its support packet. Preserve claim scope and every "
                         "supported actor, role, action, object, negation, timing, and effect. Name "

@@ -156,7 +156,8 @@ generation:
   model_digest: 820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863
   context_window_tokens: 32768
   temperature: 0
-  prompt_version: scotus-gpt-oss-citizens-guide-v1
+  reasoning_level: low
+  prompt_version: scotus-gpt-oss-citizens-guide-v2
   brief_generation_enabled: false
   maximum_brief_api_calls_per_run: 100
   # One fresh draft may correct a fixed-code validation failure; both remain budgeted.

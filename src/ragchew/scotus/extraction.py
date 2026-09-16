@@ -271,7 +271,7 @@ class DeterministicTranscriptObservationExtractor:
 
 
 class OpenAILegalObservationExtractor:
-    PROMPT_VERSION = "scotus-legal-extraction-v10"
+    PROMPT_VERSION = "scotus-legal-extraction-v11-low-reasoning"
 
     def __init__(
         self,
@@ -338,15 +338,16 @@ class OpenAILegalObservationExtractor:
             "model": self.model_name,
             "temperature": omit if self.model_name.startswith("gpt-5") else 0,
             **token_limit,
-            # Ollama's OpenAI-compatible endpoint may ignore `think: false` and spend
-            # the complete output allowance on hidden reasoning. This standard field
-            # is honored by the reviewed model and leaves room for the required JSON.
-            "reasoning_effort": "none",
+            # GPT-OSS returned empty final content when reasoning was disabled. The
+            # reviewed adapter pins bounded low reasoning and retains only final JSON.
+            "reasoning_effort": "low",
             "messages": [
                 {
                     "role": "system",
                     "content": (
-                        "/no_think\nExtract only legal observations explicitly supported by the "
+                        "Return only final strict-schema JSON, with no reasoning or wrapper text "
+                        "in the final content. Extract only legal observations explicitly "
+                        "supported by the "
                         "supplied official Supreme Court evidence. Attribute advocate claims and "
                         "disputed facts. A justice's question is not a vote or holding. Transcript "
                         "evidence cannot establish a Supreme Court order, holding, judgment, "
@@ -373,7 +374,7 @@ class OpenAILegalObservationExtractor:
                 {
                     "role": "user",
                     "content": json.dumps(
-                        {"mode": "/no_think", "evidence": evidence},
+                        {"mode": "bounded_low_reasoning", "evidence": evidence},
                         separators=(",", ":"),
                     ),
                 },

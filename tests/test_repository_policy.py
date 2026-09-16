@@ -56,6 +56,7 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863" in text
     assert "REVIEWED_OLLAMA_CONTEXT_TOKENS: 32768" in text
     assert "REVIEWED_OLLAMA_TEMPERATURE: 0" in text
+    assert "REVIEWED_OLLAMA_REASONING_LEVEL: low" in text
     assert "http://127.0.0.1:11434/api/show" in text
     assert '"num_ctx"' in text
     assert "qwen3.8:27b" in text
@@ -114,6 +115,7 @@ def test_gpt_oss_candidate_is_exact_bounded_and_fail_closed() -> None:
     )
     assert config["generation"]["context_window_tokens"] == 32768
     assert config["generation"]["temperature"] == 0
+    assert config["generation"]["reasoning_level"] == "low"
     assert config["approvals"]["model_runtime_approved"] is False
     assert config["approvals"]["launch_approved"] is False
     assert config["runner_limits"]["maximum_cases_per_run"] == 100

@@ -286,7 +286,7 @@ class MockOpenAI:
         user = json.loads(request["messages"][1]["content"])
         if name == "scotus_legal_observations":
             content = self._extraction(user["evidence"])
-        elif name == "scotus_citizens_guide_v1":
+        elif name == "scotus_citizens_guide_v2":
             content = self._compact_brief(user)
         elif name == "reader_guide_field_repair":
             claims = user["support_packet"]["claims"]
@@ -1285,29 +1285,29 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert processor is not None
     assert processor.model == (f"ollama:ragchew-gpt-oss:120b-32k@sha256:{MODEL_DIGEST}@http://127.0.0.1:11434/v1")
     assert processor.extractor_version == (
-        "scotus-observation-v2:scotus-legal-v1:scotus-legal-extraction-v10:"
+        "scotus-observation-v2:scotus-legal-v1:scotus-legal-extraction-v11-low-reasoning:"
         "official-document-text-v4"
     )
     assert processor.policy_version == "scotus-brief-policy-v61"
     assert processor.prompt_version == (
-        "scotus-gpt-oss-citizens-guide-v1;repair=scotus-citizens-guide-field-repair-v3;"
+        "scotus-gpt-oss-citizens-guide-v2;schema=scotus-citizens-guide-schema-v1;reasoning=low;repair=scotus-guide-repair-v4-low;"
         "planner=reader-guide-plan-v3;reader_prose=scotus-reader-prose-v2"
     )
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",
-        "scotus_citizens_guide_v1",
+        "scotus_citizens_guide_v2",
     ]
     assert all(
         request["extra_body"]
-        == {"think": False, "options": {"num_ctx": 32768, "temperature": 0}}
+        == {"think": "low", "options": {"num_ctx": 32768, "temperature": 0}}
         for request in model.requests
     )
     assert all(request["temperature"] == 0 for request in model.requests)
     assert model.requests[0]["max_tokens"] == 8_000
     assert model.requests[1]["max_tokens"] == 8_000
-    assert all(request["reasoning_effort"] == "none" for request in model.requests)
+    assert all(request["reasoning_effort"] == "low" for request in model.requests)
     extraction_payload = json.loads(model.requests[0]["messages"][1]["content"])
-    assert extraction_payload["mode"] == "/no_think"
+    assert extraction_payload["mode"] == "bounded_low_reasoning"
     extraction_evidence = extraction_payload["evidence"]
     assert {
         "speaker_name",
@@ -1384,7 +1384,7 @@ def test_model_digest_changes_processor_and_request_fingerprints_only(
     )
 
 
-def test_context_and_temperature_change_processor_and_request_fingerprints(
+def test_context_temperature_and_reasoning_change_processor_and_request_fingerprints(
     tmp_path: Path,
 ) -> None:
     first = run(
@@ -1397,7 +1397,11 @@ def test_context_and_temperature_change_processor_and_request_fingerprints(
     changed_config = base.model_copy(
         update={
             "generation": base.generation.model_copy(
-                update={"context_window_tokens": 16_384, "temperature": 1}
+                update={
+                    "context_window_tokens": 16_384,
+                    "temperature": 1,
+                    "reasoning_level": "medium",
+                }
             )
         }
     )
@@ -1418,8 +1422,9 @@ def test_context_and_temperature_change_processor_and_request_fingerprints(
     assert first_processor.composite_sha256 != second_processor.composite_sha256
     assert all(
         request["extra_body"]
-        == {"think": False, "options": {"num_ctx": 16_384, "temperature": 1}}
+        == {"think": "medium", "options": {"num_ctx": 16_384, "temperature": 1}}
         and request["temperature"] == 1
+        and request["reasoning_effort"] == "medium"
         for request in changed_model.requests
     )
 
@@ -1575,7 +1580,7 @@ def test_status_changing_opinion_rewrites_complete_argument_case(tmp_path: Path)
     )
     assert [
         request["response_format"]["json_schema"]["name"] for request in update_model.requests
-    ] == ["scotus_legal_observations", "scotus_legal_observations", "scotus_citizens_guide_v1"]
+    ] == ["scotus_legal_observations", "scotus_legal_observations", "scotus_citizens_guide_v2"]
     assert any("transcripts" in request.url.path for request in court.document_requests)
 
 
@@ -1650,7 +1655,7 @@ def test_disposition_only_emergency_opinion_publishes_without_argument(
     assert case.latest_court_document_date == datetime(2026, 3, 4, tzinfo=UTC)
     assert [item.kind for item in case.dispositions] == ["per_curiam"]
     names = [request["response_format"]["json_schema"]["name"] for request in model.requests]
-    assert names == ["scotus_legal_observations", "scotus_citizens_guide_v1"]
+    assert names == ["scotus_legal_observations", "scotus_citizens_guide_v2"]
     brief_request = model.requests[-1]
     brief_schema = brief_request["response_format"]["json_schema"]["schema"]
     assert brief_schema["properties"]["argument_paragraphs"]["maxItems"] == 0
@@ -1962,10 +1967,10 @@ def test_brief_validation_gets_one_bounded_private_field_correction(
         def create(self, **request: Any) -> object:
             completion = super().create(**request)
             name = request["response_format"]["json_schema"]["name"]
-            if name not in {"scotus_citizens_guide_v1", "reader_guide_field_repair"}:
+            if name not in {"scotus_citizens_guide_v2", "reader_guide_field_repair"}:
                 return completion
             self.brief_calls += 1
-            if name != "scotus_citizens_guide_v1":
+            if name != "scotus_citizens_guide_v2":
                 return completion
             payload = json.loads(completion.choices[0].message.content)
             payload["dek"] = "The language model output says the Court heard argument."
@@ -2031,7 +2036,7 @@ def test_style_warning_retains_original_without_requesting_unprovable_repair(
         def create(self, **request: Any) -> object:
             completion = super().create(**request)
             name = request["response_format"]["json_schema"]["name"]
-            if name == "scotus_citizens_guide_v1":
+            if name == "scotus_citizens_guide_v2":
                 payload = json.loads(completion.choices[0].message.content)
                 payload["dek"] = original
                 return SimpleNamespace(
@@ -2127,10 +2132,10 @@ def test_disposition_action_validation_repairs_only_rejected_field(
         def create(self, **request: Any) -> object:
             completion = super().create(**request)
             name = request["response_format"]["json_schema"]["name"]
-            if name not in {"scotus_citizens_guide_v1", "reader_guide_field_repair"}:
+            if name not in {"scotus_citizens_guide_v2", "reader_guide_field_repair"}:
                 return completion
             self.brief_calls += 1
-            if name != "scotus_citizens_guide_v1":
+            if name != "scotus_citizens_guide_v2":
                 return completion
             payload = json.loads(completion.choices[0].message.content)
             user = json.loads(request["messages"][1]["content"])
@@ -2291,7 +2296,7 @@ def test_reargument_reprocesses_every_session_under_one_case_budget(tmp_path: Pa
     assert case.revisions[-1].correction_note
     names = [request["response_format"]["json_schema"]["name"] for request in model.requests]
     assert names.count("scotus_legal_observations") == 2
-    assert names.count("scotus_citizens_guide_v1") == 1
+    assert names.count("scotus_citizens_guide_v2") == 1
 
 
 @pytest.mark.parametrize("stale_processor", [None, "f" * 64])

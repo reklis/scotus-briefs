@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from datetime import UTC, datetime, timedelta
+from types import SimpleNamespace
 from uuid import UUID, uuid4
 
 import pytest
@@ -657,17 +658,17 @@ def test_gpt_oss_citizens_guide_profile_is_versioned_strict_and_role_explicit() 
     response_format = request["response_format"]["json_schema"]
     schema = compact_reader_guide_schema(plan)
 
-    assert writer.PROMPT_VERSION == "scotus-gpt-oss-citizens-guide-v1"
+    assert writer.PROMPT_VERSION == "scotus-gpt-oss-citizens-guide-v2"
     assert writer.SCHEMA_VERSION == CITIZENS_GUIDE_SCHEMA_VERSION
     assert (
         TargetedReaderGuideRepairer.PROMPT_VERSION
-        == "scotus-citizens-guide-field-repair-v3"
+        == "scotus-guide-repair-v4-low"
     )
-    assert request["reasoning_effort"] == "none"
-    assert response_format["name"] == "scotus_citizens_guide_v1"
+    assert request["reasoning_effort"] == "low"
+    assert response_format["name"] == "scotus_citizens_guide_v2"
     assert response_format["strict"] is True
     assert response_format["schema"] == schema
-    assert "only the strict JSON schema response" in prompt
+    assert "only final strict-schema JSON" in prompt
     assert "no reasoning" in prompt
     assert "one or two short" in prompt
     assert "no more than 180 words" in prompt
@@ -681,6 +682,34 @@ def test_gpt_oss_citizens_guide_profile_is_versioned_strict_and_role_explicit() 
     assert "unexplained legal jargon" in prompt
     assert schema["additionalProperties"] is False
     assert "180 words" in schema["description"]
+
+
+def test_writer_parses_only_final_content_and_ignores_reasoning_field() -> None:
+    plan = ReaderGuidePlanner().plan(
+        candidate(status=ScotusCaseStatus.DECIDED),
+        disposition_claims(),
+        BriefMaturity.POST_OPINION,
+    )
+    final_payload = {
+        "dek": "The case concerns an agency rule.",
+        "section_paragraphs": ["Supported field."] * len(plan.sections),
+        "argument_paragraphs": [],
+    }
+    completion = SimpleNamespace(
+        choices=[
+            SimpleNamespace(
+                message=SimpleNamespace(
+                    content=json.dumps(final_payload),
+                    reasoning="private synthetic reasoning that must be ignored",
+                )
+            )
+        ]
+    )
+
+    draft = CompactReaderGuideWriter("local-test", lambda request: completion).generate(plan)
+
+    assert draft.dek == final_payload["dek"]
+    assert "private synthetic reasoning" not in draft.model_dump_json()
 
 
 def test_writer_payload_has_separate_evidence_and_action_packets_per_field() -> None:
