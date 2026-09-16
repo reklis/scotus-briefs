@@ -40,6 +40,10 @@ from ragchew.scotus.contracts import (
 from ragchew.scotus.reader_prose import load_reader_prose_policy
 
 READER_GUIDE_PLAN_VERSION = "reader-guide-plan-v3"
+CITIZENS_GUIDE_SCHEMA_VERSION = "scotus-citizens-guide-schema-v1"
+MAX_CITIZENS_GUIDE_WORDS = 180
+MIN_FIELD_SENTENCES = 1
+MAX_FIELD_SENTENCES = 2
 MAX_PLAN_SECTIONS = 10
 MAX_ARGUMENT_PACKETS = 10
 MAX_PACKET_CLAIMS = 16
@@ -452,6 +456,14 @@ _LOWER_COURT = re.compile(
 _SUPREME_COURT = re.compile(r"\b(?:Supreme Court|The Court|the Court|Court)\b")
 _NOUN_ACTION_PREFIX = re.compile(r"\b(?:a|an|the|for|of)\s+$", re.I)
 _SENTENCES = re.compile(r"[^.!?]+[.!?]?")
+_GUIDE_WORD = re.compile(
+    r"\b[\w]+(?:[\N{RIGHT SINGLE QUOTATION MARK}'-][\w]+)*\b", re.UNICODE
+)
+_GUIDE_ACRONYM = re.compile(r"\b(?:[A-Za-z]\.){2,}")
+_GUIDE_ABBREVIATION = re.compile(
+    r"\b(?:Mr|Mrs|Ms|Dr|Prof|Sr|Jr|St|No|Inc|Ltd|Co|v)\.", re.I
+)
+_GUIDE_SENTENCE_END = re.compile(r"[.!?]+(?=(?:[\"')\]]*)?(?:\s|$))")
 
 
 def _canonical_action(value: str) -> CanonicalAction:
@@ -622,28 +634,32 @@ def build_canonical_action_slots(
 
 
 _PURPOSE_GUIDANCE: Mapping[ReaderGuidePurpose, str] = {
-    ReaderGuidePurpose.BACKGROUND: "Explain the concrete dispute and who it affects.",
-    ReaderGuidePurpose.PROCEDURAL_PATH: (
-        "Explain how the case reached this Court without changing any actor or result."
+    ReaderGuidePurpose.BACKGROUND: (
+        "Explain only the concrete dispute and approved practical impact; do not predict effects."
     ),
-    ReaderGuidePurpose.LEGAL_ISSUE: ("State the practical question the Court was asked to answer."),
+    ReaderGuidePurpose.PROCEDURAL_PATH: (
+        "Explain only essential history and name the lower court for every lower-court action."
+    ),
+    ReaderGuidePurpose.LEGAL_ISSUE: (
+        "State the practical question, not an answer or predicted result."
+    ),
     ReaderGuidePurpose.POSITIONS: (
-        "Attribute each established side's requested result and reasoning."
+        "Name each side and use argues, says, asks, or wants; never turn a request into a ruling."
     ),
     ReaderGuidePurpose.JUSTICE_QUESTIONS: (
-        "Explain what assumptions the justices tested; do not imply votes."
+        "Describe only the issue tested, without naming individual justices or implying votes."
     ),
     ReaderGuidePurpose.COURT_ACTION: (
-        "State only the source-backed Supreme Court action and its effect."
+        "Name the Supreme Court and state only its supplied action, object, and effect."
     ),
     ReaderGuidePurpose.COURT_REASONING: (
-        "Explain controlling reasoning separately from any party or separate opinion."
+        "Explain only the approved controlling reason or impact; do not infer consequences."
     ),
     ReaderGuidePurpose.SEPARATE_OPINIONS: (
-        "Attribute each separate view to its author and not to the Court."
+        "Attribute each separate view to its author and never present it as the Court's ruling."
     ),
     ReaderGuidePurpose.NEXT_KNOWN_STEP: (
-        "State only a source-backed next procedural step, never a prediction."
+        "State only a supplied next procedural step and its actor, never a prediction."
     ),
 }
 
@@ -1331,65 +1347,134 @@ def _writer_slot(slot: CanonicalActionSlot) -> dict[str, object]:
     }
 
 
-def compact_reader_guide_payload(plan: ReaderGuidePlan) -> dict[str, object]:
-    """Return the complete and intentionally compact private writer payload."""
+def _field_packet(
+    *,
+    purpose: str,
+    guidance: str,
+    claims: tuple[ReaderGuideClaimPacket, ...],
+    action_slots: tuple[CanonicalActionSlot, ...] = (),
+    terms: tuple[str, ...] = (),
+) -> dict[str, object]:
+    """Build one evidence boundary; no claim or action from another field is included."""
+    claim_ids = {claim.claim_id for claim in claims}
     return {
-        "task": "translate approved facts into everyday language",
-        "summary": [_writer_claim(claim) for claim in plan.summary_claims],
-        "sections": [
+        "purpose": purpose,
+        "guidance": guidance,
+        "claims": [_writer_claim(claim) for claim in claims],
+        **(
             {
-                "purpose": section.purpose.value,
-                "guidance": section.reader_purpose,
-                "claims": [_writer_claim(claim) for claim in section.claims],
-                **(
-                    {"actions": [_writer_slot(slot) for slot in section.action_slots]}
-                    if section.action_slots
-                    else {}
-                ),
-                **(
-                    {"terms": list(section.plain_language_guidance)}
-                    if section.plain_language_guidance
-                    else {}
-                ),
+                "actions": [
+                    _writer_slot(slot) for slot in action_slots if slot.claim_id in claim_ids
+                ]
             }
+            if any(slot.claim_id in claim_ids for slot in action_slots)
+            else {}
+        ),
+        **({"terms": list(terms)} if terms else {}),
+    }
+
+
+def _argument_field_claims(
+    argument: ReaderGuideArgumentPacket,
+) -> tuple[tuple[ReaderGuideClaimPacket, ...], tuple[ReaderGuideClaimPacket, ...]]:
+    position_ids = {
+        claim_id for position in argument.positions for claim_id in position.claim_ids
+    }
+    question_ids = set(argument.justice_question_claim_ids)
+    position_claims = tuple(
+        claim for claim in argument.claims if claim.claim_id in position_ids
+    )
+    question_claims = tuple(
+        claim for claim in argument.claims if claim.claim_id in question_ids
+    )
+    # The existing LegalBriefDraft contract requires two paragraphs for every real
+    # argument session. A planner-supported session may have only one kind of
+    # evidence, so reuse that bounded evidence as the explicit fallback rather than
+    # expose unrelated case facts or invite invention.
+    fallback = position_claims or question_claims or argument.claims[:1]
+    return position_claims or fallback, question_claims or fallback
+
+
+def _argument_field_packets(argument: ReaderGuideArgumentPacket) -> list[dict[str, object]]:
+    position_claims, question_claims = _argument_field_claims(argument)
+    return [
+        _field_packet(
+            purpose="party_positions",
+            guidance=(
+                "Name each established side and use argues, says, asks, or wants. "
+                "If no party position is established, describe only the supplied material."
+            ),
+            claims=position_claims,
+            action_slots=argument.action_slots,
+            terms=argument.plain_language_guidance,
+        ),
+        _field_packet(
+            purpose="justice_questions",
+            guidance=(
+                "Describe only what the justices tested, without names, vote implications, "
+                "or a predicted result. If no question is supplied, describe only the "
+                "supplied argument material."
+            ),
+            claims=question_claims,
+            terms=argument.plain_language_guidance,
+        ),
+    ]
+
+
+def compact_reader_guide_payload(plan: ReaderGuidePlan) -> dict[str, object]:
+    """Return bounded, field-specific evidence packets for the prose-only writer."""
+    return {
+        "task": "write a concise Citizen's Guide from only each field's packet",
+        "schema_version": CITIZENS_GUIDE_SCHEMA_VERSION,
+        "limits": {
+            "total_words": MAX_CITIZENS_GUIDE_WORDS,
+            "sentences_per_field": [MIN_FIELD_SENTENCES, MAX_FIELD_SENTENCES],
+        },
+        "dek": _field_packet(
+            purpose="what_the_case_is_about",
+            guidance=(
+                "Summarize only the supplied issue and essential background in ordinary language."
+            ),
+            claims=plan.summary_claims,
+        ),
+        "sections": [
+            _field_packet(
+                purpose=section.purpose.value,
+                guidance=section.reader_purpose,
+                claims=section.claims,
+                action_slots=section.action_slots,
+                terms=section.plain_language_guidance,
+            )
             for section in plan.sections
         ],
         "arguments": [
-            {
-                "claims": [_writer_claim(claim) for claim in argument.claims],
-                "positions": [
-                    {
-                        "role": position.role.value,
-                        "established": position.established,
-                        "claim_ids": [str(value) for value in position.claim_ids],
-                    }
-                    for position in argument.positions
-                ],
-                "justice_question_claim_ids": [
-                    str(value) for value in argument.justice_question_claim_ids
-                ],
-                **(
-                    {"actions": [_writer_slot(slot) for slot in argument.action_slots]}
-                    if argument.action_slots
-                    else {}
-                ),
-                **(
-                    {"terms": list(argument.plain_language_guidance)}
-                    if argument.plain_language_guidance
-                    else {}
-                ),
-            }
-            for argument in plan.arguments
+            {"fields": _argument_field_packets(argument)} for argument in plan.arguments
         ],
     }
 
 
 def compact_reader_guide_schema(plan: ReaderGuidePlan) -> dict[str, object]:
-    paragraph = {"type": "string", "minLength": 1, "maxLength": 800}
+    paragraph = {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 800,
+        "description": "One or two ordinary-language sentences from the matching field packet.",
+    }
     return {
         "type": "object",
+        "description": (
+            f"{CITIZENS_GUIDE_SCHEMA_VERSION}: schema-only Citizen's Guide prose; all fields "
+            f"together contain at most {MAX_CITIZENS_GUIDE_WORDS} words."
+        ),
         "properties": {
-            "dek": {"type": "string", "minLength": 1, "maxLength": 500},
+            "dek": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500,
+                "description": (
+                    "One or two ordinary-language sentences from only the dek evidence packet."
+                ),
+            },
             "section_paragraphs": {
                 "type": "array",
                 "items": paragraph,
@@ -1418,9 +1503,10 @@ class RequestExecutor(Protocol):
 
 
 class CompactReaderGuideWriter:
-    """Schema-constrained writer whose only discretionary output is prose."""
+    """Schema-constrained Citizen's Guide writer; only prose is model-selected."""
 
-    PROMPT_VERSION = "scotus-reader-guide-compact-v1"
+    PROMPT_VERSION = "scotus-gpt-oss-citizens-guide-v1"
+    SCHEMA_VERSION = CITIZENS_GUIDE_SCHEMA_VERSION
 
     def __init__(
         self,
@@ -1447,11 +1533,25 @@ class CompactReaderGuideWriter:
                 {
                     "role": "system",
                     "content": (
-                        "/no_think\nTranslate each supplied packet into direct everyday language. "
-                        "Do not select facts, statuses, actors, actions, citations, headings, or "
-                        "session order. Preserve every action slot, attribute positions, treat a "
-                        "justice question only as a question, explain necessary legal terms in the "
-                        "same sentence, make no prediction, and return only the requested JSON."
+                        "/no_think\nWrite only the strict JSON schema response, with no reasoning, "
+                        "analysis, markdown, or wrapper text. Write one or two short, ordinary-"
+                        "language sentences for every output field and no more than 180 words "
+                        "across all output fields. Use only the matching field packet; never move "
+                        "evidence or actions between fields. Do not select or repeat claim IDs, "
+                        "action-slot IDs, legal status, citations, sources, identity, headings, or "
+                        "session order. Name every actor explicitly: use argues, says, asks, or "
+                        "wants for a party position or request, and reserve ruled, granted, "
+                        "denied, affirmed, reversed, or sent back for the court identified by a "
+                        "supplied action slot. Never say a party or agency issued a court order. "
+                        "Preserve every supplied actor, role, action, object, negation, timing, "
+                        "uncertainty, and "
+                        "interim or final effect. Do not use ambiguous pronouns or phrases such as "
+                        "'the Court agreed,' 'it ordered,' or 'that decision.' Do not name "
+                        "lawyers, give justice-by-justice detail, add unnecessary procedural "
+                        "history, infer an unavailable outcome or impact, predict events, or use "
+                        "unexplained legal jargon; explain any unavoidable legal term immediately "
+                        "in the same "
+                        "sentence. Omit nonessential detail rather than inventing or conflating it."
                     ),
                 },
                 {
@@ -1464,7 +1564,7 @@ class CompactReaderGuideWriter:
             "response_format": {
                 "type": "json_schema",
                 "json_schema": {
-                    "name": "compact_reader_guide",
+                    "name": "scotus_citizens_guide_v1",
                     "strict": True,
                     "schema": compact_reader_guide_schema(plan),
                 },
@@ -1560,7 +1660,7 @@ GuideValidator = Callable[[LegalBriefDraft], None]
 class TargetedReaderGuideRepairer:
     """Repair exactly one field, then validate the field and complete assembled guide."""
 
-    PROMPT_VERSION = "scotus-reader-guide-field-repair-v2"
+    PROMPT_VERSION = "scotus-citizens-guide-field-repair-v3"
 
     def __init__(
         self,
@@ -1594,10 +1694,15 @@ class TargetedReaderGuideRepairer:
                 {
                     "role": "system",
                     "content": (
-                        "/no_think\nRewrite only the rejected field. Preserve its supported "
-                        "meaning, "
-                        "claim scope, actors, action, object, negation, and effect. Return no "
-                        "commentary and do not refer to validation or processing."
+                        "/no_think\nReturn only the strict JSON schema response, with no visible "
+                        "reasoning or wrapper text. Rewrite only the rejected field as one or two "
+                        "short ordinary-language sentences so the complete guide remains at most "
+                        "180 words. Use only its support packet. Preserve claim scope and every "
+                        "supported actor, role, action, object, negation, timing, and effect. Name "
+                        "actors explicitly; use asks or wants for requests and court-action verbs "
+                        "only for the acting court. Do not name lawyers, add justice-by-justice "
+                        "detail, unnecessary history, prediction, or unexplained jargon. Do not "
+                        "refer to validation or processing."
                     ),
                 },
                 {
@@ -1675,6 +1780,7 @@ class TargetedReaderGuideRepairer:
                 safe_code="unchanged_repair_field",
             )
         _assert_only_target_changed(draft, repaired, diagnostic.path)
+        _validate_citizens_guide_fields(_draft_prose_fields(repaired))
         try:
             validate_field(text, claim_ids)
             validate_guide(repaired)
@@ -1724,6 +1830,46 @@ def _response_payload(response: object) -> dict[str, object]:
     return payload
 
 
+def _field_sentence_count(text: str) -> int:
+    normalized = _GUIDE_ACRONYM.sub(lambda match: match.group(0).replace(".", ""), text)
+    normalized = _GUIDE_ABBREVIATION.sub(lambda match: match.group(0)[:-1], normalized)
+    endings = tuple(_GUIDE_SENTENCE_END.finditer(normalized))
+    if not endings:
+        return 1
+    tail = normalized[endings[-1].end() :].strip(" \t\r\n\"')]")
+    return len(endings) + bool(tail)
+
+
+def _validate_citizens_guide_fields(fields: Iterable[str]) -> None:
+    values = tuple(fields)
+    if any(
+        not value.strip()
+        or not MIN_FIELD_SENTENCES <= _field_sentence_count(value) <= MAX_FIELD_SENTENCES
+        for value in values
+    ):
+        raise ReaderGuideWritingError(
+            "a Citizen's Guide field must contain one or two sentences",
+            safe_code="citizens_guide_sentence_limit",
+        )
+    if sum(len(_GUIDE_WORD.findall(value)) for value in values) > MAX_CITIZENS_GUIDE_WORDS:
+        raise ReaderGuideWritingError(
+            "the Citizen's Guide exceeds its total word limit",
+            safe_code="citizens_guide_word_limit",
+        )
+
+
+def _draft_prose_fields(draft: LegalBriefDraft) -> tuple[str, ...]:
+    return (
+        draft.dek,
+        *(paragraph for section in draft.sections for paragraph in section.paragraphs),
+        *(
+            paragraph
+            for analysis in draft.argument_analyses
+            for paragraph in analysis.paragraphs
+        ),
+    )
+
+
 def _assemble_draft(plan: ReaderGuidePlan, payload: Mapping[str, object]) -> LegalBriefDraft:
     if len(plan.caption) > 180:
         raise ReaderGuideWritingError(
@@ -1755,6 +1901,13 @@ def _assemble_draft(plan: ReaderGuidePlan, payload: Mapping[str, object]) -> Leg
         raise ReaderGuideWritingError(
             "writer response violates the compact schema", safe_code="invalid_writer_schema"
         )
+    _validate_citizens_guide_fields(
+        (
+            dek,
+            *section_values,
+            *(paragraph for paragraphs in argument_values for paragraph in paragraphs),
+        )
+    )
     return LegalBriefDraft(
         title=plan.caption,
         title_claim_ids=plan.title_claim_ids,
@@ -1799,7 +1952,14 @@ def _repair_context(
         return (
             draft.dek,
             claim_ids,
-            {"claims": [_writer_claim(claim) for claim in plan.summary_claims]},
+            _field_packet(
+                purpose="what_the_case_is_about",
+                guidance=(
+                    "Summarize only the supplied issue and essential background in ordinary "
+                    "language."
+                ),
+                claims=plan.summary_claims,
+            ),
         )
     if path.kind is ReaderGuideFieldKind.SECTION_PARAGRAPH:
         assert path.section_index is not None and path.paragraph_index is not None
@@ -1823,13 +1983,13 @@ def _repair_context(
         return (
             rejected,
             claim_ids,
-            {
-                "purpose": packet.purpose.value,
-                "guidance": packet.reader_purpose,
-                "claims": [_writer_claim(claim) for claim in packet.claims],
-                "actions": [_writer_slot(slot) for slot in packet.action_slots],
-                "terms": list(packet.plain_language_guidance),
-            },
+            _field_packet(
+                purpose=packet.purpose.value,
+                guidance=packet.reader_purpose,
+                claims=packet.claims,
+                action_slots=packet.action_slots,
+                terms=packet.plain_language_guidance,
+            ),
         )
     assert path.argument_index is not None and path.paragraph_index is not None
     try:
@@ -1844,22 +2004,16 @@ def _repair_context(
         raise ReaderGuideWritingError(
             "draft argument identity differs from its plan", safe_code="invalid_repair_path"
         )
-    claim_ids = tuple(claim.claim_id for claim in argument_packet.claims)
-    if analysis.claim_ids != claim_ids:
+    fixed_claim_ids = tuple(claim.claim_id for claim in argument_packet.claims)
+    if analysis.claim_ids != fixed_claim_ids:
         raise ReaderGuideWritingError(
             "draft argument citations differ from its plan", safe_code="invalid_repair_path"
         )
+    field_claims = _argument_field_claims(argument_packet)[path.paragraph_index]
     return (
         rejected,
-        claim_ids,
-        {
-            "claims": [_writer_claim(claim) for claim in argument_packet.claims],
-            "positions": [
-                position.model_dump(mode="json") for position in argument_packet.positions
-            ],
-            "actions": [_writer_slot(slot) for slot in argument_packet.action_slots],
-            "terms": list(argument_packet.plain_language_guidance),
-        },
+        tuple(claim.claim_id for claim in field_claims),
+        _argument_field_packets(argument_packet)[path.paragraph_index],
     )
 
 
