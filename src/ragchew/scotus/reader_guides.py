@@ -38,9 +38,10 @@ from ragchew.scotus.contracts import (
 )
 from ragchew.scotus.reader_prose import load_reader_prose_policy
 
-READER_GUIDE_PLAN_VERSION = "reader-guide-plan-v7"
+READER_GUIDE_PLAN_VERSION = "reader-guide-plan-v8"
 CITIZENS_GUIDE_SCHEMA_VERSION = "scotus-citizens-guide-schema-v2"
 MAX_CITIZENS_GUIDE_WORDS = 180
+MAX_CITIZENS_GUIDE_OUTPUT_TOKENS = 2_000
 MIN_FIELD_SENTENCES = 1
 MAX_FIELD_SENTENCES = 2
 MAX_PLAN_SECTIONS = 10
@@ -138,6 +139,7 @@ class CanonicalActionSlot(StrictModel):
     claim_id: UUID
     actor_role: CanonicalActorRole
     actor: str = Field(min_length=1, max_length=500)
+    actor_aliases: tuple[str, ...] = Field(default=(), max_length=4)
     action: CanonicalAction
     operative_object: str = Field(min_length=1, max_length=300)
     negated: bool = False
@@ -225,7 +227,7 @@ class ReaderGuideArgumentPacket(StrictModel):
 class ReaderGuidePlan(StrictModel):
     """Bounded private plan; this object must never enter generated public state."""
 
-    plan_version: Literal["reader-guide-plan-v7"] = "reader-guide-plan-v7"
+    plan_version: Literal["reader-guide-plan-v8"] = "reader-guide-plan-v8"
     case_id: UUID
     caption: str = Field(min_length=1, max_length=500)
     primary_docket: str = Field(min_length=1, max_length=40)
@@ -429,8 +431,9 @@ def _select_claims(
 _ACTION_PATTERN = re.compile(
     r"\b(?P<action>sent\s+(?:the\s+)?case\s+back|return(?:ed)?\s+(?:the\s+)?case\s+to\s+"
     r"(?:a|the)\s+lower\s+court|held|holds?|order(?:ed)?|grant(?:ed)?|allow(?:ed)?|"
-    r"deny|denied|reject(?:ed)?|affirm(?:ed)?|upheld|revers(?:e|ed)|vacat(?:e|ed)|"
-    r"cancel(?:led|ed)?|remand(?:ed)?|dismiss(?:ed)?|stay(?:ed)?|paus(?:e|ed)|"
+    r"deny|denied|reject(?:ed)?|affirm(?:ed)?|upheld|revers(?:e|ed)|overturn(?:ed)?|"
+    r"vacat(?:e|ed)|set\s+(?:the\s+)?(?:judgment|order)\s+aside|cancel(?:led|ed)?|"
+    r"remand(?:ed)?|dismiss(?:ed)?|threw\s+(?:the\s+)?case\s+out|stay(?:ed)?|paus(?:e|ed)|"
     r"enjoin(?:ed)?|block(?:ed)?|requir(?:e|ed))\b",
     re.I,
 )
@@ -441,10 +444,10 @@ _ACTION_CANONICAL: tuple[tuple[re.Pattern[str], CanonicalAction], ...] = (
     (re.compile(r"grant|allow", re.I), CanonicalAction.GRANT),
     (re.compile(r"deny|denied|reject", re.I), CanonicalAction.DENY),
     (re.compile(r"affirm|upheld", re.I), CanonicalAction.AFFIRM),
-    (re.compile(r"revers", re.I), CanonicalAction.REVERSE),
-    (re.compile(r"vacat|cancel", re.I), CanonicalAction.VACATE),
+    (re.compile(r"revers|overturn", re.I), CanonicalAction.REVERSE),
+    (re.compile(r"vacat|cancel|set .* aside", re.I), CanonicalAction.VACATE),
     (re.compile(r"remand", re.I), CanonicalAction.REMAND),
-    (re.compile(r"dismiss", re.I), CanonicalAction.DISMISS),
+    (re.compile(r"dismiss|threw .*case .*out", re.I), CanonicalAction.DISMISS),
     (re.compile(r"stay|paus", re.I), CanonicalAction.STAY),
     (re.compile(r"enjoin|block", re.I), CanonicalAction.BLOCK),
     (re.compile(r"requir", re.I), CanonicalAction.REQUIRE),
@@ -495,19 +498,35 @@ def _explicit_actor(
         )
     )
     matches = (
-        *(
-            (match.start(), CanonicalActorRole.LOWER_COURT, match.group(0))
-            for match in lower_matches
-        ),
-        *(
-            (match.start(), CanonicalActorRole.SUPREME_COURT, match.group(0))
-            for match in supreme_matches
-        ),
+        *((match, CanonicalActorRole.LOWER_COURT) for match in lower_matches),
+        *((match, CanonicalActorRole.SUPREME_COURT) for match in supreme_matches),
     )
     if not matches:
         return None
-    _, role, actor = max(matches, key=lambda item: item[0])
-    return role, actor
+    # Prefer a court directly acting as the grammatical subject. A court named in
+    # another court's possessive object ("lower court's judgment") is not the actor
+    # of a later coordinated verb.
+    direct = tuple(
+        (match, role)
+        for match, role in matches
+        if re.fullmatch(
+            r"\s*(?:(?:had|has|did|was|is)\s+)?",
+            sentence[match.end() : action_start],
+            re.I,
+        )
+    )
+    non_possessive = tuple(
+        (match, role)
+        for match, role in matches
+        if re.match(
+            r"\s*(?:'s|\N{RIGHT SINGLE QUOTATION MARK}s)\b",
+            sentence[match.end() : action_start],
+            re.I,
+        )
+        is None
+    )
+    match, role = max(direct or non_possessive or matches, key=lambda item: item[0].start())
+    return role, match.group(0)
 
 
 def _actor_for_action(
@@ -523,9 +542,6 @@ def _actor_for_action(
     }:
         return None
     if claim.legal_status is LegalStatus.REQUESTED:
-        position = _position_group(claim.attribution)
-        if position is not None:
-            return CanonicalActorRole.REQUESTING_PARTY, position.value.replace("_", " ")
         stated_actor = re.match(
             r"\s*(?P<actor>(?:the\s+)?[A-Za-z][A-Za-z'\N{RIGHT SINGLE QUOTATION MARK}-]*"
             r"(?:\s+[A-Za-z][A-Za-z'\N{RIGHT SINGLE QUOTATION MARK}-]*){0,4})\s+"
@@ -601,8 +617,6 @@ def build_canonical_action_slots(
                 actor = _actor_for_action(claim, sentence, match.start())
                 if actor is None:
                     continue
-                if match.group("action").casefold() == "order":
-                    continue
                 action = _canonical_action(match.group("action"))
                 preceding_conjunctions = tuple(
                     re.finditer(r"\b(?:and|but)\b", sentence[: match.start()], re.I)
@@ -631,8 +645,7 @@ def build_canonical_action_slots(
                     if interim
                     else (
                         ActionEffect.FINAL
-                        if claim.legal_status is LegalStatus.COURT_HELD
-                        or action
+                        if action
                         in {
                             CanonicalAction.AFFIRM,
                             CanonicalAction.REVERSE,
@@ -648,11 +661,19 @@ def build_canonical_action_slots(
                 if key in seen:
                     continue
                 seen.add(key)
+                position = _position_group(claim.attribution)
+                actor_aliases = (
+                    (position.value.replace("_", " "),)
+                    if actor[0] is CanonicalActorRole.REQUESTING_PARTY
+                    and position is not None
+                    else ()
+                )
                 slots.append(
                     CanonicalActionSlot(
                         claim_id=claim.claim_id,
                         actor_role=actor[0],
                         actor=actor[1],
+                        actor_aliases=actor_aliases,
                         action=action,
                         operative_object=operative_object,
                         negated=negated,
@@ -1110,6 +1131,11 @@ class ReaderGuidePlanner:
                 and claim.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
             )
             action_claims: tuple[ScotusApprovedClaim, ...] = ()
+            if not action_candidates:
+                raise ReaderGuidePlanningError(
+                    "a decided case lacks a supported Supreme Court outcome",
+                    safe_code="unsupported_court_action",
+                )
             if action_candidates:
                 action_claims = add_section(
                     ReaderGuidePurpose.COURT_ACTION,
@@ -1387,6 +1413,7 @@ def _writer_slot(slot: CanonicalActionSlot) -> dict[str, object]:
     return {
         "actor_role": slot.actor_role.value,
         "actor": slot.actor,
+        **({"actor_aliases": list(slot.actor_aliases)} if slot.actor_aliases else {}),
         "action": slot.action.value,
         "object": slot.operative_object,
         "negated": slot.negated,
@@ -1501,6 +1528,20 @@ def _citizens_guide_fields(plan: ReaderGuidePlan) -> tuple[_CitizensGuideFieldPa
                 else (claim.attribution or "unknown").casefold()
             )
             grouped_positions.setdefault(group, []).append(claim)
+        role_priority = {
+            AdvocateRole.PETITIONER.value: 0,
+            AdvocateRole.RESPONDENT.value: 1,
+            AdvocateRole.UNITED_STATES.value: 2,
+            AdvocateRole.UNKNOWN.value: 3,
+            AdvocateRole.AMICUS.value: 4,
+        }
+        ordered_groups = tuple(
+            group
+            for _, group in sorted(
+                grouped_positions.items(),
+                key=lambda item: (role_priority.get(item[0], 3), item[0]),
+            )
+        )
         position_claims = tuple(
             next(
                 (
@@ -1510,7 +1551,7 @@ def _citizens_guide_fields(plan: ReaderGuidePlan) -> tuple[_CitizensGuideFieldPa
                 ),
                 group[0],
             )
-            for group in tuple(grouped_positions.values())[:2]
+            for group in ordered_groups[:2]
         )
         position_ids = {claim.claim_id for claim in position_claims}
         position_slots = _unique_slots(

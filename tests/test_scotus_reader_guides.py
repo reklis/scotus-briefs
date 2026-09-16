@@ -386,6 +386,16 @@ def test_required_claim_that_exceeds_character_bound_fails_before_writing() -> N
     assert caught.value.safe_code == "unsupported_background"
 
 
+def test_decided_argument_case_requires_supported_supreme_court_outcome() -> None:
+    with pytest.raises(ReaderGuidePlanningError) as caught:
+        ReaderGuidePlanner().plan(
+            candidate(session(ARGUMENT_ID, NOW, 1), status=ScotusCaseStatus.DECIDED),
+            argued_claims(),
+            BriefMaturity.POST_OPINION,
+        )
+    assert caught.value.safe_code == "unsupported_court_action"
+
+
 def test_action_slots_keep_actor_action_object_polarity_and_effect() -> None:
     source = (
         claim(
@@ -420,6 +430,18 @@ def test_action_slots_keep_actor_action_object_polarity_and_effect() -> None:
     assert supreme.operative_object == "injunction"
     assert supreme.effect is ActionEffect.INTERIM
     assert supreme.timing == "pending appeal"
+
+    aliased = build_canonical_action_slots(
+        (
+            claim(
+                LegalObservationType.REQUESTED_DISPOSITION,
+                "The people asked the Supreme Court to reverse the judgment.",
+                attribution="Counsel for petitioner",
+            ),
+        )
+    )[0]
+    assert aliased.actor.casefold() == "the people"
+    assert aliased.actor_aliases == ("petitioner",)
 
 
 def test_action_slots_separate_actors_and_ignore_noun_uses() -> None:
@@ -457,6 +479,34 @@ def test_action_slots_separate_actors_and_ignore_noun_uses() -> None:
     )
     assert any(item.action is CanonicalAction.DENY for item in slots)
     assert not any(item.action is CanonicalAction.STAY for item in slots)
+
+    ordered = build_canonical_action_slots(
+        (
+            claim(
+                LegalObservationType.ORDER,
+                "The Supreme Court ordered the agency to restore the benefit.",
+            ),
+        )
+    )
+    assert any(
+        item.action is CanonicalAction.ORDER
+        and item.actor_role is CanonicalActorRole.SUPREME_COURT
+        for item in ordered
+    )
+
+    coordinated = build_canonical_action_slots(
+        (
+            claim(
+                LegalObservationType.HOLDING,
+                "The Supreme Court vacated the lower court's judgment and remanded the case.",
+            ),
+        )
+    )
+    assert {
+        item.actor_role
+        for item in coordinated
+        if item.action in {CanonicalAction.VACATE, CanonicalAction.REMAND}
+    } == {CanonicalActorRole.SUPREME_COURT}
 
     clauses = build_canonical_action_slots(
         (

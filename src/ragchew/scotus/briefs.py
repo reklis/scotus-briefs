@@ -72,6 +72,9 @@ class _CanonicalActionSlot(Protocol):
     def actor(self) -> str: ...
 
     @property
+    def actor_aliases(self) -> tuple[str, ...]: ...
+
+    @property
     def action(self) -> object: ...
 
     @property
@@ -1586,6 +1589,7 @@ _SLOT_ACTION_ALIASES = {
 # never satisfy a required action merely because the action classifier is unsure.
 _FAITHFUL_UNKNOWN_ACTION_PARAPHRASES: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bwip(?:e|ed|ing) away\b", re.IGNORECASE), "vacate"),
+    (re.compile(r"\bnullif(?:y|ies|ied|ying)\b", re.IGNORECASE), "vacate"),
 )
 _PARTY_ORDER_ISSUER = re.compile(
     r"\b(?:agency|applicant|government|party|petitioner|respondent|state)\b"
@@ -1603,7 +1607,7 @@ _REQUEST_ACTOR = re.compile(
     r"applicant|petitioner|respondent|government|agency|state)"
     r"(?:\s+(?:[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}()-]*|for|of|the)){0,5}?)\s+"
     r"(?:ask(?:s|ed|ing)?|request(?:s|ed|ing)?|seek(?:s|ing)?|sought|urge(?:s|d|ing)?|"
-    r"want(?:s|ed|ing)?)\b",
+    r"want(?:s|ed|ing)?|argue(?:s|d|ing)?)\b",
     re.IGNORECASE,
 )
 _FINAL_EFFECT = re.compile(r"\b(?:final(?:ly)?|permanent(?:ly)?|conclusive(?:ly)?)\b", re.I)
@@ -1625,12 +1629,18 @@ def _safe_action_object(value: str) -> str | None:
 def _safe_timing(value: str | None) -> str | None:
     if value is None:
         return None
-    if re.search(r"\bappeal\b", value, re.I):
-        return "appeal"
-    if re.search(r"\bpending\b", value, re.I):
-        return "pending"
+    if re.search(r"\bpending\b[^.!?]{0,40}\bappeal\b", value, re.I):
+        return "pending_appeal"
+    if re.search(r"\bbefore\b[^.!?]{0,40}\bappeal\b", value, re.I):
+        return "before_appeal"
+    if re.search(r"\bafter\b[^.!?]{0,40}\bappeal\b", value, re.I):
+        return "after_appeal"
+    if re.search(r"\bwhile\b[^.!?]{0,40}\bappeal\b", value, re.I):
+        return "while_appeal"
     if re.search(r"\buntil\b", value, re.I):
         return "until"
+    if re.search(r"\bpending\b", value, re.I):
+        return "pending"
     if re.search(r"\bwhile\b", value, re.I):
         return "while"
     if re.search(r"\b(?:during|before|after|when|on|by)\b", value, re.I):
@@ -1719,6 +1729,19 @@ def _detected_actions(sentence: str) -> tuple[tuple[_SafeActionTuple, str | None
         if action == "order" and not objects:
             objects = {"order"}
         prefix = sentence[max(0, action_match.start() - 45) : action_match.start()]
+        preceding_conjunctions = tuple(
+            re.finditer(r"\b(?:and|but)\b", sentence[: action_match.start()], re.I)
+        )
+        following_conjunction = re.search(
+            r"\b(?:and|but)\b", sentence[action_match.end() :], re.I
+        )
+        clause_start = preceding_conjunctions[-1].end() if preceding_conjunctions else 0
+        clause_end = (
+            action_match.end() + following_conjunction.start()
+            if following_conjunction
+            else len(sentence)
+        )
+        action_context = sentence[clause_start:clause_end]
         negated = bool(
             re.search(
                 r"\b(?:not|never|did not|does not|declined to|refused to)\b[^.!?]{0,30}$",
@@ -1728,9 +1751,9 @@ def _detected_actions(sentence: str) -> tuple[tuple[_SafeActionTuple, str | None
         )
         if detected_role == "request":
             effect = "requested"
-        elif _INTERIM_EFFECT.search(sentence):
+        elif _INTERIM_EFFECT.search(action_context):
             effect = "interim"
-        elif _FINAL_EFFECT.search(sentence) or action in _FINAL_ACTIONS:
+        elif _FINAL_EFFECT.search(action_context) or action in _FINAL_ACTIONS:
             effect = "final"
         else:
             effect = None
@@ -1741,7 +1764,7 @@ def _detected_actions(sentence: str) -> tuple[tuple[_SafeActionTuple, str | None
             role=detected_role,
             negated=negated,
             effect=effect,
-            timing=_safe_timing(sentence),
+            timing=_safe_timing(action_context),
         )
         detected.append(
             (safe, _detected_actor_name(sentence, action_match.start(), detected_actor))
@@ -1791,11 +1814,9 @@ def _tuple_conflict_reason(detected: _SafeActionTuple, expected: _SafeActionTupl
         return "object_conflict"
     if expected.effect == "interim" and detected.effect != "interim":
         return "effect_omission"
-    if (
-        detected.effect is not None
-        and expected.effect is not None
-        and detected.effect != expected.effect
-    ):
+    if expected.effect == "final" and detected.effect is None:
+        return "effect_omission"
+    if detected.effect is not None and detected.effect != expected.effect:
         return "effect_conflict"
     if expected.timing is not None and detected.timing is None:
         return "timing_omission"
@@ -1816,24 +1837,17 @@ def _actor_identity_conflicts(
         return False
     expected = _normalized_actor(expected_slot.actor)
     detected = _normalized_actor(detected_actor)
-    generic = {
-        "court",
-        "lower court",
-        "requesting party",
-        "other party",
-        "party",
+    accepted = {
+        expected,
+        *(
+            _normalized_actor(alias)
+            for alias in getattr(expected_slot, "actor_aliases", ())
+        ),
     }
-    if expected in generic:
+    generic = {"court", "lower court", "requesting party", "other party", "party"}
+    if accepted.intersection(generic) or detected in accepted:
         return False
-    role_opposites = {
-        "petitioner": ("respondent", "agency", "government"),
-        "respondent": ("petitioner", "applicant", "challenger"),
-        "united states": ("petitioner", "respondent", "applicant", "challenger"),
-        "amicus": ("petitioner", "respondent", "applicant", "agency"),
-    }
-    if expected in role_opposites:
-        return any(value in detected.split() for value in role_opposites[expected])
-    return bool(expected and detected and detected != expected)
+    return bool(expected and detected)
 
 
 def _validate_action_sentences_with_slots(
@@ -1843,8 +1857,6 @@ def _validate_action_sentences_with_slots(
     field_path: str,
 ) -> tuple[_ActionValidationDiagnostic, ...]:
     path = _safe_field_path(field_path)
-    if not canonical_slots:
-        return ()
     expected = tuple(_slot_tuple(slot) for slot in canonical_slots)
     detected = tuple(
         (action, actor_name, sentence)
@@ -1867,10 +1879,6 @@ def _validate_action_sentences_with_slots(
             return "actor_omission"
         if _actor_identity_conflicts(actor_name, canonical_slots[index]):
             return "actor_conflict"
-        material = set(re.findall(r"[a-z0-9]+", canonical_slots[index].operative_object.casefold()))
-        stated = set(re.findall(r"[a-z0-9]+", sentence.casefold()))
-        if material and not material.issubset(stated):
-            return "object_omission"
         return None
 
     for item, actor_name, sentence in detected:
@@ -2021,7 +2029,7 @@ def _validate_action_sentences(
     only a demonstrated tuple conflict or required omission; uncertain lexical mapping
     produces transient structured diagnostics and never stores the prose.
     """
-    if canonical_slots is None:
+    if not canonical_slots:
         _validate_action_sentences_legacy(text, supporting_claims)
         return ()
     return _validate_action_sentences_with_slots(
@@ -2919,7 +2927,7 @@ def _guide_paragraph_has_support(
     all_support_words = set().union(
         *(_guide_content_words(claim.public_value) for claim in supporting_claims)
     )
-    paragraph_overlap = min(1, len(all_support_words))
+    paragraph_overlap = min(2, len(all_support_words))
     if paragraph_overlap == 0 or len(paragraph_words & all_support_words) < paragraph_overlap:
         return False
     for sentence in sentences:
@@ -2927,7 +2935,8 @@ def _guide_paragraph_has_support(
         sentence_words = _guide_content_words(grounded_sentence)
         sentence_negated = _GUIDE_NEGATION.search(grounded_sentence) is not None
         if not any(
-            sentence_words & _guide_content_words(claim.public_value)
+            len(sentence_words & _guide_content_words(claim.public_value))
+            >= min(2, len(_guide_content_words(claim.public_value)))
             and (
                 not enforce_negation
                 or sentence_negated == (_GUIDE_NEGATION.search(claim.public_value) is not None)
@@ -3326,6 +3335,7 @@ def validate_brief_text_field(
     public_quotes: bool,
     canonical_slots: tuple[_CanonicalActionSlot, ...] | None = None,
     field_path: str = "unknown",
+    require_claim_support: bool = False,
     maximum_sentence_words: int = 30,
     maximum_paragraph_words: int = 120,
     severe_maximum_sentence_words: int = 60,
@@ -3346,6 +3356,16 @@ def validate_brief_text_field(
         severe_maximum_sentence_words=severe_maximum_sentence_words,
         severe_maximum_paragraph_words=severe_maximum_paragraph_words,
     )
+    if require_claim_support:
+        claim_map = {claim.claim_id: claim for claim in claims}
+        if not _guide_paragraph_has_support(
+            text,
+            tuple(claim_map[claim_id] for claim_id in claim_ids),
+        ):
+            raise BriefValidationError(
+                "Citizen's Guide field is not grounded in its assigned claims",
+                safe_code="ungrounded_citizens_guide_field",
+            )
     return tuple(sorted({finding.code.value for finding in findings}))
 
 
@@ -3469,12 +3489,35 @@ def validate_brief_draft(
 
     validate(draft.title, draft.title_claim_ids, context="title", field_path="title")
     validate(draft.dek, draft.dek_claim_ids, context="dek", field_path="dek")
+    if citizens_guide_profile and not _guide_paragraph_has_support(
+        draft.dek,
+        tuple(claim_map[claim_id] for claim_id in draft.dek_claim_ids),
+    ):
+        raise BriefValidationError(
+            "Citizen's Guide field is not grounded in its assigned claims",
+            safe_code="ungrounded_citizens_guide_field",
+        )
     used_claim_ids = {
         *draft.title_claim_ids,
         *draft.dek_claim_ids,
         *(claim_id for section in draft.sections for claim_id in section.claim_ids),
         *(claim_id for analysis in draft.argument_analyses for claim_id in analysis.claim_ids),
     }
+    if citizens_guide_profile and candidate.case_status in {
+        ScotusCaseStatus.DECIDED,
+        ScotusCaseStatus.ORDER_ISSUED,
+    }:
+        final_claim_ids = {
+            claim.claim_id
+            for claim in claims
+            if claim.observation_type in {LegalObservationType.HOLDING, LegalObservationType.ORDER}
+            and claim.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
+        }
+        if not final_claim_ids.intersection(used_claim_ids):
+            raise BriefValidationError(
+                "Citizen's Guide omits the supported Supreme Court outcome",
+                safe_code="missing_supreme_court_action_prose",
+            )
     if not candidate.argument_sessions:
         final_claim_ids = {
             claim.claim_id
@@ -3533,6 +3576,14 @@ def validate_brief_draft(
                 context="section_paragraph",
                 field_path=f"sections[{section_index}].paragraphs[{paragraph_index}]",
             )
+            if citizens_guide_profile and not _guide_paragraph_has_support(
+                paragraph,
+                tuple(claim_map[claim_id] for claim_id in section.claim_ids),
+            ):
+                raise BriefValidationError(
+                    "Citizen's Guide field is not grounded in its assigned claims",
+                    safe_code="ungrounded_citizens_guide_field",
+                )
         if candidate.argument_sessions:
             relevance = _section_relevance_finding(section, claim_map)
             if relevance is not None:

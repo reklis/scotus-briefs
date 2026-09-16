@@ -106,6 +106,14 @@
     "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "vacate", "operative_object": "judgment", "negated": false, "effect": "final"}
   },
   {
+    "label": "second unknown faithful lexical paraphrase",
+    "dimension": "lexical_ambiguity",
+    "text": "The Supreme Court nullified the judgment.",
+    "accepted": true,
+    "diagnostic": "ambiguous_lexical_paraphrase",
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "vacate", "operative_object": "judgment", "negated": false, "effect": "final"}
+  },
+  {
     "label": "unknown wording still exposes role change",
     "dimension": "lexical_ambiguity",
     "text": "The Supreme Court wiped away the judgment.",

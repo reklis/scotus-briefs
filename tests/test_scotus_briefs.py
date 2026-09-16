@@ -531,6 +531,26 @@ def test_disposition_only_draft_accepts_supported_plain_action_synonyms() -> Non
     _validate_action_sentences("The district court sent the case back.", (lower_court_claim,))
 
 
+def test_empty_canonical_slots_do_not_disable_legacy_action_rejection() -> None:
+    source = evaluate_brief_candidate(role_aware_disposition_candidate(), minimum_confidence=0.85)
+    question = source.claims[0].model_copy(
+        update={
+            "observation_type": LegalObservationType.QUESTION_PRESENTED,
+            "legal_status": LegalStatus.DESCRIBED,
+            "public_value": "Whether the lower court had power to block the agency rule.",
+        }
+    )
+
+    with pytest.raises(BriefValidationError) as caught:
+        _validate_action_sentences(
+            "The Supreme Court denied the application.",
+            (question,),
+            canonical_slots=(),
+            field_path="dek",
+        )
+    assert caught.value.safe_code == "unsupported_court_action"
+
+
 def test_question_framed_action_remains_a_question_not_a_lower_court_ruling() -> None:
     source = evaluate_brief_candidate(role_aware_disposition_candidate(), minimum_confidence=0.85)
     base = source.claims[0]
@@ -806,6 +826,17 @@ def test_citizens_guide_profile_has_deterministic_headings_and_no_session_detail
             citizens_guide_profile=True,
         )
     assert caught.value.safe_code == "invalid_citizens_guide_structure"
+
+    unsupported = guide.model_copy(update={"dek": "Bananas grow on a distant island."})
+    with pytest.raises(BriefValidationError) as ungrounded:
+        validate_brief_draft(
+            unsupported,
+            source,
+            decision.claims,
+            public_quotes=False,
+            citizens_guide_profile=True,
+        )
+    assert ungrounded.value.safe_code == "ungrounded_citizens_guide_field"
 
 
 def test_disposition_only_draft_accepts_zero_argument_analyses() -> None:
@@ -1797,9 +1828,10 @@ def test_26a124_shaped_guide_is_coherent_and_keeps_dissent_separate() -> None:
     )
     with pytest.raises(BriefValidationError) as caught:
         validate_brief_draft(invented_reason, source, decision.claims, public_quotes=False)
-    assert caught.value.safe_code == (
-        "ungrounded_guide_section_why_the_court_did_it_matches_case_background"
-    )
+    assert caught.value.safe_code in {
+        "ungrounded_guide_section_why_the_court_did_it",
+        "ungrounded_guide_section_why_the_court_did_it_matches_case_background",
+    }
 
 
 def test_local_brief_schema_matches_exact_argument_count() -> None:

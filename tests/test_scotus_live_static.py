@@ -1287,10 +1287,10 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
         "scotus-observation-v2:scotus-legal-v1:scotus-legal-extraction-v11-low-reasoning:"
         "official-document-text-v4"
     )
-    assert processor.policy_version == "scotus-brief-policy-v61"
+    assert processor.policy_version == "scotus-brief-policy-v62"
     assert processor.prompt_version == (
         "scotus-gpt-oss-citizens-guide-v7;schema=scotus-citizens-guide-schema-v2;reasoning=low;repair=scotus-guide-repair-v9-low;"
-        "planner=reader-guide-plan-v7;reader_prose=scotus-reader-prose-v2"
+        "planner=reader-guide-plan-v8;reader_prose=scotus-reader-prose-v2"
     )
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",
@@ -2026,10 +2026,10 @@ def test_brief_validation_gets_one_bounded_private_field_correction(
         "The case concerns statutory authority and a tax exemption.",
     ],
 )
-def test_style_warning_retains_original_without_requesting_unprovable_repair(
+def test_hard_valid_original_is_retained_without_requesting_unprovable_repair(
     tmp_path: Path, repair_text: str
 ) -> None:
-    original = "The case concerns statutory authority."
+    original = "The Court heard argument in the case."
 
     class StyleRepairModel(MockOpenAI):
         def create(self, **request: Any) -> object:

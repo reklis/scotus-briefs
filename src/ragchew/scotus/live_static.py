@@ -140,6 +140,7 @@ from ragchew.scotus.public_contracts import (
 from ragchew.scotus.publishing import build_public_case
 from ragchew.scotus.reader_guides import (
     CITIZENS_GUIDE_SCHEMA_VERSION,
+    MAX_CITIZENS_GUIDE_OUTPUT_TOKENS,
     READER_GUIDE_PLAN_VERSION,
     CompactReaderGuideWriter,
     ProcessLocalFieldDiagnostic,
@@ -200,7 +201,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v61"
+POLICY_VERSION = "scotus-brief-policy-v62"
 DOCUMENT_TEXT_VERSION = "official-document-text-v4"
 
 
@@ -1723,6 +1724,7 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
             ),
         },
         "maximum_output_tokens_per_call": (config.model_budget.maximum_output_tokens_per_call),
+        "maximum_citizens_guide_output_tokens": MAX_CITIZENS_GUIDE_OUTPUT_TOKENS,
     }
     config_digest = sha256_hex(canonical_json_bytes(processing_config, privacy_check=False))
     parser = f"{config.parser.name}:{config.parser.version}"
@@ -1894,6 +1896,7 @@ def _locate_reader_repair_path(
                 public_quotes=public_quotes,
                 canonical_slots=canonical_slots_by_field.get(_canonical_field_path(path)),
                 field_path=_canonical_field_path(path),
+                require_claim_support=True,
                 maximum_sentence_words=maximum_sentence_words,
                 maximum_paragraph_words=maximum_paragraph_words,
                 severe_maximum_sentence_words=severe_maximum_sentence_words,
@@ -2757,7 +2760,10 @@ class LiveStaticCaseProcessor:
                         else {}
                     ),
                 },
-                output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
+                output_tokens=min(
+                    self.config.model_budget.maximum_output_tokens_per_call,
+                    MAX_CITIZENS_GUIDE_OUTPUT_TOKENS,
+                ),
                 context_window_tokens=self.config.generation.context_window_tokens,
                 temperature=self.config.generation.temperature,
                 reasoning_level=self.config.generation.reasoning_level,
@@ -2773,7 +2779,8 @@ class LiveStaticCaseProcessor:
                     prompt=CompactReaderGuideWriter.PROMPT_VERSION,
                 ),
                 maximum_output_tokens=min(
-                    self.config.model_budget.maximum_output_tokens_per_call, 2_000
+                    self.config.model_budget.maximum_output_tokens_per_call,
+                    MAX_CITIZENS_GUIDE_OUTPUT_TOKENS,
                 ),
             ).generate(plan)
         except ReaderGuideWritingError as error:
@@ -2853,7 +2860,8 @@ class LiveStaticCaseProcessor:
                         validation_code=diagnostic.safe_code,
                     ),
                     maximum_output_tokens=min(
-                        self.config.model_budget.maximum_output_tokens_per_call, 2_000
+                        self.config.model_budget.maximum_output_tokens_per_call,
+                        MAX_CITIZENS_GUIDE_OUTPUT_TOKENS,
                     ),
                 )
 
@@ -2877,6 +2885,7 @@ class LiveStaticCaseProcessor:
                             _canonical_field_path(repair_path)
                         ),
                         field_path=_canonical_field_path(repair_path),
+                        require_claim_support=True,
                         maximum_sentence_words=(self.config.generation.maximum_sentence_words),
                         maximum_paragraph_words=(self.config.generation.maximum_paragraph_words),
                         severe_maximum_sentence_words=(
