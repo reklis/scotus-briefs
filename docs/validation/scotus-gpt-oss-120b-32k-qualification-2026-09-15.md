@@ -2,7 +2,7 @@
 
 ## Status
 
-**Synthetic low-reasoning qualification passed; fixture and canary qualification remain blocked pending execution.** The exact local artifact returned nonempty final schema content for cold and warm extraction and Citizen’s Guide requests, retained no reasoning, passed the production Guide assembler and hard validator, fit Spark’s reviewed resource envelope, and was unloaded cleanly. Production processing, brief generation, launch, and publication remain disabled.
+**Synthetic low-reasoning qualification passed; the first protected canary attempt stopped in its Qwen control arm and produced no GPT-OSS candidate.** The exact local artifact returned nonempty final schema content for cold and warm extraction and Citizen’s Guide requests, retained no reasoning, passed the production Guide assembler and hard validator, fit Spark’s reviewed resource envelope, and was unloaded cleanly. Production processing, brief generation, launch, and publication remain disabled.
 
 ## Provenance, license, and owner decision
 
@@ -45,6 +45,22 @@ The repository generated synthetic extraction evidence and a synthetic decided-c
 
 The final Guide response contained exactly the four applicable planner fields, remained within the 180-word and one-sentence-per-field profile, preserved deterministic metadata outside the model response, and passed field-specific canonical-slot validation. Style warnings are nonfatal and do not authorize model rewriting.
 
+## First fixed-canary attempt
+
+Protected workflow run [`35095151207`](https://github.com/reklis/scotus-briefs/actions/runs/35095151207) used source commit `685cf3a3c6539d1e4c44f86fba948e433b642b11`, `mode=nightly`, `editorial_rollout_stage=canary_10`, `maximum_cases=0`, and `deploy=false`. The fixed ten-case manifest and current generated-content parent were used without substitution. The run stopped in the contemporaneous Qwen control arm after approximately 74 minutes, before GPT-OSS started.
+
+Sanitized outcome accounting was:
+
+- `2025-26a124`: extraction validation failure;
+- `2025-24-43`: extraction validation failure;
+- `2025-24-38`: Citizen’s Guide sentence-limit failure;
+- `2024-24a884`: invalid writer schema; and
+- `2024-24-394`, `2024-24-304`, `2024-24-362`, `2024-24-249`, `2024-24-320`, and `2024-24-7`: source unavailable before a model attempt.
+
+The control made 39 receipted model calls: 37 extraction calls and 2 Guide calls. All transport attempts completed, but no case was accepted. Because six nonaccepted outcomes had no model attempt, the paired-baseline validator correctly rejected the incomplete comparison with `paired canary nonaccepted outcomes require a model attempt`. No control binding, GPT-OSS call, review manifest, preview candidate, state candidate, or deployable artifact was created. Only opaque control receipts were retained for one day. Volatile evidence and workspaces were removed; the remaining Qwen process was stopped explicitly, no model remained loaded, and Spark returned to 116.06 GiB available memory. Workflow cleanup was subsequently hardened to unload both exact canary models unconditionally.
+
+This is a failed qualification attempt, not a completed canary and not evidence for promotion. The fixed manifest must not be substituted or reduced; source availability must be diagnosed or a fresh exact canary must complete before manual Guide review.
+
 ## Runtime assessment
 
 Using the slowest valid cold response, 100 sequential cold calls project to about 46.3 minutes of model time before Court I/O, deterministic validation, and bounded retry overhead. This remains below the unchanged five-hour ceiling and does not require a budget increase. The estimate is conservative but synthetic; fixture-backed and fixed ten-case measurements are still required before promotion.
@@ -53,4 +69,4 @@ Using the slowest valid cold response, 100 sequential cold calls project to abou
 
 The exact artifact passes identity, license record, disk, memory headroom, context, final-content-only low-reasoning transport, synthetic extraction, synthetic Guide assembly/validation, runtime projection, and cleanup checks. It is **not approved for production or publication**. No Court retrieval, private-evidence request, candidate upload, public-content mutation, release change, or model substitution occurred during these probes.
 
-Next required gates are one fixture-backed publication-disabled end-to-end qualification, the fixed publication-disabled ten-case canary, manual review of every hard-valid Guide, privacy/release checks, and explicit exact-candidate approval. All processing and launch gates remain closed until those gates pass.
+Next required gates are one fixture-backed publication-disabled end-to-end qualification, a complete fixed publication-disabled ten-case canary, manual review of every hard-valid Guide, privacy/release checks, and explicit exact-candidate approval. The failed control-only run above supplies no reviewable candidate. All processing and launch gates remain closed until those gates pass.
