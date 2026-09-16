@@ -624,10 +624,168 @@ def test_canonical_slot_corpus_covers_required_action_dimensions() -> None:
         "negation",
         "effect",
         "order_issuer_recipient",
+        "actor_identity",
+        "object",
+        "timing",
         "lexical_ambiguity",
         "omission",
     }.issubset({example["dimension"] for example in ACTION_PARAPHRASES})
     assert {example["accepted"] for example in ACTION_PARAPHRASES} == {True, False}
+
+
+def test_canonical_slot_mapping_reaches_exact_draft_field() -> None:
+    source = candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    draft = FakeGenerator().generate(  # type: ignore[no-untyped-call]
+        source, decision.claims, decision.maturity
+    )
+    slot = SimpleNamespace(
+        actor_role="requesting_party",
+        actor="Applicant",
+        action="reverse",
+        operative_object="judgment",
+        negated=False,
+        effect="requested",
+        timing=None,
+    )
+    target = "sections[0].paragraphs[0]"
+    valid = draft.model_copy(
+        update={
+            "sections": (
+                draft.sections[0].model_copy(
+                    update={
+                        "paragraphs": (
+                            "The Applicant asked the Supreme Court to overturn the judgment.",
+                        )
+                    }
+                ),
+                *draft.sections[1:],
+            )
+        }
+    )
+    validate_brief_draft(
+        valid,
+        source,
+        decision.claims,
+        public_quotes=False,
+        canonical_slots={target: (slot,)},
+    )
+
+    invalid = valid.model_copy(
+        update={
+            "sections": (
+                valid.sections[0].model_copy(
+                    update={
+                        "paragraphs": (
+                            "The Respondent asked the Supreme Court to overturn the judgment.",
+                        )
+                    }
+                ),
+                *valid.sections[1:],
+            )
+        }
+    )
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(
+            invalid,
+            source,
+            decision.claims,
+            public_quotes=False,
+            canonical_slots={target: (slot,)},
+        )
+    assert caught.value.action_diagnostics[0].field_path == target
+    assert caught.value.action_diagnostics[0].reason == "actor_conflict"
+    assert "Applicant" not in repr(caught.value.action_diagnostics)
+    assert "Respondent" not in repr(caught.value.action_diagnostics)
+
+
+def test_canonical_slots_require_each_distinct_action_once() -> None:
+    lower = SimpleNamespace(
+        actor_role="lower_court",
+        actor="district court",
+        action="block",
+        operative_object="injunction",
+        negated=False,
+        effect="unspecified",
+        timing=None,
+    )
+    supreme = SimpleNamespace(
+        actor_role="supreme_court",
+        actor="Supreme Court",
+        action="vacate",
+        operative_object="judgment",
+        negated=False,
+        effect="final",
+        timing=None,
+    )
+    assert not _validate_action_sentences(
+        "The district court blocked the injunction. "
+        "The Supreme Court cancelled the judgment.",
+        (),
+        canonical_slots=(lower, supreme),
+        field_path="sections[1].paragraphs[0]",
+    )
+    with pytest.raises(BriefValidationError) as caught:
+        _validate_action_sentences(
+            "The Supreme Court cancelled the judgment.",
+            (),
+            canonical_slots=(lower, supreme),
+            field_path="sections[1].paragraphs[0]",
+        )
+    assert caught.value.action_diagnostics[0].reason == "required_slot_omission"
+    with pytest.raises(BriefValidationError) as duplicate:
+        _validate_action_sentences(
+            "The Supreme Court cancelled the judgment.",
+            (),
+            canonical_slots=(supreme, supreme),
+            field_path="sections[1].paragraphs[0]",
+        )
+    assert duplicate.value.action_diagnostics[0].reason == "required_slot_omission"
+
+
+def test_citizens_guide_profile_has_deterministic_headings_and_no_session_detail() -> None:
+    source = candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    legacy = FakeGenerator().generate(  # type: ignore[no-untyped-call]
+        source, decision.claims, decision.maturity
+    )
+    guide = legacy.model_copy(
+        update={
+            "sections": tuple(
+                section.model_copy(update={"heading": heading})
+                for section, heading in zip(
+                    legacy.sections,
+                    (
+                        "What the sides say",
+                        "What the Supreme Court did",
+                        "Why it matters",
+                    ),
+                    strict=False,
+                )
+            ),
+            "argument_analyses": (),
+        }
+    )
+    validate_brief_draft(
+        guide,
+        source,
+        decision.claims,
+        public_quotes=False,
+        citizens_guide_profile=True,
+    )
+    with pytest.raises(BriefValidationError, match="every argument session"):
+        validate_brief_draft(guide, source, decision.claims, public_quotes=False)
+
+    wrong_order = guide.model_copy(update={"sections": tuple(reversed(guide.sections))})
+    with pytest.raises(BriefValidationError) as caught:
+        validate_brief_draft(
+            wrong_order,
+            source,
+            decision.claims,
+            public_quotes=False,
+            citizens_guide_profile=True,
+        )
+    assert caught.value.safe_code == "invalid_citizens_guide_structure"
 
 
 def test_disposition_only_draft_accepts_zero_argument_analyses() -> None:

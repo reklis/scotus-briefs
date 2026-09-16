@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import re
-from collections.abc import Callable
+from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Any, Literal, Protocol
@@ -49,6 +49,7 @@ class _SafeActionTuple:
     role: str | None
     negated: bool | None
     effect: str | None
+    timing: str | None = None
 
 
 @dataclass(frozen=True)
@@ -70,6 +71,7 @@ class _CanonicalActionSlot(Protocol):
     operative_object: str
     negated: bool
     effect: object
+    timing: str | None
 
 
 class BriefValidationError(ValueError):
@@ -273,6 +275,13 @@ DISPOSITION_GUIDE_HEADINGS = (
     "Why the Court did it",
 )
 DISPOSITION_SEPARATE_OPINIONS_HEADING = "What separate opinions said"
+# The compact Citizen's Guide uses the dek for ``what_it_is_about``. Its three
+# public sections are deterministic metadata, not model-selected prose.
+CITIZENS_GUIDE_HEADINGS = (
+    "What the sides say",
+    "What the Supreme Court did",
+    "Why it matters",
+)
 
 
 def _disposition_support_by_heading(
@@ -1549,17 +1558,27 @@ def _validate_action_sentences_legacy(
 _SLOT_ACTION_ALIASES = {
     "approve": "grant",
 }
-_UNKNOWN_ACTION_PARAPHRASE = re.compile(
-    r"\b(?:gave|give|kept|let|made|received|refused|struck|turned|wiped)\b",
-    re.IGNORECASE,
-)
-_ACTIONLESS_FIELD = re.compile(
-    r"\b(?:concerns?|discuss(?:ed|es)?|background|history|issue)\b",
-    re.IGNORECASE,
+# This allowlist is intentionally tiny and fixture-labeled. Arbitrary prose must
+# never satisfy a required action merely because the action classifier is unsure.
+_FAITHFUL_UNKNOWN_ACTION_PARAPHRASES: tuple[tuple[re.Pattern[str], str], ...] = (
+    (re.compile(r"\bwip(?:e|ed|ing) away\b", re.IGNORECASE), "vacate"),
 )
 _PARTY_ORDER_ISSUER = re.compile(
     r"\b(?:agency|applicant|government|party|petitioner|respondent|state)\b"
     r"[^.!?]{0,50}\b(?:entered|issued|made)\b[^.!?]{0,20}\border\b",
+    re.IGNORECASE,
+)
+_NAMED_ORDER_ISSUER = re.compile(
+    r"^\s*(?!The (?:Supreme |District |Appeals |Lower )?Court\b)"
+    r"[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}()-]*"
+    r"(?:\s+[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}()-]*){0,4}\s+"
+    r"(?:entered|issued|made)\b[^.!?]{0,20}\border\b"
+)
+_REQUEST_ACTOR = re.compile(
+    r"^\s*(?P<actor>(?:the\s+)?(?:[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}()-]*|"
+    r"applicant|petitioner|respondent|government|agency|state)"
+    r"(?:\s+(?:[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}()-]*|for|of|the)){0,5}?)\s+"
+    r"(?:ask(?:s|ed|ing)?|request(?:s|ed|ing)?|seek(?:s|ing)?|sought|urge(?:s|d|ing)?)\b",
     re.IGNORECASE,
 )
 _FINAL_EFFECT = re.compile(r"\b(?:final(?:ly)?|permanent(?:ly)?|conclusive(?:ly)?)\b", re.I)
@@ -1578,13 +1597,63 @@ def _safe_action_object(value: str) -> str | None:
     return _canonical_action_object(value, match)
 
 
+def _safe_timing(value: str | None) -> str | None:
+    if value is None:
+        return None
+    if re.search(r"\bappeal\b", value, re.I):
+        return "appeal"
+    if re.search(r"\bpending\b", value, re.I):
+        return "pending"
+    if re.search(r"\buntil\b", value, re.I):
+        return "until"
+    if re.search(r"\bwhile\b", value, re.I):
+        return "while"
+    if re.search(r"\b(?:during|before|after|when|on|by)\b", value, re.I):
+        return "specified"
+    return None
+
+
+def _normalized_actor(value: str) -> str:
+    words = re.findall(r"[a-z0-9]+", value.casefold())
+    if words[:1] == ["the"]:
+        words = words[1:]
+    return " ".join(words)
+
+
+def _detected_actor_name(sentence: str, action_start: int, actor_role: str | None) -> str | None:
+    if actor_role == "requesting_party":
+        match = _REQUEST_ACTOR.search(sentence)
+        return match.group("actor") if match is not None else None
+    if actor_role == "other_party":
+        match = re.search(
+            r"^\s*((?:the\s+)?(?:[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}()-]*|"
+            r"agency|applicant|government|party|petitioner|respondent|state)"
+            r"(?:\s+[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}()-]*){0,4}?)\s+"
+            r"(?:entered|issued|made)\b",
+            sentence,
+            re.I,
+        )
+        return match.group(1) if match is not None else None
+    pattern = {
+        "lower_court": _LOWER_COURT_ACTOR,
+        "supreme_court": _SUPREME_COURT_ACTOR,
+    }.get(actor_role or "")
+    if pattern is None:
+        return None
+    matches = tuple(pattern.finditer(sentence))
+    if not matches:
+        return None
+    preceding = tuple(match for match in matches if match.start() < action_start)
+    return (preceding[-1] if preceding else matches[-1]).group(0)
+
+
 def _slot_tuple(slot: _CanonicalActionSlot) -> _SafeActionTuple:
     actor_role = _enum_text(slot.actor_role)
     role = "request" if actor_role in {"requesting_party", "other_party"} else "ruling"
     raw_effect = _enum_text(slot.effect)
-    effect: str | None = raw_effect
-    if raw_effect in {"unspecified", "requested"}:
-        effect = "requested" if raw_effect == "requested" else None
+    effect: str | None = "requested" if role == "request" else raw_effect
+    if role != "request" and raw_effect == "unspecified":
+        effect = None
     action = _SLOT_ACTION_ALIASES.get(_enum_text(slot.action), _enum_text(slot.action))
     return _SafeActionTuple(
         actor=actor_role,
@@ -1593,12 +1662,13 @@ def _slot_tuple(slot: _CanonicalActionSlot) -> _SafeActionTuple:
         role=role,
         negated=slot.negated,
         effect=effect,
+        timing=_safe_timing(getattr(slot, "timing", None)),
     )
 
 
-def _detected_action_tuples(sentence: str) -> tuple[_SafeActionTuple, ...]:
+def _detected_actions(sentence: str) -> tuple[tuple[_SafeActionTuple, str | None], ...]:
     role = _action_role(sentence)
-    if _PARTY_ORDER_ISSUER.search(sentence):
+    if _PARTY_ORDER_ISSUER.search(sentence) or _NAMED_ORDER_ISSUER.search(sentence):
         detected_actor = "other_party"
         detected_role = "ruling"
     elif role == "requested":
@@ -1612,7 +1682,7 @@ def _detected_action_tuples(sentence: str) -> tuple[_SafeActionTuple, ...]:
         detected_role = None
 
     pairs = _action_object_pairs(sentence)
-    detected: list[_SafeActionTuple] = []
+    detected: list[tuple[_SafeActionTuple, str | None]] = []
     for action_match in _ACTION_WORD.finditer(sentence):
         action = _canonical_action(action_match.group(0))
         if action is None:
@@ -1639,17 +1709,23 @@ def _detected_action_tuples(sentence: str) -> tuple[_SafeActionTuple, ...]:
             effect = "final"
         else:
             effect = None
+        safe = _SafeActionTuple(
+            actor=detected_actor,
+            action=action,
+            operative_object=next(iter(sorted(objects)), None),
+            role=detected_role,
+            negated=negated,
+            effect=effect,
+            timing=_safe_timing(sentence),
+        )
         detected.append(
-            _SafeActionTuple(
-                actor=detected_actor,
-                action=action,
-                operative_object=next(iter(sorted(objects)), None),
-                role=detected_role,
-                negated=negated,
-                effect=effect,
-            )
+            (safe, _detected_actor_name(sentence, action_match.start(), detected_actor))
         )
     return tuple(dict.fromkeys(detected))
+
+
+def _detected_action_tuples(sentence: str) -> tuple[_SafeActionTuple, ...]:
+    return tuple(item for item, _ in _detected_actions(sentence))
 
 
 def _safe_field_path(value: str) -> str:
@@ -1661,7 +1737,7 @@ def _slot_error_code(expected: _SafeActionTuple, reason: str) -> str:
         return "unsupported_action_role"
     if reason == "effect_omission" and expected.effect == "interim":
         return "incomplete_interim_stay_effect"
-    if reason == "object_conflict" and expected.actor == "supreme_court":
+    if reason in {"object_conflict", "object_omission"} and expected.actor == "supreme_court":
         return "unsupported_supreme_court_action_object"
     return {
         "requesting_party": "unsupported_requested_action",
@@ -1680,6 +1756,8 @@ def _tuple_conflict_reason(detected: _SafeActionTuple, expected: _SafeActionTupl
         return "action_conflict"
     if detected.negated != expected.negated:
         return "polarity_conflict"
+    if expected.operative_object is not None and detected.operative_object is None:
+        return "object_omission"
     if (
         detected.operative_object is not None
         and expected.operative_object is not None
@@ -1694,7 +1772,33 @@ def _tuple_conflict_reason(detected: _SafeActionTuple, expected: _SafeActionTupl
         and detected.effect != expected.effect
     ):
         return "effect_conflict"
+    if expected.timing is not None and detected.timing is None:
+        return "timing_omission"
+    if (
+        detected.timing is not None
+        and expected.timing is not None
+        and detected.timing != expected.timing
+    ):
+        return "timing_conflict"
     return None
+
+
+def _actor_identity_conflicts(
+    detected_actor: str | None,
+    expected_slot: _CanonicalActionSlot,
+) -> bool:
+    if detected_actor is None:
+        return False
+    expected = _normalized_actor(expected_slot.actor)
+    detected = _normalized_actor(detected_actor)
+    generic = {
+        "court",
+        "lower court",
+        "requesting party",
+        "other party",
+        "party",
+    }
+    return bool(expected and expected not in generic and detected and detected != expected)
 
 
 def _validate_action_sentences_with_slots(
@@ -1706,19 +1810,39 @@ def _validate_action_sentences_with_slots(
     path = _safe_field_path(field_path)
     expected = tuple(_slot_tuple(slot) for slot in canonical_slots)
     detected = tuple(
-        action
+        (action, actor_name, sentence)
         for sentence_match in _SENTENCE.finditer(text)
-        for action in _detected_action_tuples(sentence_match.group(0))
+        for sentence in (sentence_match.group(0),)
+        for action, actor_name in _detected_actions(sentence)
     )
-    diagnostics: list[_ActionValidationDiagnostic] = []
     matched: set[int] = set()
 
-    for item in detected:
+    def conflict_reason(
+        item: _SafeActionTuple,
+        actor_name: str | None,
+        sentence: str,
+        index: int,
+    ) -> str | None:
+        reason = _tuple_conflict_reason(item, expected[index])
+        if reason is not None:
+            return reason
+        if actor_name is None:
+            return "actor_omission"
+        if _actor_identity_conflicts(actor_name, canonical_slots[index]):
+            return "actor_conflict"
+        if expected[index].operative_object is None:
+            material = _normalized_actor(canonical_slots[index].operative_object)
+            if material and material not in _normalized_actor(sentence):
+                return "object_omission"
+        return None
+
+    for item, actor_name, sentence in detected:
         compatible = next(
             (
                 index
-                for index, slot in enumerate(expected)
-                if _tuple_conflict_reason(item, slot) is None
+                for index in range(len(expected))
+                if index not in matched
+                and conflict_reason(item, actor_name, sentence, index) is None
             ),
             None,
         )
@@ -1726,14 +1850,21 @@ def _validate_action_sentences_with_slots(
             matched.add(compatible)
             continue
         comparison_index = next(
-            (index for index, slot in enumerate(expected) if slot.action == item.action),
+            (
+                index
+                for index, slot in enumerate(expected)
+                if index not in matched and slot.action == item.action
+            ),
             next(
-                (index for index, slot in enumerate(expected) if slot.actor == item.actor),
-                0 if expected else None,
+                (
+                    index
+                    for index, slot in enumerate(expected)
+                    if index not in matched and slot.actor == item.actor
+                ),
+                next((index for index in range(len(expected)) if index not in matched), None),
             ),
         )
         if comparison_index is None:
-            # A supplied empty slot collection deliberately permits no action.
             empty = _SafeActionTuple(None, None, None, None, None, None)
             diagnostic = _ActionValidationDiagnostic(path, item, empty, "unexpected_action")
             raise BriefValidationError(
@@ -1742,7 +1873,7 @@ def _validate_action_sentences_with_slots(
                 action_diagnostics=(diagnostic,),
             )
         slot = expected[comparison_index]
-        reason = _tuple_conflict_reason(item, slot)
+        reason = conflict_reason(item, actor_name, sentence, comparison_index)
         assert reason is not None
         diagnostic = _ActionValidationDiagnostic(path, item, slot, reason)
         raise BriefValidationError(
@@ -1751,8 +1882,8 @@ def _validate_action_sentences_with_slots(
             action_diagnostics=(diagnostic,),
         )
 
-    unmatched = tuple(slot for index, slot in enumerate(expected) if index not in matched)
-    if not unmatched:
+    unmatched_indexes = tuple(index for index in range(len(expected)) if index not in matched)
+    if not unmatched_indexes:
         return ()
     if not detected:
         requested = re.search(
@@ -1779,53 +1910,64 @@ def _validate_action_sentences_with_slots(
             role,
             None,
             "interim" if _INTERIM_EFFECT.search(text) else None,
+            _safe_timing(text),
         )
         if actor is not None and all(
-            slot.actor != actor or slot.role != role for slot in unmatched
+            expected[index].actor != actor or expected[index].role != role
+            for index in unmatched_indexes
         ):
-            slot = unmatched[0]
+            slot = expected[unmatched_indexes[0]]
             diagnostic = _ActionValidationDiagnostic(path, ambiguous, slot, "actor_role_conflict")
             raise BriefValidationError(
                 "action statement conflicts with its canonical field slot",
                 safe_code=_slot_error_code(slot, diagnostic.reason),
                 action_diagnostics=(diagnostic,),
             )
-        if text.strip() and not _ACTIONLESS_FIELD.search(text):
-            # Unknown wording is not evidence of contradiction. Return only canonical,
-            # prose-free diagnostics so a process-local caller may choose a bounded repair.
-            return tuple(
-                _ActionValidationDiagnostic(
-                    path,
-                    ambiguous,
-                    slot,
-                    "ambiguous_lexical_paraphrase",
+        faithful_actions = {
+            action
+            for pattern, action in _FAITHFUL_UNKNOWN_ACTION_PARAPHRASES
+            if pattern.search(text)
+        }
+        if len(unmatched_indexes) == 1:
+            index = unmatched_indexes[0]
+            slot = expected[index]
+            actor_name = _detected_actor_name(text, len(text), actor)
+            object_matches = (
+                slot.operative_object is None
+                or ambiguous.operative_object == slot.operative_object
+            )
+            timing_matches = slot.timing is None or ambiguous.timing == slot.timing
+            if (
+                slot.action in faithful_actions
+                and actor == slot.actor
+                and role == slot.role
+                and object_matches
+                and timing_matches
+                and actor_name is not None
+                and not _actor_identity_conflicts(actor_name, canonical_slots[index])
+            ):
+                return (
+                    _ActionValidationDiagnostic(
+                        path,
+                        ambiguous,
+                        slot,
+                        "ambiguous_lexical_paraphrase",
+                    ),
                 )
-                for slot in unmatched
-            )
-    elif _UNKNOWN_ACTION_PARAPHRASE.search(text):
-        return tuple(
-            _ActionValidationDiagnostic(
-                path,
-                _SafeActionTuple(None, None, None, None, None, None),
-                slot,
-                "ambiguous_lexical_paraphrase",
-            )
-            for slot in unmatched
-        )
 
-    diagnostics.extend(
+    diagnostics = tuple(
         _ActionValidationDiagnostic(
             path,
             _SafeActionTuple(None, None, None, None, None, None),
-            slot,
+            expected[index],
             "required_slot_omission",
         )
-        for slot in unmatched
+        for index in unmatched_indexes
     )
     raise BriefValidationError(
         "action field omits a required canonical slot",
         safe_code="missing_required_action_slot",
-        action_diagnostics=tuple(diagnostics),
+        action_diagnostics=diagnostics,
     )
 
 
@@ -2448,6 +2590,8 @@ def _validate_public_text(
     *,
     public_quotes: bool,
     validation_context: str = "text",
+    canonical_slots: tuple[_CanonicalActionSlot, ...] | None = None,
+    field_path: str = "unknown",
     maximum_sentence_words: int,
     maximum_paragraph_words: int,
     severe_maximum_sentence_words: int,
@@ -2530,7 +2674,12 @@ def _validate_public_text(
             raise BriefValidationError("text adds an unsupported docket")
     supporting_claims = tuple(claim_map[value] for value in claim_ids)
     if validation_context in {"dek", "section_paragraph", "argument_paragraph"}:
-        _validate_action_sentences(action_text, supporting_claims)
+        _validate_action_sentences(
+            action_text,
+            supporting_claims,
+            canonical_slots=canonical_slots,
+            field_path=field_path,
+        )
     exact_official_caption = (
         validation_context == "title"
         and not candidate.argument_sessions
@@ -2640,6 +2789,10 @@ def _action_object_pairs(value: str) -> set[tuple[str, str]]:
     for action_match in _ACTION_WORD.finditer(value):
         action = _canonical_action(action_match.group(0))
         if action is None or action == "order":
+            continue
+        contained = _OPERATIVE_OBJECT.search(value, action_match.start(), action_match.end())
+        if contained is not None and contained.start() > action_match.start():
+            pairs.add((action, _canonical_action_object(value, contained)))
             continue
         sentence_end = min(
             (position for mark in ".!?" if (position := value.find(mark, action_match.end())) >= 0),
@@ -3157,11 +3310,17 @@ def validate_brief_draft(
     claims: tuple[ScotusApprovedClaim, ...],
     *,
     public_quotes: bool,
+    canonical_slots: Mapping[str, tuple[_CanonicalActionSlot, ...]] | None = None,
+    canonical_slots_by_field: Mapping[str, tuple[_CanonicalActionSlot, ...]] | None = None,
+    citizens_guide_profile: bool = False,
     maximum_sentence_words: int = 30,
     maximum_paragraph_words: int = 120,
     severe_maximum_sentence_words: int = 60,
     severe_maximum_paragraph_words: int = 240,
 ) -> tuple[str, ...]:
+    if canonical_slots is not None and canonical_slots_by_field is not None:
+        raise ValueError("supply only one canonical slot mapping")
+    slot_mapping = canonical_slots_by_field or canonical_slots
     claim_map = {claim.claim_id: claim for claim in claims}
     editorial_findings: list[EditorialFinding] = []
     if not draft.sections:
@@ -3175,6 +3334,22 @@ def validate_brief_draft(
     headings = [section.heading.strip().casefold() for section in draft.sections]
     if len(headings) != len(set(headings)):
         raise BriefValidationError("brief repeats a section heading")
+    if citizens_guide_profile:
+        if tuple(section.heading.strip() for section in draft.sections) != CITIZENS_GUIDE_HEADINGS:
+            raise BriefValidationError(
+                "Citizen's Guide has incomplete or model-selected section headings",
+                safe_code="invalid_citizens_guide_structure",
+            )
+        if any(len(section.paragraphs) != 1 for section in draft.sections):
+            raise BriefValidationError(
+                "Citizen's Guide sections must each contain one prose field",
+                safe_code="invalid_citizens_guide_structure",
+            )
+        if draft.argument_analyses:
+            raise BriefValidationError(
+                "Citizen's Guide cannot contain session-by-session analysis",
+                safe_code="invalid_citizens_guide_structure",
+            )
     if draft.title.strip().casefold() in {
         "what this case is about",
         "plain-language guide",
@@ -3197,7 +3372,19 @@ def validate_brief_draft(
     if total_words > 1500:
         raise BriefValidationError("brief is too long for a citizen-facing case page")
 
-    def validate(text: str, claim_ids: tuple[UUID, ...], *, context: str) -> None:
+    mapped_paths: set[str] = set()
+
+    def validate(
+        text: str,
+        claim_ids: tuple[UUID, ...],
+        *,
+        context: str,
+        field_path: str,
+    ) -> None:
+        canonical_slots = None
+        if slot_mapping is not None and field_path in slot_mapping:
+            canonical_slots = tuple(slot_mapping[field_path])
+            mapped_paths.add(field_path)
         editorial_findings.extend(
             _validate_public_text(
                 text,
@@ -3206,6 +3393,8 @@ def validate_brief_draft(
                 claim_map,
                 public_quotes=public_quotes,
                 validation_context=context,
+                canonical_slots=canonical_slots,
+                field_path=field_path,
                 maximum_sentence_words=maximum_sentence_words,
                 maximum_paragraph_words=maximum_paragraph_words,
                 severe_maximum_sentence_words=severe_maximum_sentence_words,
@@ -3213,8 +3402,8 @@ def validate_brief_draft(
             )
         )
 
-    validate(draft.title, draft.title_claim_ids, context="title")
-    validate(draft.dek, draft.dek_claim_ids, context="dek")
+    validate(draft.title, draft.title_claim_ids, context="title", field_path="title")
+    validate(draft.dek, draft.dek_claim_ids, context="dek", field_path="dek")
     used_claim_ids = {
         *draft.title_claim_ids,
         *draft.dek_claim_ids,
@@ -3243,12 +3432,13 @@ def validate_brief_draft(
             raise BriefValidationError("disposition-only brief omits the Court action")
         if not docket_claim_ids.intersection(used_claim_ids):
             raise BriefValidationError("disposition-only brief omits docket provenance")
-    for required_type in (
+    required_context_types = (
         LegalObservationType.QUESTION_PRESENTED,
         LegalObservationType.PROCEDURAL_POSTURE,
         LegalObservationType.ADVOCATE_CONTENTION,
-        LegalObservationType.JUSTICE_QUESTION,
-    ):
+        *(() if citizens_guide_profile else (LegalObservationType.JUSTICE_QUESTION,)),
+    )
+    for required_type in required_context_types:
         matching = {claim.claim_id for claim in claims if claim.observation_type is required_type}
         if matching and not matching.intersection(used_claim_ids):
             raise BriefValidationError(
@@ -3257,23 +3447,37 @@ def validate_brief_draft(
     for matching in _position_claim_groups(claims):
         if not matching.intersection(used_claim_ids):
             raise BriefValidationError("brief omits an available side's position")
-    for section in draft.sections:
-        validate(section.heading, section.claim_ids, context="section_heading")
-        for paragraph in section.paragraphs:
-            validate(paragraph, section.claim_ids, context="section_paragraph")
+    for section_index, section in enumerate(draft.sections):
+        validate(
+            section.heading,
+            section.claim_ids,
+            context="section_heading",
+            field_path=f"sections[{section_index}].heading",
+        )
+        for paragraph_index, paragraph in enumerate(section.paragraphs):
+            validate(
+                paragraph,
+                section.claim_ids,
+                context="section_paragraph",
+                field_path=f"sections[{section_index}].paragraphs[{paragraph_index}]",
+            )
         if candidate.argument_sessions:
             relevance = _section_relevance_finding(section, claim_map)
             if relevance is not None:
                 editorial_findings.append(relevance)
-    if not candidate.argument_sessions:
+    if not candidate.argument_sessions and not citizens_guide_profile:
         _validate_disposition_guide_structure(draft, claims)
-    expected_sessions = tuple(session.argument_id for session in candidate.argument_sessions)
+    expected_sessions = (
+        ()
+        if citizens_guide_profile
+        else tuple(session.argument_id for session in candidate.argument_sessions)
+    )
     actual_sessions = tuple(item.argument_id for item in draft.argument_analyses)
     if actual_sessions != expected_sessions:
         raise BriefValidationError(
             "brief must analyze every argument session in chronological order"
         )
-    for analysis in draft.argument_analyses:
+    for analysis_index, analysis in enumerate(draft.argument_analyses):
         if any(
             claim_map[claim_id].argument_id != analysis.argument_id
             for claim_id in analysis.claim_ids
@@ -3298,9 +3502,28 @@ def validate_brief_draft(
         for matching in _position_claim_groups(session_claims):
             if not matching.intersection(analysis_ids):
                 raise BriefValidationError("argument breakdown omits one side")
-        validate(analysis.heading, analysis.claim_ids, context="argument_heading")
-        for paragraph in analysis.paragraphs:
-            validate(paragraph, analysis.claim_ids, context="argument_paragraph")
+        validate(
+            analysis.heading,
+            analysis.claim_ids,
+            context="argument_heading",
+            field_path=f"argument_analyses[{analysis_index}].heading",
+        )
+        for paragraph_index, paragraph in enumerate(analysis.paragraphs):
+            validate(
+                paragraph,
+                analysis.claim_ids,
+                context="argument_paragraph",
+                field_path=(
+                    f"argument_analyses[{analysis_index}].paragraphs[{paragraph_index}]"
+                ),
+            )
+    if slot_mapping is not None:
+        unused_paths = set(slot_mapping).difference(mapped_paths)
+        if unused_paths:
+            raise BriefValidationError(
+                "canonical action slots reference no validated field",
+                safe_code="invalid_canonical_slot_mapping",
+            )
     return tuple(sorted({finding.code.value for finding in editorial_findings}))
 
 

@@ -120,5 +120,53 @@
     "accepted": false,
     "reason": "required_slot_omission",
     "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "grant", "operative_object": "relief", "negated": false, "effect": "unspecified"}
+  },
+  {
+    "label": "arbitrary actionless prose is not a paraphrase",
+    "dimension": "omission",
+    "text": "The Supreme Court addressed the judgment in a significant decision.",
+    "accepted": false,
+    "reason": "required_slot_omission",
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "vacate", "operative_object": "judgment", "negated": false, "effect": "final"}
+  },
+  {
+    "label": "wrong requesting party with same role",
+    "dimension": "actor_identity",
+    "text": "The Respondent asked the Supreme Court to overturn the judgment.",
+    "accepted": false,
+    "reason": "actor_conflict",
+    "slot": {"actor_role": "requesting_party", "actor": "Applicant", "action": "reverse", "operative_object": "judgment", "negated": false, "effect": "requested"}
+  },
+  {
+    "label": "material object omitted",
+    "dimension": "object",
+    "text": "The Supreme Court cancelled it.",
+    "accepted": false,
+    "reason": "object_omission",
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "vacate", "operative_object": "judgment", "negated": false, "effect": "final"}
+  },
+  {
+    "label": "material timing omitted",
+    "dimension": "timing",
+    "text": "The Supreme Court temporarily paused the injunction.",
+    "accepted": false,
+    "reason": "timing_omission",
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "stay", "operative_object": "injunction", "negated": false, "effect": "interim", "timing": "pending appeal"}
+  },
+  {
+    "label": "material timing changed",
+    "dimension": "timing",
+    "text": "The Supreme Court temporarily paused the injunction while the trial continues.",
+    "accepted": false,
+    "reason": "timing_conflict",
+    "slot": {"actor_role": "supreme_court", "actor": "Supreme Court", "action": "stay", "operative_object": "injunction", "negated": false, "effect": "interim", "timing": "pending appeal"}
+  },
+  {
+    "label": "named agency changed to order issuer",
+    "dimension": "order_issuer_recipient",
+    "text": "EPA issued an order to the district court.",
+    "accepted": false,
+    "reason": "actor_role_conflict",
+    "slot": {"actor_role": "lower_court", "actor": "district court", "action": "order", "operative_object": "order", "negated": false, "effect": "unspecified"}
   }
 ]
