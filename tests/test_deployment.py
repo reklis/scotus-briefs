@@ -178,6 +178,8 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "steps.batch.outputs.editorial_review_only != 'true'" in workflow
     assert "Run reviewed bounded live adapter" in workflow
     assert "if: always()" in workflow and "Clean persistent runner after build" in workflow
+    assert 'ollama stop "$REVIEWED_OLLAMA_MODEL"' in workflow
+    assert workflow.count('ollama stop "$REVIEWED_CONTROL_OLLAMA_MODEL"') == 2
     assert "Clean persistent runner before build" in workflow
     assert "github.event_name != 'pull_request'" in workflow
     assert "include-hidden-files: true" in workflow

@@ -198,6 +198,7 @@ jobs:
         if: always()
         run: |
           set -euo pipefail
+          ollama stop "$REVIEWED_CONTROL_OLLAMA_MODEL" >/dev/null 2>&1 || true
           chmod -R u+rwX "$RUNNER_TEMP/ragchew-qwen-control" "$GITHUB_WORKSPACE" 2>/dev/null || true
           rm -rf "$RUNNER_TEMP/ragchew-qwen-control"
           find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf -- {} +
@@ -687,6 +688,8 @@ jobs:
         if: always()
         run: |
           set -euo pipefail
+          ollama stop "$REVIEWED_OLLAMA_MODEL" >/dev/null 2>&1 || true
+          ollama stop "$REVIEWED_CONTROL_OLLAMA_MODEL" >/dev/null 2>&1 || true
           chmod -R u+rwX "$RUNNER_TEMP/ragchew-private" \
             "$RUNNER_TEMP/ragchew-qwen-control" \
             "$RUNNER_TEMP/ragchew-gpt-oss-candidate" "$GITHUB_WORKSPACE" 2>/dev/null || true
