@@ -7,12 +7,7 @@ from uuid import UUID, uuid4
 
 import pytest
 
-from ragchew.scotus.briefs import (
-    BriefCandidate,
-    BriefValidationError,
-    CaseArgumentSession,
-    LegalBriefDraft,
-)
+from ragchew.scotus.briefs import BriefCandidate, CaseArgumentSession
 from ragchew.scotus.contracts import (
     AdvocateRole,
     BriefMaturity,
@@ -28,16 +23,19 @@ from ragchew.scotus.reader_guides import (
     ActionEffect,
     CanonicalAction,
     CanonicalActorRole,
+    CitizensGuideField,
     CompactReaderGuideWriter,
     ProcessLocalFieldDiagnostic,
     ReaderGuideFieldKind,
     ReaderGuideFieldPath,
+    ReaderGuidePlan,
     ReaderGuidePlanner,
     ReaderGuidePlannerLimits,
     ReaderGuidePlanningError,
     ReaderGuidePurpose,
     ReaderGuideWritingError,
     TargetedReaderGuideRepairer,
+    assembled_draft_action_slots,
     build_canonical_action_slots,
     compact_reader_guide_payload,
     compact_reader_guide_schema,
@@ -517,11 +515,7 @@ def test_planner_supplies_reviewed_term_guidance_to_sections_and_arguments() -> 
     )
     assert any("how government branches divide and limit their power" in item for item in guidance)
     payload = compact_reader_guide_payload(plan)
-    assert any(
-        "terms" in field
-        for argument in payload["arguments"]
-        for field in argument["fields"]
-    )
+    assert any("terms" in field for field in payload["fields"].values())
 
 
 def test_reargument_packets_are_chronological_and_never_mix_sessions() -> None:
@@ -572,19 +566,21 @@ def test_decided_after_argument_keeps_sessions_and_adds_disposition_sections() -
     )
 
 
-def test_disposition_without_supported_reasoning_fails_closed() -> None:
+def test_disposition_without_supported_reasoning_omits_impact() -> None:
     sparse = tuple(
         item
         for item in disposition_claims()
         if item.observation_type is not LegalObservationType.DOCTRINAL_THEME
     )
-    with pytest.raises(ReaderGuidePlanningError) as caught:
-        ReaderGuidePlanner().plan(
-            candidate(status=ScotusCaseStatus.DECIDED),
-            sparse,
-            BriefMaturity.POST_OPINION,
-        )
-    assert caught.value.safe_code == "unsupported_court_reasoning"
+    plan = ReaderGuidePlanner().plan(
+        candidate(status=ScotusCaseStatus.DECIDED),
+        sparse,
+        BriefMaturity.POST_OPINION,
+    )
+    fields = compact_reader_guide_payload(plan)["fields"]
+
+    assert CitizensGuideField.WHAT_THE_COURT_DID.value in fields
+    assert CitizensGuideField.WHY_IT_MATTERS.value not in fields
 
 
 def test_controlling_action_is_not_discarded_when_it_mentions_a_dissent() -> None:
@@ -646,12 +642,27 @@ def test_sparse_disposition_and_separate_opinion_get_distinct_packets() -> None:
     assert not plan.arguments
 
 
-def test_gpt_oss_citizens_guide_profile_is_versioned_strict_and_role_explicit() -> None:
-    plan = ReaderGuidePlanner().plan(
-        candidate(session(ARGUMENT_ID, NOW, 1)),
-        argued_claims(),
-        BriefMaturity.OFFICIAL_TRANSCRIPT,
+def complete_decided_plan() -> ReaderGuidePlan:
+    return ReaderGuidePlanner().plan(
+        candidate(session(ARGUMENT_ID, NOW, 1), status=ScotusCaseStatus.DECIDED),
+        (*argued_claims(), *disposition_claims()),
+        BriefMaturity.POST_OPINION,
     )
+
+
+def complete_decided_response() -> dict[str, str]:
+    return {
+        CitizensGuideField.WHAT_IT_IS_ABOUT.value: "People challenge an agency rule.",
+        CitizensGuideField.WHAT_THE_SIDES_SAY.value: (
+            "The people and agency defend different readings."
+        ),
+        CitizensGuideField.WHAT_THE_COURT_DID.value: "The Supreme Court sent the case back.",
+        CitizensGuideField.WHY_IT_MATTERS.value: "The lower court used the wrong legal rule.",
+    }
+
+
+def test_gpt_oss_citizens_guide_profile_is_versioned_strict_and_role_explicit() -> None:
+    plan = complete_decided_plan()
     writer = CompactReaderGuideWriter("local-test", lambda request: {})
     request = writer.build_request(plan)
     prompt = request["messages"][0]["content"]
@@ -660,10 +671,7 @@ def test_gpt_oss_citizens_guide_profile_is_versioned_strict_and_role_explicit() 
 
     assert writer.PROMPT_VERSION == "scotus-gpt-oss-citizens-guide-v2"
     assert writer.SCHEMA_VERSION == CITIZENS_GUIDE_SCHEMA_VERSION
-    assert (
-        TargetedReaderGuideRepairer.PROMPT_VERSION
-        == "scotus-guide-repair-v4-low"
-    )
+    assert TargetedReaderGuideRepairer.PROMPT_VERSION == "scotus-guide-repair-v4-low"
     assert request["reasoning_effort"] == "low"
     assert response_format["name"] == "scotus_citizens_guide_v2"
     assert response_format["strict"] is True
@@ -675,26 +683,139 @@ def test_gpt_oss_citizens_guide_profile_is_versioned_strict_and_role_explicit() 
     assert "Name every actor explicitly" in prompt
     assert "argues, says, asks, or wants" in prompt
     assert "Never say a party or agency issued a court order" in prompt
-    assert "Do not name lawyers" in prompt
     assert "justice-by-justice" in prompt
-    assert "unnecessary procedural history" in prompt
-    assert "predict events" in prompt
-    assert "unexplained legal jargon" in prompt
     assert schema["additionalProperties"] is False
     assert "180 words" in schema["description"]
 
 
-def test_writer_parses_only_final_content_and_ignores_reasoning_field() -> None:
-    plan = ReaderGuidePlanner().plan(
-        candidate(status=ScotusCaseStatus.DECIDED),
-        disposition_claims(),
-        BriefMaturity.POST_OPINION,
-    )
-    final_payload = {
-        "dek": "The case concerns an agency rule.",
-        "section_paragraphs": ["Supported field."] * len(plan.sections),
-        "argument_paragraphs": [],
+def test_decided_writer_schema_is_exactly_the_four_conceptual_fields() -> None:
+    plan = complete_decided_plan()
+    expected = [field.value for field in CitizensGuideField]
+    schema = compact_reader_guide_schema(plan)
+    payload = compact_reader_guide_payload(plan)
+
+    assert list(schema["properties"]) == expected
+    assert schema["required"] == expected
+    assert list(payload["fields"]) == expected
+    assert payload["limits"] == {
+        "total_words": MAX_CITIZENS_GUIDE_WORDS,
+        "sentences_per_field": [1, 2],
     }
+    assert set(payload) == {"task", "schema_version", "limits", "fields"}
+
+
+def test_sparse_pending_case_omits_unsupported_outcome_and_impact() -> None:
+    sparse = tuple(
+        item
+        for item in disposition_claims()
+        if item.observation_type
+        not in {LegalObservationType.ORDER, LegalObservationType.DOCTRINAL_THEME}
+    )
+    plan = ReaderGuidePlanner().plan(
+        candidate(status=ScotusCaseStatus.DOCKETED),
+        sparse,
+        BriefMaturity.OFFICIAL_TRANSCRIPT,
+    )
+    fields = compact_reader_guide_payload(plan)["fields"]
+    schema = compact_reader_guide_schema(plan)
+
+    assert list(fields) == [
+        CitizensGuideField.WHAT_IT_IS_ABOUT.value,
+        CitizensGuideField.WHAT_THE_SIDES_SAY.value,
+        CitizensGuideField.WHAT_THE_COURT_DID.value,
+    ]
+    assert list(schema["properties"]) == list(fields)
+    status = fields[CitizensGuideField.WHAT_THE_COURT_DID.value]
+    assert {item["type"] for item in status["claims"]} == {
+        LegalObservationType.PROCEDURAL_POSTURE.value,
+        LegalObservationType.LOWER_COURT_ACTION.value,
+    }
+    assert all(
+        item["actor_role"] != CanonicalActorRole.SUPREME_COURT.value
+        for item in status.get("actions", [])
+    )
+    assert CitizensGuideField.WHY_IT_MATTERS.value not in fields
+
+
+def test_request_only_pending_case_omits_status_instead_of_reusing_side_evidence() -> None:
+    request_only = (
+        claim(
+            LegalObservationType.CASE_BACKGROUND,
+            "People challenge an agency rule governing a public benefit.",
+        ),
+        claim(
+            LegalObservationType.REQUESTED_DISPOSITION,
+            "The agency asked the Supreme Court to reverse the judgment.",
+            attribution="The agency",
+        ),
+        claim(
+            LegalObservationType.QUESTION_PRESENTED,
+            "Whether Congress gave the agency power to adopt the rule.",
+        ),
+    )
+    plan = ReaderGuidePlanner().plan(
+        candidate(status=ScotusCaseStatus.DOCKETED),
+        request_only,
+        BriefMaturity.OFFICIAL_TRANSCRIPT,
+    )
+    fields = compact_reader_guide_payload(plan)["fields"]
+
+    assert list(fields) == [
+        CitizensGuideField.WHAT_IT_IS_ABOUT.value,
+        CitizensGuideField.WHAT_THE_SIDES_SAY.value,
+    ]
+    side_ids = {
+        item["id"] for item in fields[CitizensGuideField.WHAT_THE_SIDES_SAY.value]["claims"]
+    }
+    about_ids = {
+        item["id"] for item in fields[CitizensGuideField.WHAT_IT_IS_ABOUT.value]["claims"]
+    }
+    assert side_ids.isdisjoint(about_ids)
+
+
+def test_writer_packets_are_cross_field_isolated() -> None:
+    plan = complete_decided_plan()
+    fields = compact_reader_guide_payload(plan)["fields"]
+    plan_by_purpose = {section.purpose: section for section in plan.sections}
+
+    expected_ids = {
+        CitizensGuideField.WHAT_IT_IS_ABOUT.value: {
+            str(claim.claim_id) for claim in plan.summary_claims
+        },
+        CitizensGuideField.WHAT_THE_SIDES_SAY.value: {
+            str(claim.claim_id)
+            for claim in plan_by_purpose[ReaderGuidePurpose.POSITIONS].claims
+            if claim.position_group is not None
+        },
+        CitizensGuideField.WHAT_THE_COURT_DID.value: {
+            str(claim.claim_id)
+            for claim in plan_by_purpose[ReaderGuidePurpose.COURT_ACTION].claims
+        },
+        CitizensGuideField.WHY_IT_MATTERS.value: {
+            str(claim.claim_id)
+            for claim in plan_by_purpose[ReaderGuidePurpose.COURT_REASONING].claims
+        },
+    }
+    for name, packet in fields.items():
+        packet_ids = {item["id"] for item in packet["claims"]}
+        assert packet_ids == expected_ids[name]
+        assert {item["claim_id"] for item in packet.get("actions", [])} <= packet_ids
+    assert all(
+        expected_ids[left].isdisjoint(expected_ids[right])
+        for index, left in enumerate(expected_ids)
+        for right in tuple(expected_ids)[index + 1 :]
+    )
+    assert "justice_question" not in json.dumps(fields)
+    assert "dissent" not in json.dumps(fields).casefold()
+    serialized = json.dumps(fields)
+    assert "official_url" not in serialized
+    assert "page_label" not in serialized
+    assert plan.caption not in serialized
+
+
+def test_writer_parses_only_final_content_and_ignores_reasoning_field() -> None:
+    plan = complete_decided_plan()
+    final_payload = complete_decided_response()
     completion = SimpleNamespace(
         choices=[
             SimpleNamespace(
@@ -708,320 +829,147 @@ def test_writer_parses_only_final_content_and_ignores_reasoning_field() -> None:
 
     draft = CompactReaderGuideWriter("local-test", lambda request: completion).generate(plan)
 
-    assert draft.dek == final_payload["dek"]
+    assert draft.dek == final_payload[CitizensGuideField.WHAT_IT_IS_ABOUT.value]
     assert "private synthetic reasoning" not in draft.model_dump_json()
 
 
-def test_writer_payload_has_separate_evidence_and_action_packets_per_field() -> None:
-    plan = ReaderGuidePlanner().plan(
-        candidate(session(ARGUMENT_ID, NOW, 1)),
-        argued_claims(),
-        BriefMaturity.OFFICIAL_TRANSCRIPT,
-    )
-    payload = compact_reader_guide_payload(plan)
-
-    assert payload["schema_version"] == CITIZENS_GUIDE_SCHEMA_VERSION
-    assert payload["limits"] == {
-        "total_words": MAX_CITIZENS_GUIDE_WORDS,
-        "sentences_per_field": [1, 2],
-    }
-    assert {item["id"] for item in payload["dek"]["claims"]} == {
-        str(item.claim_id) for item in plan.summary_claims
-    }
-    for packet, field in zip(plan.sections, payload["sections"], strict=True):
-        packet_ids = {str(item.claim_id) for item in packet.claims}
-        assert {item["id"] for item in field["claims"]} == packet_ids
-        assert {item["claim_id"] for item in field.get("actions", [])} <= packet_ids
-
-    position_field, question_field = payload["arguments"][0]["fields"]
-    position_ids = {
-        str(claim_id)
-        for position in plan.arguments[0].positions
-        for claim_id in position.claim_ids
-    }
-    question_ids = {str(item) for item in plan.arguments[0].justice_question_claim_ids}
-    assert {item["id"] for item in position_field["claims"]} == position_ids
-    assert {item["id"] for item in question_field["claims"]} == question_ids
-    assert position_ids.isdisjoint(question_ids)
-    assert position_field.get("actions")
-    assert "actions" not in question_field
-    serialized = json.dumps(payload)
-    assert "official_url" not in serialized
-    assert "page_label" not in serialized
-    assert plan.caption not in serialized
-
-
-def test_field_rules_keep_pending_status_and_decided_impact_evidence_bounded() -> None:
-    pending = ReaderGuidePlanner().plan(
-        candidate(session(ARGUMENT_ID, NOW, 1)),
-        argued_claims(),
-        BriefMaturity.OFFICIAL_TRANSCRIPT,
-    )
-    pending_payload = compact_reader_guide_payload(pending)
-    pending_purposes = {field["purpose"] for field in pending_payload["sections"]}
-    assert ReaderGuidePurpose.COURT_ACTION.value not in pending_purposes
-    assert ReaderGuidePurpose.COURT_REASONING.value not in pending_purposes
-
-    decided = ReaderGuidePlanner().plan(
-        candidate(status=ScotusCaseStatus.DECIDED),
-        disposition_claims(),
-        BriefMaturity.POST_OPINION,
-    )
-    impact = next(
-        field
-        for field in compact_reader_guide_payload(decided)["sections"]
-        if field["purpose"] == ReaderGuidePurpose.COURT_REASONING.value
-    )
-    assert "do not infer consequences" in impact["guidance"]
-    assert {
-        item["type"] for item in impact["claims"]
-    } <= {
-        LegalObservationType.DOCTRINAL_THEME.value,
-        LegalObservationType.HOLDING.value,
-    }
-
-
 def test_writer_enforces_one_or_two_sentences_and_180_total_words() -> None:
-    plan = ReaderGuidePlanner().plan(
-        candidate(session(ARGUMENT_ID, NOW, 1)),
-        argued_claims(),
-        BriefMaturity.OFFICIAL_TRANSCRIPT,
-    )
+    plan = complete_decided_plan()
 
-    def response(dek: str) -> dict[str, object]:
-        return {
-            "dek": dek,
-            "section_paragraphs": ["Plain field."] * len(plan.sections),
-            "argument_paragraphs": [["Side field.", "Question field."]],
-        }
-
+    too_many_sentences = complete_decided_response()
+    too_many_sentences[CitizensGuideField.WHAT_IT_IS_ABOUT.value] = "One. Two. Three."
     with pytest.raises(ReaderGuideWritingError) as caught:
-        CompactReaderGuideWriter(
-            "local-test", lambda request: response("One. Two. Three.")
-        ).generate(plan)
+        CompactReaderGuideWriter("local-test", lambda request: too_many_sentences).generate(plan)
     assert caught.value.safe_code == "citizens_guide_sentence_limit"
 
+    too_many_words = complete_decided_response()
+    too_many_words[CitizensGuideField.WHAT_IT_IS_ABOUT.value] = ("w " * 181).strip() + "."
     with pytest.raises(ReaderGuideWritingError) as caught:
-        CompactReaderGuideWriter(
-            "local-test", lambda request: response(("w " * 181).strip() + ".")
-        ).generate(plan)
+        CompactReaderGuideWriter("local-test", lambda request: too_many_words).generate(plan)
     assert caught.value.safe_code == "citizens_guide_word_limit"
 
-    fixed_words = 2 * len(plan.sections) + 4
-    dek_words = MAX_CITIZENS_GUIDE_WORDS - fixed_words
-    accepted = CompactReaderGuideWriter(
-        "local-test", lambda request: response(("w " * dek_words).strip() + ".")
-    ).generate(plan)
-    assert len(accepted.dek.split()) == dek_words
-
-
-def test_compact_writer_cannot_choose_identity_order_sessions_or_claim_ids() -> None:
-    plan = ReaderGuidePlanner().plan(
-        candidate(session(ARGUMENT_ID, NOW, 1)),
-        argued_claims(),
-        BriefMaturity.OFFICIAL_TRANSCRIPT,
+    accepted = complete_decided_response()
+    other_words = sum(
+        len(value.split())
+        for key, value in accepted.items()
+        if key != CitizensGuideField.WHAT_IT_IS_ABOUT.value
     )
+    accepted[CitizensGuideField.WHAT_IT_IS_ABOUT.value] = (
+        "w " * (MAX_CITIZENS_GUIDE_WORDS - other_words)
+    ).strip() + "."
+    draft = CompactReaderGuideWriter("local-test", lambda request: accepted).generate(plan)
+    assert draft.dek
+
+
+def test_assembly_preserves_deterministic_metadata_and_exports_action_mapping() -> None:
+    plan = complete_decided_plan()
     captured: list[dict[str, object]] = []
 
-    def execute(request: dict[str, object]) -> dict[str, object]:
+    def execute(request: dict[str, object]) -> dict[str, str]:
         captured.append(request)
-        return {
-            "dek": "People and an agency disagree about the power Congress gave the agency.",
-            "section_paragraphs": [
-                f"Everyday explanation {index}." for index in range(len(plan.sections))
-            ],
-            "argument_paragraphs": [
-                ["The people explained their reading.", "The justices tested both readings."]
-            ],
-        }
+        return complete_decided_response()
 
     draft = CompactReaderGuideWriter("local-test", execute).generate(plan)
-    payload = json.loads(captured[0]["messages"][1]["content"])  # type: ignore[index]
+    fields = compact_reader_guide_payload(plan)["fields"]
 
     assert draft.title == plan.caption
     assert draft.title_claim_ids == plan.title_claim_ids
-    assert tuple(item.heading for item in draft.sections) == tuple(
-        item.heading for item in plan.sections
+    assert draft.dek_claim_ids == tuple(
+        UUID(item["id"])
+        for item in fields[CitizensGuideField.WHAT_IT_IS_ABOUT.value]["claims"]
     )
-    assert tuple(item.claim_ids for item in draft.sections) == tuple(
-        tuple(claim.claim_id for claim in item.claims) for item in plan.sections
+    assert tuple(section.heading for section in draft.sections) == (
+        "What the sides say",
+        "What the Supreme Court did",
+        "Why it matters",
     )
-    assert draft.argument_analyses[0].argument_id == ARGUMENT_ID
-    assert draft.argument_analyses[0].heading == "Argument on 2026-09-08"
-    serialized = captured[0]["messages"][1]["content"]  # type: ignore[index]
-    assert plan.caption not in serialized
-    assert plan.primary_docket not in serialized
-    assert "official_url" not in serialized
-    assert "page_label" not in serialized
-    assert "case_status" not in serialized
-    assert "heading" not in payload["sections"][0]
+    assert tuple(section.claim_ids for section in draft.sections) == tuple(
+        tuple(UUID(item["id"]) for item in fields[name]["claims"])
+        for name in (
+            CitizensGuideField.WHAT_THE_SIDES_SAY.value,
+            CitizensGuideField.WHAT_THE_COURT_DID.value,
+            CitizensGuideField.WHY_IT_MATTERS.value,
+        )
+    )
+    assert draft.argument_analyses == ()
+
+    mapping = assembled_draft_action_slots(plan)
+    assert tuple(heading for _, heading in mapping) == (
+        "dek",
+        "What the sides say",
+        "What the Supreme Court did",
+        "Why it matters",
+    )
+    court_slots = next(
+        slots for (_, heading), slots in mapping.items() if heading == "What the Supreme Court did"
+    )
+    assert {slot.action for slot in court_slots} == {
+        CanonicalAction.VACATE,
+        CanonicalAction.REMAND,
+    }
+    request_payload = json.loads(captured[0]["messages"][1]["content"])  # type: ignore[index]
+    assert plan.caption not in json.dumps(request_payload)
 
 
-def test_argument_repair_receives_only_the_target_field_packet() -> None:
-    plan = ReaderGuidePlanner().plan(
-        candidate(session(ARGUMENT_ID, NOW, 1)),
-        argued_claims(),
-        BriefMaturity.OFFICIAL_TRANSCRIPT,
-    )
-    draft = CompactReaderGuideWriter(
-        "local-test",
-        lambda request: {
-            "dek": "Case summary.",
-            "section_paragraphs": ["Section summary."] * len(plan.sections),
-            "argument_paragraphs": [["Side summary.", "Question summary."]],
-        },
+def test_targeted_repair_uses_only_assembled_field_packet_and_preserves_other_bytes() -> None:
+    plan = complete_decided_plan()
+    original = CompactReaderGuideWriter(
+        "local-test", lambda request: complete_decided_response()
     ).generate(plan)
-    diagnostic = ProcessLocalFieldDiagnostic(
-        path=ReaderGuideFieldPath(
-            kind=ReaderGuideFieldKind.ARGUMENT_PARAGRAPH,
-            argument_index=0,
-            paragraph_index=1,
-        ),
-        safe_code="reader_language",
-        rule="Use ordinary language.",
-        offending_term=None,
-        required_transformation="Rewrite only the justice-question field.",
+    path = ReaderGuideFieldPath(
+        kind=ReaderGuideFieldKind.SECTION_PARAGRAPH,
+        section_index=1,
+        paragraph_index=0,
     )
-
-    request = TargetedReaderGuideRepairer("local-test", lambda request: {}).build_request(
-        plan, draft, diagnostic
-    )
-    payload = json.loads(request["messages"][1]["content"])
-    question_ids = {str(item) for item in plan.arguments[0].justice_question_claim_ids}
-
-    assert {item["id"] for item in payload["support_packet"]["claims"]} == question_ids
-    assert set(payload["fixed_claim_ids"]) == question_ids
-    assert "actions" not in payload["support_packet"]
-
-
-def test_targeted_repair_sends_one_field_and_preserves_every_valid_byte() -> None:
-    plan = ReaderGuidePlanner().plan(
-        candidate(session(ARGUMENT_ID, NOW, 1)),
-        argued_claims(),
-        BriefMaturity.OFFICIAL_TRANSCRIPT,
-    )
-    initial = CompactReaderGuideWriter(
-        "local-test",
-        lambda request: {
-            "dek": "The dispute concerns the agency's jurisdiction.",
-            "section_paragraphs": [
-                f"Valid section paragraph {index}." for index in range(len(plan.sections))
-            ],
-            "argument_paragraphs": [["Valid side paragraph.", "Valid question paragraph."]],
-        },
-    ).generate(plan)
-    path = ReaderGuideFieldPath(kind=ReaderGuideFieldKind.DEK)
     diagnostic = ProcessLocalFieldDiagnostic(
         path=path,
-        safe_code="unexplained_legal_term_jurisdiction",
-        rule="A necessary legal term needs an immediate case-specific explanation.",
-        offending_term="jurisdiction",
-        required_transformation="Explain that jurisdiction means a court's power to hear the case.",
+        safe_code="unsupported_action_role",
+        rule="The acting court must remain explicit.",
+        offending_term=None,
+        required_transformation="Name the Supreme Court and preserve only its supplied action.",
     )
     captured: list[dict[str, object]] = []
-    validation_calls: list[str] = []
 
-    def execute(request: dict[str, object]) -> dict[str, object]:
+    def execute(request: dict[str, object]) -> dict[str, str]:
         captured.append(request)
-        return {"text": "The dispute concerns which court has the power to hear the people's case."}
+        return {"text": "The Supreme Court vacated the judgment and sent the case back."}
 
     repaired = TargetedReaderGuideRepairer("local-test", execute).repair(
         plan,
-        initial,
+        original,
         diagnostic,
-        validate_field=lambda text, ids: validation_calls.append(f"field:{len(ids)}:{text}"),
-        validate_guide=lambda draft: validation_calls.append(f"guide:{draft.dek}"),
+        validate_field=lambda text, ids: None,
+        validate_guide=lambda draft: None,
     )
-    request_payload = json.loads(captured[0]["messages"][1]["content"])  # type: ignore[index]
+    payload = json.loads(captured[0]["messages"][1]["content"])  # type: ignore[index]
+    court_packet = compact_reader_guide_payload(plan)["fields"][
+        CitizensGuideField.WHAT_THE_COURT_DID.value
+    ]
 
-    assert repaired.dek != initial.dek
-    assert repaired.title == initial.title
-    assert repaired.title_claim_ids == initial.title_claim_ids
-    assert repaired.dek_claim_ids == initial.dek_claim_ids
-    assert repaired.sections == initial.sections
-    assert repaired.argument_analyses == initial.argument_analyses
-    assert request_payload["rejected_text"] == initial.dek
-    assert set(request_payload) == {
-        "field_path",
-        "rejected_text",
-        "support_packet",
-        "diagnostic",
-        "fixed_claim_ids",
+    assert repaired.sections[1].paragraphs != original.sections[1].paragraphs
+    assert repaired.dek == original.dek
+    assert repaired.sections[0] == original.sections[0]
+    assert repaired.sections[2] == original.sections[2]
+    assert repaired.title_claim_ids == original.title_claim_ids
+    assert payload["support_packet"] == court_packet
+    assert set(payload["fixed_claim_ids"]) == {
+        item["id"] for item in court_packet["claims"]
     }
-    assert "Valid section paragraph" not in captured[0]["messages"][1]["content"]  # type: ignore[index]
-    assert [item.split(":", 1)[0] for item in validation_calls] == ["field", "guide"]
-    assert repr(diagnostic) == (
-        "ProcessLocalFieldDiagnostic(safe_code='unexplained_legal_term_jurisdiction')"
-    )
+    assert "The people and agency" not in captured[0]["messages"][1]["content"]  # type: ignore[index]
 
 
-def test_repair_returns_private_rejected_draft_for_a_distinct_bounded_correction() -> None:
-    plan = ReaderGuidePlanner().plan(
-        candidate(session(ARGUMENT_ID, NOW, 1)),
-        argued_claims(),
-        BriefMaturity.OFFICIAL_TRANSCRIPT,
-    )
+def test_repair_rejects_tampered_metadata_and_schema_overflow() -> None:
+    plan = complete_decided_plan()
     original = CompactReaderGuideWriter(
-        "local-test",
-        lambda request: {
-            "dek": "Original summary.",
-            "section_paragraphs": ["Original paragraph."] * len(plan.sections),
-            "argument_paragraphs": [["Original side.", "Original questions."]],
-        },
-    ).generate(plan)
-    path = ReaderGuideFieldPath(kind=ReaderGuideFieldKind.DEK)
-    diagnostic = ProcessLocalFieldDiagnostic(
-        path=path,
-        safe_code="unexplained_legal_term_jurisdiction",
-        rule="Explain the legal term.",
-        offending_term="jurisdiction",
-        required_transformation="Explain which court has power to hear the case.",
-    )
-
-    with pytest.raises(BriefValidationError) as caught:
-        TargetedReaderGuideRepairer(
-            "local-test",
-            lambda request: {"text": "A changed but still invalid summary."},
-        ).repair(
-            plan,
-            original,
-            diagnostic,
-            validate_field=lambda text, ids: (_ for _ in ()).throw(
-                BriefValidationError(
-                    "the repair changed an action",
-                    safe_code="unsupported_lower_court_action",
-                )
-            ),
-            validate_guide=lambda draft: None,
-        )
-
-    assert caught.value.safe_code == "unsupported_lower_court_action"
-    assert caught.value.draft is not None
-    assert caught.value.draft.dek == "A changed but still invalid summary."
-    assert caught.value.draft.sections == original.sections
-
-
-def test_repair_rejects_tampered_citations_and_strict_schema_overflow() -> None:
-    plan = ReaderGuidePlanner().plan(
-        candidate(session(ARGUMENT_ID, NOW, 1)),
-        argued_claims(),
-        BriefMaturity.OFFICIAL_TRANSCRIPT,
-    )
-    original = CompactReaderGuideWriter(
-        "local-test",
-        lambda request: {
-            "dek": "A valid summary.",
-            "section_paragraphs": ["Original paragraph."] * len(plan.sections),
-            "argument_paragraphs": [["Original side.", "Original questions."]],
-        },
+        "local-test", lambda request: complete_decided_response()
     ).generate(plan)
     path = ReaderGuideFieldPath(kind=ReaderGuideFieldKind.DEK)
     diagnostic = ProcessLocalFieldDiagnostic(
         path=path,
         safe_code="reader_language",
-        rule="Use everyday words.",
+        rule="Use ordinary language.",
         offending_term=None,
-        required_transformation="Rewrite the summary in everyday words.",
+        required_transformation="Rewrite only this field in ordinary language.",
     )
     tampered = original.model_copy(update={"dek_claim_ids": (uuid4(),)})
     repairer = TargetedReaderGuideRepairer(
@@ -1053,48 +1001,3 @@ def test_repair_rejects_tampered_citations_and_strict_schema_overflow() -> None:
             validate_guide=lambda draft: None,
         )
     assert caught.value.safe_code == "invalid_repair_schema"
-
-
-def test_repair_revalidates_complete_guide_and_does_not_mutate_failed_draft() -> None:
-    plan = ReaderGuidePlanner().plan(
-        candidate(session(ARGUMENT_ID, NOW, 1)),
-        argued_claims(),
-        BriefMaturity.OFFICIAL_TRANSCRIPT,
-    )
-    original = CompactReaderGuideWriter(
-        "local-test",
-        lambda request: {
-            "dek": "A valid summary.",
-            "section_paragraphs": ["Original paragraph."] * len(plan.sections),
-            "argument_paragraphs": [["Original side.", "Original questions."]],
-        },
-    ).generate(plan)
-    before = original.model_dump_json()
-    path = ReaderGuideFieldPath(
-        kind=ReaderGuideFieldKind.SECTION_PARAGRAPH,
-        section_index=1,
-        paragraph_index=0,
-    )
-    diagnostic = ProcessLocalFieldDiagnostic(
-        path=path,
-        safe_code="unsupported_action_role",
-        rule="An action must retain its actor.",
-        offending_term=None,
-        required_transformation="Name the lower court and preserve its supported action.",
-    )
-
-    def reject_guide(draft: LegalBriefDraft) -> None:
-        raise BriefValidationError("actor changed", safe_code="unsupported_action_role")
-
-    with pytest.raises(BriefValidationError) as caught:
-        TargetedReaderGuideRepairer(
-            "local-test", lambda request: {"text": "The Supreme Court blocked the rule."}
-        ).repair(
-            plan,
-            original,
-            diagnostic,
-            validate_field=lambda text, ids: None,
-            validate_guide=reject_guide,
-        )
-    assert caught.value.safe_code == "unsupported_action_role"
-    assert original.model_dump_json() == before

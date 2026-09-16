@@ -24,7 +24,6 @@ from ragchew.scotus.briefs import (
     BriefCandidate,
     BriefValidationError,
     CaseArgumentSession,
-    DraftArgumentAnalysis,
     DraftSection,
     LegalBriefDraft,
 )
@@ -79,6 +78,15 @@ class ReaderGuidePurpose(StrEnum):
     COURT_REASONING = "court_reasoning"
     SEPARATE_OPINIONS = "separate_opinions"
     NEXT_KNOWN_STEP = "next_known_step"
+
+
+class CitizensGuideField(StrEnum):
+    """The only conceptual prose fields exposed to the compact writer."""
+
+    WHAT_IT_IS_ABOUT = "what_it_is_about"
+    WHAT_THE_SIDES_SAY = "what_the_sides_say"
+    WHAT_THE_COURT_DID = "what_the_court_did"
+    WHY_IT_MATTERS = "why_it_matters"
 
 
 class CanonicalActorRole(StrEnum):
@@ -1066,34 +1074,47 @@ class ReaderGuidePlanner:
 
         if expects_disposition:
             action_types = (LegalObservationType.HOLDING, LegalObservationType.ORDER)
-            add_section(
-                ReaderGuidePurpose.COURT_ACTION,
-                "What the Supreme Court did",
-                action_types,
-                (LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED),
-                (lambda claim: claim.observation_type in action_types,),
-                controlling,
+            action_candidates = tuple(
+                claim
+                for claim in controlling
+                if claim.observation_type in action_types
+                and claim.legal_status in {LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED}
             )
+            action_claims: tuple[ScotusApprovedClaim, ...] = ()
+            if action_candidates:
+                action_claims = add_section(
+                    ReaderGuidePurpose.COURT_ACTION,
+                    "What the Supreme Court did",
+                    action_types,
+                    (LegalStatus.COURT_HELD, LegalStatus.COURT_ORDERED),
+                    (lambda claim: claim.observation_type in action_types,),
+                    action_candidates,
+                )
             reasoning_types = (
                 LegalObservationType.DOCTRINAL_THEME,
                 LegalObservationType.HOLDING,
             )
             issue_ids = {claim.claim_id for claim in issue}
             issue_values = {claim.public_value.casefold() for claim in issue}
+            action_ids = {claim.claim_id for claim in action_claims}
             reasoning_pool = tuple(
                 claim
                 for claim in controlling
-                if claim.claim_id not in issue_ids
+                if claim.claim_id not in issue_ids | action_ids
                 and claim.public_value.casefold() not in issue_values
+                and claim.observation_type in reasoning_types
+                and claim.legal_status in {LegalStatus.DESCRIBED, LegalStatus.COURT_HELD}
+                and _is_reasoning_claim(claim)
             )
-            add_section(
-                ReaderGuidePurpose.COURT_REASONING,
-                "Why the Court did it",
-                reasoning_types,
-                (LegalStatus.DESCRIBED, LegalStatus.COURT_HELD),
-                (_is_reasoning_claim,),
-                reasoning_pool,
-            )
+            if reasoning_pool:
+                add_section(
+                    ReaderGuidePurpose.COURT_REASONING,
+                    "Why the Court did it",
+                    reasoning_types,
+                    (LegalStatus.DESCRIBED, LegalStatus.COURT_HELD),
+                    (_is_reasoning_claim,),
+                    reasoning_pool,
+                )
             if separate:
                 add_section(
                     ReaderGuidePurpose.SEPARATE_OPINIONS,
@@ -1374,55 +1395,215 @@ def _field_packet(
     }
 
 
-def _argument_field_claims(
-    argument: ReaderGuideArgumentPacket,
-) -> tuple[tuple[ReaderGuideClaimPacket, ...], tuple[ReaderGuideClaimPacket, ...]]:
-    position_ids = {
-        claim_id for position in argument.positions for claim_id in position.claim_ids
-    }
-    question_ids = set(argument.justice_question_claim_ids)
-    position_claims = tuple(
-        claim for claim in argument.claims if claim.claim_id in position_ids
-    )
-    question_claims = tuple(
-        claim for claim in argument.claims if claim.claim_id in question_ids
-    )
-    # The existing LegalBriefDraft contract requires two paragraphs for every real
-    # argument session. A planner-supported session may have only one kind of
-    # evidence, so reuse that bounded evidence as the explicit fallback rather than
-    # expose unrelated case facts or invite invention.
-    fallback = position_claims or question_claims or argument.claims[:1]
-    return position_claims or fallback, question_claims or fallback
+@dataclass(frozen=True, slots=True)
+class _CitizensGuideFieldPacket:
+    name: CitizensGuideField
+    heading: str | None
+    guidance: str
+    claims: tuple[ReaderGuideClaimPacket, ...]
+    action_slots: tuple[CanonicalActionSlot, ...] = ()
+    terms: tuple[str, ...] = ()
 
 
-def _argument_field_packets(argument: ReaderGuideArgumentPacket) -> list[dict[str, object]]:
-    position_claims, question_claims = _argument_field_claims(argument)
-    return [
-        _field_packet(
-            purpose="party_positions",
+def _unique_claims(
+    claims: Iterable[ReaderGuideClaimPacket],
+) -> tuple[ReaderGuideClaimPacket, ...]:
+    by_id: dict[UUID, ReaderGuideClaimPacket] = {}
+    for claim in claims:
+        by_id.setdefault(claim.claim_id, claim)
+    return tuple(by_id.values())
+
+
+def _unique_slots(slots: Iterable[CanonicalActionSlot]) -> tuple[CanonicalActionSlot, ...]:
+    result: list[CanonicalActionSlot] = []
+    seen: set[tuple[UUID, CanonicalActorRole, CanonicalAction, str, bool]] = set()
+    for slot in slots:
+        key = (
+            slot.claim_id,
+            slot.actor_role,
+            slot.action,
+            slot.operative_object,
+            slot.negated,
+        )
+        if key not in seen:
+            seen.add(key)
+            result.append(slot)
+    return tuple(result)
+
+
+def _citizens_guide_fields(plan: ReaderGuidePlan) -> tuple[_CitizensGuideFieldPacket, ...]:
+    """Project the detailed deterministic plan onto the high-level public shape."""
+    fields = [
+        _CitizensGuideFieldPacket(
+            name=CitizensGuideField.WHAT_IT_IS_ABOUT,
+            heading=None,
             guidance=(
-                "Name each established side and use argues, says, asks, or wants. "
-                "If no party position is established, describe only the supplied material."
+                "Explain only the supplied issue and essential background in ordinary language."
             ),
-            claims=position_claims,
-            action_slots=argument.action_slots,
-            terms=argument.plain_language_guidance,
-        ),
-        _field_packet(
-            purpose="justice_questions",
-            guidance=(
-                "Describe only what the justices tested, without names, vote implications, "
-                "or a predicted result. If no question is supplied, describe only the "
-                "supplied argument material."
-            ),
-            claims=question_claims,
-            terms=argument.plain_language_guidance,
-        ),
+            claims=plan.summary_claims,
+        )
     ]
+
+    position_sections = tuple(
+        section for section in plan.sections if section.purpose is ReaderGuidePurpose.POSITIONS
+    )
+    if position_sections:
+        position_claims = _unique_claims(
+            claim
+            for section in position_sections
+            for claim in section.claims
+            if claim.position_group is not None
+        )
+        position_ids = {claim.claim_id for claim in position_claims}
+        position_slots = _unique_slots(
+            slot
+            for section in position_sections
+            for slot in section.action_slots
+            if slot.claim_id in position_ids
+        )
+        position_terms = tuple(
+            dict.fromkeys(
+                term for section in position_sections for term in section.plain_language_guidance
+            )
+        )
+    else:
+        # A sparse docket may establish an attributed request without an argument
+        # session. That is still safe side evidence; unattributed history is not.
+        procedural = tuple(
+            section
+            for section in plan.sections
+            if section.purpose is ReaderGuidePurpose.PROCEDURAL_PATH
+        )
+        position_claims = _unique_claims(
+            claim
+            for section in procedural
+            for claim in section.claims
+            if claim.attribution
+            and claim.observation_type
+            in {
+                LegalObservationType.ADVOCATE_CONTENTION,
+                LegalObservationType.REQUESTED_DISPOSITION,
+                LegalObservationType.ANSWER,
+                LegalObservationType.CONCESSION,
+                LegalObservationType.DISPUTED_PREMISE,
+            }
+        )
+        position_ids = {claim.claim_id for claim in position_claims}
+        position_slots = _unique_slots(
+            slot
+            for section in procedural
+            for slot in section.action_slots
+            if slot.claim_id in position_ids
+        )
+        position_terms = ()
+    if position_claims:
+        fields.append(
+            _CitizensGuideFieldPacket(
+                name=CitizensGuideField.WHAT_THE_SIDES_SAY,
+                heading="What the sides say",
+                guidance=(
+                    "State only the attributed party positions or requests. Name each side and "
+                    "use argues, says, asks, or wants; never turn a request into a ruling."
+                ),
+                claims=position_claims,
+                action_slots=position_slots,
+                terms=position_terms,
+            )
+        )
+
+    action = next(
+        (
+            section
+            for section in plan.sections
+            if section.purpose is ReaderGuidePurpose.COURT_ACTION
+        ),
+        None,
+    )
+    if action is not None:
+        fields.append(
+            _CitizensGuideFieldPacket(
+                name=CitizensGuideField.WHAT_THE_COURT_DID,
+                heading="What the Supreme Court did",
+                guidance=(
+                    "State only the supplied Supreme Court action, object, polarity, timing, "
+                    "and effect. Do not add lower-court history or a party request."
+                ),
+                claims=action.claims,
+                action_slots=action.action_slots,
+                terms=action.plain_language_guidance,
+            )
+        )
+    else:
+        status_section = next(
+            (
+                section
+                for section in plan.sections
+                if section.purpose is ReaderGuidePurpose.PROCEDURAL_PATH
+            ),
+            None,
+        )
+        if status_section is not None:
+            status_claims = tuple(
+                claim
+                for claim in status_section.claims
+                if claim.observation_type
+                not in {
+                    LegalObservationType.ADVOCATE_CONTENTION,
+                    LegalObservationType.REQUESTED_DISPOSITION,
+                    LegalObservationType.ANSWER,
+                    LegalObservationType.CONCESSION,
+                    LegalObservationType.DISPUTED_PREMISE,
+                }
+            )
+            if not status_claims and not position_claims:
+                status_claims = status_section.claims
+            if status_claims:
+                status_ids = {claim.claim_id for claim in status_claims}
+                fields.append(
+                    _CitizensGuideFieldPacket(
+                        name=CitizensGuideField.WHAT_THE_COURT_DID,
+                        heading="Where the case stands",
+                        guidance=(
+                            "State only the supplied procedural status. Identify any acting lower "
+                            "court or requesting party, and do not imply a Supreme Court outcome."
+                        ),
+                        claims=status_claims,
+                        action_slots=tuple(
+                            slot
+                            for slot in status_section.action_slots
+                            if slot.claim_id in status_ids
+                        ),
+                        terms=status_section.plain_language_guidance,
+                    )
+                )
+
+    impact = next(
+        (
+            section
+            for section in plan.sections
+            if section.purpose is ReaderGuidePurpose.COURT_REASONING
+        ),
+        None,
+    )
+    if impact is not None:
+        fields.append(
+            _CitizensGuideFieldPacket(
+                name=CitizensGuideField.WHY_IT_MATTERS,
+                heading="Why it matters",
+                guidance=(
+                    "Explain only the approved reason or practical impact. Do not predict or "
+                    "infer consequences that the supplied claims do not state."
+                ),
+                claims=impact.claims,
+                action_slots=impact.action_slots,
+                terms=impact.plain_language_guidance,
+            )
+        )
+    return tuple(fields)
 
 
 def compact_reader_guide_payload(plan: ReaderGuidePlan) -> dict[str, object]:
-    """Return bounded, field-specific evidence packets for the prose-only writer."""
+    """Return only applicable, mutually isolated conceptual evidence packets."""
     return {
         "task": "write a concise Citizen's Guide from only each field's packet",
         "schema_version": CITIZENS_GUIDE_SCHEMA_VERSION,
@@ -1430,35 +1611,31 @@ def compact_reader_guide_payload(plan: ReaderGuidePlan) -> dict[str, object]:
             "total_words": MAX_CITIZENS_GUIDE_WORDS,
             "sentences_per_field": [MIN_FIELD_SENTENCES, MAX_FIELD_SENTENCES],
         },
-        "dek": _field_packet(
-            purpose="what_the_case_is_about",
-            guidance=(
-                "Summarize only the supplied issue and essential background in ordinary language."
-            ),
-            claims=plan.summary_claims,
-        ),
-        "sections": [
-            _field_packet(
-                purpose=section.purpose.value,
-                guidance=section.reader_purpose,
-                claims=section.claims,
-                action_slots=section.action_slots,
-                terms=section.plain_language_guidance,
+        "fields": {
+            field.name.value: _field_packet(
+                purpose=field.name.value,
+                guidance=field.guidance,
+                claims=field.claims,
+                action_slots=field.action_slots,
+                terms=field.terms,
             )
-            for section in plan.sections
-        ],
-        "arguments": [
-            {"fields": _argument_field_packets(argument)} for argument in plan.arguments
-        ],
+            for field in _citizens_guide_fields(plan)
+        },
     }
 
 
 def compact_reader_guide_schema(plan: ReaderGuidePlan) -> dict[str, object]:
-    paragraph = {
-        "type": "string",
-        "minLength": 1,
-        "maxLength": 800,
-        "description": "One or two ordinary-language sentences from the matching field packet.",
+    fields = _citizens_guide_fields(plan)
+    properties = {
+        field.name.value: {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500 if field.heading is None else 800,
+            "description": (
+                "One or two ordinary-language sentences from only the matching evidence packet."
+            ),
+        }
+        for field in fields
     }
     return {
         "type": "object",
@@ -1466,34 +1643,8 @@ def compact_reader_guide_schema(plan: ReaderGuidePlan) -> dict[str, object]:
             f"{CITIZENS_GUIDE_SCHEMA_VERSION}: schema-only Citizen's Guide prose; all fields "
             f"together contain at most {MAX_CITIZENS_GUIDE_WORDS} words."
         ),
-        "properties": {
-            "dek": {
-                "type": "string",
-                "minLength": 1,
-                "maxLength": 500,
-                "description": (
-                    "One or two ordinary-language sentences from only the dek evidence packet."
-                ),
-            },
-            "section_paragraphs": {
-                "type": "array",
-                "items": paragraph,
-                "minItems": len(plan.sections),
-                "maxItems": len(plan.sections),
-            },
-            "argument_paragraphs": {
-                "type": "array",
-                "items": {
-                    "type": "array",
-                    "items": paragraph,
-                    "minItems": 2,
-                    "maxItems": 2,
-                },
-                "minItems": len(plan.arguments),
-                "maxItems": len(plan.arguments),
-            },
-        },
-        "required": ["dek", "section_paragraphs", "argument_paragraphs"],
+        "properties": properties,
+        "required": list(properties),
         "additionalProperties": False,
     }
 
@@ -1548,9 +1699,10 @@ class CompactReaderGuideWriter:
                         "uncertainty, and "
                         "interim or final effect. Do not use ambiguous pronouns or phrases such as "
                         "'the Court agreed,' 'it ordered,' or 'that decision.' Do not name "
-                        "lawyers, give justice-by-justice detail, add unnecessary procedural "
-                        "history, infer an unavailable outcome or impact, predict events, or use "
-                        "unexplained legal jargon; explain any unavoidable legal term immediately "
+                        "lawyers, give justice-by-justice or per-session argument detail, add "
+                        "unnecessary procedural history, infer an unavailable outcome or impact, "
+                        "predict events, or use unexplained legal jargon; explain any unavoidable "
+                        "legal term immediately "
                         "in the same "
                         "sentence. Omit nonessential detail rather than inventing or conflating it."
                     ),
@@ -1625,6 +1777,32 @@ class ReaderGuideFieldPath(StrictModel):
         if actual != expected:
             raise ValueError("repair path indexes do not match its field kind")
         return self
+
+
+def assembled_draft_action_slots(
+    plan: ReaderGuidePlan,
+) -> dict[tuple[ReaderGuideFieldPath, str], tuple[CanonicalActionSlot, ...]]:
+    """Map each assembled field path and deterministic heading to its exact action slots.
+
+    Production validation can use this projection without reconstructing the detailed
+    planner sections. ``dek`` is used as the heading marker for the title-adjacent field.
+    """
+    result: dict[tuple[ReaderGuideFieldPath, str], tuple[CanonicalActionSlot, ...]] = {}
+    section_index = 0
+    for field in _citizens_guide_fields(plan):
+        if field.heading is None:
+            path = ReaderGuideFieldPath(kind=ReaderGuideFieldKind.DEK)
+            heading = "dek"
+        else:
+            path = ReaderGuideFieldPath(
+                kind=ReaderGuideFieldKind.SECTION_PARAGRAPH,
+                section_index=section_index,
+                paragraph_index=0,
+            )
+            heading = field.heading
+            section_index += 1
+        result[(path, heading)] = field.action_slots
+    return result
 
 
 @dataclass(frozen=True, slots=True, repr=False)
@@ -1877,64 +2055,40 @@ def _assemble_draft(plan: ReaderGuidePlan, payload: Mapping[str, object]) -> Leg
             "the exact official caption exceeds the public title bound",
             safe_code="unsupported_title_length",
         )
-    if set(payload) != {"dek", "section_paragraphs", "argument_paragraphs"}:
+    fields = _citizens_guide_fields(plan)
+    expected = {field.name.value for field in fields}
+    if set(payload) != expected:
         raise ReaderGuideWritingError(
             "writer response has unexpected fields", safe_code="invalid_writer_schema"
         )
-    dek = payload["dek"]
-    section_values = payload["section_paragraphs"]
-    argument_values = payload["argument_paragraphs"]
-    if (
-        not isinstance(dek, str)
-        or not 0 < len(dek) <= 500
-        or not isinstance(section_values, list)
-        or len(section_values) != len(plan.sections)
-        or not all(isinstance(value, str) and 0 < len(value) <= 800 for value in section_values)
-        or not isinstance(argument_values, list)
-        or len(argument_values) != len(plan.arguments)
-        or not all(
-            isinstance(value, list)
-            and len(value) == 2
-            and all(isinstance(paragraph, str) and 0 < len(paragraph) <= 800 for paragraph in value)
-            for value in argument_values
-        )
+    values = tuple(payload[field.name.value] for field in fields)
+    if any(
+        not isinstance(value, str)
+        or not value
+        or len(value) > (500 if field.heading is None else 800)
+        for field, value in zip(fields, values, strict=True)
     ):
         raise ReaderGuideWritingError(
             "writer response violates the compact schema", safe_code="invalid_writer_schema"
         )
-    _validate_citizens_guide_fields(
-        (
-            dek,
-            *section_values,
-            *(paragraph for paragraphs in argument_values for paragraph in paragraphs),
-        )
-    )
+    prose = tuple(value for value in values if isinstance(value, str))
+    _validate_citizens_guide_fields(prose)
+    about = fields[0]
+    section_fields = fields[1:]
     return LegalBriefDraft(
         title=plan.caption,
         title_claim_ids=plan.title_claim_ids,
-        dek=dek,
-        dek_claim_ids=tuple(claim.claim_id for claim in plan.summary_claims),
+        dek=prose[0],
+        dek_claim_ids=tuple(claim.claim_id for claim in about.claims),
         sections=tuple(
             DraftSection(
-                heading=packet.heading,
+                heading=field.heading or "",
                 paragraphs=(paragraph,),
-                claim_ids=tuple(claim.claim_id for claim in packet.claims),
+                claim_ids=tuple(claim.claim_id for claim in field.claims),
             )
-            for packet, paragraph in zip(plan.sections, section_values, strict=True)
+            for field, paragraph in zip(section_fields, prose[1:], strict=True)
         ),
-        argument_analyses=tuple(
-            DraftArgumentAnalysis(
-                argument_id=packet.argument_id,
-                heading=(
-                    f"Reargument on {packet.argument_date.date().isoformat()}"
-                    if packet.reargument
-                    else f"Argument on {packet.argument_date.date().isoformat()}"
-                ),
-                paragraphs=tuple(paragraphs),
-                claim_ids=tuple(claim.claim_id for claim in packet.claims),
-            )
-            for packet, paragraphs in zip(plan.arguments, argument_values, strict=True)
-        ),
+        argument_analyses=(),
     )
 
 
@@ -1943,8 +2097,10 @@ def _repair_context(
     draft: LegalBriefDraft,
     path: ReaderGuideFieldPath,
 ) -> tuple[str, tuple[UUID, ...], dict[str, object]]:
+    fields = _citizens_guide_fields(plan)
     if path.kind is ReaderGuideFieldKind.DEK:
-        claim_ids = tuple(claim.claim_id for claim in plan.summary_claims)
+        field = fields[0]
+        claim_ids = tuple(claim.claim_id for claim in field.claims)
         if draft.dek_claim_ids != claim_ids:
             raise ReaderGuideWritingError(
                 "draft summary citations differ from its plan",
@@ -1954,29 +2110,28 @@ def _repair_context(
             draft.dek,
             claim_ids,
             _field_packet(
-                purpose="what_the_case_is_about",
-                guidance=(
-                    "Summarize only the supplied issue and essential background in ordinary "
-                    "language."
-                ),
-                claims=plan.summary_claims,
+                purpose=field.name.value,
+                guidance=field.guidance,
+                claims=field.claims,
+                action_slots=field.action_slots,
+                terms=field.terms,
             ),
         )
     if path.kind is ReaderGuideFieldKind.SECTION_PARAGRAPH:
         assert path.section_index is not None and path.paragraph_index is not None
         try:
             section = draft.sections[path.section_index]
-            packet = plan.sections[path.section_index]
+            field = fields[path.section_index + 1]
             rejected = section.paragraphs[path.paragraph_index]
         except IndexError:
             raise ReaderGuideWritingError(
                 "repair path is outside the planned guide", safe_code="invalid_repair_path"
             ) from None
-        if section.heading != packet.heading:
+        if section.heading != field.heading:
             raise ReaderGuideWritingError(
                 "draft section order differs from its plan", safe_code="invalid_repair_path"
             )
-        claim_ids = tuple(claim.claim_id for claim in packet.claims)
+        claim_ids = tuple(claim.claim_id for claim in field.claims)
         if section.claim_ids != claim_ids:
             raise ReaderGuideWritingError(
                 "draft section citations differ from its plan", safe_code="invalid_repair_path"
@@ -1985,36 +2140,16 @@ def _repair_context(
             rejected,
             claim_ids,
             _field_packet(
-                purpose=packet.purpose.value,
-                guidance=packet.reader_purpose,
-                claims=packet.claims,
-                action_slots=packet.action_slots,
-                terms=packet.plain_language_guidance,
+                purpose=field.name.value,
+                guidance=field.guidance,
+                claims=field.claims,
+                action_slots=field.action_slots,
+                terms=field.terms,
             ),
         )
-    assert path.argument_index is not None and path.paragraph_index is not None
-    try:
-        analysis = draft.argument_analyses[path.argument_index]
-        argument_packet = plan.arguments[path.argument_index]
-        rejected = analysis.paragraphs[path.paragraph_index]
-    except IndexError:
-        raise ReaderGuideWritingError(
-            "repair path is outside the planned guide", safe_code="invalid_repair_path"
-        ) from None
-    if analysis.argument_id != argument_packet.argument_id:
-        raise ReaderGuideWritingError(
-            "draft argument identity differs from its plan", safe_code="invalid_repair_path"
-        )
-    fixed_claim_ids = tuple(claim.claim_id for claim in argument_packet.claims)
-    if analysis.claim_ids != fixed_claim_ids:
-        raise ReaderGuideWritingError(
-            "draft argument citations differ from its plan", safe_code="invalid_repair_path"
-        )
-    field_claims = _argument_field_claims(argument_packet)[path.paragraph_index]
-    return (
-        rejected,
-        tuple(claim.claim_id for claim in field_claims),
-        _argument_field_packets(argument_packet)[path.paragraph_index],
+    raise ReaderGuideWritingError(
+        "high-level Citizen's Guides have no argument fields",
+        safe_code="invalid_repair_path",
     )
 
 
