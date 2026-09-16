@@ -128,19 +128,17 @@ path, legal issue, Supreme Court action, and Court reasoning, plus a separate-op
 section only when explicitly attributed claims support it. Section-role validation rejects
 otherwise grounded fragments under the wrong heading, dissent-led descriptions of the
 Court, and stays that omit their interim procedural effect.
-Calls use only the exact local Apache-2.0 Ollama artifact
+The installed candidate is the exact local Apache-2.0 Ollama artifact
 `ragchew-gpt-oss:120b-32k`, with full reviewed content digest
-`820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`, at the typed
-loopback-only `http://127.0.0.1:11434/v1` endpoint. The derived Modelfile pins
-`num_ctx 32768`; strict JSON-schema requests independently pin the 32,768-token
-context, temperature zero, and non-thinking mode. Before Court or model work,
-inventory must contain the exact tag and digest and `/api/show` must confirm the
-context. Missing or drifted content stops the run; automation does not install, pull,
-select `latest`, choose native-context `gpt-oss:120b` or another local model, or use a
-hosted-provider fallback. The exact model, prompt profile, schema, context, temperature,
-and non-thinking controls participate in processor and request fingerprints.
+`820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863` and a
+32,768-token context. Exact non-thinking strict-schema probes returned empty content,
+so processing, model-runtime approval, brief generation, and launch are closed before
+Court or model work. A revised request profile must be fingerprinted and requalified.
+For any later approved profile, inventory must match the exact tag, digest, and context
+before and around completions; automation does not install, pull, select `latest`, use
+native-context `gpt-oss:120b` or another local model, or use a hosted fallback.
 
-GPT-OSS remains publication-disabled until role-sensitive synthetic fixtures, a
+GPT-OSS remains disabled and publication-disabled until role-sensitive synthetic fixtures, a
 fixture-backed end-to-end run, and a fixed ten-case canary all pass the existing
 correctness, privacy, release, cleanup, improvement, and explicit-review thresholds.
 Rollback before approval leaves the immutable active release unchanged; after approval,

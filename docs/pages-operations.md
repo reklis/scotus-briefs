@@ -194,13 +194,16 @@ in 29 minutes, including one fixed-code brief correction, and produced a privacy
 
 ## Current exact GPT-OSS candidate
 
-The active publication-disabled candidate is the locally derived Apache-2.0 artifact
+The installed publication-disabled candidate is the locally derived Apache-2.0 artifact
 `ragchew-gpt-oss:120b-32k` at Ollama digest
 `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`.
-Its reviewed Modelfile pins `num_ctx 32768`; the adapter also sends `num_ctx 32768`,
-`temperature 0`, and non-thinking mode on every request. Tag, digest, and context are
-verified before client construction and immediately before and after each completion.
-The exact prompt profile, schema, model identity, context, and controls are fingerprinted.
+Its reviewed Modelfile pins `num_ctx 32768`. Exact non-thinking qualification returned
+empty content, so checked-in processing, model-runtime approval, brief-generation, and
+launch gates are closed before Court or model work. A revised request profile must be
+fingerprinted, bounded, requalified, and explicitly approved before those gates reopen.
+For an approved profile, tag, digest, context, prompt, schema, and generation controls
+are verified before client construction and around every completion and participate in
+processor/request fingerprints.
 Neither protected automation nor an operator running it may pull, select `latest`, use
 native-context `gpt-oss:120b`, contact a hosted endpoint, or substitute a reviewer or
 fallback model.

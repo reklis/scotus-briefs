@@ -286,7 +286,7 @@ class MockOpenAI:
         user = json.loads(request["messages"][1]["content"])
         if name == "scotus_legal_observations":
             content = self._extraction(user["evidence"])
-        elif name == "compact_reader_guide":
+        elif name == "scotus_citizens_guide_v1":
             content = self._compact_brief(user)
         elif name == "reader_guide_field_repair":
             claims = user["support_packet"]["claims"]
@@ -507,7 +507,7 @@ class MockOpenAI:
             return " ".join(dict.fromkeys(str(claim["value"]) for claim in claims))
 
         return {
-            "dek": prose(user["summary"]),
+            "dek": prose(user["dek"]["claims"]),
             "section_paragraphs": [
                 prose(
                     [
@@ -521,10 +521,7 @@ class MockOpenAI:
                 for section in user["sections"]
             ],
             "argument_paragraphs": [
-                [
-                    prose(argument["claims"][::2]),
-                    prose(argument["claims"][1::2] or argument["claims"][:1]),
-                ]
+                [prose(field["claims"]) for field in argument["fields"]]
                 for argument in user["arguments"]
             ],
         }
@@ -1293,12 +1290,12 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     )
     assert processor.policy_version == "scotus-brief-policy-v61"
     assert processor.prompt_version == (
-        "scotus-reader-guide-compact-v1;repair=scotus-reader-guide-field-repair-v2;"
+        "scotus-gpt-oss-citizens-guide-v1;repair=scotus-citizens-guide-field-repair-v3;"
         "planner=reader-guide-plan-v3;reader_prose=scotus-reader-prose-v2"
     )
     assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
         "scotus_legal_observations",
-        "compact_reader_guide",
+        "scotus_citizens_guide_v1",
     ]
     assert all(
         request["extra_body"]
@@ -1319,7 +1316,12 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
         "attribution",
     }.issubset(extraction_evidence[0])
     brief_payload = json.loads(model.requests[1]["messages"][1]["content"])
-    assert brief_payload["task"] == "translate approved facts into everyday language"
+    assert brief_payload["task"] == "write a concise Citizen's Guide from only each field's packet"
+    assert brief_payload["schema_version"] == "scotus-citizens-guide-schema-v1"
+    assert brief_payload["limits"] == {
+        "total_words": 180,
+        "sentences_per_field": [1, 2],
+    }
     assert "caption" not in brief_payload
     assert "docket" not in brief_payload
     brief_schema = model.requests[1]["response_format"]["json_schema"]["schema"]
@@ -1573,7 +1575,7 @@ def test_status_changing_opinion_rewrites_complete_argument_case(tmp_path: Path)
     )
     assert [
         request["response_format"]["json_schema"]["name"] for request in update_model.requests
-    ] == ["scotus_legal_observations", "scotus_legal_observations", "compact_reader_guide"]
+    ] == ["scotus_legal_observations", "scotus_legal_observations", "scotus_citizens_guide_v1"]
     assert any("transcripts" in request.url.path for request in court.document_requests)
 
 
@@ -1648,7 +1650,7 @@ def test_disposition_only_emergency_opinion_publishes_without_argument(
     assert case.latest_court_document_date == datetime(2026, 3, 4, tzinfo=UTC)
     assert [item.kind for item in case.dispositions] == ["per_curiam"]
     names = [request["response_format"]["json_schema"]["name"] for request in model.requests]
-    assert names == ["scotus_legal_observations", "compact_reader_guide"]
+    assert names == ["scotus_legal_observations", "scotus_citizens_guide_v1"]
     brief_request = model.requests[-1]
     brief_schema = brief_request["response_format"]["json_schema"]["schema"]
     assert brief_schema["properties"]["argument_paragraphs"]["maxItems"] == 0
@@ -1960,10 +1962,10 @@ def test_brief_validation_gets_one_bounded_private_field_correction(
         def create(self, **request: Any) -> object:
             completion = super().create(**request)
             name = request["response_format"]["json_schema"]["name"]
-            if name not in {"compact_reader_guide", "reader_guide_field_repair"}:
+            if name not in {"scotus_citizens_guide_v1", "reader_guide_field_repair"}:
                 return completion
             self.brief_calls += 1
-            if name != "compact_reader_guide":
+            if name != "scotus_citizens_guide_v1":
                 return completion
             payload = json.loads(completion.choices[0].message.content)
             payload["dek"] = "The language model output says the Court heard argument."
@@ -2029,7 +2031,7 @@ def test_style_warning_retains_original_without_requesting_unprovable_repair(
         def create(self, **request: Any) -> object:
             completion = super().create(**request)
             name = request["response_format"]["json_schema"]["name"]
-            if name == "compact_reader_guide":
+            if name == "scotus_citizens_guide_v1":
                 payload = json.loads(completion.choices[0].message.content)
                 payload["dek"] = original
                 return SimpleNamespace(
@@ -2125,10 +2127,10 @@ def test_disposition_action_validation_repairs_only_rejected_field(
         def create(self, **request: Any) -> object:
             completion = super().create(**request)
             name = request["response_format"]["json_schema"]["name"]
-            if name not in {"compact_reader_guide", "reader_guide_field_repair"}:
+            if name not in {"scotus_citizens_guide_v1", "reader_guide_field_repair"}:
                 return completion
             self.brief_calls += 1
-            if name != "compact_reader_guide":
+            if name != "scotus_citizens_guide_v1":
                 return completion
             payload = json.loads(completion.choices[0].message.content)
             user = json.loads(request["messages"][1]["content"])
@@ -2289,7 +2291,7 @@ def test_reargument_reprocesses_every_session_under_one_case_budget(tmp_path: Pa
     assert case.revisions[-1].correction_note
     names = [request["response_format"]["json_schema"]["name"] for request in model.requests]
     assert names.count("scotus_legal_observations") == 2
-    assert names.count("compact_reader_guide") == 1
+    assert names.count("scotus_citizens_guide_v1") == 1
 
 
 @pytest.mark.parametrize("stale_processor", [None, "f" * 64])

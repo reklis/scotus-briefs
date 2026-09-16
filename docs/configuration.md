@@ -63,13 +63,14 @@ For a new deployment or any unreviewed source/runtime change, these settings rem
 - model brief generation;
 - static publication.
 
-The owner approved bounded production on 2026-09-03, so the checked-in source,
-generation, approval, and publication switches are currently `true`. The replacement
-model nevertheless remains `publication.dry_run=true` until its exact canary receives
-reviewed approval; schedules and manual dispatch cannot publish GPT-OSS output in this
-state. This is not a validator bypass: a manual workflow dispatch cannot override a
-closed gate, and every
-candidate remains subject to the source, budget, grounding, privacy, completeness, and
+The owner approved the earlier bounded processor on 2026-09-03. The exact GPT-OSS
+non-thinking qualification later returned empty content, so checked-in processing,
+model-runtime approval, brief generation, and launch switches are now `false`, and
+`publication.dry_run` remains `true`. Scheduled and manual workflows therefore stop
+before Court retrieval or model use. Reopening requires a revised fingerprinted request
+profile, fresh bounded qualification, and explicit owner approval. This is not a
+validator bypass: a workflow dispatch cannot override a closed gate, and every future
+candidate remains subject to source, budget, grounding, privacy, completeness, and
 release-integrity checks. The protected `scotus-publication`
 build runs on the self-hosted Spark runner and accepts only
 `RAGCHEW_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1`. That typed setting rejects remote

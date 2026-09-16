@@ -160,6 +160,15 @@ def check() -> list[str]:
     if replacement_manifest and publication.get("dry_run") is not True:
         failures.append("replacement model must remain publication-disabled before approval")
     if (
+        config.get("enabled") is not False
+        or generation.get("brief_generation_enabled") is not False
+        or approvals.get("model_runtime_approved") is not False
+        or approvals.get("launch_approved") is not False
+    ):
+        failures.append(
+            "GPT-OSS processing must remain closed after failed non-thinking qualification"
+        )
+    if (
         generation.get("provider") != "ollama"
         or generation.get("runtime_role") != "production"
         or generation.get("model") != reviewed_model

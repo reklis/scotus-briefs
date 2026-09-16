@@ -1,8 +1,9 @@
 version: "1.0"
 product: scotus_legal_briefs
 source_id: supreme_court
-# Owner-authorized bounded generation; every candidate still fails closed through validation.
-enabled: true
+# Closed after exact GPT-OSS qualification returned empty content; reopen only after a
+# revised request profile passes bounded qualification and receives owner approval.
+enabled: false
 discovery:
   # Routine runs prioritize this term and revisit older terms through a bounded cursor.
   active_term: "2025"
@@ -145,8 +146,8 @@ approvals:
   source_review_approved: true
   licenses_approved: true
   origin_approved: true
-  model_runtime_approved: true
-  launch_approved: true
+  model_runtime_approved: false
+  launch_approved: false
 generation:
   provider: ollama
   runtime_role: production
@@ -155,8 +156,8 @@ generation:
   model_digest: 820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863
   context_window_tokens: 32768
   temperature: 0
-  prompt_version: scotus-reader-guide-compact-v1
-  brief_generation_enabled: true
+  prompt_version: scotus-gpt-oss-citizens-guide-v1
+  brief_generation_enabled: false
   maximum_brief_api_calls_per_run: 100
   # One fresh draft may correct a fixed-code validation failure; both remain budgeted.
   maximum_brief_validation_attempts_per_case: 5

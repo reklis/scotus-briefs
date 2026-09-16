@@ -102,19 +102,20 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "runs-on: [self-hosted" not in hosted_jobs
 
 
-def test_generated_case_publication_is_explicitly_live_and_bounded() -> None:
+def test_gpt_oss_candidate_is_exact_bounded_and_fail_closed() -> None:
     config = yaml.safe_load(Path("config/scotus.yaml").read_text())
-    assert config["enabled"] is True
+    assert config["enabled"] is False
     assert config["publication"]["enabled"] is True
     assert config["publication"]["dry_run"] is True
-    assert config["generation"]["brief_generation_enabled"] is True
+    assert config["generation"]["brief_generation_enabled"] is False
     assert config["generation"]["model"] == "ragchew-gpt-oss:120b-32k"
     assert config["generation"]["model_digest"] == (
         "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863"
     )
     assert config["generation"]["context_window_tokens"] == 32768
     assert config["generation"]["temperature"] == 0
-    assert config["approvals"]["launch_approved"] is True
+    assert config["approvals"]["model_runtime_approved"] is False
+    assert config["approvals"]["launch_approved"] is False
     assert config["runner_limits"]["maximum_cases_per_run"] == 100
     assert config["generation"]["maximum_brief_api_calls_per_run"] == 100
     assert config["generation"]["stop_after_brief_validation_failure"] is False
