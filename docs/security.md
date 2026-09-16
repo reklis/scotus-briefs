@@ -21,10 +21,10 @@ The protected `scotus-publication` build runs on the persistent self-hosted aarc
 Spark runner. It receives no model secret and can configure only the validated
 `http://127.0.0.1:11434/v1` endpoint. Pre- and post-build cleanup remove prior source,
 candidates, and the mode-0700 private workspace. During the paired canary only, Qwen records
-bounded Court responses in a mode-0700 volatile-memory handoff and Cogito's dependent
+bounded Court responses in a mode-0700 volatile-memory handoff and GPT-OSS's dependent
 protected job first verifies the exact recorded runner identity and then replays the sequence.
 A mismatched runner fails before candidate work. This handoff is never uploaded, is removed
-after Cogito or a control failure, expires through a detached 24-hour cleanup guard, disappears
+after GPT-OSS or a control failure, expires through a detached 24-hour cleanup guard, disappears
 on runner restart, and is scrubbed before later builds. No Docker
 services are started. Deploy receives
 only `pages:write` and `id-token:write`; promotion receives only `contents:write`.
@@ -41,16 +41,18 @@ script. The remaining official content stays byte-sensitive; absent telemetry is
 unchanged, while malformed or multiple telemetry wrappers fail closed.
 
 Only bounded evidence windows or sanitized approved claims may be sent to the exact
-local Apache-2.0 Ollama model `cogito:70b`, pinned to full content digest
-`8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`.
-The OpenAI SDK targets Ollama's compatible `/v1` interface with a non-secret placeholder
-key, disabled environment proxies/redirects, and preserved JSON-schema chat
-completions. Before constructing Court/model clients, the protected workflow requires
-an installed inventory entry matching both tag and digest. The adapter repeats that
-native digest check before and after every completion, so output is rejected if the
-mutable tag changes during the request. Missing content or identity drift stops the
-run; there is no install, pull, alternate-model, remote-endpoint, or hosted-provider
-fallback.
+local Apache-2.0 Ollama artifact `ragchew-gpt-oss:120b-32k`, pinned to full content
+digest `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`.
+Its derived Modelfile and each request pin `num_ctx 32768`; requests also pin
+`temperature: 0` and non-thinking mode. The OpenAI SDK targets Ollama's compatible
+`/v1` interface with a non-secret placeholder key, disabled environment
+proxies/redirects, and preserved JSON-schema chat completions. Before constructing
+Court/model clients, the protected workflow requires an installed inventory entry
+matching both tag and digest and an exact `/api/show` context report. The adapter
+repeats that native identity/context check before and after every completion, so output
+is rejected if the mutable tag or operating envelope changes during the request.
+Missing content or drift stops the run; there is no install, pull, `latest`, native-
+context GPT-OSS, alternate-model, remote-endpoint, or hosted-provider fallback.
 Attempt and token limits are checked before sending; configured local model rates and
 maximum cost are zero. Logs and summaries contain only public case keys, stages,
 coarse status/error categories, safe counts/digests/timings, and release IDs—never

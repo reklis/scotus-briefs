@@ -52,8 +52,12 @@ def test_pages_workflow_has_least_privilege_job_boundaries() -> None:
     assert "RAGCHEW_SCOTUS_BATCH_ADAPTER: ragchew.scotus.live_static:LiveStaticBatchAdapter" in text
     assert "runs-on: [self-hosted, spark]" in text
     assert "RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1" in text
-    assert "cogito:70b" in text
-    assert "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb" in text
+    assert "ragchew-gpt-oss:120b-32k" in text
+    assert "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863" in text
+    assert "REVIEWED_OLLAMA_CONTEXT_TOKENS: 32768" in text
+    assert "REVIEWED_OLLAMA_TEMPERATURE: 0" in text
+    assert "http://127.0.0.1:11434/api/show" in text
+    assert '"num_ctx"' in text
     assert "qwen3.8:27b" in text
     assert "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643" in text
     assert "required={production}" in text
@@ -104,10 +108,12 @@ def test_generated_case_publication_is_explicitly_live_and_bounded() -> None:
     assert config["publication"]["enabled"] is True
     assert config["publication"]["dry_run"] is True
     assert config["generation"]["brief_generation_enabled"] is True
-    assert config["generation"]["model"] == "cogito:70b"
+    assert config["generation"]["model"] == "ragchew-gpt-oss:120b-32k"
     assert config["generation"]["model_digest"] == (
-        "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
+        "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863"
     )
+    assert config["generation"]["context_window_tokens"] == 32768
+    assert config["generation"]["temperature"] == 0
     assert config["approvals"]["launch_approved"] is True
     assert config["runner_limits"]["maximum_cases_per_run"] == 100
     assert config["generation"]["maximum_brief_api_calls_per_run"] == 100

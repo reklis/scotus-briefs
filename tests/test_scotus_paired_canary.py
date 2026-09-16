@@ -38,7 +38,6 @@ from ragchew.scotus.static_state import GeneratedContent
 
 NOW = datetime(2026, 9, 4, tzinfo=UTC)
 QWEN_DIGEST = "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"
-COGITO_DIGEST = "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
 
 
 def _config(role: str) -> ScotusConfig:
@@ -187,7 +186,7 @@ def test_all_hard_validation_failures_still_form_a_complete_model_control() -> N
     assert report.failed_count == 10
 
 
-def test_candidate_requires_same_parent_protocol_evidence_and_exact_cogito() -> None:
+def test_candidate_requires_same_parent_protocol_evidence_and_exact_gpt_oss() -> None:
     parent = GeneratedContent.empty()
     control_config = _config("control")
     control, control_report = _arm(control_config)

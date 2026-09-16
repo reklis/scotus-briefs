@@ -128,17 +128,27 @@ path, legal issue, Supreme Court action, and Court reasoning, plus a separate-op
 section only when explicitly attributed claims support it. Section-role validation rejects
 otherwise grounded fragments under the wrong heading, dissent-led descriptions of the
 Court, and stays that omit their interim procedural effect.
-Calls use only the exact local Apache-2.0 Ollama model `cogito:70b`, with full
-reviewed content digest
-`8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`, at the typed
-loopback-only `http://127.0.0.1:11434/v1` endpoint. The OpenAI SDK is only an
-Ollama-compatible transport with a non-secret placeholder key; strict JSON-schema
-chat completions and the non-thinking request mode remain mandatory. Before Court or
-model work, inventory must contain one entry matching both tag and digest. Missing or
-drifted content stops the run; automation does not install, pull, choose another local
-model, or use a hosted-provider fallback.
+Calls use only the exact local Apache-2.0 Ollama artifact
+`ragchew-gpt-oss:120b-32k`, with full reviewed content digest
+`820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`, at the typed
+loopback-only `http://127.0.0.1:11434/v1` endpoint. The derived Modelfile pins
+`num_ctx 32768`; strict JSON-schema requests independently pin the 32,768-token
+context, temperature zero, and non-thinking mode. Before Court or model work,
+inventory must contain the exact tag and digest and `/api/show` must confirm the
+context. Missing or drifted content stops the run; automation does not install, pull,
+select `latest`, choose native-context `gpt-oss:120b` or another local model, or use a
+hosted-provider fallback. The exact model, prompt profile, schema, context, temperature,
+and non-thinking controls participate in processor and request fingerprints.
 
-The 2026-09-11 production-protocol qualification used only repository-authored
+GPT-OSS remains publication-disabled until role-sensitive synthetic fixtures, a
+fixture-backed end-to-end run, and a fixed ten-case canary all pass the existing
+correctness, privacy, release, cleanup, improvement, and explicit-review thresholds.
+Rollback before approval leaves the immutable active release unchanged; after approval,
+rollback redeploys the prior immutable release and requires a new validated processor
+migration.
+
+For historical context, the prior Cogito candidate's 2026-09-11 production-protocol
+qualification used only repository-authored
 synthetic public evidence. It returned schema-valid grounded fields in 25 cold-start
 seconds, with 72 prompt tokens, 43 completion tokens, and 115 total tokens; it
 identified the exact Court action and object and declined to predict an unsupported

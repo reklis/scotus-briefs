@@ -370,6 +370,8 @@ class _BudgetedModelRequest:
         document_digests: tuple[str, ...],
         processor_versions: Mapping[str, str],
         output_tokens: int,
+        context_window_tokens: int,
+        temperature: int,
         authorized_replay: bool,
         verify_model_identity: Callable[[], None],
         maximum_attempts: int | None = None,
@@ -380,15 +382,27 @@ class _BudgetedModelRequest:
         self.document_digests = document_digests
         self.processor_versions = processor_versions
         self.output_tokens = output_tokens
+        self.context_window_tokens = context_window_tokens
+        self.temperature = temperature
         self.authorized_replay = authorized_replay
         self.verify_model_identity = verify_model_identity
         self.maximum_attempts = maximum_attempts
 
     def __call__(self, request: dict[str, Any]) -> Any:
         # Ollama reasoning can consume the whole output/time budget before emitting the
-        # required JSON. This production wrapper is Ollama-only, so disable hidden
-        # reasoning and include that transport choice in the request fingerprint.
-        provider_request = {**request, "extra_body": {"think": False}}
+        # required JSON. Pin every reviewed runtime control on each request rather than
+        # accepting mutable server defaults. These values are part of the request hash.
+        provider_request = {
+            **request,
+            "temperature": self.temperature,
+            "extra_body": {
+                "think": False,
+                "options": {
+                    "num_ctx": self.context_window_tokens,
+                    "temperature": self.temperature,
+                },
+            },
+        }
         payload = _request_payload(provider_request)
         serialized = json.dumps(
             payload,
@@ -1681,6 +1695,8 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
                 config.generation.maximum_brief_validation_attempts_per_case
             ),
             "maximum_context_characters": (config.generation.maximum_context_characters),
+            "context_window_tokens": config.generation.context_window_tokens,
+            "temperature": config.generation.temperature,
             "maximum_paragraph_words": config.generation.maximum_paragraph_words,
             "maximum_sentence_words": config.generation.maximum_sentence_words,
             "severe_maximum_paragraph_words": (config.generation.severe_maximum_paragraph_words),
@@ -2356,6 +2372,8 @@ class LiveStaticCaseProcessor:
                     document_digests=all_digests,
                     processor_versions=versions,
                     output_tokens=extraction_output_tokens,
+                    context_window_tokens=self.config.generation.context_window_tokens,
+                    temperature=self.config.generation.temperature,
                     authorized_replay=authorized_replay,
                     verify_model_identity=self.verify_model_identity,
                 )
@@ -2414,6 +2432,8 @@ class LiveStaticCaseProcessor:
                     document_digests=all_digests,
                     processor_versions=versions,
                     output_tokens=extraction_output_tokens,
+                    context_window_tokens=self.config.generation.context_window_tokens,
+                    temperature=self.config.generation.temperature,
                     authorized_replay=authorized_replay,
                     verify_model_identity=self.verify_model_identity,
                     maximum_attempts=1,
@@ -2710,6 +2730,8 @@ class LiveStaticCaseProcessor:
                     ),
                 },
                 output_tokens=self.config.model_budget.maximum_output_tokens_per_call,
+                context_window_tokens=self.config.generation.context_window_tokens,
+                temperature=self.config.generation.temperature,
                 authorized_replay=authorized_replay,
                 verify_model_identity=self.verify_model_identity,
             )
@@ -4074,23 +4096,32 @@ def _default_ollama_client(settings: ServiceSettings, config: ScotusConfig) -> O
 
 
 def _default_ollama_inventory(settings: ServiceSettings, config: ScotusConfig) -> Mapping[str, Any]:
-    """Read immutable model identities from Ollama's native loopback inventory."""
-    tags_url = f"{settings.ollama_base_url.removesuffix('/v1')}/api/tags"
+    """Read exact model identity and derived-context controls from loopback Ollama."""
+    native_base_url = settings.ollama_base_url.removesuffix("/v1")
     with httpx.Client(
         follow_redirects=False,
         timeout=min(config.model_budget.request_timeout_seconds, 30),
         trust_env=False,
     ) as client:
-        response = client.get(tags_url)
+        response = client.get(f"{native_base_url}/api/tags")
         response.raise_for_status()
         payload = response.json()
-    if not isinstance(payload, Mapping):
+        details_response = client.post(
+            f"{native_base_url}/api/show",
+            json={"model": config.generation.model},
+        )
+        details_response.raise_for_status()
+        details = details_response.json()
+    if not isinstance(payload, Mapping) or not isinstance(details, Mapping):
         raise ValueError("Ollama inventory is not an object")
-    return payload
+    return {**payload, "configured_model_details": details}
 
 
 def _verify_exact_ollama_model(
-    inventory: Mapping[str, Any], expected_model: str, expected_digest: str
+    inventory: Mapping[str, Any],
+    expected_model: str,
+    expected_digest: str,
+    expected_context_tokens: int,
 ) -> None:
     try:
         models = inventory["models"]
@@ -4104,6 +4135,13 @@ def _verify_exact_ollama_model(
         raise PublicationGateDenied("configured local Ollama model tag is not installed")
     if not any(item.get("digest") == expected_digest for item in matching_tags):
         raise PublicationGateDenied("configured local Ollama model digest does not match")
+    details = inventory.get("configured_model_details")
+    parameters = details.get("parameters") if isinstance(details, Mapping) else None
+    if not isinstance(parameters, str):
+        raise PublicationGateDenied("configured local Ollama model context cannot be verified")
+    context_values = re.findall(r"(?m)^\s*num_ctx\s+(\d+)\s*$", parameters)
+    if context_values != [str(expected_context_tokens)]:
+        raise PublicationGateDenied("configured local Ollama model context does not match")
 
 
 class LiveStaticBatchAdapter:
@@ -4169,6 +4207,7 @@ class LiveStaticBatchAdapter:
                 inventory,
                 config.generation.model,
                 config.generation.model_digest,
+                config.generation.context_window_tokens,
             )
 
         verify_model_identity()

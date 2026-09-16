@@ -69,8 +69,12 @@ def test_pages_workflow_wires_ephemeral_live_adapter_and_serializes_mutations() 
     assert "runs-on: [self-hosted, spark]" in workflow
     assert "OPENAI_API_KEY" not in workflow
     assert "RAGCHEW_OLLAMA_BASE_URL: http://127.0.0.1:11434/v1" in workflow
-    assert "cogito:70b" in workflow
-    assert "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb" in workflow
+    assert "ragchew-gpt-oss:120b-32k" in workflow
+    assert "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863" in workflow
+    assert "REVIEWED_OLLAMA_CONTEXT_TOKENS: 32768" in workflow
+    assert "REVIEWED_OLLAMA_TEMPERATURE: 0" in workflow
+    assert "http://127.0.0.1:11434/api/show" in workflow
+    assert '"num_ctx"' in workflow
     assert "qwen3.8:27b" in workflow
     assert "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643" in workflow
     assert "required={production}" in workflow

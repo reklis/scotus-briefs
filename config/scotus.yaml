@@ -150,8 +150,11 @@ approvals:
 generation:
   provider: ollama
   runtime_role: production
-  model: cogito:70b
-  model_digest: 8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb
+  # Exact locally derived artifact; native-context and mutable tags are forbidden.
+  model: ragchew-gpt-oss:120b-32k
+  model_digest: 820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863
+  context_window_tokens: 32768
+  temperature: 0
   prompt_version: scotus-reader-guide-compact-v1
   brief_generation_enabled: true
   maximum_brief_api_calls_per_run: 100
@@ -173,7 +176,7 @@ generation:
   prohibit_personalized_legal_advice: true
 publication:
   enabled: true
-  # Remain publication-disabled until the exact Cogito canary is reviewed and approved.
+  # Remain publication-disabled until the exact GPT-OSS canary is reviewed and approved.
   dry_run: true
   site_name: SCOTUS Legal Briefs
   base_path: /scotus

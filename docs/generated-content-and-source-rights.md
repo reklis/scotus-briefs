@@ -12,6 +12,15 @@ This policy identifies what the repository licenses and what it does not.
 | Third-party quotations or material | Governed by the third party's rights and explicitly excluded unless stated otherwise |
 | Test fixtures | Invented/synthetic and repository-licensed; `tests/fixtures/README.md` governs them |
 | Court or third-party names, seals, and logos | No trademark license or affiliation; logos are not included |
+| Local GPT-OSS model artifact | Apache-2.0 upstream model; separately installed and not redistributed by this repository |
+
+The reviewed runtime artifact `ragchew-gpt-oss:120b-32k` is locally derived from
+OpenAI's upstream [`gpt-oss-120b`](https://huggingface.co/openai/gpt-oss-120b), as
+distributed by Ollama as `gpt-oss:120b`, using a Modelfile that pins
+`num_ctx 32768`. Ollama reports the upstream model license as Apache-2.0. The derived
+model blobs and Modelfile are not committed, uploaded, or covered by the generated-content license;
+operators must separately verify upstream provenance, license, exact digest, and owner
+eligibility before qualification.
 
 ## Attribution for briefs
 

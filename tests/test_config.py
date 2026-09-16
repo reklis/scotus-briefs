@@ -43,10 +43,12 @@ def test_scotus_defaults_are_transcript_first_with_bounded_live_generation() -> 
     assert config.documents.request_timeout_seconds == 60
     assert config.generation.provider == "ollama"
     assert config.generation.runtime_role == "production"
-    assert config.generation.model == "cogito:70b"
+    assert config.generation.model == "ragchew-gpt-oss:120b-32k"
     assert config.generation.model_digest == (
-        "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
+        "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863"
     )
+    assert config.generation.context_window_tokens == 32768
+    assert config.generation.temperature == 0
     assert config.generation.prompt_version == "scotus-reader-guide-compact-v1"
     assert config.generation.brief_generation_enabled is True
     assert config.generation.maximum_brief_api_calls_per_run == 100
@@ -218,8 +220,11 @@ def test_scotus_config_requires_reviewed_ollama_provider_and_exact_model() -> No
     config = ScotusConfig.from_yaml(Path("config/scotus.yaml"))
     mutations = (
         {"provider": "openai"},
-        {"model": "cogito:latest"},
+        {"model": "ragchew-gpt-oss:latest"},
+        {"model": "gpt-oss:120b"},
         {"model_digest": "f" * 64},
+        {"context_window_tokens": 131072},
+        {"temperature": 1},
         {"runtime_role": "control"},
         {"model": "qwen3.8:27b"},
     )

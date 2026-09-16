@@ -192,6 +192,27 @@ per-scope and per-run limits. One-case live dry run `33912374845` then completed
 in 29 minutes, including one fixed-code brief correction, and produced a privacy-scanned
 1,711-case/2,976-page candidate release without deployment.
 
+## Current exact GPT-OSS candidate
+
+The active publication-disabled candidate is the locally derived Apache-2.0 artifact
+`ragchew-gpt-oss:120b-32k` at Ollama digest
+`820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`.
+Its reviewed Modelfile pins `num_ctx 32768`; the adapter also sends `num_ctx 32768`,
+`temperature 0`, and non-thinking mode on every request. Tag, digest, and context are
+verified before client construction and immediately before and after each completion.
+The exact prompt profile, schema, model identity, context, and controls are fingerprinted.
+Neither protected automation nor an operator running it may pull, select `latest`, use
+native-context `gpt-oss:120b`, contact a hosted endpoint, or substitute a reviewer or
+fallback model.
+
+Qualification proceeds only from role-sensitive synthetic fixtures to a fixture-backed
+end-to-end run and then one fixed publication-disabled ten-case canary. Every accepted
+case must preserve grounding and canonical roles, and the existing correctness, privacy,
+release, cleanup, budget, improvement, and explicit-review thresholds remain mandatory.
+Failed qualification retains only sanitized aggregate reports and opaque receipts. It
+never uploads a promotable candidate. The historical Mistral and Cogito outcomes above
+remain evidence about those artifacts, not approval for GPT-OSS.
+
 ## One-time owner settings
 
 1. Protect the default branch: require review, dismiss stale reviews, require CI and
@@ -205,9 +226,12 @@ in 29 minutes, including one fixed-code brief correction, and produced a privacy
    `spark`, pinned at version `2.337.0`, runs as the non-root `gdxspark` system service,
    and advertises `self-hosted`, `Linux`, `ARM64`, and `spark`; both protected paired
    jobs require `self-hosted` and `spark`. Run Ollama as a host service listening only on `127.0.0.1:11434`.
-   Install the reviewed Apache-2.0 model `cogito:70b` whose full Ollama content digest
-   is `8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`, and do not
-   expose the port to a network. Protected automation must never pull or install it.
+   Separately derive and install `ragchew-gpt-oss:120b-32k` from the reviewed
+   Apache-2.0 upstream GPT-OSS 120B artifact with a Modelfile containing
+   `PARAMETER num_ctx 32768`. Verify full Ollama content digest
+   `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`, upstream
+   provenance/license, and owner eligibility; do not expose the port to a network.
+   Protected automation must never pull, create, copy, or install a model.
 5. Configure Pages for GitHub Actions with custom domain `scotusbriefs.us`, enforce
    HTTPS after GitHub accepts the domain, and protect `github-pages`. It has no secrets.
    DNS is managed separately by the owner; this repository change makes no DNS changes.
@@ -315,8 +339,9 @@ or from a working tree containing private inputs.
 
 The pinned workflow cannot run its build for pull requests. Every day at 03:17 UTC,
 the protected default-branch schedule cleans the persistent self-hosted workspace,
-preflights local Ollama for exact tag `cogito:70b` and full content digest
-`8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`, reconciles
+preflights local Ollama for exact tag `ragchew-gpt-oss:120b-32k`, full content digest
+`820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`, and
+`num_ctx 32768`, reconciles
 live and branch release IDs, creates a mode-0700 temporary workspace, and runs
 `uv run ragchew-scotus-static`. `nightly` independently polls the active-term slip
 index and uses routine current/recent/rotating limits; `bootstrap` manually drains a
@@ -335,13 +360,13 @@ workflow.
 ### Measured editorial rollout
 
 Start a new reader-guide processor only with a protected manual `nightly` dispatch.
-For the Cogito replacement, preserve prompt, validation-policy, and budget settings and
+For the GPT-OSS replacement, preserve prompt, validation-policy, and budget settings and
 reconstruct exactly the ten case keys from rejected Qwen run `34579544086`, in its
 recorded order. `config/scotus.yaml` pins that reviewed order as
 `editorial_backfill.replacement_canary_case_keys`; changing or reranking it requires
 review. Because the rejected historical run did not retain its final evidence checkpoints,
 the protected workflow first runs exact pinned Qwen as a publication-disabled control and
-then runs exact pinned Cogito independently from the same generated-content parent. Both
+then runs exact pinned GPT-OSS independently from the same generated-content parent. Both
 arms must account for all ten cases under the same protocol and current evidence digest.
 Court docket pages are hashed and analyzed after removing only the nondeterministic Akamai
 Boomerang telemetry script; malformed or ambiguous telemetry markup fails closed, while any
@@ -351,27 +376,27 @@ disposition metadata differs between arms, stop without substituting a case. Unr
 Court activity remains explicit pending work and cannot consume a reserved measured slot.
 Each arm starts with fresh candidate identity, aggregate counts, warning counts, candidate
 digest, and reviewer fields; no prior decision, retry scope, attempt, or count carries over.
-Any new Cogito failure then follows the ordinary finite cooldown and retry limits.
+Any new GPT-OSS failure then follows the ordinary finite cooldown and retry limits.
 
 1. Choose `editorial_rollout_stage=canary_10`, `deploy=false`, and leave
    `maximum_cases=0`. The workflow rejects a canary deploy request and the CLI independently
    forces dry-run publication. The arms run in sequential protected jobs with unchanged
    runtime budgets. Qwen records bounded Court responses only in a mode-0700 volatile-memory
-   handoff; Cogito has no independent Court fetch and replays that exact request sequence,
+   handoff; GPT-OSS has no independent Court fetch and replays that exact request sequence,
    consumes every response, and removes the handoff. The candidate verifies the control's
    exact runner identity before work; a scheduling mismatch fails closed. The handoff is never
    uploaded, has a detached 24-hour expiry guard, and stale volatile handoffs are scrubbed
    before later self-hosted builds. The complete Qwen arm emits only its sanitized
    comparison binding, report, opaque receipts, and any privacy-scanned hard-valid public
-   candidate; Cogito cannot start without that binding. Cogito independently revalidates the
+   candidate; GPT-OSS cannot start without that binding. GPT-OSS independently revalidates the
    parent, manifest, protocol, evidence, model identity, and control-report digest. Receipts
    remain uploadable after a failed arm, and each private workspace is removed. None of these artifacts contains
    source text, prompts, rejected output, field paths, or detailed diagnostics.
-2. Confirm that the Cogito manifest exactly matches the prior rejected ten-case
+2. Confirm that the GPT-OSS manifest exactly matches the prior rejected ten-case
    comparison manifest, including order, then review it side by side with each active
    legacy page and the linked official Court materials. A normal first-stage manifest
    is newest-first and, where available, includes a disposition-only case, an argued
-   case, and a case decided after argument; the Cogito replacement does not rerank or
+   case, and a case decided after argument; the GPT-OSS replacement does not rerank or
    substitute the fixed comparison set.
    Reader-language, preferred-length, readability, repetition, and nonmaterial section-
    focus findings are fixed editorial warnings rather than factual acceptance failures.
@@ -478,7 +503,7 @@ candidate, CAS-promote that exact state. If branch active is the last known-good
 redeploy its exact site artifact. Stop for an unknown live ID; do not generate over a
 split.
 
-Before Cogito approval, rollback is configuration-only because no candidate may have
+Before GPT-OSS approval, rollback is configuration-only because no candidate may have
 been promoted: leave the live release unchanged and revert the reviewed model
 configuration rather than editing public state. After any approved promotion, select
 the prior immutable validated release, validate its manifest and file digests,

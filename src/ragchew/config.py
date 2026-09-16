@@ -249,12 +249,16 @@ class ScotusRetentionDefaults(BaseModel):
     failed_download_hours: int = Field(ge=1)
 
 
-SCOTUS_PRODUCTION_MODEL: Final[Literal["cogito:70b"]] = "cogito:70b"
-SCOTUS_PRODUCTION_MODEL_DIGEST: Final[
-    Literal["8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"]
-] = (
-    "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
+SCOTUS_PRODUCTION_MODEL: Final[Literal["ragchew-gpt-oss:120b-32k"]] = (
+    "ragchew-gpt-oss:120b-32k"
 )
+SCOTUS_PRODUCTION_MODEL_DIGEST: Final[
+    Literal["820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863"]
+] = (
+    "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863"
+)
+SCOTUS_PRODUCTION_CONTEXT_TOKENS: Final[Literal[32768]] = 32768
+SCOTUS_PRODUCTION_TEMPERATURE: Final[Literal[0]] = 0
 SCOTUS_CONTROL_MODEL: Final[Literal["qwen3.8:27b"]] = "qwen3.8:27b"
 SCOTUS_CONTROL_MODEL_DIGEST: Final[
     Literal["22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643"]
@@ -268,11 +272,13 @@ class ScotusGenerationDefaults(BaseModel):
 
     provider: Literal["ollama"]
     runtime_role: Literal["production", "control"] = "production"
-    model: Literal["cogito:70b", "qwen3.8:27b"] = SCOTUS_PRODUCTION_MODEL
+    model: Literal["ragchew-gpt-oss:120b-32k", "qwen3.8:27b"] = SCOTUS_PRODUCTION_MODEL
     model_digest: Literal[
-        "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb",
+        "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
         "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
     ] = SCOTUS_PRODUCTION_MODEL_DIGEST
+    context_window_tokens: Literal[32768] = SCOTUS_PRODUCTION_CONTEXT_TOKENS
+    temperature: Literal[0] = SCOTUS_PRODUCTION_TEMPERATURE
     prompt_version: str
     brief_generation_enabled: bool = False
     maximum_brief_api_calls_per_run: int = Field(default=1, ge=1, le=100)

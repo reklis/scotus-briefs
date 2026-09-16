@@ -83,7 +83,7 @@ from ragchew.scotus.static_state import GeneratedContent, StaticStateStore, Stor
 from ragchew.scotus.transcript_parser import TranscriptParseError
 
 NOW = datetime(2026, 8, 28, 2, tzinfo=UTC)
-MODEL_DIGEST = "8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb"
+MODEL_DIGEST = "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863"
 
 
 def _pdf(pages: int) -> bytes:
@@ -266,14 +266,17 @@ class MockOpenAI:
     def __init__(
         self,
         *,
-        model_name: str = "cogito:70b",
+        model_name: str = "ragchew-gpt-oss:120b-32k",
         model_digest: str = MODEL_DIGEST,
     ) -> None:
         self.chat = SimpleNamespace(completions=self)
         self.models = SimpleNamespace(
             list=lambda: SimpleNamespace(data=[SimpleNamespace(id=model_name)])
         )
-        self.inventory = {"models": [{"name": model_name, "digest": model_digest}]}
+        self.inventory = {
+            "models": [{"name": model_name, "digest": model_digest}],
+            "configured_model_details": {"parameters": "num_ctx 32768"},
+        }
         self.requests: list[dict[str, Any]] = []
         self.closed = False
 
@@ -978,11 +981,29 @@ def test_default_ollama_sdk_client_is_loopback_and_ignores_proxy_environment() -
         (
             {
                 "models": [
-                    {"name": "cogito:70b", "digest": "f" * 64},
+                    {"name": "ragchew-gpt-oss:120b-32k", "digest": "f" * 64},
                     {"name": "fallback:70b", "digest": MODEL_DIGEST},
-                ]
+                ],
+                "configured_model_details": {"parameters": "num_ctx 32768"},
             },
             "digest does not match",
+        ),
+        (
+            {
+                "models": [
+                    {"name": "ragchew-gpt-oss:120b-32k", "digest": MODEL_DIGEST},
+                ],
+                "configured_model_details": {"parameters": "num_ctx 131072"},
+            },
+            "context does not match",
+        ),
+        (
+            {
+                "models": [
+                    {"name": "ragchew-gpt-oss:120b-32k", "digest": MODEL_DIGEST},
+                ],
+            },
+            "context cannot be verified",
         ),
     ),
 )
@@ -1229,7 +1250,10 @@ def test_model_identity_is_rechecked_after_each_completion(tmp_path: Path) -> No
         inventory_calls += 1
         if inventory_calls < 3:
             return model.inventory
-        return {"models": [{"name": "cogito:70b", "digest": "f" * 64}]}
+        return {
+            "models": [{"name": "ragchew-gpt-oss:120b-32k", "digest": "f" * 64}],
+            "configured_model_details": {"parameters": "num_ctx 32768"},
+        }
 
     adapter = build_adapter(court, model, inventory_factory=mutable_inventory)
     with pytest.raises(RuntimeError, match="detail=PublicationGateDenied"):
@@ -1262,7 +1286,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert len(result.content.publication.documents) == 2
     processor = result.content.publication.processor
     assert processor is not None
-    assert processor.model == (f"ollama:cogito:70b@sha256:{MODEL_DIGEST}@http://127.0.0.1:11434/v1")
+    assert processor.model == (f"ollama:ragchew-gpt-oss:120b-32k@sha256:{MODEL_DIGEST}@http://127.0.0.1:11434/v1")
     assert processor.extractor_version == (
         "scotus-observation-v2:scotus-legal-v1:scotus-legal-extraction-v10:"
         "official-document-text-v4"
@@ -1276,7 +1300,12 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
         "scotus_legal_observations",
         "compact_reader_guide",
     ]
-    assert all(request["extra_body"] == {"think": False} for request in model.requests)
+    assert all(
+        request["extra_body"]
+        == {"think": False, "options": {"num_ctx": 32768, "temperature": 0}}
+        for request in model.requests
+    )
+    assert all(request["temperature"] == 0 for request in model.requests)
     assert model.requests[0]["max_tokens"] == 8_000
     assert model.requests[1]["max_tokens"] == 8_000
     assert all(request["reasoning_effort"] == "none" for request in model.requests)
@@ -1345,6 +1374,59 @@ def test_model_digest_changes_processor_and_request_fingerprints_only(
     assert [item.stage for item in first_receipts.receipts] == [
         item.stage for item in second_receipts.receipts
     ]
+    assert all(
+        first_item.input_fingerprint != second_item.input_fingerprint
+        for first_item, second_item in zip(
+            first_receipts.receipts, second_receipts.receipts, strict=True
+        )
+    )
+
+
+def test_context_and_temperature_change_processor_and_request_fingerprints(
+    tmp_path: Path,
+) -> None:
+    first = run(
+        tmp_path / "first-controls",
+        MemoryStateStore(tmp_path / "first-controls-state"),
+        CourtFixture(),
+        MockOpenAI(),
+    )
+    base = live_config()
+    changed_config = base.model_copy(
+        update={
+            "generation": base.generation.model_copy(
+                update={"context_window_tokens": 16_384, "temperature": 1}
+            )
+        }
+    )
+    changed_model = MockOpenAI()
+    changed_model.inventory["configured_model_details"] = {"parameters": "num_ctx 16384"}
+    second = run(
+        tmp_path / "second-controls",
+        MemoryStateStore(tmp_path / "second-controls-state"),
+        CourtFixture(),
+        changed_model,
+        config=changed_config,
+    )
+
+    first_processor = first.content.publication.processor
+    second_processor = second.content.publication.processor
+    assert first_processor is not None and second_processor is not None
+    assert first_processor.config_sha256 != second_processor.config_sha256
+    assert first_processor.composite_sha256 != second_processor.composite_sha256
+    assert all(
+        request["extra_body"]
+        == {"think": False, "options": {"num_ctx": 16_384, "temperature": 1}}
+        and request["temperature"] == 1
+        for request in changed_model.requests
+    )
+
+    first_receipts = CostReceiptBundle.model_validate_json(
+        (tmp_path / "first-controls/private/public-cost-receipts.json").read_bytes()
+    )
+    second_receipts = CostReceiptBundle.model_validate_json(
+        (tmp_path / "second-controls/private/public-cost-receipts.json").read_bytes()
+    )
     assert all(
         first_item.input_fingerprint != second_item.input_fingerprint
         for first_item, second_item in zip(

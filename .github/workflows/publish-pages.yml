@@ -48,8 +48,10 @@ permissions:
 env:
   CANONICAL_ORIGIN: https://scotusbriefs.us
   PROJECT_BASE_PATH: /
-  REVIEWED_OLLAMA_MODEL: cogito:70b
-  REVIEWED_OLLAMA_MODEL_DIGEST: 8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb
+  REVIEWED_OLLAMA_MODEL: ragchew-gpt-oss:120b-32k
+  REVIEWED_OLLAMA_MODEL_DIGEST: 820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863
+  REVIEWED_OLLAMA_CONTEXT_TOKENS: 32768
+  REVIEWED_OLLAMA_TEMPERATURE: 0
   REVIEWED_CONTROL_OLLAMA_MODEL: qwen3.8:27b
   REVIEWED_CONTROL_OLLAMA_MODEL_DIGEST: 22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643
   RAGCHEW_SOURCE_USER_AGENT: >-
@@ -108,6 +110,11 @@ jobs:
           curl --fail --silent --show-error --connect-timeout 5 --max-time 30 \
             http://127.0.0.1:11434/api/tags | \
             uv run python -c 'import json,os,sys; from ragchew.config import ScotusConfig; config=ScotusConfig.from_yaml("config/scotus.yaml"); models=json.load(sys.stdin).get("models", []); installed={(item.get("name"),item.get("digest")) for item in models if isinstance(item,dict)}; expected={(os.environ["REVIEWED_OLLAMA_MODEL"],os.environ["REVIEWED_OLLAMA_MODEL_DIGEST"]),(os.environ["REVIEWED_CONTROL_OLLAMA_MODEL"],os.environ["REVIEWED_CONTROL_OLLAMA_MODEL_DIGEST"])}; configured={(config.generation.model,config.generation.model_digest),(config.editorial_backfill.control_model,config.editorial_backfill.control_model_digest)}; raise SystemExit(0 if configured == expected and expected <= installed else "paired exact Ollama identities are unavailable")'
+          curl --fail --silent --show-error --connect-timeout 5 --max-time 30 \
+            --header 'Content-Type: application/json' \
+            --data '{"model":"'"$REVIEWED_OLLAMA_MODEL"'"}' \
+            http://127.0.0.1:11434/api/show | \
+            uv run python -c 'import json,os,sys; from ragchew.config import ScotusConfig; config=ScotusConfig.from_yaml("config/scotus.yaml"); parameters=json.load(sys.stdin).get("parameters", ""); contexts=[line.split()[1] for line in parameters.splitlines() if len(line.split()) == 2 and line.split()[0] == "num_ctx"]; expected=os.environ["REVIEWED_OLLAMA_CONTEXT_TOKENS"]; configured=str(config.generation.context_window_tokens) == expected and str(config.generation.temperature) == os.environ["REVIEWED_OLLAMA_TEMPERATURE"]; raise SystemExit(0 if configured and contexts == [expected] else "exact GPT-OSS context or generation controls are unavailable")'
       - name: Reconcile paired-canary parent before Court access
         env:
           EXPECTED_LIVE_RELEASE_ID: ${{ inputs.expected_live_release_id || '' }}
@@ -227,7 +234,7 @@ jobs:
           find /dev/shm -mindepth 1 -maxdepth 1 -name 'ragchew-scotus-*' \
             ! -name "ragchew-scotus-$GITHUB_RUN_ID" -exec rm -rf -- {} +
           rm -rf "$RUNNER_TEMP/ragchew-private" \
-            "$RUNNER_TEMP/ragchew-qwen-control" "$RUNNER_TEMP/ragchew-cogito-candidate"
+            "$RUNNER_TEMP/ragchew-qwen-control" "$RUNNER_TEMP/ragchew-gpt-oss-candidate"
           install -d -m 700 "$RUNNER_TEMP/ragchew-private"
       - name: Require the protected default branch
         env:
@@ -295,6 +302,11 @@ jobs:
           curl --fail --silent --show-error --connect-timeout 5 --max-time 30 \
             http://127.0.0.1:11434/api/tags | \
             uv run python -c 'import json,os,sys; from ragchew.config import ScotusConfig; config=ScotusConfig.from_yaml("config/scotus.yaml"); models=json.load(sys.stdin).get("models", []); installed={(item.get("name"),item.get("digest")) for item in models if isinstance(item,dict)}; production=(os.environ["REVIEWED_OLLAMA_MODEL"],os.environ["REVIEWED_OLLAMA_MODEL_DIGEST"]); control=(os.environ["REVIEWED_CONTROL_OLLAMA_MODEL"],os.environ["REVIEWED_CONTROL_OLLAMA_MODEL_DIGEST"]); required={production}; required |= {control} if os.environ["EDITORIAL_ROLLOUT_STAGE"] == "canary_10" else set(); configured=(config.generation.model,config.generation.model_digest)==production and (config.editorial_backfill.control_model,config.editorial_backfill.control_model_digest)==control; raise SystemExit(0 if configured and required <= installed else "required exact local Ollama model identities are unavailable")'
+          curl --fail --silent --show-error --connect-timeout 5 --max-time 30 \
+            --header 'Content-Type: application/json' \
+            --data '{"model":"'"$REVIEWED_OLLAMA_MODEL"'"}' \
+            http://127.0.0.1:11434/api/show | \
+            uv run python -c 'import json,os,sys; from ragchew.config import ScotusConfig; config=ScotusConfig.from_yaml("config/scotus.yaml"); parameters=json.load(sys.stdin).get("parameters", ""); contexts=[line.split()[1] for line in parameters.splitlines() if len(line.split()) == 2 and line.split()[0] == "num_ctx"]; expected=os.environ["REVIEWED_OLLAMA_CONTEXT_TOKENS"]; configured=str(config.generation.context_window_tokens) == expected and str(config.generation.temperature) == os.environ["REVIEWED_OLLAMA_TEMPERATURE"]; raise SystemExit(0 if configured and contexts == [expected] else "exact GPT-OSS context or generation controls are unavailable")'
       - name: Create permission-restricted private parent only
         run: |
           set -euo pipefail
@@ -422,13 +434,13 @@ jobs:
               echo "Paired replacement canary forbids case overrides and replay modes." >&2
               exit 1
             fi
-            install -d -m 700 "$RUNNER_TEMP/ragchew-cogito-candidate"
+            install -d -m 700 "$RUNNER_TEMP/ragchew-gpt-oss-candidate"
             RAGCHEW_SCOTUS_EVIDENCE_CACHE_MODE=replay \
               RAGCHEW_SCOTUS_EVIDENCE_CACHE_PATH="/dev/shm/ragchew-scotus-$GITHUB_RUN_ID" \
               uv run ragchew-scotus-static batch \
               --mode nightly \
               --state-dir generated-content-input --candidate-state-dir candidate-state \
-              --output candidate-site --workspace "$RUNNER_TEMP/ragchew-cogito-candidate" \
+              --output candidate-site --workspace "$RUNNER_TEMP/ragchew-gpt-oss-candidate" \
               --review-artifact sanitized-editorial-review.json \
               --source-commit "$GITHUB_SHA" --build-epoch "$(git show -s --format=%cI HEAD)" \
               --github-output "$GITHUB_OUTPUT" \
@@ -453,7 +465,7 @@ jobs:
           from ragchew.scotus.static_contracts import CostReceiptBundle, canonical_json_bytes
 
           paths = [Path("paired-control-receipts/control-public-cost-receipts.json")]
-          candidate = Path("${{ runner.temp }}/ragchew-cogito-candidate/public-cost-receipts.json")
+          candidate = Path("${{ runner.temp }}/ragchew-gpt-oss-candidate/public-cost-receipts.json")
           if candidate.is_file():
               paths.append(candidate)
           bundles = tuple(CostReceiptBundle.model_validate_json(path.read_bytes()) for path in paths)
@@ -676,14 +688,14 @@ jobs:
           set -euo pipefail
           chmod -R u+rwX "$RUNNER_TEMP/ragchew-private" \
             "$RUNNER_TEMP/ragchew-qwen-control" \
-            "$RUNNER_TEMP/ragchew-cogito-candidate" "$GITHUB_WORKSPACE" 2>/dev/null || true
+            "$RUNNER_TEMP/ragchew-gpt-oss-candidate" "$GITHUB_WORKSPACE" 2>/dev/null || true
           rm -rf "$RUNNER_TEMP/ragchew-private" \
-            "$RUNNER_TEMP/ragchew-qwen-control" "$RUNNER_TEMP/ragchew-cogito-candidate" \
+            "$RUNNER_TEMP/ragchew-qwen-control" "$RUNNER_TEMP/ragchew-gpt-oss-candidate" \
             "/dev/shm/ragchew-scotus-$GITHUB_RUN_ID"
           find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf -- {} +
           test ! -e "$RUNNER_TEMP/ragchew-private"
           test ! -e "$RUNNER_TEMP/ragchew-qwen-control"
-          test ! -e "$RUNNER_TEMP/ragchew-cogito-candidate"
+          test ! -e "$RUNNER_TEMP/ragchew-gpt-oss-candidate"
           test ! -e "/dev/shm/ragchew-scotus-$GITHUB_RUN_ID"
           test -z "$(find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -print -quit)"
 

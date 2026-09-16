@@ -66,7 +66,7 @@ For a new deployment or any unreviewed source/runtime change, these settings rem
 The owner approved bounded production on 2026-09-03, so the checked-in source,
 generation, approval, and publication switches are currently `true`. The replacement
 model nevertheless remains `publication.dry_run=true` until its exact canary receives
-reviewed approval; schedules and manual dispatch cannot publish Cogito output in this
+reviewed approval; schedules and manual dispatch cannot publish GPT-OSS output in this
 state. This is not a validator bypass: a manual workflow dispatch cannot override a
 closed gate, and every
 candidate remains subject to the source, budget, grounding, privacy, completeness, and
@@ -75,14 +75,18 @@ build runs on the self-hosted Spark runner and accepts only
 `RAGCHEW_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1`. That typed setting rejects remote
 hosts, credentials, query strings, and non-`/v1` paths. The OpenAI SDK is used only as
 Ollama's compatible JSON-schema chat client, with a non-secret placeholder key. The
-only reviewed model is the Apache-2.0 `cogito:70b` content with full Ollama digest
-`8f2632d0faa422ff60435bc0095575d032a8b4a0f728df034d90ea654ffb60bb`.
-Before any Court retrieval or completion traffic, preflight requires one installed
-inventory entry matching both the exact tag and full digest. The adapter repeats that
-exact inventory check immediately before and after every completion, rejecting the
-response if the mutable tag changes during a request. A missing model or tag drift fails
-closed: automation never installs or pulls a model, selects another local model, or falls
-back to a hosted provider. Deploy, receipt persistence, and promotion stay on
+only reviewed model is the locally derived Apache-2.0
+`ragchew-gpt-oss:120b-32k` artifact with full Ollama digest
+`820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`.
+Its reviewed Modelfile and every request pin a 32,768-token context; requests also pin
+`temperature: 0` and non-thinking mode. Before any Court retrieval or completion
+traffic, preflight requires one installed inventory entry matching the exact tag and
+full digest and `/api/show` must report `num_ctx 32768`. The adapter repeats that exact
+identity and context check immediately before and after every completion, rejecting a
+response if the mutable tag or operating envelope changes during a request. A missing
+model or drift fails closed: automation never installs or pulls a model, selects
+`latest`, substitutes native `gpt-oss:120b` or another local model, or falls back to a
+hosted provider. Deploy, receipt persistence, and promotion stay on
 GitHub-hosted Ubuntu and receive no model setting or secret. Pages has no runtime
 environment at all.
 
@@ -90,7 +94,7 @@ environment at all.
 cases in reviewed order. A replacement processor may start `canary_10` only from that
 exact manifest. Old-processor attempt, retry, aggregate, candidate, and reviewer state is
 reset; unrelated fresh work cannot consume a measured slot. Current official document
-bytes must still match each durable comparison case before any Cogito request.
+bytes must still match each durable comparison case before any GPT-OSS request.
 
 `.env.example` therefore contains no reader database/object-store credentials.
 `RAGCHEW_DATABASE_DSN` is accepted only when an operator explicitly runs the one-time
