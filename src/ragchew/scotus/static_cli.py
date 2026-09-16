@@ -511,14 +511,17 @@ def _with_editorial_rollout(config: ScotusConfig, value: str) -> ScotusConfig:
             )
         }
     )
-    # Every measured stage is built publication-disabled. Only an exact candidate
-    # carrying a later sanitized approval may enter the separate promotion path.
+    # Every measured stage enables model calls only in this transient qualification
+    # config and remains publication-disabled. Checked-in processing and launch gates
+    # stay closed; only a later sanitized approval may enter the promotion path.
+    generation = config.generation.model_copy(update={"brief_generation_enabled": True})
     publication = config.publication.model_copy(update={"dry_run": True})
     return config.model_copy(
         update={
             "editorial_backfill": editorial,
             "bootstrap": bootstrap,
             "runner_limits": runner_limits,
+            "generation": generation,
             "publication": publication,
         }
     )

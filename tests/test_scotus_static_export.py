@@ -80,6 +80,8 @@ def test_editorial_rollout_cli_override_only_reduces_budgets_and_disables_canary
     assert canary.runner_limits.maximum_cases_per_run == 10
     assert canary.bootstrap.maximum_cases_per_run == 10
     assert canary.publication.dry_run is True
+    assert canary.generation.brief_generation_enabled is True
+    assert config.generation.brief_generation_enabled is False
     assert canary.editorial_backfill.rollout_stage == "canary_10"
 
     batch = _with_editorial_rollout(config, "batch_100")
