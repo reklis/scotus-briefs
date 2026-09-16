@@ -792,6 +792,59 @@ def test_live_adapter_checks_all_gates_before_factories_or_traffic(tmp_path: Pat
     assert not list(tmp_path.iterdir())
 
 
+def test_fixed_dry_run_canary_can_qualify_while_launch_gates_stay_closed(
+    tmp_path: Path,
+) -> None:
+    called = False
+
+    def settings() -> ServiceSettings:
+        nonlocal called
+        called = True
+        raise RuntimeError("qualification reached protected setup")
+
+    base = ScotusConfig.from_yaml("config/scotus.yaml")
+    qualification = base.model_copy(
+        update={
+            "editorial_backfill": base.editorial_backfill.model_copy(
+                update={"rollout_stage": EditorialRolloutStage.CANARY_10.value}
+            ),
+            "publication": base.publication.model_copy(update={"dry_run": True}),
+        }
+    )
+    assert not qualification.enabled
+    assert not qualification.generation.brief_generation_enabled
+    assert not qualification.approvals.model_runtime_approved
+    assert not qualification.approvals.launch_approved
+
+    with pytest.raises(RuntimeError, match="qualification reached protected setup"):
+        LiveStaticBatchAdapter(settings_factory=settings).run(
+            state_store=StaticStateStore(tmp_path / "state"),
+            config=qualification,
+            mode=DiscoveryMode.NIGHTLY,
+            runner_temp=tmp_path,
+            authorized_replay=False,
+        )
+    assert called
+
+    incomplete = qualification.model_copy(
+        update={
+            "approvals": qualification.approvals.model_copy(
+                update={"source_review_approved": False}
+            )
+        }
+    )
+    called = False
+    with pytest.raises(PublicationGateDenied, match="source and ownership approvals"):
+        LiveStaticBatchAdapter(settings_factory=settings).run(
+            state_store=StaticStateStore(tmp_path / "state"),
+            config=incomplete,
+            mode=DiscoveryMode.NIGHTLY,
+            runner_temp=tmp_path,
+            authorized_replay=False,
+        )
+    assert not called
+
+
 def test_opinion_page_attribution_tracks_court_and_separate_opinions() -> None:
     assert _opinion_page_attribution("PER CURIAM\nThe Court explains its decision.") == (
         "Opinion of the Court"

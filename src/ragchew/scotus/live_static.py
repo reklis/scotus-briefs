@@ -685,22 +685,36 @@ def _source_from_config(config: ProceedingsConfig) -> OfficialSource:
 
 
 def _validate_live_gates(config: ScotusConfig) -> None:
-    if config.generation.runtime_role == "control" and (
-        config.editorial_backfill.rollout_stage != EditorialRolloutStage.CANARY_10.value
-        or len(config.editorial_backfill.replacement_canary_case_keys) != 10
-        or not config.publication.dry_run
-    ):
+    paired_qualification = bool(
+        config.editorial_backfill.enabled
+        and config.editorial_backfill.rollout_stage
+        == EditorialRolloutStage.CANARY_10.value
+        and len(config.editorial_backfill.replacement_canary_case_keys) == 10
+        and config.publication.enabled
+        and config.publication.dry_run
+    )
+    if config.generation.runtime_role == "control" and not paired_qualification:
         raise PublicationGateDenied(
             "Qwen control is limited to the publication-disabled paired canary"
         )
     if config.editorial_backfill.rollout_stage is not None and not config.publication.dry_run:
         raise PublicationGateDenied("editorial rollout must remain publication-disabled")
-    if not config.enabled:
-        raise PublicationGateDenied("SCOTUS live processing gate is closed")
-    if not config.generation.brief_generation_enabled or not config.publication.enabled:
-        raise PublicationGateDenied("brief-generation and publication gates are closed")
-    if not config.approvals.all_live_gates_approved():
-        raise PublicationGateDenied("live publication approvals are incomplete")
+    if paired_qualification:
+        if not (
+            config.approvals.source_review_approved
+            and config.approvals.licenses_approved
+            and config.approvals.origin_approved
+        ):
+            raise PublicationGateDenied(
+                "paired qualification source and ownership approvals are incomplete"
+            )
+    else:
+        if not config.enabled:
+            raise PublicationGateDenied("SCOTUS live processing gate is closed")
+        if not config.generation.brief_generation_enabled or not config.publication.enabled:
+            raise PublicationGateDenied("brief-generation and publication gates are closed")
+        if not config.approvals.all_live_gates_approved():
+            raise PublicationGateDenied("live publication approvals are incomplete")
     if config.generation.prompt_version != CompactReaderGuideWriter.PROMPT_VERSION:
         raise PublicationGateDenied("configured brief prompt version is not implemented")
 
