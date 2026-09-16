@@ -123,17 +123,20 @@ Model inputs are bounded evidence windows for extraction and sanitized approved
 claims for brief generation. Every changed case follows the same simple sequence: discover
 and download unseen official documents, parse them transiently, analyze all accepted case
 documents into typed grounded claims, and write one coherent plain-English citizen guide.
-Disposition-only guides have five exact ordered sections covering the subject, procedural
-path, legal issue, Supreme Court action, and Court reasoning, plus a separate-opinions
-section only when explicitly attributed claims support it. Section-role validation rejects
-otherwise grounded fragments under the wrong heading, dissent-led descriptions of the
-Court, and stays that omit their interim procedural effect.
+The compact Citizen's Guide uses up to four planner-controlled concepts: what the case is
+about, what the sides say, what the Court did or where the case stands, and why it matters.
+The first is the dek and the remaining applicable concepts use deterministic headings. The
+writer returns one short sentence per field and no more than 180 words total; it does not
+produce lawyer, justice-by-justice, or session-by-session analysis. Official argument dates
+and transcript links remain deterministic metadata. Field-specific canonical action slots
+reject actor, action, object, polarity, timing, or effect conflicts and required omissions.
 The installed candidate is the exact local Apache-2.0 Ollama artifact
 `ragchew-gpt-oss:120b-32k`, with full reviewed content digest
 `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863` and a
-32,768-token context. Exact non-thinking strict-schema probes returned empty content,
-so processing, model-runtime approval, brief generation, and launch are closed before
-Court or model work. A revised request profile must be fingerprinted and requalified.
+32,768-token context. The bounded low-reasoning/final-content-only synthetic profile
+passed cold and warm extraction and Guide probes, but fixture-backed and fixed-canary
+qualification remain incomplete. Processing, model-runtime approval, brief generation,
+and launch therefore stay closed before Court or model work.
 For any later approved profile, inventory must match the exact tag, digest, and context
 before and around completions; automation does not install, pull, select `latest`, use
 native-context `gpt-oss:120b` or another local model, or use a hosted fallback.

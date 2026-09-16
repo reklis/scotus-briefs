@@ -18,10 +18,11 @@ A protected self-hosted GitHub Actions job is scheduled daily at 03:17 UTC (and 
 restricted manual dispatch). The checked-in GPT-OSS candidate is the local Apache-2.0
 artifact `ragchew-gpt-oss:120b-32k`, pinned to full Ollama digest
 `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863` and a 32,768-token
-context. Exact non-thinking qualification returned empty content, so processing,
-model-runtime approval, brief generation, launch, and publication remain closed before
-Court or model work. Reopening requires a revised fingerprinted request profile, fresh
-bounded qualification, and owner approval. No credential, hosted provider, remote
+context. The fingerprinted low-reasoning/final-content-only synthetic profile passed cold
+and warm extraction and four-field Citizen's Guide probes, but processing, model-runtime
+approval, brief generation, launch, and publication remain closed before Court or model
+work. Reopening requires fixture-backed and fixed ten-case qualification plus explicit
+owner approval. No credential, hosted provider, remote
 endpoint, pull, `latest` tag, native-context GPT-OSS tag, or fallback model is accepted.
 When those gates are approved, preflight verifies tag, digest, and context before Court
 or model work and the adapter repeats exact verification around every completion. The

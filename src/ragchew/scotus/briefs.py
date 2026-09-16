@@ -63,15 +63,28 @@ class _ActionValidationDiagnostic:
 
 
 class _CanonicalActionSlot(Protocol):
-    """Structural slot interface avoids importing the circular reader-guide module."""
+    """Read-only structural slot interface avoids importing the reader-guide module."""
 
-    actor_role: object
-    actor: str
-    action: object
-    operative_object: str
-    negated: bool
-    effect: object
-    timing: str | None
+    @property
+    def actor_role(self) -> object: ...
+
+    @property
+    def actor(self) -> str: ...
+
+    @property
+    def action(self) -> object: ...
+
+    @property
+    def operative_object(self) -> str: ...
+
+    @property
+    def negated(self) -> bool: ...
+
+    @property
+    def effect(self) -> object: ...
+
+    @property
+    def timing(self) -> str | None: ...
 
 
 class BriefValidationError(ValueError):
@@ -1486,6 +1499,17 @@ def _validate_action_sentences_legacy(
         sentence = match.group(0)
         if not _ACTION_WORD.search(sentence):
             continue
+        question_support = " ".join(
+            claim.public_value
+            for claim in supporting_claims
+            if claim.observation_type is LegalObservationType.QUESTION_PRESENTED
+        )
+        if (
+            re.search(r"\b(?:whether|question is|asks? if|issue is if)\b", sentence, re.I)
+            and question_support
+            and _action_signatures(sentence).issubset(_action_signatures(question_support))
+        ):
+            continue
         role = _action_role(sentence)
         if role is None:
             raise BriefValidationError(
@@ -1578,7 +1602,8 @@ _REQUEST_ACTOR = re.compile(
     r"^\s*(?P<actor>(?:the\s+)?(?:[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}()-]*|"
     r"applicant|petitioner|respondent|government|agency|state)"
     r"(?:\s+(?:[A-Z][A-Za-z&.'\N{RIGHT SINGLE QUOTATION MARK}()-]*|for|of|the)){0,5}?)\s+"
-    r"(?:ask(?:s|ed|ing)?|request(?:s|ed|ing)?|seek(?:s|ing)?|sought|urge(?:s|d|ing)?)\b",
+    r"(?:ask(?:s|ed|ing)?|request(?:s|ed|ing)?|seek(?:s|ing)?|sought|urge(?:s|d|ing)?|"
+    r"want(?:s|ed|ing)?)\b",
     re.IGNORECASE,
 )
 _FINAL_EFFECT = re.compile(r"\b(?:final(?:ly)?|permanent(?:ly)?|conclusive(?:ly)?)\b", re.I)
@@ -1798,7 +1823,17 @@ def _actor_identity_conflicts(
         "other party",
         "party",
     }
-    return bool(expected and expected not in generic and detected and detected != expected)
+    if expected in generic:
+        return False
+    role_opposites = {
+        "petitioner": ("respondent", "agency", "government"),
+        "respondent": ("petitioner", "applicant", "challenger"),
+        "united states": ("petitioner", "respondent", "applicant", "challenger"),
+        "amicus": ("petitioner", "respondent", "applicant", "agency"),
+    }
+    if expected in role_opposites:
+        return any(value in detected.split() for value in role_opposites[expected])
+    return bool(expected and detected and detected != expected)
 
 
 def _validate_action_sentences_with_slots(
@@ -1808,6 +1843,8 @@ def _validate_action_sentences_with_slots(
     field_path: str,
 ) -> tuple[_ActionValidationDiagnostic, ...]:
     path = _safe_field_path(field_path)
+    if not canonical_slots:
+        return ()
     expected = tuple(_slot_tuple(slot) for slot in canonical_slots)
     detected = tuple(
         (action, actor_name, sentence)
@@ -1830,10 +1867,10 @@ def _validate_action_sentences_with_slots(
             return "actor_omission"
         if _actor_identity_conflicts(actor_name, canonical_slots[index]):
             return "actor_conflict"
-        if expected[index].operative_object is None:
-            material = _normalized_actor(canonical_slots[index].operative_object)
-            if material and material not in _normalized_actor(sentence):
-                return "object_omission"
+        material = set(re.findall(r"[a-z0-9]+", canonical_slots[index].operative_object.casefold()))
+        stated = set(re.findall(r"[a-z0-9]+", sentence.casefold()))
+        if material and not material.issubset(stated):
+            return "object_omission"
         return None
 
     for item, actor_name, sentence in detected:
@@ -3248,6 +3285,8 @@ def evaluate_brief_text_field(
         "argument_paragraph",
     ],
     public_quotes: bool,
+    canonical_slots: tuple[_CanonicalActionSlot, ...] | None = None,
+    field_path: str = "unknown",
     maximum_sentence_words: int = 30,
     maximum_paragraph_words: int = 120,
     severe_maximum_sentence_words: int = 60,
@@ -3261,6 +3300,8 @@ def evaluate_brief_text_field(
         {claim.claim_id: claim for claim in claims},
         public_quotes=public_quotes,
         validation_context=context,
+        canonical_slots=canonical_slots,
+        field_path=field_path,
         maximum_sentence_words=maximum_sentence_words,
         maximum_paragraph_words=maximum_paragraph_words,
         severe_maximum_sentence_words=severe_maximum_sentence_words,
@@ -3283,6 +3324,8 @@ def validate_brief_text_field(
         "argument_paragraph",
     ],
     public_quotes: bool,
+    canonical_slots: tuple[_CanonicalActionSlot, ...] | None = None,
+    field_path: str = "unknown",
     maximum_sentence_words: int = 30,
     maximum_paragraph_words: int = 120,
     severe_maximum_sentence_words: int = 60,
@@ -3296,6 +3339,8 @@ def validate_brief_text_field(
         claims,
         context=context,
         public_quotes=public_quotes,
+        canonical_slots=canonical_slots,
+        field_path=field_path,
         maximum_sentence_words=maximum_sentence_words,
         maximum_paragraph_words=maximum_paragraph_words,
         severe_maximum_sentence_words=severe_maximum_sentence_words,
@@ -3335,7 +3380,27 @@ def validate_brief_draft(
     if len(headings) != len(set(headings)):
         raise BriefValidationError("brief repeats a section heading")
     if citizens_guide_profile:
-        if tuple(section.heading.strip() for section in draft.sections) != CITIZENS_GUIDE_HEADINGS:
+        guide_headings = tuple(section.heading.strip() for section in draft.sections)
+        allowed_headings = (
+            "What the sides say",
+            "What the Supreme Court did",
+            "Where the case stands",
+            "Why it matters",
+        )
+        indexes = tuple(
+            allowed_headings.index(heading)
+            for heading in guide_headings
+            if heading in allowed_headings
+        )
+        valid_court_heading = not (
+            "What the Supreme Court did" in guide_headings
+            and "Where the case stands" in guide_headings
+        )
+        if (
+            len(indexes) != len(guide_headings)
+            or indexes != tuple(sorted(indexes))
+            or not valid_court_heading
+        ):
             raise BriefValidationError(
                 "Citizen's Guide has incomplete or model-selected section headings",
                 safe_code="invalid_citizens_guide_structure",
@@ -3434,9 +3499,15 @@ def validate_brief_draft(
             raise BriefValidationError("disposition-only brief omits docket provenance")
     required_context_types = (
         LegalObservationType.QUESTION_PRESENTED,
-        LegalObservationType.PROCEDURAL_POSTURE,
         LegalObservationType.ADVOCATE_CONTENTION,
-        *(() if citizens_guide_profile else (LegalObservationType.JUSTICE_QUESTION,)),
+        *(
+            ()
+            if citizens_guide_profile
+            else (
+                LegalObservationType.PROCEDURAL_POSTURE,
+                LegalObservationType.JUSTICE_QUESTION,
+            )
+        ),
     )
     for required_type in required_context_types:
         matching = {claim.claim_id for claim in claims if claim.observation_type is required_type}
@@ -3444,9 +3515,10 @@ def validate_brief_draft(
             raise BriefValidationError(
                 f"brief omits available citizen context: {required_type.value}"
             )
-    for matching in _position_claim_groups(claims):
-        if not matching.intersection(used_claim_ids):
-            raise BriefValidationError("brief omits an available side's position")
+    if not citizens_guide_profile:
+        for matching in _position_claim_groups(claims):
+            if not matching.intersection(used_claim_ids):
+                raise BriefValidationError("brief omits an available side's position")
     for section_index, section in enumerate(draft.sections):
         validate(
             section.heading,
@@ -3632,6 +3704,8 @@ class BriefGenerationService:
         maximum_paragraph_words: int = 120,
         severe_maximum_sentence_words: int = 60,
         severe_maximum_paragraph_words: int = 240,
+        canonical_slots_by_field: Mapping[str, tuple[_CanonicalActionSlot, ...]] | None = None,
+        citizens_guide_profile: bool = False,
     ) -> None:
         self.generator = generator
         self.store = store
@@ -3640,6 +3714,8 @@ class BriefGenerationService:
         self.maximum_paragraph_words = maximum_paragraph_words
         self.severe_maximum_sentence_words = severe_maximum_sentence_words
         self.severe_maximum_paragraph_words = severe_maximum_paragraph_words
+        self.canonical_slots_by_field = canonical_slots_by_field
+        self.citizens_guide_profile = citizens_guide_profile
 
     def generate(
         self,
@@ -3659,6 +3735,8 @@ class BriefGenerationService:
                 candidate,
                 decision.claims,
                 public_quotes=self.public_quotes,
+                canonical_slots_by_field=self.canonical_slots_by_field,
+                citizens_guide_profile=self.citizens_guide_profile,
                 maximum_sentence_words=self.maximum_sentence_words,
                 maximum_paragraph_words=self.maximum_paragraph_words,
                 severe_maximum_sentence_words=self.severe_maximum_sentence_words,
@@ -3678,7 +3756,7 @@ class BriefGenerationService:
                 f"ragchew:scotus-brief-revision:{brief_id}:{revision_number}",
             ),
             case_id=candidate.case_id,
-            argument_id=candidate.argument_id,
+            argument_id=None if self.citizens_guide_profile else candidate.argument_id,
             revision_number=revision_number,
             maturity=decision.maturity,
             title=draft.title,
@@ -3693,20 +3771,24 @@ class BriefGenerationService:
                 )
                 for section in draft.sections
             ),
-            argument_analyses=tuple(
-                BriefArgumentAnalysis(
-                    argument_id=analysis.argument_id,
-                    sequence=session.sequence,
-                    argument_date=session.argument_date,
-                    reargument=session.reargument,
-                    heading=analysis.heading,
-                    paragraphs=analysis.paragraphs,
-                    claim_ids=analysis.claim_ids,
-                )
-                for analysis, session in zip(
-                    draft.argument_analyses,
-                    candidate.argument_sessions,
-                    strict=True,
+            argument_analyses=(
+                ()
+                if self.citizens_guide_profile
+                else tuple(
+                    BriefArgumentAnalysis(
+                        argument_id=analysis.argument_id,
+                        sequence=session.sequence,
+                        argument_date=session.argument_date,
+                        reargument=session.reargument,
+                        heading=analysis.heading,
+                        paragraphs=analysis.paragraphs,
+                        claim_ids=analysis.claim_ids,
+                    )
+                    for analysis, session in zip(
+                        draft.argument_analyses,
+                        candidate.argument_sessions,
+                        strict=True,
+                    )
                 )
             ),
             claim_ids=tuple(

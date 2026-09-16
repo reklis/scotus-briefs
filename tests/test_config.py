@@ -50,7 +50,7 @@ def test_scotus_defaults_are_fail_closed_during_gpt_oss_qualification() -> None:
     assert config.generation.context_window_tokens == 32768
     assert config.generation.temperature == 0
     assert config.generation.reasoning_level == "low"
-    assert config.generation.prompt_version == "scotus-gpt-oss-citizens-guide-v2"
+    assert config.generation.prompt_version == "scotus-gpt-oss-citizens-guide-v7"
     assert config.generation.brief_generation_enabled is False
     assert config.generation.maximum_brief_api_calls_per_run == 100
     assert config.generation.stop_after_brief_validation_failure is False

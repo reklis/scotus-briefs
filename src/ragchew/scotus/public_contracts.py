@@ -77,7 +77,9 @@ class PublicArgumentAnalysis(BaseModel):
     argument_date: datetime
     reargument: bool = False
     heading: str
-    paragraphs: tuple[str, ...] = Field(min_length=2)
+    # A high-level Citizen's Guide retains official argument metadata and links
+    # without publishing a separate model-written session analysis.
+    paragraphs: tuple[str, ...] = ()
     official_detail_url: str
     official_transcript_url: str
     sources: tuple[PublicSourceLink, ...] = Field(min_length=1)

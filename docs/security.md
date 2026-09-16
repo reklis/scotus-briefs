@@ -43,11 +43,12 @@ unchanged, while malformed or multiple telemetry wrappers fail closed.
 The exact local Apache-2.0 Ollama candidate is
 `ragchew-gpt-oss:120b-32k`, pinned to full content digest
 `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863` and `num_ctx
-32768`. Its exact non-thinking protocol returned empty content, so processing,
-model-runtime approval, brief generation, and launch gates are closed and no Court
-evidence may be sent to it. If a revised fingerprinted request profile passes fresh
-qualification and receives approval, only bounded evidence windows or sanitized
-approved claims may be sent, with context and temperature pinned. The OpenAI SDK then
+32768`. Its bounded low-reasoning profile passed synthetic cold/warm extraction and
+Citizen's Guide probes while discarding reasoning, but processing, model-runtime
+approval, brief generation, and launch gates remain closed and no Court evidence may be
+sent to it. If fixture-backed and fixed-canary qualification pass and the exact candidate
+receives approval, only bounded evidence windows or sanitized approved claims may be
+sent, with context, temperature, and reasoning level pinned. The OpenAI SDK then
 targets Ollama's compatible `/v1` interface with a non-secret placeholder key, disabled environment
 proxies/redirects, and preserved JSON-schema chat completions. Before constructing
 Court/model clients, the protected workflow requires an installed inventory entry

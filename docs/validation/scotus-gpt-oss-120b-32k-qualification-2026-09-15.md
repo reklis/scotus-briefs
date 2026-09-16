@@ -2,11 +2,11 @@
 
 ## Status
 
-**Blocked before Court evidence or publication-disabled canary use.** The exact local artifact fits Spark’s reviewed resource envelope, but the currently implemented non-thinking OpenAI-compatible request protocol returned no content for every cold and warm strict-schema extraction and Citizen’s Guide probe. Production publication remains disabled and no model prose was retained.
+**Synthetic low-reasoning qualification passed; fixture and canary qualification remain blocked pending execution.** The exact local artifact returned nonempty final schema content for cold and warm extraction and Citizen’s Guide requests, retained no reasoning, passed the production Guide assembler and hard validator, fit Spark’s reviewed resource envelope, and was unloaded cleanly. Production processing, brief generation, launch, and publication remain disabled.
 
 ## Provenance, license, and owner decision
 
-The candidate is a locally derived Ollama artifact named `ragchew-gpt-oss:120b-32k`. It derives from OpenAI’s upstream [`gpt-oss-120b`](https://huggingface.co/openai/gpt-oss-120b), distributed locally by Ollama as `gpt-oss:120b`. The derived Modelfile references local model blob `sha256-6be6d66a3f546d8c19b130dc41dc24b2fc159f84ffbc76a0ee0676205083cf5a` and pins `PARAMETER num_ctx 32768`; the upstream default temperature remains present in the Modelfile, while every reviewed application request overrides temperature to zero.
+The candidate is a locally derived Ollama artifact named `ragchew-gpt-oss:120b-32k`. It derives from OpenAI’s upstream [`gpt-oss-120b`](https://huggingface.co/openai/gpt-oss-120b), distributed locally by Ollama as `gpt-oss:120b`. The derived Modelfile references local model blob `sha256-6be6d66a3f546d8c19b130dc41dc24b2fc159f84ffbc76a0ee0676205083cf5a` and pins `PARAMETER num_ctx 32768`; every reviewed application request overrides temperature to zero.
 
 `ollama show --license` reports the Apache License 2.0. The repository owner selected this artifact for the project’s intended local use on 2026-09-15. Apache-2.0 has no Mistral-style revenue eligibility condition; this records the project decision and observed model metadata, not general legal advice. The model is separately installed and is not redistributed by this repository.
 
@@ -19,30 +19,38 @@ The candidate is a locally derived Ollama artifact named `ragchew-gpt-oss:120b-3
 - Reported model size: approximately 65 GB
 - Reviewed context ceiling: 32,768 tokens
 - Application temperature: 0
+- Reasoning control: `reasoning_effort="low"` and root `think="low"`
+- Final-content policy: parse only final schema content; never log, persist, diagnose from, receipt, or publish reasoning
 - Endpoint: loopback Ollama OpenAI-compatible `/v1`
 - Hosted, mutable-tag, native-context, and alternate-model fallback: prohibited
 
-Before probing, Spark reported approximately 116.07 GiB available memory, 16.00 GiB total swap with effectively none used, and approximately 1.67 TB free on the model filesystem. Ollama had no loaded model. During each loaded probe, available memory remained between 51.62 and 51.73 GiB. After explicit cleanup, available memory returned to 116.01 GiB and `ollama ps` confirmed the candidate was unloaded.
+Before the final probes, Spark reported approximately 116.05–116.06 GiB available memory and no loaded model. During loaded probes, available memory remained between 51.72 and 51.93 GiB. After explicit cleanup it returned to 115.88–116.03 GiB, transient request files were removed, and the candidate was unloaded.
 
-## Sanitized strict-schema probe results
+## Historical rejected non-thinking protocol
 
-The repository generated one synthetic extraction request and one synthetic decided-case Citizen’s Guide request. They contained no live Court material or private production data. The exact configured protocol used strict JSON schema, `reasoning_effort="none"`, root `think=false`, `num_ctx=32768`, temperature zero, and a 2,000-token probe output ceiling. Each request was run once cold and once warm. Only fixed validity booleans and aggregate timing/token/resource measurements were retained.
+The first exact cold/warm run used `reasoning_effort="none"` and root `think=false`. All four extraction and Guide responses consumed completion tokens but exposed empty final assistant content. That protocol remains rejected and must not be restored. Its recorded timings were 19.52/8.29 seconds for extraction and 20.02/4.32 seconds for the Guide.
 
-| Probe | Load state | Seconds | Prompt tokens | Completion tokens | Content present | Valid JSON/schema |
-|---|---:|---:|---:|---:|---:|---:|
-| extraction | cold | 19.52 | 358 | 305 | no | no |
-| extraction | warm | 8.29 | 358 | 305 | no | no |
-| Citizen’s Guide | cold | 20.02 | 1,530 | 318 | no | no |
-| Citizen’s Guide | warm | 4.32 | 1,530 | 149 | no | no |
+A first low-reasoning extraction profile succeeded, while the legacy detailed Guide request still returned empty final content. The Guide was therefore reduced to the approved planner-controlled high-level contract rather than increasing token or runtime budgets. Intermediate compact profiles were rejected when they exceeded field sentence bounds or failed existing production action/role validation. Each material request, schema, planner, repair, and canonical-slot change received a new fingerprint.
 
-All four responses ended normally according to the transport but exposed an empty assistant content field. This reproduces the earlier observation that explicit `think=false` suppresses GPT-OSS answer content on this Ollama build. The response cannot enter the typed parser and therefore fails closed before grounding or publication checks.
+## Final sanitized strict-schema probe results
+
+The repository generated synthetic extraction evidence and a synthetic decided-case Guide plan. They contained no live Court material or private production data. The final protocol used strict JSON schema, explicit low reasoning, `num_ctx=32768`, temperature zero, an 8,000-token extraction ceiling, and a 2,000-token Guide ceiling. Each request ran once cold and once warm. Reasoning fields were observed at the transport boundary and discarded; only final schema content was parsed transiently. No reasoning or generated prose was retained.
+
+| Probe | Load state | Seconds | Prompt tokens | Completion tokens | Final content | Schema/assembly | Production validation |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| extraction v11 | cold | 27.74 | 636 | 572 | yes | pass | pass |
+| extraction v11 | warm | 16.27 | 638 | 573 | yes | pass | pass |
+| Citizen’s Guide v7 / planner v7 | cold | 21.80 | 916 | 137 | yes | pass | pass, 1 style warning |
+| Citizen’s Guide v7 / planner v7 | warm | 8.18 | 831 | 136 | yes | pass | pass, 2 style warnings |
+
+The final Guide response contained exactly the four applicable planner fields, remained within the 180-word and one-sentence-per-field profile, preserved deterministic metadata outside the model response, and passed field-specific canonical-slot validation. Style warnings are nonfatal and do not authorize model rewriting.
 
 ## Runtime assessment
 
-Measured cold and warm transport latency is comfortably below the unchanged five-hour ceiling in isolation. Even the conservative upper bound of 100 cold 20.02-second requests would consume about 33.4 minutes of model time before Court I/O and validation. That estimate does **not** authorize a canary: every measured response was unusable, and valid-output retry behavior cannot be projected from an all-empty protocol.
+Using the slowest valid cold response, 100 sequential cold calls project to about 46.3 minutes of model time before Court I/O, deterministic validation, and bounded retry overhead. This remains below the unchanged five-hour ceiling and does not require a budget increase. The estimate is conservative but synthetic; fixture-backed and fixed ten-case measurements are still required before promotion.
 
 ## Decision and cleanup
 
-The exact artifact passes identity, license-record, disk, memory-headroom, context, and cleanup checks. It fails the currently specified non-thinking request protocol. No Court retrieval, private-evidence request, generated-content mutation, candidate upload, release change, or model substitution occurred. Transient request files were removed from `/dev/shm`, the model was stopped, and only this sanitized report remains.
+The exact artifact passes identity, license record, disk, memory headroom, context, final-content-only low-reasoning transport, synthetic extraction, synthetic Guide assembly/validation, runtime projection, and cleanup checks. It is **not approved for production or publication**. No Court retrieval, private-evidence request, candidate upload, public-content mutation, release change, or model substitution occurred during these probes.
 
-Before another model request, the planning artifacts must decide whether GPT-OSS may use its supported reasoning mode while retaining only final schema content and never retaining reasoning. That is a request-semantics change requiring a new prompt/profile fingerprint and fresh bounded qualification.
+Next required gates are one fixture-backed publication-disabled end-to-end qualification, the fixed publication-disabled ten-case canary, manual review of every hard-valid Guide, privacy/release checks, and explicit exact-candidate approval. All processing and launch gates remain closed until those gates pass.

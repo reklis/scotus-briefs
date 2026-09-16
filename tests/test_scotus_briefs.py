@@ -531,6 +531,26 @@ def test_disposition_only_draft_accepts_supported_plain_action_synonyms() -> Non
     _validate_action_sentences("The district court sent the case back.", (lower_court_claim,))
 
 
+def test_question_framed_action_remains_a_question_not_a_lower_court_ruling() -> None:
+    source = evaluate_brief_candidate(role_aware_disposition_candidate(), minimum_confidence=0.85)
+    base = source.claims[0]
+    question = base.model_copy(
+        update={
+            "observation_type": LegalObservationType.QUESTION_PRESENTED,
+            "legal_status": LegalStatus.DESCRIBED,
+            "public_value": "Whether the lower court had power to block the agency rule.",
+        }
+    )
+
+    _validate_action_sentences(
+        "The issue is whether the lower court could block the agency rule.",
+        (question,),
+    )
+    with pytest.raises(BriefValidationError) as caught:
+        _validate_action_sentences("The lower court blocked the agency rule.", (question,))
+    assert caught.value.safe_code == "unsupported_lower_court_action"
+
+
 def test_action_validation_accepts_reviewed_ordinary_equivalents_and_preserves_slots() -> None:
     source = evaluate_brief_candidate(role_aware_disposition_candidate(), minimum_confidence=0.85)
     court_claim = next(

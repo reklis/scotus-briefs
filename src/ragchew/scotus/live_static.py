@@ -151,6 +151,7 @@ from ragchew.scotus.reader_guides import (
     ReaderGuidePurpose,
     ReaderGuideWritingError,
     TargetedReaderGuideRepairer,
+    assembled_draft_action_slots,
 )
 from ragchew.scotus.reader_prose import load_reader_prose_policy
 from ragchew.scotus.static_contracts import (
@@ -1791,6 +1792,7 @@ def _validation_code(error: BriefValidationError) -> str:
 def _planned_field_paths(
     plan: ReaderGuidePlan, draft: LegalBriefDraft
 ) -> tuple[ReaderGuideFieldPath, ...]:
+    del plan
     paths: list[ReaderGuideFieldPath] = [ReaderGuideFieldPath(kind=ReaderGuideFieldKind.DEK)]
     paths.extend(
         ReaderGuideFieldPath(
@@ -1810,10 +1812,6 @@ def _planned_field_paths(
         for argument_index, analysis in enumerate(draft.argument_analyses)
         for paragraph_index in range(len(analysis.paragraphs))
     )
-    if len(draft.sections) != len(plan.sections) or len(draft.argument_analyses) != len(
-        plan.arguments
-    ):
-        return ()
     return tuple(paths)
 
 
@@ -1834,8 +1832,14 @@ def _field_value_and_claims(
 
 
 def _purpose_repair_path(
-    plan: ReaderGuidePlan, purpose: ReaderGuidePurpose
+    draft: LegalBriefDraft, purpose: ReaderGuidePurpose
 ) -> ReaderGuideFieldPath | None:
+    headings = {
+        ReaderGuidePurpose.POSITIONS: {"What the sides say"},
+        ReaderGuidePurpose.PROCEDURAL_PATH: {"What the sides say", "Where the case stands"},
+        ReaderGuidePurpose.COURT_ACTION: {"What the Supreme Court did", "Where the case stands"},
+        ReaderGuidePurpose.COURT_REASONING: {"Why it matters"},
+    }.get(purpose, set())
     return next(
         (
             ReaderGuideFieldPath(
@@ -1843,11 +1847,21 @@ def _purpose_repair_path(
                 section_index=index,
                 paragraph_index=0,
             )
-            for index, section in enumerate(plan.sections)
-            if section.purpose is purpose
+            for index, section in enumerate(draft.sections)
+            if section.heading in headings
         ),
         None,
     )
+
+
+def _canonical_field_path(path: ReaderGuideFieldPath) -> str:
+    if path.kind is ReaderGuideFieldKind.DEK:
+        return "dek"
+    if path.kind is ReaderGuideFieldKind.SECTION_PARAGRAPH:
+        assert path.section_index is not None and path.paragraph_index is not None
+        return f"sections[{path.section_index}].paragraphs[{path.paragraph_index}]"
+    assert path.argument_index is not None and path.paragraph_index is not None
+    return f"argument_analyses[{path.argument_index}].paragraphs[{path.paragraph_index}]"
 
 
 def _locate_reader_repair_path(
@@ -1862,6 +1876,7 @@ def _locate_reader_repair_path(
     maximum_paragraph_words: int,
     severe_maximum_sentence_words: int,
     severe_maximum_paragraph_words: int,
+    canonical_slots_by_field: Mapping[str, tuple[Any, ...]],
 ) -> ReaderGuideFieldPath | None:
     code = _validation_code(error)
     # Locate the field that actually emits the code before applying a role-based
@@ -1877,6 +1892,8 @@ def _locate_reader_repair_path(
                 claims,
                 context=cast(Any, context),
                 public_quotes=public_quotes,
+                canonical_slots=canonical_slots_by_field.get(_canonical_field_path(path)),
+                field_path=_canonical_field_path(path),
                 maximum_sentence_words=maximum_sentence_words,
                 maximum_paragraph_words=maximum_paragraph_words,
                 severe_maximum_sentence_words=severe_maximum_sentence_words,
@@ -1912,7 +1929,7 @@ def _locate_reader_repair_path(
             None,
         )
     if purpose is not None:
-        return _purpose_repair_path(plan, purpose)
+        return _purpose_repair_path(draft, purpose)
     return None
 
 
@@ -2707,6 +2724,7 @@ class LiveStaticCaseProcessor:
         correction_note = _correction_note(source, kinds_changed)
         assert decision.maturity is not None
         plan = ReaderGuidePlanner().plan(candidate, decision.claims, decision.maturity)
+        canonical_slots_by_field = assembled_draft_action_slots(plan)
         all_digests = (
             *(states[key].integrity.sha256 for key in sorted(states)),
             *(stable_disposition_fingerprint(item) for item in source.dispositions),
@@ -2754,7 +2772,9 @@ class LiveStaticCaseProcessor:
                     attempt=1,
                     prompt=CompactReaderGuideWriter.PROMPT_VERSION,
                 ),
-                maximum_output_tokens=(self.config.model_budget.maximum_output_tokens_per_call),
+                maximum_output_tokens=min(
+                    self.config.model_budget.maximum_output_tokens_per_call, 2_000
+                ),
             ).generate(plan)
         except ReaderGuideWritingError as error:
             LOG.warning(
@@ -2773,6 +2793,8 @@ class LiveStaticCaseProcessor:
                     candidate,
                     decision.claims,
                     public_quotes=self.config.generation.public_quotes,
+                    canonical_slots_by_field=canonical_slots_by_field,
+                    citizens_guide_profile=True,
                     maximum_sentence_words=self.config.generation.maximum_sentence_words,
                     maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
                     severe_maximum_sentence_words=(
@@ -2799,6 +2821,7 @@ class LiveStaticCaseProcessor:
                     severe_maximum_paragraph_words=(
                         self.config.generation.severe_maximum_paragraph_words
                     ),
+                    canonical_slots_by_field=canonical_slots_by_field,
                 )
                 validation_code = _validation_code(error)
                 repair_scope = (path, validation_code) if path is not None else None
@@ -2829,7 +2852,9 @@ class LiveStaticCaseProcessor:
                         prompt=TargetedReaderGuideRepairer.PROMPT_VERSION,
                         validation_code=diagnostic.safe_code,
                     ),
-                    maximum_output_tokens=(self.config.model_budget.maximum_output_tokens_per_call),
+                    maximum_output_tokens=min(
+                        self.config.model_budget.maximum_output_tokens_per_call, 2_000
+                    ),
                 )
 
                 _, _, repair_context = _field_value_and_claims(plan, draft, path)
@@ -2839,6 +2864,7 @@ class LiveStaticCaseProcessor:
                     claim_ids: tuple[UUID, ...],
                     *,
                     context: str = repair_context,
+                    repair_path: ReaderGuideFieldPath = path,
                 ) -> None:
                     validate_brief_text_field(
                         text,
@@ -2847,6 +2873,10 @@ class LiveStaticCaseProcessor:
                         decision.claims,
                         context=cast(Any, context),
                         public_quotes=self.config.generation.public_quotes,
+                        canonical_slots=canonical_slots_by_field.get(
+                            _canonical_field_path(repair_path)
+                        ),
+                        field_path=_canonical_field_path(repair_path),
                         maximum_sentence_words=(self.config.generation.maximum_sentence_words),
                         maximum_paragraph_words=(self.config.generation.maximum_paragraph_words),
                         severe_maximum_sentence_words=(
@@ -2864,6 +2894,8 @@ class LiveStaticCaseProcessor:
                             candidate,
                             decision.claims,
                             public_quotes=self.config.generation.public_quotes,
+                            canonical_slots_by_field=canonical_slots_by_field,
+                            citizens_guide_profile=True,
                             maximum_sentence_words=(self.config.generation.maximum_sentence_words),
                             maximum_paragraph_words=(
                                 self.config.generation.maximum_paragraph_words
@@ -2930,6 +2962,8 @@ class LiveStaticCaseProcessor:
             candidate,
             decision.claims,
             public_quotes=self.config.generation.public_quotes,
+            canonical_slots_by_field=canonical_slots_by_field,
+            citizens_guide_profile=True,
             maximum_sentence_words=self.config.generation.maximum_sentence_words,
             maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
             severe_maximum_sentence_words=(self.config.generation.severe_maximum_sentence_words),
@@ -2944,6 +2978,8 @@ class LiveStaticCaseProcessor:
             maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
             severe_maximum_sentence_words=(self.config.generation.severe_maximum_sentence_words),
             severe_maximum_paragraph_words=(self.config.generation.severe_maximum_paragraph_words),
+            canonical_slots_by_field=canonical_slots_by_field,
+            citizens_guide_profile=True,
         ).generate(
             candidate,
             decision,

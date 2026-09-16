@@ -38,8 +38,8 @@ from ragchew.scotus.contracts import (
 )
 from ragchew.scotus.reader_prose import load_reader_prose_policy
 
-READER_GUIDE_PLAN_VERSION = "reader-guide-plan-v3"
-CITIZENS_GUIDE_SCHEMA_VERSION = "scotus-citizens-guide-schema-v1"
+READER_GUIDE_PLAN_VERSION = "reader-guide-plan-v7"
+CITIZENS_GUIDE_SCHEMA_VERSION = "scotus-citizens-guide-schema-v2"
 MAX_CITIZENS_GUIDE_WORDS = 180
 MIN_FIELD_SENTENCES = 1
 MAX_FIELD_SENTENCES = 2
@@ -225,7 +225,7 @@ class ReaderGuideArgumentPacket(StrictModel):
 class ReaderGuidePlan(StrictModel):
     """Bounded private plan; this object must never enter generated public state."""
 
-    plan_version: Literal["reader-guide-plan-v3"] = "reader-guide-plan-v3"
+    plan_version: Literal["reader-guide-plan-v7"] = "reader-guide-plan-v7"
     case_id: UUID
     caption: str = Field(min_length=1, max_length=500)
     primary_docket: str = Field(min_length=1, max_length=40)
@@ -451,7 +451,7 @@ _ACTION_CANONICAL: tuple[tuple[re.Pattern[str], CanonicalAction], ...] = (
 )
 _OBJECT = re.compile(
     r"\b(application|appeal|case|decree|execution|injunction|judgment|mandate|order|"
-    r"petition|prosecution|release|removal|rule|sentence|writ)\b",
+    r"petition|prosecution|release|removal|request|rule|sentence|writ)\b",
     re.I,
 )
 _NEGATION = re.compile(r"\b(?:not|never|did not|does not|declined to|refused to)\b", re.I)
@@ -523,7 +523,18 @@ def _actor_for_action(
     }:
         return None
     if claim.legal_status is LegalStatus.REQUESTED:
-        return CanonicalActorRole.REQUESTING_PARTY, claim.attribution or "requesting party"
+        position = _position_group(claim.attribution)
+        if position is not None:
+            return CanonicalActorRole.REQUESTING_PARTY, position.value.replace("_", " ")
+        stated_actor = re.match(
+            r"\s*(?P<actor>(?:the\s+)?[A-Za-z][A-Za-z'\N{RIGHT SINGLE QUOTATION MARK}-]*"
+            r"(?:\s+[A-Za-z][A-Za-z'\N{RIGHT SINGLE QUOTATION MARK}-]*){0,4})\s+"
+            r"(?:ask(?:s|ed)?|request(?:s|ed)?|seek(?:s|ing)?|sought|urge(?:s|d)?|want(?:s|ed)?)\b",
+            claim.public_value,
+            re.I,
+        )
+        actor = stated_actor.group("actor") if stated_actor is not None else "requesting party"
+        return CanonicalActorRole.REQUESTING_PARTY, actor
     explicit = _explicit_actor(sentence, action_start)
     if explicit is not None:
         passive_court_action = bool(
@@ -553,6 +564,17 @@ def _operative_object(clause: str, match: re.Match[str], action: CanonicalAction
         return "case"
     preceding = tuple(_OBJECT.finditer(clause, 0, match.start()))
     if preceding:
+        if action in {CanonicalAction.GRANT, CanonicalAction.DENY}:
+            requested_object = next(
+                (
+                    item
+                    for item in preceding
+                    if item.group(0).casefold() in {"application", "petition", "request"}
+                ),
+                None,
+            )
+            if requested_object is not None:
+                return requested_object.group(0).casefold()
         return preceding[-1].group(0).casefold()
     remainder = clause[match.end() :].strip(" ,:;-.")
     if remainder.casefold().startswith("that "):
@@ -593,9 +615,14 @@ def build_canonical_action_slots(
                     else len(sentence)
                 )
                 clause = sentence[clause_start:clause_end]
-                clause_match = _ACTION_PATTERN.search(clause)
-                if clause_match is None:
+                relative_action_start = match.start() - clause_start
+                clause_matches = tuple(_ACTION_PATTERN.finditer(clause))
+                if not clause_matches:
                     raise AssertionError("action disappeared from its containing clause")
+                clause_match = min(
+                    clause_matches,
+                    key=lambda item: abs(item.start() - relative_action_start),
+                )
                 operative_object = _operative_object(clause, clause_match, action)
                 negated = _NEGATION.search(clause[: clause_match.start()]) is not None
                 interim = action is CanonicalAction.STAY or _INTERIM.search(clause) is not None
@@ -686,7 +713,9 @@ def _is_reasoning_claim(claim: ScotusApprovedClaim) -> bool:
     )
 
 
-def _contains_term_guidance(claims: Iterable[ScotusApprovedClaim]) -> tuple[str, ...]:
+def _contains_term_guidance(
+    claims: Iterable[ScotusApprovedClaim | ReaderGuideClaimPacket],
+) -> tuple[str, ...]:
     """Select reviewed ordinary-language guidance for terms present in a packet."""
     text = " ".join(claim.public_value for claim in claims)
     guidance: list[str] = []
@@ -1197,12 +1226,12 @@ class ReaderGuidePlanner:
         title_claim = next(
             (
                 claim
-                for claim in summary_selected
+                for claim in all_packets
                 if claim.public_source_label.casefold() == "docket"
                 or "/docket/" in claim.official_url.casefold()
                 or candidate.primary_docket.casefold() in claim.public_value.casefold()
             ),
-            summary_selected[0],
+            summary_packets[0],
         )
         return ReaderGuidePlan(
             case_id=candidate.case_id,
@@ -1344,12 +1373,11 @@ def _is_separate_claim(claim: ScotusApprovedClaim) -> bool:
 
 
 def _writer_claim(claim: ReaderGuideClaimPacket) -> dict[str, object]:
-    """Omit provenance/link metadata that is irrelevant to the translation task."""
+    """Expose only facts and role labels needed for the bounded translation task."""
     return {
-        "id": str(claim.claim_id),
+        "value": claim.public_value,
         "type": claim.observation_type.value,
         "status": claim.legal_status.value,
-        "value": claim.public_value,
         **({"attribution": claim.attribution} if claim.attribution else {}),
         **({"position": claim.position_group.value} if claim.position_group else {}),
     }
@@ -1357,7 +1385,6 @@ def _writer_claim(claim: ReaderGuideClaimPacket) -> dict[str, object]:
 
 def _writer_slot(slot: CanonicalActionSlot) -> dict[str, object]:
     return {
-        "claim_id": str(slot.claim_id),
         "actor_role": slot.actor_role.value,
         "actor": slot.actor,
         "action": slot.action.value,
@@ -1370,7 +1397,6 @@ def _writer_slot(slot: CanonicalActionSlot) -> dict[str, object]:
 
 def _field_packet(
     *,
-    purpose: str,
     guidance: str,
     claims: tuple[ReaderGuideClaimPacket, ...],
     action_slots: tuple[CanonicalActionSlot, ...] = (),
@@ -1379,7 +1405,6 @@ def _field_packet(
     """Build one evidence boundary; no claim or action from another field is included."""
     claim_ids = {claim.claim_id for claim in claims}
     return {
-        "purpose": purpose,
         "guidance": guidance,
         "claims": [_writer_claim(claim) for claim in claims],
         **(
@@ -1433,14 +1458,21 @@ def _unique_slots(slots: Iterable[CanonicalActionSlot]) -> tuple[CanonicalAction
 
 def _citizens_guide_fields(plan: ReaderGuidePlan) -> tuple[_CitizensGuideFieldPacket, ...]:
     """Project the detailed deterministic plan onto the high-level public shape."""
+    summary_ids = {claim.claim_id for claim in plan.summary_claims}
+    summary_slots = _unique_slots(
+        (
+            *(slot for section in plan.sections for slot in section.action_slots),
+            *(slot for argument in plan.arguments for slot in argument.action_slots),
+        )
+    )
+    summary_slots = tuple(slot for slot in summary_slots if slot.claim_id in summary_ids)
     fields = [
         _CitizensGuideFieldPacket(
             name=CitizensGuideField.WHAT_IT_IS_ABOUT,
             heading=None,
-            guidance=(
-                "Explain only the supplied issue and essential background in ordinary language."
-            ),
+            guidance="Explain the issue and essential background.",
             claims=plan.summary_claims,
+            action_slots=summary_slots,
         )
     ]
 
@@ -1448,11 +1480,37 @@ def _citizens_guide_fields(plan: ReaderGuidePlan) -> tuple[_CitizensGuideFieldPa
         section for section in plan.sections if section.purpose is ReaderGuidePurpose.POSITIONS
     )
     if position_sections:
-        position_claims = _unique_claims(
+        position_candidates = _unique_claims(
             claim
             for section in position_sections
             for claim in section.claims
-            if claim.position_group is not None
+            if claim.observation_type
+            in {
+                LegalObservationType.ADVOCATE_CONTENTION,
+                LegalObservationType.REQUESTED_DISPOSITION,
+                LegalObservationType.ANSWER,
+                LegalObservationType.CONCESSION,
+                LegalObservationType.DISPUTED_PREMISE,
+            }
+        )
+        grouped_positions: dict[str, list[ReaderGuideClaimPacket]] = {}
+        for claim in position_candidates:
+            group = (
+                claim.position_group.value
+                if claim.position_group is not None
+                else (claim.attribution or "unknown").casefold()
+            )
+            grouped_positions.setdefault(group, []).append(claim)
+        position_claims = tuple(
+            next(
+                (
+                    claim
+                    for claim in group
+                    if claim.observation_type is not LegalObservationType.REQUESTED_DISPOSITION
+                ),
+                group[0],
+            )
+            for group in tuple(grouped_positions.values())[:2]
         )
         position_ids = {claim.claim_id for claim in position_claims}
         position_slots = _unique_slots(
@@ -1461,11 +1519,9 @@ def _citizens_guide_fields(plan: ReaderGuidePlan) -> tuple[_CitizensGuideFieldPa
             for slot in section.action_slots
             if slot.claim_id in position_ids
         )
-        position_terms = tuple(
-            dict.fromkeys(
-                term for section in position_sections for term in section.plain_language_guidance
-            )
-        )
+        # Recompute guidance from selected claims so omitted claims cannot leak terms
+        # across the narrower two-side field boundary.
+        position_terms = _contains_term_guidance(position_claims)
     else:
         # A sparse docket may establish an attributed request without an argument
         # session. That is still safe side evidence; unattributed history is not.
@@ -1501,10 +1557,7 @@ def _citizens_guide_fields(plan: ReaderGuidePlan) -> tuple[_CitizensGuideFieldPa
             _CitizensGuideFieldPacket(
                 name=CitizensGuideField.WHAT_THE_SIDES_SAY,
                 heading="What the sides say",
-                guidance=(
-                    "State only the attributed party positions or requests. Name each side and "
-                    "use argues, says, asks, or wants; never turn a request into a ruling."
-                ),
+                guidance="Name each side and state only its position or request.",
                 claims=position_claims,
                 action_slots=position_slots,
                 terms=position_terms,
@@ -1524,10 +1577,7 @@ def _citizens_guide_fields(plan: ReaderGuidePlan) -> tuple[_CitizensGuideFieldPa
             _CitizensGuideFieldPacket(
                 name=CitizensGuideField.WHAT_THE_COURT_DID,
                 heading="What the Supreme Court did",
-                guidance=(
-                    "State only the supplied Supreme Court action, object, polarity, timing, "
-                    "and effect. Do not add lower-court history or a party request."
-                ),
+                guidance="State the Supreme Court action exactly as labeled.",
                 claims=action.claims,
                 action_slots=action.action_slots,
                 terms=action.plain_language_guidance,
@@ -1563,10 +1613,7 @@ def _citizens_guide_fields(plan: ReaderGuidePlan) -> tuple[_CitizensGuideFieldPa
                     _CitizensGuideFieldPacket(
                         name=CitizensGuideField.WHAT_THE_COURT_DID,
                         heading="Where the case stands",
-                        guidance=(
-                            "State only the supplied procedural status. Identify any acting lower "
-                            "court or requesting party, and do not imply a Supreme Court outcome."
-                        ),
+                        guidance="State the supplied status without implying an outcome.",
                         claims=status_claims,
                         action_slots=tuple(
                             slot
@@ -1590,10 +1637,7 @@ def _citizens_guide_fields(plan: ReaderGuidePlan) -> tuple[_CitizensGuideFieldPa
             _CitizensGuideFieldPacket(
                 name=CitizensGuideField.WHY_IT_MATTERS,
                 heading="Why it matters",
-                guidance=(
-                    "Explain only the approved reason or practical impact. Do not predict or "
-                    "infer consequences that the supplied claims do not state."
-                ),
+                guidance="Explain only the supplied reason or practical importance.",
                 claims=impact.claims,
                 action_slots=impact.action_slots,
                 terms=impact.plain_language_guidance,
@@ -1605,15 +1649,8 @@ def _citizens_guide_fields(plan: ReaderGuidePlan) -> tuple[_CitizensGuideFieldPa
 def compact_reader_guide_payload(plan: ReaderGuidePlan) -> dict[str, object]:
     """Return only applicable, mutually isolated conceptual evidence packets."""
     return {
-        "task": "write a concise Citizen's Guide from only each field's packet",
-        "schema_version": CITIZENS_GUIDE_SCHEMA_VERSION,
-        "limits": {
-            "total_words": MAX_CITIZENS_GUIDE_WORDS,
-            "sentences_per_field": [MIN_FIELD_SENTENCES, MAX_FIELD_SENTENCES],
-        },
         "fields": {
             field.name.value: _field_packet(
-                purpose=field.name.value,
                 guidance=field.guidance,
                 claims=field.claims,
                 action_slots=field.action_slots,
@@ -1632,7 +1669,7 @@ def compact_reader_guide_schema(plan: ReaderGuidePlan) -> dict[str, object]:
             "minLength": 1,
             "maxLength": 500 if field.heading is None else 800,
             "description": (
-                "One or two ordinary-language sentences from only the matching evidence packet."
+                "Exactly one ordinary-language sentence from only the matching evidence packet."
             ),
         }
         for field in fields
@@ -1656,7 +1693,7 @@ class RequestExecutor(Protocol):
 class CompactReaderGuideWriter:
     """Schema-constrained Citizen's Guide writer; only prose is model-selected."""
 
-    PROMPT_VERSION = "scotus-gpt-oss-citizens-guide-v2"
+    PROMPT_VERSION = "scotus-gpt-oss-citizens-guide-v7"
     SCHEMA_VERSION = CITIZENS_GUIDE_SCHEMA_VERSION
 
     def __init__(
@@ -1684,27 +1721,18 @@ class CompactReaderGuideWriter:
                 {
                     "role": "system",
                     "content": (
-                        "Return only final strict-schema JSON, with no reasoning, analysis, "
-                        "markdown, or wrapper text in the final content. "
-                        "Write one or two short, ordinary-language sentences for every output "
-                        "field and no more than 180 words "
-                        "across all output fields. Use only the matching field packet; never move "
-                        "evidence or actions between fields. Do not select or repeat claim IDs, "
-                        "action-slot IDs, legal status, citations, sources, identity, headings, or "
-                        "session order. Name every actor explicitly: use argues, says, asks, or "
-                        "wants for a party position or request, and reserve ruled, granted, "
-                        "denied, affirmed, reversed, or sent back for the court identified by a "
-                        "supplied action slot. Never say a party or agency issued a court order. "
-                        "Preserve every supplied actor, role, action, object, negation, timing, "
-                        "uncertainty, and "
-                        "interim or final effect. Do not use ambiguous pronouns or phrases such as "
-                        "'the Court agreed,' 'it ordered,' or 'that decision.' Do not name "
-                        "lawyers, give justice-by-justice or per-session argument detail, add "
-                        "unnecessary procedural history, infer an unavailable outcome or impact, "
-                        "predict events, or use unexplained legal jargon; explain any unavoidable "
-                        "legal term immediately "
-                        "in the same "
-                        "sentence. Omit nonessential detail rather than inventing or conflating it."
+                        "Return only final JSON. For every supplied field, write exactly one short "
+                        "plain-English sentence from only that field's packet; use no more than "
+                        "180 words total. Name actors. Use argues, says, asks, or wants for party "
+                        "positions and keep each position attached to its attribution; use ruling "
+                        "verbs only for the labeled court. Preserve each "
+                        "action's actor, role, object, negation, timing, and effect. Keep "
+                        "questions "
+                        "as questions and requests as requests. A party or agency never issues a "
+                        "court order. Do not move facts between fields, name "
+                        "lawyers, list justice questions, add procedural detail, predict, cite, or "
+                        "infer a missing result or impact. Explain any unavoidable legal term in "
+                        "the same sentence."
                     ),
                 },
                 {
@@ -1717,7 +1745,7 @@ class CompactReaderGuideWriter:
             "response_format": {
                 "type": "json_schema",
                 "json_schema": {
-                    "name": "scotus_citizens_guide_v2",
+                    "name": "scotus_citizens_guide_v3",
                     "strict": True,
                     "schema": compact_reader_guide_schema(plan),
                 },
@@ -1781,27 +1809,17 @@ class ReaderGuideFieldPath(StrictModel):
 
 def assembled_draft_action_slots(
     plan: ReaderGuidePlan,
-) -> dict[tuple[ReaderGuideFieldPath, str], tuple[CanonicalActionSlot, ...]]:
-    """Map each assembled field path and deterministic heading to its exact action slots.
-
-    Production validation can use this projection without reconstructing the detailed
-    planner sections. ``dek`` is used as the heading marker for the title-adjacent field.
-    """
-    result: dict[tuple[ReaderGuideFieldPath, str], tuple[CanonicalActionSlot, ...]] = {}
+) -> dict[str, tuple[CanonicalActionSlot, ...]]:
+    """Map each assembled prose-field path to its exact canonical action slots."""
+    result: dict[str, tuple[CanonicalActionSlot, ...]] = {}
     section_index = 0
     for field in _citizens_guide_fields(plan):
         if field.heading is None:
-            path = ReaderGuideFieldPath(kind=ReaderGuideFieldKind.DEK)
-            heading = "dek"
+            path = "dek"
         else:
-            path = ReaderGuideFieldPath(
-                kind=ReaderGuideFieldKind.SECTION_PARAGRAPH,
-                section_index=section_index,
-                paragraph_index=0,
-            )
-            heading = field.heading
+            path = f"sections[{section_index}].paragraphs[0]"
             section_index += 1
-        result[(path, heading)] = field.action_slots
+        result[path] = field.action_slots
     return result
 
 
@@ -1839,7 +1857,7 @@ GuideValidator = Callable[[LegalBriefDraft], None]
 class TargetedReaderGuideRepairer:
     """Repair exactly one field, then validate the field and complete assembled guide."""
 
-    PROMPT_VERSION = "scotus-guide-repair-v4-low"
+    PROMPT_VERSION = "scotus-guide-repair-v9-low"
 
     def __init__(
         self,
@@ -1874,11 +1892,13 @@ class TargetedReaderGuideRepairer:
                     "role": "system",
                     "content": (
                         "Return only final strict-schema JSON, with no reasoning or wrapper text "
-                        "in the final content. Rewrite only the rejected field as one or two "
-                        "short ordinary-language sentences so the complete guide remains at most "
+                        "in the final content. Rewrite only the rejected field as one short "
+                        "ordinary-language sentence so the complete guide remains at most "
                         "180 words. Use only its support packet. Preserve claim scope and every "
-                        "supported actor, role, action, object, negation, timing, and effect. Name "
-                        "actors explicitly; use asks or wants for requests and court-action verbs "
+                        "supported actor, role, action, object, negation, timing, and effect. Keep "
+                        "questions as questions and requests as requests. Name "
+                        "actors explicitly and keep each position attached to its attribution; "
+                        "use asks or wants for requests and court-action verbs "
                         "only for the acting court. Do not name lawyers, add justice-by-justice "
                         "detail, unnecessary history, prediction, or unexplained jargon. Do not "
                         "refer to validation or processing."
@@ -2110,7 +2130,6 @@ def _repair_context(
             draft.dek,
             claim_ids,
             _field_packet(
-                purpose=field.name.value,
                 guidance=field.guidance,
                 claims=field.claims,
                 action_slots=field.action_slots,
@@ -2140,7 +2159,6 @@ def _repair_context(
             rejected,
             claim_ids,
             _field_packet(
-                purpose=field.name.value,
                 guidance=field.guidance,
                 claims=field.claims,
                 action_slots=field.action_slots,

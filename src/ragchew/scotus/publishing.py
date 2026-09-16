@@ -86,23 +86,45 @@ def build_public_case(
         for section in revision.sections
     )
     sessions = {session.argument_id: session for session in argument_sessions}
-    if tuple(item.argument_id for item in revision.argument_analyses) != tuple(
-        session.argument_id for session in argument_sessions
-    ):
+    if revision.argument_analyses and tuple(
+        item.argument_id for item in revision.argument_analyses
+    ) != tuple(session.argument_id for session in argument_sessions):
         raise ValueError("public case argument metadata does not match brief analyses")
-    arguments = tuple(
-        PublicArgumentAnalysis(
-            sequence=analysis.sequence,
-            argument_date=analysis.argument_date,
-            reargument=analysis.reargument,
-            heading=analysis.heading,
-            paragraphs=analysis.paragraphs,
-            official_detail_url=sessions[analysis.argument_id].official_detail_url,
-            official_transcript_url=(sessions[analysis.argument_id].official_transcript_url),
-            sources=_source_link(analysis.claim_ids, claim_map),
+    if revision.argument_analyses:
+        arguments = tuple(
+            PublicArgumentAnalysis(
+                sequence=analysis.sequence,
+                argument_date=analysis.argument_date,
+                reargument=analysis.reargument,
+                heading=analysis.heading,
+                paragraphs=analysis.paragraphs,
+                official_detail_url=sessions[analysis.argument_id].official_detail_url,
+                official_transcript_url=(sessions[analysis.argument_id].official_transcript_url),
+                sources=_source_link(analysis.claim_ids, claim_map),
+            )
+            for analysis in revision.argument_analyses
         )
-        for analysis in revision.argument_analyses
-    )
+    else:
+        arguments = tuple(
+            PublicArgumentAnalysis(
+                sequence=session.sequence,
+                argument_date=session.argument_date,
+                reargument=session.reargument,
+                heading="Oral argument",
+                paragraphs=(),
+                official_detail_url=session.official_detail_url,
+                official_transcript_url=session.official_transcript_url,
+                sources=_source_link(
+                    tuple(
+                        claim.claim_id
+                        for claim in claims
+                        if claim.argument_id == session.argument_id
+                    ),
+                    claim_map,
+                ),
+            )
+            for session in argument_sessions
+        )
     latest_argument_date = max(item.argument_date for item in arguments) if arguments else None
     if not arguments and argument_date is not None:
         raise ValueError("a disposition-only public case cannot claim an argument date")

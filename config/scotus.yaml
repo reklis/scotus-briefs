@@ -1,8 +1,8 @@
 version: "1.0"
 product: scotus_legal_briefs
 source_id: supreme_court
-# Closed after exact GPT-OSS qualification returned empty content; reopen only after a
-# revised request profile passes bounded qualification and receives owner approval.
+# Closed after synthetic low-reasoning qualification; reopen only after fixture-backed
+# and fixed-canary qualification pass and the exact candidate receives owner approval.
 enabled: false
 discovery:
   # Routine runs prioritize this term and revisit older terms through a bounded cursor.
@@ -157,7 +157,7 @@ generation:
   context_window_tokens: 32768
   temperature: 0
   reasoning_level: low
-  prompt_version: scotus-gpt-oss-citizens-guide-v2
+  prompt_version: scotus-gpt-oss-citizens-guide-v7
   brief_generation_enabled: false
   maximum_brief_api_calls_per_run: 100
   # One fresh draft may correct a fixed-code validation failure; both remain budgeted.

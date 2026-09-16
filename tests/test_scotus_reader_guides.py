@@ -515,6 +515,8 @@ def test_planner_supplies_reviewed_term_guidance_to_sections_and_arguments() -> 
     )
     assert any("how government branches divide and limit their power" in item for item in guidance)
     payload = compact_reader_guide_payload(plan)
+    serialized = json.dumps(payload)
+    assert "separation of powers" in serialized
     assert any("terms" in field for field in payload["fields"].values())
 
 
@@ -669,21 +671,20 @@ def test_gpt_oss_citizens_guide_profile_is_versioned_strict_and_role_explicit() 
     response_format = request["response_format"]["json_schema"]
     schema = compact_reader_guide_schema(plan)
 
-    assert writer.PROMPT_VERSION == "scotus-gpt-oss-citizens-guide-v2"
+    assert writer.PROMPT_VERSION == "scotus-gpt-oss-citizens-guide-v7"
     assert writer.SCHEMA_VERSION == CITIZENS_GUIDE_SCHEMA_VERSION
-    assert TargetedReaderGuideRepairer.PROMPT_VERSION == "scotus-guide-repair-v4-low"
+    assert TargetedReaderGuideRepairer.PROMPT_VERSION == "scotus-guide-repair-v9-low"
     assert request["reasoning_effort"] == "low"
-    assert response_format["name"] == "scotus_citizens_guide_v2"
+    assert response_format["name"] == "scotus_citizens_guide_v3"
     assert response_format["strict"] is True
     assert response_format["schema"] == schema
-    assert "only final strict-schema JSON" in prompt
-    assert "no reasoning" in prompt
-    assert "one or two short" in prompt
+    assert "Return only final JSON" in prompt
+    assert "exactly one short" in prompt
     assert "no more than 180 words" in prompt
-    assert "Name every actor explicitly" in prompt
+    assert "Name actors" in prompt
     assert "argues, says, asks, or wants" in prompt
-    assert "Never say a party or agency issued a court order" in prompt
-    assert "justice-by-justice" in prompt
+    assert "party or agency never issues a court order" in prompt
+    assert "list justice questions" in prompt
     assert schema["additionalProperties"] is False
     assert "180 words" in schema["description"]
 
@@ -697,11 +698,7 @@ def test_decided_writer_schema_is_exactly_the_four_conceptual_fields() -> None:
     assert list(schema["properties"]) == expected
     assert schema["required"] == expected
     assert list(payload["fields"]) == expected
-    assert payload["limits"] == {
-        "total_words": MAX_CITIZENS_GUIDE_WORDS,
-        "sentences_per_field": [1, 2],
-    }
-    assert set(payload) == {"task", "schema_version", "limits", "fields"}
+    assert set(payload) == {"fields"}
 
 
 def test_sparse_pending_case_omits_unsupported_outcome_and_impact() -> None:
@@ -726,9 +723,9 @@ def test_sparse_pending_case_omits_unsupported_outcome_and_impact() -> None:
     ]
     assert list(schema["properties"]) == list(fields)
     status = fields[CitizensGuideField.WHAT_THE_COURT_DID.value]
-    assert {item["type"] for item in status["claims"]} == {
-        LegalObservationType.PROCEDURAL_POSTURE.value,
-        LegalObservationType.LOWER_COURT_ACTION.value,
+    assert {item["status"] for item in status["claims"]} == {
+        LegalStatus.DESCRIBED.value,
+        LegalStatus.LOWER_COURT_HELD.value,
     }
     assert all(
         item["actor_role"] != CanonicalActorRole.SUPREME_COURT.value
@@ -764,13 +761,15 @@ def test_request_only_pending_case_omits_status_instead_of_reusing_side_evidence
         CitizensGuideField.WHAT_IT_IS_ABOUT.value,
         CitizensGuideField.WHAT_THE_SIDES_SAY.value,
     ]
-    side_ids = {
-        item["id"] for item in fields[CitizensGuideField.WHAT_THE_SIDES_SAY.value]["claims"]
+    side_values = {
+        item["value"]
+        for item in fields[CitizensGuideField.WHAT_THE_SIDES_SAY.value]["claims"]
     }
-    about_ids = {
-        item["id"] for item in fields[CitizensGuideField.WHAT_IT_IS_ABOUT.value]["claims"]
+    about_values = {
+        item["value"]
+        for item in fields[CitizensGuideField.WHAT_IT_IS_ABOUT.value]["claims"]
     }
-    assert side_ids.isdisjoint(about_ids)
+    assert side_values.isdisjoint(about_values)
 
 
 def test_writer_packets_are_cross_field_isolated() -> None:
@@ -778,38 +777,50 @@ def test_writer_packets_are_cross_field_isolated() -> None:
     fields = compact_reader_guide_payload(plan)["fields"]
     plan_by_purpose = {section.purpose: section for section in plan.sections}
 
-    expected_ids = {
+    expected_values = {
         CitizensGuideField.WHAT_IT_IS_ABOUT.value: {
-            str(claim.claim_id) for claim in plan.summary_claims
+            claim.public_value for claim in plan.summary_claims
         },
         CitizensGuideField.WHAT_THE_SIDES_SAY.value: {
-            str(claim.claim_id)
+            claim.public_value
             for claim in plan_by_purpose[ReaderGuidePurpose.POSITIONS].claims
-            if claim.position_group is not None
+            if claim.observation_type
+            in {
+                LegalObservationType.ADVOCATE_CONTENTION,
+                LegalObservationType.REQUESTED_DISPOSITION,
+                LegalObservationType.ANSWER,
+                LegalObservationType.CONCESSION,
+                LegalObservationType.DISPUTED_PREMISE,
+            }
         },
         CitizensGuideField.WHAT_THE_COURT_DID.value: {
-            str(claim.claim_id)
+            claim.public_value
             for claim in plan_by_purpose[ReaderGuidePurpose.COURT_ACTION].claims
         },
         CitizensGuideField.WHY_IT_MATTERS.value: {
-            str(claim.claim_id)
+            claim.public_value
             for claim in plan_by_purpose[ReaderGuidePurpose.COURT_REASONING].claims
         },
     }
     for name, packet in fields.items():
-        packet_ids = {item["id"] for item in packet["claims"]}
-        assert packet_ids == expected_ids[name]
-        assert {item["claim_id"] for item in packet.get("actions", [])} <= packet_ids
+        packet_values = {item["value"] for item in packet["claims"]}
+        if name == CitizensGuideField.WHAT_THE_SIDES_SAY.value:
+            assert packet_values <= expected_values[name]
+            assert len(packet_values) <= 2
+        else:
+            assert packet_values == expected_values[name]
     assert all(
-        expected_ids[left].isdisjoint(expected_ids[right])
-        for index, left in enumerate(expected_ids)
-        for right in tuple(expected_ids)[index + 1 :]
+        expected_values[left].isdisjoint(expected_values[right])
+        for index, left in enumerate(expected_values)
+        for right in tuple(expected_values)[index + 1 :]
     )
     assert "justice_question" not in json.dumps(fields)
     assert "dissent" not in json.dumps(fields).casefold()
     serialized = json.dumps(fields)
     assert "official_url" not in serialized
     assert "page_label" not in serialized
+    assert '"id"' not in serialized
+    assert "claim_id" not in serialized
     assert plan.caption not in serialized
 
 
@@ -870,39 +881,46 @@ def test_assembly_preserves_deterministic_metadata_and_exports_action_mapping() 
         return complete_decided_response()
 
     draft = CompactReaderGuideWriter("local-test", execute).generate(plan)
-    fields = compact_reader_guide_payload(plan)["fields"]
-
     assert draft.title == plan.caption
     assert draft.title_claim_ids == plan.title_claim_ids
-    assert draft.dek_claim_ids == tuple(
-        UUID(item["id"])
-        for item in fields[CitizensGuideField.WHAT_IT_IS_ABOUT.value]["claims"]
-    )
+    assert draft.dek_claim_ids == tuple(claim.claim_id for claim in plan.summary_claims)
     assert tuple(section.heading for section in draft.sections) == (
         "What the sides say",
         "What the Supreme Court did",
         "Why it matters",
     )
-    assert tuple(section.claim_ids for section in draft.sections) == tuple(
-        tuple(UUID(item["id"]) for item in fields[name]["claims"])
-        for name in (
-            CitizensGuideField.WHAT_THE_SIDES_SAY.value,
-            CitizensGuideField.WHAT_THE_COURT_DID.value,
-            CitizensGuideField.WHY_IT_MATTERS.value,
-        )
+    plan_by_purpose = {section.purpose: section for section in plan.sections}
+    side_values = {
+        item["value"]
+        for item in compact_reader_guide_payload(plan)["fields"][
+            CitizensGuideField.WHAT_THE_SIDES_SAY.value
+        ]["claims"]
+    }
+    assert set(draft.sections[0].claim_ids) == {
+        claim.claim_id
+        for claim in plan_by_purpose[ReaderGuidePurpose.POSITIONS].claims
+        if claim.public_value in side_values
+    }
+    assert tuple(section.claim_ids for section in draft.sections[1:]) == (
+        tuple(
+            claim.claim_id
+            for claim in plan_by_purpose[ReaderGuidePurpose.COURT_ACTION].claims
+        ),
+        tuple(
+            claim.claim_id
+            for claim in plan_by_purpose[ReaderGuidePurpose.COURT_REASONING].claims
+        ),
     )
     assert draft.argument_analyses == ()
 
     mapping = assembled_draft_action_slots(plan)
-    assert tuple(heading for _, heading in mapping) == (
+    assert tuple(mapping) == (
         "dek",
-        "What the sides say",
-        "What the Supreme Court did",
-        "Why it matters",
+        "sections[0].paragraphs[0]",
+        "sections[1].paragraphs[0]",
+        "sections[2].paragraphs[0]",
     )
-    court_slots = next(
-        slots for (_, heading), slots in mapping.items() if heading == "What the Supreme Court did"
-    )
+    court_slots = mapping["sections[1].paragraphs[0]"]
     assert {slot.action for slot in court_slots} == {
         CanonicalAction.VACATE,
         CanonicalAction.REMAND,
@@ -953,7 +971,12 @@ def test_targeted_repair_uses_only_assembled_field_packet_and_preserves_other_by
     assert repaired.title_claim_ids == original.title_claim_ids
     assert payload["support_packet"] == court_packet
     assert set(payload["fixed_claim_ids"]) == {
-        item["id"] for item in court_packet["claims"]
+        str(claim.claim_id)
+        for claim in next(
+            section
+            for section in plan.sections
+            if section.purpose is ReaderGuidePurpose.COURT_ACTION
+        ).claims
     }
     assert "The people and agency" not in captured[0]["messages"][1]["content"]  # type: ignore[index]
 

@@ -180,12 +180,12 @@ run reduced the stale queue from 1,716 entries to 29 genuine new/changed cases a
 brief generation, but no attempted case passed final validation before runtime exhaustion.
 Extraction now supplies exact source identity fields, deterministically derives provenance
 from the referenced evidence block, uses smaller evidence windows, and reports only fixed
-safe failure codes. Argued-case brief generation uses a simplified strict local-model schema without
-manufacturing claim coverage. Disposition-only cases use Ollama first for structured
-observation extraction and then for one coherent, schema-constrained citizen-guide writing
-pass over the approved typed claims. Requested relief, lower-court actions, Supreme Court
-actions, controlling reasoning, and explicitly marked separate opinions remain role-separated;
-a grounded fragment under the wrong heading fails validation. One fully budgeted transport
+safe failure codes. All eligible cases use one compact strict-schema Citizen's Guide pass over isolated,
+approved field packets. The model writes only applicable high-level issue, side-position,
+Court-action/status, and impact prose; deterministic code owns identity, headings, order,
+claim IDs, sources, argument metadata, and publication eligibility. Canonical slots keep
+requested relief, lower-court action, and Supreme Court action role-separated and fail
+closed on demonstrated tuple conflicts or required omissions. One fully budgeted transport
 retry remains limited to retryable loopback failures, while
 scheduled model-output retries use exact stable scopes, a 20-hour cooldown, and finite
 per-scope and per-run limits. One-case live dry run `33912374845` then completed end to end
@@ -197,10 +197,12 @@ in 29 minutes, including one fixed-code brief correction, and produced a privacy
 The installed publication-disabled candidate is the locally derived Apache-2.0 artifact
 `ragchew-gpt-oss:120b-32k` at Ollama digest
 `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`.
-Its reviewed Modelfile pins `num_ctx 32768`. Exact non-thinking qualification returned
-empty content, so checked-in processing, model-runtime approval, brief-generation, and
-launch gates are closed before Court or model work. A revised request profile must be
-fingerprinted, bounded, requalified, and explicitly approved before those gates reopen.
+Its reviewed Modelfile pins `num_ctx 32768`. The fingerprinted bounded-low-reasoning,
+final-content-only profile passed cold and warm synthetic extraction and Citizen's Guide
+probes, including production Guide validation and cleanup. Checked-in processing,
+model-runtime approval, brief-generation, and launch gates nevertheless remain closed
+before Court or model work. Fixture-backed and fixed ten-case qualification plus explicit
+exact-candidate approval are still required before those gates reopen.
 For an approved profile, tag, digest, context, prompt, schema, and generation controls
 are verified before client construction and around every completion and participate in
 processor/request fingerprints.

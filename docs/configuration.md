@@ -64,11 +64,12 @@ For a new deployment or any unreviewed source/runtime change, these settings rem
 - static publication.
 
 The owner approved the earlier bounded processor on 2026-09-03. The exact GPT-OSS
-non-thinking qualification later returned empty content, so checked-in processing,
-model-runtime approval, brief generation, and launch switches are now `false`, and
-`publication.dry_run` remains `true`. Scheduled and manual workflows therefore stop
-before Court retrieval or model use. Reopening requires a revised fingerprinted request
-profile, fresh bounded qualification, and explicit owner approval. This is not a
+low-reasoning/final-content-only profile later passed synthetic cold/warm probes, but
+fixture-backed and fixed-canary qualification are not complete. Checked-in processing,
+model-runtime approval, brief generation, and launch switches therefore remain `false`,
+and `publication.dry_run` remains `true`. Scheduled and manual workflows stop before
+Court retrieval or model use. Reopening requires those remaining gates and explicit
+owner approval. This is not a
 validator bypass: a workflow dispatch cannot override a closed gate, and every future
 candidate remains subject to source, budget, grounding, privacy, completeness, and
 release-integrity checks. The protected `scotus-publication`
@@ -80,7 +81,8 @@ only reviewed model is the locally derived Apache-2.0
 `ragchew-gpt-oss:120b-32k` artifact with full Ollama digest
 `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`.
 Its reviewed Modelfile and every request pin a 32,768-token context; requests also pin
-`temperature: 0` and non-thinking mode. Before any Court retrieval or completion
+`temperature: 0` and bounded low reasoning. Only final schema content is parsed; reasoning
+is discarded and never logged, persisted, receipted, diagnosed from, or published. Before any Court retrieval or completion
 traffic, preflight requires one installed inventory entry matching the exact tag and
 full digest and `/api/show` must report `num_ctx 32768`. The adapter repeats that exact
 identity and context check immediately before and after every completion, rejecting a
