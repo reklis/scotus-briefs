@@ -2028,6 +2028,7 @@ class LiveStaticCaseProcessor:
                 authorized_replay
                 or (exact_scope_authorized and "brief" in work.authorized_retry_stages)
             )
+            model_calls_before_qa = budget.model_calls
             try:
                 blocks = self._parse_qa_documents(
                     source,
@@ -2054,6 +2055,12 @@ class LiveStaticCaseProcessor:
                     documents=tuple(states[key] for key in sorted(states)),
                 ) from None
             except ReaderQAError as error:
+                if budget.model_calls == model_calls_before_qa:
+                    # Packet/status failures occurred before inference and must not
+                    # satisfy paired-canary model-attempt accounting.
+                    raise DocumentCollectionError(
+                        "official material cannot form a bounded reader packet"
+                    ) from None
                 raise ModelOutputFailure(
                     retry_scope=retry_scope,
                     stage="brief",
@@ -2507,9 +2514,19 @@ class LiveStaticCaseProcessor:
     ) -> CaseProcessingResult:
         """Generate five direct plain-text answers and deterministic public metadata."""
         now = cast(datetime, self.discovery.now)
+        document_kinds = {
+            ScotusDocumentKind(state.document_kind) for state in states.values()
+        }
         status, maturity = deterministic_status_and_maturity(
             primary_docket=source.primary_docket,
-            has_disposition=bool(source.dispositions),
+            # Historical accepted state can carry an undated official disposition
+            # URL without a newer typed disposition row. The fetched and parsed
+            # official opinion/order remains deterministic disposition evidence.
+            has_disposition=bool(source.dispositions)
+            or bool(
+                document_kinds
+                & {ScotusDocumentKind.OPINION, ScotusDocumentKind.ORDER}
+            ),
             has_correction=any(item.revision_date is not None for item in source.dispositions),
             argument_count=len(source.sessions),
             has_reargument=any(item.reargument for item in source.sessions),

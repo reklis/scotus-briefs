@@ -21,7 +21,7 @@ from ragchew.scotus.extraction import LegalEvidenceBlock
 from ragchew.scotus.public_contracts import PublicSourceLink
 
 READER_QA_QUESTION_VERSION = "scotus-citizen-questions-v1"
-READER_QA_PACKET_VERSION = "scotus-question-packets-v1"
+READER_QA_PACKET_VERSION = "scotus-question-packets-v2"
 READER_QA_PROMPT_VERSION = "scotus-plain-text-qa-v1"
 READER_QA_SYNTHESIS_VERSION = "scotus-plain-text-synthesis-v1"
 DEFAULT_PACKET_CHARACTERS = 30_000

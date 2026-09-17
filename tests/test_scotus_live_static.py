@@ -1437,7 +1437,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert processor is not None
     assert processor.model == (f"ollama:ragchew-gpt-oss:120b-32k@sha256:{MODEL_DIGEST}@http://127.0.0.1:11434/v1")
     assert processor.extractor_version == (
-        "scotus-question-packets-v1:official-document-text-v4"
+        "scotus-question-packets-v2:official-document-text-v4"
     )
     assert processor.policy_version == "scotus-brief-policy-v64-plain-text-qa"
     assert processor.prompt_version == (
@@ -1480,6 +1480,31 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert all(receipt.outcome is ModelAttemptOutcome.SUCCEEDED for receipt in receipts.receipts)
     assert sum(receipt.call_count for receipt in receipts.receipts) == len(model.requests)
     assert not list((tmp_path / "private").glob("ragchew-*"))
+
+
+def test_reader_packet_failure_before_inference_is_not_a_model_attempt(tmp_path: Path) -> None:
+    base = live_config()
+    config = base.model_copy(
+        update={
+            "generation": base.generation.model_copy(
+                update={"maximum_context_characters": 20}
+            )
+        }
+    )
+    model = MockOpenAI()
+    result = run(
+        tmp_path,
+        MemoryStateStore(tmp_path / "state"),
+        CourtFixture(),
+        model,
+        config=config,
+    )
+
+    assert model.requests == []
+    assert result.pending_case_keys == ("2025-25-1",)
+    pending = result.content.publication.pending_work[0]
+    assert not pending.model_attempted
+    assert pending.retry is None
 
 
 def test_model_digest_changes_processor_and_request_fingerprints_only(
