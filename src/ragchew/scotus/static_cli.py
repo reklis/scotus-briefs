@@ -949,9 +949,9 @@ def _require_promotable_measurement(
     """Require positive review and exact comparison binding before promotion."""
     report = candidate.publication.canary_report
     if report is None:
-        if candidate.publication.editorial_backfill is not None:
-            raise CompareAndSwapConflict("measured candidate is missing its canary report")
-        return
+        if checkpoint_only and candidate.publication.editorial_backfill is None:
+            return
+        raise CompareAndSwapConflict("measured candidate is missing its canary report")
     all_failed = (
         report.attempted_count == len(report.case_keys)
         and report.failed_count == len(report.case_keys)
@@ -961,6 +961,10 @@ def _require_promotable_measurement(
         raise CompareAndSwapConflict("rejected canary measurement cannot be promoted")
     if not checkpoint_only and report.reviewer_decision is not CanaryReviewerDecision.APPROVED:
         raise CompareAndSwapConflict("canary measurement requires reviewed approval")
+    if not checkpoint_only and report.reviewed_answer_count != report.accepted_count * 5:
+        raise CompareAndSwapConflict(
+            "approved candidate is missing per-answer manual-review attestation"
+        )
     if (
         not checkpoint_only
         and report.rollout_stage is EditorialRolloutStage.CANARY_10

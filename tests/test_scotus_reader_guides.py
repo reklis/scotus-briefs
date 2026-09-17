@@ -19,7 +19,6 @@ from ragchew.scotus.contracts import (
 )
 from ragchew.scotus.reader_guides import (
     CITIZENS_GUIDE_SCHEMA_VERSION,
-    MAX_CITIZENS_GUIDE_WORDS,
     ActionEffect,
     CanonicalAction,
     CanonicalActorRole,
@@ -750,6 +749,7 @@ def test_gpt_oss_citizens_guide_profile_is_versioned_strict_and_role_explicit() 
     assert "list justice questions" in prompt
     assert schema["additionalProperties"] is False
     assert "180 words" in schema["description"]
+    assert all("maxLength" not in field for field in schema["properties"].values())
 
 
 def test_decided_writer_schema_is_exactly_the_four_conceptual_fields() -> None:
@@ -907,32 +907,42 @@ def test_writer_parses_only_final_content_and_ignores_reasoning_field() -> None:
     assert "private synthetic reasoning" not in draft.model_dump_json()
 
 
-def test_writer_enforces_one_or_two_sentences_and_180_total_words() -> None:
+def test_writer_preserves_schema_valid_prose_for_manual_review_without_quality_gates() -> None:
     plan = complete_decided_plan()
-
-    too_many_sentences = complete_decided_response()
-    too_many_sentences[CitizensGuideField.WHAT_IT_IS_ABOUT.value] = "One. Two. Three."
-    with pytest.raises(ReaderGuideWritingError) as caught:
-        CompactReaderGuideWriter("local-test", lambda request: too_many_sentences).generate(plan)
-    assert caught.value.safe_code == "citizens_guide_sentence_limit"
-
-    too_many_words = complete_decided_response()
-    too_many_words[CitizensGuideField.WHAT_IT_IS_ABOUT.value] = ("w " * 181).strip() + "."
-    with pytest.raises(ReaderGuideWritingError) as caught:
-        CompactReaderGuideWriter("local-test", lambda request: too_many_words).generate(plan)
-    assert caught.value.safe_code == "citizens_guide_word_limit"
-
-    accepted = complete_decided_response()
-    other_words = sum(
-        len(value.split())
-        for key, value in accepted.items()
-        if key != CitizensGuideField.WHAT_IT_IS_ABOUT.value
+    review_candidate = complete_decided_response()
+    review_candidate[CitizensGuideField.WHAT_IT_IS_ABOUT.value] = (
+        "One. Two. " + ("Verbose " * 100).strip() + " Three."
     )
-    accepted[CitizensGuideField.WHAT_IT_IS_ABOUT.value] = (
-        "w " * (MAX_CITIZENS_GUIDE_WORDS - other_words)
-    ).strip() + "."
-    draft = CompactReaderGuideWriter("local-test", lambda request: accepted).generate(plan)
-    assert draft.dek
+    review_candidate[CitizensGuideField.WHAT_THE_SIDES_SAY.value] = (
+        "Notwithstanding abstruse jurisprudential terminology, " + ("verbose " * 181).strip()
+    )
+    review_candidate[CitizensGuideField.WHAT_THE_COURT_DID.value] = (
+        "The agency issued the Supreme Court's order."
+    )
+    review_candidate[CitizensGuideField.WHY_IT_MATTERS.value] = (
+        "Bananas grow on a distant island."
+    )
+
+    draft = CompactReaderGuideWriter(
+        "local-test", lambda request: review_candidate
+    ).generate(plan)
+
+    assert draft.dek == review_candidate[CitizensGuideField.WHAT_IT_IS_ABOUT.value]
+    assert len(draft.dek) > 500
+    assert [section.paragraphs[0] for section in draft.sections] == [
+        review_candidate[field.value] for field in tuple(CitizensGuideField)[1:]
+    ]
+
+
+def test_writer_rejects_whitespace_only_schema_field() -> None:
+    plan = complete_decided_plan()
+    response = complete_decided_response()
+    response[CitizensGuideField.WHAT_IT_IS_ABOUT.value] = "   "
+
+    with pytest.raises(ReaderGuideWritingError) as caught:
+        CompactReaderGuideWriter("local-test", lambda request: response).generate(plan)
+
+    assert caught.value.safe_code == "invalid_writer_schema"
 
 
 def test_assembly_preserves_deterministic_metadata_and_exports_action_mapping() -> None:

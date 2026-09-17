@@ -30,6 +30,7 @@ from ragchew.scotus.public_contracts import (
     derive_latest_court_document_date,
     public_case_slug,
 )
+from ragchew.scotus.reader_qa import ReaderQAGuideDraft
 
 
 class ScotusProjectionReader(Protocol):
@@ -164,6 +165,93 @@ def build_public_case(
         ),
         revisions=revision_history,
         updated_at=revision.created_at,
+        topics=topics,
+    )
+
+
+def build_public_case_from_qa(
+    *,
+    term: str,
+    primary_docket: str,
+    caption: str,
+    case_status: ScotusCaseStatus,
+    official_detail_url: str | None,
+    guide: ReaderQAGuideDraft,
+    argument_sessions: tuple[CaseArgumentSession, ...],
+    case_history: tuple[PublicCaseHistoryEvent, ...],
+    revision_history: tuple[PublicBriefRevisionSummary, ...],
+    official_disposition_urls: tuple[str, ...] = (),
+    official_dispositions: tuple[PublicDisposition, ...] = (),
+    allow_legacy_disposition_fallback: bool = False,
+    topics: tuple[str, ...] = (),
+) -> PublicCaseBrief:
+    """Assemble a public Q&A Guide without fabricating extracted claims."""
+    about, *remaining = guide.answers
+    sections = tuple(
+        PublicBriefSection(
+            heading=answer.question.heading,
+            paragraphs=(answer.text,),
+            sources=answer.sources,
+        )
+        for answer in remaining
+    )
+    arguments = tuple(
+        PublicArgumentAnalysis(
+            sequence=session.sequence,
+            argument_date=session.argument_date,
+            reargument=session.reargument,
+            heading="Oral argument",
+            paragraphs=(),
+            official_detail_url=session.official_detail_url,
+            official_transcript_url=session.official_transcript_url,
+            sources=(
+                PublicSourceLink(
+                    evidence_type="transcript",
+                    label="Official Supreme Court oral-argument transcript",
+                    official_url=session.official_transcript_url,
+                    page_label="oral argument",
+                ),
+            ),
+        )
+        for session in argument_sessions
+    )
+    latest_argument_date = max((item.argument_date for item in arguments), default=None)
+    if bool(arguments) != bool(official_detail_url):
+        raise ValueError("argument detail URL must exist exactly when arguments exist")
+    if official_disposition_urls and not allow_legacy_disposition_fallback:
+        raise ValueError("new public cases require dated structured disposition metadata")
+    return PublicCaseBrief(
+        slug=public_case_slug(term, primary_docket, caption),
+        term=term,
+        primary_docket=primary_docket,
+        caption=caption,
+        argument_date=latest_argument_date,
+        case_status=case_status,
+        maturity=guide.maturity,
+        title=guide.title,
+        dek=about.text,
+        title_sources=about.sources,
+        dek_sources=about.sources,
+        sections=sections,
+        arguments=arguments,
+        case_history=case_history,
+        official_detail_url=official_detail_url,
+        official_docket_url=(
+            "https://www.supremecourt.gov/docket/docketfiles/html/public/"
+            f"{quote(primary_docket, safe='-')}.html"
+        ),
+        official_disposition_urls=official_disposition_urls,
+        undated_disposition_date_fallback=(
+            "latest_argument_date" if official_disposition_urls else None
+        ),
+        dispositions=official_dispositions,
+        latest_court_document_date=derive_latest_court_document_date(
+            arguments,
+            official_dispositions,
+            legacy_argument_date=(latest_argument_date if official_disposition_urls else None),
+        ),
+        revisions=revision_history,
+        updated_at=guide.created_at,
         topics=topics,
     )
 

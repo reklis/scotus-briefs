@@ -33,11 +33,12 @@ Daily at 03:17 UTC (`17 3 * * *`) a protected, serialized, non-cancelling workfl
 5. fully recomputes each changed case, requiring complete transcripts for every real
    argument session but allowing a grounded dated disposition to support a zero-session
    case when the complete disposition and required docket metadata pass validation;
-6. merges only complete accepted cases while preserving unchanged case bytes, records
-   every failed or unselected supported activity as sanitized pending work, and
-   continues after case-local failures while shared budgets permit;
-7. exports and validates a fresh candidate, deploys that exact Pages artifact, then
-   compare-and-swap promotes the exact generated state.
+6. merges complete schema-valid cases only into a private review candidate while preserving
+   unchanged case bytes, records every failed or unselected supported activity as sanitized
+   pending work, and continues after case-local failures while shared budgets permit;
+7. exports and validates a publication-disabled candidate. Deployment and compare-and-swap
+   promotion require an approved report bound to that exact candidate after every generated
+   Guide has been manually reviewed.
 
 No Docker services run in publication. Court documents and model material stay only
 in the self-hosted runner's mode-0700 workspace. Cleanup runs before and after each
@@ -119,17 +120,24 @@ transcript links rather than fabricating them. Changed source bytes allocate a n
 logical document revision; one missing or malformed response never retracts an
 existing brief.
 
-Model inputs are bounded evidence windows for extraction and sanitized approved
-claims for brief generation. Every changed case follows the same simple sequence: discover
-and download unseen official documents, parse them transiently, analyze all accepted case
-documents into typed grounded claims, and write one coherent plain-English citizen guide.
-The compact Citizen's Guide uses up to four planner-controlled concepts: what the case is
-about, what the sides say, what the Court did or where the case stands, and why it matters.
-The first is the dek and the remaining applicable concepts use deterministic headings. The
-writer returns one short sentence per field and no more than 180 words total; it does not
-produce lawyer, justice-by-justice, or session-by-session analysis. Official argument dates
-and transcript links remain deterministic metadata. Field-specific canonical action slots
-reject actor, action, object, polarity, timing, or effect conflicts and required omissions.
+Every changed case follows a direct Guide sequence: discover and download official
+documents, parse them transiently into page/line-addressed blocks, construct five bounded
+question-specific source packets, and ask one ordinary-language question per completion.
+The model answers “What is this case about?”, “What does each side want?”, “What has
+happened in the case so far?”, the applicable decided-or-pending Court question, and “Why
+might this matter to ordinary people?”. Requests contain official text and ask for one to
+three short plain-text sentences; they contain no observation vocabulary, model-controlled
+headings, action schema, or JSON response format.
+
+The first answer is the labeled dek and the remaining four answers use deterministic public
+headings. Official argument dates, transcript links, status, maturity, source links, and
+revision metadata remain deterministic. Long relevant material uses bounded transient map
+answers followed by one plain-text synthesis call; an over-bound corpus fails rather than
+being silently truncated. Nonblank final answers are preserved unchanged as private review
+candidates. Automated grounding, action-language, style, jargon, sentence, word-count, and
+repair gates do not decide prose acceptance; a human reviewer evaluates those concerns
+before any candidate-bound approval. Structured legal extraction may remain for unrelated
+analysis but neither supplies nor blocks the Guide.
 The installed candidate is the exact local Apache-2.0 Ollama artifact
 `ragchew-gpt-oss:120b-32k`, with full reviewed content digest
 `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863` and a
@@ -142,8 +150,10 @@ before and around completions; automation does not install, pull, select `latest
 native-context `gpt-oss:120b` or another local model, or use a hosted fallback.
 
 GPT-OSS remains disabled and publication-disabled until role-sensitive synthetic fixtures, a
-fixture-backed end-to-end run, and a fixed ten-case canary all pass the existing
-correctness, privacy, release, cleanup, improvement, and explicit-review thresholds.
+fixture-backed end-to-end run, and a fixed ten-case canary complete. Generation success means
+only that five nonblank plain-text answers were assembled for review; manual review must establish
+correctness and improvement, and privacy, release, cleanup, and explicit-approval thresholds
+remain mandatory.
 Rollback before approval leaves the immutable active release unchanged; after approval,
 rollback redeploys the prior immutable release and requires a new validated processor
 migration.

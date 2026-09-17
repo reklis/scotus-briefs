@@ -23,7 +23,6 @@ from ragchew.proceedings.sources.http import (
     SourceResponse,
 )
 from ragchew.proceedings.sources.supreme_court import SupremeCourtAdapter
-from ragchew.scotus.briefs import BriefValidationError
 from ragchew.scotus.contracts import (
     LegalObservationType,
     LegalStatus,
@@ -45,7 +44,6 @@ from ragchew.scotus.live_static import (
     _opinion_page_attribution,
     _outstanding_supported_case_keys,
     _procedural_path_observation,
-    _repair_diagnostic,
     _TransientEvidenceTransport,
     _verify_exact_ollama_model,
 )
@@ -54,7 +52,6 @@ from ragchew.scotus.public_contracts import (
     ScotusPublicProjection,
     public_case_key,
 )
-from ragchew.scotus.reader_guides import ReaderGuideFieldKind, ReaderGuideFieldPath
 from ragchew.scotus.static_contracts import (
     CanaryAggregate,
     CanaryFailureCount,
@@ -286,6 +283,41 @@ class MockOpenAI:
 
     def create(self, **request: Any) -> object:
         self.requests.append(request)
+        if "response_format" not in request:
+            user_text = request["messages"][1]["content"]
+            question = user_text.splitlines()[0].removeprefix("Question: ")
+            answers = {
+                "What is this case about?": (
+                    "This case asks whether federal law limits what an agency may do."
+                ),
+                "What does each side want?": (
+                    "One side wants the Court to limit the agency, while the agency wants its "
+                    "action left in place."
+                ),
+                "What has happened in the case so far?": (
+                    "The case reached the Supreme Court after proceedings in the lower courts."
+                ),
+                "What did the Supreme Court decide?": (
+                    "The Supreme Court granted the application."
+                ),
+                "What is the Supreme Court being asked to decide?": (
+                    "The Supreme Court is being asked whether federal law permits the agency's "
+                    "action."
+                ),
+                "Why might this matter to ordinary people?": (
+                    "The answer could affect how much power federal agencies have."
+                ),
+            }
+            return SimpleNamespace(
+                choices=[
+                    SimpleNamespace(
+                        message=SimpleNamespace(
+                            content=answers.get(question, "The material does not answer this."),
+                            reasoning="private reasoning",
+                        )
+                    )
+                ]
+            )
         name = request["response_format"]["json_schema"]["name"]
         user = json.loads(request["messages"][1]["content"])
         if name == "scotus_legal_observations":
@@ -656,7 +688,7 @@ def live_config() -> ScotusConfig:
             "enabled": True,
             "generation": config.generation.model_copy(update={"brief_generation_enabled": True}),
             "publication": config.publication.model_copy(
-                update={"enabled": True, "dry_run": False}
+                update={"enabled": True, "dry_run": True}
             ),
             "approvals": approvals,
             "discovery": config.discovery.model_copy(
@@ -796,6 +828,32 @@ def test_live_adapter_checks_all_gates_before_factories_or_traffic(tmp_path: Pat
     assert not list(tmp_path.iterdir())
 
 
+def test_manual_review_generation_rejects_live_publication(tmp_path: Path) -> None:
+    called = False
+
+    def settings() -> ServiceSettings:
+        nonlocal called
+        called = True
+        raise AssertionError
+
+    config = live_config().model_copy(
+        update={
+            "publication": live_config().publication.model_copy(
+                update={"enabled": True, "dry_run": False}
+            )
+        }
+    )
+    with pytest.raises(PublicationGateDenied, match="publication-disabled"):
+        LiveStaticBatchAdapter(settings_factory=settings).run(
+            state_store=StaticStateStore(tmp_path / "state"),
+            config=config,
+            mode=DiscoveryMode.NIGHTLY,
+            runner_temp=tmp_path,
+            authorized_replay=False,
+        )
+    assert not called
+
+
 def test_fixed_dry_run_canary_can_qualify_while_launch_gates_stay_closed(
     tmp_path: Path,
 ) -> None:
@@ -850,6 +908,15 @@ def test_fixed_dry_run_canary_can_qualify_while_launch_gates_stay_closed(
 
 
 def test_opinion_page_attribution_tracks_court_and_separate_opinions() -> None:
+    assert _opinion_page_attribution("SYLLABUS\nReporter summary.") == "Reporter syllabus"
+    assert (
+        _opinion_page_attribution("Summary continues.", "Reporter syllabus")
+        == "Reporter syllabus"
+    )
+    assert (
+        _opinion_page_attribution("Opinion of the Court\nThe Court holds.", "Reporter syllabus")
+        == "Opinion of the Court"
+    )
     assert _opinion_page_attribution("PER CURIAM\nThe Court explains its decision.") == (
         "Opinion of the Court"
     )
@@ -1370,46 +1437,46 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert processor is not None
     assert processor.model == (f"ollama:ragchew-gpt-oss:120b-32k@sha256:{MODEL_DIGEST}@http://127.0.0.1:11434/v1")
     assert processor.extractor_version == (
-        "scotus-observation-v2:scotus-legal-v1:scotus-legal-extraction-v11-low-reasoning:"
-        "official-document-text-v4"
+        "scotus-question-packets-v1:official-document-text-v4"
     )
-    assert processor.policy_version == "scotus-brief-policy-v62"
+    assert processor.policy_version == "scotus-brief-policy-v64-plain-text-qa"
     assert processor.prompt_version == (
-        "scotus-gpt-oss-citizens-guide-v7;schema=scotus-citizens-guide-schema-v2;reasoning=low;repair=scotus-guide-repair-v9-low;"
-        "planner=reader-guide-plan-v8;reader_prose=scotus-reader-prose-v2"
+        "scotus-plain-text-qa-v1;questions=scotus-citizen-questions-v1;"
+        "synthesis=scotus-plain-text-synthesis-v1;reasoning=low;"
+        "review=manual-required-v1"
     )
-    assert [request["response_format"]["json_schema"]["name"] for request in model.requests] == [
-        "scotus_legal_observations",
-        "scotus_citizens_guide_v3",
-    ]
+    assert len(model.requests) == 5
+    assert all("response_format" not in request for request in model.requests)
     assert all(
         request["extra_body"]
         == {"think": "low", "options": {"num_ctx": 32768, "temperature": 0}}
         for request in model.requests
     )
     assert all(request["temperature"] == 0 for request in model.requests)
-    assert model.requests[0]["max_tokens"] == 8_000
-    assert model.requests[1]["max_tokens"] == 2_000
+    assert all(request["max_tokens"] == 500 for request in model.requests)
     assert all(request["reasoning_effort"] == "low" for request in model.requests)
-    extraction_payload = json.loads(model.requests[0]["messages"][1]["content"])
-    assert extraction_payload["mode"] == "bounded_low_reasoning"
-    extraction_evidence = extraction_payload["evidence"]
-    assert {
-        "speaker_name",
-        "speaker_kind",
-        "identity_basis",
-        "attribution",
-    }.issubset(extraction_evidence[0])
-    brief_payload = json.loads(model.requests[1]["messages"][1]["content"])
-    assert set(brief_payload) == {"fields"}
-    assert "caption" not in brief_payload
-    assert "docket" not in brief_payload
-    brief_schema = model.requests[1]["response_format"]["json_schema"]["schema"]
-    assert "$defs" not in brief_schema
+    questions = tuple(
+        request["messages"][1]["content"].splitlines()[0]
+        for request in model.requests
+    )
+    assert questions == (
+        "Question: What is this case about?",
+        "Question: What does each side want?",
+        "Question: What has happened in the case so far?",
+        "Question: What is the Supreme Court being asked to decide?",
+        "Question: Why might this matter to ordinary people?",
+    )
+    assert all(
+        "Official Court material:" in request["messages"][1]["content"]
+        for request in model.requests
+    )
+    assert tuple(section.heading for section in case.sections) == tuple(
+        question.removeprefix("Question: ") for question in questions[1:]
+    )
     receipts = CostReceiptBundle.model_validate_json(
         (tmp_path / "private/public-cost-receipts.json").read_bytes()
     )
-    assert {receipt.stage for receipt in receipts.receipts} == {"extraction", "brief"}
+    assert {receipt.stage for receipt in receipts.receipts} == {"brief"}
     assert all(receipt.outcome is ModelAttemptOutcome.SUCCEEDED for receipt in receipts.receipts)
     assert sum(receipt.call_count for receipt in receipts.receipts) == len(model.requests)
     assert not list((tmp_path / "private").glob("ragchew-*"))
@@ -1658,9 +1725,8 @@ def test_status_changing_opinion_rewrites_complete_argument_case(tmp_path: Path)
         for section in case.sections
         for paragraph in section.paragraphs
     )
-    assert [
-        request["response_format"]["json_schema"]["name"] for request in update_model.requests
-    ] == ["scotus_legal_observations", "scotus_legal_observations", "scotus_citizens_guide_v3"]
+    assert len(update_model.requests) == 5
+    assert all("response_format" not in request for request in update_model.requests)
     assert any("transcripts" in request.url.path for request in court.document_requests)
 
 
@@ -1731,25 +1797,19 @@ def test_disposition_only_emergency_opinion_publishes_without_argument(
     assert case.arguments == ()
     assert case.argument_date is None
     assert case.official_detail_url is None
-    assert case.case_status.value == "decided"
+    assert case.case_status.value == "order_issued"
+    assert case.maturity.value == "post_order"
     assert case.latest_court_document_date == datetime(2026, 3, 4, tzinfo=UTC)
     assert [item.kind for item in case.dispositions] == ["per_curiam"]
-    names = [request["response_format"]["json_schema"]["name"] for request in model.requests]
-    assert names == ["scotus_legal_observations", "scotus_citizens_guide_v3"]
-    brief_request = model.requests[-1]
-    brief_schema = brief_request["response_format"]["json_schema"]["schema"]
-    assert tuple(brief_schema["properties"]) == (
-        "what_it_is_about",
-        "what_the_sides_say",
-        "what_the_court_did",
-        "why_it_matters",
-    )
+    assert len(model.requests) == 5
+    assert all("response_format" not in request for request in model.requests)
     assert tuple(section.heading for section in case.sections) == (
-        "What the sides say",
-        "What the Supreme Court did",
-        "Why it matters",
+        "What does each side want?",
+        "What has happened in the case so far?",
+        "What did the Supreme Court decide?",
+        "Why might this matter to ordinary people?",
     )
-    assert case.sections[1].paragraphs == ("The Supreme Court granted the application.",)
+    assert case.sections[2].paragraphs == ("The Supreme Court granted the application.",)
     disposition = result.content.publication.dispositions[0]
     assert disposition.primary_docket == "25A810"
     assert disposition.publication_date == datetime(2026, 3, 4, tzinfo=UTC)
@@ -2039,7 +2099,7 @@ def test_live_discovery_canonicalizes_multi_primary_consolidation() -> None:
     assert result.dispositions[0].case_key == "2025-25-1"
 
 
-def test_brief_validation_gets_one_bounded_private_field_correction(
+def test_manual_review_preserves_first_schema_valid_guide_without_field_correction(
     tmp_path: Path,
 ) -> None:
     class CorrectingModel(MockOpenAI):
@@ -2049,19 +2109,24 @@ def test_brief_validation_gets_one_bounded_private_field_correction(
 
         def create(self, **request: Any) -> object:
             completion = super().create(**request)
-            name = request["response_format"]["json_schema"]["name"]
-            if name not in {"scotus_citizens_guide_v3", "reader_guide_field_repair"}:
+            if "response_format" in request:
                 return completion
             self.brief_calls += 1
-            if name != "scotus_citizens_guide_v3":
-                return completion
-            payload = json.loads(completion.choices[0].message.content)
-            payload["what_it_is_about"] = (
-                "The language model output says the Court heard argument."
-            )
-            return SimpleNamespace(
-                choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(payload)))]
-            )
+            if request["messages"][1]["content"].startswith(
+                "Question: What is this case about?"
+            ):
+                return SimpleNamespace(
+                    choices=[
+                        SimpleNamespace(
+                            message=SimpleNamespace(
+                                content=(
+                                    "The language model output says the Court heard argument."
+                                )
+                            )
+                        )
+                    ]
+                )
+            return completion
 
     model = CorrectingModel()
     config = live_config()
@@ -2081,27 +2146,12 @@ def test_brief_validation_gets_one_bounded_private_field_correction(
     )
 
     assert result.publishable
-    assert model.brief_calls == 2
-    repair_request = next(
-        request
-        for request in model.requests
-        if request["response_format"]["json_schema"]["name"] == "reader_guide_field_repair"
+    assert model.brief_calls == 5
+    assert result.content.projection is not None
+    assert result.content.projection.cases[0].dek == (
+        "The language model output says the Court heard argument."
     )
-    repair_payload = json.loads(repair_request["messages"][1]["content"])
-    assert repair_payload["field_path"] == {
-        "kind": "dek",
-        "section_index": None,
-        "argument_index": None,
-        "paragraph_index": None,
-    }
-    assert set(repair_payload) == {
-        "field_path",
-        "rejected_text",
-        "support_packet",
-        "diagnostic",
-        "fixed_claim_ids",
-    }
-    assert repair_payload["diagnostic"]["rule"] == "internal_process_language"
+    assert all("response_format" not in request for request in model.requests)
 
 
 @pytest.mark.parametrize(
@@ -2112,7 +2162,7 @@ def test_brief_validation_gets_one_bounded_private_field_correction(
         "The case concerns statutory authority and a tax exemption.",
     ],
 )
-def test_hard_valid_original_is_retained_without_requesting_unprovable_repair(
+def test_first_schema_valid_response_is_retained_without_requesting_repair(
     tmp_path: Path, repair_text: str
 ) -> None:
     original = "The Court heard argument in the case."
@@ -2120,22 +2170,14 @@ def test_hard_valid_original_is_retained_without_requesting_unprovable_repair(
     class StyleRepairModel(MockOpenAI):
         def create(self, **request: Any) -> object:
             completion = super().create(**request)
-            name = request["response_format"]["json_schema"]["name"]
-            if name == "scotus_citizens_guide_v3":
-                payload = json.loads(completion.choices[0].message.content)
-                payload["what_it_is_about"] = original
-                return SimpleNamespace(
-                    choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(payload)))]
+            if (
+                "response_format" not in request
+                and request["messages"][1]["content"].startswith(
+                    "Question: What is this case about?"
                 )
-            if name == "reader_guide_field_repair":
+            ):
                 return SimpleNamespace(
-                    choices=[
-                        SimpleNamespace(
-                            message=SimpleNamespace(
-                                content=json.dumps({"text": repair_text})
-                            )
-                        )
-                    ]
+                    choices=[SimpleNamespace(message=SimpleNamespace(content=original))]
                 )
             return completion
 
@@ -2158,28 +2200,11 @@ def test_hard_valid_original_is_retained_without_requesting_unprovable_repair(
     assert result.publishable
     assert result.content.projection is not None
     assert result.content.projection.cases[0].dek == original
-    assert all(
-        request["response_format"]["json_schema"]["name"] != "reader_guide_field_repair"
-        for request in model.requests
-    )
+    assert repair_text not in result.content.projection.cases[0].dek
+    assert all("response_format" not in request for request in model.requests)
 
 
-def test_term_repair_diagnostic_uses_reviewed_ordinary_alternative() -> None:
-    diagnostic = _repair_diagnostic(
-        ReaderGuideFieldPath(kind=ReaderGuideFieldKind.DEK),
-        BriefValidationError(
-            "a legal term lacks an immediate explanation",
-            safe_code="unexplained_legal_term_separation_of_powers",
-        ),
-    )
-
-    assert diagnostic.offending_term == "separation of powers"
-    assert "how government branches divide and limit their power" in (
-        diagnostic.required_transformation
-    )
-
-
-def test_disposition_action_validation_repairs_only_rejected_field(
+def test_manual_review_preserves_role_confused_disposition_without_repair(
     tmp_path: Path,
 ) -> None:
     court = CourtFixture()
@@ -2216,17 +2241,22 @@ def test_disposition_action_validation_repairs_only_rejected_field(
 
         def create(self, **request: Any) -> object:
             completion = super().create(**request)
-            name = request["response_format"]["json_schema"]["name"]
-            if name not in {"scotus_citizens_guide_v3", "reader_guide_field_repair"}:
+            if "response_format" in request:
                 return completion
             self.brief_calls += 1
-            if name != "scotus_citizens_guide_v3":
-                return completion
-            payload = json.loads(completion.choices[0].message.content)
-            payload["what_the_court_did"] = "The Supreme Court denied the application."
-            return SimpleNamespace(
-                choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(payload)))]
-            )
+            if request["messages"][1]["content"].startswith(
+                "Question: What did the Supreme Court decide?"
+            ):
+                return SimpleNamespace(
+                    choices=[
+                        SimpleNamespace(
+                            message=SimpleNamespace(
+                                content="The Supreme Court denied the application."
+                            )
+                        )
+                    ]
+                )
+            return completion
 
     model = CorrectingDispositionModel()
     config = live_config().model_copy(
@@ -2245,15 +2275,15 @@ def test_disposition_action_validation_repairs_only_rejected_field(
     )
 
     assert result.publishable
-    assert model.brief_calls == 2
-    repair_request = next(
-        request
-        for request in model.requests
-        if request["response_format"]["json_schema"]["name"] == "reader_guide_field_repair"
+    assert model.brief_calls == 5
+    assert result.content.projection is not None
+    action = next(
+        section
+        for section in result.content.projection.cases[0].sections
+        if section.heading == "What did the Supreme Court decide?"
     )
-    repair_payload = json.loads(repair_request["messages"][1]["content"])
-    assert repair_payload["diagnostic"]["rule"] == "unsupported_court_action"
-    assert repair_payload["rejected_text"] == "The Supreme Court denied the application."
+    assert action.paragraphs == ("The Supreme Court denied the application.",)
+    assert all("response_format" not in request for request in model.requests)
 
 
 def test_unchanged_disposition_reuses_guide_without_model_call(tmp_path: Path) -> None:
@@ -2371,9 +2401,8 @@ def test_reargument_reprocesses_every_session_under_one_case_budget(tmp_path: Pa
     assert result.publishable and len(case.arguments) == 2
     assert case.arguments[-1].reargument
     assert case.revisions[-1].correction_note
-    names = [request["response_format"]["json_schema"]["name"] for request in model.requests]
-    assert names.count("scotus_legal_observations") == 2
-    assert names.count("scotus_citizens_guide_v3") == 1
+    assert len(model.requests) == 5
+    assert all("response_format" not in request for request in model.requests)
 
 
 @pytest.mark.parametrize("stale_processor", [None, "f" * 64])
@@ -2473,12 +2502,12 @@ def test_failure_and_model_budget_exhaustion_keep_prior_case_active(
     config = config.model_copy(
         update={
             "model_budget": config.model_budget.model_copy(
-                update={"maximum_extraction_calls_per_run": 1}
+                update={"maximum_brief_calls_per_run": 4}
             )
         }
     )
     blocked = run(tmp_path, store, court, MockOpenAI(), config=config)
-    assert not blocked.publishable
+    assert blocked.publishable and blocked.no_public_change
     assert blocked.content.projection is not None
     assert blocked.content.projection.cases[0] == prior_case
     assert blocked.pending_case_keys == ("2025-25-1",)

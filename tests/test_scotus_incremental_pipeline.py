@@ -675,7 +675,7 @@ def live_config() -> ScotusConfig:
             "publication": config.publication.model_copy(update={"enabled": True}),
             "model_budget": config.model_budget.model_copy(
                 update={
-                    "maximum_brief_calls_per_run": 2,
+                    "maximum_brief_calls_per_run": 100,
                     "maximum_transport_attempts": 2,
                 }
             ),
@@ -767,8 +767,18 @@ def test_unified_budget_gates_and_counts_every_transport_attempt() -> None:
             input_tokens=10,
             output_tokens=10,
         )
-    with pytest.raises(BudgetExceeded, match="brief call budgets"):
-        budget.reserve_case()
+    bounded_config = live_config().model_copy(
+        update={
+            "model_budget": live_config().model_budget.model_copy(
+                update={"maximum_brief_calls_per_run": 6}
+            )
+        }
+    )
+    bounded = UnifiedRunBudget(bounded_config, CostLedger(updated_at=NOW))
+    bounded.brief_calls = 2
+    bounded.model_calls = 2
+    with pytest.raises(BudgetExceeded, match="plain-text Guide call budgets"):
+        bounded.reserve_case()
     assert budget.extraction_calls == 0
 
 

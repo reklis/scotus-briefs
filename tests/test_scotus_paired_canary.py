@@ -20,9 +20,11 @@ from ragchew.scotus.static_contracts import (
     CanaryAggregate,
     CanaryFailureCount,
     CanaryReviewerDecision,
+    CanaryWarningCount,
     ContentIntegrity,
     EditorialBackfillState,
     EditorialRolloutStage,
+    EditorialWarningCode,
     LogicalDocumentState,
     ModelRetryStatus,
     PendingModelRetry,
@@ -254,6 +256,7 @@ def test_approved_report_requires_both_comparison_bindings() -> None:
         "improved_count": 8,
         "privacy_validation_passed": True,
         "release_validation_passed": True,
+        "reviewed_answer_count": 50,
         "reviewer_decision": CanaryReviewerDecision.APPROVED,
     }
     with pytest.raises(ValidationError, match="advancement thresholds"):
@@ -288,9 +291,16 @@ def test_approved_candidate_requires_the_exact_control_baseline_at_promotion() -
             "accepted_count": 10,
             "failed_count": 0,
             "failure_code_counts": (),
+            "warning_code_counts": (
+                CanaryWarningCount(
+                    code=EditorialWarningCode.MANUAL_REVIEW_REQUIRED,
+                    count=10,
+                ),
+            ),
             "improved_count": 8,
             "privacy_validation_passed": True,
             "release_validation_passed": True,
+            "reviewed_answer_count": 50,
             "reviewer_decision": CanaryReviewerDecision.APPROVED,
         }
     )
@@ -310,3 +320,17 @@ def test_approved_candidate_requires_the_exact_control_baseline_at_promotion() -
     with pytest.raises(RuntimeError, match="comparison binding"):
         _require_promotable_measurement(promotable)
     _require_promotable_measurement(promotable, comparison_baseline=baseline)
+
+    missing_manual_accounting = replace(
+        promotable,
+        publication=promotable.publication.model_copy(
+            update={
+                "canary_report": approved.model_copy(update={"reviewed_answer_count": 0})
+            }
+        ),
+    )
+    with pytest.raises(RuntimeError, match="manual-review attestation"):
+        _require_promotable_measurement(
+            missing_manual_accounting,
+            comparison_baseline=baseline,
+        )

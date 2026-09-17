@@ -873,6 +873,29 @@ def test_citizens_guide_profile_has_deterministic_headings_and_no_session_detail
     assert ungrounded.value.safe_code == "ungrounded_citizens_guide_field"
 
 
+def test_manual_review_service_skips_guide_prose_validation() -> None:
+    source = candidate()
+    decision = evaluate_brief_candidate(source, minimum_confidence=0.85)
+    draft = FakeGenerator().generate(  # type: ignore[no-untyped-call]
+        source, decision.claims, decision.maturity
+    ).model_copy(update={"dek": "Bananas grow on a distant island."})
+
+    class StaticGuideGenerator:
+        model_name = "local-test"
+
+        def generate(self, *args: object) -> LegalBriefDraft:
+            return draft
+
+    revision = BriefGenerationService(
+        StaticGuideGenerator(),
+        InMemoryBriefRevisionStore(),
+        citizens_guide_profile=True,
+        manual_review_only=True,
+    ).generate(source, decision, revision_number=1)
+
+    assert revision.dek == "Bananas grow on a distant island."
+
+
 def test_disposition_only_draft_accepts_zero_argument_analyses() -> None:
     source = disposition_candidate()
     decision = evaluate_brief_candidate(source, minimum_confidence=0.85)

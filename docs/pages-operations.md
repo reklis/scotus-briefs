@@ -56,15 +56,17 @@ activity.
 A run may now drain up to 100 cases and 1,100 zero-cost local-model calls, continuing
 past individual case validation failures. Court
 rate controls, source authorization, a five-hour processing bound, private-disk and
-retrieval limits, and every per-case publication validator remain mandatory. The shorter
+retrieval limits, structural validation, and candidate-bound manual approval remain
+mandatory. The shorter
 application bound reserves time for receipt upload, candidate validation, and runner cleanup
 inside the 5-hour-30-minute build-job limit. A missing processor fingerprint on an accepted
 legacy import does **not** by itself create migration or pending work. Until the reviewed,
 bounded editorial-backfill cursor selects a case, that page remains active and outside
 `PendingWork`; zero-attempt `budget_exhausted` markers produced solely by the withdrawn
 global migration are cleaned as stale compatibility state. A selected source change or
-future bounded backfill must still pass the same source, model, grounding, privacy, and
-publication gates as a new case, and failure retains the complete last-known-good page.
+future bounded backfill must still pass source, exact-model, extraction-grounding, schema,
+privacy, and manual publication-approval controls, and failure retains the complete
+last-known-good page.
 
 Publication-disabled run `34147702102` tested a maximum-100 plain-language migration and
 reached the five-hour bound after 62 case attempts. It accepted zero rewrites of existing
@@ -178,15 +180,14 @@ An explicit reviewed replay (`33796212480`) produced the same fail-closed result
 three documents, 18 requests, 2,362,990 bytes, and two extraction calls. A later bounded
 run reduced the stale queue from 1,716 entries to 29 genuine new/changed cases and reached
 brief generation, but no attempted case passed final validation before runtime exhaustion.
-Extraction now supplies exact source identity fields, deterministically derives provenance
-from the referenced evidence block, uses smaller evidence windows, and reports only fixed
-safe failure codes. All eligible cases use one compact strict-schema Citizen's Guide pass over isolated,
-approved field packets. The model writes only applicable high-level issue, side-position,
-Court-action/status, and impact prose; deterministic code owns identity, headings, order,
-claim IDs, sources, argument metadata, and publication eligibility. Canonical slots keep
-requested relief, lower-court action, and Supreme Court action role-separated and fail
-closed on demonstrated tuple conflicts or required omissions. One fully budgeted transport
-retry remains limited to retryable loopback failures, while
+The current publication-disabled Guide path does not use structured model extraction or
+model-generated JSON. Deterministic code parses official documents, labels page/line source
+ranges, excludes separate opinions from the five-question profile, and constructs complete
+bounded packets. The model receives one ordinary-language question per call and returns one
+plain-text answer. Long packets use bounded transient map calls plus one synthesis call; an
+over-bound packet fails instead of being silently truncated. Deterministic code owns the
+five questions, headings, order, status, maturity, source links, argument metadata, and
+publication eligibility. One fully budgeted transport retry remains limited to retryable loopback failures, while
 scheduled model-output retries use exact stable scopes, a 20-hour cooldown, and finite
 per-scope and per-run limits. One-case live dry run `33912374845` then completed end to end
 in 29 minutes, including one fixed-code brief correction, and produced a privacy-scanned
@@ -197,13 +198,13 @@ in 29 minutes, including one fixed-code brief correction, and produced a privacy
 The installed publication-disabled candidate is the locally derived Apache-2.0 artifact
 `ragchew-gpt-oss:120b-32k` at Ollama digest
 `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`.
-Its reviewed Modelfile pins `num_ctx 32768`. The fingerprinted bounded-low-reasoning,
-final-content-only profile passed cold and warm synthetic extraction and Citizen's Guide
-probes, including production Guide validation and cleanup. Checked-in processing,
+Its reviewed Modelfile pins `num_ctx 32768`. Earlier bounded-low-reasoning probes remain
+transport evidence, but the direct five-question plain-text protocol requires new
+fixture-backed and fixed-canary qualification. Checked-in processing,
 model-runtime approval, brief-generation, and launch gates nevertheless remain closed
 before Court or model work. Fixture-backed and fixed ten-case qualification plus explicit
 exact-candidate approval are still required before those gates reopen.
-For an approved profile, tag, digest, context, prompt, schema, and generation controls
+For an approved profile, tag, digest, context, prompt, question/packet versions, and generation controls
 are verified before client construction and around every completion and participate in
 processor/request fingerprints.
 Neither protected automation nor an operator running it may pull, select `latest`, use
@@ -211,9 +212,12 @@ native-context `gpt-oss:120b`, contact a hosted endpoint, or substitute a review
 fallback model.
 
 Qualification proceeds only from role-sensitive synthetic fixtures to a fixture-backed
-end-to-end run and then one fixed publication-disabled ten-case canary. Every accepted
-case must preserve grounding and canonical roles, and the existing correctness, privacy,
-release, cleanup, budget, improvement, and explicit-review thresholds remain mandatory.
+end-to-end run and then one fixed publication-disabled ten-case canary. Five structurally
+nonblank plain-text answers are generated for review, not factually accepted: automated
+grounding, action-language, style, jargon, sentence, word-count, and repair gates do not
+discard them. Reviewers must evaluate source support, roles, correctness, readability,
+omissions, and improvement. Privacy, release, cleanup, budget, and explicit-review thresholds remain
+mandatory.
 Failed qualification retains only sanitized aggregate reports and opaque receipts. It
 never uploads a promotable candidate. The historical Mistral and Cogito outcomes above
 remain evidence about those artifacts, not approval for GPT-OSS.
@@ -358,7 +362,7 @@ For focused launch validation, `maximum_cases` may only lower the configured cas
 To verify the disposition-guide correction, first run protected `nightly` processing with
 `deploy=false`, `maximum_cases=3`, and reviewed `authorized_replay=true` only if an unchanged
 prior failure requires it. Download the retained candidate, confirm that `26A124` is revision 2
-at its existing slug, and inspect its sanitized JSON for all five required sections, the interim
+at its existing slug, and inspect its sanitized JSON and rendered page for all five required questions, the interim
 stay effect, and any separate-opinion section. Then run the normal candidate validator with
 `--privacy-scan`; promote only that exact candidate through the no-reprocessing deployment
 workflow.
@@ -392,7 +396,7 @@ Any new GPT-OSS failure then follows the ordinary finite cooldown and retry limi
    exact runner identity before work; a scheduling mismatch fails closed. The handoff is never
    uploaded, has a detached 24-hour expiry guard, and stale volatile handoffs are scrubbed
    before later self-hosted builds. The complete Qwen arm emits only its sanitized
-   comparison binding, report, opaque receipts, and any privacy-scanned hard-valid public
+   comparison binding, report, opaque receipts, and any privacy-scanned schema-valid review
    candidate; GPT-OSS cannot start without that binding. GPT-OSS independently revalidates the
    parent, manifest, protocol, evidence, model identity, and control-report digest. Receipts
    remain uploadable after a failed arm, and each private workspace is removed. None of these artifacts contains
@@ -408,15 +412,21 @@ Any new GPT-OSS failure then follows the ordinary finite cooldown and retry limi
    Record only case keys, fixed failure/warning-code counts, aggregate runtime/model
    calls, and the reviewer fields in `CanaryAggregate`—never copy model/source text into
    state or logs.
-3. Approval requires at least eight hard-valid accepted rewrites that reviewers judge
-   improved after considering every warning; zero accepted factual, status, actor,
-   chronology, or prediction errors; no degraded legacy page; and successful privacy
-   and release validation. A rejected, all-hard-failed, or incomplete canary leaves the
+3. `accepted_count` means only that cases produced all five nonblank plain-text answers;
+   it is not an automated finding of grounding, correctness, or quality. Reviewers must
+   inspect every generated answer against its official source ranges and record
+   `reviewed_answer_count` as exactly five times `accepted_count`; the generated
+   `manual_review_required` warning is not review attestation. Approval additionally requires
+   that they
+   judge each retained rewrite improved, find zero factual, status, actor, chronology, or
+   prediction errors and no degraded legacy page, and confirm successful privacy and release
+   validation. A rejected, all-hard-failed, or incomplete canary leaves the
    live release unchanged. If the ten-case threshold fails, stop; a
    model replacement requires its own source/privacy/cost/runtime approval rather than
    a stage override.
 4. After recording an approved aggregate, advance exactly one stage to `batch_25` and
-   repeat the measured review with at least 80 percent improved accepted rewrites. Only
+   repeat the measured review with at least 80 percent schema-valid candidates that human
+   reviewers explicitly judge improved. Only
    its approved exact-processor and exact-candidate report may advance to `batch_100`.
    Every measured stage remains publication-disabled while under review. One hundred is
    a selection ceiling, not permission to exceed lower case,
@@ -437,10 +447,10 @@ protected operator step.
 A successful manual `deploy=false` run uploads only the sanitized editorial review,
 privacy-scanned Pages tree, sanitized generated-state candidate, opaque receipts, and
 fixed handoff metadata for one day; it does not deploy or mutate `generated-content`.
-When every measured case fails hard, only the sanitized editorial review and opaque
-receipts are retained; no candidate or handoff is eligible for promotion.
+When every measured case fails structurally or operationally, only the sanitized editorial
+review and opaque receipts are retained; no candidate or handoff is eligible for promotion.
 
-To publish that exact candidate without repeating Court downloads, extraction, or brief
+To publish that exact candidate without repeating Court downloads or Guide model calls,
 model calls, manually run `deploy-validated-candidate.yml` from the protected default
 branch with the successful source `candidate_run_id`. The GitHub-hosted workflow verifies
 that the source run was a successful protected `publish-pages.yml` run, checks that its
@@ -454,8 +464,9 @@ before deployment. The nightly schedule automatically passes only the narrow
 cases per run while every existing call/token/runtime budget remains authoritative.
 Accepted cases, non-model failures, exhausted scopes, and manual nightly runs receive no
 such authorization. An owner may set `authorized_replay=true` only on an explicit manual
-`nightly` run after reviewing a prior failure; replay does not bypass any grounding,
-privacy, completeness, or publication validator. Restrict bootstrap/deploy/replay and
+`nightly` run after reviewing a prior failure; replay does not bypass privacy,
+completeness, source, exact-model, schema, or publication controls and does not replace
+manual prose review. Restrict bootstrap/deploy/replay and
 retained-candidate deployment to owners. Never add PR/fork or arbitrary-ref triggers.
 
 Possible outcomes:

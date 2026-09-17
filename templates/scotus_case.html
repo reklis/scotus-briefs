@@ -4,7 +4,7 @@
 <article class="case-brief" data-case-page="{{ urls.case(case) }}" data-latest-court-document-date="{{ latest_court_document_date(case).date().isoformat() }}" data-argument-session-count="{{ case.arguments|length }}">
   <header>
     <p class="eyebrow">October Term {{ case.term }} · Docket {{ case.primary_docket }}</p>
-    <h1>{{ case.title }}</h1><p class="dek">{{ case.dek }}</p>
+    <h1>{{ case.title }}</h1><h2>What is this case about?</h2><p class="dek">{{ case.dek }}</p>
     <dl class="meta">
       <div><dt>Official caption</dt><dd>{{ case.caption }}</dd></div>
       {% if case.argument_date %}<div class="argument-date"><dt>Latest argument session</dt><dd><time datetime="{{ case.argument_date.isoformat() }}">{{ case.argument_date.date() }}</time></dd></div>{% endif %}

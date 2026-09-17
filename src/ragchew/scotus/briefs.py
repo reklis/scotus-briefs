@@ -168,7 +168,7 @@ class LegalBriefDraft(BaseModel):
     model_config = ConfigDict(extra="forbid")
     title: str = Field(min_length=1, max_length=180)
     title_claim_ids: tuple[UUID, ...] = Field(min_length=1)
-    dek: str = Field(min_length=1, max_length=500)
+    dek: str = Field(min_length=1)
     dek_claim_ids: tuple[UUID, ...] = Field(min_length=1)
     sections: tuple[DraftSection, ...] = Field(min_length=1)
     # The disposition-only schema fixes this collection at zero. Argument cases are
@@ -3783,6 +3783,7 @@ class BriefGenerationService:
         severe_maximum_paragraph_words: int = 240,
         canonical_slots_by_field: Mapping[str, tuple[_CanonicalActionSlot, ...]] | None = None,
         citizens_guide_profile: bool = False,
+        manual_review_only: bool = False,
     ) -> None:
         self.generator = generator
         self.store = store
@@ -3793,6 +3794,9 @@ class BriefGenerationService:
         self.severe_maximum_paragraph_words = severe_maximum_paragraph_words
         self.canonical_slots_by_field = canonical_slots_by_field
         self.citizens_guide_profile = citizens_guide_profile
+        if manual_review_only and not citizens_guide_profile:
+            raise ValueError("manual review is limited to Citizen's Guides")
+        self.manual_review_only = manual_review_only
 
     def generate(
         self,
@@ -3807,18 +3811,19 @@ class BriefGenerationService:
         draft: LegalBriefDraft | None = None
         try:
             draft = self.generator.generate(candidate, decision.claims, decision.maturity)
-            validate_brief_draft(
-                draft,
-                candidate,
-                decision.claims,
-                public_quotes=self.public_quotes,
-                canonical_slots_by_field=self.canonical_slots_by_field,
-                citizens_guide_profile=self.citizens_guide_profile,
-                maximum_sentence_words=self.maximum_sentence_words,
-                maximum_paragraph_words=self.maximum_paragraph_words,
-                severe_maximum_sentence_words=self.severe_maximum_sentence_words,
-                severe_maximum_paragraph_words=self.severe_maximum_paragraph_words,
-            )
+            if not self.manual_review_only:
+                validate_brief_draft(
+                    draft,
+                    candidate,
+                    decision.claims,
+                    public_quotes=self.public_quotes,
+                    canonical_slots_by_field=self.canonical_slots_by_field,
+                    citizens_guide_profile=self.citizens_guide_profile,
+                    maximum_sentence_words=self.maximum_sentence_words,
+                    maximum_paragraph_words=self.maximum_paragraph_words,
+                    severe_maximum_sentence_words=self.severe_maximum_sentence_words,
+                    severe_maximum_paragraph_words=self.severe_maximum_paragraph_words,
+                )
         except BriefValidationError as error:
             safe_code = (
                 error.safe_code or re.sub(r"[^a-z0-9]+", "_", str(error).casefold()).strip("_")[:80]

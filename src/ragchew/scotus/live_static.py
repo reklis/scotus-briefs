@@ -56,6 +56,7 @@ from ragchew.proceedings.sources.http import (
     SourceResponse,
 )
 from ragchew.proceedings.sources.supreme_court import (
+    SlipOpinionKind,
     SupremeCourtAdapter,
     parse_related_opinion_documents,
 )
@@ -68,8 +69,6 @@ from ragchew.scotus.briefs import (
     InMemoryBriefRevisionStore,
     LegalBriefDraft,
     evaluate_brief_candidate,
-    validate_brief_draft,
-    validate_brief_text_field,
 )
 from ragchew.scotus.contracts import (
     LEGAL_STATUS_BY_OBSERVATION_TYPE,
@@ -137,24 +136,28 @@ from ragchew.scotus.public_contracts import (
     ScotusPublicProjection,
     public_case_key,
 )
-from ragchew.scotus.publishing import build_public_case
+from ragchew.scotus.publishing import build_public_case, build_public_case_from_qa
 from ragchew.scotus.reader_guides import (
-    CITIZENS_GUIDE_SCHEMA_VERSION,
     MAX_CITIZENS_GUIDE_OUTPUT_TOKENS,
     READER_GUIDE_PLAN_VERSION,
     CompactReaderGuideWriter,
-    ProcessLocalFieldDiagnostic,
-    ReaderGuideFieldKind,
-    ReaderGuideFieldPath,
-    ReaderGuidePlan,
     ReaderGuidePlanner,
-    ReaderGuidePlanningError,
-    ReaderGuidePurpose,
     ReaderGuideWritingError,
-    TargetedReaderGuideRepairer,
-    assembled_draft_action_slots,
 )
-from ragchew.scotus.reader_prose import load_reader_prose_policy
+from ragchew.scotus.reader_qa import (
+    DEFAULT_MAXIMUM_WINDOWS,
+    DEFAULT_OUTPUT_TOKENS,
+    READER_QA_PACKET_VERSION,
+    READER_QA_PROMPT_VERSION,
+    READER_QA_QUESTION_VERSION,
+    READER_QA_SYNTHESIS_VERSION,
+    PlainTextReaderWriter,
+    ReaderQAError,
+    ReaderQuestionId,
+    ReaderSourcePacketBuilder,
+    deterministic_status_and_maturity,
+    reader_questions,
+)
 from ragchew.scotus.static_contracts import (
     ConditionalValidators,
     ContentIntegrity,
@@ -168,12 +171,12 @@ from ragchew.scotus.static_contracts import (
     ModelRetryStatus,
     PendingReason,
     ProcessorFingerprint,
-    RetryFailureCode,
     canonical_json_bytes,
     sha256_hex,
 )
 from ragchew.scotus.static_pipeline import (
     ArgumentSessionWork,
+    BudgetExceeded,
     CaseProcessingResult,
     ModelOutputFailure,
     PublicationGateDenied,
@@ -201,7 +204,7 @@ from ragchew.storage import ObjectMetadata, ObjectStore
 
 LOG = logging.getLogger("ragchew.scotus.live_static")
 
-POLICY_VERSION = "scotus-brief-policy-v62"
+POLICY_VERSION = "scotus-brief-policy-v64-plain-text-qa"
 DOCUMENT_TEXT_VERSION = "official-document-text-v4"
 
 
@@ -436,6 +439,9 @@ class _BudgetedModelRequest:
         def invoke_exact_model() -> Any:
             self.verify_model_identity()
             response = self.client.chat.completions.create(**provider_request)
+            usage = _model_response_usage(response)
+            if usage is not None and usage[1] > self.output_tokens:
+                raise BudgetExceeded("provider output exceeded its authorized token bound")
             # Reject output if the mutable tag changed during the request. Together
             # with the pre-request check this prevents accepting bytes from content
             # other than the reviewed digest.
@@ -685,6 +691,10 @@ def _source_from_config(config: ProceedingsConfig) -> OfficialSource:
 
 
 def _validate_live_gates(config: ScotusConfig) -> None:
+    if not config.publication.dry_run:
+        raise PublicationGateDenied(
+            "manual-review Guide generation must remain publication-disabled"
+        )
     paired_qualification = bool(
         config.editorial_backfill.enabled
         and config.editorial_backfill.rollout_stage
@@ -715,7 +725,7 @@ def _validate_live_gates(config: ScotusConfig) -> None:
             raise PublicationGateDenied("brief-generation and publication gates are closed")
         if not config.approvals.all_live_gates_approved():
             raise PublicationGateDenied("live publication approvals are incomplete")
-    if config.generation.prompt_version != CompactReaderGuideWriter.PROMPT_VERSION:
+    if config.generation.prompt_version != READER_QA_PROMPT_VERSION:
         raise PublicationGateDenied("configured brief prompt version is not implemented")
 
 
@@ -1738,25 +1748,20 @@ def _processor_contract(config: ScotusConfig, model_endpoint: str) -> ProcessorF
             ),
         },
         "maximum_output_tokens_per_call": (config.model_budget.maximum_output_tokens_per_call),
-        "maximum_citizens_guide_output_tokens": MAX_CITIZENS_GUIDE_OUTPUT_TOKENS,
+        "maximum_reader_answer_output_tokens": DEFAULT_OUTPUT_TOKENS,
+        "maximum_reader_windows": DEFAULT_MAXIMUM_WINDOWS,
     }
     config_digest = sha256_hex(canonical_json_bytes(processing_config, privacy_check=False))
     parser = f"{config.parser.name}:{config.parser.version}"
     model_identity = _model_identity(config, model_endpoint)
     prompt_contract = (
         f"{config.generation.prompt_version};"
-        f"schema={CITIZENS_GUIDE_SCHEMA_VERSION};"
+        f"questions={READER_QA_QUESTION_VERSION};"
+        f"synthesis={READER_QA_SYNTHESIS_VERSION};"
         f"reasoning={config.generation.reasoning_level};"
-        f"repair={TargetedReaderGuideRepairer.PROMPT_VERSION};"
-        f"planner={READER_GUIDE_PLAN_VERSION};"
-        f"reader_prose={load_reader_prose_policy().version}"
+        f"review=manual-required-v1"
     )
-    extractor = (
-        f"{LegalExtractionService.SCHEMA_VERSION}:"
-        f"{LegalExtractionService.VOCABULARY_VERSION}:"
-        f"{OpenAILegalObservationExtractor.PROMPT_VERSION}:"
-        f"{DOCUMENT_TEXT_VERSION}"
-    )
+    extractor = f"{READER_QA_PACKET_VERSION}:{DOCUMENT_TEXT_VERSION}"
     composite = sha256_hex(
         canonical_json_bytes(
             {
@@ -1801,189 +1806,6 @@ class _PreparedDraftGenerator:
         return self._draft
 
 
-def _validation_code(error: BriefValidationError) -> str:
-    return error.safe_code or re.sub(r"[^a-z0-9]+", "_", str(error).casefold()).strip("_")[:80]
-
-
-def _planned_field_paths(
-    plan: ReaderGuidePlan, draft: LegalBriefDraft
-) -> tuple[ReaderGuideFieldPath, ...]:
-    del plan
-    paths: list[ReaderGuideFieldPath] = [ReaderGuideFieldPath(kind=ReaderGuideFieldKind.DEK)]
-    paths.extend(
-        ReaderGuideFieldPath(
-            kind=ReaderGuideFieldKind.SECTION_PARAGRAPH,
-            section_index=section_index,
-            paragraph_index=paragraph_index,
-        )
-        for section_index, section in enumerate(draft.sections)
-        for paragraph_index in range(len(section.paragraphs))
-    )
-    paths.extend(
-        ReaderGuideFieldPath(
-            kind=ReaderGuideFieldKind.ARGUMENT_PARAGRAPH,
-            argument_index=argument_index,
-            paragraph_index=paragraph_index,
-        )
-        for argument_index, analysis in enumerate(draft.argument_analyses)
-        for paragraph_index in range(len(analysis.paragraphs))
-    )
-    return tuple(paths)
-
-
-def _field_value_and_claims(
-    plan: ReaderGuidePlan,
-    draft: LegalBriefDraft,
-    path: ReaderGuideFieldPath,
-) -> tuple[str, tuple[UUID, ...], str]:
-    if path.kind is ReaderGuideFieldKind.DEK:
-        return draft.dek, draft.dek_claim_ids, "dek"
-    if path.kind is ReaderGuideFieldKind.SECTION_PARAGRAPH:
-        assert path.section_index is not None and path.paragraph_index is not None
-        section = draft.sections[path.section_index]
-        return section.paragraphs[path.paragraph_index], section.claim_ids, "section_paragraph"
-    assert path.argument_index is not None and path.paragraph_index is not None
-    analysis = draft.argument_analyses[path.argument_index]
-    return analysis.paragraphs[path.paragraph_index], analysis.claim_ids, "argument_paragraph"
-
-
-def _purpose_repair_path(
-    draft: LegalBriefDraft, purpose: ReaderGuidePurpose
-) -> ReaderGuideFieldPath | None:
-    headings = {
-        ReaderGuidePurpose.POSITIONS: {"What the sides say"},
-        ReaderGuidePurpose.PROCEDURAL_PATH: {"What the sides say", "Where the case stands"},
-        ReaderGuidePurpose.COURT_ACTION: {"What the Supreme Court did", "Where the case stands"},
-        ReaderGuidePurpose.COURT_REASONING: {"Why it matters"},
-    }.get(purpose, set())
-    return next(
-        (
-            ReaderGuideFieldPath(
-                kind=ReaderGuideFieldKind.SECTION_PARAGRAPH,
-                section_index=index,
-                paragraph_index=0,
-            )
-            for index, section in enumerate(draft.sections)
-            if section.heading in headings
-        ),
-        None,
-    )
-
-
-def _canonical_field_path(path: ReaderGuideFieldPath) -> str:
-    if path.kind is ReaderGuideFieldKind.DEK:
-        return "dek"
-    if path.kind is ReaderGuideFieldKind.SECTION_PARAGRAPH:
-        assert path.section_index is not None and path.paragraph_index is not None
-        return f"sections[{path.section_index}].paragraphs[{path.paragraph_index}]"
-    assert path.argument_index is not None and path.paragraph_index is not None
-    return f"argument_analyses[{path.argument_index}].paragraphs[{path.paragraph_index}]"
-
-
-def _locate_reader_repair_path(
-    plan: ReaderGuidePlan,
-    draft: LegalBriefDraft,
-    error: BriefValidationError,
-    candidate: BriefCandidate,
-    claims: tuple[ScotusApprovedClaim, ...],
-    *,
-    public_quotes: bool,
-    maximum_sentence_words: int,
-    maximum_paragraph_words: int,
-    severe_maximum_sentence_words: int,
-    severe_maximum_paragraph_words: int,
-    canonical_slots_by_field: Mapping[str, tuple[Any, ...]],
-) -> ReaderGuideFieldPath | None:
-    code = _validation_code(error)
-    # Locate the field that actually emits the code before applying a role-based
-    # structural fallback. Source wording can mention a lower court inside a
-    # Supreme Court action, so the code alone does not identify the section.
-    for path in _planned_field_paths(plan, draft):
-        text, claim_ids, context = _field_value_and_claims(plan, draft, path)
-        try:
-            validate_brief_text_field(
-                text,
-                claim_ids,
-                candidate,
-                claims,
-                context=cast(Any, context),
-                public_quotes=public_quotes,
-                canonical_slots=canonical_slots_by_field.get(_canonical_field_path(path)),
-                field_path=_canonical_field_path(path),
-                require_claim_support=True,
-                maximum_sentence_words=maximum_sentence_words,
-                maximum_paragraph_words=maximum_paragraph_words,
-                severe_maximum_sentence_words=severe_maximum_sentence_words,
-                severe_maximum_paragraph_words=severe_maximum_paragraph_words,
-            )
-        except BriefValidationError as field_error:
-            if _validation_code(field_error) == code:
-                return path
-    purpose = None
-    if code in {
-        "unsupported_requested_action",
-        "unsupported_lower_court_action",
-    }:
-        purpose = ReaderGuidePurpose.PROCEDURAL_PATH
-    elif code in {
-        "unsupported_court_action",
-        "unsupported_supreme_court_action",
-        "unsupported_supreme_court_action_object",
-        "incomplete_interim_stay_effect",
-        "missing_supreme_court_action_prose",
-    }:
-        purpose = ReaderGuidePurpose.COURT_ACTION
-    elif code == "ambiguous_separate_opinion_attribution":
-        purpose = ReaderGuidePurpose.SEPARATE_OPINIONS
-    elif code.startswith("ungrounded_guide_section_"):
-        slug = code.removeprefix("ungrounded_guide_section_")
-        purpose = next(
-            (
-                section.purpose
-                for section in plan.sections
-                if re.sub(r"[^a-z0-9]+", "_", section.heading.casefold()).strip("_") == slug
-            ),
-            None,
-        )
-    if purpose is not None:
-        return _purpose_repair_path(draft, purpose)
-    return None
-
-
-def _repair_diagnostic(
-    path: ReaderGuideFieldPath, error: BriefValidationError
-) -> ProcessLocalFieldDiagnostic:
-    code = _validation_code(error)
-    term_prefixes = ("unexplained_legal_term_", "unexplained_legalese_")
-    offending_label = next(
-        (code.removeprefix(prefix) for prefix in term_prefixes if code.startswith(prefix)),
-        None,
-    )
-    offending_term = offending_label.replace("_", " ") if offending_label else None
-    policy_term = next(
-        (term for term in load_reader_prose_policy().terms if term.label == offending_label),
-        None,
-    )
-    transformation = (
-        f'Prefer ordinary wording such as "{policy_term.ordinary_alternatives[0]}" or explain '
-        f'"{offending_term}" with that case-specific meaning in the same sentence. Preserve the '
-        "supplied actors, action, object, status, and claim scope."
-        if policy_term is not None
-        else (
-            "Use ordinary words or explain the named term in the same sentence while preserving "
-            "the supplied actors, action, object, status, and claim scope."
-            if offending_term
-            else "Rewrite this field to satisfy the fixed rule while preserving every supplied "
-            "fact, actor, action, object, status, and claim citation."
-        )
-    )
-    return ProcessLocalFieldDiagnostic(
-        path=path,
-        safe_code=code,
-        rule=code,
-        offending_term=offending_term,
-        required_transformation=transformation,
-    )
 
 
 class LiveStaticCaseProcessor:
@@ -2126,8 +1948,11 @@ class LiveStaticCaseProcessor:
             # disposition roles and final status/maturity, and every collected document must
             # have the prior accepted bytes. New or changed opinion/order content therefore
             # continues through parsing, extraction, writing, and full-case validation.
-            if metadata_only_candidate and _metadata_only_documents_unchanged(
-                prior_documents, states
+            if (
+                metadata_only_candidate
+                and self._processor_case_fingerprints.get(work.case_key)
+                == _processor_contract(self.config, self.model_endpoint).composite_sha256
+                and _metadata_only_documents_unchanged(prior_documents, states)
             ):
                 return CaseProcessingResult(
                     case_key=work.case_key,
@@ -2199,29 +2024,21 @@ class LiveStaticCaseProcessor:
             if work.retry_scope_probe_only and work.authorized_retry_scope == retry_scope:
                 raise RetryScopeUnchanged(tuple(states[key] for key in sorted(states)))
             exact_scope_authorized = work.authorized_retry_scope == retry_scope
-            extraction_replay = bool(
-                authorized_replay
-                or (exact_scope_authorized and "extraction" in work.authorized_retry_stages)
-            )
             brief_replay = bool(
                 authorized_replay
                 or (exact_scope_authorized and "brief" in work.authorized_retry_stages)
             )
             try:
-                observations, document_urls = self._analyze_documents(
+                blocks = self._parse_qa_documents(
                     source,
                     private_documents,
                     outcomes,
-                    states,
                     objects,
-                    budget,
-                    extraction_replay,
                 )
-                return self._generate_public_case(
+                return self._generate_qa_public_case(
                     source,
                     work,
-                    observations,
-                    document_urls,
+                    blocks,
                     states,
                     changed_keys,
                     budget,
@@ -2236,22 +2053,11 @@ class LiveStaticCaseProcessor:
                     failure_code=_persisted_brief_failure_code(error.safe_code),
                     documents=tuple(states[key] for key in sorted(states)),
                 ) from None
-            except LegalExtractionError as error:
-                failure_code = (
-                    _persisted_extraction_output_code(error.safe_code)
-                    or RetryFailureCode.VALIDATION_FAILED
-                )
+            except ReaderQAError as error:
                 raise ModelOutputFailure(
                     retry_scope=retry_scope,
-                    stage="extraction",
-                    failure_code=failure_code,
-                    documents=tuple(states[key] for key in sorted(states)),
-                ) from None
-            except (BriefPolicyError, ReaderGuidePlanningError):
-                raise ModelOutputFailure(
-                    retry_scope=retry_scope,
-                    stage="extraction",
-                    failure_code=RetryFailureCode.VALIDATION_FAILED,
+                    stage="brief",
+                    failure_code=_persisted_brief_failure_code(error.safe_code),
                     documents=tuple(states[key] for key in sorted(states)),
                 ) from None
         finally:
@@ -2301,6 +2107,49 @@ class LiveStaticCaseProcessor:
             )
             store.accepted[revision_id] = accepted
             store.identity[(case_id, kind, item.logical_key)] = revision_id
+
+    def _parse_qa_documents(
+        self,
+        source: _CaseInput,
+        documents: tuple[_PrivateDocument, ...],
+        outcomes: Mapping[str, Any],
+        objects: _LocalObjectStore,
+    ) -> tuple[LegalEvidenceBlock, ...]:
+        """Parse every current official document without structured model extraction."""
+        blocks: list[LegalEvidenceBlock] = []
+        for item in documents:
+            outcome = outcomes[item.logical_key]
+            if not outcome.object_key or not objects.exists(outcome.object_key):
+                raise DocumentCollectionError("private accepted document is unavailable")
+            revision_id = outcome.document_revision_id
+            with objects.open(outcome.object_key) as file:
+                if item.kind is ScotusDocumentKind.TRANSCRIPT:
+                    backend = self.parser_backend_factory()
+                    parse_id = deterministic_parse_revision_id(
+                        revision_id, self.config.parser, backend
+                    )
+                    parsed = ScotusTranscriptParser(backend, self.config.parser).parse(
+                        file,
+                        parse_revision_id=parse_id,
+                        document_revision_id=revision_id,
+                    )
+                    blocks.extend(
+                        transcript_turn_block(turn, item.descriptor.official_url)
+                        for turn in parsed.turns
+                    )
+                else:
+                    blocks.extend(
+                        _document_blocks(
+                            file,
+                            revision_id=revision_id,
+                            kind=item.kind,
+                            official_url=item.descriptor.official_url,
+                            primary_docket=source.primary_docket,
+                        )
+                    )
+        if not blocks:
+            raise DocumentCollectionError("official case documents produced no reader material")
+        return tuple(blocks)
 
     def _analyze_documents(
         self,
@@ -2646,6 +2495,207 @@ class LiveStaticCaseProcessor:
         observations.sort(key=lambda item: str(item.observation_id))
         return tuple(observations), urls
 
+    def _generate_qa_public_case(
+        self,
+        source: _CaseInput,
+        work: StaticCaseWork,
+        blocks: tuple[LegalEvidenceBlock, ...],
+        states: Mapping[str, LogicalDocumentState],
+        changed_keys: set[str],
+        budget: UnifiedRunBudget,
+        authorized_replay: bool,
+    ) -> CaseProcessingResult:
+        """Generate five direct plain-text answers and deterministic public metadata."""
+        now = cast(datetime, self.discovery.now)
+        status, maturity = deterministic_status_and_maturity(
+            primary_docket=source.primary_docket,
+            has_disposition=bool(source.dispositions),
+            has_correction=any(item.revision_date is not None for item in source.dispositions),
+            argument_count=len(source.sessions),
+            has_reargument=any(item.reargument for item in source.sessions),
+        )
+        decided = status in {
+            ScotusCaseStatus.DECIDED,
+            ScotusCaseStatus.ORDER_ISSUED,
+            ScotusCaseStatus.CORRECTED,
+        }
+        questions = reader_questions(decided=decided)
+        packets = ReaderSourcePacketBuilder(
+            maximum_characters=self.config.generation.maximum_context_characters,
+            maximum_windows=DEFAULT_MAXIMUM_WINDOWS,
+        ).build(questions, blocks)
+        all_digests = (
+            *(states[key].integrity.sha256 for key in sorted(states)),
+            *(stable_disposition_fingerprint(item) for item in source.dispositions),
+        )
+
+        def execute(
+            request: dict[str, Any],
+            *,
+            question_id: ReaderQuestionId,
+            phase: str,
+            window_index: int,
+        ) -> object:
+            stage: Literal["extraction", "brief"] = (
+                "extraction" if phase == "map" else "brief"
+            )
+            return _BudgetedModelRequest(
+                client=self.model_client,
+                budget=budget,
+                stage=stage,
+                document_digests=all_digests,
+                processor_versions={
+                    "brief_generation_mode": "plain_text_qa_manual_review_v1",
+                    "endpoint": self.model_endpoint,
+                    "model": self.config.generation.model,
+                    "model_digest": self.config.generation.model_digest,
+                    "packet": READER_QA_PACKET_VERSION,
+                    "phase": phase,
+                    "policy": POLICY_VERSION,
+                    "prompt": (
+                        READER_QA_SYNTHESIS_VERSION
+                        if phase == "synthesis"
+                        else READER_QA_PROMPT_VERSION
+                    ),
+                    "provider": self.config.generation.provider,
+                    "question": question_id.value,
+                    "questions": READER_QA_QUESTION_VERSION,
+                    "window": str(window_index),
+                },
+                output_tokens=min(
+                    self.config.model_budget.maximum_output_tokens_per_call,
+                    DEFAULT_OUTPUT_TOKENS,
+                ),
+                context_window_tokens=self.config.generation.context_window_tokens,
+                temperature=self.config.generation.temperature,
+                reasoning_level=self.config.generation.reasoning_level,
+                authorized_replay=authorized_replay,
+                verify_model_identity=self.verify_model_identity,
+            )(request)
+
+        guide = PlainTextReaderWriter(
+            self.config.generation.model,
+            execute,
+            maximum_output_tokens=min(
+                self.config.model_budget.maximum_output_tokens_per_call,
+                DEFAULT_OUTPUT_TOKENS,
+            ),
+        ).generate(
+            title=source.caption,
+            packets=packets,
+            maturity=maturity,
+            created_at=now,
+        )
+        sessions = tuple(
+            CaseArgumentSession(
+                argument_id=deterministic_argument_id(
+                    deterministic_case_id(source.term, source.primary_docket),
+                    item.argument_date,
+                    sequence=item.sequence,
+                    reargument=item.reargument,
+                ),
+                argument_date=item.argument_date,
+                sequence=item.sequence,
+                reargument=item.reargument,
+                official_detail_url=item.official_detail_url,
+                official_transcript_url=cast(DocumentDescriptor, item.transcript).official_url,
+            )
+            for item in source.sessions
+        )
+        revision_number = len(source.prior.revisions) + 1 if source.prior else 1
+        correction_note = _correction_note(
+            source,
+            {ScotusDocumentKind(states[key].document_kind) for key in changed_keys},
+        )
+        prior_history = source.prior.case_history if source.prior else ()
+        history = (
+            *prior_history,
+            *(
+                (
+                    PublicCaseHistoryEvent(
+                        status=status,
+                        changed_at=now,
+                        explanation=_history_explanation(
+                            status,
+                            source.prior is not None,
+                            disposition_kinds={item.kind for item in source.dispositions},
+                        ),
+                    ),
+                )
+                if source.prior is None or source.prior.case_status is not status
+                else ()
+            ),
+        )
+        revision_history = (
+            *(source.prior.revisions if source.prior else ()),
+            PublicBriefRevisionSummary(
+                revision_number=revision_number,
+                maturity=maturity,
+                created_at=now,
+                correction_note=correction_note,
+            ),
+        )
+        typed_disposition_urls = {item.official_url for item in source.dispositions}
+        retained_legacy_urls = (
+            set(source.prior.official_disposition_urls)
+            if source.prior is not None
+            and source.prior.undated_disposition_date_fallback is not None
+            else set()
+        )
+        disposition_urls = tuple(
+            sorted(
+                {
+                    item.descriptor.official_url
+                    for item in _case_documents(source)
+                    if item.kind in {ScotusDocumentKind.ORDER, ScotusDocumentKind.OPINION}
+                    and item.descriptor.official_url not in typed_disposition_urls
+                    and item.descriptor.official_url in retained_legacy_urls
+                }
+            )
+        )
+        official_dispositions = tuple(
+            sorted(
+                (
+                    PublicDisposition(
+                        kind=item.kind.value,
+                        official_url=item.official_url,
+                        publication_date=item.publication_date,
+                        revision_date=item.revision_date,
+                    )
+                    for item in source.dispositions
+                ),
+                key=lambda item: (
+                    item.publication_date,
+                    item.revision_date or item.publication_date,
+                    item.kind,
+                    item.official_url,
+                ),
+            )
+        )
+        public = build_public_case_from_qa(
+            term=source.term,
+            primary_docket=source.primary_docket,
+            caption=source.caption,
+            case_status=status,
+            official_detail_url=(source.sessions[-1].official_detail_url if sessions else None),
+            guide=guide,
+            argument_sessions=sessions,
+            case_history=history,
+            revision_history=revision_history,
+            official_disposition_urls=disposition_urls,
+            official_dispositions=official_dispositions,
+            allow_legacy_disposition_fallback=bool(disposition_urls),
+            topics=source.prior.topics if source.prior else (),
+        )
+        return CaseProcessingResult(
+            case_key=work.case_key,
+            processed_session_keys=tuple(item.session_key for item in work.sessions),
+            public_case=public,
+            changed=True,
+            documents=tuple(states[key] for key in sorted(states)),
+            editorial_warning_codes=(EditorialWarningCode.MANUAL_REVIEW_REQUIRED,),
+        )
+
     def _generate_public_case(
         self,
         source: _CaseInput,
@@ -2741,23 +2791,18 @@ class LiveStaticCaseProcessor:
         correction_note = _correction_note(source, kinds_changed)
         assert decision.maturity is not None
         plan = ReaderGuidePlanner().plan(candidate, decision.claims, decision.maturity)
-        canonical_slots_by_field = assembled_draft_action_slots(plan)
         all_digests = (
             *(states[key].integrity.sha256 for key in sorted(states)),
             *(stable_disposition_fingerprint(item) for item in source.dispositions),
         )
-        maximum_brief_attempts = self.config.generation.maximum_brief_validation_attempts_per_case
-
-        def budgeted_request(
-            *, attempt: int, prompt: str, validation_code: str | None = None
-        ) -> _BudgetedModelRequest:
+        def budgeted_request() -> _BudgetedModelRequest:
             return _BudgetedModelRequest(
                 client=self.model_client,
                 budget=budget,
                 stage="brief",
                 document_digests=all_digests,
                 processor_versions={
-                    "brief_validation_attempt": str(attempt),
+                    "brief_generation_mode": "manual_review_required_v1",
                     "endpoint": self.model_endpoint,
                     "extractor": LegalExtractionService.SCHEMA_VERSION,
                     "model": self.config.generation.model,
@@ -2766,13 +2811,7 @@ class LiveStaticCaseProcessor:
                     "provider": self.config.generation.provider,
                     "parser": _processor_contract(self.config, self.model_endpoint).parser_version,
                     "policy": POLICY_VERSION,
-                    "prompt": prompt,
-                    "reader_prose": load_reader_prose_policy().version,
-                    **(
-                        {"validation_feedback": validation_code}
-                        if validation_code is not None
-                        else {}
-                    ),
+                    "prompt": CompactReaderGuideWriter.PROMPT_VERSION,
                 },
                 output_tokens=min(
                     self.config.model_budget.maximum_output_tokens_per_call,
@@ -2788,10 +2827,7 @@ class LiveStaticCaseProcessor:
         try:
             draft = CompactReaderGuideWriter(
                 self.config.generation.model,
-                budgeted_request(
-                    attempt=1,
-                    prompt=CompactReaderGuideWriter.PROMPT_VERSION,
-                ),
+                budgeted_request(),
                 maximum_output_tokens=min(
                     self.config.model_budget.maximum_output_tokens_per_call,
                     MAX_CITIZENS_GUIDE_OUTPUT_TOKENS,
@@ -2805,193 +2841,8 @@ class LiveStaticCaseProcessor:
             )
             raise BriefValidationError(str(error), safe_code=error.safe_code) from None
 
-        repaired_scopes: set[tuple[ReaderGuideFieldPath, str]] = set()
-        attempt = 1
-        while True:
-            try:
-                validate_brief_draft(
-                    draft,
-                    candidate,
-                    decision.claims,
-                    public_quotes=self.config.generation.public_quotes,
-                    canonical_slots_by_field=canonical_slots_by_field,
-                    citizens_guide_profile=True,
-                    maximum_sentence_words=self.config.generation.maximum_sentence_words,
-                    maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-                    severe_maximum_sentence_words=(
-                        self.config.generation.severe_maximum_sentence_words
-                    ),
-                    severe_maximum_paragraph_words=(
-                        self.config.generation.severe_maximum_paragraph_words
-                    ),
-                )
-                break
-            except BriefValidationError as error:
-                path = _locate_reader_repair_path(
-                    plan,
-                    draft,
-                    error,
-                    candidate,
-                    decision.claims,
-                    public_quotes=self.config.generation.public_quotes,
-                    maximum_sentence_words=self.config.generation.maximum_sentence_words,
-                    maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-                    severe_maximum_sentence_words=(
-                        self.config.generation.severe_maximum_sentence_words
-                    ),
-                    severe_maximum_paragraph_words=(
-                        self.config.generation.severe_maximum_paragraph_words
-                    ),
-                    canonical_slots_by_field=canonical_slots_by_field,
-                )
-                validation_code = _validation_code(error)
-                repair_scope = (path, validation_code) if path is not None else None
-                if (
-                    path is None
-                    or repair_scope in repaired_scopes
-                    or attempt >= maximum_brief_attempts
-                ):
-                    LOG.warning(
-                        "SCOTUS reader-guide repair unavailable; case=%s; code=%s; "
-                        "path_found=%s; attempt=%d",
-                        source.case_key,
-                        validation_code,
-                        path is not None,
-                        attempt,
-                    )
-                    raise BriefValidationError(
-                        "reader-guide field repair budget was exhausted",
-                        safe_code="repair_exhausted",
-                        draft=draft,
-                    ) from None
-                attempt += 1
-                diagnostic = _repair_diagnostic(path, error)
-                repairer = TargetedReaderGuideRepairer(
-                    self.config.generation.model,
-                    budgeted_request(
-                        attempt=attempt,
-                        prompt=TargetedReaderGuideRepairer.PROMPT_VERSION,
-                        validation_code=diagnostic.safe_code,
-                    ),
-                    maximum_output_tokens=min(
-                        self.config.model_budget.maximum_output_tokens_per_call,
-                        MAX_CITIZENS_GUIDE_OUTPUT_TOKENS,
-                    ),
-                )
-
-                _, _, repair_context = _field_value_and_claims(plan, draft, path)
-
-                def validate_field(
-                    text: str,
-                    claim_ids: tuple[UUID, ...],
-                    *,
-                    context: str = repair_context,
-                    repair_path: ReaderGuideFieldPath = path,
-                ) -> None:
-                    validate_brief_text_field(
-                        text,
-                        claim_ids,
-                        candidate,
-                        decision.claims,
-                        context=cast(Any, context),
-                        public_quotes=self.config.generation.public_quotes,
-                        canonical_slots=canonical_slots_by_field.get(
-                            _canonical_field_path(repair_path)
-                        ),
-                        field_path=_canonical_field_path(repair_path),
-                        require_claim_support=True,
-                        maximum_sentence_words=(self.config.generation.maximum_sentence_words),
-                        maximum_paragraph_words=(self.config.generation.maximum_paragraph_words),
-                        severe_maximum_sentence_words=(
-                            self.config.generation.severe_maximum_sentence_words
-                        ),
-                        severe_maximum_paragraph_words=(
-                            self.config.generation.severe_maximum_paragraph_words
-                        ),
-                    )
-
-                def validate_guide(repaired: LegalBriefDraft) -> None:
-                    try:
-                        validate_brief_draft(
-                            repaired,
-                            candidate,
-                            decision.claims,
-                            public_quotes=self.config.generation.public_quotes,
-                            canonical_slots_by_field=canonical_slots_by_field,
-                            citizens_guide_profile=True,
-                            maximum_sentence_words=(self.config.generation.maximum_sentence_words),
-                            maximum_paragraph_words=(
-                                self.config.generation.maximum_paragraph_words
-                            ),
-                            severe_maximum_sentence_words=(
-                                self.config.generation.severe_maximum_sentence_words
-                            ),
-                            severe_maximum_paragraph_words=(
-                                self.config.generation.severe_maximum_paragraph_words
-                            ),
-                        )
-                    except BriefValidationError as next_error:
-                        raise BriefValidationError(
-                            str(next_error),
-                            safe_code=_validation_code(next_error),
-                            draft=repaired,
-                        ) from None
-
-                try:
-                    draft = repairer.repair(
-                        plan,
-                        draft,
-                        diagnostic,
-                        validate_field=validate_field,
-                        validate_guide=validate_guide,
-                    )
-                except BriefValidationError as repair_error:
-                    repaired_scopes.add((path, diagnostic.safe_code))
-                    if repair_error.draft is None:
-                        LOG.warning(
-                            "SCOTUS reader-guide repaired field rejected; case=%s; code=%s",
-                            source.case_key,
-                            _validation_code(repair_error),
-                        )
-                        raise BriefValidationError(
-                            "reader-guide field repair failed validation",
-                            safe_code="repair_exhausted",
-                            draft=draft,
-                        ) from None
-                    draft = repair_error.draft
-                except ReaderGuideWritingError as repair_error:
-                    LOG.warning(
-                        "SCOTUS reader-guide repair response rejected; case=%s; code=%s",
-                        source.case_key,
-                        repair_error.safe_code,
-                    )
-                    raise BriefValidationError(
-                        str(repair_error), safe_code=repair_error.safe_code, draft=draft
-                    ) from None
-                else:
-                    repaired_scopes.add((path, diagnostic.safe_code))
-                LOG.warning(
-                    "SCOTUS brief field correction requested; case=%s; code=%s; attempt=%d",
-                    source.case_key,
-                    diagnostic.safe_code,
-                    attempt,
-                )
-
-        # Style-only findings cannot prove semantic equivalence. Keep the original
-        # hard-valid draft and its warnings rather than risking changes to supported
-        # facts or polarity. Hard-error repairs above remain bounded and unchanged.
-        editorial_warning_codes = validate_brief_draft(
-            draft,
-            candidate,
-            decision.claims,
-            public_quotes=self.config.generation.public_quotes,
-            canonical_slots_by_field=canonical_slots_by_field,
-            citizens_guide_profile=True,
-            maximum_sentence_words=self.config.generation.maximum_sentence_words,
-            maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
-            severe_maximum_sentence_words=(self.config.generation.severe_maximum_sentence_words),
-            severe_maximum_paragraph_words=(self.config.generation.severe_maximum_paragraph_words),
-        )
+        # The first schema-valid response is preserved unchanged for manual review.
+        editorial_warning_codes = (EditorialWarningCode.MANUAL_REVIEW_REQUIRED.value,)
 
         revision = BriefGenerationService(
             _PreparedDraftGenerator(self.config.generation.model, draft),
@@ -3001,8 +2852,8 @@ class LiveStaticCaseProcessor:
             maximum_paragraph_words=self.config.generation.maximum_paragraph_words,
             severe_maximum_sentence_words=(self.config.generation.severe_maximum_sentence_words),
             severe_maximum_paragraph_words=(self.config.generation.severe_maximum_paragraph_words),
-            canonical_slots_by_field=canonical_slots_by_field,
             citizens_guide_profile=True,
+            manual_review_only=True,
         ).generate(
             candidate,
             decision,
@@ -3014,7 +2865,11 @@ class LiveStaticCaseProcessor:
             PublicCaseHistoryEvent(
                 status=status,
                 changed_at=candidate.evaluated_at,
-                explanation=_history_explanation(status, source.prior is not None),
+                explanation=_history_explanation(
+                    status,
+                    source.prior is not None,
+                    disposition_kinds={item.kind for item in source.dispositions},
+                ),
             ),
         )
         revision_history = (
@@ -3142,16 +2997,25 @@ _SEPARATE_OPINION_PAGE = re.compile(
 )
 
 
-def _opinion_page_attribution(text: str, previous: str | None = None) -> str:
-    """Carry the Court/separate-opinion role across extracted PDF pages."""
+def _opinion_page_attribution(
+    text: str,
+    previous: str | None = None,
+    *,
+    default: str = "Opinion of the Court",
+) -> str:
+    """Carry reporter, Court, and separate-opinion roles across extracted PDF pages."""
     match = _SEPARATE_OPINION_PAGE.search(text)
     if match is not None:
         author = " ".join(match.group(1).split()).title()
         role = " ".join(match.group(2).split()).casefold()
         return f"Justice {author}, {role}"
+    if re.search(r"(?:^|\n)\s*SYLLABUS\b", text, re.IGNORECASE):
+        # The reporter disclaimer itself says "opinion of the Court," so the
+        # explicit syllabus heading must win on the first reporter-prepared page.
+        return "Reporter syllabus"
     if re.search(r"\b(?:PER CURIAM|Opinion of the Court)\b", text, re.IGNORECASE):
         return "Opinion of the Court"
-    return previous or "Opinion of the Court"
+    return previous or default
 
 
 def _document_blocks(
@@ -3191,8 +3055,16 @@ def _document_blocks(
     blocks: list[LegalEvidenceBlock] = []
     opinion_attribution: str | None = None
     for page_number, text in enumerate(pages, 1):
-        if kind is ScotusDocumentKind.OPINION:
-            opinion_attribution = _opinion_page_attribution(text, opinion_attribution)
+        if kind in {ScotusDocumentKind.OPINION, ScotusDocumentKind.ORDER}:
+            opinion_attribution = _opinion_page_attribution(
+                text,
+                opinion_attribution,
+                default=(
+                    "Order of the Court"
+                    if kind is ScotusDocumentKind.ORDER
+                    else "Opinion of the Court"
+                ),
+            )
         lines = [" ".join(line.split()) for line in text.splitlines() if line.strip()]
         for start in range(0, len(lines), 80):
             selected = lines[start : start + 80]
@@ -3802,6 +3674,8 @@ def _public_metadata_changed(source: _CaseInput) -> bool:
 def _correction_note(source: _CaseInput, changed: set[ScotusDocumentKind]) -> str | None:
     if source.prior is None:
         return None
+    if not changed:
+        return "Regenerated under the revised Citizen's Guide protocol."
     if ScotusDocumentKind.OPINION in changed:
         return "Updated after a new or revised official Supreme Court opinion."
     if ScotusDocumentKind.ORDER in changed:
@@ -3813,14 +3687,25 @@ def _correction_note(source: _CaseInput, changed: set[ScotusDocumentKind]) -> st
     return "Corrected after revised official Supreme Court case material."
 
 
-def _history_explanation(status: ScotusCaseStatus, update: bool) -> str:
+def _history_explanation(
+    status: ScotusCaseStatus,
+    update: bool,
+    *,
+    disposition_kinds: set[SlipOpinionKind],
+) -> str:
     if status is ScotusCaseStatus.DECIDED:
+        if disposition_kinds == {SlipOpinionKind.DECREE}:
+            return "An official Supreme Court decree was added to the case record."
         return "An official Supreme Court opinion was added to the case record."
     if status is ScotusCaseStatus.ORDER_ISSUED:
         return "An official Supreme Court order was added to the case record."
     if status is ScotusCaseStatus.REARGUED:
         return "The Court held another argument session in this case."
-    if status is ScotusCaseStatus.CORRECTED or update:
+    if status is ScotusCaseStatus.CORRECTED:
+        if not update:
+            return "A corrected official Supreme Court disposition was added to the record."
+        return "The brief was updated after corrected official Court material."
+    if update:
         return "The brief was updated after revised official Court material."
     return "The Court held oral argument and published an official transcript."
 

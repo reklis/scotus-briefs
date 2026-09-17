@@ -442,6 +442,7 @@ class CanaryFailureCount(StaticContract):
 class EditorialWarningCode(StrEnum):
     """Fixed public-safe categories for nonfatal reader-prose findings."""
 
+    MANUAL_REVIEW_REQUIRED = "manual_review_required"
     UNEXPLAINED_LEGAL_TERM = "unexplained_legal_term"
     LAWYER_FACING_PHRASE = "lawyer_facing_phrase"
     PREFERRED_SENTENCE_LENGTH = "preferred_sentence_length"
@@ -517,6 +518,10 @@ class CanaryAggregate(StaticContract):
     degraded_legacy_count: int = Field(default=0, ge=0, le=100)
     privacy_validation_passed: bool = False
     release_validation_passed: bool = False
+    # An authorized reviewer records five reviewed answers per structurally accepted
+    # direct-Q&A case. Zero preserves compatibility with historical reports while
+    # preventing them from authorizing a new Q&A candidate.
+    reviewed_answer_count: int = Field(default=0, ge=0, le=500)
     reviewer_decision: CanaryReviewerDecision = CanaryReviewerDecision.PENDING
 
     @property
@@ -563,6 +568,8 @@ class CanaryAggregate(StaticContract):
             raise ValueError("canary error-category count cannot exceed accepted count")
         if self.degraded_legacy_count > len(self.case_keys):
             raise ValueError("canary degraded count cannot exceed its case set")
+        if self.reviewed_answer_count > self.accepted_count * 5:
+            raise ValueError("reviewed answer count cannot exceed generated answers")
         codes = tuple(item.code.value for item in self.failure_code_counts)
         if codes != tuple(sorted(set(codes))):
             raise ValueError("canary failure codes must be unique and sorted")
@@ -967,6 +974,9 @@ def _json_value(value: Any) -> Any:
         if "warning_code_counts" not in value.model_fields_set:
             # Adding warning aggregates must not rewrite an immutable legacy report.
             payload.pop("warning_code_counts", None)
+        if "reviewed_answer_count" not in value.model_fields_set:
+            # Historical approvals can load for audit but cannot authorize new Q&A.
+            payload.pop("reviewed_answer_count", None)
         for field in ("comparison_baseline_sha256", "control_report_sha256"):
             if field not in value.model_fields_set:
                 payload.pop(field, None)
@@ -989,6 +999,8 @@ def _json_value(value: Any) -> Any:
         else:
             if "warning_code_counts" not in value.canary_report.model_fields_set:
                 payload["canary_report"].pop("warning_code_counts", None)
+            if "reviewed_answer_count" not in value.canary_report.model_fields_set:
+                payload["canary_report"].pop("reviewed_answer_count", None)
             for field in ("comparison_baseline_sha256", "control_report_sha256"):
                 if field not in value.canary_report.model_fields_set:
                     payload["canary_report"].pop(field, None)

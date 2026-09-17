@@ -421,7 +421,7 @@ class LegalBriefRevision(StrictModel):
     maturity: BriefMaturity
     title: str = Field(min_length=1, max_length=180)
     title_claim_ids: tuple[UUID, ...] = Field(min_length=1)
-    dek: str = Field(min_length=1, max_length=500)
+    dek: str = Field(min_length=1)
     dek_claim_ids: tuple[UUID, ...] = Field(min_length=1)
     sections: tuple[BriefSection, ...] = Field(min_length=1)
     argument_analyses: tuple[BriefArgumentAnalysis, ...] = ()

@@ -486,6 +486,7 @@ def record_canary_review(
     degraded_legacy_count: int = 0,
     privacy_validation_passed: bool,
     release_validation_passed: bool,
+    reviewed_answer_count: int,
     reviewer_decision: CanaryReviewerDecision,
 ) -> CanaryAggregate:
     """Apply sanitized side-by-side review counts; contract validation is the gate."""
@@ -501,6 +502,7 @@ def record_canary_review(
             "degraded_legacy_count": degraded_legacy_count,
             "privacy_validation_passed": privacy_validation_passed,
             "release_validation_passed": release_validation_passed,
+            "reviewed_answer_count": reviewed_answer_count,
             "reviewer_decision": reviewer_decision,
         }
     )
@@ -526,6 +528,8 @@ def qualification_failures(report: CanaryAggregate) -> tuple[str, ...]:
         failures.append("privacy_validation_failed")
     if not report.release_validation_passed:
         failures.append("release_validation_failed")
+    if report.reviewed_answer_count != report.accepted_count * 5:
+        failures.append("manual_review_incomplete")
     return tuple(failures)
 
 

@@ -52,6 +52,7 @@ class LegalEvidenceBlock(BaseModel):
     text_private: str = Field(min_length=1, max_length=30_000)
     speaker_name: str | None = Field(default=None, max_length=300)
     speaker_kind: SpeakerKind = SpeakerKind.UNKNOWN
+    advocate_role: AdvocateRole | None = None
     identity_basis: SpeakerIdentityBasis = SpeakerIdentityBasis.ANONYMOUS
     attribution: str | None = Field(default=None, max_length=500)
 
@@ -127,6 +128,7 @@ def transcript_turn_block(turn: TranscriptTurn, official_url: str) -> LegalEvide
         text_private=turn.text_private,
         speaker_name=turn.speaker_name,
         speaker_kind=turn.speaker_kind,
+        advocate_role=turn.advocate_role,
         identity_basis=turn.identity_basis,
         attribution=turn.speaker_name or turn.speaker_label_private,
     )

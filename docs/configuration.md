@@ -16,8 +16,8 @@ slip path supports strict individual opinion, per-curiam, and decree rows (inclu
 emergency `A` and consolidated dockets), not expansion of omnibus order lists.
 
 Runner limits bound selected cases/documents, HTTP requests/download bytes, private
-disk, and runtime. Model limits separately bound extraction calls, brief calls, total
-attempted calls, input characters/tokens, output tokens, zero local cost, request
+disk, and runtime. Model limits separately bound compatibility-stage map calls, final
+question/synthesis calls, total attempted calls, input characters/tokens, output tokens, zero local cost, request
 timeout, and transport attempts. Configuration validation rejects inconsistent
 maxima. The complete eligible queue is ranked before its case limit. Fresh new/changed
 Court activity comes first; unattempted fresh work uses authoritative official activity
@@ -69,19 +69,21 @@ fixture-backed and fixed-canary qualification are not complete. Checked-in proce
 model-runtime approval, brief generation, and launch switches therefore remain `false`,
 and `publication.dry_run` remains `true`. Scheduled and manual workflows stop before
 Court retrieval or model use. Reopening requires those remaining gates and explicit
-owner approval. This is not a
-validator bypass: a workflow dispatch cannot override a closed gate, and every future
-candidate remains subject to source, budget, grounding, privacy, completeness, and
-release-integrity checks. The protected `scotus-publication`
+owner approval. This does not bypass operational controls: a workflow dispatch cannot override a closed
+gate, and every future candidate remains subject to source, budget, privacy, completeness,
+and release-integrity checks. Citizen's Guide prose itself is manual-review-only; five
+nonblank plain-text answers carry `manual_review_required` and do not establish grounding,
+correctness, improvement, or publication approval. The protected `scotus-publication`
 build runs on the self-hosted Spark runner and accepts only
 `RAGCHEW_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1`. That typed setting rejects remote
 hosts, credentials, query strings, and non-`/v1` paths. The OpenAI SDK is used only as
-Ollama's compatible JSON-schema chat client, with a non-secret placeholder key. The
+Ollama's compatible local chat client, with a non-secret placeholder key. Guide requests
+omit `response_format` and ask one deterministic question per plain-text completion. The
 only reviewed model is the locally derived Apache-2.0
 `ragchew-gpt-oss:120b-32k` artifact with full Ollama digest
 `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863`.
 Its reviewed Modelfile and every request pin a 32,768-token context; requests also pin
-`temperature: 0` and bounded low reasoning. Only final schema content is parsed; reasoning
+`temperature: 0` and bounded low reasoning. Only nonblank final answer text is read; reasoning
 is discarded and never logged, persisted, receipted, diagnosed from, or published. Before any Court retrieval or completion
 traffic, preflight requires one installed inventory entry matching the exact tag and
 full digest and `/api/show` must report `num_ctx 32768`. The adapter repeats that exact

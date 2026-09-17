@@ -29,6 +29,7 @@ from ragchew.scotus.documents import DocumentCollectionError
 from ragchew.scotus.editorial_backfill import aggregate_canary_report
 from ragchew.scotus.extraction import LegalExtractionError
 from ragchew.scotus.public_contracts import PublicCaseBrief, public_case_key
+from ragchew.scotus.reader_qa import DEFAULT_OUTPUT_TOKENS as READER_QA_OUTPUT_TOKENS
 from ragchew.scotus.static_contracts import (
     CanaryAggregate,
     CostLedger,
@@ -255,6 +256,10 @@ class RunWorkspace:
         self.cleanup()
 
 
+_READER_QA_LOGICAL_QUESTION_CALLS = 5
+_READER_QA_LOGICAL_MAXIMUM_MAP_CALLS = 20
+
+
 class WorkspaceSignalCleanup:
     """Install temporary SIGINT/SIGTERM handlers that clean before propagating."""
 
@@ -357,16 +362,39 @@ class UnifiedRunBudget:
             raise BudgetExceeded("document budget exhausted")
         if self.config.generation.brief_generation_enabled and self.config.publication.enabled:
             limits = self.config.model_budget
-            # Do not start/download a case, and especially do not buy extraction,
-            # unless at least one extraction and its required final brief can fit.
+            # Do not start/download a case unless the maximum bounded five-question
+            # map-and-synthesize shape can fit. Map calls retain the legacy extraction
+            # receipt stage for ledger compatibility; final answers use the brief stage.
+            transport_attempts = limits.maximum_transport_attempts
+            maximum_map_calls = _READER_QA_LOGICAL_MAXIMUM_MAP_CALLS * transport_attempts
+            question_calls = _READER_QA_LOGICAL_QUESTION_CALLS * transport_attempts
+            maximum_case_calls = maximum_map_calls + question_calls
+            maximum_case_input = maximum_case_calls * limits.maximum_input_tokens_per_call
+            maximum_case_output = maximum_case_calls * min(
+                limits.maximum_output_tokens_per_call,
+                READER_QA_OUTPUT_TOKENS,
+            )
+            maximum_case_cost = (
+                Decimal(maximum_case_input) * limits.input_cost_usd_per_million_tokens
+                + Decimal(maximum_case_output) * limits.output_cost_usd_per_million_tokens
+            ) / Decimal(1_000_000)
             if (
-                self.extraction_calls >= limits.maximum_extraction_calls_per_run
-                or self.brief_calls >= limits.maximum_brief_calls_per_run
-                or self.model_calls + 2 > limits.maximum_total_calls_per_run
+                self.extraction_calls + maximum_map_calls
+                > limits.maximum_extraction_calls_per_run
+                or self.brief_calls + question_calls
+                > limits.maximum_brief_calls_per_run
+                or self.model_calls + maximum_case_calls
+                > limits.maximum_total_calls_per_run
+                or self.input_characters + maximum_case_input
+                > limits.maximum_input_characters_per_run
+                or self.input_tokens + maximum_case_input
+                > limits.maximum_input_tokens_per_run
+                or self.output_tokens + maximum_case_output
+                > limits.maximum_output_tokens_per_run
+                or self.estimated_cost_usd + maximum_case_cost
+                > limits.maximum_estimated_cost_usd_per_run
             ):
-                raise GlobalBudgetExceeded(
-                    "case cannot fit extraction and brief call budgets"
-                )
+                raise GlobalBudgetExceeded("case cannot fit plain-text Guide call budgets")
         self.selected_cases += 1
         self.selected_documents += documents
 

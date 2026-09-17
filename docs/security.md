@@ -43,14 +43,17 @@ unchanged, while malformed or multiple telemetry wrappers fail closed.
 The exact local Apache-2.0 Ollama candidate is
 `ragchew-gpt-oss:120b-32k`, pinned to full content digest
 `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863` and `num_ctx
-32768`. Its bounded low-reasoning profile passed synthetic cold/warm extraction and
-Citizen's Guide probes while discarding reasoning, but processing, model-runtime
-approval, brief generation, and launch gates remain closed and no Court evidence may be
-sent to it. If fixture-backed and fixed-canary qualification pass and the exact candidate
-receives approval, only bounded evidence windows or sanitized approved claims may be
-sent, with context, temperature, and reasoning level pinned. The OpenAI SDK then
-targets Ollama's compatible `/v1` interface with a non-secret placeholder key, disabled environment
-proxies/redirects, and preserved JSON-schema chat completions. Before constructing
+32768`. Its earlier bounded low-reasoning profile passed synthetic cold/warm probes while
+discarding reasoning, but the new direct Q&A protocol still requires fixture-backed and
+fixed-canary qualification. Processing, model-runtime approval, brief generation, and launch
+gates remain closed and no Court evidence may be sent to it. Five nonblank plain-text Guide
+answers are treated only as a private manual-review candidate: automated prose-quality and
+factual heuristics do not approve them, and every generated Guide carries
+`manual_review_required`. If qualification completes and the exact candidate receives
+approval, only deterministic bounded official-source packets may be sent, with context,
+temperature, and reasoning level pinned. The OpenAI SDK then targets Ollama's compatible
+`/v1` interface with a non-secret placeholder key and disabled environment
+proxies/redirects. Guide calls have no JSON response schema. Before constructing
 Court/model clients, the protected workflow requires an installed inventory entry
 matching both tag and digest and an exact `/api/show` context report. The adapter
 repeats that native identity/context check before and after every completion, so output

@@ -286,7 +286,12 @@ def test_resumed_report_accumulates_runtime_calls_and_warnings_as_progress_chang
         runtime_seconds=10,
         model_call_count=2,
         candidate_sha256="c" * 64,
-        warnings_by_case={first_key: (EditorialWarningCode.READABILITY,)},
+        warnings_by_case={
+            first_key: (
+                EditorialWarningCode.MANUAL_REVIEW_REQUIRED,
+                EditorialWarningCode.READABILITY,
+            )
+        },
     )
 
     resumed = aggregate_canary_report(
@@ -296,7 +301,12 @@ def test_resumed_report_accumulates_runtime_calls_and_warnings_as_progress_chang
         runtime_seconds=15,
         model_call_count=3,
         candidate_sha256="d" * 64,
-        warnings_by_case={second_key: (EditorialWarningCode.READABILITY,)},
+        warnings_by_case={
+            second_key: (
+                EditorialWarningCode.MANUAL_REVIEW_REQUIRED,
+                EditorialWarningCode.READABILITY,
+            )
+        },
         previous=first,
     )
 
@@ -304,7 +314,8 @@ def test_resumed_report_accumulates_runtime_calls_and_warnings_as_progress_chang
     assert resumed.runtime_seconds == 25
     assert resumed.model_call_count == 5
     assert [(item.code, item.count) for item in resumed.warning_code_counts] == [
-        (EditorialWarningCode.READABILITY, 2)
+        (EditorialWarningCode.MANUAL_REVIEW_REQUIRED, 2),
+        (EditorialWarningCode.READABILITY, 2),
     ]
 
 
@@ -395,6 +406,11 @@ def test_cli_promotion_rejects_failed_or_rejected_measurement_before_mode_branch
     with pytest.raises(CompareAndSwapConflict, match="cannot be promoted"):
         _require_promotable_measurement(candidate)
 
+    unmeasured_candidate = GeneratedContent.empty()
+    with pytest.raises(CompareAndSwapConflict, match="missing its canary report"):
+        _require_promotable_measurement(unmeasured_candidate)
+    _require_promotable_measurement(unmeasured_candidate, checkpoint_only=True)
+
     missing_report = replace(
         GeneratedContent.empty(),
         publication=PublicationState(updated_at=NOW, editorial_backfill=backfill),
@@ -461,6 +477,7 @@ def test_advancement_requires_all_measured_canary_gates() -> None:
         improved_count=8,
         privacy_validation_passed=True,
         release_validation_passed=True,
+        reviewed_answer_count=50,
     )
     assert qualification_failures(pending) == ()
     with pytest.raises(ValueError, match="reviewer approval"):
@@ -471,6 +488,7 @@ def test_advancement_requires_all_measured_canary_gates() -> None:
         improved_count=8,
         privacy_validation_passed=True,
         release_validation_passed=True,
+        reviewed_answer_count=50,
         reviewer_decision=CanaryReviewerDecision.APPROVED,
     )
     require_stage_advancement(backfill, approved, EditorialRolloutStage.BATCH_25)

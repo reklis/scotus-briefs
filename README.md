@@ -18,11 +18,13 @@ A protected self-hosted GitHub Actions job is scheduled daily at 03:17 UTC (and 
 restricted manual dispatch). The checked-in GPT-OSS candidate is the local Apache-2.0
 artifact `ragchew-gpt-oss:120b-32k`, pinned to full Ollama digest
 `820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863` and a 32,768-token
-context. The fingerprinted low-reasoning/final-content-only synthetic profile passed cold
-and warm extraction and four-field Citizen's Guide probes, but processing, model-runtime
-approval, brief generation, launch, and publication remain closed before Court or model
-work. Reopening requires fixture-backed and fixed ten-case qualification plus explicit
-owner approval. No credential, hosted provider, remote
+context. Citizen’s Guides now use five deterministic, ordinary-language questions asked
+directly against bounded official Court text. Each call returns one plain-text answer—no
+structured extraction, model-generated JSON, semantic gate, or repair participates in the
+Guide path. Processing, model-runtime approval, brief generation, launch, and publication
+remain closed before Court or model work. Reopening requires fixture-backed and fixed
+ten-case qualification plus explicit owner approval. Nonblank answers are preserved only
+as `manual_review_required` candidates, and reviewers must decide correctness and quality. No credential, hosted provider, remote
 endpoint, pull, `latest` tag, native-context GPT-OSS tag, or fallback model is accepted.
 When those gates are approved, preflight verifies tag, digest, and context before Court
 or model work and the adapter repeats exact verification around every completion. The
@@ -48,15 +50,14 @@ The public `generated-content` branch contains only versioned projection/case JS
 conditional validators and digests, dated official activity, bounded cursors and
 sanitized pending/freshness outcomes, immutable public revisions, release manifests,
 and opaque model-attempt/zero-cost receipts. It never contains Court PDFs, source
-HTML, extracted transcript text, observations/claim ledgers, prompts, model responses,
+HTML, extracted transcript text, source packets, observations/claim ledgers, prompts, model responses,
 object keys, credentials, private logs, or internal UUIDs. Official documents are
 linked, not redistributed.
 
-The owner enabled bounded live Court/model processing and publication on 2026-09-03;
-the checked-in source, generation, approval, and publication switches are therefore
-on. Those switches do not bypass per-case grounding, privacy, completeness, budget,
-static-release, or source-access checks: each candidate still fails closed, and an
-unreviewed source or runtime change must stop publication.
+The owner previously enabled bounded live processing for the legacy writer. The checked-in
+GPT-OSS processing, generation, approval, and publication switches are now closed. A later
+reviewed reopening cannot bypass privacy, completeness, budget, static-release,
+source-access, exact-model, or candidate-bound manual-approval checks.
 
 ## Local development
 

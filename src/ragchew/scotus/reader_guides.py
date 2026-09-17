@@ -1728,9 +1728,9 @@ def compact_reader_guide_schema(plan: ReaderGuidePlan) -> dict[str, object]:
         field.name.value: {
             "type": "string",
             "minLength": 1,
-            "maxLength": 500 if field.heading is None else 800,
             "description": (
-                "Exactly one ordinary-language sentence from only the matching evidence packet."
+                "Nonempty prose from only the matching evidence packet; manual review decides "
+                "factual and editorial acceptance."
             ),
         }
         for field in fields
@@ -2143,17 +2143,11 @@ def _assemble_draft(plan: ReaderGuidePlan, payload: Mapping[str, object]) -> Leg
             "writer response has unexpected fields", safe_code="invalid_writer_schema"
         )
     values = tuple(payload[field.name.value] for field in fields)
-    if any(
-        not isinstance(value, str)
-        or not value
-        or len(value) > (500 if field.heading is None else 800)
-        for field, value in zip(fields, values, strict=True)
-    ):
+    if any(not isinstance(value, str) or not value.strip() for value in values):
         raise ReaderGuideWritingError(
             "writer response violates the compact schema", safe_code="invalid_writer_schema"
         )
     prose = tuple(value for value in values if isinstance(value, str))
-    _validate_citizens_guide_fields(prose)
     about = fields[0]
     section_fields = fields[1:]
     return LegalBriefDraft(
