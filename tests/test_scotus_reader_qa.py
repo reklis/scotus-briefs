@@ -209,6 +209,20 @@ def test_packets_label_sources_and_exclude_separate_opinions() -> None:
     }
 
 
+def test_cross_page_transcript_range_names_both_pages() -> None:
+    source = block(
+        ScotusDocumentKind.TRANSCRIPT,
+        "An advocate continues onto the next page.",
+        page=45,
+        url=TRANSCRIPT_URL,
+        speaker_kind=SpeakerKind.ADVOCATE,
+    ).model_copy(update={"end_file_page": 46, "end_line": 23, "start_line": 41})
+
+    excerpt = source_excerpts((source,))[0]
+    assert excerpt.page_label == "pages 45-46, lines 45:41-46:23"
+    assert excerpt.public_link().page_label == excerpt.page_label
+
+
 def test_question_specific_packets_cover_realistic_source_roles_and_late_action() -> None:
     blocks = [
         block(

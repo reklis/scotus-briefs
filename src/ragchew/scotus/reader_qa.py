@@ -21,7 +21,7 @@ from ragchew.scotus.extraction import LegalEvidenceBlock
 from ragchew.scotus.public_contracts import PublicSourceLink
 
 READER_QA_QUESTION_VERSION = "scotus-citizen-questions-v1"
-READER_QA_PACKET_VERSION = "scotus-question-packets-v2"
+READER_QA_PACKET_VERSION = "scotus-question-packets-v3"
 READER_QA_PROMPT_VERSION = "scotus-plain-text-qa-v1"
 READER_QA_SYNTHESIS_VERSION = "scotus-plain-text-synthesis-v1"
 DEFAULT_PACKET_CHARACTERS = 30_000
@@ -270,6 +270,12 @@ def source_excerpts(blocks: Sequence[LegalEvidenceBlock]) -> tuple[ReaderSourceE
             role=_source_role(block),
             page_label=(
                 f"page {block.start_file_page}, lines {block.start_line}-{block.end_line}"
+                if block.start_file_page == block.end_file_page
+                else (
+                    f"pages {block.start_file_page}-{block.end_file_page}, lines "
+                    f"{block.start_file_page}:{block.start_line}-"
+                    f"{block.end_file_page}:{block.end_line}"
+                )
             ),
             block_order=index,
             text_private=block.text_private,

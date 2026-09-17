@@ -1437,7 +1437,7 @@ def test_new_transcript_runs_grounded_pipeline_with_budget_and_cleanup(
     assert processor is not None
     assert processor.model == (f"ollama:ragchew-gpt-oss:120b-32k@sha256:{MODEL_DIGEST}@http://127.0.0.1:11434/v1")
     assert processor.extractor_version == (
-        "scotus-question-packets-v2:official-document-text-v4"
+        "scotus-question-packets-v3:official-document-text-v4"
     )
     assert processor.policy_version == "scotus-brief-policy-v64-plain-text-qa"
     assert processor.prompt_version == (
