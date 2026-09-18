@@ -1,0 +1,639 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
+            "evidence_ids": [
+              "ev-6744b9949e83-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case is docketed as No.\u202f24\u2011394 (also 24\u2011396) before the Supreme Court of Oklahoma."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
+            "evidence_ids": [
+              "ev-6744b9949e83-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "James A. Campbell argued the cause for petitioners in No.\u202f24\u2011394."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          },
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          },
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0003-0003"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          },
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0006-0003"
+            ],
+            "pages": {
+              "end": 135,
+              "start": 135
+            }
+          }
+        ],
+        "text": "Justices asked whether charter schools, including religious ones like St.\u202fIsidore, are considered public schools and state actors for constitutional purposes."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2024-24-394",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.1",
+    "generated_at": "2026-09-18T05:36:45.792145Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.4+guide-1.0.6+verification-1.0.2",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
+      "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether a religious school could change its curriculum to teach only creationism."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0000-0005"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the grants and tax credits in Trinity Lutheran, Espinoza, and Carson involve a contract distinction."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the schools are only teaching the Catholic religion."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0001-0005"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked about historical examples of state funding of religious schools and the lack of a free\u2011exercise claim."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0001-0006"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether a student in Oklahoma is free to attend a public school if they choose."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Thomas asked what features would convert St.\u202fIsidore into a state actor."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0002-0007"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether, under strict scrutiny, the government has a compelling interest."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0002-0009"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 61
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked about the similarity of Oklahoma\u2019s program to those in other states."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0002-0010"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "Justice Jackson asked whether the federal law requiring charter schools to be nonsectarian is unconstitutional."
+      },
+      {
+        "attribution": "Justice SOTOMAYOR",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0003-0003"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "Justice Sotomayor referenced the Peltier v. Charter School case and asked about the opposite position taken today."
+      },
+      {
+        "attribution": "Justice KAGAN",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0003-0004"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "Justice Kagan asked \u201cAnd what\u2019s the difference?\u201d"
+      },
+      {
+        "attribution": "Justice JACKSON",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0003-0001"
+            ],
+            "pages": {
+              "end": 73,
+              "start": 73
+            }
+          }
+        ],
+        "text": "Justice Jackson asked whether the board would have to choose among charter school applicants of different religions."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0004-0000"
+            ],
+            "pages": {
+              "end": 88,
+              "start": 88
+            }
+          }
+        ],
+        "text": "Justice Jackson asked whether the board would have to choose among charter school applicants of different religions (repeated citation)."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0004-0003"
+            ],
+            "pages": {
+              "end": 92,
+              "start": 92
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether St.\u202fIsidore can participate in the charter program and remain private."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0005-0002"
+            ],
+            "pages": {
+              "end": 122,
+              "start": 122
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked how the program differs from a choice program where no student is compelled to attend a religious charter school."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0006-0000"
+            ],
+            "pages": {
+              "end": 129,
+              "start": 129
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether statements by the attorney general reflected hostility toward Islam."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0006-0001"
+            ],
+            "pages": {
+              "end": 130,
+              "start": 130
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the statements were motivated by the Blaine movement."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0006-0003"
+            ],
+            "pages": {
+              "end": 135,
+              "start": 135
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked about the state\u2011entity versus state\u2011actor theories in light of West and Rendell\u2011Baker."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0006-0004"
+            ],
+            "pages": {
+              "end": 137,
+              "start": 137
+            }
+          }
+        ],
+        "text": "Justice Kagan asked what issues would arise in other states if the Court ruled for petitioners."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0007-0002"
+            ],
+            "pages": {
+              "end": 151,
+              "start": 151
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts noted that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          },
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          },
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0003-0003"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          },
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0006-0003"
+            ],
+            "pages": {
+              "end": 135,
+              "start": 135
+            }
+          }
+        ],
+        "text": "Justices questioned whether charter schools, including religious ones like St.\u202fIsidore, are considered public schools and state actors for constitutional purposes."
+      },
+      {
+        "attribution": "Mr. Campbell",
+        "citations": [
+          {
+            "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+            "evidence_ids": [
+              "ev-90e3c01ef665-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Petitioners argue that St.\u202fIsidore hires teachers who are not Catholic."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Campbell",
+          "citations": [
+            {
+              "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+              "evidence_ids": [
+                "ev-90e3c01ef665-0001-0002"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "St.\u202fIsidore hires teachers who are not Catholic."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
+      "evidence_ids": [
+        "ev-6744b9949e83-0000-0000",
+        "ev-6744b9949e83-0000-0001",
+        "ev-6744b9949e83-0000-0004"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+      "evidence_ids": [
+        "ev-90e3c01ef665-0000-0003",
+        "ev-90e3c01ef665-0000-0005",
+        "ev-90e3c01ef665-0001-0000",
+        "ev-90e3c01ef665-0001-0002",
+        "ev-90e3c01ef665-0001-0005",
+        "ev-90e3c01ef665-0001-0006",
+        "ev-90e3c01ef665-0002-0000",
+        "ev-90e3c01ef665-0002-0007",
+        "ev-90e3c01ef665-0002-0009",
+        "ev-90e3c01ef665-0002-0010",
+        "ev-90e3c01ef665-0003-0003",
+        "ev-90e3c01ef665-0003-0004",
+        "ev-90e3c01ef665-0003-0001",
+        "ev-90e3c01ef665-0004-0000",
+        "ev-90e3c01ef665-0004-0003",
+        "ev-90e3c01ef665-0005-0002",
+        "ev-90e3c01ef665-0006-0000",
+        "ev-90e3c01ef665-0006-0001",
+        "ev-90e3c01ef665-0006-0003",
+        "ev-90e3c01ef665-0006-0004",
+        "ev-90e3c01ef665-0007-0002"
+      ],
+      "pages": {
+        "end": 151,
+        "start": 10
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-18T05:50:51.625937Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

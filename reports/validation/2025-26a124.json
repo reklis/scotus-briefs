@@ -1,0 +1,41 @@
+{
+  "accepted": true,
+  "case_id": "2025-26a124",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": true,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "The oral\u2011argument section is marked source_limited and contains no claims; consider adding any available oral\u2011argument excerpts or explicitly note that no oral\u2011argument material is available.",
+    "The background and question section is also source_limited; if additional evidence becomes available, augment the summary to improve completeness.",
+    "All claims are properly attributed and supported; maintain this practice for any future additions.",
+    "No overstatements or mischaracterizations of dissenting opinions were found; continue to keep dissent statements clearly attributed."
+  ],
+  "quality_scores": {
+    "completeness": 0.85,
+    "factual_accuracy": 0.98,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.96,
+    "traceability": 0.99
+  }
+}

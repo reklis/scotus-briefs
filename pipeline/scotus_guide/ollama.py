@@ -92,17 +92,21 @@ class OllamaClient:
         return ModelIdentity(self.model, digest)
 
     def generate_json(self, prompt: str, *, schema: dict[str, Any] | None = None) -> Any:
+        # GPT-OSS emits its final answer through Ollama's chat template. The
+        # generate endpoint can return an empty response after producing only
+        # reasoning tokens, so use chat and read message.content.
         payload: dict[str, object] = {
             "model": self.model,
-            "prompt": prompt,
+            "messages": [{"role": "user", "content": prompt}],
             "stream": False,
             "format": schema or "json",
             "options": self.parameters,
         }
         last_error: OllamaResponseError | None = None
         for attempt in range(self.attempts):
-            response = self._request("POST", "/api/generate", payload)
-            raw = response.get("response")
+            response = self._request("POST", "/api/chat", payload)
+            message = response.get("message")
+            raw = message.get("content") if isinstance(message, dict) else response.get("response")
             if not isinstance(raw, str):
                 last_error = OllamaResponseError("Ollama generation response lacks text")
             else:

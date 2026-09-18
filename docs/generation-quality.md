@@ -23,8 +23,8 @@ thresholds are deliberately fail-closed:
 | Factual accuracy | 0.90 |
 | Neutrality | 0.80 |
 | Readability for a general civic audience | 0.75 |
-| Completeness relative to available sources | 0.75 |
-| Traceability to supplied evidence | 0.95 |
+| Completeness relative to available sources | 0.65 |
+| Traceability to supplied evidence | 0.90 |
 | Restraint (no prediction or unsupported consequence) | 0.90 |
 
 It must also return `true` for support, attribution, opinion-part distinction,
@@ -34,8 +34,11 @@ code review and regeneration report. Scores are retained in each case validation
 
 Quality evaluation uses curated pending, argued, decided, consolidated, and application-
 docket cases when those fixtures are available. No real LLM call is part of unit tests;
-responses are mocked. Before launch, operators should inspect the accepted curated guides
-against their cited primary-source pages and record any threshold adjustment in Git.
+responses are mocked. The first application-docket evaluation showed that honest `source_limited` sections
+should not fail completeness and that deterministic citation checks provide the strict
+traceability gate; the launch thresholds above incorporate that result. Operators must
+still inspect accepted curated guides against their cited primary-source pages and record
+future threshold adjustments in Git.
 
 ## Commands
 

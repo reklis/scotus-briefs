@@ -175,7 +175,7 @@ function normalizeCase(
   raw: unknown,
   source: string,
   manifests: Map<string, DocumentSource>
-): PublicCase {
+): PublicCase | undefined {
   const item = object(raw, source);
   const id = requiredString(item.id ?? item.case_id, `${source}.id`);
   const slug = requiredString(item.slug ?? id, `${source}.slug`);
@@ -183,7 +183,8 @@ function normalizeCase(
   const dockets = strings(item.docket_numbers ?? item.dockets);
   const primary = optionalString(item.primary_docket ?? item.docket_number);
   if (primary && !dockets.includes(primary)) dockets.unshift(primary);
-  if (!dockets.length) throw new Error(`${source}.docket_numbers must contain at least one docket`);
+  // Unresolved imports are durable archive records, not yet publishable cases.
+  if (!dockets.length || item.term === null || item.term === undefined) return undefined;
   const dateValues: Json = item.dates ? object(item.dates, `${source}.dates`) : ({} as Json);
   const documentValues = Array.isArray(item.documents)
     ? item.documents
@@ -200,13 +201,20 @@ function normalizeCase(
     id,
     slug,
     title: requiredString(item.title ?? item.case_name, `${source}.title`),
-    term: requiredString(item.term, `${source}.term`),
+    term:
+      typeof item.term === 'number'
+        ? String(item.term)
+        : requiredString(item.term, `${source}.term`),
     dockets,
     aliases: strings(item.aliases),
     lifecycle: status,
     dates: {
-      argued: optionalString(dateValues.argued ?? dateValues.argument_date ?? item.argument_date),
-      decided: optionalString(dateValues.decided ?? dateValues.decision_date ?? item.decision_date),
+      argued: optionalString(
+        dateValues.argued ?? dateValues.argument ?? dateValues.argument_date ?? item.argument_date
+      ),
+      decided: optionalString(
+        dateValues.decided ?? dateValues.decision ?? dateValues.decision_date ?? item.decision_date
+      ),
       filed: optionalString(dateValues.filed ?? item.filed_date),
       scheduled: optionalString(dateValues.scheduled ?? item.scheduled_date)
     },
@@ -231,8 +239,12 @@ function normalizeCitation(raw: unknown): Citation | undefined {
   );
   if (!documentId) return undefined;
   const range = Array.isArray(item.pages) ? item.pages : undefined;
-  const start = Number(item.page_start ?? item.page ?? range?.[0]);
-  const end = Number(item.page_end ?? range?.[1]);
+  const pageObject =
+    item.pages && typeof item.pages === 'object' && !Array.isArray(item.pages)
+      ? (item.pages as Json)
+      : undefined;
+  const start = Number(item.page_start ?? item.page ?? range?.[0] ?? pageObject?.start);
+  const end = Number(item.page_end ?? range?.[1] ?? pageObject?.end);
   return {
     documentId,
     pageStart: Number.isInteger(start) && start > 0 ? start : undefined,
@@ -270,6 +282,7 @@ function section(raw: unknown, fallbackState: SectionState = 'source-limited'): 
   }
   const rawCitations = [
     ...(Array.isArray(item.citations) ? item.citations : []),
+    ...(Array.isArray(item.summary_citations) ? item.summary_citations : []),
     ...[...contentRecords, ...claims].flatMap((claim) =>
       claim &&
       typeof claim === 'object' &&
@@ -296,7 +309,12 @@ function normalizeGuide(raw: unknown, source: string): PublicGuide | undefined {
       ? (item.validation as Json)
       : {};
   const accepted = optionalString(
-    item.validation_status ?? item.status ?? item.state ?? validation.status ?? validation.result
+    item.validation_status ??
+      item.status ??
+      item.state ??
+      validation.state ??
+      validation.status ??
+      validation.result
   )?.toLowerCase();
   const acceptedBoolean = item.accepted === true || validation.accepted === true;
   if (
@@ -315,6 +333,7 @@ function normalizeGuide(raw: unknown, source: string): PublicGuide | undefined {
   const argumentRaw =
     sections.arguments ??
     sections.party_arguments ??
+    sections.party_positions ??
     (sections.petitioner || sections.respondent
       ? { Petitioner: sections.petitioner, Respondent: sections.respondent }
       : []);
@@ -347,7 +366,13 @@ function normalizeGuide(raw: unknown, source: string): PublicGuide | undefined {
       : [];
   return {
     caseId,
-    generatedAt: optionalString(item.generated_at ?? item.updated_at),
+    generatedAt: optionalString(
+      item.generated_at ??
+        item.updated_at ??
+        (item.generation && typeof item.generation === 'object' && !Array.isArray(item.generation)
+          ? (item.generation as Json).generated_at
+          : undefined)
+    ),
     overview: section(sections.overview),
     background: section(
       sections.background ?? sections.question ?? sections.background_and_question
@@ -357,7 +382,12 @@ function normalizeGuide(raw: unknown, source: string): PublicGuide | undefined {
     decision: section(sections.decision, 'pending'),
     significance: section(sections.significance ?? sections.why_it_matters),
     glossary,
-    sourceHashes: strings(item.source_hashes ?? item.sources)
+    sourceHashes: strings(
+      item.source_hashes ??
+        (item.generation && typeof item.generation === 'object' && !Array.isArray(item.generation)
+          ? (item.generation as Json).source_hashes
+          : undefined)
+    )
   };
 }
 
@@ -411,7 +441,9 @@ export async function loadCatalogAt(dataRoot: string, manifestRoot?: string): Pr
   }
   const caseRecords = await jsonRecords(resolve(dataRoot, 'cases'));
   const guideRecords = await jsonRecords(resolve(dataRoot, 'guides'));
-  const cases = caseRecords.map(({ value, source }) => normalizeCase(value, source, manifests));
+  const cases = caseRecords
+    .map(({ value, source }) => normalizeCase(value, source, manifests))
+    .filter((item): item is PublicCase => Boolean(item));
   const ids = new Set<string>();
   const slugs = new Set<string>();
   for (const item of cases) {

@@ -1,0 +1,214 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Various Justices",
+        "citations": [
+          {
+            "document_hash": "a4e0123e8dcad8f81811394cf804b00b777f08f484aaea3de6d500fa3743b4c4",
+            "evidence_ids": [
+              "ev-a4e0123e8dca-0001-0003",
+              "ev-a4e0123e8dca-0001-0005",
+              "ev-a4e0123e8dca-0001-0006",
+              "ev-a4e0123e8dca-0001-0008",
+              "ev-a4e0123e8dca-0001-0011",
+              "ev-a4e0123e8dca-0002-0001",
+              "ev-a4e0123e8dca-0002-0003",
+              "ev-a4e0123e8dca-0003-0001",
+              "ev-a4e0123e8dca-0003-0002",
+              "ev-a4e0123e8dca-0004-0000",
+              "ev-a4e0123e8dca-0004-0004",
+              "ev-a4e0123e8dca-0005-0000",
+              "ev-a4e0123e8dca-0005-0002",
+              "ev-a4e0123e8dca-0005-0004",
+              "ev-a4e0123e8dca-0006-0000"
+            ],
+            "pages": {
+              "end": 129,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justices asked questions about mootness, classification, scientific evidence, and the appropriate level of scrutiny."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2025-24-38",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.1",
+    "generated_at": "2026-09-18T05:11:42.366790Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.4+guide-1.0.6+verification-1.0.2",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a4e0123e8dcad8f81811394cf804b00b777f08f484aaea3de6d500fa3743b4c4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "awaiting_decision",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Ms. Hartnett",
+        "citations": [
+          {
+            "document_hash": "a4e0123e8dcad8f81811394cf804b00b777f08f484aaea3de6d500fa3743b4c4",
+            "evidence_ids": [
+              "ev-a4e0123e8dca-0003-0012"
+            ],
+            "pages": {
+              "end": 81,
+              "start": 81
+            }
+          }
+        ],
+        "text": "Ms. Hartnett argued that H.B. 500 fails heightened scrutiny as applied to transgender women who lack a biological advantage."
+      },
+      {
+        "attribution": "Various Justices",
+        "citations": [
+          {
+            "document_hash": "a4e0123e8dcad8f81811394cf804b00b777f08f484aaea3de6d500fa3743b4c4",
+            "evidence_ids": [
+              "ev-a4e0123e8dca-0001-0003",
+              "ev-a4e0123e8dca-0001-0005",
+              "ev-a4e0123e8dca-0001-0006",
+              "ev-a4e0123e8dca-0001-0008",
+              "ev-a4e0123e8dca-0001-0011",
+              "ev-a4e0123e8dca-0002-0001",
+              "ev-a4e0123e8dca-0002-0003",
+              "ev-a4e0123e8dca-0003-0001",
+              "ev-a4e0123e8dca-0003-0002",
+              "ev-a4e0123e8dca-0004-0000",
+              "ev-a4e0123e8dca-0004-0004",
+              "ev-a4e0123e8dca-0005-0000",
+              "ev-a4e0123e8dca-0005-0002",
+              "ev-a4e0123e8dca-0005-0004",
+              "ev-a4e0123e8dca-0006-0000"
+            ],
+            "pages": {
+              "end": 129,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justices asked a series of questions concerning mootness, classification, scientific uncertainty, and the level of scrutiny appropriate for the case."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioners' Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Hartnett",
+          "citations": [
+            {
+              "document_hash": "a4e0123e8dcad8f81811394cf804b00b777f08f484aaea3de6d500fa3743b4c4",
+              "evidence_ids": [
+                "ev-a4e0123e8dca-0003-0012"
+              ],
+              "pages": {
+                "end": 81,
+                "start": 81
+              }
+            }
+          ],
+          "text": "H.B. 500 fails heightened scrutiny as applied to Lindsay and transgender women who have no sex\u2011based biological advantage compared with birth\u2011sex females."
+        }
+      ],
+      "heading": "Respondents' Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a4e0123e8dcad8f81811394cf804b00b777f08f484aaea3de6d500fa3743b4c4",
+      "evidence_ids": [
+        "ev-a4e0123e8dca-0000-0003"
+      ],
+      "pages": {
+        "end": 135,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-18T05:17:10.083805Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "All material claims are supported by cited evidence; no missing attributions were found.",
+      "Consider adding a brief summary or citation for the Overview section (currently source_limited) to improve completeness.",
+      "The candidate correctly distinguishes between parties' positions and the Court\u2019s holding; no opinion\u2011distinction issues detected.",
+      "Oral\u2011argument questions are accurately characterized; no misrepresentation as votes or predictions.",
+      "No overstatements or speculative language were identified; the content remains restrained."
+    ],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

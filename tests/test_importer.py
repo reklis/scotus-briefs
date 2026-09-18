@@ -48,6 +48,32 @@ def test_import_verifies_jsonl_and_creates_unresolved_group(tmp_path: Path) -> N
     assert archived.read_bytes() == PDF
 
 
+def test_import_infers_group_above_document_type_directory(tmp_path: Path) -> None:
+    corpus = tmp_path / "corpus"
+    source = corpus / "opaque-uuid" / "transcript" / "file.pdf"
+    source.parent.mkdir(parents=True)
+    source.write_bytes(PDF)
+    digest = hashlib.sha256(PDF).hexdigest()
+    jsonl = tmp_path / "manifest.jsonl"
+    jsonl.write_text(
+        json.dumps(
+            {
+                "path": "opaque-uuid/transcript/file.pdf",
+                "sha256": digest,
+                "size": len(PDF),
+                "type": "transcript",
+            }
+        )
+        + "\n"
+    )
+    store = ManifestStore(tmp_path / "manifests/documents.json")
+
+    report = import_corpus(jsonl, corpus, tmp_path, store)
+
+    assert len(report.unresolved_case_ids) == 1
+    assert store.load().documents[0].cases[0].historical_group == "opaque-uuid"
+
+
 def test_import_rejects_checksum_mismatch_without_manifest_entry(tmp_path: Path) -> None:
     corpus = tmp_path / "corpus"
     corpus.mkdir()

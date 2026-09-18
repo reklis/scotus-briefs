@@ -36,8 +36,28 @@ def test_generate_retries_server_failure_and_sends_deterministic_options() -> No
     client = httpx.Client(transport=httpx.MockTransport(handler))
     ollama = OllamaClient("http://ollama", client=client, attempts=2, sleeper=lambda _: None)
     assert ollama.generate_json("prompt") == {"ok": True}
+    assert requests[-1]["messages"] == [{"role": "user", "content": "prompt"}]
     assert requests[-1]["stream"] is False
     assert requests[-1]["options"] == {"temperature": 0, "seed": 0, "num_ctx": 32768}
+
+
+def test_generate_reads_chat_message_content() -> None:
+    client = httpx.Client(
+        transport=httpx.MockTransport(
+            lambda request: httpx.Response(
+                200,
+                json={
+                    "message": {
+                        "role": "assistant",
+                        "content": '{"ok": true}',
+                        "thinking": "private reasoning",
+                    }
+                },
+                request=request,
+            )
+        )
+    )
+    assert OllamaClient("http://ollama", client=client).generate_json("prompt") == {"ok": True}
 
 
 def test_malformed_model_output_and_missing_model_fail_closed() -> None:

@@ -170,8 +170,14 @@ def _safe_source_path(root: Path, relative: str) -> Path:
 
 
 def _group_from_path(relative: str) -> str:
-    parent = Path(relative).parent.name
-    return parent if parent and parent != "." else "ungrouped"
+    """Recover the opaque case group from ``.../<group>/<type>/<file>.pdf`` paths."""
+    parts = Path(relative).parts
+    document_directories = {"opinion", "transcript", "order", "brief", "appendix"}
+    if len(parts) >= 3 and parts[-2].lower() in document_directories:
+        return parts[-3]
+    if len(parts) >= 2:
+        return parts[-2]
+    return "ungrouped"
 
 
 def _document_type(value: object) -> DocumentType:

@@ -1,0 +1,392 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "States",
+        "citations": [
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          },
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0000-0005"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The case concerns a presidential Executive Order that changes vote\u2011by\u2011mail systems, which the states argue is unconstitutional."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0002-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          },
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The legal question is whether the states have standing to challenge the order and whether the order should be enjoined."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2025-26a124",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0000-0002"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The Court granted the stay, halting the Executive Order\u2019s implementation."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0000-0005"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor, joined by Justice Kagan, dissented, noting that the decision does not address whether the President\u2019s attempts to interfere with the states\u2019 administration of the November\u202f2026 elections are lawful."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0001-0001"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, the dissent argued that the majority\u2019s reliance on speculative harm undermines scrutiny of executive actions affecting elections."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.1",
+    "generated_at": "2026-09-18T04:40:50.678915Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.4+guide-1.0.4+verification-1.0.2",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0000-0001"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The District Court had previously enjoined the government from implementing the Executive Order."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0000-0002"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          },
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0000-0007"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The Supreme Court granted a stay, effectively halting the order\u2019s implementation."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Applicants (Donald J. Trump and federal officials)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "States",
+          "citations": [
+            {
+              "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+              "evidence_ids": [
+                "ev-9729f21f8a18-0000-0003"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "The states argued that \u00a7\u00a7\u202f72 and\u202f3 of the Executive Order are unconstitutional and sought an injunction."
+        }
+      ],
+      "heading": "Respondents (California and other states)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+      "evidence_ids": [
+        "ev-9729f21f8a18-0000-0001"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+      "evidence_ids": [
+        "ev-9729f21f8a18-0000-0002"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+      "evidence_ids": [
+        "ev-9729f21f8a18-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+      "evidence_ids": [
+        "ev-9729f21f8a18-0000-0007"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 10
+      }
+    },
+    {
+      "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+      "evidence_ids": [
+        "ev-9729f21f8a18-0000-0005"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    },
+    {
+      "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+      "evidence_ids": [
+        "ev-9729f21f8a18-0001-0000"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 13
+      }
+    },
+    {
+      "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+      "evidence_ids": [
+        "ev-9729f21f8a18-0001-0001"
+      ],
+      "pages": {
+        "end": 14,
+        "start": 14
+      }
+    },
+    {
+      "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+      "evidence_ids": [
+        "ev-9729f21f8a18-0002-0003"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-18T04:50:46.580948Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "The claim in the 'Background and Question' section that the legal question is whether the states have standing and whether the order should be enjoined is attributed to the Court but is only supported by dissenting language (Justice Jackson) and a party argument; the attribution is incorrect and the claim lacks direct Court support.",
+      "All other claims are properly attributed and supported by the supplied evidence.",
+      "No oral\u2011argument material is presented as a vote or prediction; the oral\u2011argument section is correctly marked source_limited."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0001-0000"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, the case illustrates the Court\u2019s approach to standing in pre\u2011enforcement election challenges, emphasizing that a credible threat of enforcement can satisfy the injury requirement."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0001-0001"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          },
+          {
+            "document_hash": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+            "evidence_ids": [
+              "ev-9729f21f8a18-0002-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "The dissent warns that relying on speculative or hypothetical harm may allow executive actions that affect election administration to go unchecked."
+      }
+    ],
+    "heading": "Why it matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

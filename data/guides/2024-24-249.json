@@ -1,0 +1,443 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2024-24-249",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.1",
+    "generated_at": "2026-09-18T06:00:54.422304Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.4+guide-1.0.6+verification-1.0.2",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+      "c7f7f47ffad4432638caa73968012e870208d9f094db359790334a7d1832cfb7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether there is an argument embedded in the question about the applicable standard."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0000-0004"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked if, assuming no unique standard in the school context, the court on remand would decide which standard is appropriate."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0000-0005"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked for the difference between \u201cdeliberate indifference\u201d as defined by the Solicitor General and \u201cbad faith\u201d or \u201cgross misjudgment.\u201d"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0000-0007"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned the source of the tests, noting that mens rea is generally willfulness, which the statute does not mention."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0000-0009"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether other circuits have taken the view, indicating it may be a live issue in the lower courts."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0001-0006"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked if the Solicitor General\u2019s formulation of deliberate indifference was acceptable."
+      },
+      {
+        "attribution": "Justice ALITO",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Alito asked what impulse led many lower courts to adopt a standard the Court finds unsupported."
+      },
+      {
+        "attribution": "MS. REAVES",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Ms. Reaves testified that there was enough to go to trial because of deliberate indifference after repeated requests for an interpreter."
+      },
+      {
+        "attribution": "Justice ALITO",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0002-0006"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the IDEA\u2019s requirement to provide a free appropriate public education could be \u201cextremely expensive.\u201d"
+      },
+      {
+        "attribution": "Justice KAGAN",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0002-0005"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Justice Kagan asked what could properly happen below if the dual\u2011track approach is rejected and no standards for damages or injunctions are set."
+      },
+      {
+        "attribution": "Justice KAVANAUGH",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0002-0002"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked how the Court should deal with the lack of clear notice when the Solicitor General frames deliberate indifference as requiring actual knowledge of a substantially likely violation."
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0002-0003"
+            ],
+            "pages": {
+              "end": 64,
+              "start": 64
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether Mr. Martinez and the Solicitor General are lying."
+      },
+      {
+        "attribution": "Justice JACKSON",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0003-0000"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Jackson asked for at least one other circuit that has applied the bad\u2011faith standard in a different context."
+      },
+      {
+        "attribution": "Justice BARRETT",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0003-0002"
+            ],
+            "pages": {
+              "end": 67,
+              "start": 67
+            }
+          }
+        ],
+        "text": "According to Justice Barrett, justice Barrett noted that such a change would be a \u201csea change.\u201d"
+      },
+      {
+        "attribution": "Justice KAVANAUGH",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0003-0004"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh clarified that the definition of \u201cbad faith\u201d does not require animus."
+      },
+      {
+        "attribution": "Justice JACKSON",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0003-0006"
+            ],
+            "pages": {
+              "end": 74,
+              "start": 74
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, justice Jackson restated the question presented: whether the ADA and Rehabilitation Act require a uniquely stringent bad\u2011faith or gross\u2011misjudgment standard for relief."
+      },
+      {
+        "attribution": "Justice SOTOMAYOR",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0003-0009"
+            ],
+            "pages": {
+              "end": 85,
+              "start": 85
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor observed that nowhere else has \u201cdeliberate indifference\u201d or \u201cgross indifference\u201d been used to define intentional discrimination."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0004-0000"
+            ],
+            "pages": {
+              "end": 88,
+              "start": 88
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor noted that intent was not an issue because the plaintiffs already obtained an injunction under the IDEA."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+            "evidence_ids": [
+              "ev-9ff217544eaa-0004-0003"
+            ],
+            "pages": {
+              "end": 97,
+              "start": 97
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh questioned how one can know a federally protected right was substantially likely to be violated without knowing what the law provides."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioners' Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondents' Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb",
+      "evidence_ids": [
+        "ev-9ff217544eaa-0000-0003",
+        "ev-9ff217544eaa-0000-0004",
+        "ev-9ff217544eaa-0000-0005",
+        "ev-9ff217544eaa-0000-0007",
+        "ev-9ff217544eaa-0000-0009",
+        "ev-9ff217544eaa-0001-0006",
+        "ev-9ff217544eaa-0002-0000",
+        "ev-9ff217544eaa-0002-0001",
+        "ev-9ff217544eaa-0002-0006",
+        "ev-9ff217544eaa-0002-0005",
+        "ev-9ff217544eaa-0002-0002",
+        "ev-9ff217544eaa-0002-0003",
+        "ev-9ff217544eaa-0003-0000",
+        "ev-9ff217544eaa-0003-0002",
+        "ev-9ff217544eaa-0003-0004",
+        "ev-9ff217544eaa-0003-0006",
+        "ev-9ff217544eaa-0003-0009",
+        "ev-9ff217544eaa-0004-0000",
+        "ev-9ff217544eaa-0004-0003",
+        "ev-9ff217544eaa-0004-0004"
+      ],
+      "pages": {
+        "end": 105,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-18T06:08:15.694538Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "All oral\u2011argument claims are directly supported by the supplied transcript citations and correctly attributed to the justices or witness.",
+      "The claims are accurately presented as questions or statements made during oral argument, not as holdings or opinions of the Court.",
+      "No material overstatements or speculative assertions were found.",
+      "No revisions are required; the candidate meets the verification criteria."
+    ],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

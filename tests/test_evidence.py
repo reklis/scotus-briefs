@@ -117,6 +117,50 @@ def test_malformed_evidence_output_writes_failure_report(tmp_path: Path) -> None
     assert report["state"] == "failed"
 
 
+def test_evidence_accepts_layout_hyphenation_and_rejects_paraphrases(tmp_path: Path) -> None:
+    case, entry, digest = setup_source(tmp_path)
+    model = FakeOllama(
+        {
+            "records": [
+                {
+                    "evidence_id": "exact",
+                    "case_id": case.case_id,
+                    "document_hash": digest,
+                    "pages": {"start": 1, "end": 1},
+                    "kind": "fact",
+                    "attribution": "Source",
+                    "text": "The order concerns election integrity.",
+                    "confidence": 1,
+                    "status": "supported",
+                    "opinion_part": None,
+                },
+                {
+                    "evidence_id": "paraphrase",
+                    "case_id": case.case_id,
+                    "document_hash": digest,
+                    "pages": {"start": 1, "end": 1},
+                    "kind": "fact",
+                    "attribution": "Source",
+                    "text": "The President changed election rules.",
+                    "confidence": 1,
+                    "status": "supported",
+                    "opinion_part": None,
+                },
+            ]
+        }
+    )
+    extractor = PdfTextExtractor(
+        minimum_characters=1,
+        page_reader=lambda _path: ["The order concerns election integ-\nrity."],
+    )
+
+    records = EvidenceGenerator(tmp_path, extractor, model).generate_document(  # type: ignore[arg-type]
+        case, entry
+    )
+
+    assert [record.text for record in records] == ["The order concerns election integrity."]
+
+
 def test_shared_document_keeps_case_scoped_evidence(tmp_path: Path) -> None:
     case, entry, digest = setup_source(tmp_path)
     extractor = PdfTextExtractor(

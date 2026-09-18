@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import tempfile
+import unicodedata
 from datetime import UTC, datetime
 from enum import StrEnum
 from pathlib import Path
@@ -68,6 +70,7 @@ class EvidenceGenerator:
         *,
         context_tokens: int = 32_768,
         reserved_tokens: int = 8_192,
+        max_chunk_tokens: int = 6_000,
         model_digest: str = "unknown",
     ) -> None:
         self.root = root
@@ -75,6 +78,7 @@ class EvidenceGenerator:
         self.ollama = ollama
         self.context_tokens = context_tokens
         self.reserved_tokens = reserved_tokens
+        self.max_chunk_tokens = max_chunk_tokens
         self.model_digest = model_digest
 
     def generate_document(
@@ -119,6 +123,9 @@ class EvidenceGenerator:
                 extracted.pages,
                 context_tokens=self.context_tokens,
                 reserved_tokens=self.reserved_tokens,
+                max_chunk_tokens=min(
+                    self.max_chunk_tokens, self.context_tokens - self.reserved_tokens
+                ),
             )
             resume_at = (
                 prior.completed_chunks
@@ -216,36 +223,75 @@ def _parse_evidence_payload(
     pages = {page.page_number: page for page in extracted.pages}
     records: list[EvidenceRecord] = []
     for index, raw in enumerate(payload["records"]):
-        record = EvidenceRecord.model_validate(raw)
-        if record.case_id != case.case_id or record.document_hash != extracted.document_hash:
-            raise OllamaResponseError("evidence output changed case or document identity")
-        if record.pages.start < start_page or record.pages.end > end_page:
-            raise OllamaResponseError("evidence citation is outside the supplied chunk")
-        cited_pages = [pages[number] for number in range(record.pages.start, record.pages.end + 1)]
-        if any(page.status == PageStatus.UNAVAILABLE for page in cited_pages):
-            raise OllamaResponseError("evidence cites an unavailable page")
-        source_text = normalize_text("\n".join(page.text for page in cited_pages)).casefold()
-        quoted_text = normalize_text(record.text).casefold()
-        if not quoted_text or quoted_text not in source_text:
-            raise OllamaResponseError("evidence text is not present on the cited source pages")
-        parts = {page.opinion_part.value for page in cited_pages if page.opinion_part}
-        if record.opinion_part and record.opinion_part not in parts:
-            raise OllamaResponseError("evidence opinion part conflicts with page classification")
-        if record.kind == EvidenceKind.HOLDING and not parts.intersection(
-            {OpinionPart.MAJORITY.value, OpinionPart.PLURALITY.value, OpinionPart.PER_CURIAM.value}
-        ):
-            raise OllamaResponseError("holding evidence is not from a controlling opinion part")
-        update: dict[str, object] = {
-            "evidence_id": f"ev-{extracted.document_hash[:12]}-{chunk_index:04d}-{index:04d}"
-        }
-        if not extracted.classification_confident and record.kind in {
-            EvidenceKind.HOLDING,
-            EvidenceKind.PARTY_ARGUMENT,
-            EvidenceKind.AMICUS_ARGUMENT,
-        }:
-            update["status"] = EvidenceStatus.UNCERTAIN
-        records.append(record.model_copy(update=update))
+        try:
+            record = EvidenceRecord.model_validate(raw)
+            if record.case_id != case.case_id or record.document_hash != extracted.document_hash:
+                raise OllamaResponseError("evidence output changed case or document identity")
+            if record.pages.start < start_page or record.pages.end > end_page:
+                raise OllamaResponseError("evidence citation is outside the supplied chunk")
+            cited_pages = [
+                pages[number] for number in range(record.pages.start, record.pages.end + 1)
+            ]
+            if any(page.status == PageStatus.UNAVAILABLE for page in cited_pages):
+                raise OllamaResponseError("evidence cites an unavailable page")
+            source_text = _quotation_key("\n".join(page.text for page in cited_pages))
+            quoted_text = _quotation_key(record.text)
+            if not quoted_text or quoted_text not in source_text:
+                raise OllamaResponseError(
+                    "evidence text is not present as a contiguous passage on the cited pages"
+                )
+            parts = {page.opinion_part.value for page in cited_pages if page.opinion_part}
+            page_attributions = {
+                page.attribution.strip() for page in cited_pages if page.attribution
+            }
+            if record.opinion_part and record.opinion_part not in parts:
+                raise OllamaResponseError(
+                    "evidence opinion part conflicts with page classification"
+                )
+            if record.kind in {EvidenceKind.PARTY_ARGUMENT, EvidenceKind.AMICUS_ARGUMENT} and (
+                record.attribution.strip().casefold() in {"court", "source"}
+            ):
+                raise OllamaResponseError("argument evidence must name the arguing party")
+            if record.kind == EvidenceKind.HOLDING and not parts.intersection(
+                {
+                    OpinionPart.MAJORITY.value,
+                    OpinionPart.PLURALITY.value,
+                    OpinionPart.PER_CURIAM.value,
+                }
+            ):
+                raise OllamaResponseError("holding evidence is not from a controlling opinion part")
+            update: dict[str, object] = {
+                "evidence_id": f"ev-{extracted.document_hash[:12]}-{chunk_index:04d}-{index:04d}"
+            }
+            if record.opinion_part is None and len(parts) == 1:
+                update["opinion_part"] = next(iter(parts))
+            if record.kind in {
+                EvidenceKind.HOLDING,
+                EvidenceKind.CONCURRENCE,
+                EvidenceKind.DISSENT,
+            } and len(page_attributions) == 1:
+                update["attribution"] = next(iter(page_attributions))
+            if not extracted.classification_confident and record.kind in {
+                EvidenceKind.HOLDING,
+                EvidenceKind.PARTY_ARGUMENT,
+                EvidenceKind.AMICUS_ARGUMENT,
+            }:
+                update["status"] = EvidenceStatus.UNCERTAIN
+            records.append(record.model_copy(update=update))
+        except (KeyError, ValidationError, OllamaResponseError):
+            # Reject an unsupported model claim without discarding other exact,
+            # independently verifiable passages from the same response.
+            continue
+    # A chunk may contain only paraphrased or malformed suggestions. Treat it as
+    # having no supported evidence so later chunks can still make progress.
     return records
+
+
+def _quotation_key(text: str) -> str:
+    """Normalize layout artifacts while retaining a strict contiguous-quote check."""
+    value = unicodedata.normalize("NFKC", normalize_text(text))
+    value = re.sub(r"(?<=\w)-\s+(?=\w)", "", value)
+    return " ".join(value.split()).casefold()
 
 
 def _unavailable_records(case_id: str, extracted: ExtractedDocument) -> list[EvidenceRecord]:

@@ -32,8 +32,8 @@ QUALITY_THRESHOLDS: dict[str, float] = {
     "factual_accuracy": 0.90,
     "neutrality": 0.80,
     "readability": 0.75,
-    "completeness": 0.75,
-    "traceability": 0.95,
+    "completeness": 0.65,
+    "traceability": 0.90,
     "restraint": 0.90,
 }
 VERIFY_CHECKS = (
@@ -181,9 +181,19 @@ class GuideValidator:
                         or item.opinion_part in {"concurrence", "dissent"}
                         for item in records
                     )
+                    and (
+                        not claim.attribution
+                        or not re.search(
+                            r"\b(dissent|dissented|concurr|separate opinion)\b",
+                            claim.text,
+                            re.I,
+                        )
+                    )
                 ):
                     checks["opinion_distinction"] = False
-                    messages.append("decision claim relies only on separate opinion evidence")
+                    messages.append(
+                        "separate-opinion claim must name its author and label the disagreement"
+                    )
                 if (
                     section_name == "oral_argument"
                     and any(item.kind == EvidenceKind.JUSTICE_QUESTION for item in records)

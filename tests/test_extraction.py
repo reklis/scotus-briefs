@@ -68,6 +68,22 @@ def test_opinion_parts_and_authors_carry_across_pages(tmp_path: Path) -> None:
     assert result.pages[3].attribution == "Justice Beta"
 
 
+def test_opinion_header_not_body_reference_controls_author(tmp_path: Path) -> None:
+    path, digest = pdf(tmp_path)
+    pages = [
+        "SOTOMAYOR, J., dissenting\nJustice and the legal system are discussed. "
+        + "reasoning " * 10,
+        "SOTOMAYOR, J., dissenting\nContinued dissent reasoning. " + "analysis " * 10,
+    ]
+    result = PdfTextExtractor(page_reader=lambda _path: pages).extract(
+        path, digest, DocumentType.OPINION
+    )
+    assert [page.attribution for page in result.pages] == [
+        "Justice Sotomayor",
+        "Justice Sotomayor",
+    ]
+
+
 def test_chunking_is_page_aware_bounded_and_deterministic(tmp_path: Path) -> None:
     path, digest = pdf(tmp_path)
     extracted = PdfTextExtractor(

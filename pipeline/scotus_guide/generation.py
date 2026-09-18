@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -16,6 +17,7 @@ from .models import (
     SCHEMA_VERSION,
     CitizenGuide,
     DocumentManifest,
+    EvidenceKind,
     EvidenceRecord,
     EvidenceStatus,
     GenerationProvenance,
@@ -31,9 +33,16 @@ from .prompts import (
     EVIDENCE_PROMPT_VERSION,
     PROMPT_VERSION,
     consolidation_prompt,
+    revision_prompt,
     synthesis_prompt,
 )
-from .validation import GuideValidator, adversarial_verify, publish_candidate
+from .validation import (
+    GuideValidator,
+    ModelVerification,
+    adversarial_verify,
+    publish_candidate,
+    verification_checks,
+)
 
 
 class GuideGenerationError(RuntimeError):
@@ -112,57 +121,30 @@ class GuideGenerator:
                 synthesis_prompt(case, bounded),
                 schema=CitizenGuide.model_json_schema(mode="validation"),
             )
-            if not isinstance(raw, dict):
-                raise OllamaResponseError("guide response must be a JSON object")
-            raw.update(
-                {
-                    "case_id": case.case_id,
-                    "lifecycle": case.lifecycle,
-                    "generation": provenance.model_dump(mode="json"),
-                    "validation": ValidationResult(
-                        state=ValidationState.CANDIDATE,
-                        checked_at=datetime.now(UTC),
-                        checks={},
-                    ).model_dump(mode="json"),
-                }
-            )
-            if case.lifecycle != Lifecycle.DECIDED:
-                raw["decision"] = GuideSection(
-                    status=SectionStatus.PENDING,
-                    heading="Decision",
-                ).model_dump(mode="json")
-            candidate = CitizenGuide.model_validate(raw)
-            deterministic = GuideValidator(self.root).deterministic(
-                case, candidate, bounded, manifest
-            )
-            if deterministic.state == ValidationState.REJECTED:
-                # Do not spend another request verifying a deterministically invalid guide.
-                from .validation import ModelVerification
-
-                failed_model = ModelVerification(
-                    checks={
-                        name: False
-                        for name in (
-                            "support",
-                            "attribution",
-                            "opinion_distinction",
-                            "oral_argument_characterization",
-                            "overstatement",
+            candidate = _candidate(raw, case, provenance, bounded)
+            validator = GuideValidator(self.root)
+            for attempt in range(4):
+                deterministic = validator.deterministic(case, candidate, bounded, manifest)
+                if deterministic.state == ValidationState.REJECTED:
+                    model_result = _failed_model_result(deterministic.messages)
+                    feedback = deterministic.messages
+                else:
+                    model_result = adversarial_verify(self.ollama, case, candidate, bounded)
+                    if all(verification_checks(model_result).values()):
+                        return publish_candidate(
+                            self.root, case, candidate, deterministic, model_result
                         )
-                    },
-                    scores={
-                        "factual_accuracy": 0,
-                        "neutrality": 0,
-                        "readability": 0,
-                        "completeness": 0,
-                        "traceability": 0,
-                        "restraint": 0,
-                    },
-                    messages=["Adversarial verification skipped after deterministic failure"],
+                    feedback = model_result.messages
+                if attempt == 3:
+                    return publish_candidate(
+                        self.root, case, candidate, deterministic, model_result
+                    )
+                revised = self.ollama.generate_json(
+                    revision_prompt(case, candidate, bounded, feedback),
+                    schema=CitizenGuide.model_json_schema(mode="validation"),
                 )
-                return publish_candidate(self.root, case, candidate, deterministic, failed_model)
-            model_result = adversarial_verify(self.ollama, case, candidate, bounded)
-            return publish_candidate(self.root, case, candidate, deterministic, model_result)
+                candidate = _candidate(revised, case, provenance, bounded)
+            raise AssertionError("unreachable guide revision loop")
         except (ValidationError, ValueError, OllamaError) as error:
             raise GuideGenerationError(str(error)) from error
 
@@ -181,6 +163,123 @@ class GuideGenerator:
                 )
             current = consolidated
         return current
+
+
+def _candidate(
+    raw: Any,
+    case: NormalizedCase,
+    provenance: GenerationProvenance,
+    evidence: list[EvidenceRecord],
+) -> CitizenGuide:
+    if not isinstance(raw, dict):
+        raise OllamaResponseError("guide response must be a JSON object")
+    raw.update(
+        {
+            "case_id": case.case_id,
+            "lifecycle": case.lifecycle,
+            "generation": provenance.model_dump(mode="json"),
+            "validation": ValidationResult(
+                state=ValidationState.CANDIDATE,
+                checked_at=datetime.now(UTC),
+                checks={},
+            ).model_dump(mode="json"),
+        }
+    )
+    if case.lifecycle != Lifecycle.DECIDED:
+        raw["decision"] = GuideSection(
+            status=SectionStatus.PENDING,
+            heading="Decision",
+        ).model_dump(mode="json")
+    _make_attribution_explicit(raw, evidence)
+    return CitizenGuide.model_validate(raw)
+
+
+def _failed_model_result(messages: list[str]) -> ModelVerification:
+    return ModelVerification(
+        checks={
+            name: False
+            for name in (
+                "support",
+                "attribution",
+                "opinion_distinction",
+                "oral_argument_characterization",
+                "overstatement",
+            )
+        },
+        scores={
+            "factual_accuracy": 0,
+            "neutrality": 0,
+            "readability": 0,
+            "completeness": 0,
+            "traceability": 0,
+            "restraint": 0,
+        },
+        messages=["Adversarial verification skipped after deterministic failure", *messages],
+    )
+
+
+def _make_attribution_explicit(raw: dict[str, Any], evidence: list[EvidenceRecord]) -> None:
+    """Make source-required attribution visible in both metadata and reader prose."""
+    by_id = {item.evidence_id: item for item in evidence}
+    section_values: list[object] = [
+        raw.get("overview"),
+        raw.get("background_and_question"),
+        raw.get("oral_argument"),
+        raw.get("decision"),
+        raw.get("why_it_matters"),
+    ]
+    party_positions = raw.get("party_positions")
+    if isinstance(party_positions, list):
+        section_values.extend(party_positions)
+    attributed_kinds = {
+        EvidenceKind.ALLEGATION,
+        EvidenceKind.PARTY_ARGUMENT,
+        EvidenceKind.AMICUS_ARGUMENT,
+        EvidenceKind.JUSTICE_QUESTION,
+        EvidenceKind.CONCURRENCE,
+        EvidenceKind.DISSENT,
+    }
+    for section in section_values:
+        if not isinstance(section, dict) or not isinstance(section.get("claims"), list):
+            continue
+        for claim in section["claims"]:
+            if not isinstance(claim, dict):
+                continue
+            records: list[EvidenceRecord] = []
+            citations = claim.get("citations", [])
+            if not isinstance(citations, list):
+                continue
+            for citation in citations:
+                if not isinstance(citation, dict):
+                    continue
+                ids = citation.get("evidence_ids", [])
+                if isinstance(ids, list):
+                    records.extend(by_id[item] for item in ids if item in by_id)
+            requiring = [item for item in records if item.kind in attributed_kinds]
+            attributions = {
+                item.attribution.strip() for item in records if item.attribution.strip()
+            }
+            text = claim.get("text")
+            if not attributions and isinstance(claim.get("attribution"), str):
+                attributions = {claim["attribution"].strip()}
+            if len(attributions) > 1 and isinstance(text, str) and all(
+                attribution.casefold() in text.casefold() for attribution in attributions
+            ):
+                claim["attribution"] = "; ".join(sorted(attributions))
+                continue
+            if len(attributions) != 1:
+                continue
+            attribution = next(iter(attributions))
+            claim["attribution"] = attribution
+            if not requiring or not isinstance(text, str) or not text.strip():
+                continue
+            speech_verbs = r"argue|contend|say|ask|maintain|claim|warn|dissent|concur"
+            speech_pattern = (
+                rf"(?:\baccording to\s+{re.escape(attribution)}\b|"
+                rf"\b{re.escape(attribution)}\b.{{0,120}}\b({speech_verbs}))"
+            )
+            if not re.search(speech_pattern, text, re.I):
+                claim["text"] = f"According to {attribution}, {text[0].lower()}{text[1:]}"
 
 
 def _evidence_tokens(records: list[EvidenceRecord]) -> int:

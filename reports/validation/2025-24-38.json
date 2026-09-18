@@ -1,0 +1,42 @@
+{
+  "accepted": true,
+  "case_id": "2025-24-38",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": true,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "All material claims are supported by cited evidence; no missing attributions were found.",
+    "Consider adding a brief summary or citation for the Overview section (currently source_limited) to improve completeness.",
+    "The candidate correctly distinguishes between parties' positions and the Court\u2019s holding; no opinion\u2011distinction issues detected.",
+    "Oral\u2011argument questions are accurately characterized; no misrepresentation as votes or predictions.",
+    "No overstatements or speculative language were identified; the content remains restrained."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.99,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.95,
+    "traceability": 1.0
+  }
+}

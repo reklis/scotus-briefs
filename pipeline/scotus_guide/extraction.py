@@ -14,7 +14,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from .archive import hash_file
 from .models import DocumentType
 
-EXTRACTOR_VERSION = "1.0.0"
+EXTRACTOR_VERSION = "1.0.1"
 
 
 class PageStatus(StrEnum):
@@ -214,7 +214,13 @@ def classify_opinion_parts(pages: Sequence[ExtractedPage]) -> list[ExtractedPage
 def _opinion_heading(text: str) -> tuple[OpinionPart, str | None] | None:
     normalized = " ".join(text.split())
     upper = normalized.upper()
-    author_match = re.search(r"JUSTICE\s+([A-Z][A-Z'-]+)", upper)
+    short_heading = re.search(
+        r"\b([A-Z][A-Z'-]+),\s*J\.,\s*(?:CONCURRING|DISSENTING)", upper
+    )
+    justice_heading = re.search(
+        r"\bJUSTICE\s+([A-Z][A-Z'-]+)(?=,|\s+WITH\b|\s+DELIVERED\b)", upper
+    )
+    author_match = short_heading or justice_heading
     author = f"Justice {author_match.group(1).title()}" if author_match else None
     if "PER CURIAM" in upper:
         return OpinionPart.PER_CURIAM, "Court"
