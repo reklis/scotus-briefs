@@ -11,7 +11,7 @@ from pydantic import BaseModel, ConfigDict, Field, HttpUrl, model_validator
 
 SCHEMA_VERSION = "1.0.0"
 Sha256 = Annotated[str, Field(pattern=r"^[0-9a-f]{64}$")]
-DocketNumber = Annotated[str, Field(pattern=r"^(?:\d{2,4}-\d+|\d{2,4}[A-Z]\d+)$")]
+DocketNumber = Annotated[str, Field(pattern=r"^(?:\d{2,4}-\d+|\d{2,4}[A-Z]\d+|\d+O)$")]
 
 
 class ContractModel(BaseModel):

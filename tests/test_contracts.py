@@ -7,12 +7,13 @@ from pathlib import Path
 
 import jsonschema
 import pytest
-from pydantic import ValidationError
+from pydantic import TypeAdapter, ValidationError
 from scotus_guide.cli import _schema_with_invariants
 from scotus_guide.models import (
     CANONICAL_MODELS,
     CaseDates,
     CitizenGuide,
+    DocketNumber,
     DocumentManifest,
     DocumentManifestEntry,
     DocumentType,
@@ -50,6 +51,13 @@ def test_manifest_contract_enforces_content_path_and_unique_hash() -> None:
         entry.model_copy(update={"archive_path": "documents/wrong.pdf"}).model_validate(
             {**entry.model_dump(), "archive_path": "documents/wrong.pdf"}
         )
+
+
+def test_docket_contract_accepts_canonical_original_jurisdiction_dockets() -> None:
+    adapter = TypeAdapter(DocketNumber)
+    assert adapter.validate_python("65O") == "65O"
+    with pytest.raises(ValidationError):
+        adapter.validate_python("No. 65, Orig.")
 
 
 def test_case_requires_real_or_unresolved_identity_and_decision_date() -> None:

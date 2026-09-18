@@ -11,6 +11,25 @@ from hashlib import sha256
 _PREFIX_RE = re.compile(r"^(?:(?:docket|nos?\.?)\s+)", re.IGNORECASE)
 _STANDARD_RE = re.compile(r"^(?P<term>\d{2,4})-(?P<number>\d+)$")
 _LETTER_RE = re.compile(r"^(?P<term>\d{2,4})(?P<letter>[A-Z])(?P<number>\d+)$")
+_ORIGINAL_RE = re.compile(r"^(?P<number>\d+)O$")
+_ORIGINAL_LABEL_RE = re.compile(r"^(?P<number>\d+)(?:\s*,\s*|\s+)ORIG(?:INAL)?\.?$")
+_DASH_SPACING_RE = re.compile(r"\s*-\s*")
+_DOCKET_CHARACTER_TRANSLATION = str.maketrans(
+    {
+        "\N{NO-BREAK SPACE}": " ",
+        "\N{SOFT HYPHEN}": "-",
+        "\N{HYPHEN}": "-",
+        "\N{NON-BREAKING HYPHEN}": "-",
+        "\N{FIGURE DASH}": "-",
+        "\N{EN DASH}": "-",
+        "\N{EM DASH}": "-",
+        "\N{HORIZONTAL BAR}": "-",
+        "\N{MINUS SIGN}": "-",
+        "\N{SMALL EM DASH}": "-",
+        "\N{SMALL HYPHEN-MINUS}": "-",
+        "\N{FULLWIDTH HYPHEN-MINUS}": "-",
+    }
+)
 
 
 class DocketKind(IntEnum):
@@ -23,7 +42,7 @@ class DocketKind(IntEnum):
 @dataclass(frozen=True, slots=True)
 class ParsedDocket:
     canonical: str
-    term: int
+    term: int | None
     number: int
     kind: DocketKind
     letter: str = ""
@@ -36,14 +55,18 @@ class ParsedDocket:
 
 def normalize_docket(value: str) -> str:
     """Return the Court's compact docket form, rejecting ambiguous input."""
-    cleaned = value.strip().replace("\N{EN DASH}", "-").replace("\N{EM DASH}", "-").upper()
+    cleaned = value.translate(_DOCKET_CHARACTER_TRANSLATION).strip().upper()
     cleaned = _PREFIX_RE.sub("", cleaned).strip().rstrip(".,;")
+    cleaned = _DASH_SPACING_RE.sub("-", cleaned)
     match = _STANDARD_RE.fullmatch(cleaned)
     if match:
         return f"{int(match.group('term')):02d}-{int(match.group('number'))}"
     match = _LETTER_RE.fullmatch(cleaned)
     if match:
         return f"{int(match.group('term')):02d}{match.group('letter')}{int(match.group('number'))}"
+    match = _ORIGINAL_RE.fullmatch(cleaned) or _ORIGINAL_LABEL_RE.fullmatch(cleaned)
+    if match:
+        return f"{int(match.group('number'))}O"
     raise ValueError(f"unsupported Supreme Court docket number: {value!r}")
 
 
@@ -55,15 +78,18 @@ def parse_docket(value: str) -> ParsedDocket:
             canonical, int(match.group("term")), int(match.group("number")), DocketKind.STANDARD
         )
     match = _LETTER_RE.fullmatch(canonical)
+    if match:
+        letter = match.group("letter")
+        kind = {
+            "A": DocketKind.APPLICATION,
+            "O": DocketKind.ORIGINAL,
+        }.get(letter, DocketKind.OTHER_LETTER)
+        return ParsedDocket(
+            canonical, int(match.group("term")), int(match.group("number")), kind, letter
+        )
+    match = _ORIGINAL_RE.fullmatch(canonical)
     assert match is not None
-    letter = match.group("letter")
-    kind = {
-        "A": DocketKind.APPLICATION,
-        "O": DocketKind.ORIGINAL,
-    }.get(letter, DocketKind.OTHER_LETTER)
-    return ParsedDocket(
-        canonical, int(match.group("term")), int(match.group("number")), kind, letter
-    )
+    return ParsedDocket(canonical, None, int(match.group("number")), DocketKind.ORIGINAL, "O")
 
 
 def docket_sort_key(value: str) -> tuple[int, int, str]:

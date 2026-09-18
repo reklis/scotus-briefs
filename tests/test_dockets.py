@@ -15,6 +15,33 @@ def test_normalizes_standard_and_application_dockets() -> None:
     assert parse_docket("24A884").kind is DocketKind.APPLICATION
 
 
+@pytest.mark.parametrize(
+    "separator",
+    [
+        "\N{SOFT HYPHEN}",
+        "\N{HYPHEN}",
+        "\N{NON-BREAKING HYPHEN}",
+        "\N{FIGURE DASH}",
+        "\N{EM DASH}",
+        "\N{MINUS SIGN}",
+    ],
+)
+def test_normalizes_unicode_docket_separators_and_nbsp(separator: str) -> None:
+    label = f"No.\N{NO-BREAK SPACE}24\N{NO-BREAK SPACE}{separator}\N{NO-BREAK SPACE}007"
+    assert normalize_docket(label) == "24-7"
+
+
+def test_normalizes_original_jurisdiction_labels() -> None:
+    assert normalize_docket("No. 65, Orig.") == "65O"
+    assert normalize_docket("65 Original") == "65O"
+    parsed = parse_docket("65O")
+    assert parsed.kind is DocketKind.ORIGINAL
+    assert parsed.term is None
+    assert parsed.number == 65
+    with pytest.raises(ValueError):
+        normalize_docket("65Orig")
+
+
 def test_numeric_sort_and_consolidated_deduplication() -> None:
     dockets = ["24-304", "24A2", "24-38", "24-7", "24-007"]
     assert sorted(dockets, key=docket_sort_key) == ["24-7", "24-007", "24-38", "24-304", "24A2"]

@@ -279,7 +279,7 @@
     },
     "docket_numbers": {
       "items": {
-        "pattern": "^(?:\\d{2,4}-\\d+|\\d{2,4}[A-Z]\\d+)$",
+        "pattern": "^(?:\\d{2,4}-\\d+|\\d{2,4}[A-Z]\\d+|\\d+O)$",
         "type": "string"
       },
       "title": "Docket Numbers",
@@ -306,7 +306,7 @@
     "primary_docket": {
       "anyOf": [
         {
-          "pattern": "^(?:\\d{2,4}-\\d+|\\d{2,4}[A-Z]\\d+)$",
+          "pattern": "^(?:\\d{2,4}-\\d+|\\d{2,4}[A-Z]\\d+|\\d+O)$",
           "type": "string"
         },
         {
