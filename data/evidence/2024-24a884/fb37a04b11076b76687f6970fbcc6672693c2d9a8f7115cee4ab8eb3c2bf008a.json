@@ -11,20 +11,52 @@
       "kind": "party_argument",
       "opinion_part": null,
       "pages": {
-        "end": 3,
-        "start": 3
+        "end": 2,
+        "start": 2
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "The Government is likely to succeed on the merits of its claim that the District Courts lacked authority to issue universal injunctions."
+      "text": "The Government argues that the District Courts lacked equitable authority to impose universal relief"
+    },
+    {
+      "attribution": "Plaintiffs",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0000-0002",
+      "kind": "allegation",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The plaintiffs allege that the Executive Order violates the Fourteenth Amendment's Citizenship Clause, \u00a7 1, and \u00a7 201 of the Nationality Act of 1940."
     },
     {
       "attribution": "Court",
       "case_id": "2024-24a884",
       "confidence": 1.0,
       "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0000-0002",
-      "kind": "fact",
+      "evidence_id": "ev-fb37a04b1107-0000-0003",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Argued May 15, 2025\u2014Decided June 27, 2025"
+    },
+    {
+      "attribution": "Respondents",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0000-0005",
+      "kind": "party_argument",
       "opinion_part": null,
       "pages": {
         "end": 4,
@@ -32,14 +64,30 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "sider Scott v. Donald, where the plaintiff successfully challenged the constitutionality of a law on which state offcials had relied to confscate alcohol that the plaintiff kept for personal use. See 165 U. S. 107, 109 (statement of case); id., at 111\u2013112 (opinion of the Court). Although the plaintiff sought an injunction barring enforcement of the law against both himself and anyone \u201cwhose rights [were] infringed and threatened\u201d by it, the Court permitted only relief benefting the named plaintiff."
+      "text": "Respondents' counterarguments are unavailing."
     },
     {
-      "attribution": "The Coalition to Defend Affrmative Action et al.",
+      "attribution": "Court",
       "case_id": "2024-24a884",
       "confidence": 1.0,
       "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0000-0004",
+      "evidence_id": "ev-fb37a04b1107-0000-0009",
+      "kind": "stated_consequence",
+      "opinion_part": null,
+      "pages": {
+        "end": 6,
+        "start": 6
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "When a federal court enters a universal injunction against the Government, it \u201cimproper[ly] intru[des]\u201d on \u201ca coordinate branch of the Government\u201d"
+    },
+    {
+      "attribution": "Amici curiae (B. A. M. N.)",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0000-0006",
       "kind": "amicus_argument",
       "opinion_part": null,
       "pages": {
@@ -49,38 +97,6 @@
       "schema_version": "1.0.0",
       "status": "supported",
       "text": "Briefs of amici curiae urging the denial of the applications were fled in all cases for B. A. M. N. (The Coalition to Defend Affrmative Action et al.) by Shanta Driver;"
-    },
-    {
-      "attribution": "Justice Barrett",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0000-0005",
-      "kind": "procedural_event",
-      "opinion_part": "majority",
-      "pages": {
-        "end": 8,
-        "start": 8
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "Justice Barrett delivered the opinion of the Court."
-    },
-    {
-      "attribution": "Court",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0000-0006",
-      "kind": "fact",
-      "opinion_part": "majority",
-      "pages": {
-        "end": 9,
-        "start": 9
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "The applications before us concern three overlapping, universal preliminary injunctions entered by three different District Courts."
     },
     {
       "attribution": "Plaintiffs",
@@ -115,27 +131,11 @@
       "text": "The Government has now fled three nearly identical applications seeking to partially stay the universal preliminary injunctions and limit them to the parties."
     },
     {
-      "attribution": "Solicitor General",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0001-0002",
-      "kind": "party_argument",
-      "opinion_part": "majority",
-      "pages": {
-        "end": 11,
-        "start": 11
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "On multiple occasions, and across administrations, the Solicitor General has asked us to consider the propriety of this expansive remedy."
-    },
-    {
       "attribution": "Government",
       "case_id": "2024-24a884",
       "confidence": 1.0,
       "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0001-0003",
+      "evidence_id": "ev-fb37a04b1107-0001-0002",
       "kind": "party_argument",
       "opinion_part": "majority",
       "pages": {
@@ -151,11 +151,27 @@
       "case_id": "2024-24a884",
       "confidence": 1.0,
       "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0001-0003",
+      "kind": "holding",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 12,
+        "start": 12
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "A universal injunction can be justifed only as an exercise of equitable authority, yet Congress has granted federal courts no such power."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
       "evidence_id": "ev-fb37a04b1107-0001-0004",
       "kind": "holding",
       "opinion_part": "majority",
       "pages": {
-        "end": 14,
+        "end": 13,
         "start": 13
       },
       "schema_version": "1.0.0",
@@ -163,111 +179,47 @@
       "text": "The answer is no: Neither the universal injunction nor any analogous form of relief was available in the High Court of Chancery in England at the time of the founding."
     },
     {
-      "attribution": "Court",
+      "attribution": "Respondents",
       "case_id": "2024-24a884",
       "confidence": 1.0,
       "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0001-0005",
-      "kind": "holding",
+      "evidence_id": "ev-fb37a04b1107-0001-0006",
+      "kind": "party_argument",
       "opinion_part": "majority",
       "pages": {
-        "end": 18,
-        "start": 18
+        "end": 19,
+        "start": 19
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "Because the universal injunction lacks a historical pedigree, it falls outside the bounds of a federal court's equitable authority under the Judiciary Act."
+      "text": "Universal injunctions are analogous to this traditional equitable device, respondents say, so federal courts have authority under the Judiciary Act to issue them."
     },
     {
-      "attribution": "Justice Barrett",
+      "attribution": "Respondents",
       "case_id": "2024-24a884",
       "confidence": 1.0,
       "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0002-0004",
-      "kind": "fact",
+      "evidence_id": "ev-fb37a04b1107-0002-0000",
+      "kind": "party_argument",
       "opinion_part": "majority",
       "pages": {
-        "end": 20,
+        "end": 21,
         "start": 20
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "Rule 23 requires numerosity (such that joinder is impracticable), common questions of law or fact, typicality, and representative parties who adequately protect the interests of the class. Fed. Rule Civ. Proc. 23(a)."
-    },
-    {
-      "attribution": "Court",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0002-0002",
-      "kind": "holding",
-      "opinion_part": "majority",
-      "pages": {
-        "end": 28,
-        "start": 27
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "Thus, under the Judiciary Act, federal courts lack authority to issue them."
-    },
-    {
-      "attribution": "Justice Barrett",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0003-0004",
-      "kind": "procedural_event",
-      "opinion_part": "majority",
-      "pages": {
-        "end": 30,
-        "start": 30
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "Finally, the Government must show a likelihood that it will suffer irreparable harm absent a stay."
-    },
-    {
-      "attribution": "Government",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0003-0003",
-      "kind": "party_argument",
-      "opinion_part": "majority",
-      "pages": {
-        "end": 32,
-        "start": 32
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "The Government's applications to partially stay the preliminary injunctions are granted, but only to the extent that the injunctions are broader than necessary to provide complete relief to each plaintiff with standing to sue."
-    },
-    {
-      "attribution": "Justice Thomas",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0003-0000",
-      "kind": "concurrence",
-      "opinion_part": "concurrence",
-      "pages": {
-        "end": 34,
-        "start": 33
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "The Court today holds that federal courts may not issue so-called universal injunctions. I agree and join in full."
+      "text": "Respondents contend that universal injunctions\u2014or at least these universal injunctions\u2014are consistent with the principle that a court of equity may fashion a remedy that awards complete relief. See Opposition to Application in No. 24A884 ( CASA), at 22\u201325; Opposition to Application in"
     },
     {
       "attribution": "Justice Alito",
       "case_id": "2024-24a884",
       "confidence": 1.0,
       "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0003-0001",
+      "evidence_id": "ev-fb37a04b1107-0003-0002",
       "kind": "concurrence",
       "opinion_part": "concurrence",
       "pages": {
-        "end": 38,
+        "end": 37,
         "start": 37
       },
       "schema_version": "1.0.0",
@@ -288,14 +240,14 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "In justiciable cases, this Court, not the district courts or courts of appeals, will often still be the ultimate decisionmaker as to the interim legal status of major new federal statutes and executive actions\u2014that is, the interim legal status for the several-year period before a fnal decision on the merits."
+      "text": "in debates over the universal-injunction issue, those courts generally do not have the last word when they grant or deny preliminary injunctions. The courts of appeals and this Court can (and regularly do) expeditiously review district court decisions awarding or denying preliminary injunctive relief."
     },
     {
       "attribution": "Justice Sotomayor",
       "case_id": "2024-24a884",
       "confidence": 1.0,
       "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0004-0002",
+      "evidence_id": "ev-fb37a04b1107-0004-0001",
       "kind": "dissent",
       "opinion_part": "dissent",
       "pages": {
@@ -304,7 +256,7 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "applications for stays or injunctions with respect to major new federal statutes and executive actions. Deciding those applications is not a distraction from our job. It is a critical part of our job."
+      "text": "applications for stays or injunctions with respect to major new federal statutes and executive actions. Deciding those applications is not a distraction from our job. It is a critical part of our job. With that understanding, I join the Court's opinion in full."
     },
     {
       "attribution": "Justice Sotomayor",
@@ -320,14 +272,142 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "The Citizenship Clause provides that \u201c[a]ll persons born or naturalized in the United States and subject to the jurisdic-\ntion thereof, are citizens of the United States and of the State wherein they reside.\u201d U. S. Const., Amdt. 14, \u00a7 1."
+      "text": "To be \u201csubject to the jurisdiction\u201d of the United States means simply to be bound to its authority and its laws. See 1 N. Webster, An American Dictionary of the English Language 732 (C. Goodrich & N. Porter eds. 1865) (defning jurisdiction as the \u201c[p]ower of governing or legislating,\u201d or \u201cthe power or right of exercising authority\u201d)."
     },
     {
       "attribution": "Justice Sotomayor",
       "case_id": "2024-24a884",
       "confidence": 1.0,
       "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0006-0003",
+      "evidence_id": "ev-fb37a04b1107-0005-0001",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 53,
+        "start": 53
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Long before the Fourteenth Amendment, and indeed before the founding, the common-law rule of jus soli (literally, right of the soil) governed English citizenship."
+    },
+    {
+      "attribution": "Justice Sotomayor",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0005-0004",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 56,
+        "start": 56
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "the single additional exception of children of members of the Indian tribes owing direct allegiance to their several tribes,\u201d id., at 693."
+    },
+    {
+      "attribution": "Justice Sotomayor",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0005-0007",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 59,
+        "start": 59
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Respondents also sought a preliminary injunction barring enforcement of the Citizenship Order during the pendency of the litigation."
+    },
+    {
+      "attribution": "Justice Sotomayor",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0005-0008",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 60,
+        "start": 60
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "All three District Courts preliminarily enjoined enforcement of the Citizenship Order."
+    },
+    {
+      "attribution": "Justice Sotomayor",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0005-0009",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 61,
+        "start": 61
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The Government fled motions to stay the injunctions in three separate Courts of Appeals."
+    },
+    {
+      "attribution": "Justice Sotomayor",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0005-0010",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 62,
+        "start": 62
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "A stay, this Court has said, \u201c `is not a matter of right,' \u201d but rather \u201c `an exercise of judicial discretion.' \u201d"
+    },
+    {
+      "attribution": "Justice Sotomayor",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0006-0000",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 63,
+        "start": 63
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "It is a bedrock principle that parties who request a stay must show they will likely suffer irreparable harm absent such relief."
+    },
+    {
+      "attribution": "Justice Sotomayor",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0006-0001",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 64,
+        "start": 64
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The problem, however, is that the Executive Branch has no right to enforce the Citizenship Order against anyone."
+    },
+    {
+      "attribution": "Justice Sotomayor",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0006-0002",
       "kind": "dissent",
       "opinion_part": "dissent",
       "pages": {
@@ -336,7 +416,23 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "The universal injunctions of the Citizenship Order ft frmly within that tradition. The right to birthright citizenship is \u201cclear,\u201d the Citizenship Order is an \u201c `illegal act,' \u201d and without the \u201c `preventive process of injunction,' \u201d the right will be \u201c `irreparably injured.' \u201d Arthur v. Oakes, 63 F. 310, 328 (CA7 1894) (Harlan, J.) (describing standard for when an injunction should issue)."
+      "text": "The universal injunctions of the Citizenship Order ft frmly within that tradition."
+    },
+    {
+      "attribution": "Justice Sotomayor",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0007-0002",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 82,
+        "start": 82
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "the Massachusetts District Court \u201cdecided that a universal injunction was necessary to provide the States themselves with complete relief.\u201d"
     },
     {
       "attribution": "Justice Sotomayor",
@@ -352,119 +448,7 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "As an initial matter, the Government never raised those narrower injunctions to the District Courts, meaning it forfeited them. That is what the First Circuit expressly held, 131 F. 4th, at 43 (\u201cdeclining to consider\u201d those alternatives because they were \u201craised for [the] frst time . . . in support of stay pending appeal of preliminary injunction\u201d), and the majority does not dispute the point."
-    },
-    {
-      "attribution": "Justice Sotomayor",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0008-0001",
-      "kind": "dissent",
-      "opinion_part": "dissent",
-      "pages": {
-        "end": 84,
-        "start": 84
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "Such a system would also be incompatible with federal law. Some statutes, like those governing Medicaid and Supplemental Nutrition Assistance Program (SNAP) benefts, require States to give benefts only to applicants with a Social Security number and to use those numbers for certain administrative purposes."
-    },
-    {
-      "attribution": "Justice Sotomayor",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0008-0002",
-      "kind": "dissent",
-      "opinion_part": "dissent",
-      "pages": {
-        "end": 85,
-        "start": 85
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "Inexplicably, however, the Court declares that, for the associational and individual respondents, injunctions enjoining the Government from enforcing the Citizenship Order against them (and only them) would have suffced."
-    },
-    {
-      "attribution": "Justice Sotomayor",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0008-0005",
-      "kind": "dissent",
-      "opinion_part": "dissent",
-      "pages": {
-        "end": 88,
-        "start": 88
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "United States, for it purports to strip citizenship from the children of parents legally present on a temporary basis."
-    },
-    {
-      "attribution": "Justice Sotomayor",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0008-0006",
-      "kind": "dissent",
-      "opinion_part": "dissent",
-      "pages": {
-        "end": 89,
-        "start": 89
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "Appeals holding the Citizenship Order unlawful (except with respect to the plaintiffs in the suit), even within the relevant Circuit."
-    },
-    {
-      "attribution": "Justice Sotomayor",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0008-0007",
-      "kind": "dissent",
-      "opinion_part": "dissent",
-      "pages": {
-        "end": 90,
-        "start": 90
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "applications challenged only the scope of the preliminary injunctions."
-    },
-    {
-      "attribution": "Justice Sotomayor",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0008-0008",
-      "kind": "dissent",
-      "opinion_part": "dissent",
-      "pages": {
-        "end": 91,
-        "start": 91
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "That mechanism may provide some relief, but it is not a perfect substitute for a universal injunction."
-    },
-    {
-      "attribution": "Justice Jackson",
-      "case_id": "2024-24a884",
-      "confidence": 1.0,
-      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0008-0009",
-      "kind": "dissent",
-      "opinion_part": "dissent",
-      "pages": {
-        "end": 92,
-        "start": 92
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "The rule of law is not a given in this Nation, nor any other. It is a precept of our democracy that will endure only if those brave enough in every branch fght for its survival."
+      "text": "treat children covered by the Citizenship Order as eligible\nfor federally funded welfare benefts when those children re-\nside in a respondent State. See ibid. (citing Application for\nPartial Stay of Injunction in No. 24A884, p. 23)."
     },
     {
       "attribution": "Justice Jackson",
@@ -496,7 +480,7 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "May\n a federal court in the United States of America order\n the Executive to follow the law?"
+      "text": "May a federal court in the United States of America order the\nExecutive to follow the law?"
     },
     {
       "attribution": "Justice Jackson",
@@ -512,14 +496,14 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "The power to compel the Executive to follow the law is particularly vital where the relevant law is the Constitution."
+      "text": "The power to compel the Executive to follow the law is\nparticularly vital where the relevant law is the Constitution."
     },
     {
       "attribution": "Justice Jackson",
       "case_id": "2024-24a884",
       "confidence": 1.0,
       "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "evidence_id": "ev-fb37a04b1107-0009-0003",
+      "evidence_id": "ev-fb37a04b1107-0009-0004",
       "kind": "dissent",
       "opinion_part": "dissent",
       "pages": {
@@ -528,7 +512,7 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "What I mean by this is that our rights-based legal system can only function properly if the Executive, and everyone else, is always bound by law."
+      "text": "Our rights-based legal system can only function properly if the Executive, and everyone else, is always bound by law."
     },
     {
       "attribution": "Justice Jackson",
@@ -544,7 +528,23 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "has not yet sued carves out a huge exception\u2014a gash in the basic tenets of our founding charter that could turn out to be a mortal wound."
+      "text": "has not yet sued carves out a huge exception\u2014a gash in the basic tenets of our founding charter that could turn out to be a mortal wound. What is more, to me, requiring courts themselves to provide the dagger (by giving their imprima-\ntur to the Executive Branch's intermittent lawlessness) makes a mockery of the Judiciary's solemn duty to safeguard the rule of law."
+    },
+    {
+      "attribution": "Justice Jackson",
+      "case_id": "2024-24a884",
+      "confidence": 1.0,
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_id": "ev-fb37a04b1107-0010-0001",
+      "kind": "stated_consequence",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 105,
+        "start": 105
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Consequently, the zone of lawlessness the majority has now authorized will disproportionately impact the poor, the uneducated, and the unpopular\u2014i. e., those who may not have the wherewithal to lawyer up, and will all too often fnd themselves beholden to the Executive's whims."
     }
   ],
   "schema_version": "1.0.0"
