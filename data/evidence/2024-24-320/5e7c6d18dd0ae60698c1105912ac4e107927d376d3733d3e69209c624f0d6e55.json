@@ -1,0 +1,87 @@
+{
+  "case_id": "2024-24-320",
+  "document_hash": "5e7c6d18dd0ae60698c1105912ac4e107927d376d3733d3e69209c624f0d6e55",
+  "records": [
+    {
+      "attribution": "Simon Soto",
+      "case_id": "2024-24-320",
+      "confidence": 0.98,
+      "document_hash": "5e7c6d18dd0ae60698c1105912ac4e107927d376d3733d3e69209c624f0d6e55",
+      "evidence_id": "ev-5e7c6d18dd0a-0000-0002",
+      "kind": "party_argument",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "uncertain",
+      "text": "Soto fled a class-action lawsuit arguing that the Barring Act's 6-year limitations period does not apply to CRSC claims because the CRSC statute constitutes \u201canother law\u201d that provides its own settlement mechanism."
+    },
+    {
+      "attribution": "District Court",
+      "case_id": "2024-24-320",
+      "confidence": 0.99,
+      "document_hash": "5e7c6d18dd0ae60698c1105912ac4e107927d376d3733d3e69209c624f0d6e55",
+      "evidence_id": "ev-5e7c6d18dd0a-0000-0004",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The District Court granted summary judgment for the class, but the Federal Circuit reversed, holding that the CRSC statute does not explicitly grant settlement authority and therefore cannot displace the Barring Act."
+    },
+    {
+      "attribution": "United States",
+      "case_id": "2024-24-320",
+      "confidence": 0.97,
+      "document_hash": "5e7c6d18dd0ae60698c1105912ac4e107927d376d3733d3e69209c624f0d6e55",
+      "evidence_id": "ev-5e7c6d18dd0a-0000-0003",
+      "kind": "party_argument",
+      "opinion_part": null,
+      "pages": {
+        "end": 3,
+        "start": 3
+      },
+      "schema_version": "1.0.0",
+      "status": "uncertain",
+      "text": "The Government's arguments for affrmance are similarly unpersuasive, including its insistence on \u201challmark formulations\u201d to confer settlement authority and its concern about destabilizing Government programs."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2024-24-320",
+      "confidence": 0.99,
+      "document_hash": "5e7c6d18dd0ae60698c1105912ac4e107927d376d3733d3e69209c624f0d6e55",
+      "evidence_id": "ev-5e7c6d18dd0a-0000-0001",
+      "kind": "fact",
+      "opinion_part": null,
+      "pages": {
+        "end": 4,
+        "start": 4
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Title 31 U. S. C. \u00a7 3702, known as the Barring Act, establishes a default settlement regime for certain claims brought against the Government. The Barring Act subjects most claims to a 6-year limitations period."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2024-24-320",
+      "confidence": 1.0,
+      "document_hash": "5e7c6d18dd0ae60698c1105912ac4e107927d376d3733d3e69209c624f0d6e55",
+      "evidence_id": "ev-5e7c6d18dd0a-0001-0003",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 17,
+        "start": 17
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The judgment of the Court of Appeals is reversed, and the case is remanded for further proceedings consistent with this opinion."
+    }
+  ],
+  "schema_version": "1.0.0"
+}

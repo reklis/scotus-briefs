@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2024-24-304",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": true,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "The claim that \"Justice Alito asked whether the Ninth Circuit rule on material versus immaterial changes is jurisdictional\" is incorrectly attributed to \"Court\"; the evidence shows the question was asked by Justice Alito. Update the attribution to \"Justice Alito\".",
+    "All other claims are properly supported and attributed."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.9,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.95,
+    "traceability": 0.95
+  }
+}
