@@ -1,0 +1,376 @@
+{
+  "$defs": {
+    "CaseDates": {
+      "additionalProperties": false,
+      "properties": {
+        "argument": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Argument"
+        },
+        "decision": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Decision"
+        },
+        "filed": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Filed"
+        },
+        "granted": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Granted"
+        }
+      },
+      "title": "CaseDates",
+      "type": "object"
+    },
+    "CaseDocumentReference": {
+      "additionalProperties": false,
+      "properties": {
+        "current": {
+          "default": true,
+          "title": "Current",
+          "type": "boolean"
+        },
+        "document_type": {
+          "$ref": "#/$defs/DocumentType"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sha256",
+        "document_type"
+      ],
+      "title": "CaseDocumentReference",
+      "type": "object"
+    },
+    "DocumentType": {
+      "enum": [
+        "oral_argument_transcript",
+        "opinion",
+        "order",
+        "merits_brief",
+        "reply_brief",
+        "amicus_brief",
+        "petition",
+        "response",
+        "appendix",
+        "other",
+        "unknown"
+      ],
+      "title": "DocumentType",
+      "type": "string"
+    },
+    "Lifecycle": {
+      "enum": [
+        "pending",
+        "scheduled",
+        "argued",
+        "awaiting_decision",
+        "decided",
+        "dismissed",
+        "unresolved"
+      ],
+      "title": "Lifecycle",
+      "type": "string"
+    },
+    "MetadataProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "confidence": {
+          "default": 1.0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "document_hash": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Hash"
+        },
+        "field": {
+          "title": "Field",
+          "type": "string"
+        },
+        "method": {
+          "enum": [
+            "official",
+            "imported",
+            "extracted",
+            "manual"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "observed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Observed At"
+        },
+        "source_url": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Url"
+        }
+      },
+      "required": [
+        "field",
+        "method"
+      ],
+      "title": "MetadataProvenance",
+      "type": "object"
+    },
+    "Party": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "role": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Role"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Party",
+      "type": "object"
+    }
+  },
+  "$id": "https://scotusbriefs.us/schemas/normalized-case/1.0.0",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycle": {
+            "const": "decided"
+          }
+        },
+        "required": [
+          "lifecycle"
+        ]
+      },
+      "then": {
+        "properties": {
+          "dates": {
+            "required": [
+              "decision"
+            ]
+          }
+        },
+        "required": [
+          "dates"
+        ]
+      }
+    }
+  ],
+  "anyOf": [
+    {
+      "properties": {
+        "docket_numbers": {
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "properties": {
+        "unresolved_group": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "unresolved_group"
+      ]
+    }
+  ],
+  "properties": {
+    "aliases": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Aliases",
+      "type": "array"
+    },
+    "case_id": {
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Case Id",
+      "type": "string"
+    },
+    "dates": {
+      "$ref": "#/$defs/CaseDates"
+    },
+    "docket_numbers": {
+      "items": {
+        "pattern": "^(?:\\d{2,4}-\\d+|\\d{2,4}[A-Z]\\d+)$",
+        "type": "string"
+      },
+      "title": "Docket Numbers",
+      "type": "array",
+      "uniqueItems": true
+    },
+    "documents": {
+      "items": {
+        "$ref": "#/$defs/CaseDocumentReference"
+      },
+      "title": "Documents",
+      "type": "array"
+    },
+    "lifecycle": {
+      "$ref": "#/$defs/Lifecycle"
+    },
+    "parties": {
+      "items": {
+        "$ref": "#/$defs/Party"
+      },
+      "title": "Parties",
+      "type": "array"
+    },
+    "primary_docket": {
+      "anyOf": [
+        {
+          "pattern": "^(?:\\d{2,4}-\\d+|\\d{2,4}[A-Z]\\d+)$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Primary Docket"
+    },
+    "provenance": {
+      "items": {
+        "$ref": "#/$defs/MetadataProvenance"
+      },
+      "title": "Provenance",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "slug": {
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Slug",
+      "type": "string"
+    },
+    "term": {
+      "anyOf": [
+        {
+          "maximum": 2200,
+          "minimum": 1789,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Term"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "unresolved_group": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Unresolved Group"
+    }
+  },
+  "required": [
+    "case_id",
+    "slug",
+    "title",
+    "lifecycle"
+  ],
+  "title": "NormalizedCase",
+  "type": "object"
+}

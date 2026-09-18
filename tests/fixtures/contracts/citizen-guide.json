@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "scotus-24-7",
+  "lifecycle": "pending",
+  "overview": {
+    "status": "complete",
+    "heading": "Overview",
+    "summary": "A supported explanation.",
+    "claims": [],
+    "summary_citations": [
+      {
+        "document_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "pages": {
+          "start": 1,
+          "end": 1
+        },
+        "evidence_ids": [
+          "ev-1"
+        ]
+      }
+    ]
+  },
+  "background_and_question": {
+    "status": "complete",
+    "heading": "Overview",
+    "summary": "A supported explanation.",
+    "claims": [],
+    "summary_citations": [
+      {
+        "document_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "pages": {
+          "start": 1,
+          "end": 1
+        },
+        "evidence_ids": [
+          "ev-1"
+        ]
+      }
+    ]
+  },
+  "party_positions": [
+    {
+      "status": "complete",
+      "heading": "Overview",
+      "summary": "A supported explanation.",
+      "claims": [],
+      "summary_citations": [
+        {
+          "document_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "pages": {
+            "start": 1,
+            "end": 1
+          },
+          "evidence_ids": [
+            "ev-1"
+          ]
+        }
+      ]
+    }
+  ],
+  "oral_argument": {
+    "status": "pending",
+    "heading": "Decision",
+    "claims": []
+  },
+  "decision": {
+    "status": "pending",
+    "heading": "Decision",
+    "claims": []
+  },
+  "why_it_matters": {
+    "status": "complete",
+    "heading": "Overview",
+    "summary": "A supported explanation.",
+    "claims": [],
+    "summary_citations": [
+      {
+        "document_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "pages": {
+          "start": 1,
+          "end": 1
+        },
+        "evidence_ids": [
+          "ev-1"
+        ]
+      }
+    ]
+  },
+  "glossary": [],
+  "sources": [
+    {
+      "document_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "pages": {
+        "start": 1,
+        "end": 1
+      },
+      "evidence_ids": [
+        "ev-1"
+      ]
+    }
+  ],
+  "generation": {
+    "source_hashes": [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    ],
+    "model_name": "fixture",
+    "model_digest": "sha256:fixture",
+    "parameters": {},
+    "prompt_version": "1",
+    "schema_version": "1.0.0",
+    "extractor_version": "1",
+    "generated_at": "2025-01-01T00:00:00Z"
+  },
+  "validation": {
+    "state": "candidate",
+    "checked_at": "2025-01-01T00:00:00Z",
+    "checks": {
+      "schema": true
+    },
+    "messages": []
+  }
+}

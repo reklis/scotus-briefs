@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "documents": [
+    {
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "archive_path": "documents/aa/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.pdf",
+      "byte_size": 12,
+      "document_type": "opinion",
+      "retrieved_at": "2025-01-01T00:00:00Z",
+      "cases": [
+        {
+          "case_id": "scotus-24-7",
+          "docket_numbers": [
+            "24-7"
+          ]
+        }
+      ],
+      "media_type": "application/pdf",
+      "sources": [
+        {
+          "url": "https://www.supremecourt.gov/opinions/example.pdf"
+        }
+      ]
+    }
+  ]
+}

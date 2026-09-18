@@ -1,0 +1,434 @@
+{
+  "$defs": {
+    "Citation": {
+      "additionalProperties": false,
+      "properties": {
+        "document_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Document Hash",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "pages": {
+          "$ref": "#/$defs/PageRange"
+        }
+      },
+      "required": [
+        "document_hash",
+        "pages"
+      ],
+      "title": "Citation",
+      "type": "object"
+    },
+    "GenerationProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "extractor_version": {
+          "title": "Extractor Version",
+          "type": "string"
+        },
+        "generated_at": {
+          "format": "date-time",
+          "title": "Generated At",
+          "type": "string"
+        },
+        "model_digest": {
+          "title": "Model Digest",
+          "type": "string"
+        },
+        "model_name": {
+          "title": "Model Name",
+          "type": "string"
+        },
+        "parameters": {
+          "additionalProperties": true,
+          "title": "Parameters",
+          "type": "object"
+        },
+        "prompt_version": {
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "schema_version": {
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "source_hashes": {
+          "items": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Hashes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_hashes",
+        "model_name",
+        "model_digest",
+        "parameters",
+        "prompt_version",
+        "schema_version",
+        "extractor_version",
+        "generated_at"
+      ],
+      "title": "GenerationProvenance",
+      "type": "object"
+    },
+    "GlossaryEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "citations": {
+          "items": {
+            "$ref": "#/$defs/Citation"
+          },
+          "minItems": 1,
+          "title": "Citations",
+          "type": "array"
+        },
+        "definition": {
+          "title": "Definition",
+          "type": "string"
+        },
+        "term": {
+          "title": "Term",
+          "type": "string"
+        }
+      },
+      "required": [
+        "term",
+        "definition",
+        "citations"
+      ],
+      "title": "GlossaryEntry",
+      "type": "object"
+    },
+    "GuideSection": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "summary": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "summary"
+            ]
+          },
+          "then": {
+            "properties": {
+              "summary_citations": {
+                "minItems": 1
+              }
+            },
+            "required": [
+              "summary_citations"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "pending",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "claims": {
+                "maxItems": 0
+              },
+              "summary": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ],
+      "properties": {
+        "claims": {
+          "items": {
+            "$ref": "#/$defs/MaterialClaim"
+          },
+          "title": "Claims",
+          "type": "array"
+        },
+        "heading": {
+          "title": "Heading",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/SectionStatus"
+        },
+        "summary": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Summary"
+        },
+        "summary_citations": {
+          "items": {
+            "$ref": "#/$defs/Citation"
+          },
+          "title": "Summary Citations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "status",
+        "heading"
+      ],
+      "title": "GuideSection",
+      "type": "object"
+    },
+    "Lifecycle": {
+      "enum": [
+        "pending",
+        "scheduled",
+        "argued",
+        "awaiting_decision",
+        "decided",
+        "dismissed",
+        "unresolved"
+      ],
+      "title": "Lifecycle",
+      "type": "string"
+    },
+    "MaterialClaim": {
+      "additionalProperties": false,
+      "properties": {
+        "attribution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attribution"
+        },
+        "citations": {
+          "items": {
+            "$ref": "#/$defs/Citation"
+          },
+          "minItems": 1,
+          "title": "Citations",
+          "type": "array"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "citations"
+      ],
+      "title": "MaterialClaim",
+      "type": "object"
+    },
+    "PageRange": {
+      "additionalProperties": false,
+      "properties": {
+        "end": {
+          "minimum": 1,
+          "title": "End",
+          "type": "integer"
+        },
+        "start": {
+          "minimum": 1,
+          "title": "Start",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "title": "PageRange",
+      "type": "object"
+    },
+    "SectionStatus": {
+      "enum": [
+        "complete",
+        "pending",
+        "source_limited",
+        "not_applicable"
+      ],
+      "title": "SectionStatus",
+      "type": "string"
+    },
+    "ValidationResult": {
+      "additionalProperties": false,
+      "properties": {
+        "checked_at": {
+          "format": "date-time",
+          "title": "Checked At",
+          "type": "string"
+        },
+        "checks": {
+          "additionalProperties": {
+            "type": "boolean"
+          },
+          "title": "Checks",
+          "type": "object"
+        },
+        "messages": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Messages",
+          "type": "array"
+        },
+        "state": {
+          "$ref": "#/$defs/ValidationState"
+        }
+      },
+      "required": [
+        "state",
+        "checked_at",
+        "checks"
+      ],
+      "title": "ValidationResult",
+      "type": "object"
+    },
+    "ValidationState": {
+      "enum": [
+        "candidate",
+        "accepted",
+        "rejected"
+      ],
+      "title": "ValidationState",
+      "type": "string"
+    }
+  },
+  "$id": "https://scotusbriefs.us/schemas/citizen-guide/1.0.0",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycle": {
+            "not": {
+              "const": "decided"
+            }
+          }
+        },
+        "required": [
+          "lifecycle"
+        ]
+      },
+      "then": {
+        "properties": {
+          "decision": {
+            "properties": {
+              "status": {
+                "not": {
+                  "const": "complete"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "properties": {
+    "background_and_question": {
+      "$ref": "#/$defs/GuideSection"
+    },
+    "case_id": {
+      "title": "Case Id",
+      "type": "string"
+    },
+    "decision": {
+      "$ref": "#/$defs/GuideSection"
+    },
+    "generation": {
+      "$ref": "#/$defs/GenerationProvenance"
+    },
+    "glossary": {
+      "items": {
+        "$ref": "#/$defs/GlossaryEntry"
+      },
+      "title": "Glossary",
+      "type": "array"
+    },
+    "lifecycle": {
+      "$ref": "#/$defs/Lifecycle"
+    },
+    "oral_argument": {
+      "$ref": "#/$defs/GuideSection"
+    },
+    "overview": {
+      "$ref": "#/$defs/GuideSection"
+    },
+    "party_positions": {
+      "items": {
+        "$ref": "#/$defs/GuideSection"
+      },
+      "title": "Party Positions",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/Citation"
+      },
+      "minItems": 1,
+      "title": "Sources",
+      "type": "array"
+    },
+    "validation": {
+      "$ref": "#/$defs/ValidationResult"
+    },
+    "why_it_matters": {
+      "$ref": "#/$defs/GuideSection"
+    }
+  },
+  "required": [
+    "case_id",
+    "lifecycle",
+    "overview",
+    "background_and_question",
+    "party_positions",
+    "oral_argument",
+    "decision",
+    "why_it_matters",
+    "sources",
+    "generation",
+    "validation"
+  ],
+  "title": "CitizenGuide",
+  "type": "object"
+}

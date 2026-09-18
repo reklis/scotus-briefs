@@ -1,0 +1,129 @@
+{
+  "$defs": {
+    "EvidenceKind": {
+      "enum": [
+        "fact",
+        "allegation",
+        "party_argument",
+        "amicus_argument",
+        "procedural_event",
+        "justice_question",
+        "holding",
+        "concurrence",
+        "dissent",
+        "stated_consequence"
+      ],
+      "title": "EvidenceKind",
+      "type": "string"
+    },
+    "EvidenceStatus": {
+      "enum": [
+        "supported",
+        "uncertain",
+        "unavailable"
+      ],
+      "title": "EvidenceStatus",
+      "type": "string"
+    },
+    "PageRange": {
+      "additionalProperties": false,
+      "properties": {
+        "end": {
+          "minimum": 1,
+          "title": "End",
+          "type": "integer"
+        },
+        "start": {
+          "minimum": 1,
+          "title": "Start",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "title": "PageRange",
+      "type": "object"
+    }
+  },
+  "$id": "https://scotusbriefs.us/schemas/evidence/1.0.0",
+  "additionalProperties": false,
+  "properties": {
+    "attribution": {
+      "title": "Attribution",
+      "type": "string"
+    },
+    "case_id": {
+      "title": "Case Id",
+      "type": "string"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "document_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Document Hash",
+      "type": "string"
+    },
+    "evidence_id": {
+      "minLength": 1,
+      "title": "Evidence Id",
+      "type": "string"
+    },
+    "kind": {
+      "$ref": "#/$defs/EvidenceKind"
+    },
+    "opinion_part": {
+      "anyOf": [
+        {
+          "enum": [
+            "majority",
+            "plurality",
+            "concurrence",
+            "dissent",
+            "per_curiam"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Opinion Part"
+    },
+    "pages": {
+      "$ref": "#/$defs/PageRange"
+    },
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/EvidenceStatus"
+    },
+    "text": {
+      "title": "Text",
+      "type": "string"
+    }
+  },
+  "required": [
+    "evidence_id",
+    "case_id",
+    "document_hash",
+    "pages",
+    "kind",
+    "attribution",
+    "text",
+    "confidence",
+    "status"
+  ],
+  "title": "EvidenceRecord",
+  "type": "object"
+}

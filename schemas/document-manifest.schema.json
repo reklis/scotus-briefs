@@ -1,0 +1,248 @@
+{
+  "$defs": {
+    "CaseAssociation": {
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Case Id"
+        },
+        "docket_numbers": {
+          "items": {
+            "pattern": "^(?:\\d{2,4}-\\d+|\\d{2,4}[A-Z]\\d+)$",
+            "type": "string"
+          },
+          "title": "Docket Numbers",
+          "type": "array"
+        },
+        "historical_group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Historical Group"
+        }
+      },
+      "title": "CaseAssociation",
+      "type": "object"
+    },
+    "DocumentManifestEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "archive_path": {
+          "pattern": "^documents/[0-9a-f]{2}/[0-9a-f]{64}\\.pdf$",
+          "title": "Archive Path",
+          "type": "string"
+        },
+        "byte_size": {
+          "exclusiveMinimum": 0,
+          "title": "Byte Size",
+          "type": "integer"
+        },
+        "cases": {
+          "items": {
+            "$ref": "#/$defs/CaseAssociation"
+          },
+          "title": "Cases",
+          "type": "array"
+        },
+        "document_type": {
+          "$ref": "#/$defs/DocumentType"
+        },
+        "media_type": {
+          "const": "application/pdf",
+          "default": "application/pdf",
+          "title": "Media Type",
+          "type": "string"
+        },
+        "retrieved_at": {
+          "format": "date-time",
+          "title": "Retrieved At",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/SourceIdentity"
+          },
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
+        },
+        "supersedes": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Supersedes"
+        }
+      },
+      "required": [
+        "sha256",
+        "archive_path",
+        "byte_size",
+        "document_type",
+        "sources",
+        "retrieved_at"
+      ],
+      "title": "DocumentManifestEntry",
+      "type": "object"
+    },
+    "DocumentType": {
+      "enum": [
+        "oral_argument_transcript",
+        "opinion",
+        "order",
+        "merits_brief",
+        "reply_brief",
+        "amicus_brief",
+        "petition",
+        "response",
+        "appendix",
+        "other",
+        "unknown"
+      ],
+      "title": "DocumentType",
+      "type": "string"
+    },
+    "SourceIdentity": {
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "properties": {
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        {
+          "properties": {
+            "import_path": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "import_path"
+          ]
+        }
+      ],
+      "properties": {
+        "import_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Import Path"
+        },
+        "official_filename": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Official Filename"
+        },
+        "page_url": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Url"
+        },
+        "source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Id"
+        },
+        "url": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url"
+        }
+      },
+      "title": "SourceIdentity",
+      "type": "object"
+    }
+  },
+  "$id": "https://scotusbriefs.us/schemas/document-manifest/1.0.0",
+  "additionalProperties": false,
+  "properties": {
+    "documents": {
+      "items": {
+        "$ref": "#/$defs/DocumentManifestEntry"
+      },
+      "title": "Documents",
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "title": "DocumentManifest",
+  "type": "object"
+}
