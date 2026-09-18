@@ -186,6 +186,7 @@ jobs:
       - name: Generate and verify accepted guides
         id: generate
         if: steps.extract.outcome == 'success'
+        continue-on-error: true
         env:
           MODE: ${{ steps.options.outputs.mode }}
           BATCH_SIZE: ${{ steps.options.outputs.batch_size }}

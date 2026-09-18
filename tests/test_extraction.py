@@ -68,6 +68,33 @@ def test_opinion_parts_and_authors_carry_across_pages(tmp_path: Path) -> None:
     assert result.pages[3].attribution == "Justice Beta"
 
 
+def test_syllabus_references_do_not_start_separate_opinions(tmp_path: Path) -> None:
+    path, digest = pdf(tmp_path)
+    text = (
+        "Page Proof Pending Publication\nCase name\nSyllabus\n"
+        "Alito, J., filed a concurring opinion. Sotomayor, J., filed a dissenting opinion. "
+        + "syllabus text " * 10
+    )
+    result = PdfTextExtractor(page_reader=lambda _path: [text]).extract(
+        path, digest, DocumentType.OPINION
+    )
+    assert result.pages[0].opinion_part is None
+    assert result.pages[0].attribution is None
+
+
+def test_controlling_opinion_header_wins_over_body_citation(tmp_path: Path) -> None:
+    path, digest = pdf(tmp_path)
+    text = (
+        "Opinion of the Court\nJustice Alpha delivered the opinion of the Court. "
+        "See Example (Stras, J., concurring). " + "majority reasoning " * 10
+    )
+    result = PdfTextExtractor(page_reader=lambda _path: [text]).extract(
+        path, digest, DocumentType.OPINION
+    )
+    assert result.pages[0].opinion_part == OpinionPart.MAJORITY
+    assert result.pages[0].attribution == "Justice Alpha"
+
+
 def test_opinion_header_not_body_reference_controls_author(tmp_path: Path) -> None:
     path, digest = pdf(tmp_path)
     pages = [

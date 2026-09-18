@@ -266,6 +266,7 @@ def _parse_evidence_payload(
                 )
             if record.kind in {EvidenceKind.PARTY_ARGUMENT, EvidenceKind.AMICUS_ARGUMENT} and (
                 record.attribution.strip().casefold() in {"court", "source"}
+                or re.search(r"\breporting (?:corporation|company)\b", record.attribution, re.I)
             ):
                 raise OllamaResponseError("argument evidence must name the arguing party")
             controlling_parts = {
@@ -290,9 +291,10 @@ def _parse_evidence_payload(
                 update["opinion_part"] = next(iter(parts))
             if kind == EvidenceKind.HOLDING:
                 update["attribution"] = "Court"
-            elif kind in {EvidenceKind.CONCURRENCE, EvidenceKind.DISSENT} and len(
-                page_attributions
-            ) == 1:
+            elif (
+                kind in {EvidenceKind.CONCURRENCE, EvidenceKind.DISSENT}
+                and len(page_attributions) == 1
+            ):
                 update["attribution"] = next(iter(page_attributions))
             if not extracted.classification_confident and kind in {
                 EvidenceKind.HOLDING,

@@ -67,8 +67,16 @@ def test_invalid_model_citations_are_removed_before_validation() -> None:
             "claims": [
                 {"text": "Supported.", "citations": [valid]},
                 {"text": "Unsupported.", "citations": [invalid]},
+                {"text": "Decided April 29, 2025.", "citations": [valid]},
             ],
         },
+        "party_positions": [
+            {
+                "claims": [
+                    {"text": "A procedural fact is not a party argument.", "citations": [valid]}
+                ]
+            }
+        ],
         "glossary": [
             {"term": "Valid", "definition": "Supported.", "citations": [valid]},
             {"term": "Invalid", "definition": "Unsupported.", "citations": [invalid]},
@@ -79,6 +87,7 @@ def test_invalid_model_citations_are_removed_before_validation() -> None:
 
     assert [claim["text"] for claim in raw["overview"]["claims"]] == ["Supported."]
     assert raw["overview"]["summary"] is None
+    assert raw["party_positions"][0]["claims"] == []
     assert [entry["term"] for entry in raw["glossary"]] == ["Valid"]
 
 

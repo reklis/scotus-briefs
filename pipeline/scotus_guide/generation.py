@@ -195,9 +195,7 @@ def _candidate(
     return CitizenGuide.model_validate(raw)
 
 
-def _drop_invalid_cited_content(
-    raw: dict[str, Any], evidence: list[EvidenceRecord]
-) -> None:
+def _drop_invalid_cited_content(raw: dict[str, Any], evidence: list[EvidenceRecord]) -> None:
     """Remove model claims whose structured citations cannot pass deterministic checks."""
     by_id = {item.evidence_id: item for item in evidence}
 
@@ -228,33 +226,74 @@ def _drop_invalid_cited_content(
                 return False
         return True
 
-    sections: list[object] = [
-        raw.get("overview"),
-        raw.get("background_and_question"),
-        raw.get("oral_argument"),
-        raw.get("decision"),
-        raw.get("why_it_matters"),
+    def citation_records(citations: list[object]) -> list[EvidenceRecord]:
+        records: list[EvidenceRecord] = []
+        for citation in citations:
+            if not isinstance(citation, dict) or not isinstance(citation.get("evidence_ids"), list):
+                continue
+            records.extend(
+                by_id[item]
+                for item in citation["evidence_ids"]
+                if isinstance(item, str) and item in by_id
+            )
+        return records
+
+    date_pattern = re.compile(
+        r"\b(?:January|February|March|April|May|June|July|August|September|October|"
+        r"November|December)\s+\d{1,2}(?:,\s*|\s+)\d{4}\b",
+        re.I,
+    )
+
+    def valid_claim(value: object, *, party_position: bool) -> bool:
+        if not isinstance(value, dict) or not isinstance(value.get("citations"), list):
+            return False
+        citations = value["citations"]
+        if not citations or not all(valid_citation(item) for item in citations):
+            return False
+        records = citation_records(citations)
+        if party_position and any(
+            item.kind not in {EvidenceKind.PARTY_ARGUMENT, EvidenceKind.AMICUS_ARGUMENT}
+            for item in records
+        ):
+            return False
+        text = value.get("text")
+        if isinstance(text, str):
+            evidence_words = {
+                word.casefold()
+                for item in records
+                for word in re.findall(r"[A-Za-z]+|\d+", item.text)
+            }
+            for date in date_pattern.findall(text):
+                if not all(
+                    word.casefold() in evidence_words for word in re.findall(r"[A-Za-z]+|\d+", date)
+                ):
+                    return False
+        return True
+
+    sections: list[tuple[bool, object]] = [
+        (False, raw.get("overview")),
+        (False, raw.get("background_and_question")),
+        (False, raw.get("oral_argument")),
+        (False, raw.get("decision")),
+        (False, raw.get("why_it_matters")),
     ]
     party_positions = raw.get("party_positions")
     if isinstance(party_positions, list):
-        sections.extend(party_positions)
-    for section in sections:
+        sections.extend((True, item) for item in party_positions)
+    for party_position, section in sections:
         if not isinstance(section, dict):
             continue
         claims = section.get("claims")
         if isinstance(claims, list):
             section["claims"] = [
-                claim
-                for claim in claims
-                if isinstance(claim, dict)
-                and isinstance(claim.get("citations"), list)
-                and claim["citations"]
-                and all(valid_citation(item) for item in claim["citations"])
+                claim for claim in claims if valid_claim(claim, party_position=party_position)
             ]
         if section.get("summary"):
             citations = section.get("summary_citations")
-            if not isinstance(citations, list) or not citations or not all(
-                valid_citation(item) for item in citations
+            if (
+                not isinstance(citations, list)
+                or not citations
+                or not all(valid_citation(item) for item in citations)
             ):
                 section["summary"] = None
                 section["summary_citations"] = []
@@ -338,8 +377,10 @@ def _make_attribution_explicit(raw: dict[str, Any], evidence: list[EvidenceRecor
             text = claim.get("text")
             if not attributions and isinstance(claim.get("attribution"), str):
                 attributions = {claim["attribution"].strip()}
-            if len(attributions) > 1 and isinstance(text, str) and all(
-                attribution.casefold() in text.casefold() for attribution in attributions
+            if (
+                len(attributions) > 1
+                and isinstance(text, str)
+                and all(attribution.casefold() in text.casefold() for attribution in attributions)
             ):
                 claim["attribution"] = "; ".join(sorted(attributions))
                 continue

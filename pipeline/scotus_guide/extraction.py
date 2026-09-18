@@ -14,7 +14,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from .archive import hash_file
 from .models import DocumentType
 
-EXTRACTOR_VERSION = "1.0.2"
+EXTRACTOR_VERSION = "1.0.3"
 
 
 class PageStatus(StrEnum):
@@ -208,7 +208,13 @@ def classify_opinion_parts(pages: Sequence[ExtractedPage]) -> list[ExtractedPage
         heading = page.text[:1200]
         detected = _opinion_heading(heading)
         if detected is not None:
-            current_part, current_author = detected
+            detected_part, detected_author = detected
+            if detected_author is None and detected_part == current_part:
+                detected_author = current_author
+            current_part = detected_part
+            current_author = detected_author or (
+                "Court" if detected_part == OpinionPart.MAJORITY else None
+            )
         result.append(
             page.model_copy(update={"opinion_part": current_part, "attribution": current_author})
         )
@@ -216,26 +222,46 @@ def classify_opinion_parts(pages: Sequence[ExtractedPage]) -> list[ExtractedPage
 
 
 def _opinion_heading(text: str) -> tuple[OpinionPart, str | None] | None:
-    normalized = " ".join(text.split())
+    # Opinion PDFs repeat the operative label in the first few non-empty lines.
+    # Restrict detection to that header so body citations to separate opinions
+    # cannot change the classification of a controlling-opinion page.
+    header_lines = [line.strip() for line in text.splitlines() if line.strip()][:4]
+    normalized = " ".join(header_lines)
     upper = normalized.upper()
     short_heading = re.search(
-        r"\b([A-Z][A-Z'-]+),\s*J\.,\s*(?:CONCURRING|DISSENTING)", upper
+        r"\b([A-Z][A-Z'-]+),\s*J\.,\s*(CONCURRING|DISSENTING)\b", upper
     )
-    justice_heading = re.search(
-        r"\bJUSTICE\s+([A-Z][A-Z'-]+)(?=,|\s+WITH\b|\s+DELIVERED\b)", upper
+    justice_separate_heading = re.search(
+        r"\bJUSTICE\s+([A-Z][A-Z'-]+),?\s+(CONCURRING|DISSENTING)\b", upper
     )
-    author_match = short_heading or justice_heading
-    author = f"Justice {author_match.group(1).title()}" if author_match else None
+    separate_heading = short_heading or justice_separate_heading
+    separate_author = (
+        f"Justice {separate_heading.group(1).title()}" if separate_heading else None
+    )
+    separate_kind = separate_heading.group(2) if separate_heading else None
+    delivered_heading = re.search(
+        r"\bJUSTICE\s+([A-Z][A-Z'-]+)\s+DELIVERED\b|"
+        r"\b([A-Z][A-Z'-]+),\s*J\.,\s*DELIVERED\b",
+        upper,
+    )
+    delivered_name = (
+        next((group for group in delivered_heading.groups() if group), None)
+        if delivered_heading
+        else None
+    )
+    majority_author = f"Justice {delivered_name.title()}" if delivered_name else None
     if "PER CURIAM" in upper:
         return OpinionPart.PER_CURIAM, "Court"
-    if "DISSENTING" in upper or (author and re.search(r"\bDISSENT\b", upper)):
-        return OpinionPart.DISSENT, author
-    if re.search(r"\bCONCURRING\b", upper) or (author and re.search(r"\bCONCURRENCE\b", upper)):
-        return OpinionPart.CONCURRENCE, author
-    if "PLURALITY" in upper:
-        return OpinionPart.PLURALITY, author
+    # Running headers are stronger than citations to separate opinions in the
+    # page body. Check controlling-opinion markers before those citations.
     if "DELIVERED THE OPINION OF THE COURT" in upper or "OPINION OF THE COURT" in upper:
-        return OpinionPart.MAJORITY, author or "Court"
+        return OpinionPart.MAJORITY, majority_author
+    if separate_kind == "DISSENTING":
+        return OpinionPart.DISSENT, separate_author
+    if separate_kind == "CONCURRING":
+        return OpinionPart.CONCURRENCE, separate_author
+    if "PLURALITY" in upper:
+        return OpinionPart.PLURALITY, separate_author
     return None
 
 
