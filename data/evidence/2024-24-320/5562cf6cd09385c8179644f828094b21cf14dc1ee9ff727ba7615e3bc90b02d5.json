@@ -3,11 +3,43 @@
   "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
   "records": [
     {
-      "attribution": "Petitioner",
+      "attribution": "Court",
       "case_id": "2024-24-320",
       "confidence": 1.0,
       "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
       "evidence_id": "ev-5562cf6cd093-0000-0000",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The above-entitled matter came on for oral argument before the Supreme Court of the United States at 11:32 a.m."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2024-24-320",
+      "confidence": 1.0,
+      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
+      "evidence_id": "ev-5562cf6cd093-0000-0001",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "APPEARANCES: TACY F. FLINT, ESQUIRE, Chicago, Illinois; on behalf of the Petitioner. CAROLINE A. FLYNN, Assistant to the Solicitor General, Department of Justice, Washington, D.C.; on behalf of the Respondent."
+    },
+    {
+      "attribution": "Petitioner",
+      "case_id": "2024-24-320",
+      "confidence": 1.0,
+      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
+      "evidence_id": "ev-5562cf6cd093-0000-0008",
       "kind": "party_argument",
       "opinion_part": null,
       "pages": {
@@ -15,15 +47,15 @@
         "start": 4
       },
       "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "MS. FLINT: Mr. Chief Justice, and may it please the Court: This case starts and ends with the text of the Combat-Related Special Compensation statute. Because that statute grants the secretary concerned authority to settle claims for CRSC, the Barring Act does not apply. A statute grants settlement authority if it authorizes a specific government official to do two things: determine whether a claim is valid and determine the amount due. Settlement authority does not exist if a statute merely creates a substantive right to payment. The grant of authority to a specific official to administratively determine the validity of the claim and the amount due is the touchstone."
+      "status": "supported",
+      "text": "This case starts and ends with the text of the Combat-Related Special Compensation statute. Because that statute grants the secretary concerned authority to settle claims for CRSC, the Barring Act does not apply."
     },
     {
       "attribution": "Petitioner",
       "case_id": "2024-24-320",
       "confidence": 1.0,
       "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0000-0001",
+      "evidence_id": "ev-5562cf6cd093-0000-0009",
       "kind": "party_argument",
       "opinion_part": null,
       "pages": {
@@ -31,8 +63,8 @@
         "start": 5
       },
       "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "The CRSC statute does that. Start with subsection (d). It provides for the secretary of a military department to consider whether a veteran is eligible for CRSC using CRSC-specific procedures and criteria. Because subsection (d) authorizes the secretary to consider whether a veteran is eligible for CRSC, it authorizes a specific government official to determine whether the claim is valid. Then subsections (a) and (b) say the secretary concerned shall determine the amount of CRSC owed, meaning a specific official is authorized to determine the amount due. The CRSC statute in this way grants the secretary concerned all authority needed to determine validity and amount due, so the Barring Act does not apply."
+      "status": "supported",
+      "text": "The CRSC statute does that. Start with subsection (d). It provides for the secretary of a military department to consider whether a veteran is eligible for CRSC using CRSC-specific procedures and criteria. Because subsection (d) authorizes the secretary to consider whether a veteran is eligible for CRSC, it authorizes a specific government official to determine whether the claim is valid."
     },
     {
       "attribution": "Justice Thomas",
@@ -48,26 +80,90 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "JUSTICE THOMAS: And yet the government argues that if we agree with you, there would be a considerable number of other statutes that would confer settlement -- settlement authority."
+      "text": "And yet the government argues that if we agree with you, there would be a considerable number of other statutes that would confer settlement -- settlement authority."
+    },
+    {
+      "attribution": "Government",
+      "case_id": "2024-24-320",
+      "confidence": 1.0,
+      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
+      "evidence_id": "ev-5562cf6cd093-0000-0011",
+      "kind": "party_argument",
+      "opinion_part": null,
+      "pages": {
+        "end": 9,
+        "start": 9
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "none of these statutes are part of this case because the government's theory is that the Court should not read Section 1413a literally because of the risk that these other statutes will create a destabilization in their terms of military pay."
+    },
+    {
+      "attribution": "Justice Alito",
+      "case_id": "2024-24-320",
+      "confidence": 1.0,
+      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
+      "evidence_id": "ev-5562cf6cd093-0000-0005",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 15,
+        "start": 15
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "What is it?"
+    },
+    {
+      "attribution": "Justice Kavanaugh",
+      "case_id": "2024-24-320",
+      "confidence": 1.0,
+      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
+      "evidence_id": "ev-5562cf6cd093-0000-0006",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 17,
+        "start": 17
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "What should we make of the waiver provision?"
     },
     {
       "attribution": "Petitioner",
       "case_id": "2024-24-320",
       "confidence": 1.0,
       "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0000-0004",
+      "evidence_id": "ev-5562cf6cd093-0000-0015",
       "kind": "party_argument",
       "opinion_part": null,
       "pages": {
-        "end": 8,
-        "start": 8
+        "end": 18,
+        "start": 18
       },
       "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "MS. FLINT: So we identified one in our brief, the death gratuity statute, section 1479. That authorizes a -- for purposes of immediate payment of death gratuities, it authorizes a regional command to determine which -- whether a beneficiary is entitled to the death gratuity and certify the amount due. That sounds like settlement authority to us."
+      "status": "supported",
+      "text": "the waiver provision doesn't come into play."
     },
     {
-      "attribution": "Justice GORSUCH",
+      "attribution": "Justice Alito",
+      "case_id": "2024-24-320",
+      "confidence": 1.0,
+      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
+      "evidence_id": "ev-5562cf6cd093-0000-0007",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 23,
+        "start": 23
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "What about the situation where -- the situation where the veteran owes a lot of money to the government?"
+    },
+    {
+      "attribution": "Justice Gorsuch",
       "case_id": "2024-24-320",
       "confidence": 1.0,
       "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
@@ -80,26 +176,26 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "In your understanding of the statute, who does the offsets? How are they accounted for? Because I think it's one thing to determine the validity of the claim; it's another thing then to say whether there are offsets. And then -- and then it's a third thing still to say pay. And you've got in --in the statute a good deal of language, as you pointed out with Justice Kagan, on the first step, determine the validity of the claim, and maybe on the third, the authority to pay. But somebody's got to do the business in the middle, and who does it and how and under your understanding of the statute?"
+      "text": "In your understanding of the statute, who does the offsets? How are they accounted for?"
     },
     {
-      "attribution": "Heritage Reporting Corporation",
+      "attribution": "Justice Gorsuch",
       "case_id": "2024-24-320",
       "confidence": 1.0,
       "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
       "evidence_id": "ev-5562cf6cd093-0001-0001",
-      "kind": "party_argument",
+      "kind": "justice_question",
       "opinion_part": null,
       "pages": {
         "end": 25,
         "start": 25
       },
       "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "The way it works in real life is DFAS does that. The guidance actually even talks about this context, the guidance that the Secretary of Defense promulgated for -- for CRSC claims. The guidance says that the DFAS considers offsets in the context of paying claims of overpayment."
+      "status": "supported",
+      "text": "All right. But -- but 2, the -- the $500 that the --the veteran happens to owe the department for whatever reason, who does that and how before the secretary of the relevant military department is authorized to pay?"
     },
     {
-      "attribution": "Justice SOTOMAYOR",
+      "attribution": "Justice Sotomayor",
       "case_id": "2024-24-320",
       "confidence": 1.0,
       "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
@@ -115,27 +211,11 @@
       "text": "All -- all -- all of the offsets have been imposed by regulatory direction, correct?"
     },
     {
-      "attribution": "Heritage Reporting Corporation",
+      "attribution": "Justice Jackson",
       "case_id": "2024-24-320",
       "confidence": 1.0,
       "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
       "evidence_id": "ev-5562cf6cd093-0001-0003",
-      "kind": "party_argument",
-      "opinion_part": null,
-      "pages": {
-        "end": 26,
-        "start": 26
-      },
-      "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "Yes, or there are some other statutes that refer to offsets, but you're exactly right, Justice Sotomayor, none of these statutes addressing settlement deal with offsets one whit."
-    },
-    {
-      "attribution": "Justice JACKSON",
-      "case_id": "2024-24-320",
-      "confidence": 1.0,
-      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0001-0004",
       "kind": "justice_question",
       "opinion_part": null,
       "pages": {
@@ -147,84 +227,20 @@
       "text": "In the Barring Act, when there's a six-year statute of limitations, do we know from when it accrues, or does it work backwards from the person's application?"
     },
     {
-      "attribution": "Heritage Reporting Corporation",
+      "attribution": "Justice Kavanaugh",
       "case_id": "2024-24-320",
       "confidence": 1.0,
       "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0001-0005",
-      "kind": "party_argument",
-      "opinion_part": null,
-      "pages": {
-        "end": 27,
-        "start": 27
-      },
-      "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "It works -- the six years works backwards from the time the claim was -- the application was filed."
-    },
-    {
-      "attribution": "Justice SOTOMAYOR",
-      "case_id": "2024-24-320",
-      "confidence": 1.0,
-      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0001-0006",
+      "evidence_id": "ev-5562cf6cd093-0001-0004",
       "kind": "justice_question",
       "opinion_part": null,
       "pages": {
-        "end": 28,
-        "start": 28
+        "end": 34,
+        "start": 34
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "But he can't start the application process until he's gotten a VA rating, correct?"
-    },
-    {
-      "attribution": "Heritage Reporting Corporation",
-      "case_id": "2024-24-320",
-      "confidence": 1.0,
-      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0001-0007",
-      "kind": "party_argument",
-      "opinion_part": null,
-      "pages": {
-        "end": 28,
-        "start": 28
-      },
-      "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "That's right. A VA rating is required."
-    },
-    {
-      "attribution": "Justice ALITO",
-      "case_id": "2024-24-320",
-      "confidence": 1.0,
-      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0001-0008",
-      "kind": "justice_question",
-      "opinion_part": null,
-      "pages": {
-        "end": 31,
-        "start": 31
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "Alito's question of, you know, are we certain that Congress intended for that entire span to be covered and why would you think in this circumstance they would want --Congress would want that."
-    },
-    {
-      "attribution": "Heritage Reporting Corporation",
-      "case_id": "2024-24-320",
-      "confidence": 1.0,
-      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0001-0009",
-      "kind": "party_argument",
-      "opinion_part": null,
-      "pages": {
-        "end": 31,
-        "start": 31
-      },
-      "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "Well, of course, the best indication of Congress's intent is the -- is the text. In Section 1413a, it is best read to authorize determination of validity and amount due."
+      "text": "So, on page 34 of the government's brief, they say that other than this case and one other federal claims case, there's no comptroller general, Department of Defense, or judicial decision that finds section 3702(b)(1)'s limitations period inapplicable to any form of military compensation in Title 10 or Title 37. I just want to -- is that accurate?"
     },
     {
       "attribution": "Chief Justice Roberts",
@@ -243,22 +259,6 @@
       "text": "CHIEF JUSTICE ROBERTS: Counsel, what -- what is the concern you have broader beyond -- beyond this particular statute? I mean, to be eligible for benefits here, you have to have gotten a Purple Heart, be disabled as a result of armed conflict, hazardous service, performance of duty under conditions of war."
     },
     {
-      "attribution": "Ms. Flynn",
-      "case_id": "2024-24-320",
-      "confidence": 1.0,
-      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0002-0001",
-      "kind": "party_argument",
-      "opinion_part": null,
-      "pages": {
-        "end": 47,
-        "start": 47
-      },
-      "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "MS. FLYNN: Yes. And so, you know, as I think we -- we suggested in our brief, we're not saying that or suggesting there might be a staggering amount of liability based under this particular type of benefit, and there is also a waiver authority where this time bar can be waived for individuals with CRSC claims or other claims."
-    },
-    {
       "attribution": "Justice Gorsuch",
       "case_id": "2024-24-320",
       "confidence": 1.0,
@@ -273,70 +273,6 @@
       "schema_version": "1.0.0",
       "status": "supported",
       "text": "JUSTICE GORSUCH: I want to hear what the six are and do all of them contain statutes of limitations, or are some of them lack them too?"
-    },
-    {
-      "attribution": "Justice Gorsuch",
-      "case_id": "2024-24-320",
-      "confidence": 1.0,
-      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0002-0003",
-      "kind": "justice_question",
-      "opinion_part": null,
-      "pages": {
-        "end": 52,
-        "start": 52
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "JUSTICE GORSUCH: Okay. Go ahead."
-    },
-    {
-      "attribution": "Ms. Flynn",
-      "case_id": "2024-24-320",
-      "confidence": 1.0,
-      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0002-0009",
-      "kind": "party_argument",
-      "opinion_part": null,
-      "pages": {
-        "end": 52,
-        "start": 52
-      },
-      "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "MS. FLYNN: So that one does have a statute of limitations that Congress added in the 2025 NDAA, I believe. And, before, it had no statute of limitations and the understanding was that the -- the Barring Act applied."
-    },
-    {
-      "attribution": "Justice Barrett",
-      "case_id": "2024-24-320",
-      "confidence": 1.0,
-      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0002-0004",
-      "kind": "justice_question",
-      "opinion_part": null,
-      "pages": {
-        "end": 54,
-        "start": 54
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "JUSTICE BARRETT: Ms. Flynn, can I -- oh."
-    },
-    {
-      "attribution": "Justice Alito",
-      "case_id": "2024-24-320",
-      "confidence": 1.0,
-      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0002-0005",
-      "kind": "justice_question",
-      "opinion_part": null,
-      "pages": {
-        "end": 57,
-        "start": 57
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "JUSTICE ALITO: You have said that if the Court were to disagree with you about this particular statute, the government would argue that there's -- there are grounds for distinguishing those other six statutes that you mentioned."
     },
     {
       "attribution": "Justice Kavanaugh",
@@ -355,11 +291,27 @@
       "text": "JUSTICE KAVANAUGH: -- what's the relevance of that? Would you summarize that for us?"
     },
     {
+      "attribution": "Government",
+      "case_id": "2024-24-320",
+      "confidence": 1.0,
+      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
+      "evidence_id": "ev-5562cf6cd093-0003-0001",
+      "kind": "party_argument",
+      "opinion_part": null,
+      "pages": {
+        "end": 68,
+        "start": 68
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "So it's that -- the GAO was the one sort of implementing the statute for a long time, and the comptroller general decisions are what we have as authorities in this area of what counts."
+    },
+    {
       "attribution": "Justice Kavanaugh",
       "case_id": "2024-24-320",
       "confidence": 1.0,
       "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0003-0002",
+      "evidence_id": "ev-5562cf6cd093-0003-0004",
       "kind": "justice_question",
       "opinion_part": null,
       "pages": {
@@ -371,12 +323,44 @@
       "text": "JUSTICE KAVANAUGH: And the other point, there's no other form of military compensation where the limitations period is inapplicable, correct?"
     },
     {
+      "attribution": "Petitioner",
+      "case_id": "2024-24-320",
+      "confidence": 1.0,
+      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
+      "evidence_id": "ev-5562cf6cd093-0003-0002",
+      "kind": "party_argument",
+      "opinion_part": null,
+      "pages": {
+        "end": 70,
+        "start": 70
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "to be the word \"settle,\" but it has to be a hallmark formulation. And then my friend read examples of words that, in the government's view, sound \"hallmark\" enough."
+    },
+    {
+      "attribution": "Government",
+      "case_id": "2024-24-320",
+      "confidence": 1.0,
+      "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
+      "evidence_id": "ev-5562cf6cd093-0003-0005",
+      "kind": "party_argument",
+      "opinion_part": null,
+      "pages": {
+        "end": 72,
+        "start": 72
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "A statute that authorizes an official to determine the validity and amount due on claims is a statute that authorizes settlement."
+    },
+    {
       "attribution": "Chief Justice Roberts",
       "case_id": "2024-24-320",
       "confidence": 1.0,
       "document_hash": "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
-      "evidence_id": "ev-5562cf6cd093-0003-0007",
-      "kind": "procedural_event",
+      "evidence_id": "ev-5562cf6cd093-0003-0003",
+      "kind": "justice_question",
       "opinion_part": null,
       "pages": {
         "end": 74,
