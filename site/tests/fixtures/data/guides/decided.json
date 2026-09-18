@@ -1,0 +1,33 @@
+{
+  "case_id": "sample-decided",
+  "validation": { "status": "accepted" },
+  "generated_at": "2025-05-13T12:00:00Z",
+  "source_hashes": ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"],
+  "sections": {
+    "overview": {
+      "status": "available",
+      "paragraphs": ["The Court considered how a public agency applied a fictional rule."],
+      "citations": [
+        {
+          "document_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "page": 2
+        }
+      ]
+    },
+    "background_and_question": {
+      "content": "The question was whether the agency followed the statute."
+    },
+    "arguments": [
+      { "party": "The citizen", "content": "The citizen argued that the rule was too broad." },
+      { "party": "The agency", "content": "The agency argued that the rule fit the statute." }
+    ],
+    "oral_argument": {
+      "content": "The justices asked both sides about the rule's practical limits."
+    },
+    "decision": { "content": "The Court held that the agency used the wrong legal test." },
+    "why_it_matters": {
+      "content": "The decision explains how this fictional rule must be applied."
+    },
+    "terms": [{ "term": "Statute", "definition": "A law enacted by a legislature." }]
+  }
+}

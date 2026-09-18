@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap');
+
+:root {
+  font-family: 'Libre Franklin', system-ui, sans-serif;
+  color: #17212a;
+  background: #f8f7f3;
+  font-synthesis: none;
+  --navy: #173b57;
+  --navy-dark: #0c293f;
+  --red: #a43a35;
+  --cream: #f8f7f3;
+  --paper: #fff;
+  --ink: #17212a;
+  --muted: #53616b;
+  --line: #ccd1d2;
+  --gold-pale: #f7edcf;
+  --blue-pale: #e9f1f6;
+  --green-pale: #e9f2ec;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  line-height: 1.65;
+}
+a {
+  color: #075b8c;
+  text-underline-offset: 0.16em;
+}
+a:hover {
+  color: var(--red);
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #f1b82d;
+  outline-offset: 3px;
+}
+h1,
+h2,
+h3 {
+  color: var(--navy-dark);
+  font-family: 'Source Serif 4', Georgia, serif;
+  line-height: 1.16;
+}
+h1 {
+  font-size: clamp(2.2rem, 5vw, 4.25rem);
+  letter-spacing: -0.035em;
+  margin: 0.3em 0;
+}
+h2 {
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  margin: 1.4em 0 0.55em;
+}
+h3 {
+  font-size: 1.25rem;
+}
+p {
+  max-width: 72ch;
+}
+.shell {
+  margin-inline: auto;
+  max-width: 1120px;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+.narrow {
+  max-width: 780px;
+}
+.eyebrow {
+  color: var(--red);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.muted {
+  color: var(--muted);
+}
+.skip-link {
+  background: #fff;
+  left: 1rem;
+  padding: 0.6rem 1rem;
+  position: fixed;
+  top: -5rem;
+  z-index: 20;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+.site-header {
+  background: var(--navy-dark);
+  border-bottom: 4px solid var(--red);
+  color: #fff;
+}
+.masthead {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  min-height: 74px;
+}
+.brand {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  font-size: 1.18rem;
+  gap: 0.65rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+.brand:hover {
+  color: #fff;
+}
+.brand-mark {
+  border: 1px solid #aec2cf;
+  border-radius: 50%;
+  display: grid;
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  height: 2.3rem;
+  place-items: center;
+  width: 2.3rem;
+}
+.site-header nav {
+  display: flex;
+  gap: clamp(0.8rem, 3vw, 2rem);
+}
+.site-header nav a {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.site-header nav a:hover {
+  text-decoration: underline;
+}
+main {
+  min-height: 65vh;
+}
+footer {
+  background: var(--navy-dark);
+  color: #d9e3e8;
+  margin-top: 5rem;
+  padding-block: 3rem;
+}
+footer strong {
+  color: #fff;
+}
+footer p {
+  font-size: 0.86rem;
+  margin: 0.45rem 0;
+}
+.footer-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1.2fr 1.2fr 0.7fr;
+}
+footer nav {
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+}
+footer a {
+  color: #fff;
+}
+.hero {
+  background: linear-gradient(145deg, var(--navy-dark), #245878);
+  color: #fff;
+  padding-block: clamp(3.5rem, 10vw, 7.5rem);
+}
+.hero h1 {
+  color: #fff;
+  max-width: 850px;
+}
+.hero .lede {
+  color: #e1ebef;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: clamp(1.1rem, 2.3vw, 1.4rem);
+  max-width: 720px;
+}
+.button {
+  background: var(--red);
+  border: 2px solid var(--red);
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.72rem 1.1rem;
+  text-decoration: none;
+}
+.button:hover {
+  background: #842c28;
+  color: #fff;
+}
+.button.secondary {
+  background: transparent;
+  border-color: currentColor;
+  color: var(--navy);
+}
+.button.secondary:hover {
+  background: var(--blue-pale);
+}
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+}
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--navy);
+  padding: 1.3rem;
+}
+.card h2,
+.card h3 {
+  margin-top: 0.25rem;
+}
+.card-link {
+  color: inherit;
+  text-decoration: none;
+}
+.card-link:hover h2,
+.card-link:hover h3 {
+  color: var(--red);
+  text-decoration: underline;
+}
+.page-header {
+  background: #eaf0f3;
+  border-bottom: 1px solid var(--line);
+  padding-block: 2.5rem;
+}
+.page-content {
+  padding-block: 2.5rem;
+}
+.notice {
+  background: var(--gold-pale);
+  border-left: 4px solid #ba8a21;
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+}
+.guide-section {
+  border-top: 1px solid var(--line);
+  margin-top: 2.5rem;
+  padding-top: 0.5rem;
+  scroll-margin-top: 1rem;
+}
+.guide-section p {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.08rem;
+}
+.metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  margin: 1rem 0;
+  padding: 0;
+}
+.metadata div {
+  min-width: 8rem;
+}
+.metadata dt {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.metadata dd {
+  margin: 0.12rem 0;
+}
+.case-list {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+.case-list > li {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: minmax(7rem, 0.25fr) 1fr auto;
+  padding: 1.2rem;
+}
+.case-list h2,
+.case-list h3 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.05rem;
+  margin: 0;
+}
+.dockets {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+.term-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+.term-nav a {
+  background: #fff;
+  border: 1px solid var(--line);
+  display: block;
+  padding: 0.45rem 0.75rem;
+}
+.term-nav a[aria-current='page'] {
+  background: var(--navy);
+  color: #fff;
+}
+.sr-only {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+@media (max-width: 650px) {
+  .masthead {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding-block: 1rem;
+  }
+  .site-header nav {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .case-list > li {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
