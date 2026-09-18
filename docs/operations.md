@@ -115,13 +115,43 @@ The self-hosted runner must:
 1. Be registered to a trusted repository or organization and show both `self-hosted` and `spark` labels.
 2. Run on ARM64 Linux (`uname -m` should report `aarch64`).
 3. Run as an unprivileged, dedicated service account with write access to its Actions work directory.
-4. Have `git`, `python3`, `node`, `npm`, and `curl` on `PATH` for that service account.
+4. Have `git`, `python3`, and `curl` on `PATH` for that service account. The workflow installs its locked Node.js runtime with `actions/setup-node`.
 5. Reach GitHub Actions, official source hosts, and `OLLAMA_BASE_URL` over the LAN.
 6. Have sufficient persistent disk for a full Git checkout. Monitor both free disk and repository growth.
 
 Keep the runner application current and run it as a supervised service. Do not add `pull_request` or `pull_request_target` triggers to a job using `spark`: public pull-request code must never execute on the LAN-connected runner.
 
 Repository settings must allow GitHub Actions, permit the workflow's scoped `GITHUB_TOKEN` to write repository content, and configure Pages to use **GitHub Actions** as its source. Preserve the `scotusbriefs.us` custom domain and DNS settings. The workflow itself grants no default permissions: the pipeline gets `contents: write`; only the deploy job gets `pages: write` and `id-token: write`.
+
+## Launch status and source coverage
+
+The public catalog launched on 2026-09-18 at `https://scotusbriefs.us/`. The initial
+repository contains 2,161 immutable PDFs, 1,797 case/group records, 10 normalized curated
+cases, and four accepted citizen guides spanning a pending case, a consolidated case, an
+application docket, and an ordinary merits case. The nightly schedule is active at 08:17 UTC.
+
+Known launch limitations:
+
+- 1,787 historical export groups retain opaque identifiers until authoritative docket metadata
+  can be recovered; they remain archived but are intentionally excluded from public browsing.
+- Guide coverage is intentionally sparse while the resumable backfill runs. Missing sections
+  remain pending or source-limited rather than being filled from model memory.
+- OCR requires an explicitly configured `SCOTUS_OCR_COMMAND`; without it, pages lacking usable
+  embedded text are marked unavailable and cannot support claims.
+- Current discovery depends on the documented Supreme Court source pages and may require adapter
+  updates if the Court changes its markup or URLs.
+
+Continue historical processing with a small monitored batch, then increase only after reviewing
+validation reports and repository growth:
+
+```bash
+# Preferred: dispatch this mode in the publication workflow.
+scotus-guide extract --mode bounded-backfill --batch-size 5
+scotus-guide generate --mode bounded-backfill --batch-size 5
+```
+
+The first checked-in backfill checkpoint completed `2024-24-249`; rerunning bounded backfill
+resumes after accepted cases. Recovery procedures are below.
 
 ## Publication behavior
 

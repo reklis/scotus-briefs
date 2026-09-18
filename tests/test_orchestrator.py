@@ -55,6 +55,19 @@ def test_modes_aliases_case_requirements_and_cli_validation(tmp_path: Path) -> N
     assert (tmp_path / "reports" / "repository-validation.json").exists()
 
 
+def test_no_change_incremental_selects_no_work(tmp_path: Path) -> None:
+    write_case(tmp_path, "scotus-24-7", "24-7")
+    reports = tmp_path / "reports"
+    reports.mkdir()
+    (reports / "ingestion.json").write_text('{"changed_case_ids":[]}')
+
+    selected = GenerationOrchestrator(tmp_path).select_cases(
+        OperationMode.INCREMENTAL, batch_size=25
+    )
+
+    assert selected == []
+
+
 def test_incremental_only_selects_changed_cases(tmp_path: Path) -> None:
     write_case(tmp_path, "scotus-24-7", "24-7")
     write_case(tmp_path, "scotus-24-8", "24-8")

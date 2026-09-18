@@ -119,6 +119,8 @@ describe('build-time catalog', () => {
       expect(item.guide?.overview.citations[0]).toMatchObject({ pageStart: 2, pageEnd: 3 });
       expect(item.guide?.generatedAt).toBe('2026-01-01T00:00:00Z');
       expect(item.guide?.sourceHashes).toEqual([hash]);
+      expect(item.documents[0].officialUrl).toBe('https://www.supremecourt.gov/example.pdf');
+      expect(item.documents[0].archiveUrl).toContain(`/blob/dev/documents/aa/${hash}.pdf`);
     } finally {
       await rm(root, { recursive: true, force: true });
     }

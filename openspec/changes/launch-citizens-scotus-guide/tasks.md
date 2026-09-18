@@ -88,5 +88,5 @@
 - [x] 9.3 Generate, inspect, and accept the first citizen guides through the complete extraction, synthesis, citation, and verification pipeline
 - [x] 9.4 Build the complete site from a fresh checkout and verify that archived PDFs permit regeneration while remaining absent from the static artifact
 - [ ] 9.5 Deploy the initial representative catalog to `https://scotusbriefs.us/` and verify custom-domain routing, search, browsing, source links, mobile layout, and accessibility smoke tests
-- [ ] 9.6 Run and verify one resumable historical backfill batch and one no-change incremental nightly simulation
-- [ ] 9.7 Enable the nightly schedule and document launch status, known source-coverage limitations, recovery procedures, and next-backfill operation
+- [x] 9.6 Run and verify one resumable historical backfill batch and one no-change incremental nightly simulation
+- [x] 9.7 Enable the nightly schedule and document launch status, known source-coverage limitations, recovery procedures, and next-backfill operation

@@ -106,6 +106,11 @@ function archiveUrl(path: string): string {
 
 function normalizeManifest(raw: unknown, source: string): DocumentSource | undefined {
   const item = object(raw, source);
+  const sourceValues = Array.isArray(item.sources) ? item.sources : [];
+  const primarySource =
+    sourceValues[0] && typeof sourceValues[0] === 'object' && !Array.isArray(sourceValues[0])
+      ? (sourceValues[0] as Json)
+      : ({} as Json);
   const sha = optionalString(item.sha256 ?? item.hash ?? item.document_hash);
   if (!sha) return undefined;
   const path = optionalString(item.archive_path ?? item.path);
@@ -113,10 +118,16 @@ function normalizeManifest(raw: unknown, source: string): DocumentSource | undef
     id: sha,
     sha256: sha,
     title:
-      optionalString(item.title ?? item.official_filename ?? item.filename) ??
-      `${optionalString(item.document_type) ?? 'Court document'} (${sha.slice(0, 8)})`,
+      optionalString(
+        item.title ??
+          item.official_filename ??
+          item.filename ??
+          primarySource.official_filename
+      ) ?? `${optionalString(item.document_type) ?? 'Court document'} (${sha.slice(0, 8)})`,
     type: optionalString(item.document_type ?? item.type),
-    officialUrl: optionalString(item.source_url ?? item.official_url ?? item.url),
+    officialUrl: optionalString(
+      item.source_url ?? item.official_url ?? item.url ?? primarySource.url
+    ),
     archivePath: path,
     archiveUrl: path ? archiveUrl(path) : undefined
   };
@@ -436,8 +447,12 @@ export async function loadCatalogAt(dataRoot: string, manifestRoot?: string): Pr
   const manifestRecords = manifestRoot ? await jsonRecords(manifestRoot) : [];
   const manifests = new Map<string, DocumentSource>();
   for (const record of manifestRecords) {
-    const manifest = normalizeManifest(record.value, record.source);
-    if (manifest) manifests.set(manifest.id, manifest);
+    const envelope = object(record.value, record.source);
+    const values = Array.isArray(envelope.documents) ? envelope.documents : [record.value];
+    for (const [index, value] of values.entries()) {
+      const manifest = normalizeManifest(value, `${record.source}.documents[${index}]`);
+      if (manifest) manifests.set(manifest.id, manifest);
+    }
   }
   const caseRecords = await jsonRecords(resolve(dataRoot, 'cases'));
   const guideRecords = await jsonRecords(resolve(dataRoot, 'guides'));
