@@ -106,7 +106,7 @@ npm --prefix site run build
 scripts/check-pages-artifact.sh site/build 100
 ```
 
-In normal production operation, dispatch **Update archive and publish citizen guide** in GitHub Actions instead of manually committing output. Choose `incremental`, `bounded-backfill`, `case-regeneration`, or `validation-only`. A case ID is mandatory for case regeneration. Batch size is limited to 1–100. The nightly schedule runs incremental mode at 08:17 UTC.
+In normal production operation, dispatch **Update archive and publish citizen guide** in GitHub Actions instead of manually committing output. Choose `incremental`, `bounded-backfill`, `case-regeneration`, `guide-regeneration`, or `validation-only`. A case ID is mandatory for either regeneration mode. `case-regeneration` re-extracts evidence before rebuilding the guide; `guide-regeneration` reuses the currently accepted evidence and is appropriate after a synthesis-only fix. Batch size is limited to 1–100. The nightly schedule runs incremental mode at 08:17 UTC.
 
 ## ARM64 `spark` runner
 
@@ -193,7 +193,7 @@ Start with the failed run's step summary and its `operation-reports-<run>-<attem
 
 ### Ollama, extraction, or guide validation fails
 
-The source-preservation commit should already be on the default branch. Confirm it in the run summary and Git history. Restore Ollama or correct the extraction/validation issue, then dispatch `case-regeneration` for one case or rerun the bounded operation. The last accepted guide and public site remain in place.
+The source-preservation commit should already be on the default branch. Confirm it in the run summary and Git history. Restore Ollama or correct the extraction/validation issue, then dispatch `case-regeneration` for an extraction change, `guide-regeneration` for a synthesis-only change, or rerun the bounded operation. The last accepted guide and public site remain in place.
 
 ### Source commit or push fails
 

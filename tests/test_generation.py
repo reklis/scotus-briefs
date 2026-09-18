@@ -70,6 +70,16 @@ def test_invalid_model_citations_are_removed_before_validation() -> None:
                 {"text": "Decided April 29, 2025.", "citations": [valid]},
             ],
         },
+        "why_it_matters": {
+            "status": "complete",
+            "claims": [
+                {
+                    "text": "The ruling preserves the separation of powers.",
+                    "attribution": "Court",
+                    "citations": [valid],
+                }
+            ],
+        },
         "party_positions": [
             {
                 "status": "complete",
@@ -90,6 +100,8 @@ def test_invalid_model_citations_are_removed_before_validation() -> None:
     assert raw["overview"]["summary"] is None
     assert raw["party_positions"][0]["claims"] == []
     assert raw["party_positions"][0]["status"] == "source_limited"
+    assert raw["why_it_matters"]["claims"] == []
+    assert raw["why_it_matters"]["status"] == "source_limited"
     assert [entry["term"] for entry in raw["glossary"]] == ["Valid"]
 
 

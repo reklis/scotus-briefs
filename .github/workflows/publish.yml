@@ -12,6 +12,7 @@ on:
           - incremental
           - bounded-backfill
           - case-regeneration
+          - guide-regeneration
           - validation-only
       batch_size:
         description: Maximum cases/documents to process (1-100)
@@ -83,15 +84,15 @@ jobs:
             case_id=$REQUESTED_CASE_ID
           fi
           case "$mode" in
-            incremental|bounded-backfill|case-regeneration|validation-only) ;;
+            incremental|bounded-backfill|case-regeneration|guide-regeneration|validation-only) ;;
             *) echo "Unsupported operation: $mode" >&2; exit 2 ;;
           esac
           if [[ ! $batch_size =~ ^[0-9]+$ ]] || ((batch_size < 1 || batch_size > 100)); then
             echo "batch_size must be between 1 and 100." >&2
             exit 2
           fi
-          if [[ $mode == case-regeneration && -z $case_id ]]; then
-            echo "case_id is required for case-regeneration." >&2
+          if [[ $mode =~ ^(case-regeneration|guide-regeneration)$ && -z $case_id ]]; then
+            echo "case_id is required for case-regeneration and guide-regeneration." >&2
             exit 2
           fi
           if [[ -n $case_id && ! $case_id =~ ^[A-Za-z0-9][A-Za-z0-9._:-]*$ ]]; then
@@ -185,7 +186,9 @@ jobs:
 
       - name: Generate and verify accepted guides
         id: generate
-        if: steps.extract.outcome == 'success'
+        if: >-
+          steps.extract.outcome == 'success' ||
+          steps.options.outputs.mode == 'guide-regeneration'
         continue-on-error: true
         env:
           MODE: ${{ steps.options.outputs.mode }}
@@ -195,6 +198,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p reports/workflow
+          [[ $MODE == guide-regeneration ]] && MODE=case-regeneration
           args=(generate --mode "$MODE" --batch-size "$BATCH_SIZE")
           if [[ -n $CASE_ID ]]; then args+=(--case-id "$CASE_ID"); fi
           .venv/bin/scotus-guide "${args[@]}" \
@@ -209,7 +213,8 @@ jobs:
           always() && steps.options.outcome == 'success' &&
           steps.prerequisites.outcome == 'success' && steps.dependencies.outcome == 'success' &&
           (steps.options.outputs.mode == 'validation-only' ||
-           (steps.extract.outcome == 'success' &&
+           ((steps.extract.outcome == 'success' ||
+             steps.options.outputs.mode == 'guide-regeneration') &&
             (steps.generate.outcome == 'success' || steps.generate.outcome == 'failure')))
         shell: bash
         run: |
@@ -235,7 +240,8 @@ jobs:
         if: >-
           always() && steps.data_validation.outcome == 'success' &&
           (steps.options.outputs.mode == 'validation-only' ||
-           (steps.extract.outcome == 'success' &&
+           ((steps.extract.outcome == 'success' ||
+             steps.options.outputs.mode == 'guide-regeneration') &&
             (steps.generate.outcome == 'success' || steps.generate.outcome == 'failure') &&
             steps.generated_commit.outcome == 'success'))
         shell: bash

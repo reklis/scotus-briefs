@@ -244,7 +244,7 @@ def _drop_invalid_cited_content(raw: dict[str, Any], evidence: list[EvidenceReco
         re.I,
     )
 
-    def valid_claim(value: object, *, party_position: bool) -> bool:
+    def valid_claim(value: object, *, section_name: str, party_position: bool) -> bool:
         if not isinstance(value, dict) or not isinstance(value.get("citations"), list):
             return False
         citations = value["citations"]
@@ -268,25 +268,38 @@ def _drop_invalid_cited_content(raw: dict[str, Any], evidence: list[EvidenceReco
                     word.casefold() in evidence_words for word in re.findall(r"[A-Za-z]+|\d+", date)
                 ):
                     return False
+            if section_name == "why_it_matters" and value.get("attribution") == "Court":
+                inferred_effects = re.findall(
+                    r"\b(preserv\w*|protect\w*|safeguard\w*|ensur\w*)\b", text, re.I
+                )
+                if any(
+                    not any(word.startswith(effect[:5].casefold()) for word in evidence_words)
+                    for effect in inferred_effects
+                ):
+                    return False
         return True
 
-    sections: list[tuple[bool, object]] = [
-        (False, raw.get("overview")),
-        (False, raw.get("background_and_question")),
-        (False, raw.get("oral_argument")),
-        (False, raw.get("decision")),
-        (False, raw.get("why_it_matters")),
+    sections: list[tuple[str, bool, object]] = [
+        ("overview", False, raw.get("overview")),
+        ("background_and_question", False, raw.get("background_and_question")),
+        ("oral_argument", False, raw.get("oral_argument")),
+        ("decision", False, raw.get("decision")),
+        ("why_it_matters", False, raw.get("why_it_matters")),
     ]
     party_positions = raw.get("party_positions")
     if isinstance(party_positions, list):
-        sections.extend((True, item) for item in party_positions)
-    for party_position, section in sections:
+        sections.extend(("party_positions", True, item) for item in party_positions)
+    for section_name, party_position, section in sections:
         if not isinstance(section, dict):
             continue
         claims = section.get("claims")
         if isinstance(claims, list):
             section["claims"] = [
-                claim for claim in claims if valid_claim(claim, party_position=party_position)
+                claim
+                for claim in claims
+                if valid_claim(
+                    claim, section_name=section_name, party_position=party_position
+                )
             ]
         if section.get("summary"):
             citations = section.get("summary_citations")
