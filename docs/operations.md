@@ -77,6 +77,7 @@ scotus-guide --help
 scotus-guide ingest --help
 scotus-guide extract --help
 scotus-guide generate --help
+scotus-guide recover --help
 ```
 
 The workflow uses the following stable command contract:
@@ -96,6 +97,13 @@ scotus-guide generate --mode bounded-backfill --batch-size 10
 scotus-guide extract --mode case-regeneration --batch-size 1 --case-id <stable-case-id>
 scotus-guide generate --mode case-regeneration --batch-size 1 --case-id <stable-case-id>
 
+# Deterministically inspect historical PDFs without changing canonical metadata.
+# These defaults write reports/recovery/plan.json and reports/recovery/report.json.
+scotus-guide recover --plan
+
+# Apply that exact reviewed plan atomically (no extraction or model calls).
+scotus-guide recover --apply
+
 # Deterministic schema, citation, lifecycle, and archive checks only.
 scotus-guide validate
 
@@ -106,7 +114,7 @@ npm --prefix site run build
 scripts/check-pages-artifact.sh site/build 100
 ```
 
-In normal production operation, dispatch **Update archive and publish citizen guide** in GitHub Actions instead of manually committing output. Choose `incremental`, `bounded-backfill`, `case-regeneration`, `guide-regeneration`, or `validation-only`. A case ID is mandatory for either regeneration mode. `case-regeneration` re-extracts evidence before rebuilding the guide; `guide-regeneration` reuses the currently accepted evidence and is appropriate after a synthesis-only fix. Batch size is limited to 1–100. The nightly schedule runs incremental mode at 08:17 UTC.
+In normal production operation, dispatch **Update archive and publish citizen guide** in GitHub Actions instead of manually committing output. Choose `incremental`, `bounded-backfill`, `case-regeneration`, `guide-regeneration`, `validation-only`, `historical-recovery-plan`, or `historical-recovery-apply`. A case ID is mandatory for either regeneration mode. `case-regeneration` re-extracts evidence before rebuilding the guide; `guide-regeneration` reuses the currently accepted evidence and is appropriate after a synthesis-only fix. The two recovery operations are described below. Batch size is limited to 1–100 and is ignored by recovery. The nightly schedule runs incremental mode at 08:17 UTC.
 
 ## ARM64 `spark` runner
 
@@ -152,6 +160,58 @@ scotus-guide generate --mode bounded-backfill --batch-size 5
 
 The first checked-in backfill checkpoint completed `2024-24-249`; rerunning bounded backfill
 resumes after accepted cases. Recovery procedures are below.
+
+## Historical metadata recovery
+
+Recovery is deterministic and uses only preserved import paths and archived PDF text. It does not
+use Ollama. Prefer the serialized workflow operations so the reviewed transaction and applied
+source state have durable commit boundaries:
+
+1. Dispatch `historical-recovery-plan`. It writes and commits
+   `reports/recovery/plan.json` (the transaction and source hashes) and
+   `reports/recovery/report.json` (coverage and conflicts). It does not change `manifests/` or
+   `data/cases/`, run repository/site validation, build, deploy, extract evidence, or contact
+   Ollama.
+2. Review the committed plan and report. For every proposed component, confirm the docket set,
+   title/caption, term, lifecycle and dates against the listed PDF hashes and field provenance.
+   Review every split group, merged group, existing-case mapping, warning, and conflict. Confirm
+   unresolved or ambiguous documents are not assigned, curated metadata is not weakened, and no
+   unexpected case ID or primary-docket collision is proposed. Do not apply while unexplained
+   conflicts or implausible coverage changes remain; fix the deterministic parser and make a new
+   plan instead of hand-editing the JSON transaction.
+3. Dispatch `historical-recovery-apply` only while the reviewed plan is still the canonical file
+   on the default branch. Apply verifies the recorded manifest and case hashes, archived bytes,
+   and complete transaction before atomically changing the manifest and case records. A stale or
+   malformed plan fails before canonical writes.
+4. The workflow commits the applied manifest, case metadata, and durable recovery report as
+   source state. Only after that commit succeeds does it run repository validation, site checks,
+   tests, build, artifact guards, and deployment. Apply does not generate guides or contact
+   Ollama.
+5. Inspect `reports/recovery/report.json` and the workflow summary. `cases_written`,
+   `unresolved_cases_removed`, `unresolved_cases_reduced`, and `manifest_changed` must match the
+   review. To prove idempotence, create and review a fresh plan against the new source hashes and
+   apply it; the report should show `no_op: true` and no canonical changes.
+
+Local commands accept `--root`, `--manifest`, `--plan-path`, and `--report` for fixture or recovery
+worktrees, but production uses the canonical defaults above. Plan generation leaves manifest and
+case files byte-for-byte unchanged. Do not combine plan and apply into an unreviewed command.
+
+Recovery makes docketed cases eligible for the existing resumable pipeline; it intentionally does
+not start an unbounded generation run. After a successful apply, dispatch a small, monitored
+`bounded-backfill` (start with `batch_size: 5`). Review extraction/generation reports and repository
+growth after each committed batch, then continue from the checked-in checkpoint. Ambiguous
+unresolved groups remain excluded. Never increase the bound merely to bypass a failing case.
+
+### Rolling back historical recovery
+
+Stop new publication runs and identify the source-state commit produced by
+`historical-recovery-apply`. If bounded backfill commits were made afterward, revert those commits
+first in reverse order so guides, evidence, and checkpoints cannot refer to cases being restored.
+Then use `git revert <recovery-commit>` on the current default branch. The revert should restore
+both `manifests/documents.json` and affected `data/cases/*.json` plus the recovery report; it must
+not delete or rewrite anything under `documents/`. Run `scotus-guide validate` and dispatch
+`validation-only` to rebuild and deploy the restored checked-in state. Never force-push, reset the
+default branch, delete immutable PDFs, or edit a recovery plan to simulate rollback.
 
 ## Publication behavior
 

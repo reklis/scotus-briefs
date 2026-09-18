@@ -23,6 +23,11 @@ from .discovery import ScotusDiscoveryAdapter, SourcePage, reconcile_discovery_s
 from .evidence import EvidenceGenerator
 from .extraction import CommandOcrEngine, PdfTextExtractor
 from .generation import GuideGenerator
+from .historical import (
+    HistoricalRecoveryPlan,
+    apply_historical_recovery,
+    plan_historical_recovery,
+)
 from .importer import import_corpus
 from .integrity import check_archive
 from .models import CANONICAL_MODELS, SCHEMA_VERSION
@@ -62,6 +67,21 @@ def _parser() -> argparse.ArgumentParser:
     integrity.add_argument("--root", type=Path, default=Path("."))
     integrity.add_argument("--manifest", type=Path, default=Path("manifests/documents.json"))
     integrity.add_argument("--report", type=Path, default=Path("reports/integrity.json"))
+
+    recover = subcommands.add_parser(
+        "recover", help="plan or apply deterministic historical metadata recovery"
+    )
+    recovery_action = recover.add_mutually_exclusive_group(required=True)
+    recovery_action.add_argument(
+        "--plan", action="store_true", help="write a reviewable plan without changing source state"
+    )
+    recovery_action.add_argument(
+        "--apply", action="store_true", help="atomically apply the previously reviewed plan"
+    )
+    recover.add_argument("--root", type=Path, default=Path("."))
+    recover.add_argument("--manifest", type=Path, default=Path("manifests/documents.json"))
+    recover.add_argument("--plan-path", type=Path, default=Path("reports/recovery/plan.json"))
+    recover.add_argument("--report", type=Path, default=Path("reports/recovery/report.json"))
 
     ingest = subcommands.add_parser("ingest", help="run configured incremental source ingestion")
     _operation_arguments(ingest)
@@ -143,9 +163,11 @@ def main(argv: list[str] | None = None) -> int:
         return 1 if import_result.problems else 0
     if args.command == "integrity":
         root = args.root.resolve()
-        integrity_result = check_archive(root, ManifestStore(root / args.manifest))
-        _write_json(root / args.report, integrity_result.as_dict())
+        integrity_result = check_archive(root, ManifestStore(_under_root(root, args.manifest)))
+        _write_json(_under_root(root, args.report), integrity_result.as_dict())
         return 0 if integrity_result.valid else 1
+    if args.command == "recover":
+        return _recover(args)
     if args.command == "ingest":
         return _ingest(args)
     if args.command == "validate":
@@ -197,6 +219,43 @@ def main(argv: list[str] | None = None) -> int:
         validation_status = _validate(root) if args.command == "run" else 0
         return 1 if had_failures or validation_status else 0
     return 2
+
+
+def _recover(args: argparse.Namespace) -> int:
+    """Create or atomically apply the canonical historical recovery transaction."""
+    root = args.root.resolve()
+    store = ManifestStore(_under_root(root, args.manifest))
+    plan_path = _under_root(root, args.plan_path)
+    report_path = _under_root(root, args.report)
+    if args.plan:
+        _, report = plan_historical_recovery(
+            root,
+            store,
+            plan_path=plan_path,
+            report_path=report_path,
+        )
+    else:
+        try:
+            plan = HistoricalRecoveryPlan.model_validate_json(plan_path.read_text())
+        except (OSError, ValueError) as error:
+            print(f"cannot load historical recovery plan {plan_path}: {error}", file=sys.stderr)
+            return 2
+        try:
+            report = apply_historical_recovery(
+                root,
+                store,
+                plan,
+                report_path=report_path,
+            )
+        except (OSError, ValueError) as error:
+            print(f"historical recovery was not applied: {error}", file=sys.stderr)
+            return 1
+    print(report.model_dump_json())
+    return 0
+
+
+def _under_root(root: Path, path: Path) -> Path:
+    return path if path.is_absolute() else root / path
 
 
 def _ingest(args: argparse.Namespace) -> int:

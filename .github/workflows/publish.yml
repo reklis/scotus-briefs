@@ -14,6 +14,8 @@ on:
           - case-regeneration
           - guide-regeneration
           - validation-only
+          - historical-recovery-plan
+          - historical-recovery-apply
       batch_size:
         description: Maximum cases/documents to process (1-100)
         required: true
@@ -50,6 +52,7 @@ jobs:
       contents: write
     outputs:
       artifact_size: ${{ steps.artifact_check.outputs.size_bytes }}
+      pages_upload_outcome: ${{ steps.pages_upload.outcome }}
     steps:
       - name: Check out the default branch
         uses: actions/checkout@v4
@@ -84,7 +87,7 @@ jobs:
             case_id=$REQUESTED_CASE_ID
           fi
           case "$mode" in
-            incremental|bounded-backfill|case-regeneration|guide-regeneration|validation-only) ;;
+            incremental|bounded-backfill|case-regeneration|guide-regeneration|validation-only|historical-recovery-plan|historical-recovery-apply) ;;
             *) echo "Unsupported operation: $mode" >&2; exit 2 ;;
           esac
           if [[ ! $batch_size =~ ^[0-9]+$ ]] || ((batch_size < 1 || batch_size > 100)); then
@@ -100,8 +103,9 @@ jobs:
             exit 2
           fi
           [[ $mode == incremental || $mode == bounded-backfill ]] && ingest=true || ingest=false
-          printf 'mode=%s\nbatch_size=%s\ncase_id=%s\ningest=%s\n' \
-            "$mode" "$batch_size" "$case_id" "$ingest" >> "$GITHUB_OUTPUT"
+          [[ $mode == historical-recovery-plan || $mode == historical-recovery-apply ]] && recovery=true || recovery=false
+          printf 'mode=%s\nbatch_size=%s\ncase_id=%s\ningest=%s\nrecovery=%s\n' \
+            "$mode" "$batch_size" "$case_id" "$ingest" "$recovery" >> "$GITHUB_OUTPUT"
 
       - name: Install Node.js
         uses: actions/setup-node@v4
@@ -149,13 +153,30 @@ jobs:
           .venv/bin/scotus-guide ingest --mode "$MODE" --batch-size "$BATCH_SIZE" \
             2>&1 | tee reports/workflow/ingestion.log
 
-      # Ingestion is responsible for atomic per-candidate acceptance. Candidate
-      # failures are reported without making the command fail; an infrastructure
-      # failure exits nonzero and is retained as an artifact rather than pushing
-      # potentially partial metadata.
+      - name: Plan or apply historical metadata recovery
+        id: recovery
+        if: steps.options.outputs.recovery == 'true'
+        env:
+          MODE: ${{ steps.options.outputs.mode }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p reports/workflow
+          if [[ $MODE == historical-recovery-plan ]]; then
+            action=--plan
+          else
+            action=--apply
+          fi
+          .venv/bin/scotus-guide recover "$action" \
+            2>&1 | tee reports/workflow/historical-recovery.log
+
+      # Ingestion and recovery perform their own atomic acceptance. Commit this
+      # factual source state before any validation, generation, or publication.
+      # A plan commit persists the exact transaction for review and later apply.
       - name: Commit and push preserved source state
         id: source_commit
-        if: steps.ingest.outcome == 'success'
+        if: >-
+          steps.ingest.outcome == 'success' || steps.recovery.outcome == 'success'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         shell: bash
@@ -213,6 +234,8 @@ jobs:
           always() && steps.options.outcome == 'success' &&
           steps.prerequisites.outcome == 'success' && steps.dependencies.outcome == 'success' &&
           (steps.options.outputs.mode == 'validation-only' ||
+           (steps.options.outputs.mode == 'historical-recovery-apply' &&
+            steps.recovery.outcome == 'success' && steps.source_commit.outcome == 'success') ||
            ((steps.extract.outcome == 'success' ||
              steps.options.outputs.mode == 'guide-regeneration') &&
             (steps.generate.outcome == 'success' || steps.generate.outcome == 'failure')))
@@ -226,6 +249,8 @@ jobs:
         id: generated_commit
         if: >-
           always() && steps.options.outputs.mode != 'validation-only' &&
+          steps.options.outputs.mode != 'historical-recovery-apply' &&
+          steps.options.outputs.mode != 'historical-recovery-plan' &&
           steps.data_validation.outcome == 'success'
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -240,6 +265,8 @@ jobs:
         if: >-
           always() && steps.data_validation.outcome == 'success' &&
           (steps.options.outputs.mode == 'validation-only' ||
+           (steps.options.outputs.mode == 'historical-recovery-apply' &&
+            steps.recovery.outcome == 'success' && steps.source_commit.outcome == 'success') ||
            ((steps.extract.outcome == 'success' ||
              steps.options.outputs.mode == 'guide-regeneration') &&
             (steps.generate.outcome == 'success' || steps.generate.outcome == 'failure') &&
@@ -292,6 +319,7 @@ jobs:
         env:
           MODE: ${{ steps.options.outputs.mode }}
           INGEST: ${{ steps.ingest.outcome }}
+          RECOVERY: ${{ steps.recovery.outcome }}
           SOURCE_COMMIT: ${{ steps.source_commit.outcome }}
           EXTRACT: ${{ steps.extract.outcome }}
           GENERATE: ${{ steps.generate.outcome }}
@@ -311,9 +339,11 @@ jobs:
           report=reports/workflow/outcomes.md
           discovery=not-requested
           archive_import=not-requested
+          recovery=not-requested
           case "$MODE" in
             incremental) discovery=$INGEST ;;
             bounded-backfill) archive_import=$INGEST ;;
+            historical-recovery-plan|historical-recovery-apply) recovery=$RECOVERY ;;
           esac
           {
             echo "# Workflow outcomes"
@@ -327,6 +357,7 @@ jobs:
             echo '| --- | --- |'
             echo "| Discovery | $discovery |"
             echo "| Archive import | $archive_import |"
+            echo "| Historical recovery | $recovery |"
             echo "| Source preservation commit | $SOURCE_COMMIT |"
             echo "| Extraction | $EXTRACT |"
             echo "| Generation | $GENERATE |"
@@ -354,6 +385,7 @@ jobs:
   deploy:
     name: Deploy GitHub Pages
     needs: pipeline
+    if: needs.pipeline.outputs.pages_upload_outcome == 'success'
     runs-on: [self-hosted, spark]
     timeout-minutes: 30
     permissions:
