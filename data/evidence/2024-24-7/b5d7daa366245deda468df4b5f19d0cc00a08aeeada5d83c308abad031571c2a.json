@@ -3,7 +3,7 @@
   "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
   "records": [
     {
-      "attribution": "Court",
+      "attribution": "California",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
@@ -16,7 +16,7 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "Under the Clean Air Act, the Environmental Protection Agency (EPA) approved California regulations that require automakers to manufacture more electric vehicles and fewer gasoline-powered vehicles with a goal of decreasing emissions from liquid fuels."
+      "text": "California's own estimates indicated the regulations would cause substantial reductions in demand for gasoline exceeding $1 billion beginning in 2020 and increasing to over $10 billion in 2030."
     },
     {
       "attribution": "Fuel producers",
@@ -51,52 +51,52 @@
       "text": "California argued that the fuel producers lacked standing because automobile manufacturers would not change course if EPA's decision were vacated given the \u201csurging consumer demand\u201d for electric vehicles."
     },
     {
+      "attribution": "EPA",
+      "case_id": "2024-24-7",
+      "confidence": 1.0,
+      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
+      "evidence_id": "ev-b5d7daa36624-0000-0004",
+      "kind": "fact",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "EPA did not challenge the fuel producers' standing in the D. C. Circuit."
+    },
+    {
       "attribution": "Court",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0000-0007",
-      "kind": "stated_consequence",
+      "evidence_id": "ev-b5d7daa36624-0000-0006",
+      "kind": "procedural_event",
       "opinion_part": null,
       "pages": {
-        "end": 3,
-        "start": 3
+        "end": 2,
+        "start": 2
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "invalidating the regulations would likely result in more revenue from additional fuel sales based on commonsense economic principles and record evidence."
+      "text": "Argued April 23, 2025\u2014Decided June 20, 2025"
     },
     {
-      "attribution": "Justice Sotomayor",
+      "attribution": "Court",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
       "evidence_id": "ev-b5d7daa36624-0000-0005",
-      "kind": "dissent",
-      "opinion_part": "dissent",
-      "pages": {
-        "end": 5,
-        "start": 5
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "Sotomayor, J., post, p. 126, and Jackson, J., post, p. 128, fled dissenting opinions."
-    },
-    {
-      "attribution": "American Petroleum Institute",
-      "case_id": "2024-24-7",
-      "confidence": 1.0,
-      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0000-0006",
-      "kind": "amicus_argument",
+      "kind": "holding",
       "opinion_part": "majority",
       "pages": {
-        "end": 6,
-        "start": 6
+        "end": 7,
+        "start": 7
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "Briefs of amici curiae urging reversal were fled for the American Petroleum Institute by Paul D. Clement and C. Harker Rhodes IV;"
+      "text": "Based on this Court's precedents and the evidence in the record, we hold that the fuel producers have standing. We therefore reverse the contrary judgment of the U. S. Court of Appeals for the D. C. Circuit and remand for that court to consider the merits of the fuel producers' legal claims."
     },
     {
       "attribution": "Court",
@@ -112,7 +112,7 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "The court explained that redressabil- ity depended on how third-party automakers would act in the absence of California's feet-wide emissions standards and electric-vehicle mandate."
+      "text": "the fuel producers failed to \u201ccite any record evidence\u201d or \u201cfle additional affdavits or other evidence\u201d demonstrating that automakers would respond to invalidation of the regulations by producing fewer electric vehicles and more gasoline-powered vehicles."
     },
     {
       "attribution": "Court",
@@ -120,18 +120,34 @@
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
       "evidence_id": "ev-b5d7daa36624-0001-0001",
-      "kind": "procedural_event",
+      "kind": "fact",
       "opinion_part": "majority",
       "pages": {
-        "end": 12,
-        "start": 12
+        "end": 15,
+        "start": 15
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "This Court granted certiorari limited to the question of whether the fuel producers have Article III standing."
+      "text": "fewer gasoline sales, leading to a monetary injury in fact for producers of gasoline and other liquid fuels."
     },
     {
-      "attribution": "Fuel producers",
+      "attribution": "EPA",
+      "case_id": "2024-24-7",
+      "confidence": 1.0,
+      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
+      "evidence_id": "ev-b5d7daa36624-0001-0002",
+      "kind": "party_argument",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 15,
+        "start": 15
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "they argue that the fuel producers did not establish redressability."
+    },
+    {
+      "attribution": "California",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
@@ -144,62 +160,62 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "As to redressability, the fuel producers say that invalidating the California regulations would likely redress their injury because it would remove a regulatory impediment to the sale and use of their products."
+      "text": "they argue that the fuel producers did not establish redressability."
     },
     {
-      "attribution": "EPA and California",
+      "attribution": "Court",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
       "evidence_id": "ev-b5d7daa36624-0001-0004",
-      "kind": "party_argument",
+      "kind": "holding",
       "opinion_part": "majority",
       "pages": {
-        "end": 15,
-        "start": 15
+        "end": 16,
+        "start": 16
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "But they argue that the fuel producers did not establish redressability. According to EPA and California, even if the California regulations are invalidated, the fuel producers have not shown that vehicle manufacturers would reduce the percentage of their feets that consist of electric vehicles (or otherwise stated, increase the percentage that consists of gasoline-powered vehicles)."
+      "text": "As for redressability, invalidating the California regulations would likely redress at least some of the fuel producers' monetary injuries."
     },
     {
-      "attribution": "Court",
+      "attribution": "Fuel producers",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
       "evidence_id": "ev-b5d7daa36624-0001-0005",
-      "kind": "holding",
+      "kind": "party_argument",
       "opinion_part": "majority",
       "pages": {
-        "end": 15,
-        "start": 15
+        "end": 18,
+        "start": 18
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "We hold that the fuel producers have standing to sue."
+      "text": "Either way, they say that the California regulations pose a legal barrier to the fuel producers' sale of their products and deny them the opportunity to compete in the marketplace without government interference."
     },
     {
-      "attribution": "Court",
-      "case_id": "2024-24-7",
-      "confidence": 1.0,
-      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0001-0006",
-      "kind": "stated_consequence",
-      "opinion_part": "majority",
-      "pages": {
-        "end": 20,
-        "start": 20
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "Invalidating the regulations likely (not certainly, but likely) would make a difference for fuel producers because automakers would likely manufacture more vehicles that run on gasoline and other liquid fuels."
-    },
-    {
-      "attribution": "Court",
+      "attribution": "States",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
       "evidence_id": "ev-b5d7daa36624-0002-0000",
+      "kind": "party_argument",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 23,
+        "start": 23
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The States argued that reinstating the question would likely cause noncitizens to respond to the census at lower rates, thereby causing noncitizen residents of the States to be undercounted, and in turn leading to reduced representation and other harms for those States."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2024-24-7",
+      "confidence": 1.0,
+      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
+      "evidence_id": "ev-b5d7daa36624-0002-0001",
       "kind": "holding",
       "opinion_part": "majority",
       "pages": {
@@ -208,14 +224,14 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "Such a rule has little to commend it, and we decline to adopt it."
+      "text": "Such a rule would create incentives for gamesmanship and could make it diffcult or impossible to establish standing in cases where the standing analysis should be straightforward. A heightened \u201cproof of redressability\u201d requirement of that kind would ultimately close the courthouse doors to many traditional challenges to agency action. Cf. id., at 768. Such a rule has little to commend it, and we decline to adopt it."
     },
     {
       "attribution": "Court",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0002-0001",
+      "evidence_id": "ev-b5d7daa36624-0002-0002",
       "kind": "fact",
       "opinion_part": "majority",
       "pages": {
@@ -231,7 +247,7 @@
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0002-0002",
+      "evidence_id": "ev-b5d7daa36624-0002-0003",
       "kind": "holding",
       "opinion_part": "majority",
       "pages": {
@@ -247,39 +263,23 @@
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0002-0003",
-      "kind": "procedural_event",
+      "evidence_id": "ev-b5d7daa36624-0002-0005",
+      "kind": "holding",
       "opinion_part": "majority",
-      "pages": {
-        "end": 26,
-        "start": 26
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "Two of our colleagues have filed dissenting opinions."
-    },
-    {
-      "attribution": "Court",
-      "case_id": "2024-24-7",
-      "confidence": 1.0,
-      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0002-0004",
-      "kind": "dissent",
-      "opinion_part": "dissent",
       "pages": {
         "end": 27,
         "start": 27
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "Justice Jackson separately argues that the Court does not apply standing doctrine \u201cevenhandedly.\u201d"
+      "text": "knowledged the D. C. Circuit's misunderstanding. Moreover, because this litigation has gone on for three years, we see no good reason to waste the parties' time and resources by remanding for further analysis of the standing issue in the Court of Appeals when the parties have comprehensively briefed it and we can readily resolve it now."
     },
     {
       "attribution": "Justice Sotomayor",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0002-0005",
+      "evidence_id": "ev-b5d7daa36624-0002-0006",
       "kind": "dissent",
       "opinion_part": "dissent",
       "pages": {
@@ -291,12 +291,28 @@
       "text": "EPA's approval of the California regulations. We reverse the judgment of the Court of Appeals and remand the case for further proceedings consistent with this opinion."
     },
     {
-      "attribution": "Justice Sotomayor",
+      "attribution": "Petitioners",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0002-0010",
-      "kind": "fact",
+      "evidence_id": "ev-b5d7daa36624-0002-0007",
+      "kind": "party_argument",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 28,
+        "start": 28
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Petitioners argued, relying in part on statements from California regulators and the EPA, that this shift toward fuel effciency would reduce demand for the fossil fuels they produce, thereby causing a fnancial injury."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2024-24-7",
+      "confidence": 1.0,
+      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
+      "evidence_id": "ev-b5d7daa36624-0002-0008",
+      "kind": "procedural_event",
       "opinion_part": "dissent",
       "pages": {
         "end": 29,
@@ -304,14 +320,14 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "On that question, the evidence did not support petitioners, who bore the burden of proof to establish redressability."
+      "text": "Thus, the D. C. Circuit dismissed the petition for lack of standing."
     },
     {
       "attribution": "Justice Jackson",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0002-0006",
+      "evidence_id": "ev-b5d7daa36624-0002-0009",
       "kind": "dissent",
       "opinion_part": "dissent",
       "pages": {
@@ -327,8 +343,24 @@
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
+      "evidence_id": "ev-b5d7daa36624-0002-0011",
+      "kind": "fact",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 32,
+        "start": 32
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "But, notably, that provision contains an exception for the State of California, which was the only State whose efforts to regulate auto emissions predated the Clean Air Act."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2024-24-7",
+      "confidence": 1.0,
+      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
       "evidence_id": "ev-b5d7daa36624-0003-0000",
-      "kind": "dissent",
+      "kind": "procedural_event",
       "opinion_part": "dissent",
       "pages": {
         "end": 34,
@@ -336,30 +368,14 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "prices of their vehicles such that fewer non-conventional ve-\nhicles\u2014and more conventional vehicles\u2014were sold.\u201d Id., at\n302. But petitioners had \u201cfail[ed] to point to any evidence\naffrmatively demonstrating that vacatur of the waiver\nwould be substantially likely to result in any change to auto-\nmobile manufacturers' vehicle feets by Model Year 2025,\u201d\nwhen the court believed California's program would termi-\nnate. Ibid."
+      "text": "Seven months after the D. C. Circuit issued its decision, President Trump was elected to a second term in offce. We granted certiorari the following month."
     },
     {
-      "attribution": "California",
+      "attribution": "Fuel industry",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0003-0003",
-      "kind": "party_argument",
-      "opinion_part": "dissent",
-      "pages": {
-        "end": 34,
-        "start": 34
-      },
-      "schema_version": "1.0.0",
-      "status": "supported",
-      "text": "Among other evidence, the court cited an expert declara-\ntion submitted by California, which had intervened to defend\nthe waiver. The declaration documented how electric-\nvehicle sales in California had already surpassed state-\nmandated levels as a result of rising consumer demand and\nautomakers' long-term planning choices, \u201csuggesting that va-\ncatur of the [electric] vehicle mandate would not redress\n[p]etitioners' injuries.\u201d Id., at 305."
-    },
-    {
-      "attribution": "fuel industry",
-      "case_id": "2024-24-7",
-      "confidence": 1.0,
-      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0003-0002",
+      "evidence_id": "ev-b5d7daa36624-0003-0001",
       "kind": "party_argument",
       "opinion_part": "dissent",
       "pages": {
@@ -368,23 +384,23 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "The fuel industry's answer to that question here should\ngive us all pause. In their petition for certiorari, the indus-\ntry members asserted that California's emissions standards\nharmed them by suppressing the sale of gas-powered cars\nand thereby driving down demand for fuel."
+      "text": "The fuel industry's answer to that question here should give us all pause. In their petition for certiorari, the industry members asserted that California's emissions standards harmed them by suppressing the sale of gas-powered cars and thereby driving down demand for fuel."
     },
     {
       "attribution": "Justice Jackson",
       "case_id": "2024-24-7",
       "confidence": 1.0,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "evidence_id": "ev-b5d7daa36624-0003-0004",
-      "kind": "dissent",
+      "evidence_id": "ev-b5d7daa36624-0003-0002",
+      "kind": "justice_question",
       "opinion_part": "dissent",
       "pages": {
-        "end": 43,
-        "start": 43
+        "end": 36,
+        "start": 36
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "Petitioners have made little effort to meet that burden.\nNone of the declarations they submitted below say anything\nsubstantive about redressability. None purport to address,\nmuch less refute, any of the data or analyses California's ex-\npert or the automaker intervenors have provided."
+      "text": "Why would this Court rush to opine on whether the fuel industry's legal challenge raises an Article III \u201ccase\u201d or \u201ccontroversy\u201d when all involved\u2014including petitioners themselves\u2014believe that any such \u201ccase\u201d or \u201ccontroversy\u201d will soon vanish?"
     },
     {
       "attribution": "Justice Jackson",
@@ -400,7 +416,39 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "The Court's remarkably lenient approach to standing in\nthis case contrasts starkly with the stern stance it has taken\nin cases concerning the rights of ordinary citizens. See, e. g.,\nWhitmore v. Arkansas, 495 U. S. 149, 155\u2013156 (1990) (\u201cA fed-\neral court is powerless to create its own jurisdiction by\nembellishing otherwise defcient allegations of standing\u201d)."
+      "text": "The Court's remarkably lenient approach to standing in this case contrasts starkly with the stern stance it has taken in cases concerning the rights of ordinary citizens. See, e. g., Whitmore v. Arkansas, 495 U. S. 149, 155\u2013156 (1990) (\u201cA federal court is powerless to create its own jurisdiction by embellishing otherwise defcient allegations of standing\u201d)."
+    },
+    {
+      "attribution": "Justice Jackson",
+      "case_id": "2024-24-7",
+      "confidence": 1.0,
+      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
+      "evidence_id": "ev-b5d7daa36624-0004-0001",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 46,
+        "start": 46
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Among the reasons we provided for this holding was that any surveillance activities the Government pursued would ultimately have to be approved by the Foreign Intelligence Surveillance Court (FISC), and the plaintiffs could \u201conly speculate as to whether that court will authorize such surveillance.\u201d Id., at 413."
+    },
+    {
+      "attribution": "Justice Jackson",
+      "case_id": "2024-24-7",
+      "confidence": 1.0,
+      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
+      "evidence_id": "ev-b5d7daa36624-0004-0002",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 47,
+        "start": 47
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "If the Court privileges the interests of one class of litigants over others, even unintentionally, it can damage Americans' faith in an impartial Judiciary and undermine the long-term credibility of its judgments."
     }
   ],
   "schema_version": "1.0.0"
