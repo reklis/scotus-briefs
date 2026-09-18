@@ -1,11 +1,11 @@
 {
-  "completed_case_ids": [
-    "2024-24-7"
-  ],
-  "failures": {},
+  "completed_case_ids": [],
+  "failures": {
+    "2024-24a884": "1 validation error for CitizenGuide\noverview\n  Value error, complete sections require content [type=value_error, input_value={'status': 'complete', 'h...Overview', 'claims': []}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+  },
   "mode": "case-regeneration",
   "selected_case_ids": [
-    "2024-24-7"
+    "2024-24a884"
   ],
   "skipped_case_ids": []
 }
