@@ -6,8 +6,10 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import tempfile
 from collections import defaultdict
+from collections.abc import Callable
 from contextlib import suppress
 from datetime import date
 from enum import StrEnum
@@ -37,6 +39,7 @@ from .models import (
 )
 
 HISTORICAL_SCHEMA_VERSION = "1.0.0"
+HISTORICAL_PARSER_VERSION = "2"
 DEFAULT_OPENING_PAGES = 3
 DEFAULT_MAX_CHARACTERS = 60_000
 DEFAULT_MAX_PDF_BYTES = 100 * 1024 * 1024
@@ -167,11 +170,33 @@ class HistoricalRecoveryPlan(ContractModel):
     """Versioned, reviewable recovery transaction with source-state preconditions."""
 
     schema_version: Literal["1.0.0"] = "1.0.0"
+    parser_version: Literal["2"]
+    max_pages: Annotated[int, Field(ge=1)]
+    max_characters: Annotated[int, Field(ge=1)]
+    max_pdf_bytes: Annotated[int, Field(ge=1)]
+    candidate_payload_digest: Sha256
     source_manifest_hash: Sha256
     source_case_hashes: dict[str, Sha256] = Field(default_factory=dict)
     candidates: list[HistoricalDocumentCandidate] = Field(default_factory=list)
     components: list[RecoveryComponent] = Field(default_factory=list)
     conflicts: list[RecoveryConflict] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def candidates_match_digest(self) -> HistoricalRecoveryPlan:
+        if self.candidate_payload_digest != _candidate_payload_digest(self.candidates):
+            raise ValueError("candidate payload digest does not match recovery candidates")
+        return self
+
+
+class _JournalEntry(ContractModel):
+    destination: str
+    backup: str | None = None
+    desired: str | None = None
+
+
+class _RecoveryJournal(ContractModel):
+    phase: Literal["prepared", "committed"]
+    entries: list[_JournalEntry]
 
 
 class HistoricalRecoveryReport(ContractModel):
@@ -307,6 +332,21 @@ def read_pdf_opening(
 extract_opening_pages = read_pdf_opening
 
 
+def _historical_import_paths(entry: DocumentManifestEntry) -> list[str]:
+    """Return only paths explicitly filed in a supported historical category."""
+    paths: list[str] = []
+    for source in entry.sources:
+        if source.import_path is None:
+            continue
+        try:
+            classify_historical_document_type(source.import_path)
+        except ValueError:
+            # Current fixed-ten imports, among others, are not historical corpus input.
+            continue
+        paths.append(source.import_path)
+    return sorted(set(paths))
+
+
 def extract_historical_candidate(
     entry: DocumentManifestEntry,
     repository_root: Path,
@@ -316,11 +356,9 @@ def extract_historical_candidate(
     max_pdf_bytes: int = DEFAULT_MAX_PDF_BYTES,
 ) -> HistoricalDocumentCandidate:
     """Read and parse one manifest entry without mutating repository state."""
-    import_paths = sorted(
-        {source.import_path for source in entry.sources if source.import_path is not None}
-    )
+    import_paths = _historical_import_paths(entry)
     if not import_paths:
-        raise ValueError(f"manifest document {entry.sha256} has no preserved import path")
+        raise ValueError(f"manifest document {entry.sha256} has no historical import path")
     classified = {path: classify_historical_document_type(path) for path in import_paths}
     document_types = set(classified.values())
     if len(document_types) != 1:
@@ -504,7 +542,7 @@ def plan_historical_recovery(
         historical_entries = [
             entry
             for entry in sorted(manifest.documents, key=lambda item: item.sha256)
-            if any(source.import_path is not None for source in entry.sources)
+            if _historical_import_paths(entry)
         ]
         for entry in historical_entries:
             try:
@@ -526,14 +564,22 @@ def plan_historical_recovery(
                     )
                 )
 
-        components, component_conflicts = _build_recovery_components(candidates, cases)
+        components, component_conflicts = _build_recovery_components(
+            candidates, cases, manifest
+        )
         conflicts.extend(component_conflicts)
         conflicts.extend(_repository_conflicts(manifest, case_files, cases))
         conflicts = sorted(conflicts, key=_conflict_key)
+        sorted_candidates = sorted(candidates, key=lambda item: item.document_hash)
         plan = HistoricalRecoveryPlan(
+            parser_version=HISTORICAL_PARSER_VERSION,
+            max_pages=max_pages,
+            max_characters=max_characters,
+            max_pdf_bytes=max_pdf_bytes,
+            candidate_payload_digest=_candidate_payload_digest(sorted_candidates),
             source_manifest_hash=manifest_hash,
             source_case_hashes=dict(sorted(case_hashes.items())),
-            candidates=sorted(candidates, key=lambda item: item.document_hash),
+            candidates=sorted_candidates,
             components=components,
             conflicts=conflicts,
         )
@@ -557,32 +603,39 @@ def build_historical_recovery_plan(
         if isinstance(existing_cases, dict)
         else {item.case_id: item for item in existing_cases or []}
     )
-    components, conflicts = _build_recovery_components(candidates, cases)
+    components, conflicts = _build_recovery_components(candidates, cases, manifest)
+    sorted_candidates = sorted(candidates, key=lambda item: item.document_hash)
     plan = HistoricalRecoveryPlan(
+        parser_version=HISTORICAL_PARSER_VERSION,
+        max_pages=DEFAULT_OPENING_PAGES,
+        max_characters=DEFAULT_MAX_CHARACTERS,
+        max_pdf_bytes=DEFAULT_MAX_PDF_BYTES,
+        candidate_payload_digest=_candidate_payload_digest(sorted_candidates),
         source_manifest_hash=_contract_payload_hash(manifest),
         source_case_hashes={
             key: _contract_payload_hash(value) for key, value in sorted(cases.items())
         },
-        candidates=sorted(candidates, key=lambda item: item.document_hash),
+        candidates=sorted_candidates,
         components=components,
         conflicts=conflicts,
     )
     historical_entries = [
-        entry
-        for entry in manifest.documents
-        if any(source.import_path is not None for source in entry.sources)
+        entry for entry in manifest.documents if _historical_import_paths(entry)
     ]
     return plan, _planning_report(historical_entries, candidates, components, conflicts)
 
 
 def _build_recovery_components(
-    candidates: list[HistoricalDocumentCandidate], existing_cases: dict[str, NormalizedCase]
+    candidates: list[HistoricalDocumentCandidate],
+    existing_cases: dict[str, NormalizedCase],
+    manifest: DocumentManifest | None = None,
 ) -> tuple[list[RecoveryComponent], list[RecoveryConflict]]:
     usable = sorted(
         (item for item in candidates if not item.ambiguous and item.docket_numbers),
         key=lambda item: item.document_hash,
     )
     parent = list(range(len(usable)))
+    clusters: dict[int, set[int]] = {index: {index} for index in range(len(usable))}
 
     def find(index: int) -> int:
         while parent[index] != index:
@@ -590,38 +643,74 @@ def _build_recovery_components(
             index = parent[index]
         return index
 
-    def union(left: int, right: int) -> None:
+    def union(left: int, right: int, *, curated: bool = False) -> None:
         left_root, right_root = find(left), find(right)
-        if left_root != right_root:
-            parent[max(left_root, right_root)] = min(left_root, right_root)
+        if left_root == right_root:
+            return
+        if not curated and not all(
+            _candidate_captions_compatible(usable[a], usable[b])
+            for a in clusters[left_root]
+            for b in clusters[right_root]
+        ):
+            return
+        low, high = sorted((left_root, right_root))
+        parent[high] = low
+        clusters[low].update(clusters.pop(high))
 
-    docket_owner: dict[str, int] = {}
-    hash_owner: dict[str, int] = {}
+    # Exact docket overlap is only an edge when the complete caption identity agrees.
+    # Checking every member of both clusters prevents an incidental candidate from
+    # becoming a transitive bridge between unrelated cases.
+    docket_indexes: dict[str, list[int]] = defaultdict(list)
+    hash_indexes: dict[str, list[int]] = defaultdict(list)
     for index, candidate in enumerate(usable):
-        for key in [candidate.document_hash, *candidate.docket_numbers]:
-            owners = hash_owner if key == candidate.document_hash else docket_owner
-            prior = owners.setdefault(key, index)
-            union(index, prior)
+        hash_indexes[candidate.document_hash].append(index)
+        for docket in candidate.docket_numbers:
+            docket_indexes[docket].append(index)
+    for indexes in hash_indexes.values():
+        for index in indexes[1:]:
+            union(indexes[0], index)
+    for indexes in docket_indexes.values():
+        for offset, left in enumerate(indexes):
+            for right in indexes[offset + 1 :]:
+                union(left, right)
 
-    # A curated consolidated case is also authoritative evidence that its canonical
-    # dockets share one identity.  Coalesce candidate islands before creating proposals.
+    # A curated consolidated case is authoritative evidence that its canonical dockets
+    # share one identity, and is the sole exception to caption-compatible union edges.
     for case in sorted(existing_cases.values(), key=lambda item: item.case_id):
-        candidate_indexes = [
-            docket_owner[docket]
-            for docket in case.docket_numbers
-            if docket in docket_owner
-        ]
+        if case.unresolved_group is not None or len(case.docket_numbers) < 2:
+            continue
+        candidate_indexes = sorted(
+            {
+                index
+                for docket in case.docket_numbers
+                for index in docket_indexes.get(docket, [])
+            }
+        )
         for index in candidate_indexes[1:]:
-            union(candidate_indexes[0], index)
+            union(candidate_indexes[0], index, curated=True)
 
     grouped: dict[int, list[HistoricalDocumentCandidate]] = defaultdict(list)
     for index, candidate in enumerate(usable):
         grouped[find(index)].append(candidate)
 
     docket_cases: dict[str, set[str]] = defaultdict(set)
+    curated_hash_owners: dict[str, set[str]] = defaultdict(set)
+    manifest_types: dict[str, DocumentType] = {}
     for case in existing_cases.values():
         for docket in case.docket_numbers:
             docket_cases[docket].add(case.case_id)
+        if case.unresolved_group is None:
+            for reference in case.documents:
+                curated_hash_owners[reference.sha256].add(case.case_id)
+    if manifest is not None:
+        for entry in manifest.documents:
+            manifest_types[entry.sha256] = entry.document_type
+            for association in entry.cases:
+                if (
+                    association.case_id in existing_cases
+                    and existing_cases[association.case_id].unresolved_group is None
+                ):
+                    curated_hash_owners[entry.sha256].add(association.case_id)
 
     components: list[RecoveryComponent] = []
     global_conflicts: list[RecoveryConflict] = []
@@ -633,6 +722,13 @@ def _build_recovery_components(
         identifier = hashlib.sha256(("\0".join([*dockets, *hashes])).encode()).hexdigest()[:16]
         component_conflicts: list[RecoveryConflict] = []
         matched_ids = sorted({case_id for docket in dockets for case_id in docket_cases[docket]})
+        curated_matches = [
+            case_id
+            for case_id in matched_ids
+            if existing_cases[case_id].unresolved_group is None
+        ]
+        if curated_matches:
+            matched_ids = curated_matches
         existing: NormalizedCase | None = None
         if len(matched_ids) > 1:
             component_conflicts.append(
@@ -670,11 +766,55 @@ def _build_recovery_components(
                     )
                 )
                 target_id = None
-        if existing is None and (title is None or term is None):
+        if title is None or (existing is None and term is None):
             component_conflicts.append(
                 RecoveryConflict(
                     code="insufficient-case-identity",
-                    message="a new case requires an unambiguous title and Court term",
+                    message=(
+                        "a case requires an unambiguous title and new cases require a Court term"
+                    ),
+                    docket_numbers=dockets,
+                    document_hashes=hashes,
+                )
+            )
+        known_reference_types = {
+            reference.sha256: reference.document_type
+            for reference in (existing.documents if existing is not None else [])
+            if reference.document_type is not DocumentType.UNKNOWN
+        }
+        type_conflicts = sorted(
+            item.document_hash
+            for item in members
+            if (
+                manifest_types.get(item.document_hash, DocumentType.UNKNOWN)
+                not in {DocumentType.UNKNOWN, item.document_type}
+                or known_reference_types.get(item.document_hash, item.document_type)
+                is not item.document_type
+            )
+        )
+        if type_conflicts:
+            component_conflicts.append(
+                RecoveryConflict(
+                    code="curated-document-type",
+                    message="curated document type conflicts with path classification",
+                    document_hashes=type_conflicts,
+                )
+            )
+        protected_owners = sorted(
+            {owner for document_hash in hashes for owner in curated_hash_owners[document_hash]}
+        )
+        if protected_owners and (
+            len(protected_owners) > 1
+            or target_id is None
+            or protected_owners[0] != target_id
+        ):
+            component_conflicts.append(
+                RecoveryConflict(
+                    code="curated-document-ownership",
+                    message=(
+                        "component documents are already owned by another curated case: "
+                        + ", ".join(protected_owners)
+                    ),
                     docket_numbers=dockets,
                     document_hashes=hashes,
                 )
@@ -713,20 +853,72 @@ def _build_recovery_components(
         global_conflicts.extend(component.conflicts)
 
     components.sort(key=lambda item: item.component_id)
-    targets: dict[str, list[RecoveryComponent]] = defaultdict(list)
-    for component in components:
+    targets: dict[str, list[int]] = defaultdict(list)
+    for index, component in enumerate(components):
         if component.target_case_id and component.proposed_case:
-            targets[component.target_case_id].append(component)
-    for target, values in sorted(targets.items()):
-        if len(values) > 1:
-            global_conflicts.append(
-                RecoveryConflict(
-                    code="duplicate-target-case",
-                    message=f"multiple components target case {target}",
-                    document_hashes=sorted(
-                        {item for value in values for item in value.document_hashes}
-                    ),
-                )
+            targets[component.target_case_id].append(index)
+    for target, indexes in sorted(targets.items()):
+        if len(indexes) <= 1:
+            continue
+        hashes = sorted(
+            {
+                document_hash
+                for index in indexes
+                for document_hash in components[index].document_hashes
+            }
+        )
+        conflict = RecoveryConflict(
+            code="duplicate-target-case",
+            message=f"incompatible components target the same case {target}",
+            document_hashes=hashes,
+        )
+        global_conflicts.append(conflict)
+        for index in indexes:
+            component = components[index]
+            components[index] = component.model_copy(
+                update={
+                    "proposed_case": None,
+                    "conflicts": sorted([*component.conflicts, conflict], key=_conflict_key),
+                }
+            )
+
+    docket_targets: dict[str, list[int]] = defaultdict(list)
+    for index, component in enumerate(components):
+        if component.proposed_case is not None:
+            for docket in component.proposed_case.docket_numbers:
+                docket_targets[docket].append(index)
+    overlapping_indexes = sorted(
+        {
+            index
+            for indexes in docket_targets.values()
+            if len(indexes) > 1
+            for index in indexes
+        }
+    )
+    if overlapping_indexes:
+        overlapping_dockets = _sort_dockets(
+            {docket for docket, indexes in docket_targets.items() if len(indexes) > 1}
+        )
+        conflict = RecoveryConflict(
+            code="overlapping-target-docket",
+            message="incompatible proposed cases share canonical dockets",
+            docket_numbers=overlapping_dockets,
+            document_hashes=sorted(
+                {
+                    document_hash
+                    for index in overlapping_indexes
+                    for document_hash in components[index].document_hashes
+                }
+            ),
+        )
+        global_conflicts.append(conflict)
+        for index in overlapping_indexes:
+            component = components[index]
+            components[index] = component.model_copy(
+                update={
+                    "proposed_case": None,
+                    "conflicts": sorted([*component.conflicts, conflict], key=_conflict_key),
+                }
             )
     return components, sorted(global_conflicts, key=_conflict_key)
 
@@ -754,7 +946,10 @@ def _resolve_text_field(
         return existing.title
     equivalent: list[str] = []
     for value in values:
-        if not any(_captions_equivalent(value, prior) for prior in equivalent):
+        if not any(
+            _captions_equivalent(value, prior) or _caption_party_overlap(value, prior)
+            for prior in equivalent
+        ):
             equivalent.append(value)
     if len(equivalent) > 1:
         conflicts.append(
@@ -919,9 +1114,15 @@ def _proposed_case(
     prior_documents = {item.sha256: item for item in existing.documents} if existing else {}
     for item in members:
         prior_reference = prior_documents.get(item.document_hash)
+        reference_type = item.document_type
+        if (
+            prior_reference is not None
+            and prior_reference.document_type is not DocumentType.UNKNOWN
+        ):
+            reference_type = prior_reference.document_type
         prior_documents[item.document_hash] = CaseDocumentReference(
             sha256=item.document_hash,
-            document_type=item.document_type,
+            document_type=reference_type,
             current=prior_reference.current if prior_reference is not None else True,
         )
     all_dockets = _sort_dockets(
@@ -1064,8 +1265,14 @@ def validate_historical_recovery_plan(
     repository_root: Path,
     manifest_store: ManifestStore,
     plan: HistoricalRecoveryPlan,
+    *,
+    candidate_extractor: Callable[..., HistoricalDocumentCandidate] = extract_historical_candidate,
 ) -> None:
     """Fail closed if the plan is stale or would violate repository references."""
+    if plan.parser_version != HISTORICAL_PARSER_VERSION:
+        raise ValueError("historical recovery plan parser version is unsupported")
+    if plan.candidate_payload_digest != _candidate_payload_digest(plan.candidates):
+        raise ValueError("historical recovery plan candidate payload digest failed")
     manifest = manifest_store.load()
     if _stored_contract_hash(manifest_store.path, manifest) != plan.source_manifest_hash:
         raise ValueError("historical recovery plan manifest precondition failed")
@@ -1100,10 +1307,10 @@ def validate_historical_recovery_plan(
         if set(component.document_types) != set(component.document_hashes):
             raise ValueError(f"component {component.component_id} has inconsistent document types")
     entries = {entry.sha256: entry for entry in manifest.documents}
-    archive_present = (repository_root / "documents").exists()
+    reextracted: list[HistoricalDocumentCandidate] = []
     for candidate in plan.candidates:
         entry = entries[candidate.document_hash]
-        import_paths = {source.import_path for source in entry.sources if source.import_path}
+        import_paths = set(_historical_import_paths(entry))
         historical_groups = {
             association.historical_group
             for association in entry.cases
@@ -1123,14 +1330,29 @@ def validate_historical_recovery_plan(
         if classify_historical_document_type(candidate.import_path) is not candidate.document_type:
             raise ValueError(f"candidate {candidate.document_hash} has an invalid document type")
         archive_path = repository_root / entry.archive_path
-        if archive_present:
-            if not archive_path.is_file():
-                raise ValueError(f"archived document is missing: {entry.archive_path}")
-            actual_hash, actual_size = hash_file(archive_path)
-            if actual_hash != entry.sha256 or actual_size != entry.byte_size:
-                raise ValueError(f"archived document precondition failed: {entry.archive_path}")
+        if not archive_path.is_file():
+            raise ValueError(f"archived document is missing: {entry.archive_path}")
+        actual_hash, actual_size = hash_file(archive_path)
+        if actual_hash != entry.sha256 or actual_size != entry.byte_size:
+            raise ValueError(f"archived document precondition failed: {entry.archive_path}")
+        try:
+            reextracted.append(
+                candidate_extractor(
+                    entry,
+                    repository_root,
+                    max_pages=plan.max_pages,
+                    max_characters=plan.max_characters,
+                    max_pdf_bytes=plan.max_pdf_bytes,
+                )
+            )
+        except (HistoricalParseError, OSError, ValueError) as error:
+            raise ValueError(
+                f"candidate {candidate.document_hash} cannot be re-extracted: {error}"
+            ) from error
+    if _candidate_payload_digest(reextracted) != plan.candidate_payload_digest:
+        raise ValueError("re-extracted historical candidates do not match the recovery plan")
 
-    expected_components, _ = _build_recovery_components(plan.candidates, cases)
+    expected_components, _ = _build_recovery_components(plan.candidates, cases, manifest)
     if plan.components != expected_components:
         raise ValueError("historical recovery plan components do not match its candidates")
 
@@ -1155,18 +1377,43 @@ def validate_historical_recovery_plan(
         for document_hash in hashes:
             if document_hash not in manifest_hashes:
                 raise ValueError(f"case {case.case_id} references missing document {document_hash}")
-            references.setdefault(document_hash, case.case_id)
+            owner = references.setdefault(document_hash, case.case_id)
+            if (
+                owner != case.case_id
+                and case.unresolved_group is None
+                and cases.get(owner, case).unresolved_group is None
+            ):
+                raise ValueError(
+                    f"document {document_hash} is owned by curated cases {owner} and {case.case_id}"
+                )
     proposed_by_id = {case.case_id: case for case in proposed}
     final_cases = {**cases, **proposed_by_id}
     final_primary: dict[str, str] = {}
     for case in final_cases.values():
-        if case.primary_docket is None:
-            continue
-        owner = final_primary.setdefault(case.primary_docket, case.case_id)
-        if owner != case.case_id:
-            raise ValueError(
-                f"duplicate primary docket {case.primary_docket}: {owner}, {case.case_id}"
-            )
+        if case.primary_docket is not None:
+            owner = final_primary.setdefault(case.primary_docket, case.case_id)
+            if owner != case.case_id:
+                raise ValueError(
+                    f"duplicate primary docket {case.primary_docket}: {owner}, {case.case_id}"
+                )
+    for entry in manifest.documents:
+        for association in entry.cases:
+            if association.case_id is None:
+                continue
+            associated_case = final_cases.get(association.case_id)
+            if associated_case is None:
+                raise ValueError(
+                    f"document {entry.sha256} references missing case {association.case_id}"
+                )
+            if entry.sha256 not in {item.sha256 for item in associated_case.documents}:
+                raise ValueError(
+                    f"association for {entry.sha256} is absent from case {association.case_id}"
+                )
+            if not set(association.docket_numbers).issubset(associated_case.docket_numbers):
+                raise ValueError(
+                    f"association dockets for {entry.sha256} disagree with case "
+                    f"{association.case_id}"
+                )
 
 
 def apply_historical_recovery(
@@ -1174,11 +1421,22 @@ def apply_historical_recovery(
     manifest_store: ManifestStore,
     plan: HistoricalRecoveryPlan,
     *,
-    report_path: Path | None = None,
+    report_path: Path | None,
+    candidate_extractor: Callable[..., HistoricalDocumentCandidate] = extract_historical_candidate,
+    failure_injector: Callable[[str], None] | None = None,
 ) -> HistoricalRecoveryReport:
     """Validate and atomically apply a recovery plan under the manifest lock."""
+    if report_path is None:
+        raise ValueError("historical recovery requires a report path")
+    _validate_report_path(repository_root, manifest_store, report_path)
     with manifest_store.locked():
-        validate_historical_recovery_plan(repository_root, manifest_store, plan)
+        _recover_recovery_transaction(repository_root, manifest_store, report_path)
+        validate_historical_recovery_plan(
+            repository_root,
+            manifest_store,
+            plan,
+            candidate_extractor=candidate_extractor,
+        )
         manifest = manifest_store.load()
         _, cases = _load_case_repository(repository_root)
         proposed = {
@@ -1192,7 +1450,10 @@ def apply_historical_recovery(
             if component.proposed_case is not None
             for document_hash in component.document_hashes
         }
-        candidate_types = {item.document_hash: item.document_type for item in plan.candidates}
+        candidate_types = {
+            document_hash: component.document_types[document_hash]
+            for document_hash, component in assigned_components.items()
+        }
         unresolved_ids = {
             case.case_id for case in cases.values() if case.unresolved_group is not None
         }
@@ -1200,7 +1461,12 @@ def apply_historical_recovery(
         updated_entries: list[DocumentManifestEntry] = []
         manifest_changed = False
         for entry in manifest.documents:
-            document_type = candidate_types.get(entry.sha256, entry.document_type)
+            recovered_type = candidate_types.get(entry.sha256)
+            document_type = (
+                recovered_type
+                if recovered_type is not None and entry.document_type is DocumentType.UNKNOWN
+                else entry.document_type
+            )
             associations = list(entry.cases)
             component = assigned_components.get(entry.sha256)
             if component is not None and component.target_case_id is not None:
@@ -1288,7 +1554,7 @@ def apply_historical_recovery(
             [
                 entry
                 for entry in manifest.documents
-                if any(source.import_path is not None for source in entry.sources)
+                if _historical_import_paths(entry)
             ],
             plan.candidates,
             plan.components,
@@ -1304,19 +1570,18 @@ def apply_historical_recovery(
             }
         )
         if no_op:
-            if report_path is not None:
-                _atomic_contract(report_path, report)
+            _atomic_contract(report_path, report)
         else:
             _commit_recovery_transaction(
                 repository_root,
                 manifest_store,
-                manifest,
                 updated_manifest,
                 cases,
                 resulting_cases,
                 removals,
                 report_path=report_path,
                 report=report,
+                failure_injector=failure_injector,
             )
         return report
 
@@ -1324,17 +1589,22 @@ def apply_historical_recovery(
 def _commit_recovery_transaction(
     root: Path,
     store: ManifestStore,
-    old_manifest: DocumentManifest,
     new_manifest: DocumentManifest,
     old_cases: dict[str, NormalizedCase],
     new_cases: dict[str, NormalizedCase],
     removals: list[str],
     *,
-    report_path: Path | None,
+    report_path: Path,
     report: HistoricalRecoveryReport,
+    failure_injector: Callable[[str], None] | None,
 ) -> None:
+    transaction_dir = root / ".historical-recovery"
+    journal_path = transaction_dir / "journal.json"
+    if journal_path.exists():
+        raise RuntimeError("an unrecovered historical transaction already exists")
+    stage_dir = transaction_dir / "staging"
+
     case_dir = root / "data" / "cases"
-    case_dir.mkdir(parents=True, exist_ok=True)
     affected = sorted(
         set(removals)
         | {
@@ -1343,52 +1613,203 @@ def _commit_recovery_transaction(
             if case_id not in old_cases or _model_hash(case) != _model_hash(old_cases[case_id])
         }
     )
-    originals: dict[Path, bytes | None] = {}
-    staged: dict[Path, Path] = {}
-    try:
-        for case_id in affected:
-            destination = case_dir / f"{case_id}.json"
-            originals[destination] = destination.read_bytes() if destination.exists() else None
-            if case_id not in new_cases:
-                continue
-            descriptor, raw = tempfile.mkstemp(prefix=destination.name, suffix=".tmp", dir=case_dir)
-            temporary = Path(raw)
-            with os.fdopen(descriptor, "w", encoding="utf-8") as output:
-                output.write(new_cases[case_id].model_dump_json(indent=2) + "\n")
-                output.flush()
-                os.fsync(output.fileno())
-            staged[destination] = temporary
-        if report_path is not None:
-            report_path.parent.mkdir(parents=True, exist_ok=True)
-            originals[report_path] = report_path.read_bytes() if report_path.exists() else None
-            descriptor, raw = tempfile.mkstemp(
-                prefix=report_path.name, suffix=".tmp", dir=report_path.parent
+    payloads: list[tuple[Path, bytes | None]] = []
+    for case_id in affected:
+        case = new_cases.get(case_id)
+        payloads.append(
+            (
+                case_dir / f"{case_id}.json",
+                None if case is None else (case.model_dump_json(indent=2) + "\n").encode(),
             )
-            temporary = Path(raw)
-            with os.fdopen(descriptor, "w", encoding="utf-8") as output:
-                output.write(report.model_dump_json(indent=2) + "\n")
-                output.flush()
-                os.fsync(output.fileno())
-            staged[report_path] = temporary
-        for destination in sorted(originals, key=str):
-            staged_temporary = staged.get(destination)
-            if staged_temporary is None:
+        )
+    payloads.extend(
+        [
+            (report_path, (report.model_dump_json(indent=2) + "\n").encode()),
+            (store.path, (new_manifest.model_dump_json(indent=2) + "\n").encode()),
+        ]
+    )
+    destinations = [path.resolve() for path, _ in payloads]
+    transaction_root = transaction_dir.resolve()
+    if len(destinations) != len(set(destinations)):
+        raise ValueError("recovery report, manifest, and case destinations must be distinct")
+    if any(path.is_relative_to(transaction_root) for path in destinations):
+        raise ValueError("recovery destinations cannot use the transaction staging directory")
+    _durable_mkdir(stage_dir)
+
+    entries: list[_JournalEntry] = []
+    try:
+        for index, (destination, desired) in enumerate(payloads):
+            destination = destination.resolve()
+            backup_path: Path | None = None
+            if destination.exists():
+                backup_path = stage_dir / f"{index}.backup"
+                _write_durable_file(backup_path, destination.read_bytes())
+            desired_path: Path | None = None
+            if desired is not None:
+                desired_path = stage_dir / f"{index}.desired"
+                _write_durable_file(desired_path, desired)
+            entries.append(
+                _JournalEntry(
+                    destination=str(destination),
+                    backup=str(backup_path) if backup_path is not None else None,
+                    desired=str(desired_path) if desired_path is not None else None,
+                )
+            )
+        _atomic_contract(journal_path, _RecoveryJournal(phase="prepared", entries=entries))
+        _fsync_directory(transaction_dir)
+        if failure_injector is not None:
+            failure_injector("prepared")
+        for index, entry in enumerate(entries):
+            destination = Path(entry.destination)
+            if entry.desired is None:
                 destination.unlink(missing_ok=True)
+                _fsync_directory(destination.parent)
             else:
-                os.replace(staged_temporary, destination)
-        store.save(new_manifest)
+                _atomic_bytes(destination, Path(entry.desired).read_bytes())
+            if failure_injector is not None:
+                failure_injector(f"write-{index}")
+        _atomic_contract(journal_path, _RecoveryJournal(phase="committed", entries=entries))
+        _fsync_directory(transaction_dir)
+        if failure_injector is not None:
+            failure_injector("committed")
     except BaseException:
-        for destination, content in originals.items():
-            if content is None:
-                destination.unlink(missing_ok=True)
-            else:
-                destination.write_bytes(content)
-        if _model_hash(store.load()) != _model_hash(old_manifest):
-            store.save(old_manifest)
+        if journal_path.exists():
+            _recover_recovery_transaction(root, store, report_path)
+        else:
+            shutil.rmtree(stage_dir, ignore_errors=True)
         raise
+    _remove_transaction_artifacts(transaction_dir)
+
+
+def _validate_report_path(root: Path, store: ManifestStore, report_path: Path) -> None:
+    resolved_root = root.resolve()
+    resolved = report_path.resolve()
+    if not resolved.is_relative_to(resolved_root):
+        raise ValueError("historical recovery report must be inside the repository")
+    relative = resolved.relative_to(resolved_root)
+    protected = (
+        relative.parts[:1] == ("documents",)
+        or relative.parts[:2] == ("data", "cases")
+        or relative.parts[:1] == (".historical-recovery",)
+        or resolved in {store.path.resolve(), store.lock_path.resolve()}
+    )
+    if protected:
+        raise ValueError("historical recovery report path overlaps protected repository data")
+
+
+def _validate_recovery_journal(
+    root: Path,
+    store: ManifestStore,
+    report_path: Path,
+    journal: _RecoveryJournal,
+) -> None:
+    transaction_dir = (root / ".historical-recovery").resolve()
+    stage_dir = (transaction_dir / "staging").resolve()
+    case_dir = (root / "data" / "cases").resolve()
+    allowed_files = {store.path.resolve(), report_path.resolve()}
+    for entry in journal.entries:
+        destination = Path(entry.destination)
+        if not destination.is_absolute():
+            raise ValueError("recovery journal contains a relative destination")
+        resolved_destination = destination.resolve()
+        is_case = (
+            resolved_destination.parent == case_dir
+            and resolved_destination.suffix == ".json"
+        )
+        if resolved_destination not in allowed_files and not is_case:
+            raise ValueError("recovery journal contains an unexpected destination")
+        for staged_name in (entry.backup, entry.desired):
+            if staged_name is None:
+                continue
+            staged = Path(staged_name)
+            if (
+                not staged.is_absolute()
+                or staged.is_symlink()
+                or not staged.is_file()
+                or not staged.resolve().is_relative_to(stage_dir)
+            ):
+                raise ValueError("recovery journal contains an invalid staging file")
+
+
+def _recover_recovery_transaction(
+    root: Path, store: ManifestStore, report_path: Path
+) -> None:
+    """Roll back an interrupted prepared transaction or finish committed cleanup."""
+    transaction_dir = root / ".historical-recovery"
+    journal_path = transaction_dir / "journal.json"
+    stage_dir = transaction_dir / "staging"
+    if transaction_dir.is_symlink() or journal_path.is_symlink() or stage_dir.is_symlink():
+        raise ValueError("historical recovery transaction paths cannot be symbolic links")
+    if not journal_path.exists():
+        stale_stage = stage_dir
+        if stale_stage.exists():
+            shutil.rmtree(stale_stage)
+            _fsync_directory(transaction_dir)
+        return
+    journal = _RecoveryJournal.model_validate_json(journal_path.read_text())
+    _validate_recovery_journal(root, store, report_path, journal)
+    if journal.phase == "prepared":
+        for entry in journal.entries:
+            destination = Path(entry.destination)
+            if entry.backup is None:
+                destination.unlink(missing_ok=True)
+                if destination.parent.exists():
+                    _fsync_directory(destination.parent)
+            else:
+                _atomic_bytes(destination, Path(entry.backup).read_bytes())
+    _remove_transaction_artifacts(transaction_dir)
+
+
+def _remove_transaction_artifacts(transaction_dir: Path) -> None:
+    (transaction_dir / "journal.json").unlink(missing_ok=True)
+    _fsync_directory(transaction_dir)
+    shutil.rmtree(transaction_dir / "staging", ignore_errors=True)
+    if transaction_dir.exists():
+        _fsync_directory(transaction_dir)
+
+
+def _write_durable_file(path: Path, payload: bytes) -> None:
+    _durable_mkdir(path.parent)
+    with path.open("xb") as output:
+        output.write(payload)
+        output.flush()
+        os.fsync(output.fileno())
+    _fsync_directory(path.parent)
+
+
+def _atomic_bytes(path: Path, payload: bytes) -> None:
+    _durable_mkdir(path.parent)
+    descriptor, raw = tempfile.mkstemp(prefix=path.name, suffix=".tmp", dir=path.parent)
+    temporary = Path(raw)
+    try:
+        with os.fdopen(descriptor, "wb") as output:
+            output.write(payload)
+            output.flush()
+            os.fsync(output.fileno())
+        os.replace(temporary, path)
+        _fsync_directory(path.parent)
     finally:
-        for temporary in staged.values():
-            temporary.unlink(missing_ok=True)
+        temporary.unlink(missing_ok=True)
+
+
+def _durable_mkdir(path: Path) -> None:
+    missing: list[Path] = []
+    current = path
+    while not current.exists():
+        missing.append(current)
+        current = current.parent
+    path.mkdir(parents=True, exist_ok=True)
+    for created in reversed(missing):
+        _fsync_directory(created)
+        _fsync_directory(created.parent)
+
+
+def _fsync_directory(path: Path) -> None:
+    descriptor = os.open(path, os.O_RDONLY | os.O_DIRECTORY)
+    try:
+        os.fsync(descriptor)
+    finally:
+        os.close(descriptor)
 
 
 def _repository_conflicts(
@@ -1398,7 +1819,9 @@ def _repository_conflicts(
 ) -> list[RecoveryConflict]:
     conflicts: list[RecoveryConflict] = []
     primary: dict[str, str] = {}
-    manifest_hashes = {entry.sha256 for entry in manifest.documents}
+    curated_owners: dict[str, str] = {}
+    manifest_entries = {entry.sha256: entry for entry in manifest.documents}
+    manifest_hashes = set(manifest_entries)
     for case_id, case in sorted(cases.items()):
         path = case_files[case_id]
         if path.stem != case_id:
@@ -1437,6 +1860,38 @@ def _repository_conflicts(
                     document_hashes=missing,
                 )
             )
+        for reference in case.documents:
+            manifest_entry = manifest_entries.get(reference.sha256)
+            if (
+                manifest_entry is not None
+                and manifest_entry.document_type is not DocumentType.UNKNOWN
+                and reference.document_type is not DocumentType.UNKNOWN
+                and manifest_entry.document_type is not reference.document_type
+            ):
+                conflicts.append(
+                    RecoveryConflict(
+                        code="document-type-mismatch",
+                        message=(
+                            f"case {case_id} and manifest disagree on the type of "
+                            f"{reference.sha256}"
+                        ),
+                        document_hashes=[reference.sha256],
+                    )
+                )
+        if case.unresolved_group is None:
+            for document_hash in hashes:
+                prior = curated_owners.setdefault(document_hash, case_id)
+                if prior != case_id:
+                    conflicts.append(
+                        RecoveryConflict(
+                            code="duplicate-curated-document-owner",
+                            message=(
+                                f"document {document_hash} is owned by curated cases "
+                                f"{prior} and {case_id}"
+                            ),
+                            document_hashes=[document_hash],
+                        )
+                    )
     known_ids = set(cases)
     seen_associations: set[tuple[str, str]] = set()
     for entry in manifest.documents:
@@ -1465,6 +1920,33 @@ def _repository_conflicts(
                         document_hashes=[entry.sha256],
                     )
                 )
+            elif association.case_id:
+                associated_case = cases[association.case_id]
+                if entry.sha256 not in {item.sha256 for item in associated_case.documents}:
+                    conflicts.append(
+                        RecoveryConflict(
+                            code="association-document-mismatch",
+                            message=(
+                                f"association for {entry.sha256} is absent from case "
+                                f"{association.case_id}"
+                            ),
+                            document_hashes=[entry.sha256],
+                        )
+                    )
+                if not set(association.docket_numbers).issubset(
+                    associated_case.docket_numbers
+                ):
+                    conflicts.append(
+                        RecoveryConflict(
+                            code="association-docket-mismatch",
+                            message=(
+                                f"association dockets for {entry.sha256} disagree with case "
+                                f"{association.case_id}"
+                            ),
+                            document_hashes=[entry.sha256],
+                            docket_numbers=association.docket_numbers,
+                        )
+                    )
     return sorted(conflicts, key=_conflict_key)
 
 
@@ -1491,6 +1973,15 @@ def _deduplicate_associations(values: list[CaseAssociation]) -> list[CaseAssocia
         for item in values
     }
     return [keyed[key] for key in sorted(keyed)]
+
+
+def _candidate_payload_digest(candidates: list[HistoricalDocumentCandidate]) -> str:
+    payload = [
+        candidate.model_dump(mode="json")
+        for candidate in sorted(candidates, key=lambda item: item.document_hash)
+    ]
+    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    return hashlib.sha256(encoded.encode()).hexdigest()
 
 
 def _model_hash(model: ContractModel) -> str:
@@ -1522,7 +2013,7 @@ def _conflict_key(conflict: RecoveryConflict) -> tuple[object, ...]:
 
 
 def _atomic_contract(path: Path, model: ContractModel) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
+    _durable_mkdir(path.parent)
     descriptor, raw = tempfile.mkstemp(prefix=path.name, suffix=".tmp", dir=path.parent)
     temporary = Path(raw)
     try:
@@ -1531,6 +2022,7 @@ def _atomic_contract(path: Path, model: ContractModel) -> None:
             output.flush()
             os.fsync(output.fileno())
         os.replace(temporary, path)
+        _fsync_directory(path.parent)
     finally:
         temporary.unlink(missing_ok=True)
 
@@ -1689,11 +2181,17 @@ def _caption_from_metadata(title: str | None) -> str | None:
 
 def _extract_caption(text: str, document_type: DocumentType) -> str | None:
     lines = [line.strip(" |") for line in text.splitlines() if line.strip(" |")]
+    # Transcript captions are laid out around explicit party roles and vertical rules.
+    # Parse that stronger structure before considering incidental prose containing "v.".
+    if document_type is DocumentType.TRANSCRIPT:
+        transcript_caption = _transcript_caption(lines)
+        if transcript_caption is not None:
+            return transcript_caption
     candidates: list[str] = []
     for index, line in enumerate(lines):
         if not re.search(r"\bv\.?\s*(?:$|[^a-z])", line, re.IGNORECASE):
             continue
-        if len(line) > 220 or re.search(r"\b(?:see|cf\.)\s+\w+\s+v\.", line, re.IGNORECASE):
+        if not _generic_caption_context(lines, index) or _suspicious_caption_line(line):
             continue
         start = index
         while start > 0 and index - start < 2 and _caption_continuation(lines[start - 1]):
@@ -1704,13 +2202,44 @@ def _extract_caption(text: str, document_type: DocumentType) -> str | None:
         caption = _clean_caption(" ".join(lines[start:end]))
         if _looks_like_caption(caption):
             candidates.append(caption)
-    if candidates:
-        # Opinion/order captions are usually complete on one line; transcripts often need
-        # the role-aware parser below because the docket occurs between "v." and respondent.
-        return max(candidates, key=_caption_score)
-    if document_type is DocumentType.TRANSCRIPT:
-        return _transcript_caption(lines)
-    return None
+    return max(candidates, key=_caption_score) if candidates else None
+
+
+def _generic_caption_context(lines: list[str], index: int) -> bool:
+    nearby = " ".join(lines[max(0, index - 3) : index + 4])
+    return bool(
+        _DOCKET_LABEL_RE.search(nearby)
+        or re.search(
+            r"\b(?:SUPREME COURT|IN THE|OCTOBER TERM|Syllabus|ON (?:WRIT|APPEAL)|"
+            r"CERTIORARI TO)\b",
+            nearby,
+            re.IGNORECASE,
+        )
+    )
+
+
+def _suspicious_caption_line(line: str) -> bool:
+    return bool(
+        len(line) > 220
+        or re.match(r"^\s*\d{1,3}\s+", line)
+        or re.search(
+            r"\b(?:see|cf\.|accord|e\.g\.|MR\.|MS\.|JUSTICE|QUESTION|ANSWER)\s+[^.]*\bv\.",
+            line,
+            re.IGNORECASE,
+        )
+        or re.match(
+            r"^\s*(?:we|the court|this court|in|as|under|because|our)\b.*\bv\.",
+            line,
+            re.IGNORECASE,
+        )
+        or re.search(r"\b\d+\s+(?:U\.?\s*S\.?|S\.\s*Ct\.|F\.\s*\d+d?)\s+\d+", line)
+        or re.search(
+            r"\b(?:above-entitled|came on|official transcript|heritage reporting|"
+            r"proceedings|copyright)\b",
+            line,
+            re.IGNORECASE,
+        )
+    )
 
 
 def _caption_continuation(line: str) -> bool:
@@ -1796,18 +2325,33 @@ def _nearest_party(lines: list[str], origin: int, direction: int) -> str | None:
 
 
 def _looks_like_caption(value: str) -> bool:
-    return bool(re.search(r"\s+v\.?\s+", value, re.IGNORECASE)) and len(value) <= 350
+    sides = _caption_sides(value)
+    return (
+        sides is not None
+        and all(_meaningful_party_words(side) for side in sides)
+        and len(value) <= 350
+        and not _suspicious_caption_line(value)
+    )
 
 
 def _caption_score(value: str) -> tuple[int, int]:
     return (int(" v. " in value), len(value))
 
 
-def _normalized_party_words(caption: str) -> set[str]:
-    ignored = {"the", "of", "and", "et", "al", "v"}
+def _caption_sides(caption: str) -> tuple[str, str] | None:
+    sides = re.split(r"\s+v\.?\s+", caption, maxsplit=1, flags=re.IGNORECASE)
+    return (sides[0], sides[1]) if len(sides) == 2 else None
+
+
+def _meaningful_party_words(value: str) -> set[str]:
+    ignored = {
+        "the", "of", "and", "et", "al", "for", "inc", "llc", "corporation",
+        "petitioner", "petitioners", "respondent", "respondents", "appellant",
+        "appellee", "secretary", "department",
+    }
     return {
         word.casefold()
-        for word in re.findall(r"[A-Za-z]{3,}", caption)
+        for word in re.findall(r"[A-Za-z]{3,}", value)
         if word.casefold() not in ignored
     }
 
@@ -1819,9 +2363,26 @@ def _captions_equivalent(first: str, second: str) -> bool:
 
 
 def _caption_party_overlap(first: str, second: str) -> bool:
-    first_words = _normalized_party_words(first)
-    second_words = _normalized_party_words(second)
-    return bool(first_words & second_words)
+    first_sides = _caption_sides(first)
+    second_sides = _caption_sides(second)
+    if first_sides is None or second_sides is None:
+        return False
+    # A caption is compatible only when each corresponding party has meaningful support;
+    # one shared boilerplate word anywhere in the captions is not identity evidence.
+    return all(
+        bool(_meaningful_party_words(left) & _meaningful_party_words(right))
+        for left, right in zip(first_sides, second_sides, strict=True)
+    )
+
+
+def _candidate_captions_compatible(
+    first: HistoricalDocumentCandidate, second: HistoricalDocumentCandidate
+) -> bool:
+    if first.title is None or second.title is None:
+        return False
+    return _captions_equivalent(first.title, second.title) or _caption_party_overlap(
+        first.title, second.title
+    )
 
 
 def _extract_parties(

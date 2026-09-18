@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 from datetime import date
 from pathlib import Path
 from types import SimpleNamespace
@@ -25,7 +26,15 @@ HASH = "a" * 64
 def test_versioned_recovery_contracts_reject_unknown_fields() -> None:
     conflict = RecoveryConflict(code="caption-conflict", message="captions disagree")
     component = RecoveryComponent(component_id="component-1", conflicts=[conflict])
-    plan = HistoricalRecoveryPlan(source_manifest_hash=HASH, components=[component])
+    plan = HistoricalRecoveryPlan(
+        parser_version="2",
+        max_pages=3,
+        max_characters=60_000,
+        max_pdf_bytes=100 * 1024 * 1024,
+        candidate_payload_digest=hashlib.sha256(b"[]").hexdigest(),
+        source_manifest_hash=HASH,
+        components=[component],
+    )
     report = HistoricalRecoveryReport(documents_examined=1, conflicts=[conflict])
 
     assert HistoricalDocumentCandidate.model_fields["schema_version"].default == "1.0.0"
@@ -109,6 +118,51 @@ def test_legacy_numbered_transcript_caption_layout_is_supported() -> None:
     assert candidate.title == "UNITED STATES v. JICARILLA APACHE NATION"
     assert candidate.dates.argument == date(2011, 4, 20)
     assert candidate.term == 2010
+
+
+def test_transcript_role_caption_wins_over_speech_and_reporter_citations() -> None:
+    candidate = parse_historical_metadata(
+        document_hash=HASH,
+        import_path="archive/group/transcript/source.pdf",
+        opening_text="""
+        SUPREME COURT OF THE UNITED STATES
+        ACME WORKERS UNION, )
+          Petitioner, )
+        v. ) No. 22-123
+        BETA COUNTY BOARD, )
+          Respondent. )
+        MR. SMITH: In Smith v. Jones, 410 U.S. 1, the Court said otherwise.
+        The above-entitled matter came on for argument in Alpha v. Boilerplate.
+        Date: October 4, 2022
+        """,
+    )
+
+    assert candidate.title == "ACME WORKERS UNION v. BETA COUNTY BOARD"
+
+
+def test_generic_caption_requires_header_context_and_two_supported_party_sides() -> None:
+    citation_only = parse_historical_metadata(
+        document_hash=HASH,
+        import_path="archive/group/opinion/source.pdf",
+        opening_text="""
+        No. 22-123. Decided May 1, 2023
+        The rule from Smith v. Jones, 410 U.S. 1, controls this dispute.
+        """,
+    )
+    conflicting = parse_historical_metadata(
+        document_hash="b" * 64,
+        import_path="archive/group/opinion/source.pdf",
+        opening_text="""
+        SUPREME COURT OF THE UNITED STATES
+        ALPHA WORKERS v. BETA BOARD
+        No. 22-123. Decided May 1, 2023
+        """,
+        embedded_title="22-123 Omega Consumers v. Gamma Agency",
+    )
+
+    assert citation_only.title is None
+    assert conflicting.ambiguous is True
+    assert any("conflicting captions" in warning for warning in conflicting.warnings)
 
 
 def test_historical_opinion_parses_caption_explicit_term_and_dates() -> None:
