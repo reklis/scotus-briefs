@@ -11,11 +11,11 @@ stage=${1:-}
 message=${2:-}
 case "$stage" in
   source)
-    paths=(documents manifests data/cases data/checkpoints reports ':(exclude)reports/workflow')
+    paths=(documents manifests data/cases data/checkpoints reports)
     default_message="chore(archive): preserve workflow source updates"
     ;;
   generated)
-    paths=(data/evidence data/guides data/checkpoints reports ':(exclude)reports/workflow')
+    paths=(data/evidence data/guides data/checkpoints reports)
     default_message="chore(guides): publish accepted workflow updates"
     ;;
   *) usage ;;
