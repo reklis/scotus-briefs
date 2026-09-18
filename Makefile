@@ -1,4 +1,4 @@
-.PHONY: sync format lint typecheck test schemas ingest discover import integrity generation backfill
+.PHONY: sync format lint typecheck test schemas ingest discover import integrity generation backfill validate
 sync:
 	uv sync --frozen
 format:
@@ -11,18 +11,19 @@ test:
 	uv run pytest
 test-all: lint typecheck test
 schemas:
-	uv run scotus-pipeline schemas
+	uv run scotus-guide schemas
 # Pass additional CLI options with ARGS='...'.
 ingest:
-	uv run scotus-pipeline reconcile $(ARGS)
+	uv run scotus-guide ingest --mode incremental --batch-size 25 $(ARGS)
 discover:
-	uv run scotus-pipeline discover $(ARGS)
+	uv run scotus-guide discover $(ARGS)
 import:
-	uv run scotus-pipeline import-corpus $(ARGS)
+	uv run scotus-guide import-corpus $(ARGS)
 integrity:
-	uv run scotus-pipeline integrity $(ARGS)
-# Reserved entry points for later OpenSpec phases; intentionally do not invoke an LLM yet.
+	uv run scotus-guide integrity $(ARGS)
 generation:
-	@echo 'Guide generation is implemented in tasks 5-6, not in the archive foundation.'; exit 2
+	uv run scotus-guide run --mode incremental --batch-size 25 $(ARGS)
 backfill:
-	@echo 'Generation backfill is implemented in task 8; use import for PDF backfill.'; exit 2
+	uv run scotus-guide run --mode backfill --batch-size 10 $(ARGS)
+validate:
+	uv run scotus-guide run --mode validate --batch-size 1 $(ARGS)

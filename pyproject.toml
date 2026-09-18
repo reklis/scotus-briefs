@@ -10,9 +10,11 @@ requires-python = ">=3.12"
 dependencies = [
   "httpx>=0.27.2,<0.29",
   "pydantic>=2.9.2,<3",
+  "pypdf>=5.1.0,<6",
 ]
 
 [project.scripts]
+scotus-guide = "scotus_guide.cli:main"
 scotus-pipeline = "scotus_guide.cli:main"
 
 [dependency-groups]
