@@ -11,6 +11,7 @@ from pydantic import TypeAdapter, ValidationError
 from scotus_guide.cli import _schema_with_invariants
 from scotus_guide.models import (
     CANONICAL_MODELS,
+    CaseAssociation,
     CaseDates,
     CitizenGuide,
     DocketNumber,
@@ -58,6 +59,13 @@ def test_docket_contract_accepts_canonical_original_jurisdiction_dockets() -> No
     assert adapter.validate_python("65O") == "65O"
     with pytest.raises(ValidationError):
         adapter.validate_python("No. 65, Orig.")
+
+
+def test_case_association_requires_canonical_case_id_when_present() -> None:
+    assert CaseAssociation(case_id="scotus-24-7").case_id == "scotus-24-7"
+    assert CaseAssociation(historical_group="legacy").case_id is None
+    with pytest.raises(ValidationError, match="string_pattern_mismatch"):
+        CaseAssociation(case_id="scotus-24A7")
 
 
 def test_case_requires_real_or_unresolved_identity_and_decision_date() -> None:

@@ -285,6 +285,37 @@ def validate_repository(root: Path) -> list[str]:
         )
     except (OSError, ValidationError) as error:
         return [f"manifest: {error}"]
+
+    cases: dict[str, NormalizedCase] = {}
+    for path in sorted((root / "data" / "cases").glob("*.json")):
+        try:
+            case = NormalizedCase.model_validate_json(path.read_text())
+        except (OSError, ValidationError) as error:
+            errors.append(f"{path}: {error}")
+            continue
+        if case.case_id in cases:
+            errors.append(f"{path}: duplicate case ID {case.case_id}")
+            continue
+        cases[case.case_id] = case
+
+    for entry in manifest.documents:
+        for association in entry.cases:
+            if association.case_id is None:
+                # Historical documents can remain associated only by docket or import group.
+                continue
+            associated_case = cases.get(association.case_id)
+            if associated_case is None:
+                errors.append(
+                    f"{manifest_path}: document {entry.sha256} has dangling case association "
+                    f"{association.case_id}"
+                )
+                continue
+            if entry.sha256 not in {reference.sha256 for reference in associated_case.documents}:
+                errors.append(
+                    f"{manifest_path}: association {association.case_id} does not reference "
+                    f"document {entry.sha256} in its normalized case"
+                )
+
     validator = GuideValidator(root)
     for path in sorted((root / "data" / "guides").glob("*.json")):
         try:

@@ -11,6 +11,7 @@ from pydantic import BaseModel, ConfigDict, Field, HttpUrl, model_validator
 
 SCHEMA_VERSION = "1.0.0"
 Sha256 = Annotated[str, Field(pattern=r"^[0-9a-f]{64}$")]
+StableCaseId = Annotated[str, Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+)*$")]
 DocketNumber = Annotated[str, Field(pattern=r"^(?:\d{2,4}-\d+|\d{2,4}[A-Z]\d+|\d+O)$")]
 
 
@@ -33,7 +34,7 @@ class DocumentType(StrEnum):
 
 
 class CaseAssociation(ContractModel):
-    case_id: str | None = None
+    case_id: StableCaseId | None = None
     docket_numbers: list[DocketNumber] = Field(default_factory=list)
     historical_group: str | None = None
 
@@ -138,8 +139,8 @@ class CaseDocumentReference(ContractModel):
 
 class NormalizedCase(ContractModel):
     schema_version: Literal["1.0.0"] = "1.0.0"
-    case_id: Annotated[str, Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+)*$")]
-    slug: Annotated[str, Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+)*$")]
+    case_id: StableCaseId
+    slug: StableCaseId
     title: str
     term: Annotated[int, Field(ge=1789, le=2200)] | None = None
     docket_numbers: list[DocketNumber] = Field(default_factory=list)

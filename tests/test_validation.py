@@ -8,6 +8,7 @@ from typing import Any
 from scotus_guide.evidence import _atomic_json
 from scotus_guide.extraction import ExtractedDocument, ExtractedPage, PageStatus
 from scotus_guide.models import (
+    CaseAssociation,
     CaseDocumentReference,
     Citation,
     CitizenGuide,
@@ -33,6 +34,7 @@ from scotus_guide.validation import (
     ModelVerification,
     adversarial_verify,
     publish_candidate,
+    validate_repository,
     verification_checks,
 )
 
@@ -179,6 +181,43 @@ def test_deterministic_validation_checks_citations_attribution_and_lifecycle(
     invalid = guide.model_copy(update={"overview": bad_section})
     result = GuideValidator(tmp_path).deterministic(case, invalid, [evidence], manifest)
     assert not result.checks["attribution"]
+
+
+def test_repository_validation_checks_manifest_case_associations(tmp_path: Path) -> None:
+    case, manifest, _evidence, _guide = fixtures(tmp_path)
+    case_path = tmp_path / "data" / "cases" / f"{case.case_id}.json"
+    case_path.parent.mkdir(parents=True)
+    case_path.write_text(case.model_dump_json())
+
+    hashes = [HASH, "c" * 64, "d" * 64, "e" * 64]
+    associations = [
+        CaseAssociation(case_id=case.case_id),
+        CaseAssociation(case_id="scotus-24-8"),
+        CaseAssociation(case_id=case.case_id),
+        CaseAssociation(historical_group="legacy"),
+    ]
+    entries = [
+        manifest.documents[0].model_copy(
+            update={
+                "sha256": document_hash,
+                "archive_path": f"documents/{document_hash[:2]}/{document_hash}.pdf",
+                "cases": [association],
+            }
+        )
+        for document_hash, association in zip(hashes, associations, strict=True)
+    ]
+    manifest_path = tmp_path / "manifests" / "documents.json"
+    manifest_path.parent.mkdir()
+    manifest_path.write_text(DocumentManifest(documents=entries).model_dump_json())
+
+    errors = validate_repository(tmp_path)
+
+    assert any("dangling case association scotus-24-8" in error for error in errors)
+    assert any(
+        f"association {case.case_id} does not reference document {'d' * 64}" in error
+        for error in errors
+    )
+    assert not any("e" * 64 in error for error in errors)
 
 
 def test_rejected_candidate_retains_prior_accepted_guide(tmp_path: Path) -> None:
