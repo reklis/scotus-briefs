@@ -297,6 +297,12 @@ def _drop_invalid_cited_content(raw: dict[str, Any], evidence: list[EvidenceReco
             ):
                 section["summary"] = None
                 section["summary_citations"] = []
+        if (
+            section.get("status") == SectionStatus.COMPLETE.value
+            and not section.get("summary")
+            and not section.get("claims")
+        ):
+            section["status"] = SectionStatus.SOURCE_LIMITED.value
     glossary = raw.get("glossary")
     if isinstance(glossary, list):
         raw["glossary"] = [

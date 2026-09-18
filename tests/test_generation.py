@@ -72,9 +72,10 @@ def test_invalid_model_citations_are_removed_before_validation() -> None:
         },
         "party_positions": [
             {
+                "status": "complete",
                 "claims": [
                     {"text": "A procedural fact is not a party argument.", "citations": [valid]}
-                ]
+                ],
             }
         ],
         "glossary": [
@@ -88,6 +89,7 @@ def test_invalid_model_citations_are_removed_before_validation() -> None:
     assert [claim["text"] for claim in raw["overview"]["claims"]] == ["Supported."]
     assert raw["overview"]["summary"] is None
     assert raw["party_positions"][0]["claims"] == []
+    assert raw["party_positions"][0]["status"] == "source_limited"
     assert [entry["term"] for entry in raw["glossary"]] == ["Valid"]
 
 
