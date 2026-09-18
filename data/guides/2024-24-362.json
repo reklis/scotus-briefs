@@ -1,0 +1,584 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+            "evidence_ids": [
+              "ev-8933bf7d996b-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case arose from an FBI raid on the wrong house on October\u202f18,\u202f2017."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+            "evidence_ids": [
+              "ev-8933bf7d996b-0000-0004"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Petitioners filed a petition for certiorari to the United States Court of Appeals for the Eleventh Circuit."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+            "evidence_ids": [
+              "ev-ae8402906c3f-0001-0002"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether a proviso such as this could extend more broadly than the case at hand."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+            "evidence_ids": [
+              "ev-ae8402906c3f-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Jackson asked whether the Court should not reach the Supremacy Clause question."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+            "evidence_ids": [
+              "ev-ae8402906c3f-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, justice Jackson expressed concern about jurisdiction to decide a question that never appeared in the cert petition."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+            "evidence_ids": [
+              "ev-ae8402906c3f-0002-0004"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, justice Jackson noted that the Eleventh Circuit is the only circuit that has adopted this line of thinking."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2024-24-362",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+            "evidence_ids": [
+              "ev-8933bf7d996b-0001-0002"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "The Court held that the FTCA does not permit the Eleventh Circuit\u2019s Supremacy Clause defense."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+            "evidence_ids": [
+              "ev-8933bf7d996b-0001-0003"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Court held that none of the defenses include In\u202fre\u202fNeagle and that decision did not recognize a judicial or legislative immunity."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+            "evidence_ids": [
+              "ev-8933bf7d996b-0001-0004"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The Court held that the Eleventh Circuit must assess the issue without reference to its mistaken view that the law\u2011enforcement proviso applies to subsection (a)."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-18T21:30:32.318273Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+      "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+            "evidence_ids": [
+              "ev-ae8402906c3f-0001-0002"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether a proviso such as this could extend more broadly than the case at hand."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+            "evidence_ids": [
+              "ev-ae8402906c3f-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked, \u201cBut, if so, they can say that?\u201d"
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+            "evidence_ids": [
+              "ev-ae8402906c3f-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Jackson asked whether the Court should not reach the Supremacy Clause question."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+            "evidence_ids": [
+              "ev-ae8402906c3f-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, justice Jackson expressed concern about jurisdiction to decide a question that never appeared in the cert petition."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+            "evidence_ids": [
+              "ev-ae8402906c3f-0002-0004"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, justice Jackson noted that the Eleventh Circuit is the only circuit that has adopted this line of thinking."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+            "evidence_ids": [
+              "ev-8933bf7d996b-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "On October 18, 2017, the FBI mistakenly raided a family home in suburban Atlanta belonging to Curtrina\u202fMartin and others instead of the intended target."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+            "evidence_ids": [
+              "ev-8933bf7d996b-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioners argue that the statutory proviso should be applied more broadly."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+            "evidence_ids": [
+              "ev-ae8402906c3f-0002-0006"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "The petitioners contend that the Eleventh Circuit\u2019s interpretation of the discretionary\u2011function exception would eliminate most of the Federal Tort Claims Act and the liability the proviso was intended to provide."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+            "evidence_ids": [
+              "ev-8933bf7d996b-0001-0002"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "The Court held that the FTCA does not permit the Eleventh Circuit\u2019s Supremacy Clause defense."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+            "evidence_ids": [
+              "ev-8933bf7d996b-0001-0004"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The Court held that the Eleventh Circuit must assess the issue without reference to its mistaken view that the law\u2011enforcement proviso applies to subsection (a)."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+            "evidence_ids": [
+              "ev-8933bf7d996b-0001-0003"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Court concluded that decisions such as In\u202fre\u202fNeagle do not create a judicial or legislative immunity defense."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+              "evidence_ids": [
+                "ev-8933bf7d996b-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioners argue for a broader application of the proviso."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+              "evidence_ids": [
+                "ev-ae8402906c3f-0002-0006"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "Petitioners contend that the Eleventh Circuit\u2019s understanding of the discretionary\u2011function exception would eliminate most of the FTCA and the liability the proviso was enacted to provide."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+      "evidence_ids": [
+        "ev-8933bf7d996b-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+      "evidence_ids": [
+        "ev-8933bf7d996b-0000-0004"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+      "evidence_ids": [
+        "ev-8933bf7d996b-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+      "evidence_ids": [
+        "ev-8933bf7d996b-0001-0002"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    },
+    {
+      "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+      "evidence_ids": [
+        "ev-8933bf7d996b-0001-0003"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+      "evidence_ids": [
+        "ev-8933bf7d996b-0001-0004"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+      "evidence_ids": [
+        "ev-ae8402906c3f-0001-0002"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+      "evidence_ids": [
+        "ev-ae8402906c3f-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+      "evidence_ids": [
+        "ev-ae8402906c3f-0002-0001"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+      "evidence_ids": [
+        "ev-ae8402906c3f-0002-0002"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+      "evidence_ids": [
+        "ev-ae8402906c3f-0002-0004"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 53
+      }
+    },
+    {
+      "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+      "evidence_ids": [
+        "ev-ae8402906c3f-0002-0006"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    },
+    {
+      "document_hash": "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+      "evidence_ids": [
+        "ev-ae8402906c3f-0002-0007"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 60
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-18T21:46:01.621834Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

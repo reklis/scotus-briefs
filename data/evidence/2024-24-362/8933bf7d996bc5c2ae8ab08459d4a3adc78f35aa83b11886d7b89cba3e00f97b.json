@@ -19,12 +19,12 @@
       "text": "On October 18, 2017, the FBI raided the wrong house in suburban Atlanta. Offcers meant to execute search and arrest warrants at a suspected gang hideout at 3741 Landau Lane but instead stormed 3756 Denville Trace, a quiet family home occupied by petitioners Hilliard Toi Cliatt, his partner Curtrina Martin, and her 7-year-old son."
     },
     {
-      "attribution": "Petitioners",
+      "attribution": "Court",
       "case_id": "2024-24-362",
       "confidence": 1.0,
       "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
-      "evidence_id": "ev-8933bf7d996b-0000-0001",
-      "kind": "allegation",
+      "evidence_id": "ev-8933bf7d996b-0000-0004",
+      "kind": "procedural_event",
       "opinion_part": null,
       "pages": {
         "end": 2,
@@ -32,7 +32,7 @@
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "petitioners sued the United States under the Federal Tort Claims Act (FTCA), 28 U. S. C. \u00a7 2671 et seq., seeking damages resulting from the offcers' alleged negligent and intentional actions during the raid."
+      "text": "certiorari to the united states court of appeals for the eleventh circuit"
     },
     {
       "attribution": "Petitioners",
@@ -47,81 +47,113 @@
         "start": 3
       },
       "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "Petitioners' arguments for broader application of the proviso are unpersuasive."
-    },
-    {
-      "attribution": "Justice Gorsuch",
-      "case_id": "2024-24-362",
-      "confidence": 1.0,
-      "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
-      "evidence_id": "ev-8933bf7d996b-0000-0006",
-      "kind": "justice_question",
-      "opinion_part": null,
-      "pages": {
-        "end": 5,
-        "start": 5
-      },
-      "schema_version": "1.0.0",
       "status": "supported",
-      "text": "If federal offcers raid the wrong house, causing property damage and assaulting innocent occupants, may the homeowners sue the government for damages?"
+      "text": "Petitioners' arguments for broader application of the proviso are unpersuasive."
     },
     {
       "attribution": "Court",
       "case_id": "2024-24-362",
-      "confidence": 1.0,
+      "confidence": 0.85,
       "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
-      "evidence_id": "ev-8933bf7d996b-0000-0007",
-      "kind": "stated_consequence",
-      "opinion_part": null,
+      "evidence_id": "ev-8933bf7d996b-0001-0000",
+      "kind": "fact",
+      "opinion_part": "majority",
       "pages": {
-        "end": 10,
-        "start": 10
+        "end": 12,
+        "start": 12
       },
       "schema_version": "1.0.0",
       "status": "supported",
-      "text": "the government had a winning Supremacy Clause defense. As a result, the Eleventh Circuit concluded, the United States was entitled to summary judgment."
+      "text": "The proviso's placement supplies an immediate clue about the scope of its application. It appears in the same subsec-\ntion (and the same sentence) as the intentional-tort excep-\ntion."
     },
     {
-      "attribution": "Plaintiffs",
+      "attribution": "Court",
       "case_id": "2024-24-362",
-      "confidence": 1.0,
+      "confidence": 0.85,
       "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
-      "evidence_id": "ev-8933bf7d996b-0001-0003",
-      "kind": "party_argument",
-      "opinion_part": null,
+      "evidence_id": "ev-8933bf7d996b-0001-0001",
+      "kind": "fact",
+      "opinion_part": "majority",
       "pages": {
-        "end": 14,
-        "start": 14
+        "end": 13,
+        "start": 13
       },
       "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "Seeking to defend the Eleventh Circuit's view that the proviso applies broadly across all of \u00a7 2680's exceptions, the plaintiffs offer a number of thoughtful arguments."
+      "status": "supported",
+      "text": "Notice, too, that subsection (h) and its proviso work to-\ngether to address the same category of claims: intentional\ntorts. Subsection (h)'s intentional-tort exception excludes\nfrom the FTCA's sovereign-immunity waiver claims for torts\nlike \u201cassault, battery, false imprisonment, [and] false arrest.\u201d"
     },
     {
-      "attribution": "Christopher Mills",
+      "attribution": "Court",
       "case_id": "2024-24-362",
-      "confidence": 1.0,
+      "confidence": 0.95,
       "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
-      "evidence_id": "ev-8933bf7d996b-0001-0004",
-      "kind": "amicus_argument",
-      "opinion_part": null,
+      "evidence_id": "ev-8933bf7d996b-0001-0002",
+      "kind": "holding",
+      "opinion_part": "majority",
       "pages": {
         "end": 16,
         "start": 16
       },
       "schema_version": "1.0.0",
-      "status": "uncertain",
-      "text": "the Court appointed Christopher Mills as amicus to represent the Eleventh Circuit's views."
+      "status": "supported",
+      "text": "the FTCA does not permit the Eleventh Circuit's Supremacy Clause defense."
     },
     {
-      "attribution": "Supreme Court",
+      "attribution": "Court",
       "case_id": "2024-24-362",
-      "confidence": 1.0,
+      "confidence": 0.8,
       "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
-      "evidence_id": "ev-8933bf7d996b-0001-0002",
-      "kind": "procedural_event",
-      "opinion_part": null,
+      "evidence_id": "ev-8933bf7d996b-0001-0006",
+      "kind": "fact",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 18,
+        "start": 18
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "In re Neagle involved an affair, a homicide, and a habeas petition. In 1883, Sarah Althea Hill claimed to be the wife of U. S. Senator William Sharon and sought a share of his fortune in acrimonious California divorce proceedings."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2024-24-362",
+      "confidence": 0.95,
+      "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+      "evidence_id": "ev-8933bf7d996b-0001-0003",
+      "kind": "holding",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 20,
+        "start": 20
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "But none of these defenses include In re Neagle. That decision did not recognize a \u201cjudicial or legislative immunity.\u201d"
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2024-24-362",
+      "confidence": 0.9,
+      "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+      "evidence_id": "ev-8933bf7d996b-0001-0004",
+      "kind": "holding",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 21,
+        "start": 21
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "the Eleventh Circuit must undertake that assessment without reference to its mistaken view that the law enforcement proviso applies to subsection (a)."
+    },
+    {
+      "attribution": "Justice Sotomayor",
+      "case_id": "2024-24-362",
+      "confidence": 0.95,
+      "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+      "evidence_id": "ev-8933bf7d996b-0001-0005",
+      "kind": "concurrence",
+      "opinion_part": "concurrence",
       "pages": {
         "end": 22,
         "start": 22
@@ -129,6 +161,22 @@
       "schema_version": "1.0.0",
       "status": "supported",
       "text": "The judgment of the Eleventh Circuit is vacated, and the case is remanded for further proceedings consistent with this opinion."
+    },
+    {
+      "attribution": "Justice Sotomayor",
+      "case_id": "2024-24-362",
+      "confidence": 1.0,
+      "document_hash": "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+      "evidence_id": "ev-8933bf7d996b-0002-0001",
+      "kind": "concurrence",
+      "opinion_part": "concurrence",
+      "pages": {
+        "end": 24,
+        "start": 24
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "desire to `prevent judicial \u201csecond-guessing\u201d of legislative and administrative decisions grounded in social, economic, and political policy through the medium of an action in tort,' \u201d this Court has clarifed that the exception protects only those governmental actions and decisions that are themselves \u201cbased on considerations of public policy.\u201d Id., at 536\u2013537"
     }
   ],
   "schema_version": "1.0.0"

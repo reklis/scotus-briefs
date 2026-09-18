@@ -1,5 +1,5 @@
 {
-  "accepted": false,
+  "accepted": true,
   "case_id": "2024-24-362",
   "checks": {
     "attribution": true,
@@ -10,7 +10,7 @@
     "model_attribution": true,
     "model_opinion_distinction": true,
     "model_oral_argument_characterization": true,
-    "model_overstatement": false,
+    "model_overstatement": true,
     "model_support": true,
     "opinion_distinction": true,
     "oral_argument": true,
@@ -24,15 +24,13 @@
     "quality_traceability": true,
     "schema": true
   },
-  "messages": [
-    "All material claims are supported by cited evidence, correctly attributed, and free of overstatement or mischaracterization."
-  ],
+  "messages": [],
   "quality_scores": {
-    "completeness": 0.9,
-    "factual_accuracy": 0.98,
+    "completeness": 0.95,
+    "factual_accuracy": 1.0,
     "neutrality": 0.95,
     "readability": 0.9,
-    "restraint": 0.96,
-    "traceability": 0.95
+    "restraint": 0.95,
+    "traceability": 1.0
   }
 }
