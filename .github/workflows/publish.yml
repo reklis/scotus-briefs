@@ -234,7 +234,8 @@ jobs:
         if: >-
           steps.data_validation.outcome == 'success' &&
           (steps.options.outputs.mode == 'validation-only' ||
-           (steps.extract.outcome == 'success' && steps.generate.outcome == 'success' &&
+           (steps.extract.outcome == 'success' &&
+            (steps.generate.outcome == 'success' || steps.generate.outcome == 'failure') &&
             steps.generated_commit.outcome == 'success'))
         shell: bash
         run: |
