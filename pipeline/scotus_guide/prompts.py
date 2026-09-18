@@ -8,9 +8,9 @@ from collections.abc import Sequence
 from .chunking import DocumentChunk
 from .models import CitizenGuide, EvidenceRecord, NormalizedCase
 
-EVIDENCE_PROMPT_VERSION = "evidence-1.0.4"
+EVIDENCE_PROMPT_VERSION = "evidence-1.0.5"
 SYNTHESIS_PROMPT_VERSION = "guide-1.0.6"
-VERIFICATION_PROMPT_VERSION = "verification-1.0.2"
+VERIFICATION_PROMPT_VERSION = "verification-1.0.3"
 PROMPT_VERSION = "+".join(
     (EVIDENCE_PROMPT_VERSION, SYNTHESIS_PROMPT_VERSION, VERIFICATION_PROMPT_VERSION)
 )
@@ -128,9 +128,12 @@ Use only supplied evidence. Return only JSON with:
 - messages: an array of actionable strings.
 Set a check false for any unsupported material claim, missing attribution, dissent or
 concurrence represented as the Court's holding, oral-argument question represented as a
-vote/view, prediction, or material overstatement. Score traceability at least 0.9 when every
-material claim has a valid evidence citation. Do not penalize completeness when a section is
-honestly marked source_limited or not_applicable because no supporting evidence was supplied.
+vote/view, prediction, or material overstatement. The `overstatement` check means "absence of
+overstatement": it MUST be true when no overstatement exists and false only when one exists.
+Messages must identify every false check and must not describe a false check as passing.
+Score traceability at least 0.9 when every material claim has a valid evidence citation. Do not
+penalize completeness when a section is honestly marked source_limited or not_applicable because
+no supporting evidence was supplied.
 Treat an uncited general-knowledge glossary definition as unsupported when its evidence only
 mentions the term rather than defining it. Do not repair the candidate.
 <CASE_METADATA>{case.model_dump_json()}</CASE_METADATA>

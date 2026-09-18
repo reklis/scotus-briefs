@@ -14,7 +14,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from .archive import hash_file
 from .models import DocumentType
 
-EXTRACTOR_VERSION = "1.0.1"
+EXTRACTOR_VERSION = "1.0.2"
 
 
 class PageStatus(StrEnum):
@@ -180,7 +180,11 @@ def classify_document(
         (DocumentType.TRANSCRIPT, ("official transcript", "oral argument", "chief justice:")),
         (
             DocumentType.OPINION,
-            ("supreme court of the united states", "justice delivered the opinion"),
+            (
+                "supreme court of the united states",
+                "justice delivered the opinion",
+                "page proof pending publication",
+            ),
         ),
         (DocumentType.ORDER, ("order list", "it is ordered")),
         (DocumentType.AMICUS_BRIEF, ("brief of amicus", "amici curiae")),

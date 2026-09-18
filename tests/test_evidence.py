@@ -117,6 +117,86 @@ def test_malformed_evidence_output_writes_failure_report(tmp_path: Path) -> None
     assert report["state"] == "failed"
 
 
+def test_transcript_speaker_controls_justice_question_attribution(tmp_path: Path) -> None:
+    case, entry, digest = setup_source(tmp_path)
+    text = "JUSTICE ALITO: Is this rule jurisdictional?"
+    model = FakeOllama(
+        {
+            "records": [
+                {
+                    "evidence_id": "model-id",
+                    "case_id": case.case_id,
+                    "document_hash": digest,
+                    "pages": {"start": 1, "end": 1},
+                    "kind": "procedural_event",
+                    "attribution": "Court",
+                    "text": text,
+                    "confidence": 1,
+                    "status": "supported",
+                    "opinion_part": None,
+                }
+            ]
+        }
+    )
+    records = EvidenceGenerator(
+        tmp_path,
+        PdfTextExtractor(minimum_characters=1, page_reader=lambda _path: [text]),
+        model,  # type: ignore[arg-type]
+    ).generate_document(case, entry)
+
+    assert records[0].kind == "justice_question"
+    assert records[0].attribution == "Justice Alito"
+
+
+def test_case_document_type_and_disposition_control_holding_classification(
+    tmp_path: Path,
+) -> None:
+    case, entry, digest = setup_source(tmp_path)
+    case = case.model_copy(
+        update={
+            "documents": [
+                CaseDocumentReference(sha256=digest, document_type=DocumentType.OPINION)
+            ]
+        }
+    )
+    entry = entry.model_copy(update={"document_type": DocumentType.UNKNOWN})
+    text = (
+        "Page Proof Pending Publication\n"
+        "Justice Alpha delivered the opinion of the Court.\n"
+        "The judgment of the Court of Appeals is reversed, and the case is remanded."
+    )
+    disposition = (
+        "The judgment of the Court of Appeals is reversed, and the case is remanded."
+    )
+    model = FakeOllama(
+        {
+            "records": [
+                {
+                    "evidence_id": "model-id",
+                    "case_id": case.case_id,
+                    "document_hash": digest,
+                    "pages": {"start": 1, "end": 1},
+                    "kind": "procedural_event",
+                    "attribution": "Court",
+                    "text": disposition,
+                    "confidence": 1,
+                    "status": "supported",
+                    "opinion_part": None,
+                }
+            ]
+        }
+    )
+    records = EvidenceGenerator(
+        tmp_path,
+        PdfTextExtractor(minimum_characters=1, page_reader=lambda _path: [text]),
+        model,  # type: ignore[arg-type]
+    ).generate_document(case, entry)
+
+    assert records[0].kind == "holding"
+    assert records[0].attribution == "Court"
+    assert records[0].opinion_part == "majority"
+
+
 def test_evidence_accepts_layout_hyphenation_and_rejects_paraphrases(tmp_path: Path) -> None:
     case, entry, digest = setup_source(tmp_path)
     model = FakeOllama(

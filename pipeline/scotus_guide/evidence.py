@@ -25,6 +25,7 @@ from .extraction import (
 )
 from .models import (
     DocumentManifestEntry,
+    DocumentType,
     EvidenceKind,
     EvidenceRecord,
     EvidenceStatus,
@@ -113,10 +114,17 @@ class EvidenceGenerator:
         ):
             return _read_records(records_path)
         try:
+            declared_type = manifest.document_type
+            if declared_type in {DocumentType.UNKNOWN, DocumentType.OTHER}:
+                reference = next(
+                    (item for item in case.documents if item.sha256 == manifest.sha256), None
+                )
+                if reference is not None:
+                    declared_type = reference.document_type
             extracted = self.extractor.extract(
                 self.root / manifest.archive_path,
                 manifest.sha256,
-                manifest.document_type,
+                declared_type,
             )
             _atomic_json(extraction_path, extracted.model_dump(mode="json"))
             chunks = chunk_pages(
@@ -225,6 +233,14 @@ def _parse_evidence_payload(
     for index, raw in enumerate(payload["records"]):
         try:
             record = EvidenceRecord.model_validate(raw)
+            justice_speaker = _justice_speaker(record.text)
+            if justice_speaker:
+                record = record.model_copy(
+                    update={
+                        "kind": EvidenceKind.JUSTICE_QUESTION,
+                        "attribution": justice_speaker,
+                    }
+                )
             if record.case_id != case.case_id or record.document_hash != extracted.document_hash:
                 raise OllamaResponseError("evidence output changed case or document identity")
             if record.pages.start < start_page or record.pages.end > end_page:
@@ -252,26 +268,33 @@ def _parse_evidence_payload(
                 record.attribution.strip().casefold() in {"court", "source"}
             ):
                 raise OllamaResponseError("argument evidence must name the arguing party")
-            if record.kind == EvidenceKind.HOLDING and not parts.intersection(
-                {
-                    OpinionPart.MAJORITY.value,
-                    OpinionPart.PLURALITY.value,
-                    OpinionPart.PER_CURIAM.value,
-                }
+            controlling_parts = {
+                OpinionPart.MAJORITY.value,
+                OpinionPart.PLURALITY.value,
+                OpinionPart.PER_CURIAM.value,
+            }
+            kind = record.kind
+            if (
+                kind == EvidenceKind.PROCEDURAL_EVENT
+                and parts.intersection(controlling_parts)
+                and _looks_like_disposition(record.text)
             ):
+                kind = EvidenceKind.HOLDING
+            if kind == EvidenceKind.HOLDING and not parts.intersection(controlling_parts):
                 raise OllamaResponseError("holding evidence is not from a controlling opinion part")
             update: dict[str, object] = {
-                "evidence_id": f"ev-{extracted.document_hash[:12]}-{chunk_index:04d}-{index:04d}"
+                "evidence_id": f"ev-{extracted.document_hash[:12]}-{chunk_index:04d}-{index:04d}",
+                "kind": kind,
             }
             if record.opinion_part is None and len(parts) == 1:
                 update["opinion_part"] = next(iter(parts))
-            if record.kind in {
-                EvidenceKind.HOLDING,
-                EvidenceKind.CONCURRENCE,
-                EvidenceKind.DISSENT,
-            } and len(page_attributions) == 1:
+            if kind == EvidenceKind.HOLDING:
+                update["attribution"] = "Court"
+            elif kind in {EvidenceKind.CONCURRENCE, EvidenceKind.DISSENT} and len(
+                page_attributions
+            ) == 1:
                 update["attribution"] = next(iter(page_attributions))
-            if not extracted.classification_confident and record.kind in {
+            if not extracted.classification_confident and kind in {
                 EvidenceKind.HOLDING,
                 EvidenceKind.PARTY_ARGUMENT,
                 EvidenceKind.AMICUS_ARGUMENT,
@@ -285,6 +308,32 @@ def _parse_evidence_payload(
     # A chunk may contain only paraphrased or malformed suggestions. Treat it as
     # having no supported evidence so later chunks can still make progress.
     return records
+
+
+def _justice_speaker(text: str) -> str | None:
+    normalized = " ".join(text.split())
+    match = re.match(
+        r"^(?:THE\s+)?(CHIEF\s+JUSTICE|JUSTICE)(?:\s+([A-Z][A-Z'\-]+))?\s*:",
+        normalized,
+        re.I,
+    )
+    if not match:
+        return None
+    role = "Chief Justice" if match.group(1).casefold().startswith("chief") else "Justice"
+    surname = match.group(2)
+    return f"{role} {surname.title()}" if surname else role
+
+
+def _looks_like_disposition(text: str) -> bool:
+    normalized = " ".join(text.split())
+    return bool(
+        re.search(
+            r"\b(?:judgment|judgments)\b.{0,180}\b(?:affirmed|reversed|vacated|remanded)\b",
+            normalized,
+            re.I,
+        )
+        or re.search(r"\bwe\s+(?:hold|affirm|reverse|vacate)\b", normalized, re.I)
+    )
 
 
 def _quotation_key(text: str) -> str:
