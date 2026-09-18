@@ -1,0 +1,407 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+            "evidence_ids": [
+              "ev-fb37a04b1107-0001-0003",
+              "ev-fb37a04b1107-0001-0004"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The central legal question is whether a federal court may issue a universal injunction\u2014an injunction that applies to all persons or entities\u2014when Congress has not expressly granted such equitable power."
+      }
+    ],
+    "heading": "Background & Central Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2024-24a884",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+            "evidence_ids": [
+              "ev-fb37a04b1107-0001-0003"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "A universal injunction can be justified only as an exercise of equitable authority, yet Congress has granted federal courts no such power."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+            "evidence_ids": [
+              "ev-fb37a04b1107-0001-0004"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "Neither the universal injunction nor any analogous form of relief was available in the High Court of Chancery in England at the time of the founding."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-18T21:00:51.411376Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f96a441c2d484a57cd3055a83ddee3cda1c55c285ecfb99b57c629f5caecbe76",
+      "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "f96a441c2d484a57cd3055a83ddee3cda1c55c285ecfb99b57c629f5caecbe76",
+            "evidence_ids": [
+              "ev-f96a441c2d48-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "JUSTICE THOMAS: General Sauer, the \u2014 these universal injunctions, as you say, have proliferated over the last three decades or so. Would you discuss, though, the origins of universal injunctions?"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "f96a441c2d484a57cd3055a83ddee3cda1c55c285ecfb99b57c629f5caecbe76",
+            "evidence_ids": [
+              "ev-f96a441c2d48-0000-0005"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, jUSTICE SOTOMAYOR: I'm sorry. ... Does citizenship mean are you born in the territory of the United States, or does it mean are you loyal to someone else ...?"
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "f96a441c2d484a57cd3055a83ddee3cda1c55c285ecfb99b57c629f5caecbe76",
+            "evidence_ids": [
+              "ev-f96a441c2d48-0001-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice GORSUCH, well, what do you say, though, to the suggestion that the patchwork problems for the government and plaintiffs justify broader relief?"
+      },
+      {
+        "attribution": "Justice THOMAS",
+        "citations": [
+          {
+            "document_hash": "f96a441c2d484a57cd3055a83ddee3cda1c55c285ecfb99b57c629f5caecbe76",
+            "evidence_ids": [
+              "ev-f96a441c2d48-0001-0004"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice THOMAS, general, when were the first universal injunctions used?"
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "f96a441c2d484a57cd3055a83ddee3cda1c55c285ecfb99b57c629f5caecbe76",
+            "evidence_ids": [
+              "ev-f96a441c2d48-0005-0001"
+            ],
+            "pages": {
+              "end": 128,
+              "start": 128
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, you say the government is wrong about the availability of preliminary injunctions. On what do you base that?"
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "f96a441c2d484a57cd3055a83ddee3cda1c55c285ecfb99b57c629f5caecbe76",
+            "evidence_ids": [
+              "ev-f96a441c2d48-0007-0000"
+            ],
+            "pages": {
+              "end": 151,
+              "start": 151
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, some of your concerns about this Court being involved, I guess I'm not sure I really understand that."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "f96a441c2d484a57cd3055a83ddee3cda1c55c285ecfb99b57c629f5caecbe76",
+            "evidence_ids": [
+              "ev-f96a441c2d48-0004-0000"
+            ],
+            "pages": {
+              "end": 88,
+              "start": 88
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, you don't get to squiggle out into the first bucket, okay? We're in the third bucket."
+      },
+      {
+        "attribution": "States",
+        "citations": [
+          {
+            "document_hash": "f96a441c2d484a57cd3055a83ddee3cda1c55c285ecfb99b57c629f5caecbe76",
+            "evidence_ids": [
+              "ev-f96a441c2d48-0004-0001"
+            ],
+            "pages": {
+              "end": 88,
+              "start": 88
+            }
+          }
+        ],
+        "text": "According to States, which is I think it requires having district courts consider the availability of the alternative and explaining why it's not workable in the case."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+            "evidence_ids": [
+              "ev-fb37a04b1107-0009-0001"
+            ],
+            "pages": {
+              "end": 94,
+              "start": 94
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, may a federal court in the United States of America order the Executive to follow the law?"
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+            "evidence_ids": [
+              "ev-fb37a04b1107-0001-0003"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          },
+          {
+            "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+            "evidence_ids": [
+              "ev-fb37a04b1107-0001-0004"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Supreme Court held that universal injunctions exceed Article\u202fIII judicial power because Congress has not granted federal courts the equitable authority to issue them."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Applicants (Donald J. Trump and Federal Officials)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+              "evidence_ids": [
+                "ev-fb37a04b1107-0001-0006"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "Respondents argue that universal injunctions provide complete relief consistent with equity, and that the Judiciary Act authorizes such relief."
+        }
+      ],
+      "heading": "Respondents (CASA, Inc., States, and Others)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "evidence_ids": [
+        "ev-fb37a04b1107-0001-0003"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "f96a441c2d484a57cd3055a83ddee3cda1c55c285ecfb99b57c629f5caecbe76",
+      "evidence_ids": [
+        "ev-f96a441c2d48-0000-0000"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-18T21:07:53.934769Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+            "evidence_ids": [
+              "ev-fb37a04b1107-0010-0001"
+            ],
+            "pages": {
+              "end": 105,
+              "start": 105
+            }
+          }
+        ],
+        "text": "The zone of lawlessness the majority authorizes will disproportionately impact the poor, the uneducated, and the unpopular, who lack resources to defend themselves."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+            "evidence_ids": [
+              "ev-fb37a04b1107-0009-0001"
+            ],
+            "pages": {
+              "end": 94,
+              "start": 94
+            }
+          },
+          {
+            "document_hash": "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+            "evidence_ids": [
+              "ev-fb37a04b1107-0009-0004"
+            ],
+            "pages": {
+              "end": 102,
+              "start": 102
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, courts must have the power to order everyone, including the Executive, to follow the law, especially when constitutional rights are at stake."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

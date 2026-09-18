@@ -1,5 +1,5 @@
 {
-  "accepted": false,
+  "accepted": true,
   "case_id": "2024-24a884",
   "checks": {
     "attribution": true,
@@ -8,33 +8,29 @@
     "document_currency": true,
     "lifecycle": true,
     "model_attribution": true,
-    "model_opinion_distinction": false,
+    "model_opinion_distinction": true,
     "model_oral_argument_characterization": true,
-    "model_overstatement": false,
-    "model_support": false,
+    "model_overstatement": true,
+    "model_support": true,
     "opinion_distinction": true,
     "oral_argument": true,
     "page_ranges": true,
     "provenance": true,
     "quality_completeness": true,
-    "quality_factual_accuracy": false,
+    "quality_factual_accuracy": true,
     "quality_neutrality": true,
     "quality_readability": true,
-    "quality_restraint": false,
-    "quality_traceability": false,
+    "quality_restraint": true,
+    "quality_traceability": true,
     "schema": true
   },
-  "messages": [
-    "support check failed: the claim in the Why It Matters section that the decision \"preserves the separation of powers between the judiciary and the executive\" is not backed by any cited evidence.",
-    "opinion_distinction check failed: the Why It Matters claim attributes an interpretive, policy\u2011oriented statement to the Court without indicating it is an opinion rather than a holding.",
-    "overstatement check failed: the Why It Matters claim overstates the decision by asserting it preserves separation of powers, a conclusion not supported by the cited holdings."
-  ],
+  "messages": [],
   "quality_scores": {
     "completeness": 0.9,
-    "factual_accuracy": 0.85,
-    "neutrality": 0.8,
-    "readability": 0.9,
-    "restraint": 0.75,
-    "traceability": 0.85
+    "factual_accuracy": 0.98,
+    "neutrality": 0.9,
+    "readability": 0.85,
+    "restraint": 0.9,
+    "traceability": 0.95
   }
 }
