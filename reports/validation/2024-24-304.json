@@ -1,5 +1,5 @@
 {
-  "accepted": false,
+  "accepted": true,
   "case_id": "2024-24-304",
   "checks": {
     "attribution": true,
@@ -7,33 +7,30 @@
     "citation_targets": true,
     "document_currency": true,
     "lifecycle": true,
-    "model_attribution": false,
+    "model_attribution": true,
     "model_opinion_distinction": true,
     "model_oral_argument_characterization": true,
     "model_overstatement": true,
-    "model_support": false,
+    "model_support": true,
     "opinion_distinction": true,
     "oral_argument": true,
     "page_ranges": true,
     "provenance": true,
     "quality_completeness": true,
-    "quality_factual_accuracy": false,
+    "quality_factual_accuracy": true,
     "quality_neutrality": true,
     "quality_readability": true,
     "quality_restraint": true,
     "quality_traceability": true,
     "schema": true
   },
-  "messages": [
-    "The claim that oral argument occurred at 11:03\u202fa.m. on April\u202f29,\u202f2025 is unsupported; the cited evidence only states the time (11:03\u202fa.m.) and does not provide the date.",
-    "The claim about the August order is attributed to the Court, but the claim text says the petitioner argues this point; the attribution therefore does not match the source of the argument."
-  ],
+  "messages": [],
   "quality_scores": {
-    "completeness": 0.8,
-    "factual_accuracy": 0.875,
-    "neutrality": 0.9,
+    "completeness": 0.93,
+    "factual_accuracy": 0.97,
+    "neutrality": 0.94,
     "readability": 0.9,
     "restraint": 0.95,
-    "traceability": 0.95
+    "traceability": 0.96
   }
 }

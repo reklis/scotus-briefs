@@ -1,0 +1,450 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Laboratory Corporation of America (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0003-0002"
+            ],
+            "pages": {
+              "end": 84,
+              "start": 84
+            }
+          }
+        ],
+        "text": "The key legal question is whether a class may include plaintiffs who lack an Article\u202fIII injury."
+      },
+      {
+        "attribution": "Petitioner (Noel J. Francisco)",
+        "citations": [
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0007-0000"
+            ],
+            "pages": {
+              "end": 153,
+              "start": 153
+            }
+          },
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0007-0001"
+            ],
+            "pages": {
+              "end": 154,
+              "start": 154
+            }
+          }
+        ],
+        "text": "The parties dispute whether the district court\u2019s refined class definition materially changes the class composition."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2024-24-304",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-18T19:30:25.069101Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0001-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked if the class definition would lead to a thousand mini\u2011trials."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0004-0000"
+            ],
+            "pages": {
+              "end": 90,
+              "start": 90
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether an Article\u202fIII injury is required for class certification."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0006-0009"
+            ],
+            "pages": {
+              "end": 150,
+              "start": 150
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, justice Jackson questioned the timing of weeding out uninjured parties after certification."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Laboratory Corporation of America Holdings)",
+        "citations": [
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Laboratory Corporation of America Holdings (Petitioner) sued Luke Davis and others (Respondents) over whether a proposed class action satisfies Article\u202fIII standing and Rule\u202f23 requirements."
+      },
+      {
+        "attribution": "Laboratory Corporation of America (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0003-0002"
+            ],
+            "pages": {
+              "end": 84,
+              "start": 84
+            }
+          }
+        ],
+        "text": "The case centers on whether individuals who have not suffered an injury can be included in a federal class action."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Laboratory Corporation of America (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+              "evidence_ids": [
+                "ev-fe7c353a4d6a-0000-0000"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Laboratory Corporation of America (Petitioner), according to Laboratory Corporation of America (Petitioner), petitioner argues that a class action is merely a tool for aggregating claims and that any plaintiff without Article\u202fIII standing cannot be part of the class."
+        },
+        {
+          "attribution": "Laboratory Corporation of America (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+              "evidence_ids": [
+                "ev-fe7c353a4d6a-0000-0003"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Laboratory Corporation of America (Petitioner), according to Laboratory Corporation of America (Petitioner), petitioner contends that Rule\u202f23(b)(3) predominance requires all class members to share the same injury, so including uninjured plaintiffs would swamp common issues."
+        },
+        {
+          "attribution": "Mr. Francisco",
+          "citations": [
+            {
+              "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+              "evidence_ids": [
+                "ev-fe7c353a4d6a-0002-0000"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Mr. Francisco, petitioner warns that if the class is certified and loses, the entire class will be bound by the adverse judgment."
+        },
+        {
+          "attribution": "Petitioner (Noel J. Francisco)",
+          "citations": [
+            {
+              "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+              "evidence_ids": [
+                "ev-fe7c353a4d6a-0007-0000"
+              ],
+              "pages": {
+                "end": 153,
+                "start": 153
+              }
+            }
+          ],
+          "text": "According to Petitioner (Noel J. Francisco), according to Petitioner (Noel J. Francisco), petitioner says the district court\u2019s order does not materially alter the class composition."
+        }
+      ],
+      "heading": "Petitioner (Laboratory Corporation of America Holdings)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondents (Luke Davis and others)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+      "evidence_ids": [
+        "ev-fe7c353a4d6a-0000-0000"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+      "evidence_ids": [
+        "ev-fe7c353a4d6a-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+      "evidence_ids": [
+        "ev-fe7c353a4d6a-0000-0003"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+      "evidence_ids": [
+        "ev-fe7c353a4d6a-0003-0002"
+      ],
+      "pages": {
+        "end": 84,
+        "start": 84
+      }
+    },
+    {
+      "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+      "evidence_ids": [
+        "ev-fe7c353a4d6a-0007-0000"
+      ],
+      "pages": {
+        "end": 153,
+        "start": 153
+      }
+    },
+    {
+      "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+      "evidence_ids": [
+        "ev-fe7c353a4d6a-0007-0001"
+      ],
+      "pages": {
+        "end": 154,
+        "start": 154
+      }
+    },
+    {
+      "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+      "evidence_ids": [
+        "ev-fe7c353a4d6a-0002-0000"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+      "evidence_ids": [
+        "ev-fe7c353a4d6a-0001-0000"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+      "evidence_ids": [
+        "ev-fe7c353a4d6a-0004-0000"
+      ],
+      "pages": {
+        "end": 90,
+        "start": 90
+      }
+    },
+    {
+      "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+      "evidence_ids": [
+        "ev-fe7c353a4d6a-0006-0009"
+      ],
+      "pages": {
+        "end": 150,
+        "start": 150
+      }
+    },
+    {
+      "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+      "evidence_ids": [
+        "ev-fe7c353a4d6a-0005-0003"
+      ],
+      "pages": {
+        "end": 114,
+        "start": 114
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-18T19:37:02.625885Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0005-0003"
+            ],
+            "pages": {
+              "end": 114,
+              "start": 114
+            }
+          }
+        ],
+        "text": "The Court has held that Article\u202fIII does not give federal courts power to grant relief to uninjured plaintiffs, making the standing issue critical for class actions."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
