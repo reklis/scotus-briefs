@@ -190,8 +190,84 @@ def _candidate(
             status=SectionStatus.PENDING,
             heading="Decision",
         ).model_dump(mode="json")
+    _drop_invalid_cited_content(raw, evidence)
     _make_attribution_explicit(raw, evidence)
     return CitizenGuide.model_validate(raw)
+
+
+def _drop_invalid_cited_content(
+    raw: dict[str, Any], evidence: list[EvidenceRecord]
+) -> None:
+    """Remove model claims whose structured citations cannot pass deterministic checks."""
+    by_id = {item.evidence_id: item for item in evidence}
+
+    def valid_citation(value: object) -> bool:
+        if not isinstance(value, dict):
+            return False
+        document_hash = value.get("document_hash")
+        pages = value.get("pages")
+        evidence_ids = value.get("evidence_ids")
+        if (
+            not isinstance(document_hash, str)
+            or not isinstance(pages, dict)
+            or not isinstance(pages.get("start"), int)
+            or not isinstance(pages.get("end"), int)
+            or not isinstance(evidence_ids, list)
+            or not evidence_ids
+        ):
+            return False
+        for evidence_id in evidence_ids:
+            record = by_id.get(evidence_id) if isinstance(evidence_id, str) else None
+            if (
+                record is None
+                or record.status != EvidenceStatus.SUPPORTED
+                or record.document_hash != document_hash
+                or record.pages.start < pages["start"]
+                or record.pages.end > pages["end"]
+            ):
+                return False
+        return True
+
+    sections: list[object] = [
+        raw.get("overview"),
+        raw.get("background_and_question"),
+        raw.get("oral_argument"),
+        raw.get("decision"),
+        raw.get("why_it_matters"),
+    ]
+    party_positions = raw.get("party_positions")
+    if isinstance(party_positions, list):
+        sections.extend(party_positions)
+    for section in sections:
+        if not isinstance(section, dict):
+            continue
+        claims = section.get("claims")
+        if isinstance(claims, list):
+            section["claims"] = [
+                claim
+                for claim in claims
+                if isinstance(claim, dict)
+                and isinstance(claim.get("citations"), list)
+                and claim["citations"]
+                and all(valid_citation(item) for item in claim["citations"])
+            ]
+        if section.get("summary"):
+            citations = section.get("summary_citations")
+            if not isinstance(citations, list) or not citations or not all(
+                valid_citation(item) for item in citations
+            ):
+                section["summary"] = None
+                section["summary_citations"] = []
+    glossary = raw.get("glossary")
+    if isinstance(glossary, list):
+        raw["glossary"] = [
+            entry
+            for entry in glossary
+            if isinstance(entry, dict)
+            and isinstance(entry.get("citations"), list)
+            and entry["citations"]
+            and all(valid_citation(item) for item in entry["citations"])
+        ]
 
 
 def _failed_model_result(messages: list[str]) -> ModelVerification:

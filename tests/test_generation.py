@@ -6,7 +6,7 @@ from typing import Any, ClassVar
 
 from scotus_guide.evidence import EvidenceJobStatus, JobState, _atomic_json
 from scotus_guide.extraction import ExtractedDocument, ExtractedPage, PageStatus
-from scotus_guide.generation import GuideGenerator
+from scotus_guide.generation import GuideGenerator, _drop_invalid_cited_content
 from scotus_guide.models import (
     CaseDocumentReference,
     DocumentManifest,
@@ -36,6 +36,50 @@ class FakeOllama:
     def generate_json(self, prompt: str, *, schema: dict[str, Any] | None = None) -> Any:
         self.prompts.append(prompt)
         return self.responses.pop(0)
+
+
+def test_invalid_model_citations_are_removed_before_validation() -> None:
+    evidence = EvidenceRecord(
+        evidence_id="ev-1",
+        case_id="scotus-24-7",
+        document_hash=HASH,
+        pages=PageRange(start=2, end=2),
+        kind=EvidenceKind.FACT,
+        attribution="Court",
+        text="Supported text.",
+        confidence=1,
+        status=EvidenceStatus.SUPPORTED,
+    )
+    valid = {
+        "document_hash": HASH,
+        "pages": {"start": 2, "end": 2},
+        "evidence_ids": ["ev-1"],
+    }
+    invalid = {
+        "document_hash": HASH,
+        "pages": {"start": 1, "end": 1},
+        "evidence_ids": ["missing"],
+    }
+    raw: dict[str, Any] = {
+        "overview": {
+            "summary": "Unsupported summary.",
+            "summary_citations": [invalid],
+            "claims": [
+                {"text": "Supported.", "citations": [valid]},
+                {"text": "Unsupported.", "citations": [invalid]},
+            ],
+        },
+        "glossary": [
+            {"term": "Valid", "definition": "Supported.", "citations": [valid]},
+            {"term": "Invalid", "definition": "Unsupported.", "citations": [invalid]},
+        ],
+    }
+
+    _drop_invalid_cited_content(raw, [evidence])
+
+    assert [claim["text"] for claim in raw["overview"]["claims"]] == ["Supported."]
+    assert raw["overview"]["summary"] is None
+    assert [entry["term"] for entry in raw["glossary"]] == ["Valid"]
 
 
 def test_case_synthesis_uses_evidence_forces_pending_decision_and_accepts(tmp_path: Path) -> None:

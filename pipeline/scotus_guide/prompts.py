@@ -9,7 +9,7 @@ from .chunking import DocumentChunk
 from .models import CitizenGuide, EvidenceRecord, NormalizedCase
 
 EVIDENCE_PROMPT_VERSION = "evidence-1.0.5"
-SYNTHESIS_PROMPT_VERSION = "guide-1.0.6"
+SYNTHESIS_PROMPT_VERSION = "guide-1.0.7"
 VERIFICATION_PROMPT_VERSION = "verification-1.0.3"
 PROMPT_VERSION = "+".join(
     (EVIDENCE_PROMPT_VERSION, SYNTHESIS_PROMPT_VERSION, VERIFICATION_PROMPT_VERSION)

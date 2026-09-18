@@ -232,7 +232,7 @@ jobs:
       - name: Check SvelteKit project
         id: site_check
         if: >-
-          steps.data_validation.outcome == 'success' &&
+          always() && steps.data_validation.outcome == 'success' &&
           (steps.options.outputs.mode == 'validation-only' ||
            (steps.extract.outcome == 'success' &&
             (steps.generate.outcome == 'success' || steps.generate.outcome == 'failure') &&

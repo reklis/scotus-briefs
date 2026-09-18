@@ -184,7 +184,7 @@ class GuideValidator:
                     and (
                         not claim.attribution
                         or not re.search(
-                            r"\b(dissent|dissented|concurr|separate opinion)\b",
+                            r"\b(dissent(?:ed|ing)?|concurr(?:ence|ed|ing)?|separate opinion)\b",
                             claim.text,
                             re.I,
                         )
