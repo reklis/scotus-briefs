@@ -1,0 +1,379 @@
+name: Update archive and publish citizen guide
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Operation to run
+        required: true
+        type: choice
+        default: incremental
+        options:
+          - incremental
+          - bounded-backfill
+          - case-regeneration
+          - validation-only
+      batch_size:
+        description: Maximum cases/documents to process (1-100)
+        required: true
+        type: number
+        default: 25
+      case_id:
+        description: Stable case ID (required for case-regeneration)
+        required: false
+        type: string
+  schedule:
+    - cron: '17 8 * * *'
+
+# Never cancel a run after it may have downloaded source material. Queuing also
+# prevents two checkouts from pushing archive/checkpoint changes concurrently.
+concurrency:
+  group: scotus-guide-publication
+  cancel-in-progress: false
+
+permissions: {}
+
+env:
+  CI: 'true'
+  OLLAMA_BASE_URL: ${{ vars.OLLAMA_BASE_URL || 'http://192.168.1.41:11434' }}
+  OLLAMA_MODEL: ${{ vars.OLLAMA_MODEL || 'ragchew-gpt-oss:120b-32k' }}
+  OLLAMA_CONTEXT_LENGTH: '32768'
+  PAGES_ARTIFACT_MAX_MIB: ${{ vars.PAGES_ARTIFACT_MAX_MIB || '100' }}
+
+jobs:
+  pipeline:
+    name: Preserve, validate, and build
+    runs-on: [self-hosted, spark]
+    timeout-minutes: 360
+    permissions:
+      contents: write
+    outputs:
+      artifact_size: ${{ steps.artifact_check.outputs.size_bytes }}
+    steps:
+      - name: Check out the default branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: false
+          # Dependency and model processes must not inherit push credentials.
+          persist-credentials: false
+
+      - name: Resolve and validate operation
+        id: options
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REQUESTED_OPERATION: ${{ inputs.operation }}
+          REQUESTED_BATCH_SIZE: ${{ inputs.batch_size }}
+          REQUESTED_CASE_ID: ${{ inputs.case_id }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_REF_NAME" != "$DEFAULT_BRANCH" ]]; then
+            echo "This state-writing workflow must run from the default branch ($DEFAULT_BRANCH)." >&2
+            exit 1
+          fi
+          if [[ "$EVENT_NAME" == schedule ]]; then
+            mode=incremental
+            batch_size=25
+            case_id=
+          else
+            mode=$REQUESTED_OPERATION
+            batch_size=$REQUESTED_BATCH_SIZE
+            case_id=$REQUESTED_CASE_ID
+          fi
+          case "$mode" in
+            incremental|bounded-backfill|case-regeneration|validation-only) ;;
+            *) echo "Unsupported operation: $mode" >&2; exit 2 ;;
+          esac
+          if [[ ! $batch_size =~ ^[0-9]+$ ]] || ((batch_size < 1 || batch_size > 100)); then
+            echo "batch_size must be between 1 and 100." >&2
+            exit 2
+          fi
+          if [[ $mode == case-regeneration && -z $case_id ]]; then
+            echo "case_id is required for case-regeneration." >&2
+            exit 2
+          fi
+          if [[ -n $case_id && ! $case_id =~ ^[A-Za-z0-9][A-Za-z0-9._:-]*$ ]]; then
+            echo "case_id must be a stable ID containing only letters, numbers, '.', '_', ':', or '-'." >&2
+            exit 2
+          fi
+          [[ $mode == incremental || $mode == bounded-backfill ]] && ingest=true || ingest=false
+          printf 'mode=%s\nbatch_size=%s\ncase_id=%s\ningest=%s\n' \
+            "$mode" "$batch_size" "$case_id" "$ingest" >> "$GITHUB_OUTPUT"
+
+      - name: Verify runner prerequisites
+        shell: bash
+        run: |
+          set -euo pipefail
+          uname -m
+          for command in git python3 node npm curl; do
+            command -v "$command" >/dev/null || { echo "Missing runner command: $command" >&2; exit 1; }
+          done
+          test "$(uname -m)" = aarch64 || echo "::warning::spark is expected to be ARM64 (aarch64)."
+
+      - name: Synchronize the default branch before executing repository code
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: scripts/sync-workflow-branch.sh --ff-only
+
+      - name: Install pipeline and site dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m venv .venv
+          .venv/bin/python -m pip install --disable-pip-version-check -e .
+          npm --prefix site ci
+
+      - name: Discover or import source documents
+        id: ingest
+        if: steps.options.outputs.ingest == 'true'
+        env:
+          MODE: ${{ steps.options.outputs.mode }}
+          BATCH_SIZE: ${{ steps.options.outputs.batch_size }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p reports/workflow
+          .venv/bin/scotus-guide ingest --mode "$MODE" --batch-size "$BATCH_SIZE" \
+            2>&1 | tee reports/workflow/ingestion.log
+
+      # Ingestion is responsible for atomic per-candidate acceptance. Candidate
+      # failures are reported without making the command fail; an infrastructure
+      # failure exits nonzero and is retained as an artifact rather than pushing
+      # potentially partial metadata.
+      - name: Commit and push preserved source state
+        id: source_commit
+        if: steps.ingest.outcome == 'success'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          scripts/commit-workflow-state.sh source \
+            "chore(archive): preserve sources from run $GITHUB_RUN_ID"
+
+      - name: Extract page-aware evidence
+        id: extract
+        if: >-
+          always() && steps.options.outcome == 'success' &&
+          steps.options.outputs.mode != 'validation-only' &&
+          steps.source_commit.outcome != 'failure' &&
+          (steps.options.outputs.mode == 'case-regeneration' || steps.ingest.outcome == 'success')
+        env:
+          MODE: ${{ steps.options.outputs.mode }}
+          BATCH_SIZE: ${{ steps.options.outputs.batch_size }}
+          CASE_ID: ${{ steps.options.outputs.case_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p reports/workflow
+          args=(extract --mode "$MODE" --batch-size "$BATCH_SIZE")
+          if [[ -n $CASE_ID ]]; then args+=(--case-id "$CASE_ID"); fi
+          .venv/bin/scotus-guide "${args[@]}" \
+            2>&1 | tee reports/workflow/extraction.log
+
+      - name: Generate and verify accepted guides
+        id: generate
+        if: steps.extract.outcome == 'success'
+        env:
+          MODE: ${{ steps.options.outputs.mode }}
+          BATCH_SIZE: ${{ steps.options.outputs.batch_size }}
+          CASE_ID: ${{ steps.options.outputs.case_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p reports/workflow
+          args=(generate --mode "$MODE" --batch-size "$BATCH_SIZE")
+          if [[ -n $CASE_ID ]]; then args+=(--case-id "$CASE_ID"); fi
+          .venv/bin/scotus-guide "${args[@]}" \
+            2>&1 | tee reports/workflow/generation.log
+
+      # Validate generated changes before they can replace checked-in guides.
+      # A partial generation failure may still have valid accepted cases, but its
+      # rejected candidates must leave prior guide files untouched.
+      - name: Validate repository data
+        id: data_validation
+        if: >-
+          always() && steps.options.outcome == 'success' &&
+          (steps.options.outputs.mode == 'validation-only' ||
+           (steps.extract.outcome == 'success' &&
+            (steps.generate.outcome == 'success' || steps.generate.outcome == 'failure')))
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p reports/workflow
+          .venv/bin/scotus-guide validate 2>&1 | tee reports/workflow/data-validation.log
+
+      - name: Commit and push validated generated state
+        id: generated_commit
+        if: >-
+          always() && steps.options.outputs.mode != 'validation-only' &&
+          steps.data_validation.outcome == 'success'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          scripts/commit-workflow-state.sh generated \
+            "chore(guides): preserve accepted output from run $GITHUB_RUN_ID"
+
+      - name: Check SvelteKit project
+        id: site_check
+        if: >-
+          steps.data_validation.outcome == 'success' &&
+          (steps.options.outputs.mode == 'validation-only' ||
+           (steps.extract.outcome == 'success' && steps.generate.outcome == 'success' &&
+            steps.generated_commit.outcome == 'success'))
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p reports/workflow
+          npm --prefix site run check 2>&1 | tee reports/workflow/site-check.log
+
+      - name: Test SvelteKit project
+        id: site_test
+        if: steps.site_check.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm --prefix site test 2>&1 | tee reports/workflow/site-test.log
+
+      - name: Build static site
+        id: site_build
+        if: steps.site_test.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm --prefix site run build 2>&1 | tee reports/workflow/site-build.log
+
+      - name: Verify Pages artifact excludes PDFs and is size bounded
+        id: artifact_check
+        if: steps.site_build.outcome == 'success'
+        shell: bash
+        run: scripts/check-pages-artifact.sh site/build "$PAGES_ARTIFACT_MAX_MIB"
+
+      - name: Confirm the built revision is still current
+        id: current_revision
+        if: steps.artifact_check.outcome == 'success'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: scripts/sync-workflow-branch.sh --check-clean
+
+      - name: Upload Pages artifact
+        id: pages_upload
+        if: steps.current_revision.outcome == 'success'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/build
+
+      - name: Record pipeline outcomes
+        if: always()
+        env:
+          MODE: ${{ steps.options.outputs.mode }}
+          INGEST: ${{ steps.ingest.outcome }}
+          SOURCE_COMMIT: ${{ steps.source_commit.outcome }}
+          EXTRACT: ${{ steps.extract.outcome }}
+          GENERATE: ${{ steps.generate.outcome }}
+          GENERATED_COMMIT: ${{ steps.generated_commit.outcome }}
+          VALIDATE: ${{ steps.data_validation.outcome }}
+          SITE_CHECK: ${{ steps.site_check.outcome }}
+          SITE_TEST: ${{ steps.site_test.outcome }}
+          SITE_BUILD: ${{ steps.site_build.outcome }}
+          ARTIFACT_CHECK: ${{ steps.artifact_check.outcome }}
+          CURRENT_REVISION: ${{ steps.current_revision.outcome }}
+          PAGES_UPLOAD: ${{ steps.pages_upload.outcome }}
+          ARTIFACT_SIZE: ${{ steps.artifact_check.outputs.size_bytes }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p reports/workflow
+          report=reports/workflow/outcomes.md
+          discovery=not-requested
+          archive_import=not-requested
+          case "$MODE" in
+            incremental) discovery=$INGEST ;;
+            bounded-backfill) archive_import=$INGEST ;;
+          esac
+          {
+            echo "# Workflow outcomes"
+            echo
+            echo "- Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            echo "- Mode: ${MODE:-unresolved}"
+            echo "- Commit: $(git rev-parse HEAD)"
+            echo "- Pages artifact bytes: ${ARTIFACT_SIZE:-not-created}"
+            echo
+            echo '| Stage | Outcome |'
+            echo '| --- | --- |'
+            echo "| Discovery | $discovery |"
+            echo "| Archive import | $archive_import |"
+            echo "| Source preservation commit | $SOURCE_COMMIT |"
+            echo "| Extraction | $EXTRACT |"
+            echo "| Generation | $GENERATE |"
+            echo "| Data validation | $VALIDATE |"
+            echo "| Generated-state commit | $GENERATED_COMMIT |"
+            echo "| Site check | $SITE_CHECK |"
+            echo "| Site tests | $SITE_TEST |"
+            echo "| Static build | $SITE_BUILD |"
+            echo "| PDF / size guard | $ARTIFACT_CHECK |"
+            echo "| Current-revision guard | $CURRENT_REVISION |"
+            echo "| Pages upload | $PAGES_UPLOAD |"
+            echo '| Pages deployment | not-attempted-in-pipeline-job |'
+          } > "$report"
+          cat "$report" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Retain operation and failure reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: operation-reports-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/
+          if-no-files-found: warn
+          retention-days: 30
+
+  deploy:
+    name: Deploy GitHub Pages
+    needs: pipeline
+    runs-on: [self-hosted, spark]
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy without removing the previous successful site
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Summarize deployment
+        if: always()
+        env:
+          OUTCOME: ${{ steps.deployment.outcome }}
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+          ARTIFACT_SIZE: ${{ needs.pipeline.outputs.artifact_size }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p reports/workflow
+          {
+            echo '# Pages deployment outcome'
+            echo
+            echo "- Outcome: $OUTCOME"
+            echo "- URL: ${PAGE_URL:-previous deployment retained}"
+            echo "- Artifact bytes: ${ARTIFACT_SIZE:-unknown}"
+            echo "- Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          } | tee reports/workflow/deployment.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Retain deployment failure report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deployment-failure-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/workflow/deployment.md
+          if-no-files-found: error
+          retention-days: 30
