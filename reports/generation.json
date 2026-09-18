@@ -1,16 +1,11 @@
 {
-  "completed_case_ids": [
-    "2025-24-43"
-  ],
+  "completed_case_ids": [],
   "failures": {
-    "2024-24-7": "candidate rejected; prior accepted guide retained",
-    "2024-24a884": "candidate rejected; prior accepted guide retained"
+    "2024-24-304": "candidate rejected; prior accepted guide retained"
   },
-  "mode": "bounded-backfill",
+  "mode": "case-regeneration",
   "selected_case_ids": [
-    "2024-24-7",
-    "2024-24a884",
-    "2025-24-43"
+    "2024-24-304"
   ],
   "skipped_case_ids": []
 }

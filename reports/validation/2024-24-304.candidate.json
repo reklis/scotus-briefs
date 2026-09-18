@@ -2,7 +2,7 @@
   "background_and_question": {
     "claims": [
       {
-        "attribution": "Justice Thomas",
+        "attribution": "Petitioner",
         "citations": [
           {
             "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
@@ -10,95 +10,31 @@
               "ev-fe7c353a4d6a-0000-0002"
             ],
             "pages": {
-              "end": 7,
-              "start": 7
+              "end": 5,
+              "start": 5
             }
           }
         ],
-        "text": "During oral argument, Justice Thomas asked whether the Court had jurisdiction over a May order that was inoperative."
+        "text": "Petitioner argues that a class action is merely a tool for aggregating claims and that each plaintiff must have Article\u202fIII standing; otherwise the class cannot be certified."
       },
       {
-        "attribution": "Justice Sotomayor",
+        "attribution": "Heritage Reporting Corporation",
         "citations": [
           {
             "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
             "evidence_ids": [
-              "ev-fe7c353a4d6a-0001-0000"
+              "ev-fe7c353a4d6a-0004-0001"
             ],
             "pages": {
-              "end": 41,
-              "start": 41
+              "end": 91,
+              "start": 91
             }
           }
         ],
-        "text": "Justice Sotomayor asked when a party becomes part of the litigation."
-      },
-      {
-        "attribution": "Justice Gorsuch",
-        "citations": [
-          {
-            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
-            "evidence_ids": [
-              "ev-fe7c353a4d6a-0002-0005"
-            ],
-            "pages": {
-              "end": 58,
-              "start": 58
-            }
-          }
-        ],
-        "text": "According to Justice Gorsuch, justice Gorsuch raised the question of whether an uninjured person can be included in a class definition."
-      },
-      {
-        "attribution": "Justice Jackson",
-        "citations": [
-          {
-            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
-            "evidence_ids": [
-              "ev-fe7c353a4d6a-0005-0001"
-            ],
-            "pages": {
-              "end": 112,
-              "start": 112
-            }
-          }
-        ],
-        "text": "Justice Jackson asked whether injuries are an element of the claim."
-      },
-      {
-        "attribution": "Justice Gorsuch",
-        "citations": [
-          {
-            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
-            "evidence_ids": [
-              "ev-fe7c353a4d6a-0004-0000"
-            ],
-            "pages": {
-              "end": 90,
-              "start": 90
-            }
-          }
-        ],
-        "text": "According to Justice Gorsuch, justice Gorsuch suggested that an Article\u202fIII injury might be a backdoor to the petitioner's position."
-      },
-      {
-        "attribution": "Court",
-        "citations": [
-          {
-            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
-            "evidence_ids": [
-              "ev-fe7c353a4d6a-0000-0000"
-            ],
-            "pages": {
-              "end": 156,
-              "start": 2
-            }
-          }
-        ],
-        "text": "The statements in this section are drawn from direct quotations of the oral\u2011argument transcript."
+        "text": "Heritage Reporting Corporation contends that Rule\u202f23 requires all class members to share the same injury."
       }
     ],
-    "heading": "Background and Questions",
+    "heading": "Background and Question",
     "status": "complete",
     "summary": null,
     "summary_citations": []
@@ -112,8 +48,8 @@
     "summary_citations": []
   },
   "generation": {
-    "extractor_version": "1.0.1",
-    "generated_at": "2026-09-18T16:42:59.969140Z",
+    "extractor_version": "1.0.2",
+    "generated_at": "2026-09-18T19:05:11.844365Z",
     "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
     "model_name": "ragchew-gpt-oss:120b-32k",
     "parameters": {
@@ -121,10 +57,9 @@
       "seed": 0,
       "temperature": 0
     },
-    "prompt_version": "evidence-1.0.4+guide-1.0.6+verification-1.0.2",
+    "prompt_version": "evidence-1.0.5+guide-1.0.7+verification-1.0.3",
     "schema_version": "1.0.0",
     "source_hashes": [
-      "1f75a92a9fc815bd5dd9313f2813b62bccbc8d77ec4e6d0938c738c26aa441af",
       "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13"
     ]
   },
@@ -132,134 +67,6 @@
   "lifecycle": "decided",
   "oral_argument": {
     "claims": [
-      {
-        "attribution": "Chief Justice Roberts",
-        "citations": [
-          {
-            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
-            "evidence_ids": [
-              "ev-fe7c353a4d6a-0000-0001"
-            ],
-            "pages": {
-              "end": 5,
-              "start": 5
-            }
-          }
-        ],
-        "text": "Chief Justice Roberts announced the case for argument."
-      },
-      {
-        "attribution": "Justice Thomas",
-        "citations": [
-          {
-            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
-            "evidence_ids": [
-              "ev-fe7c353a4d6a-0000-0002"
-            ],
-            "pages": {
-              "end": 7,
-              "start": 7
-            }
-          }
-        ],
-        "text": "Justice Thomas asked about the Court\u2019s jurisdiction over the May order."
-      },
-      {
-        "attribution": "Justice Sotomayor",
-        "citations": [
-          {
-            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
-            "evidence_ids": [
-              "ev-fe7c353a4d6a-0001-0000"
-            ],
-            "pages": {
-              "end": 41,
-              "start": 41
-            }
-          }
-        ],
-        "text": "Justice Sotomayor asked when a party becomes part of a litigation."
-      },
-      {
-        "attribution": "Justice Gorsuch",
-        "citations": [
-          {
-            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
-            "evidence_ids": [
-              "ev-fe7c353a4d6a-0002-0005"
-            ],
-            "pages": {
-              "end": 58,
-              "start": 58
-            }
-          }
-        ],
-        "text": "According to Justice Gorsuch, justice Gorsuch questioned whether an uninjured person can be in a class definition."
-      },
-      {
-        "attribution": "Justice Barrett",
-        "citations": [
-          {
-            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
-            "evidence_ids": [
-              "ev-fe7c353a4d6a-0003-0000"
-            ],
-            "pages": {
-              "end": 68,
-              "start": 68
-            }
-          }
-        ],
-        "text": "Justice Barrett asked, \u201cWhat happens to you?\u201d"
-      },
-      {
-        "attribution": "Justice Jackson",
-        "citations": [
-          {
-            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
-            "evidence_ids": [
-              "ev-fe7c353a4d6a-0005-0000"
-            ],
-            "pages": {
-              "end": 111,
-              "start": 111
-            }
-          }
-        ],
-        "text": "According to Justice Jackson, justice Jackson raised concerns about Rule\u202f23 and commonality in class certification."
-      },
-      {
-        "attribution": "Court",
-        "citations": [
-          {
-            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
-            "evidence_ids": [
-              "ev-fe7c353a4d6a-0006-0004"
-            ],
-            "pages": {
-              "end": 147,
-              "start": 147
-            }
-          }
-        ],
-        "text": "Justice Alito asked whether the Ninth Circuit rule on material versus immaterial changes is jurisdictional."
-      },
-      {
-        "attribution": "Counsel",
-        "citations": [
-          {
-            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
-            "evidence_ids": [
-              "ev-fe7c353a4d6a-0007-0002"
-            ],
-            "pages": {
-              "end": 156,
-              "start": 156
-            }
-          }
-        ],
-        "text": "Counsel stated that a class loss binds the class even if the Court lacked jurisdiction over some members."
-      },
       {
         "attribution": "Court",
         "citations": [
@@ -269,12 +76,28 @@
               "ev-fe7c353a4d6a-0000-0000"
             ],
             "pages": {
-              "end": 156,
+              "end": 2,
               "start": 2
             }
           }
         ],
-        "text": "The statements in this section are drawn from direct quotations of the oral\u2011argument transcript."
+        "text": "Oral argument before the Supreme Court took place at 11:03\u202fa.m. on April\u202f29,\u202f2025."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+            "evidence_ids": [
+              "ev-fe7c353a4d6a-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Appearances included Noel J.\u202fFrancisco for the petitioner, Sopan Joshi (Assistant to the Solicitor General) as amicus, and Deepak Gupta for the respondents."
       }
     ],
     "heading": "Oral Argument",
@@ -285,36 +108,30 @@
   "overview": {
     "claims": [
       {
-        "attribution": "Court",
+        "attribution": "Petitioner",
         "citations": [
           {
             "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
             "evidence_ids": [
-              "ev-fe7c353a4d6a-0000-0000"
+              "ev-fe7c353a4d6a-0000-0002"
             ],
             "pages": {
-              "end": 2,
-              "start": 2
+              "end": 5,
+              "start": 5
             }
-          }
-        ],
-        "text": "Oral argument was held at 11:03\u202fa.m."
-      },
-      {
-        "attribution": "Court",
-        "citations": [
+          },
           {
-            "document_hash": "1f75a92a9fc815bd5dd9313f2813b62bccbc8d77ec4e6d0938c738c26aa441af",
+            "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
             "evidence_ids": [
-              "ev-1f75a92a9fc8-0000-0000"
+              "ev-fe7c353a4d6a-0000-0003"
             ],
             "pages": {
-              "end": 2,
-              "start": 2
+              "end": 6,
+              "start": 6
             }
           }
         ],
-        "text": "The Court dismissed the petition for certiorari."
+        "text": "According to Petitioner, the case concerns whether a class action can be certified when many alleged class members lack Article\u202fIII standing and therefore do not share a common injury."
       }
     ],
     "heading": "Overview",
@@ -322,42 +139,94 @@
     "summary": null,
     "summary_citations": []
   },
-  "party_positions": [],
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+              "evidence_ids": [
+                "ev-fe7c353a4d6a-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "The petitioner maintains that without individual Article\u202fIII standing, a class cannot be certified because the class would include non\u2011injured members."
+        },
+        {
+          "attribution": "Court",
+          "citations": [
+            {
+              "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+              "evidence_ids": [
+                "ev-fe7c353a4d6a-0004-0003"
+              ],
+              "pages": {
+                "end": 107,
+                "start": 107
+              }
+            }
+          ],
+          "text": "The petitioner argues that the August order does not materially change the class definition and therefore does not affect standing analysis."
+        }
+      ],
+      "heading": "Petitioner (Laboratory Corporation of America Holdings)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondents (Luke Davis and others)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Heritage Reporting Corporation",
+          "citations": [
+            {
+              "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+              "evidence_ids": [
+                "ev-fe7c353a4d6a-0004-0001"
+              ],
+              "pages": {
+                "end": 91,
+                "start": 91
+              }
+            }
+          ],
+          "text": "Heritage Reporting Corporation contends that Rule\u202f23\u2019s commonality and predominance requirements require all class members to share the same injury."
+        }
+      ],
+      "heading": "Amicus (Heritage Reporting Corporation)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
   "schema_version": "1.0.0",
   "sources": [
     {
-      "document_hash": "1f75a92a9fc815bd5dd9313f2813b62bccbc8d77ec4e6d0938c738c26aa441af",
-      "evidence_ids": [
-        "ev-1f75a92a9fc8-0000-0000"
-      ],
-      "pages": {
-        "end": 2,
-        "start": 2
-      }
-    },
-    {
       "document_hash": "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
       "evidence_ids": [
-        "ev-fe7c353a4d6a-0000-0000",
-        "ev-fe7c353a4d6a-0000-0001",
-        "ev-fe7c353a4d6a-0000-0002",
-        "ev-fe7c353a4d6a-0001-0000",
-        "ev-fe7c353a4d6a-0002-0005",
-        "ev-fe7c353a4d6a-0003-0000",
-        "ev-fe7c353a4d6a-0004-0000",
-        "ev-fe7c353a4d6a-0005-0000",
-        "ev-fe7c353a4d6a-0005-0001",
-        "ev-fe7c353a4d6a-0006-0004",
-        "ev-fe7c353a4d6a-0007-0002"
+        "ev-fe7c353a4d6a-0000-0000"
       ],
       "pages": {
         "end": 156,
-        "start": 2
+        "start": 1
       }
     }
   ],
   "validation": {
-    "checked_at": "2026-09-18T16:53:42.099050Z",
+    "checked_at": "2026-09-18T19:12:40.710730Z",
     "checks": {
       "attribution": true,
       "case_identity": true,
@@ -368,13 +237,13 @@
       "model_opinion_distinction": true,
       "model_oral_argument_characterization": true,
       "model_overstatement": true,
-      "model_support": true,
+      "model_support": false,
       "opinion_distinction": true,
       "oral_argument": true,
       "page_ranges": true,
       "provenance": true,
       "quality_completeness": true,
-      "quality_factual_accuracy": true,
+      "quality_factual_accuracy": false,
       "quality_neutrality": true,
       "quality_readability": true,
       "quality_restraint": true,
@@ -382,14 +251,14 @@
       "schema": true
     },
     "messages": [
-      "The claim that \"Justice Alito asked whether the Ninth Circuit rule on material versus immaterial changes is jurisdictional\" is incorrectly attributed to \"Court\"; the evidence shows the question was asked by Justice Alito. Update the attribution to \"Justice Alito\".",
-      "All other claims are properly supported and attributed."
+      "The claim that oral argument occurred at 11:03\u202fa.m. on April\u202f29,\u202f2025 is unsupported; the cited evidence only states the time (11:03\u202fa.m.) and does not provide the date.",
+      "The claim about the August order is attributed to the Court, but the claim text says the petitioner argues this point; the attribution therefore does not match the source of the argument."
     ],
     "state": "rejected"
   },
   "why_it_matters": {
     "claims": [],
-    "heading": "Why it matters",
+    "heading": "Why It Matters",
     "status": "source_limited",
     "summary": null,
     "summary_citations": []

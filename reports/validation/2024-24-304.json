@@ -11,13 +11,13 @@
     "model_opinion_distinction": true,
     "model_oral_argument_characterization": true,
     "model_overstatement": true,
-    "model_support": true,
+    "model_support": false,
     "opinion_distinction": true,
     "oral_argument": true,
     "page_ranges": true,
     "provenance": true,
     "quality_completeness": true,
-    "quality_factual_accuracy": true,
+    "quality_factual_accuracy": false,
     "quality_neutrality": true,
     "quality_readability": true,
     "quality_restraint": true,
@@ -25,13 +25,13 @@
     "schema": true
   },
   "messages": [
-    "The claim that \"Justice Alito asked whether the Ninth Circuit rule on material versus immaterial changes is jurisdictional\" is incorrectly attributed to \"Court\"; the evidence shows the question was asked by Justice Alito. Update the attribution to \"Justice Alito\".",
-    "All other claims are properly supported and attributed."
+    "The claim that oral argument occurred at 11:03\u202fa.m. on April\u202f29,\u202f2025 is unsupported; the cited evidence only states the time (11:03\u202fa.m.) and does not provide the date.",
+    "The claim about the August order is attributed to the Court, but the claim text says the petitioner argues this point; the attribution therefore does not match the source of the argument."
   ],
   "quality_scores": {
-    "completeness": 0.9,
-    "factual_accuracy": 0.9,
-    "neutrality": 0.95,
+    "completeness": 0.8,
+    "factual_accuracy": 0.875,
+    "neutrality": 0.9,
     "readability": 0.9,
     "restraint": 0.95,
     "traceability": 0.95
