@@ -102,7 +102,15 @@ jobs:
           printf 'mode=%s\nbatch_size=%s\ncase_id=%s\ningest=%s\n' \
             "$mode" "$batch_size" "$case_id" "$ingest" >> "$GITHUB_OUTPUT"
 
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
       - name: Verify runner prerequisites
+        id: prerequisites
         shell: bash
         run: |
           set -euo pipefail
@@ -119,6 +127,7 @@ jobs:
         run: scripts/sync-workflow-branch.sh --ff-only
 
       - name: Install pipeline and site dependencies
+        id: dependencies
         shell: bash
         run: |
           set -euo pipefail
@@ -197,6 +206,7 @@ jobs:
         id: data_validation
         if: >-
           always() && steps.options.outcome == 'success' &&
+          steps.prerequisites.outcome == 'success' && steps.dependencies.outcome == 'success' &&
           (steps.options.outputs.mode == 'validation-only' ||
            (steps.extract.outcome == 'success' &&
             (steps.generate.outcome == 'success' || steps.generate.outcome == 'failure')))
