@@ -1,0 +1,291 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "58aecba757f09cdf0ae3ee54ad64b8050c4c79a2820a2e70a6d427e0a1601f3d",
+            "evidence_ids": [
+              "ev-58aecba757f0-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:03\u202fa.m."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "58aecba757f09cdf0ae3ee54ad64b8050c4c79a2820a2e70a6d427e0a1601f3d",
+            "evidence_ids": [
+              "ev-58aecba757f0-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Chief Justice Rehnquist asked why the adjudication is not considered an application of law to findings of fact."
+      },
+      {
+        "attribution": "Justice (unspecified)",
+        "citations": [
+          {
+            "document_hash": "58aecba757f09cdf0ae3ee54ad64b8050c4c79a2820a2e70a6d427e0a1601f3d",
+            "evidence_ids": [
+              "ev-58aecba757f0-0003-0003"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Justice (unspecified), justices questioned whether the Commission could fine the State."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "58aecba757f09cdf0ae3ee54ad64b8050c4c79a2820a2e70a6d427e0a1601f3d",
+            "evidence_ids": [
+              "ev-58aecba757f0-0002-0004"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice, justices asked about the boundary of state sovereign immunity under the Eleventh Amendment."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-01-46",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T18:57:54.988041Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "58aecba757f09cdf0ae3ee54ad64b8050c4c79a2820a2e70a6d427e0a1601f3d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "58aecba757f09cdf0ae3ee54ad64b8050c4c79a2820a2e70a6d427e0a1601f3d",
+            "evidence_ids": [
+              "ev-58aecba757f0-0003-0006"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "The case is submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "58aecba757f09cdf0ae3ee54ad64b8050c4c79a2820a2e70a6d427e0a1601f3d",
+            "evidence_ids": [
+              "ev-58aecba757f0-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The Supreme Court heard oral argument in this case at 10:03\u202fa.m."
+      },
+      {
+        "attribution": "Federal Maritime Commission",
+        "citations": [
+          {
+            "document_hash": "58aecba757f09cdf0ae3ee54ad64b8050c4c79a2820a2e70a6d427e0a1601f3d",
+            "evidence_ids": [
+              "ev-58aecba757f0-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The Federal Maritime Commission argues that adjudicating a Shipping Act complaint is an administrative regulatory process that involves making findings of fact and applying its interpretation of the Shipping Act, constituting an exercise of executive power."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "58aecba757f09cdf0ae3ee54ad64b8050c4c79a2820a2e70a6d427e0a1601f3d",
+            "evidence_ids": [
+              "ev-58aecba757f0-0002-0004"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice, justices raised questions about the scope of state sovereign immunity under the Eleventh Amendment in relation to the Commission's authority."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Federal Maritime Commission",
+          "citations": [
+            {
+              "document_hash": "58aecba757f09cdf0ae3ee54ad64b8050c4c79a2820a2e70a6d427e0a1601f3d",
+              "evidence_ids": [
+                "ev-58aecba757f0-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Federal Maritime Commission, the adjudication of a Shipping Act complaint by the Federal Maritime Commission is an administrative regulatory process through which the agency makes findings of fact and applies its interpretation of the Shipping Act to those findings of fact. This is an exercise of executive power."
+        },
+        {
+          "attribution": "Federal Maritime Commission",
+          "citations": [
+            {
+              "document_hash": "58aecba757f09cdf0ae3ee54ad64b8050c4c79a2820a2e70a6d427e0a1601f3d",
+              "evidence_ids": [
+                "ev-58aecba757f0-0003-0001"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to Federal Maritime Commission, the commission has never indicated that it has the authority to fine a State instrumentality for not complying with a reparation order."
+        }
+      ],
+      "heading": "Federal Maritime Commission",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "South Carolina State Ports Authority",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "58aecba757f09cdf0ae3ee54ad64b8050c4c79a2820a2e70a6d427e0a1601f3d",
+      "evidence_ids": [
+        "ev-58aecba757f0-0000-0000",
+        "ev-58aecba757f0-0000-0001",
+        "ev-58aecba757f0-0000-0002",
+        "ev-58aecba757f0-0001-0000",
+        "ev-58aecba757f0-0001-0002",
+        "ev-58aecba757f0-0001-0004",
+        "ev-58aecba757f0-0002-0000",
+        "ev-58aecba757f0-0002-0002",
+        "ev-58aecba757f0-0002-0003",
+        "ev-58aecba757f0-0002-0004",
+        "ev-58aecba757f0-0003-0001",
+        "ev-58aecba757f0-0003-0003",
+        "ev-58aecba757f0-0003-0004",
+        "ev-58aecba757f0-0003-0005",
+        "ev-58aecba757f0-0003-0006"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T19:03:48.724274Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

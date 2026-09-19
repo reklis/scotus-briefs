@@ -1,0 +1,367 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+            "evidence_ids": [
+              "ev-a6f14db4cf36-0000-0005"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Appearances were made by Bruce\u202fE.\u202fJohnson for the petitioners, Edmund\u202fJ.\u202fSease for the respondent, and Lawrence\u202fG.\u202fWallace, Deputy Solicitor General, for the United States as amicus curiae."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+            "evidence_ids": [
+              "ev-a6f14db4cf36-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+            "evidence_ids": [
+              "ev-a6f14db4cf36-0002-0002"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Justice, justices asked several questions, including whether the rights conferred by the Plant Variety Protection statute differ from those of the patent statute, and whether a farmer who replants saved seed would infringe the patent."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-99-1996",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T20:25:34.681111Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Bruce E. Johnson",
+        "citations": [
+          {
+            "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+            "evidence_ids": [
+              "ev-a6f14db4cf36-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Bruce E. Johnson, petitioner\u2019s counsel argued that the patents are invalid because Congress created a distinct statutory scheme for plant varieties."
+      },
+      {
+        "attribution": "Edmund J. Sease",
+        "citations": [
+          {
+            "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+            "evidence_ids": [
+              "ev-a6f14db4cf36-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Edmund J. Sease, respondent\u2019s counsel emphasized that the Plant Variety Protection statute was intended to protect the right to exclude others from sexually multiplying plant varieties, not to regulate seed marketing."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+            "evidence_ids": [
+              "ev-a6f14db4cf36-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+            "evidence_ids": [
+              "ev-a6f14db4cf36-0002-0002"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Justice, justices questioned whether the rights under the Plant Variety Protection statute differ from those under the patent statute and whether a farmer who replants saved seed would infringe the patent."
+      }
+    ],
+    "heading": "Oral Argument Summary",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Bruce E. Johnson",
+        "citations": [
+          {
+            "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+            "evidence_ids": [
+              "ev-a6f14db4cf36-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Bruce E. Johnson, the case concerns whether patents on corn plant varieties are invalid because Congress created a separate statutory scheme \u2013 the Plant Variety Protection (PVP) system \u2013 to protect such living things."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Bruce E. Johnson",
+          "citations": [
+            {
+              "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+              "evidence_ids": [
+                "ev-a6f14db4cf36-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Bruce E. Johnson, the patents on the corn plant varieties are invalid because Congress enacted a specific statutory scheme (the Plant Variety Protection Act) to govern protection of such living things."
+        }
+      ],
+      "heading": "Petitioner \u2013 J.E.M. AG SUPPLY, INC., DBA FARM ADVANTAGE INC.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Edmund J. Sease",
+          "citations": [
+            {
+              "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+              "evidence_ids": [
+                "ev-a6f14db4cf36-0001-0000"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Edmund J. Sease, congress intended the Plant Variety Protection statute to regulate the right to exclude others from sexually multiplying plant varieties, not to intervene in ordinary seed marketing."
+        },
+        {
+          "attribution": "Edmund J. Sease",
+          "citations": [
+            {
+              "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+              "evidence_ids": [
+                "ev-a6f14db4cf36-0001-0001"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Edmund J. Sease, the Plant Variety Protection system requires disclosure of breeding history, a requirement that does not exist for utility patents."
+        },
+        {
+          "attribution": "Edmund J. Sease",
+          "citations": [
+            {
+              "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+              "evidence_ids": [
+                "ev-a6f14db4cf36-0001-0005"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "According to Edmund J. Sease, the respondent asserts that the plaintiff\u2019s activities constitute infringement of the utility patent."
+        },
+        {
+          "attribution": "Edmund J. Sease",
+          "citations": [
+            {
+              "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+              "evidence_ids": [
+                "ev-a6f14db4cf36-0001-0006"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "According to Edmund J. Sease, the respondent notes that a party can obtain permission to use the patented seed by paying a licensing fee."
+        },
+        {
+          "attribution": "Mr. Sease",
+          "citations": [
+            {
+              "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+              "evidence_ids": [
+                "ev-a6f14db4cf36-0002-0000"
+              ],
+              "pages": {
+                "end": 35,
+                "start": 35
+              }
+            }
+          ],
+          "text": "According to Mr. Sease, utility patent protection is critically important in the seed industry because seeds can be easily copied through self\u2011replication."
+        }
+      ],
+      "heading": "Respondent \u2013 PIONEER HI\u2011BRED INTERNATIONAL, INC.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Lawrence G. Wallace",
+          "citations": [
+            {
+              "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+              "evidence_ids": [
+                "ev-a6f14db4cf36-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Lawrence G. Wallace, the Court\u2019s prior discussion in Diamond v. Chakrabarty highlighted the central role of the Plant Patent Act and the Plant Variety Protection Act in debates over plant\u2011related intellectual property."
+        }
+      ],
+      "heading": "Amicus \u2013 United States (Deputy Solicitor General Lawrence G. Wallace)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a6f14db4cf364d5a31e7011feea2ff1d5627a46e5729cb0ddcec1c5da7d63219",
+      "evidence_ids": [
+        "ev-a6f14db4cf36-0000-0000",
+        "ev-a6f14db4cf36-0000-0005",
+        "ev-a6f14db4cf36-0000-0001",
+        "ev-a6f14db4cf36-0000-0002",
+        "ev-a6f14db4cf36-0000-0004",
+        "ev-a6f14db4cf36-0001-0000",
+        "ev-a6f14db4cf36-0001-0001",
+        "ev-a6f14db4cf36-0001-0003",
+        "ev-a6f14db4cf36-0001-0005",
+        "ev-a6f14db4cf36-0001-0006",
+        "ev-a6f14db4cf36-0002-0000",
+        "ev-a6f14db4cf36-0002-0001",
+        "ev-a6f14db4cf36-0002-0002",
+        "ev-a6f14db4cf36-0002-0003"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T20:33:29.748755Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

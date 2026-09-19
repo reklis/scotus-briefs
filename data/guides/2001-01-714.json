@@ -1,0 +1,462 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Thomas R. Lee, Esq.",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Since 1790, the Constitution has required that the census be conducted by an actual enumeration of the population."
+      },
+      {
+        "attribution": "Thomas R. Lee, Esq.",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The 2000 Census used statistical imputation, adding .4\u202f% (about 1.2\u202fmillion people) by estimating occupants for 620,000 addresses based on neighboring households."
+      },
+      {
+        "attribution": "Mr. Dellinger",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0002-0005"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Mr. Dellinger, utah contends that this imputation violates the constitutional requirement for an actual count."
+      },
+      {
+        "attribution": "Justice Ginsburg and Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justiciability and standing of Utah are also in dispute."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-01-714",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T20:01:27.320319Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the key issue is whether the method is sampling."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0001-0003"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether using a neighbor\u2019s information to infer occupants is permissible."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether Utah\u2019s injury is redressable given the timing of its aggrievement."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor asked whether Utah is aggrieved by distortion of its congressional districts."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0002-0002"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor asked about justiciability and what remedy might be available."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0002-0004"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor asked whether the method is a proxy use of neighbor information or a statistical estimate."
+      },
+      {
+        "attribution": "Justice (unspecified)",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Justice (unspecified), according to Justice (unspecified), an unspecified Justice asked which standing basis the Court agrees with."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Thomas R. Lee, Esq.",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The U.S. Constitution requires an actual count of the population for the census."
+      },
+      {
+        "attribution": "Thomas R. Lee, Esq.",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "In the 2000 Census, the Census Bureau added about 1.2\u202fmillion people (0.4\u202f% of the total) by statistically imputing occupants for 620,000 addresses based on neighboring households."
+      },
+      {
+        "attribution": "Mr. Dellinger",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0002-0005"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Mr. Dellinger, utah argues that counting zero people for a known occupied address is a counter\u2011factual enumeration and violates the Constitution\u2019s requirement for an actual count."
+      },
+      {
+        "attribution": "Justice Kennedy and Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The case asks whether the Census Bureau\u2019s imputation method violates the Constitution and whether Utah has standing to sue."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Dellinger",
+          "citations": [
+            {
+              "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+              "evidence_ids": [
+                "ev-3e34a1134a68-0002-0005"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            }
+          ],
+          "text": "According to Mr. Dellinger, utah argues that counting zero people for a known occupied address is a counter\u2011factual enumeration that violates the Constitution\u2019s enumeration requirement."
+        },
+        {
+          "attribution": "Thomas R. Lee (Appellant)",
+          "citations": [
+            {
+              "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+              "evidence_ids": [
+                "ev-3e34a1134a68-0003-0001"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 63
+              }
+            }
+          ],
+          "text": "According to Thomas R. Lee (Appellant), according to Thomas R. Lee (Appellant), utah points out that 69\u202f% of the imputed units were of uncertain occupancy, showing that the Census Bureau applied imputation to addresses where occupancy could not be verified."
+        }
+      ],
+      "heading": "Utah (Appellant)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Secretary of Commerce (Appellee)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+      "evidence_ids": [
+        "ev-3e34a1134a68-0000-0000"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T20:11:03.280403Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Thomas R. Lee, Esq.",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The census determines representation in Congress; how the population is counted can affect the political power of each state."
+      },
+      {
+        "attribution": "Justice Kennedy and Thomas R. Lee, Esq.",
+        "citations": [
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "3e34a1134a68630cd60843abd91cdc687d7325c4b75f203b65186dc91b5d8c65",
+            "evidence_ids": [
+              "ev-3e34a1134a68-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The case addresses whether statistical methods such as imputation can be used in the census, which could shape future population\u2011counting practices."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

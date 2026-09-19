@@ -1,0 +1,431 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+            "evidence_ids": [
+              "ev-2e96706a298b-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument before the Supreme Court began at 11:02\u202fa.m."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+            "evidence_ids": [
+              "ev-2e96706a298b-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Chief Justice Rehnquist asked: \u201cIs this a question of Federal law?\u201d"
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+            "evidence_ids": [
+              "ev-2e96706a298b-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Chief Justice later asked: \u201cYou\u2019re now relying on English law, I take it?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+            "evidence_ids": [
+              "ev-2e96706a298b-0001-0003"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "A Justice asked: \u201cDoes it make them subject\u2014subjects?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+            "evidence_ids": [
+              "ev-2e96706a298b-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "A Justice asked: \u201cHow does that affect a corporation?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+            "evidence_ids": [
+              "ev-2e96706a298b-0002-0003"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "A Justice asked about Canadians: \u201cUntil Canada domesticated its constitution\u2026 were they not subjects of the Crown?\u201d"
+      }
+    ],
+    "heading": "Background & Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-01-651",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T19:33:24.498397Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+            "evidence_ids": [
+              "ev-2e96706a298b-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The Supreme Court heard oral argument for this case at 11:02\u202fa.m."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+            "evidence_ids": [
+              "ev-2e96706a298b-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Chief Justice Rehnquist asked whether the issue presented a question of Federal law."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+            "evidence_ids": [
+              "ev-2e96706a298b-0001-0000",
+              "ev-2e96706a298b-0001-0003",
+              "ev-2e96706a298b-0002-0000",
+              "ev-2e96706a298b-0002-0003"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Subsequent questions addressed whether English law applied, whether the corporation was a \u201csubject,\u201d and how the issue affected corporations and other foreign nationals."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "JPMorgan Chase Bank",
+        "citations": [
+          {
+            "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+            "evidence_ids": [
+              "ev-2e96706a298b-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioner JPMorgan Chase Bank argues that the term \u201ccitizens and subjects\u201d applies to corporations, not just natural persons."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+            "evidence_ids": [
+              "ev-2e96706a298b-0000-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "According to United States, the United States, as amicus, submits that corporations organized under United Kingdom overseas territories are citizens or subjects of a foreign state for alienage diversity jurisdiction."
+      },
+      {
+        "attribution": "MR. ALBERT",
+        "citations": [
+          {
+            "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+            "evidence_ids": [
+              "ev-2e96706a298b-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to MR. ALBERT, respondent argues that a British Virgin Islands corporation should not be subject to diversity jurisdiction because its shareholders have opted for BVI status rather than British status."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "JPMorgan Chase Bank",
+          "citations": [
+            {
+              "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+              "evidence_ids": [
+                "ev-2e96706a298b-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to JPMorgan Chase Bank, petitioner argues that the term \u201ccitizens and subjects\u201d applies to corporations, not just natural persons."
+        },
+        {
+          "attribution": "MS. REID",
+          "citations": [
+            {
+              "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+              "evidence_ids": [
+                "ev-2e96706a298b-0002-0005"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to MS. REID, petitioner\u2019s counsel, Ms. Reid, states that corporations are incorporated under the laws of their legislative district."
+        }
+      ],
+      "heading": "JPMorgan Chase Bank (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United Kingdom",
+          "citations": [
+            {
+              "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+              "evidence_ids": [
+                "ev-2e96706a298b-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            },
+            {
+              "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+              "evidence_ids": [
+                "ev-2e96706a298b-0001-0004"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to United Kingdom, the United Kingdom points out that the British Nationality Act distinguishes classes of citizens and subjects, and that the corporation does not automatically become a citizen or subject of the United Kingdom."
+        }
+      ],
+      "heading": "United Kingdom (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+              "evidence_ids": [
+                "ev-2e96706a298b-0000-0002"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "According to United States, the United States submits that corporations organized under United Kingdom overseas territories are citizens or subjects of a foreign state for alienage diversity jurisdiction."
+        }
+      ],
+      "heading": "United States (Amicus)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "MR. ALBERT",
+          "citations": [
+            {
+              "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+              "evidence_ids": [
+                "ev-2e96706a298b-0002-0001"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to MR. ALBERT, counsel argues that a British Virgin Islands corporation should never be subject to diversity jurisdiction because its shareholders have opted for BVI status rather than British status."
+        }
+      ],
+      "heading": "Traffic Stream (BVI Infrastructure Limited) (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2e96706a298b193dc8af9123e17beb4bae8df94c42a2cc71ce52dfb83bbd4bb5",
+      "evidence_ids": [
+        "ev-2e96706a298b-0000-0000",
+        "ev-2e96706a298b-0000-0001",
+        "ev-2e96706a298b-0000-0002",
+        "ev-2e96706a298b-0000-0003",
+        "ev-2e96706a298b-0001-0000",
+        "ev-2e96706a298b-0001-0001",
+        "ev-2e96706a298b-0001-0004",
+        "ev-2e96706a298b-0001-0003",
+        "ev-2e96706a298b-0002-0000",
+        "ev-2e96706a298b-0002-0001",
+        "ev-2e96706a298b-0002-0003",
+        "ev-2e96706a298b-0002-0005",
+        "ev-2e96706a298b-0002-0007"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T19:38:10.548707Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

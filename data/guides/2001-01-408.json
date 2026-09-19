@@ -1,0 +1,516 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The Supreme Court heard oral argument for this case at 11:11\u202fa.m."
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice, the Court questioned whether Congress intended patent law to be uniform."
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Chief Justice, the Court also asked whether the Federal Circuit has jurisdiction over patent counterclaims or only compulsory counterclaims."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-01-408",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T18:42:35.439412Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began before the Supreme Court at 11:11\u202fa.m."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioner, Mr. Dabney, argued that the Federal Circuit\u2019s jurisdiction may be overly expansive, potentially excluding regional circuits."
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The Chief Justice asked whether Congress intended patent law to be uniform."
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Chief Justice also asked whether the Federal Circuit has jurisdiction over patent counterclaims or only compulsory counterclaims."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor posed a question during the argument."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice, a Justice questioned whether the appellate meaning of \u201carising under\u201d excludes counterclaims for original jurisdiction purposes."
+      },
+      {
+        "attribution": "Mr. Gowdey",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0002-0003"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Mr. Gowdey stated that there has not been a patent ruling in the case."
+      },
+      {
+        "attribution": "Mr. Gowdey",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0002-0004"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Mr. Gowdey, mr. Gowdey explained that a well\u2011pled patent counterclaim at the pleading stage could place appellate jurisdiction in the Federal Circuit under the Aerojet rule."
+      },
+      {
+        "attribution": "Mr. Dabney",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0002-0006"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Mr. Dabney argued that the respondent\u2019s position would require the Court to retreat from the Christianson precedent and adopt a special interpretation of the \u201carising under\u201d language."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "The petitioner argued that the case concerns whether the Federal Circuit can assert jurisdiction over patent counterclaims, potentially excluding regional circuit courts."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+            "evidence_ids": [
+              "ev-f500a1969ce2-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "A preliminary injunction issued in January 2000 remains in effect pending a $100,000 bond."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+              "evidence_ids": [
+                "ev-f500a1969ce2-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The petitioner argued that the Federal Circuit\u2019s jurisdiction may be overly expansive, potentially excluding regional circuits."
+        },
+        {
+          "attribution": "Mr. Dabney",
+          "citations": [
+            {
+              "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+              "evidence_ids": [
+                "ev-f500a1969ce2-0002-0006"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Mr. Dabney, the petitioner contended that the respondent\u2019s position would require the Court to retreat from the Christianson precedent and adopt a special interpretation of the \u201carising under\u201d language."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent (via Mr. Gowdey)",
+          "citations": [
+            {
+              "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+              "evidence_ids": [
+                "ev-f500a1969ce2-0001-0003"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Respondent (via Mr. Gowdey), according to Respondent (via Mr. Gowdey), the respondent argued that the district court retains original jurisdiction through a patent counterclaim, as illustrated by the Cardinal case."
+        },
+        {
+          "attribution": "Mr. Gowdey",
+          "citations": [
+            {
+              "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+              "evidence_ids": [
+                "ev-f500a1969ce2-0002-0004"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Mr. Gowdey, the respondent explained that a well\u2011pled patent counterclaim at the pleading stage could place appellate jurisdiction in the Federal Circuit under the Aerojet rule."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+      "evidence_ids": [
+        "ev-f500a1969ce2-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+      "evidence_ids": [
+        "ev-f500a1969ce2-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+      "evidence_ids": [
+        "ev-f500a1969ce2-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+      "evidence_ids": [
+        "ev-f500a1969ce2-0000-0003"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+      "evidence_ids": [
+        "ev-f500a1969ce2-0001-0001"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+      "evidence_ids": [
+        "ev-f500a1969ce2-0001-0002"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+      "evidence_ids": [
+        "ev-f500a1969ce2-0001-0003"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+      "evidence_ids": [
+        "ev-f500a1969ce2-0002-0000"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+      "evidence_ids": [
+        "ev-f500a1969ce2-0002-0003"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+      "evidence_ids": [
+        "ev-f500a1969ce2-0002-0004"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "f500a1969ce2a7ec4eac69ca1b2a03fa8cce80d431dedaa5f84d129f17feed77",
+      "evidence_ids": [
+        "ev-f500a1969ce2-0002-0006"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T18:47:54.865643Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

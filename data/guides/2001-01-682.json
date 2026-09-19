@@ -1,0 +1,498 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Breyer asked, \u201cWhat are we supposed to do then?\u201d"
+      },
+      {
+        "attribution": "Justice (unspecified)",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0001-0002"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice (unspecified), according to Justice (unspecified), an unspecified justice questioned reliance on \u201cheavy gun\u201d statutes such as Title\u202fVI and Title\u202fIX, noting they are rarely used."
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0002-0003"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Chief Justice asked about recent cases (Alexander, Malesko) indicating a more critical look at these claims."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-01-682",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T19:43:21.849470Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Breyer asked, \u201cWhat are we supposed to do then?\u201d"
+      },
+      {
+        "attribution": "Justice (unspecified)",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0001-0002"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice (unspecified), according to Justice (unspecified), an unspecified justice questioned reliance on \u201cheavy gun\u201d statutes such as Title\u202fVI and Title\u202fIX, noting they are rarely used."
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0002-0003"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Chief Justice asked about recent cases (Alexander, Malesko) indicating a more critical look at these claims."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Lawrence S. Robbins (Petitioners)",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The case concerns whether a private plaintiff can obtain punitive damages against municipal government defendants under Section\u202f504 of the Rehabilitation Act and Title\u202fII of the Americans with Disabilities Act."
+      },
+      {
+        "attribution": "Robbins",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0002-0008"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          },
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0002-0009"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Robbins, petitioners argue that punitive damages are available against governmental entities because Title\u202fII is silent and thus permits an unlimited punitive\u2011damages remedy."
+      },
+      {
+        "attribution": "United States, as amicus curiae (Gregory G. Garre)",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0000-0001"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "According to United States, as amicus curiae (Gregory G. Garre), according to United States, as amicus curiae (Gregory G. Garre), the statutes do not sanction punitive damages, which exceed what is necessary to make good a wrong."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          },
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0002-0001"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "The Court notes that Congress intended the same remedies for states as for private entities, and that punitive damages serve a deterrent purpose."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0002-0002"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The Court also states that policies are not served by immunizing defendants from punitive damages under a Newport rationale."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Lawrence S. Robbins (Petitioners)",
+          "citations": [
+            {
+              "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+              "evidence_ids": [
+                "ev-12cc86e3b7db-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Lawrence S. Robbins (Petitioners), according to Lawrence S. Robbins (Petitioners), petitioners assert that a private plaintiff may obtain punitive damages against municipal defendants under Section\u202f504 and Title\u202fII."
+        },
+        {
+          "attribution": "Robbins",
+          "citations": [
+            {
+              "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+              "evidence_ids": [
+                "ev-12cc86e3b7db-0002-0008"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            },
+            {
+              "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+              "evidence_ids": [
+                "ev-12cc86e3b7db-0002-0009"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Robbins, petitioners argue that the 1991 amendment limited punitive damages to nongovernmental entities, but Title\u202fII\u2019s silence permits an unlimited punitive\u2011damages remedy against governmental entities."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+      "evidence_ids": [
+        "ev-12cc86e3b7db-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+      "evidence_ids": [
+        "ev-12cc86e3b7db-0000-0003"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+      "evidence_ids": [
+        "ev-12cc86e3b7db-0000-0001"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    },
+    {
+      "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+      "evidence_ids": [
+        "ev-12cc86e3b7db-0001-0002"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+      "evidence_ids": [
+        "ev-12cc86e3b7db-0002-0000"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+      "evidence_ids": [
+        "ev-12cc86e3b7db-0002-0001"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+      "evidence_ids": [
+        "ev-12cc86e3b7db-0002-0002"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+      "evidence_ids": [
+        "ev-12cc86e3b7db-0002-0003"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+      "evidence_ids": [
+        "ev-12cc86e3b7db-0002-0008"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+      "evidence_ids": [
+        "ev-12cc86e3b7db-0002-0009"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T19:52:01.362307Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0002-0001"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "If punitive damages are available against government entities, they can serve as a deterrent to discrimination, aligning with Congress\u2019s goal of eliminating disability discrimination."
+      },
+      {
+        "attribution": "Petitioners and United States, as amicus curiae (Gregory G. Garre)",
+        "citations": [
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "12cc86e3b7db2203e8d3658d86db0b845acfee191f034ff4e8a410725ff50470",
+            "evidence_ids": [
+              "ev-12cc86e3b7db-0000-0001"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "The parties present competing interpretations of whether the statutes expressly permit punitive damages."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

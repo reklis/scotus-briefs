@@ -1,0 +1,335 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+            "evidence_ids": [
+              "ev-6402cf8f8219-0002-0003"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice, a question was whether the advertising ban applies only to advertising to the general public or to all advertising."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+            "evidence_ids": [
+              "ev-6402cf8f8219-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, justices asked whether the parties had conducted double\u2011blind tests."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+            "evidence_ids": [
+              "ev-6402cf8f8219-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice, justices inquired about the constitutional implications of the advertising ban."
+      }
+    ],
+    "heading": "Background & Question(s)",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-01-344",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T18:19:40.057617Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+            "evidence_ids": [
+              "ev-6402cf8f8219-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:11\u202fa.m. before the Supreme Court."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+            "evidence_ids": [
+              "ev-6402cf8f8219-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case was presented for oral argument before the Supreme Court of the United States."
+      },
+      {
+        "attribution": "Petitioners (Dept. of Justice)",
+        "citations": [
+          {
+            "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+            "evidence_ids": [
+              "ev-6402cf8f8219-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners (Dept. of Justice), according to Petitioners (Dept. of Justice), petitioners argue that the Federal Food, Drug, and Cosmetic Act requires a new drug to be proven safe and effective by the FDA before it can be marketed."
+      },
+      {
+        "attribution": "Petitioners (Dept. of Justice)",
+        "citations": [
+          {
+            "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+            "evidence_ids": [
+              "ev-6402cf8f8219-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners (Dept. of Justice), according to Petitioners (Dept. of Justice), petitioners contend that Congress intended the public health to be protected by requiring scientifically valid studies, and that those who promote new drugs must conduct those studies."
+      },
+      {
+        "attribution": "Mr. Hoffman",
+        "citations": [
+          {
+            "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+            "evidence_ids": [
+              "ev-6402cf8f8219-0002-0002"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Mr. Hoffman, respondents assert that the pharmacist\u2019s role is essential in the drug dispensing process."
+      },
+      {
+        "attribution": "Mr. Hoffman",
+        "citations": [
+          {
+            "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+            "evidence_ids": [
+              "ev-6402cf8f8219-0002-0004"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Mr. Hoffman, they did not seek to have the conduct\u2011related provisions of the statute stricken."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners (Dept. of Justice)",
+          "citations": [
+            {
+              "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+              "evidence_ids": [
+                "ev-6402cf8f8219-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioners (Dept. of Justice), according to Petitioners (Dept. of Justice), the Federal Food, Drug, and Cosmetic Act requires a new drug to be proven safe and effective by the FDA before it can be marketed."
+        },
+        {
+          "attribution": "Petitioners (Dept. of Justice)",
+          "citations": [
+            {
+              "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+              "evidence_ids": [
+                "ev-6402cf8f8219-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioners (Dept. of Justice), according to Petitioners (Dept. of Justice), congress intended that safety and effectiveness be established by scientifically valid studies, and that those who promote new drugs must conduct those studies."
+        }
+      ],
+      "heading": "Petitioner (Dept. of Justice)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Hoffman",
+          "citations": [
+            {
+              "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+              "evidence_ids": [
+                "ev-6402cf8f8219-0002-0002"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Mr. Hoffman, the pharmacist\u2019s role is essential in the drug dispensing process."
+        },
+        {
+          "attribution": "Mr. Hoffman",
+          "citations": [
+            {
+              "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+              "evidence_ids": [
+                "ev-6402cf8f8219-0002-0004"
+              ],
+              "pages": {
+                "end": 47,
+                "start": 47
+              }
+            }
+          ],
+          "text": "According to Mr. Hoffman, they did not seek to have the conduct\u2011related provisions of the statute stricken."
+        }
+      ],
+      "heading": "Respondent (Western States Medical Center)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6402cf8f8219cca1c3b5a19dc26c2e5182f2ee90e73eeebf3d3007cabf7e9670",
+      "evidence_ids": [
+        "ev-6402cf8f8219-0000-0000",
+        "ev-6402cf8f8219-0000-0001",
+        "ev-6402cf8f8219-0000-0002",
+        "ev-6402cf8f8219-0001-0000",
+        "ev-6402cf8f8219-0001-0003",
+        "ev-6402cf8f8219-0002-0000",
+        "ev-6402cf8f8219-0002-0001",
+        "ev-6402cf8f8219-0002-0002",
+        "ev-6402cf8f8219-0002-0003",
+        "ev-6402cf8f8219-0002-0004"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T18:24:46.716047Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
