@@ -1,0 +1,285 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice (questioner)",
+        "citations": [
+          {
+            "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+            "evidence_ids": [
+              "ev-1d561d32c135-0002-0000"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Justice (questioner), according to Justice (questioner), the Court questioned whether there is a sufficiency issue regarding evidence of consent for women who never received prenatal care, who arrived in labor, and what they signed at that point."
+      },
+      {
+        "attribution": "Justice (questioner)",
+        "citations": [
+          {
+            "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+            "evidence_ids": [
+              "ev-1d561d32c135-0002-0001"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Justice (questioner), according to Justice (questioner), for purposes of deciding, the Court assumed that there was no consent because consent was not reviewed by the Court of Appeals."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2000-99-936",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T07:24:46.637486Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice (questioner)",
+        "citations": [
+          {
+            "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+            "evidence_ids": [
+              "ev-1d561d32c135-0002-0000"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Justice (questioner), according to Justice (questioner), the Court questioned the sufficiency of consent evidence for women who arrived in labor without prior prenatal care."
+      },
+      {
+        "attribution": "Justice (questioner)",
+        "citations": [
+          {
+            "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+            "evidence_ids": [
+              "ev-1d561d32c135-0002-0001"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Justice (questioner), according to Justice (questioner), the Court assumed there was no consent because the issue had not been reviewed by the Court of Appeals."
+      },
+      {
+        "attribution": "Mr. Hood",
+        "citations": [
+          {
+            "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+            "evidence_ids": [
+              "ev-1d561d32c135-0002-0002"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Mr. Hood argued that the policy was a law\u2011enforcement tool implemented by the hospital for crime detection."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. Hood",
+        "citations": [
+          {
+            "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+            "evidence_ids": [
+              "ev-1d561d32c135-0002-0002"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Mr. Hood, a hospital policy was created by and for law\u2011enforcement agencies and was implemented by the hospital for the purpose of crime detection."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+            "evidence_ids": [
+              "ev-1d561d32c135-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The policy resulted in arrests, including seven individuals taken directly from their hospital beds."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Hood",
+          "citations": [
+            {
+              "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+              "evidence_ids": [
+                "ev-1d561d32c135-0002-0002"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Mr. Hood, the respondent argued that the policy was designed by and for law\u2011enforcement and was implemented by the hospital to detect crime."
+        }
+      ],
+      "heading": "City of Charleston (Respondent) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+      "evidence_ids": [
+        "ev-1d561d32c135-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+      "evidence_ids": [
+        "ev-1d561d32c135-0002-0000"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+      "evidence_ids": [
+        "ev-1d561d32c135-0002-0001"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+      "evidence_ids": [
+        "ev-1d561d32c135-0002-0002"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T07:29:45.106031Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice (questioner)",
+        "citations": [
+          {
+            "document_hash": "1d561d32c135060a0e89e613c9f04e466b21b4a57d9e3f138f5f55f19554ef01",
+            "evidence_ids": [
+              "ev-1d561d32c135-0002-0000"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Justice (questioner), according to Justice (questioner), the case raises important questions about whether patients in labor can give informed, voluntary consent when they have not received prior prenatal care."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

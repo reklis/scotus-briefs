@@ -1,0 +1,450 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "John G. Roberts",
+        "citations": [
+          {
+            "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+            "evidence_ids": [
+              "ev-c3221463d199-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The certificate of coverage is an agreement between the HMO and the employer that extends to particular employees the benefits that are set forth there."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+            "evidence_ids": [
+              "ev-c3221463d199-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice asked whether the plan was in the record."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+            "evidence_ids": [
+              "ev-c3221463d199-0001-0002"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor asked whether a less\u2011expensive effective treatment would still be considered medically necessary."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+            "evidence_ids": [
+              "ev-c3221463d199-0001-0003"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Souter asked about the traditional elements of arbitration, including review of evidence and opportunity to argue."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+            "evidence_ids": [
+              "ev-c3221463d199-0002-0003"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "A Justice asked a follow\u2011up question about a difficult aspect of the case."
+      }
+    ],
+    "heading": "Background & Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-1021",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T07:29:45.118566Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+          "evidence_ids": [
+            "ev-c3221463d199-0000-0002"
+          ],
+          "pages": {
+            "end": 4,
+            "start": 4
+          }
+        }
+      ],
+      "definition": "An agreement between the HMO and the employer that extends to particular employees the benefits that are set forth there.",
+      "term": "certificate of coverage"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+            "evidence_ids": [
+              "ev-c3221463d199-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist announced the hearing of argument for Number\u202f00\u20111021, Rush Prudential HMO, Inc. v. Deborah C. Moran."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+            "evidence_ids": [
+              "ev-c3221463d199-0001-0002"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor asked whether a less\u2011expensive effective treatment would still be medically necessary."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+            "evidence_ids": [
+              "ev-c3221463d199-0001-0003"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Souter asked about the traditional elements of arbitration, including review of evidence and opportunity to argue."
+      },
+      {
+        "attribution": "Edwin S. Kneedler (United States, amicus curiae)",
+        "citations": [
+          {
+            "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+            "evidence_ids": [
+              "ev-c3221463d199-0002-0002",
+              "ev-c3221463d199-0002-0004"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Edwin S. Kneedler (United States, amicus curiae), an oral argument was presented on behalf of the United States."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "John G. Roberts",
+        "citations": [
+          {
+            "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+            "evidence_ids": [
+              "ev-c3221463d199-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to John G. Roberts, petitioner argues that Illinois law providing an independent review of HMO benefit denials is preempted by ERISA."
+      },
+      {
+        "attribution": "Mr. Albers",
+        "citations": [
+          {
+            "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+            "evidence_ids": [
+              "ev-c3221463d199-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Mr. Albers, respondent contends that Illinois section\u202f4\u201110 is not in conflict with ERISA and therefore is enforceable."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "John G. Roberts",
+          "citations": [
+            {
+              "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+              "evidence_ids": [
+                "ev-c3221463d199-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to John G. Roberts, eRISA\u2019s civil enforcement provisions are the exclusive remedy, so the Illinois independent external review law is preempted."
+        }
+      ],
+      "heading": "Petitioner (Rush Prudential HMO, Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Albers",
+          "citations": [
+            {
+              "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+              "evidence_ids": [
+                "ev-c3221463d199-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Albers, illinois section\u202f4\u201110 does not conflict with ERISA and is enforceable to protect Illinois insureds."
+        },
+        {
+          "attribution": "Mr. Albers",
+          "citations": [
+            {
+              "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+              "evidence_ids": [
+                "ev-c3221463d199-0002-0000"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Mr. Albers, the dispute is an arbitration that proceeds to a neutral third party."
+        },
+        {
+          "attribution": "Mr. Albers",
+          "citations": [
+            {
+              "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+              "evidence_ids": [
+                "ev-c3221463d199-0002-0001"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Mr. Albers, the HMO Insurance Act is part of the Illinois Insurance Code and meets the factors the Court has set for what constitutes an insurer."
+        }
+      ],
+      "heading": "Respondent (Deborah C. Moran)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+      "evidence_ids": [
+        "ev-c3221463d199-0000-0000",
+        "ev-c3221463d199-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+      "evidence_ids": [
+        "ev-c3221463d199-0000-0002",
+        "ev-c3221463d199-0000-0003"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+      "evidence_ids": [
+        "ev-c3221463d199-0001-0001"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+      "evidence_ids": [
+        "ev-c3221463d199-0001-0002"
+      ],
+      "pages": {
+        "end": 32,
+        "start": 32
+      }
+    },
+    {
+      "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+      "evidence_ids": [
+        "ev-c3221463d199-0001-0003"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+      "evidence_ids": [
+        "ev-c3221463d199-0002-0000",
+        "ev-c3221463d199-0002-0003"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+      "evidence_ids": [
+        "ev-c3221463d199-0002-0001"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "c3221463d19964fabc3a32c9eeb915b50d904f3a96cce7a5d0b9789fe86c08ba",
+      "evidence_ids": [
+        "ev-c3221463d199-0002-0002",
+        "ev-c3221463d199-0002-0004"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T07:35:58.894663Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

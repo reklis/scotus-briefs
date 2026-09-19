@@ -1,0 +1,55 @@
+{
+  "case_id": "2000-99-603",
+  "document_hash": "0487dc5433e208e0cbe4e715b6dfa111d9982aaf08672c7b9275dd2565865846",
+  "records": [
+    {
+      "attribution": "Justice",
+      "case_id": "2000-99-603",
+      "confidence": 1.0,
+      "document_hash": "0487dc5433e208e0cbe4e715b6dfa111d9982aaf08672c7b9275dd2565865846",
+      "evidence_id": "ev-0487dc5433e2-0001-0000",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 20,
+        "start": 20
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "QUESTION: But it was Government expression."
+    },
+    {
+      "attribution": "Justice",
+      "case_id": "2000-99-603",
+      "confidence": 0.95,
+      "document_hash": "0487dc5433e208e0cbe4e715b6dfa111d9982aaf08672c7b9275dd2565865846",
+      "evidence_id": "ev-0487dc5433e2-0002-0001",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 40,
+        "start": 40
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "QUESTION: Well now, Rust did not say that."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2000-99-603",
+      "confidence": 0.98,
+      "document_hash": "0487dc5433e208e0cbe4e715b6dfa111d9982aaf08672c7b9275dd2565865846",
+      "evidence_id": "ev-0487dc5433e2-0002-0004",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 56,
+        "start": 56
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The case is submitted."
+    }
+  ],
+  "schema_version": "1.0.0"
+}

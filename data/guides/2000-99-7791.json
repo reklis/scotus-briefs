@@ -1,0 +1,415 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0004-0002",
+              "ev-d256a2c260cf-0004-0003"
+            ],
+            "pages": {
+              "end": 73,
+              "start": 72
+            }
+          }
+        ],
+        "text": "The Attorney General\u2019s detention is reasonably related to the goal of protecting the public from dangerous criminal aliens and is subject to periodic, automatic review each year."
+      },
+      {
+        "attribution": "Source",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0003-0006"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "There is habeas\u2011corpus review available in this case."
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Chief Justice asked, \u201cWhich circuit court?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0001-0008"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "A Justice asked, \u201cIt is or is not one of the elements?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0004-0001"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "A Justice asked whether Carlson would allow judicial review of the periodic determinations."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2000-99-7791",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T07:15:04.488804Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Chief Justice asked, \u201cWhich circuit court?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0001-0008"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "A Justice asked, \u201cIt is or is not one of the elements?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0004-0001"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "A Justice asked whether Carlson would allow judicial review of the periodic determinations."
+      },
+      {
+        "attribution": "Mr. Kneedler",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0004-0000"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "According to Mr. Kneedler, mr. Kneedler responded that judicial review should follow the Carlson line, focusing on arbitrary exercise of power and a possible residual liberty interest."
+      },
+      {
+        "attribution": "Jay W. Stansell",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0004-0004",
+              "ev-d256a2c260cf-0004-0005"
+            ],
+            "pages": {
+              "end": 75,
+              "start": 74
+            }
+          }
+        ],
+        "text": "Mr. Stansell argued that the administrative process fails to consider deportation foreseeability."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0004-0002"
+            ],
+            "pages": {
+              "end": 72,
+              "start": 72
+            }
+          }
+        ],
+        "text": "The case Kestutis Zadvydas v. Lynn Underdown and Immigration and Naturalization Service concerns the Attorney General\u2019s authority to detain an alien."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0004-0002",
+              "ev-d256a2c260cf-0004-0003"
+            ],
+            "pages": {
+              "end": 73,
+              "start": 72
+            }
+          }
+        ],
+        "text": "The detention is subject to periodic, automatic review each year, and the alien may request a review in intervening periods."
+      },
+      {
+        "attribution": "Petitioner and Respondent",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0004-0000",
+              "ev-d256a2c260cf-0004-0004",
+              "ev-d256a2c260cf-0004-0005"
+            ],
+            "pages": {
+              "end": 75,
+              "start": 71
+            }
+          }
+        ],
+        "text": "The parties argue whether judicial review is available and whether the detention raises constitutional due\u2011process concerns."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Kneedler",
+          "citations": [
+            {
+              "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+              "evidence_ids": [
+                "ev-d256a2c260cf-0004-0000"
+              ],
+              "pages": {
+                "end": 71,
+                "start": 71
+              }
+            }
+          ],
+          "text": "According to Mr. Kneedler, petitioner argues that judicial review should follow the Carlson standard, focusing on whether the Attorney General exercised power arbitrarily and whether a residual liberty interest exists."
+        },
+        {
+          "attribution": "Mr. Stansell",
+          "citations": [
+            {
+              "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+              "evidence_ids": [
+                "ev-d256a2c260cf-0004-0005"
+              ],
+              "pages": {
+                "end": 75,
+                "start": 75
+              }
+            }
+          ],
+          "text": "According to Mr. Stansell, petitioner contends that the administrative process should consider the foreseeability of deportation."
+        }
+      ],
+      "heading": "Petitioner \u2013 Kestutis Zadvydas",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Jay W. Stansell",
+          "citations": [
+            {
+              "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+              "evidence_ids": [
+                "ev-d256a2c260cf-0004-0004"
+              ],
+              "pages": {
+                "end": 74,
+                "start": 74
+              }
+            }
+          ],
+          "text": "According to Jay W. Stansell, respondent argues that the administrative process is fundamentally flawed because it takes no consideration that deportation is not foreseeable."
+        }
+      ],
+      "heading": "Respondent \u2013 Lynn Underdown and Immigration and Naturalization Service",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+      "evidence_ids": [
+        "ev-d256a2c260cf-0000-0004",
+        "ev-d256a2c260cf-0001-0008",
+        "ev-d256a2c260cf-0003-0006",
+        "ev-d256a2c260cf-0004-0000",
+        "ev-d256a2c260cf-0004-0001",
+        "ev-d256a2c260cf-0004-0002",
+        "ev-d256a2c260cf-0004-0003",
+        "ev-d256a2c260cf-0004-0004",
+        "ev-d256a2c260cf-0004-0005"
+      ],
+      "pages": {
+        "end": 75,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T07:20:05.375865Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0004-0002",
+              "ev-d256a2c260cf-0004-0003"
+            ],
+            "pages": {
+              "end": 73,
+              "start": 72
+            }
+          },
+          {
+            "document_hash": "d256a2c260cf84b2c51f36a254425581d4a77e936d8b885dbc2cb815940262b4",
+            "evidence_ids": [
+              "ev-d256a2c260cf-0004-0000"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "The case addresses the scope of the Attorney General\u2019s detention authority and the availability of judicial review, which directly affect the due\u2011process rights of detained aliens."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

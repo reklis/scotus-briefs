@@ -1,0 +1,369 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-10666",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T07:42:02.833205Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+            "evidence_ids": [
+              "ev-2dba323396db-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice asked whether the Court could apply the Apprendi rule to the case."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+            "evidence_ids": [
+              "ev-2dba323396db-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether there is a rational distinction between adding two years at the top of a sentence and subtracting two years at the bottom."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+            "evidence_ids": [
+              "ev-2dba323396db-0002-0004"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor asked if that is the implication of Apprendi."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (William C. Ingram)",
+        "citations": [
+          {
+            "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+            "evidence_ids": [
+              "ev-2dba323396db-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner (William C. Ingram), petitioner argued that \u201cbrandish\u201d should be defined as displaying a firearm to intimidate, includes a mens\u2011rea element, and therefore must be proved as an element of the offense rather than treated merely as a sentencing enhancement."
+      },
+      {
+        "attribution": "Petitioner (William C. Ingram)",
+        "citations": [
+          {
+            "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+            "evidence_ids": [
+              "ev-2dba323396db-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioner (William C. Ingram), petitioner also contended that the statutory increase of the mandatory minimum for brandishing from five to seven years represents a 40\u202f% rise, and that the penalty for discharging a firearm doubles, highlighting the severity of the enhanced sentencing."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+            "evidence_ids": [
+              "ev-2dba323396db-0001-0003"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Respondent argued that before the amendment to 18\u202fU.S.C.\u202f\u00a7\u202f924(c) judges had no sentencing discretion, and that Congress changed the law to treat the conduct as a more serious crime."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+            "evidence_ids": [
+              "ev-2dba323396db-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice asked whether the Court could apply the Apprendi rule to the case."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+            "evidence_ids": [
+              "ev-2dba323396db-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether there is a rational distinction between adding two years at the top of a sentence and subtracting two years at the bottom."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+            "evidence_ids": [
+              "ev-2dba323396db-0002-0004"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor asked if that is the implication of Apprendi."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (William C. Ingram)",
+          "citations": [
+            {
+              "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+              "evidence_ids": [
+                "ev-2dba323396db-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (William C. Ingram), petitioner argued that \u201cbrandish\u201d should be defined as displaying a firearm to intimidate, includes a mens\u2011rea element, and therefore must be proved as an element of the offense rather than treated merely as a sentencing enhancement."
+        },
+        {
+          "attribution": "Petitioner (William C. Ingram)",
+          "citations": [
+            {
+              "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+              "evidence_ids": [
+                "ev-2dba323396db-0000-0003"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner (William C. Ingram), petitioner also contended that the statutory increase of the mandatory minimum for brandishing from five to seven years represents a 40\u202f% rise, and that the penalty for discharging a firearm doubles, highlighting the severity of the enhanced sentencing."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+              "evidence_ids": [
+                "ev-2dba323396db-0001-0003"
+              ],
+              "pages": {
+                "end": 33,
+                "start": 33
+              }
+            }
+          ],
+          "text": "Respondent argued that before the amendment to 18\u202fU.S.C.\u202f\u00a7\u202f924(c) judges had no sentencing discretion, and that Congress changed the law to treat the conduct as a more serious crime."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+      "evidence_ids": [
+        "ev-2dba323396db-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+      "evidence_ids": [
+        "ev-2dba323396db-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+      "evidence_ids": [
+        "ev-2dba323396db-0000-0003"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+      "evidence_ids": [
+        "ev-2dba323396db-0001-0003"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+      "evidence_ids": [
+        "ev-2dba323396db-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+      "evidence_ids": [
+        "ev-2dba323396db-0002-0000"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "2dba323396db574abee852ed74d06579ba01a4084acf77cdae704daf7cd976da",
+      "evidence_ids": [
+        "ev-2dba323396db-0002-0004"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T07:44:58.276926Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
