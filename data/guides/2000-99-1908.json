@@ -1,0 +1,149 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2000-99-1908",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T05:44:04.283488Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "48c743f8dbc8518fe9d9f7ac7fc60e5023c8b9bd398af15017fe3d05dde4d823"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "48c743f8dbc8518fe9d9f7ac7fc60e5023c8b9bd398af15017fe3d05dde4d823",
+            "evidence_ids": [
+              "ev-48c743f8dbc8-0001-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice asked the question: \u201cWhich argument do you say was made?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "48c743f8dbc8518fe9d9f7ac7fc60e5023c8b9bd398af15017fe3d05dde4d823",
+            "evidence_ids": [
+              "ev-48c743f8dbc8-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice asked the question: \u201cYou can say anything --\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "48c743f8dbc8518fe9d9f7ac7fc60e5023c8b9bd398af15017fe3d05dde4d823",
+            "evidence_ids": [
+              "ev-48c743f8dbc8-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice asked the question: \u201cWell, one --\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "48c743f8dbc8518fe9d9f7ac7fc60e5023c8b9bd398af15017fe3d05dde4d823",
+      "evidence_ids": [
+        "ev-48c743f8dbc8-0001-0001",
+        "ev-48c743f8dbc8-0002-0000",
+        "ev-48c743f8dbc8-0002-0003"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 36
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T05:45:51.612866Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
