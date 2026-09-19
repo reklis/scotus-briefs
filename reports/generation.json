@@ -1,11 +1,20 @@
 {
   "completed_case_ids": [
-    "2024-24-362"
+    "2000-00-121",
+    "2000-00-151",
+    "2000-00-152"
   ],
-  "failures": {},
-  "mode": "case-regeneration",
+  "failures": {
+    "2000-00-157": "no supported evidence for 2000-00-157",
+    "2000-00-189": "no supported evidence for 2000-00-189"
+  },
+  "mode": "bounded-backfill",
   "selected_case_ids": [
-    "2024-24-362"
+    "2000-00-121",
+    "2000-00-151",
+    "2000-00-152",
+    "2000-00-157",
+    "2000-00-189"
   ],
   "skipped_case_ids": []
 }
