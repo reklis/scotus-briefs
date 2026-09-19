@@ -1,0 +1,55 @@
+{
+  "case_id": "2000-00-949",
+  "document_hash": "b9154976624ecd1790a5159e9c08d490606650d987cbb3e90b661be754f07c62",
+  "records": [
+    {
+      "attribution": "Justice (unspecified)",
+      "case_id": "2000-00-949",
+      "confidence": 1.0,
+      "document_hash": "b9154976624ecd1790a5159e9c08d490606650d987cbb3e90b661be754f07c62",
+      "evidence_id": "ev-b9154976624e-0001-0000",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 20,
+        "start": 20
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "QUESTION: Even in the contest period?"
+    },
+    {
+      "attribution": "Mr. Olson",
+      "case_id": "2000-00-949",
+      "confidence": 0.8,
+      "document_hash": "b9154976624ecd1790a5159e9c08d490606650d987cbb3e90b661be754f07c62",
+      "evidence_id": "ev-b9154976624e-0001-0002",
+      "kind": "allegation",
+      "opinion_part": null,
+      "pages": {
+        "end": 21,
+        "start": 21
+      },
+      "schema_version": "1.0.0",
+      "status": "uncertain",
+      "text": "I believe it was not"
+    },
+    {
+      "attribution": "Justice",
+      "case_id": "2000-00-949",
+      "confidence": 0.8,
+      "document_hash": "b9154976624ecd1790a5159e9c08d490606650d987cbb3e90b661be754f07c62",
+      "evidence_id": "ev-b9154976624e-0003-0003",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 56,
+        "start": 56
+      },
+      "schema_version": "1.0.0",
+      "status": "uncertain",
+      "text": "QUESTION: What did he say with respect to this?"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

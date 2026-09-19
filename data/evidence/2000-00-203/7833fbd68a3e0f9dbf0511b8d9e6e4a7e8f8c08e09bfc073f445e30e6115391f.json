@@ -1,0 +1,39 @@
+{
+  "case_id": "2000-00-203",
+  "document_hash": "7833fbd68a3e0f9dbf0511b8d9e6e4a7e8f8c08e09bfc073f445e30e6115391f",
+  "records": [
+    {
+      "attribution": "Justice",
+      "case_id": "2000-00-203",
+      "confidence": 0.95,
+      "document_hash": "7833fbd68a3e0f9dbf0511b8d9e6e4a7e8f8c08e09bfc073f445e30e6115391f",
+      "evidence_id": "ev-7833fbd68a3e-0002-0000",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 35,
+        "start": 35
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "QUESTION: May I ask you a question on that?"
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2000-00-203",
+      "confidence": 0.95,
+      "document_hash": "7833fbd68a3e0f9dbf0511b8d9e6e4a7e8f8c08e09bfc073f445e30e6115391f",
+      "evidence_id": "ev-7833fbd68a3e-0002-0005",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 47,
+        "start": 47
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The case is submitted."
+    }
+  ],
+  "schema_version": "1.0.0"
+}
