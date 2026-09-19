@@ -1,0 +1,374 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+            "evidence_ids": [
+              "ev-0a8c5a2935f3-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:13\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+            "evidence_ids": [
+              "ev-0a8c5a2935f3-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice asked whether the issue is jurisdiction."
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+            "evidence_ids": [
+              "ev-0a8c5a2935f3-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Chief Justice asked whether there is any procedure to ensure the housing authority\u2019s broad discretion is not abused."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+            "evidence_ids": [
+              "ev-0a8c5a2935f3-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked about the respondents\u2019 standing to contest the housing authority\u2019s interpretation of a HUD regulation."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-1770",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T11:26:02.827163Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+            "evidence_ids": [
+              "ev-0a8c5a2935f3-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:13\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+            "evidence_ids": [
+              "ev-0a8c5a2935f3-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice asked whether the issue is jurisdiction."
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+            "evidence_ids": [
+              "ev-0a8c5a2935f3-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Chief Justice asked whether there is any procedure to ensure the housing authority\u2019s broad discretion is not abused."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+            "evidence_ids": [
+              "ev-0a8c5a2935f3-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked about the respondents\u2019 standing to contest the housing authority\u2019s interpretation of a HUD regulation."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+            "evidence_ids": [
+              "ev-0a8c5a2935f3-0002-0003"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "The court noted that Mr. Feldman had three minutes remaining."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Gary T. Lafayette (Private Petitioners)",
+        "citations": [
+          {
+            "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+            "evidence_ids": [
+              "ev-0a8c5a2935f3-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Gary T. Lafayette (Private Petitioners), according to Gary T. Lafayette (Private Petitioners), the Oakland Housing Authority revised its lease to include provisions aimed at maintaining a drug\u2011free environment, updating paragraph\u202f9(m), the occupants\u2019 responsibility statement, and the tenant agreement."
+      },
+      {
+        "attribution": "Gary T. Lafayette (Private Petitioners)",
+        "citations": [
+          {
+            "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+            "evidence_ids": [
+              "ev-0a8c5a2935f3-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Gary T. Lafayette (Private Petitioners), according to Gary T. Lafayette (Private Petitioners), the Authority reported about 700 felony arrests for drug\u2011related activity from 1998 through November of the current year, among its roughly 8,000 residents in 3,308 housing units."
+      },
+      {
+        "attribution": "Respondents (Mr. Renne)",
+        "citations": [
+          {
+            "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+            "evidence_ids": [
+              "ev-0a8c5a2935f3-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Respondents (Mr. Renne), according to Respondents (Mr. Renne), tenants have a right in eviction court to present equitable and legal defenses."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Department of Housing and Urban Development",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Gary T. Lafayette (Private Petitioners)",
+          "citations": [
+            {
+              "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+              "evidence_ids": [
+                "ev-0a8c5a2935f3-0001-0000"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Gary T. Lafayette (Private Petitioners), according to Gary T. Lafayette (Private Petitioners), the Oakland Housing Authority revised its lease to include provisions aimed at maintaining a drug\u2011free environment, updating paragraph\u202f9(m), the occupants\u2019 responsibility statement, and the tenant agreement."
+        },
+        {
+          "attribution": "Gary T. Lafayette (Private Petitioners)",
+          "citations": [
+            {
+              "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+              "evidence_ids": [
+                "ev-0a8c5a2935f3-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Gary T. Lafayette (Private Petitioners), according to Gary T. Lafayette (Private Petitioners), the Authority reported about 700 felony arrests for drug\u2011related activity from 1998 through November of the current year, among its roughly 8,000 residents in 3,308 housing units."
+        }
+      ],
+      "heading": "Oakland Housing Authority",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents (Mr. Renne)",
+          "citations": [
+            {
+              "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+              "evidence_ids": [
+                "ev-0a8c5a2935f3-0002-0001"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Respondents (Mr. Renne), according to Respondents (Mr. Renne), tenants have a right in eviction court to present equitable and legal defenses."
+        }
+      ],
+      "heading": "Respondents (Mr. Renne)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0a8c5a2935f349af031cb6b1dcb2021d5970cb246869a58c13416de0b33fe478",
+      "evidence_ids": [
+        "ev-0a8c5a2935f3-0000-0000",
+        "ev-0a8c5a2935f3-0000-0002",
+        "ev-0a8c5a2935f3-0001-0000",
+        "ev-0a8c5a2935f3-0001-0001",
+        "ev-0a8c5a2935f3-0001-0002",
+        "ev-0a8c5a2935f3-0002-0000",
+        "ev-0a8c5a2935f3-0002-0001",
+        "ev-0a8c5a2935f3-0002-0002",
+        "ev-0a8c5a2935f3-0002-0003",
+        "ev-0a8c5a2935f3-0002-0004"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T11:31:21.853231Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

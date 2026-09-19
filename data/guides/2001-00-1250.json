@@ -1,0 +1,230 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-1250",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T09:50:20.545630Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "8e1424b7711640f7004cd15fd193fc37d1bcb2963dc63cb2642d6dabfa30c413"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": "Ms. Center argued on behalf of the respondent during the oral argument, which was recorded on page 24 of the transcript.",
+    "summary_citations": [
+      {
+        "document_hash": "8e1424b7711640f7004cd15fd193fc37d1bcb2963dc63cb2642d6dabfa30c413",
+        "evidence_ids": [
+          "ev-8e1424b77116-0001-0002"
+        ],
+        "pages": {
+          "end": 24,
+          "start": 24
+        }
+      },
+      {
+        "document_hash": "8e1424b7711640f7004cd15fd193fc37d1bcb2963dc63cb2642d6dabfa30c413",
+        "evidence_ids": [
+          "ev-8e1424b77116-0002-0002"
+        ],
+        "pages": {
+          "end": 39,
+          "start": 39
+        }
+      }
+    ]
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "U.S. Airways, Inc.",
+        "citations": [
+          {
+            "document_hash": "8e1424b7711640f7004cd15fd193fc37d1bcb2963dc63cb2642d6dabfa30c413",
+            "evidence_ids": [
+              "ev-8e1424b77116-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to U.S. Airways, Inc., u.S. Airways, Inc. argues that the ADA does not require an employer to override a neutral seniority system that is unrelated to disability."
+      },
+      {
+        "attribution": "U.S. Airways, Inc.",
+        "citations": [
+          {
+            "document_hash": "8e1424b7711640f7004cd15fd193fc37d1bcb2963dc63cb2642d6dabfa30c413",
+            "evidence_ids": [
+              "ev-8e1424b77116-0000-0001"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to U.S. Airways, Inc., u.S. Airways, Inc. contends that reasonable accommodation includes reassignment and that employers must actively consider other vacant positions for a disabled employee."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "U.S. Airways, Inc.",
+          "citations": [
+            {
+              "document_hash": "8e1424b7711640f7004cd15fd193fc37d1bcb2963dc63cb2642d6dabfa30c413",
+              "evidence_ids": [
+                "ev-8e1424b77116-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to U.S. Airways, Inc., u.S. Airways, Inc. maintains that the ADA does not require an employer to override neutral selection criteria unrelated to disability, nor to set aside a bona\u2011fide seniority system."
+        },
+        {
+          "attribution": "U.S. Airways, Inc.",
+          "citations": [
+            {
+              "document_hash": "8e1424b7711640f7004cd15fd193fc37d1bcb2963dc63cb2642d6dabfa30c413",
+              "evidence_ids": [
+                "ev-8e1424b77116-0000-0001"
+              ],
+              "pages": {
+                "end": 9,
+                "start": 9
+              }
+            }
+          ],
+          "text": "According to U.S. Airways, Inc., u.S. Airways, Inc. argues that reasonable accommodation includes reassignment and requires the employer to actively consider other vacant positions for the employee."
+        }
+      ],
+      "heading": "US Airways, Inc. (petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Robert Barnett (respondent)",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "8e1424b7711640f7004cd15fd193fc37d1bcb2963dc63cb2642d6dabfa30c413",
+      "evidence_ids": [
+        "ev-8e1424b77116-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "8e1424b7711640f7004cd15fd193fc37d1bcb2963dc63cb2642d6dabfa30c413",
+      "evidence_ids": [
+        "ev-8e1424b77116-0000-0001"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "8e1424b7711640f7004cd15fd193fc37d1bcb2963dc63cb2642d6dabfa30c413",
+      "evidence_ids": [
+        "ev-8e1424b77116-0001-0002"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "8e1424b7711640f7004cd15fd193fc37d1bcb2963dc63cb2642d6dabfa30c413",
+      "evidence_ids": [
+        "ev-8e1424b77116-0002-0002"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T09:54:41.381653Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

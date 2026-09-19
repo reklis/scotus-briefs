@@ -1,0 +1,460 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mr. Jones",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The central question is whether the Federal tax lien that applies by operation of law to all property and rights to property of a delinquent taxpayer attaches to the interest of that taxpayer in a tenancy by the entirety."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-1831",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T11:31:21.874763Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice asked: \u201cThese are all contingent rights.\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0001-0008"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice asked: \u201cCommunity property is not owned by a community which is a separate entity?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice asked: \u201cIs that wrong?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice asked: \u201cYes, that may be, but why \u2026 a lot of property \u2026 owned by communities \u2026 tenancy by the entirety.\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice asked: \u201cHow many States are there that have tenancies by the entireties?\u201d"
+      },
+      {
+        "attribution": "Mr. Sutton",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0002-0011"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Mr. Sutton responded that 14 states and the District of Columbia have traditional tenancies by the entirety."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice asked: \u201cWell, didn\u2019t this Court comment on that in the Rodgers decision \u2026?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0002-0004"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice asked: \u201cIn this particular case, wasn\u2019t the Sixth Circuit saying \u2026 we have to follow that old precedent?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0002-0005"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice asked: \u201cIf you follow that rationale \u2026 a husband and wife could hold a closely held corporation by the entirety and wouldn\u2019t be liable for income tax?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0002-0008"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice asked: \u201cMr. Sutton, I think there was considerable attention in the Drye case to exactly what it is you look to State law for.\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0002-0010"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice asked: \u201cMr. Sutton, this is a question of what the Federal taxing authority can do.\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court Record",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The United States is the petitioner and Sandra L. Craft is the respondent."
+      },
+      {
+        "attribution": "Mr. Jones",
+        "citations": [
+          {
+            "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+            "evidence_ids": [
+              "ev-2924a7156c20-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The case concerns whether a federal tax lien attaches to a taxpayer\u2019s interest in a tenancy by the entirety."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "KENT L. JONES, ESQ., on behalf of the Petitioner",
+          "citations": [
+            {
+              "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+              "evidence_ids": [
+                "ev-2924a7156c20-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to KENT L. JONES, ESQ., on behalf of the Petitioner, the petitioner argues that the validity of the lien is the first question; if the lien is valid, there is no need to address the fraudulent conveyance issue."
+        },
+        {
+          "attribution": "KENT L. JONES, ESQ., on behalf of the Petitioner",
+          "citations": [
+            {
+              "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+              "evidence_ids": [
+                "ev-2924a7156c20-0000-0005"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to KENT L. JONES, ESQ., on behalf of the Petitioner, the petitioner asserts that the comprehensive text of the Federal tax lien reaches all property and all rights to property, and that the Court has consistently held that the lien reaches every valuable, legally protected right or interest of the taxpayer."
+        },
+        {
+          "attribution": "Kent L. Jones",
+          "citations": [
+            {
+              "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+              "evidence_ids": [
+                "ev-2924a7156c20-0003-0000"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to Kent L. Jones, the petitioner contends that the tenancy was destroyed when it was transferred from the husband to the spouse and again when the wife sold it to a third party."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Jeffrey S. Sutton (Respondent)",
+          "citations": [
+            {
+              "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+              "evidence_ids": [
+                "ev-2924a7156c20-0001-0005"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to Jeffrey S. Sutton (Respondent), according to Jeffrey S. Sutton (Respondent), the respondent argues that the 1975 Michigan statute granting spouses equal rights to rent and income in a tenancy by the entirety does not apply because the tenancy at issue was created in 1972, making the statute irrelevant."
+        },
+        {
+          "attribution": "Jeffrey S. Sutton (Respondent)",
+          "citations": [
+            {
+              "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+              "evidence_ids": [
+                "ev-2924a7156c20-0001-0006"
+              ],
+              "pages": {
+                "end": 29,
+                "start": 29
+              }
+            }
+          ],
+          "text": "According to Jeffrey S. Sutton (Respondent), according to Jeffrey S. Sutton (Respondent), the respondent points out that under Michigan law (Muskegon Lumber, 1953), a tenancy by the entirety continues even after the spouse receives proceeds, so the tenancy is not terminated by such transfers."
+        },
+        {
+          "attribution": "Jeffrey S. Sutton (Respondent)",
+          "citations": [
+            {
+              "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+              "evidence_ids": [
+                "ev-2924a7156c20-0001-0004"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to Jeffrey S. Sutton (Respondent), according to Jeffrey S. Sutton (Respondent), the respondent notes that Michigan\u2019s 1975 statute states that spouses in a tenancy by the entirety have equal rights to rent, income, and profits, but emphasizes that this statute applies only to tenancies created after 1975."
+        }
+      ],
+      "heading": "Sandra L. Craft (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2924a7156c2098f2cbecc5ccc380537b4eb993e4194a45c405e0577aaab0d6b0",
+      "evidence_ids": [
+        "ev-2924a7156c20-0000-0000",
+        "ev-2924a7156c20-0000-0001",
+        "ev-2924a7156c20-0000-0002",
+        "ev-2924a7156c20-0000-0004",
+        "ev-2924a7156c20-0000-0005",
+        "ev-2924a7156c20-0001-0000",
+        "ev-2924a7156c20-0001-0002",
+        "ev-2924a7156c20-0001-0003",
+        "ev-2924a7156c20-0001-0009",
+        "ev-2924a7156c20-0001-0004",
+        "ev-2924a7156c20-0001-0005",
+        "ev-2924a7156c20-0001-0006",
+        "ev-2924a7156c20-0002-0000",
+        "ev-2924a7156c20-0002-0001",
+        "ev-2924a7156c20-0002-0002",
+        "ev-2924a7156c20-0002-0003",
+        "ev-2924a7156c20-0002-0004",
+        "ev-2924a7156c20-0002-0005",
+        "ev-2924a7156c20-0002-0008",
+        "ev-2924a7156c20-0002-0010",
+        "ev-2924a7156c20-0002-0011",
+        "ev-2924a7156c20-0003-0000",
+        "ev-2924a7156c20-0003-0003"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T11:37:44.303907Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

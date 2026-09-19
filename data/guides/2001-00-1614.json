@@ -1,0 +1,372 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+            "evidence_ids": [
+              "ev-c6364c1afb6d-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument was heard at 11:12\u202fa.m. on Wednesday, January\u202f9,\u202f2002."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+            "evidence_ids": [
+              "ev-c6364c1afb6d-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor asked whether there are exceptions to the rule and when the Court would look back."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+            "evidence_ids": [
+              "ev-c6364c1afb6d-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned whether an exception could allow recovery for conduct occurring before the 300\u2011day period."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+            "evidence_ids": [
+              "ev-c6364c1afb6d-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether ongoing violations could permit damages for conduct prior to the 300\u2011day limit."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-1614",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T11:09:17.574921Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+            "evidence_ids": [
+              "ev-c6364c1afb6d-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The oral argument was heard at 11:12\u202fa.m. on January\u202f9,\u202f2002."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+            "evidence_ids": [
+              "ev-c6364c1afb6d-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "National Railroad Passenger Corporation v. Abner Morgan, Jr. was argued before the Supreme Court on January 9, 2002."
+      },
+      {
+        "attribution": "Amtrak; Government",
+        "citations": [
+          {
+            "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+            "evidence_ids": [
+              "ev-c6364c1afb6d-0001-0003"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          },
+          {
+            "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+            "evidence_ids": [
+              "ev-c6364c1afb6d-0003-0001"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "The parties argue whether the \u201ccontinuing violation\u201d doctrine should extend the limitations period for ongoing discriminatory practices."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "National Railroad Passenger Corporation (Petitioner)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Amtrak",
+          "citations": [
+            {
+              "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+              "evidence_ids": [
+                "ev-c6364c1afb6d-0001-0003"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to Amtrak, ongoing violations of the law should not be barred by a 180\u2011day limit because that would effectively nullify \u00a7\u202f706(g)."
+        }
+      ],
+      "heading": "Amtrak (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Roy T. Englert, Jr. (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+              "evidence_ids": [
+                "ev-c6364c1afb6d-0002-0003"
+              ],
+              "pages": {
+                "end": 52,
+                "start": 52
+              }
+            }
+          ],
+          "text": "According to Roy T. Englert, Jr. (Petitioner), according to Roy T. Englert, Jr. (Petitioner), there is a lopsided circuit split; the First Circuit\u2019s Sabree decision, which cuts off damages at 300\u202fdays, aligns with our position."
+        }
+      ],
+      "heading": "Roy T. Englert, Jr. (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Solicitor General",
+          "citations": [
+            {
+              "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+              "evidence_ids": [
+                "ev-c6364c1afb6d-0003-0000"
+              ],
+              "pages": {
+                "end": 53,
+                "start": 53
+              }
+            }
+          ],
+          "text": "According to Solicitor General, in the Lorance case, the Court rejected the Government\u2019s request to follow Havens."
+        }
+      ],
+      "heading": "Solicitor General (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+              "evidence_ids": [
+                "ev-c6364c1afb6d-0003-0001"
+              ],
+              "pages": {
+                "end": 54,
+                "start": 54
+              }
+            }
+          ],
+          "text": "According to Government, the continuing\u2011violation doctrine applies in other areas of law and should not bar a claim simply because it was not filed within 300\u202fdays of the first incident."
+        }
+      ],
+      "heading": "Government (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+      "evidence_ids": [
+        "ev-c6364c1afb6d-0000-0000",
+        "ev-c6364c1afb6d-0000-0002",
+        "ev-c6364c1afb6d-0000-0003",
+        "ev-c6364c1afb6d-0000-0004",
+        "ev-c6364c1afb6d-0001-0000",
+        "ev-c6364c1afb6d-0001-0001",
+        "ev-c6364c1afb6d-0001-0002",
+        "ev-c6364c1afb6d-0001-0003",
+        "ev-c6364c1afb6d-0002-0003",
+        "ev-c6364c1afb6d-0003-0000",
+        "ev-c6364c1afb6d-0003-0001",
+        "ev-c6364c1afb6d-0003-0002",
+        "ev-c6364c1afb6d-0003-0004"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T11:16:18.202538Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+            "evidence_ids": [
+              "ev-c6364c1afb6d-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to United States, the Government notes that section\u202f706(e) operates as a statute of limitations that begins when the alleged unlawful employment practice occurs."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "c6364c1afb6da2c60a7725c342406a23d1b6c2e6fcdd4d8d317dc4c40c58016c",
+            "evidence_ids": [
+              "ev-c6364c1afb6d-0003-0001"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "The Government argues that the continuing\u2011violation doctrine in other areas of law permits claims beyond the 300\u2011day period, suggesting similar treatment could apply here."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

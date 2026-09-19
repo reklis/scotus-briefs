@@ -1,0 +1,494 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0000-0004"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case was heard for oral argument before the Supreme Court on February 27, 2002 at 10:07\u202fa.m."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Chief Justice Rehnquist asked, \u201cWhere do we find that, Mr. Shapiro?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, a Justice questioned how the business\u2011necessity argument should be evaluated."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0002-0004"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Another Justice asked how to draw the line between safety concerns and discrimination."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-1406",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T10:16:35.212313Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0000-0004"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:07\u202fa.m. on February 27, 2002."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Chief Justice Rehnquist asked, \u201cWhere do we find that, Mr. Shapiro?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, a Justice questioned how the business\u2011necessity argument should be evaluated."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0002-0002"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "A Justice raised concerns about safety versus discrimination, asking whether an employer\u2019s position could be \u201cbarbarous.\u201d"
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0003-0001"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          },
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0003-0003"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether extreme cases, such as a suicidal worker, fall within the regulation."
+      },
+      {
+        "attribution": "Mr. Shapiro",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0003-0002"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Mr. Shapiro, safety is a basic business necessity, as noted in the Dothard case."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0003-0004"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "The case was submitted at 11:07\u202fa.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Chevron U.S.A., Inc.",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0000-0001"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0000-0005"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          }
+        ],
+        "text": "According to Chevron U.S.A., Inc., according to Chevron U.S.A., Inc., the case involves Chevron U.S.A., Inc. as petitioner and Mario Echazabal as respondent, concerning the employer\u2019s use of medical examinations and business\u2011necessity defenses under discrimination law."
+      },
+      {
+        "attribution": "EEOC",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The EEOC argues that a parallel defense is available when an individual poses a significant safety threat to himself."
+      },
+      {
+        "attribution": "Congress",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0001-0006"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Congress has not addressed safety threats to self or others in the public context."
+      },
+      {
+        "attribution": "Regulations",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0001-0003"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Regulations require that medical examinations be based on objective or other medical examination criteria."
+      },
+      {
+        "attribution": "Mr. Shapiro",
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0003-0002"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Mr. Shapiro, safety is a basic business necessity, as noted by Mr. Shapiro referencing the Dothard case."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Chevron U.S.A., Inc.",
+          "citations": [
+            {
+              "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+              "evidence_ids": [
+                "ev-f9b21ca178e3-0000-0001"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to Chevron U.S.A., Inc., chevron argues that an employer may use medical examinations and condition an offer of employment on the results of those examinations."
+        }
+      ],
+      "heading": "Chevron U.S.A., Inc. (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "EEOC",
+          "citations": [
+            {
+              "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+              "evidence_ids": [
+                "ev-f9b21ca178e3-0001-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "The EEOC argued that the summary judgment on direct threat was appropriate."
+        },
+        {
+          "attribution": "EEOC",
+          "citations": [
+            {
+              "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+              "evidence_ids": [
+                "ev-f9b21ca178e3-0001-0002"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "The EEOC argued against the respondent\u2019s position, stating \u201cno.\u201d"
+        }
+      ],
+      "heading": "EEOC (Amicus/Party Argument)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+      "evidence_ids": [
+        "ev-f9b21ca178e3-0000-0004",
+        "ev-f9b21ca178e3-0000-0000",
+        "ev-f9b21ca178e3-0000-0003",
+        "ev-f9b21ca178e3-0000-0001",
+        "ev-f9b21ca178e3-0000-0005",
+        "ev-f9b21ca178e3-0000-0002",
+        "ev-f9b21ca178e3-0001-0000",
+        "ev-f9b21ca178e3-0001-0006",
+        "ev-f9b21ca178e3-0001-0003",
+        "ev-f9b21ca178e3-0001-0001",
+        "ev-f9b21ca178e3-0001-0005",
+        "ev-f9b21ca178e3-0001-0002",
+        "ev-f9b21ca178e3-0002-0000",
+        "ev-f9b21ca178e3-0002-0001",
+        "ev-f9b21ca178e3-0002-0002",
+        "ev-f9b21ca178e3-0002-0003",
+        "ev-f9b21ca178e3-0002-0004",
+        "ev-f9b21ca178e3-0003-0001",
+        "ev-f9b21ca178e3-0003-0003",
+        "ev-f9b21ca178e3-0003-0002",
+        "ev-f9b21ca178e3-0003-0004",
+        "ev-f9b21ca178e3-0003-0006"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T10:27:49.790966Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "why_it_matters.claims[0] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "why_it_matters.claims[0] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0001-0006"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          },
+          {
+            "document_hash": "f9b21ca178e3da0e5aefbb6b7d7b5f682e612a08b7ee6c46d10adff2e5ea4979",
+            "evidence_ids": [
+              "ev-f9b21ca178e3-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Congress has not addressed safety threats to self or others, and the Court is questioning how to apply the business\u2011necessity argument."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
