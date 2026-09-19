@@ -1,0 +1,270 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "db0ed2ead581f70e451b5c8d43e8231a26be5b199974a619282a03f3b6a073d2",
+            "evidence_ids": [
+              "ev-db0ed2ead581-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, the central issue is what standard applies to determine whether a conflict of interest exists."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-9285",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T15:49:21.668417Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "db0ed2ead581f70e451b5c8d43e8231a26be5b199974a619282a03f3b6a073d2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "db0ed2ead581f70e451b5c8d43e8231a26be5b199974a619282a03f3b6a073d2",
+            "evidence_ids": [
+              "ev-db0ed2ead581-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument before the Supreme Court began at 10:02\u202fa.m."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "db0ed2ead581f70e451b5c8d43e8231a26be5b199974a619282a03f3b6a073d2",
+            "evidence_ids": [
+              "ev-db0ed2ead581-0001-0005"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "db0ed2ead581f70e451b5c8d43e8231a26be5b199974a619282a03f3b6a073d2",
+            "evidence_ids": [
+              "ev-db0ed2ead581-0001-0009"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "According to Justice, justices asked the petitioner whether the rule should be adopted and whether the lawyer had an ethical duty to disclose the conflict."
+      },
+      {
+        "attribution": "Robert J. Wagner (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "db0ed2ead581f70e451b5c8d43e8231a26be5b199974a619282a03f3b6a073d2",
+            "evidence_ids": [
+              "ev-db0ed2ead581-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Robert J. Wagner (Petitioner), according to Robert J. Wagner, the petitioner maintained that the rule from Holloway, Cuyler and Wood is appropriate because it requires the trial judge or the judge in the case knows or reasonably should know that there is, in fact, a particular conflict."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "db0ed2ead581f70e451b5c8d43e8231a26be5b199974a619282a03f3b6a073d2",
+            "evidence_ids": [
+              "ev-db0ed2ead581-0001-0007"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "WALTER MICKENS, JR. v. JOHN TAYLOR, WARDEN is a dispute over whether Mickens can establish a conflict\u2011of\u2011interest claim against the warden."
+      },
+      {
+        "attribution": "Robert J. Wagner (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "db0ed2ead581f70e451b5c8d43e8231a26be5b199974a619282a03f3b6a073d2",
+            "evidence_ids": [
+              "ev-db0ed2ead581-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Robert J. Wagner (Petitioner), according to Robert J. Wagner, the case turns on the legal rule from Holloway, Cuyler and Wood that a judge must know, or should know, that a conflict exists."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": null,
+          "citations": [
+            {
+              "document_hash": "db0ed2ead581f70e451b5c8d43e8231a26be5b199974a619282a03f3b6a073d2",
+              "evidence_ids": [
+                "ev-db0ed2ead581-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            },
+            {
+              "document_hash": "db0ed2ead581f70e451b5c8d43e8231a26be5b199974a619282a03f3b6a073d2",
+              "evidence_ids": [
+                "ev-db0ed2ead581-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "The petitioner argues that the Holloway rule applies and that a potential lapse in representation is enough to show a conflict of interest."
+        }
+      ],
+      "heading": "Petitioner Position (Walter Mickens, Jr.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent Position (John Taylor, Warden)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "db0ed2ead581f70e451b5c8d43e8231a26be5b199974a619282a03f3b6a073d2",
+      "evidence_ids": [
+        "ev-db0ed2ead581-0000-0000",
+        "ev-db0ed2ead581-0000-0002",
+        "ev-db0ed2ead581-0001-0000",
+        "ev-db0ed2ead581-0001-0001",
+        "ev-db0ed2ead581-0001-0002",
+        "ev-db0ed2ead581-0001-0003",
+        "ev-db0ed2ead581-0001-0005",
+        "ev-db0ed2ead581-0001-0006",
+        "ev-db0ed2ead581-0001-0007",
+        "ev-db0ed2ead581-0001-0008",
+        "ev-db0ed2ead581-0001-0009",
+        "ev-db0ed2ead581-0002-0000",
+        "ev-db0ed2ead581-0002-0004",
+        "ev-db0ed2ead581-0003-0000",
+        "ev-db0ed2ead581-0003-0001",
+        "ev-db0ed2ead581-0003-0002",
+        "ev-db0ed2ead581-0003-0003",
+        "ev-db0ed2ead581-0003-0005"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T15:56:34.085648Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "party_positions[0].claims[0] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "party_positions[0].claims[0] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

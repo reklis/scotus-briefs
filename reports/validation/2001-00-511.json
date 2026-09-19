@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2001-00-511",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": false,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that Justice Breyer questioned whether the FCC\u2019s methodology would lead to confiscation is not supported; the evidence shows he explicitly said his question had nothing to do with confiscation.",
+    "Oral argument characterization check failed: the same claim mischaracterizes Justice Breyer\u2019s oral\u2011argument question as addressing confiscation, which it does not.",
+    "Overstatement check failed: the claim overstates Justice Breyer\u2019s position by asserting he raised a confiscation concern that the transcript does not contain."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.85,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.85,
+    "traceability": 0.92
+  }
+}

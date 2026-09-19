@@ -1,0 +1,322 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+            "evidence_ids": [
+              "ev-3cb348e5edb7-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether the case involves only an action against the corporation and not against its employees."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-860",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T15:30:30.151005Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+            "evidence_ids": [
+              "ev-3cb348e5edb7-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O'Connor: \"Do you \u2013 this \u2013 this involves only an action against the corporation not against its employees?\""
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+            "evidence_ids": [
+              "ev-3cb348e5edb7-0001-0003"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Chief Justice: \"Are you making that as arguendo, or are you conceding that? Now, your brief seems to make a concession to that effect.\""
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+            "evidence_ids": [
+              "ev-3cb348e5edb7-0001-0004"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Chief Justice: \"Why couldn't you say the same about joint tortfeasors?\""
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+            "evidence_ids": [
+              "ev-3cb348e5edb7-0003-0002"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist: \"Do you concede, for purpose of review of the case and based on your question presented, that the complaint states a cause of action?\""
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Carter G. Phillips",
+        "citations": [
+          {
+            "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+            "evidence_ids": [
+              "ev-3cb348e5edb7-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Carter G. Phillips, the central issue is whether a Bivens action for damages can be brought against a private corporation acting under color of federal law."
+      },
+      {
+        "attribution": "United States (Amicus Curiae)",
+        "citations": [
+          {
+            "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+            "evidence_ids": [
+              "ev-3cb348e5edb7-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to United States (Amicus Curiae), according to United States (Amicus Curiae), the corporation is described as an unusual tortfeasor that can act only through its employees."
+      },
+      {
+        "attribution": "United States (Amicus Curiae)",
+        "citations": [
+          {
+            "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+            "evidence_ids": [
+              "ev-3cb348e5edb7-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to United States (Amicus Curiae), according to United States (Amicus Curiae), when an inmate in a federally operated facility is subjected to a constitutional deprivation, that inmate has a remedy against the individual Federal officers who committed the constitutional deprivation."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Carter G. Phillips",
+          "citations": [
+            {
+              "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+              "evidence_ids": [
+                "ev-3cb348e5edb7-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Carter G. Phillips, the petitioner argues that the case concerns whether a Bivens action for damages applies to a private corporation acting under federal authority."
+        }
+      ],
+      "heading": "Petitioner \u2013 Correctional Services Corporation",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent (Mr. Pasternak)",
+          "citations": [
+            {
+              "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+              "evidence_ids": [
+                "ev-3cb348e5edb7-0003-0000"
+              ],
+              "pages": {
+                "end": 52,
+                "start": 52
+              }
+            }
+          ],
+          "text": "According to Respondent (Mr. Pasternak), according to Respondent (Mr. Pasternak), the respondent contends that the corporation should be treated as a private entity that controls its employees, invoking respondeat superior and fiduciary duties."
+        }
+      ],
+      "heading": "Respondent \u2013 John E. Malesko",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+      "evidence_ids": [
+        "ev-3cb348e5edb7-0000-0000",
+        "ev-3cb348e5edb7-0000-0001",
+        "ev-3cb348e5edb7-0001-0000",
+        "ev-3cb348e5edb7-0001-0001",
+        "ev-3cb348e5edb7-0001-0003",
+        "ev-3cb348e5edb7-0001-0004",
+        "ev-3cb348e5edb7-0002-0000",
+        "ev-3cb348e5edb7-0002-0001",
+        "ev-3cb348e5edb7-0002-0003",
+        "ev-3cb348e5edb7-0002-0004",
+        "ev-3cb348e5edb7-0003-0000",
+        "ev-3cb348e5edb7-0003-0002"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T15:35:19.494082Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Carter G. Phillips",
+        "citations": [
+          {
+            "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+            "evidence_ids": [
+              "ev-3cb348e5edb7-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Carter G. Phillips, the case raises the question of whether a Bivens action for damages applies to a private corporation acting under color of federal law."
+      },
+      {
+        "attribution": "Mr. Pasternak",
+        "citations": [
+          {
+            "document_hash": "3cb348e5edb724cf7be827905be1fa00ac6ef2dc825f4a4221945ea5a6f4ac3d",
+            "evidence_ids": [
+              "ev-3cb348e5edb7-0002-0003"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "If corporations are held liable, insurance rates may rise, increasing costs for the United States Government."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

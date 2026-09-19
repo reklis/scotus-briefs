@@ -1,0 +1,513 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Rehnquist asked whether the policy goes beyond what was permitted in Vernonia."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0001-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor asked what the school board\u2019s recommendation would be if statistical evidence showed that students in extracurricular activities were less likely to use drugs than non\u2011participants."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0001-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Scalia asked what the specific danger is in the school context compared to other occupational hazards."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-01-332",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T16:45:41.058824Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist opened the argument, identifying the case as No.\u202f01\u2011332."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0001-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          },
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0001-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justices asked several questions about the scope and justification of the policy, including whether it exceeds Vernonia, the relevance of statistical evidence, and the specific danger posed to students."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0001-0002"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "According to Respondents, respondent counsel highlighted the need to maintain the individualized reasonable suspicion standard set forth in T.L.O."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Amicus United States argued that a school district facing a drug problem may adopt random drug tests without violating the Constitution."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Board of Education of Independent School District No. 92 of Pottawatomie County (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The case concerns the constitutionality of a school district\u2019s suspicionless drug\u2011testing policy for students who participate in competitive extracurricular activities."
+      },
+      {
+        "attribution": "Court record",
+        "citations": [
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Only three instances of drug use have been found among the class of students subject to the challenge."
+      },
+      {
+        "attribution": "Source",
+        "citations": [
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The school employs security measures such as cameras, security guards, drug\u2011detecting dogs, locker searches, and teachers trained to look for drug use."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Board of Education of Independent School District No. 92 of Pottawatomie County (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+              "evidence_ids": [
+                "ev-a690d7bb2f38-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            },
+            {
+              "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+              "evidence_ids": [
+                "ev-a690d7bb2f38-0001-0000"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "The Board argues that the suspicionless drug\u2011testing policy is a reasonable and constitutionally permissible measure to address drug use among students in competitive activities."
+        }
+      ],
+      "heading": "Board of Education of Independent School District No. 92 of Pottawatomie County (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+              "evidence_ids": [
+                "ev-a690d7bb2f38-0001-0002"
+              ],
+              "pages": {
+                "end": 29,
+                "start": 29
+              }
+            },
+            {
+              "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+              "evidence_ids": [
+                "ev-a690d7bb2f38-0001-0004"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            }
+          ],
+          "text": "The Respondents contend that individualized reasonable suspicion is required for school searches, citing the T.L.O. standard, and argue that the policy oversteps this requirement."
+        }
+      ],
+      "heading": "Lindsay Earls (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0000-0003"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0000-0004"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 13
+      }
+    },
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0001-0000"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0001-0001"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0001-0002"
+      ],
+      "pages": {
+        "end": 29,
+        "start": 29
+      }
+    },
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0001-0003"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0001-0004"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0002-0000"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0002-0004"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+      "evidence_ids": [
+        "ev-a690d7bb2f38-0003-0000"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 54
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T16:57:04.551344Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim that respondents argue the policy oversteps the individualized\u2011reasonable\u2011suspicion requirement is not fully backed by the cited evidence (page\u202f30 does not address that argument).",
+      "Support check failed: the \u2018why it matters\u2019 statement about guiding schools nationwide is not supported by any of the provided citations.",
+      "Attribution check failed: the question about Vernonia is attributed to Justice Rehnquist, but the evidence only records the question as coming from an unnamed Justice.",
+      "Opinion\u2011distinction check failed: the \u2018why it matters\u2019 paragraph presents a policy recommendation as a factual claim without attributing it to a party or source, conflating opinion with fact.",
+      "Overstatement check failed: the \u2018why it matters\u2019 claim that understanding the constitutional limits will guide schools nationwide is a material overstatement not substantiated by the evidence."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Board of Education of Independent School District No. 92 of Pottawatomie County (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "a690d7bb2f382b89be27d86224df3399e02a28b9a6f391ce9896a2dac0b004f4",
+            "evidence_ids": [
+              "ev-a690d7bb2f38-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Understanding the constitutional limits of suspicionless testing can guide schools nationwide in developing policies that respect constitutional protections while promoting safety."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

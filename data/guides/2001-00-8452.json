@@ -1,0 +1,281 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-8452",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T15:13:30.926300Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "08435f677d195a2635658040abad88dbbc7cd8e386f5caefa0cd6efe9e93d490"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "08435f677d195a2635658040abad88dbbc7cd8e386f5caefa0cd6efe9e93d490",
+            "evidence_ids": [
+              "ev-08435f677d19-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked how many states are needed for a consensus."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "08435f677d195a2635658040abad88dbbc7cd8e386f5caefa0cd6efe9e93d490",
+            "evidence_ids": [
+              "ev-08435f677d19-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Scalia asked how many states have enacted legislation prohibiting execution of the retarded."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "08435f677d195a2635658040abad88dbbc7cd8e386f5caefa0cd6efe9e93d490",
+            "evidence_ids": [
+              "ev-08435f677d19-0000-0004"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked where the burden of proof lies in a capital murder case involving a retarded defendant."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "08435f677d195a2635658040abad88dbbc7cd8e386f5caefa0cd6efe9e93d490",
+            "evidence_ids": [
+              "ev-08435f677d19-0002-0005"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice asked whether an evolutionary element exists in Eighth Amendment jurisprudence."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "08435f677d195a2635658040abad88dbbc7cd8e386f5caefa0cd6efe9e93d490",
+            "evidence_ids": [
+              "ev-08435f677d19-0002-0010"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "Justice asked about the status of Virginia legislation on this point now."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "08435f677d195a2635658040abad88dbbc7cd8e386f5caefa0cd6efe9e93d490",
+            "evidence_ids": [
+              "ev-08435f677d19-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner, petitioner defines consensus as a settled judgment of the American people."
+      },
+      {
+        "attribution": "Mr. Ellis",
+        "citations": [
+          {
+            "document_hash": "08435f677d195a2635658040abad88dbbc7cd8e386f5caefa0cd6efe9e93d490",
+            "evidence_ids": [
+              "ev-08435f677d19-0001-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Mr. Ellis, petitioner states that the reason for this consensus is that individuals with mental retardation lack the culpability required for the death penalty."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "08435f677d195a2635658040abad88dbbc7cd8e386f5caefa0cd6efe9e93d490",
+              "evidence_ids": [
+                "ev-08435f677d19-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner defines \u201cconsensus\u201d as a settled judgment of the American people."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Commonwealth",
+          "citations": [
+            {
+              "document_hash": "08435f677d195a2635658040abad88dbbc7cd8e386f5caefa0cd6efe9e93d490",
+              "evidence_ids": [
+                "ev-08435f677d19-0002-0001"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "The Commonwealth argues that the statutory limit of 18 states is not fixed because many statutes do not provide for retroactive application."
+        }
+      ],
+      "heading": "Respondent (Virginia) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "08435f677d195a2635658040abad88dbbc7cd8e386f5caefa0cd6efe9e93d490",
+      "evidence_ids": [
+        "ev-08435f677d19-0000-0000",
+        "ev-08435f677d19-0000-0001",
+        "ev-08435f677d19-0000-0002",
+        "ev-08435f677d19-0000-0004",
+        "ev-08435f677d19-0000-0006",
+        "ev-08435f677d19-0001-0000",
+        "ev-08435f677d19-0001-0001",
+        "ev-08435f677d19-0001-0003",
+        "ev-08435f677d19-0002-0000",
+        "ev-08435f677d19-0002-0001",
+        "ev-08435f677d19-0002-0002",
+        "ev-08435f677d19-0002-0003",
+        "ev-08435f677d19-0002-0005",
+        "ev-08435f677d19-0002-0007",
+        "ev-08435f677d19-0002-0008",
+        "ev-08435f677d19-0002-0009",
+        "ev-08435f677d19-0002-0010",
+        "ev-08435f677d19-0002-0011",
+        "ev-08435f677d19-0002-0012",
+        "ev-08435f677d19-0003-0000",
+        "ev-08435f677d19-0003-0001"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T15:21:32.601330Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

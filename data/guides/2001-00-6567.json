@@ -1,0 +1,345 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+            "evidence_ids": [
+              "ev-3bd0aa3ba0b2-0000-0003",
+              "ev-3bd0aa3ba0b2-0000-0004"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, the Court asked whether the government's mailing and prison delivery methods were sufficient to satisfy the Due Process Clause's notice requirement."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-6567",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T14:17:15.350695Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+            "evidence_ids": [
+              "ev-3bd0aa3ba0b2-0001-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Jeffrey P. Minear presented oral argument on behalf of the respondent."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+            "evidence_ids": [
+              "ev-3bd0aa3ba0b2-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, justices questioned whether staff at the prison delivering mail sufficed for notice."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+            "evidence_ids": [
+              "ev-3bd0aa3ba0b2-0000-0004"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, justices asked if actual notice had ever been required."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+            "evidence_ids": [
+              "ev-3bd0aa3ba0b2-0001-0007"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice, justices inquired about the Third Circuit\u2019s test requiring prison procedures to be reasonably calculated to deliver notice."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+            "evidence_ids": [
+              "ev-3bd0aa3ba0b2-0001-0008"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice, justices asked whether that standard would be satisfactory to the Government."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+            "evidence_ids": [
+              "ev-3bd0aa3ba0b2-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the Government has special procedures for military personnel."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court Record",
+        "citations": [
+          {
+            "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+            "evidence_ids": [
+              "ev-3bd0aa3ba0b2-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Larry Dean Dusenbery v. United States concerns the forfeiture of $22,000 after the government mailed a notice to him while he was incarcerated."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+            "evidence_ids": [
+              "ev-3bd0aa3ba0b2-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to United States, the dispute centers on whether the 1988 mailing procedures satisfied due process notice requirements, even if the notice was not actually received."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+              "evidence_ids": [
+                "ev-3bd0aa3ba0b2-0000-0005"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "Petitioner argues that the 1988 procedures did not assure delivery because what happened after the mail reached the prison mailroom was vague and undocumented."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+              "evidence_ids": [
+                "ev-3bd0aa3ba0b2-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The United States maintains that its 1988 procedures satisfied due process regardless of whether the notice was received."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+              "evidence_ids": [
+                "ev-3bd0aa3ba0b2-0002-0001"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "The Government argues that ordinary mail is sufficient, as in many comparable cases."
+        },
+        {
+          "attribution": "Mr. MINEAR",
+          "citations": [
+            {
+              "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+              "evidence_ids": [
+                "ev-3bd0aa3ba0b2-0001-0004"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "According to Mr. MINEAR, attorney Jeffrey P. Minear cited precedent that notice requirements are met by a method reasonably calculated to provide notice."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3bd0aa3ba0b2b317f9cf73902198efdb1a4af16aff40dc56c5bf476a7c19755e",
+      "evidence_ids": [
+        "ev-3bd0aa3ba0b2-0000-0000",
+        "ev-3bd0aa3ba0b2-0000-0001",
+        "ev-3bd0aa3ba0b2-0000-0002",
+        "ev-3bd0aa3ba0b2-0000-0003",
+        "ev-3bd0aa3ba0b2-0000-0004",
+        "ev-3bd0aa3ba0b2-0000-0005",
+        "ev-3bd0aa3ba0b2-0001-0000",
+        "ev-3bd0aa3ba0b2-0001-0001",
+        "ev-3bd0aa3ba0b2-0001-0002",
+        "ev-3bd0aa3ba0b2-0001-0003",
+        "ev-3bd0aa3ba0b2-0001-0004",
+        "ev-3bd0aa3ba0b2-0001-0006",
+        "ev-3bd0aa3ba0b2-0001-0007",
+        "ev-3bd0aa3ba0b2-0001-0008",
+        "ev-3bd0aa3ba0b2-0001-0009",
+        "ev-3bd0aa3ba0b2-0002-0000",
+        "ev-3bd0aa3ba0b2-0002-0001",
+        "ev-3bd0aa3ba0b2-0002-0003",
+        "ev-3bd0aa3ba0b2-0002-0004"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 3
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T14:24:25.399480Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2001-00-6029",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: claims 2 (overview \u2013 authority to impose penalties), 7 (petitioner position \u2013 lack of notice interferes), and 14 (why it matters \u2013 proper notice essential) are not fully supported by the cited evidence.",
+    "Attribution check failed: claims 2, 7, and 14 attribute statements to individuals (Stewart, Sutter) that are not backed by the provided citations; some citations reference other speakers.",
+    "Overstatement check failed: claim 2 overstates the scope of the Secretary of Labor\u2019s penalty authority beyond what Stewart\u2019s testimony provides, and claim 14 overstates that Sutter explicitly said proper notice is essential, which is not directly evidenced."
+  ],
+  "quality_scores": {
+    "completeness": 0.8,
+    "factual_accuracy": 0.8,
+    "neutrality": 0.9,
+    "readability": 0.85,
+    "restraint": 0.6,
+    "traceability": 0.6
+  }
+}

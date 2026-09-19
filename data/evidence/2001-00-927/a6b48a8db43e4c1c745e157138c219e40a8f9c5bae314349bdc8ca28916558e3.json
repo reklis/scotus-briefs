@@ -1,0 +1,55 @@
+{
+  "case_id": "2001-00-927",
+  "document_hash": "a6b48a8db43e4c1c745e157138c219e40a8f9c5bae314349bdc8ca28916558e3",
+  "records": [
+    {
+      "attribution": "Justice",
+      "case_id": "2001-00-927",
+      "confidence": 0.9,
+      "document_hash": "a6b48a8db43e4c1c745e157138c219e40a8f9c5bae314349bdc8ca28916558e3",
+      "evidence_id": "ev-a6b48a8db43e-0002-0001",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 36,
+        "start": 36
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "QUESTION: Is that illegal too?"
+    },
+    {
+      "attribution": "Mr. Veters",
+      "case_id": "2001-00-927",
+      "confidence": 0.9,
+      "document_hash": "a6b48a8db43e4c1c745e157138c219e40a8f9c5bae314349bdc8ca28916558e3",
+      "evidence_id": "ev-a6b48a8db43e-0002-0005",
+      "kind": "stated_consequence",
+      "opinion_part": null,
+      "pages": {
+        "end": 40,
+        "start": 40
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "They prevented pollution."
+    },
+    {
+      "attribution": "Chief Justice Rehnquist",
+      "case_id": "2001-00-927",
+      "confidence": 0.9,
+      "document_hash": "a6b48a8db43e4c1c745e157138c219e40a8f9c5bae314349bdc8ca28916558e3",
+      "evidence_id": "ev-a6b48a8db43e-0002-0006",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 46,
+        "start": 46
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The case is submitted."
+    }
+  ],
+  "schema_version": "1.0.0"
+}

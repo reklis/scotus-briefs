@@ -1,0 +1,311 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99",
+            "evidence_ids": [
+              "ev-03f04d4408c6-0000-0004"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Bonnie I. Robin\u2011Vergeer, Esq. appeared on behalf of the petitioner."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99",
+            "evidence_ids": [
+              "ev-03f04d4408c6-0000-0003",
+              "ev-03f04d4408c6-0001-0000",
+              "ev-03f04d4408c6-0002-0004",
+              "ev-03f04d4408c6-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 4
+            }
+          }
+        ],
+        "text": "During oral argument, the Justices asked the petitioner a series of questions about the case."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-6933",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T14:24:25.418305Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99",
+            "evidence_ids": [
+              "ev-03f04d4408c6-0000-0003",
+              "ev-03f04d4408c6-0001-0000",
+              "ev-03f04d4408c6-0002-0004",
+              "ev-03f04d4408c6-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Rehnquist and other Justices asked the petitioner a series of questions during the argument."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Bonnie I. Robin-Vergeer",
+        "citations": [
+          {
+            "document_hash": "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99",
+            "evidence_ids": [
+              "ev-03f04d4408c6-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Bonnie I. Robin-Vergeer, remon Lee is serving a life sentence without possibility of parole for first\u2011degree murder and argues he never had a chance to present testimony from witnesses who could have established his innocence."
+      },
+      {
+        "attribution": "Bonnie I. Robin-Vergeer",
+        "citations": [
+          {
+            "document_hash": "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99",
+            "evidence_ids": [
+              "ev-03f04d4408c6-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Bonnie I. Robin-Vergeer, lee contends that his failure to comply with two Missouri rules governing motions for continuance should not be an adequate State\u2011law ground to bar consideration of his federal due\u2011process claim."
+      },
+      {
+        "attribution": "Defendant",
+        "citations": [
+          {
+            "document_hash": "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99",
+            "evidence_ids": [
+              "ev-03f04d4408c6-0003-0001"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Defendant, lee alleges that the trial court denied his rights to due process of law and to effective assistance of counsel guaranteed by the Sixth and Fourteenth Amendments when it overruled his motion for a continuance."
+      },
+      {
+        "attribution": "Court Record",
+        "citations": [
+          {
+            "document_hash": "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99",
+            "evidence_ids": [
+              "ev-03f04d4408c6-0002-0002"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "A new\u2011trial motion was filed two weeks after trial and was not heard until two months after trial."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Bonnie I. Robin-Vergeer",
+          "citations": [
+            {
+              "document_hash": "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99",
+              "evidence_ids": [
+                "ev-03f04d4408c6-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Bonnie I. Robin-Vergeer, lee was never given a chance to present testimony from witnesses who could have shown his innocence."
+        },
+        {
+          "attribution": "Bonnie I. Robin-Vergeer",
+          "citations": [
+            {
+              "document_hash": "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99",
+              "evidence_ids": [
+                "ev-03f04d4408c6-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Bonnie I. Robin-Vergeer, lee argues that his failure to follow Missouri rules on continuances should not bar his federal due\u2011process claim."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99",
+              "evidence_ids": [
+                "ev-03f04d4408c6-0002-0001"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Petitioner, lee says the trial judge was not told that the witnesses could be located in a reasonable time and would provide the expected testimony."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99",
+              "evidence_ids": [
+                "ev-03f04d4408c6-0002-0003"
+              ],
+              "pages": {
+                "end": 47,
+                "start": 47
+              }
+            }
+          ],
+          "text": "According to Petitioner, lee cites Missouri v. Cuckovich and other cases to argue that Missouri rules 24.09 and 24.10 applied before and during trial."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "03f04d4408c6652bcf5c65375827cdc22ea9a89875c425f4babd5c6a425e2f99",
+      "evidence_ids": [
+        "ev-03f04d4408c6-0000-0000",
+        "ev-03f04d4408c6-0000-0004",
+        "ev-03f04d4408c6-0000-0001",
+        "ev-03f04d4408c6-0000-0002",
+        "ev-03f04d4408c6-0000-0003",
+        "ev-03f04d4408c6-0001-0000",
+        "ev-03f04d4408c6-0001-0003",
+        "ev-03f04d4408c6-0002-0001",
+        "ev-03f04d4408c6-0002-0004",
+        "ev-03f04d4408c6-0002-0003",
+        "ev-03f04d4408c6-0002-0002",
+        "ev-03f04d4408c6-0003-0000",
+        "ev-03f04d4408c6-0003-0001"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T14:28:47.292670Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "accepted": false,
+  "case_id": "2001-01-332",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": false,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that respondents argue the policy oversteps the individualized\u2011reasonable\u2011suspicion requirement is not fully backed by the cited evidence (page\u202f30 does not address that argument).",
+    "Support check failed: the \u2018why it matters\u2019 statement about guiding schools nationwide is not supported by any of the provided citations.",
+    "Attribution check failed: the question about Vernonia is attributed to Justice Rehnquist, but the evidence only records the question as coming from an unnamed Justice.",
+    "Opinion\u2011distinction check failed: the \u2018why it matters\u2019 paragraph presents a policy recommendation as a factual claim without attributing it to a party or source, conflating opinion with fact.",
+    "Overstatement check failed: the \u2018why it matters\u2019 claim that understanding the constitutional limits will guide schools nationwide is a material overstatement not substantiated by the evidence."
+  ],
+  "quality_scores": {
+    "completeness": 0.85,
+    "factual_accuracy": 0.77,
+    "neutrality": 0.9,
+    "readability": 0.9,
+    "restraint": 0.8,
+    "traceability": 0.7
+  }
+}

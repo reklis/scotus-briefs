@@ -1,0 +1,453 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+            "evidence_ids": [
+              "ev-659089d3617f-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist announced that the Court will hear argument in No.\u202f00\u2011511, Verizon Communications v. FCC, among other related cases."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-511",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T13:38:06.370082Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+            "evidence_ids": [
+              "ev-659089d3617f-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist noted the upcoming argument for No.\u202f00\u2011511."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+            "evidence_ids": [
+              "ev-659089d3617f-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "A Justice asked whether the $180\u202fbillion figure used by Verizon was a depreciated amount."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+            "evidence_ids": [
+              "ev-659089d3617f-0004-0000"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned whether the FCC\u2019s methodology would lead to confiscation."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+            "evidence_ids": [
+              "ev-659089d3617f-0004-0002"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia inquired whether states could increase the cost\u2011of\u2011capital rate when utilities lack depreciation on sunk costs."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+            "evidence_ids": [
+              "ev-659089d3617f-0004-0005"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked about the starting point of depreciation and capital rates in the FCC\u2019s order."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Mr. Verrilli)",
+          "citations": [
+            {
+              "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+              "evidence_ids": [
+                "ev-659089d3617f-0004-0001"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Petitioner (Mr. Verrilli), verizon argues that if depreciation and cost of capital are set correctly, the FCC\u2019s methodology will not result in confiscation."
+        }
+      ],
+      "heading": "Verizon Communications, Inc.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Federal Petitioners",
+          "citations": [
+            {
+              "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+              "evidence_ids": [
+                "ev-659089d3617f-0002-0003"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "Federal Petitioners argue that the FCC must explain why its rate\u2011setting method is appropriate and that the record contains extensive analysis of various recovery methods."
+        },
+        {
+          "attribution": "Federal Petitioners",
+          "citations": [
+            {
+              "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+              "evidence_ids": [
+                "ev-659089d3617f-0002-0004"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to Federal Petitioners, federal Petitioners point to the Pole Attachments Act, noting that the statute refers to costs of capital for telephone poles and conduits, and that language about rate of return is ambiguous."
+        }
+      ],
+      "heading": "Federal Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Local exchange carriers",
+          "citations": [
+            {
+              "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+              "evidence_ids": [
+                "ev-659089d3617f-0003-0001"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "Local exchange carriers argue for relief based on specific premises they present to the Court."
+        }
+      ],
+      "heading": "Local Exchange Carriers",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Federal Communications Commission (FCC)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+              "evidence_ids": [
+                "ev-659089d3617f-0003-0004"
+              ],
+              "pages": {
+                "end": 66,
+                "start": 66
+              }
+            }
+          ],
+          "text": "According to Petitioners, petitioners explain that the FCC adopted TELRIC to send the right signals to new entrants and prevent anti\u2011competitive behavior."
+        }
+      ],
+      "heading": "Petitioners (TELRIC Argument)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0000-0000",
+        "ev-659089d3617f-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0000-0004"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0001-0002"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0002-0003"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0002-0004"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 51
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0003-0000"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0003-0001"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0003-0003"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 65
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0003-0004"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 66
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0004-0000",
+        "ev-659089d3617f-0004-0001"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0004-0002",
+        "ev-659089d3617f-0004-0003"
+      ],
+      "pages": {
+        "end": 69,
+        "start": 69
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0004-0004"
+      ],
+      "pages": {
+        "end": 70,
+        "start": 70
+      }
+    },
+    {
+      "document_hash": "659089d3617f32f2f78392db2eecc10a2852041c8969d11be88f9b61893c6ecd",
+      "evidence_ids": [
+        "ev-659089d3617f-0004-0005"
+      ],
+      "pages": {
+        "end": 71,
+        "start": 71
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T13:50:31.321421Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim that Justice Breyer questioned whether the FCC\u2019s methodology would lead to confiscation is not supported; the evidence shows he explicitly said his question had nothing to do with confiscation.",
+      "Oral argument characterization check failed: the same claim mischaracterizes Justice Breyer\u2019s oral\u2011argument question as addressing confiscation, which it does not.",
+      "Overstatement check failed: the claim overstates Justice Breyer\u2019s position by asserting he raised a confiscation concern that the transcript does not contain."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

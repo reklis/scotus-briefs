@@ -1,0 +1,444 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+            "evidence_ids": [
+              "ev-1665b5fc5b35-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Mr. Crane is a person who has been found legally responsible, is competent to stand trial, is imprisoned, and upon release would be subject to involuntary commitment for a mental disorder."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+            "evidence_ids": [
+              "ev-1665b5fc5b35-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice, qUESTION: What does the court have to find in order to release a person under the statute?"
+      },
+      {
+        "attribution": "Justice (unspecified)",
+        "citations": [
+          {
+            "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+            "evidence_ids": [
+              "ev-1665b5fc5b35-0002-0001"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice (unspecified), qUESTION: Are you saying that the finding that a person was unable to control his behavior was the holding of the case?"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+            "evidence_ids": [
+              "ev-1665b5fc5b35-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice, qUESTION: In *Hendricks*, was the reference to a volitionally impaired person merely descriptive or essential to the holding?"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-957",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T16:05:47.921885Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+            "evidence_ids": [
+              "ev-1665b5fc5b35-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice asked whether the reference to a volitionally impaired person in *Hendricks* was descriptive rather than essential to the holding."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+            "evidence_ids": [
+              "ev-1665b5fc5b35-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice asked what the court must find in order to release a person under the statute."
+      },
+      {
+        "attribution": "Justice (unspecified)",
+        "citations": [
+          {
+            "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+            "evidence_ids": [
+              "ev-1665b5fc5b35-0002-0001"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice (unspecified), justice asked whether the finding that a person was unable to control his behavior constituted the holding of *Hendricks*."
+      },
+      {
+        "attribution": "Mr. Donham",
+        "citations": [
+          {
+            "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+            "evidence_ids": [
+              "ev-1665b5fc5b35-0002-0002"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Mr. Donham argued that the Kansas act is constitutional because it adds an element beyond dangerousness, referencing *Foucha v. Louisiana*."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+            "evidence_ids": [
+              "ev-1665b5fc5b35-0002-0004"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Chief Justice Rehnquist noted that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Kansas",
+        "citations": [
+          {
+            "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+            "evidence_ids": [
+              "ev-1665b5fc5b35-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Kansas, the case concerns whether Kansas' civil\u2011commitment statute requires proof that a sexually violent predator cannot control his behavior, in addition to the traditional requisites of mental illness and dangerousness."
+      },
+      {
+        "attribution": "State",
+        "citations": [
+          {
+            "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+            "evidence_ids": [
+              "ev-1665b5fc5b35-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The State argues that the statute should be limited to volitional impairments and that emotional impairments are not valid under the law."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+            "evidence_ids": [
+              "ev-1665b5fc5b35-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "The Court has previously held in *Hendricks* that inability to control behavior was the appropriate level of mental illness for civil commitment."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Kansas",
+          "citations": [
+            {
+              "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+              "evidence_ids": [
+                "ev-1665b5fc5b35-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Kansas, kansas asserts that the Kansas Supreme Court misread *Hendricks* by requiring a showing that a potentially sexually violent predator cannot control his behavior, adding to the two requisites of mental illness and dangerousness."
+        }
+      ],
+      "heading": "Kansas (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+              "evidence_ids": [
+                "ev-1665b5fc5b35-0001-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "The State contends that the legislature did not define \"mental abnormality,\" but that the term includes both emotional and volitional impairments, and argues that only volitional impairments should be permissible under the statute."
+        },
+        {
+          "attribution": "Mr. Donham",
+          "citations": [
+            {
+              "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+              "evidence_ids": [
+                "ev-1665b5fc5b35-0002-0002"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "Mr. Donham argued that the Kansas act is constitutional because it does not rely solely on dangerousness, referencing *Foucha v. Louisiana*, and that the additional element distinguishes cases like *Hendricks*."
+        },
+        {
+          "attribution": "Mr. Donham",
+          "citations": [
+            {
+              "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+              "evidence_ids": [
+                "ev-1665b5fc5b35-0002-0003"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Donham, mr. Donham also noted that *Hendricks* admitted an inability to control behavior, suggesting that such admission is central to the statutory analysis."
+        }
+      ],
+      "heading": "State (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+      "evidence_ids": [
+        "ev-1665b5fc5b35-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+      "evidence_ids": [
+        "ev-1665b5fc5b35-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+      "evidence_ids": [
+        "ev-1665b5fc5b35-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+      "evidence_ids": [
+        "ev-1665b5fc5b35-0001-0001"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+      "evidence_ids": [
+        "ev-1665b5fc5b35-0002-0000"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+      "evidence_ids": [
+        "ev-1665b5fc5b35-0002-0001"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+      "evidence_ids": [
+        "ev-1665b5fc5b35-0002-0003"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "1665b5fc5b3512251c1de816ba66626b3ee00ccaedae5fe2e5c07831187413f3",
+      "evidence_ids": [
+        "ev-1665b5fc5b35-0002-0004"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T16:08:40.734500Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

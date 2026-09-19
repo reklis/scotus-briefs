@@ -1,0 +1,428 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, does the Act require the posting of a general notice in the place of employment about the Family Leave Act?"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, is the employee entitled to more than 12 weeks of leave because the employer's policy provides different rights?"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, did the employer's failure to inform the employee that she could work intermittently affect the doctor's advice about her ability to work?"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-6029",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T14:03:50.211664Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Luther O. Sutter",
+        "citations": [
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0003-0000"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Petitioner counsel Sutter argued that the FMLA provides a bundle of rights beyond the employer's plan and that lack of notice interferes with exercising those rights."
+      },
+      {
+        "attribution": "Employer",
+        "citations": [
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 35
+            }
+          }
+        ],
+        "text": "According to Employer, respondent counsel Bennett stated that the employer posted required notices under the collective bargaining agreement and employee handbook."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0002-0000"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justices asked whether the Act requires posting a general notice and whether the employee must be aware of the right to invoke it."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0003-0001"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "The Court recorded that the case was submitted at 11:02\u202fa.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, the case concerns whether employers must post a general notice about the Family and Medical Leave Act (FMLA)."
+      },
+      {
+        "attribution": "Malcolm L. Stewart",
+        "citations": [
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0000-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          },
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "The dispute also addresses the scope of employee leave rights and the authority of the Secretary of Labor to impose penalties for failing to provide notice."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Luther O. Sutter",
+          "citations": [
+            {
+              "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+              "evidence_ids": [
+                "ev-7f917539344c-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Luther O. Sutter, the FMLA guarantees a bundle of statutory rights that may exceed the employer's leave plan."
+        },
+        {
+          "attribution": "Luther O. Sutter",
+          "citations": [
+            {
+              "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+              "evidence_ids": [
+                "ev-7f917539344c-0003-0000"
+              ],
+              "pages": {
+                "end": 52,
+                "start": 52
+              }
+            },
+            {
+              "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+              "evidence_ids": [
+                "ev-7f917539344c-0000-0002"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "Employees need accurate information about the FMLA to exercise their rights, and lack of notice interferes with that ability."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Employer",
+          "citations": [
+            {
+              "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+              "evidence_ids": [
+                "ev-7f917539344c-0002-0001"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 35
+              }
+            }
+          ],
+          "text": "According to Employer, the employer posted statutory notices as required, incorporated in the collective bargaining agreement and employee handbook."
+        },
+        {
+          "attribution": "Employer",
+          "citations": [
+            {
+              "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+              "evidence_ids": [
+                "ev-7f917539344c-0002-0003"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Employer, the statute only requires employee notice; Congress intentionally omitted employer notice, indicating a presumption against employer\u2011required posting."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+      "evidence_ids": [
+        "ev-7f917539344c-0000-0000",
+        "ev-7f917539344c-0000-0001",
+        "ev-7f917539344c-0000-0002",
+        "ev-7f917539344c-0000-0003",
+        "ev-7f917539344c-0000-0004",
+        "ev-7f917539344c-0000-0005",
+        "ev-7f917539344c-0001-0000",
+        "ev-7f917539344c-0001-0001",
+        "ev-7f917539344c-0001-0002",
+        "ev-7f917539344c-0001-0004",
+        "ev-7f917539344c-0002-0000",
+        "ev-7f917539344c-0002-0001",
+        "ev-7f917539344c-0002-0002",
+        "ev-7f917539344c-0002-0003",
+        "ev-7f917539344c-0003-0000",
+        "ev-7f917539344c-0003-0001"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T14:17:15.330501Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: claims 2 (overview \u2013 authority to impose penalties), 7 (petitioner position \u2013 lack of notice interferes), and 14 (why it matters \u2013 proper notice essential) are not fully supported by the cited evidence.",
+      "Attribution check failed: claims 2, 7, and 14 attribute statements to individuals (Stewart, Sutter) that are not backed by the provided citations; some citations reference other speakers.",
+      "Overstatement check failed: claim 2 overstates the scope of the Secretary of Labor\u2019s penalty authority beyond what Stewart\u2019s testimony provides, and claim 14 overstates that Sutter explicitly said proper notice is essential, which is not directly evidenced."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Luther O. Sutter",
+        "citations": [
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0000-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "Proper notice is essential for employees to know and exercise their FMLA rights."
+      },
+      {
+        "attribution": "Richard D. Bennett",
+        "citations": [
+          {
+            "document_hash": "7f917539344c73bb2e0d17bfecf6aefc63aeec49afc8d82767d1bb6d90c3dd23",
+            "evidence_ids": [
+              "ev-7f917539344c-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Clarifying the Secretary of Labor's authority affects how penalties are applied for non\u2011compliance with notice requirements."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

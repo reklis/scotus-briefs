@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2001-00-952",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": false,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that section\u202f5(b)(1) of \u00a71396 states that none of the community spouse\u2019s income shall be deemed available is not directly supported; the evidence is a Justice\u2019s question about the provision, not a statement confirming it.",
+    "Opinion_distinction check failed: the same claim treats the Justice\u2019s question as a factual assertion about the statute, conflating a query with an established legal rule.",
+    "Overstatement check failed: the claim overstates the evidence by asserting the statutory language as fact without confirmation from the transcript."
+  ],
+  "quality_scores": {
+    "completeness": 1.0,
+    "factual_accuracy": 0.9,
+    "neutrality": 1.0,
+    "readability": 0.9,
+    "restraint": 0.9,
+    "traceability": 0.95
+  }
+}

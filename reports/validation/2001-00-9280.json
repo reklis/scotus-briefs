@@ -1,0 +1,44 @@
+{
+  "accepted": false,
+  "case_id": "2001-00-9280",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": false,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": false,
+    "model_oral_argument_characterization": false,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": false,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": false,
+    "quality_readability": false,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "sources[0]: unknown evidence ID ev-a56afe33ea862-0003-0007",
+    "sources[0]: unknown evidence ID ev-a56afe33ea862-0003-0008",
+    "sources[0]: unknown evidence ID ev-a56afe33ea862-0003-0010",
+    "Adversarial verification skipped after deterministic failure",
+    "sources[0]: unknown evidence ID ev-a56afe33ea862-0003-0007",
+    "sources[0]: unknown evidence ID ev-a56afe33ea862-0003-0008",
+    "sources[0]: unknown evidence ID ev-a56afe33ea862-0003-0010"
+  ],
+  "quality_scores": {
+    "completeness": 0.0,
+    "factual_accuracy": 0.0,
+    "neutrality": 0.0,
+    "readability": 0.0,
+    "restraint": 0.0,
+    "traceability": 0.0
+  }
+}

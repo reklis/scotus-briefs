@@ -1,0 +1,368 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+            "evidence_ids": [
+              "ev-d335501401b3-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice, justices asked whether, in the absence of a specific statute, states could directly regulate energy transmission under the Commerce Clause."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+            "evidence_ids": [
+              "ev-d335501401b3-0002-0005"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          },
+          {
+            "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+            "evidence_ids": [
+              "ev-d335501401b3-0003-0000"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "According to Justice, justices also questioned whether FERC has the power to assert jurisdiction over transmission and whether it must exercise that power, distinguishing between legal authority and policy choice."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2001-00-568",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T13:50:31.339770Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+            "evidence_ids": [
+              "ev-d335501401b3-0003-0008"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "The oral argument concluded with the case being submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice; State; FERC",
+        "citations": [
+          {
+            "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+            "evidence_ids": [
+              "ev-d335501401b3-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+            "evidence_ids": [
+              "ev-d335501401b3-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+            "evidence_ids": [
+              "ev-d335501401b3-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "The dispute centers on whether states have the authority to regulate electricity transmission, or whether that authority belongs to the Federal Energy Regulatory Commission (FERC)."
+      },
+      {
+        "attribution": "FERC; State",
+        "citations": [
+          {
+            "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+            "evidence_ids": [
+              "ev-d335501401b3-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+            "evidence_ids": [
+              "ev-d335501401b3-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          },
+          {
+            "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+            "evidence_ids": [
+              "ev-d335501401b3-0002-0004"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Petitioners argue that states should be able to set retail rates that include transmission costs, while respondents contend that FERC has jurisdiction over transmission but may choose not to exercise it."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+              "evidence_ids": [
+                "ev-d335501401b3-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "The State argues that when setting a retail electricity rate, it must consider all components of the cost, including transmission service."
+        }
+      ],
+      "heading": "New York (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "FERC",
+          "citations": [
+            {
+              "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+              "evidence_ids": [
+                "ev-d335501401b3-0002-0002"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to FERC, fERC asserts it has jurisdiction over transmission under the wholesale sales and transmission clauses of the statute."
+        },
+        {
+          "attribution": "FERC",
+          "citations": [
+            {
+              "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+              "evidence_ids": [
+                "ev-d335501401b3-0002-0004"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to FERC, fERC acknowledges it could choose not to exercise its jurisdiction over transmission."
+        },
+        {
+          "attribution": "FERC",
+          "citations": [
+            {
+              "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+              "evidence_ids": [
+                "ev-d335501401b3-0003-0006"
+              ],
+              "pages": {
+                "end": 54,
+                "start": 54
+              }
+            }
+          ],
+          "text": "According to FERC, interpreting the statute under Chevron, FERC concluded the agency could go either way regarding jurisdiction."
+        },
+        {
+          "attribution": "Respondent (Mr. Cohen)",
+          "citations": [
+            {
+              "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+              "evidence_ids": [
+                "ev-d335501401b3-0001-0001"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to Respondent (Mr. Cohen), according to Respondent (Mr. Cohen), respondent Mr. Cohen stated that states have plenary power to regulate retail customers but must respect FERC's jurisdiction over transmission."
+        },
+        {
+          "attribution": "Respondent (Mr. Kneedler)",
+          "citations": [
+            {
+              "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+              "evidence_ids": [
+                "ev-d335501401b3-0001-0003"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 33
+              }
+            }
+          ],
+          "text": "According to Respondent (Mr. Kneedler), according to Respondent (Mr. Kneedler), respondent Mr. Kneedler said Order\u202f888 respects and complements state regulatory jurisdiction over transmission and the sale of electric energy."
+        }
+      ],
+      "heading": "Federal Energy Regulatory Commission (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Enron",
+          "citations": [
+            {
+              "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+              "evidence_ids": [
+                "ev-d335501401b3-0002-0003"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to Enron, enron seeks to apply an open\u2011access pricing provision to the transmission component of electricity sales, even in states with monopoly utilities."
+        }
+      ],
+      "heading": "Enron Power Marketing, Inc. (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "d335501401b3d8804c6a1f43bb23e49f997234e7915398e825ed1088184a0038",
+      "evidence_ids": [
+        "ev-d335501401b3-0000-0000"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T14:03:50.192575Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
