@@ -36,5 +36,5 @@
 - [x] 5.1 Generate and review a full-corpus plan, retaining ambiguous records as unresolved
 - [x] 5.2 Apply the validated high-confidence recovery plan and prove a second run is a no-op
 - [x] 5.3 Run lint, type checking, tests, repository validation, and strict OpenSpec validation
-- [ ] 5.4 Commit and push recovered metadata in Git-manageable validated batches
-- [ ] 5.5 Dispatch and monitor small resumable guide-backfill batches for recovered cases
+- [x] 5.4 Commit and push recovered metadata in Git-manageable validated batches
+- [x] 5.5 Dispatch and monitor small resumable guide-backfill batches for recovered cases
