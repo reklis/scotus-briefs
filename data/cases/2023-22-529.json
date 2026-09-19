@@ -19,7 +19,16 @@
     "argument": "2024-02-27",
     "decision": "2024-05-30"
   },
-  "parties": [],
+  "parties": [
+    {
+      "name": "ALEX CANTERO, ET AL., INDIVIDUALLY AND ON BEHALF OF ALL OTHERS SIMILARLY SITUATED",
+      "role": "petitioner"
+    },
+    {
+      "name": "BANK OF AMERICA, N.A.",
+      "role": "respondent"
+    }
+  ],
   "provenance": [
     {
       "field": "dates",
@@ -31,6 +40,14 @@
     },
     {
       "field": "docket_numbers",
+      "source_url": null,
+      "document_hash": "8118443fa95d423579578c9c4de61e596ab973414ac22ef9447f50af70d1d0b4",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "parties",
       "source_url": null,
       "document_hash": "8118443fa95d423579578c9c4de61e596ab973414ac22ef9447f50af70d1d0b4",
       "observed_at": null,

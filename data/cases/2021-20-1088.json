@@ -9,14 +9,15 @@
   ],
   "primary_docket": "20-1088",
   "aliases": [
-    "No. 20-1088"
+    "No. 20-1088",
+    "No. 20–1088"
   ],
   "lifecycle": "argued",
   "dates": {
     "filed": null,
     "granted": null,
     "argument": "2021-12-08",
-    "decision": null
+    "decision": "2022-06-21"
   },
   "parties": [
     {
@@ -29,6 +30,30 @@
     }
   ],
   "provenance": [
+    {
+      "field": "dates",
+      "source_url": null,
+      "document_hash": "699847e75835e016880aa443428cdbc30b7b9fca45a1b01b6f0d3108359219c3",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "docket_numbers",
+      "source_url": null,
+      "document_hash": "699847e75835e016880aa443428cdbc30b7b9fca45a1b01b6f0d3108359219c3",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "term",
+      "source_url": null,
+      "document_hash": "699847e75835e016880aa443428cdbc30b7b9fca45a1b01b6f0d3108359219c3",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
     {
       "field": "dates",
       "source_url": null,
@@ -79,6 +104,11 @@
     }
   ],
   "documents": [
+    {
+      "sha256": "699847e75835e016880aa443428cdbc30b7b9fca45a1b01b6f0d3108359219c3",
+      "document_type": "opinion",
+      "current": true
+    },
     {
       "sha256": "dfbb69b749e96a95db53be42b06f406dc63450fbd0dae4f9ede9c7f4c04b5512",
       "document_type": "oral_argument_transcript",

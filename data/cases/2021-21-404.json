@@ -9,6 +9,7 @@
   ],
   "primary_docket": "21-404",
   "aliases": [
+    "No. 21-404",
     "No. 21–404"
   ],
   "lifecycle": "decided",
@@ -76,12 +77,41 @@
       "observed_at": null,
       "method": "extracted",
       "confidence": 1.0
+    },
+    {
+      "field": "dates",
+      "source_url": null,
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "docket_numbers",
+      "source_url": null,
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "term",
+      "source_url": null,
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
     }
   ],
   "documents": [
     {
       "sha256": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
       "document_type": "opinion",
+      "current": true
+    },
+    {
+      "sha256": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "document_type": "oral_argument_transcript",
       "current": true
     }
   ],

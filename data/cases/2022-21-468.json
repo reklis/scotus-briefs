@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "case_id": "2022-21-468",
   "slug": "2022-21-468",
-  "title": "NATIONAL PORK PRODUCERS COUNCIL ET AL. v. CAPACITY AS SECRETARY OF THE CALIFORNIA DEPARTMENT OF FOOD & AGRICULTURE, ET AL.",
+  "title": "NATIONAL PORK PRODUCERS COUNCIL et al. v. ROSS, SECRETARY OF THE CALIFORNIA DEPARTMENT OF FOOD AND AGRICULTURE, et al.",
   "term": 2022,
   "docket_numbers": [
     "21-468"
@@ -19,7 +19,16 @@
     "argument": "2022-10-11",
     "decision": "2023-05-11"
   },
-  "parties": [],
+  "parties": [
+    {
+      "name": "NATIONAL PORK PRODUCERS COUNCIL",
+      "role": "petitioner"
+    },
+    {
+      "name": "ROSS, SECRETARY OF THE CALIFORNIA DEPARTMENT OF FOOD AND AGRICULTURE",
+      "role": "respondent"
+    }
+  ],
   "provenance": [
     {
       "field": "dates",
@@ -46,7 +55,23 @@
       "confidence": 1.0
     },
     {
+      "field": "parties",
+      "source_url": null,
+      "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
       "field": "term",
+      "source_url": null,
+      "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "title",
       "source_url": null,
       "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
       "observed_at": null,

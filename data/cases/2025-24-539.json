@@ -20,7 +20,16 @@
     "argument": "2025-10-07",
     "decision": "2026-03-31"
   },
-  "parties": [],
+  "parties": [
+    {
+      "name": "CHILES",
+      "role": "petitioner"
+    },
+    {
+      "name": "SALAZAR, EXECUTIVE DIRECTOR OF THE COLORADO DEPARTMENT OF REGULATORY AGENCIES",
+      "role": "respondent"
+    }
+  ],
   "provenance": [
     {
       "field": "dates",
@@ -40,6 +49,14 @@
     },
     {
       "field": "lifecycle",
+      "source_url": null,
+      "document_hash": "5693365408890bbbcc9ad4ba969b1c102ae011d815dd08fa720ecf5f5c8bd061",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "parties",
       "source_url": null,
       "document_hash": "5693365408890bbbcc9ad4ba969b1c102ae011d815dd08fa720ecf5f5c8bd061",
       "observed_at": null,

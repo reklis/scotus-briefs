@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "case_id": "2024-23-621",
   "slug": "2024-23-621",
-  "title": "CAPACITY AS THE COMMISSIONER OF THE VIRGINIA DEPARTMENT OF MOTOR VEHICLES v. DAMIAN STINNIE, ET AL.",
+  "title": "LACKEY, COMMISSIONER OF THE VIRGINIA DEPARTMENT OF MOTOR VEHICLES v. STINNIE et al.",
   "term": 2024,
   "docket_numbers": [
     "23-621"
@@ -19,7 +19,16 @@
     "argument": "2024-10-08",
     "decision": "2025-02-25"
   },
-  "parties": [],
+  "parties": [
+    {
+      "name": "LACKEY, COMMISSIONER OF THE VIRGINIA DEPARTMENT OF MOTOR VEHICLES",
+      "role": "petitioner"
+    },
+    {
+      "name": "STINNIE",
+      "role": "respondent"
+    }
+  ],
   "provenance": [
     {
       "field": "dates",
@@ -39,14 +48,6 @@
     },
     {
       "field": "term",
-      "source_url": null,
-      "document_hash": "36a1c7db220df31be7476edfd19e22f861bff533f116ea51bd29758ae6b8a95b",
-      "observed_at": null,
-      "method": "extracted",
-      "confidence": 1.0
-    },
-    {
-      "field": "title",
       "source_url": null,
       "document_hash": "36a1c7db220df31be7476edfd19e22f861bff533f116ea51bd29758ae6b8a95b",
       "observed_at": null,
@@ -78,7 +79,23 @@
       "confidence": 1.0
     },
     {
+      "field": "parties",
+      "source_url": null,
+      "document_hash": "d3ed0ddf1df0252872012b137e544ae57e393fac309ab379cf4f8d96751b2410",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
       "field": "term",
+      "source_url": null,
+      "document_hash": "d3ed0ddf1df0252872012b137e544ae57e393fac309ab379cf4f8d96751b2410",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "title",
       "source_url": null,
       "document_hash": "d3ed0ddf1df0252872012b137e544ae57e393fac309ab379cf4f8d96751b2410",
       "observed_at": null,

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "case_id": "2021-20-843",
   "slug": "2021-20-843",
-  "title": "NEW YORK STATE RIFLE & PISTOL ASSOCIATION, INC., ET AL. v. CAPACITY AS SUPERINTENDENT OF NEW YORK STATE POLICE, ET AL.",
+  "title": "NEW YORK STATE RIFLE & PISTOL ASSOCIATION, INC., et al. v. BRUEN, SUPERINTENDENT OF NEW YORK STATE POLICE, et al.",
   "term": 2021,
   "docket_numbers": [
     "20-843"
@@ -19,7 +19,16 @@
     "argument": "2021-11-03",
     "decision": "2022-06-23"
   },
-  "parties": [],
+  "parties": [
+    {
+      "name": "NEW YORK STATE RIFLE & PISTOL ASSOCIATION, INC.",
+      "role": "applicant"
+    },
+    {
+      "name": "BRUEN, SUPERINTENDENT OF NEW YORK STATE POLICE",
+      "role": "respondent"
+    }
+  ],
   "provenance": [
     {
       "field": "dates",
@@ -46,7 +55,23 @@
       "confidence": 1.0
     },
     {
+      "field": "parties",
+      "source_url": null,
+      "document_hash": "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
       "field": "term",
+      "source_url": null,
+      "document_hash": "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "title",
       "source_url": null,
       "document_hash": "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
       "observed_at": null,

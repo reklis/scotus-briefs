@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "case_id": "2022-21-1271",
   "slug": "2022-21-1271",
-  "title": "CAPACITY AS SPEAKER OF THE NORTH CAROLINA HOUSE OF REPRESENTATIVES, ET AL. v. REBECCA HARPER, ET AL.",
+  "title": "THE NORTH CAROLINA HOUSE OF REPRESENTATIVES, et al. v. HARPER et al.",
   "term": 2022,
   "docket_numbers": [
     "21-1271"
@@ -19,7 +19,16 @@
     "argument": "2022-12-07",
     "decision": "2023-06-27"
   },
-  "parties": [],
+  "parties": [
+    {
+      "name": "THE NORTH CAROLINA HOUSE OF REPRESENTATIVES",
+      "role": "petitioner"
+    },
+    {
+      "name": "HARPER",
+      "role": "respondent"
+    }
+  ],
   "provenance": [
     {
       "field": "dates",
@@ -46,7 +55,23 @@
       "confidence": 1.0
     },
     {
+      "field": "parties",
+      "source_url": null,
+      "document_hash": "e790c40f27cfc29a71075410d857d4d414965aaa7a867def746d808999b8c4e0",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
       "field": "term",
+      "source_url": null,
+      "document_hash": "e790c40f27cfc29a71075410d857d4d414965aaa7a867def746d808999b8c4e0",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "title",
       "source_url": null,
       "document_hash": "e790c40f27cfc29a71075410d857d4d414965aaa7a867def746d808999b8c4e0",
       "observed_at": null,
@@ -71,14 +96,6 @@
     },
     {
       "field": "term",
-      "source_url": null,
-      "document_hash": "f7fd24dd6d83df19b5d7b43a27c92d4389a345f50d694e4aceb2b469cb92aa3c",
-      "observed_at": null,
-      "method": "extracted",
-      "confidence": 1.0
-    },
-    {
-      "field": "title",
       "source_url": null,
       "document_hash": "f7fd24dd6d83df19b5d7b43a27c92d4389a345f50d694e4aceb2b469cb92aa3c",
       "observed_at": null,
