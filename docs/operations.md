@@ -114,7 +114,7 @@ npm --prefix site run build
 scripts/check-pages-artifact.sh site/build 100
 ```
 
-In normal production operation, dispatch **Update archive and publish citizen guide** in GitHub Actions instead of manually committing output. Choose `incremental`, `bounded-backfill`, `case-regeneration`, `guide-regeneration`, `validation-only`, `historical-recovery-plan`, or `historical-recovery-apply`. A case ID is mandatory for either regeneration mode. `case-regeneration` re-extracts evidence before rebuilding the guide; `guide-regeneration` reuses the currently accepted evidence and is appropriate after a synthesis-only fix. The two recovery operations are described below. Batch size is limited to 1–100 and is ignored by recovery. The nightly schedule runs incremental mode at 08:17 UTC.
+In normal production operation, dispatch **Update archive and publish citizen guide** in GitHub Actions instead of manually committing output. Choose `incremental`, `bounded-backfill`, `bounded-backfill-drain`, `case-regeneration`, `guide-regeneration`, `validation-only`, `historical-recovery-plan`, or `historical-recovery-apply`. A case ID is mandatory for either regeneration mode. `case-regeneration` re-extracts evidence before rebuilding the guide; `guide-regeneration` reuses the currently accepted evidence and is appropriate after a synthesis-only fix. The two recovery operations are described below. Batch size is limited to 1–100 and is ignored by recovery. The nightly schedule runs incremental mode at 08:17 UTC.
 
 ## ARM64 `spark` runner
 
@@ -201,6 +201,12 @@ not start an unbounded generation run. After a successful apply, dispatch a smal
 `bounded-backfill` (start with `batch_size: 5`). Review extraction/generation reports and repository
 growth after each committed batch, then continue from the checked-in checkpoint. Ambiguous
 unresolved groups remain excluded. Never increase the bound merely to bypass a failing case.
+
+After a monitored batch succeeds, `bounded-backfill-drain` processes the same bounded batch and
+self-dispatches exactly one successor run. It stops after every docketed case has either produced an
+accepted guide or recorded a source-limited failure. Repository concurrency still permits only one
+state-writing run at a time, each batch commits independently, and a failed batch does not dispatch a
+successor. Cancel the pending or active drain run in GitHub Actions to pause the loop.
 
 ### Rolling back historical recovery
 

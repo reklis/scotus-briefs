@@ -31,11 +31,22 @@ def write_case(root: Path, case_id: str, docket: str) -> None:
 def test_backfill_checkpoint_resumes_and_batch_is_bounded(tmp_path: Path) -> None:
     write_case(tmp_path, "scotus-24-7", "24-7")
     write_case(tmp_path, "scotus-24-8", "24-8")
+    write_case(tmp_path, "scotus-24-9", "24-9")
+    unresolved = NormalizedCase(
+        case_id="unresolved-history",
+        slug="unresolved-history",
+        title="Unresolved historical group history",
+        lifecycle=Lifecycle.UNRESOLVED,
+        unresolved_group="history",
+    )
+    unresolved_path = tmp_path / "data" / "cases" / "unresolved-history.json"
+    unresolved_path.write_text(unresolved.model_dump_json())
     orchestrator = GenerationOrchestrator(tmp_path)
     orchestrator.save_checkpoint(
         Checkpoint(
             mode=OperationMode.BACKFILL,
             completed_case_ids=["scotus-24-7"],
+            failed_cases={"scotus-24-9": "no supported evidence"},
             updated_at=datetime.now(UTC),
         )
     )
@@ -43,6 +54,7 @@ def test_backfill_checkpoint_resumes_and_batch_is_bounded(tmp_path: Path) -> Non
     assert [case.case_id for case in selected] == ["scotus-24-8"]
     loaded = orchestrator.load_checkpoint(OperationMode.BACKFILL)
     assert loaded.completed_case_ids == ["scotus-24-7"]
+    assert orchestrator.unattempted_backfill_case_ids() == ["scotus-24-8"]
 
 
 def test_modes_aliases_case_requirements_and_cli_validation(tmp_path: Path) -> None:

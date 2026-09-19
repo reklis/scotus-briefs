@@ -66,7 +66,11 @@ class GenerationOrchestrator:
     ) -> list[NormalizedCase]:
         if not 1 <= batch_size <= 100:
             raise ValueError("batch_size must be between 1 and 100")
-        cases = self._cases()
+        cases = {
+            case_id: case
+            for case_id, case in self._cases().items()
+            if case.unresolved_group is None and case.primary_docket is not None
+        }
         if mode == OperationMode.VALIDATE:
             return []
         if mode == OperationMode.CASE:
@@ -88,6 +92,18 @@ class GenerationOrchestrator:
             changed = self._changed_case_ids()
             candidates = [cases[item] for item in sorted(changed) if item in cases]
         return candidates[:batch_size]
+
+    def unattempted_backfill_case_ids(self) -> list[str]:
+        """Return docketed cases that have never completed or failed a backfill attempt."""
+        cases = {
+            case_id: case
+            for case_id, case in self._cases().items()
+            if case.unresolved_group is None and case.primary_docket is not None
+        }
+        checkpoint = self.load_checkpoint(OperationMode.BACKFILL)
+        attempted = set(checkpoint.completed_case_ids) | set(checkpoint.failed_cases)
+        accepted = {case_id for case_id in cases if self._accepted(case_id)}
+        return sorted(set(cases) - attempted - accepted)
 
     def extract(
         self,
