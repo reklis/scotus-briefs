@@ -27,7 +27,7 @@ def test_versioned_recovery_contracts_reject_unknown_fields() -> None:
     conflict = RecoveryConflict(code="caption-conflict", message="captions disagree")
     component = RecoveryComponent(component_id="component-1", conflicts=[conflict])
     plan = HistoricalRecoveryPlan(
-        parser_version="5",
+        parser_version="7",
         max_pages=3,
         max_characters=60_000,
         max_pdf_bytes=100 * 1024 * 1024,
@@ -211,6 +211,8 @@ def test_later_cited_dockets_do_not_become_case_aliases() -> None:
         "Services, et al. v. Louisiana et al., also on application for stay.",
         "The rule follows ZIVOTOFSKY v. CLINTON, 566 U. S. 1",
         "counsel was ineffective under Strickland v. Washington, 466",
+        "JOHN STURGEON v. CAPACITY AS ALASKA REGIONAL DIRECTOR",
+        "CAPACITY AS MAYOR v. JAMES EDMOND",
     ],
 )
 def test_incomplete_or_prose_caption_is_not_promoted_to_case_identity(

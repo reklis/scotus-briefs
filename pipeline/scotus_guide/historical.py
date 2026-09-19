@@ -39,7 +39,7 @@ from .models import (
 )
 
 HISTORICAL_SCHEMA_VERSION = "1.0.0"
-HISTORICAL_PARSER_VERSION = "5"
+HISTORICAL_PARSER_VERSION = "7"
 DEFAULT_OPENING_PAGES = 3
 DEFAULT_MAX_CHARACTERS = 60_000
 DEFAULT_MAX_PDF_BYTES = 100 * 1024 * 1024
@@ -170,7 +170,7 @@ class HistoricalRecoveryPlan(ContractModel):
     """Versioned, reviewable recovery transaction with source-state preconditions."""
 
     schema_version: Literal["1.0.0"] = "1.0.0"
-    parser_version: Literal["5"]
+    parser_version: Literal["7"]
     max_pages: Annotated[int, Field(ge=1)]
     max_characters: Annotated[int, Field(ge=1)]
     max_pdf_bytes: Annotated[int, Field(ge=1)]
@@ -932,8 +932,19 @@ def _resolve_text_field(
     conflicts: list[RecoveryConflict],
 ) -> str | None:
     values = sorted({item.title for item in members if item.title is not None})
-    if existing is not None and existing.title and not existing.title.startswith(
-        "Unresolved historical group "
+    title_provenance = (
+        [item for item in existing.provenance if item.field in {"identity", "title"}]
+        if existing is not None
+        else []
+    )
+    existing_is_authoritative = existing is not None and (
+        not title_provenance or any(item.method != "extracted" for item in title_provenance)
+    )
+    if (
+        existing is not None
+        and existing_is_authoritative
+        and existing.title
+        and not existing.title.startswith("Unresolved historical group ")
     ):
         if values and not all(_captions_equivalent(existing.title, value) for value in values):
             conflicts.append(
@@ -2299,6 +2310,11 @@ def _complete_caption_or_none(value: str | None, warnings: list[str]) -> str | N
             value,
             re.IGNORECASE,
         )
+        or re.search(
+            r"^(?:INCAPACITATED PERSON\b|CAPACITY AS\b|.+\s+v\.\s+CAPACITY AS\b)",
+            value,
+            re.IGNORECASE,
+        )
     )
     if incomplete:
         warnings.append("discarded an incomplete extracted caption")
@@ -2421,7 +2437,14 @@ def _candidate_captions_compatible(
     first: HistoricalDocumentCandidate, second: HistoricalDocumentCandidate
 ) -> bool:
     if first.title is None or second.title is None:
-        return False
+        # A missing caption is not conflicting evidence. Exact single-docket identity
+        # within the same preserved source group can safely attach that document to a
+        # captioned peer without inventing any metadata.
+        return (
+            len(first.docket_numbers) == 1
+            and first.docket_numbers == second.docket_numbers
+            and bool(set(first.historical_groups) & set(second.historical_groups))
+        )
     return _captions_equivalent(first.title, second.title) or _caption_party_overlap(
         first.title, second.title
     )

@@ -23,6 +23,7 @@ from scotus_guide.models import (
     DocumentManifestEntry,
     DocumentType,
     Lifecycle,
+    MetadataProvenance,
     NormalizedCase,
     SourceIdentity,
 )
@@ -265,6 +266,49 @@ def test_stale_plan_fails_before_writes(tmp_path: Path) -> None:
             candidate_extractor=_extractor(_candidate(1, "20-1", "legacy")),
         )
     assert not (tmp_path / "data" / "cases" / "2020-20-1.json").exists()
+
+
+def test_missing_caption_joins_captioned_peer_with_same_group_and_docket() -> None:
+    manifest = DocumentManifest(documents=[_entry(1, "one"), _entry(2, "one")])
+    captioned = _candidate(1, "20-1", "one")
+    missing = _candidate(2, "20-1", "one").model_copy(
+        update={"title": None, "parties": []}
+    )
+
+    plan, _ = build_historical_recovery_plan(manifest, [captioned, missing])
+
+    proposed = [item for item in plan.components if item.proposed_case is not None]
+    assert len(proposed) == 1
+    assert proposed[0].document_hashes == [_hash(1), _hash(2)]
+
+
+def test_extracted_existing_title_can_be_corrected() -> None:
+    manifest = DocumentManifest(documents=[_entry(1, "one")])
+    recovered = NormalizedCase(
+        case_id="2020-20-1",
+        slug="2020-20-1",
+        title="CAPACITY AS DIRECTOR v. BETA",
+        term=2020,
+        docket_numbers=["20-1"],
+        primary_docket="20-1",
+        lifecycle=Lifecycle.DECIDED,
+        dates=CaseDates(decision=date(2021, 5, 1)),
+        provenance=[
+            MetadataProvenance(
+                field="title",
+                document_hash=_hash(1),
+                method="extracted",
+            )
+        ],
+        documents=[CaseDocumentReference(sha256=_hash(1), document_type=DocumentType.OPINION)],
+    )
+
+    plan, _ = build_historical_recovery_plan(
+        manifest, [_candidate(1, "20-1", "one", title="Alpha v. Beta")], [recovered]
+    )
+
+    proposed = next(item.proposed_case for item in plan.components if item.proposed_case)
+    assert proposed.title == "Alpha v. Beta"
 
 
 def test_transitive_docket_bridge_does_not_merge_incompatible_captions() -> None:
