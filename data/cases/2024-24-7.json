@@ -8,7 +8,10 @@
     "24-7"
   ],
   "primary_docket": "24-7",
-  "aliases": [],
+  "aliases": [
+    "No. 24-7",
+    "No. 24–7"
+  ],
   "lifecycle": "decided",
   "dates": {
     "filed": null,
@@ -28,10 +31,66 @@
   ],
   "provenance": [
     {
+      "field": "dates",
+      "source_url": null,
+      "document_hash": "05f2a4cd4aa661bb34fc5eed40dbcedbaee6f16ba85e0d323d6e65ffb6ea0a0d",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "docket_numbers",
+      "source_url": null,
+      "document_hash": "05f2a4cd4aa661bb34fc5eed40dbcedbaee6f16ba85e0d323d6e65ffb6ea0a0d",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "term",
+      "source_url": null,
+      "document_hash": "05f2a4cd4aa661bb34fc5eed40dbcedbaee6f16ba85e0d323d6e65ffb6ea0a0d",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "dates",
+      "source_url": null,
+      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "docket_numbers",
+      "source_url": null,
+      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
       "field": "identity",
       "source_url": null,
       "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
       "observed_at": "2026-09-18T03:45:10.047308Z",
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "lifecycle",
+      "source_url": null,
+      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "term",
+      "source_url": null,
+      "document_hash": "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
+      "observed_at": null,
       "method": "extracted",
       "confidence": 1.0
     }

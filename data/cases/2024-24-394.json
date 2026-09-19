@@ -9,7 +9,10 @@
     "24-396"
   ],
   "primary_docket": "24-394",
-  "aliases": [],
+  "aliases": [
+    "No. 24-394",
+    "No. 24–394"
+  ],
   "lifecycle": "decided",
   "dates": {
     "filed": null,
@@ -29,23 +32,79 @@
   ],
   "provenance": [
     {
+      "field": "dates",
+      "source_url": null,
+      "document_hash": "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "docket_numbers",
+      "source_url": null,
+      "document_hash": "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
       "field": "identity",
       "source_url": null,
       "document_hash": "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
       "observed_at": "2026-09-18T03:45:10.047236Z",
       "method": "extracted",
       "confidence": 1.0
+    },
+    {
+      "field": "lifecycle",
+      "source_url": null,
+      "document_hash": "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "term",
+      "source_url": null,
+      "document_hash": "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "dates",
+      "source_url": null,
+      "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "docket_numbers",
+      "source_url": null,
+      "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "term",
+      "source_url": null,
+      "document_hash": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
     }
   ],
   "documents": [
     {
-      "sha256": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
-      "document_type": "oral_argument_transcript",
+      "sha256": "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
+      "document_type": "opinion",
       "current": true
     },
     {
-      "sha256": "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
-      "document_type": "opinion",
+      "sha256": "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+      "document_type": "oral_argument_transcript",
       "current": true
     }
   ],

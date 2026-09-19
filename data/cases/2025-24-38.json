@@ -8,7 +8,9 @@
     "24-38"
   ],
   "primary_docket": "24-38",
-  "aliases": [],
+  "aliases": [
+    "No. 24-38"
+  ],
   "lifecycle": "awaiting_decision",
   "dates": {
     "filed": null,
@@ -28,10 +30,34 @@
   ],
   "provenance": [
     {
+      "field": "dates",
+      "source_url": null,
+      "document_hash": "a4e0123e8dcad8f81811394cf804b00b777f08f484aaea3de6d500fa3743b4c4",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "docket_numbers",
+      "source_url": null,
+      "document_hash": "a4e0123e8dcad8f81811394cf804b00b777f08f484aaea3de6d500fa3743b4c4",
+      "observed_at": null,
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
       "field": "identity",
       "source_url": null,
       "document_hash": "a4e0123e8dcad8f81811394cf804b00b777f08f484aaea3de6d500fa3743b4c4",
       "observed_at": "2026-09-18T03:45:10.047456Z",
+      "method": "extracted",
+      "confidence": 1.0
+    },
+    {
+      "field": "term",
+      "source_url": null,
+      "document_hash": "a4e0123e8dcad8f81811394cf804b00b777f08f484aaea3de6d500fa3743b4c4",
+      "observed_at": null,
       "method": "extracted",
       "confidence": 1.0
     }
