@@ -27,7 +27,7 @@ def test_versioned_recovery_contracts_reject_unknown_fields() -> None:
     conflict = RecoveryConflict(code="caption-conflict", message="captions disagree")
     component = RecoveryComponent(component_id="component-1", conflicts=[conflict])
     plan = HistoricalRecoveryPlan(
-        parser_version="2",
+        parser_version="5",
         max_pages=3,
         max_characters=60_000,
         max_pdf_bytes=100 * 1024 * 1024,
@@ -185,6 +185,48 @@ def test_historical_opinion_parses_caption_explicit_term_and_dates() -> None:
     assert candidate.dates.argument == date(2021, 12, 1)
     assert candidate.dates.decision == date(2022, 6, 2)
     assert candidate.lifecycle is Lifecycle.DECIDED
+
+
+def test_later_cited_dockets_do_not_become_case_aliases() -> None:
+    candidate = parse_historical_metadata(
+        document_hash=HASH,
+        import_path="archive/group/opinion/source.pdf",
+        opening_text="""
+        OCTOBER TERM, 2023
+        SNYDER v. UNITED STATES
+        No. 23-108. Argued November 8, 2023—Decided June 26, 2024
+        The Court previously considered No. 99-797 and no. 10-12.
+        """,
+    )
+
+    assert candidate.docket_numbers == ["23-108"]
+    assert candidate.docket_labels == ["No. 23-108"]
+    assert candidate.title == "SNYDER v. UNITED STATES"
+
+
+@pytest.mark.parametrize(
+    "caption",
+    [
+        "TOWN OF ALPHA v. BETA, GAMMA, AND",
+        "Services, et al. v. Louisiana et al., also on application for stay.",
+        "The rule follows ZIVOTOFSKY v. CLINTON, 566 U. S. 1",
+        "counsel was ineffective under Strickland v. Washington, 466",
+    ],
+)
+def test_incomplete_or_prose_caption_is_not_promoted_to_case_identity(
+    caption: str,
+) -> None:
+    candidate = parse_historical_metadata(
+        document_hash=HASH,
+        import_path="archive/group/opinion/source.pdf",
+        opening_text=f"""
+        OCTOBER TERM, 2004
+        {caption}
+        No. 04-278. Decided June 27, 2005
+        """,
+    )
+
+    assert candidate.title is None
 
 
 def test_docket_bearing_pdf_title_is_preferred_and_conflicts_fail_closed() -> None:

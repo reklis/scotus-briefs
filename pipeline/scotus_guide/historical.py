@@ -39,7 +39,7 @@ from .models import (
 )
 
 HISTORICAL_SCHEMA_VERSION = "1.0.0"
-HISTORICAL_PARSER_VERSION = "2"
+HISTORICAL_PARSER_VERSION = "5"
 DEFAULT_OPENING_PAGES = 3
 DEFAULT_MAX_CHARACTERS = 60_000
 DEFAULT_MAX_PDF_BYTES = 100 * 1024 * 1024
@@ -170,7 +170,7 @@ class HistoricalRecoveryPlan(ContractModel):
     """Versioned, reviewable recovery transaction with source-state preconditions."""
 
     schema_version: Literal["1.0.0"] = "1.0.0"
-    parser_version: Literal["2"]
+    parser_version: Literal["5"]
     max_pages: Annotated[int, Field(ge=1)]
     max_characters: Annotated[int, Field(ge=1)]
     max_pdf_bytes: Annotated[int, Field(ge=1)]
@@ -447,6 +447,8 @@ def parse_historical_metadata(
 
     metadata_caption = _caption_from_metadata(metadata_title) if title_dockets else None
     text_caption = _extract_caption(text, document_type)
+    metadata_caption = _complete_caption_or_none(metadata_caption, warnings)
+    text_caption = _complete_caption_or_none(text_caption, warnings)
     title = metadata_caption or text_caption
     # Metadata titles routinely abbreviate parties.  Only block clearly unrelated captions.
     if (
@@ -1474,8 +1476,13 @@ def apply_historical_recovery(
                 replaced = False
                 for association in associations:
                     if association.historical_group is not None and (
-                        association.case_id is None or association.case_id in unresolved_ids
+                        association.case_id is None
+                        or association.case_id in unresolved_ids
+                        or association.case_id == component.target_case_id
                     ):
+                        # Normalize an already-recovered association as well as replacing
+                        # an unresolved one. This collapses stale duplicate docket variants
+                        # and makes a regenerated plan converge to a true no-op.
                         enriched.append(
                             CaseAssociation(
                                 case_id=component.target_case_id,
@@ -2066,13 +2073,20 @@ def _extract_labeled_dockets(text: str) -> tuple[list[str], list[str]]:
                 tail = lines[index + 1]
             # A label's docket list never legitimately continues into prose.
             tail = re.split(r"[;)]|\b(?:Argued|Decided|Petitioner|Respondent)\b", tail)[0]
+            line_dockets: list[str] = []
+            line_labels: list[str] = []
             for match in _DOCKET_TOKEN_RE.finditer(tail):
                 raw = match.group(0).strip().rstrip(".,;")
                 canonical = _canonical_docket(raw)
                 if canonical is not None:
-                    dockets.append(canonical)
-                    labels.append(f"{marker.group(0).strip()} {raw}".strip())
-    return _sort_dockets(set(dockets)), _deduplicate(labels)
+                    line_dockets.append(canonical)
+                    line_labels.append(f"{marker.group(0).strip()} {raw}".strip())
+            if line_dockets:
+                # The case docket is the first explicitly labeled docket set in a
+                # Court document. Later labels on opening syllabus pages and in oral
+                # argument are citations to other cases, not aliases of this matter.
+                return _sort_dockets(set(line_dockets)), _deduplicate(line_labels)
+    return dockets, labels
 
 
 def _extract_title_dockets(title: str | None) -> tuple[list[str], list[str]]:
@@ -2200,6 +2214,9 @@ def _extract_caption(text: str, document_type: DocumentType) -> str | None:
         while end < len(lines) and end - index <= 3 and _caption_continuation(lines[end]):
             end += 1
         caption = _clean_caption(" ".join(lines[start:end]))
+        first_letter = next((character for character in caption if character.isalpha()), "")
+        if first_letter.islower():
+            continue
         if _looks_like_caption(caption):
             candidates.append(caption)
     return max(candidates, key=_caption_score) if candidates else None
@@ -2259,8 +2276,33 @@ def _clean_caption(value: str) -> str:
     value = _DOCKET_LABEL_RE.sub(" ", value)
     value = _DOCKET_TOKEN_RE.sub(" ", value)
     value = re.sub(r"\b(?:Petitioners?|Respondents?),?\b", " ", value, flags=re.IGNORECASE)
+    value = re.sub(
+        r"^(?:AT\s+)?OCTOBER\s+TERM,?\s+\d{4}\s+",
+        "",
+        value,
+        flags=re.IGNORECASE,
+    )
     value = re.sub(r"\s+", " ", value).strip(" ,;:-")
     value = re.sub(r"\s+v\.?\s+", " v. ", value, flags=re.IGNORECASE)
+    return value
+
+
+def _complete_caption_or_none(value: str | None, warnings: list[str]) -> str | None:
+    if value is None:
+        return None
+    incomplete = (
+        re.search(r"(?:\bAND|\bOF|\bAS|;\s*AND)\.?$", value, re.IGNORECASE)
+        or re.match(r"^ET\s+AL\.?\s+v\.", value, re.IGNORECASE)
+        or re.search(r"\b\d+\s+U\.\s*S\.?\b", value, re.IGNORECASE)
+        or re.search(
+            r"\b(?:also on (?:an? )?application|we will hear|hear argument|this morning)\b",
+            value,
+            re.IGNORECASE,
+        )
+    )
+    if incomplete:
+        warnings.append("discarded an incomplete extracted caption")
+        return None
     return value
 
 

@@ -48,9 +48,14 @@ class ParsedDocket:
     letter: str = ""
 
     @property
-    def sort_key(self) -> tuple[int, int, str]:
-        """Order regular dockets first, then A applications, original, and other series."""
-        return (int(self.kind), self.number, self.letter)
+    def sort_key(self) -> tuple[int, int, int, str]:
+        """Order by series, term, and number with a total deterministic key."""
+        return (
+            int(self.kind),
+            self.term if self.term is not None else -1,
+            self.number,
+            self.letter,
+        )
 
 
 def normalize_docket(value: str) -> str:
@@ -92,7 +97,7 @@ def parse_docket(value: str) -> ParsedDocket:
     return ParsedDocket(canonical, None, int(match.group("number")), DocketKind.ORIGINAL, "O")
 
 
-def docket_sort_key(value: str) -> tuple[int, int, str]:
+def docket_sort_key(value: str) -> tuple[int, int, int, str]:
     return parse_docket(value).sort_key
 
 

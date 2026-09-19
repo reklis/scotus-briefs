@@ -2,7 +2,9 @@ import { readdir, readFile, stat } from 'node:fs/promises';
 import { extname, join, relative, resolve } from 'node:path';
 
 const root = resolve('build');
-const maxBytes = Number(process.env.PAGES_ARTIFACT_MAX_BYTES ?? 20 * 1024 * 1024);
+// The recovered historical catalog intentionally prerenders thousands of lightweight case
+// pages. Keep a firm ceiling while leaving room for resumable guide backfill growth.
+const maxBytes = Number(process.env.PAGES_ARTIFACT_MAX_BYTES ?? 128 * 1024 * 1024);
 
 async function filesBelow(directory: string): Promise<string[]> {
   const entries = await readdir(directory, { withFileTypes: true });

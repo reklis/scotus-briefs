@@ -46,6 +46,7 @@ def test_numeric_sort_and_consolidated_deduplication() -> None:
     dockets = ["24-304", "24A2", "24-38", "24-7", "24-007"]
     assert sorted(dockets, key=docket_sort_key) == ["24-7", "24-007", "24-38", "24-304", "24A2"]
     assert normalize_dockets(dockets) == ("24-7", "24-38", "24-304", "24A2")
+    assert normalize_dockets(["18-389", "13-389"]) == ("13-389", "18-389")
 
 
 def test_stable_identity_does_not_use_title() -> None:
