@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2002-01-1107",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "support check failed: the claim in the \u201cWhy it Matters\u201d section that \u201cAccording to Michael R. Dreeben, the outcome could affect how states regulate symbolic conduct that is deemed threatening.\u201d is not backed by any supplied evidence.",
+    "overstatement check failed: the same claim overstates Dreeben\u2019s position by attributing a prediction about future regulatory impact that is not present in the evidence."
+  ],
+  "quality_scores": {
+    "completeness": 0.85,
+    "factual_accuracy": 0.9,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.7,
+    "traceability": 0.8
+  }
+}

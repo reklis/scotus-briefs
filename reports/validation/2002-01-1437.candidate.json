@@ -1,0 +1,371 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The United States moved for a stay of the injunction at the Supreme Court of Mississippi, and that stay was denied."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether Mississippi had appealed from the injunction."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether the State was still pursuing the redistricting that was the subject of the application to the Attorney General, and whether that depended on an appeal from the federal injunction."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0002-0002"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether it would be correct to refuse approval of a Mississippi plan that violates the Court\u2019s constitutional holding."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-1437",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T23:41:42.756882Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Stevens asked: \u201cNow, did Mississippi appeal from the injunction?\u201d"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the State was still pursuing the redistricting subject to the Attorney General\u2019s application, and whether that depended on an appeal from the federal injunction."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0002-0002"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned whether it would be correct to refuse approval of a Mississippi plan that violates the Court\u2019s constitutional holding."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0003-0002"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "The case concerns a Mississippi state\u2011court redistricting plan that has been enjoined on constitutional grounds."
+      },
+      {
+        "attribution": "United States (Amicus Curiae)",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0001-0000"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to United States (Amicus Curiae), according to United States (Amicus Curiae), the United States, filing as amicus curiae, argues that the state\u2011court plan was not pre\u2011cleared."
+      },
+      {
+        "attribution": "Branch, et al.",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Branch, et al., according to Branch, et al., state judges should address constitutional malapportionment issues, and they are preferred over federal judges for reapportionment matters."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Branch, et al.",
+          "citations": [
+            {
+              "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+              "evidence_ids": [
+                "ev-ba22edaf8247-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Branch, et al., according to Branch, et al., branch, et al. argue that state judges should address constitutional malapportionment issues, and they are preferred over federal judges for reapportionment matters."
+        }
+      ],
+      "heading": "Branch (Appellant)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States (Amicus Curiae)",
+          "citations": [
+            {
+              "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+              "evidence_ids": [
+                "ev-ba22edaf8247-0001-0000"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to United States (Amicus Curiae), according to United States (Amicus Curiae), the United States (Amicus Curiae) maintains that the State court redistricting plan was not pre\u2011cleared on either occasion referenced by the appellants."
+        }
+      ],
+      "heading": "United States (Amicus)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+      "evidence_ids": [
+        "ev-ba22edaf8247-0000-0000",
+        "ev-ba22edaf8247-0000-0001",
+        "ev-ba22edaf8247-0000-0002",
+        "ev-ba22edaf8247-0001-0000",
+        "ev-ba22edaf8247-0001-0003",
+        "ev-ba22edaf8247-0002-0000",
+        "ev-ba22edaf8247-0002-0002",
+        "ev-ba22edaf8247-0003-0000",
+        "ev-ba22edaf8247-0003-0001",
+        "ev-ba22edaf8247-0003-0002"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T23:50:42.037419Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "support check failed: the overview claim that the Mississippi state\u2011court redistricting plan has been enjoined on constitutional grounds is not directly supported by the cited evidence.",
+      "overstatement check failed: the same overview claim overstates the factual situation by asserting the plan was enjoined, which is not confirmed by the provided evidence."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0003-0002"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "The Court noted that there is no regulation allowing the Justice Department to consider a plan that has been enjoined on constitutional grounds."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0003-0001"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "The stated consequence is that Mississippi will be able to conduct its 2004 elections without the confusion that occurred in the previous election."
+      },
+      {
+        "attribution": "Branch, et al.",
+        "citations": [
+          {
+            "document_hash": "ba22edaf8247b97c013cabe81480a44e8f3170976523464802586543311e6192",
+            "evidence_ids": [
+              "ev-ba22edaf8247-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Branch, et al., according to Branch, et al., branch, et al. state that state judges are preferred to federal judges as agents of reapportionment."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

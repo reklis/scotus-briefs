@@ -1,0 +1,345 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether Congress\u2019s judgment should be given substantial deference."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-1229",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T22:47:38.781703Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Paul D. Clement",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0000-0002"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Paul D. Clement argued that the 1995 amendment to Section\u202f409 is constitutional and protects data used for federal highway funding from litigation."
+      },
+      {
+        "attribution": "United States Government",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to United States Government, the United States Government questioned whether the 409 privilege depends on a state\u2019s assertion of the privilege to receive funding, emphasizing that the privilege serves a federal interest in accurate information."
+      },
+      {
+        "attribution": "Court Transcript",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The Court noted that federal highway funds and the documents used for that purpose have an inherently federal character, giving Congress power to protect them in litigation."
+      },
+      {
+        "attribution": "Court Transcript",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0001-0004"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The Court stated that the act must have authority under some Article\u202fI, Section\u202f(a) basis."
+      },
+      {
+        "attribution": "Mr. MUNGIA",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Mr. Mungia argued that there is no final judgment in the tort action and that the discovery order was taken up on interlocutory appeal."
+      },
+      {
+        "attribution": "Mr. MUNGIA",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0002-0004"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Mr. Mungia also argued that the funding condition cannot be authorized under the Spending Clause."
+      },
+      {
+        "attribution": "Mr. MUNGIA",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0002-0005"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "According to Mr. MUNGIA, the statutory language requires control over vehicle size and weight to avoid loss of funding, similar to other statutes."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0002-0006"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "The Court referenced the Dole case, noting that under 23\u202fU.S.C.\u202f158 the title of the act was withdrawal of Federal funds."
+      },
+      {
+        "attribution": "Solicitor General",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0002-0008"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "The Solicitor General, as amicus, argued that documents in the hands of the transferee agency are protected because they exist only due to the planning agency\u2019s collection of that information."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Paul D. Clement",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0000-0002"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          },
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The case concerns the constitutionality of the 1995 amendment to Section 409, which protects data compiled for federal highway funding from being used in litigation."
+      },
+      {
+        "attribution": "Court Transcript",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The amendment is argued to serve an important federal interest in ensuring accurate and complete information for awarding federal highway funds."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, the case raises the question whether Congress's judgment on the matter deserves substantial deference."
+      },
+      {
+        "attribution": "Mr. MUNGIA",
+        "citations": [
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0002-0004"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          },
+          {
+            "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+            "evidence_ids": [
+              "ev-9928e2a69e79-0002-0005"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "According to Mr. MUNGIA, the discussion also addresses whether conditions on federal highway funding may be authorized under the Spending Clause."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9928e2a69e79bc54a6f8e2ec35d6f5e64958880512ba94f5c8efcffefb634aaf",
+      "evidence_ids": [
+        "ev-9928e2a69e79-0000-0000"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T22:54:45.623157Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

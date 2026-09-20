@@ -1,0 +1,455 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to United States, the case centers on the definition of conspiracy as an agreement to commit an unlawful act."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether an act in furtherance of the conspiracy is required."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice O'Connor also asked when a conspiracy terminates."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens questioned the difference between an attempt and a conspiracy, noting that an attempt requires a dangerous probability of success while a conspiracy does not."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-1184",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T22:36:12.053661Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked: \u201cAnd taken some act in furtherance of it?\u201d"
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked: \u201cWhen does the conspiracy terminate, in your view?\u201d"
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "Justice Stevens asked about the difference between an attempt and a conspiracy, noting the differing requirements for probability of success."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Breyer asked: \u201cIs that the argument?\u201d"
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0002-0002"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Stevens asked: \u201cMay I ask? Are the instructions to the jury in the papers before us?\u201d"
+      },
+      {
+        "attribution": "Mr. Dreeben",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0001-0003"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Mr. Dreeben explained that a co\u2011conspirator\u2019s statement is admissible only if made during the course of and in furtherance of the conspiracy."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0002-0003"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "The case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The United States argues that conspiracy is an inchoate offense defined as an agreement to commit an unlawful act."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+            "evidence_ids": [
+              "ev-6158348c5137-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to United States, the United States alleges that the respondents conspired to distribute and deliver marijuana and cocaine."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+              "evidence_ids": [
+                "ev-6158348c5137-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to United States, conspiracy is an inchoate offense defined as an agreement to commit an unlawful act."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+              "evidence_ids": [
+                "ev-6158348c5137-0000-0003"
+              ],
+              "pages": {
+                "end": 8,
+                "start": 8
+              }
+            }
+          ],
+          "text": "According to United States, the respondents conspired to distribute and deliver marijuana and cocaine."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Shurtliff (Respondents)",
+          "citations": [
+            {
+              "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+              "evidence_ids": [
+                "ev-6158348c5137-0001-0000"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Mr. Shurtliff (Respondents), according to Mr. Shurtliff (Respondents), respondents state they are not invited to argue that the case below was decided on the sufficiency of the evidence, though they do not abandon that argument."
+        }
+      ],
+      "heading": "Francisco Jimenez Recio and Adrina Lopez\u2011Mesa (Respondents)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+      "evidence_ids": [
+        "ev-6158348c5137-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+      "evidence_ids": [
+        "ev-6158348c5137-0000-0001",
+        "ev-6158348c5137-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+      "evidence_ids": [
+        "ev-6158348c5137-0000-0003"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+      "evidence_ids": [
+        "ev-6158348c5137-0000-0004"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+      "evidence_ids": [
+        "ev-6158348c5137-0001-0003"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+      "evidence_ids": [
+        "ev-6158348c5137-0001-0000"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+      "evidence_ids": [
+        "ev-6158348c5137-0002-0000"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+      "evidence_ids": [
+        "ev-6158348c5137-0002-0002"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "6158348c51376ab74d1db5c527db75dc1f6fae458381a8602802fefed89b5057",
+      "evidence_ids": [
+        "ev-6158348c5137-0002-0003"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T22:41:43.303888Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

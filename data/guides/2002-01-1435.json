@@ -1,0 +1,329 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-1435",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T23:37:38.794268Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+            "evidence_ids": [
+              "ev-3bedd2172453-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Breyer asked: \u201cNeither, all right. Then write that section of the opinion.\u201d"
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+            "evidence_ids": [
+              "ev-3bedd2172453-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The Chief Justice asked whether a distinction should be made between owner\u2011directors who provide daily services and those who do not."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Steven W. Seymour",
+        "citations": [
+          {
+            "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+            "evidence_ids": [
+              "ev-3bedd2172453-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Steven W. Seymour, the case concerns whether the four shareholder\u2011directors of the petitioner\u2019s gastroenterology clinic are employees for purposes of the Americans with Disabilities Act."
+      },
+      {
+        "attribution": "Petitioner; Respondent",
+        "citations": [
+          {
+            "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+            "evidence_ids": [
+              "ev-3bedd2172453-0001-0004"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          },
+          {
+            "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+            "evidence_ids": [
+              "ev-3bedd2172453-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "The parties dispute whether corporate form should be ignored in determining employee status, with the petitioner arguing the directors are not employees and the respondent asserting the corporate entity is a separate legal person."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Steven W. Seymour",
+          "citations": [
+            {
+              "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+              "evidence_ids": [
+                "ev-3bedd2172453-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Steven W. Seymour, petitioner argues the four doctors who are shareholder\u2011directors own and manage their own clinic, so they are not employees under the ADA."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+              "evidence_ids": [
+                "ev-3bedd2172453-0001-0004"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "Petitioner contends that the corporate structure is a separate and distinct legal entity and should not be ignored in determining employee status."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+              "evidence_ids": [
+                "ev-3bedd2172453-0001-0003"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "Respondent argues that the corporate form and structure should be ignored, citing precedent that a sole shareholder is separate and distinct from the corporation itself."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+      "evidence_ids": [
+        "ev-3bedd2172453-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+      "evidence_ids": [
+        "ev-3bedd2172453-0000-0003"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+      "evidence_ids": [
+        "ev-3bedd2172453-0000-0001"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 17
+      }
+    },
+    {
+      "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+      "evidence_ids": [
+        "ev-3bedd2172453-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+      "evidence_ids": [
+        "ev-3bedd2172453-0001-0001"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+      "evidence_ids": [
+        "ev-3bedd2172453-0001-0003"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+      "evidence_ids": [
+        "ev-3bedd2172453-0001-0004"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+      "evidence_ids": [
+        "ev-3bedd2172453-0001-0005"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+      "evidence_ids": [
+        "ev-3bedd2172453-0002-0001"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "3bedd2172453a4a98d6893a53c792d32bf5d929e08b5ff656769219c048bdeb3",
+      "evidence_ids": [
+        "ev-3bedd2172453-0002-0002"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T23:41:42.745001Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

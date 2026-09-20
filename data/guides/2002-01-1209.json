@@ -1,0 +1,409 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Kenneth S. Geller",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Kenneth S. Geller, the Internal Revenue Code requires corporations to pay tax on net income, but the DISC and FSC statutes give favorable tax treatment to the portion of income attributable to export sales."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, the Court asked how the statutory proposition regarding export income is found in the law."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justices questioned whether the rules for DISC differ from those for other jurisdictions such as Puerto Rico, Europe, or Saudi Arabia."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0002-0001"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, the Court asked whether all research and development costs must be allocated to the DISC when a business engages in both export sales and R&D in the same SIC code."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0002-0005"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "According to Justice, a hypothetical about \u201cfish/roses\u201d was raised to clarify whether R&D costs are charged to the DISC only when the products share the same SIC grouping."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-1209",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T22:41:43.323853Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens introduced the case, noting it was Number 1209, Boeing Company against the United States."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked where the statutory proposition cited by Mr. Geller appears in the law."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned whether Congress intended different rules for DISC compared with other jurisdictions such as Puerto Rico, Europe, or Saudi Arabia."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0002-0001"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether the Government\u2019s position is that all R&D costs are allocated to the DISC when a business operates in the same SIC code."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0002-0005"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "According to Justice, a Justice posed a hypothetical about \u201cfish/roses\u201d to clarify whether R&D costs are charged to the DISC only when the products share the same SIC grouping."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Kenneth S. Geller",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Kenneth S. Geller, the case concerns whether Boeing\u2019s export income qualifies for tax incentives under the Domestic International Sales Corporation (DISC) and Foreign Sales Corporation (FSC) statutes."
+      },
+      {
+        "attribution": "Kenneth S. Geller (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0003-0000",
+              "ev-18d37390b531-0003-0001"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Kenneth S. Geller (Petitioner), according to Kenneth S. Geller (Petitioner), boeing argues that Congress created the DISC and FSC statutes to encourage exports and to allow immediate deductibility of research and development expenses."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+            "evidence_ids": [
+              "ev-18d37390b531-0002-0000"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Government, the United States contends that research and development costs must be allocated to the DISC, which would reduce the tax benefit for export income."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Kenneth S. Geller (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+              "evidence_ids": [
+                "ev-18d37390b531-0003-0000",
+                "ev-18d37390b531-0003-0001"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Kenneth S. Geller (Petitioner), according to Kenneth S. Geller (Petitioner), congress intended the DISC and FSC statutes to provide export incentives and to allow immediate deductibility of research and development expenses."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+              "evidence_ids": [
+                "ev-18d37390b531-0001-0003"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 27
+              }
+            }
+          ],
+          "text": "According to Government, boeing grouped its export transactions by product line (e.g., 747s, 767s) rather than by SIC code, which it argues is permissible under the regulations."
+        },
+        {
+          "attribution": "Kenneth S. Geller (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+              "evidence_ids": [
+                "ev-18d37390b531-0003-0000",
+                "ev-18d37390b531-0003-0001"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Kenneth S. Geller (Petitioner), according to Kenneth S. Geller (Petitioner), export income should qualify for DISC benefits even though Boeing also performed R&D on unrelated products."
+        }
+      ],
+      "heading": "Boeing Company (Petitioner) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+              "evidence_ids": [
+                "ev-18d37390b531-0002-0000"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to Government, all research and development costs must be allocated to the DISC, which reduces the tax benefit for export income."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+              "evidence_ids": [
+                "ev-18d37390b531-0001-0001"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Government, DISC rules differ from those applied to other jurisdictions."
+        }
+      ],
+      "heading": "United States (Respondent) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "18d37390b53149d206255469e7382ba9bec6d4de0c41b49dc8612654a351d582",
+      "evidence_ids": [
+        "ev-18d37390b531-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T22:47:38.773674Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

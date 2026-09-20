@@ -1,0 +1,340 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+            "evidence_ids": [
+              "ev-cc44c5520d40-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument in this case took place before the Supreme Court at 11:03\u202fa.m."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+            "evidence_ids": [
+              "ev-cc44c5520d40-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether there is some other possible cause of action."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-1375",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T23:28:42.009053Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+            "evidence_ids": [
+              "ev-cc44c5520d40-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument was held at 11:03\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+            "evidence_ids": [
+              "ev-cc44c5520d40-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether there is some other possible cause of action."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+            "evidence_ids": [
+              "ev-cc44c5520d40-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The United States argued that there is no cause of action under the Tucker Act because no violation of any act of Congress or executive regulation exists."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+            "evidence_ids": [
+              "ev-cc44c5520d40-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to United States, the United States alleged that the Secretary of the Interior had private conversations with representatives of Peabody Coal to discourage approval of a $20 rate."
+      },
+      {
+        "attribution": "Respondent (Paul E. Frye)",
+        "citations": [
+          {
+            "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+            "evidence_ids": [
+              "ev-cc44c5520d40-0001-0000"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to Respondent (Paul E. Frye), the Navajo Nation, through respondent Paul E. Frye, argued that violations of trust duties by the federal government give rise to a claim for money damages in the Court of Federal Claims, citing the Mitchell II principle."
+      },
+      {
+        "attribution": "Petitioner (Navajo Nation)",
+        "citations": [
+          {
+            "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+            "evidence_ids": [
+              "ev-cc44c5520d40-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Petitioner (Navajo Nation), the Navajo Nation alleged that a decision was forthcoming that would hurt them and asked the Court to stop it, attributing responsibility to the Secretary."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+            "evidence_ids": [
+              "ev-cc44c5520d40-0002-0002",
+              "ev-cc44c5520d40-0003-0000",
+              "ev-cc44c5520d40-0003-0001"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Court records show that the tribe learned from Washington that they were requested to return to negotiations, and Secretary Hodel preferred negotiation over a final decision on the merits of the appeal."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+              "evidence_ids": [
+                "ev-cc44c5520d40-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to United States, there is no cause of action under the Tucker Act because no violation of any act of Congress or executive regulation exists."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent (Paul E. Frye)",
+          "citations": [
+            {
+              "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+              "evidence_ids": [
+                "ev-cc44c5520d40-0001-0000"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "According to Respondent (Paul E. Frye), violations of trust duties by the federal government give rise to a claim for money damages in the Court of Federal Claims, as established in Mitchell\u202fII."
+        }
+      ],
+      "heading": "Navajo Nation (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+      "evidence_ids": [
+        "ev-cc44c5520d40-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+      "evidence_ids": [
+        "ev-cc44c5520d40-0000-0001",
+        "ev-cc44c5520d40-0000-0002",
+        "ev-cc44c5520d40-0000-0003"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+      "evidence_ids": [
+        "ev-cc44c5520d40-0001-0000"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+      "evidence_ids": [
+        "ev-cc44c5520d40-0002-0001"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "cc44c5520d4086436d545e1c2c845157ebe7babeb0bc319052a0f735cda368d0",
+      "evidence_ids": [
+        "ev-cc44c5520d40-0002-0002",
+        "ev-cc44c5520d40-0003-0000",
+        "ev-cc44c5520d40-0003-0001"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 53
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T23:31:15.054566Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

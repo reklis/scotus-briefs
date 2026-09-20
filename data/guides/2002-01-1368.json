@@ -1,0 +1,337 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+            "evidence_ids": [
+              "ev-214078b5dad1-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the states\u2019 dispensing of leave was based on sex."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+            "evidence_ids": [
+              "ev-214078b5dad1-0002-0001"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia further questioned whether the 1987 bill, unlike the 1993 enactment, addressed the Equal Protection Clause."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-1368",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T23:23:13.754704Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+            "evidence_ids": [
+              "ev-214078b5dad1-0002-0002"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Viet D. Dinh presented oral argument on behalf of the respondent United States."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+            "evidence_ids": [
+              "ev-214078b5dad1-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          },
+          {
+            "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+            "evidence_ids": [
+              "ev-214078b5dad1-0002-0001"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia raised questions about whether state leave dispensing was sex\u2011based and about the Equal Protection implications of the legislation."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Nevada Department of Human Resources (Petitioners)",
+        "citations": [
+          {
+            "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+            "evidence_ids": [
+              "ev-214078b5dad1-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Nevada Department of Human Resources (Petitioners), according to Nevada Department of Human Resources (Petitioners), petitioners argue that Congress did not validly abrogate state sovereign immunity when it enacted the Family Medical Leave Act\u2019s family\u2011leave provision, because the FMLA is ordinary economic legislation, not antidiscrimination legislation, there was no discernible pattern of unconstitutional state behavior, and the 12\u2011week mandate is not a proportional response."
+      },
+      {
+        "attribution": "Nevada Department of Human Resources (Petitioners)",
+        "citations": [
+          {
+            "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+            "evidence_ids": [
+              "ev-214078b5dad1-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Nevada Department of Human Resources (Petitioners), according to Nevada Department of Human Resources (Petitioners), petitioners also contend that Congress was concerned the FMLA might be challenged under the Equal Protection Clause and therefore framed the law as promoting equal employment opportunity."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+            "evidence_ids": [
+              "ev-214078b5dad1-0001-0004"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The Court notes that thirty states already had their own family\u2011leave statutes."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Nevada Department of Human Resources (Petitioners)",
+          "citations": [
+            {
+              "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+              "evidence_ids": [
+                "ev-214078b5dad1-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Nevada Department of Human Resources (Petitioners), according to Nevada Department of Human Resources (Petitioners), petitioners argue that Congress did not validly abrogate State immunity when it adopted the Family Medical Leave Act's family leave provision, because the FMLA is ordinary economic legislation, not antidiscrimination legislation, there was no discernible pattern of unconstitutional state behavior, and the 12\u2011week mandate is not a proportional response."
+        },
+        {
+          "attribution": "Nevada Department of Human Resources (Petitioners)",
+          "citations": [
+            {
+              "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+              "evidence_ids": [
+                "ev-214078b5dad1-0000-0002"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Nevada Department of Human Resources (Petitioners), according to Nevada Department of Human Resources (Petitioners), petitioners also contend that Congress was concerned the FMLA might be challenged under the Equal Protection Clause and therefore framed the law as promoting equal employment opportunity."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Taggart",
+          "citations": [
+            {
+              "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+              "evidence_ids": [
+                "ev-214078b5dad1-0001-0003"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Mr. Taggart, respondent argues that states are presumed to act constitutionally and there is no pattern justifying a mandatory 12\u2011week leave imposed by abrogating state immunity."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+              "evidence_ids": [
+                "ev-214078b5dad1-0002-0000"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to United States, respondent emphasizes that the FMLA is part of a broader statutory scheme aimed at eliminating sex\u2011based employment discrimination for both men and women."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+      "evidence_ids": [
+        "ev-214078b5dad1-0000-0000"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T23:28:41.998790Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Nevada Department of Human Resources (Petitioners)",
+        "citations": [
+          {
+            "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+            "evidence_ids": [
+              "ev-214078b5dad1-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Nevada Department of Human Resources (Petitioners), petitioners argue that Congress did not validly abrogate state sovereign immunity when it enacted the Family Medical Leave Act's family\u2011leave provision."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "214078b5dad1021e5dae73cd0c82f0c5eb562315339bc68fd3c8f605542025cc",
+            "evidence_ids": [
+              "ev-214078b5dad1-0001-0004"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The Court notes that thirty states already had their own family\u2011leave statutes."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,384 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+            "evidence_ids": [
+              "ev-f988c4a5785c-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether there is any evidence of misconduct by the city beyond the claim that it refused to issue the permit during the referendum."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+            "evidence_ids": [
+              "ev-f988c4a5785c-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice, justice questioned whether the brief\u2019s antitrust analogy was appropriate."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+            "evidence_ids": [
+              "ev-f988c4a5785c-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer expressed concern about a range of legislative acts that might be problematic."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+            "evidence_ids": [
+              "ev-f988c4a5785c-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the referendum evidence shows racial bias by city officials or merely increases damages due to the permit delay."
+      }
+    ],
+    "heading": "Background and Questions Raised",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-1269",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-19T23:08:10.039403Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+            "evidence_ids": [
+              "ev-f988c4a5785c-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument in this case began at 11:03\u202fa.m. before the Supreme Court of the United States."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. Nager",
+        "citations": [
+          {
+            "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+            "evidence_ids": [
+              "ev-f988c4a5785c-0002-0004"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to Mr. Nager, petitioners raised a disparate\u2011impact claim concerning the referendum."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Nager",
+          "citations": [
+            {
+              "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+              "evidence_ids": [
+                "ev-f988c4a5785c-0002-0004"
+              ],
+              "pages": {
+                "end": 52,
+                "start": 52
+              }
+            }
+          ],
+          "text": "Mr. Nager said the petitioners raised a disparate\u2011impact claim."
+        },
+        {
+          "attribution": "Mr. Kramer",
+          "citations": [
+            {
+              "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+              "evidence_ids": [
+                "ev-f988c4a5785c-0002-0000"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "Mr. Kramer argued that if the act was motivated by racial or anti\u2011family bias, it would violate the Fair Housing Act."
+        }
+      ],
+      "heading": "Petitioner (City of Cuyahoga Falls)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Salmons",
+          "citations": [
+            {
+              "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+              "evidence_ids": [
+                "ev-f988c4a5785c-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            },
+            {
+              "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+              "evidence_ids": [
+                "ev-f988c4a5785c-0001-0002"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Salmons, mr. Salmons urged the Court to determine whether the petition at issue was genuine or a sham, emphasizing the case hinges on the authenticity of the First Amendment activity versus a strategic attempt to affect housing rights."
+        }
+      ],
+      "heading": "Respondent (Buckeye Community Hope Foundation)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+      "evidence_ids": [
+        "ev-f988c4a5785c-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+      "evidence_ids": [
+        "ev-f988c4a5785c-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+      "evidence_ids": [
+        "ev-f988c4a5785c-0000-0003"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    },
+    {
+      "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+      "evidence_ids": [
+        "ev-f988c4a5785c-0001-0000"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+      "evidence_ids": [
+        "ev-f988c4a5785c-0001-0001"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+      "evidence_ids": [
+        "ev-f988c4a5785c-0001-0002"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+      "evidence_ids": [
+        "ev-f988c4a5785c-0002-0000",
+        "ev-f988c4a5785c-0002-0001"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+      "evidence_ids": [
+        "ev-f988c4a5785c-0002-0003"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+      "evidence_ids": [
+        "ev-f988c4a5785c-0002-0004"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-19T23:17:29.535899Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "why_it_matters.claims[0] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "why_it_matters.claims[0] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+            "evidence_ids": [
+              "ev-f988c4a5785c-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          },
+          {
+            "document_hash": "f988c4a5785cd1411565c949b732c1813f8c7703b41e40494568fbbad019b326",
+            "evidence_ids": [
+              "ev-f988c4a5785c-0002-0004"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "The case raises whether a delay associated with a referendum could give rise to a claim of racial discrimination under the Fair Housing Act."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
