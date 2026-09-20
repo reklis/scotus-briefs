@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2002-02-695",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "support check failed: the overview claim that the dispute concerns Iowa\u2019s practice of imposing different tax rates on slot\u2011machine revenue is not directly supported by any cited evidence.",
+    "overstatement check failed: the same overview claim overstates the nature of the dispute beyond what the evidence actually states."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.85,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.85,
+    "traceability": 0.8
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+            "evidence_ids": [
+              "ev-77a3e8fe3a92-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether the contract should be interpreted according to the law of the state with jurisdiction."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+            "evidence_ids": [
+              "ev-77a3e8fe3a92-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "A Justice asked, \"Why?\""
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+            "evidence_ids": [
+              "ev-77a3e8fe3a92-0001-0003"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "Justice Scalia asked which doctrine of state contract law led to the result, referencing the contra proferentem rule."
+      }
+    ],
+    "heading": "Background & Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-02-634",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T08:14:53.689956Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+            "evidence_ids": [
+              "ev-77a3e8fe3a92-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case was heard at oral argument before the Supreme Court at 10:10\u202fa.m."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+            "evidence_ids": [
+              "ev-77a3e8fe3a92-0003-0003"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "After argument, the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+            "evidence_ids": [
+              "ev-77a3e8fe3a92-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioner argues that arbitration under the Federal Arbitration Act is a matter of consent, not coercion."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+            "evidence_ids": [
+              "ev-77a3e8fe3a92-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          },
+          {
+            "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+            "evidence_ids": [
+              "ev-77a3e8fe3a92-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "The dispute concerns whether an arbitrator exceeded his authority by certifying a class\u2011wide arbitration under the Federal Arbitration Act."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+            "evidence_ids": [
+              "ev-77a3e8fe3a92-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+            "evidence_ids": [
+              "ev-77a3e8fe3a92-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "Respondent contends that the arbitrator lacks authority to decide the rights of unnamed third parties and that the class action was unauthorized."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+              "evidence_ids": [
+                "ev-77a3e8fe3a92-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner asserts that arbitration under the Federal Arbitration Act is based on consent, not coercion."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+              "evidence_ids": [
+                "ev-77a3e8fe3a92-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            },
+            {
+              "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+              "evidence_ids": [
+                "ev-77a3e8fe3a92-0003-0001"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "Petitioner argues that the arbitrator exceeded his authority by certifying a class\u2011wide arbitration, contrary to the parties' consent."
+        },
+        {
+          "attribution": "Ms. Pillard",
+          "citations": [
+            {
+              "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+              "evidence_ids": [
+                "ev-77a3e8fe3a92-0003-0001"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Ms. Pillard, petitioner says the South Carolina Supreme Court applied a rule of construction against the drafter without any contractual or statutory directive."
+        }
+      ],
+      "heading": "Petitioner (Green Tree Financial Corp.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Phillips",
+          "citations": [
+            {
+              "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+              "evidence_ids": [
+                "ev-77a3e8fe3a92-0001-0000"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Phillips, respondent argues that the arbitrator does not have authority to resolve the rights of unnamed third parties; that is a question for the court."
+        },
+        {
+          "attribution": "Carter G. Phillips",
+          "citations": [
+            {
+              "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+              "evidence_ids": [
+                "ev-77a3e8fe3a92-0003-0000"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Carter G. Phillips, respondent states that neither Green Tree nor any of the unnamed class members consented to have the arbitrator arbitrate their claims."
+        }
+      ],
+      "heading": "Respondent (Lynn W. Bazzle, etc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+      "evidence_ids": [
+        "ev-77a3e8fe3a92-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+      "evidence_ids": [
+        "ev-77a3e8fe3a92-0000-0001",
+        "ev-77a3e8fe3a92-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+      "evidence_ids": [
+        "ev-77a3e8fe3a92-0001-0000",
+        "ev-77a3e8fe3a92-0001-0001"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+      "evidence_ids": [
+        "ev-77a3e8fe3a92-0001-0003"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 31
+      }
+    },
+    {
+      "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+      "evidence_ids": [
+        "ev-77a3e8fe3a92-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+      "evidence_ids": [
+        "ev-77a3e8fe3a92-0003-0001"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    },
+    {
+      "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+      "evidence_ids": [
+        "ev-77a3e8fe3a92-0003-0000"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    },
+    {
+      "document_hash": "77a3e8fe3a92be4e02a56c2b2d6b276cde47fafb95e8da92032bd36dda51eb15",
+      "evidence_ids": [
+        "ev-77a3e8fe3a92-0003-0003"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 59
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T08:19:46.975625Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

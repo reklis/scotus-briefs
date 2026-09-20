@@ -1,0 +1,275 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-02-311",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T06:42:37.898341Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+            "evidence_ids": [
+              "ev-c159ee051f05-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case was argued before the Supreme Court at 11:03 a.m."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+            "evidence_ids": [
+              "ev-c159ee051f05-0001-0004"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Souter asked if there is any evidence that defense counsel interviewed the defendant about his background."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+            "evidence_ids": [
+              "ev-c159ee051f05-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Breyer asked for an explanation of a bifurcated sentencing hearing."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+              "evidence_ids": [
+                "ev-c159ee051f05-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, under Strickland v. Washington, a lawyer's decision must be supported by a thorough investigation or a reasonable professional judgment."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+              "evidence_ids": [
+                "ev-c159ee051f05-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Petitioner, it would be unreasonable not to present powerful mitigating evidence that could affect sentencing."
+        }
+      ],
+      "heading": "Petitioner (Kevin Wiggins)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Sewall Smith, Warden)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+      "evidence_ids": [
+        "ev-c159ee051f05-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+      "evidence_ids": [
+        "ev-c159ee051f05-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+      "evidence_ids": [
+        "ev-c159ee051f05-0001-0001"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+      "evidence_ids": [
+        "ev-c159ee051f05-0001-0005"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+      "evidence_ids": [
+        "ev-c159ee051f05-0001-0004"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+      "evidence_ids": [
+        "ev-c159ee051f05-0002-0002"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+      "evidence_ids": [
+        "ev-c159ee051f05-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+      "evidence_ids": [
+        "ev-c159ee051f05-0003-0000"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 54
+      }
+    },
+    {
+      "document_hash": "c159ee051f059e937634447d81006315e25c6a64ae1750444cbae2aea0cf923c",
+      "evidence_ids": [
+        "ev-c159ee051f05-0003-0003"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T06:46:31.333432Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

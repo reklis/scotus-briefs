@@ -1,0 +1,445 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:11\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, the Court asked whether the Government challenges the exemption of the not\u2011for-profit corporation from expenditure limitations."
+      },
+      {
+        "attribution": "Justices Breyer and Ginsburg",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0002-0010"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justices Breyer and Ginsburg noted there is a potential that low contribution limits could be unconstitutional."
+      },
+      {
+        "attribution": "Justice (question)",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice (question), according to Justice (question), justices questioned whether a bribe motivated by environmental concerns constitutes corruption, noting a distinction between economic and political motives."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0002-0000",
+              "ev-e18e66443d32-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, the Court inquired whether contributions must be made through a segregated fund (a 501(c)(4) organization) and whether that requirement is constitutionally permissible."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-02-403",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T07:12:36.583681Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the Government challenges the exemption of the not\u2011for-profit corporation from expenditure limitations."
+      },
+      {
+        "attribution": "Justice (question)",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice (question), according to Justice (question), a Justice questioned whether a politically motivated bribe without economic motive constitutes corruption."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0002-0000",
+              "ev-e18e66443d32-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, justices probed the requirement that contributions be made through a segregated 501(c)(4) fund and whether that is constitutionally permissible."
+      },
+      {
+        "attribution": "Justices Breyer and Ginsburg",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0002-0010"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justices Breyer and Ginsburg noted there is a potential that low contribution limits could be unconstitutional."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, federal Election Commission v. Christine Beaumont concerns whether a not\u2011for\u2011profit corporation may be exempt from federal expenditure limitations on political activity."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Federal Election Commission",
+          "citations": [
+            {
+              "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+              "evidence_ids": [
+                "ev-e18e66443d32-0000-0003"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Federal Election Commission, the Commission argues that the Court\u2019s prior dissent distinguished the level of scrutiny applied to contribution limits versus expenditure limits."
+        }
+      ],
+      "heading": "Federal Election Commission (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Bopp",
+          "citations": [
+            {
+              "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+              "evidence_ids": [
+                "ev-e18e66443d32-0002-0002"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Mr. Bopp, requiring contributions to be made through a segregated fund imposes an unconstitutional burden on First Amendment political activity."
+        },
+        {
+          "attribution": "Mr. Bopp",
+          "citations": [
+            {
+              "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+              "evidence_ids": [
+                "ev-e18e66443d32-0002-0004"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Mr. Bopp, pooling resources in an association serves valid associational interests distinct from individual contributions."
+        },
+        {
+          "attribution": "Mr. Bopp",
+          "citations": [
+            {
+              "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+              "evidence_ids": [
+                "ev-e18e66443d32-0002-0009"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. Bopp, amount limitations are not a total prohibition on contributions."
+        },
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+              "evidence_ids": [
+                "ev-e18e66443d32-0002-0013"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, the Court has not required a \u201cleast restrictive means\u201d analysis for contribution regulations, as shown in National Right to Work Committee and California Medical Association cases."
+        },
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+              "evidence_ids": [
+                "ev-e18e66443d32-0002-0014"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, segregated funds protect membership lists from disclosure requirements that could otherwise expose association members."
+        }
+      ],
+      "heading": "Respondent (Christine Beaumont) \u2013 Arguments by James Bopp, Jr. and Others",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+      "evidence_ids": [
+        "ev-e18e66443d32-0000-0000",
+        "ev-e18e66443d32-0000-0002",
+        "ev-e18e66443d32-0000-0003",
+        "ev-e18e66443d32-0001-0001",
+        "ev-e18e66443d32-0001-0002",
+        "ev-e18e66443d32-0001-0003",
+        "ev-e18e66443d32-0001-0004",
+        "ev-e18e66443d32-0002-0000",
+        "ev-e18e66443d32-0002-0001",
+        "ev-e18e66443d32-0002-0002",
+        "ev-e18e66443d32-0002-0003",
+        "ev-e18e66443d32-0002-0004",
+        "ev-e18e66443d32-0002-0005",
+        "ev-e18e66443d32-0002-0006",
+        "ev-e18e66443d32-0002-0007",
+        "ev-e18e66443d32-0002-0008",
+        "ev-e18e66443d32-0002-0009",
+        "ev-e18e66443d32-0002-0010",
+        "ev-e18e66443d32-0002-0012",
+        "ev-e18e66443d32-0002-0013",
+        "ev-e18e66443d32-0002-0014"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T07:20:26.733524Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Mr. Bopp",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0002-0002"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Mr. Bopp, the case addresses the balance between campaign\u2011finance contribution limits and First Amendment associational rights."
+      },
+      {
+        "attribution": "Justices Breyer and Ginsburg",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0002-0010"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Low contribution limits may be unconstitutional if they are too low."
+      },
+      {
+        "attribution": "Mr. Clement",
+        "citations": [
+          {
+            "document_hash": "e18e66443d322cb2752f03fb9160d5a4cb320a18dd631dddee13ae48b0d09aa1",
+            "evidence_ids": [
+              "ev-e18e66443d32-0002-0013"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Mr. Clement, the Court has not required a \u201cleast restrictive means\u201d analysis for contribution regulations, affecting how future limits may be evaluated."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

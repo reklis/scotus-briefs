@@ -1,0 +1,234 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bec43eaf2ca32bef2b6a2c8929538a58f21fbe561d348debb2f26ab886326f61",
+            "evidence_ids": [
+              "ev-bec43eaf2ca3-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The matter came on for oral argument before the Supreme Court of the United States at 10:04 a.m."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bec43eaf2ca32bef2b6a2c8929538a58f21fbe561d348debb2f26ab886326f61",
+            "evidence_ids": [
+              "ev-bec43eaf2ca3-0000-0004"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Counsel for the petitioner, Mr. Kirk O. Kolbo, appeared on behalf of the petitioner."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-02-241",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T06:00:38.324382Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "bec43eaf2ca32bef2b6a2c8929538a58f21fbe561d348debb2f26ab886326f61"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bec43eaf2ca32bef2b6a2c8929538a58f21fbe561d348debb2f26ab886326f61",
+            "evidence_ids": [
+              "ev-bec43eaf2ca3-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:04 a.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bec43eaf2ca32bef2b6a2c8929538a58f21fbe561d348debb2f26ab886326f61",
+            "evidence_ids": [
+              "ev-bec43eaf2ca3-0000-0004"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Counsel for the petitioner, Mr. Kirk O. Kolbo, appeared on behalf of the petitioner."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "bec43eaf2ca32bef2b6a2c8929538a58f21fbe561d348debb2f26ab886326f61",
+              "evidence_ids": [
+                "ev-bec43eaf2ca3-0002-0001"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Petitioner, the Constitution protects the rights of individuals, not racial groups."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Mahoney",
+          "citations": [
+            {
+              "document_hash": "bec43eaf2ca32bef2b6a2c8929538a58f21fbe561d348debb2f26ab886326f61",
+              "evidence_ids": [
+                "ev-bec43eaf2ca3-0001-0007"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Ms. Mahoney, the admissions policy is not a quota."
+        },
+        {
+          "attribution": "University of Michigan",
+          "citations": [
+            {
+              "document_hash": "bec43eaf2ca32bef2b6a2c8929538a58f21fbe561d348debb2f26ab886326f61",
+              "evidence_ids": [
+                "ev-bec43eaf2ca3-0002-0000"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to University of Michigan, the policy will only take race into account when it is necessary to achieve the educational objectives."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "bec43eaf2ca32bef2b6a2c8929538a58f21fbe561d348debb2f26ab886326f61",
+      "evidence_ids": [
+        "ev-bec43eaf2ca3-0000-0000",
+        "ev-bec43eaf2ca3-0000-0004",
+        "ev-bec43eaf2ca3-0001-0007",
+        "ev-bec43eaf2ca3-0002-0000",
+        "ev-bec43eaf2ca3-0002-0001",
+        "ev-bec43eaf2ca3-0002-0002"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T06:03:47.717722Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
