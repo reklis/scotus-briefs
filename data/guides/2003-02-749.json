@@ -1,0 +1,353 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+            "evidence_ids": [
+              "ev-32a8b1b0c056-0000-0002",
+              "ev-32a8b1b0c056-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether the Ninth Circuit\u2019s treatment of the no\u2011rehire policy was correct under the ADA, whether the employer was entitled to summary judgment, and whether Hernandez raises a genuine issue of material fact as to whether he was denied reemployment because of his past record of drug addiction."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2003-02-749",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T15:02:34.974841Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+            "evidence_ids": [
+              "ev-32a8b1b0c056-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether the Ninth Circuit\u2019s treatment of the no\u2011rehire policy was correct under the ADA."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+            "evidence_ids": [
+              "ev-32a8b1b0c056-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether the employer was entitled to summary judgment."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+            "evidence_ids": [
+              "ev-32a8b1b0c056-0000-0003"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the employee even knew the policy existed."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+            "evidence_ids": [
+              "ev-32a8b1b0c056-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Scalia asked what disability would need to be accommodated."
+      },
+      {
+        "attribution": "Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+            "evidence_ids": [
+              "ev-32a8b1b0c056-0002-0002"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Rehnquist asked whether the weight of the evidence is relevant to summary judgment."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Carter G. Phillips",
+        "citations": [
+          {
+            "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+            "evidence_ids": [
+              "ev-32a8b1b0c056-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Carter G. Phillips, Raytheon Company (petitioner) maintains a policy that permanently bars rehiring employees who are discharged for serious misconduct."
+      },
+      {
+        "attribution": "Mr. Clement",
+        "citations": [
+          {
+            "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+            "evidence_ids": [
+              "ev-32a8b1b0c056-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Mr. Clement, Raytheon argues that summary judgment is appropriate on the record."
+      },
+      {
+        "attribution": "Mr. Clement",
+        "citations": [
+          {
+            "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+            "evidence_ids": [
+              "ev-32a8b1b0c056-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Mr. Clement, Raytheon contends that a neutral policy does not constitute disparate treatment on the basis of disability."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Carter G. Phillips",
+          "citations": [
+            {
+              "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+              "evidence_ids": [
+                "ev-32a8b1b0c056-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Carter G. Phillips, Raytheon\u2019s policy permanently bars rehiring employees discharged for serious misconduct."
+        },
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+              "evidence_ids": [
+                "ev-32a8b1b0c056-0001-0000"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, Raytheon argues that summary judgment is appropriate on the record."
+        },
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+              "evidence_ids": [
+                "ev-32a8b1b0c056-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, Raytheon maintains that applying a neutral policy does not constitute disparate treatment on the basis of disability."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+              "evidence_ids": [
+                "ev-32a8b1b0c056-0002-0003"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 49
+              }
+            }
+          ],
+          "text": "According to Petitioner, according to the petitioner, Raytheon asserts that the employee\u2019s potential accommodation, qualifications, direct threat, undue hardship, and business necessity are relevant considerations."
+        }
+      ],
+      "heading": "Petitioner (Raytheon Company)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Joel Hernandez)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+      "evidence_ids": [
+        "ev-32a8b1b0c056-0000-0000",
+        "ev-32a8b1b0c056-0000-0002",
+        "ev-32a8b1b0c056-0000-0004",
+        "ev-32a8b1b0c056-0000-0003",
+        "ev-32a8b1b0c056-0001-0000",
+        "ev-32a8b1b0c056-0001-0001",
+        "ev-32a8b1b0c056-0001-0002",
+        "ev-32a8b1b0c056-0001-0006",
+        "ev-32a8b1b0c056-0002-0000",
+        "ev-32a8b1b0c056-0002-0002",
+        "ev-32a8b1b0c056-0002-0003"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 3
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T15:12:52.511672Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Mr. Clement",
+        "citations": [
+          {
+            "document_hash": "32a8b1b0c0567bf76ffb6687f6c4b352c086154d9d76e29335808037d0cb8931",
+            "evidence_ids": [
+              "ev-32a8b1b0c056-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Mr. Clement, summary judgment could be granted for the employer on the record."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

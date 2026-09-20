@@ -1,0 +1,38 @@
+{
+  "accepted": false,
+  "case_id": "2003-02-8286",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that petitioner contends the failure to disclose warrants setting aside the sentencing phase is not supported by the cited evidence (the citation is a Justice's question, not a statement of petitioner\u2019s contention)."
+  ],
+  "quality_scores": {
+    "completeness": 0.95,
+    "factual_accuracy": 0.9,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.95,
+    "traceability": 0.9
+  }
+}

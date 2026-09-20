@@ -1,0 +1,322 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+            "evidence_ids": [
+              "ev-fff05b50381f-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+            "evidence_ids": [
+              "ev-fff05b50381f-0001-0004"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "The case concerns whether a sole owner can be considered an employee and therefore a participant in the Raymond B. Yates Profit Sharing Plan under ERISA."
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+            "evidence_ids": [
+              "ev-fff05b50381f-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Chief Justice asked whether, if the petitioner is deemed an employee, the Court must address the broader alienation issue or simply remand the case."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2003-02-458",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T14:16:29.300403Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+            "evidence_ids": [
+              "ev-fff05b50381f-0000-0004"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Counsel for the petitioners were James A. Holifield and Matthew D. Roberts (amicus), while counsel for the respondent was C.\u202fMark Troutman."
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+            "evidence_ids": [
+              "ev-fff05b50381f-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Chief Justice asked whether, after deciding the employee\u2011status issue, the Court must address the alienation question or simply remand the case."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+            "evidence_ids": [
+              "ev-fff05b50381f-0001-0003"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice, a Justice inquired about the status of partners under the plan."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+            "evidence_ids": [
+              "ev-fff05b50381f-0001-0006"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "According to Justice, another Justice questioned whether the $50,000 repayment should be returned to the plan."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+            "evidence_ids": [
+              "ev-fff05b50381f-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioners argue that a sole owner may be a participant in an employee benefit plan if another common law employee participates, regardless of whether the entity operates as a sole proprietorship, partnership, or corporation."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+            "evidence_ids": [
+              "ev-fff05b50381f-0000-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The United States, as amicus, contends that all working owners\u2014including shareholders, partners, and sole proprietors\u2014should be treated as participants under ERISA, just like other employees."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+              "evidence_ids": [
+                "ev-fff05b50381f-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioners maintain that a sole owner may be a participant in an employee benefit plan when another common law employee participates, irrespective of the entity\u2019s legal form."
+        },
+        {
+          "attribution": "C. Mark Troutman",
+          "citations": [
+            {
+              "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+              "evidence_ids": [
+                "ev-fff05b50381f-0001-0000"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to C. Mark Troutman, petitioners request that the Court clarify that all types of working owners\u2014not only common\u2011law employees\u2014are eligible participants under ERISA."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+      "evidence_ids": [
+        "ev-fff05b50381f-0000-0004",
+        "ev-fff05b50381f-0000-0001",
+        "ev-fff05b50381f-0000-0003",
+        "ev-fff05b50381f-0000-0002",
+        "ev-fff05b50381f-0001-0000",
+        "ev-fff05b50381f-0001-0001",
+        "ev-fff05b50381f-0001-0003",
+        "ev-fff05b50381f-0001-0006",
+        "ev-fff05b50381f-0001-0004"
+      ],
+      "pages": {
+        "end": 35,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T14:23:24.561242Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "United States (amicus)",
+        "citations": [
+          {
+            "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+            "evidence_ids": [
+              "ev-fff05b50381f-0000-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          },
+          {
+            "document_hash": "fff05b50381f390659d296ee44f16dd963268263b691bd4d2f78e445713e39d9",
+            "evidence_ids": [
+              "ev-fff05b50381f-0001-0004"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "Clarifying that working owners are participants under ERISA would affect the benefits coverage of hundreds of thousands of owners and employees."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

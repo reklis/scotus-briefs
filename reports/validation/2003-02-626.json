@@ -1,0 +1,41 @@
+{
+  "accepted": false,
+  "case_id": "2003-02-626",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: The overview claim that the case concerns whether the S\u20119 water\u2011control pump must obtain a Section\u202f402 permit is not directly supported by the supplied evidence.",
+    "Attribution check failed: The same overview claim is attributed to the Court, but the evidence does not contain a Court statement framing the issue that the pump must obtain a Section\u202f402 permit.",
+    "Support check failed: The background claim that the legal question is whether the operation of the S\u20119 pump constitutes an addition of pollutant to navigable waters is not directly supported by the supplied evidence.",
+    "Attribution check failed: The legal\u2011question claim is attributed to the Court, yet the evidence provides no Court articulation of that specific legal question."
+  ],
+  "quality_scores": {
+    "completeness": 0.79,
+    "factual_accuracy": 0.42,
+    "neutrality": 0.91,
+    "readability": 0.88,
+    "restraint": 0.93,
+    "traceability": 0.58
+  }
+}

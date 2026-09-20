@@ -1,0 +1,418 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice asked whether the court had identified only four factors."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether a reasonable officer could conclude that he had been constructively denied admittance."
+      },
+      {
+        "attribution": "Justice (unspecified)",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice (unspecified), an unspecified Justice asked why the Ninth Circuit's subsequent case with a footnote should not be considered."
+      },
+      {
+        "attribution": "Justice (unspecified)",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0002-0005"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice (unspecified), an unspecified Justice asked how the lower court treated the issue."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2003-02-473",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T14:23:24.583916Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the United States argued that the officers\u2019 entry after a 15\u201320\u2011second wait was reasonable under the Fourth Amendment."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The Government maintained that statute\u202f3109 codifies the common\u2011law knock\u2011and\u2011announce tradition rather than being read literally."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0001-0002"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "The respondent contended that the door\u2011waiting rule should be limited to 15 seconds."
+      },
+      {
+        "attribution": "David B. Salmons",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0002-0001"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to David B. Salmons, mr. Salmons urged that the lower\u2011court judgment be reversed."
+      },
+      {
+        "attribution": "David B. Salmons",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0002-0002"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to David B. Salmons, mr. Salmons explained that the Fourth Amendment standard is flexible and does not always require knock\u2011and\u2011announce, taking officer safety and evidence preservation into account."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the United States argues that the officers' entry after waiting 15\u201320 seconds was reasonable under the Fourth Amendment."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The Government contends that statute 3109 should be read as a codification of the common\u2011law knock\u2011and\u2011announce tradition, not literally."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0001-0002"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Lashawn Lowell Banks (respondent) argues that the appropriate waiting period at a door is 15 seconds."
+      },
+      {
+        "attribution": "David B. Salmons",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0002-0001"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to David B. Salmons, mr. Salmons (representing the Government) urges reversal of the lower\u2011court judgment."
+      },
+      {
+        "attribution": "David B. Salmons",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0002-0002"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to David B. Salmons, mr. Salmons notes that the Fourth Amendment standard is flexible and does not always require knock\u2011and\u2011announce, considering officer safety and evidence preservation."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+              "evidence_ids": [
+                "ev-0d215f8bbada-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, the officers' entry after waiting 15\u201320 seconds was reasonable under the Fourth Amendment."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+              "evidence_ids": [
+                "ev-0d215f8bbada-0001-0001"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Government, statute\u202f3109 should be read as a codification of the common\u2011law knock\u2011and\u2011announce tradition, not literally."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+              "evidence_ids": [
+                "ev-0d215f8bbada-0001-0002"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            }
+          ],
+          "text": "According to Respondent, the appropriate waiting period at a door is 15 seconds."
+        }
+      ],
+      "heading": "Lashawn Lowell Banks (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+      "evidence_ids": [
+        "ev-0d215f8bbada-0000-0000",
+        "ev-0d215f8bbada-0000-0001",
+        "ev-0d215f8bbada-0000-0002",
+        "ev-0d215f8bbada-0001-0000",
+        "ev-0d215f8bbada-0001-0001",
+        "ev-0d215f8bbada-0001-0002",
+        "ev-0d215f8bbada-0002-0000",
+        "ev-0d215f8bbada-0002-0001",
+        "ev-0d215f8bbada-0002-0002",
+        "ev-0d215f8bbada-0002-0003",
+        "ev-0d215f8bbada-0002-0004",
+        "ev-0d215f8bbada-0002-0005"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T14:26:42.525089Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Mr. Roske",
+        "citations": [
+          {
+            "document_hash": "0d215f8bbadab977a241f078ce1a404683c90c035c225c17ca138bfae606be17",
+            "evidence_ids": [
+              "ev-0d215f8bbada-0002-0004"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "Mr. Roske stated that opinions have a deterrent effect, suggesting that this case may influence future law\u2011enforcement conduct."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

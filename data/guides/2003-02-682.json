@@ -1,0 +1,402 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+            "evidence_ids": [
+              "ev-5cf32219d7b3-0002-0001"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the Court was modifying the remedy by granting a sole remedy, indicating concern about the effect of any modification."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2003-02-682",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T14:57:42.317870Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+            "evidence_ids": [
+              "ev-5cf32219d7b3-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Appearances: Richard G. Taranto, Esq., for the petitioner; Theodore B. Olson, Esq., Solicitor General (United States amicus supporting the petitioner); Donald B. Verrilli, Jr., Esq., for the respondent."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Verizon Communications Inc. (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+            "evidence_ids": [
+              "ev-5cf32219d7b3-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Verizon Communications Inc. (Petitioner), according to Verizon Communications Inc. (Petitioner), verizon argues that the Court has never recognized a Section\u202f2 duty for a monopolist to turn over its sales to rivals at specially discounted prices, i.e., a duty to dismantle itself."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+            "evidence_ids": [
+              "ev-5cf32219d7b3-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The Court states that there is no Section\u202f2 duty on the merits to turn over sales to a rival, noting that Section\u202f2 does not condemn mere size and does not compel competition."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Verizon Communications Inc. (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+              "evidence_ids": [
+                "ev-5cf32219d7b3-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Verizon Communications Inc. (Petitioner), according to Verizon Communications Inc. (Petitioner), verizon contends that Section\u202f2 does not impose a duty for a monopolist to dismantle itself by sharing assets at discounted prices."
+        },
+        {
+          "attribution": "Verizon",
+          "citations": [
+            {
+              "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+              "evidence_ids": [
+                "ev-5cf32219d7b3-0001-0003"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "Verizon argues that consumers in Trinko\u2019s position have standing and that the Illinois Brick doctrine does not bar the claim."
+        },
+        {
+          "attribution": "Verizon",
+          "citations": [
+            {
+              "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+              "evidence_ids": [
+                "ev-5cf32219d7b3-0001-0004"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Verizon, verizon suggests that Trinko could have sued AT&T, and that AT&T would have blamed Verizon for any failure."
+        }
+      ],
+      "heading": "Verizon Communications Inc. (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Law Offices of Curtis V. Trinko, LLP. (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0000-0003"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    },
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0001-0000"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0001-0001"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0001-0002"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0001-0003"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0001-0004"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0002-0000"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0002-0001"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0002-0002"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+      "evidence_ids": [
+        "ev-5cf32219d7b3-0002-0004"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 51
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T15:02:34.953798Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+            "evidence_ids": [
+              "ev-5cf32219d7b3-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+            "evidence_ids": [
+              "ev-5cf32219d7b3-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The case examines whether antitrust law requires a monopolist to share its network with competitors, a question that could shape competition in the telecommunications industry."
+      },
+      {
+        "attribution": "United States (Amicus Curiae)",
+        "citations": [
+          {
+            "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+            "evidence_ids": [
+              "ev-5cf32219d7b3-0000-0003"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          },
+          {
+            "document_hash": "5cf32219d7b3d8e962bc2efc3a4893be9adf8c3f6310b8a77f5163de0b1db9ac",
+            "evidence_ids": [
+              "ev-5cf32219d7b3-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The Court\u2019s view that Section\u202f2 does not compel competition highlights the importance of the Telecommunications Act and other regulatory frameworks in governing monopoly behavior."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

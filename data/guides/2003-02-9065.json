@@ -1,0 +1,423 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+            "evidence_ids": [
+              "ev-d2d6a8984ae1-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Shakur Muhammad, a state prisoner, alleges that a prison guard framed him on a false disciplinary charge in retaliation for seeking redress for the guard\u2019s prior misconduct."
+      },
+      {
+        "attribution": "Unnamed Justice",
+        "citations": [
+          {
+            "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+            "evidence_ids": [
+              "ev-d2d6a8984ae1-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "An unnamed justice expressed confusion about the case, asking for clarification of the events described."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+            "evidence_ids": [
+              "ev-d2d6a8984ae1-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "A justice asked whether the petitioner could have filed a motion to remand."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+            "evidence_ids": [
+              "ev-d2d6a8984ae1-0002-0005"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "A justice asked what the difference was in the Sixth Circuit rule and why it might be in the minority."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2003-02-9065",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T15:55:54.467669Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+            "evidence_ids": [
+              "ev-d2d6a8984ae1-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Ms. Beckwith, representing the petitioner, argued that the claim is a valid First Amendment retaliation claim."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+            "evidence_ids": [
+              "ev-d2d6a8984ae1-0002-0002"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The petitioner filed a motion for rehearing."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+            "evidence_ids": [
+              "ev-d2d6a8984ae1-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "The respondent argued that summary judgment should be affirmed because the case is confusing."
+      },
+      {
+        "attribution": "Mr. Casey",
+        "citations": [
+          {
+            "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+            "evidence_ids": [
+              "ev-d2d6a8984ae1-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Mr. Casey, the respondent, through Mr. Casey, cited Edwards v. Balisok and Heck v. Humphrey as analogous cases for analysis."
+      },
+      {
+        "attribution": "Ms. Beckwith",
+        "citations": [
+          {
+            "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+            "evidence_ids": [
+              "ev-d2d6a8984ae1-0002-0003"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "Ms. Beckwith also argued that there is no justification for the Sixth Circuit\u2019s rule extending the Heck favorable termination requirement to prison hearings that do not involve the fact or duration of custody."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+            "evidence_ids": [
+              "ev-d2d6a8984ae1-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Shakur Muhammad, a state prisoner, alleges that a prison guard framed him on a false disciplinary charge in retaliation for seeking redress for the guard\u2019s prior misconduct."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+              "evidence_ids": [
+                "ev-d2d6a8984ae1-0000-0003"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner, ms. Beckwith argued that the claim is a valid First Amendment retaliation claim."
+        },
+        {
+          "attribution": "Ms. Beckwith",
+          "citations": [
+            {
+              "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+              "evidence_ids": [
+                "ev-d2d6a8984ae1-0002-0003"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "Ms. Beckwith contended that there is no justification for the Sixth Circuit\u2019s rule extending the Heck favorable termination requirement to prison hearings that do not involve the fact or duration of custody."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+              "evidence_ids": [
+                "ev-d2d6a8984ae1-0001-0002"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "The respondent argued that summary judgment should be affirmed because the case is confusing."
+        },
+        {
+          "attribution": "Mr. Casey",
+          "citations": [
+            {
+              "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+              "evidence_ids": [
+                "ev-d2d6a8984ae1-0002-0000"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Casey, the respondent, through Mr. Casey, cited Edwards v. Balisok and Heck v. Humphrey as analogous cases for analysis."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+      "evidence_ids": [
+        "ev-d2d6a8984ae1-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+      "evidence_ids": [
+        "ev-d2d6a8984ae1-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+      "evidence_ids": [
+        "ev-d2d6a8984ae1-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+      "evidence_ids": [
+        "ev-d2d6a8984ae1-0000-0003"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+      "evidence_ids": [
+        "ev-d2d6a8984ae1-0001-0002"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+      "evidence_ids": [
+        "ev-d2d6a8984ae1-0002-0001",
+        "ev-d2d6a8984ae1-0002-0002"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+      "evidence_ids": [
+        "ev-d2d6a8984ae1-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+      "evidence_ids": [
+        "ev-d2d6a8984ae1-0002-0005"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "d2d6a8984ae199b88e25907861c991fa88c1ca9672ddd0328a86cb68fc20a247",
+      "evidence_ids": [
+        "ev-d2d6a8984ae1-0002-0003"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 51
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T15:59:07.782760Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
