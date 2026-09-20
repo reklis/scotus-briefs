@@ -1,0 +1,572 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-03-388",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T22:10:09.427711Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, jUSTICE STEVENS: We'll hear argument in Bates against Dow AgroSciences."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "JUSTICE GINSBURG: But couldn't you make every failure to warn claim a defective design claim?"
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "JUSTICE O'CONNOR: Mr. Frederick, on the defective design claim, presumably that's based on a factual theory that Dow could have reasonably designed Strongarm to be safe for growing peanuts in high\u2011acid soil."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0000-0005"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, jUSTICE KENNEDY: The problem I have with the Government's case and with the respondent's case is that \u2014 it's really the obverse of what Justice Ginsburg said. Their problem is that they would recast everything as a warning."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0000-0006"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, jUSTICE SCALIA: At any cost? I mean, what if it \u2014 you know, yes, I can \u2014 I can sell you stuff that will \u2014 that will work in high pH soil, but it's going to be three times as effective. Do I have to sell it?"
+      },
+      {
+        "attribution": "Justice STEVENS",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice STEVENS, jUSTICE STEVENS: Now, does he have to change the label or could he change the product?"
+      },
+      {
+        "attribution": "Justice STEVENS",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0002-0005"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "JUSTICE STEVENS: What do you say about my vitamin A example?"
+      },
+      {
+        "attribution": "Justice O'CONNOR",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0002-0006"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Justice O'CONNOR, jUSTICE O'CONNOR: If it's a failure to test, if it's a \u2014 a design defect requirement, if it's an off\u2011labeled, false misrepresentation, why are they preempted?"
+      },
+      {
+        "attribution": "Justice SCALIA",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "JUSTICE SCALIA: How can you possibly say it's clear?"
+      },
+      {
+        "attribution": "Justice SOUTER",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0002-0004"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice SOUTER, jUSTICE SOUTER: Yes, but why isn't there a big difference, for purposes of your argument, between the Medtronic situation and this one for the simple reason in this case you've got a statute that authorizes EPA to do absolutely nothing on the subject of efficacy?"
+      },
+      {
+        "attribution": "Justice KENNEDY",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0002-0007"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice KENNEDY, jUSTICE KENNEDY: Can they do the same thing by \u2014 through jury verdicts?"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "David C. Frederick",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0000-0007"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to David C. Frederick, the case concerns allegations that Dow AgroSciences\u2019 pesticide label claimed suitability for peanut\u2011growing areas, which the petitioner says was false."
+      },
+      {
+        "attribution": "MR. WAXMAN",
+        "citations": [
+          {
+            "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+            "evidence_ids": [
+              "ev-52594e92a9ec-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to MR. WAXMAN, FIFRA's preemption provision, as amended in 1978, preempts labeling requirements that differ from those required under FIFRA."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "David C. Frederick",
+          "citations": [
+            {
+              "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+              "evidence_ids": [
+                "ev-52594e92a9ec-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to David C. Frederick, pesticides are economic poisons designed to kill living things, and courts historically allowed farmers to sue manufacturers for crop damage."
+        },
+        {
+          "attribution": "David C. Frederick",
+          "citations": [
+            {
+              "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+              "evidence_ids": [
+                "ev-52594e92a9ec-0000-0007"
+              ],
+              "pages": {
+                "end": 9,
+                "start": 9
+              }
+            }
+          ],
+          "text": "According to David C. Frederick, the 2000 label stating the product was suitable for peanut\u2011growing areas was false, constituting misbranding actionable as a failure\u2011to\u2011warn, fraud, and breach\u2011of\u2011warranty claim."
+        },
+        {
+          "attribution": "David C. Frederick",
+          "citations": [
+            {
+              "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+              "evidence_ids": [
+                "ev-52594e92a9ec-0000-0008"
+              ],
+              "pages": {
+                "end": 13,
+                "start": 13
+              }
+            }
+          ],
+          "text": "According to David C. Frederick, a warranty claim is not required under State law because it is a voluntary contractual arrangement between the parties."
+        }
+      ],
+      "heading": "Petitioner (Dennis Bates)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "MR. WAXMAN",
+          "citations": [
+            {
+              "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+              "evidence_ids": [
+                "ev-52594e92a9ec-0001-0001"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to MR. WAXMAN, FIFRA\u2019s preemption provision, as amended in 1978, preempts state labeling requirements that differ from those required under FIFRA."
+        },
+        {
+          "attribution": "MR. WAXMAN",
+          "citations": [
+            {
+              "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+              "evidence_ids": [
+                "ev-52594e92a9ec-0001-0003"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to MR. WAXMAN, under Texas law, negligent testing is not an independent tort but a subset of inadequate warnings, and therefore part of a product\u2011defect claim related to warnings."
+        },
+        {
+          "attribution": "Mr. WAXMAN",
+          "citations": [
+            {
+              "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+              "evidence_ids": [
+                "ev-52594e92a9ec-0002-0001"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Mr. WAXMAN, if a label change is required, it must be made by the EPA because the manufacturer would violate federal law by selling the product with a different label."
+        }
+      ],
+      "heading": "Respondent (Dow AgroSciences)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0000-0003"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0000-0004"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0000-0005"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0000-0006"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0000-0007"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0000-0008"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 13
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0001-0001"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0001-0003"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0002-0000",
+        "ev-52594e92a9ec-0002-0001"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0002-0003"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0002-0004"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0002-0005"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0002-0006"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "52594e92a9ec032bc9e651daa4a17e656163e7411efd952db832bd15e412c26b",
+      "evidence_ids": [
+        "ev-52594e92a9ec-0002-0007"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T22:20:30.297095Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

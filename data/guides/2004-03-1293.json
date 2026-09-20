@@ -1,0 +1,380 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+            "evidence_ids": [
+              "ev-a1e6cbfa4ff3-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the government had to prove an overt act to establish venue."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+            "evidence_ids": [
+              "ev-a1e6cbfa4ff3-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the venue provision was the only basis for venue."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+            "evidence_ids": [
+              "ev-a1e6cbfa4ff3-0001-0000"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Scalia later asked whether, when multiple objects are involved, the government should charge both under \u00a7\u202f371 and under \u00a7\u202f1956."
+      }
+    ],
+    "heading": "Background & Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-03-1293",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T21:03:42.353798Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+            "evidence_ids": [
+              "ev-a1e6cbfa4ff3-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:09\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+            "evidence_ids": [
+              "ev-a1e6cbfa4ff3-0001-0003"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The respondent was represented by Jonathan L.\u202fMarcus during oral argument."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+            "evidence_ids": [
+              "ev-a1e6cbfa4ff3-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "The case was submitted at 10:49\u202fa.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+            "evidence_ids": [
+              "ev-a1e6cbfa4ff3-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioners argue that Congress enacted 18\u202fU.S.C.\u202f1956(h) solely to increase penalties for money\u2011laundering conspiracies."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+            "evidence_ids": [
+              "ev-a1e6cbfa4ff3-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Petitioners contend that the venue provision in 18\u202fU.S.C.\u202f1956(i) is the exclusive venue provision for money\u2011laundering offenses."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+            "evidence_ids": [
+              "ev-a1e6cbfa4ff3-0001-0001"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Petitioners argue that, because before the enactment of \u00a7\u202f1956(h) the government had to prosecute money\u2011laundering conspiracies under \u00a7\u202f371 for six years, Congress intended to carry forward the overt\u2011act requirement of \u00a7\u202f371 into the money\u2011laundering conspiracy offense."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+              "evidence_ids": [
+                "ev-a1e6cbfa4ff3-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioners, congress enacted 18\u202fU.S.C.\u202f1956(h) for the sole purpose of increasing the penalties for money\u2011laundering conspiracies."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+              "evidence_ids": [
+                "ev-a1e6cbfa4ff3-0000-0004"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioners, the venue provision in 18\u202fU.S.C.\u202f1956(i) is the exclusive venue provision for money\u2011laundering."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+              "evidence_ids": [
+                "ev-a1e6cbfa4ff3-0001-0001"
+              ],
+              "pages": {
+                "end": 29,
+                "start": 29
+              }
+            }
+          ],
+          "text": "According to Petitioners, because before \u00a7\u202f1956(h) the government had to prosecute money\u2011laundering conspiracies under \u00a7\u202f371 for six years, the Court should presume that Congress intended to perpetuate the overt\u2011act requirement of \u00a7\u202f371 into the money\u2011laundering conspiracy offense."
+        }
+      ],
+      "heading": "Petitioners\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent\u2019s Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+      "evidence_ids": [
+        "ev-a1e6cbfa4ff3-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+      "evidence_ids": [
+        "ev-a1e6cbfa4ff3-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+      "evidence_ids": [
+        "ev-a1e6cbfa4ff3-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+      "evidence_ids": [
+        "ev-a1e6cbfa4ff3-0000-0003",
+        "ev-a1e6cbfa4ff3-0000-0004"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+      "evidence_ids": [
+        "ev-a1e6cbfa4ff3-0001-0003"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+      "evidence_ids": [
+        "ev-a1e6cbfa4ff3-0001-0000"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+      "evidence_ids": [
+        "ev-a1e6cbfa4ff3-0001-0001"
+      ],
+      "pages": {
+        "end": 29,
+        "start": 29
+      }
+    },
+    {
+      "document_hash": "a1e6cbfa4ff34a8f154af2ea163074e966b923a8735b7a8d63a9d316d411c012",
+      "evidence_ids": [
+        "ev-a1e6cbfa4ff3-0002-0000"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T21:06:16.305500Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

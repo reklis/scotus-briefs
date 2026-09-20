@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2004-03-750",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": false,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that Justice O'Connor asked whether Congress meant to define felon\u2011in\u2011possession statutes broadly is not supported by the transcript, which records her making a declarative statement rather than posing a question.",
+    "Oral_argument_characterization check failed: the same claim mischaracterizes Justice O'Connor's remark as a question, whereas the evidence shows it is a statement.",
+    "Overstatement check failed: the claim overstates the nature of Justice O'Connor's contribution by presenting a statement as a question."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.89,
+    "neutrality": 0.92,
+    "readability": 0.91,
+    "restraint": 0.95,
+    "traceability": 1.0
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "accepted": false,
+  "case_id": "2004-03-287",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": true,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Overstatement check failed: the claim in the 'Why It Matters' section adds an unsupported consequence ('potentially affecting many prisoners\u2019 rights') that is not present in the cited evidence."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.95,
+    "neutrality": 0.9,
+    "readability": 0.85,
+    "restraint": 0.85,
+    "traceability": 0.9
+  }
+}

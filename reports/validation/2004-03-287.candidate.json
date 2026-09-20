@@ -1,0 +1,591 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mr. Cole",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Mr. Cole, the petitioners contend that the prior order is void ab\u202finitio and that a new decision on parole is required."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0001-0002"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, the Court asked whether the petitioners\u2019 claims were moot or academic because a subsequent parole hearing had already occurred."
+      },
+      {
+        "attribution": "Mr. Cole",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0001-0009"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Mr. Cole explained that an ex post facto claim requires showing an increase in the quantum of punishment after the crime was committed."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0001-0014"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, the Court asked whether the challenge concerned the procedure used to determine sentence duration rather than the duration itself."
+      }
+    ],
+    "heading": "Background & Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-03-287",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T21:56:03.164761Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0000-0001"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Appearances were made by Douglas R.\u202fCole for the petitioners; John Q.\u202fLewis for respondent Johnson; and Alan E.\u202fUntereiner for respondent Dotson."
+      },
+      {
+        "attribution": "Mr. Cole",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Mr. Cole argued that the prior order is void and a new decision on parole is required."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0001-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the only relief sought was a more prompt next hearing."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0001-0002"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Ginsburg questioned whether the claims were moot or academic because a later parole hearing had occurred."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Breyer asked, \u201cAnd why would that be bad?\u201d"
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0002-0001"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Souter requested clarification on the claim that the case would expand habeas corpus."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0002-0004"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the petition sought a 1983 hearing directing the parole commission\u2019s future actions."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0000-0005"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "If successful, the petitioners would be entitled to more frequent release hearings in the future."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0002-0005"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "The Court indicated it would ask to affirm the Sixth Circuit\u2019s unanimous decision in favor of Dotson."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Cole",
+          "citations": [
+            {
+              "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+              "evidence_ids": [
+                "ev-e04bd805ece7-0001-0000"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Mr. Cole, the petitioners argue that the prior order is void and that a new decision on parole must be made."
+        },
+        {
+          "attribution": "Mr. Cole",
+          "citations": [
+            {
+              "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+              "evidence_ids": [
+                "ev-e04bd805ece7-0001-0009"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Mr. Cole, they contend that an ex\u202fpost\u202ffacto claim requires showing an increase in punishment after the crime."
+        },
+        {
+          "attribution": "Mr. Cole",
+          "citations": [
+            {
+              "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+              "evidence_ids": [
+                "ev-e04bd805ece7-0001-0007"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Mr. Cole, they cite Balisok, arguing that post\u2011judgment administrative decisions about confinement duration count as criminal judgments protected by the Heck doctrine."
+        },
+        {
+          "attribution": "Mr. Lewis (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+              "evidence_ids": [
+                "ev-e04bd805ece7-0002-0002"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Mr. Lewis (Petitioner), according to Mr. Lewis (Petitioner), the petition\u2019s relief could give states a license to violate civil\u2011rights protections under 42\u202fU.S.C.\u202f\u00a7\u202f1983."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Cole",
+          "citations": [
+            {
+              "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+              "evidence_ids": [
+                "ev-e04bd805ece7-0001-0007"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Mr. Cole, the respondent cites Balisok, noting that post\u2011judgment administrative decisions about confinement are criminal judgments protected by the Heck doctrine."
+        }
+      ],
+      "heading": "Respondents",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0000-0001"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0000-0004"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 10
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0000-0005"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0001-0000"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0001-0001"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0001-0002"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0001-0007"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0001-0009"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0001-0014"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 31
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0002-0000"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0002-0002"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0002-0001"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0002-0004"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+      "evidence_ids": [
+        "ev-e04bd805ece7-0002-0005"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T22:10:09.406674Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Overstatement check failed: the claim in the 'Why It Matters' section adds an unsupported consequence ('potentially affecting many prisoners\u2019 rights') that is not present in the cited evidence."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0000-0005"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "If the petitioners prevail, they would obtain more frequent release hearings, potentially affecting many prisoners\u2019 rights."
+      },
+      {
+        "attribution": "Mr. Lewis (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "e04bd805ece7f4ffb3b54fe027dcbeb5fb27b3a87fd93660ee3977593fb80fca",
+            "evidence_ids": [
+              "ev-e04bd805ece7-0002-0002"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Mr. Lewis (Petitioner), according to Mr. Lewis (Petitioner), the case raises concerns that the relief sought could give states a license to violate civil\u2011rights protections under 42\u202fU.S.C.\u202f\u00a7\u202f1983."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

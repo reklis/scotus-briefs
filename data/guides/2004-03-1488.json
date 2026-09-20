@@ -1,0 +1,490 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+            "evidence_ids": [
+              "ev-13a32e8e68cc-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the petitioner was challenging only the second part of the injunction (the distance restriction) and not the other parts."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-03-1488",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T21:41:20.338847Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+            "evidence_ids": [
+              "ev-13a32e8e68cc-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the petitioner was challenging only the second part of the injunction."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+            "evidence_ids": [
+              "ev-13a32e8e68cc-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Souter asked, \u201cDo you agree with that?\u201d"
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+            "evidence_ids": [
+              "ev-13a32e8e68cc-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "The oral argument was presented by Jonathan B. Cole on behalf of the respondent."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Erwin Chemerinsky (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+            "evidence_ids": [
+              "ev-13a32e8e68cc-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Erwin Chemerinsky (Petitioner), the injunction at issue is alleged to violate the First Amendment because it is a prior restraint and a content\u2011based restriction on speech."
+      },
+      {
+        "attribution": "Erwin Chemerinsky (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+            "evidence_ids": [
+              "ev-13a32e8e68cc-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+            "evidence_ids": [
+              "ev-13a32e8e68cc-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Erwin Chemerinsky (Petitioner), the petitioner argues the injunction is overbroad, restricting speech of non\u2011parties."
+      },
+      {
+        "attribution": "Mr. Cole",
+        "citations": [
+          {
+            "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+            "evidence_ids": [
+              "ev-13a32e8e68cc-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Mr. Cole, the respondent contends that the conduct of attempting to extort money is not protected speech."
+      },
+      {
+        "attribution": "Mr. Cole",
+        "citations": [
+          {
+            "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+            "evidence_ids": [
+              "ev-13a32e8e68cc-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Mr. Cole, the respondent argues California does not adopt the collateral bar rule; People v. Gonzales supports this position."
+      },
+      {
+        "attribution": "Mr. Cole",
+        "citations": [
+          {
+            "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+            "evidence_ids": [
+              "ev-13a32e8e68cc-0002-0002"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Mr. Cole, the respondent suggests the injunction could be limited to defamatory speech of a similar nature designed to extort."
+      },
+      {
+        "attribution": "Mr. Cole",
+        "citations": [
+          {
+            "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+            "evidence_ids": [
+              "ev-13a32e8e68cc-0002-0003"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "According to Mr. Cole, the respondent also proposes narrowing the injunction by striking subparagraphs (ii) and (iii) of paragraph\u202f2."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Erwin Chemerinsky (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+              "evidence_ids": [
+                "ev-13a32e8e68cc-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Erwin Chemerinsky (Petitioner), the injunction violates the First Amendment as a prior restraint and a content\u2011based restriction on speech."
+        },
+        {
+          "attribution": "Erwin Chemerinsky (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+              "evidence_ids": [
+                "ev-13a32e8e68cc-0000-0003"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Erwin Chemerinsky (Petitioner), the injunction is most clearly unconstitutional because it is overbroad."
+        },
+        {
+          "attribution": "Mr. Chemerinsky",
+          "citations": [
+            {
+              "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+              "evidence_ids": [
+                "ev-13a32e8e68cc-0001-0001"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. Chemerinsky, one issue before the Court is whether the injunction is overbroad, and it clearly is."
+        }
+      ],
+      "heading": "Petitioner (Ulysses Tory)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Cole",
+          "citations": [
+            {
+              "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+              "evidence_ids": [
+                "ev-13a32e8e68cc-0002-0000"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Mr. Cole, the conduct of attempting to extort money from Mr. Cochran is not protected speech."
+        },
+        {
+          "attribution": "Mr. Cole",
+          "citations": [
+            {
+              "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+              "evidence_ids": [
+                "ev-13a32e8e68cc-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Cole, california does not adopt the collateral bar rule; People v. Gonzales supports this position."
+        },
+        {
+          "attribution": "Mr. Cole",
+          "citations": [
+            {
+              "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+              "evidence_ids": [
+                "ev-13a32e8e68cc-0002-0002"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            }
+          ],
+          "text": "According to Mr. Cole, the injunction could be limited to defamatory speech of a similar nature designed to extort."
+        },
+        {
+          "attribution": "Mr. Cole",
+          "citations": [
+            {
+              "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+              "evidence_ids": [
+                "ev-13a32e8e68cc-0002-0003"
+              ],
+              "pages": {
+                "end": 49,
+                "start": 49
+              }
+            }
+          ],
+          "text": "According to Mr. Cole, while the injunction is broad, it is not an unconstitutional prior restraint; striking subparagraphs (ii) and (iii) of paragraph\u202f2 would resolve the problem."
+        }
+      ],
+      "heading": "Respondent (Johnnie L. Cochran, Jr.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+      "evidence_ids": [
+        "ev-13a32e8e68cc-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+      "evidence_ids": [
+        "ev-13a32e8e68cc-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+      "evidence_ids": [
+        "ev-13a32e8e68cc-0000-0003"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+      "evidence_ids": [
+        "ev-13a32e8e68cc-0001-0001"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+      "evidence_ids": [
+        "ev-13a32e8e68cc-0001-0000"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+      "evidence_ids": [
+        "ev-13a32e8e68cc-0001-0003"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+      "evidence_ids": [
+        "ev-13a32e8e68cc-0002-0000"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+      "evidence_ids": [
+        "ev-13a32e8e68cc-0002-0001"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+      "evidence_ids": [
+        "ev-13a32e8e68cc-0002-0002"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "13a32e8e68ccccbb35b57c0dfbbfbd31b1625a257effdab4aaf267306aa623c0",
+      "evidence_ids": [
+        "ev-13a32e8e68cc-0002-0003"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 49
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T21:44:24.236386Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

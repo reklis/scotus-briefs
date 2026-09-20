@@ -1,0 +1,464 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0002-0005"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          },
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0001-0005"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          },
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0001-0004"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The central legal question is whether Title III of the ADA was intended by Congress to apply extraterritorially to foreign\u2011flagged vessels."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-03-1388",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T21:06:16.330758Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+          "evidence_ids": [
+            "ev-3a0fc2b63b9a-0001-0010"
+          ],
+          "pages": {
+            "end": 31,
+            "start": 31
+          }
+        }
+      ],
+      "definition": "Definition of commerce here is broader than it was and specifically refers to travel between the United States and foreign countries.",
+      "term": "commerce"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether other countries, such as those in the EU, have applied their disability laws to cruise ships that dock in their courts."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0001-0000"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether Congress intended the ADA to apply in this context."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0001-0002"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Stevens asked about the parties\u2019 positions on the issue."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0002-0006"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          },
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0003-0000"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to Justice Souter, justice Souter inquired about the full sweep argument and the lack of a legal relationship between a patent\u2011infringing object\u2019s supplier and the ship in the United States."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0001-0004"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The case concerns whether Title III of the Americans with Disabilities Act (ADA) applies to foreign\u2011flagged cruise ships that dock in United States ports."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners, petitioners are American citizens who purchased cruise tickets in the United States and allege discrimination by Norwegian Cruise Line Ltd., a U.S.-based company, both on land and in U.S. waters."
+      },
+      {
+        "attribution": "Mr. Frederick",
+        "citations": [
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0001-0011"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "According to Mr. Frederick, respondent argues that the issue is one of congressional intent rather than congressional power."
+      },
+      {
+        "attribution": "Gregory G. Garre",
+        "citations": [
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0002-0008"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "According to Gregory G. Garre, amicus briefs argue that applying the ADA extraterritorially could create international conflict."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+              "evidence_ids": [
+                "ev-3a0fc2b63b9a-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioners, petitioners assert that they are U.S. citizens who bought tickets in the United States and were subjected to discrimination by the respondent."
+        },
+        {
+          "attribution": "Mr. Goldstein",
+          "citations": [
+            {
+              "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+              "evidence_ids": [
+                "ev-3a0fc2b63b9a-0001-0003"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Mr. Goldstein, petitioners argue that because the accommodation was purchased in the United States, the ADA should cover the cruise."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Frederick",
+          "citations": [
+            {
+              "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+              "evidence_ids": [
+                "ev-3a0fc2b63b9a-0001-0011"
+              ],
+              "pages": {
+                "end": 32,
+                "start": 32
+              }
+            }
+          ],
+          "text": "According to Mr. Frederick, respondent maintains that the case is about congressional intent, not congressional power."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "David B. Salmons",
+          "citations": [
+            {
+              "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+              "evidence_ids": [
+                "ev-3a0fc2b63b9a-0001-0004"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to David B. Salmons, the United States, as amicus, argues that Title III of the ADA was not intended to apply extraterritorially."
+        },
+        {
+          "attribution": "David B. Salmons",
+          "citations": [
+            {
+              "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+              "evidence_ids": [
+                "ev-3a0fc2b63b9a-0001-0010"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "According to David B. Salmons, the amicus defines commerce broadly to include travel between the United States and foreign countries."
+        }
+      ],
+      "heading": "Amicus \u2013 United States",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Gregory G. Garre",
+          "citations": [
+            {
+              "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+              "evidence_ids": [
+                "ev-3a0fc2b63b9a-0002-0008"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 50
+              }
+            }
+          ],
+          "text": "According to Gregory G. Garre, the Bahamas, as amicus, argues that applying the ADA to foreign\u2011flagged vessels would cause international discord and conflict."
+        }
+      ],
+      "heading": "Amicus \u2013 The Bahamas",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+      "evidence_ids": [
+        "ev-3a0fc2b63b9a-0000-0000"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T21:12:09.435643Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Gregory G. Garre",
+        "citations": [
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0002-0008"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "According to Gregory G. Garre, applying the ADA extraterritorially could create international legal conflicts, as noted by the Bahamas amicus."
+      },
+      {
+        "attribution": "David B. Salmons",
+        "citations": [
+          {
+            "document_hash": "3a0fc2b63b9ac03869965db16cacd030a9987871042851b9b41a4a7edf44a61c",
+            "evidence_ids": [
+              "ev-3a0fc2b63b9a-0001-0010"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to David B. Salmons, a broad definition of commerce could extend U.S. regulatory reach to international travel."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

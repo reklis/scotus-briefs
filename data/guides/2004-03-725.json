@@ -1,0 +1,322 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+            "evidence_ids": [
+              "ev-1108b87382a8-0001-0005"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Respondent, the prosecution alleges wire fraud that defrauded a foreign government of tax revenue."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-03-725",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T22:35:00.092858Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+            "evidence_ids": [
+              "ev-1108b87382a8-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument was held before the Supreme Court at 11:13\u202fa.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+            "evidence_ids": [
+              "ev-1108b87382a8-0002-0007"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "The revenue rule is a longstanding principle that prevents U.S. courts from enforcing foreign laws that affect contracts."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+            "evidence_ids": [
+              "ev-1108b87382a8-0002-0009"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Petitioners argue that the revenue rule bars both direct and indirect enforcement of foreign tax laws."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+              "evidence_ids": [
+                "ev-1108b87382a8-0002-0009"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 50
+              }
+            }
+          ],
+          "text": "Petitioners argue that the revenue rule bars both direct and indirect enforcement of foreign tax laws."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+              "evidence_ids": [
+                "ev-1108b87382a8-0002-0001"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "The United States argues that restitution under the mandatory statute should be ordered and does not violate the revenue rule."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+              "evidence_ids": [
+                "ev-1108b87382a8-0002-0003"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to United States, absent clear congressional intent to override the revenue rule, statutes should not be interpreted to contravene it."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+              "evidence_ids": [
+                "ev-1108b87382a8-0002-0004"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to United States, there is no obligation for the United States to assist a foreign sovereign in enforcing its tax laws."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+              "evidence_ids": [
+                "ev-1108b87382a8-0001-0005"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Respondent, prosecuting wire fraud serves United States interests independent of the foreign government's loss."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+      "evidence_ids": [
+        "ev-1108b87382a8-0002-0007"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+      "evidence_ids": [
+        "ev-1108b87382a8-0002-0009"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 50
+      }
+    },
+    {
+      "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+      "evidence_ids": [
+        "ev-1108b87382a8-0001-0005"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+      "evidence_ids": [
+        "ev-1108b87382a8-0002-0001"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+      "evidence_ids": [
+        "ev-1108b87382a8-0002-0003"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+      "evidence_ids": [
+        "ev-1108b87382a8-0002-0004"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "1108b87382a89de139f9d2461d909e551722930f25c6ef2a4d17434408e79b0d",
+      "evidence_ids": [
+        "ev-1108b87382a8-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T22:41:58.770766Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
