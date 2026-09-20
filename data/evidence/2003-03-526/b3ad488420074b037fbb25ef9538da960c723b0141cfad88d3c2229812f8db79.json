@@ -1,0 +1,55 @@
+{
+  "case_id": "2003-03-526",
+  "document_hash": "b3ad488420074b037fbb25ef9538da960c723b0141cfad88d3c2229812f8db79",
+  "records": [
+    {
+      "attribution": "Court Record",
+      "case_id": "2003-03-526",
+      "confidence": 1.0,
+      "document_hash": "b3ad488420074b037fbb25ef9538da960c723b0141cfad88d3c2229812f8db79",
+      "evidence_id": "ev-b3ad48842007-0000-0000",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 1,
+        "start": 1
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The above-entitled matter came on for oral argument before the Supreme Court of the United States at 11:10 a.m."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2003-03-526",
+      "confidence": 1.0,
+      "document_hash": "b3ad488420074b037fbb25ef9538da960c723b0141cfad88d3c2229812f8db79",
+      "evidence_id": "ev-b3ad48842007-0001-0002",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 22,
+        "start": 22
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "ORAL ARGUMENT OF KEN MURRAY"
+    },
+    {
+      "attribution": "Chief Justice Rehnquist",
+      "case_id": "2003-03-526",
+      "confidence": 0.96,
+      "document_hash": "b3ad488420074b037fbb25ef9538da960c723b0141cfad88d3c2229812f8db79",
+      "evidence_id": "ev-b3ad48842007-0002-0006",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 43,
+        "start": 43
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "CHIEF JUSTICE REHNQUIST: The case is submitted."
+    }
+  ],
+  "schema_version": "1.0.0"
+}

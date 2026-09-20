@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2003-03-107",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that \"According to Mr. Kneeldler, the respondent raises the concern that a tribal prosecution followed by a federal prosecution could constitute double jeopardy\" is not directly supported by the cited evidence (ev-99e44637c715-0003-0001). The evidence records Kneeldler questioning whether the offenses might be the same, but does not state he raised a double\u2011jeopardy concern.",
+    "Overstatement check failed: the same claim overstates Kneeldler's position by asserting he raised a double\u2011jeopardy concern, which is not evidenced in the transcript."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.93,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.85,
+    "traceability": 0.95
+  }
+}

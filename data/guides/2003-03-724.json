@@ -1,0 +1,268 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3",
+            "evidence_ids": [
+              "ev-ab26c723af5e-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The oral argument began at 10:59\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3",
+            "evidence_ids": [
+              "ev-ab26c723af5e-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Chief Justice Rehnquist asked whether the court of appeals explained how the issue would be litigated or decided whether someone else had a claim."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2003-03-724",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T18:14:11.273761Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3",
+            "evidence_ids": [
+              "ev-ab26c723af5e-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The oral argument began at 10:59\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3",
+            "evidence_ids": [
+              "ev-ab26c723af5e-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist questioned whether the court of appeals explained how the issue would be litigated or decided whether someone else had a claim."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3",
+            "evidence_ids": [
+              "ev-ab26c723af5e-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case was heard before the Supreme Court of the United States at 10:59\u202fa.m."
+      },
+      {
+        "attribution": "Stephen M. Shapiro",
+        "citations": [
+          {
+            "document_hash": "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3",
+            "evidence_ids": [
+              "ev-ab26c723af5e-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Stephen M. Shapiro, the United States, joined by seven other nations, argues that the decision in this case is an error and should be reversed because the plaintiffs are foreign claimants who allege they paid too much for vitamins outside of U.S. commerce."
+      },
+      {
+        "attribution": "R. Hewitt Pate",
+        "citations": [
+          {
+            "document_hash": "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3",
+            "evidence_ids": [
+              "ev-ab26c723af5e-0000-0005"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "According to R. Hewitt Pate, amnesty programs do not provide amnesty for civil liability."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Stephen M. Shapiro",
+          "citations": [
+            {
+              "document_hash": "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3",
+              "evidence_ids": [
+                "ev-ab26c723af5e-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Stephen M. Shapiro, the United States argues that the decision is an error and should be reversed because the plaintiffs are foreign claimants who overpaid for vitamins outside U.S. commerce."
+        }
+      ],
+      "heading": "United States (joined by seven other nations)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3",
+      "evidence_ids": [
+        "ev-ab26c723af5e-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3",
+      "evidence_ids": [
+        "ev-ab26c723af5e-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3",
+      "evidence_ids": [
+        "ev-ab26c723af5e-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "ab26c723af5e646419f3561d5b4c0259f1e3e8d9ec199e2a2ca115332d1934f3",
+      "evidence_ids": [
+        "ev-ab26c723af5e-0000-0005"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T18:16:14.749982Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

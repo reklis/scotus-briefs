@@ -1,0 +1,278 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "dce0d40a31876736e0e401b8bc286e06e18ee1c78e8fdad3e445d8cded659526",
+            "evidence_ids": [
+              "ev-dce0d40a3187-0000-0004"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor questioned whether it would be acceptable for a prosecutor to repeatedly tell a jury that the burden of proof is a preponderance rather than beyond a reasonable doubt."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "dce0d40a31876736e0e401b8bc286e06e18ee1c78e8fdad3e445d8cded659526",
+            "evidence_ids": [
+              "ev-dce0d40a3187-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens inquired whether the jury could have been misled by the instructions concerning factor (k) and the consideration of all evidence."
+      }
+    ],
+    "heading": "Background & Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-03-1039",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T18:47:55.235336Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "dce0d40a31876736e0e401b8bc286e06e18ee1c78e8fdad3e445d8cded659526"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "dce0d40a31876736e0e401b8bc286e06e18ee1c78e8fdad3e445d8cded659526",
+            "evidence_ids": [
+              "ev-dce0d40a3187-0000-0004"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor asked whether it would be permissible for a prosecutor to repeatedly state that the burden of proof is a preponderance rather than beyond a reasonable doubt."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "dce0d40a31876736e0e401b8bc286e06e18ee1c78e8fdad3e445d8cded659526",
+            "evidence_ids": [
+              "ev-dce0d40a3187-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens inquired about the possibility that the jury was misled by the instructions concerning factor (k)."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "dce0d40a31876736e0e401b8bc286e06e18ee1c78e8fdad3e445d8cded659526",
+            "evidence_ids": [
+              "ev-dce0d40a3187-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioner Jill L. Brown, Acting Warden, argues that the Ninth Circuit violated the Antiterrorism and Effective Death Penalty Act (AEDPA) by reversing the California Supreme Court\u2019s decision affirming William Charles Payton\u2019s 1982 death sentence."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "dce0d40a31876736e0e401b8bc286e06e18ee1c78e8fdad3e445d8cded659526",
+              "evidence_ids": [
+                "ev-dce0d40a3187-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, the Ninth Circuit erred by reversing the California Supreme Court\u2019s affirmation of Payton\u2019s death sentence, violating AEDPA."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. CORTINA",
+          "citations": [
+            {
+              "document_hash": "dce0d40a31876736e0e401b8bc286e06e18ee1c78e8fdad3e445d8cded659526",
+              "evidence_ids": [
+                "ev-dce0d40a3187-0001-0001"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Ms. CORTINA, factor (k) evidence falls within the scope of permissible consideration, and the jury should have been allowed to consider it."
+        },
+        {
+          "attribution": "Ms. Cortina",
+          "citations": [
+            {
+              "document_hash": "dce0d40a31876736e0e401b8bc286e06e18ee1c78e8fdad3e445d8cded659526",
+              "evidence_ids": [
+                "ev-dce0d40a3187-0002-0003"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            }
+          ],
+          "text": "According to Ms. Cortina, under AEDPA, the proper analysis is how the California Supreme Court reviewed the claim, not a de novo review of the likelihood of error."
+        },
+        {
+          "attribution": "Mr. GITS",
+          "citations": [
+            {
+              "document_hash": "dce0d40a31876736e0e401b8bc286e06e18ee1c78e8fdad3e445d8cded659526",
+              "evidence_ids": [
+                "ev-dce0d40a3187-0001-0002"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. GITS, the penalty phase of the trial lasted about a day and involved eight witnesses."
+        },
+        {
+          "attribution": "Mr. Gits",
+          "citations": [
+            {
+              "document_hash": "dce0d40a31876736e0e401b8bc286e06e18ee1c78e8fdad3e445d8cded659526",
+              "evidence_ids": [
+                "ev-dce0d40a3187-0002-0001"
+              ],
+              "pages": {
+                "end": 35,
+                "start": 35
+              }
+            }
+          ],
+          "text": "According to Mr. Gits, the Supreme Court\u2019s decision in Skipper indicated that post\u2011crime evidence of rehabilitation is not relevant to culpability, making factor (k) ambiguous."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "dce0d40a31876736e0e401b8bc286e06e18ee1c78e8fdad3e445d8cded659526",
+      "evidence_ids": [
+        "ev-dce0d40a3187-0000-0000"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T18:54:59.054615Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

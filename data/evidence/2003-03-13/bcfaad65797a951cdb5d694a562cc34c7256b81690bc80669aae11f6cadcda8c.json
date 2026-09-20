@@ -1,0 +1,55 @@
+{
+  "case_id": "2003-03-13",
+  "document_hash": "bcfaad65797a951cdb5d694a562cc34c7256b81690bc80669aae11f6cadcda8c",
+  "records": [
+    {
+      "attribution": "Court",
+      "case_id": "2003-03-13",
+      "confidence": 1.0,
+      "document_hash": "bcfaad65797a951cdb5d694a562cc34c7256b81690bc80669aae11f6cadcda8c",
+      "evidence_id": "ev-bcfaad65797a-0000-0000",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 1,
+        "start": 1
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The above-entitled matter came on for oral argument before the Supreme Court of the United States at 11:13 a.m."
+    },
+    {
+      "attribution": "Justice",
+      "case_id": "2003-03-13",
+      "confidence": 1.0,
+      "document_hash": "bcfaad65797a951cdb5d694a562cc34c7256b81690bc80669aae11f6cadcda8c",
+      "evidence_id": "ev-bcfaad65797a-0001-0006",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 30,
+        "start": 30
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "interferes with our foreign affairs, period?"
+    },
+    {
+      "attribution": "Chief Justice Rehnquist",
+      "case_id": "2003-03-13",
+      "confidence": 0.9,
+      "document_hash": "bcfaad65797a951cdb5d694a562cc34c7256b81690bc80669aae11f6cadcda8c",
+      "evidence_id": "ev-bcfaad65797a-0003-0001",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 51,
+        "start": 51
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "CHIEF JUSTICE REHNQUIST: Thank you, Mr. Cooper."
+    }
+  ],
+  "schema_version": "1.0.0"
+}

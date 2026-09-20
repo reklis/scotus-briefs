@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2004-03-10198",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that Justices Souter and Ginsburg questioned whether a denial of an application for appeal is a determination on the merits and thus preclusive is not fully supported\u2014Ginsburg's quoted question concerns boiler\u2011plate language, not preclusive effect.",
+    "Support check failed: the petitioner claim that Mr. Moran argued the denial should be reviewed under ordinary standards adds a normative statement not present in the transcript; the evidence only states that appeals are decided on the merits with preclusive effect.",
+    "Overstatement check failed: the candidate overstates Ginsburg's question as addressing preclusive effect and adds an unsupported assertion about the appropriate standard of review, which goes beyond the supplied evidence."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.78,
+    "neutrality": 0.92,
+    "readability": 0.86,
+    "restraint": 0.75,
+    "traceability": 0.71
+  }
+}
