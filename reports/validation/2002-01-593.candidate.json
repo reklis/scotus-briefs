@@ -1,0 +1,422 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+            "evidence_ids": [
+              "ev-a8fcda3a7e3f-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Chief Justice Rehnquist asked whether the ownership of the companies is \u201cowned in the same capacity now as it was earlier.\u201d"
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+            "evidence_ids": [
+              "ev-a8fcda3a7e3f-0003-0000"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist questioned whether the Court should give special deference to the Executive\u2019s interpretation of a foreign\u2011affairs statute."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+            "evidence_ids": [
+              "ev-a8fcda3a7e3f-0001-0003"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "A Justice asked why a particular ruling would eliminate the right to a jury trial."
+      }
+    ],
+    "heading": "Background & Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-593",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T02:12:15.452080Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+          "evidence_ids": [
+            "ev-a8fcda3a7e3f-0002-0004"
+          ],
+          "pages": {
+            "end": 45,
+            "start": 45
+          }
+        }
+      ],
+      "definition": "Ownership of a majority of the shares or other ownership interest of a corporation by a foreign state or its political subdivision.",
+      "term": "majority ownership"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+            "evidence_ids": [
+              "ev-a8fcda3a7e3f-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist opened the argument, noting the case number and that it was a companion case."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+            "evidence_ids": [
+              "ev-a8fcda3a7e3f-0003-0000"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, the Chief Justice asked whether ownership at the fifth tier down should be treated as ownership for jurisdictional purposes."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+            "evidence_ids": [
+              "ev-a8fcda3a7e3f-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioners, the case concerns whether Israel owned a majority of the shares or other ownership interests in Dole Food Company and Dead Sea Bromine Co. through a tiered corporate structure."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+            "evidence_ids": [
+              "ev-a8fcda3a7e3f-0001-0000"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Respondents argue that the ownership makes the companies foreign\u2011state instruments subject to the Foreign Sovereign Immunities Act (FSIA) jurisdictional rules."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+              "evidence_ids": [
+                "ev-a8fcda3a7e3f-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioners, israel owned a majority of the shares or other ownership interests in the companies throughout the period giving rise to the claims."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+              "evidence_ids": [
+                "ev-a8fcda3a7e3f-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioners, the majority ownership includes Dead Sea Bromine, which Israel possessed through a tiered ownership structure."
+        }
+      ],
+      "heading": "Petitioners (Dole Food Co. & Dead Sea Bromine Co.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+              "evidence_ids": [
+                "ev-a8fcda3a7e3f-0001-0000"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Respondents, if the complaint alleges actions of a foreign\u2011state instrumentality, those actions should be within the claim."
+        },
+        {
+          "attribution": "Mr. Paden",
+          "citations": [
+            {
+              "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+              "evidence_ids": [
+                "ev-a8fcda3a7e3f-0002-0006"
+              ],
+              "pages": {
+                "end": 52,
+                "start": 52
+              }
+            }
+          ],
+          "text": "According to Mr. Paden, jurisdictional statutes should be construed narrowly, following the principle from Strawbridge v. Curtis that complete diversity is required."
+        },
+        {
+          "attribution": "Mr. Paden",
+          "citations": [
+            {
+              "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+              "evidence_ids": [
+                "ev-a8fcda3a7e3f-0002-0007"
+              ],
+              "pages": {
+                "end": 53,
+                "start": 53
+              }
+            }
+          ],
+          "text": "According to Mr. Paden, dead Sea Works was the immediate parent of Dead Sea Bromine, and Dead Sea Works was owned by the State of Israel."
+        },
+        {
+          "attribution": "Mr. Massey",
+          "citations": [
+            {
+              "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+              "evidence_ids": [
+                "ev-a8fcda3a7e3f-0002-0002"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Massey, the simplest resolution is to apply the longstanding rule that the filing date of the complaint determines jurisdiction."
+        }
+      ],
+      "heading": "Respondents (Patrickson et al.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+      "evidence_ids": [
+        "ev-a8fcda3a7e3f-0000-0000",
+        "ev-a8fcda3a7e3f-0000-0001",
+        "ev-a8fcda3a7e3f-0000-0002",
+        "ev-a8fcda3a7e3f-0000-0003",
+        "ev-a8fcda3a7e3f-0001-0000",
+        "ev-a8fcda3a7e3f-0001-0001",
+        "ev-a8fcda3a7e3f-0001-0002",
+        "ev-a8fcda3a7e3f-0001-0003",
+        "ev-a8fcda3a7e3f-0002-0000",
+        "ev-a8fcda3a7e3f-0002-0001",
+        "ev-a8fcda3a7e3f-0002-0002",
+        "ev-a8fcda3a7e3f-0002-0003",
+        "ev-a8fcda3a7e3f-0002-0004",
+        "ev-a8fcda3a7e3f-0002-0005",
+        "ev-a8fcda3a7e3f-0002-0006",
+        "ev-a8fcda3a7e3f-0002-0007",
+        "ev-a8fcda3a7e3f-0003-0000"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T02:23:55.934619Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim that Respondents argue the ownership makes the companies foreign\u2011state instruments subject to FSIA jurisdictional rules is not supported by the supplied evidence.",
+      "Support check failed: the glossary definition of \u201cmajority ownership\u201d is not supported; the evidence only mentions the term without providing a definition.",
+      "Overstatement check failed: the two unsupported claims above overstate what the evidence actually says."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+            "evidence_ids": [
+              "ev-a8fcda3a7e3f-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+            "evidence_ids": [
+              "ev-a8fcda3a7e3f-0002-0004"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "The case involves the application of the FSIA\u2019s majority ownership language to the corporate structure at issue."
+      },
+      {
+        "attribution": "United States (Amicus Curiae)",
+        "citations": [
+          {
+            "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+            "evidence_ids": [
+              "ev-a8fcda3a7e3f-0002-0003"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to United States (Amicus Curiae), according to United States (Amicus Curiae), according to United States (Amicus Curiae), congress enacted the FSIA based on corporate law principles that a parent corporation and its subsidiary are distinct, limiting the reach of foreign\u2011state immunity."
+      },
+      {
+        "attribution": "United States (Amicus Curiae)",
+        "citations": [
+          {
+            "document_hash": "a8fcda3a7e3fe8f5f4c697cb190277c12a8bdf44fad343193593ecc030dcc74b",
+            "evidence_ids": [
+              "ev-a8fcda3a7e3f-0002-0005"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to United States (Amicus Curiae), according to United States (Amicus Curiae), according to United States (Amicus Curiae), the government argued that Congress wanted a bright\u2011line rule for majority ownership to avoid costly jurisdictional litigation."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

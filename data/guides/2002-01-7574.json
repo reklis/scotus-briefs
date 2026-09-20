@@ -1,0 +1,280 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+            "evidence_ids": [
+              "ev-46506f952aa1-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Pennsylvania was afforded one fair opportunity to sentence Mr. Sattazahn to death, and the jury rendered a verdict in accordance with the trial\u2011court instructions."
+      },
+      {
+        "attribution": "Robert B. Dunham",
+        "citations": [
+          {
+            "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+            "evidence_ids": [
+              "ev-46506f952aa1-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+            "evidence_ids": [
+              "ev-46506f952aa1-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 39
+            }
+          }
+        ],
+        "text": "The central double\u2011jeopardy question is whether the first judgment of life precludes the Commonwealth of Pennsylvania from seeking and obtaining the death penalty in a second capital trial."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-7574",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T03:10:39.775045Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Robert B. Dunham",
+        "citations": [
+          {
+            "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+            "evidence_ids": [
+              "ev-46506f952aa1-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Robert B. Dunham, david Allen Sattazahn is asking the Supreme Court to decide whether his first capital\u2011trial judgment of life bars Pennsylvania from seeking the death penalty in a second capital trial."
+      },
+      {
+        "attribution": "Ms. Dougherty (Respondent)",
+        "citations": [
+          {
+            "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+            "evidence_ids": [
+              "ev-46506f952aa1-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Ms. Dougherty (Respondent), according to Ms. Dougherty (Respondent), the Commonwealth argues that the life sentence created by the first trial gives the defendant a protected liberty interest that survives appeal."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Robert B. Dunham",
+          "citations": [
+            {
+              "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+              "evidence_ids": [
+                "ev-46506f952aa1-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Robert B. Dunham, the petitioner contends that the first capital\u2011trial judgment of life precludes a second death\u2011penalty trial under the Double Jeopardy Clause."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Dougherty (Respondent)",
+          "citations": [
+            {
+              "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+              "evidence_ids": [
+                "ev-46506f952aa1-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to Ms. Dougherty (Respondent), according to Ms. Dougherty (Respondent), the Commonwealth argues that the life sentence creates a liberty interest that survives appeal because of a special interest in finality."
+        },
+        {
+          "attribution": "Ms. Dougherty (Respondent)",
+          "citations": [
+            {
+              "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+              "evidence_ids": [
+                "ev-46506f952aa1-0001-0003"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 33
+              }
+            }
+          ],
+          "text": "According to Ms. Dougherty (Respondent), according to Ms. Dougherty (Respondent), the respondent further maintains that a life sentence imposed after a hung jury is not an acquittal and therefore does not trigger double\u2011jeopardy protection."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+      "evidence_ids": [
+        "ev-46506f952aa1-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+      "evidence_ids": [
+        "ev-46506f952aa1-0000-0001",
+        "ev-46506f952aa1-0000-0003"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+      "evidence_ids": [
+        "ev-46506f952aa1-0001-0001"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+      "evidence_ids": [
+        "ev-46506f952aa1-0001-0003"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "46506f952aa1c710ff9ff2382b6d0a68fa8ad5b5aa73c5b684a94ebdcbf38079",
+      "evidence_ids": [
+        "ev-46506f952aa1-0002-0000"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 39
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T03:16:03.339199Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

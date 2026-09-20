@@ -1,0 +1,445 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+            "evidence_ids": [
+              "ev-5dc8d6195520-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The matter came on for oral argument before the Supreme Court of the United States at 11:02\u202fa.m."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+            "evidence_ids": [
+              "ev-5dc8d6195520-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice asked: \u201cWhat about 25 percent going to the charitable purpose?\u201d"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-1806",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T01:51:56.041882Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+            "evidence_ids": [
+              "ev-5dc8d6195520-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice asked: \u201cWhat about 25 percent going to the charitable purpose?\u201d"
+      },
+      {
+        "attribution": "Justice (unspecified)",
+        "citations": [
+          {
+            "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+            "evidence_ids": [
+              "ev-5dc8d6195520-0001-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice (unspecified), justice asked: \u201cBut isn\u2019t that essentially\u2026 telephone calls\u2026 to Vietnam\u2026 what is happening here?\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+            "evidence_ids": [
+              "ev-5dc8d6195520-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, justice said: \u201cI\u2019m not understanding.\u201d"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+            "evidence_ids": [
+              "ev-5dc8d6195520-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, justice said: \u201cNo.\u201d"
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+            "evidence_ids": [
+              "ev-5dc8d6195520-0003-0001"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist: \u201cThank you, Mr. Huszagh. The case is submitted.\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+            "evidence_ids": [
+              "ev-5dc8d6195520-0002-0003"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to Petitioner, illinois Attorney General Lisa Madigan sued Telemarketing Associates Inc. alleging that charitable solicitations were fraudulent because only a nominal amount of each donation actually reached the charitable purpose."
+      },
+      {
+        "attribution": "Petitioner (Richard S. Huszagh)",
+        "citations": [
+          {
+            "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+            "evidence_ids": [
+              "ev-5dc8d6195520-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner (Richard S. Huszagh), the dispute focuses on how much of the donated money actually goes to the charitable purpose versus how much is retained for fundraising costs."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Richard S. Huszagh)",
+          "citations": [
+            {
+              "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+              "evidence_ids": [
+                "ev-5dc8d6195520-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner (Richard S. Huszagh), it is unquestionably fraudulent to induce a donation by claiming a specific charitable purpose when, in fact, only a nominal amount goes to that purpose and the solicitor keeps the vast majority."
+        }
+      ],
+      "heading": "Petitioner (Illinois Attorney General)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents (Mr. Copilevitz)",
+          "citations": [
+            {
+              "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+              "evidence_ids": [
+                "ev-5dc8d6195520-0001-0000"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to Respondents (Mr. Copilevitz), charities\u2019 decisions about how much to spend on fundraising are a measure of judgment, constitute protected speech, and cannot be second\u2011guessed."
+        },
+        {
+          "attribution": "Defendants",
+          "citations": [
+            {
+              "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+              "evidence_ids": [
+                "ev-5dc8d6195520-0003-0000"
+              ],
+              "pages": {
+                "end": 53,
+                "start": 53
+              }
+            }
+          ],
+          "text": "Defendants argue that unless there is an explicit factual misrepresentation, they should receive blanket immunity from liability for charitable fundraising claims."
+        }
+      ],
+      "heading": "Respondents (Telemarketing Associates Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+      "evidence_ids": [
+        "ev-5dc8d6195520-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+      "evidence_ids": [
+        "ev-5dc8d6195520-0000-0001",
+        "ev-5dc8d6195520-0000-0003"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+      "evidence_ids": [
+        "ev-5dc8d6195520-0000-0002"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    },
+    {
+      "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+      "evidence_ids": [
+        "ev-5dc8d6195520-0001-0001"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+      "evidence_ids": [
+        "ev-5dc8d6195520-0001-0003"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+      "evidence_ids": [
+        "ev-5dc8d6195520-0001-0000"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+      "evidence_ids": [
+        "ev-5dc8d6195520-0001-0002"
+      ],
+      "pages": {
+        "end": 35,
+        "start": 35
+      }
+    },
+    {
+      "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+      "evidence_ids": [
+        "ev-5dc8d6195520-0002-0000",
+        "ev-5dc8d6195520-0002-0001"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+      "evidence_ids": [
+        "ev-5dc8d6195520-0002-0003"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    },
+    {
+      "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+      "evidence_ids": [
+        "ev-5dc8d6195520-0003-0000"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 53
+      }
+    },
+    {
+      "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+      "evidence_ids": [
+        "ev-5dc8d6195520-0003-0001"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 54
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T01:55:21.434285Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "United States (Amicus Curiae)",
+        "citations": [
+          {
+            "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+            "evidence_ids": [
+              "ev-5dc8d6195520-0000-0002"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "According to United States (Amicus Curiae), the government has authority to protect the public from fraud, even when the representations involve speech."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5dc8d619552069c29a1804baed87c00b4e13246086d0b11fa2d5aca8e0b96eed",
+            "evidence_ids": [
+              "ev-5dc8d6195520-0001-0003"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Intent to deceive is a key element of common\u2011law fraud and determines liability for charitable solicitations."
+      }
+    ],
+    "heading": "Why it matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

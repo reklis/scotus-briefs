@@ -1,0 +1,589 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Ms. Coffin",
+        "citations": [
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "A stay was entered before counsel was appointed; after counsel was appointed, a 120\u2011day stay was entered, and the parties filed a Specification of Non\u2011frivolous Issues."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0001-0003"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, the Court asked how AEDPA should be applied in this case."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-1862",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T01:55:21.446715Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Ms. Coffin",
+        "citations": [
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The parties discussed a prior stay, the appointment of counsel, and a subsequent 120\u2011day stay before filing a Specification of Non\u2011frivolous Issues."
+      },
+      {
+        "attribution": "Petitioner (Janis S. McLean)",
+        "citations": [
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0002-0003"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The petitioner argued that the five circuit courts\u2019 decisions are correct and that AEDPA does not apply to the pre\u2011application period."
+      },
+      {
+        "attribution": "Respondent (Lynne S. Coffin)",
+        "citations": [
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0000-0003"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          },
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0001-0004"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "The respondent contended that the issue is the appropriateness of following precedent, that Congress did not intend immediate AEDPA coverage for everyone, and that AEDPA should not apply retroactively to Garceau."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          },
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0001-0003"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, the Court asked the parties questions such as \u201cRight?\u201d and \u201cHow?\u201d and inquired about the application of AEDPA at the threshold stage."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Ms. Coffin",
+        "citations": [
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0001-0004"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          },
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0002-0003"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The case, Jeanne Woodford, Warden v. Robert Frederick Garceau, concerns whether the Antiterrorism and Effective Death Penalty Act (AEDPA) should apply retroactively to the respondent's case."
+      },
+      {
+        "attribution": "Petitioner (Janis S. McLean)",
+        "citations": [
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner (Janis S. McLean), according to Petitioner (Janis S. McLean), the petitioner argues that the decisions of the five circuit courts are correct."
+      },
+      {
+        "attribution": "Respondent (Lynne S. Coffin)",
+        "citations": [
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0000-0003"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          }
+        ],
+        "text": "According to Respondent (Lynne S. Coffin), according to Respondent (Lynne S. Coffin), the respondent argues that the issue is not the harm to Garceau but whether the Court should follow precedent as the State requests."
+      },
+      {
+        "attribution": "Ms. Coffin",
+        "citations": [
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The procedural history includes a stay before counsel was appointed, a subsequent 120\u2011day stay after counsel was appointed, and the filing of a Specification of Non\u2011frivolous Issues."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          },
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0001-0003"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice, during oral argument, the Court asked the parties questions such as \u201cRight?\u201d and \u201cHow?\u201d."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Janis S. McLean)",
+          "citations": [
+            {
+              "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+              "evidence_ids": [
+                "ev-5f6c3f298dad-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner (Janis S. McLean), according to Petitioner (Janis S. McLean), the petitioner believes that the decisions of the five circuit courts are correct."
+        },
+        {
+          "attribution": "Ms. McLean",
+          "citations": [
+            {
+              "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+              "evidence_ids": [
+                "ev-5f6c3f298dad-0002-0003"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Ms. McLean, the petitioner argues that AEDPA does not apply to the pre\u2011application period and therefore cannot affect Garceau\u2019s case."
+        }
+      ],
+      "heading": "Petitioner (Jeanne Woodford, Warden)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent (Lynne S. Coffin)",
+          "citations": [
+            {
+              "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+              "evidence_ids": [
+                "ev-5f6c3f298dad-0000-0003"
+              ],
+              "pages": {
+                "end": 15,
+                "start": 15
+              }
+            }
+          ],
+          "text": "According to Respondent (Lynne S. Coffin), according to Respondent (Lynne S. Coffin), the respondent contends that the central issue is whether the Court should follow precedent as the State asks, not the potential harm to Garceau."
+        },
+        {
+          "attribution": "Ms. Coffin",
+          "citations": [
+            {
+              "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+              "evidence_ids": [
+                "ev-5f6c3f298dad-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Ms. Coffin, the respondent argues that Congress intended AEDPA not to affect everyone immediately, implying limited retroactive application."
+        },
+        {
+          "attribution": "Ms. Coffin",
+          "citations": [
+            {
+              "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+              "evidence_ids": [
+                "ev-5f6c3f298dad-0001-0004"
+              ],
+              "pages": {
+                "end": 33,
+                "start": 33
+              }
+            }
+          ],
+          "text": "According to Ms. Coffin, the respondent asserts that AEDPA should not be applied retroactively to Garceau, citing precedent such as Lindh."
+        },
+        {
+          "attribution": "Ms. Coffin",
+          "citations": [
+            {
+              "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+              "evidence_ids": [
+                "ev-5f6c3f298dad-0002-0000"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Ms. Coffin, the respondent maintains that the correct result for Garceau aligns with the interests of other capital defendants."
+        }
+      ],
+      "heading": "Respondent (Robert Frederick Garceau)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+      "evidence_ids": [
+        "ev-5f6c3f298dad-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+      "evidence_ids": [
+        "ev-5f6c3f298dad-0000-0003"
+      ],
+      "pages": {
+        "end": 15,
+        "start": 15
+      }
+    },
+    {
+      "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+      "evidence_ids": [
+        "ev-5f6c3f298dad-0001-0000"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+      "evidence_ids": [
+        "ev-5f6c3f298dad-0001-0001"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+      "evidence_ids": [
+        "ev-5f6c3f298dad-0001-0003"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+      "evidence_ids": [
+        "ev-5f6c3f298dad-0001-0002"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+      "evidence_ids": [
+        "ev-5f6c3f298dad-0001-0004"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+      "evidence_ids": [
+        "ev-5f6c3f298dad-0002-0000",
+        "ev-5f6c3f298dad-0002-0001"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+      "evidence_ids": [
+        "ev-5f6c3f298dad-0002-0003"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T02:01:36.765519Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Ms. Coffin",
+        "citations": [
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0002-0000",
+              "ev-5f6c3f298dad-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          },
+          {
+            "document_hash": "5f6c3f298dad478fe059e3c9c75218f53c9aa94a7c0b0160f06491447f0b4504",
+            "evidence_ids": [
+              "ev-5f6c3f298dad-0002-0003"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "If AEDPA were applied retroactively, it could affect Garceau and potentially many other capital defendants."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,433 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument before the Supreme Court took place at 11:02\u202fa.m."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the arbitrator is empowered to determine the applicability of the issue referenced in 10324."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked what general principle controls the first conclusion."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0001-0003"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether parties can agree to a temporal restriction while leaving the decision of its truth to someone else."
+      },
+      {
+        "attribution": "Justice (unspecified)",
+        "citations": [
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice (unspecified), an unspecified Justice asked whether the NASD code of procedure, which the petitioner agreed to be bound by, incorporates the relevant provision."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-800",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T03:19:16.095733Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument before the Supreme Court took place at 11:02\u202fa.m."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          },
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0001-0003"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          },
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "During oral argument the Court asked several questions about the arbitration agreement, including its temporal restrictions and the authority of arbitrators."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument before the Supreme Court took place at 11:02\u202fa.m."
+      },
+      {
+        "attribution": "Petitioners (Karen Howsam et al.)",
+        "citations": [
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners (Karen Howsam et al.), petitioners argue that Dean Witter is attempting to place a hurdle in the way of the public investor who seeks to enforce an arbitration agreement."
+      },
+      {
+        "attribution": "Respondent (Dean Witter Reynolds)",
+        "citations": [
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Respondent (Dean Witter Reynolds), respondents argue that a \u201cnot to be submitted\u201d clause and a six\u2011year limitation limit the scope of the arbitration agreement."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0001-0003"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether parties can agree to a temporal restriction while leaving the decision of its truth to someone else."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners (Karen Howsam et al.)",
+          "citations": [
+            {
+              "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+              "evidence_ids": [
+                "ev-f89204d3508f-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioners (Karen Howsam et al.), petitioners argue that Dean Witter is attempting to place a hurdle in the way of the public investor who seeks to enforce an arbitration agreement."
+        }
+      ],
+      "heading": "Petitioner (Karen Howsam et al.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent (Dean Witter Reynolds)",
+          "citations": [
+            {
+              "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+              "evidence_ids": [
+                "ev-f89204d3508f-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Respondent (Dean Witter Reynolds), respondents argue that a \u201cnot to be submitted\u201d clause and a six\u2011year limitation limit the scope of the arbitration agreement."
+        }
+      ],
+      "heading": "Respondent (Dean Witter Reynolds, Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+      "evidence_ids": [
+        "ev-f89204d3508f-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+      "evidence_ids": [
+        "ev-f89204d3508f-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+      "evidence_ids": [
+        "ev-f89204d3508f-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+      "evidence_ids": [
+        "ev-f89204d3508f-0000-0004"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+      "evidence_ids": [
+        "ev-f89204d3508f-0001-0000"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+      "evidence_ids": [
+        "ev-f89204d3508f-0001-0003"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 31
+      }
+    },
+    {
+      "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+      "evidence_ids": [
+        "ev-f89204d3508f-0002-0001"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T03:27:11.775034Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioners (Karen Howsam et al.)",
+        "citations": [
+          {
+            "document_hash": "f89204d3508f9be4ac53da0dad126e0865db592ef9e61da87164826d393e6eab",
+            "evidence_ids": [
+              "ev-f89204d3508f-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners (Karen Howsam et al.), the case concerns whether public investors can be forced into industry\u2011run arbitration, affecting their access to courts."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

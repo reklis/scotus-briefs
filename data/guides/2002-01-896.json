@@ -1,0 +1,185 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "3348d4b4178577c75f809ea166385397a52a33df962795a30b3db3274278eb73",
+            "evidence_ids": [
+              "ev-3348d4b41785-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Petitioners, another issue is whether administrative costs can be counted toward the amount in controversy."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-896",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T03:27:11.792723Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3348d4b4178577c75f809ea166385397a52a33df962795a30b3db3274278eb73"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3348d4b4178577c75f809ea166385397a52a33df962795a30b3db3274278eb73",
+            "evidence_ids": [
+              "ev-3348d4b41785-0002-0003"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about the cost to the defendant under a test assuming a single plaintiff."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "3348d4b4178577c75f809ea166385397a52a33df962795a30b3db3274278eb73",
+              "evidence_ids": [
+                "ev-3348d4b41785-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "Petitioners contend that allowing administrative costs to count toward the amount in controversy would vastly expand the federal caseload."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3348d4b4178577c75f809ea166385397a52a33df962795a30b3db3274278eb73",
+      "evidence_ids": [
+        "ev-3348d4b41785-0000-0000",
+        "ev-3348d4b41785-0001-0000",
+        "ev-3348d4b41785-0000-0002",
+        "ev-3348d4b41785-0002-0001",
+        "ev-3348d4b41785-0002-0003"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T03:31:26.638692Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "3348d4b4178577c75f809ea166385397a52a33df962795a30b3db3274278eb73",
+            "evidence_ids": [
+              "ev-3348d4b41785-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Petitioners, resolution of whether administrative costs count toward the amount in controversy may impact the federal courts\u2019 docket size."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

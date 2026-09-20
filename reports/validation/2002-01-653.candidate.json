@@ -1,0 +1,376 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+            "evidence_ids": [
+              "ev-84460a1d05ec-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice, justices asked whether the FCC\u2019s determination was a regulatory determination."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+            "evidence_ids": [
+              "ev-84460a1d05ec-0001-0003"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Justice, justices asked whether the cancellation rule is \u201cautomatic.\u201d"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+            "evidence_ids": [
+              "ev-84460a1d05ec-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justices asked whether the FCC can pledge a license to a bank as collateral for a loan."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+            "evidence_ids": [
+              "ev-84460a1d05ec-0003-0000"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justices asked whether bankruptcy considerations are binding on the FCC."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-653",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T02:28:29.586959Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+            "evidence_ids": [
+              "ev-84460a1d05ec-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist opened the argument and announced the case."
+      },
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+            "evidence_ids": [
+              "ev-84460a1d05ec-0001-0000",
+              "ev-84460a1d05ec-0001-0003"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+            "evidence_ids": [
+              "ev-84460a1d05ec-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          },
+          {
+            "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+            "evidence_ids": [
+              "ev-84460a1d05ec-0003-0000",
+              "ev-84460a1d05ec-0003-0003"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "Justices repeatedly questioned the parties about the nature of the FCC\u2019s cancellation rule, the possibility of pledging a license, and the role of bankruptcy policy."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+            "evidence_ids": [
+              "ev-84460a1d05ec-0003-0010"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist concluded the argument by noting that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Federal Communications Commission (Petitioner)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Franklin",
+          "citations": [
+            {
+              "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+              "evidence_ids": [
+                "ev-84460a1d05ec-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Franklin, nextWave contends that the FCC had valid regulatory reasons for its action and that the issue of payment default is undisputed."
+        }
+      ],
+      "heading": "NextWave Personal Communications, Inc. (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+      "evidence_ids": [
+        "ev-84460a1d05ec-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+      "evidence_ids": [
+        "ev-84460a1d05ec-0001-0001"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+      "evidence_ids": [
+        "ev-84460a1d05ec-0001-0003"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 31
+      }
+    },
+    {
+      "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+      "evidence_ids": [
+        "ev-84460a1d05ec-0002-0001"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+      "evidence_ids": [
+        "ev-84460a1d05ec-0002-0000"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+      "evidence_ids": [
+        "ev-84460a1d05ec-0003-0000",
+        "ev-84460a1d05ec-0003-0001",
+        "ev-84460a1d05ec-0003-0003"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 54
+      }
+    },
+    {
+      "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+      "evidence_ids": [
+        "ev-84460a1d05ec-0003-0005"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    },
+    {
+      "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+      "evidence_ids": [
+        "ev-84460a1d05ec-0003-0010"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T02:37:20.783976Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "oral_argument.claims[1] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "oral_argument.claims[1] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "FCC",
+        "citations": [
+          {
+            "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+            "evidence_ids": [
+              "ev-84460a1d05ec-0002-0000"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to FCC, the case could clarify the scope of the FCC\u2019s authority to automatically cancel licenses for payment defaults, affecting how telecom companies manage financial obligations."
+      },
+      {
+        "attribution": "General Clement",
+        "citations": [
+          {
+            "document_hash": "84460a1d05ec6ea1479c57f650fcae68839e0f2fee046c75d1a7599cbc1c7289",
+            "evidence_ids": [
+              "ev-84460a1d05ec-0003-0001",
+              "ev-84460a1d05ec-0003-0005"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 54
+            }
+          }
+        ],
+        "text": "According to General Clement, the dispute over whether bankruptcy policy must be considered may influence future FCC rule\u2011making where financial distress of licensees is involved."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

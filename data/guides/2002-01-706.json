@@ -1,0 +1,329 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+            "evidence_ids": [
+              "ev-b7e0076c5938-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the central question is whether state common law tort claims that a boat engine was defective because it lacked a propeller guard are preempted either by the Boat Safety Act of 1971 or by an unpublished Coast Guard letter stating that the agency had decided not to take any regulatory action with respect to propeller guards."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-706",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T02:55:41.632224Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+            "evidence_ids": [
+              "ev-b7e0076c5938-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether a state law requiring a propeller guard on every propeller would be valid under 43\u202fU.S.C.\u202f\u00a7\u202f4306."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+            "evidence_ids": [
+              "ev-b7e0076c5938-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether it is necessary to draw a wedge between common law and positive law."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+            "evidence_ids": [
+              "ev-b7e0076c5938-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "A Justice asked why the Court should care whether the Coast Guard was \u201chappy\u201d with the regulation."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+            "evidence_ids": [
+              "ev-b7e0076c5938-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, a Justice inquired about negligent operation as an alternative basis for liability."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+            "evidence_ids": [
+              "ev-b7e0076c5938-0002-0003"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "A Justice asked why Illinois law preemption was an issue if there is no state law in this area, emphasizing that the matter is entirely federal."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+            "evidence_ids": [
+              "ev-b7e0076c5938-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case asks whether state common law tort claims that a boat engine is defective because it lacks a propeller guard are preempted by the federal Boat Safety Act of 1971 or an unpublished Coast Guard letter."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+            "evidence_ids": [
+              "ev-b7e0076c5938-0001-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "The Boat Safety Act preempts any state law that creates equipment requirements not identical to the Coast Guard\u2019s prescribed regulations."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+              "evidence_ids": [
+                "ev-b7e0076c5938-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The petitioner argues that the issue of preemption by the Boat Safety Act or the Coast Guard letter is the core legal question in this case."
+        },
+        {
+          "attribution": "Petitioner (Leslie A. Brueckner)",
+          "citations": [
+            {
+              "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+              "evidence_ids": [
+                "ev-b7e0076c5938-0003-0000"
+              ],
+              "pages": {
+                "end": 53,
+                "start": 53
+              }
+            }
+          ],
+          "text": "According to Petitioner (Leslie A. Brueckner), according to Petitioner (Leslie A. Brueckner), the petitioner contends that the maritime argument was waived because the United States never briefed it and the respondents never raised it in their opposition brief."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Shapiro",
+          "citations": [
+            {
+              "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+              "evidence_ids": [
+                "ev-b7e0076c5938-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Shapiro, the respondent argues that the manufacturer may not know about the defect, suggesting a lack of knowledge about the missing propeller guard."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Stewart",
+          "citations": [
+            {
+              "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+              "evidence_ids": [
+                "ev-b7e0076c5938-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Stewart, the amicus brief argues that a tort judgment serves an important purpose\u2014compensating people who have actually been injured by defects\u2014something the prescriptive standard does not provide."
+        }
+      ],
+      "heading": "Amicus (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b7e0076c593813a6bc13152ac085c1aca3295099b0921b06aa0716247a74f89d",
+      "evidence_ids": [
+        "ev-b7e0076c5938-0000-0000",
+        "ev-b7e0076c5938-0000-0001",
+        "ev-b7e0076c5938-0000-0002",
+        "ev-b7e0076c5938-0000-0003",
+        "ev-b7e0076c5938-0001-0000",
+        "ev-b7e0076c5938-0001-0001",
+        "ev-b7e0076c5938-0001-0003",
+        "ev-b7e0076c5938-0002-0000",
+        "ev-b7e0076c5938-0002-0001",
+        "ev-b7e0076c5938-0002-0003",
+        "ev-b7e0076c5938-0003-0000",
+        "ev-b7e0076c5938-0003-0001"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T03:02:07.210494Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

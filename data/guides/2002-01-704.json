@@ -1,0 +1,320 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+            "evidence_ids": [
+              "ev-7331b4fdf475-0001-0004"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice, the Court asked whether the client had sought to proceed before the Secretary."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2002-01-704",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T02:42:25.421286Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+            "evidence_ids": [
+              "ev-7331b4fdf475-0001-0003"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the Government was suggesting that the Secretary had denied the application in writing."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+            "evidence_ids": [
+              "ev-7331b4fdf475-0001-0004"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "A Justice asked whether the client had sought to proceed before the Secretary."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+            "evidence_ids": [
+              "ev-7331b4fdf475-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice, a Justice remarked that otherwise Congress could not work."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+            "evidence_ids": [
+              "ev-7331b4fdf475-0002-0004"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist thanked Mr. Kneedler and noted that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "United States (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+            "evidence_ids": [
+              "ev-7331b4fdf475-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to United States (Petitioner), according to United States (Petitioner), according to United States (Petitioner), congress annually prohibits the Bureau of Alcohol, Tobacco, and Firearms (BATF) from investigating or acting on applications for discretionary relief from firearms disabilities under 18\u202fU.S.C.\u202f925(c)."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+            "evidence_ids": [
+              "ev-7331b4fdf475-0001-0001"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to United States, the Government argued that there was no jurisdiction but nevertheless participated on the factual side of the case."
+      },
+      {
+        "attribution": "Mr. Goldstein",
+        "citations": [
+          {
+            "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+            "evidence_ids": [
+              "ev-7331b4fdf475-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Mr. Goldstein, the Government\u2019s preferred outcome was a judgment remanding the matter to the Secretary."
+      },
+      {
+        "attribution": "Mr. Kneedler",
+        "citations": [
+          {
+            "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+            "evidence_ids": [
+              "ev-7331b4fdf475-0002-0002"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Mr. Kneedler, the argument included the principle that when Congress prohibits an agency from spending funds, it does not expect money to be drawn from another source."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "United States (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+              "evidence_ids": [
+                "ev-7331b4fdf475-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to United States (Petitioner), according to United States (Petitioner), according to United States (Petitioner), congress annually prohibits the BATF from investigating or acting on applications for discretionary relief from firearms disabilities under 18\u202fU.S.C.\u202f925(c)."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+              "evidence_ids": [
+                "ev-7331b4fdf475-0001-0001"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to United States, the Government argued that there was no jurisdiction but nevertheless participated on the factual side of the case."
+        },
+        {
+          "attribution": "Mr. Goldstein",
+          "citations": [
+            {
+              "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+              "evidence_ids": [
+                "ev-7331b4fdf475-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Goldstein, the Government\u2019s preferred outcome was a judgment remanding the matter to the Secretary."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Thomas Lamar Bean (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "7331b4fdf4753cd41dffe6b73240c1d1f6b77a6db97e9d813085b260a968f50c",
+      "evidence_ids": [
+        "ev-7331b4fdf475-0000-0000",
+        "ev-7331b4fdf475-0001-0000",
+        "ev-7331b4fdf475-0001-0001",
+        "ev-7331b4fdf475-0001-0002",
+        "ev-7331b4fdf475-0001-0003",
+        "ev-7331b4fdf475-0001-0004",
+        "ev-7331b4fdf475-0002-0000",
+        "ev-7331b4fdf475-0002-0001",
+        "ev-7331b4fdf475-0002-0002",
+        "ev-7331b4fdf475-0002-0003",
+        "ev-7331b4fdf475-0002-0004",
+        "ev-7331b4fdf475-0000-0003"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T02:47:58.224124Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
