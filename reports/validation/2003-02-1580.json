@@ -1,0 +1,41 @@
+{
+  "accepted": false,
+  "case_id": "2003-02-1580",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": false,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: The overview claim adds that the plan \u201ctherefore violates constitutional limits on partisan gerrymandering,\u201d which is not directly supported by the cited evidence (page 55). The oral\u2011argument summary also asserts that petitioners said the map \u201cviolates constitutional limits,\u201d a statement not found in the provided transcript.",
+    "Attribution check failed: The oral\u2011argument summary presents factual statements without any attribution to a speaker, violating the requirement that each claim be attributed.",
+    "Opinion\u2011distinction check failed: The overview claim treats the constitutional\u2011violation argument as a settled fact rather than as a party\u2019s position or an un\u2011resolved opinion, conflating opinion with holding.",
+    "Overstatement check failed: The claim that the map \u201cviolates constitutional limits\u201d goes beyond what the evidence shows and therefore constitutes an overstatement."
+  ],
+  "quality_scores": {
+    "completeness": 0.91,
+    "factual_accuracy": 0.78,
+    "neutrality": 0.92,
+    "readability": 0.89,
+    "restraint": 0.9,
+    "traceability": 0.84
+  }
+}

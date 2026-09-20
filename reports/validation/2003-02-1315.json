@@ -1,0 +1,38 @@
+{
+  "accepted": false,
+  "case_id": "2003-02-1315",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": true,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "overstatement check failed: the claim that Washington\u2019s constitution contains a \u201cBlaine\u2011type amendment\u201d is not supported by the supplied evidence, which only states that the constitution limits government involvement in religious matters."
+  ],
+  "quality_scores": {
+    "completeness": 0.95,
+    "factual_accuracy": 0.9,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.95,
+    "traceability": 0.95
+  }
+}

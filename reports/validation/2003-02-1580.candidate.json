@@ -1,0 +1,373 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mr. Smith",
+        "citations": [
+          {
+            "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+            "evidence_ids": [
+              "ev-3da3e7ceddf8-0003-0002"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Mr. Smith, petitioner Vieth challenges Pennsylvania\u2019s congressional redistricting plan, alleging it was drawn to maximize partisan advantage."
+      },
+      {
+        "attribution": "Justice (unidentified)",
+        "citations": [
+          {
+            "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+            "evidence_ids": [
+              "ev-3da3e7ceddf8-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Justice (unidentified), according to Justice (unidentified), the Court asked whether the lower courts had applied the Bandemer standard correctly."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2003-02-1580",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T11:38:12.067072Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": "During oral argument, the petitioners described the map as a partisan gerrymander that violates constitutional limits. The justices asked whether the lower courts had correctly applied the Bandemer standard and whether any level of partisan discrimination is permissible.",
+    "summary_citations": [
+      {
+        "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+        "evidence_ids": [
+          "ev-3da3e7ceddf8-0000-0002"
+        ],
+        "pages": {
+          "end": 3,
+          "start": 3
+        }
+      },
+      {
+        "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+        "evidence_ids": [
+          "ev-3da3e7ceddf8-0003-0002"
+        ],
+        "pages": {
+          "end": 55,
+          "start": 55
+        }
+      }
+    ]
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. Smith",
+        "citations": [
+          {
+            "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+            "evidence_ids": [
+              "ev-3da3e7ceddf8-0003-0002"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Mr. Smith, petitioner Vieth challenges Pennsylvania\u2019s congressional redistricting plan, alleging it was drawn to maximize partisan advantage and therefore violates constitutional limits on partisan gerrymandering."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": [
+      {
+        "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+        "evidence_ids": [
+          "ev-3da3e7ceddf8-0003-0002"
+        ],
+        "pages": {
+          "end": 55,
+          "start": 55
+        }
+      }
+    ]
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Paul M. Smith (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+              "evidence_ids": [
+                "ev-3da3e7ceddf8-0000-0003"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Paul M. Smith (Petitioner), according to Paul M. Smith (Petitioner), the standard applied requires showing that voters are prevented from registering to vote, from raising money, from campaigning, or from showing up at the polls."
+        },
+        {
+          "attribution": "Paul M. Smith (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+              "evidence_ids": [
+                "ev-3da3e7ceddf8-0000-0004"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Paul M. Smith (Petitioner), according to Paul M. Smith (Petitioner), lower courts applied a \u201cshut\u2011out\u201d standard that lacks real scrutiny of the map."
+        },
+        {
+          "attribution": "Paul M. Smith (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+              "evidence_ids": [
+                "ev-3da3e7ceddf8-0000-0005"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Paul M. Smith (Petitioner), according to Paul M. Smith (Petitioner), there are judicially enforceable limits on a state\u2019s power to create an uneven playing field in congressional elections."
+        },
+        {
+          "attribution": "Mr. Smith",
+          "citations": [
+            {
+              "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+              "evidence_ids": [
+                "ev-3da3e7ceddf8-0001-0000"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Mr. Smith, the government may not discriminate against people based on partisan affiliation or political viewpoint."
+        },
+        {
+          "attribution": "Mr. Smith",
+          "citations": [
+            {
+              "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+              "evidence_ids": [
+                "ev-3da3e7ceddf8-0001-0002"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Smith, some level of partisan consideration is permissible, but an outer boundary is needed."
+        },
+        {
+          "attribution": "Mr. Smith",
+          "citations": [
+            {
+              "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+              "evidence_ids": [
+                "ev-3da3e7ceddf8-0001-0003"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to Mr. Smith, when one party obtains two\u2011thirds of the seats with less than half the votes, the map crosses the constitutional line."
+        },
+        {
+          "attribution": "Cortes and Accurti",
+          "citations": [
+            {
+              "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+              "evidence_ids": [
+                "ev-3da3e7ceddf8-0002-0003"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Cortes and Accurti, the Shaw line of cases attempted to isolate race from politics in redistricting."
+        },
+        {
+          "attribution": "Mr. DeLone",
+          "citations": [
+            {
+              "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+              "evidence_ids": [
+                "ev-3da3e7ceddf8-0003-0001"
+              ],
+              "pages": {
+                "end": 53,
+                "start": 53
+              }
+            }
+          ],
+          "text": "According to Mr. DeLone, traditional districting criteria are tools used by parties to seek political advantage, which is not inherently unlawful."
+        },
+        {
+          "attribution": "Mr. Smith",
+          "citations": [
+            {
+              "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+              "evidence_ids": [
+                "ev-3da3e7ceddf8-0003-0003"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Mr. Smith, the map exhibits packing and cracking, a form of severe partisan discrimination."
+        },
+        {
+          "attribution": "Mr. Smith",
+          "citations": [
+            {
+              "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+              "evidence_ids": [
+                "ev-3da3e7ceddf8-0003-0002"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Mr. Smith, the complaint satisfies the Bandemer standard by alleging partisan maximization was the sole driving force behind the map."
+        }
+      ],
+      "heading": "Petitioner (Vieth)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Jubelirer)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3da3e7ceddf897b095422836c769a2e2e493bb6050ef6c21919ad2ad95dd0ed2",
+      "evidence_ids": [
+        "ev-3da3e7ceddf8-0000-0000",
+        "ev-3da3e7ceddf8-0000-0002",
+        "ev-3da3e7ceddf8-0000-0003",
+        "ev-3da3e7ceddf8-0000-0004",
+        "ev-3da3e7ceddf8-0000-0005",
+        "ev-3da3e7ceddf8-0001-0000",
+        "ev-3da3e7ceddf8-0001-0001",
+        "ev-3da3e7ceddf8-0001-0002",
+        "ev-3da3e7ceddf8-0001-0003",
+        "ev-3da3e7ceddf8-0002-0003",
+        "ev-3da3e7ceddf8-0003-0001",
+        "ev-3da3e7ceddf8-0003-0002",
+        "ev-3da3e7ceddf8-0003-0003"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T11:47:36.408752Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: The overview claim adds that the plan \u201ctherefore violates constitutional limits on partisan gerrymandering,\u201d which is not directly supported by the cited evidence (page 55). The oral\u2011argument summary also asserts that petitioners said the map \u201cviolates constitutional limits,\u201d a statement not found in the provided transcript.",
+      "Attribution check failed: The oral\u2011argument summary presents factual statements without any attribution to a speaker, violating the requirement that each claim be attributed.",
+      "Opinion\u2011distinction check failed: The overview claim treats the constitutional\u2011violation argument as a settled fact rather than as a party\u2019s position or an un\u2011resolved opinion, conflating opinion with holding.",
+      "Overstatement check failed: The claim that the map \u201cviolates constitutional limits\u201d goes beyond what the evidence shows and therefore constitutes an overstatement."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

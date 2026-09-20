@@ -1,0 +1,189 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "dcf70b9c68c9d9e4f50790397596c22bf94fd016e0e269bd28b792b1da6077d5",
+            "evidence_ids": [
+              "ev-dcf70b9c68c9-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice, qUESTION: You mean that Teague is a new rule."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "dcf70b9c68c9d9e4f50790397596c22bf94fd016e0e269bd28b792b1da6077d5",
+            "evidence_ids": [
+              "ev-dcf70b9c68c9-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice, qUESTION: Yes, the direct appeal."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2003-02-1603",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T11:52:52.610271Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "dcf70b9c68c9d9e4f50790397596c22bf94fd016e0e269bd28b792b1da6077d5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "dcf70b9c68c9d9e4f50790397596c22bf94fd016e0e269bd28b792b1da6077d5",
+            "evidence_ids": [
+              "ev-dcf70b9c68c9-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice, qUESTION: You mean that Teague is a new rule."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "dcf70b9c68c9d9e4f50790397596c22bf94fd016e0e269bd28b792b1da6077d5",
+            "evidence_ids": [
+              "ev-dcf70b9c68c9-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice, qUESTION: Yes, the direct appeal."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner: JEFFREY A. BEARD, SECRETARY PENNSYLVANIA DEPARTMENT OF CORRECTIONS",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent: GEORGE E. BANKS.",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "dcf70b9c68c9d9e4f50790397596c22bf94fd016e0e269bd28b792b1da6077d5",
+      "evidence_ids": [
+        "ev-dcf70b9c68c9-0001-0000"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "dcf70b9c68c9d9e4f50790397596c22bf94fd016e0e269bd28b792b1da6077d5",
+      "evidence_ids": [
+        "ev-dcf70b9c68c9-0001-0002"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T11:56:18.739765Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

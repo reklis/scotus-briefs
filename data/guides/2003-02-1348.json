@@ -1,0 +1,261 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "c6dd9b197f4ea32c03014d24dca41e0af67c36e7ee03f0a2397317e784f50412",
+            "evidence_ids": [
+              "ev-c6dd9b197f4e-0003-0002"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Chief Justice asked Ms. McDowell a question during oral argument."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2003-02-1348",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T11:18:08.760351Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c6dd9b197f4ea32c03014d24dca41e0af67c36e7ee03f0a2397317e784f50412"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c6dd9b197f4ea32c03014d24dca41e0af67c36e7ee03f0a2397317e784f50412",
+            "evidence_ids": [
+              "ev-c6dd9b197f4e-0003-0003"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "The case was submitted at 12:04\u202fp.m. during the oral argument session."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Ms. McDowell",
+        "citations": [
+          {
+            "document_hash": "c6dd9b197f4ea32c03014d24dca41e0af67c36e7ee03f0a2397317e784f50412",
+            "evidence_ids": [
+              "ev-c6dd9b197f4e-0003-0000"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Ms. McDowell argued that the case falls under a due\u2011care defense and that the Montreal Convention balances airline and passenger interests."
+      },
+      {
+        "attribution": "Mr. Harakas (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "c6dd9b197f4ea32c03014d24dca41e0af67c36e7ee03f0a2397317e784f50412",
+            "evidence_ids": [
+              "ev-c6dd9b197f4e-0003-0001"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "According to Mr. Harakas (Petitioner), mr. Harakas contended that the dispute centers on negligence and seeks to equate the accident with negligence."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Harakas (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "c6dd9b197f4ea32c03014d24dca41e0af67c36e7ee03f0a2397317e784f50412",
+              "evidence_ids": [
+                "ev-c6dd9b197f4e-0003-0001"
+              ],
+              "pages": {
+                "end": 53,
+                "start": 53
+              }
+            }
+          ],
+          "text": "According to Mr. Harakas (Petitioner), the petitioner contended that the core issue is negligence, seeking to equate the accident with negligence."
+        }
+      ],
+      "heading": "Petitioner (Olympic Airways) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. McDowell",
+          "citations": [
+            {
+              "document_hash": "c6dd9b197f4ea32c03014d24dca41e0af67c36e7ee03f0a2397317e784f50412",
+              "evidence_ids": [
+                "ev-c6dd9b197f4e-0003-0000"
+              ],
+              "pages": {
+                "end": 52,
+                "start": 52
+              }
+            }
+          ],
+          "text": "According to Ms. McDowell, the respondent argued that the case should be understood as a due\u2011care defense under the Montreal Convention, balancing airline and passenger interests."
+        }
+      ],
+      "heading": "Respondent (Rubina Husain) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c6dd9b197f4ea32c03014d24dca41e0af67c36e7ee03f0a2397317e784f50412",
+      "evidence_ids": [
+        "ev-c6dd9b197f4e-0003-0000"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    },
+    {
+      "document_hash": "c6dd9b197f4ea32c03014d24dca41e0af67c36e7ee03f0a2397317e784f50412",
+      "evidence_ids": [
+        "ev-c6dd9b197f4e-0003-0002"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    },
+    {
+      "document_hash": "c6dd9b197f4ea32c03014d24dca41e0af67c36e7ee03f0a2397317e784f50412",
+      "evidence_ids": [
+        "ev-c6dd9b197f4e-0003-0001"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 53
+      }
+    },
+    {
+      "document_hash": "c6dd9b197f4ea32c03014d24dca41e0af67c36e7ee03f0a2397317e784f50412",
+      "evidence_ids": [
+        "ev-c6dd9b197f4e-0003-0003"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T11:19:59.817926Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Ms. McDowell",
+        "citations": [
+          {
+            "document_hash": "c6dd9b197f4ea32c03014d24dca41e0af67c36e7ee03f0a2397317e784f50412",
+            "evidence_ids": [
+              "ev-c6dd9b197f4e-0003-0000"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to Ms. McDowell, interpreting the accident requirement as satisfying the negligence standard serves the Montreal Convention\u2019s purpose of balancing carrier and passenger interests and provides compensation and incentives for airline supervision and training."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

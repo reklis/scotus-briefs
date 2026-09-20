@@ -1,0 +1,409 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+            "evidence_ids": [
+              "ev-15f8483fa7a9-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice, qUESTION: When you say traditionally it's been understood to mean real interest rate plus time value of money, it means real interest rate for the particular lender. Isn't -- I mean, the -- the interest rate that is given to different lenders is not always the same."
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+            "evidence_ids": [
+              "ev-15f8483fa7a9-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice, qUESTION: Well, why isn't that a valid distinction?"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+            "evidence_ids": [
+              "ev-15f8483fa7a9-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, qUESTION: Would it satisfy you if we said this?"
+      },
+      {
+        "attribution": "Justice",
+        "citations": [
+          {
+            "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+            "evidence_ids": [
+              "ev-15f8483fa7a9-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice, qUESTION: But no. But does what I say satisfy you?"
+      },
+      {
+        "attribution": "Chief Justice",
+        "citations": [
+          {
+            "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+            "evidence_ids": [
+              "ev-15f8483fa7a9-0003-0000"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "According to Chief Justice, qUESTION: But it seems pretty obvious if it's a higher rate, there are going to be more defaults."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+            "evidence_ids": [
+              "ev-15f8483fa7a9-0003-0005"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, qUESTION: Thank you, Ms. Harper. The case is submitted."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2003-02-1016",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-20T10:24:08.218456Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+            "evidence_ids": [
+              "ev-15f8483fa7a9-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners, the dispute centers on how to calculate deferred payments required under section 1325(a)(5)(B)(ii) of the Bankruptcy Code."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+            "evidence_ids": [
+              "ev-15f8483fa7a9-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioners argue that deferred payments must equal the present value of the collateral, which they say is an objective concept reflecting the real interest rate and inflation."
+      },
+      {
+        "attribution": "Mr. Brunstad",
+        "citations": [
+          {
+            "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+            "evidence_ids": [
+              "ev-15f8483fa7a9-0002-0003"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Mr. Brunstad, respondent argues that a secured creditor in a Chapter 13 cramdown is not seeking profit but merely trying to mitigate the large losses it would otherwise suffer."
+      },
+      {
+        "attribution": "Mr. Brunstad",
+        "citations": [
+          {
+            "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+            "evidence_ids": [
+              "ev-15f8483fa7a9-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Mr. Brunstad, respondent also points to studies indicating that the success rate of Chapter 13 plans is low, with failure rates as high as 97 percent in some jurisdictions."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+              "evidence_ids": [
+                "ev-15f8483fa7a9-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioners, deferred payments under \u00a71325(a)(5)(B)(ii) must equal the present value of the collateral, an objective concept reflecting the real interest rate and inflation."
+        }
+      ],
+      "heading": "Till (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Brunstad",
+          "citations": [
+            {
+              "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+              "evidence_ids": [
+                "ev-15f8483fa7a9-0002-0003"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Brunstad, a secured creditor in a Chapter 13 cramdown is not trying to make a profit but is merely trying to mitigate the enormous losses it would otherwise suffer."
+        },
+        {
+          "attribution": "Mr. Brunstad",
+          "citations": [
+            {
+              "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+              "evidence_ids": [
+                "ev-15f8483fa7a9-0001-0003"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Mr. Brunstad, studies show that the success rate of Chapter 13 plans can be as low as 3 percent, with failure rates up to 97 percent in some jurisdictions."
+        }
+      ],
+      "heading": "SCS Credit Corp. (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+      "evidence_ids": [
+        "ev-15f8483fa7a9-0000-0000",
+        "ev-15f8483fa7a9-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+      "evidence_ids": [
+        "ev-15f8483fa7a9-0001-0000"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+      "evidence_ids": [
+        "ev-15f8483fa7a9-0001-0001",
+        "ev-15f8483fa7a9-0001-0004"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+      "evidence_ids": [
+        "ev-15f8483fa7a9-0001-0003"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+      "evidence_ids": [
+        "ev-15f8483fa7a9-0002-0000",
+        "ev-15f8483fa7a9-0002-0001"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+      "evidence_ids": [
+        "ev-15f8483fa7a9-0002-0003"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+      "evidence_ids": [
+        "ev-15f8483fa7a9-0003-0000",
+        "ev-15f8483fa7a9-0003-0001"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 53
+      }
+    },
+    {
+      "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+      "evidence_ids": [
+        "ev-15f8483fa7a9-0003-0005"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    },
+    {
+      "document_hash": "15f8483fa7a92f20849e03b6ebf439491ed58c94652356ba359396f7036094bc",
+      "evidence_ids": [
+        "ev-15f8483fa7a9-0003-0006"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-20T10:28:39.438484Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
