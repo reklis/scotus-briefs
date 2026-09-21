@@ -1,0 +1,390 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether a district judge who denied a motion before the jury verdict can, within ten days after the verdict, change his mind and grant the motion."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked what a trial court should do if it grants judgment non obstante veredicto and, alternatively, would grant a new trial."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0001-0004"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether the rule implies that a reserved question is implicitly resolved when the court later does not act."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0001-0005"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the record before the Federal Circuit was truncated, noting that a larger record might exist."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0003-0000"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Souter asked for clarification on the meaning of the rule."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0003-0001"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether a judge can grant a new trial on a Rule 50(a) motion."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-597",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T11:30:46.443929Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0002-0002"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The Court noted that a motion for a new trial was based on newly discovered evidence."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0001-0001",
+              "ev-6397a1cfc46c-0001-0000",
+              "ev-6397a1cfc46c-0001-0004",
+              "ev-6397a1cfc46c-0001-0005",
+              "ev-6397a1cfc46c-0003-0000",
+              "ev-6397a1cfc46c-0003-0001"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justices Stevens, Kennedy, Scalia, Ginsburg, and Souter asked multiple questions about the scope, timing, and effect of Rule 50(a) motions."
+      },
+      {
+        "attribution": "Mr. Schroeder",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0002-0001"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Mr. Schroeder, the respondent, through Robert A. Schroeder, argued that Rule 50(a) allows the judge to grant the motion."
+      }
+    ],
+    "heading": "Oral Argument Summary",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. Stewart",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0001-0003"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Rule 50(a)(1) is permissive, allowing the court to decide an issue against a party when there is no legally sufficient evidentiary basis."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0002-0002"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "A motion for a new trial was filed based on newly discovered evidence."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0003-0004"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "The judge may decide a Rule 50(a) motion at any time before entering judgment and can change his or her mind at any time because the issue remains before the court."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0003-0003"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "The differing interpretations of Rule 50(a) create confusion, subjectivity, and inconsistent legal standards nationwide."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Schroeder",
+          "citations": [
+            {
+              "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+              "evidence_ids": [
+                "ev-6397a1cfc46c-0002-0001"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Mr. Schroeder, the respondent argued that Rule 50(a) permits the judge to grant a motion for judgment as a matter of law."
+        },
+        {
+          "attribution": "Robert A. Schroeder",
+          "citations": [
+            {
+              "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+              "evidence_ids": [
+                "ev-6397a1cfc46c-0001-0002"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "According to Robert A. Schroeder, robert A. Schroeder presented oral argument on behalf of the respondent."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Petitioner Position",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+      "evidence_ids": [
+        "ev-6397a1cfc46c-0001-0003",
+        "ev-6397a1cfc46c-0002-0002",
+        "ev-6397a1cfc46c-0003-0004",
+        "ev-6397a1cfc46c-0003-0003",
+        "ev-6397a1cfc46c-0001-0001",
+        "ev-6397a1cfc46c-0001-0000",
+        "ev-6397a1cfc46c-0001-0004",
+        "ev-6397a1cfc46c-0001-0005",
+        "ev-6397a1cfc46c-0003-0000",
+        "ev-6397a1cfc46c-0003-0001",
+        "ev-6397a1cfc46c-0001-0002",
+        "ev-6397a1cfc46c-0002-0001"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 20
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T11:35:16.632559Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6397a1cfc46cf2958425596afc9b0de607b13c68e6e97fbff082b84ce6379cb0",
+            "evidence_ids": [
+              "ev-6397a1cfc46c-0003-0003"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "The lack of a clear rule on when a judge may grant or rescind a Rule 50(a) motion creates confusion, subjectivity, and inconsistent legal standards across the nation."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

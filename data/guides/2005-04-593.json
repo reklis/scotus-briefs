@@ -1,0 +1,442 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the plaintiff can recover damages for emotional distress in addition to loss of profits."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0001-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the dispute is a matter of federal contract law, common law, or state law, and whether Section 1981 applies as a third\u2011party beneficiary."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked if the claim is stronger than a tortious interference claim because the target is the party itself."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0001-0004"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked where in the complaint it alleges a tortious interference claim."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the individual plaintiff asserted the Section 1981 claim before the settlement of the corporate claim."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether recovery by the corporation would be effectively recovery by John McDonald."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-593",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T11:25:03.335162Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy questioned the scope of damages, including whether emotional distress could be recovered."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0001-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the dispute should be decided under federal contract law, common law, or state law, and whether Section 1981 applies as a third\u2011party beneficiary."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Kennedy also asked if the claim is stronger than a tortious interference claim because the target is the party itself."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0001-0004"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked where in the complaint it alleges a tortious interference claim."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the individual plaintiff asserted the Section 1981 claim before the settlement of the corporate claim."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether recovery by the corporation would be effectively recovery by John McDonald."
+      },
+      {
+        "attribution": "Allen Lichtenstein (Respondent)",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0001-0003"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          },
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0001-0005"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Allen Lichtenstein (Respondent), according to Allen Lichtenstein (Respondent), lichtenstein argued that Section 1981 imposes a nondiscrimination duty not based on contract law and that the case is a discrimination claim, not tortious interference."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The district court dismissed the complaint with prejudice because there was no alternative theory and the parties did not move for leave to amend."
+      },
+      {
+        "attribution": "Allen Lichtenstein (Respondent)",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0001-0003"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Allen Lichtenstein (Respondent), according to Allen Lichtenstein (Respondent), lichtenstein contended that Section 1981 imposes a nondiscrimination duty that is not a contractual provision and that intentional racial discrimination is more akin to a tort than a breach of contract."
+      },
+      {
+        "attribution": "Allen Lichtenstein (Respondent)",
+        "citations": [
+          {
+            "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+            "evidence_ids": [
+              "ev-828be96c4449-0001-0005"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Allen Lichtenstein (Respondent), according to Allen Lichtenstein (Respondent), lichtenstein also stated that the complaint does not allege a tortious interference claim and that the case is a Section 1981 discrimination claim."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner (Domino's Pizza, Inc.)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Allen Lichtenstein (Respondent)",
+          "citations": [
+            {
+              "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+              "evidence_ids": [
+                "ev-828be96c4449-0001-0003"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Allen Lichtenstein (Respondent), according to Allen Lichtenstein (Respondent), lichtenstein contended that Section 1981 imposes a nondiscrimination duty that is not a contractual provision and that intentional racial discrimination is more akin to a tort than a breach of contract."
+        },
+        {
+          "attribution": "Allen Lichtenstein (Respondent)",
+          "citations": [
+            {
+              "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+              "evidence_ids": [
+                "ev-828be96c4449-0001-0005"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Allen Lichtenstein (Respondent), according to Allen Lichtenstein (Respondent), lichtenstein stated that the complaint does not allege a tortious interference claim and that the case is a Section 1981 discrimination claim."
+        },
+        {
+          "attribution": "MR. LICHTENSTEIN",
+          "citations": [
+            {
+              "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+              "evidence_ids": [
+                "ev-828be96c4449-0002-0000"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to MR. LICHTENSTEIN, lichtenstein noted that the corporate form gives certain protections, but it does not protect corporate officers or shareholders from their own tortious behavior."
+        }
+      ],
+      "heading": "Respondent (John McDonald)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "828be96c4449a35bf99c58d1f513bafe8da358b459d9cc627a88f83676871e15",
+      "evidence_ids": [
+        "ev-828be96c4449-0000-0003",
+        "ev-828be96c4449-0000-0000",
+        "ev-828be96c4449-0000-0002",
+        "ev-828be96c4449-0001-0000",
+        "ev-828be96c4449-0001-0001",
+        "ev-828be96c4449-0001-0002",
+        "ev-828be96c4449-0001-0003",
+        "ev-828be96c4449-0001-0004",
+        "ev-828be96c4449-0001-0005",
+        "ev-828be96c4449-0002-0000",
+        "ev-828be96c4449-0002-0002",
+        "ev-828be96c4449-0002-0003"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T11:30:46.433948Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

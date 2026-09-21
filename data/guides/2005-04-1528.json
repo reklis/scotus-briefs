@@ -1,0 +1,285 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1528",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T10:15:30.131993Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3a92294cd28c949cf9d59e42f605c3c54777a29b4def462a40b5d38fc1a35989"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3a92294cd28c949cf9d59e42f605c3c54777a29b4def462a40b5d38fc1a35989",
+            "evidence_ids": [
+              "ev-3a92294cd28c-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, jUSTICE GINSBURG: Mr. Bopp, would you clarify a procedural point? As I understand it, on the expenditure issue, there is no final decision that has gone back to the district court for further proceedings."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "3a92294cd28c949cf9d59e42f605c3c54777a29b4def462a40b5d38fc1a35989",
+            "evidence_ids": [
+              "ev-3a92294cd28c-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, jUSTICE KENNEDY: Well, just --"
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "3a92294cd28c949cf9d59e42f605c3c54777a29b4def462a40b5d38fc1a35989",
+            "evidence_ids": [
+              "ev-3a92294cd28c-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Souter, jUSTICE SOUTER: But on -- on your view, if -- if there were a -- a mandatory publicly funded scheme and the -- the limits on expenditure were very high -- it was a very generous scheme. They gave them lots of money -- it would still be unconstitutional because there would be -- I -- I take it on your view, because there would be an elimination of any way to participate by contributing. Is that correct?"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "3a92294cd28c949cf9d59e42f605c3c54777a29b4def462a40b5d38fc1a35989",
+            "evidence_ids": [
+              "ev-3a92294cd28c-0001-0004"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, jUSTICE SCALIA: But that's the limit you've placed on -- on contributions."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "3a92294cd28c949cf9d59e42f605c3c54777a29b4def462a40b5d38fc1a35989",
+            "evidence_ids": [
+              "ev-3a92294cd28c-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, jUSTICE SCALIA: If the burden is on the candidate to establish that -- that somebody's expenditure is independent and shouldn't be counted against his expenditure limit."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "3a92294cd28c949cf9d59e42f605c3c54777a29b4def462a40b5d38fc1a35989",
+            "evidence_ids": [
+              "ev-3a92294cd28c-0002-0005"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "So the case is going back to the trial court on those bases anyway."
+      },
+      {
+        "attribution": "Vermont record",
+        "citations": [
+          {
+            "document_hash": "3a92294cd28c949cf9d59e42f605c3c54777a29b4def462a40b5d38fc1a35989",
+            "evidence_ids": [
+              "ev-3a92294cd28c-0002-0003"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "We had a record in Vermont that showed that for the previous nine election cycles before the act was enacted, only one incumbent had been defeated for a statewide office."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "3a92294cd28c949cf9d59e42f605c3c54777a29b4def462a40b5d38fc1a35989",
+              "evidence_ids": [
+                "ev-3a92294cd28c-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioners, as this Court made clear recently in Republican Party of Minnesota v. White, since political candidates are the ones who take office, it is imperative that they be allowed freely to express themselves on matters of current public importance. As a result, this Court has never allowed the government to prohibit candidates from communicating relevant information to voters during an election."
+        },
+        {
+          "attribution": "Mr. Bopp",
+          "citations": [
+            {
+              "document_hash": "3a92294cd28c949cf9d59e42f605c3c54777a29b4def462a40b5d38fc1a35989",
+              "evidence_ids": [
+                "ev-3a92294cd28c-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. Bopp, there would be an absolute prohibition, and this Court in -- in Beaumont reserved that question of whether or not an absolute prohibition -- and -- and then in McConnell, you struck down the absolute prohibition on minors' contributing to campaigns. So, yes, there would be a absolute prohibition on any way for any individual to associate with a campaign through a contribution."
+        }
+      ],
+      "heading": "Petitioners\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Sorrell",
+          "citations": [
+            {
+              "document_hash": "3a92294cd28c949cf9d59e42f605c3c54777a29b4def462a40b5d38fc1a35989",
+              "evidence_ids": [
+                "ev-3a92294cd28c-0001-0002"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Mr. Sorrell, money buys access. Our Governor admitted that in a State of the State address. But we also had testimony at trial from a former statewide officeholder that money, of course, buys access, but on the bad days, it buys influence."
+        }
+      ],
+      "heading": "Respondents\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3a92294cd28c949cf9d59e42f605c3c54777a29b4def462a40b5d38fc1a35989",
+      "evidence_ids": [
+        "ev-3a92294cd28c-0000-0000",
+        "ev-3a92294cd28c-0000-0002",
+        "ev-3a92294cd28c-0000-0004",
+        "ev-3a92294cd28c-0001-0000",
+        "ev-3a92294cd28c-0001-0001",
+        "ev-3a92294cd28c-0001-0002",
+        "ev-3a92294cd28c-0001-0004",
+        "ev-3a92294cd28c-0002-0000",
+        "ev-3a92294cd28c-0002-0003",
+        "ev-3a92294cd28c-0002-0005"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T10:20:39.307546Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

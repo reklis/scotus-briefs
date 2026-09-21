@@ -1,0 +1,384 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mr. Olson",
+        "citations": [
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0002-0001"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "According to Mr. Olson, Ohio offers an investment tax credit that reduces the franchise tax owed by in\u2011state manufacturers, while out\u2011of\u2011state manufacturers must pay the full tax."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether any party other than the respondents might have standing to challenge the tax credit."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia echoed the question, asking whether someone could be found to challenge the credit."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens inquired whether the case would differ if the tax credit were replaced by a cash subsidy."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1704",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T10:40:48.562273Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether any party other than the respondents might have standing to challenge the tax credit."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether someone could be found to challenge the credit."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens inquired whether the case would be different if the tax credit were replaced by a cash subsidy."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Theodore B. Olson",
+        "citations": [
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Theodore B. Olson, respondents contend that Ohio\u2019s franchise tax system, including its investment tax credit, is unwise, ineffective, and unconstitutional."
+      },
+      {
+        "attribution": "Theodore B. Olson",
+        "citations": [
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Theodore B. Olson, respondents face two major obstacles: they cannot show a concrete, particularized injury from Ohio\u2019s investment tax credit, and their Dormant Commerce Clause challenge lacks merit."
+      },
+      {
+        "attribution": "Douglas R. Cole",
+        "citations": [
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0000-0002"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "According to Douglas R. Cole, the Court has repeatedly rejected generalized taxpayer grievances as a basis for standing."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "DAIMLERCHRYSLER CORPORATION (Petitioner)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "WILLIAM W. WILKINS, TAX COMMISSIONER FOR THE STATE OF OHIO (Petitioner)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Theodore B. Olson",
+          "citations": [
+            {
+              "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+              "evidence_ids": [
+                "ev-4906558c4deb-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Theodore B. Olson, respondents argue that Ohio's franchise tax system, including the investment tax credit, is unconstitutional, and they contend that a facial Dormant Commerce Clause challenge is without merit."
+        },
+        {
+          "attribution": "Douglas R. Cole",
+          "citations": [
+            {
+              "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+              "evidence_ids": [
+                "ev-4906558c4deb-0000-0002"
+              ],
+              "pages": {
+                "end": 13,
+                "start": 13
+              }
+            }
+          ],
+          "text": "According to Douglas R. Cole, respondents' grievance as taxpayers is a generalized public grievance, which the Court has repeatedly rejected as a basis for standing."
+        },
+        {
+          "attribution": "Douglas R. Cole",
+          "citations": [
+            {
+              "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+              "evidence_ids": [
+                "ev-4906558c4deb-0000-0004"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "According to Douglas R. Cole, even if standing were found, there is disagreement about whether that standing extends to challenge the investment tax credit itself."
+        }
+      ],
+      "heading": "CHARLOTTE CUNO (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+      "evidence_ids": [
+        "ev-4906558c4deb-0000-0000",
+        "ev-4906558c4deb-0000-0001",
+        "ev-4906558c4deb-0000-0002",
+        "ev-4906558c4deb-0000-0003",
+        "ev-4906558c4deb-0000-0004",
+        "ev-4906558c4deb-0001-0001",
+        "ev-4906558c4deb-0001-0002",
+        "ev-4906558c4deb-0002-0000",
+        "ev-4906558c4deb-0002-0001",
+        "ev-4906558c4deb-0002-0002"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T10:49:35.345545Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Douglas R. Cole",
+        "citations": [
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0000-0002"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The dispute highlights the pivotal role of the standing doctrine in determining whether federal courts can review state tax incentives."
+      },
+      {
+        "attribution": "Mr. Olson",
+        "citations": [
+          {
+            "document_hash": "4906558c4deb55aeede93c723ac2fb629c3e5ce686414d54f688ec7c95dcc40c",
+            "evidence_ids": [
+              "ev-4906558c4deb-0002-0001"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "According to Mr. Olson, the case also raises questions about the constitutional limits on state tax schemes that differentiate between in\u2011state and out\u2011of\u2011state businesses."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,468 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the State previously conceded that the petition was timely, but later raised a statute\u2011of\u2011limitations defense, prompting the question of whether this constitutes a waiver."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0001-0001",
+              "ev-613083aad6ee-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, may a judge suggest or raise a statute of limitations defense sua sponte when the State has not raised it?"
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1324",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T08:34:05.064985Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the error was a computation mistake rather than a waiver of the statute of limitations."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0000-0006"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          },
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0000-0007"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy inquired whether there is an obligation to notice the limitation issue on first review and whether the district court has discretion to refer the matter to the State."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0000-0012"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether the error stemmed from a failure to follow Rule\u202f15."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          },
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0001-0001",
+              "ev-613083aad6ee-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether a judge may suggest a statute\u2011of\u2011limitations defense and when such a suggestion would be an abuse of discretion."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0003-0001"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted that the case was submitted for decision."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the dispute centers on whether the State waived the affirmative defense of the statute of limitations by failing to raise it earlier and by conceding that the petition was timely."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, the parties argue that a computation error, not a deliberate waiver, led to the State\u2019s late assertion of the limitations defense."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          },
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0001-0001",
+              "ev-613083aad6ee-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, the case also raises whether a judge may raise a statute\u2011of\u2011limitations defense sua sponte when the State has not."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+              "evidence_ids": [
+                "ev-613083aad6ee-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, the State waived the affirmative defense of limitations by not raising it and by conceding the petition was timely."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+              "evidence_ids": [
+                "ev-613083aad6ee-0000-0014"
+              ],
+              "pages": {
+                "end": 16,
+                "start": 16
+              }
+            }
+          ],
+          "text": "According to Petitioner, the case should be analyzed under Civil Rules 8 and 12, following Gonzalez and Mayle."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+              "evidence_ids": [
+                "ev-613083aad6ee-0000-0015"
+              ],
+              "pages": {
+                "end": 17,
+                "start": 17
+              }
+            }
+          ],
+          "text": "According to Petitioner, the State is best positioned to calculate the limitations period; the court should not bear that burden."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+              "evidence_ids": [
+                "ev-613083aad6ee-0000-0016"
+              ],
+              "pages": {
+                "end": 18,
+                "start": 18
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petitioner seeks a motion to amend the case to address the limitations issue."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+              "evidence_ids": [
+                "ev-613083aad6ee-0000-0017"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Petitioner, the court should not raise the limitations defense sua sponte when the State has not."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+              "evidence_ids": [
+                "ev-613083aad6ee-0003-0000"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Petitioner, the Eleventh Circuit\u2019s opinion imposes an obligation (a \u201cmust\u201d) rather than a discretionary \u201cmay\u201d regarding the limitations defense."
+        }
+      ],
+      "heading": "Petitioner (Patrick Day)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+      "evidence_ids": [
+        "ev-613083aad6ee-0000-0001",
+        "ev-613083aad6ee-0000-0002",
+        "ev-613083aad6ee-0000-0006",
+        "ev-613083aad6ee-0000-0007",
+        "ev-613083aad6ee-0000-0008",
+        "ev-613083aad6ee-0000-0010",
+        "ev-613083aad6ee-0000-0012",
+        "ev-613083aad6ee-0000-0014",
+        "ev-613083aad6ee-0000-0015",
+        "ev-613083aad6ee-0000-0016",
+        "ev-613083aad6ee-0000-0017",
+        "ev-613083aad6ee-0001-0000",
+        "ev-613083aad6ee-0001-0001",
+        "ev-613083aad6ee-0001-0002",
+        "ev-613083aad6ee-0001-0003",
+        "ev-613083aad6ee-0001-0004",
+        "ev-613083aad6ee-0001-0006",
+        "ev-613083aad6ee-0001-0007",
+        "ev-613083aad6ee-0002-0004",
+        "ev-613083aad6ee-0003-0000",
+        "ev-613083aad6ee-0003-0001"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T08:47:16.544137Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0002-0004"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "The court indicated that resolving the limitation issue now would conserve judicial and party resources."
+      },
+      {
+        "attribution": "MR. BUSBY",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0001-0006"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Continuing the case on another theory would waste court resources and prejudice the parties."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "613083aad6eea4eb66f7f26640905bd27e5ada77d6353c40d3cf2b2c9997fd3b",
+            "evidence_ids": [
+              "ev-613083aad6ee-0001-0007"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The procedural deadline that a limitation defense must be raised within one year underscores the importance of timely pleading."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

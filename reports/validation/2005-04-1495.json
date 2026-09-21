@@ -1,0 +1,41 @@
+{
+  "accepted": false,
+  "case_id": "2005-04-1495",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": false,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that \u201cthe Court asked whether retaliation is simply a species of malicious conduct\u201d misrepresents Justice Souter\u2019s statement, which was not a question but a comment, so the claim is not supported by the evidence.",
+    "Support check failed: the claim that \u201cJustices asked whether retaliation is a form of malicious conduct and what evidence is needed to prove it\u201d is inaccurate; the evidence shows Justice Souter made a statement (not a question) and only Justice Breyer asked about evidence, so the claim is not fully supported.",
+    "Oral argument characterization check failed: the candidate characterizes Justice Souter\u2019s remark and the justices\u2019 remarks as questions, whereas the transcript shows they were statements or only partially questions, leading to mischaracterization of the oral argument.",
+    "Overstatement check failed: the candidate overstates the nature of the justices\u2019 inquiries by presenting statements as questions, constituting an overstatement of the oral argument content."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.87,
+    "neutrality": 0.9,
+    "readability": 0.85,
+    "restraint": 0.8,
+    "traceability": 0.95
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+            "evidence_ids": [
+              "ev-5d2a5596e168-0002-0005"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          },
+          {
+            "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+            "evidence_ids": [
+              "ev-5d2a5596e168-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The case concerns whether the operation of the petitioner\u2019s hydropower facilities results in a discharge into navigable waters under the Clean Water Act."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1527",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T10:08:32.968685Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+            "evidence_ids": [
+              "ev-5d2a5596e168-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, if a drum of water is removed from the river, stored for five years, and then poured back, is that a discharge into the river?"
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+            "evidence_ids": [
+              "ev-5d2a5596e168-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Souter, did that case involve the addition of a pollutant? There was no addition because the water was equally polluted on each side."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+            "evidence_ids": [
+              "ev-5d2a5596e168-0002-0008"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, I don\u2019t understand how the Clean Water Act works; is the State rule a creature of the Clean Water Act?"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+            "evidence_ids": [
+              "ev-5d2a5596e168-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, do you know what FERC\u2019s position is?"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+            "evidence_ids": [
+              "ev-5d2a5596e168-0003-0001"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, could a State adopt water quality standards that would effectively preclude hydroelectric power in the State?"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "S.D. Warren Company",
+        "citations": [
+          {
+            "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+            "evidence_ids": [
+              "ev-5d2a5596e168-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to S.D. Warren Company, the petitioner argues that water flowing through its five dams on the Presumpscot River does not constitute a discharge under the Clean Water Act."
+      },
+      {
+        "attribution": "Mr. Rowe",
+        "citations": [
+          {
+            "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+            "evidence_ids": [
+              "ev-5d2a5596e168-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          },
+          {
+            "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+            "evidence_ids": [
+              "ev-5d2a5596e168-0002-0009"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Section 401 of the Clean Water Act derives from Section 21(b) of the 1970 Water Quality Improvement Act, which provided a broad definition of \u201cdischarge.\u201d"
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "S.D. Warren Company",
+          "citations": [
+            {
+              "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+              "evidence_ids": [
+                "ev-5d2a5596e168-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to S.D. Warren Company, the Presumpscot River is a single body of water, and the flow through the five dams does not constitute a discharge into that same body of water."
+        },
+        {
+          "attribution": "Mr. Minear",
+          "citations": [
+            {
+              "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+              "evidence_ids": [
+                "ev-5d2a5596e168-0003-0002"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to Mr. Minear, the dictionary definition of \u201cdischarge\u201d does not include the concept of \u201caddition,\u201d and the petitioners have not provided any definition that speaks in terms of an addition."
+        }
+      ],
+      "heading": "Petitioner (S.D. Warren Company)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Maine Board of Environmental Protection)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5d2a5596e168ca777e1b2f21e0bfdc10bfef66908a419d1a3054c42ed1e3206b",
+      "evidence_ids": [
+        "ev-5d2a5596e168-0000-0000"
+      ],
+      "pages": {
+        "end": 63,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T10:15:30.112319Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "background_and_question.claims[0] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "background_and_question.claims[0] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

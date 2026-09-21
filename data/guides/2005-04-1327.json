@@ -1,0 +1,351 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1327",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T08:47:16.554129Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+            "evidence_ids": [
+              "ev-2494e2ba9e26-0002-0002"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the petitioner argues that third\u2011party evidence must meet proof beyond a reasonable doubt."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+            "evidence_ids": [
+              "ev-2494e2ba9e26-0003-0003"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked if the case hinges on a challenge to the DNA evidence."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+            "evidence_ids": [
+              "ev-2494e2ba9e26-0003-0005"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts inquired whether the DNA error would be harmless and therefore not affect the jury\u2019s decision."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+            "evidence_ids": [
+              "ev-2494e2ba9e26-0002-0004"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Scalia asked if anyone else had examined the evidence on both sides."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+            "evidence_ids": [
+              "ev-2494e2ba9e26-0003-0007"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "The case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "John H. Blume (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+            "evidence_ids": [
+              "ev-2494e2ba9e26-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to John H. Blume (Petitioner), according to John H. Blume (Petitioner), the case concerns the admissibility of third\u2011party guilt evidence when the prosecution has presented strong forensic evidence."
+      },
+      {
+        "attribution": "John H. Blume (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+            "evidence_ids": [
+              "ev-2494e2ba9e26-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to John H. Blume (Petitioner), according to John H. Blume (Petitioner), the South Carolina Supreme Court previously limited a defendant\u2019s ability to create reasonable doubt by presenting third\u2011party guilt evidence, first in State v. Gay (2001) and now in this case."
+      },
+      {
+        "attribution": "Mr. Blume",
+        "citations": [
+          {
+            "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+            "evidence_ids": [
+              "ev-2494e2ba9e26-0001-0003"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Mr. Blume, other states allow third\u2011party guilt evidence if it creates a reasonable inference of innocence."
+      },
+      {
+        "attribution": "Mr. Blume",
+        "citations": [
+          {
+            "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+            "evidence_ids": [
+              "ev-2494e2ba9e26-0001-0004"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Mr. Blume, even when the State\u2019s case is strong, the jury should be allowed to consider alibi witnesses."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Blume",
+          "citations": [
+            {
+              "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+              "evidence_ids": [
+                "ev-2494e2ba9e26-0001-0003"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Mr. Blume, third\u2011party guilt evidence should be admissible if it creates a reasonable inference of innocence."
+        },
+        {
+          "attribution": "Mr. Blume",
+          "citations": [
+            {
+              "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+              "evidence_ids": [
+                "ev-2494e2ba9e26-0001-0004"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Blume, even when the State\u2019s case is strong, the jury should be allowed to consider alibi witnesses."
+        },
+        {
+          "attribution": "Mr. Blume",
+          "citations": [
+            {
+              "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+              "evidence_ids": [
+                "ev-2494e2ba9e26-0003-0004"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Mr. Blume, the DNA evidence may be harmless and therefore should not be excluded."
+        },
+        {
+          "attribution": "Mr. Blume",
+          "citations": [
+            {
+              "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+              "evidence_ids": [
+                "ev-2494e2ba9e26-0003-0002"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Mr. Blume, the trial judge found sufficient evidence that the victim was in the area at the relevant time."
+        },
+        {
+          "attribution": "Mr. Blume",
+          "citations": [
+            {
+              "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+              "evidence_ids": [
+                "ev-2494e2ba9e26-0003-0006"
+              ],
+              "pages": {
+                "end": 58,
+                "start": 58
+              }
+            }
+          ],
+          "text": "According to Mr. Blume, the jury\u2019s determination should be respected."
+        }
+      ],
+      "heading": "Petitioner (Bobby Lee Holmes)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (South Carolina)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2494e2ba9e268c93709bd109fb1cd21b051450ef91dba6bbcdcffab1af6d3cd5",
+      "evidence_ids": [
+        "ev-2494e2ba9e26-0000-0000",
+        "ev-2494e2ba9e26-0001-0003",
+        "ev-2494e2ba9e26-0001-0004",
+        "ev-2494e2ba9e26-0002-0002",
+        "ev-2494e2ba9e26-0002-0004",
+        "ev-2494e2ba9e26-0003-0000",
+        "ev-2494e2ba9e26-0003-0002",
+        "ev-2494e2ba9e26-0003-0003",
+        "ev-2494e2ba9e26-0003-0004",
+        "ev-2494e2ba9e26-0003-0005",
+        "ev-2494e2ba9e26-0003-0006",
+        "ev-2494e2ba9e26-0003-0007"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T08:54:44.123546Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

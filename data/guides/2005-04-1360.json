@@ -1,0 +1,299 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner and Respondent",
+        "citations": [
+          {
+            "document_hash": "69e7b59737b7c64b5ddf354829f93b253e3bd96eaa0393b548f0173bd9044ae5",
+            "evidence_ids": [
+              "ev-69e7b59737b7-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "4a3f5b1f521459f5b8cfb491baad1ca88c7ed93ede01a0c35967ebb60f2573ba",
+            "evidence_ids": [
+              "ev-4a3f5b1f5214-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The case arises from a police entry that allegedly violated the knock\u2011and\u2011announce rule, raising the question whether such a violation triggers the exclusionary rule when there is no causal link to the seized evidence."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1360",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T09:15:56.178883Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4a3f5b1f521459f5b8cfb491baad1ca88c7ed93ede01a0c35967ebb60f2573ba",
+      "69e7b59737b7c64b5ddf354829f93b253e3bd96eaa0393b548f0173bd9044ae5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "4a3f5b1f521459f5b8cfb491baad1ca88c7ed93ede01a0c35967ebb60f2573ba",
+            "evidence_ids": [
+              "ev-4a3f5b1f5214-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether any states allow no\u2011knock warrants."
+      },
+      {
+        "attribution": "Justice KENNEDY",
+        "citations": [
+          {
+            "document_hash": "4a3f5b1f521459f5b8cfb491baad1ca88c7ed93ede01a0c35967ebb60f2573ba",
+            "evidence_ids": [
+              "ev-4a3f5b1f5214-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether, when there is probable cause to enter, there is a presumption of innocence."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "69e7b59737b7c64b5ddf354829f93b253e3bd96eaa0393b548f0173bd9044ae5",
+            "evidence_ids": [
+              "ev-69e7b59737b7-0000-0005"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked how long the officers had to wait before they could enter."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "69e7b59737b7c64b5ddf354829f93b253e3bd96eaa0393b548f0173bd9044ae5",
+            "evidence_ids": [
+              "ev-69e7b59737b7-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether it would have been possible for the police to obtain a no\u2011knock warrant."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "4a3f5b1f521459f5b8cfb491baad1ca88c7ed93ede01a0c35967ebb60f2573ba",
+            "evidence_ids": [
+              "ev-4a3f5b1f5214-0002-0002"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "Justice Breyer asked about the harms that could result from officers entering without announcing."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "69e7b59737b7c64b5ddf354829f93b253e3bd96eaa0393b548f0173bd9044ae5",
+            "evidence_ids": [
+              "ev-69e7b59737b7-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioner argues that the knock\u2011and\u2011announce rule is a core component of the Fourth Amendment right to be secure in one\u2019s home."
+      },
+      {
+        "attribution": "David B. Salmons",
+        "citations": [
+          {
+            "document_hash": "4a3f5b1f521459f5b8cfb491baad1ca88c7ed93ede01a0c35967ebb60f2573ba",
+            "evidence_ids": [
+              "ev-4a3f5b1f5214-0002-0001"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "According to David B. Salmons, an amicus brief argues that the knock\u2011and\u2011announce rule does not protect an individual\u2019s privacy interest in the items to be searched."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "69e7b59737b7c64b5ddf354829f93b253e3bd96eaa0393b548f0173bd9044ae5",
+              "evidence_ids": [
+                "ev-69e7b59737b7-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, the knock\u2011and\u2011announce rule is a core part of the constitutional right to be secure in one\u2019s house."
+        }
+      ],
+      "heading": "Petitioner (Booker T. Hudson, Jr.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Baughman",
+          "citations": [
+            {
+              "document_hash": "4a3f5b1f521459f5b8cfb491baad1ca88c7ed93ede01a0c35967ebb60f2573ba",
+              "evidence_ids": [
+                "ev-4a3f5b1f5214-0002-0004"
+              ],
+              "pages": {
+                "end": 48,
+                "start": 48
+              }
+            }
+          ],
+          "text": "According to Mr. Baughman, the exclusionary rule is premised on evidence being the product of police misconduct."
+        }
+      ],
+      "heading": "Respondent (Michigan)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4a3f5b1f521459f5b8cfb491baad1ca88c7ed93ede01a0c35967ebb60f2573ba",
+      "evidence_ids": [
+        "ev-4a3f5b1f5214-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "69e7b59737b7c64b5ddf354829f93b253e3bd96eaa0393b548f0173bd9044ae5",
+      "evidence_ids": [
+        "ev-69e7b59737b7-0000-0001"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T09:22:44.816573Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

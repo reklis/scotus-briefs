@@ -1,0 +1,370 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "CINDY S. LEE (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+            "evidence_ids": [
+              "ev-0fbdd39657ad-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+            "evidence_ids": [
+              "ev-0fbdd39657ad-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The central question is whether the First Amendment requires protection for all public\u2011employee speech that touches on a matter of public concern, without regard to whether the speech is expressed as a private citizen or as part of official duties."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-473",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T11:07:26.327823Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+      "feb829ab701674e25f6a2bdb5eeedda16d3366c1517ada14353781983313cc48"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+            "evidence_ids": [
+              "ev-0fbdd39657ad-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Souter, justice Souter questioned whether the Ninth Circuit\u2019s approach would lead to a flood of cases, noting that such a deluge has not occurred since the 1988 Roth decision."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+            "evidence_ids": [
+              "ev-0fbdd39657ad-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked what standard the lower\u2011court judge should apply under the First Amendment."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "CINDY S. LEE (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+            "evidence_ids": [
+              "ev-0fbdd39657ad-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "feb829ab701674e25f6a2bdb5eeedda16d3366c1517ada14353781983313cc48",
+            "evidence_ids": [
+              "ev-feb829ab7016-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Garcetti v. Ceballos concerns whether the First Amendment protects public\u2011employee speech on matters of public concern, even when the speech is made as part of the employee\u2019s official duties."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "feb829ab701674e25f6a2bdb5eeedda16d3366c1517ada14353781983313cc48",
+              "evidence_ids": [
+                "ev-feb829ab7016-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            },
+            {
+              "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+              "evidence_ids": [
+                "ev-0fbdd39657ad-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioners argue that the First Amendment is about free and open debate on matters of public importance, not about policing the workplace, and that adopting the Ninth Circuit\u2019s approach would expand constitutional protection for public\u2011employee speech."
+        }
+      ],
+      "heading": "Petitioners\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States (amicus)",
+          "citations": [
+            {
+              "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+              "evidence_ids": [
+                "ev-0fbdd39657ad-0001-0002"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to United States (amicus), according to United States (amicus), according to United States (amicus), the United States amicus brief argues that a Brady disclosure is a prosecutorial function, not protected speech, and therefore should not automatically satisfy the first step of the Pickering balancing test."
+        }
+      ],
+      "heading": "United States (Amicus) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "MS. Robin-Vergeer",
+          "citations": [
+            {
+              "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+              "evidence_ids": [
+                "ev-0fbdd39657ad-0002-0001"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to MS. Robin-Vergeer, according to MS. Robin\u2011Vergeer, robin\u2011Vergeer asserts that the first step of the Pickering analysis is whether the speech concerns a matter of public importance, and that reports of government misconduct meet that threshold."
+        },
+        {
+          "attribution": "MS. Robin-Vergeer",
+          "citations": [
+            {
+              "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+              "evidence_ids": [
+                "ev-0fbdd39657ad-0002-0003"
+              ],
+              "pages": {
+                "end": 47,
+                "start": 47
+              }
+            }
+          ],
+          "text": "According to MS. Robin-Vergeer, according to MS. Robin\u2011Vergeer, she notes that the Court has previously held that private communications on matters of public concern are protected, citing Givhan and Rankin."
+        },
+        {
+          "attribution": "MS. Robin-Vergeer",
+          "citations": [
+            {
+              "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+              "evidence_ids": [
+                "ev-0fbdd39657ad-0002-0005"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to MS. Robin-Vergeer, according to MS. Robin\u2011Vergeer, she argues that a report of government misconduct to a supervisor should at least meet the Court\u2019s threshold for protected speech."
+        },
+        {
+          "attribution": "Robin-Vergeer",
+          "citations": [
+            {
+              "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+              "evidence_ids": [
+                "ev-0fbdd39657ad-0003-0004"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 60
+              }
+            },
+            {
+              "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+              "evidence_ids": [
+                "ev-0fbdd39657ad-0003-0006"
+              ],
+              "pages": {
+                "end": 61,
+                "start": 61
+              }
+            }
+          ],
+          "text": "According to Robin-Vergeer, robin\u2011Vergeer points out that whistleblower statutes are a patchwork, and some may protect the speech at issue while others may not."
+        }
+      ],
+      "heading": "Robin\u2011Vergeer\u2019s Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0fbdd39657ad03f47844b565985c3a451688f1372e686bb0a0f331b25322debd",
+      "evidence_ids": [
+        "ev-0fbdd39657ad-0000-0000"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "feb829ab701674e25f6a2bdb5eeedda16d3366c1517ada14353781983313cc48",
+      "evidence_ids": [
+        "ev-feb829ab7016-0000-0000"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T11:17:20.520898Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "feb829ab701674e25f6a2bdb5eeedda16d3366c1517ada14353781983313cc48",
+            "evidence_ids": [
+              "ev-feb829ab7016-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners, the case addresses the balance between government employees\u2019 ability to speak on matters of public concern and the government\u2019s interest in controlling its own operations."
+      },
+      {
+        "attribution": "Robin-Vergeer",
+        "citations": [
+          {
+            "document_hash": "feb829ab701674e25f6a2bdb5eeedda16d3366c1517ada14353781983313cc48",
+            "evidence_ids": [
+              "ev-feb829ab7016-0001-0003"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "According to Robin-Vergeer, according to Robin\u2011Vergeer, the Court has recognized that the threat of dismissal is a potent means of inhibiting speech, underscoring the importance of protecting whistleblowers who expose government misconduct."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

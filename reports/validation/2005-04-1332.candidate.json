@@ -1,0 +1,275 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1332",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T09:05:56.549506Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+            "evidence_ids": [
+              "ev-e5a5bec18281-0000-0003"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Douglas Hallward\u2011Drimieier appeared for the petitioners and Allison M. Zieve appeared for the respondents."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Hallward-Drimieier",
+          "citations": [
+            {
+              "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+              "evidence_ids": [
+                "ev-e5a5bec18281-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Hallward-Drimieier, the judgment bar protects a government employee by precluding later suits."
+        },
+        {
+          "attribution": "Mr. Hallward-Drimieier",
+          "citations": [
+            {
+              "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+              "evidence_ids": [
+                "ev-e5a5bec18281-0001-0003"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. Hallward-Drimieier, statute 1346(b) bars any action related to the same subject matter after a judgment that finally resolves the United States\u2019 liability."
+        },
+        {
+          "attribution": "Mr. Hallward-Driemeier",
+          "citations": [
+            {
+              "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+              "evidence_ids": [
+                "ev-e5a5bec18281-0002-0004"
+              ],
+              "pages": {
+                "end": 48,
+                "start": 47
+              }
+            }
+          ],
+          "text": "According to Mr. Hallward-Driemeier, the Westfall Act confers official immunity, meaning any action related to the same subject matter is precluded."
+        }
+      ],
+      "heading": "Petitioners' Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Zieve",
+          "citations": [
+            {
+              "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+              "evidence_ids": [
+                "ev-e5a5bec18281-0001-0004"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Ms. Zieve, the Court of Appeals lacked jurisdiction to review the district court\u2019s order because the \u201cfinal judgment\u201d rule barred review."
+        },
+        {
+          "attribution": "Ms. Zieve",
+          "citations": [
+            {
+              "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+              "evidence_ids": [
+                "ev-e5a5bec18281-0002-0001"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Ms. Zieve, section 2680 states that 1346(b) shall not apply, limiting the judgment bar\u2019s reach."
+        }
+      ],
+      "heading": "Respondents' Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+      "evidence_ids": [
+        "ev-e5a5bec18281-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+      "evidence_ids": [
+        "ev-e5a5bec18281-0000-0003"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+      "evidence_ids": [
+        "ev-e5a5bec18281-0001-0001"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+      "evidence_ids": [
+        "ev-e5a5bec18281-0001-0003"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+      "evidence_ids": [
+        "ev-e5a5bec18281-0002-0004"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+      "evidence_ids": [
+        "ev-e5a5bec18281-0001-0004"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "e5a5bec18281bef46949e18773c41cf7ed858b60d69f3fac5849863adec2571c",
+      "evidence_ids": [
+        "ev-e5a5bec18281-0002-0001"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T09:15:56.160766Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim that \"statute 1346(b) bars any action related to the same subject matter after a judgment that finally resolves the United States\u2019 liability\" is not fully supported by the cited evidence, which only describes the statute\u2019s test for a judgment but does not explicitly state it bars any such action.",
+      "Overstatement check failed: the same claim overstates the evidence by asserting a blanket bar on all related actions, which is not directly asserted in the provided transcript."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

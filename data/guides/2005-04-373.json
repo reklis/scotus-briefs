@@ -1,0 +1,286 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1648089627b37d6cc9dc179b480f2bbdb499570bb4ab3fb74223e1d4c84eb0a2",
+            "evidence_ids": [
+              "ev-1648089627b3-0003-0005"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "The trial court found that Blake was merely responding to Officer Reese\u2019s statements, not initiating a new conversation, and that the interaction lasted 28 minutes."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-373",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T10:55:12.263903Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1648089627b37d6cc9dc179b480f2bbdb499570bb4ab3fb74223e1d4c84eb0a2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1648089627b37d6cc9dc179b480f2bbdb499570bb4ab3fb74223e1d4c84eb0a2",
+            "evidence_ids": [
+              "ev-1648089627b3-0003-0005"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "The trial court found that Blake was merely responding to Officer Reese\u2019s statements, not initiating a new conversation, and that the interaction lasted 28 minutes."
+      },
+      {
+        "attribution": "Ms. Graeff",
+        "citations": [
+          {
+            "document_hash": "1648089627b37d6cc9dc179b480f2bbdb499570bb4ab3fb74223e1d4c84eb0a2",
+            "evidence_ids": [
+              "ev-1648089627b3-0003-0000"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "Ms. Graeff argues that custody and voluntariness are mixed questions of fact and law; historical facts receive deference, but the ultimate question of custody and voluntariness is reviewed de novo."
+      },
+      {
+        "attribution": "Ms. Graeff",
+        "citations": [
+          {
+            "document_hash": "1648089627b37d6cc9dc179b480f2bbdb499570bb4ab3fb74223e1d4c84eb0a2",
+            "evidence_ids": [
+              "ev-1648089627b3-0003-0004"
+            ],
+            "pages": {
+              "end": 64,
+              "start": 64
+            }
+          }
+        ],
+        "text": "Ms. Graeff contends that Detective Johns cured the impropriety by informing Blake that there would be no more questioning, leaving Blake free to choose whether to speak or remain silent."
+      },
+      {
+        "attribution": "Kenneth W. Ravenell",
+        "citations": [
+          {
+            "document_hash": "1648089627b37d6cc9dc179b480f2bbdb499570bb4ab3fb74223e1d4c84eb0a2",
+            "evidence_ids": [
+              "ev-1648089627b3-0001-0002"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "According to Kenneth W. Ravenell, ravenell asserts that Edwards v. Arizona supports the view that a cure should not be applied unless the defendant himself initiates contact."
+      },
+      {
+        "attribution": "Ravenell",
+        "citations": [
+          {
+            "document_hash": "1648089627b37d6cc9dc179b480f2bbdb499570bb4ab3fb74223e1d4c84eb0a2",
+            "evidence_ids": [
+              "ev-1648089627b3-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Ravenell argues that additional factors beyond the right to counsel should be considered, and that another fallback position is not needed."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Graeff",
+          "citations": [
+            {
+              "document_hash": "1648089627b37d6cc9dc179b480f2bbdb499570bb4ab3fb74223e1d4c84eb0a2",
+              "evidence_ids": [
+                "ev-1648089627b3-0003-0000"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 60
+              }
+            }
+          ],
+          "text": "Ms. Graeff argues that custody and voluntariness are mixed questions of fact and law; historical facts receive deference, but the ultimate question of custody and voluntariness is reviewed de novo."
+        },
+        {
+          "attribution": "Ms. Graeff",
+          "citations": [
+            {
+              "document_hash": "1648089627b37d6cc9dc179b480f2bbdb499570bb4ab3fb74223e1d4c84eb0a2",
+              "evidence_ids": [
+                "ev-1648089627b3-0003-0004"
+              ],
+              "pages": {
+                "end": 64,
+                "start": 64
+              }
+            }
+          ],
+          "text": "Ms. Graeff contends that Detective Johns cured the impropriety by informing Blake that there would be no more questioning, leaving Blake free to choose whether to speak or remain silent."
+        },
+        {
+          "attribution": "Kenneth W. Ravenell",
+          "citations": [
+            {
+              "document_hash": "1648089627b37d6cc9dc179b480f2bbdb499570bb4ab3fb74223e1d4c84eb0a2",
+              "evidence_ids": [
+                "ev-1648089627b3-0001-0002"
+              ],
+              "pages": {
+                "end": 32,
+                "start": 32
+              }
+            }
+          ],
+          "text": "According to Kenneth W. Ravenell, ravenell asserts that Edwards v. Arizona supports the view that a cure should not be applied unless the defendant himself initiates contact."
+        },
+        {
+          "attribution": "Ravenell",
+          "citations": [
+            {
+              "document_hash": "1648089627b37d6cc9dc179b480f2bbdb499570bb4ab3fb74223e1d4c84eb0a2",
+              "evidence_ids": [
+                "ev-1648089627b3-0002-0000"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "Ravenell argues that additional factors beyond the right to counsel should be considered, and that another fallback position is not needed."
+        }
+      ],
+      "heading": "Maryland (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Leeander Jerome Blake (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1648089627b37d6cc9dc179b480f2bbdb499570bb4ab3fb74223e1d4c84eb0a2",
+      "evidence_ids": [
+        "ev-1648089627b3-0000-0000",
+        "ev-1648089627b3-0001-0000",
+        "ev-1648089627b3-0001-0002",
+        "ev-1648089627b3-0002-0000",
+        "ev-1648089627b3-0002-0001",
+        "ev-1648089627b3-0003-0005",
+        "ev-1648089627b3-0003-0000",
+        "ev-1648089627b3-0003-0001",
+        "ev-1648089627b3-0003-0002",
+        "ev-1648089627b3-0003-0003",
+        "ev-1648089627b3-0003-0004"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T11:00:25.000505Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,378 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Louis J. Rovelli",
+        "citations": [
+          {
+            "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+            "evidence_ids": [
+              "ev-5de83145e39d-0000-0000",
+              "ev-5de83145e39d-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Louis J. Rovelli, the policy applies only to a narrow group of inmates who are considered the most dangerous and disruptive, and it ties the denial of periodicals and photographs to incentives for improved behavior and security."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+            "evidence_ids": [
+              "ev-5de83145e39d-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Souter, justice Souter questioned whether the restriction on reading material violates the First Amendment\u2019s guarantee of free speech and access to information."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1739",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T10:49:35.366845Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+            "evidence_ids": [
+              "ev-5de83145e39d-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the First Amendment analysis should be treated the same as the Eighth Amendment analysis in this context."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+            "evidence_ids": [
+              "ev-5de83145e39d-0001-0004"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned the effectiveness of the policy in changing inmate behavior and its impact on others outside the unit."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+            "evidence_ids": [
+              "ev-5de83145e39d-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether there were other bases for the restriction beyond the inmates\u2019 dangerousness."
+      },
+      {
+        "attribution": "Justice KENNEDY",
+        "citations": [
+          {
+            "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+            "evidence_ids": [
+              "ev-5de83145e39d-0002-0004"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy inquired about the state\u2019s goal of using temporary privilege removal as a deterrent."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Louis J. Rovelli",
+        "citations": [
+          {
+            "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+            "evidence_ids": [
+              "ev-5de83145e39d-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Louis J. Rovelli, Pennsylvania\u2019s policy restricts newspapers, magazines, and photographs for a small class of dangerous, disruptive inmates confined at level\u202f2 of the Long Term Segregation Unit, the most restrictive custody level in the state prison system."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+            "evidence_ids": [
+              "ev-5de83145e39d-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Souter questioned whether the policy implicates First Amendment rights, asking if the analysis should be treated similarly to the Eighth Amendment analysis."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Louis J. Rovelli",
+          "citations": [
+            {
+              "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+              "evidence_ids": [
+                "ev-5de83145e39d-0000-0000",
+                "ev-5de83145e39d-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Louis J. Rovelli, the restriction is narrowly tailored to a small, dangerous class of inmates and is logically connected to rehabilitation and prison security."
+        }
+      ],
+      "heading": "Petitioner (Pennsylvania Department of Corrections)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Krakoff",
+          "citations": [
+            {
+              "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+              "evidence_ids": [
+                "ev-5de83145e39d-0001-0005"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            },
+            {
+              "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+              "evidence_ids": [
+                "ev-5de83145e39d-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "Removing newspapers and magazines deprives inmates of a significant right\u2014the ability to learn what is happening beyond the prison walls\u2014and therefore requires a reasonable basis."
+        }
+      ],
+      "heading": "Respondent (Ronald Banks)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+      "evidence_ids": [
+        "ev-5de83145e39d-0000-0000",
+        "ev-5de83145e39d-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+      "evidence_ids": [
+        "ev-5de83145e39d-0000-0002"
+      ],
+      "pages": {
+        "end": 17,
+        "start": 17
+      }
+    },
+    {
+      "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+      "evidence_ids": [
+        "ev-5de83145e39d-0001-0001"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+      "evidence_ids": [
+        "ev-5de83145e39d-0001-0004"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+      "evidence_ids": [
+        "ev-5de83145e39d-0001-0005"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+      "evidence_ids": [
+        "ev-5de83145e39d-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+      "evidence_ids": [
+        "ev-5de83145e39d-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+      "evidence_ids": [
+        "ev-5de83145e39d-0002-0004"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 49
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T10:55:12.246364Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Jonathan L. Marcus",
+        "citations": [
+          {
+            "document_hash": "5de83145e39d3d844a18df824ff0bd6b426a679b73bd84b2a4bd96e84bb7109e",
+            "evidence_ids": [
+              "ev-5de83145e39d-0000-0002"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "Jonathan L. Marcus argued that Pennsylvania's policy of prohibiting its most dangerous and recalcitrant prisoners from possessing newspapers, magazines, and photos as an incentive to improve their behavior does not violate their First Amendment rights."
+      }
+    ],
+    "heading": "Why This Case Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

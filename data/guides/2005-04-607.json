@@ -1,0 +1,390 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+            "evidence_ids": [
+              "ev-8e14f67b26df-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the second point was definiteness."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+            "evidence_ids": [
+              "ev-8e14f67b26df-0001-0003"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Stevens asked about the patent\u2019s validity under \u00a7101."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+            "evidence_ids": [
+              "ev-8e14f67b26df-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Souter asked for a greater\u2011detail explanation."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+            "evidence_ids": [
+              "ev-8e14f67b26df-0002-0002"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Scalia asked what was made by man here."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+            "evidence_ids": [
+              "ev-8e14f67b26df-0002-0004"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the case would be different if they quoted \u00a7101 in their appendix."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-607",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T11:35:16.653373Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+            "evidence_ids": [
+              "ev-8e14f67b26df-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument before the Supreme Court began at 11:12\u202fa.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Jonathan S. Franklin (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+            "evidence_ids": [
+              "ev-8e14f67b26df-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Jonathan S. Franklin (Petitioner), according to Jonathan S. Franklin (Petitioner), according to Jonathan S. Franklin (Petitioner), the case concerns a patent claim covering homocysteine testing that the petitioner says is infringed whenever a doctor looks at a homocysteine test result and thinks about a natural correlation."
+      },
+      {
+        "attribution": "Jonathan S. Franklin (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+            "evidence_ids": [
+              "ev-8e14f67b26df-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Jonathan S. Franklin (Petitioner), the petitioner asserts that the patent has led to multimillion\u2011dollar damages and an injunction prohibiting any testing company from conducting homocysteine tests by any method for any reason."
+      },
+      {
+        "attribution": "United States Department of Justice",
+        "citations": [
+          {
+            "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+            "evidence_ids": [
+              "ev-8e14f67b26df-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The United States Department of Justice, as amicus, argues that claim 13 satisfies the written\u2011description, enablement, and definiteness requirements of \u00a7112 of the Patent Act."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Jonathan S. Franklin (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+              "evidence_ids": [
+                "ev-8e14f67b26df-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Jonathan S. Franklin (Petitioner), according to Jonathan S. Franklin (Petitioner), according to Jonathan S. Franklin (Petitioner), the patent claim is infringed whenever any doctor looks at a homocysteine test result and reflexively thinks about a basic natural correlation."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+              "evidence_ids": [
+                "ev-8e14f67b26df-0002-0001"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Petitioner, commercial laboratory companies like LabCorp are selling the test to practice our invention."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+              "evidence_ids": [
+                "ev-8e14f67b26df-0002-0003"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Petitioner, anyone who makes, uses or sells the invention is potentially liable as an infringer."
+        },
+        {
+          "attribution": "Mr. Franklin",
+          "citations": [
+            {
+              "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+              "evidence_ids": [
+                "ev-8e14f67b26df-0001-0000"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Mr. Franklin, it applies to any homocysteine test, no matter how it\u2019s done, no matter what reason it\u2019s done, no matter if it\u2019s in the prior art, no matter if I invent it tomorrow."
+        },
+        {
+          "attribution": "Mr. Franklin",
+          "citations": [
+            {
+              "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+              "evidence_ids": [
+                "ev-8e14f67b26df-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Franklin, so I don\u2019t think the Court needs to get into the inquiry, and I don\u2019t think the Patent Office really wants to get into that inquiry either."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Estrada",
+          "citations": [
+            {
+              "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+              "evidence_ids": [
+                "ev-8e14f67b26df-0001-0005"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            }
+          ],
+          "text": "According to Mr. Estrada, LabCorp never asked the trial judge or the Federal Circuit to declare this patent invalid under \u00a7101, which is an affirmative defense they had to plead in the answer and prove by clear and convincing evidence."
+        },
+        {
+          "attribution": "Mr. Estrada",
+          "citations": [
+            {
+              "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+              "evidence_ids": [
+                "ev-8e14f67b26df-0001-0006"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "According to Mr. Estrada, in the Morse case, claim 8, it had been known for many years that it was possible to transmit using the electromagnetic current but nobody knew how. This Court\u2019s ruling on page 107 says this was known by men of science everywhere."
+        },
+        {
+          "attribution": "Unidentified Party Representative",
+          "citations": [
+            {
+              "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+              "evidence_ids": [
+                "ev-8e14f67b26df-0003-0000"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to Unidentified Party Representative, we are only asking that the Court give further guidance on this patent and to say that a patent that claims nothing more than a natural correlation preceded by the inherent and generic step of measuring the input for that correlation is invalid and the judgment that is based upon it should also be reversed."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "8e14f67b26df95ffae023b1fecb05ab43b124081fa170eb8a04cde39c86811f2",
+      "evidence_ids": [
+        "ev-8e14f67b26df-0000-0000"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T11:43:24.321995Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

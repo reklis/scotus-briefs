@@ -1,0 +1,329 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1371",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T09:22:44.834153Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+            "evidence_ids": [
+              "ev-3d6d37546a34-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked: \u201cWhat about the --\u201d."
+      },
+      {
+        "attribution": "Justice SOUTER",
+        "citations": [
+          {
+            "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+            "evidence_ids": [
+              "ev-3d6d37546a34-0001-0014"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Souter asked: \u201cWhat did Congress intend? And --\u201d."
+      },
+      {
+        "attribution": "Justice STEVENS",
+        "citations": [
+          {
+            "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+            "evidence_ids": [
+              "ev-3d6d37546a34-0001-0015"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "Justice Stevens asked: \u201cAnd are you aware \u2014 you mentioned the 100 years of State precedent \u2014 is there any precedent in the State law for class actions for holder claims?\u201d"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+            "evidence_ids": [
+              "ev-3d6d37546a34-0002-0001"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Scalia asked: \u201cWhat is there in the statute that says the two have to go with each other?\u201d"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+            "evidence_ids": [
+              "ev-3d6d37546a34-0002-0003"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked: \u201cOne is \u2014 we know about the holder claims. They are saved for State actions. They're not preempted. What else would fall in this category that is not \u2014 that SLUSA doesn't affect, that can be brought as class actions in State court?\u201d"
+      },
+      {
+        "attribution": "Justice Breyer and Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+            "evidence_ids": [
+              "ev-3d6d37546a34-0003-0000"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "According to Justice Breyer and Justice Ginsburg, justices Breyer and Ginsburg asked questions illustrating that Congress could not have intended such an anomalous result by allowing holders\u2019 claims to proceed as non\u2011preempted."
+      },
+      {
+        "attribution": "Mr. Frederick",
+        "citations": [
+          {
+            "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+            "evidence_ids": [
+              "ev-3d6d37546a34-0002-0002"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Mr. Frederick explained that the congressional findings in SLUSA were narrowly framed to preempt only Federal\u2011law claims, not State\u2011law holder claims."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+              "evidence_ids": [
+                "ev-3d6d37546a34-0001-0005"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Respondent, the respondent described the state of the law as accurate in theory, but noted that respondents have not been able to point to a single reported holder class\u2011action case in State court prior to the adoption of the Uniform Standards Act."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+              "evidence_ids": [
+                "ev-3d6d37546a34-0001-0007"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Respondent, the respondent explained that Blue Chip was not about the scope of the \u201cin connection with\u201d requirement or the \u00a710(b) prohibition; rather, it concerned what Congress would have wanted to authorize as a right of action."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+              "evidence_ids": [
+                "ev-3d6d37546a34-0001-0008"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "The respondent\u2019s position is that SLUSA does not preempt class actions asserting holder claims because Congress incorporated the Court\u2019s interpretation of \u201cin connection with\u201d from Blue Chip Stamps when it enacted SLUSA."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+              "evidence_ids": [
+                "ev-3d6d37546a34-0001-0009"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "The respondent asserted that SLUSA does not preempt holder claims for private civil\u2011action purposes."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+              "evidence_ids": [
+                "ev-3d6d37546a34-0001-0011"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to Respondent, the respondent noted that the Court\u2019s decision in Blue Chip Stamps involved non\u2011purchasers, which is a very different kind of case."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+              "evidence_ids": [
+                "ev-3d6d37546a34-0001-0012"
+              ],
+              "pages": {
+                "end": 29,
+                "start": 29
+              }
+            }
+          ],
+          "text": "The respondent argued that a holder\u2019s claim would not exist but for purchases and sales that caused the price to rise."
+        }
+      ],
+      "heading": "Respondent (Shadi Dabit)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3d6d37546a34706f1a084aec0d015512ff6aa17ccf8e93cd5892f22dcc7230c2",
+      "evidence_ids": [
+        "ev-3d6d37546a34-0001-0001",
+        "ev-3d6d37546a34-0001-0005",
+        "ev-3d6d37546a34-0001-0007",
+        "ev-3d6d37546a34-0001-0008",
+        "ev-3d6d37546a34-0001-0009",
+        "ev-3d6d37546a34-0001-0011",
+        "ev-3d6d37546a34-0001-0012",
+        "ev-3d6d37546a34-0001-0014",
+        "ev-3d6d37546a34-0001-0015",
+        "ev-3d6d37546a34-0002-0001",
+        "ev-3d6d37546a34-0002-0002",
+        "ev-3d6d37546a34-0002-0003",
+        "ev-3d6d37546a34-0003-0000",
+        "ev-3d6d37546a34-0003-0001"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 20
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T09:25:07.699555Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
