@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2004-03-892",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the background claim that the assignment\u2011of\u2011income doctrine applies to litigation proceeds is not supported by any cited evidence.",
+    "Overstatement check failed: the same background claim overstates the issue by asserting the assignment\u2011of\u2011income doctrine applies without supporting evidence."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.92,
+    "neutrality": 1.0,
+    "readability": 0.9,
+    "restraint": 0.8,
+    "traceability": 0.85
+  }
+}

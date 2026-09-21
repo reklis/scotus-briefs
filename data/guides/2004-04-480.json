@@ -1,0 +1,290 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-04-480",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T02:16:21.228568Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "164d0d530150985c1aa985455118207fdf0c91270fe1a5f8e873e947e5631ca4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "164d0d530150985c1aa985455118207fdf0c91270fe1a5f8e873e947e5631ca4",
+            "evidence_ids": [
+              "ev-164d0d530150-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the claim that infringement is the only significant use ignored the 2.6\u202fbillion legitimate uses noted in the brief."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Metro-Goldwyn-Mayer Studios, Inc. (Petitioners)",
+          "citations": [
+            {
+              "document_hash": "164d0d530150985c1aa985455118207fdf0c91270fe1a5f8e873e947e5631ca4",
+              "evidence_ids": [
+                "ev-164d0d530150-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Metro-Goldwyn-Mayer Studios, Inc. (Petitioners), according to Metro\u2011Goldwyn\u2011Mayer Studios, Inc. (Petitioners), copyright infringement is the only commercially significant use of the Grokster and StreamCast services, indicating a business model built on infringement."
+        },
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "164d0d530150985c1aa985455118207fdf0c91270fe1a5f8e873e947e5631ca4",
+              "evidence_ids": [
+                "ev-164d0d530150-0001-0000"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, the lower court allowed companies to build a business model out of copyright infringement without fear of secondary liability."
+        },
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "164d0d530150985c1aa985455118207fdf0c91270fe1a5f8e873e947e5631ca4",
+              "evidence_ids": [
+                "ev-164d0d530150-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, a study by petitioners\u2019 experts shows how the system operates to facilitate infringement."
+        },
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "164d0d530150985c1aa985455118207fdf0c91270fe1a5f8e873e947e5631ca4",
+              "evidence_ids": [
+                "ev-164d0d530150-0001-0002"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, the Ninth Circuit got the analysis wrong by relying on a combination of public\u2011domain works and anecdotal evidence of authorized sharing."
+        },
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "164d0d530150985c1aa985455118207fdf0c91270fe1a5f8e873e947e5631ca4",
+              "evidence_ids": [
+                "ev-164d0d530150-0001-0003"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, under the Sony test, a clear business model that targets infringing uses should satisfy the inducement standard before reaching actual inducement."
+        },
+        {
+          "attribution": "Mr. Taranto",
+          "citations": [
+            {
+              "document_hash": "164d0d530150985c1aa985455118207fdf0c91270fe1a5f8e873e947e5631ca4",
+              "evidence_ids": [
+                "ev-164d0d530150-0001-0004"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to Mr. Taranto, because the software products have large and growing legitimate uses, their distribution is protected under the Sony rule."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "164d0d530150985c1aa985455118207fdf0c91270fe1a5f8e873e947e5631ca4",
+              "evidence_ids": [
+                "ev-164d0d530150-0002-0004"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to Petitioners, all past acts constitute a basis for inducement liability, which the Court could affirm."
+        }
+      ],
+      "heading": "Petitioner (Metro\u2011Goldwyn\u2011Mayer Studios, Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "164d0d530150985c1aa985455118207fdf0c91270fe1a5f8e873e947e5631ca4",
+      "evidence_ids": [
+        "ev-164d0d530150-0000-0000",
+        "ev-164d0d530150-0000-0001",
+        "ev-164d0d530150-0000-0002",
+        "ev-164d0d530150-0000-0003",
+        "ev-164d0d530150-0000-0005",
+        "ev-164d0d530150-0001-0000",
+        "ev-164d0d530150-0001-0001",
+        "ev-164d0d530150-0001-0002",
+        "ev-164d0d530150-0001-0003",
+        "ev-164d0d530150-0001-0004",
+        "ev-164d0d530150-0001-0005",
+        "ev-164d0d530150-0001-0008",
+        "ev-164d0d530150-0002-0000",
+        "ev-164d0d530150-0002-0001",
+        "ev-164d0d530150-0002-0002",
+        "ev-164d0d530150-0002-0003",
+        "ev-164d0d530150-0002-0004",
+        "ev-164d0d530150-0003-0000",
+        "ev-164d0d530150-0003-0001",
+        "ev-164d0d530150-0003-0002",
+        "ev-164d0d530150-0003-0003",
+        "ev-164d0d530150-0003-0004"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T02:25:24.429667Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "164d0d530150985c1aa985455118207fdf0c91270fe1a5f8e873e947e5631ca4",
+            "evidence_ids": [
+              "ev-164d0d530150-0003-0000"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to Court, the Court noted that the staple article\u2011of\u2011commerce doctrine must strike a balance that provides effective protection of copyright while protecting unrelated lines of commerce."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "164d0d530150985c1aa985455118207fdf0c91270fe1a5f8e873e947e5631ca4",
+            "evidence_ids": [
+              "ev-164d0d530150-0003-0002"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "The Government argued that the rule of immunity would destroy innovation and that technological innovation is moving toward legitimate digital distribution of music and movies."
+      }
+    ],
+    "heading": "Why it matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

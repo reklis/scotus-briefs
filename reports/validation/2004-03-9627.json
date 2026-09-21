@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2004-03-9627",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that the Court examined how the State's procedural filing requirements inform the federal AEDPA filing deadline is not adequately supported by the cited evidence (page 8 is a Justice Scalia question, not a Court analysis).",
+    "Attribution check failed: the overview claim that the case concerns equitable tolling attributes the statement to the Petitioner, but two of the three cited pages (20 and 38) are from Justices Scalia and Breyer, not the Petitioner.",
+    "Attribution check failed: the background claim that the Court examined procedural filing requirements attributes the analysis to the Court, yet one of the citations (page 8) is a Justice Scalia question rather than a Court statement."
+  ],
+  "quality_scores": {
+    "completeness": 0.81,
+    "factual_accuracy": 0.71,
+    "neutrality": 0.92,
+    "readability": 0.94,
+    "restraint": 0.9,
+    "traceability": 0.78
+  }
+}

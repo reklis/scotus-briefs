@@ -1,0 +1,55 @@
+{
+  "case_id": "2004-04-277",
+  "document_hash": "2e30199dedab1d2baf932e970891a02c6671c4a5e415d461e6bf653e075f86f0",
+  "records": [
+    {
+      "attribution": "Justice Scalia",
+      "case_id": "2004-04-277",
+      "confidence": 1.0,
+      "document_hash": "2e30199dedab1d2baf932e970891a02c6671c4a5e415d461e6bf653e075f86f0",
+      "evidence_id": "ev-2e30199dedab-0000-0001",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 5,
+        "start": 5
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "JUSTICE SCALIA: Why? Why is that reasonable?"
+    },
+    {
+      "attribution": "Justice BREYER",
+      "case_id": "2004-04-277",
+      "confidence": 1.0,
+      "document_hash": "2e30199dedab1d2baf932e970891a02c6671c4a5e415d461e6bf653e075f86f0",
+      "evidence_id": "ev-2e30199dedab-0001-0000",
+      "kind": "justice_question",
+      "opinion_part": null,
+      "pages": {
+        "end": 20,
+        "start": 20
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "And how is this different?"
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2004-04-277",
+      "confidence": 0.94,
+      "document_hash": "2e30199dedab1d2baf932e970891a02c6671c4a5e415d461e6bf653e075f86f0",
+      "evidence_id": "ev-2e30199dedab-0003-0002",
+      "kind": "fact",
+      "opinion_part": null,
+      "pages": {
+        "end": 54,
+        "start": 54
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "the FCC was reasonable in rejecting that position."
+    }
+  ],
+  "schema_version": "1.0.0"
+}

@@ -1,0 +1,367 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, the central legal question is whether striking at least one African American prospective juror was race\u2011based for the petitioner to prevail."
+      },
+      {
+        "attribution": "Waxman",
+        "citations": [
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          },
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0002-0005"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The case involves the Texas practice of \u201cjury shuffles,\u201d a procedure that exists only in Texas."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioner, the petitioner alleges that the State\u2019s purpose in striking jurors was to deliberately minimize the number of African Americans on the jury."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-03-9659",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T01:37:17.926054Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether the petitioners must show that the strike of at least one African American prospective juror was race\u2011based to prevail."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Kennedy posed a hypothetical where black jurors were questioned more extensively than white jurors, asking if that suggested a race\u2011based motive."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether there was a reasonable basis to think the individuals had changed their minds about the case."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0002-0001"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the race\u2011coding of juror cards had any neutral justification and when it stopped."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, the justice Stevens questioned whether the cues on juror cards indicated that prosecutors considered race a factor in challenges."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "The case concerns an allegation that the State used race\u2011based jury selection to minimize the number of African American jurors in a Texas death\u2011penalty case."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+            "evidence_ids": [
+              "ev-7899400e6feb-0002-0003"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "The respondent argues that the juror strikes were based on the prospective jurors\u2019 views on the death penalty, not on race."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+              "evidence_ids": [
+                "ev-7899400e6feb-0002-0004"
+              ],
+              "pages": {
+                "end": 49,
+                "start": 49
+              }
+            }
+          ],
+          "text": "The petitioner argues that the strikes were based on jurors\u2019 views on the death penalty, not on race, and that this is the proper Batson analysis."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+              "evidence_ids": [
+                "ev-7899400e6feb-0001-0001"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "The respondent (Ms. Bunn) maintains that the majority of African American jurors opposed the death penalty, while most white jurors did not, and that the strikes were based on these views, not on race."
+        },
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+              "evidence_ids": [
+                "ev-7899400e6feb-0002-0003"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "The State argues that questioning of a juror (Mr. Fields) during voir dire was a legitimate basis for a strike."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "7899400e6febf8d09cd30b43eb2c477ddcb30001bed175c3a4ae5e003921dc77",
+      "evidence_ids": [
+        "ev-7899400e6feb-0000-0000",
+        "ev-7899400e6feb-0000-0001",
+        "ev-7899400e6feb-0000-0003",
+        "ev-7899400e6feb-0000-0004",
+        "ev-7899400e6feb-0001-0000",
+        "ev-7899400e6feb-0001-0001",
+        "ev-7899400e6feb-0002-0000",
+        "ev-7899400e6feb-0002-0001",
+        "ev-7899400e6feb-0002-0002",
+        "ev-7899400e6feb-0002-0003",
+        "ev-7899400e6feb-0002-0004",
+        "ev-7899400e6feb-0002-0005"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T01:43:59.137617Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

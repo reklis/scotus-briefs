@@ -1,0 +1,403 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "David B. Salmons (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+            "evidence_ids": [
+              "ev-a468b6909014-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+            "evidence_ids": [
+              "ev-a468b6909014-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The central legal question is whether litigation proceeds, including attorney fees, must be included in the taxpayer\u2019s gross income, and whether the assignment\u2011of\u2011income doctrine applies to such proceeds."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-03-892",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T00:51:56.126781Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+          "evidence_ids": [
+            "ev-a468b6909014-0000-0001"
+          ],
+          "pages": {
+            "end": 4,
+            "start": 4
+          }
+        }
+      ],
+      "definition": "All income from whatever source derived, as defined by Section\u202f61(a) of the Internal Revenue Code.",
+      "term": "gross income"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+            "evidence_ids": [
+              "ev-a468b6909014-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether the amount would be deductible if the alternative minimum tax did not apply."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+            "evidence_ids": [
+              "ev-a468b6909014-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia inquired whether the amount represented 2\u202fpercent of the person's annual income."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+            "evidence_ids": [
+              "ev-a468b6909014-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Souter, justice Souter noted that a bond coupon has a certain value at the time it is assigned."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+            "evidence_ids": [
+              "ev-a468b6909014-0001-0004"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Scalia asked about the \u201cDavenport theory\u201d and whether the service treated litigation fees as a transaction cost."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+            "evidence_ids": [
+              "ev-a468b6909014-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice O'Connor followed up, asking whether plaintiffs sometimes receive tax bills larger than the amount they received from the lawsuit."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+            "evidence_ids": [
+              "ev-a468b6909014-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy questioned whether the income in question could be treated as an ordinary and necessary business expense under \u00a7\u202f162."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "David B. Salmons (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+            "evidence_ids": [
+              "ev-a468b6909014-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          },
+          {
+            "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+            "evidence_ids": [
+              "ev-a468b6909014-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+            "evidence_ids": [
+              "ev-a468b6909014-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The case concerns whether litigation proceeds, including contingent\u2011fee attorney payments, are taxable as gross income under the Internal Revenue Code."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "David B. Salmons (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+              "evidence_ids": [
+                "ev-a468b6909014-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to David B. Salmons (Petitioner), according to David B. Salmons (Petitioner), according to David B. Salmons (Petitioner), according to David B. Salmons (Petitioner), section\u202f61(a) of the Internal Revenue Code defines gross income to include all income from whatever source derived."
+        },
+        {
+          "attribution": "Mr. Salmons (respondent)",
+          "citations": [
+            {
+              "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+              "evidence_ids": [
+                "ev-a468b6909014-0001-0001"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Mr. Salmons (respondent), according to Mr. Salmons (respondent), according to Mr. Salmons (respondent), according to Mr. Salmons (respondent), the IRS maintains that the entire amount of litigation proceeds, including amounts paid to a lawyer under a contingent\u2011fee agreement, is includable in the taxpayer\u2019s gross income."
+        }
+      ],
+      "heading": "Commissioner of Internal Revenue (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "David B. Salmons (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+              "evidence_ids": [
+                "ev-a468b6909014-0000-0004"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to David B. Salmons (Petitioner), according to David B. Salmons (Petitioner), according to David B. Salmons (Petitioner), according to David B. Salmons (Petitioner), the same principles that apply to ordinary lawsuits should also apply to class\u2011action lawsuits with respect to the taxation of litigation proceeds."
+        },
+        {
+          "attribution": "Mr. Jones (petitioner)",
+          "citations": [
+            {
+              "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+              "evidence_ids": [
+                "ev-a468b6909014-0001-0005"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            },
+            {
+              "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+              "evidence_ids": [
+                "ev-a468b6909014-0002-0003"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "The assignment\u2011of\u2011income doctrine does not apply when unrelated persons combine resources to jointly generate income."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+              "evidence_ids": [
+                "ev-a468b6909014-0003-0000"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Petitioner, attorney fees earned under contingent\u2011fee agreements are simply compensation for services and do not constitute an assignment of income."
+        }
+      ],
+      "heading": "John W. Banks, II (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a468b6909014bb6177b54c625ef20416a216916347fbe9a93b56efcfffb402de",
+      "evidence_ids": [
+        "ev-a468b6909014-0000-0000",
+        "ev-a468b6909014-0000-0001",
+        "ev-a468b6909014-0000-0002",
+        "ev-a468b6909014-0000-0003",
+        "ev-a468b6909014-0000-0004",
+        "ev-a468b6909014-0001-0000",
+        "ev-a468b6909014-0001-0001",
+        "ev-a468b6909014-0001-0002",
+        "ev-a468b6909014-0001-0003",
+        "ev-a468b6909014-0001-0004",
+        "ev-a468b6909014-0001-0005",
+        "ev-a468b6909014-0001-0007",
+        "ev-a468b6909014-0002-0000",
+        "ev-a468b6909014-0002-0003",
+        "ev-a468b6909014-0002-0004",
+        "ev-a468b6909014-0003-0000",
+        "ev-a468b6909014-0001-0005",
+        "ev-a468b6909014-0002-0003"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T01:01:09.321395Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the background claim that the assignment\u2011of\u2011income doctrine applies to litigation proceeds is not supported by any cited evidence.",
+      "Overstatement check failed: the same background claim overstates the issue by asserting the assignment\u2011of\u2011income doctrine applies without supporting evidence."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

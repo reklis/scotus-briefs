@@ -1,0 +1,289 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4e7a706e18bfcda1adabe91421dd3e1f23627b3a9f6bf63a9b795b0354088ea5",
+            "evidence_ids": [
+              "ev-4e7a706e18bf-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The matter came on for oral argument before the Supreme Court at 11:03 a.m."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-03-8661",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T00:42:19.233070Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4e7a706e18bfcda1adabe91421dd3e1f23627b3a9f6bf63a9b795b0354088ea5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "4e7a706e18bfcda1adabe91421dd3e1f23627b3a9f6bf63a9b795b0354088ea5",
+            "evidence_ids": [
+              "ev-4e7a706e18bf-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether there is any practical effect to the party\u2019s winning in this case."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "4e7a706e18bfcda1adabe91421dd3e1f23627b3a9f6bf63a9b795b0354088ea5",
+            "evidence_ids": [
+              "ev-4e7a706e18bf-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Breyer asked why the party did not want a fairly simple rule that he was thinking of."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "4e7a706e18bfcda1adabe91421dd3e1f23627b3a9f6bf63a9b795b0354088ea5",
+            "evidence_ids": [
+              "ev-4e7a706e18bf-0002-0004"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, the \u201cquick and dirty\u201d procedure described might be a boon to prosecutors because a judge is unlikely to dismiss a charge on that basis."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "4e7a706e18bfcda1adabe91421dd3e1f23627b3a9f6bf63a9b795b0354088ea5",
+            "evidence_ids": [
+              "ev-4e7a706e18bf-0003-0000"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Justice Scalia asked \u201cHoning?\u201d during the argument."
+      },
+      {
+        "attribution": "Mr. Nathanson",
+        "citations": [
+          {
+            "document_hash": "4e7a706e18bfcda1adabe91421dd3e1f23627b3a9f6bf63a9b795b0354088ea5",
+            "evidence_ids": [
+              "ev-4e7a706e18bf-0003-0003"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Mr. Nathanson, Justice Souter was endorsed by Mr. Nathanson, who urged trial judges to take the proposed rule seriously."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Cathryn A. Neaves",
+        "citations": [
+          {
+            "document_hash": "4e7a706e18bfcda1adabe91421dd3e1f23627b3a9f6bf63a9b795b0354088ea5",
+            "evidence_ids": [
+              "ev-4e7a706e18bf-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Cathryn A. Neaves, the State asks this Court to make exceptions to the long\u2011held rule that acquittals terminate jeopardy."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "David J. Nathanson",
+          "citations": [
+            {
+              "document_hash": "4e7a706e18bfcda1adabe91421dd3e1f23627b3a9f6bf63a9b795b0354088ea5",
+              "evidence_ids": [
+                "ev-4e7a706e18bf-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to David J. Nathanson, the trial judge found Melvin Smith not guilty on the merits, and that acquittal entitled him to repose."
+        }
+      ],
+      "heading": "Petitioner (Melvin T. Smith)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Cathryn A. Neaves",
+          "citations": [
+            {
+              "document_hash": "4e7a706e18bfcda1adabe91421dd3e1f23627b3a9f6bf63a9b795b0354088ea5",
+              "evidence_ids": [
+                "ev-4e7a706e18bf-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Cathryn A. Neaves, the State asks this Court to make exceptions to the long\u2011held rule that acquittals terminate jeopardy."
+        }
+      ],
+      "heading": "Respondent (Massachusetts)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4e7a706e18bfcda1adabe91421dd3e1f23627b3a9f6bf63a9b795b0354088ea5",
+      "evidence_ids": [
+        "ev-4e7a706e18bf-0000-0000",
+        "ev-4e7a706e18bf-0000-0001",
+        "ev-4e7a706e18bf-0000-0002",
+        "ev-4e7a706e18bf-0000-0004",
+        "ev-4e7a706e18bf-0001-0000",
+        "ev-4e7a706e18bf-0002-0000",
+        "ev-4e7a706e18bf-0002-0001",
+        "ev-4e7a706e18bf-0002-0004",
+        "ev-4e7a706e18bf-0003-0000",
+        "ev-4e7a706e18bf-0003-0002",
+        "ev-4e7a706e18bf-0003-0003"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T00:51:12.596701Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "David J. Nathanson",
+        "citations": [
+          {
+            "document_hash": "4e7a706e18bfcda1adabe91421dd3e1f23627b3a9f6bf63a9b795b0354088ea5",
+            "evidence_ids": [
+              "ev-4e7a706e18bf-0000-0004"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The Double Jeopardy Clause reflects a constitutional policy of finality for the defendant\u2019s benefit."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

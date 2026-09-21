@@ -1,0 +1,550 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Chief Justice Rehnquist asked whether easing burdens applies to state governments as well as the federal government."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0000-0004"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether Satanism is a non\u2011mainstream religion."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0001-0004"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Souter asked why a particular line was violated."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-03-9877",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T01:43:59.157808Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:00 a.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist questioned whether easing burdens applies to state governments as well as the federal government."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0000-0004"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether Satanism is a non\u2011mainstream religion."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Scalia also asked what the relevance of the Royal Navy was to the case."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0001-0002"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg raised a question about racist literature distributed by a religious organization."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0001-0004"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Souter asked why a particular line was violated."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0002-0003"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens questioned the \u201cleast restrictive\u201d language in the statute."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0002-0005"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Breyer inquired about an American Indian religious claim involving a woman who wanted a name rather than a number."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0002-0004"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Scalia asked why judges overseeing religious life in prison is worse than wardens."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0002-0007"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked why the act goes beyond former free\u2011exercise standards."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0002-0009"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to United States, mr. Clement responded, noting that deference to prison officials has been reduced compared to prior standards."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0000-0003"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "According to Petitioners, the case involves a petition to dismiss, with the underlying facts in dispute."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The United States argues that the case does not raise constitutional issues related to federal funding, citing prior Supreme Court decisions such as Zobrest, Mergens, Agostini, Mitchell, and Helms."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The United States contends that RLUIPA forces prison officials to alter the balance between safety and religious accommodation, imposing risks on other inmates."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0002-0001"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "The United States maintains that the statute\u2019s \u201cleast restrictive alternative\u201d requirement subjects prison officials to strict scrutiny."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0002-0002"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The United States highlights an explosion of religious accommodation claims in prisons before RFRA was declared unconstitutional."
+      },
+      {
+        "attribution": "Mr. Clement",
+        "citations": [
+          {
+            "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+            "evidence_ids": [
+              "ev-e30e0ffd5ee0-0003-0002"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Mr. Clement, petitioners assert that the Sixth Circuit erred in its decision and should be reversed."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+              "evidence_ids": [
+                "ev-e30e0ffd5ee0-0000-0003"
+              ],
+              "pages": {
+                "end": 17,
+                "start": 17
+              }
+            }
+          ],
+          "text": "According to Petitioners, the petition seeks dismissal, arguing that the facts are seriously disputed."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+              "evidence_ids": [
+                "ev-e30e0ffd5ee0-0000-0005"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "The United States argues that there is no constitutional problem with federal money, referencing cases such as Zobrest, Mergens, Agostini, Mitchell, and Helms."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+              "evidence_ids": [
+                "ev-e30e0ffd5ee0-0002-0000"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to United States, the United States asserts that RLUIPA forces prison officials to alter the balance between safety and religious accommodation, imposing risks on other inmates."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+              "evidence_ids": [
+                "ev-e30e0ffd5ee0-0002-0001"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "The United States maintains that the statute\u2019s \u201cleast restrictive alternative\u201d requirement subjects prison officials to strict scrutiny."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+              "evidence_ids": [
+                "ev-e30e0ffd5ee0-0002-0002"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "The United States highlights an explosion of religious accommodation claims in prisons before RFRA was declared unconstitutional."
+        },
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+              "evidence_ids": [
+                "ev-e30e0ffd5ee0-0003-0002"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "Counsel for the United States (Mr. Clement) argues that the Sixth Circuit erred and should be reversed."
+        }
+      ],
+      "heading": "United States",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e30e0ffd5ee0a9f67251c53f9632595a57b56cddb3e32ad8986460fb7d3c3432",
+      "evidence_ids": [
+        "ev-e30e0ffd5ee0-0000-0000",
+        "ev-e30e0ffd5ee0-0000-0001",
+        "ev-e30e0ffd5ee0-0000-0003",
+        "ev-e30e0ffd5ee0-0000-0004",
+        "ev-e30e0ffd5ee0-0000-0005",
+        "ev-e30e0ffd5ee0-0001-0000",
+        "ev-e30e0ffd5ee0-0001-0002",
+        "ev-e30e0ffd5ee0-0001-0004",
+        "ev-e30e0ffd5ee0-0002-0000",
+        "ev-e30e0ffd5ee0-0002-0001",
+        "ev-e30e0ffd5ee0-0002-0002",
+        "ev-e30e0ffd5ee0-0002-0003",
+        "ev-e30e0ffd5ee0-0002-0004",
+        "ev-e30e0ffd5ee0-0002-0005",
+        "ev-e30e0ffd5ee0-0002-0007",
+        "ev-e30e0ffd5ee0-0002-0009",
+        "ev-e30e0ffd5ee0-0003-0000"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T01:50:27.855458Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

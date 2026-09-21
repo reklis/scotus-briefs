@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2004-04-495",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim in the Background & Question section that \"The Court is asked to determine whether Ohio\u2019s new policy for classifying inmates to level\u20115 (super\u2011max) confinement complies with the Due Process Clause\" is not backed by any supporting evidence in the transcript.",
+    "Attribution check failed: the same claim attributes the statement to the Petitioners, but the content describes the Court\u2019s task, not a party position, resulting in missing or incorrect attribution."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.9,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.95,
+    "traceability": 0.95
+  }
+}
