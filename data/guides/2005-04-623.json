@@ -1,0 +1,386 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+            "evidence_ids": [
+              "ev-c5cd408e95ba-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began before the Supreme Court at 10:02\u202fa.m."
+      },
+      {
+        "attribution": "Justice STEVENS",
+        "citations": [
+          {
+            "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+            "evidence_ids": [
+              "ev-c5cd408e95ba-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Stevens asked, \u201cWhat Federal law does it violate?\u201d"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-623",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T13:21:22.467998Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice STEVENS",
+        "citations": [
+          {
+            "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+            "evidence_ids": [
+              "ev-c5cd408e95ba-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Stevens asked, \u201cWhat Federal law does it violate?\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+            "evidence_ids": [
+              "ev-c5cd408e95ba-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked, \u201cWhat does that do to the effectiveness of regulation under the Controlled Substances Act?\u201d"
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+            "evidence_ids": [
+              "ev-c5cd408e95ba-0002-0002"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether Congress could pass a statute prohibiting states from authorizing morphine use."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+            "evidence_ids": [
+              "ev-c5cd408e95ba-0002-0004"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about procedural problems and lack of notice."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+            "evidence_ids": [
+              "ev-c5cd408e95ba-0003-0000"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether Congress has spoken on the issue."
+      },
+      {
+        "attribution": "Mr. Atkinson",
+        "citations": [
+          {
+            "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+            "evidence_ids": [
+              "ev-c5cd408e95ba-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Mr. Atkinson, petitioners argue the Attorney General lacks authority under the Controlled Substances Act."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+            "evidence_ids": [
+              "ev-c5cd408e95ba-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Respondents contend Oregon\u2019s removal of state\u2011law consequences also removes federal consequences."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. Atkinson",
+        "citations": [
+          {
+            "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+            "evidence_ids": [
+              "ev-c5cd408e95ba-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Mr. Atkinson, petitioners argue that the Attorney General lacks authority under the Controlled Substances Act."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+            "evidence_ids": [
+              "ev-c5cd408e95ba-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Respondents argue that Oregon's removal of state\u2011law consequences also eliminates federal consequences."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+              "evidence_ids": [
+                "ev-c5cd408e95ba-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioners contend the Attorney General\u2019s action violates the Controlled Substances Act."
+        },
+        {
+          "attribution": "Mr. Atkinson",
+          "citations": [
+            {
+              "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+              "evidence_ids": [
+                "ev-c5cd408e95ba-0002-0000"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Mr. Atkinson, petitioners argue the Attorney General lacks authority under the Controlled Substances Act."
+        },
+        {
+          "attribution": "Mr. Atkinson",
+          "citations": [
+            {
+              "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+              "evidence_ids": [
+                "ev-c5cd408e95ba-0003-0001"
+              ],
+              "pages": {
+                "end": 54,
+                "start": 54
+              }
+            }
+          ],
+          "text": "According to Mr. Atkinson, petitioners say medical practices evolve and are regulated by the states, not the Attorney General."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+              "evidence_ids": [
+                "ev-c5cd408e95ba-0000-0003"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Respondents contend that Oregon\u2019s removal of state\u2011law consequences also removes federal consequences."
+        },
+        {
+          "attribution": "General Clement",
+          "citations": [
+            {
+              "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+              "evidence_ids": [
+                "ev-c5cd408e95ba-0003-0006"
+              ],
+              "pages": {
+                "end": 59,
+                "start": 59
+              }
+            }
+          ],
+          "text": "According to General Clement, respondents argue the federal regime has a long history of regulating controlled substances and should not be overridden by the state."
+        }
+      ],
+      "heading": "Respondents",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c5cd408e95ba329bc6f094809daa5cdb714962d48c76cfb21f694bff9cb3ce76",
+      "evidence_ids": [
+        "ev-c5cd408e95ba-0000-0000",
+        "ev-c5cd408e95ba-0000-0001",
+        "ev-c5cd408e95ba-0000-0002",
+        "ev-c5cd408e95ba-0000-0003",
+        "ev-c5cd408e95ba-0002-0000",
+        "ev-c5cd408e95ba-0002-0001",
+        "ev-c5cd408e95ba-0002-0002",
+        "ev-c5cd408e95ba-0002-0004",
+        "ev-c5cd408e95ba-0003-0000",
+        "ev-c5cd408e95ba-0003-0001",
+        "ev-c5cd408e95ba-0003-0003",
+        "ev-c5cd408e95ba-0003-0006",
+        "ev-c5cd408e95ba-0003-0007"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T13:28:31.210791Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

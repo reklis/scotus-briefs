@@ -1,0 +1,283 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Questions",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-631",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T13:28:31.231824Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c",
+            "evidence_ids": [
+              "ev-2758705f73bb-0002-0005"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "The oral argument was conducted by Edwin S. Kneedler on behalf of the United States."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c",
+            "evidence_ids": [
+              "ev-2758705f73bb-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c",
+            "evidence_ids": [
+              "ev-2758705f73bb-0001-0000",
+              "ev-2758705f73bb-0001-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          },
+          {
+            "document_hash": "2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c",
+            "evidence_ids": [
+              "ev-2758705f73bb-0001-0004"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "Justices O'Connor, Ginsburg, Stevens, and Scalia each asked questions about the tax\u2019s incidence during oral argument."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c",
+            "evidence_ids": [
+              "ev-2758705f73bb-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Breyer asked a question concerning the constitutional basis of the tax during oral argument."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c",
+            "evidence_ids": [
+              "ev-2758705f73bb-0002-0003"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked a question about the relevance of the tax issue during oral argument."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court Record",
+        "citations": [
+          {
+            "document_hash": "2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c",
+            "evidence_ids": [
+              "ev-2758705f73bb-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The parties\u2019 counsel were Theodore B. Olson for the petitioner, Ian Heath Gershengorn for the respondent, and Edwin S. Kneedler for the United States as amicus supporting the respondent."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c",
+            "evidence_ids": [
+              "ev-2758705f73bb-0003-0003"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "Section 3401(f)(3) defines a \u201cdistributor\u201d as someone who receives the product."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c",
+              "evidence_ids": [
+                "ev-2758705f73bb-0001-0005"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Respondent, the respondent further states that if a distributor has not performed the use, sale, or delivery, the distributor can be held liable for any tax increases that occur while it holds the tax."
+        }
+      ],
+      "heading": "Respondent (Prairie Band Potawatomi Nation)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Kneedler",
+          "citations": [
+            {
+              "document_hash": "2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c",
+              "evidence_ids": [
+                "ev-2758705f73bb-0003-0000"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Mr. Kneedler, on behalf of the United States, argues that the court was wrong to conclude that the tax incidence falls on the distributor."
+        }
+      ],
+      "heading": "United States (Amicus Curiae, represented by Edwin S. Kneedler)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2758705f73bbccf0c1767089e7cb88e2be87d16b3a1ea278037c3af8a6bdfd8c",
+      "evidence_ids": [
+        "ev-2758705f73bb-0000-0000",
+        "ev-2758705f73bb-0000-0002",
+        "ev-2758705f73bb-0000-0003",
+        "ev-2758705f73bb-0000-0004",
+        "ev-2758705f73bb-0001-0000",
+        "ev-2758705f73bb-0001-0001",
+        "ev-2758705f73bb-0001-0002",
+        "ev-2758705f73bb-0001-0003",
+        "ev-2758705f73bb-0001-0004",
+        "ev-2758705f73bb-0001-0005",
+        "ev-2758705f73bb-0002-0000",
+        "ev-2758705f73bb-0002-0002",
+        "ev-2758705f73bb-0002-0003",
+        "ev-2758705f73bb-0002-0005",
+        "ev-2758705f73bb-0003-0000",
+        "ev-2758705f73bb-0003-0001",
+        "ev-2758705f73bb-0003-0003",
+        "ev-2758705f73bb-0003-0004"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T13:35:57.209930Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

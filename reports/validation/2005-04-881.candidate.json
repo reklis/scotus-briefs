@@ -1,0 +1,304 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5",
+            "evidence_ids": [
+              "ev-e96c6399588e-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justices asked whether the later statute that permits collection \u201cout of Social Security\u201d contains a ten\u2011year bar for older debts."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-881",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T14:01:44.520327Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5",
+            "evidence_ids": [
+              "ev-e96c6399588e-0000-0006"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Appearances: Brian Wolfman represented the petitioner; Lisa S. Blatt represented the respondent."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5",
+            "evidence_ids": [
+              "ev-e96c6399588e-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts announced that the Court would hear argument in Lockhart v. United States."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5",
+            "evidence_ids": [
+              "ev-e96c6399588e-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether the later statute that permits collection \u201cout of Social Security\u201d contains a ten\u2011year bar."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5",
+            "evidence_ids": [
+              "ev-e96c6399588e-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens prompted further comment without stating a specific question."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5",
+            "evidence_ids": [
+              "ev-e96c6399588e-0002-0002"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned why a disabled debtor could obtain a discharge."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5",
+            "evidence_ids": [
+              "ev-e96c6399588e-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Petitioner, the vast majority of student\u2011loan defaults involve borrowers under age\u202f55, and about 84% of Social Security payments are retirement benefits, not disability benefits."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5",
+            "evidence_ids": [
+              "ev-e96c6399588e-0001-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Government, according to Petitioner, the Government\u2019s brief relies on statistics that do not support the Government\u2019s position."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5",
+              "evidence_ids": [
+                "ev-e96c6399588e-0002-0000"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Petitioner, the vast majority of student\u2011loan defaults involve borrowers under age\u202f55, and about 84% of Social Security payments are retirement benefits, not disability benefits."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5",
+              "evidence_ids": [
+                "ev-e96c6399588e-0002-0004"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to Petitioner, a discharge of student\u2011loan debt requires a permanent disability lasting at least twelve months, which is distinct from merely being disabled."
+        }
+      ],
+      "heading": "Petitioner (James Lockhart)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5",
+              "evidence_ids": [
+                "ev-e96c6399588e-0001-0001"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "Petitioner says the Government\u2019s brief cites statistics \u2026 but those statistics do not substantiate the claim that offsets are permissible."
+        }
+      ],
+      "heading": "Government (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e96c6399588ee2b133de6df8c666935e23ea05e96be635929d58d3edbceb4fa5",
+      "evidence_ids": [
+        "ev-e96c6399588e-0000-0000",
+        "ev-e96c6399588e-0000-0003",
+        "ev-e96c6399588e-0000-0006",
+        "ev-e96c6399588e-0001-0000",
+        "ev-e96c6399588e-0001-0001",
+        "ev-e96c6399588e-0002-0000",
+        "ev-e96c6399588e-0002-0002",
+        "ev-e96c6399588e-0002-0004"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T14:11:26.201419Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Attribution check failed: the claim that the Government\u2019s brief relies on statistics that do not support the Government\u2019s position is attributed to the Government, but the supporting evidence is a statement by petitioner counsel (Wolfman).",
+      "Attribution check failed: the claim that the Government\u2019s brief cites statistics that do not substantiate the claim that offsets are permissible is attributed to the Government, yet the evidence is again a statement by petitioner counsel (Wolfman)."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

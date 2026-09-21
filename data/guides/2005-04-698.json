@@ -1,0 +1,310 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+            "evidence_ids": [
+              "ev-706ba4f37f26-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners, congress enacted the Individuals with Disabilities Education Act (IDEA) to protect the rights of children with disabilities and to ensure parental involvement in their education."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-698",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T13:35:57.229292Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+            "evidence_ids": [
+              "ev-706ba4f37f26-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens opened the argument, indicating the Court would hear Schaffer against Weast."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+            "evidence_ids": [
+              "ev-706ba4f37f26-0001-0002"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg questioned which allocation of the burden of proof best advances Congress\u2019s purposes."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+              "evidence_ids": [
+                "ev-706ba4f37f26-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The petitioners argue that the burden of proof should be placed on the local school system, reflecting Congress\u2019s intent to protect children with disabilities."
+        },
+        {
+          "attribution": "Mr. Hurd",
+          "citations": [
+            {
+              "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+              "evidence_ids": [
+                "ev-706ba4f37f26-0001-0001"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Mr. Hurd, they request that the school district bear the burden of persuasion in the hearing."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+              "evidence_ids": [
+                "ev-706ba4f37f26-0003-0001"
+              ],
+              "pages": {
+                "end": 53,
+                "start": 53
+              }
+            }
+          ],
+          "text": "According to Petitioners, most jurisdictions, according to the petitioners, place the burden on schools as interpreted by federal courts."
+        }
+      ],
+      "heading": "Petitioners (Brian Schaffer, by his parents)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Garre",
+          "citations": [
+            {
+              "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+              "evidence_ids": [
+                "ev-706ba4f37f26-0001-0006"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "According to Mr. Garre, the respondent maintains that the traditional rule places the burden of proof on the party who initiates the proceeding\u2014the parent."
+        },
+        {
+          "attribution": "Mr. Garre",
+          "citations": [
+            {
+              "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+              "evidence_ids": [
+                "ev-706ba4f37f26-0002-0001"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Mr. Garre, shifting the burden to school districts would erode the trust Congress placed in state and local educational officials."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+              "evidence_ids": [
+                "ev-706ba4f37f26-0002-0002"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "The United States argues that several features of the IDEA confirm that Congress intended the traditional allocation of the burden of proof to apply to administrative hearings."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+              "evidence_ids": [
+                "ev-706ba4f37f26-0003-0006"
+              ],
+              "pages": {
+                "end": 59,
+                "start": 59
+              }
+            }
+          ],
+          "text": "According to Government, the Government points out that the statutory pleading requirements differ from traditional pleading, affecting how the burden of proof is addressed."
+        }
+      ],
+      "heading": "Respondent (Jerry Weast, Montgomery County Public Schools)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+      "evidence_ids": [
+        "ev-706ba4f37f26-0000-0000"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T13:39:41.455313Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+            "evidence_ids": [
+              "ev-706ba4f37f26-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners, the allocation of the burden of proof determines who must prove compliance with IDEA, directly affecting the educational rights of children with disabilities."
+      },
+      {
+        "attribution": "Mr. Garre",
+        "citations": [
+          {
+            "document_hash": "706ba4f37f269665c9e74acf6da06678d4465f5d2ef4d17c9c78216a8a880266",
+            "evidence_ids": [
+              "ev-706ba4f37f26-0001-0006"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Mr. Garre, if the burden falls on schools, it may shift the balance of power in administrative hearings, influencing how states implement special\u2011education services."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

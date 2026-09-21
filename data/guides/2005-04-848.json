@@ -1,0 +1,406 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+            "evidence_ids": [
+              "ev-8c327f505fff-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:04\u202fa.m."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-848",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T13:58:32.574088Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+            "evidence_ids": [
+              "ev-8c327f505fff-0000-0004"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, jUSTICE O'CONNOR: What was the purpose of the enactment of the waiver of Federal sovereign immunity here? Was it to allow recovery for auto accidents occurring by postal trucks?"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+            "evidence_ids": [
+              "ev-8c327f505fff-0000-0005"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, jUSTICE SCALIA: Well, I guess we've already construed it broadly, haven't we?"
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+            "evidence_ids": [
+              "ev-8c327f505fff-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Souter, jUSTICE SOUTER: But you're using --"
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+            "evidence_ids": [
+              "ev-8c327f505fff-0001-0003"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, jUSTICE KENNEDY: Well, how is mail\u2011 --"
+      },
+      {
+        "attribution": "JUSTICE SCALIA",
+        "citations": [
+          {
+            "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+            "evidence_ids": [
+              "ev-8c327f505fff-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to JUSTICE SCALIA, jUSTICE SCALIA: Except that you \u2014 my biggest hangup \u2014 and I wish you'd go through your distinguishing of it again \u2014 is the Kosak case. Carrying the mail in a mail truck is the handling of the mail. There is no doubt that it's the handling of the mail."
+      },
+      {
+        "attribution": "CHIEF JUSTICE ROBERTS",
+        "citations": [
+          {
+            "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+            "evidence_ids": [
+              "ev-8c327f505fff-0002-0003"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "CHIEF JUSTICE ROBERTS: But if the postman throws the box onto the porch and hits somebody there, you say that's within the exception?"
+      },
+      {
+        "attribution": "JUSTICE SCALIA",
+        "citations": [
+          {
+            "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+            "evidence_ids": [
+              "ev-8c327f505fff-0002-0008"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "JUSTICE SCALIA: Distinction. You say there is no liability for the package that falls off the back of the truck, but there is liability if the truck hits another vehicle. I really don't understand the basis for that distinction."
+      },
+      {
+        "attribution": "JUSTICE GINSBURG",
+        "citations": [
+          {
+            "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+            "evidence_ids": [
+              "ev-8c327f505fff-0002-0010"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to JUSTICE GINSBURG, jUSTICE GINSBURG: What about the practical problem that was raised that, in the automobile accident, there's witnesses, there's a police report, usually; but a slip\u2011and\u2011fall over mail, nobody's around, these are easily made up, and the Post Office has no opportunity to check?"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+            "evidence_ids": [
+              "ev-8c327f505fff-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioner Dolan argues that the Federal Tort Claims Act\u2019s postal\u2011matter exception bars claims arising from the failure to deliver mail, but does not bar ordinary negligence that occurs while the mail is being delivered."
+      },
+      {
+        "attribution": "United States Postal Service",
+        "citations": [
+          {
+            "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+            "evidence_ids": [
+              "ev-8c327f505fff-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Respondent United States Postal Service argues for a broader construction that would bar all claims that arise from the handling of mail."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+              "evidence_ids": [
+                "ev-8c327f505fff-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, the Federal Tort Claims Act\u2019s postal\u2011matter exception bars any claim arising out of the failure of the Postal Service to fulfill its duty to deliver mail to its intended destination on time and in good condition, but does not bar any claim arising out of ordinary negligence that happens while the tortfeasor is delivering mail."
+        },
+        {
+          "attribution": "MS. MILLETT",
+          "citations": [
+            {
+              "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+              "evidence_ids": [
+                "ev-8c327f505fff-0002-0000"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to MS. MILLETT, there are about 700 slip\u2011and\u2011fall cases a year, but the vast majority occur in buildings on slippery floors; only roughly ten of those involve mail."
+        },
+        {
+          "attribution": "MS. MILLETT",
+          "citations": [
+            {
+              "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+              "evidence_ids": [
+                "ev-8c327f505fff-0002-0001"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to MS. MILLETT, if damage is done to the mail or a package, the liability for that damage cannot be sued over; the petitioner agrees that damage to and from the mail is covered."
+        }
+      ],
+      "heading": "Petitioner (Dolan)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States Postal Service",
+          "citations": [
+            {
+              "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+              "evidence_ids": [
+                "ev-8c327f505fff-0000-0003"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to United States Postal Service, the Government argues for a much broader construction that would bar all claims that arise from the handling of mail."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+              "evidence_ids": [
+                "ev-8c327f505fff-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "The broad interpretation that the Government asks for, and that the Third Circuit followed, was that \u201cnegligent transmission\u201d covered anything that occurred to the mail from the time the mail was dropped off at the Post Office until it arrived at a destination."
+        },
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+              "evidence_ids": [
+                "ev-8c327f505fff-0001-0002"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to Respondents, it falls within the word \u201ctransmission,\u201d but the relevant phrase is \u201cnegligent transmission of mail or postal matter.\u201d"
+        },
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+              "evidence_ids": [
+                "ev-8c327f505fff-0001-0004"
+              ],
+              "pages": {
+                "end": 32,
+                "start": 32
+              }
+            }
+          ],
+          "text": "According to Respondents, first of all, the decision to put it into a mailbox is a uniquely postal issue."
+        }
+      ],
+      "heading": "Respondent (United States Postal Service)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "8c327f505ffff62c64b665d8cf9f2ccec8fdfdb6d02a9c91575d4193d338b561",
+      "evidence_ids": [
+        "ev-8c327f505fff-0000-0000"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T14:01:44.500242Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
