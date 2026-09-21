@@ -1,0 +1,435 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0001-0006"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The case concerns whether Clark's mental illness excuses the intent required for first-degree murder under Arizona law."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0001-0006"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          },
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "A legal question is whether the State must prove that Clark knowingly killed a police officer, or whether the burden can shift to the defendant to show the victim was not a police officer."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Another question is what degree of murder (first-degree, second-degree, or manslaughter) applies given the evidence of Clark's mental illness."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-05-5966",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T18:18:30.158353Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+          "evidence_ids": [
+            "ev-2ab18b9c5dbb-0001-0002"
+          ],
+          "pages": {
+            "end": 21,
+            "start": 21
+          }
+        }
+      ],
+      "definition": "Intentional murder, without premeditation.",
+      "term": "Second-degree murder"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether Clark could be convicted of a lesser degree of murder under Arizona law."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the State bears the burden to show that the victim was a police officer."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0001-0003"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Scalia noted that the issue does not hinge on pre\u2011meditation."
+      },
+      {
+        "attribution": "Mr. Howe",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0001-0004"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Mr. Howe asked whether states have discretion to define the affirmative defense of insanity as policymakers see fit."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "David I. Goldberg (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to David I. Goldberg (Petitioner), according to David I. Goldberg (Petitioner), petitioner argues that his Fourteenth Amendment right to a fair trial was denied."
+      },
+      {
+        "attribution": "David I. Goldberg (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to David I. Goldberg (Petitioner), according to David I. Goldberg (Petitioner), arizona law defines the cognitive elements of first-degree murder as requiring proof beyond a reasonable doubt that the defendant intentionally and knowingly shot and killed a police officer."
+      },
+      {
+        "attribution": "Mr. Goldberg",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Mr. Goldberg, goldberg contends that if the State fails to prove Clark knew he was killing a police officer, Clark should be found guilty of second-degree murder or manslaughter."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Second-degree murder under Arizona law is defined as intentional murder without premeditation."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0001-0006"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The State must prove that Clark intended to kill a police officer, or at least knowingly killed a police officer, unless his mental illness excuses the conduct."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether Clark could be convicted of a lesser degree of murder under Arizona law."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+            "evidence_ids": [
+              "ev-2ab18b9c5dbb-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the State bears the burden to show that the victim was a police officer."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "David I. Goldberg (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+              "evidence_ids": [
+                "ev-2ab18b9c5dbb-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to David I. Goldberg (Petitioner), according to David I. Goldberg (Petitioner), petitioner claims his Fourteenth Amendment right to a fair trial was denied."
+        },
+        {
+          "attribution": "David I. Goldberg (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+              "evidence_ids": [
+                "ev-2ab18b9c5dbb-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to David I. Goldberg (Petitioner), according to David I. Goldberg (Petitioner), petitioner argues that Arizona law requires proof that the defendant intentionally and knowingly shot a police officer to sustain a first-degree murder conviction."
+        },
+        {
+          "attribution": "Mr. Goldberg",
+          "citations": [
+            {
+              "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+              "evidence_ids": [
+                "ev-2ab18b9c5dbb-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Goldberg, petitioner maintains that if the State fails to prove Clark knew he was killing a police officer, Clark should be convicted of second-degree murder or manslaughter."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2ab18b9c5dbb92d6862ba89c47633c073da800705bdfe854568320a7db83ec76",
+      "evidence_ids": [
+        "ev-2ab18b9c5dbb-0000-0000",
+        "ev-2ab18b9c5dbb-0000-0001",
+        "ev-2ab18b9c5dbb-0001-0000",
+        "ev-2ab18b9c5dbb-0001-0001",
+        "ev-2ab18b9c5dbb-0001-0002",
+        "ev-2ab18b9c5dbb-0001-0003",
+        "ev-2ab18b9c5dbb-0001-0004",
+        "ev-2ab18b9c5dbb-0001-0005",
+        "ev-2ab18b9c5dbb-0001-0006",
+        "ev-2ab18b9c5dbb-0002-0001"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T18:24:00.322798Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

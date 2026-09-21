@@ -1,0 +1,433 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case was remanded to the Oregon courts to reconsider their decision in light of the Supreme Court\u2019s State Farm ruling."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          },
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0002-0003"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "The central issue is how juries should be instructed to account for the extent of harm to others when assessing punitive damages."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-05-1256",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T19:36:22.842268Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the petitioner was referring to \u201cnumber\u202f34.\u201d"
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Souter, justice Souter expressed concern that the instruction could change the outcome of the case."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0001-0000"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Scalia asked what specifically was wrong with the proposed instruction."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice BREYER, justice Breyer noted that many states have similar factors when assessing punitive damages."
+      },
+      {
+        "attribution": "Justice STEVENS",
+        "citations": [
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Stevens asked about the distinction between taking into account the extent of harm to others and punishing for that harm."
+      },
+      {
+        "attribution": "Justice ALITO",
+        "citations": [
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0002-0003"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Justice ALITO, justice Alito questioned whether juries can understand an instruction that allows consideration of harm to others without punishing for that harm."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0001-0003"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "The Court noted that sixty percent of a statutory award goes to Oregon\u2019s crime\u2011victims fund, making the State a judgment creditor."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0000-0005"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0001-0001"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "This case concerns Philip Morris USA\u2019s challenge to an Oregon jury instruction on punitive damages in a lawsuit brought by Mayola Williams."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioner argues that the Oregon courts erred in not applying the Supreme Court\u2019s State Farm precedent after the case was remanded."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          },
+          {
+            "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+            "evidence_ids": [
+              "ev-993aa0c4ef6b-0002-0003"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Several Justices asked clarifying questions about the proposed instruction, focusing on whether jurors can consider harm to others without punishing for that harm."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+              "evidence_ids": [
+                "ev-993aa0c4ef6b-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The petitioner argues that the Oregon courts failed to apply the State Farm precedent after the remand."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+              "evidence_ids": [
+                "ev-993aa0c4ef6b-0000-0005"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "The petitioner contends that punitive damages should reflect the harm suffered by all Oregon smokers, similar to a class\u2011action punishment."
+        },
+        {
+          "attribution": "Mr. Frey",
+          "citations": [
+            {
+              "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+              "evidence_ids": [
+                "ev-993aa0c4ef6b-0001-0004"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Frey, the petitioner warns that allowing a potentially aberrational verdict to pre\u2011empt the work of other juries undermines the judicial process."
+        },
+        {
+          "attribution": "Robert S. Peck",
+          "citations": [
+            {
+              "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+              "evidence_ids": [
+                "ev-993aa0c4ef6b-0001-0001"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "Robert S. Peck argues that the proposed jury instruction would force jurors to consider the harm to others, which Philip\u202fMorris claims they cannot do."
+        },
+        {
+          "attribution": "Mr. PECK",
+          "citations": [
+            {
+              "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+              "evidence_ids": [
+                "ev-993aa0c4ef6b-0002-0000"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. PECK, mr. Peck outlines factors for assessing liability, including likelihood of serious harm, defendant\u2019s awareness, profitability, duration, conduct upon discovery, and financial condition."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "993aa0c4ef6b77e24ec87cc1352c15fd9435a9b5b0e61587f26188cb0fb7d929",
+      "evidence_ids": [
+        "ev-993aa0c4ef6b-0000-0001",
+        "ev-993aa0c4ef6b-0000-0002",
+        "ev-993aa0c4ef6b-0000-0004",
+        "ev-993aa0c4ef6b-0000-0005",
+        "ev-993aa0c4ef6b-0001-0000",
+        "ev-993aa0c4ef6b-0001-0001",
+        "ev-993aa0c4ef6b-0001-0003",
+        "ev-993aa0c4ef6b-0001-0004",
+        "ev-993aa0c4ef6b-0002-0000",
+        "ev-993aa0c4ef6b-0002-0001",
+        "ev-993aa0c4ef6b-0002-0002",
+        "ev-993aa0c4ef6b-0002-0003"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T19:41:42.961379Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

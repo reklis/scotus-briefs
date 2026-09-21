@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2006-05-1382",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": true,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Attribution check failed for the overview claim about the parties discussing medical risks of the injection and the benefits of dilation and extraction procedures: the claim attributes the discussion of benefits to the Petitioner, but the supporting evidence shows the benefits were discussed by Ms. Gartner (Respondent).",
+    "Attribution check failed for the Planned Parenthood claim: the attribution field incorrectly labels Ms. Gartner as a \"Petitioner\" when she is representing the Respondent."
+  ],
+  "quality_scores": {
+    "completeness": 1.0,
+    "factual_accuracy": 1.0,
+    "neutrality": 1.0,
+    "readability": 0.9,
+    "restraint": 1.0,
+    "traceability": 1.0
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41",
+            "evidence_ids": [
+              "ev-8f647debb851-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether, if the relator is not an original source, neither he nor the government should receive any money under the statute."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41",
+            "evidence_ids": [
+              "ev-8f647debb851-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Stevens asked what public disclosure of the claim ultimately prevailed."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-05-1272",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T19:41:42.972512Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41",
+            "evidence_ids": [
+              "ev-8f647debb851-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether the statute would deny any money to both the relator and the government if the relator is not an original source."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41",
+            "evidence_ids": [
+              "ev-8f647debb851-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens inquired about the public disclosure that ultimately prevailed in the case."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41",
+            "evidence_ids": [
+              "ev-8f647debb851-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The case concerns whether a private relator who is not an original source of allegations can share in a monetary award under the statute."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41",
+            "evidence_ids": [
+              "ev-8f647debb851-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Petitioners argue that jurisdiction requires the relator to be an original source or the United States to bring the claim."
+      },
+      {
+        "attribution": "Mr. Stewart (Government)",
+        "citations": [
+          {
+            "document_hash": "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41",
+            "evidence_ids": [
+              "ev-8f647debb851-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Mr. Stewart (Government), according to Mr. Stewart (Government), the government aligns with the relator, arguing that the recovery should be shared with the relator rather than going entirely to the United States."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41",
+              "evidence_ids": [
+                "ev-8f647debb851-0000-0003"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioners, jurisdiction requires the relator to be an original source or the United States to bring the claim."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41",
+              "evidence_ids": [
+                "ev-8f647debb851-0000-0006"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "According to Petitioners, Stone left his job in March 1986 and therefore could not have direct and independent knowledge of the predicate acts."
+        },
+        {
+          "attribution": "Ms. Mahoney (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41",
+              "evidence_ids": [
+                "ev-8f647debb851-0002-0003"
+              ],
+              "pages": {
+                "end": 54,
+                "start": 54
+              }
+            }
+          ],
+          "text": "According to Ms. Mahoney (Petitioner), according to Ms. Mahoney (Petitioner), Ms. Mahoney argued that Stone did not know anything about fraud or the leaks because he was not present at the time, and the statute requires direct knowledge."
+        }
+      ],
+      "heading": "Petitioners (Rockwell International Corp.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Stewart (Government)",
+          "citations": [
+            {
+              "document_hash": "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41",
+              "evidence_ids": [
+                "ev-8f647debb851-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Stewart (Government), according to Mr. Stewart (Government), the government aligns with Stone, supporting that the recovery should be shared with the relator rather than going entirely to the United States."
+        }
+      ],
+      "heading": "United States (Government)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "8f647debb851d99d5b89793fb4a7b0c7061a53ba8c9284bbc133a8f02a76ef41",
+      "evidence_ids": [
+        "ev-8f647debb851-0000-0000"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T19:46:28.830766Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

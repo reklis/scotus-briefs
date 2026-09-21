@@ -1,0 +1,300 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce",
+            "evidence_ids": [
+              "ev-3192486417bd-0001-0004"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice BREYER asked, \u201cSo what's the test?\u201d"
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-05-5705",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T18:10:59.115326Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce",
+            "evidence_ids": [
+              "ev-3192486417bd-0001-0004"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice BREYER asked, \u201cSo what's the test?\u201d"
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce",
+            "evidence_ids": [
+              "ev-3192486417bd-0000-0007"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "According to Justice BREYER, justice BREYER expressed concern that Crawford removes the Confrontation Clause from the hearsay rule, potentially making testimony testimonial even when not hearsay."
+      },
+      {
+        "attribution": "Justice ALITO",
+        "citations": [
+          {
+            "document_hash": "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce",
+            "evidence_ids": [
+              "ev-3192486417bd-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice ALITO asked whether a highly incriminating statement to a known law\u2011enforcement officer that does not specifically identify a person falls within the test."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce",
+            "evidence_ids": [
+              "ev-3192486417bd-0003-0003"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice STEVENS questioned whether the emergency continued at the time the witness\u2019s words were repeated."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce",
+            "evidence_ids": [
+              "ev-3192486417bd-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice BREYER, justice BREYER posed a hypothetical about an undercover agent or a member of the KKK revealing himself."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Richard D. Friedman)",
+        "citations": [
+          {
+            "document_hash": "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce",
+            "evidence_ids": [
+              "ev-3192486417bd-0000-0008"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          },
+          {
+            "document_hash": "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce",
+            "evidence_ids": [
+              "ev-3192486417bd-0001-0004"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "The case concerns the scope of the Confrontation Clause, specifically whether statements made to law\u2011enforcement officers are testimonial."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Richard D. Friedman)",
+          "citations": [
+            {
+              "document_hash": "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce",
+              "evidence_ids": [
+                "ev-3192486417bd-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner (Richard D. Friedman), according to Petitioner (Richard D. Friedman), the Court can decide these cases, as it decided Crawford without testing the outer bounds of the Confrontation Clause, by adopting a simple, intuitive proposition that is easily understood by ordinary lay people and capable of being passed on as a cornerstone of our fundamental liberties."
+        },
+        {
+          "attribution": "Petitioner (Richard D. Friedman)",
+          "citations": [
+            {
+              "document_hash": "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce",
+              "evidence_ids": [
+                "ev-3192486417bd-0000-0005"
+              ],
+              "pages": {
+                "end": 9,
+                "start": 9
+              }
+            },
+            {
+              "document_hash": "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce",
+              "evidence_ids": [
+                "ev-3192486417bd-0000-0006"
+              ],
+              "pages": {
+                "end": 10,
+                "start": 10
+              }
+            }
+          ],
+          "text": "According to Petitioner (Richard D. Friedman), according to Petitioner (Richard D. Friedman), petitioner noted that California and Oregon have already adopted such statutes, and argued that the Michigan bill he testified about is \u201cblatantly unconstitutional.\u201d"
+        }
+      ],
+      "heading": "Petitioner (Hershel Hammons)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Indiana)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3192486417bd087e8993a3e0a92d682b2f65128073bd60b594d87cbed14dc5ce",
+      "evidence_ids": [
+        "ev-3192486417bd-0000-0000",
+        "ev-3192486417bd-0000-0001",
+        "ev-3192486417bd-0000-0002",
+        "ev-3192486417bd-0000-0003",
+        "ev-3192486417bd-0000-0004",
+        "ev-3192486417bd-0000-0005",
+        "ev-3192486417bd-0000-0006",
+        "ev-3192486417bd-0000-0007",
+        "ev-3192486417bd-0000-0008",
+        "ev-3192486417bd-0001-0000",
+        "ev-3192486417bd-0001-0003",
+        "ev-3192486417bd-0001-0004",
+        "ev-3192486417bd-0002-0000",
+        "ev-3192486417bd-0002-0001",
+        "ev-3192486417bd-0002-0003",
+        "ev-3192486417bd-0002-0004",
+        "ev-3192486417bd-0003-0000",
+        "ev-3192486417bd-0003-0001",
+        "ev-3192486417bd-0003-0003",
+        "ev-3192486417bd-0003-0004"
+      ],
+      "pages": {
+        "end": 63,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T18:18:30.138227Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

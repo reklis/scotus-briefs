@@ -1,0 +1,338 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "KSR International",
+        "citations": [
+          {
+            "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+            "evidence_ids": [
+              "ev-f11a6a6c6444-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioner KSR International argues that claim\u202f4 of the Engelgau patent is broadly worded and invalid under \u00a7\u202f103, a view shared by the Solicitor General and the USPTO."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-04-1350",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T18:45:21.770477Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+            "evidence_ids": [
+              "ev-f11a6a6c6444-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Souter asked about the \u201crevolution argument\u201d and whether overturning long\u2011standing precedent would cause chaos."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+            "evidence_ids": [
+              "ev-f11a6a6c6444-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg questioned the vagueness of the \u201csufficiently innovative\u201d standard proposed by the petitioner."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+            "evidence_ids": [
+              "ev-f11a6a6c6444-0001-0004"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Scalia asked what would happen to the presumption of validity of patents if the teaching\u2011suggestion\u2011motivation test were discarded."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+            "evidence_ids": [
+              "ev-f11a6a6c6444-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked why claim\u202f4 is considered a \u201cbig deal.\u201d"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+            "evidence_ids": [
+              "ev-f11a6a6c6444-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether there would be any objection to the opinion being discussed."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+            "evidence_ids": [
+              "ev-f11a6a6c6444-0002-0002"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "Justice Stevens asked what makes the invention non\u2011obvious."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+            "evidence_ids": [
+              "ev-f11a6a6c6444-0003-0000"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens described the invention as \u201cthe decision of where to put the control.\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+            "evidence_ids": [
+              "ev-f11a6a6c6444-0003-0001"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked what makes the invention non\u2011obvious, suggesting it is attached to a non\u2011moving piece."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "KSR International",
+        "citations": [
+          {
+            "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+            "evidence_ids": [
+              "ev-f11a6a6c6444-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to KSR International, the dispute centers on claim\u202f4 of the Engelgau patent, which the petitioner says is overly broad and invalid under \u00a7\u202f103 of the Patent Act."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "KSR International",
+          "citations": [
+            {
+              "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+              "evidence_ids": [
+                "ev-f11a6a6c6444-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to KSR International, claim\u202f4 of the Engelgau patent is overly broad and therefore invalid under \u00a7\u202f103 of the Patent Act."
+        }
+      ],
+      "heading": "KSR International (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent (Mr. Hungar)",
+          "citations": [
+            {
+              "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+              "evidence_ids": [
+                "ev-f11a6a6c6444-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Respondent (Mr. Hungar), claims\u202f1\u20113 of the Engelgau patent are valid, but claim\u202f4 is so broad that it sweeps obvious manifestations."
+        },
+        {
+          "attribution": "Mr. GOLDSTEIN",
+          "citations": [
+            {
+              "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+              "evidence_ids": [
+                "ev-f11a6a6c6444-0003-0003"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Mr. GOLDSTEIN, the invention is an adjustable pedal that has a non\u2011moving pivot."
+        }
+      ],
+      "heading": "Teleflex (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f11a6a6c64444bfde7511fe92fdc0d83f62e9990a69273e13261757a8d9c56b3",
+      "evidence_ids": [
+        "ev-f11a6a6c6444-0000-0000",
+        "ev-f11a6a6c6444-0000-0001",
+        "ev-f11a6a6c6444-0000-0002",
+        "ev-f11a6a6c6444-0001-0000",
+        "ev-f11a6a6c6444-0001-0001",
+        "ev-f11a6a6c6444-0001-0002",
+        "ev-f11a6a6c6444-0001-0004",
+        "ev-f11a6a6c6444-0002-0000",
+        "ev-f11a6a6c6444-0002-0001",
+        "ev-f11a6a6c6444-0002-0002",
+        "ev-f11a6a6c6444-0003-0000",
+        "ev-f11a6a6c6444-0003-0001",
+        "ev-f11a6a6c6444-0003-0003"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T18:48:04.453442Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
