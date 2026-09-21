@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2005-04-1170",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim in the 'Why it matters' section (Ms. Woodman says the case addresses how the Eighth Amendment\u2019s prohibition on cruel and unusual punishment applies to statutes that may force juries to impose death when factors are balanced) is not directly supported by the cited evidence, which only states that the Eighth Amendment requires reliability in death\u2011sentence determinations.",
+    "Overstatement check failed: the same 'Why it matters' claim overstates Ms. Woodman's testimony by adding language about the prohibition on cruel and unusual punishment and the statute forcing juries to impose death, which is not present in the provided evidence."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.91,
+    "neutrality": 0.9,
+    "readability": 0.85,
+    "restraint": 0.85,
+    "traceability": 0.8
+  }
+}

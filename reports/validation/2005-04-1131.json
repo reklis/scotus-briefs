@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2005-04-1131",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": false,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": true,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Opinion distinction check failed: multiple claims (e.g., Whitman's challenge, Government's waiver of exhaustion, petitioner's argument that the Court rewrite the CSRA) present legal arguments as factual statements without indicating they are opinions.",
+    "Overstatement check failed: the 'Why this case matters' claim predicts that the case will clarify the scope of the CSRA, which is a forward\u2011looking statement not yet supported by a decision."
+  ],
+  "quality_scores": {
+    "completeness": 0.95,
+    "factual_accuracy": 0.85,
+    "neutrality": 0.9,
+    "readability": 0.9,
+    "restraint": 0.8,
+    "traceability": 0.95
+  }
+}

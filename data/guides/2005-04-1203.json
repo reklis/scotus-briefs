@@ -1,0 +1,276 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "df6a92cd6d69e251f47a0886b5cbd2ee8a153c254129bac6454b668063371142",
+            "evidence_ids": [
+              "ev-df6a92cd6d69-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Stevens asked what the proper standard should be for evaluating ADA accommodations in prisons."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1203",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T06:29:35.546501Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "df6a92cd6d69e251f47a0886b5cbd2ee8a153c254129bac6454b668063371142"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Gregory A. Castanias (Respondents)",
+        "citations": [
+          {
+            "document_hash": "df6a92cd6d69e251f47a0886b5cbd2ee8a153c254129bac6454b668063371142",
+            "evidence_ids": [
+              "ev-df6a92cd6d69-0001-0002"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Gregory A. Castanias (Respondents), respondent\u2019s counsel Gregory\u202fA.\u202fCastanias made three opening points."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "df6a92cd6d69e251f47a0886b5cbd2ee8a153c254129bac6454b668063371142",
+            "evidence_ids": [
+              "ev-df6a92cd6d69-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Amici counsel Gene\u202fC.\u202fSchaerr filed a brief supporting the respondents."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "df6a92cd6d69e251f47a0886b5cbd2ee8a153c254129bac6454b668063371142",
+            "evidence_ids": [
+              "ev-df6a92cd6d69-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The United States is the petitioner and Georgia is the respondent in case 04\u20111203."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "df6a92cd6d69e251f47a0886b5cbd2ee8a153c254129bac6454b668063371142",
+            "evidence_ids": [
+              "ev-df6a92cd6d69-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Amici curiae filed on behalf of Tennessee in support of the respondents."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner (United States)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Gregory A. Castanias (Respondents)",
+          "citations": [
+            {
+              "document_hash": "df6a92cd6d69e251f47a0886b5cbd2ee8a153c254129bac6454b668063371142",
+              "evidence_ids": [
+                "ev-df6a92cd6d69-0001-0002"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "According to Gregory A. Castanias (Respondents), respondent counsel Gregory\u202fA.\u202fCastanias outlined three basic points in his opening remarks."
+        },
+        {
+          "attribution": "Mr. Schaerr",
+          "citations": [
+            {
+              "document_hash": "df6a92cd6d69e251f47a0886b5cbd2ee8a153c254129bac6454b668063371142",
+              "evidence_ids": [
+                "ev-df6a92cd6d69-0003-0001"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Mr. Schaerr, amici counsel Gene\u202fC.\u202fSchaerr argued that the record must have been within Congress\u2019s awareness at the time the statute was passed."
+        },
+        {
+          "attribution": "Mr. Schaerr",
+          "citations": [
+            {
+              "document_hash": "df6a92cd6d69e251f47a0886b5cbd2ee8a153c254129bac6454b668063371142",
+              "evidence_ids": [
+                "ev-df6a92cd6d69-0003-0002"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Mr. Schaerr, schaerr further argued that Title\u202fII\u2019s substantive accommodation duty exceeds constitutional requirements."
+        }
+      ],
+      "heading": "Respondent (Georgia)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Amici Curiae (Tennessee)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Former President George H. W. Bush",
+          "citations": [
+            {
+              "document_hash": "df6a92cd6d69e251f47a0886b5cbd2ee8a153c254129bac6454b668063371142",
+              "evidence_ids": [
+                "ev-df6a92cd6d69-0001-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Former President George H. W. Bush, amicus brief filed by former President George\u202fH.\u202fW.\u202fBush emphasized that the ADA was enacted because the Rehabilitation Act had failed."
+        }
+      ],
+      "heading": "Amici Curiae (Former President George\u202fH.\u202fW.\u202fBush)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "df6a92cd6d69e251f47a0886b5cbd2ee8a153c254129bac6454b668063371142",
+      "evidence_ids": [
+        "ev-df6a92cd6d69-0000-0000"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T06:33:53.450539Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

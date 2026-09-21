@@ -1,0 +1,528 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          },
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked how to define a tributary and what constitutes a hydrological connection, including whether seepage through the ground is sufficient."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0000-0002"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether it would be sufficient to prove that a discharge ultimately reaches a tributary, implying a focus on the \u201cdischarge\u201d test for jurisdiction."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0001-0003"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens raised the question of whether a future hydrological connection, created by the proposed project, could establish jurisdiction."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1034",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T05:12:06.133793Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked the Court to define \u201ctributary.\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts also questioned what constitutes a \u201chydrological connection,\u201d including whether seepage through the ground is sufficient."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0000-0002"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether it would be enough to prove that a discharge ultimately reaches a tributary."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0001-0003"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens inquired whether a wetland lacking a present hydrological connection could become connected after the proposed project is built."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia characterized the classification of a municipal drainage ditch as \u201cwaters of the United States\u201d as \u201cextravagant.\u201d"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0004-0004"
+            ],
+            "pages": {
+              "end": 77,
+              "start": 77
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg noted that one of the wetlands was much closer to the water body."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioners contend that the Corps of Engineers and the EPA have exceeded the limits of congressional authority, arguing that the agencies are overreaching the plain text of the Clean Water Act."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0000-0003"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 16
+            }
+          }
+        ],
+        "text": "According to Petitioners, petitioners assert that their wetland is hydrologically isolated from any navigable water of the United States."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Respondents argue that jurisdiction can be based on a hydrological connection, citing their brief\u2019s discussion of such connections."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Respondents further claim that the sole basis for agency jurisdiction is the adjacency of the wetland to a non\u2011navigable, unnamed ditch dug for a sewer system."
+      },
+      {
+        "attribution": "General Clement",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0001-0004"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "According to General Clement, Corps regulations since 1975 specifically exclude the Nundane ditch and its adjacent drain from the definition of \u201cwaters of the United States.\u201d"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, the classification of a municipal drainage ditch as \u201cwaters of the United States\u201d is \u201cextravagant.\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked the Court to define what a \u201ctributary\u201d is."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts also asked what constitutes a \u201chydrological connection,\u201d including whether seepage through the ground suffices."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+            "evidence_ids": [
+              "ev-37b89618981b-0001-0003"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, a wetland lacking a current hydrological connection could become connected after a proposed project is built."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+              "evidence_ids": [
+                "ev-37b89618981b-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioners argue that the Corps and EPA have overreached the statutory limits of the Clean Water Act, exceeding the plain text of the statute."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+              "evidence_ids": [
+                "ev-37b89618981b-0000-0003"
+              ],
+              "pages": {
+                "end": 17,
+                "start": 16
+              }
+            }
+          ],
+          "text": "Petitioners maintain that their wetland is hydrologically isolated from any navigable water, and therefore lies outside the scope of the Act."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+              "evidence_ids": [
+                "ev-37b89618981b-0001-0000"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "Respondents contend that jurisdiction can be established through a hydrological connection, as reflected in their brief."
+        },
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+              "evidence_ids": [
+                "ev-37b89618981b-0001-0002"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "Respondents argue that the wetland\u2019s adjacency to a non\u2011navigable ditch, dug for a sewer system, is the sole basis for agency jurisdiction."
+        },
+        {
+          "attribution": "General Clement",
+          "citations": [
+            {
+              "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+              "evidence_ids": [
+                "ev-37b89618981b-0001-0004"
+              ],
+              "pages": {
+                "end": 35,
+                "start": 35
+              }
+            }
+          ],
+          "text": "According to General Clement, general Clement testified that Corps regulations since 1975 specifically exclude the Nundane ditch and its adjacent drain from the definition of \u201cwaters of the United States.\u201d"
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+              "evidence_ids": [
+                "ev-37b89618981b-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "Government representative General Clement argued that the Corps does not distinguish between man\u2011made and natural channels, noting that even the Erie Canal is a ditch."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+              "evidence_ids": [
+                "ev-37b89618981b-0002-0002"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Government, government explained that the Corps\u2019 regulations have long ignored the presence of berms because, in most cases, they do not prevent a hydrological connection."
+        }
+      ],
+      "heading": "Respondents",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "37b89618981b80a0caaf7d4b1ce314974005bf49d3b6542218470df118511611",
+      "evidence_ids": [
+        "ev-37b89618981b-0000-0000"
+      ],
+      "pages": {
+        "end": 78,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T05:21:00.440065Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,419 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor asked whether a wife\u2019s consent to a search overrides the husband\u2019s objection."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0003-0000",
+              "ev-9ff227fa8609-0003-0001"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts posed a hypothetical in which the wife and adult children consent to entry while the husband objects, asking what would happen then."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0003-0002"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked what case law says that a child\u2019s invitation can override the parents\u2019 objection."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1067",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T05:28:03.360533Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+          "evidence_ids": [
+            "ev-9ff227fa8609-0000-0000"
+          ],
+          "pages": {
+            "end": 3,
+            "start": 3
+          }
+        }
+      ],
+      "definition": "A person who has joint access or control over property for most purposes, not based on property\u2011law concepts, and therefore may consent to a search on his or her own behalf.",
+      "term": "common authority"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Paula K. Smith",
+        "citations": [
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Paula K. Smith, georgia submitted that consent can be given by a person with common authority, citing Matlock\u2019s definition."
+      },
+      {
+        "attribution": "Respondent; Thomas C. Goldstein",
+        "citations": [
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0001-0002"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          },
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The respondent, represented by Thomas C. Goldstein, argued that the Court must weigh privacy against the societal benefit of encouraging consent."
+      },
+      {
+        "attribution": "Michael R. Dreeben",
+        "citations": [
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0000-0002"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "According to Michael R. Dreeben, amicus counsel Michael R. Dreeben emphasized that consent searches are evaluated for reasonableness and that a cotenant\u2019s authority is independent of the other spouse."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0003-0000",
+              "ev-9ff227fa8609-0003-0001",
+              "ev-9ff227fa8609-0003-0002"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Justices asked several hypotheticals about whether a wife\u2019s or children\u2019s consent overrides a husband\u2019s objection."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The case concerns whether a spouse can consent to a police search of a home when the other spouse objects, under the Fourth Amendment."
+      },
+      {
+        "attribution": "Paula K. Smith; Respondent",
+        "citations": [
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0000-0002"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The parties dispute how \u201ccommon authority\u201d is defined and whether privacy interests should outweigh social interests that encourage consent to searches."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Paula K. Smith",
+          "citations": [
+            {
+              "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+              "evidence_ids": [
+                "ev-9ff227fa8609-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Paula K. Smith, georgia argues that a person who meets Matlock\u2019s definition of common authority\u2014someone with joint access or control over property\u2014may consent to a search on his or her own behalf."
+        }
+      ],
+      "heading": "Georgia (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+              "evidence_ids": [
+                "ev-9ff227fa8609-0001-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 24
+              }
+            }
+          ],
+          "text": "The respondent contends that the Court should balance individual privacy interests against social interests that encourage consent, and that ordinary social understandings are insufficient for calibrating the law."
+        }
+      ],
+      "heading": "Scott Fitz Randolph (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+      "evidence_ids": [
+        "ev-9ff227fa8609-0000-0000",
+        "ev-9ff227fa8609-0000-0002",
+        "ev-9ff227fa8609-0000-0003",
+        "ev-9ff227fa8609-0001-0000",
+        "ev-9ff227fa8609-0001-0001",
+        "ev-9ff227fa8609-0001-0002",
+        "ev-9ff227fa8609-0001-0003",
+        "ev-9ff227fa8609-0002-0002",
+        "ev-9ff227fa8609-0002-0004",
+        "ev-9ff227fa8609-0003-0000",
+        "ev-9ff227fa8609-0003-0001",
+        "ev-9ff227fa8609-0003-0002",
+        "ev-9ff227fa8609-0003-0004"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T05:38:30.570750Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: Overview claim 1 (spouse consent issue) is not directly supported by the transcript and is incorrectly attributed to Justice O'Connor.",
+      "Support check failed: Oral argument claim 2 attributes the privacy\u2011vs\u2011consent argument to Thomas C. Goldstein without any transcript evidence of him making that specific argument.",
+      "Attribution check failed: Overview claim 1 misattributes the case\u2011concern statement to Justice O'Connor; the transcript only shows her asking a question.",
+      "Attribution check failed: Oral argument claim 2 lists both the Respondent and Thomas C. Goldstein as the source of the privacy\u2011balancing argument, but Goldstein's speech in the record does not contain that argument.",
+      "Overstatement check failed: Overview claim 1 overstates the case issue and presents it as a definitive holding rather than a question raised during argument."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Michael R. Dreeben",
+        "citations": [
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0000-0002"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          },
+          {
+            "document_hash": "9ff227fa8609fd5d4ca2de8fbe7fd9a8e73c9a3d176d2a177261f4a4db83ffe3",
+            "evidence_ids": [
+              "ev-9ff227fa8609-0001-0003"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "The case addresses how consent searches are evaluated under the Fourth Amendment, influencing the balance between individual privacy rights and law\u2011enforcement interests."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

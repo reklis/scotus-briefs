@@ -1,0 +1,450 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the issue arises only if the amendment is accepted under Rule 15(a)."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0001-0004"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          },
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0001-0007"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O'Connor questioned how to interpret \u201ctransaction or occurrence\u201d and whether a narrow view is permissible in the habeas context."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Breyer inquired why a 1981 claim does not relate back, suggesting the injury occurred at trial."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0002-0002"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether unlawful detention is the counterpart to injury in a tort case."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-04-563",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T04:28:02.799832Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:05\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0002-0007"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "The case was submitted to the Court."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioner argues that the conduct set forth in the initial petition should be treated as the core operative facts for constitutional violations and that a relation\u2011back rule is superior to the Ninth Circuit\u2019s approach."
+      },
+      {
+        "attribution": "Ms. Blatt",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Ms. Blatt, the respondent contends that habeas petitions must meet heightened pleading requirements, identifying all grounds and facts, and that the relevant conduct is the set of facts supporting the specific grounds for relief."
+      },
+      {
+        "attribution": "Ms. Blatt",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Ms. Blatt, the respondent also argues that the transaction or occurrence in the habeas context should be narrowly defined, focusing on police misconduct rather than counsel performance."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Court notes that the statute of limitations is a strict defense that applies regardless of timing, prejudice, or motive."
+      },
+      {
+        "attribution": "United States (amicus curiae)",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0000-0003"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "According to United States (amicus curiae), an amicus brief argues that the relevant conduct in a habeas petition is the set of facts supporting the particular grounds for relief, preserving the reference point."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+              "evidence_ids": [
+                "ev-5f0acfd4b502-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petitioner asserts that the conduct set forth in the initial petition should be treated as the core operative facts for constitutional violations and that a relation\u2011back rule is superior to the Ninth Circuit\u2019s approach."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Blatt",
+          "citations": [
+            {
+              "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+              "evidence_ids": [
+                "ev-5f0acfd4b502-0001-0000"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Ms. Blatt, the respondent argues that habeas petitions must meet heightened pleading requirements, identifying all grounds and facts supporting relief."
+        },
+        {
+          "attribution": "Ms. Blatt",
+          "citations": [
+            {
+              "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+              "evidence_ids": [
+                "ev-5f0acfd4b502-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Ms. Blatt, the respondent contends that the transaction or occurrence in the habeas context should be narrowly defined, focusing on police misconduct rather than counsel performance."
+        },
+        {
+          "attribution": "Mr. Porter",
+          "citations": [
+            {
+              "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+              "evidence_ids": [
+                "ev-5f0acfd4b502-0001-0003"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Porter, the respondent relies on both habeas Rule\u202f2 and AEDPA principles concerning finality."
+        },
+        {
+          "attribution": "Mr. Chan",
+          "citations": [
+            {
+              "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+              "evidence_ids": [
+                "ev-5f0acfd4b502-0002-0006"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Mr. Chan, the respondent argues that the Tiller case, being a non\u2011habeas case, should not be read to permit relation\u2011back in this context."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+      "evidence_ids": [
+        "ev-5f0acfd4b502-0000-0000",
+        "ev-5f0acfd4b502-0000-0001",
+        "ev-5f0acfd4b502-0000-0002",
+        "ev-5f0acfd4b502-0000-0003",
+        "ev-5f0acfd4b502-0000-0004",
+        "ev-5f0acfd4b502-0001-0000",
+        "ev-5f0acfd4b502-0001-0001",
+        "ev-5f0acfd4b502-0001-0003",
+        "ev-5f0acfd4b502-0001-0004",
+        "ev-5f0acfd4b502-0001-0007",
+        "ev-5f0acfd4b502-0002-0000",
+        "ev-5f0acfd4b502-0002-0001",
+        "ev-5f0acfd4b502-0002-0002",
+        "ev-5f0acfd4b502-0002-0003",
+        "ev-5f0acfd4b502-0002-0004",
+        "ev-5f0acfd4b502-0002-0005",
+        "ev-5f0acfd4b502-0002-0006",
+        "ev-5f0acfd4b502-0002-0007"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T04:31:22.237010Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, a relation\u2011back rule could affect how courts treat the operative facts underlying constitutional violations across circuits."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The strict statute of limitations serves as a defense regardless of when a filing is made or whether prejudice exists."
+      },
+      {
+        "attribution": "Ms. Blatt",
+        "citations": [
+          {
+            "document_hash": "5f0acfd4b50253923d2cde94732e7110a7ac8b6e4708c947416b27bd36f61be0",
+            "evidence_ids": [
+              "ev-5f0acfd4b502-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Ms. Blatt, heightened pleading requirements focus habeas petitions on specific grounds and facts, ensuring that petitions are tailored to the relief sought."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

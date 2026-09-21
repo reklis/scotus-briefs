@@ -1,0 +1,42 @@
+{
+  "accepted": false,
+  "case_id": "2005-04-1067",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: Overview claim 1 (spouse consent issue) is not directly supported by the transcript and is incorrectly attributed to Justice O'Connor.",
+    "Support check failed: Oral argument claim 2 attributes the privacy\u2011vs\u2011consent argument to Thomas C. Goldstein without any transcript evidence of him making that specific argument.",
+    "Attribution check failed: Overview claim 1 misattributes the case\u2011concern statement to Justice O'Connor; the transcript only shows her asking a question.",
+    "Attribution check failed: Oral argument claim 2 lists both the Respondent and Thomas C. Goldstein as the source of the privacy\u2011balancing argument, but Goldstein's speech in the record does not contain that argument.",
+    "Overstatement check failed: Overview claim 1 overstates the case issue and presents it as a definitive holding rather than a question raised during argument."
+  ],
+  "quality_scores": {
+    "completeness": 0.86,
+    "factual_accuracy": 0.42,
+    "neutrality": 0.81,
+    "readability": 0.92,
+    "restraint": 0.61,
+    "traceability": 0.68
+  }
+}

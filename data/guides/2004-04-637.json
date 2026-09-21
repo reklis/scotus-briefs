@@ -1,0 +1,352 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+            "evidence_ids": [
+              "ev-d88c0ed45f88-0002-0001"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, the Court is asked whether the evidence presented at Stumpf\u2019s sentencing was sufficient to support a finding of guilt as an aider and abetter."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-04-637",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T04:35:40.279357Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+            "evidence_ids": [
+              "ev-d88c0ed45f88-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice O'Connor asked whether Stumpf received the death sentence."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+            "evidence_ids": [
+              "ev-d88c0ed45f88-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Souter asked about due process linking the plea to the sentence."
+      },
+      {
+        "attribution": "Justice STEVENS",
+        "citations": [
+          {
+            "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+            "evidence_ids": [
+              "ev-d88c0ed45f88-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Stevens asked about the original sentencer\u2019s actions."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+            "evidence_ids": [
+              "ev-d88c0ed45f88-0002-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether Wesley was denied due process."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+            "evidence_ids": [
+              "ev-d88c0ed45f88-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, the case concerns a death\u2011penalty sentencing for John\u202fDavid\u202fStumpf."
+      },
+      {
+        "attribution": "State",
+        "citations": [
+          {
+            "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+            "evidence_ids": [
+              "ev-d88c0ed45f88-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+            "evidence_ids": [
+              "ev-d88c0ed45f88-0000-0001"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "The State argues that the death penalty is appropriate even though the evidence does not establish that Stumpf was the actual shooter."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+              "evidence_ids": [
+                "ev-d88c0ed45f88-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "The State contends that the death penalty is appropriate even without proof that Stumpf was the shooter."
+        },
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+              "evidence_ids": [
+                "ev-d88c0ed45f88-0000-0001"
+              ],
+              "pages": {
+                "end": 8,
+                "start": 8
+              }
+            }
+          ],
+          "text": "According to State, the State asserts that there is ample evidence allowing the court to conclude Stumpf\u2019s guilt."
+        },
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+              "evidence_ids": [
+                "ev-d88c0ed45f88-0000-0002"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "According to State, the State presents two arguments: that Stumpf was the triggerman, and that Wesley was the triggerman."
+        }
+      ],
+      "heading": "State",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Freedman",
+          "citations": [
+            {
+              "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+              "evidence_ids": [
+                "ev-d88c0ed45f88-0002-0006"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Mr. Freedman, defense counsel argues that inconsistencies in the record should not constitute a due\u2011process violation."
+        },
+        {
+          "attribution": "defense counsel",
+          "citations": [
+            {
+              "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+              "evidence_ids": [
+                "ev-d88c0ed45f88-0002-0008"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            }
+          ],
+          "text": "Defense counsel says the record\u2019s arguments were cryptic and unfair."
+        },
+        {
+          "attribution": "Mr. Cole",
+          "citations": [
+            {
+              "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+              "evidence_ids": [
+                "ev-d88c0ed45f88-0002-0007"
+              ],
+              "pages": {
+                "end": 52,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to Mr. Cole, defense counsel argues that participation in an aggravated robbery can infer specific intent for aggravated murder."
+        }
+      ],
+      "heading": "Defense Counsel",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "d88c0ed45f88bb1ee08eb27858e93102cb44ce9df59dc8ecaa91ac8e21ba346b",
+      "evidence_ids": [
+        "ev-d88c0ed45f88-0000-0000",
+        "ev-d88c0ed45f88-0000-0001",
+        "ev-d88c0ed45f88-0000-0002",
+        "ev-d88c0ed45f88-0000-0003",
+        "ev-d88c0ed45f88-0000-0004",
+        "ev-d88c0ed45f88-0001-0000",
+        "ev-d88c0ed45f88-0001-0001",
+        "ev-d88c0ed45f88-0001-0002",
+        "ev-d88c0ed45f88-0001-0004",
+        "ev-d88c0ed45f88-0002-0000",
+        "ev-d88c0ed45f88-0002-0001",
+        "ev-d88c0ed45f88-0002-0003",
+        "ev-d88c0ed45f88-0002-0004",
+        "ev-d88c0ed45f88-0002-0005",
+        "ev-d88c0ed45f88-0002-0006",
+        "ev-d88c0ed45f88-0002-0007",
+        "ev-d88c0ed45f88-0002-0008"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T04:44:49.547076Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

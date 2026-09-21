@@ -1,0 +1,340 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+            "evidence_ids": [
+              "ev-2399200d0077-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist announced the start of argument in No.\u202f04\u2011603, Grable & Sons Metal Products v. Darue Engineering."
+      },
+      {
+        "attribution": "Justice O'Connor",
+        "citations": [
+          {
+            "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+            "evidence_ids": [
+              "ev-2399200d0077-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Justice O'Connor, justice O\u2019Connor asked whether Merrell\u202fDow had silently overruled about five cases dealing with quiet\u2011title actions."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+            "evidence_ids": [
+              "ev-2399200d0077-0001-0005"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Souter, justice Souter inquired whether a factual dispute about the operation of federal law would affect whether the issue is a substantial federal question."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+            "evidence_ids": [
+              "ev-2399200d0077-0001-0006"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether a laches defense under state law could arise in a quiet\u2011title action."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+            "evidence_ids": [
+              "ev-2399200d0077-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Chief Justice Rehnquist, chief Justice Rehnquist noted that the case was submitted."
+      }
+    ],
+    "heading": "Background & Questions Presented",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-04-603",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T04:31:22.258130Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Eric H. Zagrans)",
+        "citations": [
+          {
+            "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+            "evidence_ids": [
+              "ev-2399200d0077-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          },
+          {
+            "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+            "evidence_ids": [
+              "ev-2399200d0077-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The argument focused on whether the federal question presented is substantial enough to grant federal\u2011question jurisdiction under \u00a71331."
+      },
+      {
+        "attribution": "Mr. Walton",
+        "citations": [
+          {
+            "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+            "evidence_ids": [
+              "ev-2399200d0077-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Mr. Walton, counsel argued that the case involves only questions of federal law and no factual disputes, so without the federal issue there would be no controversy."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+            "evidence_ids": [
+              "ev-2399200d0077-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+            "evidence_ids": [
+              "ev-2399200d0077-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The parties argue that the analysis should focus on the federal interest rather than the state interest."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Eric H. Zagrans)",
+          "citations": [
+            {
+              "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+              "evidence_ids": [
+                "ev-2399200d0077-0002-0001"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Petitioner (Eric H. Zagrans), according to Petitioner (Eric H. Zagrans), the petitioner argues that Merrell\u202fDow\u2019s holding that federal statutory violations are not substantial enough to confer jurisdiction unless Congress created a private right of action should be applied here."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+              "evidence_ids": [
+                "ev-2399200d0077-0000-0004"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "The petitioner contends that the focus should be on the federal interest, not the state interest, when determining congressional intent for federal\u2011question jurisdiction."
+        },
+        {
+          "attribution": "Mr. Zagrans",
+          "citations": [
+            {
+              "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+              "evidence_ids": [
+                "ev-2399200d0077-0001-0000"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Mr. Zagrans, the petitioner emphasizes that the test for a substantial federal question hinges on whether the federal issue is essential to the state cause of action."
+        }
+      ],
+      "heading": "Petitioner (Grable & Sons Metal Products Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Darue Engineering & Manufacturing)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+      "evidence_ids": [
+        "ev-2399200d0077-0000-0000"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T04:35:40.259557Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Eric H. Zagrans)",
+        "citations": [
+          {
+            "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+            "evidence_ids": [
+              "ev-2399200d0077-0002-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          },
+          {
+            "document_hash": "2399200d0077b50f321266882146f797b6767821b54ebd2b4d279b166240801f",
+            "evidence_ids": [
+              "ev-2399200d0077-0001-0003"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "The case clarifies the scope of federal\u2011question jurisdiction, affecting how courts determine whether state\u2011law causes of action that rely on federal statutes can be heard in federal court."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

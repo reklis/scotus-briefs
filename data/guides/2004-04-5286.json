@@ -1,0 +1,376 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+            "evidence_ids": [
+              "ev-adcbc11ab31b-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:12\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+            "evidence_ids": [
+              "ev-adcbc11ab31b-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether a district judge should stay a complaint until the Supreme Court decides on retroactivity."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+            "evidence_ids": [
+              "ev-adcbc11ab31b-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked which court should make the retroactivity finding."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-04-5286",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T04:16:43.189158Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+            "evidence_ids": [
+              "ev-adcbc11ab31b-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:12\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+            "evidence_ids": [
+              "ev-adcbc11ab31b-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether a district judge should stay a complaint until the Supreme Court decides on retroactivity."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+            "evidence_ids": [
+              "ev-adcbc11ab31b-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned whether the Supreme Court must be the court that recognizes the right."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+            "evidence_ids": [
+              "ev-adcbc11ab31b-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked which court should make the retroactivity finding."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+            "evidence_ids": [
+              "ev-adcbc11ab31b-0003-0000",
+              "ev-adcbc11ab31b-0003-0001"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the right was newly recognized or initially recognized."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Ms. Bergmann",
+        "citations": [
+          {
+            "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+            "evidence_ids": [
+              "ev-adcbc11ab31b-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Ms. Bergmann, the case concerns how paragraph\u202f6(3) of a statute should be read to determine when a one\u2011year limitation period begins."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Bergmann",
+          "citations": [
+            {
+              "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+              "evidence_ids": [
+                "ev-adcbc11ab31b-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Ms. Bergmann, the petitioner argues that reading paragraph\u202f6(3) in line with Congress\u2019s verb tense and the Court\u2019s decision in Tyler v. Cain shows the Government\u2019s interpretation is absurd and effectively nullifies the provision."
+        },
+        {
+          "attribution": "Ms. Bergmann",
+          "citations": [
+            {
+              "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+              "evidence_ids": [
+                "ev-adcbc11ab31b-0002-0003"
+              ],
+              "pages": {
+                "end": 52,
+                "start": 52
+              }
+            }
+          ],
+          "text": "According to Ms. Bergmann, the petitioner warns that the Government\u2019s proposal would rewrite the \u201cif\u201d clause by changing Congress\u2019s past\u2011tense verb to a future\u2011tense one."
+        },
+        {
+          "attribution": "Ms. Bergmann",
+          "citations": [
+            {
+              "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+              "evidence_ids": [
+                "ev-adcbc11ab31b-0003-0003"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to Ms. Bergmann, in closing, the petitioner argues that his interpretation best respects Congress\u2019s use of tense and aligns with the Court\u2019s reading in Tyler."
+        }
+      ],
+      "heading": "Petitioner (Michael Donald Dodd)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+              "evidence_ids": [
+                "ev-adcbc11ab31b-0001-0001"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "The respondent argues that a motion filed outside the one\u2011year period and not fitting any exception in paragraph\u202f6 should be dismissed as untimely."
+        },
+        {
+          "attribution": "Mr. Feldman",
+          "citations": [
+            {
+              "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+              "evidence_ids": [
+                "ev-adcbc11ab31b-0002-0001"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Mr. Feldman, the respondent\u2019s counsel argued that the statutory \u201cif\u201d clause should not be rewritten to shift the limitation date set by Congress."
+        }
+      ],
+      "heading": "Respondent (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+      "evidence_ids": [
+        "ev-adcbc11ab31b-0000-0000",
+        "ev-adcbc11ab31b-0000-0001",
+        "ev-adcbc11ab31b-0003-0000",
+        "ev-adcbc11ab31b-0001-0000",
+        "ev-adcbc11ab31b-0001-0001",
+        "ev-adcbc11ab31b-0001-0003",
+        "ev-adcbc11ab31b-0001-0002",
+        "ev-adcbc11ab31b-0002-0000",
+        "ev-adcbc11ab31b-0002-0001",
+        "ev-adcbc11ab31b-0002-0002",
+        "ev-adcbc11ab31b-0002-0004",
+        "ev-adcbc11ab31b-0002-0003",
+        "ev-adcbc11ab31b-0003-0000",
+        "ev-adcbc11ab31b-0003-0001",
+        "ev-adcbc11ab31b-0003-0002",
+        "ev-adcbc11ab31b-0003-0003",
+        "ev-adcbc11ab31b-0003-0005"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T04:23:46.264981Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "adcbc11ab31b85a21e0b66a7a9096f77c08166f55f00d90687393d44fe60d104",
+            "evidence_ids": [
+              "ev-adcbc11ab31b-0001-0003"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "If the Court permits premature filings, it could preclude litigants from filing until a cause of action is clear, reducing futile litigation."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

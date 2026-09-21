@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2005-04-1244",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the overview claim that the dispute centers on whether the Hobbs Act, the FACE Act, and RICO can be used to obtain injunctions against anti\u2011abortion activism is not fully supported by the supplied evidence. The evidence cites a petitioner's argument about the Hobbs Act (page\u202f8) but provides no direct support for the FACE Act or RICO components of the claim.",
+    "Attribution check failed: the same overview claim attributes the framing of the dispute to the Petitioners, yet the evidence for the FACE Act statement comes from Ms. BLATT (an amicus) and the RICO statement comes from Mr. Chemerinsky, not from the Petitioners."
+  ],
+  "quality_scores": {
+    "completeness": 1.0,
+    "factual_accuracy": 0.88,
+    "neutrality": 0.92,
+    "readability": 0.94,
+    "restraint": 0.95,
+    "traceability": 0.96
+  }
+}

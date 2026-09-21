@@ -1,0 +1,254 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "8d4cb97d6b47ec7b95d25c3197863618da3c6cfedafc9965dcf339a3bff5c063",
+            "evidence_ids": [
+              "ev-8d4cb97d6b47-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Scalia questioned whether a trial judge may consider anything beyond the racial\u2011strike evidence and warned that such speculation might be extreme."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "8d4cb97d6b47ec7b95d25c3197863618da3c6cfedafc9965dcf339a3bff5c063",
+            "evidence_ids": [
+              "ev-8d4cb97d6b47-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg noted that in the Title\u202fVII context, the initial threshold does not require showing \u201cmore likely than not\u201d; only four statutory showings are needed."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2004-04-6964",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T04:50:59.447570Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "8d4cb97d6b47ec7b95d25c3197863618da3c6cfedafc9965dcf339a3bff5c063"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8d4cb97d6b47ec7b95d25c3197863618da3c6cfedafc9965dcf339a3bff5c063",
+            "evidence_ids": [
+              "ev-8d4cb97d6b47-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:49\u202fa.m."
+      },
+      {
+        "attribution": "Chief Justice Rehnquist",
+        "citations": [
+          {
+            "document_hash": "8d4cb97d6b47ec7b95d25c3197863618da3c6cfedafc9965dcf339a3bff5c063",
+            "evidence_ids": [
+              "ev-8d4cb97d6b47-0002-0003"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Chief Justice Rehnquist noted that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Stephen B. Bedrick)",
+          "citations": [
+            {
+              "document_hash": "8d4cb97d6b47ec7b95d25c3197863618da3c6cfedafc9965dcf339a3bff5c063",
+              "evidence_ids": [
+                "ev-8d4cb97d6b47-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner (Stephen B. Bedrick), according to Petitioner (Stephen B. Bedrick), the correct prima facie standard under Batson is whether there is sufficient evidence to permit a judge to draw a reasonable inference of discrimination."
+        },
+        {
+          "attribution": "Mr. Bedrick",
+          "citations": [
+            {
+              "document_hash": "8d4cb97d6b47ec7b95d25c3197863618da3c6cfedafc9965dcf339a3bff5c063",
+              "evidence_ids": [
+                "ev-8d4cb97d6b47-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Bedrick, under Title\u202fVII, the facts must be proved by a preponderance of the evidence (\u201cmore likely than not\u201d) and the McDonnell\u202fDouglas formula applies."
+        },
+        {
+          "attribution": "Mr. Bedrick",
+          "citations": [
+            {
+              "document_hash": "8d4cb97d6b47ec7b95d25c3197863618da3c6cfedafc9965dcf339a3bff5c063",
+              "evidence_ids": [
+                "ev-8d4cb97d6b47-0001-0003"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. Bedrick, the trial judge should not speculate beyond the racial\u2011strike evidence; doing so would be extreme and unusual."
+        },
+        {
+          "attribution": "Mr. Schalit",
+          "citations": [
+            {
+              "document_hash": "8d4cb97d6b47ec7b95d25c3197863618da3c6cfedafc9965dcf339a3bff5c063",
+              "evidence_ids": [
+                "ev-8d4cb97d6b47-0001-0005"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Mr. Schalit, if a party refuses to produce requested discovery, the court may draw an adverse inference, apply issue preclusion, or impose a termination sanction."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "8d4cb97d6b47ec7b95d25c3197863618da3c6cfedafc9965dcf339a3bff5c063",
+      "evidence_ids": [
+        "ev-8d4cb97d6b47-0000-0000",
+        "ev-8d4cb97d6b47-0000-0001",
+        "ev-8d4cb97d6b47-0001-0000",
+        "ev-8d4cb97d6b47-0001-0001",
+        "ev-8d4cb97d6b47-0001-0002",
+        "ev-8d4cb97d6b47-0001-0003",
+        "ev-8d4cb97d6b47-0001-0004",
+        "ev-8d4cb97d6b47-0001-0005",
+        "ev-8d4cb97d6b47-0001-0006",
+        "ev-8d4cb97d6b47-0002-0002",
+        "ev-8d4cb97d6b47-0002-0003"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T04:56:08.795558Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

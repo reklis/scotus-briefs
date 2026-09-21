@@ -1,0 +1,267 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6",
+            "evidence_ids": [
+              "ev-eff53f106ec3-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioners contend that the Solomon Amendment ensures the military can recruit the nation\u2019s best graduates, a vital mission."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6",
+            "evidence_ids": [
+              "ev-eff53f106ec3-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          },
+          {
+            "document_hash": "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6",
+            "evidence_ids": [
+              "ev-eff53f106ec3-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6",
+            "evidence_ids": [
+              "ev-eff53f106ec3-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6",
+            "evidence_ids": [
+              "ev-eff53f106ec3-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justices asked whether the statute forces schools to convey messages they disagree with, raising a compelled\u2011speech issue."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2005-04-1152",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T06:05:05.889930Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6",
+            "evidence_ids": [
+              "ev-eff53f106ec3-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          },
+          {
+            "document_hash": "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6",
+            "evidence_ids": [
+              "ev-eff53f106ec3-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The case concerns whether the Solomon Amendment, which conditions federal funding for universities on allowing military recruiters on campus, violates constitutional protections against compelled speech."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6",
+              "evidence_ids": [
+                "ev-eff53f106ec3-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioners, the Solomon Amendment conditions the Federal funding of educational institutions on receiving something that any donor would expect, the opportunity to recruit students educated at the funded institutions. That opportunity allows the military a fair shot at recruiting the best and the brightest for the military's critical and vital mission."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6",
+      "evidence_ids": [
+        "ev-eff53f106ec3-0000-0000",
+        "ev-eff53f106ec3-0000-0001",
+        "ev-eff53f106ec3-0000-0002",
+        "ev-eff53f106ec3-0000-0003",
+        "ev-eff53f106ec3-0000-0004",
+        "ev-eff53f106ec3-0001-0000",
+        "ev-eff53f106ec3-0001-0005",
+        "ev-eff53f106ec3-0002-0000",
+        "ev-eff53f106ec3-0003-0000",
+        "ev-eff53f106ec3-0003-0001",
+        "ev-eff53f106ec3-0003-0003"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T06:08:44.400498Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6",
+            "evidence_ids": [
+              "ev-eff53f106ec3-0001-0005"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          },
+          {
+            "document_hash": "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6",
+            "evidence_ids": [
+              "ev-eff53f106ec3-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          },
+          {
+            "document_hash": "eff53f106ec3e20963baadde4755b9f9ffa0cd39dc44101df62a86922fa49bd6",
+            "evidence_ids": [
+              "ev-eff53f106ec3-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The dispute highlights the tension between government recruitment objectives and university free\u2011speech rights, potentially influencing how institutions can express positions on controversial policies."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
