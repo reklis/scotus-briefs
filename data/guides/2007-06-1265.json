@@ -1,0 +1,400 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner and Respondent",
+        "citations": [
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0001-0001"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Petitioner seeks to establish standing for an FCM to sue for bad\u2011faith enforcement failures, while Respondent argues that liability rests directly with the clearinghouse."
+      },
+      {
+        "attribution": "Justices Ginsburg and Alito",
+        "citations": [
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justices raised questions about the potential for multiple liability if the FCM\u2019s right to sue is recognized, and about the absence of a clear statutory definition of \u201ctransaction.\u201d"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2007-06-1265",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T07:37:24.045668Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether allowing the FCM to sue could create multiple liability."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito noted the absence of any clear definition of \u201ctransaction\u201d in the statute."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0002-0005"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Justice Scalia asked why the phrase \u201cor subject to the rules\u201d does not add anything to the petitioner\u2019s argument."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Petitioner argues that a clearing futures commodity merchant (FCM) has standing to sue contract markets and clearing organizations under Section\u202f25(b)(1) of the Commodity Exchange Act for bad\u2011faith failure to enforce required rules."
+      },
+      {
+        "attribution": "United States (Amicus Curiae)",
+        "citations": [
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0000-0002"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to United States (Amicus Curiae), according to United States (Amicus Curiae), the United States, as amicus curiae, suggests that the word \u201ctransaction\u201d in Section\u202f25(b)(1) should be read as limited to the purchase and sale of futures and options contracts."
+      },
+      {
+        "attribution": "Respondents (Mr. Stewart)",
+        "citations": [
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0001-0001"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to Respondents (Mr. Stewart), according to Respondents (Mr. Stewart), respondent contends that the clearing FCM assumes direct contractual liability to the clearinghouse."
+      },
+      {
+        "attribution": "Petitioner (Mr. Pincus)",
+        "citations": [
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0002-0003"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Petitioner (Mr. Pincus), according to Petitioner (Mr. Pincus), petitioner further argues that \u201con or subject to\u201d language in the statute refers to trades, and that Congress\u2019s technical substitution of registered entities does not change that meaning."
+      },
+      {
+        "attribution": "Petitioner (Mr. Pincus)",
+        "citations": [
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0002-0004"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "Petitioner warns that the lack of clarity about the statute creates two categories of harm, including uncertainty about how far back liability may extend."
+      },
+      {
+        "attribution": "Mr. Days",
+        "citations": [
+          {
+            "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+            "evidence_ids": [
+              "ev-c0e044580014-0003-0001"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "According to Mr. Days, speaking for the petitioner, the clearing FCM is financially liable throughout the transaction process and that Congress intended the statute to protect the public and preserve market credibility."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+              "evidence_ids": [
+                "ev-c0e044580014-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner asserts that an FCM has standing to sue under Section\u202f25(b)(1) for bad\u2011faith failures to enforce required rules."
+        },
+        {
+          "attribution": "Petitioner (Mr. Pincus)",
+          "citations": [
+            {
+              "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+              "evidence_ids": [
+                "ev-c0e044580014-0002-0003"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Petitioner (Mr. Pincus), according to Petitioner (Mr. Pincus), petitioner argues that \u201con or subject to\u201d language in the statute refers to trades, and that Congress\u2019s substitution of registered entities does not alter that meaning."
+        },
+        {
+          "attribution": "Mr. Days",
+          "citations": [
+            {
+              "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+              "evidence_ids": [
+                "ev-c0e044580014-0003-0001"
+              ],
+              "pages": {
+                "end": 58,
+                "start": 58
+              }
+            }
+          ],
+          "text": "Mr. Days (for petitioner) contends that the clearing FCM is financially liable throughout the transaction process and that Congress intended the statute to protect the public and preserve market credibility."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents (Mr. Stewart)",
+          "citations": [
+            {
+              "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+              "evidence_ids": [
+                "ev-c0e044580014-0001-0001"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "According to Respondents (Mr. Stewart), according to Respondents (Mr. Stewart), respondent argues that the clearing FCM assumes direct contractual liability to the clearinghouse."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c0e044580014a1113a75c9585c9aeda050551be17228a84b3ed53efc1748b8ce",
+      "evidence_ids": [
+        "ev-c0e044580014-0000-0000",
+        "ev-c0e044580014-0000-0001",
+        "ev-c0e044580014-0000-0002",
+        "ev-c0e044580014-0000-0004",
+        "ev-c0e044580014-0001-0000",
+        "ev-c0e044580014-0001-0001",
+        "ev-c0e044580014-0002-0000",
+        "ev-c0e044580014-0002-0001",
+        "ev-c0e044580014-0002-0002",
+        "ev-c0e044580014-0002-0003",
+        "ev-c0e044580014-0002-0004",
+        "ev-c0e044580014-0002-0005",
+        "ev-c0e044580014-0003-0001"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T07:44:46.901216Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "189d4ae6e2c5370fcbeaade2d5e37ca6068a224e95b144527949e24c1df21ebf",
+            "evidence_ids": [
+              "ev-189d4ae6e2c5-0000-0003",
+              "ev-189d4ae6e2c5-0000-0005",
+              "ev-189d4ae6e2c5-0000-0008",
+              "ev-189d4ae6e2c5-0000-0009"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 4
+            }
+          }
+        ],
+        "text": "During oral argument the Court asked several questions about the structure of prior statutes and Congress\u2019s intent, indicating that the central issue is how Section\u202f2501 should be interpreted."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2007-06-1164",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T07:08:56.851229Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "189d4ae6e2c5370fcbeaade2d5e37ca6068a224e95b144527949e24c1df21ebf"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "189d4ae6e2c5370fcbeaade2d5e37ca6068a224e95b144527949e24c1df21ebf",
+            "evidence_ids": [
+              "ev-189d4ae6e2c5-0000-0001"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Appearances were made by counsel for the petitioner and the United States."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "189d4ae6e2c5370fcbeaade2d5e37ca6068a224e95b144527949e24c1df21ebf",
+            "evidence_ids": [
+              "ev-189d4ae6e2c5-0000-0003",
+              "ev-189d4ae6e2c5-0000-0005",
+              "ev-189d4ae6e2c5-0000-0008",
+              "ev-189d4ae6e2c5-0000-0009",
+              "ev-189d4ae6e2c5-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justices asked questions about the structure of prior statutes, whether Congress was aware of the general rule, and the relationship between sovereign immunity, jurisdiction, and equitable tolling."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Jeffrey K. Haynes)",
+        "citations": [
+          {
+            "document_hash": "189d4ae6e2c5370fcbeaade2d5e37ca6068a224e95b144527949e24c1df21ebf",
+            "evidence_ids": [
+              "ev-189d4ae6e2c5-0000-0002",
+              "ev-189d4ae6e2c5-0000-0011"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The case concerns whether Section\u202f2501 of Title\u202f28, which imposes a six\u2011year filing deadline, limits the Court of Federal Claims\u2019 subject\u2011matter jurisdiction or is an ordinary, waivable affirmative defense."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Jeffrey K. Haynes)",
+          "citations": [
+            {
+              "document_hash": "189d4ae6e2c5370fcbeaade2d5e37ca6068a224e95b144527949e24c1df21ebf",
+              "evidence_ids": [
+                "ev-189d4ae6e2c5-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner (Jeffrey K. Haynes), according to Petitioner (Jeffrey K. Haynes), petitioner argues that Section\u202f2501 does not limit subject\u2011matter jurisdiction and should be applied to the government as an ordinary, waivable affirmative defense."
+        },
+        {
+          "attribution": "Mr. Haynes",
+          "citations": [
+            {
+              "document_hash": "189d4ae6e2c5370fcbeaade2d5e37ca6068a224e95b144527949e24c1df21ebf",
+              "evidence_ids": [
+                "ev-189d4ae6e2c5-0001-0000"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Haynes, petitioner further contends that, consistent with Franconia, once sovereign immunity is waived the statute of limitations applies to the government."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "189d4ae6e2c5370fcbeaade2d5e37ca6068a224e95b144527949e24c1df21ebf",
+              "evidence_ids": [
+                "ev-189d4ae6e2c5-0002-0000"
+              ],
+              "pages": {
+                "end": 49,
+                "start": 49
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner concludes that while the government may have won the immediate battle, it lost the broader war on the Irwin rule."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Stewart",
+          "citations": [
+            {
+              "document_hash": "189d4ae6e2c5370fcbeaade2d5e37ca6068a224e95b144527949e24c1df21ebf",
+              "evidence_ids": [
+                "ev-189d4ae6e2c5-0001-0005"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Mr. Stewart, respondent argues that the language of Section\u202f2501, as explained by Chief Justice Rehnquist, addresses equitable tolling rather than waivability, suggesting the statute is not a waivable defense."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "189d4ae6e2c5370fcbeaade2d5e37ca6068a224e95b144527949e24c1df21ebf",
+      "evidence_ids": [
+        "ev-189d4ae6e2c5-0000-0001",
+        "ev-189d4ae6e2c5-0000-0002",
+        "ev-189d4ae6e2c5-0000-0011",
+        "ev-189d4ae6e2c5-0000-0003",
+        "ev-189d4ae6e2c5-0000-0005",
+        "ev-189d4ae6e2c5-0000-0008",
+        "ev-189d4ae6e2c5-0000-0009",
+        "ev-189d4ae6e2c5-0001-0000",
+        "ev-189d4ae6e2c5-0001-0002",
+        "ev-189d4ae6e2c5-0001-0005",
+        "ev-189d4ae6e2c5-0002-0000"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T07:12:23.967705Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

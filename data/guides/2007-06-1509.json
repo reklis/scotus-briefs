@@ -1,0 +1,362 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+            "evidence_ids": [
+              "ev-809007d149a7-0000-0002"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          },
+          {
+            "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+            "evidence_ids": [
+              "ev-809007d149a7-0002-0001"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "The dispute arises from allegations that Michael H. Boulware, a controlling shareholder, took corporate funds that the Government characterizes as embezzlement."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+            "evidence_ids": [
+              "ev-809007d149a7-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the limiting phrase \u201cwith respect to the stock\u201d is the key threshold condition in the statute."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+            "evidence_ids": [
+              "ev-809007d149a7-0002-0004"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the burden of proof rests on the defendant to show that the corporation had no earnings and profits, making the distribution a return of capital."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2007-06-1509",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T09:06:40.927086Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+            "evidence_ids": [
+              "ev-809007d149a7-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the limiting phrase \u201cwith respect to the stock\u201d is the key threshold condition in the statute."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+            "evidence_ids": [
+              "ev-809007d149a7-0001-0002"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted the petitioner\u2019s proffer of expert testimony that the corporation lacked earnings and profits, which the district court rejected."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+            "evidence_ids": [
+              "ev-809007d149a7-0002-0004"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the burden of proof rested on the defendant to show that the corporation had no earnings and profits, making the distribution a return of capital."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (John D. Cline)",
+        "citations": [
+          {
+            "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+            "evidence_ids": [
+              "ev-809007d149a7-0000-0000",
+              "ev-809007d149a7-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioner (John D. Cline) argues that Congress placed the phrase \u201cwith respect to its stock\u201d in \u00a7301(a) to limit the application of \u00a7301(c) to corporate payments made in a non\u2011shareholder capacity."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+            "evidence_ids": [
+              "ev-809007d149a7-0000-0002"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          },
+          {
+            "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+            "evidence_ids": [
+              "ev-809007d149a7-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The Government argues that a controlling shareholder cannot embezzle from his corporation and that, under Ninth Circuit precedent, a defendant must show objective intent to make a distribution with respect to stock before a return\u2011of\u2011capital defense can be presented."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+            "evidence_ids": [
+              "ev-809007d149a7-0001-0003"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The Court requires factual evidence of three elements: a distribution with respect to stock, the corporation\u2019s lack of earnings and profits, and the defendant\u2019s sufficient basis in the stock to cover the funds received."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (John D. Cline)",
+          "citations": [
+            {
+              "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+              "evidence_ids": [
+                "ev-809007d149a7-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner (John D. Cline), according to Petitioner (John D. Cline), petitioner argues that Congress intended the phrase \u201cwith respect to its stock\u201d to limit the application of \u00a7301(c) to corporate payments made in a non\u2011shareholder capacity."
+        },
+        {
+          "attribution": "Mr. Cline",
+          "citations": [
+            {
+              "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+              "evidence_ids": [
+                "ev-809007d149a7-0002-0003"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to Mr. Cline, petitioner contends that an adequate proffer of evidence was made in the record (page 97 of the joint appendix)."
+        }
+      ],
+      "heading": "Petitioner (Michael H. Boulware)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+              "evidence_ids": [
+                "ev-809007d149a7-0000-0002"
+              ],
+              "pages": {
+                "end": 8,
+                "start": 8
+              }
+            }
+          ],
+          "text": "The Government maintains that a controlling shareholder cannot embezzle from his own corporation."
+        },
+        {
+          "attribution": "Government (as presented by Respondent Ms. Maynard)",
+          "citations": [
+            {
+              "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+              "evidence_ids": [
+                "ev-809007d149a7-0001-0000"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Government (as presented by Respondent Ms. Maynard), according to Government (as presented by Respondent Ms. Maynard), the Government asserts that, under Ninth Circuit precedent, a defendant must show objective evidence that the corporation intended a distribution with respect to its stock before a return\u2011of\u2011capital defense can be raised."
+        }
+      ],
+      "heading": "Respondent (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "809007d149a746f9f598accce4594fbea5a12f26e91860225ac4f0c0bf2971b0",
+      "evidence_ids": [
+        "ev-809007d149a7-0000-0000",
+        "ev-809007d149a7-0000-0001",
+        "ev-809007d149a7-0000-0002",
+        "ev-809007d149a7-0001-0000",
+        "ev-809007d149a7-0001-0001",
+        "ev-809007d149a7-0001-0002",
+        "ev-809007d149a7-0001-0003",
+        "ev-809007d149a7-0002-0001",
+        "ev-809007d149a7-0002-0002",
+        "ev-809007d149a7-0002-0003",
+        "ev-809007d149a7-0002-0004",
+        "ev-809007d149a7-0003-0000",
+        "ev-809007d149a7-0003-0001",
+        "ev-809007d149a7-0003-0002",
+        "ev-809007d149a7-0003-0003",
+        "ev-809007d149a7-0003-0004"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T09:14:53.317868Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

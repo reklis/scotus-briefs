@@ -1,0 +1,551 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Beth S. Brinkmann",
+        "citations": [
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          },
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "The case concerns Illinois\u2019s operational\u2011function tax and whether it can be applied to MeadWestvaco\u2019s sales, with questions about the unitary\u2011business doctrine."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          },
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0002-0007"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "The key legal question is whether the unitary\u2011business doctrine applies, allowing Illinois to tax the sale, or whether the tax results in prohibited double taxation."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2007-06-1413",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T08:19:10.555902Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0003-0001"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts opened the argument, noting the case will be heard."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the trial court had found the business to be non\u2011unitary and whether that finding was undisturbed on appeal."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy inquired whether, assuming the unitary\u2011business argument is met, Illinois has the right to tax the sale or part of it."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens questioned how the tax amount was computed if the unitary\u2011business approach was not applied."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0002-0008"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia clarified that the tax is imposed on Mead, not on Lexis/Nexis."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0002-0006"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg raised the issue of potential double taxation if Ohio were to tax the entire gain."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Beth S. Brinkmann",
+        "citations": [
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Beth S. Brinkmann, petitioner argues that the Illinois appellate court\u2019s ruling dramatically expanded the state\u2019s operational\u2011function tax, which the petitioner says violates constitutional limits on state taxing authority."
+      },
+      {
+        "attribution": "Barov",
+        "citations": [
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Barov, respondent contends that the tax is calculated using a two\u2011factor formula based on Mead\u2019s sales, not on the activities of Lexis/Nexis."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Beth S. Brinkmann",
+          "citations": [
+            {
+              "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+              "evidence_ids": [
+                "ev-7a06624cf9c5-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Beth S. Brinkmann, petitioner asserts that the tax violates constitutional limits on state taxing authority because the operational\u2011function tax was improperly expanded."
+        },
+        {
+          "attribution": "Ms. Brinkmann",
+          "citations": [
+            {
+              "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+              "evidence_ids": [
+                "ev-7a06624cf9c5-0003-0000"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to Ms. Brinkmann, petitioner further argues that Illinois rule 341(h)(7) and (i) requires the issue to be raised in the appellate court, and because it was not, the tax claim is waived as an independent and adequate state ground."
+        }
+      ],
+      "heading": "Petitioner Position (MEADWESTVACO CORPORTATION SUCCESSOR IN INTEREST TO THE MEAD CORPORATION)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Barov",
+          "citations": [
+            {
+              "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+              "evidence_ids": [
+                "ev-7a06624cf9c5-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Barov, respondent maintains that the tax is calculated using a two\u2011factor formula tied to Mead\u2019s sales, not to Lexis/Nexis activities."
+        },
+        {
+          "attribution": "Barov",
+          "citations": [
+            {
+              "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+              "evidence_ids": [
+                "ev-7a06624cf9c5-0002-0004"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Barov, respondent points to a detailed stipulation and accompanying exhibits that describe the relationship between Mead and Lexis/Nexis."
+        },
+        {
+          "attribution": "Barov",
+          "citations": [
+            {
+              "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+              "evidence_ids": [
+                "ev-7a06624cf9c5-0002-0007"
+              ],
+              "pages": {
+                "end": 47,
+                "start": 47
+              }
+            }
+          ],
+          "text": "According to Barov, respondent relies on the Mobil Oil precedent, arguing that the possibility of taxation by another state does not preclude Illinois taxation."
+        }
+      ],
+      "heading": "Respondent Position (ILLINOIS DEPARTMENT OF REVENUE)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+      "evidence_ids": [
+        "ev-7a06624cf9c5-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+      "evidence_ids": [
+        "ev-7a06624cf9c5-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+      "evidence_ids": [
+        "ev-7a06624cf9c5-0002-0004"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+      "evidence_ids": [
+        "ev-7a06624cf9c5-0002-0007"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+      "evidence_ids": [
+        "ev-7a06624cf9c5-0003-0000"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    },
+    {
+      "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+      "evidence_ids": [
+        "ev-7a06624cf9c5-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+      "evidence_ids": [
+        "ev-7a06624cf9c5-0001-0002"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+      "evidence_ids": [
+        "ev-7a06624cf9c5-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+      "evidence_ids": [
+        "ev-7a06624cf9c5-0002-0008"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+      "evidence_ids": [
+        "ev-7a06624cf9c5-0002-0006"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+      "evidence_ids": [
+        "ev-7a06624cf9c5-0003-0001"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T08:32:02.665766Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          },
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The case addresses the scope of state authority to tax multistate corporations under the unitary\u2011business doctrine."
+      },
+      {
+        "attribution": "Barov",
+        "citations": [
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0002-0004"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          },
+          {
+            "document_hash": "7a06624cf9c524c78a424c4bdc2f948806413eae4416d361f51e00b3b88aa698",
+            "evidence_ids": [
+              "ev-7a06624cf9c5-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Barov, the arguments describe how the tax calculation considers the relationship between Mead and Lexis/Nexis, reflecting considerations relevant to operational\u2011function taxes."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

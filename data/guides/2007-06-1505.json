@@ -1,0 +1,296 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+            "evidence_ids": [
+              "ev-66826b97bf56-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether there is a distinction between \u201cbusiness necessity\u201d and \u201cbusiness reasonableness\u201d regarding the employer\u2019s lifting requirement under the ADEA."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2007-06-1505",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T09:01:12.695712Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+            "evidence_ids": [
+              "ev-66826b97bf56-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether there is a distinction between \u201cbusiness necessity\u201d and \u201cbusiness reasonableness.\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+            "evidence_ids": [
+              "ev-66826b97bf56-0002-0003"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the argument is simply to affirm the lower court regardless of who bears the burden, or whether it truly addresses the legal question before the Court."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Employer",
+        "citations": [
+          {
+            "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+            "evidence_ids": [
+              "ev-66826b97bf56-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Employer, the employer required all employees to lift 50 pounds overhead ten times in 30 seconds, and older workers said this had a substantial adverse effect on them."
+      },
+      {
+        "attribution": "Mr. Waxman",
+        "citations": [
+          {
+            "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+            "evidence_ids": [
+              "ev-66826b97bf56-0002-0002"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Mr. Waxman, company management recognized that the lifting requirement could expose the firm to an age\u2011discrimination lawsuit under the ADEA."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner (Clifford B. Meacham)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+              "evidence_ids": [
+                "ev-66826b97bf56-0002-0004"
+              ],
+              "pages": {
+                "end": 54,
+                "start": 54
+              }
+            }
+          ],
+          "text": "The respondents argue that they are not entitled to deference and that there is no disparate\u2011impact liability under the ADEA."
+        },
+        {
+          "attribution": "Mr. Waxman",
+          "citations": [
+            {
+              "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+              "evidence_ids": [
+                "ev-66826b97bf56-0002-0002"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Mr. Waxman, management was aware that the lifting policy could lead to an age\u2011discrimination lawsuit."
+        }
+      ],
+      "heading": "Respondent (Knolls Atomic Power Laboratory)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+      "evidence_ids": [
+        "ev-66826b97bf56-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+      "evidence_ids": [
+        "ev-66826b97bf56-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+      "evidence_ids": [
+        "ev-66826b97bf56-0002-0002"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+      "evidence_ids": [
+        "ev-66826b97bf56-0002-0003"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+      "evidence_ids": [
+        "ev-66826b97bf56-0002-0004"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 54
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T09:06:40.909855Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts; Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+            "evidence_ids": [
+              "ev-66826b97bf56-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          },
+          {
+            "document_hash": "66826b97bf5600930441640b4ff2392be35b42b4860580e4c4fb701214c11e4e",
+            "evidence_ids": [
+              "ev-66826b97bf56-0002-0003"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Kennedy and Chief Justice Roberts raised questions about the legal standards concerning business necessity versus business reasonableness in the context of the ADEA."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

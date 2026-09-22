@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2007-06-1221",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": false,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that \u201cthe relevance determination must be made case\u2011by\u2011case\u201d is not directly supported by the transcript; Chief Justice Roberts only asked a question about case\u2011by\u2011case relevance, not asserted it as a rule.",
+    "Oral\u2011argument characterization check failed: the same claim treats Roberts\u2019s question as a definitive statement, mischaracterizing a justice question as a factual assertion.",
+    "Overstatement check failed: asserting that \u201cthe relevance determination must be made case\u2011by\u2011case\u201d goes beyond what is stated in the evidence and constitutes an overstatement."
+  ],
+  "quality_scores": {
+    "completeness": 0.95,
+    "factual_accuracy": 0.92,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.95,
+    "traceability": 1.0
+  }
+}
