@@ -1,0 +1,501 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Shell Oil Company",
+        "citations": [
+          {
+            "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+            "evidence_ids": [
+              "ev-7b2604044bbc-0000-0001",
+              "ev-7b2604044bbc-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The legal question is whether Shell can be held liable under 107(a)(2) rather than 107(a)(3) for waste spills."
+      },
+      {
+        "attribution": "Shell Oil Company",
+        "citations": [
+          {
+            "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+            "evidence_ids": [
+              "ev-7b2604044bbc-0000-0005",
+              "ev-7b2604044bbc-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          },
+          {
+            "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+            "evidence_ids": [
+              "ev-7b2604044bbc-0000-0007"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "Whether Shell\u2019s ownership of the waste and lack of economic benefit affect liability."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+            "evidence_ids": [
+              "ev-7b2604044bbc-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          },
+          {
+            "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+            "evidence_ids": [
+              "ev-7b2604044bbc-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+            "evidence_ids": [
+              "ev-7b2604044bbc-0000-0006"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          },
+          {
+            "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+            "evidence_ids": [
+              "ev-7b2604044bbc-0000-0008"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "Whether arranger liability applies when a company arranges delivery that results in spillage."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-1601",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T19:34:26.822870Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+            "evidence_ids": [
+              "ev-7b2604044bbc-0000-0001",
+              "ev-7b2604044bbc-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The case concerns whether Shell Oil Company may be liable for waste spills under environmental statutes."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+            "evidence_ids": [
+              "ev-7b2604044bbc-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Respondents, the dispute involves arranger liability."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+            "evidence_ids": [
+              "ev-7b2604044bbc-0003-0000",
+              "ev-7b2604044bbc-0003-0001"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "The dispute involves the apportionment of environmental harm."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+            "evidence_ids": [
+              "ev-7b2604044bbc-0003-0000",
+              "ev-7b2604044bbc-0003-0001"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "The district court found that the harm is divisible and capable of apportionment, and this is not disputed."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Shell Oil Company",
+          "citations": [
+            {
+              "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+              "evidence_ids": [
+                "ev-7b2604044bbc-0000-0002"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Shell Oil Company, shell might be liable under 107(a)(2) rather than 107(a)(3)."
+        },
+        {
+          "attribution": "Shell Oil Company",
+          "citations": [
+            {
+              "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+              "evidence_ids": [
+                "ev-7b2604044bbc-0000-0005"
+              ],
+              "pages": {
+                "end": 8,
+                "start": 8
+              }
+            }
+          ],
+          "text": "According to Shell Oil Company, shell would be the owner of the waste in cases where it retains ownership until delivery."
+        },
+        {
+          "attribution": "Shell Oil Company",
+          "citations": [
+            {
+              "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+              "evidence_ids": [
+                "ev-7b2604044bbc-0000-0007"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "According to Shell Oil Company, shell had no economic benefit from the leaks and took steps to prevent spills."
+        },
+        {
+          "attribution": "Shell Oil Company",
+          "citations": [
+            {
+              "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+              "evidence_ids": [
+                "ev-7b2604044bbc-0000-0009"
+              ],
+              "pages": {
+                "end": 16,
+                "start": 16
+              }
+            }
+          ],
+          "text": "According to Shell Oil Company, shell does not concede liability if an alternative carrier without spills were available."
+        }
+      ],
+      "heading": "Shell Oil Company",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Burlington Northern and Santa Fe Railway Company et al.",
+          "citations": [
+            {
+              "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+              "evidence_ids": [
+                "ev-7b2604044bbc-0000-0010"
+              ],
+              "pages": {
+                "end": 18,
+                "start": 18
+              }
+            }
+          ],
+          "text": "According to Burlington Northern and Santa Fe Railway Company et al., according to Burlington Northern and Santa Fe Railway Company et al., the trial court applied common\u2011law standards for apportionment in pollution cases, referencing Restatement section\u202f912."
+        }
+      ],
+      "heading": "Burlington Northern and Santa Fe Railway Company",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+              "evidence_ids": [
+                "ev-7b2604044bbc-0001-0003"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Respondents, the government argues that arranger liability should not be imposed on Shell merely because it sold a useful product later disposed of."
+        }
+      ],
+      "heading": "United States",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0000-0001",
+        "ev-7b2604044bbc-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0003-0000",
+        "ev-7b2604044bbc-0003-0001"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    },
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0001-0003"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0000-0005",
+        "ev-7b2604044bbc-0000-0004"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0000-0007"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    },
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0000-0003"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0000-0006"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    },
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0000-0008"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    },
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0000-0005"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0000-0007"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    },
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0000-0009"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    },
+    {
+      "document_hash": "7b2604044bbc52708634b47d7edb4b424781e618474d89ca3b4a8a5beb2c11e3",
+      "evidence_ids": [
+        "ev-7b2604044bbc-0000-0010"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T19:47:45.144380Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

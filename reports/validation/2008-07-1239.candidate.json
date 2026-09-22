@@ -1,0 +1,456 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-1239",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T18:24:59.641091Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+            "evidence_ids": [
+              "ev-145d597c9b41-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the injunction referred to was the original district\u2011court order or the Ninth Circuit modification, and whether the petitioners\u2019 three points apply to the modified injunction."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+            "evidence_ids": [
+              "ev-145d597c9b41-0001-0000"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether both the circuit and the district court found the issue beyond question."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+            "evidence_ids": [
+              "ev-145d597c9b41-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked a follow\u2011up question (content not specified)."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+            "evidence_ids": [
+              "ev-145d597c9b41-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether, in a typical case requiring an Environmental Impact Statement (EIS), it would be normal to enjoin the government action until the EIS is filed."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+            "evidence_ids": [
+              "ev-145d597c9b41-0001-0006"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether there is any record evidence that beaked whales would be killed by the sonar exercises."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+            "evidence_ids": [
+              "ev-145d597c9b41-0002-0002"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Alito also asked where in the record there is evidence that beaked whales would be killed."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+            "evidence_ids": [
+              "ev-145d597c9b41-0002-0004"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the Navy\u2019s alleged bad\u2011faith assertion holds water given that they were conducting an Environmental Assessment (EA)."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+            "evidence_ids": [
+              "ev-145d597c9b41-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Justice Scalia followed up asking about a briefing that linked beaked\u2011whale beachings to sonar."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+            "evidence_ids": [
+              "ev-145d597c9b41-0003-0002"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts thanked counsel and indicated the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+            "evidence_ids": [
+              "ev-145d597c9b41-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners, the case concerns the Navy\u2019s use of mid\u2011frequency active (MFA) sonar in training exercises and a Ninth Circuit injunction that places serious restrictions on that use."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+            "evidence_ids": [
+              "ev-145d597c9b41-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioners argue that MFA sonar is vitally important for the survival of naval strike groups and therefore critical to national security."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+              "evidence_ids": [
+                "ev-145d597c9b41-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioners, mFA sonar is essential for the survival of naval strike groups and therefore critical to national security."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+              "evidence_ids": [
+                "ev-145d597c9b41-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The Ninth Circuit injunction places serious restrictions on the Navy\u2019s use of MFA sonar, which the petitioners contend is fundamentally flawed."
+        },
+        {
+          "attribution": "Navy",
+          "citations": [
+            {
+              "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+              "evidence_ids": [
+                "ev-145d597c9b41-0001-0003"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Navy, the Navy\u2019s 293\u2011page environmental assessment provides detailed support for continued sonar use."
+        }
+      ],
+      "heading": "Petitioners (Secretary of the Navy)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondents (Natural Resources Defense Council)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+      "evidence_ids": [
+        "ev-145d597c9b41-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+      "evidence_ids": [
+        "ev-145d597c9b41-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+      "evidence_ids": [
+        "ev-145d597c9b41-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+      "evidence_ids": [
+        "ev-145d597c9b41-0000-0003"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+      "evidence_ids": [
+        "ev-145d597c9b41-0000-0005"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 15
+      }
+    },
+    {
+      "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+      "evidence_ids": [
+        "ev-145d597c9b41-0001-0003"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+      "evidence_ids": [
+        "ev-145d597c9b41-0001-0000"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+      "evidence_ids": [
+        "ev-145d597c9b41-0001-0001",
+        "ev-145d597c9b41-0001-0002"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+      "evidence_ids": [
+        "ev-145d597c9b41-0001-0006"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+      "evidence_ids": [
+        "ev-145d597c9b41-0002-0002"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+      "evidence_ids": [
+        "ev-145d597c9b41-0002-0004"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "145d597c9b41db5665873a4d692dfb6025df65d0225d5fd65c136d5961222b42",
+      "evidence_ids": [
+        "ev-145d597c9b41-0003-0000",
+        "ev-145d597c9b41-0003-0002",
+        "ev-145d597c9b41-0003-0003"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T18:36:18.270570Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim attributed to Justice Alito that he asked whether there is any record evidence that beaked whales would be killed is cited to page\u202f30, but the transcript on page\u202f30 contains a different question and does not include the beaked\u2011whale query.",
+      "Traceability is reduced because the above citation does not correctly support its claim."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

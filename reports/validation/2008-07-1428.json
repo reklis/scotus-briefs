@@ -1,0 +1,42 @@
+{
+  "accepted": false,
+  "case_id": "2008-07-1428",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Claim in Overview: \u201cThe case concerns whether the City\u2019s employment testing practices violate Title\u202fVII\u2019s disparate\u2011impact provisions.\u201d \u2013 unsupported; the cited evidence discusses the disparate\u2011impact test generally but does not show the City\u2019s testing practices are at issue.",
+    "Claim in Overview: \u201cThe dispute also centers on whether promoting diversity can be pursued as a compelling state interest without using racial classifications.\u201d \u2013 unsupported; the second citation (pages 43\u201144) does not address this issue, leaving the claim insufficiently supported.",
+    "Oral\u2011argument claim: \u201cAccording to Justice Breyer, justice Breyer questioned whether a test that is not job\u2011related but widely used could still violate plaintiffs\u2019 rights.\u201d \u2013 unsupported; the cited passage (page 75) concerns quota\u2011setting, not a non\u2011job\u2011related test.",
+    "Why\u2011it\u2011matters claim: \u201cIt may affect how government entities can pursue diversity goals without using racial classifications.\u201d \u2013 unsupported; the citation to page 4 is a quotation from Gregory Coleman about racial classifications, not evidence of governmental impact, making the claim overstated.",
+    "Overstatement detected in the Why\u2011it\u2011matters section: the statement about affecting government entities\u2019 ability to pursue diversity without racial classifications is not backed by the supplied evidence and thus overstates the case\u2019s significance."
+  ],
+  "quality_scores": {
+    "completeness": 0.85,
+    "factual_accuracy": 0.8,
+    "neutrality": 0.9,
+    "readability": 0.9,
+    "restraint": 0.75,
+    "traceability": 0.8
+  }
+}

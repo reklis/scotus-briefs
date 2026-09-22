@@ -1,0 +1,419 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+            "evidence_ids": [
+              "ev-aa3ebe7fb3b9-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether there was discussion of the Brady claim on the merits, suggesting the district court\u2019s handling might have been erroneous."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-1114",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T17:39:07.880986Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+            "evidence_ids": [
+              "ev-aa3ebe7fb3b9-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:08 a.m."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+            "evidence_ids": [
+              "ev-aa3ebe7fb3b9-0003-0005"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "The case was submitted after argument."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+            "evidence_ids": [
+              "ev-aa3ebe7fb3b9-0001-0000",
+              "ev-aa3ebe7fb3b9-0003-0001",
+              "ev-aa3ebe7fb3b9-0003-0002"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether there was discussion of the Brady claim on the merits and whether the appellate court treated the categories separately."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+            "evidence_ids": [
+              "ev-aa3ebe7fb3b9-0001-0001"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the evidence was deliberately or negligently suppressed."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+            "evidence_ids": [
+              "ev-aa3ebe7fb3b9-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the evidence was favorable to the defendant."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+            "evidence_ids": [
+              "ev-aa3ebe7fb3b9-0002-0003"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Alito asked about procedural default and prior rulings of the state court."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+            "evidence_ids": [
+              "ev-aa3ebe7fb3b9-0003-0003"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "Justice Scalia asked what the photographic evidence was."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+            "evidence_ids": [
+              "ev-aa3ebe7fb3b9-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the petitioner alleges that the prosecution suppressed all evidence concerning whether the defendant was a drug addict and committed the crimes during an amphetamine psychosis."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+            "evidence_ids": [
+              "ev-aa3ebe7fb3b9-0001-0000",
+              "ev-aa3ebe7fb3b9-0001-0001",
+              "ev-aa3ebe7fb3b9-0002-0000",
+              "ev-aa3ebe7fb3b9-0002-0003",
+              "ev-aa3ebe7fb3b9-0003-0001",
+              "ev-aa3ebe7fb3b9-0003-0002",
+              "ev-aa3ebe7fb3b9-0003-0003"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The Court\u2019s oral argument included several questions about the Brady claim and evidence suppression."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Goldstein",
+          "citations": [
+            {
+              "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+              "evidence_ids": [
+                "ev-aa3ebe7fb3b9-0001-0002"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "According to Mr. Goldstein, the petitioner contends that the prosecution deliberately suppressed evidence, which is central to the case."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+              "evidence_ids": [
+                "ev-aa3ebe7fb3b9-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The petitioner argues that the suppressed evidence is material to determining the defendant\u2019s mental state and culpability."
+        }
+      ],
+      "heading": "Petitioner (Gary Bradford Cone)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Ricky Bell, Warden)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+      "evidence_ids": [
+        "ev-aa3ebe7fb3b9-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+      "evidence_ids": [
+        "ev-aa3ebe7fb3b9-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+      "evidence_ids": [
+        "ev-aa3ebe7fb3b9-0001-0000"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+      "evidence_ids": [
+        "ev-aa3ebe7fb3b9-0001-0001",
+        "ev-aa3ebe7fb3b9-0001-0002"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+      "evidence_ids": [
+        "ev-aa3ebe7fb3b9-0001-0004"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 34
+      }
+    },
+    {
+      "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+      "evidence_ids": [
+        "ev-aa3ebe7fb3b9-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+      "evidence_ids": [
+        "ev-aa3ebe7fb3b9-0002-0003"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+      "evidence_ids": [
+        "ev-aa3ebe7fb3b9-0003-0000"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    },
+    {
+      "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+      "evidence_ids": [
+        "ev-aa3ebe7fb3b9-0003-0001",
+        "ev-aa3ebe7fb3b9-0003-0002"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    },
+    {
+      "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+      "evidence_ids": [
+        "ev-aa3ebe7fb3b9-0003-0003"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    },
+    {
+      "document_hash": "aa3ebe7fb3b90e4a2b63bdc4a817bdd1554f0705874e58babafe0423b4b578cc",
+      "evidence_ids": [
+        "ev-aa3ebe7fb3b9-0003-0005"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T17:47:20.144869Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,284 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-542",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T20:18:53.820175Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "56c9413406686c6e6878d5e43998876326775631be129d5a1ee201bcaf96f4bd"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "56c9413406686c6e6878d5e43998876326775631be129d5a1ee201bcaf96f4bd",
+            "evidence_ids": [
+              "ev-56c941340668-0000-0008"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Souter asked: \"Is it perfectly workable to say that if the defendant has been taken to the police station, they can't then search the car?\""
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "56c9413406686c6e6878d5e43998876326775631be129d5a1ee201bcaf96f4bd",
+            "evidence_ids": [
+              "ev-56c941340668-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Stevens asked: \"Are you more concerned about the ability to search the vehicle or the protection of the officer?\""
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "56c9413406686c6e6878d5e43998876326775631be129d5a1ee201bcaf96f4bd",
+            "evidence_ids": [
+              "ev-56c941340668-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Scalia asked: \"You've arrested this guy for reckless driving. He was going 25 miles over the speed limit, okay? And you're going to search his car for evidence? Of what?\""
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "56c9413406686c6e6878d5e43998876326775631be129d5a1ee201bcaf96f4bd",
+            "evidence_ids": [
+              "ev-56c941340668-0001-0005"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned whether the search was contemporaneous with the arrest, noting that \u201cif it isn\u2019t contemporaneous, that\u2019s a new world.\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "56c9413406686c6e6878d5e43998876326775631be129d5a1ee201bcaf96f4bd",
+            "evidence_ids": [
+              "ev-56c941340668-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Alito asked: \"What does contemporaneous have to do with officer safety? It has to do with timing, doesn\u2019t it?\""
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "56c9413406686c6e6878d5e43998876326775631be129d5a1ee201bcaf96f4bd",
+            "evidence_ids": [
+              "ev-56c941340668-0002-0005"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Breyer later asked whether the stare decisis doctrine should apply if an earlier decision was wrong."
+      },
+      {
+        "attribution": "Mr. YANG",
+        "citations": [
+          {
+            "document_hash": "56c9413406686c6e6878d5e43998876326775631be129d5a1ee201bcaf96f4bd",
+            "evidence_ids": [
+              "ev-56c941340668-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Mr. YANG, mr. Yang testified that \u201cthe protection of the officer is what motivates the doctrine.\u201d"
+      },
+      {
+        "attribution": "Mr. YANG",
+        "citations": [
+          {
+            "document_hash": "56c9413406686c6e6878d5e43998876326775631be129d5a1ee201bcaf96f4bd",
+            "evidence_ids": [
+              "ev-56c941340668-0001-0003"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Mr. YANG, mr. Yang explained that when a suspect is under custodial arrest, there is an increased incentive to escape, obtain weapons, and destroy incriminating evidence."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "56c9413406686c6e6878d5e43998876326775631be129d5a1ee201bcaf96f4bd",
+              "evidence_ids": [
+                "ev-56c941340668-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, arizona argues that the Court should apply prior decisions in Chimel and Robinson to vehicle arrests to create a clear, workable rule for officers."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "56c9413406686c6e6878d5e43998876326775631be129d5a1ee201bcaf96f4bd",
+              "evidence_ids": [
+                "ev-56c941340668-0000-0003"
+              ],
+              "pages": {
+                "end": 10,
+                "start": 10
+              }
+            }
+          ],
+          "text": "According to Petitioner, arizona points out that in 2007 there were 93 reported cases where arrestees cuffed in the back of a patrol car escaped, showing a risk of escape."
+        }
+      ],
+      "heading": "Petitioner (Arizona)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Rodney Joseph Gant)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "56c9413406686c6e6878d5e43998876326775631be129d5a1ee201bcaf96f4bd",
+      "evidence_ids": [
+        "ev-56c941340668-0000-0000",
+        "ev-56c941340668-0000-0003",
+        "ev-56c941340668-0000-0008",
+        "ev-56c941340668-0001-0000",
+        "ev-56c941340668-0001-0001",
+        "ev-56c941340668-0001-0002",
+        "ev-56c941340668-0001-0003",
+        "ev-56c941340668-0001-0005",
+        "ev-56c941340668-0002-0000",
+        "ev-56c941340668-0002-0005"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T20:21:09.921671Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

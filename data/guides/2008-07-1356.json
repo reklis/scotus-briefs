@@ -1,0 +1,384 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+            "evidence_ids": [
+              "ev-b094e89ff63a-0000-0005"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The jury acquitted Mr. Ventris of the murder charge."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+            "evidence_ids": [
+              "ev-b094e89ff63a-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, the Court considered when a Sixth Amendment violation occurs."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-1356",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T18:42:29.323332Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+            "evidence_ids": [
+              "ev-b094e89ff63a-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked when the Sixth Amendment violation occurs."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+            "evidence_ids": [
+              "ev-b094e89ff63a-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether it would make no difference if a police officer pretended to be a cellmate."
+      },
+      {
+        "attribution": "JUSTICE SCALIA",
+        "citations": [
+          {
+            "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+            "evidence_ids": [
+              "ev-b094e89ff63a-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to JUSTICE SCALIA, justice Scalia later questioned whether the Court would be allowing a constitutional violation, referencing the Miranda situation."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+            "evidence_ids": [
+              "ev-b094e89ff63a-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether there was a dispute that a Sixth Amendment violation occurred at the time the statement was taken."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+            "evidence_ids": [
+              "ev-b094e89ff63a-0002-0001"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg inquired about a fallback approach and the need for a judicial determination of intentional false testimony."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+            "evidence_ids": [
+              "ev-b094e89ff63a-0002-0004"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the rule would apply equally for statements made under oath."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Stephen R. McCallister",
+        "citations": [
+          {
+            "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+            "evidence_ids": [
+              "ev-b094e89ff63a-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+            "evidence_ids": [
+              "ev-b094e89ff63a-0000-0004"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The case concerns whether voluntary statements obtained in violation of constitutional standards may be used for impeachment when the defendant testifies at trial."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Stephen R. McCallister",
+          "citations": [
+            {
+              "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+              "evidence_ids": [
+                "ev-b094e89ff63a-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Stephen R. McCallister, the petitioner argues that voluntary statements obtained in violation of constitutional standards may be used for impeachment when the defendant testifies at trial."
+        },
+        {
+          "attribution": "Nicole A. Saharsky",
+          "citations": [
+            {
+              "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+              "evidence_ids": [
+                "ev-b094e89ff63a-0000-0004"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "According to Nicole A. Saharsky, the petitioner (through amicus counsel) contends that the rule allowing such statements for impeachment should apply in this case."
+        },
+        {
+          "attribution": "MS. SAHARSKY",
+          "citations": [
+            {
+              "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+              "evidence_ids": [
+                "ev-b094e89ff63a-0001-0000"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to MS. SAHARSKY, the petitioner argues that excluding the evidence would impose a strong price on the government, citing prior cases such as Havens, Walder, Harris, Hass, and Harvey."
+        },
+        {
+          "attribution": "Stephen R. McAllister",
+          "citations": [
+            {
+              "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+              "evidence_ids": [
+                "ev-b094e89ff63a-0002-0002"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Stephen R. McAllister, the petitioner argues that the balancing of interests in Sixth Amendment cases is a modest consideration, referencing Nix v. Williams and Michigan v. Harvey."
+        }
+      ],
+      "heading": "Kansas (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "MR. EDGE",
+          "citations": [
+            {
+              "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+              "evidence_ids": [
+                "ev-b094e89ff63a-0001-0002"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to MR. EDGE, the respondent argues that the Sixth Amendment violation at issue is a core enumerated trial right, making it a distinct matter from other cases."
+        },
+        {
+          "attribution": "MR. EDGE",
+          "citations": [
+            {
+              "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+              "evidence_ids": [
+                "ev-b094e89ff63a-0001-0005"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to MR. EDGE, the respondent contends that allowing the evidence would remove any disincentive for police to obtain such evidence improperly."
+        }
+      ],
+      "heading": "Donnie Ray Ventris (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b094e89ff63a3a9fc73115dc219cfdfe6097571ba864151d857ca2463d066afc",
+      "evidence_ids": [
+        "ev-b094e89ff63a-0000-0000",
+        "ev-b094e89ff63a-0000-0001",
+        "ev-b094e89ff63a-0000-0002",
+        "ev-b094e89ff63a-0000-0003",
+        "ev-b094e89ff63a-0000-0005",
+        "ev-b094e89ff63a-0000-0004",
+        "ev-b094e89ff63a-0001-0000",
+        "ev-b094e89ff63a-0001-0001",
+        "ev-b094e89ff63a-0001-0002",
+        "ev-b094e89ff63a-0001-0004",
+        "ev-b094e89ff63a-0001-0005",
+        "ev-b094e89ff63a-0002-0000",
+        "ev-b094e89ff63a-0002-0001",
+        "ev-b094e89ff63a-0002-0002",
+        "ev-b094e89ff63a-0002-0003",
+        "ev-b094e89ff63a-0002-0004",
+        "ev-b094e89ff63a-0002-0005"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T18:49:37.329371Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

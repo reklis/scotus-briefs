@@ -1,0 +1,520 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the petitioner\u2019s argument depends on the quality of the record\u2011keeping in the sheriff\u2019s department."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether negligence is relevant, suggesting the argument is about sheer causality rather than negligence."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0002-0003"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked for the definition of negligence, suggesting it means conduct that is not objectively reasonable."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0002-0001"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "Justice Breyer asked for clarification on distinguishing the nature of the bad conduct (negligent, reckless, deliberate) and who performed it (police official or other)."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0002-0008"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Justice Kennedy referenced Hudson v. Michigan and asked whether the Court had engaged in a broad balancing of social costs versus potential violations."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0001-0005"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Souter asked why personal liability law, which compensates for negligence even without bad faith, might affect conduct."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned the justification for distinguishing between a court employee and other police department staff when a mistake occurs."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Scalia stated that the police will not keep good records unless criminals are let go."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0001-0004"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Ginsburg noted that it is unknown whether the records are good, bad, or indifferent."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-513",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T20:02:05.837651Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, during oral argument, the petitioner described the recall error and its consequences."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The petitioner asked the Court to apply Arizona v. Evans."
+      },
+      {
+        "attribution": "Mr. Dreeben",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0001-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          },
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0002-0007"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Mr. Dreeben argued that an isolated negligent clerical error should not lead to suppression and that the exclusionary rule\u2019s costs may outweigh its benefits."
+      },
+      {
+        "attribution": "Ms. Karlan",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0002-0002"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          },
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0002-0004"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          },
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0003-0003"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "Ms. Karlan argued that negligent police error should result in suppression and advocated for a clean, narrow rule limited to negligence."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case concerns a warrant that was recalled but not updated in the computer system, leading to a warrantless arrest of the petitioner."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+            "evidence_ids": [
+              "ev-2acc9027c86b-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The petitioner asks the Court to apply Arizona v. Evans."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+              "evidence_ids": [
+                "ev-2acc9027c86b-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The petitioner argues that the warrant recall error was a clerical mistake that caused a warrantless arrest lacking probable cause."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+              "evidence_ids": [
+                "ev-2acc9027c86b-0000-0004"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petitioner requests the Court apply Arizona v. Evans."
+        },
+        {
+          "attribution": "Mr. Dreeben",
+          "citations": [
+            {
+              "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+              "evidence_ids": [
+                "ev-2acc9027c86b-0001-0001"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "Counsel Mr. Dreeben argues that an isolated negligent clerical error should not lead to suppression of evidence."
+        },
+        {
+          "attribution": "Mr. Dreeben",
+          "citations": [
+            {
+              "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+              "evidence_ids": [
+                "ev-2acc9027c86b-0002-0007"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "Mr. Dreeben also contends that the costs of the exclusionary rule may outweigh its benefits."
+        },
+        {
+          "attribution": "Ms. Karlan",
+          "citations": [
+            {
+              "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+              "evidence_ids": [
+                "ev-2acc9027c86b-0002-0002"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "Ms. Karlan argues that negligent police error should result in suppression of the evidence."
+        },
+        {
+          "attribution": "Ms. Karlan",
+          "citations": [
+            {
+              "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+              "evidence_ids": [
+                "ev-2acc9027c86b-0002-0004"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to Ms. Karlan, ms. Karlan advocates for a narrow rule that applies only when police officials act negligently."
+        },
+        {
+          "attribution": "Ms. Karlan",
+          "citations": [
+            {
+              "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+              "evidence_ids": [
+                "ev-2acc9027c86b-0003-0003"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 62
+              }
+            }
+          ],
+          "text": "According to Ms. Karlan, ms. Karlan describes the proposed rule as a clean, narrow rule."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "United States",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2acc9027c86b657928a681526cfe4d70d75e57b67ce3878dc83945d91d621dc4",
+      "evidence_ids": [
+        "ev-2acc9027c86b-0000-0001",
+        "ev-2acc9027c86b-0000-0002",
+        "ev-2acc9027c86b-0000-0003",
+        "ev-2acc9027c86b-0000-0004",
+        "ev-2acc9027c86b-0001-0000",
+        "ev-2acc9027c86b-0001-0001",
+        "ev-2acc9027c86b-0001-0002",
+        "ev-2acc9027c86b-0001-0004",
+        "ev-2acc9027c86b-0001-0005",
+        "ev-2acc9027c86b-0002-0000",
+        "ev-2acc9027c86b-0002-0001",
+        "ev-2acc9027c86b-0002-0002",
+        "ev-2acc9027c86b-0002-0003",
+        "ev-2acc9027c86b-0002-0004",
+        "ev-2acc9027c86b-0002-0007",
+        "ev-2acc9027c86b-0002-0008",
+        "ev-2acc9027c86b-0003-0000",
+        "ev-2acc9027c86b-0003-0001",
+        "ev-2acc9027c86b-0003-0002",
+        "ev-2acc9027c86b-0003-0003",
+        "ev-2acc9027c86b-0003-0004",
+        "ev-2acc9027c86b-0003-0005"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 3
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T20:11:58.583524Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

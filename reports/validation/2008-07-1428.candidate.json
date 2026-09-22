@@ -1,0 +1,678 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "United States (Amicus Curiae)",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0001-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          },
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0001-0004"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Title\u202fVII prohibits not only intentional discrimination but also employment practices that have a discriminatory effect."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0004-0003"
+            ],
+            "pages": {
+              "end": 76,
+              "start": 76
+            }
+          }
+        ],
+        "text": "According to Justice Souter, the Court must decide whether the City must modify or abandon the test to avoid liability under Title\u202fVII\u2019s disparate\u2011impact standard."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-1428",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T19:08:43.915597Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0004-0003"
+            ],
+            "pages": {
+              "end": 76,
+              "start": 76
+            }
+          },
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0004-0004"
+            ],
+            "pages": {
+              "end": 77,
+              "start": 77
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the city could stop a test that is likely to produce disparate results and redesign it before administration."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0001-0003"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer presented a hypothetical where an employer extends a hiring deadline to increase minority applicants."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether promotion of diversity is a compelling state interest in the employment context."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy expressed difficulty with the argument that the case is not about race."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0002-0003"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether a violation of the four\u2011fifths rule is sufficient to establish disparate impact."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0002-0004"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the test could be considered facially neutral."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0002-0005"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          },
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0004-0000"
+            ],
+            "pages": {
+              "end": 74,
+              "start": 74
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked what New Haven actually did and whether the test is job\u2011related."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0004-0002"
+            ],
+            "pages": {
+              "end": 75,
+              "start": 75
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned whether a test that is not job\u2011related but widely used could still violate plaintiffs\u2019 rights."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0001-0004"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          },
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0001-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "The case concerns whether the City\u2019s employment testing practices violate Title\u202fVII\u2019s disparate\u2011impact provisions."
+      },
+      {
+        "attribution": "Gregory S. Coleman",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Gregory S. Coleman, petitioner\u2019s counsel argued that racial classifications are \u201cinherently pernicious\u201d and can lead to socially destructive politics."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0002-0006"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 43
+            }
+          }
+        ],
+        "text": "The dispute also centers on whether promoting diversity can be pursued as a compelling state interest without using racial classifications."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Gregory S. Coleman",
+          "citations": [
+            {
+              "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+              "evidence_ids": [
+                "ev-b1ed1f7d6b30-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Gregory S. Coleman, racial classifications are inherently pernicious and can lead to socially destructive politics."
+        },
+        {
+          "attribution": "Mr. Coleman",
+          "citations": [
+            {
+              "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+              "evidence_ids": [
+                "ev-b1ed1f7d6b30-0001-0001"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Mr. Coleman, the City should conduct an honest and open assessment of whether it is liable under Title\u202fVII\u2019s disparate\u2011impact provision."
+        }
+      ],
+      "heading": "Petitioner (Frank Ricci)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents (Mr. Kneedler)",
+          "citations": [
+            {
+              "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+              "evidence_ids": [
+                "ev-b1ed1f7d6b30-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Respondents (Mr. Kneedler), according to Respondents (Mr. Kneedler), a compelling state interest cannot be advanced by racial classifications."
+        },
+        {
+          "attribution": "Respondents (Mr. Meade)",
+          "citations": [
+            {
+              "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+              "evidence_ids": [
+                "ev-b1ed1f7d6b30-0002-0006"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 43
+              }
+            }
+          ],
+          "text": "According to Respondents (Mr. Meade), according to Respondents (Mr. Meade), employers, both private and public, must comply with Title\u202fVII\u2019s disparate\u2011impact provisions."
+        }
+      ],
+      "heading": "Respondent (John Destefano)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0001-0001"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0001-0002"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0001-0004"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0001-0003"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0002-0000",
+        "ev-b1ed1f7d6b30-0002-0001"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0002-0002"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0002-0006"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0002-0003"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0002-0004"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0002-0005"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 49
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0003-0004"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 60
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0004-0000",
+        "ev-b1ed1f7d6b30-0004-0001"
+      ],
+      "pages": {
+        "end": 74,
+        "start": 74
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0004-0002"
+      ],
+      "pages": {
+        "end": 75,
+        "start": 75
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0004-0003"
+      ],
+      "pages": {
+        "end": 76,
+        "start": 76
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0004-0004"
+      ],
+      "pages": {
+        "end": 77,
+        "start": 77
+      }
+    },
+    {
+      "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+      "evidence_ids": [
+        "ev-b1ed1f7d6b30-0004-0006"
+      ],
+      "pages": {
+        "end": 78,
+        "start": 78
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T19:24:20.685360Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Claim in Overview: \u201cThe case concerns whether the City\u2019s employment testing practices violate Title\u202fVII\u2019s disparate\u2011impact provisions.\u201d \u2013 unsupported; the cited evidence discusses the disparate\u2011impact test generally but does not show the City\u2019s testing practices are at issue.",
+      "Claim in Overview: \u201cThe dispute also centers on whether promoting diversity can be pursued as a compelling state interest without using racial classifications.\u201d \u2013 unsupported; the second citation (pages 43\u201144) does not address this issue, leaving the claim insufficiently supported.",
+      "Oral\u2011argument claim: \u201cAccording to Justice Breyer, justice Breyer questioned whether a test that is not job\u2011related but widely used could still violate plaintiffs\u2019 rights.\u201d \u2013 unsupported; the cited passage (page 75) concerns quota\u2011setting, not a non\u2011job\u2011related test.",
+      "Why\u2011it\u2011matters claim: \u201cIt may affect how government entities can pursue diversity goals without using racial classifications.\u201d \u2013 unsupported; the citation to page 4 is a quotation from Gregory Coleman about racial classifications, not evidence of governmental impact, making the claim overstated.",
+      "Overstatement detected in the Why\u2011it\u2011matters section: the statement about affecting government entities\u2019 ability to pursue diversity without racial classifications is not backed by the supplied evidence and thus overstates the case\u2019s significance."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0001-0004"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          },
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0004-0003"
+            ],
+            "pages": {
+              "end": 76,
+              "start": 76
+            }
+          }
+        ],
+        "text": "The case could clarify how courts evaluate employment tests that may have a disparate impact on minority groups."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0002-0000",
+              "ev-b1ed1f7d6b30-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "It may affect how government entities can pursue diversity goals without using racial classifications."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b1ed1f7d6b30f1720b7dd5a27f67a8652abb406b393a658570ec1bde2651484a",
+            "evidence_ids": [
+              "ev-b1ed1f7d6b30-0003-0004"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "The outcome could influence the use of quotas or set\u2011asides as remedial measures for past discrimination."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
