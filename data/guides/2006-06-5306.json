@@ -1,0 +1,281 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec",
+            "evidence_ids": [
+              "ev-fa5493e9c2c4-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked what type of jurisdiction was being discussed."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec",
+            "evidence_ids": [
+              "ev-fa5493e9c2c4-0001-0004"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the rule could be waived."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec",
+            "evidence_ids": [
+              "ev-fa5493e9c2c4-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Justice Alito asked how one would find out when a case was entered on the docket."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-06-5306",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T04:01:49.810243Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec",
+            "evidence_ids": [
+              "ev-fa5493e9c2c4-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked what type of jurisdiction was being discussed."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec",
+            "evidence_ids": [
+              "ev-fa5493e9c2c4-0001-0004"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the rule could be waived."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec",
+            "evidence_ids": [
+              "ev-fa5493e9c2c4-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Justice Alito asked how one would find out when a case was entered on the docket."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "MR. MANCINO",
+          "citations": [
+            {
+              "document_hash": "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec",
+              "evidence_ids": [
+                "ev-fa5493e9c2c4-0001-0000"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to MR. MANCINO, the petitioner relies on exceptions to deadlines, including equitable tolling and waiver, and points to a judge\u2019s specific assurance that the case could be reopened."
+        },
+        {
+          "attribution": "Petitioner (Paul Mancino, Jr.)",
+          "citations": [
+            {
+              "document_hash": "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec",
+              "evidence_ids": [
+                "ev-fa5493e9c2c4-0002-0003"
+              ],
+              "pages": {
+                "end": 53,
+                "start": 53
+              }
+            }
+          ],
+          "text": "According to Petitioner (Paul Mancino, Jr.), if the case involved only a missed 30\u2011day deadline, the issue would not arise; instead, the petitioner emphasizes that a judge properly found notice was not given and had authority to reopen the case."
+        },
+        {
+          "attribution": "Plaintiff's Counsel",
+          "citations": [
+            {
+              "document_hash": "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec",
+              "evidence_ids": [
+                "ev-fa5493e9c2c4-0002-0002"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Plaintiff's Counsel, plaintiff\u2019s counsel cites the Thompson case to support the petitioner\u2019s position."
+        }
+      ],
+      "heading": "Petitioner (Keith Bowles)",
+      "status": "complete",
+      "summary": "The petitioner argues that equitable tolling and waiver exceptions apply to the deadline, and that a judge\u2019s specific assurance permits reopening the case.",
+      "summary_citations": [
+        {
+          "document_hash": "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec",
+          "evidence_ids": [
+            "ev-fa5493e9c2c4-0001-0000"
+          ],
+          "pages": {
+            "end": 20,
+            "start": 20
+          }
+        },
+        {
+          "document_hash": "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec",
+          "evidence_ids": [
+            "ev-fa5493e9c2c4-0002-0003"
+          ],
+          "pages": {
+            "end": 53,
+            "start": 53
+          }
+        }
+      ]
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Harry Russell, Warden)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "fa5493e9c2c488a7d84ad519f3b25222729a0d5899c9288b44086c54fe8299ec",
+      "evidence_ids": [
+        "ev-fa5493e9c2c4-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T04:04:53.525122Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

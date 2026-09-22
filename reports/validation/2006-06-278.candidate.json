@@ -1,0 +1,632 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Superintendent",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0002-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "The school suspended the student."
+      },
+      {
+        "attribution": "Mertz",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "The district court heard motions for summary judgment but issued no factual findings."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The legal question before the Court is whether the student\u2019s speech is protected by the First Amendment under the Tinker standard."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-06-278",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T02:55:22.850910Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked, \u201cDisruptive of what? Disruptive of the classroom order? There was no classroom here.\u201d"
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Souter asked what would be \u201cdisorderly,\u201d questioning why a sign urging marijuana law change would be disruptive."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the rationale presented was \u201cnothing more broad.\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether the school\u2019s regulation was viewpoint\u2011neutral."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia suggested distinguishing \u201cdisruption\u201d from \u201cundermining\u201d the school\u2019s message."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0002-0004"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the teacher should have known the correct answer in the calm deliberative atmosphere of the school."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked for clarification about the timing of the banner relative to the student\u2019s attendance."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0003-0004"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned whether the principal could order the student to take down the banner if the student was not part of the school group."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0003-0003"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted that the case was submitted for decision."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0002-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "The case involves a student who displayed a banner urging changes to marijuana laws, leading to his suspension by the school."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Both sides invoke the Supreme Court\u2019s decision in Tinker v. Des Moines, which permits student speech that is not disruptive."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0000-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The United States, as amicus, argues that the First Amendment does not require schools to permit promotion of illegal drug use."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mertz",
+          "citations": [
+            {
+              "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+              "evidence_ids": [
+                "ev-c06b7fcf940f-0002-0000"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mertz, they assert that Tinker requires schools to allow nondisruptive expression."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0000-0003"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0000-0004"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0000-0001"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0001-0002"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0001-0003"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0002-0002",
+        "ev-c06b7fcf940f-0002-0003"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0002-0004"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 50
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0003-0000",
+        "ev-c06b7fcf940f-0003-0004"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0003-0001",
+        "ev-c06b7fcf940f-0003-0002"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    },
+    {
+      "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+      "evidence_ids": [
+        "ev-c06b7fcf940f-0003-0003"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 59
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T03:08:56.389325Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: several claims are not backed by the supplied evidence (e.g., the overview claim that a student displayed a banner urging changes to marijuana laws, the statement that the legal question before the Court is whether the speech is protected under Tinker, and the why\u2011it\u2011matters claim about balancing school authority and free\u2011speech rights).",
+      "Overstatement check failed: the claim that the case addresses the balance between school authority and student free\u2011speech rights is not directly supported by any of the cited transcript pages."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0000-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The case addresses the balance between school authority and student free\u2011speech rights, a core First Amendment issue."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "c06b7fcf940fa58ea3a9fa4f5703ba24f41fb0695b039015ebc57dffaa3e4725",
+            "evidence_ids": [
+              "ev-c06b7fcf940f-0000-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to United States, the outcome could affect how schools handle speech that encourages illegal activity, such as drug use."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,469 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the term \u201chome\u201d refers to the person who employs rather than the person who receives the services."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens inquired whether a statutory provision protects defendants from damages liability if they relied in good faith on the regulation."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Stevens also asked whether the regulation should be given prospective effect."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0001-0003"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted a conflict among the justices."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0002-0003"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether an interpretive regulation is a binding regulation and how Chevron versus Skidmore deference should apply."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-06-593",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T04:18:12.802526Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the word \u201chome\u201d refers to the employer rather than the service recipient."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens questioned whether a safe\u2011harbor provision protects defendants who rely in good faith on the regulation."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Stevens also asked whether the regulation should be given prospective effect."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0001-0003"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted that the justices were in conflict."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0002-0003"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether an interpretive regulation is a binding regulation and how Chevron versus Skidmore deference should apply."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners, the case concerns the interpretation of the companionship services exemption under the Fair Labor Standards Act as amended in 1974."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners, the Department of Labor\u2019s regulations implementing that exemption may be entitled to Chevron deference when they are a permissible implementation of the statute."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0002-0005"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "The case was submitted to the Court for argument."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+              "evidence_ids": [
+                "ev-96b6bcd94461-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioners argue that because the Department of Labor filled in the details through notice\u2011and\u2011comment rulemaking, its regulations should receive Chevron deference when they are a permissible implementation of the statute."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+              "evidence_ids": [
+                "ev-96b6bcd94461-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioners further contend that if the regulations contain ambiguities or a facial inconsistency, the court should accept the Secretary\u2019s reasonable resolution of those ambiguities."
+        }
+      ],
+      "heading": "Petitioners\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Becker",
+          "citations": [
+            {
+              "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+              "evidence_ids": [
+                "ev-96b6bcd94461-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Becker, respondents assert that the statute creates two types of authority, similar to the tax statutes interpreted in Vogel and Rowan."
+        },
+        {
+          "attribution": "Mr. Becker",
+          "citations": [
+            {
+              "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+              "evidence_ids": [
+                "ev-96b6bcd94461-0002-0002"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. Becker, they rely on regulation 552.2(c), which states that only those in Part\u202fA define and delimit the scope of the exemption."
+        }
+      ],
+      "heading": "Respondents\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+      "evidence_ids": [
+        "ev-96b6bcd94461-0000-0000",
+        "ev-96b6bcd94461-0000-0002",
+        "ev-96b6bcd94461-0001-0000",
+        "ev-96b6bcd94461-0001-0001",
+        "ev-96b6bcd94461-0001-0002",
+        "ev-96b6bcd94461-0001-0003",
+        "ev-96b6bcd94461-0002-0000",
+        "ev-96b6bcd94461-0002-0001",
+        "ev-96b6bcd94461-0002-0002",
+        "ev-96b6bcd94461-0002-0003",
+        "ev-96b6bcd94461-0002-0005"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T04:29:05.689334Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners, the case illustrates how courts may apply Chevron deference to agency regulations interpreting the Fair Labor Standards Act, which can shape employers\u2019 obligations."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether a safe\u2011harbor provision protects defendants from damages liability when they rely in good faith on the regulation."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "96b6bcd94461be0ff06162a80095bf1ead63d7d7e50d895ecbd7b198103d713e",
+            "evidence_ids": [
+              "ev-96b6bcd94461-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, the discussion about prospective effect raises questions about the future applicability of agency regulations."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

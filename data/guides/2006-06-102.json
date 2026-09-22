@@ -1,0 +1,302 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095",
+            "evidence_ids": [
+              "ev-ac5c555e75be-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether a federal district court\u2019s forum non conveniens dismissal has any ongoing legal effect as the law of the case."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095",
+            "evidence_ids": [
+              "ev-ac5c555e75be-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether a plaintiff can seek relief in a different U.S. court after a forum non conveniens dismissal in favor of a foreign forum."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095",
+            "evidence_ids": [
+              "ev-ac5c555e75be-0001-0003"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether dismissing on forum non conveniens without first addressing personal jurisdiction requires assuming personal jurisdiction exists."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-06-102",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T02:19:08.611592Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095",
+            "evidence_ids": [
+              "ev-ac5c555e75be-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy questioned the continuing legal effect of a forum non conveniens dismissal by a federal district court."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095",
+            "evidence_ids": [
+              "ev-ac5c555e75be-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether a plaintiff can pursue a different U.S. forum after a foreign\u2011forum non conveniens dismissal."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095",
+            "evidence_ids": [
+              "ev-ac5c555e75be-0001-0003"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia inquired whether dismissing on forum non conveniens without first addressing personal jurisdiction presumes personal jurisdiction exists."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Sinochem International",
+        "citations": [
+          {
+            "document_hash": "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095",
+            "evidence_ids": [
+              "ev-ac5c555e75be-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Sinochem International, the case involves a dispute between Sinochem International and Malaysia International Shipping over alleged fraudulent misrepresentation to Chinese courts."
+      },
+      {
+        "attribution": "Oral argument transcript",
+        "citations": [
+          {
+            "document_hash": "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095",
+            "evidence_ids": [
+              "ev-ac5c555e75be-0000-0001",
+              "ev-ac5c555e75be-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The parties are arguing about the effect of a forum non conveniens dismissal and related jurisdictional issues."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Sinochem International",
+          "citations": [
+            {
+              "document_hash": "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095",
+              "evidence_ids": [
+                "ev-ac5c555e75be-0000-0005"
+              ],
+              "pages": {
+                "end": 9,
+                "start": 9
+              }
+            }
+          ],
+          "text": "According to Sinochem International, sinochem contends that the complaint alleges it made a misrepresentation to Chinese courts."
+        },
+        {
+          "attribution": "Ms. Higgins",
+          "citations": [
+            {
+              "document_hash": "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095",
+              "evidence_ids": [
+                "ev-ac5c555e75be-0001-0000"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "Sinochem, through counsel Ms. Higgins, argues the Court should affirm the Third Circuit judgment."
+        }
+      ],
+      "heading": "Sinochem International",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Castanias",
+          "citations": [
+            {
+              "document_hash": "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095",
+              "evidence_ids": [
+                "ev-ac5c555e75be-0001-0004"
+              ],
+              "pages": {
+                "end": 33,
+                "start": 33
+              }
+            }
+          ],
+          "text": "According to Mr. Castanias, counsel Mr. Castanias indicated that Malaysia International Shipping will rest on the arguments given in the briefs."
+        }
+      ],
+      "heading": "Malaysia International Shipping",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ac5c555e75bebbf2e250e224612b0f1ca80440c8bbe3dcb7ed35ca4d84943095",
+      "evidence_ids": [
+        "ev-ac5c555e75be-0000-0001",
+        "ev-ac5c555e75be-0000-0002",
+        "ev-ac5c555e75be-0000-0003",
+        "ev-ac5c555e75be-0000-0004",
+        "ev-ac5c555e75be-0000-0005",
+        "ev-ac5c555e75be-0001-0000",
+        "ev-ac5c555e75be-0001-0003",
+        "ev-ac5c555e75be-0001-0004"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T02:22:45.104456Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

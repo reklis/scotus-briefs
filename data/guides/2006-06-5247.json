@@ -1,0 +1,408 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          },
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0000-0007"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          },
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0001-0004"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "The central legal question concerns which harmless\u2011error standard\u2014Kotteakos, Chapman, or Brecht\u2014should govern the analysis of the alleged constitutional error."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-06-5247",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T03:54:21.112919Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the petitioner could have come directly to this Court."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned the application of the Kotteakos and Chapman standards."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0000-0007"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the petitioner\u2019s argument was that the error should not be considered harmless under the Brecht standard."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0000-0008"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "Justice Scalia further asked whether the harmless\u2011error standard chosen would affect the defendant\u2019s entitlement to reversal."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer inquired about the burdens of proof relevant to the harmless\u2011error analysis."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0001-0004"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Breyer also asked the Court to consider applying the Brecht standard."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked how a witness\u2019s name entered the trial record."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether a particular testimony could have been cross\u2011examined."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0002-0005"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Stevens requested permission to ask two questions before proceeding."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Victor S. Haltom",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Victor S. Haltom, the petitioner argues that a constitutional error in Mr. Fry\u2019s third trial could result in the conviction of an innocent person."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          },
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0000-0007"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "The Court is grappling with which harmless\u2011error standard\u2014Kotteakos, Chapman, or Brecht\u2014should apply to the case."
+      },
+      {
+        "attribution": "Ms. Millett",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0002-0004"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Ms. Millett, an amicus brief argues that the record does not show a substantial or injurious effect from the exclusion of an extra witness."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Victor S. Haltom",
+          "citations": [
+            {
+              "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+              "evidence_ids": [
+                "ev-69c6a05c7d20-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Victor S. Haltom, the petitioner contends that the constitutional error in his third trial could have led to the conviction of an innocent person."
+        },
+        {
+          "attribution": "Mr. Haltom",
+          "citations": [
+            {
+              "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+              "evidence_ids": [
+                "ev-69c6a05c7d20-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. Haltom, the petitioner argues that the Court has struggled with which harmless\u2011error standard should apply, citing the difficulty of applying such standards."
+        }
+      ],
+      "heading": "Petitioner (John Francis Fry)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+      "evidence_ids": [
+        "ev-69c6a05c7d20-0000-0000",
+        "ev-69c6a05c7d20-0000-0001",
+        "ev-69c6a05c7d20-0000-0003",
+        "ev-69c6a05c7d20-0000-0007",
+        "ev-69c6a05c7d20-0000-0008",
+        "ev-69c6a05c7d20-0001-0000",
+        "ev-69c6a05c7d20-0001-0001",
+        "ev-69c6a05c7d20-0001-0004",
+        "ev-69c6a05c7d20-0002-0000",
+        "ev-69c6a05c7d20-0002-0001",
+        "ev-69c6a05c7d20-0002-0005",
+        "ev-69c6a05c7d20-0002-0004"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T04:01:49.788848Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Ms. Millett",
+        "citations": [
+          {
+            "document_hash": "69c6a05c7d20dc67b63dd1aef03c1c164c5a98f935ff6541d1a9e3f0034321da",
+            "evidence_ids": [
+              "ev-69c6a05c7d20-0002-0004"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Ms. Millett, the amicus brief argues that the record does not show a substantial or injurious effect from the exclusion of an extra witness."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

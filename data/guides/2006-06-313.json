@@ -1,0 +1,279 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "90c63a856e4b811da1297f61d13df3eb94cc56fcd3f8123c9b5301186dd47faa",
+            "evidence_ids": [
+              "ev-90c63a856e4b-0000-0002",
+              "ev-90c63a856e4b-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether a prosecutor\u2019s alleged misstatement of the law in a closing argument would be reviewable under AEDPA."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "90c63a856e4b811da1297f61d13df3eb94cc56fcd3f8123c9b5301186dd47faa",
+            "evidence_ids": [
+              "ev-90c63a856e4b-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens also inquired about the relevance of the prosecutor\u2019s argument."
+      }
+    ],
+    "heading": "Background and Question(s)",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-06-313",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T03:08:56.408239Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "90c63a856e4b811da1297f61d13df3eb94cc56fcd3f8123c9b5301186dd47faa"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "90c63a856e4b811da1297f61d13df3eb94cc56fcd3f8123c9b5301186dd47faa",
+            "evidence_ids": [
+              "ev-90c63a856e4b-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The Court instructed that closing arguments are not evidence."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "90c63a856e4b811da1297f61d13df3eb94cc56fcd3f8123c9b5301186dd47faa",
+            "evidence_ids": [
+              "ev-90c63a856e4b-0002-0004"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "The case was submitted at the close of oral argument."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "90c63a856e4b811da1297f61d13df3eb94cc56fcd3f8123c9b5301186dd47faa",
+              "evidence_ids": [
+                "ev-90c63a856e4b-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The petitioner argues that the Court\u2019s fairness standard for reviewing prosecutors\u2019 closing arguments is a very general standard, and under AEDPA the State court should be given more leeway in reaching outcomes."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "90c63a856e4b811da1297f61d13df3eb94cc56fcd3f8123c9b5301186dd47faa",
+              "evidence_ids": [
+                "ev-90c63a856e4b-0000-0004"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "The petitioner contends that none of the prosecutor\u2019s comments misstated the evidence or the law."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "90c63a856e4b811da1297f61d13df3eb94cc56fcd3f8123c9b5301186dd47faa",
+              "evidence_ids": [
+                "ev-90c63a856e4b-0000-0008"
+              ],
+              "pages": {
+                "end": 8,
+                "start": 8
+              }
+            }
+          ],
+          "text": "The petitioner maintains that it is not improper to make statements based on inferences from the evidence."
+        }
+      ],
+      "heading": "Petitioner (Don Roper Superintendent, Potosi Correctional Center)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "90c63a856e4b811da1297f61d13df3eb94cc56fcd3f8123c9b5301186dd47faa",
+              "evidence_ids": [
+                "ev-90c63a856e4b-0001-0005"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Respondent, the respondent asserts that the prosecutor\u2019s penalty\u2011phase closing argument contained improper, mutually reinforcing statements that exploited the authority of his office, analogized the jury\u2019s duties to soldiers, introduced extraneous matters, and appealed to jurors\u2019 passions and prejudice."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "90c63a856e4b811da1297f61d13df3eb94cc56fcd3f8123c9b5301186dd47faa",
+              "evidence_ids": [
+                "ev-90c63a856e4b-0001-0008"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "The respondent argues that the death penalty in this case was sought solely for deterrent reasons, unanchored in the culpability of the defendant."
+        }
+      ],
+      "heading": "Respondent (William Weaver)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "90c63a856e4b811da1297f61d13df3eb94cc56fcd3f8123c9b5301186dd47faa",
+      "evidence_ids": [
+        "ev-90c63a856e4b-0000-0000",
+        "ev-90c63a856e4b-0000-0001",
+        "ev-90c63a856e4b-0000-0002",
+        "ev-90c63a856e4b-0000-0003",
+        "ev-90c63a856e4b-0000-0004",
+        "ev-90c63a856e4b-0000-0005",
+        "ev-90c63a856e4b-0000-0007",
+        "ev-90c63a856e4b-0000-0008",
+        "ev-90c63a856e4b-0000-0009",
+        "ev-90c63a856e4b-0001-0000",
+        "ev-90c63a856e4b-0001-0002",
+        "ev-90c63a856e4b-0001-0003",
+        "ev-90c63a856e4b-0001-0005",
+        "ev-90c63a856e4b-0001-0006",
+        "ev-90c63a856e4b-0001-0008",
+        "ev-90c63a856e4b-0002-0000",
+        "ev-90c63a856e4b-0002-0001",
+        "ev-90c63a856e4b-0002-0004"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T03:13:23.265596Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

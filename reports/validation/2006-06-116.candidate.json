@@ -1,0 +1,421 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Seth P. Waxman",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Seth P. Waxman, congress amended the Organic Act of Guam to replace the Ninth Circuit\u2019s certiorari jurisdiction with direct review by this Court, but the amendment did not specify whether it applies to cases already pending before the Ninth Circuit."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0000-0002"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "The Court issued an order withdrawing and deferring a ruling in this case pending the decision in the related Santos case."
+      },
+      {
+        "attribution": "Seth P. Waxman",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0000-0000",
+              "ev-0fc92376d6fe-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The parties ask whether the amendment\u2019s language and purpose require it to apply to pending appeals, and what the proper definition of \u201ctax valuation\u201d is for Guam tax purposes."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-06-116",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T02:22:45.124705Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+          "evidence_ids": [
+            "ev-0fc92376d6fe-0001-0001"
+          ],
+          "pages": {
+            "end": 22,
+            "start": 22
+          }
+        }
+      ],
+      "definition": "The valuation that is used by Guam for the calculation of tax.",
+      "term": "tax valuation"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the Ninth Circuit had decided the same jurisdiction question in the pending Santos case."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the phrase \u201ccolorable jurisdiction\u201d or another term should be used to describe the test being suggested."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether, in Puerto Rico, the Philippines, or Alaska, bonds had ever been issued that exceeded ten percent of the assessed value."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Scalia raised the hypothetical of an ambiguous statute and asked how it should be applied to pending cases."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer prompted \u201cBecause?\u201d after a discussion of bond limits."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia suggested that the tax valuation could be set at 150\u202f% of fair value rather than 100\u202f%."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0002-0002"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether voters would notice higher taxes if the valuation were changed without adjusting the tax rate."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0002-0003"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens inquired whether the federal government had ever had to bail out the Guam government for bankruptcy or a similar situation."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Questions from the Justices",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Seth P. Waxman",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Seth P. Waxman, the case concerns whether the amendment to the Organic Act of Guam that gave this Court direct review authority applies to appeals that were already pending before the Ninth Circuit."
+      },
+      {
+        "attribution": "Mr. Waxman (petitioner)",
+        "citations": [
+          {
+            "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+            "evidence_ids": [
+              "ev-0fc92376d6fe-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Mr. Waxman (petitioner), according to Mr. Waxman (petitioner), according to Mr. Waxman (petitioner), according to Mr. Waxman (petitioner), the dispute also involves the proper meaning of \u201ctax valuation\u201d under Guam law, which the petitioner says is the valuation used by Guam for calculating tax."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Seth P. Waxman",
+          "citations": [
+            {
+              "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+              "evidence_ids": [
+                "ev-0fc92376d6fe-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Seth P. Waxman, the case is properly before this Court and should be reversed under the plain language and purpose of the Organic Act of Guam."
+        },
+        {
+          "attribution": "Mr. Waxman (petitioner)",
+          "citations": [
+            {
+              "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+              "evidence_ids": [
+                "ev-0fc92376d6fe-0001-0001"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Mr. Waxman (petitioner), according to Mr. Waxman (petitioner), according to Mr. Waxman (petitioner), according to Mr. Waxman (petitioner), the natural meaning of \u201ctax valuation\u201d is the valuation that Guam uses to calculate tax."
+        }
+      ],
+      "heading": "Petitioner (Attorney General of Guam)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Beth S. Brinkmann (respondent)",
+          "citations": [
+            {
+              "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+              "evidence_ids": [
+                "ev-0fc92376d6fe-0001-0000"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Beth S. Brinkmann (respondent), according to Beth S. Brinkmann (respondent), according to Beth S. Brinkmann (respondent), according to Beth S. Brinkmann (respondent), the case should be dismissed for lack of jurisdiction because the certiorari petition was untimely."
+        },
+        {
+          "attribution": "Beth S. Brinkmann (respondent)",
+          "citations": [
+            {
+              "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+              "evidence_ids": [
+                "ev-0fc92376d6fe-0001-0000"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Beth S. Brinkmann (respondent), according to Beth S. Brinkmann (respondent), according to Beth S. Brinkmann (respondent), according to Beth S. Brinkmann (respondent), if the Court reaches the merits, the Guam Supreme Court\u2019s interpretation of section\u202f11 of the Organic Act should be affirmed."
+        }
+      ],
+      "heading": "Respondent (Governor of Guam)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0fc92376d6feec09a75ccc39d5eaa0a31be2484f3e978e1d7923e4ab2bfb7104",
+      "evidence_ids": [
+        "ev-0fc92376d6fe-0000-0000",
+        "ev-0fc92376d6fe-0000-0001",
+        "ev-0fc92376d6fe-0000-0002",
+        "ev-0fc92376d6fe-0000-0004",
+        "ev-0fc92376d6fe-0001-0000",
+        "ev-0fc92376d6fe-0001-0001",
+        "ev-0fc92376d6fe-0001-0002",
+        "ev-0fc92376d6fe-0001-0003",
+        "ev-0fc92376d6fe-0002-0000",
+        "ev-0fc92376d6fe-0002-0001",
+        "ev-0fc92376d6fe-0002-0002",
+        "ev-0fc92376d6fe-0002-0003",
+        "ev-0fc92376d6fe-0002-0004",
+        "ev-0fc92376d6fe-0002-0005"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T02:34:15.193612Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": false,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

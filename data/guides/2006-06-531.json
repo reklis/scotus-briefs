@@ -1,0 +1,306 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd",
+            "evidence_ids": [
+              "ev-4981c3b5eb6c-0001-0000"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Scalia asked what would happen if the parties obtained a TRO instead of a preliminary injunction."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd",
+            "evidence_ids": [
+              "ev-4981c3b5eb6c-0002-0000"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, the Court inquired whether the underlying principle involved a First Amendment right to demonstrate in the nude."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-06-531",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T04:04:53.543076Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd",
+            "evidence_ids": [
+              "ev-4981c3b5eb6c-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument before the Supreme Court began at 11:20\u202fa.m."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd",
+            "evidence_ids": [
+              "ev-4981c3b5eb6c-0000-0005"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts announced the case: \u201cWe\u2019ll next hear Case\u202f06\u2011531, Sole versus Wyner.\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd",
+            "evidence_ids": [
+              "ev-4981c3b5eb6c-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioners, the case concerns whether parties who obtain a preliminary injunction are entitled to attorney's fees."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd",
+              "evidence_ids": [
+                "ev-4981c3b5eb6c-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioners argue that appellate precedent holds that plaintiffs who obtain a preliminary injunction are prevailing parties entitled to attorney's fees."
+        },
+        {
+          "attribution": "Ms. Millett",
+          "citations": [
+            {
+              "document_hash": "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd",
+              "evidence_ids": [
+                "ev-4981c3b5eb6c-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Ms. Millett, they further contend that fee entitlement is tied to a violation of Federal law, but a consent decree situation can also permit fees when the defendant does not resist final relief."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd",
+              "evidence_ids": [
+                "ev-4981c3b5eb6c-0000-0002"
+              ],
+              "pages": {
+                "end": 18,
+                "start": 18
+              }
+            }
+          ],
+          "text": "According to United States, they note that a preliminary injunction does not itself determine a violation of Federal law."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. GALANTER",
+          "citations": [
+            {
+              "document_hash": "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd",
+              "evidence_ids": [
+                "ev-4981c3b5eb6c-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. GALANTER, respondents contend that the district court's orders treat similar protests differently and that this reading is unfair."
+        },
+        {
+          "attribution": "Ms. Seitz",
+          "citations": [
+            {
+              "document_hash": "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd",
+              "evidence_ids": [
+                "ev-4981c3b5eb6c-0003-0004"
+              ],
+              "pages": {
+                "end": 59,
+                "start": 59
+              }
+            }
+          ],
+          "text": "According to Ms. Seitz, they point out that costs awarded were reduced so that no party ultimately received any costs."
+        },
+        {
+          "attribution": "Mr. Galanter",
+          "citations": [
+            {
+              "document_hash": "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd",
+              "evidence_ids": [
+                "ev-4981c3b5eb6c-0003-0003"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Mr. Galanter, they note that they received short notice\u2014only a week\u2014before the district court decided not to allow nude protest."
+        }
+      ],
+      "heading": "Respondents",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4981c3b5eb6c16713c8bcc0f03c45df7bf8f8e070e9cdb4f98aa9cdce58729fd",
+      "evidence_ids": [
+        "ev-4981c3b5eb6c-0000-0000",
+        "ev-4981c3b5eb6c-0000-0001",
+        "ev-4981c3b5eb6c-0000-0002",
+        "ev-4981c3b5eb6c-0000-0005",
+        "ev-4981c3b5eb6c-0001-0000",
+        "ev-4981c3b5eb6c-0001-0001",
+        "ev-4981c3b5eb6c-0002-0000",
+        "ev-4981c3b5eb6c-0002-0001",
+        "ev-4981c3b5eb6c-0003-0000",
+        "ev-4981c3b5eb6c-0003-0001",
+        "ev-4981c3b5eb6c-0003-0002",
+        "ev-4981c3b5eb6c-0003-0003",
+        "ev-4981c3b5eb6c-0003-0004"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T04:09:28.738133Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

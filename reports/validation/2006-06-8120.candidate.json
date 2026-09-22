@@ -1,0 +1,372 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-06-8120",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T04:43:33.779477Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+            "evidence_ids": [
+              "ev-1a81ac5b64a0-0001-0001"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Clifford E. Zall presented oral argument on behalf of the respondent."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Ms. Campbell)",
+        "citations": [
+          {
+            "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+            "evidence_ids": [
+              "ev-1a81ac5b64a0-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner (Ms. Campbell), according to Petitioner (Ms. Campbell), when an officer makes a traffic stop and activates his flashing lights, he seizes the driver, the car, and everyone in the car."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+            "evidence_ids": [
+              "ev-1a81ac5b64a0-0001-0004"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The Court says the passenger is seized when the car comes to a stop."
+      },
+      {
+        "attribution": "MS. CAMPBELL",
+        "citations": [
+          {
+            "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+            "evidence_ids": [
+              "ev-1a81ac5b64a0-0002-0002"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "According to MS. CAMPBELL, petitioner argues that passengers have a liberty interest in free travel, citing Delaware v. Prouse."
+      },
+      {
+        "attribution": "MR. ZALL",
+        "citations": [
+          {
+            "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+            "evidence_ids": [
+              "ev-1a81ac5b64a0-0002-0005"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to MR. ZALL, petitioner contends that the presence of an arrest warrant attenuates any taint, making the evidence not suppressible."
+      },
+      {
+        "attribution": "Clifford E. Zall",
+        "citations": [
+          {
+            "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+            "evidence_ids": [
+              "ev-1a81ac5b64a0-0001-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Clifford E. Zall, respondent argues that the situation does not result in a seizure of a passenger."
+      },
+      {
+        "attribution": "MR. ZALL",
+        "citations": [
+          {
+            "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+            "evidence_ids": [
+              "ev-1a81ac5b64a0-0002-0005"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to MR. ZALL, respondent also argues that even if a seizure occurred, the arrest warrant attenuates the taint."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Ms. Campbell)",
+          "citations": [
+            {
+              "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+              "evidence_ids": [
+                "ev-1a81ac5b64a0-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner (Ms. Campbell), according to Petitioner (Ms. Campbell), when an officer makes a traffic stop and activates his flashing lights, he seizes the driver, the car, and everyone in the car."
+        },
+        {
+          "attribution": "Ms. Campbell",
+          "citations": [
+            {
+              "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+              "evidence_ids": [
+                "ev-1a81ac5b64a0-0001-0003"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Ms. Campbell, the passenger is certainly stopped when the car comes to a halt."
+        },
+        {
+          "attribution": "MS. CAMPBELL",
+          "citations": [
+            {
+              "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+              "evidence_ids": [
+                "ev-1a81ac5b64a0-0002-0002"
+              ],
+              "pages": {
+                "end": 54,
+                "start": 54
+              }
+            }
+          ],
+          "text": "According to MS. CAMPBELL, passengers have a liberty interest in free travel on the highways, as recognized in Delaware v. Prouse."
+        },
+        {
+          "attribution": "MR. ZALL",
+          "citations": [
+            {
+              "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+              "evidence_ids": [
+                "ev-1a81ac5b64a0-0002-0005"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to MR. ZALL, even if the passenger were subject to a seizure, the arrest warrant attenuates any taint, so the evidence is not suppressible."
+        }
+      ],
+      "heading": "Petitioner (Bruce Edward Brendlin)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Clifford E. Zall",
+          "citations": [
+            {
+              "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+              "evidence_ids": [
+                "ev-1a81ac5b64a0-0001-0002"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to Clifford E. Zall, in our view that does not result in a seizure of a passenger."
+        },
+        {
+          "attribution": "MR. ZALL",
+          "citations": [
+            {
+              "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+              "evidence_ids": [
+                "ev-1a81ac5b64a0-0002-0005"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to MR. ZALL, even if a seizure occurred, the arrest warrant attenuates the taint, so the evidence is not suppressible."
+        }
+      ],
+      "heading": "Respondent (California)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+      "evidence_ids": [
+        "ev-1a81ac5b64a0-0000-0001"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T04:50:41.870196Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": false,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "sources[0]: evidence ev-1a81ac5b64a0-0000-0001 does not support citation",
+      "Adversarial verification skipped after deterministic failure",
+      "sources[0]: evidence ev-1a81ac5b64a0-0000-0001 does not support citation"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Ms. Campbell) and Court",
+        "citations": [
+          {
+            "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+            "evidence_ids": [
+              "ev-1a81ac5b64a0-0001-0004"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+            "evidence_ids": [
+              "ev-1a81ac5b64a0-0002-0002"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "The case addresses whether passengers are seized during a traffic stop, which implicates a liberty interest in free travel."
+      },
+      {
+        "attribution": "MR. ZALL",
+        "citations": [
+          {
+            "document_hash": "1a81ac5b64a019dd75a5f3c849fb110f428b8e260b5a487e2add7b75973d29a9",
+            "evidence_ids": [
+              "ev-1a81ac5b64a0-0002-0005"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to MR. ZALL, the outcome could determine whether evidence obtained after a stop is suppressible."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

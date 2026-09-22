@@ -1,0 +1,302 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-06-6407",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T04:35:00.250133Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b",
+            "evidence_ids": [
+              "ev-889ed7a6fc8f-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts questioned whether Panetti understood why he was imprisoned and whether the Ford right extended to his situation."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b",
+            "evidence_ids": [
+              "ev-889ed7a6fc8f-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the delusion today is the same as the delusion yesterday."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b",
+            "evidence_ids": [
+              "ev-889ed7a6fc8f-0001-0003"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether Congress was not addressing the problem of mental illness in criminal justice."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b",
+            "evidence_ids": [
+              "ev-889ed7a6fc8f-0001-0004"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether the issue raised was constitutional."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b",
+            "evidence_ids": [
+              "ev-889ed7a6fc8f-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked a follow\u2011up question, \u201cWhat about that one?\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b",
+            "evidence_ids": [
+              "ev-889ed7a6fc8f-0000-0004"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "Petitioner contends that the Antiterrorism and Effective Death Penalty Act (AEDPA) does not bar the Supreme Court from reviewing the constitutional issues presented."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b",
+            "evidence_ids": [
+              "ev-889ed7a6fc8f-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          },
+          {
+            "document_hash": "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b",
+            "evidence_ids": [
+              "ev-889ed7a6fc8f-0002-0004"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "The district court found that Panetti understands he committed the murders and that he will be executed."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b",
+              "evidence_ids": [
+                "ev-889ed7a6fc8f-0000-0004"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "Petitioner argues that the AEDPA does not prevent this Court from addressing the merits of the constitutional issue here."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Cruz (Respondent)",
+          "citations": [
+            {
+              "document_hash": "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b",
+              "evidence_ids": [
+                "ev-889ed7a6fc8f-0001-0006"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "According to Mr. Cruz (Respondent), respondent argues that AEDPA bars relief because the State court complied with clearly established law under Ford and because Panetti\u2019s petition is a second or successive habeas application."
+        },
+        {
+          "attribution": "Mr. Cruz",
+          "citations": [
+            {
+              "document_hash": "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b",
+              "evidence_ids": [
+                "ev-889ed7a6fc8f-0002-0000"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Mr. Cruz, respondent states that, in this case, Panetti satisfies the test required for relief."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "889ed7a6fc8f92ef4ff9afddb4ca211c0c410437e448d2e7d673a3e28805372b",
+      "evidence_ids": [
+        "ev-889ed7a6fc8f-0000-0000",
+        "ev-889ed7a6fc8f-0000-0001",
+        "ev-889ed7a6fc8f-0000-0002",
+        "ev-889ed7a6fc8f-0000-0006",
+        "ev-889ed7a6fc8f-0000-0003",
+        "ev-889ed7a6fc8f-0000-0004",
+        "ev-889ed7a6fc8f-0001-0000",
+        "ev-889ed7a6fc8f-0001-0005",
+        "ev-889ed7a6fc8f-0001-0002",
+        "ev-889ed7a6fc8f-0001-0006",
+        "ev-889ed7a6fc8f-0001-0003",
+        "ev-889ed7a6fc8f-0001-0004",
+        "ev-889ed7a6fc8f-0002-0001",
+        "ev-889ed7a6fc8f-0002-0000",
+        "ev-889ed7a6fc8f-0002-0003",
+        "ev-889ed7a6fc8f-0002-0004"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T04:43:33.760764Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

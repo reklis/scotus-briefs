@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2006-06-278",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: several claims are not backed by the supplied evidence (e.g., the overview claim that a student displayed a banner urging changes to marijuana laws, the statement that the legal question before the Court is whether the speech is protected under Tinker, and the why\u2011it\u2011matters claim about balancing school authority and free\u2011speech rights).",
+    "Overstatement check failed: the claim that the case addresses the balance between school authority and student free\u2011speech rights is not directly supported by any of the cited transcript pages."
+  ],
+  "quality_scores": {
+    "completeness": 0.8,
+    "factual_accuracy": 0.83,
+    "neutrality": 0.9,
+    "readability": 0.9,
+    "restraint": 0.6,
+    "traceability": 1.0
+  }
+}

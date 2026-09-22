@@ -1,0 +1,309 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Legal Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-06-219",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T02:48:59.940604Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+            "evidence_ids": [
+              "ev-bdd25bdc7683-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Laurence H. Tribe presented oral argument on behalf of the respondent."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+            "evidence_ids": [
+              "ev-bdd25bdc7683-0002-0007"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Gregory C. Garre presented a rebuttal argument for the petitioners."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners (Garre)",
+        "citations": [
+          {
+            "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+            "evidence_ids": [
+              "ev-bdd25bdc7683-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioners (Garre), according to Petitioners (Garre), petitioners argue that there is no remedy under Bivens or an inferred action under the Just Compensation Clause."
+      },
+      {
+        "attribution": "Petitioners (Garre)",
+        "citations": [
+          {
+            "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+            "evidence_ids": [
+              "ev-bdd25bdc7683-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioners (Garre), according to Petitioners (Garre), petitioners assert that the conduct does not establish a constitutional tort or an actionable claim under RICO."
+      },
+      {
+        "attribution": "Mr. Garre",
+        "citations": [
+          {
+            "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+            "evidence_ids": [
+              "ev-bdd25bdc7683-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Mr. Garre, i think what is distinct about the Bivens claim here is first Bivens and Just Compensation Clause claims are fundamentally incompatible. And that in Bivens, its damages are nothing. Here the constitutional right actually explicitly provides a remedy, just compensation."
+      },
+      {
+        "attribution": "Mr. Garre",
+        "citations": [
+          {
+            "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+            "evidence_ids": [
+              "ev-bdd25bdc7683-0003-0001"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "According to Mr. Garre, they don't have a Bivens remedy and they don't have a RICO remedy."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners (Garre)",
+          "citations": [
+            {
+              "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+              "evidence_ids": [
+                "ev-bdd25bdc7683-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioners (Garre), we don't think that there is a remedy under Bivens or an inferred action under the Just Compensation Clause."
+        },
+        {
+          "attribution": "Petitioners (Garre)",
+          "citations": [
+            {
+              "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+              "evidence_ids": [
+                "ev-bdd25bdc7683-0000-0004"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioners (Garre), our position is that he hasn't established a constitutional tort or an actionable claim under RICO."
+        },
+        {
+          "attribution": "Mr. Garre",
+          "citations": [
+            {
+              "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+              "evidence_ids": [
+                "ev-bdd25bdc7683-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. Garre, i think what is distinct about the Bivens claim here is first Bivens and Just Compensation Clause claims are fundamentally incompatible. And that in Bivens, its damages are nothing. Here the constitutional right actually explicitly provides a remedy, just compensation."
+        },
+        {
+          "attribution": "Mr. Garre",
+          "citations": [
+            {
+              "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+              "evidence_ids": [
+                "ev-bdd25bdc7683-0003-0001"
+              ],
+              "pages": {
+                "end": 59,
+                "start": 59
+              }
+            }
+          ],
+          "text": "According to Mr. Garre, they don't have a Bivens remedy and they don't have a RICO remedy."
+        }
+      ],
+      "heading": "Petitioners\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners (Garre)",
+          "citations": [
+            {
+              "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+              "evidence_ids": [
+                "ev-bdd25bdc7683-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioners (Garre), respondent seeks recognition of a new constitutional tort under Bivens and the Just Compensation Clause."
+        },
+        {
+          "attribution": "Mr. Tribe",
+          "citations": [
+            {
+              "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+              "evidence_ids": [
+                "ev-bdd25bdc7683-0001-0002"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. Tribe, it is the retaliatory pattern that there is no remedy for."
+        }
+      ],
+      "heading": "Respondent\u2019s Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "bdd25bdc7683b5f9fda37a01287db67117827e8db61343b1b69c5f2abdde6dc6",
+      "evidence_ids": [
+        "ev-bdd25bdc7683-0000-0000"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T02:55:22.832849Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
