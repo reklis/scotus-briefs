@@ -1,0 +1,507 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice KENNEDY",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether courts must treat as binding a legal proposition that they think is \u201cdead wrong.\u201d"
+      },
+      {
+        "attribution": "Justice SCALIA",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Scalia asked what would happen if a new company, not existing when the regulation was issued, sought to challenge the regulation\u2019s conformity with the statute."
+      },
+      {
+        "attribution": "Justice GINSBURG",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0001-0004"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Justice GINSBURG, justice Ginsburg inquired whether a new company could raise a declaration of non\u2011applicability."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens questioned whether the agency could adopt one definition of \u201cmodification\u201d for ten years and then change it for all programs."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0002-0004"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Stevens also asked whether the statutory text requires a uniform definition of \u201cmodification\u201d across all regulations."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-05-848",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T23:39:28.659548Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice KENNEDY",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether courts must follow a legal proposition they consider \u201cdead wrong.\u201d"
+      },
+      {
+        "attribution": "Justice SCALIA",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice SCALIA, justice Scalia questioned the standing of a new company to challenge the regulation\u2019s conformity with the statute."
+      },
+      {
+        "attribution": "Justice GINSBURG",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0001-0004"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Justice GINSBURG, justice Ginsburg inquired about a declaration of non\u2011applicability by a new company."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the agency could change its definition of \u201cmodification\u201d after ten years."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0002-0004"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Stevens also asked whether the statutory text requires a uniform definition of \u201cmodification\u201d across all regulations."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0002-0008"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy wondered whether \u201cconstruction\u201d could be interpreted to include both \u201cmodification\u201d and a new term \u201calteration.\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0002-0003"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Environmental Defense (the petitioner) argues that the agency may not adopt a new definition of \u201cmodification\u201d that differs from the one used under prior regulations."
+      },
+      {
+        "attribution": "Mr. HUNGAR",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0001-0007"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The petitioner\u2019s counsel, Mr. Hungar, says the regulation language does not support interpreting a change in hours of operation as a physical change."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+            "evidence_ids": [
+              "ev-c148bc7cb60f-0002-0012"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The agency\u2019s interpretation could lead to increased pollution because operating the plant 24 hours a day would double emissions compared with a 12\u2011hour schedule."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+              "evidence_ids": [
+                "ev-c148bc7cb60f-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner counsel Mr. Phillips stated that it would be impermissible for the agency to adopt a regulatory interpretation of \u201cmodification\u201d that differs from the definition used under the new source regulations."
+        },
+        {
+          "attribution": "Mr. HUNGAR",
+          "citations": [
+            {
+              "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+              "evidence_ids": [
+                "ev-c148bc7cb60f-0001-0005"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Mr. HUNGAR, petitioner argued that a new company could seek a determination of non\u2011applicability and obtain judicial review of that determination."
+        },
+        {
+          "attribution": "Mr. HUNGAR",
+          "citations": [
+            {
+              "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+              "evidence_ids": [
+                "ev-c148bc7cb60f-0001-0007"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. HUNGAR, petitioner\u2019s counsel Mr. Hungar emphasized that the regulation\u2019s language does not support interpreting a change in hours of operation as a physical change."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+              "evidence_ids": [
+                "ev-c148bc7cb60f-0002-0011"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner noted that the term \u201crate\u201d is used as an annual rate in specific statutory provisions (51.166(b)(21) and (b)(23))."
+        }
+      ],
+      "heading": "Petitioner (Environmental Defense)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Duke Energy Corporation)",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+      "evidence_ids": [
+        "ev-c148bc7cb60f-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+      "evidence_ids": [
+        "ev-c148bc7cb60f-0001-0002"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+      "evidence_ids": [
+        "ev-c148bc7cb60f-0001-0004",
+        "ev-c148bc7cb60f-0001-0005"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+      "evidence_ids": [
+        "ev-c148bc7cb60f-0001-0007"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+      "evidence_ids": [
+        "ev-c148bc7cb60f-0002-0001"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+      "evidence_ids": [
+        "ev-c148bc7cb60f-0002-0002",
+        "ev-c148bc7cb60f-0002-0003"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+      "evidence_ids": [
+        "ev-c148bc7cb60f-0002-0012"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+      "evidence_ids": [
+        "ev-c148bc7cb60f-0002-0004"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+      "evidence_ids": [
+        "ev-c148bc7cb60f-0002-0008"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "c148bc7cb60f4a936abd0ea2f75c723ded54fb9be476b4cf6341319ffc55391d",
+      "evidence_ids": [
+        "ev-c148bc7cb60f-0002-0011"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T23:42:39.364788Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+            "evidence_ids": [
+              "ev-39b97a3c45c8-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Souter asked about the \u00a71447(d) problem."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+            "evidence_ids": [
+              "ev-39b97a3c45c8-0001-0006"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          },
+          {
+            "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+            "evidence_ids": [
+              "ev-39b97a3c45c8-0002-0004"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 52
+            }
+          },
+          {
+            "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+            "evidence_ids": [
+              "ev-39b97a3c45c8-0002-0003"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "The Court also considered whether sovereign or organ immunity affects the state\u2011court proceedings."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-05-85",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T23:42:39.384386Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+            "evidence_ids": [
+              "ev-39b97a3c45c8-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether counsel would address the \u00a71447(d) problem."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+            "evidence_ids": [
+              "ev-39b97a3c45c8-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg noted the district court\u2019s claim of lacking authority over the parties."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+            "evidence_ids": [
+              "ev-39b97a3c45c8-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer raised a technical question about a hypothetical diversity case and the effect of an erroneous remand."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+            "evidence_ids": [
+              "ev-39b97a3c45c8-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked about \u00a71447(e) and the possibility of losing subject\u2011matter jurisdiction after removal."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+            "evidence_ids": [
+              "ev-39b97a3c45c8-0001-0004"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned the relevance of the post\u2011removal event."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+            "evidence_ids": [
+              "ev-39b97a3c45c8-0001-0006"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the immunity argument could be raised in state court if the petitioner does not prevail."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+            "evidence_ids": [
+              "ev-39b97a3c45c8-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Kennedy later asked for a brief explanation of the difference between sovereign immunity and organ immunity."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Source",
+        "citations": [
+          {
+            "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+            "evidence_ids": [
+              "ev-39b97a3c45c8-0002-0005"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The case concerns a district\u2011court remand order issued under 28\u202fU.S.C. \u00a71447(d)."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+              "evidence_ids": [
+                "ev-39b97a3c45c8-0001-0010"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Respondents, respondents mention the possibility of a collateral\u2011order appeal."
+        },
+        {
+          "attribution": "Mr. Simon",
+          "citations": [
+            {
+              "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+              "evidence_ids": [
+                "ev-39b97a3c45c8-0002-0003"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Mr. Simon, respondents argue that immunity is dispositive."
+        }
+      ],
+      "heading": "Respondents",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "39b97a3c45c8e56a946057f649a64c41a4e9d25e9b433c243e613d0e8016355b",
+      "evidence_ids": [
+        "ev-39b97a3c45c8-0000-0002",
+        "ev-39b97a3c45c8-0000-0003",
+        "ev-39b97a3c45c8-0001-0000",
+        "ev-39b97a3c45c8-0001-0002",
+        "ev-39b97a3c45c8-0001-0004",
+        "ev-39b97a3c45c8-0001-0006",
+        "ev-39b97a3c45c8-0001-0007",
+        "ev-39b97a3c45c8-0002-0000",
+        "ev-39b97a3c45c8-0002-0001",
+        "ev-39b97a3c45c8-0002-0002",
+        "ev-39b97a3c45c8-0002-0003",
+        "ev-39b97a3c45c8-0002-0004",
+        "ev-39b97a3c45c8-0002-0005"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T23:54:02.344774Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Attribution check failed for the claim in Background and Question: \"The Court also considered whether sovereign or organ immunity affects the state\u2011court proceedings.\" The claim attributes the consideration to \"Court\" but the supporting evidence is attributed to individual justices and parties, not to the Court as an entity."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

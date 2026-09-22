@@ -1,0 +1,471 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the application would be pending during the period that the case is under advisement in this Court."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the petition for certiorari is the application."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-05-8820",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T23:54:02.352969Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the petition for certiorari is the \u201capplication.\u201d"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Breyer asked about the language in 2244(d)(2)."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts inquired about statistics on how many post\u2011conviction collateral\u2011review petitions are granted."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy noted that a protective petition would have to be filed in the district court."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the application would be pending while the case is under advisement."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether district\u2011court habeas actions could proceed while certiorari is pending."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0002-0002"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether a district judge would wait for the Supreme Court\u2019s disposition of the cert petition."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0002-0007"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, except in capital cases, defendants may lack incentive to delay."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioner argues that there is a distinction between appellate jurisdiction under 2104 and the original writ of certiorari that would lie in this Court in some instances."
+      },
+      {
+        "attribution": "Mr. Kise",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Mr. Kise, filing a petition for certiorari does not automatically stay district\u2011court actions; a stay may be granted later."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, the Court was asked how many post\u2011conviction collateral\u2011review petitions are granted, indicating interest in the frequency of stays."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+              "evidence_ids": [
+                "ev-60f83a2440e1-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, there is a distinction between appellate jurisdiction under 2104 and the original writ of certiorari that would lie in this Court in some instances."
+        },
+        {
+          "attribution": "Mr. Kise",
+          "citations": [
+            {
+              "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+              "evidence_ids": [
+                "ev-60f83a2440e1-0002-0003"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Mr. Kise, filing a petition for certiorari does not automatically stay district\u2011court proceedings; a stay may be granted later."
+        },
+        {
+          "attribution": "Mr. Kise",
+          "citations": [
+            {
+              "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+              "evidence_ids": [
+                "ev-60f83a2440e1-0002-0005"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Mr. Kise, time is consumed by the Rule\u202f4 screening process, determining whether the petition meets formal requirements before any stay can be considered."
+        },
+        {
+          "attribution": "Ms. Bonner",
+          "citations": [
+            {
+              "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+              "evidence_ids": [
+                "ev-60f83a2440e1-0002-0008"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 50
+              }
+            }
+          ],
+          "text": "According to Ms. Bonner, statistical analysis shows the petitioner filed his petition within days of the average filing time before AEDPA, suggesting prompt action."
+        },
+        {
+          "attribution": "Ms. Bonner",
+          "citations": [
+            {
+              "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+              "evidence_ids": [
+                "ev-60f83a2440e1-0002-0009"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to Ms. Bonner, the Court controls the timing of review; once a petition is filed, it is either decided within 90\u202fdays or the petitioner is out of court."
+        }
+      ],
+      "heading": "Petitioner (Gary Lawrence)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Bonner",
+          "citations": [
+            {
+              "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+              "evidence_ids": [
+                "ev-60f83a2440e1-0002-0006"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Ms. Bonner, for statutory tolling purposes, the respondent argues that petitioners must file both a state\u2011court petition and a federal petition, or they forfeit the right to one."
+        }
+      ],
+      "heading": "Respondent (Florida)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+      "evidence_ids": [
+        "ev-60f83a2440e1-0000-0000"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T00:05:17.809141Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0002-0004"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens noted that the state's interest in moving capital cases forward is strong."
+      },
+      {
+        "attribution": "Mr. Kise",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Mr. Kise, mr. Kise stated that filing a petition for certiorari does not automatically stay district\u2011court proceedings."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "60f83a2440e187c2870c14c86c51dd16ed68315d6a03341294cd03d9f4c1b2ce",
+            "evidence_ids": [
+              "ev-60f83a2440e1-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked for statistics on how many post\u2011conviction collateral\u2011review petitions are granted."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,425 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Harry J.F. Korrell",
+        "citations": [
+          {
+            "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+            "evidence_ids": [
+              "ev-9bed12dbcb18-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Harry J.F. Korrell, the case centers on the district\u2019s attempt to achieve racial balance in high schools, leading to alleged racial discrimination in admissions."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-05-908",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T00:05:17.830099Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+            "evidence_ids": [
+              "ev-9bed12dbcb18-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked if it would be impermissible to have a mix of teachers in all schools."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+            "evidence_ids": [
+              "ev-9bed12dbcb18-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether a policy seeking racial mix is unconstitutional."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+            "evidence_ids": [
+              "ev-9bed12dbcb18-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Scalia later asked if there is anything unconstitutional about that objective."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+            "evidence_ids": [
+              "ev-9bed12dbcb18-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Alito asked how the district can aim for racial balance while ignoring the most unbalanced schools."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+            "evidence_ids": [
+              "ev-9bed12dbcb18-0002-0004"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether there is any diversity left or substantially more diversity after the district\u2019s plan."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+            "evidence_ids": [
+              "ev-9bed12dbcb18-0000-0004"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the Seattle School District denied admission to over 300 children, both white and minority, based solely on race without individualized consideration."
+      },
+      {
+        "attribution": "Harry J.F. Korrell",
+        "citations": [
+          {
+            "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+            "evidence_ids": [
+              "ev-9bed12dbcb18-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Harry J.F. Korrell, the denial raises concerns under the Equal Protection Clause, which requires the government to treat individuals, not merely members of a racial class."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Harry J.F. Korrell",
+          "citations": [
+            {
+              "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+              "evidence_ids": [
+                "ev-9bed12dbcb18-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Harry J.F. Korrell, the district\u2019s race\u2011based admissions policy violates the Equal Protection Clause because it treats students as members of a racial class rather than as individuals."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Madden",
+          "citations": [
+            {
+              "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+              "evidence_ids": [
+                "ev-9bed12dbcb18-0002-0002"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Madden, the district\u2019s plan does not mandate that a student attend a school for integration purposes, unlike past policies."
+        },
+        {
+          "attribution": "Michael F. Madden (Respondents)",
+          "citations": [
+            {
+              "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+              "evidence_ids": [
+                "ev-9bed12dbcb18-0001-0006"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            }
+          ],
+          "text": "According to Michael F. Madden (Respondents), according to Michael F. Madden (Respondents), housing decisions are inherently private, unlike public education, so the district\u2019s approach to racial balancing should be viewed as a public\u2011education matter."
+        },
+        {
+          "attribution": "Michael F. Madden (Respondents)",
+          "citations": [
+            {
+              "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+              "evidence_ids": [
+                "ev-9bed12dbcb18-0001-0008"
+              ],
+              "pages": {
+                "end": 33,
+                "start": 33
+              }
+            }
+          ],
+          "text": "According to Michael F. Madden (Respondents), according to Michael F. Madden (Respondents), the term \u201cracial balancing\u201d has two significant meanings, indicating flexibility in how the district may implement its policy."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+      "evidence_ids": [
+        "ev-9bed12dbcb18-0000-0000",
+        "ev-9bed12dbcb18-0000-0004"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+      "evidence_ids": [
+        "ev-9bed12dbcb18-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+      "evidence_ids": [
+        "ev-9bed12dbcb18-0001-0001"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+      "evidence_ids": [
+        "ev-9bed12dbcb18-0001-0004"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+      "evidence_ids": [
+        "ev-9bed12dbcb18-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+      "evidence_ids": [
+        "ev-9bed12dbcb18-0002-0004",
+        "ev-9bed12dbcb18-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+      "evidence_ids": [
+        "ev-9bed12dbcb18-0001-0006"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+      "evidence_ids": [
+        "ev-9bed12dbcb18-0001-0008"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+      "evidence_ids": [
+        "ev-9bed12dbcb18-0002-0002"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T00:10:21.503756Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Harry J.F. Korrell",
+        "citations": [
+          {
+            "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+            "evidence_ids": [
+              "ev-9bed12dbcb18-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Harry J.F. Korrell, the case highlights the tension between efforts to achieve racial diversity in public schools and the constitutional guarantee of equal protection."
+      },
+      {
+        "attribution": "Madden",
+        "citations": [
+          {
+            "document_hash": "9bed12dbcb18c32ab91ebb8a0c41764f9837d4df1b7a7f3b4e0e1feb73ec8493",
+            "evidence_ids": [
+              "ev-9bed12dbcb18-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Enrollment data from Franklin High School shows a sharp decline in white student representation, illustrating the demographic changes prompting the district\u2019s plan."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

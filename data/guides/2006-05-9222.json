@@ -1,0 +1,684 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The parties appearing before the Court were: Petitioner Jeffrey L. Fisher, Esq. (Stanford, CA); Respondent William B. Collins, Esq., Deputy Solicitor General (Olympia, WA); and United States amicus curiae Matthew D. Roberts, Esq., Assistant to the Solicitor General (Washington, D.C.)."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0000-0002",
+              "ev-f2841bde5fe7-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Souter, the central issue is whether a judge\u2019s decision to impose consecutive sentences requires a factual finding beyond the jury\u2019s verdict, as required by the Apprendi\u2011Blakely rule."
+      }
+    ],
+    "heading": "Background and Question Presented",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-05-9222",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T00:14:16.534856Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the decision to impose consecutive sentences requires the finding of any fact about the crimes, the circumstances, or the defendant\u2019s character."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Souter, the only fact needed might be that without a consecutive sentence there would be a \u201cfree crime,\u201d questioning whether that fact falls within any of the traditional categories."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0000-0005"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the petitioner\u2019s argument applied to this case."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0000-0008"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, Justice Ginsburg raised a procedural impediment concerning a prior petition and the need for appellate permission."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0001-0004"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether any precedent reads the rule in the way the parties suggest."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0002-0000"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Souter, Justice Souter questioned whether the State\u2019s position required a factual distinction not spoken of in Apprendi."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0002-0001"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Souter followed with a question asking whether drawing such a distinction was required."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0002-0002"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the State\u2019s claim was true in fact."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0000-0006"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Petitioner, petitioner cites a Washington Court of Appeals decision (State v. Washington, 143 P.3d 606) that held consecutive sentences trigger and violate Blakely."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0000-0007"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "Petitioner argues that any additional fact needed to impose consecutive sentences must be proved to a jury beyond a reasonable doubt, following Apprendi\u2011Blakely precedent."
+      },
+      {
+        "attribution": "State",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The State (respondent) argues that precedent is clear: the statutory maximum for Sixth and Fourteenth Amendment purposes is the maximum a defendant may receive based solely on the facts reflected in the jury verdict."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The Court notes that none of the authorities cited by the parties quote or acknowledge the passages in Apprendi that define the test as one of effect, not form."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The Court further observes that the holding of Apprendi is central to the issue at hand."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+              "evidence_ids": [
+                "ev-f2841bde5fe7-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner asserts that the Ninth Circuit\u2019s statement that the Blakely rule was unclear is wrong; the Supreme Court\u2019s Apprendi decision already defined the statutory maximum as the maximum based solely on the jury verdict."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+              "evidence_ids": [
+                "ev-f2841bde5fe7-0000-0006"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner relies on the Washington Court of Appeals decision (State v. Washington, 143 P.3d 606) that consecutive sentences violate Blakely."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+              "evidence_ids": [
+                "ev-f2841bde5fe7-0000-0007"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "Petitioner argues that any additional fact needed to impose consecutive sentences must be proved to a jury beyond a reasonable doubt, following Apprendi\u2011Blakely precedent."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+              "evidence_ids": [
+                "ev-f2841bde5fe7-0001-0000"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "The State argues that precedent is clear: the statutory maximum for Sixth and Fourteenth Amendment purposes is the maximum a defendant may receive based solely on the facts reflected in the jury verdict."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+              "evidence_ids": [
+                "ev-f2841bde5fe7-0001-0008"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "According to Respondent, the State characterizes the petition as successive, noting that the petitioner filed a first petition and then a second one."
+        }
+      ],
+      "heading": "Respondent (State) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+              "evidence_ids": [
+                "ev-f2841bde5fe7-0002-0003"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the United States amicus argues that a distinction could be drawn between Apprendi and Blakely, and that reasonable jurists might accept that distinction."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+              "evidence_ids": [
+                "ev-f2841bde5fe7-0002-0004"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the amicus notes that Washington\u2019s sentencing guidelines channel but do not eliminate judicial discretion, which could be analogized to traditional sentencing systems not constrained by Apprendi."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+              "evidence_ids": [
+                "ev-f2841bde5fe7-0002-0005"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the amicus submits that reasonable jurists could accept the distinction and draw a different result from Apprendi."
+        }
+      ],
+      "heading": "United States (Amicus Curiae) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0000-0002",
+        "ev-f2841bde5fe7-0000-0003"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0000-0006"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0000-0005"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0000-0007"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0000-0008"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0001-0001"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0001-0002"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0001-0004"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0001-0008"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 34
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0002-0000"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0002-0001"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0002-0003"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0002-0004"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0002-0005"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+      "evidence_ids": [
+        "ev-f2841bde5fe7-0002-0002"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T00:27:18.084551Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "f2841bde5fe76e139787612a7269a63e05369e469d92506564643bb02e617743",
+            "evidence_ids": [
+              "ev-f2841bde5fe7-0000-0002",
+              "ev-f2841bde5fe7-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Souter, the case addresses how the Supreme Court\u2019s Apprendi rule applies to consecutive sentencing, which could affect the constitutional requirements for fact\u2011finding in many criminal cases."
+      }
+    ],
+    "heading": "Why This Case Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-05-1541",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T21:48:03.666375Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6be202812f376528a2c36f12d2d704676486ec390f225f217a9eb36b47d6481f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "6be202812f376528a2c36f12d2d704676486ec390f225f217a9eb36b47d6481f",
+            "evidence_ids": [
+              "ev-6be202812f37-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked: \u201cAnd why did the court point out twice in Williams that section 7426 was not available?\u201d"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "6be202812f376528a2c36f12d2d704676486ec390f225f217a9eb36b47d6481f",
+            "evidence_ids": [
+              "ev-6be202812f37-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Breyer asked: \u201cYou want to say no to that.\u201d"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "6be202812f376528a2c36f12d2d704676486ec390f225f217a9eb36b47d6481f",
+            "evidence_ids": [
+              "ev-6be202812f37-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Scalia asked: \u201cWas, was the more specific statute there enacted after the more general statute?\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "6be202812f376528a2c36f12d2d704676486ec390f225f217a9eb36b47d6481f",
+              "evidence_ids": [
+                "ev-6be202812f37-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, the Defendant, in unequivocal language of section 1346, waives sovereign immunity and permits a refund suit by a third party such as Petitioner."
+        }
+      ],
+      "heading": "EC Term of Years Trust (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "6be202812f376528a2c36f12d2d704676486ec390f225f217a9eb36b47d6481f",
+              "evidence_ids": [
+                "ev-6be202812f37-0001-0000"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "The Government contended that Mrs. Williams had remedies available to her, certainly not a levy, because there was no levy, but the Government was contending she could have sought relief under the Quiet Title Act."
+        }
+      ],
+      "heading": "United States (Government) (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Maynard",
+          "citations": [
+            {
+              "document_hash": "6be202812f376528a2c36f12d2d704676486ec390f225f217a9eb36b47d6481f",
+              "evidence_ids": [
+                "ev-6be202812f37-0001-0004"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Ms. Maynard, when Congress creates a specific remedy for a specific situation that remedy forecloses resort to a more general remedy when that general remedy would frustrate the purposes of the specific remedy."
+        }
+      ],
+      "heading": "Ms. Maynard (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6be202812f376528a2c36f12d2d704676486ec390f225f217a9eb36b47d6481f",
+      "evidence_ids": [
+        "ev-6be202812f37-0000-0000",
+        "ev-6be202812f37-0000-0001",
+        "ev-6be202812f37-0001-0000",
+        "ev-6be202812f37-0001-0001",
+        "ev-6be202812f37-0001-0004",
+        "ev-6be202812f37-0001-0002"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T21:50:51.055331Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

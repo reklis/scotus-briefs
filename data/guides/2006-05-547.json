@@ -1,0 +1,420 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy and Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+            "evidence_ids": [
+              "ev-e3765dd5a716-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+            "evidence_ids": [
+              "ev-e3765dd5a716-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The Court is asked whether a state conviction that would have been punishable under federal law satisfies the definition of a drug\u2011trafficking crime for immigration purposes."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-05-547",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T22:30:56.845821Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+            "evidence_ids": [
+              "ev-e3765dd5a716-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether a state conviction that would have been punishable under the Federal law meets the definition of a drug\u2011trafficking crime."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+            "evidence_ids": [
+              "ev-e3765dd5a716-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens questioned whether a state felony can ever be punishable under a federal statute."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+            "evidence_ids": [
+              "ev-e3765dd5a716-0003-0000",
+              "ev-e3765dd5a716-0003-0001"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the parties conceded that a State offense could constitute illicit trafficking."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+            "evidence_ids": [
+              "ev-e3765dd5a716-0003-0001"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether there is a uniform federal definition of a theft offense."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. Kneedler",
+        "citations": [
+          {
+            "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+            "evidence_ids": [
+              "ev-e3765dd5a716-0001-0008"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          },
+          {
+            "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+            "evidence_ids": [
+              "ev-e3765dd5a716-0001-0007"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Mr. Kneedler, section\u202f1101(a)(43)(B) of the Immigration and Nationality Act incorporates that definition, so a conviction that meets the federal drug\u2011trafficking definition can trigger immigration consequences."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+            "evidence_ids": [
+              "ev-e3765dd5a716-0003-0004"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "An aggravated\u2011felony conviction can bar a non\u2011citizen from becoming a U.S. citizen because it forecloses the ability to establish good moral character."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner Lopez",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Crooks",
+          "citations": [
+            {
+              "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+              "evidence_ids": [
+                "ev-e3765dd5a716-0001-0005"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Mr. Crooks, Toledo\u2011Flores contends that the case is not moot because the sentence remains in effect and can affect future immigration outcomes, citing Campo\u202fSerrano as precedent."
+        },
+        {
+          "attribution": "Mr. Crooks",
+          "citations": [
+            {
+              "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+              "evidence_ids": [
+                "ev-e3765dd5a716-0001-0006"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to Mr. Crooks, he also argues that a conviction under 924(c) can affect the ability to obtain a waiver of inadmissibility, referencing the Hamdi case."
+        },
+        {
+          "attribution": "Mr. Crooks",
+          "citations": [
+            {
+              "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+              "evidence_ids": [
+                "ev-e3765dd5a716-0001-0003"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Crooks, he warns that holding the appeal moot while the sentence is still enforceable would be unfair."
+        }
+      ],
+      "heading": "Petitioner Toledo\u2011Flores",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent Attorney General",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "United States",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+      "evidence_ids": [
+        "ev-e3765dd5a716-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+      "evidence_ids": [
+        "ev-e3765dd5a716-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+      "evidence_ids": [
+        "ev-e3765dd5a716-0001-0006"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+      "evidence_ids": [
+        "ev-e3765dd5a716-0001-0003"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+      "evidence_ids": [
+        "ev-e3765dd5a716-0001-0005"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+      "evidence_ids": [
+        "ev-e3765dd5a716-0001-0007"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+      "evidence_ids": [
+        "ev-e3765dd5a716-0001-0008"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+      "evidence_ids": [
+        "ev-e3765dd5a716-0002-0001"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+      "evidence_ids": [
+        "ev-e3765dd5a716-0003-0000",
+        "ev-e3765dd5a716-0003-0001"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    },
+    {
+      "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+      "evidence_ids": [
+        "ev-e3765dd5a716-0003-0004"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 60
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T22:39:06.340369Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e3765dd5a716713bc161ee2666a85786ef7809d8ce4dbc68a524e2779d3fd43c",
+            "evidence_ids": [
+              "ev-e3765dd5a716-0003-0004"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "Because an aggravated\u2011felony conviction can block a non\u2011citizen from establishing the good\u2011moral\u2011character requirement, the outcome of this case could determine whether the petitioners can ever become U.S. citizens."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mr. Gold",
+        "citations": [
+          {
+            "document_hash": "b5adf815700bbb9289ef247844e0de1151ab0aa657e89fbba7b358b565d3289b",
+            "evidence_ids": [
+              "ev-b5adf815700b-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Mr. Gold, one question raised was whether jury findings could justify imposing a middle term in sentencing."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2006-05-6551",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-21T23:02:03.670337Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b5adf815700bbb9289ef247844e0de1151ab0aa657e89fbba7b358b565d3289b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b5adf815700bbb9289ef247844e0de1151ab0aa657e89fbba7b358b565d3289b",
+            "evidence_ids": [
+              "ev-b5adf815700b-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:01\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "b5adf815700bbb9289ef247844e0de1151ab0aa657e89fbba7b358b565d3289b",
+            "evidence_ids": [
+              "ev-b5adf815700b-0001-0004"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Stevens asked, \u201cIs that not correct?\u201d"
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "b5adf815700bbb9289ef247844e0de1151ab0aa657e89fbba7b358b565d3289b",
+            "evidence_ids": [
+              "ev-b5adf815700b-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Souter asked, \u201cIs Black repealing the rule of court?\u201d"
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "b5adf815700bbb9289ef247844e0de1151ab0aa657e89fbba7b358b565d3289b",
+            "evidence_ids": [
+              "ev-b5adf815700b-0002-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked about the percentage of jury\u2011trial cases that result in bifurcated sentencing proceedings."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "b5adf815700bbb9289ef247844e0de1151ab0aa657e89fbba7b358b565d3289b",
+            "evidence_ids": [
+              "ev-b5adf815700b-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer defined an aggravating factor as an aggravating fact."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. Gold",
+        "citations": [
+          {
+            "document_hash": "b5adf815700bbb9289ef247844e0de1151ab0aa657e89fbba7b358b565d3289b",
+            "evidence_ids": [
+              "ev-b5adf815700b-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Mr. Gold, the case discusses whether the middle term in sentencing can be imposed based on jury findings."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Gold",
+          "citations": [
+            {
+              "document_hash": "b5adf815700bbb9289ef247844e0de1151ab0aa657e89fbba7b358b565d3289b",
+              "evidence_ids": [
+                "ev-b5adf815700b-0001-0002"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. Gold, the petitioner suggests amending section\u202f1170(b) to read \u201cA judge may impose\u201d instead of \u201cshall impose,\u201d allowing judges to impose the middle term based on jury\u2011found facts."
+        }
+      ],
+      "heading": "Petitioner Position (John Cunningham)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Laurence",
+          "citations": [
+            {
+              "document_hash": "b5adf815700bbb9289ef247844e0de1151ab0aa657e89fbba7b358b565d3289b",
+              "evidence_ids": [
+                "ev-b5adf815700b-0002-0005"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to Mr. Laurence, california argues that its sentencing system, which imposes only a reasonableness constraint, does not violate the Constitution."
+        },
+        {
+          "attribution": "Mr. Laurence",
+          "citations": [
+            {
+              "document_hash": "b5adf815700bbb9289ef247844e0de1151ab0aa657e89fbba7b358b565d3289b",
+              "evidence_ids": [
+                "ev-b5adf815700b-0001-0003"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Mr. Laurence, california contends that not every constraint on a trial court\u2019s discretion in selecting a sentencing term triggers the Sixth Amendment right to a jury trial."
+        }
+      ],
+      "heading": "Respondent Position (California)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b5adf815700bbb9289ef247844e0de1151ab0aa657e89fbba7b358b565d3289b",
+      "evidence_ids": [
+        "ev-b5adf815700b-0000-0000",
+        "ev-b5adf815700b-0001-0000",
+        "ev-b5adf815700b-0001-0001",
+        "ev-b5adf815700b-0001-0002",
+        "ev-b5adf815700b-0001-0003",
+        "ev-b5adf815700b-0001-0004",
+        "ev-b5adf815700b-0002-0000",
+        "ev-b5adf815700b-0002-0003",
+        "ev-b5adf815700b-0002-0005"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-21T23:07:02.314210Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
