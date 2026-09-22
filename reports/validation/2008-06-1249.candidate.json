@@ -1,0 +1,358 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Seth P. Waxman",
+        "citations": [
+          {
+            "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+            "evidence_ids": [
+              "ev-84e28f2b128f-0000-0004"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Wyeth's Phenergan injection has been FDA\u2011approved for IV push use."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+            "evidence_ids": [
+              "ev-84e28f2b128f-0001-0001"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Breyer asked why the occurrence of gangrene was not considered new information."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-06-1249",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T15:34:03.824325Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+          "evidence_ids": [
+            "ev-84e28f2b128f-0001-0002"
+          ],
+          "pages": {
+            "end": 20,
+            "start": 20
+          }
+        }
+      ],
+      "definition": "New information means new information about a risk that is greater in severity or frequency.",
+      "term": "new information"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+            "evidence_ids": [
+              "ev-84e28f2b128f-0000-0003"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument was held before the Supreme Court on Monday, November 3, 2008 at 10:06\u202fa.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Seth P. Waxman",
+        "citations": [
+          {
+            "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+            "evidence_ids": [
+              "ev-84e28f2b128f-0000-0004"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Wyeth's drug Phenergan injection was approved by the FDA as safe and effective, including for IV push administration."
+      },
+      {
+        "attribution": "Seth P. Waxman",
+        "citations": [
+          {
+            "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+            "evidence_ids": [
+              "ev-84e28f2b128f-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Seth P. Waxman, the case involves conflict pre\u2011emption under the Supremacy Clause."
+      },
+      {
+        "attribution": "Mr. Frederick",
+        "citations": [
+          {
+            "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+            "evidence_ids": [
+              "ev-84e28f2b128f-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "If a drug label is not adequate for public safety, the drug is considered misbranded."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Seth P. Waxman",
+          "citations": [
+            {
+              "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+              "evidence_ids": [
+                "ev-84e28f2b128f-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Seth P. Waxman, the case concerns conflict pre\u2011emption under the Supremacy Clause."
+        }
+      ],
+      "heading": "Argument by Seth P. Waxman",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "FDA",
+          "citations": [
+            {
+              "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+              "evidence_ids": [
+                "ev-84e28f2b128f-0001-0002"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to FDA, new information means new information about a risk that is greater in severity or frequency."
+        }
+      ],
+      "heading": "Argument by the FDA",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Frederick",
+          "citations": [
+            {
+              "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+              "evidence_ids": [
+                "ev-84e28f2b128f-0002-0000"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Mr. Frederick, the duty is on the manufacturer to make a safe label."
+        }
+      ],
+      "heading": "Argument by Mr. Frederick",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+      "evidence_ids": [
+        "ev-84e28f2b128f-0000-0003"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+      "evidence_ids": [
+        "ev-84e28f2b128f-0000-0000",
+        "ev-84e28f2b128f-0000-0004"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+      "evidence_ids": [
+        "ev-84e28f2b128f-0001-0001"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+      "evidence_ids": [
+        "ev-84e28f2b128f-0001-0002"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+      "evidence_ids": [
+        "ev-84e28f2b128f-0002-0000"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+      "evidence_ids": [
+        "ev-84e28f2b128f-0002-0002"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T15:43:45.519519Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "The claim in the 'Why it matters' section adds unsupported speculation that the case may affect how state law claims against drug manufacturers are adjudicated; this is not backed by the cited evidence, causing the support check to fail.",
+      "The same claim overstates the evidence by asserting an impact on state law claims that is not present in the source, causing the overstatement check to fail."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Seth P. Waxman",
+        "citations": [
+          {
+            "document_hash": "84e28f2b128fdfbafb254b499afc0616a14a1f93ab0e8747fbb145ff90cccfff",
+            "evidence_ids": [
+              "ev-84e28f2b128f-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Seth P. Waxman, the case concerns conflict pre\u2011emption under the Supremacy Clause, which may affect how state law claims against drug manufacturers are adjudicated."
+      }
+    ],
+    "heading": "Why it matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2008-06-1249",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "The claim in the 'Why it matters' section adds unsupported speculation that the case may affect how state law claims against drug manufacturers are adjudicated; this is not backed by the cited evidence, causing the support check to fail.",
+    "The same claim overstates the evidence by asserting an impact on state law claims that is not present in the source, causing the overstatement check to fail."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.91,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.85,
+    "traceability": 0.9
+  }
+}

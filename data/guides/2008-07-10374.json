@@ -1,0 +1,334 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+            "evidence_ids": [
+              "ev-818279ac54c8-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case was argued before the Supreme Court on December 3, 2008."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-10374",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T15:50:46.930312Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+            "evidence_ids": [
+              "ev-818279ac54c8-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Alito asked what the standard is for determining whether a rule is jurisdictional."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+            "evidence_ids": [
+              "ev-818279ac54c8-0001-0005"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the case involved Idaho or Johnson."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+            "evidence_ids": [
+              "ev-818279ac54c8-0001-0009"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about the practical difference."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+            "evidence_ids": [
+              "ev-818279ac54c8-0001-0010"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens posed a hypothetical about a statute limiting damages in railroad cases."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+            "evidence_ids": [
+              "ev-818279ac54c8-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether, consistent with FELA cases, a rule could bar tort claims by railroad employees in state court."
+      },
+      {
+        "attribution": "MS. UNDERWOOD",
+        "citations": [
+          {
+            "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+            "evidence_ids": [
+              "ev-818279ac54c8-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to MS. UNDERWOOD, ms. Underwood suggested that closing the doors of the court to both state and federal cases is different from hearing cases."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+            "evidence_ids": [
+              "ev-818279ac54c8-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Ginsburg referenced Testa and asked about evenhandedness regarding penal actions."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+            "evidence_ids": [
+              "ev-818279ac54c8-0002-0005"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether a discriminatory rule would be invalid."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+            "evidence_ids": [
+              "ev-818279ac54c8-0003-0003"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether there was any substantive change from the original enactment to the amendment."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+            "evidence_ids": [
+              "ev-818279ac54c8-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case was argued before the Supreme Court on December 3, 2008."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Murtagh",
+          "citations": [
+            {
+              "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+              "evidence_ids": [
+                "ev-818279ac54c8-0003-0001"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Mr. Murtagh, congress may provide a removal mechanism to federal court, but the State cannot impose its own policy judgment over congressional decisions regarding federal claims."
+        },
+        {
+          "attribution": "Mr. Murtagh",
+          "citations": [
+            {
+              "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+              "evidence_ids": [
+                "ev-818279ac54c8-0003-0002"
+              ],
+              "pages": {
+                "end": 58,
+                "start": 58
+              }
+            }
+          ],
+          "text": "According to Mr. Murtagh, the petitioner cannot bring his Section\u202f1983 claim in any state court because New York law bars suits against employees and the State is not a person under Supreme Court precedent (Will v. Michigan)."
+        },
+        {
+          "attribution": "Ms. Underwood",
+          "citations": [
+            {
+              "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+              "evidence_ids": [
+                "ev-818279ac54c8-0001-0006"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Ms. Underwood, the Federal Constitution permits state courts to hear federal claims but does not require them to do so, provided the state does not discriminate against federal claims."
+        }
+      ],
+      "heading": "Petitioner (Keith Haywood)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "818279ac54c81c2c6d567fd896a56559aade07109815c41b4ca9a45f21af8fc6",
+      "evidence_ids": [
+        "ev-818279ac54c8-0000-0000"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T15:54:13.309918Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

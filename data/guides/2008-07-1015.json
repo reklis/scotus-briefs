@@ -1,0 +1,167 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "1f8a880c0011895954874e44b5a7878d499331ddc6aaab699baef2a4708b7eec",
+            "evidence_ids": [
+              "ev-1f8a880c0011-0001-0005"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, can he do that or not?"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-1015",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T15:49:39.024342Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1f8a880c0011895954874e44b5a7878d499331ddc6aaab699baef2a4708b7eec"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "1f8a880c0011895954874e44b5a7878d499331ddc6aaab699baef2a4708b7eec",
+            "evidence_ids": [
+              "ev-1f8a880c0011-0001-0005"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, can he do that or not?"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "GENERAL GARRE",
+          "citations": [
+            {
+              "document_hash": "1f8a880c0011895954874e44b5a7878d499331ddc6aaab699baef2a4708b7eec",
+              "evidence_ids": [
+                "ev-1f8a880c0011-0003-0003"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 62
+              }
+            }
+          ],
+          "text": "According to GENERAL GARRE, the Second Circuit decision should be reversed."
+        }
+      ],
+      "heading": "General Garre's Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1f8a880c0011895954874e44b5a7878d499331ddc6aaab699baef2a4708b7eec",
+      "evidence_ids": [
+        "ev-1f8a880c0011-0001-0005"
+      ],
+      "pages": {
+        "end": 35,
+        "start": 35
+      }
+    },
+    {
+      "document_hash": "1f8a880c0011895954874e44b5a7878d499331ddc6aaab699baef2a4708b7eec",
+      "evidence_ids": [
+        "ev-1f8a880c0011-0003-0003"
+      ],
+      "pages": {
+        "end": 62,
+        "start": 62
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T15:50:46.912172Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,582 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "David L. McColgin (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to David L. McColgin (Petitioner), according to David L. McColgin (Petitioner), fBI agents delayed presenting Mr. Corley to a federal magistrate judge in order to obtain his two confessions, raising the issue of whether the delay makes the confessions inadmissible."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Alito, the Court asked whether the language in subsection (c) codifies the McNabb\u2011Mallory rule."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-10441",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T15:54:13.329986Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the language in subsection (c) codifies the McNabb\u2011Mallory rule."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0000-0003"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the McNabb\u2011Mallory rule serves purposes beyond ensuring voluntariness of a statement."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia remarked that the delay was a \u201cvery back\u2011door way\u201d of obtaining confessions."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Souter asked why a special rule for transportation was appropriate."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0001-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the delay itself should be a disincentive affecting voluntariness."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0001-0004"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether punishment for excessive delay should apply only when there has been a confession."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0001-0006"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Souter asked why Congress needed subsection (c) at all."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0001-0008"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Breyer asked why (a) should be interpreted to set aside other provisions and overturn McNabb\u2011Mallory."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the Court is familiar with cases where a confession has been excluded under Rule\u202f403."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0002-0002"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Souter asked why the statute did not say that inadmissibility shall not be found solely because of delay."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "David L. McColgin (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to David L. McColgin (Petitioner), according to David L. McColgin (Petitioner), johnnie Corley (petitioner) challenges the United States (respondent) over the admissibility of two confessions obtained after FBI agents delayed presenting him to a federal magistrate judge."
+      },
+      {
+        "attribution": "David L. McColgin (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to David L. McColgin (Petitioner), according to David L. McColgin (Petitioner), the case turns on the interpretation of 18\u202fU.S.C.\u202f\u00a7\u202f3501(c) and whether it incorporates the McNabb\u2011Mallory rule and the requirement of prompt presentment."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+              "evidence_ids": [
+                "ev-ad4c562a05d7-0002-0004"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to Petitioner, the delay was purposeful, and Congress left the McNabb\u2011Mallory rule in place to address such flagrant conduct."
+        },
+        {
+          "attribution": "David L. McColgin (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+              "evidence_ids": [
+                "ev-ad4c562a05d7-0000-0002"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to David L. McColgin (Petitioner), according to David L. McColgin (Petitioner), the statutory language uses the phrase \u201ctime limitation,\u201d which depends on the McNabb\u2011Mallory rule to create that limitation."
+        },
+        {
+          "attribution": "David L. McColgin (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+              "evidence_ids": [
+                "ev-ad4c562a05d7-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to David L. McColgin (Petitioner), according to David L. McColgin (Petitioner), fBI agents delayed presenting Mr. Corley to obtain his confessions, raising the admissibility issue."
+        }
+      ],
+      "heading": "Petitioner (Johnnie Corley)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+              "evidence_ids": [
+                "ev-ad4c562a05d7-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Government, rule\u202f403, together with Rule\u202f16\u2019s discovery obligations, provides the basis for an exclusionary rule concerning delayed confessions."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+              "evidence_ids": [
+                "ev-ad4c562a05d7-0002-0003"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Government, the statute was written to make clear that McNabb\u2011Mallory shall not operate in the six\u2011hour period after arrest and before presentment."
+        }
+      ],
+      "heading": "Respondent (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0000-0001"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0000-0003"
+      ],
+      "pages": {
+        "end": 14,
+        "start": 14
+      }
+    },
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0001-0001"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0001-0003"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0001-0004"
+      ],
+      "pages": {
+        "end": 29,
+        "start": 29
+      }
+    },
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0001-0006"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0001-0008"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0002-0000",
+        "ev-ad4c562a05d7-0002-0001"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0002-0002",
+        "ev-ad4c562a05d7-0002-0003"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+      "evidence_ids": [
+        "ev-ad4c562a05d7-0002-0004"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 51
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T16:00:42.166569Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "David L. McColgin (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "ad4c562a05d7e3e85d7f349004ca987144b7bdc2996231dc7a0b9c991ce10e6e",
+            "evidence_ids": [
+              "ev-ad4c562a05d7-0002-0000",
+              "ev-ad4c562a05d7-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "How the Court interprets subsection (c) will determine whether confessions obtained after a delay are admissible, affecting defendants\u2019 constitutional rights and the government\u2019s ability to use such statements."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,501 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked: \u201cMr. Jay, is the government running with the fox and chasing with the hounds?\u201d"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked: \u201cBut why shouldn't it be a suit contesting the constitutionality? \u2026 what is the point of going through any kind of administrative process of the refund route?\u201d"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked: \u201cNothing different from what it is now, but just Congress makes clear that a tax and alleged violation of the Export Clause falls within the term \u2018any Internal Revenue tax\u2019?\u201d"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0001-0003"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Scalia asked: \u201cWhy is the Export Clause so, so significant? The only other self\u2011executing constitutional clause that provides for damages automatically that comes to mind is the Takings Clause.\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0001-0005"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked: \u201cPlus you get interest.\u201d"
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0002-0003"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked: \u201cIs the interest the same in amount in either case?\u201d"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked: \u201cBUT \u2014 the use of any Internal Revenue tax, and your whole argument is this isn\u2019t an Internal Revenue tax.\u201d"
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2007-07-308",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T14:58:16.937520Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0000-0002",
+              "ev-81dc6d9f86dc-0001-0003"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, the oral argument featured Justice Scalia questioning the government\u2019s conduct and the significance of the Export Clause."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0000-0003",
+              "ev-81dc6d9f86dc-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg raised questions about whether the suit should contest the constitutionality of the tax versus pursuing the administrative refund route."
+      },
+      {
+        "attribution": "Chief Justice Roberts; Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0001-0005",
+              "ev-81dc6d9f86dc-0002-0003"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts and Justice Kennedy inquired about the interest that would be due under the tax\u2011refund scheme."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (William M. Jay)",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioner (William M. Jay), the United States argues that the case falls under Title\u202f26 tax\u2011refund provisions, asserting that the respondents have already received the full tax refund and interest."
+      },
+      {
+        "attribution": "Petitioner (William M. Jay)",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioner (William M. Jay), the United States further contends that because the respondents cannot proceed under the exclusive tax\u2011refund procedure, they cannot plead constitutional damages instead."
+      },
+      {
+        "attribution": "Respondents (Patricia A. Millett)",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0000-0001"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "According to Respondents (Patricia A. Millett), clintwood Elkhorn Mining Co. argues that the government must assert a plausible basis for tax liability to invoke the tax\u2011refund scheme, and that the government has not done so."
+      },
+      {
+        "attribution": "Ms. Millett",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Ms. Millett, clintwood Elkhorn Mining Co. maintains that any tax is one that the government asserts as valid; it need not be correct, only asserted."
+      },
+      {
+        "attribution": "Ms. Millett",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Clintwood Elkhorn Mining Co. points out that there is no administrative avenue such as tax court for this particular tax."
+      },
+      {
+        "attribution": "Mr. Jay",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Mr. Jay, the United States asserts that the tax on coal mined in the United States is facially constitutional."
+      },
+      {
+        "attribution": "Ms. Millett",
+        "citations": [
+          {
+            "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+            "evidence_ids": [
+              "ev-81dc6d9f86dc-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Ms. Millett, clintwood Elkhorn Mining Co. argues that a claimant need only show an overpayment, not that they went through the administrative scheme."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (William M. Jay)",
+          "citations": [
+            {
+              "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+              "evidence_ids": [
+                "ev-81dc6d9f86dc-0000-0000"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner (William M. Jay), the United States argues that the case is governed by Title\u202f26, and that the respondents have already received the full tax refund and interest."
+        },
+        {
+          "attribution": "Petitioner (William M. Jay)",
+          "citations": [
+            {
+              "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+              "evidence_ids": [
+                "ev-81dc6d9f86dc-0000-0000"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner (William M. Jay), the United States contends that because the respondents cannot proceed under the exclusive tax\u2011refund procedure, they cannot claim constitutional damages."
+        },
+        {
+          "attribution": "Mr. Jay",
+          "citations": [
+            {
+              "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+              "evidence_ids": [
+                "ev-81dc6d9f86dc-0002-0002"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Mr. Jay, the United States asserts that the tax on coal mined in the United States is facially constitutional."
+        }
+      ],
+      "heading": "Petitioner (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents (Patricia A. Millett)",
+          "citations": [
+            {
+              "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+              "evidence_ids": [
+                "ev-81dc6d9f86dc-0000-0001"
+              ],
+              "pages": {
+                "end": 17,
+                "start": 17
+              }
+            }
+          ],
+          "text": "According to Respondents (Patricia A. Millett), respondents argue that the government must assert a plausible basis for tax liability to invoke the tax\u2011refund scheme, and that it has not done so."
+        },
+        {
+          "attribution": "Ms. Millett",
+          "citations": [
+            {
+              "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+              "evidence_ids": [
+                "ev-81dc6d9f86dc-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Ms. Millett, respondents maintain that any tax is one that the government asserts as valid, regardless of correctness."
+        },
+        {
+          "attribution": "Ms. Millett",
+          "citations": [
+            {
+              "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+              "evidence_ids": [
+                "ev-81dc6d9f86dc-0002-0000"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Ms. Millett, respondents argue that a claimant need only show an overpayment, not that they went through the administrative scheme."
+        }
+      ],
+      "heading": "Respondents (Clintwood Elkhorn Mining Co.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "81dc6d9f86dcaba9dd9b669ce69dc6048835d86b735a1608a59af4bd70417d9a",
+      "evidence_ids": [
+        "ev-81dc6d9f86dc-0000-0000",
+        "ev-81dc6d9f86dc-0000-0001",
+        "ev-81dc6d9f86dc-0000-0002",
+        "ev-81dc6d9f86dc-0000-0003",
+        "ev-81dc6d9f86dc-0001-0000",
+        "ev-81dc6d9f86dc-0001-0001",
+        "ev-81dc6d9f86dc-0001-0003",
+        "ev-81dc6d9f86dc-0001-0004",
+        "ev-81dc6d9f86dc-0001-0005",
+        "ev-81dc6d9f86dc-0002-0000",
+        "ev-81dc6d9f86dc-0002-0001",
+        "ev-81dc6d9f86dc-0002-0002",
+        "ev-81dc6d9f86dc-0002-0003"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T15:02:05.178237Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
