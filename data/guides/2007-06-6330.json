@@ -1,0 +1,530 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:06\u202fa.m. before the Supreme Court of the United States."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts announced that the Court would hear argument in case\u202f06\u20116330,\u202fKimbrough\u202fv.\u202fUnited\u202fStates."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether Congress could have mandated the result and the rationale that the Fourth Circuit used here."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Kennedy further asked whether the district court must be able to disregard the commission\u2019s policy in every case that comes before it."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0001-0004"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens questioned whether the case might be controlled by *Neal v. United States*."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Stevens asked about the proportion of crack\u2011related sentences that are imposed at the mandatory minimum."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2007-06-6330",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T11:31:21.322865Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:06\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts announced that the Court would hear argument in case\u202f06\u20116330,\u202fKimbrough\u202fv.\u202fUnited\u202fStates."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether Congress could have mandated the result and rationale used by the Fourth Circuit."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy also questioned whether the district court must be able to disregard the commission\u2019s policy in every case."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0001-0004"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens raised the possibility that the case is controlled by *Neal v. United States*."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Stevens asked about the percentage of crack sentences that are imposed at the mandatory minimum."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0001-0003"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Respondent, the dispute centers on whether a district court can deviate from Congress\u2019s sentencing ratio for crack versus powder cocaine."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+            "evidence_ids": [
+              "ev-c25a73209671-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Government argues that judges must follow the individualized sentencing requirements of 18\u202fU.S.C.\u202f\u00a7\u202f3553(a) in every case."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Dreeben",
+          "citations": [
+            {
+              "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+              "evidence_ids": [
+                "ev-c25a73209671-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "Mr. Dreeben argued that the petitioner\u2019s position is consistent with reading statutes both for what they say and for what they mean."
+        },
+        {
+          "attribution": "Mr. Dreeben",
+          "citations": [
+            {
+              "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+              "evidence_ids": [
+                "ev-c25a73209671-0002-0004"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Mr. Dreeben, mr. Dreeben said he is not aware that Congress has legislated in this area after *Booker*."
+        },
+        {
+          "attribution": "Mr. Dreeben",
+          "citations": [
+            {
+              "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+              "evidence_ids": [
+                "ev-c25a73209671-0002-0006"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Mr. Dreeben, mr. Dreeben described the sentencing scheme as being done in a logically proportional manner."
+        },
+        {
+          "attribution": "Mr. Nachmanoff",
+          "citations": [
+            {
+              "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+              "evidence_ids": [
+                "ev-c25a73209671-0002-0009"
+              ],
+              "pages": {
+                "end": 49,
+                "start": 49
+              }
+            }
+          ],
+          "text": "According to Mr. Nachmanoff, mr. Nachmanoff noted that roughly 70\u202fpercent of crack sentences are imposed at the mandatory minimum or just above it."
+        }
+      ],
+      "heading": "Petitioner (Derrick Kimbrough)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+              "evidence_ids": [
+                "ev-c25a73209671-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "The Government contended that 18\u202fU.S.C.\u202f\u00a7\u202f3553(a) requires individualized sentencing and that judges must follow its mandates and calculate the advisory Guidelines correctly in every case."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+              "evidence_ids": [
+                "ev-c25a73209671-0001-0003"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to Respondent, the United States asked whether a district court can reasonably disagree with Congress concerning the ratio between quantity\u2011based sentences for crack and powder cocaine."
+        }
+      ],
+      "heading": "Respondent (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+      "evidence_ids": [
+        "ev-c25a73209671-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+      "evidence_ids": [
+        "ev-c25a73209671-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+      "evidence_ids": [
+        "ev-c25a73209671-0000-0003"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+      "evidence_ids": [
+        "ev-c25a73209671-0001-0000",
+        "ev-c25a73209671-0001-0001"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+      "evidence_ids": [
+        "ev-c25a73209671-0001-0003",
+        "ev-c25a73209671-0001-0004"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+      "evidence_ids": [
+        "ev-c25a73209671-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+      "evidence_ids": [
+        "ev-c25a73209671-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+      "evidence_ids": [
+        "ev-c25a73209671-0002-0004"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+      "evidence_ids": [
+        "ev-c25a73209671-0002-0006"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "c25a732096714a4fc0fc7db2225f67e7426ab35201261b3d1d971f711b6da5ed",
+      "evidence_ids": [
+        "ev-c25a73209671-0002-0009"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 49
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T11:36:54.247747Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

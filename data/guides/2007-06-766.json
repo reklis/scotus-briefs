@@ -1,0 +1,324 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+            "evidence_ids": [
+              "ev-6b5f3c1d779f-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+            "evidence_ids": [
+              "ev-6b5f3c1d779f-0001-0009"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, does the requirement that delegates obtain a specified number of signatures (such as 500) to appear on the ballot constitute a constitutional violation?"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2007-06-766",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T12:09:47.619365Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+            "evidence_ids": [
+              "ev-6b5f3c1d779f-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the signature requirement (e.g., 2,000 signatures in 30 days) could raise a constitutional issue."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+            "evidence_ids": [
+              "ev-6b5f3c1d779f-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer inquired how delegates would learn about candidates\u2019 qualifications under the statute."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+            "evidence_ids": [
+              "ev-6b5f3c1d779f-0001-0006"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg questioned the extent of party autonomy when state law imposes the delegate selection system."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+            "evidence_ids": [
+              "ev-6b5f3c1d779f-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Stevens posed a hypothetical about a statute that lets county chairmen select delegates, asking if that would be unconstitutional."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+            "evidence_ids": [
+              "ev-6b5f3c1d779f-0002-0005"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Souter, justice Souter sought clarification on whether the burden is the difficulty of assembling a slate that can control the meeting."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+            "evidence_ids": [
+              "ev-6b5f3c1d779f-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+            "evidence_ids": [
+              "ev-6b5f3c1d779f-0001-0009"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, the case examines whether New York's delegate\u2011selection process for judicial elections, which includes signature requirements for ballot access, raises constitutional concerns."
+      },
+      {
+        "attribution": "New York County Democratic Committee; Board of Elections",
+        "citations": [
+          {
+            "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+            "evidence_ids": [
+              "ev-6b5f3c1d779f-0000-0002"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          },
+          {
+            "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+            "evidence_ids": [
+              "ev-6b5f3c1d779f-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The parties argue that the signature thresholds (e.g., 500 signatures) are not an undue burden on candidates or delegates."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "New York State Board of Elections",
+          "citations": [
+            {
+              "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+              "evidence_ids": [
+                "ev-6b5f3c1d779f-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to New York State Board of Elections, the Board argues that New York\u2019s reliance on party primaries for selecting supreme court justice candidates has discouraged qualified candidates and led to costly, potentially corrupt fundraising."
+        },
+        {
+          "attribution": "Board of Elections",
+          "citations": [
+            {
+              "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+              "evidence_ids": [
+                "ev-6b5f3c1d779f-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Board of Elections, the Board contends that party members should be allowed to assemble and run a slate of candidates at the convention."
+        }
+      ],
+      "heading": "New York State Board of Elections",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "New York County Democratic Committee",
+          "citations": [
+            {
+              "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+              "evidence_ids": [
+                "ev-6b5f3c1d779f-0000-0002"
+              ],
+              "pages": {
+                "end": 17,
+                "start": 17
+              }
+            }
+          ],
+          "text": "According to New York County Democratic Committee, the Committee maintains that the 500\u2011signature requirement for delegates is not a barrier to ballot access."
+        }
+      ],
+      "heading": "New York County Democratic Committee",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6b5f3c1d779fe28bddbf408cd1079340a63965bea2abb833dda78f75ec74d204",
+      "evidence_ids": [
+        "ev-6b5f3c1d779f-0000-0000"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T12:13:33.475366Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

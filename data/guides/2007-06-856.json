@@ -1,0 +1,476 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+            "evidence_ids": [
+              "ev-e84af8b76a3f-0002-0003"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Souter, the legal issue is whether a loss to the plan that originates from an individual participant\u2019s account qualifies as a loss to the plan under ERISA section (a)(2)."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+            "evidence_ids": [
+              "ev-e84af8b76a3f-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Amicus United States argues that ERISA allows a participant to sue to recover losses to the plan caused by a fiduciary breach even when the losses are attributable to the participant\u2019s individual account."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2007-06-856",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T12:24:56.804941Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+            "evidence_ids": [
+              "ev-e84af8b76a3f-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Scalia asked for the code numbers of the ERISA sections referenced."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+            "evidence_ids": [
+              "ev-e84af8b76a3f-0001-0004"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the government's position on the (a)(1)(B) argument was that it is available, but (a)(2) is also available."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+            "evidence_ids": [
+              "ev-e84af8b76a3f-0001-0003"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, section (a)(2) refers to 1109 and does not specify who may be sued."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+            "evidence_ids": [
+              "ev-e84af8b76a3f-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Breyer asked why relief is not available under (a)(2)."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+            "evidence_ids": [
+              "ev-e84af8b76a3f-0002-0003"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Souter asked how to determine whether a loss from an individual account suffices as a loss to the plan for pleading purposes."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+            "evidence_ids": [
+              "ev-e84af8b76a3f-0002-0004"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, the case was dismissed on the pleadings."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+            "evidence_ids": [
+              "ev-e84af8b76a3f-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The case concerns the interpretation of ERISA sections 502(a)(2) and 409 regarding restoration of any losses to a plan."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+            "evidence_ids": [
+              "ev-e84af8b76a3f-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Petitioner argues that the phrase \u201cany losses to the plan\u201d includes any diminution in value of defined contribution plan assets, regardless of how many participants are affected."
+      },
+      {
+        "attribution": "Mr. Gies",
+        "citations": [
+          {
+            "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+            "evidence_ids": [
+              "ev-e84af8b76a3f-0002-0002"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Mr. Gies, respondent argues that section (a)(2) does not permit an individual claim."
+      },
+      {
+        "attribution": "Mr. Gies",
+        "citations": [
+          {
+            "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+            "evidence_ids": [
+              "ev-e84af8b76a3f-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Mr. Gies, respondent argues that recovery of assets such as diamonds and any associated profits would be available under section (a)(3)."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+              "evidence_ids": [
+                "ev-e84af8b76a3f-0000-0003"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "Petitioner argues that the phrase \u201cany losses to the plan\u201d includes any diminution in value of defined contribution plan assets, regardless of how many participants are affected."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+              "evidence_ids": [
+                "ev-e84af8b76a3f-0000-0004"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner states that the loss is documented in the complaint filed in this case."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Gies",
+          "citations": [
+            {
+              "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+              "evidence_ids": [
+                "ev-e84af8b76a3f-0002-0002"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Gies, respondent argues that section (a)(2) does not permit an individual claim."
+        },
+        {
+          "attribution": "Mr. Gies",
+          "citations": [
+            {
+              "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+              "evidence_ids": [
+                "ev-e84af8b76a3f-0002-0000"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. Gies, respondent argues that recovery of assets such as diamonds and any associated profits would be available under section (a)(3)."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+      "evidence_ids": [
+        "ev-e84af8b76a3f-0000-0001",
+        "ev-e84af8b76a3f-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+      "evidence_ids": [
+        "ev-e84af8b76a3f-0000-0003"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+      "evidence_ids": [
+        "ev-e84af8b76a3f-0000-0004"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+      "evidence_ids": [
+        "ev-e84af8b76a3f-0001-0001"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+      "evidence_ids": [
+        "ev-e84af8b76a3f-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+      "evidence_ids": [
+        "ev-e84af8b76a3f-0001-0003"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+      "evidence_ids": [
+        "ev-e84af8b76a3f-0001-0004"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+      "evidence_ids": [
+        "ev-e84af8b76a3f-0002-0002"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+      "evidence_ids": [
+        "ev-e84af8b76a3f-0002-0000",
+        "ev-e84af8b76a3f-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+      "evidence_ids": [
+        "ev-e84af8b76a3f-0002-0003"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "e84af8b76a3f99ec010531d8476a3f3114cfeb26f959979e412335019fdd6bdc",
+      "evidence_ids": [
+        "ev-e84af8b76a3f-0002-0004"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 53
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T12:34:53.079457Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

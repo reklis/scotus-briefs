@@ -1,0 +1,286 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "eff1f73fbf70d37f69a699155e1e416cb7820f54c7a7a0e00cefa7bc130e9e77",
+            "evidence_ids": [
+              "ev-eff1f73fbf70-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "eff1f73fbf70d37f69a699155e1e416cb7820f54c7a7a0e00cefa7bc130e9e77",
+            "evidence_ids": [
+              "ev-eff1f73fbf70-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Watson received a firearm as payment for drugs, and the Court must decide whether that receipt satisfies the term \u201cuse\u201d in the firearm\u2011use statute."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2007-06-571",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T11:23:37.322805Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "eff1f73fbf70d37f69a699155e1e416cb7820f54c7a7a0e00cefa7bc130e9e77"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument \u2013 Questions from the Justices",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "eff1f73fbf70d37f69a699155e1e416cb7820f54c7a7a0e00cefa7bc130e9e77",
+            "evidence_ids": [
+              "ev-eff1f73fbf70-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "eff1f73fbf70d37f69a699155e1e416cb7820f54c7a7a0e00cefa7bc130e9e77",
+            "evidence_ids": [
+              "ev-eff1f73fbf70-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The case centers on whether that receipt counts as \u201cuse\u201d of the firearm under 18\u202fU.S.C.\u202f\u00a7\u202f924(c)(1)."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "eff1f73fbf70d37f69a699155e1e416cb7820f54c7a7a0e00cefa7bc130e9e77",
+              "evidence_ids": [
+                "ev-eff1f73fbf70-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, receipt of a firearm is not \u201cuse\u201d because the plain meaning of \u201cuse\u201d does not include merely receiving an item."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "eff1f73fbf70d37f69a699155e1e416cb7820f54c7a7a0e00cefa7bc130e9e77",
+              "evidence_ids": [
+                "ev-eff1f73fbf70-0000-0004"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to Petitioner, the buyer\u2019s conduct presents a different type of risk than the seller\u2019s, suggesting a distinction in culpability."
+        },
+        {
+          "attribution": "MR. KOCH",
+          "citations": [
+            {
+              "document_hash": "eff1f73fbf70d37f69a699155e1e416cb7820f54c7a7a0e00cefa7bc130e9e77",
+              "evidence_ids": [
+                "ev-eff1f73fbf70-0001-0003"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to MR. KOCH, citing Bailey, the petitioner argues that merely receiving and holding the gun does not constitute \u201cuse.\u201d"
+        }
+      ],
+      "heading": "Petitioner\u2019s Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "MS. MAYNARD",
+          "citations": [
+            {
+              "document_hash": "eff1f73fbf70d37f69a699155e1e416cb7820f54c7a7a0e00cefa7bc130e9e77",
+              "evidence_ids": [
+                "ev-eff1f73fbf70-0001-0001"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to MS. MAYNARD, receiving the firearm as payment is a \u201cuse\u201d of the firearm in furtherance of a drug\u2011trafficking crime."
+        },
+        {
+          "attribution": "Ms. Maynard",
+          "citations": [
+            {
+              "document_hash": "eff1f73fbf70d37f69a699155e1e416cb7820f54c7a7a0e00cefa7bc130e9e77",
+              "evidence_ids": [
+                "ev-eff1f73fbf70-0002-0002"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Ms. Maynard, the firearm was used as currency, which the Court has previously held violates the statute."
+        },
+        {
+          "attribution": "Ms. Maynard",
+          "citations": [
+            {
+              "document_hash": "eff1f73fbf70d37f69a699155e1e416cb7820f54c7a7a0e00cefa7bc130e9e77",
+              "evidence_ids": [
+                "ev-eff1f73fbf70-0002-0006"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Ms. Maynard, if the Court rules against the government, the conduct could be charged under possession and furtherance statutes."
+        }
+      ],
+      "heading": "Respondent\u2019s Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "eff1f73fbf70d37f69a699155e1e416cb7820f54c7a7a0e00cefa7bc130e9e77",
+      "evidence_ids": [
+        "ev-eff1f73fbf70-0000-0000",
+        "ev-eff1f73fbf70-0000-0001",
+        "ev-eff1f73fbf70-0000-0003",
+        "ev-eff1f73fbf70-0000-0004",
+        "ev-eff1f73fbf70-0001-0000",
+        "ev-eff1f73fbf70-0001-0002",
+        "ev-eff1f73fbf70-0001-0003",
+        "ev-eff1f73fbf70-0001-0001",
+        "ev-eff1f73fbf70-0001-0004",
+        "ev-eff1f73fbf70-0001-0005",
+        "ev-eff1f73fbf70-0002-0000",
+        "ev-eff1f73fbf70-0002-0001",
+        "ev-eff1f73fbf70-0002-0002",
+        "ev-eff1f73fbf70-0002-0003",
+        "ev-eff1f73fbf70-0002-0004",
+        "ev-eff1f73fbf70-0002-0005",
+        "ev-eff1f73fbf70-0002-0006",
+        "ev-eff1f73fbf70-0002-0008"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T11:31:21.301258Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "background_and_question.claims[0] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "background_and_question.claims[0] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

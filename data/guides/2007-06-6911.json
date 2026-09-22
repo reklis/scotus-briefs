@@ -1,0 +1,391 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg; Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+            "evidence_ids": [
+              "ev-2e9c42eb6cfd-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+            "evidence_ids": [
+              "ev-2e9c42eb6cfd-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The central question is whether a conviction in a state that never removes civil rights (e.g., Vermont) should be treated the same as one where rights were removed and later restored for purposes of the firearms ban."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2007-06-6911",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T11:52:49.740950Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+            "evidence_ids": [
+              "ev-2e9c42eb6cfd-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether a Vermont statute that never removes civil rights would equate a first\u2011degree murderer to someone whose rights were removed and later restored."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+            "evidence_ids": [
+              "ev-2e9c42eb6cfd-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Scalia asked how civil rights that have been taken away are typically restored."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+            "evidence_ids": [
+              "ev-2e9c42eb6cfd-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked if the petitioner\u2019s argument would effectively weed out certain misdemeanor provisions when civil rights were never taken away."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Richard A. Coad",
+        "citations": [
+          {
+            "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+            "evidence_ids": [
+              "ev-2e9c42eb6cfd-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Richard A. Coad, the case concerns how the federal firearms ban determines which prior convictions count as felonies, with an exemption clause that considers whether a state indicates that a conviction\u2019s civil\u2011rights effects have been removed."
+      },
+      {
+        "attribution": "Richard A. Coad",
+        "citations": [
+          {
+            "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+            "evidence_ids": [
+              "ev-2e9c42eb6cfd-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Richard A. Coad, some states, such as Vermont and Maine, do not strip civil rights after convictions, affecting the application of the exemption clause."
+      },
+      {
+        "attribution": "Richard A. Coad",
+        "citations": [
+          {
+            "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+            "evidence_ids": [
+              "ev-2e9c42eb6cfd-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Richard A. Coad, restoration of civil rights varies by state; many states automatically restore rights without additional conditions."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Richard A. Coad",
+          "citations": [
+            {
+              "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+              "evidence_ids": [
+                "ev-2e9c42eb6cfd-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Richard A. Coad, the petitioner argues that the exemption clause should apply to states where civil rights are never removed, thereby limiting the reach of the firearms ban."
+        },
+        {
+          "attribution": "Richard A. Coad",
+          "citations": [
+            {
+              "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+              "evidence_ids": [
+                "ev-2e9c42eb6cfd-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Richard A. Coad, the petitioner points to states such as Vermont and Maine, where civil rights are not taken away, as examples supporting the exemption."
+        },
+        {
+          "attribution": "Richard A. Coad",
+          "citations": [
+            {
+              "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+              "evidence_ids": [
+                "ev-2e9c42eb6cfd-0000-0004"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Richard A. Coad, the petitioner notes that many states automatically restore civil rights without further conditions, reinforcing the argument that the exemption should apply broadly."
+        },
+        {
+          "attribution": "Richard A. Coad",
+          "citations": [
+            {
+              "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+              "evidence_ids": [
+                "ev-2e9c42eb6cfd-0000-0006"
+              ],
+              "pages": {
+                "end": 15,
+                "start": 15
+              }
+            }
+          ],
+          "text": "According to Richard A. Coad, the petitioner argues that the government\u2019s narrowing of \u201cproblem states\u201d ignores the historical scope of the Armed Career Criminal Act, which looks back to state laws from the 1960s\u20111980s."
+        },
+        {
+          "attribution": "Mr. Joseffer",
+          "citations": [
+            {
+              "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+              "evidence_ids": [
+                "ev-2e9c42eb6cfd-0001-0002"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Mr. Joseffer, the petitioner emphasizes that restoring a right does not mean leaving it untouched and that the statute is not absurd."
+        }
+      ],
+      "heading": "Logan (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "United States (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+      "evidence_ids": [
+        "ev-2e9c42eb6cfd-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+      "evidence_ids": [
+        "ev-2e9c42eb6cfd-0000-0001",
+        "ev-2e9c42eb6cfd-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+      "evidence_ids": [
+        "ev-2e9c42eb6cfd-0000-0003",
+        "ev-2e9c42eb6cfd-0000-0004"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+      "evidence_ids": [
+        "ev-2e9c42eb6cfd-0000-0005"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+      "evidence_ids": [
+        "ev-2e9c42eb6cfd-0000-0006"
+      ],
+      "pages": {
+        "end": 15,
+        "start": 15
+      }
+    },
+    {
+      "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+      "evidence_ids": [
+        "ev-2e9c42eb6cfd-0001-0004"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+      "evidence_ids": [
+        "ev-2e9c42eb6cfd-0001-0000"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "2e9c42eb6cfd922568f786a3e13fce2a1d560c93ef0723da8e9006855e5fc8f7",
+      "evidence_ids": [
+        "ev-2e9c42eb6cfd-0001-0002"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T12:00:28.866406Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2007-06-9130",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T12:34:53.099843Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+            "evidence_ids": [
+              "ev-192c0093cd7c-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether \u201cother property\u201d includes any type of property."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+            "evidence_ids": [
+              "ev-192c0093cd7c-0000-0002"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia inquired about a later statute that makes an exception to the exception."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+            "evidence_ids": [
+              "ev-192c0093cd7c-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether there had ever been a debate in earlier stages of the litigation as to whether this was a detention."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+            "evidence_ids": [
+              "ev-192c0093cd7c-0001-0004"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Souter, justice Souter questioned whether Congress intended to cover all law officers and whether mentioning customs and excise was merely to clarify inclusion."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+            "evidence_ids": [
+              "ev-192c0093cd7c-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about the frequency with which other law\u2011enforcement officers assist customs and revenue agents."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+            "evidence_ids": [
+              "ev-192c0093cd7c-0002-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Souter warned against isolating the phrase \u201cany officer of customs or excise\u201d from the statute as a whole."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+            "evidence_ids": [
+              "ev-192c0093cd7c-0003-0000"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the parties would have In Forma Pauperis (IFP) status."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+            "evidence_ids": [
+              "ev-192c0093cd7c-0003-0004"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts thanked counsel and noted that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+              "evidence_ids": [
+                "ev-192c0093cd7c-0000-0005"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "The petitioner argued that the phrase \u201cother law enforcement officer\u201d should be read broadly to include any loose tax or customs function."
+        },
+        {
+          "attribution": "Mr. Shanmugam",
+          "citations": [
+            {
+              "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+              "evidence_ids": [
+                "ev-192c0093cd7c-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Shanmugam, counsel for the petitioner contended that an officer acting in a customs or tax capacity is actually acting in a revenue\u2011collecting capacity, and that under the petitioner\u2019s construction the statutory phrase \u201cany officer of customs or excise\u201d should not be limited to a revenue\u2011collecting function."
+        }
+      ],
+      "heading": "Petitioner (Ali)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Andre",
+          "citations": [
+            {
+              "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+              "evidence_ids": [
+                "ev-192c0093cd7c-0002-0002"
+              ],
+              "pages": {
+                "end": 52,
+                "start": 52
+              }
+            }
+          ],
+          "text": "According to Mr. Andre, government counsel argued that the statutory language is clear and that the phrase \u201cany other\u201d followed by \u201cany worker engaged in interstate or foreign commerce\u201d has a plain meaning in context."
+        },
+        {
+          "attribution": "Mr. Andre",
+          "citations": [
+            {
+              "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+              "evidence_ids": [
+                "ev-192c0093cd7c-0003-0001"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Mr. Andre, counsel noted that even if a prisoner obtains In Forma Pauperis (IFP) status, the filing fee must still be paid, albeit in installments, and that the plaintiff must consider the cost\u2011benefit of suing."
+        },
+        {
+          "attribution": "Mr. Andre",
+          "citations": [
+            {
+              "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+              "evidence_ids": [
+                "ev-192c0093cd7c-0003-0002"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Mr. Andre, counsel further explained that the amount at stake ($177) may not justify litigation, especially when filing fees were lower in earlier years."
+        }
+      ],
+      "heading": "Respondent (Federal Bureau of Prisons)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "192c0093cd7c4cbd877b6d57a0128aed093b72b6ecb888d824f7f3051b327818",
+      "evidence_ids": [
+        "ev-192c0093cd7c-0000-0001",
+        "ev-192c0093cd7c-0000-0002",
+        "ev-192c0093cd7c-0000-0005",
+        "ev-192c0093cd7c-0001-0000",
+        "ev-192c0093cd7c-0001-0004",
+        "ev-192c0093cd7c-0002-0000",
+        "ev-192c0093cd7c-0002-0001",
+        "ev-192c0093cd7c-0002-0002",
+        "ev-192c0093cd7c-0002-0003",
+        "ev-192c0093cd7c-0003-0000",
+        "ev-192c0093cd7c-0003-0001",
+        "ev-192c0093cd7c-0003-0002",
+        "ev-192c0093cd7c-0003-0004"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T12:38:47.357550Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
