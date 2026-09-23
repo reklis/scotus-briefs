@@ -1,0 +1,342 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Solicitor General Elena Kagan",
+        "citations": [
+          {
+            "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+            "evidence_ids": [
+              "ev-8073d5c66b75-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Solicitor General Elena Kagan, Congress enacted Section\u202f4248 under Article\u202fI authority as a limited federal civil\u2011commitment statute."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+            "evidence_ids": [
+              "ev-8073d5c66b75-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justices asked whether the statutory scheme permits a one\u2011year federal commitment before the State assumes custody."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+            "evidence_ids": [
+              "ev-8073d5c66b75-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justices questioned what constitutional power allows the federal government to ensure sexually dangerous individuals are not released."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-1224",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T07:39:37.787617Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+            "evidence_ids": [
+              "ev-8073d5c66b75-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the statutory scheme allows a one\u2011year federal commitment before the State takes over."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+            "evidence_ids": [
+              "ev-8073d5c66b75-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned what constitutional power permits the federal government to ensure sexually dangerous individuals are not released."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+            "evidence_ids": [
+              "ev-8073d5c66b75-0001-0003"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked what power the federal government is exercising when it commits someone found not guilty by reason of insanity."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+            "evidence_ids": [
+              "ev-8073d5c66b75-0002-0003"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor raised the issue that a prisoner might be released before a cure for the alleged mental illness is found, limiting supervised release."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Solicitor General Elena Kagan",
+        "citations": [
+          {
+            "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+            "evidence_ids": [
+              "ev-8073d5c66b75-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Solicitor General Elena Kagan, section\u202f4248 is a limited federal civil\u2011commitment statute."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": "Section\u202f4248 is a limited federal civil\u2011commitment statute.",
+    "summary_citations": [
+      {
+        "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+        "evidence_ids": [
+          "ev-8073d5c66b75-0000-0001"
+        ],
+        "pages": {
+          "end": 3,
+          "start": 3
+        }
+      }
+    ]
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Solicitor General Elena Kagan",
+          "citations": [
+            {
+              "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+              "evidence_ids": [
+                "ev-8073d5c66b75-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            },
+            {
+              "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+              "evidence_ids": [
+                "ev-8073d5c66b75-0000-0005"
+              ],
+              "pages": {
+                "end": 10,
+                "start": 10
+              }
+            },
+            {
+              "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+              "evidence_ids": [
+                "ev-8073d5c66b75-0000-0007"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "According to Solicitor General Elena Kagan, the statute is a proper exercise of Congress\u2019s Article\u202fI power and fills a transition gap to prevent sexually dangerous, mentally ill individuals from falling through the cracks between federal and state custody."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "G. Alan DuBois",
+          "citations": [
+            {
+              "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+              "evidence_ids": [
+                "ev-8073d5c66b75-0001-0001"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            },
+            {
+              "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+              "evidence_ids": [
+                "ev-8073d5c66b75-0001-0004"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            },
+            {
+              "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+              "evidence_ids": [
+                "ev-8073d5c66b75-0001-0002"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "According to G. Alan DuBois, the federal government lacks the constitutional authority under the Necessary and Proper Clause to detain individuals beyond their criminal sentence; public health and mental health are traditionally state functions."
+        }
+      ],
+      "heading": "Graydon Earl Comstock Jr. (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "8073d5c66b75b4a7c0d3748910c862bbba06db37b9dd1e7674446ef60ce78d7b",
+      "evidence_ids": [
+        "ev-8073d5c66b75-0000-0001",
+        "ev-8073d5c66b75-0000-0002",
+        "ev-8073d5c66b75-0000-0004",
+        "ev-8073d5c66b75-0000-0005",
+        "ev-8073d5c66b75-0000-0007",
+        "ev-8073d5c66b75-0001-0001",
+        "ev-8073d5c66b75-0001-0002",
+        "ev-8073d5c66b75-0001-0004",
+        "ev-8073d5c66b75-0001-0000",
+        "ev-8073d5c66b75-0001-0003",
+        "ev-8073d5c66b75-0002-0000",
+        "ev-8073d5c66b75-0002-0001",
+        "ev-8073d5c66b75-0002-0002",
+        "ev-8073d5c66b75-0002-0003"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T07:47:14.019327Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

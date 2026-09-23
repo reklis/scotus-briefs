@@ -1,0 +1,279 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "41725085540a9204a5c18ed0005b81ee0a4d4272dcd5b94d6f6d08a9d3b7eba7",
+            "evidence_ids": [
+              "ev-41725085540a-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether there are errors that are so basic that they would call for an automatic new trial."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-1341",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T08:02:05.288475Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "41725085540a9204a5c18ed0005b81ee0a4d4272dcd5b94d6f6d08a9d3b7eba7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "41725085540a9204a5c18ed0005b81ee0a4d4272dcd5b94d6f6d08a9d3b7eba7",
+            "evidence_ids": [
+              "ev-41725085540a-0000-0004"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:08 a.m."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "41725085540a9204a5c18ed0005b81ee0a4d4272dcd5b94d6f6d08a9d3b7eba7",
+            "evidence_ids": [
+              "ev-41725085540a-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether there are errors that are so basic that they would call for an automatic new trial."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "41725085540a9204a5c18ed0005b81ee0a4d4272dcd5b94d6f6d08a9d3b7eba7",
+            "evidence_ids": [
+              "ev-41725085540a-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Alito asked about the prejudice prongs of the Olano test, questioning whether both prong three and prong four look to prejudice."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "41725085540a9204a5c18ed0005b81ee0a4d4272dcd5b94d6f6d08a9d3b7eba7",
+            "evidence_ids": [
+              "ev-41725085540a-0001-0002"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Ginsburg later asked if the respondent's position is that plain error does not apply in this area, but is simply error because it involved evidence predating enactment."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "41725085540a9204a5c18ed0005b81ee0a4d4272dcd5b94d6f6d08a9d3b7eba7",
+            "evidence_ids": [
+              "ev-41725085540a-0000-0004"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "United States v. Glenn Marcus was presented for oral argument before the Supreme Court of the United States."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "41725085540a9204a5c18ed0005b81ee0a4d4272dcd5b94d6f6d08a9d3b7eba7",
+              "evidence_ids": [
+                "ev-41725085540a-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The United States argues that the Court of Appeals erred in holding that reversal of the respondent's conviction was appropriate on plain error review if there was any possibility, however unlikely, that the jury's verdict was based on conduct predating the statute."
+        },
+        {
+          "attribution": "MR. FAHRINGER",
+          "citations": [
+            {
+              "document_hash": "41725085540a9204a5c18ed0005b81ee0a4d4272dcd5b94d6f6d08a9d3b7eba7",
+              "evidence_ids": [
+                "ev-41725085540a-0001-0005"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            },
+            {
+              "document_hash": "41725085540a9204a5c18ed0005b81ee0a4d4272dcd5b94d6f6d08a9d3b7eba7",
+              "evidence_ids": [
+                "ev-41725085540a-0001-0003"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "The United States, through counsel Mr. Fahringer, contends that no person should be tried for conduct that did not violate a law, citing the Marks and Harris cases on the ex post facto concept."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Glenn Marcus",
+          "citations": [
+            {
+              "document_hash": "41725085540a9204a5c18ed0005b81ee0a4d4272dcd5b94d6f6d08a9d3b7eba7",
+              "evidence_ids": [
+                "ev-41725085540a-0000-0001"
+              ],
+              "pages": {
+                "end": 15,
+                "start": 15
+              }
+            }
+          ],
+          "text": "According to Glenn Marcus, glenn Marcus asserts that there are errors so basic that they require automatic reversal, specifically the prosecution of a person for conduct over two years that violated no law."
+        }
+      ],
+      "heading": "Glenn Marcus (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "41725085540a9204a5c18ed0005b81ee0a4d4272dcd5b94d6f6d08a9d3b7eba7",
+      "evidence_ids": [
+        "ev-41725085540a-0000-0004",
+        "ev-41725085540a-0000-0000",
+        "ev-41725085540a-0000-0002",
+        "ev-41725085540a-0000-0003",
+        "ev-41725085540a-0000-0001",
+        "ev-41725085540a-0001-0005",
+        "ev-41725085540a-0001-0003",
+        "ev-41725085540a-0001-0002"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T08:05:37.375399Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

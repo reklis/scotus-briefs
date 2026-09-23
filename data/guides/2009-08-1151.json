@@ -1,0 +1,415 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0000-0006"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          },
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The case centers on whether Florida\u2019s beach\u2011renourishment program, which adds sand to the shoreline, constitutes a taking that requires compensation under the Fifth Amendment."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-1151",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T06:49:57.590785Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the petitioner\u2019s basic position was that the Florida legislation violated the Takings Clause and why the focus shifted from the legislature to the judiciary."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether the right of contact with the water could be eliminated by an avulsion."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether a private party could be barred from placing a hot\u2011dog stand on newly created land."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0000-0009"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked a question about Florida property valuation."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether a person would still be considered a littoral owner after the state adds sand."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito posed a hypothetical about a city creating a large beach in front of privately owned homes for spring\u2011break tourists."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0003-0000"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether there is a generally understood common\u2011law littoral right to contact the water."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0003-0001"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts wondered whether adding an amusement park would be permissible under the petitioner\u2019s theory."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0000-0006"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The petitioner says the Florida legislature may redefine what counts as property, but if that definition results in a taking, the state must pay just compensation under the Takings Clause."
+      },
+      {
+        "attribution": "MR. SAFRIET",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to MR. SAFRIET, the petitioner argues that the beach is actually gaining sand (accreting) rather than eroding, and there is about 200 feet of dry beach that is growing over time."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0003-0003"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "The petitioner claims that owners have a right, under Florida common law and their deeds, to own land up to the mean high\u2011water line."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+            "evidence_ids": [
+              "ev-9c5b75ef7ee8-0003-0004"
+            ],
+            "pages": {
+              "end": 63,
+              "start": 63
+            }
+          }
+        ],
+        "text": "According to Petitioner, the petitioner invokes the doctrine of reclamation, which allows a landowner to replace sand lost to the sea in order to re\u2011establish the mean high\u2011water line."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+              "evidence_ids": [
+                "ev-9c5b75ef7ee8-0000-0006"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "The petitioner argues that the legislature\u2019s redefinition of property must be accompanied by just compensation when it results in a taking."
+        },
+        {
+          "attribution": "MR. SAFRIET",
+          "citations": [
+            {
+              "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+              "evidence_ids": [
+                "ev-9c5b75ef7ee8-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to MR. SAFRIET, the petitioner maintains that the beach is accreting, providing additional dry land rather than eroding existing property."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+              "evidence_ids": [
+                "ev-9c5b75ef7ee8-0003-0003"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 62
+              }
+            }
+          ],
+          "text": "The petitioner claims owners have rights to the mean high\u2011water line under Florida common law and their deeds."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+              "evidence_ids": [
+                "ev-9c5b75ef7ee8-0003-0004"
+              ],
+              "pages": {
+                "end": 63,
+                "start": 63
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petitioner invokes the doctrine of reclamation, allowing landowners to replace sand lost to the sea to restore the mean high\u2011water line."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9c5b75ef7ee888e72ddce64dfd4283758034c0194a481452b905e581fd921c08",
+      "evidence_ids": [
+        "ev-9c5b75ef7ee8-0000-0000",
+        "ev-9c5b75ef7ee8-0000-0002",
+        "ev-9c5b75ef7ee8-0000-0003",
+        "ev-9c5b75ef7ee8-0000-0005",
+        "ev-9c5b75ef7ee8-0000-0006",
+        "ev-9c5b75ef7ee8-0000-0009",
+        "ev-9c5b75ef7ee8-0001-0000",
+        "ev-9c5b75ef7ee8-0001-0001",
+        "ev-9c5b75ef7ee8-0001-0003",
+        "ev-9c5b75ef7ee8-0002-0000",
+        "ev-9c5b75ef7ee8-0002-0001",
+        "ev-9c5b75ef7ee8-0002-0002",
+        "ev-9c5b75ef7ee8-0003-0000",
+        "ev-9c5b75ef7ee8-0003-0001",
+        "ev-9c5b75ef7ee8-0003-0003",
+        "ev-9c5b75ef7ee8-0003-0004",
+        "ev-9c5b75ef7ee8-0003-0007"
+      ],
+      "pages": {
+        "end": 67,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T06:57:28.119702Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

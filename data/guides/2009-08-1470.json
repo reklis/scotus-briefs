@@ -1,0 +1,431 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+            "evidence_ids": [
+              "ev-a160f9b9dada-0003-0000",
+              "ev-a160f9b9dada-0003-0001"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, the central question is whether Thompkins\u2019 silence for more than two hours after receiving Miranda warnings constitutes an unambiguous invocation of his right to remain silent, thereby requiring police to cease questioning."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-1470",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T08:50:09.000921Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+            "evidence_ids": [
+              "ev-a160f9b9dada-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether Thompkins ever waived his rights, noting that he did not make an explicit waiver."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+            "evidence_ids": [
+              "ev-a160f9b9dada-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how the limited responses could imply a waiver."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+            "evidence_ids": [
+              "ev-a160f9b9dada-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether a two\u2011and\u2011a\u2011quarter\u2011hour interrogation was excessively long."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+            "evidence_ids": [
+              "ev-a160f9b9dada-0002-0001"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the same argument would hold if the interrogation were compressed to 45 minutes."
+      },
+      {
+        "attribution": "Justices Sotomayor and Scalia",
+        "citations": [
+          {
+            "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+            "evidence_ids": [
+              "ev-a160f9b9dada-0002-0002",
+              "ev-a160f9b9dada-0002-0005"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justices Sotomayor and Scalia discussed when police must stop questioning after a suspect remains silent following Miranda warnings."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+            "evidence_ids": [
+              "ev-a160f9b9dada-0002-0004"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Breyer asked when, after two hours and fifteen minutes of answering, Thompkins actually waived his Miranda rights."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+            "evidence_ids": [
+              "ev-a160f9b9dada-0003-0000",
+              "ev-a160f9b9dada-0003-0001"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "Justice Stevens referenced the respondent\u2019s brief, asking whether Thompkins ever indicated a desire to remain silent during the two\u2011hour interrogation."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justices Ginsburg and Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+            "evidence_ids": [
+              "ev-a160f9b9dada-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+            "evidence_ids": [
+              "ev-a160f9b9dada-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Supreme Court is hearing arguments about whether the failure to explicitly invoke Miranda rights after an extended interrogation period amounts to a waiver."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "MR. RESTUCCIA",
+          "citations": [
+            {
+              "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+              "evidence_ids": [
+                "ev-a160f9b9dada-0003-0002"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 60
+              }
+            }
+          ],
+          "text": "According to MR. RESTUCCIA, the petitioner argues that an invocation of the right to remain silent must be unambiguous; mere silence, even over an extended period, does not automatically waive Miranda rights."
+        },
+        {
+          "attribution": "MR. RESTUCCIA",
+          "citations": [
+            {
+              "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+              "evidence_ids": [
+                "ev-a160f9b9dada-0003-0002"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 60
+              }
+            }
+          ],
+          "text": "According to MR. RESTUCCIA, the petitioner emphasizes that the burden is on the suspect to make an affirmative, clear assertion to stop questioning."
+        }
+      ],
+      "heading": "Petitioner (Mary Berghuis, Warden)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Van Chester Thompkins)",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0000-0003"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0000-0004"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0000-0001"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0001-0000"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0001-0003"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0002-0002",
+        "ev-a160f9b9dada-0002-0005"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0002-0001"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 51
+      }
+    },
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0002-0004"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    },
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0003-0000",
+        "ev-a160f9b9dada-0003-0001"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 59
+      }
+    },
+    {
+      "document_hash": "a160f9b9dada48e601a574df9d00f904174bfc94375d39d6d805511332175f3c",
+      "evidence_ids": [
+        "ev-a160f9b9dada-0003-0002",
+        "ev-a160f9b9dada-0003-0003",
+        "ev-a160f9b9dada-0003-0004",
+        "ev-a160f9b9dada-0003-0005"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 60
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T09:00:05.830180Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

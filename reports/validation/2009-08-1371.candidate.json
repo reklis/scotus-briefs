@@ -1,0 +1,426 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0003-0003"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the Court should decide the constitutionality of a pure all\u2011comers policy."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0002-0013"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy questioned whether the policy had been applied evenly to all student groups."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-1371",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T08:05:37.392780Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the all\u2011comers policy is broader than the nondiscrimination policy, so that compliance with the former automatically satisfies the latter."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned whether the policy would require schools to recognize groups that discriminate on the basis of race, gender, or disability."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0002-0005"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Scalia asked, \u201cTeach Bible classes? Right?\u201d"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0002-0006"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          },
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0002-0007"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "Justice Breyer asked, \u201cWhat\u2019s supposed to happen?\u201d and later, \u201cYes, but what is your opinion?\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0003-0000"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether California law requires religious groups to admit people who do not share their beliefs."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0002-0009"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the organization\u2019s criteria for membership could be limited to interest or knowledge rather than belief."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The case is a dispute between the Christian Legal Society Chapter of the University of California Hastings (petitioner) and Leo P. Martinez (respondent) over the university\u2019s \u201call\u2011comers\u201d policy for registered student organizations."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The petitioner argues that the all\u2011comers policy requires any student organization, including a Christian Bible study group, to be open to all students regardless of belief, and that denying such access would violate the university\u2019s nondiscrimination obligations."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Garre",
+          "citations": [
+            {
+              "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+              "evidence_ids": [
+                "ev-65651932be0a-0001-0002"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            },
+            {
+              "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+              "evidence_ids": [
+                "ev-65651932be0a-0002-0017"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "The all\u2011comers policy ensures that all students enjoy equal access to school\u2011subsidized and school\u2011recognized activities."
+        },
+        {
+          "attribution": "Mr. Garre",
+          "citations": [
+            {
+              "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+              "evidence_ids": [
+                "ev-65651932be0a-0002-0017"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to Mr. Garre, the policy avoids line\u2011drawing problems and strife in small educational communities."
+        },
+        {
+          "attribution": "Mr. McCONNELL",
+          "citations": [
+            {
+              "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+              "evidence_ids": [
+                "ev-65651932be0a-0001-0000"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Mr. McCONNELL, mr. McCONNELL stated that the university has denied CLS the right to meet on campus."
+        },
+        {
+          "attribution": "Mr. Garre",
+          "citations": [
+            {
+              "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+              "evidence_ids": [
+                "ev-65651932be0a-0002-0019"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "Mr. Garre argued that the policy is a long\u2011standing university practice supported by substantial history and sworn testimony."
+        }
+      ],
+      "heading": "Petitioner (Christian Legal Society Chapter of UC Hastings)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Leo P. Martinez)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+      "evidence_ids": [
+        "ev-65651932be0a-0000-0001"
+      ],
+      "pages": {
+        "end": 63,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T08:17:29.825299Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Attribution check failed: the overview claim about the dispute is attributed to Chief Justice Roberts, but the supporting evidence does not contain a statement from Chief Justice Roberts; the attribution should reflect the actual source (e.g., the petitioner\u2019s argument)."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "American Council of Education",
+        "citations": [
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0001-0003"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          },
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0002-0017"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "The American Council of Education argues that the case could affect how public universities balance nondiscrimination obligations with the free\u2011exercise rights of religious student groups."
+      },
+      {
+        "attribution": "Association of Jesuit Colleges and Universities",
+        "citations": [
+          {
+            "document_hash": "65651932be0a2dc2f50d1ec32dc7b3baf6c105e99e40f71d3a41a2a3e8045929",
+            "evidence_ids": [
+              "ev-65651932be0a-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Amicus briefs filed by organizations such as the Association of Jesuit Colleges and Universities contend that an all\u2011comers policy is a reasonable and common approach for thousands of colleges."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

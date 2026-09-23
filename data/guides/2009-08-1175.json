@@ -1,0 +1,412 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0000-0000",
+              "ev-44ccb8d7fe48-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The legal issue is whether the warning used by Tampa police satisfies constitutional requirements under the Florida Constitution, which contains a counterpart to the Fifth Amendment."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0001-0014"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, a key question is whether the warning is substantively the same as the FBI warnings approved in Miranda."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-1175",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T06:57:28.137036Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the Florida Constitution could be used to reach the same conclusion as the Fifth Amendment."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned whether the Court was encouraging the practice under discussion."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0001-0005"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether adopting the petitioner\u2019s warning would make it acceptable for every jurisdiction in the country."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0001-0007"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Kennedy also questioned whether lack of uniformity in warnings was a good idea."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0001-0011"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether it would be wiser to have the same warning form used throughout the state."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0002-0000"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg highlighted the issue of whether Powell had knowingly waived his right to counsel during police questioning."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0002-0002"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether there was any malevolent reason for Tampa police to adopt the warning."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Joseph W. Jacquot",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Joseph W. Jacquot, the case concerns whether the Florida Supreme Court erred in suppressing a voluntary confession of Kevin Dewayne Powell."
+      },
+      {
+        "attribution": "Joseph W. Jacquot",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Joseph W. Jacquot, miranda warnings protect Fifth Amendment rights and promote voluntary confessions, which are important for seeking truth, solving crimes, and securing justice."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Joseph W. Jacquot",
+          "citations": [
+            {
+              "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+              "evidence_ids": [
+                "ev-44ccb8d7fe48-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Joseph W. Jacquot, florida argues that the Supreme Court erred in suppressing Powell\u2019s voluntary confession."
+        },
+        {
+          "attribution": "Mr. Jacquot",
+          "citations": [
+            {
+              "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+              "evidence_ids": [
+                "ev-44ccb8d7fe48-0003-0001"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 60
+              }
+            }
+          ],
+          "text": "According to Mr. Jacquot, the warning at issue stems from the 1991 Florida Supreme Court decision in Thompson v. State and involves no manipulation."
+        }
+      ],
+      "heading": "Petitioner (Florida) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Brueckheimer",
+          "citations": [
+            {
+              "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+              "evidence_ids": [
+                "ev-44ccb8d7fe48-0002-0003"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Ms. Brueckheimer, powell\u2019s side emphasizes that it is difficult to ascertain the motives of the Tampa Police Department in creating the warning forms."
+        },
+        {
+          "attribution": "Ms. Brueckheimer",
+          "citations": [
+            {
+              "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+              "evidence_ids": [
+                "ev-44ccb8d7fe48-0002-0003"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Ms. Brueckheimer, the focus should be on how defendants perceive the warnings, not on the police\u2019s motives."
+        }
+      ],
+      "heading": "Respondent (Kevin Dewayne Powell) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+      "evidence_ids": [
+        "ev-44ccb8d7fe48-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T07:07:16.611930Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Joseph W. Jacquot",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Joseph W. Jacquot, miranda warnings protect Fifth Amendment rights and encourage voluntary confessions, which are essential for truth\u2011finding, crime solving, and justice."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0001-0005"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "44ccb8d7fe48f56080ed7040b516a77c1402ec55ef11e5b433a0f1ed742ee127",
+            "evidence_ids": [
+              "ev-44ccb8d7fe48-0001-0007"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, uniformity of warnings may affect how defendants understand their rights and whether they receive effective counsel."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

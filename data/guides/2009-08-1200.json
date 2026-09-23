@@ -1,0 +1,234 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "United States (amicus curiae)",
+        "citations": [
+          {
+            "document_hash": "2d15c865f973676d17d248db7aa0a776738dbb71ba25c8895b7385c2b8f1c68f",
+            "evidence_ids": [
+              "ev-2d15c865f973-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "2d15c865f973676d17d248db7aa0a776738dbb71ba25c8895b7385c2b8f1c68f",
+            "evidence_ids": [
+              "ev-2d15c865f973-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The Court is asked to interpret the scope of the bona\u2011fide error defense under the Fair Debt Collection Practices Act (FDCPA)."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-1200",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T07:29:19.381019Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2d15c865f973676d17d248db7aa0a776738dbb71ba25c8895b7385c2b8f1c68f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Kevin K. Russell",
+          "citations": [
+            {
+              "document_hash": "2d15c865f973676d17d248db7aa0a776738dbb71ba25c8895b7385c2b8f1c68f",
+              "evidence_ids": [
+                "ev-2d15c865f973-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            },
+            {
+              "document_hash": "2d15c865f973676d17d248db7aa0a776738dbb71ba25c8895b7385c2b8f1c68f",
+              "evidence_ids": [
+                "ev-2d15c865f973-0001-0001"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "Petitioner argues that ignorance of the law is not a defense under the FDCPA and that the bona\u2011fide error defense should be applied narrowly."
+        }
+      ],
+      "heading": "Petitioner Position (Karen L. Jerman)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Coakley",
+          "citations": [
+            {
+              "document_hash": "2d15c865f973676d17d248db7aa0a776738dbb71ba25c8895b7385c2b8f1c68f",
+              "evidence_ids": [
+                "ev-2d15c865f973-0002-0000"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            },
+            {
+              "document_hash": "2d15c865f973676d17d248db7aa0a776738dbb71ba25c8895b7385c2b8f1c68f",
+              "evidence_ids": [
+                "ev-2d15c865f973-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Coakley, respondent contends that the bona\u2011fide error defense should shield lawyers and debt collectors who make reasonable legal errors."
+        }
+      ],
+      "heading": "Respondent Position (Carlisle, McNellie, Rini Kramer & Ulrich LPA)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2d15c865f973676d17d248db7aa0a776738dbb71ba25c8895b7385c2b8f1c68f",
+      "evidence_ids": [
+        "ev-2d15c865f973-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "2d15c865f973676d17d248db7aa0a776738dbb71ba25c8895b7385c2b8f1c68f",
+      "evidence_ids": [
+        "ev-2d15c865f973-0001-0001"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "2d15c865f973676d17d248db7aa0a776738dbb71ba25c8895b7385c2b8f1c68f",
+      "evidence_ids": [
+        "ev-2d15c865f973-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "2d15c865f973676d17d248db7aa0a776738dbb71ba25c8895b7385c2b8f1c68f",
+      "evidence_ids": [
+        "ev-2d15c865f973-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "2d15c865f973676d17d248db7aa0a776738dbb71ba25c8895b7385c2b8f1c68f",
+      "evidence_ids": [
+        "ev-2d15c865f973-0003-0004"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T07:33:49.973575Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

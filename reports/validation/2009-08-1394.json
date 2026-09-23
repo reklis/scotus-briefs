@@ -1,0 +1,42 @@
+{
+  "accepted": false,
+  "case_id": "2009-08-1394",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": false,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": false,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": false,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that \u201cThe case highlights challenges in ensuring impartial juries in high\u2011profile prosecutions\u201d is not directly supported by any cited passage; the cited pages discuss voir dire arguments but do not contain this summary statement.",
+    "Attribution check failed: the claim \u201cAccording to Petitioner, petitioner noted that ordinary practice would only be altered in rare cases involving a wave of public passion\u201d attributes the remark to the Petitioner, yet the evidence attributes the remark to Mr. Srinivasan, not to the Petitioner themselves.",
+    "Attribution check failed: the claim that \u201cThe case highlights challenges in ensuring impartial juries in high\u2011profile prosecutions\u201d attributes the observation to \u201cPetitioner and Respondent,\u201d but neither party is recorded as making that exact statement in the transcript.",
+    "Opinion distinction check failed: the same \u201chigh\u2011profile prosecutions\u201d claim is presented as a factual statement, whereas it is an evaluative opinion about the case\u2019s significance and should be labeled as such.",
+    "Overstatement check failed: the aforementioned claim overstates the record by asserting the case \u201chighlights challenges\u201d without explicit support, constituting an overstatement of the evidence."
+  ],
+  "quality_scores": {
+    "completeness": 0.61,
+    "factual_accuracy": 0.32,
+    "neutrality": 0.78,
+    "readability": 0.91,
+    "restraint": 0.71,
+    "traceability": 0.82
+  }
+}

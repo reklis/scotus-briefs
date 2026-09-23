@@ -1,0 +1,496 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Alito, is it true that the Commissioner of Social Security has paid EAJA awards directly to attorneys and continues to do so when the client has assigned the payment to an attorney?"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, what authority does a court have to direct that the money be paid to the attorney?"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, what would happen if the prevailing party were a prisoner; would the attorney fee be paid to the prisoner, and if not, to whom?"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0001-0005"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, can trusts recover EAJA fees?"
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-1322",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T07:49:43.406728Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The matter came on for oral argument before the Supreme Court of the United States at 10:03\u202fa.m."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0001-0004"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "James D. Leach presented oral argument on behalf of the respondent."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Alito, the case concerns whether EAJA fee awards may be paid directly to attorneys."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0001-0005"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, the case concerns whether EAJA fee awards may be paid to trusts."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, the case concerns whether EAJA fee awards may be paid to prisoners."
+      },
+      {
+        "attribution": "Mr. Yang",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The case concerns whether EAJA fee awards are taxable income to the client."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+              "evidence_ids": [
+                "ev-3e7c092447d7-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner, eAJA provides that in an appropriate case a court shall award to a prevailing party fees and other expenses incurred by that party."
+        }
+      ],
+      "heading": "Petitioner (Commissioner of Social Security)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Leach",
+          "citations": [
+            {
+              "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+              "evidence_ids": [
+                "ev-3e7c092447d7-0001-0003"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Mr. Leach, catherine Ratliff is entitled to receive the fee for the legal services she performed, which the government argued were not substantially justified."
+        },
+        {
+          "attribution": "Mr. Yang",
+          "citations": [
+            {
+              "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+              "evidence_ids": [
+                "ev-3e7c092447d7-0001-0000"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Yang, eAJA applies not only in the Social Security context; it applies in all civil actions against the United States where no other specific fee provision exists."
+        }
+      ],
+      "heading": "Respondent (Catherine G. Ratliff)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+      "evidence_ids": [
+        "ev-3e7c092447d7-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+      "evidence_ids": [
+        "ev-3e7c092447d7-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+      "evidence_ids": [
+        "ev-3e7c092447d7-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+      "evidence_ids": [
+        "ev-3e7c092447d7-0000-0003"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+      "evidence_ids": [
+        "ev-3e7c092447d7-0000-0004"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+      "evidence_ids": [
+        "ev-3e7c092447d7-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+      "evidence_ids": [
+        "ev-3e7c092447d7-0001-0002"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+      "evidence_ids": [
+        "ev-3e7c092447d7-0001-0003",
+        "ev-3e7c092447d7-0001-0004"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+      "evidence_ids": [
+        "ev-3e7c092447d7-0001-0005"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 31
+      }
+    },
+    {
+      "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+      "evidence_ids": [
+        "ev-3e7c092447d7-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T07:58:17.058687Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          },
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0001-0005"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "The case raises questions about who may receive EAJA fee awards."
+      },
+      {
+        "attribution": "Mr. Yang",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Attorney\u2011fee awards are taxable income to the client."
+      },
+      {
+        "attribution": "Mr. Yang",
+        "citations": [
+          {
+            "document_hash": "3e7c092447d7bcc7749abe61fbb8a715dce0d53925efb7ca841f2d7f39213ca4",
+            "evidence_ids": [
+              "ev-3e7c092447d7-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Mr. Yang, eAJA applies to all civil actions against the United States where no other specific fee provision exists."
+      }
+    ],
+    "heading": "Why it matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
