@@ -1,0 +1,348 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+            "evidence_ids": [
+              "ev-4b7756ab59de-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Appearances were made by Christina Rainville (Chief Deputy State's Attorney, Bennington, VT.) for the petitioner, Leondra R. Kruger (Assistant to the Solicitor General, Department of Justice) as amicus curiae supporting the petitioner, and William A. Nelson for the respondent."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+            "evidence_ids": [
+              "ev-4b7756ab59de-0000-0004"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether a very important principle was involved that does not simply involve calculating particular periods of delay."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+            "evidence_ids": [
+              "ev-4b7756ab59de-0001-0004"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Souter, justice Souter questioned whether the answer would change if the defendant never spoke on the record and only made requests for continuances through counsel."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+            "evidence_ids": [
+              "ev-4b7756ab59de-0002-0000"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked how the argument affects the fundamental principle that public defenders work for their clients, not the State."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+            "evidence_ids": [
+              "ev-4b7756ab59de-0002-0001"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy inquired whether there are instances in which a State\u2011appointed counsel can delay a case without that delay being attributed to the State."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-08-88",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T04:26:39.709952Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts; Justice Alito; Justice Kennedy; Justice Souter",
+        "citations": [
+          {
+            "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+            "evidence_ids": [
+              "ev-4b7756ab59de-0000-0004",
+              "ev-4b7756ab59de-0001-0004",
+              "ev-4b7756ab59de-0002-0000",
+              "ev-4b7756ab59de-0002-0001"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The Justices asked about various principles and hypothetical scenarios concerning pre\u2011trial delays, including whether a broader principle beyond calculating delay periods is relevant (Justice Alito), how the facts would change if the defendant never spoke on the record (Justice Souter), the role of public defenders and whether they work for the State (Chief Justice Roberts), and whether delays by State\u2011appointed counsel are always attributable to the State (Justice Kennedy)."
+      },
+      {
+        "attribution": "Christina Rainville",
+        "citations": [
+          {
+            "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+            "evidence_ids": [
+              "ev-4b7756ab59de-0000-0001",
+              "ev-4b7756ab59de-0000-0005",
+              "ev-4b7756ab59de-0000-0006"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioner counsel Christina Rainville argued that the delays were caused by non\u2011State actors, that the defendant had waived speedy\u2011trial rights, and that the Vermont Supreme Court\u2019s decision should be reversed."
+      },
+      {
+        "attribution": "MS. KRUGER",
+        "citations": [
+          {
+            "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+            "evidence_ids": [
+              "ev-4b7756ab59de-0001-0001",
+              "ev-4b7756ab59de-0001-0003",
+              "ev-4b7756ab59de-0001-0005"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to MS. KRUGER, amicus counsel Leondra R. Kruger contended that attributing delay to the State would undermine lawyers\u2019 discretion and emphasized the ethical duty of counsel to avoid unreasonable delays."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Christina Rainville",
+          "citations": [
+            {
+              "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+              "evidence_ids": [
+                "ev-4b7756ab59de-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Christina Rainville, there are many reasons to reverse the Vermont Supreme Court in this case."
+        },
+        {
+          "attribution": "Christina Rainville",
+          "citations": [
+            {
+              "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+              "evidence_ids": [
+                "ev-4b7756ab59de-0000-0005"
+              ],
+              "pages": {
+                "end": 18,
+                "start": 18
+              }
+            }
+          ],
+          "text": "According to Christina Rainville, the delays in this case were caused by non\u2011State actors and, as a matter of law, cannot be a constitutional violation."
+        },
+        {
+          "attribution": "Christina Rainville",
+          "citations": [
+            {
+              "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+              "evidence_ids": [
+                "ev-4b7756ab59de-0000-0006"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Christina Rainville, based on his concessions and admissions in the brief, the defendant has waived the right to a speedy trial, applying the standard waiver doctrine from Barker v. Wingo."
+        }
+      ],
+      "heading": "Petitioner \u2013 Vermont (represented by Christina Rainville)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "MS. KRUGER",
+          "citations": [
+            {
+              "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+              "evidence_ids": [
+                "ev-4b7756ab59de-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to MS. KRUGER, a rule attributing delay to the State would be inconsistent with the role of a lawyer in an adversarial system and would undermine a lawyer's authority to make day\u2011to\u2011day scheduling decisions."
+        },
+        {
+          "attribution": "MS. KRUGER",
+          "citations": [
+            {
+              "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+              "evidence_ids": [
+                "ev-4b7756ab59de-0001-0003"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to MS. KRUGER, defendants can waive their right to a speedy trial and often desire to postpone trial; the remedy for a speedy\u2011trial violation uniquely advantages defendants and imposes substantial burdens on society, so a defendant cannot escape responsibility for continuances they requested."
+        },
+        {
+          "attribution": "MS. KRUGER",
+          "citations": [
+            {
+              "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+              "evidence_ids": [
+                "ev-4b7756ab59de-0001-0005"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to MS. KRUGER, the principal safeguard against attorney\u2011caused delay is the attorney's ethical obligation to represent clients with reasonable diligence and promptness."
+        }
+      ],
+      "heading": "Amicus Curiae \u2013 United States (represented by Leondra R. Kruger)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4b7756ab59de8d030fa5f55d7a49978787d94fe59d9a5b054441f13f20f6ecdb",
+      "evidence_ids": [
+        "ev-4b7756ab59de-0000-0000"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T04:33:44.516478Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

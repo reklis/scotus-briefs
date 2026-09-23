@@ -1,0 +1,343 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Attorney General of New York",
+        "citations": [
+          {
+            "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+            "evidence_ids": [
+              "ev-9f07fefe037b-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Attorney General of New York, the dispute centers on whether the OCC\u2019s regulations pre\u2011empt state antidiscrimination and consumer\u2011protection laws, thereby barring the New\u202fYork Attorney General from enforcing those laws against national banks."
+      },
+      {
+        "attribution": "Office of the Comptroller of the Currency",
+        "citations": [
+          {
+            "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+            "evidence_ids": [
+              "ev-9f07fefe037b-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Office of the Comptroller of the Currency, the Office of the Comptroller maintains that the OCC regulations expressly pre\u2011empt any state enforcement authority."
+      },
+      {
+        "attribution": "The Clearing House Association",
+        "citations": [
+          {
+            "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+            "evidence_ids": [
+              "ev-9f07fefe037b-0001-0003"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to The Clearing House Association, the Clearing House contends that Section\u202f484 pre\u2011empts the State\u2019s investigative and enforcement machinery."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-08-453",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T03:26:13.004221Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Attorney General of New York",
+        "citations": [
+          {
+            "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+            "evidence_ids": [
+              "ev-9f07fefe037b-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The Attorney General of New York argued that under the OCC regulation at issue, state antidiscrimination and consumer\u2011protection laws can be enforced against national banks by the Federal OCC and by private parties, but not by state attorneys general."
+      },
+      {
+        "attribution": "Office of the Comptroller of the Currency",
+        "citations": [
+          {
+            "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+            "evidence_ids": [
+              "ev-9f07fefe037b-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The Office of the Comptroller of the Currency contended that the OCC regulation pre\u2011empts the ability of any state to enforce its laws."
+      },
+      {
+        "attribution": "The Clearing House Association",
+        "citations": [
+          {
+            "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+            "evidence_ids": [
+              "ev-9f07fefe037b-0001-0003"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "The Clearing House Association argued that Section\u202f484 of the OCC regulations has a pre\u2011emptive effect that displaces the State\u2019s investigative and enforcement machinery."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Attorney General of New York",
+          "citations": [
+            {
+              "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+              "evidence_ids": [
+                "ev-9f07fefe037b-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Attorney General of New York, state antidiscrimination and consumer\u2011protection laws can be enforced against national banks by the Federal OCC and private parties, but not by state attorneys general."
+        }
+      ],
+      "heading": "Attorney General of New York",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Office of the Comptroller of the Currency",
+          "citations": [
+            {
+              "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+              "evidence_ids": [
+                "ev-9f07fefe037b-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Office of the Comptroller of the Currency, the OCC regulations pre\u2011empt the ability of any state to enforce its laws."
+        },
+        {
+          "attribution": "Office of the Comptroller of the Currency",
+          "citations": [
+            {
+              "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+              "evidence_ids": [
+                "ev-9f07fefe037b-0001-0002"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Office of the Comptroller of the Currency, the Riegle\u2011Neal amendments require that the laws be enforced by the Comptroller of the Currency."
+        }
+      ],
+      "heading": "Office of the Comptroller of the Currency",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "The Clearing House Association",
+          "citations": [
+            {
+              "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+              "evidence_ids": [
+                "ev-9f07fefe037b-0001-0003"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to The Clearing House Association, section\u202f484 has a pre\u2011emptive effect that displaces the State\u2019s investigative and enforcement machinery."
+        }
+      ],
+      "heading": "The Clearing House Association",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Underwood",
+          "citations": [
+            {
+              "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+              "evidence_ids": [
+                "ev-9f07fefe037b-0002-0003"
+              ],
+              "pages": {
+                "end": 49,
+                "start": 49
+              }
+            }
+          ],
+          "text": "According to Ms. Underwood, state law allows a motion to quash a subpoena that is overly burdensome or harassing, giving state courts control over excessive discovery requests."
+        }
+      ],
+      "heading": "Ms. Underwood",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Waxman",
+          "citations": [
+            {
+              "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+              "evidence_ids": [
+                "ev-9f07fefe037b-0002-0004"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Mr. Waxman, historical visitorial powers allow state attorneys general to require compliance with state\u2011mandated rate schedules, as illustrated by the 1874 Attorney General v. Chicago and Northwest Railroad case."
+        }
+      ],
+      "heading": "Mr. Waxman",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9f07fefe037bbece22d31c6c78fc93a4386521ce2fa4c22b147d8e2962a925cd",
+      "evidence_ids": [
+        "ev-9f07fefe037b-0000-0000",
+        "ev-9f07fefe037b-0000-0001",
+        "ev-9f07fefe037b-0000-0002",
+        "ev-9f07fefe037b-0001-0000",
+        "ev-9f07fefe037b-0001-0001",
+        "ev-9f07fefe037b-0001-0002",
+        "ev-9f07fefe037b-0001-0003",
+        "ev-9f07fefe037b-0002-0000",
+        "ev-9f07fefe037b-0002-0001",
+        "ev-9f07fefe037b-0002-0003",
+        "ev-9f07fefe037b-0002-0004"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T03:28:28.237077Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,440 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument before the Supreme Court took place at 1:00\u202fp.m."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, the Court asked what the major difference is between the standards for a preliminary injunction and a stay."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-08-681",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T04:18:36.451874Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether stays are usually granted in this type of case."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia noted that deciding it the same way twice would be improper."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked if references to equitable relief and restrain are clear enough to cover the Court\u2019s authority to grant a stay."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked what the major difference is between the standards for a preliminary injunction and a stay."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0002-0003"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Justice Kennedy also asked whether the same standard would be applied in future years."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0002-0001"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Breyer asked how the process is supposed to work."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0002-0006"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked a technical point."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0003-0001"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether the government\u2019s interpretation that the stay violated the statute was correct."
+      },
+      {
+        "attribution": "General Kneedler",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0002-0005"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "The Court granted the stay in connection with the granting of certiorari."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0003-0000"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "The case concerns whether Congress intended different standards for stays and injunctions, as reflected in the statutory language of (b)(3)(B) and (f)(2)."
+      },
+      {
+        "attribution": "Petitioner; Respondent",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "Petitioner argues the terms indicate distinct forms of relief, while the respondent argues the standards are virtually identical."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+              "evidence_ids": [
+                "ev-4ca0a58fa4da-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, congress used different words (\u201cstay\u201d in (b)(3)(B) and \u201cenjoin\u201d in (f)(2)) to signal different forms of relief."
+        },
+        {
+          "attribution": "Ms. Harrison",
+          "citations": [
+            {
+              "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+              "evidence_ids": [
+                "ev-4ca0a58fa4da-0002-0002"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 49
+              }
+            }
+          ],
+          "text": "According to Ms. Harrison, the government\u2019s interpretation that a stay would violate the statute is inconsistent with the text of (f)(2)."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+              "evidence_ids": [
+                "ev-4ca0a58fa4da-0000-0003"
+              ],
+              "pages": {
+                "end": 10,
+                "start": 10
+              }
+            }
+          ],
+          "text": "According to Respondent, the government contends that the two standards are virtually identical."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+      "evidence_ids": [
+        "ev-4ca0a58fa4da-0000-0000",
+        "ev-4ca0a58fa4da-0000-0001",
+        "ev-4ca0a58fa4da-0000-0002",
+        "ev-4ca0a58fa4da-0000-0003",
+        "ev-4ca0a58fa4da-0000-0004",
+        "ev-4ca0a58fa4da-0001-0000",
+        "ev-4ca0a58fa4da-0001-0001",
+        "ev-4ca0a58fa4da-0002-0001",
+        "ev-4ca0a58fa4da-0002-0002",
+        "ev-4ca0a58fa4da-0002-0003",
+        "ev-4ca0a58fa4da-0002-0005",
+        "ev-4ca0a58fa4da-0002-0006",
+        "ev-4ca0a58fa4da-0003-0000",
+        "ev-4ca0a58fa4da-0003-0001"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T04:26:39.689043Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0003-0000"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          },
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The case concerns whether Congress intended different standards for stays and injunctions, as reflected in the statutory language of (b)(3)(B) and (f)(2)."
+      },
+      {
+        "attribution": "General Kneedler",
+        "citations": [
+          {
+            "document_hash": "4ca0a58fa4da8a3b2c7de1cf7823f24e7e33796816a5ad875eb05a34c3e8740d",
+            "evidence_ids": [
+              "ev-4ca0a58fa4da-0002-0005"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "The Court granted a stay in connection with the granting of certiorari."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

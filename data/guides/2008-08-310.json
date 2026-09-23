@@ -1,0 +1,410 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, the City of Valdez imposes a tax on vessels that is described as 11\u202fpercent of the tax base."
+      },
+      {
+        "attribution": "Polar Tankers, Inc.",
+        "citations": [
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Polar Tankers, Inc., according to Polar Tankers, Inc., the central legal question is whether the vessel tax violates the Constitution\u2019s Tonnage Clause, Due Process Clause, and Commerce Clause."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-08-310",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T03:02:22.198607Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the tax\u2019s 11\u202fpercent rate of the tax base was accurate and what it meant."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Souter, justice Souter questioned whether the tax discriminates against certain states or vessels, potentially violating the Tonnage Clause."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Scalia asked if a daily charge on vessels for remaining in port violates the Tonnage Clause."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens inquired which state might be discriminated against by the tax scheme."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0003-0001"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked how a city could impose a property tax on a vessel."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Polar Tankers, Inc.",
+        "citations": [
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Polar Tankers, Inc., according to Polar Tankers, Inc., polar Tankers, Inc. challenges the City of Valdez\u2019s vessel tax as unconstitutional under the Tonnage Clause, the Due Process Clause, and the Commerce Clause."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0001-0005"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          },
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0001-0006"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "The City of Valdez argues that the tax is a permissible property tax authorized by state law and does not violate the Constitution."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+            "evidence_ids": [
+              "ev-879a9c1be495-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "During oral argument, the Justices asked numerous questions about the tax\u2019s constitutionality, its historical basis, and whether it discriminates against certain vessels or states."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Polar Tankers, Inc.",
+          "citations": [
+            {
+              "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+              "evidence_ids": [
+                "ev-879a9c1be495-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Polar Tankers, Inc., according to Polar Tankers, Inc., the tax operates as a charge on the privilege of trading in Valdez and improperly taxes extraterritorial values, violating the Due Process and Commerce Clauses."
+        },
+        {
+          "attribution": "Polar Tankers, Inc.",
+          "citations": [
+            {
+              "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+              "evidence_ids": [
+                "ev-879a9c1be495-0000-0003"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Polar Tankers, Inc., according to Polar Tankers, Inc., the tax targets only certain vessels, exempting small boats and fishing vessels, making it a discriminatory property tax contrary to the Tonnage Clause."
+        }
+      ],
+      "heading": "Polar Tankers, Inc. \u2013 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Rothfeld",
+          "citations": [
+            {
+              "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+              "evidence_ids": [
+                "ev-879a9c1be495-0003-0003"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            },
+            {
+              "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+              "evidence_ids": [
+                "ev-879a9c1be495-0003-0005"
+              ],
+              "pages": {
+                "end": 58,
+                "start": 58
+              }
+            }
+          ],
+          "text": "According to Rothfeld, vessels are a distinct category of property under the Tonnage Clause, and the city\u2019s tax does not violate that clause."
+        }
+      ],
+      "heading": "City of Valdez, Alaska \u2013 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "879a9c1be495b32d614baf533f515db0b3ef65380fe046fe75391acbc6c5ed7b",
+      "evidence_ids": [
+        "ev-879a9c1be495-0000-0000",
+        "ev-879a9c1be495-0000-0001",
+        "ev-879a9c1be495-0000-0002",
+        "ev-879a9c1be495-0000-0003",
+        "ev-879a9c1be495-0000-0004",
+        "ev-879a9c1be495-0001-0000",
+        "ev-879a9c1be495-0001-0002",
+        "ev-879a9c1be495-0001-0003",
+        "ev-879a9c1be495-0001-0004",
+        "ev-879a9c1be495-0001-0005",
+        "ev-879a9c1be495-0001-0006",
+        "ev-879a9c1be495-0002-0000",
+        "ev-879a9c1be495-0002-0001",
+        "ev-879a9c1be495-0002-0002",
+        "ev-879a9c1be495-0002-0003",
+        "ev-879a9c1be495-0002-0005",
+        "ev-879a9c1be495-0003-0003",
+        "ev-879a9c1be495-0003-0004",
+        "ev-879a9c1be495-0003-0005",
+        "ev-879a9c1be495-0003-0006",
+        "ev-879a9c1be495-0003-0007",
+        "ev-879a9c1be495-0003-0000",
+        "ev-879a9c1be495-0003-0001",
+        "ev-879a9c1be495-0003-0002",
+        "ev-879a9c1be495-0003-0007"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T03:07:17.039796Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

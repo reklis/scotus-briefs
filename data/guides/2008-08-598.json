@@ -1,0 +1,370 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+            "evidence_ids": [
+              "ev-aed7b430a66a-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case was heard before the Supreme Court at 11:02\u202fa.m. on the day of oral argument."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+            "evidence_ids": [
+              "ev-aed7b430a66a-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the issue was an Atkins finding."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+            "evidence_ids": [
+              "ev-aed7b430a66a-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked where the State\u2019s admission of mental retardation appeared in the post\u2011conviction record."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+            "evidence_ids": [
+              "ev-aed7b430a66a-0002-0004"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Souter questioned whether there was a sufficient record to support a judicial\u2011estoppel claim."
+      }
+    ],
+    "heading": "Background & Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-08-598",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T03:46:02.865714Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+            "evidence_ids": [
+              "ev-aed7b430a66a-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The oral argument began at 11:02\u202fa.m."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+            "evidence_ids": [
+              "ev-aed7b430a66a-0001-0000",
+              "ev-aed7b430a66a-0002-0000",
+              "ev-aed7b430a66a-0002-0004"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justices asked questions about whether the issue was an Atkins finding, about the State\u2019s admission of mental retardation, and about the adequacy of the record for a judicial\u2011estoppel claim."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+            "evidence_ids": [
+              "ev-aed7b430a66a-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioner argues that double\u2011jeopardy requires the Ohio post\u2011conviction court to hold a hearing on whether Mr.\u202fBies is mentally retarded under the Atkins rule."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+            "evidence_ids": [
+              "ev-aed7b430a66a-0000-0004"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioner notes that there has been no acquittal in this case."
+      },
+      {
+        "attribution": "State",
+        "citations": [
+          {
+            "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+            "evidence_ids": [
+              "ev-aed7b430a66a-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The State contends that the record shows the defendant is mildly mentally retarded with an IQ of 69."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+            "evidence_ids": [
+              "ev-aed7b430a66a-0002-0003"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Petitioner, the petitioner raises a judicial\u2011estoppel issue, arguing that the writ should be dismissed as improvidently granted."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+            "evidence_ids": [
+              "ev-aed7b430a66a-0002-0005"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Ginsburg indicated that, as a matter of law at the time, a person with such mental retardation could be punished by execution."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+              "evidence_ids": [
+                "ev-aed7b430a66a-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The petitioner argues that double\u2011jeopardy requires a hearing on Mr.\u202fBies\u2019s mental\u2011retardation status under Atkins."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+              "evidence_ids": [
+                "ev-aed7b430a66a-0002-0003"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petitioner raises a judicial\u2011estoppel issue, urging dismissal of the writ as improvidently granted."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+              "evidence_ids": [
+                "ev-aed7b430a66a-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to State, the State asserts that the record shows the defendant is mildly mentally retarded with an IQ of 69."
+        }
+      ],
+      "heading": "State",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+      "evidence_ids": [
+        "ev-aed7b430a66a-0000-0000",
+        "ev-aed7b430a66a-0000-0001",
+        "ev-aed7b430a66a-0000-0004",
+        "ev-aed7b430a66a-0001-0000",
+        "ev-aed7b430a66a-0002-0000",
+        "ev-aed7b430a66a-0002-0001",
+        "ev-aed7b430a66a-0002-0003",
+        "ev-aed7b430a66a-0002-0004",
+        "ev-aed7b430a66a-0002-0005",
+        "ev-aed7b430a66a-0002-0008"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T03:54:44.375784Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "aed7b430a66a00ec606625ba7523a4caf9fe4b72b01677d4777e8f1965762fa5",
+            "evidence_ids": [
+              "ev-aed7b430a66a-0002-0005"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Ginsburg noted that, as a matter of law at the time, a person who is mildly mentally retarded could be punished by execution."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

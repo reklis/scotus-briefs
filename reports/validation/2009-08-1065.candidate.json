@@ -1,0 +1,487 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Stephen Sanders",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Stephen Sanders, the central legal question is whether a prosecutor's absolute immunity bars civil suits for fabricated evidence that results in a conviction."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-1065",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T04:49:22.231217Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0000-0004"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy referenced Buckley v. Fitzsimmons, suggesting the case may repeat that issue."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether police officers would also be immune if they fabricated evidence at the investigation stage."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia sought a clear yes/no answer on liability of both prosecutors and police officers."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0000-0006"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 17
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned the need for a new theory, noting there is no free\u2011standing right."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked what the result would be if a prosecutor knowingly introduced fabricated evidence."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether prosecutors would flinch when they suspect perjured evidence and the message to police officers."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0001-0005"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito inquired about the pleading standards needed to survive summary judgment under Iqbal."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0001-0006"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Alito asked about the credibility of a witness with impeachment baggage before a grand jury."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether there was a Fourth Amendment violation."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0003-0005"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether pre\u2011trial detention is a deprivation of liberty."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Stephen Sanders",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Stephen Sanders, the case concerns whether a prosecutor can be sued for fabricating evidence that leads to a conviction, despite the doctrine of absolute immunity."
+      },
+      {
+        "attribution": "Stephen Sanders",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          },
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0003-0002"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Stephen Sanders, petitioners argue that absolute immunity should not shield prosecutors who fabricate evidence, citing Zahrey and Gonzalez decisions that limit the scope of immunity."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Stephen Sanders",
+          "citations": [
+            {
+              "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+              "evidence_ids": [
+                "ev-7c788d6409ac-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Stephen Sanders, petitioners contend that absolute immunity does not apply when a prosecutor knowingly fabricates evidence, as such conduct creates a constitutional cause of action."
+        },
+        {
+          "attribution": "Stephen Sanders",
+          "citations": [
+            {
+              "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+              "evidence_ids": [
+                "ev-7c788d6409ac-0003-0000"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to Stephen Sanders, petitioners cite the Second Circuit\u2019s Zahrey and later decisions that have narrowed the scope of absolute immunity for prosecutors."
+        },
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+              "evidence_ids": [
+                "ev-7c788d6409ac-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, the lower court accepted the absolute\u2011immunity argument, but the Supreme Court rejected it."
+        }
+      ],
+      "heading": "Petitioner (Potawatomi County Iowa)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+              "evidence_ids": [
+                "ev-7c788d6409ac-0001-0001"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "Respondents argue that even if a prosecutor knows evidence is fabricated, there is no Fifth Amendment due\u2011process violation."
+        }
+      ],
+      "heading": "Respondent (Curtis W. McGhee Jr.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+      "evidence_ids": [
+        "ev-7c788d6409ac-0000-0000",
+        "ev-7c788d6409ac-0000-0004",
+        "ev-7c788d6409ac-0000-0001",
+        "ev-7c788d6409ac-0000-0003",
+        "ev-7c788d6409ac-0000-0005",
+        "ev-7c788d6409ac-0000-0006",
+        "ev-7c788d6409ac-0001-0000",
+        "ev-7c788d6409ac-0001-0001",
+        "ev-7c788d6409ac-0001-0002",
+        "ev-7c788d6409ac-0001-0005",
+        "ev-7c788d6409ac-0001-0006",
+        "ev-7c788d6409ac-0002-0000",
+        "ev-7c788d6409ac-0002-0001",
+        "ev-7c788d6409ac-0002-0002",
+        "ev-7c788d6409ac-0003-0000",
+        "ev-7c788d6409ac-0003-0001",
+        "ev-7c788d6409ac-0003-0002",
+        "ev-7c788d6409ac-0003-0003",
+        "ev-7c788d6409ac-0003-0004"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T05:00:31.324787Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": false,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "sources[0]: unknown evidence ID ev-7c788d6409ac-0003-0004",
+      "why_it_matters.claims[1] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "sources[0]: unknown evidence ID ev-7c788d6409ac-0003-0004",
+      "why_it_matters.claims[1] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Stephen Sanders",
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0003-0003"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Stephen Sanders warned that affirming the lower courts could radically change the law of immunity, potentially allowing more wrongful\u2011conviction claims against prosecutors to proceed under qualified immunity."
+      },
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          },
+          {
+            "document_hash": "7c788d6409ace4ce6ac62ea666b9ad10b9471b2715e57d3f14a483c35681072b",
+            "evidence_ids": [
+              "ev-7c788d6409ac-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justices asked whether clarifying liability would affect police practices and the handling of fabricated evidence."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

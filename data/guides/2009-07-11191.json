@@ -1,0 +1,679 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Richard D. Friedman",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Richard D. Friedman, petitioners argue that overturning Melendez\u2011D\u00edaz would severely impair the Confrontation Clause and alter long\u2011standing trial practices."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked why the Court might overrule Melendez\u2011D\u00edaz."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0000-0002"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justices questioned whether presenting a lab analyst\u2019s report via affidavit, without live testimony, raises a Confrontation Clause problem."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-07-11191",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T04:33:44.524805Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked: \u201cWhy is that overruling Melendez\u2011D\u00edaz?\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0000-0002"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether presenting an analyst\u2019s report via affidavit would raise a Confrontation Clause problem."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Breyer asked how many different lab personnel would need to be called if multiple machines and operators were involved."
+      },
+      {
+        "attribution": "Justice ALITO",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0001-0003"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "According to Justice ALITO, justice Alito clarified a scenario where the analyst testifies to the report and the defense cross\u2011examines."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0002-0000"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia suggested that the hearsay rule might resolve the problem raised."
+      },
+      {
+        "attribution": "JUSTICE ALITO",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0003-0003"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether Virginia\u2019s rule that the Commonwealth bears the risk of a no\u2011show would affect the outcome."
+      },
+      {
+        "attribution": "JUSTICE ALITO",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0003-0004"
+            ],
+            "pages": {
+              "end": 63,
+              "start": 63
+            }
+          }
+        ],
+        "text": "According to JUSTICE ALITO, justice Alito inquired whether the Court should grant, vacate, and remand because of the unclear risk of a no\u2011show."
+      },
+      {
+        "attribution": "JUSTICE GINSBURG",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0003-0006"
+            ],
+            "pages": {
+              "end": 64,
+              "start": 64
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the proper solution is to grant, vacate, and remand in light of Melendez\u2011D\u00edaz."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Richard D. Friedman",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0003-0000"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 61
+            }
+          },
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0002-0004"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "The case concerns whether Virginia can allow the prosecution to rely on forensic laboratory reports without live testimony, raising Confrontation Clause issues and invoking the Supreme Court\u2019s Melendez\u2011D\u00edaz precedent."
+      },
+      {
+        "attribution": "Petitioners and Commonwealth",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0002-0003"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          },
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0003-0001"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "Both sides dispute who bears the risk if a witness fails to appear (\u201cno\u2011show\u201d), a question not previously resolved by Virginia courts."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. FRIEDMAN",
+          "citations": [
+            {
+              "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+              "evidence_ids": [
+                "ev-9f3e58830a8d-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            },
+            {
+              "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+              "evidence_ids": [
+                "ev-9f3e58830a8d-0001-0004"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            }
+          ],
+          "text": "According to Mr. FRIEDMAN, petitioners contend that the prosecution must present live testimony; labs can be organized so that only one analyst needs to testify."
+        },
+        {
+          "attribution": "Richard D. Friedman",
+          "citations": [
+            {
+              "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+              "evidence_ids": [
+                "ev-9f3e58830a8d-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Richard D. Friedman, they argue that overturning Melendez\u2011D\u00edaz would impair the Confrontation Clause and fundamentally change Anglo\u2011American trial practice."
+        }
+      ],
+      "heading": "Petitioners (Briscoe & Cypress)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Commonwealth",
+          "citations": [
+            {
+              "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+              "evidence_ids": [
+                "ev-9f3e58830a8d-0002-0003"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            },
+            {
+              "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+              "evidence_ids": [
+                "ev-9f3e58830a8d-0003-0001"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 62
+              }
+            }
+          ],
+          "text": "The Commonwealth argues that the statute plainly requires a witness to appear, and no Virginia court has held that the prosecution bears the risk of a no\u2011show."
+        },
+        {
+          "attribution": "Commonwealth and United States",
+          "citations": [
+            {
+              "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+              "evidence_ids": [
+                "ev-9f3e58830a8d-0003-0002"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 62
+              }
+            }
+          ],
+          "text": "According to Commonwealth and United States, the Commonwealth and the United States suggest that allowing affidavits could transform trial practice, relying on the Due Process Clause to back\u2011fill any deficiencies."
+        }
+      ],
+      "heading": "Respondent (Virginia / Commonwealth)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0000-0002"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0001-0000"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0001-0001"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0001-0003"
+      ],
+      "pages": {
+        "end": 29,
+        "start": 29
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0001-0004"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0002-0000"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0002-0003"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0002-0002"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0002-0004"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0002-0006"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0003-0000"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 61
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0003-0001"
+      ],
+      "pages": {
+        "end": 62,
+        "start": 62
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0003-0002"
+      ],
+      "pages": {
+        "end": 62,
+        "start": 62
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0003-0003"
+      ],
+      "pages": {
+        "end": 62,
+        "start": 62
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0003-0004"
+      ],
+      "pages": {
+        "end": 63,
+        "start": 63
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0003-0005"
+      ],
+      "pages": {
+        "end": 63,
+        "start": 63
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0003-0006"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 64
+      }
+    },
+    {
+      "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+      "evidence_ids": [
+        "ev-9f3e58830a8d-0003-0007"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 64
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T04:41:01.810102Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Richard D. Friedman",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Richard D. Friedman, the outcome will determine how forensic laboratory reports can be used in criminal trials, potentially reshaping the application of the Confrontation Clause to scientific evidence."
+      },
+      {
+        "attribution": "Court Record",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0002-0004"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "The case occurs shortly after Virginia\u2019s new forensic\u2011evidence statute took effect on August\u202f21,\u202f2009, making the timing of the decision especially consequential."
+      },
+      {
+        "attribution": "Leondra R. Kruger (Amicus Curiae for United States)",
+        "citations": [
+          {
+            "document_hash": "9f3e58830a8d38c46ce7d79bfa385d99212a415b756cf9424de9058e8321f531",
+            "evidence_ids": [
+              "ev-9f3e58830a8d-0002-0006"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Leondra R. Kruger (Amicus Curiae for United States), according to Leondra R. Kruger (Amicus Curiae for United States), amicus counsel for the United States argues that affidavits may be permissible if the affiants are brought to court for questioning, highlighting a possible compromise between confrontation rights and procedural efficiency."
+      }
+    ],
+    "heading": "Why This Case Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

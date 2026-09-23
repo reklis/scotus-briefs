@@ -1,0 +1,338 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+            "evidence_ids": [
+              "ev-870bb9c4443f-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+            "evidence_ids": [
+              "ev-870bb9c4443f-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, the legal question is whether IDEA requires that a public school district provide a free appropriate public education before a student can receive tuition reimbursement for a private school placement."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-08-305",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T02:54:52.417786Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+            "evidence_ids": [
+              "ev-870bb9c4443f-0003-0004"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts concluded the argument by stating, \u201cThe case is submitted.\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Gary S. Feinerman",
+        "citations": [
+          {
+            "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+            "evidence_ids": [
+              "ev-870bb9c4443f-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Gary S. Feinerman argues that the 1997 amendments to the Individuals with Disabilities Education Act (IDEA) prohibit tuition reimbursement for students who are unilaterally placed in private school without first having received special education services from the public school district."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Gary S. Feinerman",
+          "citations": [
+            {
+              "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+              "evidence_ids": [
+                "ev-870bb9c4443f-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Gary S. Feinerman, the 1997 amendments prohibit tuition reimbursement awards for students who are unilaterally placed in private school without first having received special education services from the public school district."
+        },
+        {
+          "attribution": "Mr. Feinerman",
+          "citations": [
+            {
+              "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+              "evidence_ids": [
+                "ev-870bb9c4443f-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. Feinerman, the statutory scheme requires that reimbursement be awarded only under the conditions set out in subsection (C)(ii), reflecting Congress\u2019s intent."
+        },
+        {
+          "attribution": "Mr. Feinerman",
+          "citations": [
+            {
+              "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+              "evidence_ids": [
+                "ev-870bb9c4443f-0003-0002"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to Mr. Feinerman, regulations do not give hearing officers the authority to award tuition reimbursement in these circumstances."
+        }
+      ],
+      "heading": "Petitioner \u2013 Forest Grove School District",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "David B. Salmons",
+          "citations": [
+            {
+              "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+              "evidence_ids": [
+                "ev-870bb9c4443f-0001-0003"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to David B. Salmons, a ten\u2011day notice period is required before a child can be removed from the public school system."
+        },
+        {
+          "attribution": "David B. Salmons",
+          "citations": [
+            {
+              "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+              "evidence_ids": [
+                "ev-870bb9c4443f-0001-0004"
+              ],
+              "pages": {
+                "end": 29,
+                "start": 29
+              }
+            }
+          ],
+          "text": "According to David B. Salmons, subsection (C)(i) provides the general rule that governs payment of private school tuition when the parents place the child unilaterally."
+        },
+        {
+          "attribution": "Salmon",
+          "citations": [
+            {
+              "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+              "evidence_ids": [
+                "ev-870bb9c4443f-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Salmon, the Carter case and the regulations support the district court\u2019s authority to award tuition reimbursement when the public school fails to provide an adequate education."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+              "evidence_ids": [
+                "ev-870bb9c4443f-0002-0002"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to United States, amicus brief argues that if the district failed to provide an adequate special education, the district court has discretion to award private\u2011school tuition reimbursement."
+        }
+      ],
+      "heading": "Respondent \u2013 T.A.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+      "evidence_ids": [
+        "ev-870bb9c4443f-0000-0000",
+        "ev-870bb9c4443f-0000-0001",
+        "ev-870bb9c4443f-0000-0002",
+        "ev-870bb9c4443f-0001-0000",
+        "ev-870bb9c4443f-0001-0001",
+        "ev-870bb9c4443f-0001-0003",
+        "ev-870bb9c4443f-0001-0004",
+        "ev-870bb9c4443f-0002-0000",
+        "ev-870bb9c4443f-0002-0001",
+        "ev-870bb9c4443f-0002-0002",
+        "ev-870bb9c4443f-0002-0004",
+        "ev-870bb9c4443f-0003-0000",
+        "ev-870bb9c4443f-0003-0001",
+        "ev-870bb9c4443f-0003-0002",
+        "ev-870bb9c4443f-0003-0003",
+        "ev-870bb9c4443f-0003-0004",
+        "ev-870bb9c4443f-0003-0005",
+        "ev-870bb9c4443f-0003-0005"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T03:02:22.177792Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+            "evidence_ids": [
+              "ev-870bb9c4443f-0002-0005"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "The Federal Government reimburses roughly 10\u202f%\u201312\u202f% of the additional costs of educating children with special needs."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "870bb9c4443f6cd9786e670380f878b72312f4c51f783b004e2b6a5cc9f9ea7e",
+            "evidence_ids": [
+              "ev-870bb9c4443f-0003-0005"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Equitable considerations support paying tuition reimbursement when a district fails to provide an adequate education."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

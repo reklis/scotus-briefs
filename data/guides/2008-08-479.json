@@ -1,0 +1,289 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "99248ed6d0b508eb63d611f4c1d39ef912bddf721d3d84e16bcb1dbc578f35a0",
+            "evidence_ids": [
+              "ev-99248ed6d0b5-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioners argued that the search of Savana Redding was constitutional because they had reason to suspect she possessed contraband that posed a health and safety risk."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-08-479",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T03:28:28.256764Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "99248ed6d0b508eb63d611f4c1d39ef912bddf721d3d84e16bcb1dbc578f35a0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "99248ed6d0b508eb63d611f4c1d39ef912bddf721d3d84e16bcb1dbc578f35a0",
+            "evidence_ids": [
+              "ev-99248ed6d0b5-0000-0004"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts opened the argument, noting the case number and parties."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "99248ed6d0b508eb63d611f4c1d39ef912bddf721d3d84e16bcb1dbc578f35a0",
+            "evidence_ids": [
+              "ev-99248ed6d0b5-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the school setting affects the permissibility and scope of the search."
+      },
+      {
+        "attribution": "JUSTICE ALITO",
+        "citations": [
+          {
+            "document_hash": "99248ed6d0b508eb63d611f4c1d39ef912bddf721d3d84e16bcb1dbc578f35a0",
+            "evidence_ids": [
+              "ev-99248ed6d0b5-0003-0000"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the issue was a question of law or a factual question about reasonable suspicion."
+      },
+      {
+        "attribution": "JUSTICE SCALIA",
+        "citations": [
+          {
+            "document_hash": "99248ed6d0b508eb63d611f4c1d39ef912bddf721d3d84e16bcb1dbc578f35a0",
+            "evidence_ids": [
+              "ev-99248ed6d0b5-0003-0005"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "Justice Scalia further asked whether probable cause is a question for a jury."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "99248ed6d0b508eb63d611f4c1d39ef912bddf721d3d84e16bcb1dbc578f35a0",
+            "evidence_ids": [
+              "ev-99248ed6d0b5-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The United States, as amicus curiae, argued that intrusive body searches in the school context require greater justification under the Fourth Amendment."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "99248ed6d0b508eb63d611f4c1d39ef912bddf721d3d84e16bcb1dbc578f35a0",
+            "evidence_ids": [
+              "ev-99248ed6d0b5-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioners argued that the search of Savana Redding was constitutional because they had reason to suspect she possessed contraband that posed a health and safety risk."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "99248ed6d0b508eb63d611f4c1d39ef912bddf721d3d84e16bcb1dbc578f35a0",
+            "evidence_ids": [
+              "ev-99248ed6d0b5-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The United States, as amicus curiae, argued that intrusive body searches in the school context require greater justification under the Fourth Amendment."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Wolf",
+          "citations": [
+            {
+              "document_hash": "99248ed6d0b508eb63d611f4c1d39ef912bddf721d3d84e16bcb1dbc578f35a0",
+              "evidence_ids": [
+                "ev-99248ed6d0b5-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. Wolf, the petitioner contended that without specific suspicion of finding the contraband, a broader search would not be justified."
+        },
+        {
+          "attribution": "MR. WRIGHT",
+          "citations": [
+            {
+              "document_hash": "99248ed6d0b508eb63d611f4c1d39ef912bddf721d3d84e16bcb1dbc578f35a0",
+              "evidence_ids": [
+                "ev-99248ed6d0b5-0003-0001"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 62
+              }
+            }
+          ],
+          "text": "According to MR. WRIGHT, the petitioner emphasized that the scope of the search must be limited, arguing that searching for items like heroin or bullets would be unacceptable in a school setting."
+        }
+      ],
+      "heading": "Petitioner (Safford Unified School District #1)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (April Redding)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "99248ed6d0b508eb63d611f4c1d39ef912bddf721d3d84e16bcb1dbc578f35a0",
+      "evidence_ids": [
+        "ev-99248ed6d0b5-0000-0000",
+        "ev-99248ed6d0b5-0000-0004",
+        "ev-99248ed6d0b5-0000-0001",
+        "ev-99248ed6d0b5-0000-0002",
+        "ev-99248ed6d0b5-0001-0001",
+        "ev-99248ed6d0b5-0001-0003",
+        "ev-99248ed6d0b5-0002-0000",
+        "ev-99248ed6d0b5-0002-0001",
+        "ev-99248ed6d0b5-0003-0000",
+        "ev-99248ed6d0b5-0003-0005",
+        "ev-99248ed6d0b5-0003-0001",
+        "ev-99248ed6d0b5-0003-0002",
+        "ev-99248ed6d0b5-0003-0003"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T03:35:21.625607Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
