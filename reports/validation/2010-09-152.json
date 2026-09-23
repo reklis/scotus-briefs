@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2010-09-152",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim in the 'Why it matters' section that the case raises questions about how the National Childhood Vaccine Injury Act may be applied to vaccines later found less safe is not supported by the supplied evidence.",
+    "Overstatement check failed: the same claim overstates the evidence by asserting a question about the Act's application that is not backed by the cited sources."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.93,
+    "neutrality": 0.9,
+    "readability": 0.85,
+    "restraint": 0.6,
+    "traceability": 1.0
+  }
+}

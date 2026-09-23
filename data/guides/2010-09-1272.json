@@ -1,0 +1,591 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Kentucky",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Kentucky, the issue before the Court is whether police can impermissibly create exigent circumstances, arising from the improper suppression of reasonably seized evidence after a reasonable warrantless entry."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, does the Kentucky Supreme Court consider the subjective state of mind of police when evaluating warrantless entries?"
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0001-0005"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, may police create exigent circumstances and use those circumstances to enter a home?"
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-1272",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T21:15:22.441574Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked where the Kentucky Supreme Court said it looked at the subjective state of mind of police."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0001-0003"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Breyer asked what objections exist to adding the alternative phrase \"or in bad faith\"."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0002-0004"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Breyer argued that the lower court was wrong because it treated police tactics that foreseeably create exigent circumstances as irrelevant to reasonableness."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0001-0005"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the Court should decide the question of whether police may create exigent circumstances and use them to enter."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0002-0006"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked what the discussion of police officers' lawfulness has to do with the case."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0002-0007"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether it is unlawful for a police officer to threaten to burst into a home."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Kentucky",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Kentucky, the case concerns whether police may create exigent circumstances to justify warrantless entry and the suppression of evidence seized after such entry."
+      },
+      {
+        "attribution": "Kentucky",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Kentucky argues that the subjective intent of police officers is irrelevant to the Fourth Amendment analysis."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The respondent argues that there is insufficient evidence of exigency."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The respondent argues that police may rely on any ensuing exigency."
+      },
+      {
+        "attribution": "Farley",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The smell of marijuana can give probable cause to obtain a search warrant."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Kentucky",
+          "citations": [
+            {
+              "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+              "evidence_ids": [
+                "ev-e864eca0a453-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Kentucky, the subjective intent of police officers is irrelevant to the Fourth Amendment analysis."
+        },
+        {
+          "attribution": "Commonwealth",
+          "citations": [
+            {
+              "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+              "evidence_ids": [
+                "ev-e864eca0a453-0002-0000"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Commonwealth, reasonable police behavior is not made unreasonable by the possibility that evidence may be destroyed; therefore suppression is not the proper remedy."
+        },
+        {
+          "attribution": "Commonwealth",
+          "citations": [
+            {
+              "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+              "evidence_ids": [
+                "ev-e864eca0a453-0002-0001"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Commonwealth, police act unreasonably when they convey to a reasonable person that entry is imminent and inevitable."
+        },
+        {
+          "attribution": "Commonwealth",
+          "citations": [
+            {
+              "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+              "evidence_ids": [
+                "ev-e864eca0a453-0002-0002"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to Commonwealth, \"Lawful\" is defined as a synonym for \"unreasonable,\" and no prior Fourth Amendment violation is required."
+        }
+      ],
+      "heading": "Kentucky (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+              "evidence_ids": [
+                "ev-e864eca0a453-0001-0000"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Respondent, there is insufficient evidence of exigency to justify suppression of the seized evidence."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+              "evidence_ids": [
+                "ev-e864eca0a453-0001-0002"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to Respondent, under the Court's interpretation of Fourth Amendment warrant exceptions, police may rely on any ensuing exigency."
+        }
+      ],
+      "heading": "Hollis Deshaun King (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0000-0003"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0001-0000"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0000-0005"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0001-0002"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0001-0003"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0001-0005"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0002-0000"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0002-0001"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0002-0002"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0002-0006"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0002-0003"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+      "evidence_ids": [
+        "ev-e864eca0a453-0002-0007"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T21:24:24.328136Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Kentucky",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Kentucky, the case addresses how the Fourth Amendment applies when police create the very circumstances that justify a warrantless entry, potentially expanding or limiting police powers."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "e864eca0a453a831959d2f72710e99833e27d1b0c2f47543510b1a5fb7615fd4",
+            "evidence_ids": [
+              "ev-e864eca0a453-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Respondent, conversely, the respondent\u2019s position that police may rely on any ensuing exigency could broaden police authority to act pre\u2011emptively, raising concerns about civil liberties."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

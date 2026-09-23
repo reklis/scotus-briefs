@@ -1,0 +1,488 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Alito asked if the Crooker decision has been the leading decision on Exemption\u202f2 for nearly 30 years."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned why Crooker has not been accepted as the definitive interpretation of Exemption\u202f2."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-1163",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T20:54:24.109169Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "David S. Mann",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to David S. Mann, petitioner\u2019s counsel David S. Mann presented four points, emphasizing the narrow scope of Exemption\u202f2."
+      },
+      {
+        "attribution": "David S. Mann",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to David S. Mann, mann argued that Crooker created a \u201cHigh\u202f2\u201d exemption for law\u2011enforcement manuals."
+      },
+      {
+        "attribution": "David S. Mann",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0000-0005"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to David S. Mann, mann noted that Congress chose not to amend Exemption\u202f2 when it amended Exemption\u202f7."
+      },
+      {
+        "attribution": "MR. YANG",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to MR. YANG, respondent\u2019s counsel Anthony A. Yang argued that Exemption\u202f2 requires records to be internally maintained and not for general release."
+      },
+      {
+        "attribution": "MR. YANG",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to MR. YANG, yang explained that Congress lowered the bar for law\u2011enforcement records, providing more protection than Crooker did."
+      },
+      {
+        "attribution": "Justices (Alito, Breyer)",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0002-0004"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          },
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justices asked several questions about Crooker\u2019s authority, the practicality of classifying all security\u2011related information, and how emergency procedures might be handled."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "David S. Mann",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to David S. Mann, the case concerns the interpretation of Exemption\u202f2 of the Freedom of Information Act, which the petitioner argues applies only to internal personnel policies and rules."
+      },
+      {
+        "attribution": "David S. Mann",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to David S. Mann, petitioner says the Crooker decision created a \u201cHigh\u202f2\u201d exemption covering FBI and ATF search\u2011and\u2011seizure manuals."
+      },
+      {
+        "attribution": "David S. Mann",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0000-0005"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to David S. Mann, petitioner notes that Congress considered but ultimately chose not to amend Exemption\u202f2 when it amended Exemption\u202f7."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0001-0006"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The Navy\u2019s oral argument was presented by Anthony A. Yang."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "David S. Mann",
+          "citations": [
+            {
+              "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+              "evidence_ids": [
+                "ev-c903e32b70e2-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to David S. Mann, exemption\u202f2\u2019s plain language limits it to materials related solely to internal personnel policies and rules."
+        },
+        {
+          "attribution": "David S. Mann",
+          "citations": [
+            {
+              "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+              "evidence_ids": [
+                "ev-c903e32b70e2-0000-0003"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to David S. Mann, the Crooker decision created a \u201cHigh\u202f2\u201d exemption covering FBI and ATF search\u2011and\u2011seizure manuals."
+        },
+        {
+          "attribution": "David S. Mann",
+          "citations": [
+            {
+              "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+              "evidence_ids": [
+                "ev-c903e32b70e2-0000-0005"
+              ],
+              "pages": {
+                "end": 8,
+                "start": 8
+              }
+            }
+          ],
+          "text": "According to David S. Mann, congress considered amending Exemption\u202f2 at the same time it amended Exemption\u202f7 but ultimately chose not to."
+        },
+        {
+          "attribution": "MR. YANG",
+          "citations": [
+            {
+              "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+              "evidence_ids": [
+                "ev-c903e32b70e2-0001-0000"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to MR. YANG, petitioner argues that rejecting the Crooker\u2011based interpretation would disrupt 30 years of FOIA practice."
+        },
+        {
+          "attribution": "MR. YANG",
+          "citations": [
+            {
+              "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+              "evidence_ids": [
+                "ev-c903e32b70e2-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to MR. YANG, petitioner\u2019s brief identifies three elements of Exemption\u202f2, emphasizing that records must be properly maintained within an agency and not for general release."
+        },
+        {
+          "attribution": "MR. YANG",
+          "citations": [
+            {
+              "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+              "evidence_ids": [
+                "ev-c903e32b70e2-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to MR. YANG, petitioner contends that Congress lowered the protection bar for law\u2011enforcement records, providing more protection than Crooker did."
+        }
+      ],
+      "heading": "Petitioner (Glen Scott Milner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Department of the Navy)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+      "evidence_ids": [
+        "ev-c903e32b70e2-0000-0001",
+        "ev-c903e32b70e2-0000-0002",
+        "ev-c903e32b70e2-0000-0003",
+        "ev-c903e32b70e2-0000-0004",
+        "ev-c903e32b70e2-0000-0005",
+        "ev-c903e32b70e2-0001-0005",
+        "ev-c903e32b70e2-0001-0000",
+        "ev-c903e32b70e2-0001-0006",
+        "ev-c903e32b70e2-0001-0001",
+        "ev-c903e32b70e2-0001-0003",
+        "ev-c903e32b70e2-0001-0004",
+        "ev-c903e32b70e2-0001-0007",
+        "ev-c903e32b70e2-0002-0001",
+        "ev-c903e32b70e2-0002-0000",
+        "ev-c903e32b70e2-0002-0004"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T21:04:16.553783Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "David S. Mann",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to David S. Mann, Exemption\u202f2 applies only to materials related solely to internal personnel policies and rules."
+      },
+      {
+        "attribution": "MR. YANG",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to MR. YANG, Congress lowered the bar for law\u2011enforcement records, providing more protection than Crooker did."
+      },
+      {
+        "attribution": "JUSTICE BREYER",
+        "citations": [
+          {
+            "document_hash": "c903e32b70e2d26c4f32a548fb53d0218db69e42beddefeb564a29dcd6515faf",
+            "evidence_ids": [
+              "ev-c903e32b70e2-0001-0005"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Breyer highlighted that misclassifying munitions information could lead to unsafe handling of weapons."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,449 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0002-0004"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justices questioned whether Congress intended the National Childhood Vaccine Injury Act to shield manufacturers from liability when a vaccine is later found less safe."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioners argue that the vaccine given to Hannah Bruesewitz was unsafe because a safer pertussis component had been available for decades."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          },
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Respondents maintain that the Act was intended to ensure a stable vaccine supply and to compensate victims, not to grant blanket immunity."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-152",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T22:06:47.623071Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 1:00\u202fp.m. on the scheduled date."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked the petitioner to clarify the point they were trying to make."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg raised a question about whether the law forecloses victims from seeking court compensation."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the Secretary has authority to withdraw vaccine certification on safety grounds."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0002-0002"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor challenged the assumption that the only concern was protecting manufacturers."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0002-0005"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          },
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0002-0006"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "According to United States, an amicus brief highlighted the role of the CDC and its Advisory Committee on Immunization Practices in recommending vaccines."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioners contend that a vaccine designed in the 1940s was administered to Hannah Bruesewitz in 1992, decades after a safer pertussis component had been discovered."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          },
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The respondents argue that Congress enacted the National Childhood Vaccine Injury Act to protect the vaccine supply and provide compensation to injured individuals."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+              "evidence_ids": [
+                "ev-ac3219cbe96a-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The petitioners contend that a vaccine designed in the 1940s was administered to Hannah Bruesewitz in 1992, decades after a safer pertussis component had been discovered."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+              "evidence_ids": [
+                "ev-ac3219cbe96a-0001-0002"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            },
+            {
+              "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+              "evidence_ids": [
+                "ev-ac3219cbe96a-0002-0003"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "The respondents argue that Congress enacted the National Childhood Vaccine Injury Act to protect the vaccine supply and provide compensation to injured individuals."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+      "evidence_ids": [
+        "ev-ac3219cbe96a-0000-0000",
+        "ev-ac3219cbe96a-0000-0001",
+        "ev-ac3219cbe96a-0000-0002",
+        "ev-ac3219cbe96a-0000-0004",
+        "ev-ac3219cbe96a-0000-0005",
+        "ev-ac3219cbe96a-0001-0000",
+        "ev-ac3219cbe96a-0001-0002",
+        "ev-ac3219cbe96a-0002-0000",
+        "ev-ac3219cbe96a-0002-0009",
+        "ev-ac3219cbe96a-0002-0002",
+        "ev-ac3219cbe96a-0002-0003",
+        "ev-ac3219cbe96a-0002-0004",
+        "ev-ac3219cbe96a-0002-0005",
+        "ev-ac3219cbe96a-0002-0006",
+        "ev-ac3219cbe96a-0003-0004",
+        "ev-ac3219cbe96a-0003-0000",
+        "ev-ac3219cbe96a-0003-0001",
+        "ev-ac3219cbe96a-0003-0002"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T22:18:18.514283Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim in the 'Why it matters' section that the case raises questions about how the National Childhood Vaccine Injury Act may be applied to vaccines later found less safe is not supported by the supplied evidence.",
+      "Overstatement check failed: the same claim overstates the evidence by asserting a question about the Act's application that is not backed by the cited sources."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Source",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0002-0009"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The case raises questions about how the National Childhood Vaccine Injury Act may be applied to vaccines later found less safe."
+      },
+      {
+        "attribution": "Source",
+        "citations": [
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          },
+          {
+            "document_hash": "ac3219cbe96a3b94c6bf50dc633a2dcea9ee6818755033ad8ec345a4ba5dca09",
+            "evidence_ids": [
+              "ev-ac3219cbe96a-0002-0009"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The case highlights the tension between protecting vaccine manufacturers and ensuring victims receive compensation."
+      }
+    ],
+    "heading": "Why it matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

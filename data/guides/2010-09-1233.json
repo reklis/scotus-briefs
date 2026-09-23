@@ -1,0 +1,305 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-1233",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T21:12:35.488863Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+            "evidence_ids": [
+              "ev-5f13bcfb0fbb-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The case concerns a court order requiring California to release between 36,000 and 45,000 inmates within a two\u2011year period."
+      },
+      {
+        "attribution": "Mr. Specter",
+        "citations": [
+          {
+            "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+            "evidence_ids": [
+              "ev-5f13bcfb0fbb-0002-0007"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "According to Mr. Specter, the state argues that increasing good\u2011time credits can help reduce prison crowding."
+      },
+      {
+        "attribution": "Mr. Specter",
+        "citations": [
+          {
+            "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+            "evidence_ids": [
+              "ev-5f13bcfb0fbb-0002-0006"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "The prison population has declined by about 10,000 prisoners."
+      },
+      {
+        "attribution": "Mr. Phillips",
+        "citations": [
+          {
+            "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+            "evidence_ids": [
+              "ev-5f13bcfb0fbb-0004-0004"
+            ],
+            "pages": {
+              "end": 78,
+              "start": 78
+            }
+          }
+        ],
+        "text": "The plaintiffs argue that the state can implement a plan that would release about 16,000 inmates without additional legislation, but would need legislation for further reductions."
+      },
+      {
+        "attribution": "Mr. Phillips",
+        "citations": [
+          {
+            "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+            "evidence_ids": [
+              "ev-5f13bcfb0fbb-0004-0006"
+            ],
+            "pages": {
+              "end": 80,
+              "start": 80
+            }
+          }
+        ],
+        "text": "The district court ordered the state to achieve a 137.5\u202f% capacity level within two years."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Specter",
+          "citations": [
+            {
+              "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+              "evidence_ids": [
+                "ev-5f13bcfb0fbb-0002-0007"
+              ],
+              "pages": {
+                "end": 48,
+                "start": 48
+              }
+            }
+          ],
+          "text": "According to Mr. Specter, the state argues that increasing good\u2011time credits can help reduce prison crowding."
+        }
+      ],
+      "heading": "Appellant \u2013 Arnold Schwarzenegger, Governor of California",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Phillips",
+          "citations": [
+            {
+              "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+              "evidence_ids": [
+                "ev-5f13bcfb0fbb-0004-0002"
+              ],
+              "pages": {
+                "end": 77,
+                "start": 77
+              }
+            }
+          ],
+          "text": "According to Mr. Phillips, the state has submitted a compliance plan and believes it can meet the court\u2011ordered requirements."
+        }
+      ],
+      "heading": "Appellee \u2013 Marciano Plata",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+      "evidence_ids": [
+        "ev-5f13bcfb0fbb-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+      "evidence_ids": [
+        "ev-5f13bcfb0fbb-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+      "evidence_ids": [
+        "ev-5f13bcfb0fbb-0002-0006"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+      "evidence_ids": [
+        "ev-5f13bcfb0fbb-0002-0007"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+      "evidence_ids": [
+        "ev-5f13bcfb0fbb-0004-0002"
+      ],
+      "pages": {
+        "end": 77,
+        "start": 77
+      }
+    },
+    {
+      "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+      "evidence_ids": [
+        "ev-5f13bcfb0fbb-0004-0004"
+      ],
+      "pages": {
+        "end": 78,
+        "start": 78
+      }
+    },
+    {
+      "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+      "evidence_ids": [
+        "ev-5f13bcfb0fbb-0004-0006"
+      ],
+      "pages": {
+        "end": 80,
+        "start": 80
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T21:15:22.420867Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f13bcfb0fbb58a2489b83ad89ac6e09cc4d8771e978e178b9380d601e20009b",
+            "evidence_ids": [
+              "ev-5f13bcfb0fbb-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The case involves a mandated reduction of California\u2019s prison population by up to 45,000 inmates over two years, a change that will affect correctional policy and public safety considerations."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
