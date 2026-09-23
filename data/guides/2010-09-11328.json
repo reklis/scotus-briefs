@@ -1,0 +1,432 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0001-0003"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Court has not applied the good faith exception in this setting."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-11328",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T18:43:51.462170Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether applying the good\u2011faith rule would deny retroactive effect to the altered judgment and whether the good\u2011faith exception is a separate question from retroactivity."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked why the Court is not simply following the good\u2011faith rule here."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0000-0005"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether the petitioner\u2019s argument applies when the precedent relied upon is from a circuit or state court."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0000-0007"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg inquired whether the Eleventh Circuit\u2019s line reflects retroactivity precedent."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0000-0009"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan raised concerns about incentives and suggested a limited rule applying the exclusionary rule only in the present case and not on direct appeal."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether it is worthwhile to litigate the difference between zero and remote in determining the rule to apply."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned a regime where the exclusionary rule would apply depending on whether the law was clear in a circuit, raising concerns about qualified immunity."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0001-0005"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Alito followed up on Justice Kagan\u2019s suggestion, asking what is wrong with retaining an exception to the good\u2011faith exception for the defendant in this case."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the Court would grant the first request and deny all the rest."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case concerns whether the good faith exception to the exclusionary rule should apply when reliance is on precedent that may be altered retroactively."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Petitioner argues that the good faith exception, as labeled, has the same substance and effect as a retroactivity decision."
+      },
+      {
+        "attribution": "Michael R. Dreeben (respondent counsel)",
+        "citations": [
+          {
+            "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+            "evidence_ids": [
+              "ev-1812768977ea-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Michael R. Dreeben (respondent counsel), according to Michael R. Dreeben (respondent counsel), the United States contends that the exclusionary rule should be limited to situations necessary to deter police misconduct and shape police conduct."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+              "evidence_ids": [
+                "ev-1812768977ea-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petitioner asserts that the case raises the intersection of retroactivity and the good faith exception, and that the Court should reverse and hold the good faith exception does not apply to reliance on precedent."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+              "evidence_ids": [
+                "ev-1812768977ea-0000-0004"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "The petitioner says the government's use of the good\u2011faith label is actually a retroactivity argument."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+              "evidence_ids": [
+                "ev-1812768977ea-0000-0006"
+              ],
+              "pages": {
+                "end": 8,
+                "start": 8
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petitioner notes that the Eleventh Circuit had not expanded Belton, only made routine applications of it."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+              "evidence_ids": [
+                "ev-1812768977ea-0000-0008"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "The petitioner argues that the exclusionary rule is a remedy in some cases and a necessary cost."
+        },
+        {
+          "attribution": "Petitioner (Orin S. Kerr)",
+          "citations": [
+            {
+              "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+              "evidence_ids": [
+                "ev-1812768977ea-0002-0005"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Petitioner (Orin S. Kerr), according to Petitioner (Orin S. Kerr), the petitioner emphasizes that the plain error doctrine largely addresses the government\u2019s concerns about the exclusionary rule."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Michael R. Dreeben (respondent counsel)",
+          "citations": [
+            {
+              "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+              "evidence_ids": [
+                "ev-1812768977ea-0001-0001"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to Michael R. Dreeben (respondent counsel), according to Michael R. Dreeben (respondent counsel), respondent counsel argues that the exclusionary rule should be limited to situations where it is necessary to further the deterrent purpose of the rule and to shape police conduct."
+        }
+      ],
+      "heading": "United States",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1812768977ea14d58bdea56b6e4475e435d508ad1553b04fd718b06bc8f902d1",
+      "evidence_ids": [
+        "ev-1812768977ea-0000-0000"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T18:52:13.919144Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

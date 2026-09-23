@@ -1,0 +1,197 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "f997ec4f0437860b002244ac1fc8f2e3cea163ff63a8eed56f3169868fbe06f8",
+            "evidence_ids": [
+              "ev-f997ec4f0437-0001-0000"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether a suit based on a Type\u202f2 belt injury would be pre\u2011empted."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "f997ec4f0437860b002244ac1fc8f2e3cea163ff63a8eed56f3169868fbe06f8",
+            "evidence_ids": [
+              "ev-f997ec4f0437-0001-0003"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how the case differs from situations where an agency lets manufacturers choose designs rather than setting a universal minimum standard."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-08-1314",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T17:46:30.810738Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f997ec4f0437860b002244ac1fc8f2e3cea163ff63a8eed56f3169868fbe06f8"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "NHTSA",
+        "citations": [
+          {
+            "document_hash": "f997ec4f0437860b002244ac1fc8f2e3cea163ff63a8eed56f3169868fbe06f8",
+            "evidence_ids": [
+              "ev-f997ec4f0437-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to NHTSA, the National Highway Traffic Administration (NHTSA) has stated that merely offering options does not constitute pre\u2011emption."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. BUCHANAN",
+          "citations": [
+            {
+              "document_hash": "f997ec4f0437860b002244ac1fc8f2e3cea163ff63a8eed56f3169868fbe06f8",
+              "evidence_ids": [
+                "ev-f997ec4f0437-0002-0003"
+              ],
+              "pages": {
+                "end": 49,
+                "start": 49
+              }
+            }
+          ],
+          "text": "According to Mr. BUCHANAN, petitioners state that the 1987\u20111989 regulatory history contains no mention of child safety influencing the decision not to mandate Type\u202f2 shoulder belts for aisle and center seats."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. GARRE",
+          "citations": [
+            {
+              "document_hash": "f997ec4f0437860b002244ac1fc8f2e3cea163ff63a8eed56f3169868fbe06f8",
+              "evidence_ids": [
+                "ev-f997ec4f0437-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. GARRE, the vehicle had three rows of seats; the child was seated in the middle\u2011row center seat, which is adjacent to an aisle."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f997ec4f0437860b002244ac1fc8f2e3cea163ff63a8eed56f3169868fbe06f8",
+      "evidence_ids": [
+        "ev-f997ec4f0437-0000-0000"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T17:51:54.491566Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

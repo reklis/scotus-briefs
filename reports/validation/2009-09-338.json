@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2009-09-338",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the respondent claim that McCowan maintains habeas relief is appropriate because the trial judge\u2019s declaration of a mistrial was based on manifest necessity is not supported by the supplied evidence.",
+    "Overstatement check failed: the same claim overstates the evidence by asserting a conclusion not present in the cited transcript."
+  ],
+  "quality_scores": {
+    "completeness": 0.95,
+    "factual_accuracy": 0.93,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.8,
+    "traceability": 0.93
+  }
+}

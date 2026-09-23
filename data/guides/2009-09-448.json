@@ -1,0 +1,478 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the Fourth Circuit vacated an award of attorney\u2019s fees to Hardt even though the district court found the insurer violated ERISA in bad faith and ordered a redetermination of benefits within 30 days; Hardt subsequently secured full disability benefits."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          },
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0003"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0004"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0002-0003"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "The central legal question is whether a party who wins only a procedural victory may be awarded attorney\u2019s fees under ERISA."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-09-448",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T16:48:25.739827Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0000-0003"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked: \u201cHow could somebody have some success on the merits if they don't achieve a judgment of some sort?\u201d"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether fees are assessable when the only victory is procedural."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether a party who wins only a technical hearing should receive attorney\u2019s fees."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0003"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts wondered about a scenario where a plaintiff wins every procedural issue but ultimately loses on the merits."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0004"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether treating the statute as having a prevailing\u2011party clause is appropriate."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0006"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer later questioned the discretion of district judges to award fees when the plaintiff obtains some benefit."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg posed a hypothetical about entitlement to documents in an interlocutory order."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0002-0003"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked what distinguishes a prevailing party from a mere success on the merits."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, petitioner Bridget Hardt seeks attorney\u2019s fees under ERISA \u00a7502(g)(1) after a procedural victory."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          },
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0003"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0001-0004"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+            "evidence_ids": [
+              "ev-dcda670d3683-0002-0003"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "The case raises the question of whether a party who achieves only a procedural success, without final relief, is eligible for fee awards."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+              "evidence_ids": [
+                "ev-dcda670d3683-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioner argues she is entitled to an attorney\u2019s fee award under ERISA \u00a7502(g)(1) by applying the Court\u2019s established fee standards."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+      "evidence_ids": [
+        "ev-dcda670d3683-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+      "evidence_ids": [
+        "ev-dcda670d3683-0000-0003"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    },
+    {
+      "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+      "evidence_ids": [
+        "ev-dcda670d3683-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+      "evidence_ids": [
+        "ev-dcda670d3683-0001-0002"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+      "evidence_ids": [
+        "ev-dcda670d3683-0001-0003"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+      "evidence_ids": [
+        "ev-dcda670d3683-0001-0004"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+      "evidence_ids": [
+        "ev-dcda670d3683-0001-0006"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+      "evidence_ids": [
+        "ev-dcda670d3683-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "dcda670d3683c788004cd1fae808688d561770bcfbacb55f1d32322a6c979e53",
+      "evidence_ids": [
+        "ev-dcda670d3683-0002-0003"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T16:55:49.639095Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

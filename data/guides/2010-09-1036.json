@@ -1,0 +1,381 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0000-0006"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, the legal question before the Court is whether the deadline for filing a veterans\u2019 appeal is a jurisdictional requirement."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-1036",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T18:19:13.121864Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts introduced the case."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0000-0006"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          },
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0001-0005"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0001-0006"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justices asked whether the deadline is jurisdictional and whether there are exceptions for veterans who miss it."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0001-0004"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Eric D. Miller presented oral argument on behalf of the respondent."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0000-0006"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, the case concerns whether a filing deadline for veterans\u2019 appeals is jurisdictional."
+      },
+      {
+        "attribution": "Lisa S. Blatt (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Lisa S. Blatt (Petitioner), according to Lisa S. Blatt (Petitioner), the petitioner argues that the Federal Circuit\u2019s ruling that the deadline is jurisdictional is wrong because it blocks review for veterans who cannot file on time due to their disability."
+      },
+      {
+        "attribution": "Government (Respondent)",
+        "citations": [
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0000-0003"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "According to Government (Respondent), according to Government (Respondent), the government contends that veterans who file in the wrong forum are simply out of time with no exceptions."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Lisa S. Blatt (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+              "evidence_ids": [
+                "ev-04c3be04cdca-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            },
+            {
+              "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+              "evidence_ids": [
+                "ev-04c3be04cdca-0001-0002"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "The deadline is not jurisdictional; therefore the Federal Circuit erred in treating it as such."
+        }
+      ],
+      "heading": "Petitioner (Lisa S. Blatt)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government (Respondent)",
+          "citations": [
+            {
+              "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+              "evidence_ids": [
+                "ev-04c3be04cdca-0000-0003"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "According to Government (Respondent), according to Government (Respondent), veterans who miss the filing deadline, even if they filed in the wrong forum, are out of time with no exception."
+        }
+      ],
+      "heading": "Respondent (Government)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+      "evidence_ids": [
+        "ev-04c3be04cdca-0000-0000",
+        "ev-04c3be04cdca-0000-0001",
+        "ev-04c3be04cdca-0000-0003",
+        "ev-04c3be04cdca-0000-0004",
+        "ev-04c3be04cdca-0000-0005",
+        "ev-04c3be04cdca-0000-0006",
+        "ev-04c3be04cdca-0001-0000",
+        "ev-04c3be04cdca-0001-0001",
+        "ev-04c3be04cdca-0001-0002",
+        "ev-04c3be04cdca-0001-0004",
+        "ev-04c3be04cdca-0001-0005",
+        "ev-04c3be04cdca-0001-0006",
+        "ev-04c3be04cdca-0002-0000",
+        "ev-04c3be04cdca-0002-0001",
+        "ev-04c3be04cdca-0002-0002",
+        "ev-04c3be04cdca-0003-0000",
+        "ev-04c3be04cdca-0003-0001"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T18:26:56.934969Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Lisa S. Blatt (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0000-0003"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "If the deadline is deemed jurisdictional, many veterans with disabilities may be barred from appealing for benefits."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          },
+          {
+            "document_hash": "04c3be04cdca284a445bbf03ab69652655ec153833940a6c8947d97c0b2b754f",
+            "evidence_ids": [
+              "ev-04c3be04cdca-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The case also raises issues about representation and notice, affecting how veterans receive information about filing deadlines."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,537 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Jeffrey L. Fisher)",
+        "citations": [
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0002-0000"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "The legal question is whether the lab analyst\u2019s statements in a forensic report are testimonial and therefore require the analyst\u2019s in\u2011court testimony under the Confrontation Clause."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-10876",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T18:26:56.953379Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether \u201cin the presence\u201d requires the analyst to testify in the courtroom or could be satisfied by video\u2011conferencing."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0001-0004"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          },
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0002-0000"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia inquired whether the analyst had been fired, placed on administrative leave, or otherwise, and whether the issue was an interrogation."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0003-0004"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether New Mexico\u2019s criminal procedure rules treat the lab report as prima facie evidence."
+      },
+      {
+        "attribution": "Mr. King",
+        "citations": [
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0002-0002"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Mr. King explained that the trial at the district\u2011court level occurred before the Melendez\u2011Diaz decision."
+      },
+      {
+        "attribution": "Mr. King",
+        "citations": [
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Mr. King argued that each statement proposed for trial must be analyzed to determine whether it is a substitute for live testimony."
+      },
+      {
+        "attribution": "Mr. King",
+        "citations": [
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0003-0001"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Mr. King described the gas\u2011chromatograph printout showing the blood\u2011alcohol level and its transfer to the lab form."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0003-0002"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether a hypothetical machine that could match a bullet to a gun with high certainty would be acceptable evidence."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Jeffrey L. Fisher)",
+        "citations": [
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+            "evidence_ids": [
+              "ev-e74f1b44bab3-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The dispute centers on whether the State\u2019s use of a forensic lab analyst\u2019s written report, without the analyst testifying, violates the Confrontation Clause of the Sixth Amendment."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Jeffrey L. Fisher)",
+          "citations": [
+            {
+              "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+              "evidence_ids": [
+                "ev-e74f1b44bab3-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner (Jeffrey L. Fisher), according to Petitioner (Jeffrey L. Fisher), the Confrontation Clause bars the introduction of the lab analyst\u2019s statements without live testimony."
+        },
+        {
+          "attribution": "Petitioner (Jeffrey L. Fisher)",
+          "citations": [
+            {
+              "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+              "evidence_ids": [
+                "ev-e74f1b44bab3-0000-0006"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Jeffrey L. Fisher), according to Petitioner (Jeffrey L. Fisher), a surrogate\u2011witness procedure violates all four components of the right to confrontation."
+        },
+        {
+          "attribution": "Petitioner (Jeffrey L. Fisher)",
+          "citations": [
+            {
+              "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+              "evidence_ids": [
+                "ev-e74f1b44bab3-0000-0003"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner (Jeffrey L. Fisher), according to Petitioner (Jeffrey L. Fisher), an amicus brief cited by the petitioner suggests some flexibility for trial judges in accommodating lab analysts\u2019 schedules."
+        }
+      ],
+      "heading": "Petitioner (Donald Bullcoming)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+              "evidence_ids": [
+                "ev-e74f1b44bab3-0001-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to State, the State acknowledges that using the lab report without the analyst on the stand would make its case considerably weaker."
+        }
+      ],
+      "heading": "State",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+              "evidence_ids": [
+                "ev-e74f1b44bab3-0001-0003"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "According to Respondent, new Mexico argues that the lab report is not an ex\u2011parte examination and therefore does not violate the Confrontation Clause."
+        },
+        {
+          "attribution": "Mr. King",
+          "citations": [
+            {
+              "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+              "evidence_ids": [
+                "ev-e74f1b44bab3-0002-0001"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Mr. King, form\u202f705, the laboratory report form, is routinely used in every circumstance by the lab."
+        }
+      ],
+      "heading": "Respondent (New Mexico)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0000-0006"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0000-0003"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0001-0001"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0001-0003"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 31
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0002-0001"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0002-0000"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0002-0002"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0003-0000",
+        "ev-e74f1b44bab3-0003-0001"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0003-0002"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0003-0004"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 59
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0001-0002"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "e74f1b44bab33e1cfdcb32d78a63fd083cd4ab9795662610e5d05e2bb2ee910a",
+      "evidence_ids": [
+        "ev-e74f1b44bab3-0001-0004"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T18:33:06.601376Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

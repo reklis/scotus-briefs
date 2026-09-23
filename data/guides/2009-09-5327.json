@@ -1,0 +1,438 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument was held before the Supreme Court at 11:02\u202fa.m."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the failure to notify was more than negligence."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked if a one\u2011day miscalculation changes the outcome."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether there is a distinction between paid counsel and court\u2011appointed counsel regarding state responsibility."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0001-0005"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether a forged date stamp on a filing eliminates equitable tolling."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0001-0008"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Alito also asked whether the case was denied because the petitioner was pro se."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0001-0007"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy raised the question of applying equitable tolling broadly unless the state has attorney\u2011discipline procedures."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0001-0004",
+              "ev-d170aa8c7f1e-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned the Eleventh Circuit\u2019s standard that negligence alone is insufficient without proof of bad faith, dishonesty, or mental impairment."
+      }
+    ],
+    "heading": "Background & Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-09-5327",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T17:11:34.445465Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the failure to notify was more than negligence."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked about the effect of a one\u2011day miscalculation."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about the difference between paid counsel and court\u2011appointed counsel."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0001-0005"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether a forged date stamp on a filing eliminates equitable tolling."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0001-0008"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Alito also asked whether the case was denied because the petitioner was pro se."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0001-0007"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy raised the question of applying equitable tolling broadly unless the state has attorney\u2011discipline procedures."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0001-0004",
+              "ev-d170aa8c7f1e-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned the Eleventh Circuit\u2019s standard that negligence alone is insufficient without proof of bad faith, dishonesty, or mental impairment."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+            "evidence_ids": [
+              "ev-d170aa8c7f1e-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, petitioner alleges he was not provided notice that the Florida Supreme Court denied his post\u2011conviction appeal, causing his AEDPA statute\u2011of\u2011limitations period to expire."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Todd G. Scher (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+              "evidence_ids": [
+                "ev-d170aa8c7f1e-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Todd G. Scher (Petitioner), according to Todd G. Scher (Petitioner), todd G. Scher (Petitioner) stated that the Eleventh Circuit characterized Mr. Collins's conduct as gross negligence."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+              "evidence_ids": [
+                "ev-d170aa8c7f1e-0001-0000"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner stated he notified the Florida Supreme Court of his lawyer\u2019s problem and apologized to the clerk."
+        },
+        {
+          "attribution": "Mr. Makar",
+          "citations": [
+            {
+              "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+              "evidence_ids": [
+                "ev-d170aa8c7f1e-0002-0001"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "Mr. Makar agrees with the Eleventh Circuit\u2019s view that attorney negligence, even gross negligence, is insufficient, but warns that concepts like dishonesty or conflict should not be conflated with negligence."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "d170aa8c7f1e7e94becff9af62ce3c2a77296b82bfcf2c3bbff3a935f6db6e4a",
+      "evidence_ids": [
+        "ev-d170aa8c7f1e-0000-0000",
+        "ev-d170aa8c7f1e-0000-0001",
+        "ev-d170aa8c7f1e-0000-0002",
+        "ev-d170aa8c7f1e-0000-0003",
+        "ev-d170aa8c7f1e-0000-0004",
+        "ev-d170aa8c7f1e-0001-0000",
+        "ev-d170aa8c7f1e-0001-0001",
+        "ev-d170aa8c7f1e-0001-0002",
+        "ev-d170aa8c7f1e-0001-0004",
+        "ev-d170aa8c7f1e-0001-0005",
+        "ev-d170aa8c7f1e-0001-0007",
+        "ev-d170aa8c7f1e-0001-0008",
+        "ev-d170aa8c7f1e-0001-0009",
+        "ev-d170aa8c7f1e-0002-0000",
+        "ev-d170aa8c7f1e-0002-0001",
+        "ev-d170aa8c7f1e-0002-0003"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T17:24:56.076556Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

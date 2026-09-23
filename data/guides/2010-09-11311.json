@@ -1,0 +1,511 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "William E. Marsh (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to William E. Marsh (Petitioner), according to William E. Marsh (Petitioner), indiana law treats vehicular fleeing as a continuum ranging from a low\u2011level failure to stop (the crime for which Mr. Sykes was convicted) to a high\u2011level felony that results in the death of a police officer."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Alito, is vehicular flight that results in death considered aggressive conduct for purposes of the ACCA?"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-11311",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T18:36:52.945452Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Scalia asked, \u201cWhat\u2019s in between?\u201d"
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked, \u201cYou\u2019re supposed to stop dead in your tracks and not pull off on the shoulder?\u201d"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer noted, \u201cMy problem is there is arguably not here a gradation.\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Alito said, \u201cI wouldn\u2019t say that they didn\u2019t have a rational basis for dividing it.\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Alito asked, \u201cIf a person is convicted of vehicular flight that causes death, is that aggressive conduct?\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked, \u201cDoesn\u2019t whether it\u2019s aggressive or not depend upon how it happened?\u201d"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0002-0004"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Scalia responded, \u201cBut he\u2019s saying even when it\u2019s risky, it\u2019s not aggressive.\u201d"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0002-0006"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Breyer asked, \u201cSuppose you have one of 36 States which treat the general offense as a misdemeanor and then make it a felony if you put somebody at risk\u2026 would that be your normal instinct?\u201d"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0002-0008"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked, \u201cYou can\u2019t commit (B) without committing (A) first\u2026 how can it not be a lesser included?\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "William E. Marsh (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to William E. Marsh (Petitioner), according to William E. Marsh (Petitioner), the case concerns the Armed Career Criminal Act (ACCA) and how it applies to vehicular fleeing offenses in Indiana."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          },
+          {
+            "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+            "evidence_ids": [
+              "ev-ecaa56a7caa9-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The Court is examining whether a conviction for vehicular flight that causes death qualifies as aggressive conduct under ACCA."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "William E. Marsh (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+              "evidence_ids": [
+                "ev-ecaa56a7caa9-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to William E. Marsh (Petitioner), according to William E. Marsh (Petitioner), the Armed Career Criminal Act enhances punishment for firearm possession for a person with three prior violent felony convictions, and Mr. Sykes was convicted of the low\u2011level vehicular\u2011fleeing offense."
+        },
+        {
+          "attribution": "William E. Marsh (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+              "evidence_ids": [
+                "ev-ecaa56a7caa9-0000-0005"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to William E. Marsh (Petitioner), according to William E. Marsh (Petitioner), the petitioner questioned whether the prosecutor is under any obligation in this context."
+        }
+      ],
+      "heading": "Petitioner (Marcus Sykes)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+              "evidence_ids": [
+                "ev-ecaa56a7caa9-0002-0001"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Government, the Government asserts that vehicular flight that causes death is aggressive conduct."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+              "evidence_ids": [
+                "ev-ecaa56a7caa9-0002-0005"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Government, in the ordinary case, the character of the conduct is aggressive."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+              "evidence_ids": [
+                "ev-ecaa56a7caa9-0002-0009"
+              ],
+              "pages": {
+                "end": 47,
+                "start": 47
+              }
+            }
+          ],
+          "text": "According to Government, the Government does not view offense (A) as a lesser\u2011included offense of (B)."
+        }
+      ],
+      "heading": "Government (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+      "evidence_ids": [
+        "ev-ecaa56a7caa9-0000-0001",
+        "ev-ecaa56a7caa9-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+      "evidence_ids": [
+        "ev-ecaa56a7caa9-0000-0004"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+      "evidence_ids": [
+        "ev-ecaa56a7caa9-0000-0005"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+      "evidence_ids": [
+        "ev-ecaa56a7caa9-0001-0000"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+      "evidence_ids": [
+        "ev-ecaa56a7caa9-0001-0001"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+      "evidence_ids": [
+        "ev-ecaa56a7caa9-0002-0000",
+        "ev-ecaa56a7caa9-0002-0001"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+      "evidence_ids": [
+        "ev-ecaa56a7caa9-0002-0002"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+      "evidence_ids": [
+        "ev-ecaa56a7caa9-0002-0004",
+        "ev-ecaa56a7caa9-0002-0005"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+      "evidence_ids": [
+        "ev-ecaa56a7caa9-0002-0006",
+        "ev-ecaa56a7caa9-0002-0007"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "ecaa56a7caa977ec65bfe63a645f857a3c4ba162cc4132ec5516e2dd96668875",
+      "evidence_ids": [
+        "ev-ecaa56a7caa9-0002-0008",
+        "ev-ecaa56a7caa9-0002-0009"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T18:43:51.442361Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

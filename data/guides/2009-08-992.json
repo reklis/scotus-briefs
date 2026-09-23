@@ -1,0 +1,365 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+            "evidence_ids": [
+              "ev-816175841503-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+            "evidence_ids": [
+              "ev-816175841503-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioners, the case concerns whether the adequate State grounds doctrine requires a State procedural rule to be \u201cadequate\u201d when the rule is discretionary, and whether such discretion precludes Federal courts from reviewing constitutional claims."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-992",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T16:05:51.130581Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+            "evidence_ids": [
+              "ev-816175841503-0000-0007"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked for clarification of the Third Circuit\u2019s rule equating discretion with inadequacy."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+            "evidence_ids": [
+              "ev-816175841503-0000-0008"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned where the rule could be found in the Third Circuit\u2019s opinion."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+            "evidence_ids": [
+              "ev-816175841503-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the parties were disagreeing with the Third Circuit\u2019s conclusion about Pennsylvania law."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+            "evidence_ids": [
+              "ev-816175841503-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer inquired whether anything could be said to improve the situation."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+            "evidence_ids": [
+              "ev-816175841503-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioners argue that the adequate State grounds doctrine should not strip State courts of their equitable power to excuse procedural defaults, but only to prevent discrimination against Federal claims."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+            "evidence_ids": [
+              "ev-816175841503-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioners, they contend that the rule applied to the defendant was discretionary, not an inadequate procedural default."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+            "evidence_ids": [
+              "ev-816175841503-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Petitioners, they further argue that the State rule gave the defendant reasonable notice, so the State ground cannot be thrown out in Federal court for inadequacy."
+      },
+      {
+        "attribution": "Commonwealth",
+        "citations": [
+          {
+            "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+            "evidence_ids": [
+              "ev-816175841503-0001-0003"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Commonwealth, according to the petitioner (the Commonwealth), it wants the Court to change the adequate State grounds doctrine so that Mr. Kindler may be executed without further court review of his constitutional claims."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+              "evidence_ids": [
+                "ev-816175841503-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioners, the petitioner maintains that the State\u2019s discretionary rule should be considered adequate and therefore should not bar Federal review of the death\u2011penalty claim."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+              "evidence_ids": [
+                "ev-816175841503-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioners, the petitioner argues that the rule applied was discretionary, not an inadequate procedural default."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+              "evidence_ids": [
+                "ev-816175841503-0000-0005"
+              ],
+              "pages": {
+                "end": 9,
+                "start": 9
+              }
+            }
+          ],
+          "text": "According to Petitioners, the petitioner contends that the State rule gave the defendant reasonable notice, so it cannot be thrown out for inadequacy."
+        },
+        {
+          "attribution": "Commonwealth",
+          "citations": [
+            {
+              "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+              "evidence_ids": [
+                "ev-816175841503-0001-0003"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Commonwealth, according to the petitioner (the Commonwealth), it wants the Court to change the adequate State grounds doctrine so that Mr. Kindler may be executed without further court review of his constitutional claims."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+      "evidence_ids": [
+        "ev-816175841503-0000-0000",
+        "ev-816175841503-0000-0002",
+        "ev-816175841503-0000-0003",
+        "ev-816175841503-0000-0005",
+        "ev-816175841503-0000-0006",
+        "ev-816175841503-0000-0007",
+        "ev-816175841503-0000-0008",
+        "ev-816175841503-0001-0000",
+        "ev-816175841503-0001-0001",
+        "ev-816175841503-0001-0003",
+        "ev-816175841503-0002-0000",
+        "ev-816175841503-0002-0004",
+        "ev-816175841503-0002-0005",
+        "ev-816175841503-0002-0006"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T16:10:19.587428Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Mr. Lawry",
+        "citations": [
+          {
+            "document_hash": "81617584150348851aa45f371ad3f8ba22f966e816b6e0981497e5966d429e5f",
+            "evidence_ids": [
+              "ev-816175841503-0002-0004"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "If the Court holds that the State\u2019s discretionary rule is not adequate, the respondent could be executed with no further court review of his constitutional claims."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
