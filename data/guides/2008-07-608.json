@@ -1,0 +1,284 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Ms. Saharsky",
+        "citations": [
+          {
+            "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+            "evidence_ids": [
+              "ev-eeb4de82c861-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Hayes was convicted of assaulting his wife, causing facial swelling and injuries to her body."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+            "evidence_ids": [
+              "ev-eeb4de82c861-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+            "evidence_ids": [
+              "ev-eeb4de82c861-0002-0002"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The legal question is whether the statute defining a misdemeanor crime of domestic violence requires the offense to be a domestic\u2011violence incident, or whether any assault can qualify."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-608",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T22:43:47.809893Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+            "evidence_ids": [
+              "ev-eeb4de82c861-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:53\u202fa.m. before the Supreme Court of the United States."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+            "evidence_ids": [
+              "ev-eeb4de82c861-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+            "evidence_ids": [
+              "ev-eeb4de82c861-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The case concerns whether Hayes's conviction for assaulting his wife qualifies as a misdemeanor crime of domestic violence."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+              "evidence_ids": [
+                "ev-eeb4de82c861-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The United States argues that Hayes's conviction is a misdemeanor crime of domestic violence because the statutory text reads that way and a contrary reading would defeat Congress's purposes."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Giatrass",
+          "citations": [
+            {
+              "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+              "evidence_ids": [
+                "ev-eeb4de82c861-0002-0001"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "Mr. Giatrass contends that, based on the law in 1993\u201194, Hayes would not have lost his rights regarding the issue."
+        }
+      ],
+      "heading": "Mr. Giatrass (Respondent\u2019s Counsel)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+      "evidence_ids": [
+        "ev-eeb4de82c861-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+      "evidence_ids": [
+        "ev-eeb4de82c861-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+      "evidence_ids": [
+        "ev-eeb4de82c861-0001-0001"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+      "evidence_ids": [
+        "ev-eeb4de82c861-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+      "evidence_ids": [
+        "ev-eeb4de82c861-0002-0002"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "eeb4de82c86127454caaf4f41e42bb5c3997dd50cddde3e2083f3b259573e2f8",
+      "evidence_ids": [
+        "ev-eeb4de82c861-0002-0001"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T22:47:03.598501Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

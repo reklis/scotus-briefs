@@ -1,0 +1,337 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+            "evidence_ids": [
+              "ev-5fe0ab4dec86-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+            "evidence_ids": [
+              "ev-5fe0ab4dec86-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The central legal question is whether the discharge of mine tailings constitutes \u201cfill,\u201d which would place permitting authority with the Army Corps of Engineers under CWA \u00a7404, or \u201ceffluent,\u201d which would be regulated by the EPA under \u00a7402."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-984",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T00:12:19.352350Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+            "evidence_ids": [
+              "ev-5fe0ab4dec86-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts announced the hearing of the case."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+            "evidence_ids": [
+              "ev-5fe0ab4dec86-0001-0002"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the EPA definition of fill applies to solids."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+            "evidence_ids": [
+              "ev-5fe0ab4dec86-0002-0004"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether the Court could have simply vetoed the permit if it found the discharge problematic."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+            "evidence_ids": [
+              "ev-5fe0ab4dec86-0002-0000"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether the slurry of tailings was covering the lake bottom with dirt and hazardous chemicals."
+      },
+      {
+        "attribution": "Mr. Olson (Government)",
+        "citations": [
+          {
+            "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+            "evidence_ids": [
+              "ev-5fe0ab4dec86-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Mr. Olson (Government), according to Mr. Olson (Government), the government argued that if the discharge is classified as fill, the permitting agency is the Army Corps of Engineers."
+      },
+      {
+        "attribution": "Mr. Olson",
+        "citations": [
+          {
+            "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+            "evidence_ids": [
+              "ev-5fe0ab4dec86-0003-0000"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "According to Mr. Olson, the government also noted that both a \u00a7402 permit and a \u00a7404 permit are present in the case."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+            "evidence_ids": [
+              "ev-5fe0ab4dec86-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+            "evidence_ids": [
+              "ev-5fe0ab4dec86-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The case concerns whether the discharge of mine\u2011tailings (fill material) into a lake is regulated as \u201cfill\u201d under Clean Water Act section\u202f404, which would give permitting authority to the Army Corps of Engineers, or as \u201ceffluent\u201d under section\u202f402, which would be regulated by the EPA."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+            "evidence_ids": [
+              "ev-5fe0ab4dec86-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The EPA\u2019s definition of \u201cfill\u201d is referenced in the arguments."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioners (Coeur Alaska, Inc. and Alaska)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+              "evidence_ids": [
+                "ev-5fe0ab4dec86-0000-0003"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Respondents, expert agencies charged with implementing the Clean Water Act have concluded that the discharge of fill material should be permitted by the Army Corps of Engineers under CWA \u00a7404 and is not subject to EPA effluent guidelines under \u00a7402."
+        },
+        {
+          "attribution": "Mr. Waldo (Respondents)",
+          "citations": [
+            {
+              "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+              "evidence_ids": [
+                "ev-5fe0ab4dec86-0001-0003"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "According to Mr. Waldo (Respondents), according to Mr. Waldo (Respondents), ePA has historically regulated industrial sources whose wastewater contains high levels of suspended solids that effectively act as fill material."
+        },
+        {
+          "attribution": "Mr. Olson",
+          "citations": [
+            {
+              "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+              "evidence_ids": [
+                "ev-5fe0ab4dec86-0003-0000"
+              ],
+              "pages": {
+                "end": 58,
+                "start": 58
+              }
+            }
+          ],
+          "text": "According to Mr. Olson, both a \u00a7402 permit and a \u00a7404 permit are involved in the case: the \u00a7402 permit covers material leaving the lake, while the \u00a7404 permit covers material entering the lake."
+        }
+      ],
+      "heading": "Respondent (Southeast Alaska Conservation Council)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5fe0ab4dec86271b1d1d08faede5b3efe9e946617cf8d16cc6b7e27ed4e3bae2",
+      "evidence_ids": [
+        "ev-5fe0ab4dec86-0000-0000",
+        "ev-5fe0ab4dec86-0000-0003",
+        "ev-5fe0ab4dec86-0001-0000",
+        "ev-5fe0ab4dec86-0001-0001",
+        "ev-5fe0ab4dec86-0001-0002",
+        "ev-5fe0ab4dec86-0001-0003",
+        "ev-5fe0ab4dec86-0002-0000",
+        "ev-5fe0ab4dec86-0002-0004",
+        "ev-5fe0ab4dec86-0003-0000"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T00:17:01.003089Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

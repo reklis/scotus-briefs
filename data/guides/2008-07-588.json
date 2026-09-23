@@ -1,0 +1,589 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 9
+            }
+          },
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0002-0001"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          },
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          },
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "The central question is whether the EPA may consider costs when determining the \u201cbest technology available\u201d under Clean Water Act section\u202f316(b)."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-588",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T22:29:07.814390Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0000-0004"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts opened the argument for Case\u202f07\u2011588."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether the petitioners were arguing that costs should be taken into account."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg questioned how much cost consideration is appropriate and noted concerns about comparing incomparable factors."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0002-0001"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the cost question was merely about the industry\u2019s economic ability to afford the technology."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia inquired whether Section\u202f307 allowed a cost\u2011benefit analysis."
+      },
+      {
+        "attribution": "Justice ALITO",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0001-0007"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "Justice Alito asked how cost could be incorporated into the concept of availability."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0003-0002"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts queried whether the panel\u2019s decision overruled the prior Riverkeeper\u202f1 decision."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Environmental Protection Agency",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Environmental Protection Agency, the Environmental Protection Agency has for more than 30 years interpreted the Clean Water Act to permit consideration of costs and benefits when setting limits on water intake."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0000-0002"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Petitioners, petitioners note that the Executive Branch has required a cost\u2011benefit analysis for regulations for almost 30 years."
+      },
+      {
+        "attribution": "Environmental Protection Agency",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0003-0003"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "According to Environmental Protection Agency, the EPA argues that the Riverkeeper\u202f1 decision is inconsistent with other opinions and demonstrates ambiguity in the law."
+      },
+      {
+        "attribution": "Environmental Protection Agency",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0003-0004"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 61
+            }
+          }
+        ],
+        "text": "According to Environmental Protection Agency, ePA\u2019s cost\u2011benefit analysis was not among the most robust forms; it first created national performance standards."
+      },
+      {
+        "attribution": "Environmental Protection Agency",
+        "citations": [
+          {
+            "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+            "evidence_ids": [
+              "ev-ade17efb97f0-0003-0005"
+            ],
+            "pages": {
+              "end": 63,
+              "start": 63
+            }
+          }
+        ],
+        "text": "According to Environmental Protection Agency, ePA also applied a variance when a facility\u2019s costs were significantly greater than the benefits."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+              "evidence_ids": [
+                "ev-ade17efb97f0-0000-0002"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 19
+              }
+            }
+          ],
+          "text": "Petitioners argue that cost\u2011benefit analysis is a longstanding requirement for regulations and should be considered in the EPA\u2019s rulemaking."
+        },
+        {
+          "attribution": "Lazarus; Mr. LAZARUS",
+          "citations": [
+            {
+              "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+              "evidence_ids": [
+                "ev-ade17efb97f0-0002-0000"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 40
+              }
+            },
+            {
+              "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+              "evidence_ids": [
+                "ev-ade17efb97f0-0001-0005"
+              ],
+              "pages": {
+                "end": 29,
+                "start": 29
+              }
+            }
+          ],
+          "text": "Petitioners (Mr. Lazarus) contend that Section\u202f316(b) does not authorize the EPA to weigh costs against benefits; Congress excluded cost\u2011benefit analysis and focused on technology availability."
+        },
+        {
+          "attribution": "Mr. LAZARUS",
+          "citations": [
+            {
+              "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+              "evidence_ids": [
+                "ev-ade17efb97f0-0001-0008"
+              ],
+              "pages": {
+                "end": 32,
+                "start": 32
+              }
+            }
+          ],
+          "text": "According to Mr. LAZARUS, petitioners assert that \u201cavailability includes economic availability.\u201d"
+        },
+        {
+          "attribution": "Mr. LAZARUS",
+          "citations": [
+            {
+              "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+              "evidence_ids": [
+                "ev-ade17efb97f0-0001-0009"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. LAZARUS, petitioners claim that the \u201cbest available\u201d standard does not involve a cost\u2011benefit analysis, only a \u201cbest practical\u201d approach."
+        }
+      ],
+      "heading": "Petitioners\u2019 Position (Entergy Corp, PSEG Fossil LLC, Utility Water Act Group)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Riverkeeper, Inc. Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0000-0004"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0000-0003"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0000-0002"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0001-0000"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0001-0001"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0001-0005"
+      ],
+      "pages": {
+        "end": 29,
+        "start": 29
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0001-0007"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 31
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0001-0008"
+      ],
+      "pages": {
+        "end": 32,
+        "start": 32
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0001-0009"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0002-0000"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0002-0001"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0003-0000"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0003-0002"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0003-0003"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 59
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0003-0004"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 61
+      }
+    },
+    {
+      "document_hash": "ade17efb97f08f985a290cbdf74a8def3e3af0c314375330f664e90e79f7d002",
+      "evidence_ids": [
+        "ev-ade17efb97f0-0003-0005"
+      ],
+      "pages": {
+        "end": 63,
+        "start": 63
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T22:35:37.036755Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

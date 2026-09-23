@@ -1,0 +1,451 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+            "evidence_ids": [
+              "ev-50ad870ec72f-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          },
+          {
+            "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+            "evidence_ids": [
+              "ev-50ad870ec72f-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The central question before the Court is whether the Confrontation Clause permits admission of forensic laboratory reports under a business\u2011records exception."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-591",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T22:35:37.053741Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+            "evidence_ids": [
+              "ev-50ad870ec72f-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts announced the case for argument."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+            "evidence_ids": [
+              "ev-50ad870ec72f-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether there is a business\u2011records exception for forensic lab reports."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+            "evidence_ids": [
+              "ev-50ad870ec72f-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia inquired about the historical basis of the Confrontation Clause and whether a business\u2011records exception existed historically."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+            "evidence_ids": [
+              "ev-50ad870ec72f-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy questioned whether the involvement of a machine versus an expert affects the rule for admissibility."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+            "evidence_ids": [
+              "ev-50ad870ec72f-0002-0004"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy expressed concern about making a rule based solely on machine involvement."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+            "evidence_ids": [
+              "ev-50ad870ec72f-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens noted that the issue is not limited to drug cases but includes murder and other scientific evidence cases."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+            "evidence_ids": [
+              "ev-50ad870ec72f-0003-0003"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer highlighted the hearsay aspect of the reports."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+            "evidence_ids": [
+              "ev-50ad870ec72f-0003-0004"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 61
+            }
+          }
+        ],
+        "text": "Justice Souter asked why the Court does not require the analyst who performed the test to appear for confrontation."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+            "evidence_ids": [
+              "ev-50ad870ec72f-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          },
+          {
+            "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+            "evidence_ids": [
+              "ev-50ad870ec72f-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The Court is considering whether a business\u2011records exception to the Confrontation Clause applies to forensic lab reports."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner (Luis E. Melendez\u2011Diaz)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Coakley",
+          "citations": [
+            {
+              "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+              "evidence_ids": [
+                "ev-50ad870ec72f-0002-0003"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Ms. Coakley, the respondent contends that requiring live testimony would create an undue burden with little benefit to the defendant."
+        },
+        {
+          "attribution": "MS. Schertler (Government)",
+          "citations": [
+            {
+              "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+              "evidence_ids": [
+                "ev-50ad870ec72f-0003-0006"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to MS. Schertler (Government), according to MS. Schertler (Government), the government argues that the defense can still challenge the authenticity and testing procedures of the reports even if they are admitted without live testimony."
+        }
+      ],
+      "heading": "Respondent (Massachusetts)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0000-0003"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 10
+      }
+    },
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0001-0002"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0001-0003"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0002-0001"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0002-0003"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0002-0004"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    },
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0003-0000",
+        "ev-50ad870ec72f-0003-0006"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    },
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0003-0001"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    },
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0003-0002",
+        "ev-50ad870ec72f-0003-0005"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    },
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0003-0003"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 59
+      }
+    },
+    {
+      "document_hash": "50ad870ec72f2d84abc1ecd5d19e8c1e8f31b58f71e35ecaf253be96530425be",
+      "evidence_ids": [
+        "ev-50ad870ec72f-0003-0004"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 61
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T22:43:47.792492Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

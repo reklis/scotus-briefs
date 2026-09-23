@@ -1,0 +1,249 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "48e58e46234583b304518604f33f8bad3661deae13049d059bbef67b199038cc",
+            "evidence_ids": [
+              "ev-48e58e462345-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case concerns whether a denial of a peremptory challenge that leads to an improperly seated juror requires automatic reversal of a conviction."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-9995",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T00:17:01.021659Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "48e58e46234583b304518604f33f8bad3661deae13049d059bbef67b199038cc"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "48e58e46234583b304518604f33f8bad3661deae13049d059bbef67b199038cc",
+            "evidence_ids": [
+              "ev-48e58e462345-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The oral argument took place before the Supreme Court at 11:05\u202fa.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "48e58e46234583b304518604f33f8bad3661deae13049d059bbef67b199038cc",
+            "evidence_ids": [
+              "ev-48e58e462345-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case was heard in oral argument before the Supreme Court of the United States at 11:05\u202fa.m."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "48e58e46234583b304518604f33f8bad3661deae13049d059bbef67b199038cc",
+            "evidence_ids": [
+              "ev-48e58e462345-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioner Michael Rivera argued that the denial of a peremptory challenge resulted in an improperly seated juror and that his conviction should be automatically reversed for three independent reasons."
+      },
+      {
+        "attribution": "Matthew D. Roberts",
+        "citations": [
+          {
+            "document_hash": "48e58e46234583b304518604f33f8bad3661deae13049d059bbef67b199038cc",
+            "evidence_ids": [
+              "ev-48e58e462345-0002-0001"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Amicus counsel Matthew D. Roberts argued that federal law does not require automatic reversal and that harmless\u2011error review would apply."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "48e58e46234583b304518604f33f8bad3661deae13049d059bbef67b199038cc",
+              "evidence_ids": [
+                "ev-48e58e462345-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioner contended that the erroneous denial of his peremptory challenge caused an unqualified juror to sit, violating his rights and warranting automatic reversal of his conviction."
+        }
+      ],
+      "heading": "Petitioner (Michael Rivera)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Illinois)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "48e58e46234583b304518604f33f8bad3661deae13049d059bbef67b199038cc",
+      "evidence_ids": [
+        "ev-48e58e462345-0000-0000",
+        "ev-48e58e462345-0000-0001",
+        "ev-48e58e462345-0002-0002",
+        "ev-48e58e462345-0002-0001"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T00:23:05.685118Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "48e58e46234583b304518604f33f8bad3661deae13049d059bbef67b199038cc",
+            "evidence_ids": [
+              "ev-48e58e462345-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case concerns whether a denial of a peremptory challenge that leads to an improperly seated juror requires automatic reversal of a conviction."
+      },
+      {
+        "attribution": "Matthew D. Roberts",
+        "citations": [
+          {
+            "document_hash": "48e58e46234583b304518604f33f8bad3661deae13049d059bbef67b199038cc",
+            "evidence_ids": [
+              "ev-48e58e462345-0002-0001"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Amicus counsel Matthew D. Roberts argues that federal law does not require automatic reversal and that harmless\u2011error review would apply."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

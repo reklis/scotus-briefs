@@ -1,0 +1,368 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+            "evidence_ids": [
+              "ev-4445e81a6974-0000-0005"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether any of the claims were for punitive damages."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+            "evidence_ids": [
+              "ev-4445e81a6974-0000-0008"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether punitive damages were historically available for maintenance and cure claims."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+            "evidence_ids": [
+              "ev-4445e81a6974-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Ginsburg inquired about the incidence of representation for maintenance and cure claims versus Jones Act negligence claims."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-08-214",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T00:41:53.502522Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+            "evidence_ids": [
+              "ev-4445e81a6974-0000-0005"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether any of the claims were for punitive damages."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+            "evidence_ids": [
+              "ev-4445e81a6974-0000-0008"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether punitive damages were historically available for maintenance and cure claims."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+            "evidence_ids": [
+              "ev-4445e81a6974-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Ginsburg inquired about the incidence of representation for maintenance and cure claims versus Jones Act negligence claims."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+            "evidence_ids": [
+              "ev-4445e81a6974-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted that punitive damages could increase litigation costs and be passed on to consumers."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Atlantic Sounding Co., Inc.",
+        "citations": [
+          {
+            "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+            "evidence_ids": [
+              "ev-4445e81a6974-0000-0001",
+              "ev-4445e81a6974-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Atlantic Sounding Co., Inc., according to Atlantic Sounding Co., Inc., the case concerns whether a Jones Act seaman can recover punitive damages for a shipowner\u2019s willful failure to pay maintenance and cure."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+            "evidence_ids": [
+              "ev-4445e81a6974-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          },
+          {
+            "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+            "evidence_ids": [
+              "ev-4445e81a6974-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The respondent argues that punitive damages should never be awarded and that a seaman should not have to go to court for maintenance and cure."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Atlantic Sounding Co., Inc.",
+          "citations": [
+            {
+              "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+              "evidence_ids": [
+                "ev-4445e81a6974-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Atlantic Sounding Co., Inc., according to Atlantic Sounding Co., Inc., the petitioner contends that punitive damages are unavailable under the Jones Act for maintenance and cure claims."
+        },
+        {
+          "attribution": "David W. McCreadie",
+          "citations": [
+            {
+              "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+              "evidence_ids": [
+                "ev-4445e81a6974-0000-0007"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to David W. McCreadie, the petitioner notes that there is no precedent for awarding punitive damages to a Jones Act seaman for failure to pay maintenance and cure."
+        }
+      ],
+      "heading": "Petitioner (Atlantic Sounding Co., Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+              "evidence_ids": [
+                "ev-4445e81a6974-0001-0004"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            }
+          ],
+          "text": "The respondent argues that punitive damages were part of common law until removed by Congress and should not be awarded."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+              "evidence_ids": [
+                "ev-4445e81a6974-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Respondent, the respondent asserts that a seaman should never have to go to court for maintenance and cure and that punitive damages should never be awarded."
+        }
+      ],
+      "heading": "Respondent (Edgar L. Townsend)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+      "evidence_ids": [
+        "ev-4445e81a6974-0000-0000",
+        "ev-4445e81a6974-0000-0001",
+        "ev-4445e81a6974-0000-0002",
+        "ev-4445e81a6974-0000-0004",
+        "ev-4445e81a6974-0000-0005",
+        "ev-4445e81a6974-0000-0007",
+        "ev-4445e81a6974-0000-0008",
+        "ev-4445e81a6974-0001-0000",
+        "ev-4445e81a6974-0001-0001",
+        "ev-4445e81a6974-0001-0002",
+        "ev-4445e81a6974-0001-0004",
+        "ev-4445e81a6974-0002-0006",
+        "ev-4445e81a6974-0002-0000",
+        "ev-4445e81a6974-0002-0002",
+        "ev-4445e81a6974-0002-0005"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T00:48:11.466016Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "4445e81a6974b73317ea0e495414736e656a40846f7a6f0b3cdfd1eaecde1577",
+            "evidence_ids": [
+              "ev-4445e81a6974-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, the issue could affect the cost of maritime litigation and potentially increase consumer prices if punitive damages are allowed."
+      }
+    ],
+    "heading": "Why it matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,510 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+            "evidence_ids": [
+              "ev-bba080d3f96a-0003-0000",
+              "ev-bba080d3f96a-0003-0001"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justices also asked whether the number of times a word is used or its context affects its indecency."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-582",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T22:15:18.169212Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+            "evidence_ids": [
+              "ev-bba080d3f96a-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the agency\u2019s position is that its policy has changed or not."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+            "evidence_ids": [
+              "ev-bba080d3f96a-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg noted a lack of consistency in the Commission\u2019s decisions regarding different films."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+            "evidence_ids": [
+              "ev-bba080d3f96a-0000-0006"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Breyer asked what the FCC should do when a live event contains swearing."
+      },
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+            "evidence_ids": [
+              "ev-bba080d3f96a-0001-0005"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Souter asked whether the Commission\u2019s explanation would satisfy the arbitrary\u2011and\u2011capricious standard."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+            "evidence_ids": [
+              "ev-bba080d3f96a-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked how the case is consistent with the precedent set in Vermont Yankee."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+            "evidence_ids": [
+              "ev-bba080d3f96a-0002-0001"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "Justice Stevens asked whether a change in community standards justifies a change in the FCC\u2019s policies."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Solicitor General Garre (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+            "evidence_ids": [
+              "ev-bba080d3f96a-0000-0005"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "According to Solicitor General Garre (Petitioner), according to General Garre (FCC), the FCC says community standards for broadcast are based on the average listener and include input from lawmakers, courts, broadcasters, public\u2011interest groups, and citizens."
+      },
+      {
+        "attribution": "General Garre (FCC)",
+        "citations": [
+          {
+            "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+            "evidence_ids": [
+              "ev-bba080d3f96a-0001-0006"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to General Garre (FCC), according to General Garre (FCC), the FCC describes using broadcast delays to bleep isolated expletives, such as during the Billboard Music Awards."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "General Garre",
+          "citations": [
+            {
+              "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+              "evidence_ids": [
+                "ev-bba080d3f96a-0003-0004"
+              ],
+              "pages": {
+                "end": 61,
+                "start": 61
+              }
+            }
+          ],
+          "text": "According to General Garre, the one thing that can't be disputed \u2014 in this case \u2014 is that the F\u2011Word is patently offensive under community standards for the broadcast medium."
+        },
+        {
+          "attribution": "Solicitor General Garre (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+              "evidence_ids": [
+                "ev-bba080d3f96a-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Solicitor General Garre (Petitioner), according to General Garre (FCC), the FCC says its policy now departs from earlier cases that treated isolated or fleeting use of the F\u2011Word as not indecent."
+        },
+        {
+          "attribution": "General Garre (FCC)",
+          "citations": [
+            {
+              "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+              "evidence_ids": [
+                "ev-bba080d3f96a-0001-0009"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to General Garre (FCC), according to General Garre (FCC), the FCC considers whether content is shocking, titillating, or pandering when deciding enforcement."
+        },
+        {
+          "attribution": "General Garre (FCC)",
+          "citations": [
+            {
+              "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+              "evidence_ids": [
+                "ev-bba080d3f96a-0001-0006"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to General Garre (FCC), according to General Garre (FCC), the FCC uses broadcast delays and bleeping to limit exposure to isolated expletives."
+        },
+        {
+          "attribution": "General Garre (FCC)",
+          "citations": [
+            {
+              "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+              "evidence_ids": [
+                "ev-bba080d3f96a-0001-0010"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "According to General Garre (FCC), according to General Garre (FCC), the FCC\u2019s approach is consistent with constitutional avoidance and avoids deciding issues not resolved below."
+        }
+      ],
+      "heading": "Federal Communications Commission (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Fox Television Stations Inc. (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0000-0004"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0000-0005"
+      ],
+      "pages": {
+        "end": 14,
+        "start": 14
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0000-0006"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0001-0006"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0001-0009"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0001-0010"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0001-0005"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0002-0000",
+        "ev-bba080d3f96a-0002-0003"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0002-0001"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 49
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0002-0004"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0003-0000",
+        "ev-bba080d3f96a-0003-0001"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    },
+    {
+      "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+      "evidence_ids": [
+        "ev-bba080d3f96a-0003-0004"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 61
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T22:29:07.796923Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claims that attribute statements to Solicitor General Garre (Petitioner) are not backed by any evidence; only General Garre (FCC) is cited.",
+      "Attribution check failed: several statements are incorrectly attributed to Solicitor General Garre (Petitioner) despite the evidence only showing General Garre (FCC) as the source."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Mr. Phillips",
+        "citations": [
+          {
+            "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+            "evidence_ids": [
+              "ev-bba080d3f96a-0002-0003"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Mr. Phillips, the case involves content\u2011based restrictions on speech, raising First Amendment concerns about free expression on broadcast media."
+      },
+      {
+        "attribution": "National Association of Broadcasters",
+        "citations": [
+          {
+            "document_hash": "bba080d3f96a4307047d97362f9f79a71745b5bac0325bdab9fab66d50475bac",
+            "evidence_ids": [
+              "ev-bba080d3f96a-0002-0004"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to National Association of Broadcasters, the NAB\u2019s amicus brief describes numerous similar indecency incidents, showing the broader industry impact of the FCC\u2019s policy."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

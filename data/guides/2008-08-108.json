@@ -1,0 +1,320 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+            "evidence_ids": [
+              "ev-637153a33f31-0001-0003"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the phrase \u201cof another individual\u201d can be read to mean a person other than the user, regardless of whether that person is real."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+            "evidence_ids": [
+              "ev-637153a33f31-0000-0002"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy questioned whether the issue could be submitted to a jury."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-08-108",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T00:23:05.703739Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+            "evidence_ids": [
+              "ev-637153a33f31-0001-0003"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the phrase \u201cof another individual\u201d can be read to mean a person other than the user, regardless of whether that person is real."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+            "evidence_ids": [
+              "ev-637153a33f31-0000-0002"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the issue could be submitted to a jury."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+            "evidence_ids": [
+              "ev-637153a33f31-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg raised the Government\u2019s argument that Congress was targeting false identification to protect victims whose numbers are misused."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+            "evidence_ids": [
+              "ev-637153a33f31-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts inquired whether it is time to revisit the Court\u2019s decision in Hayes."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+            "evidence_ids": [
+              "ev-637153a33f31-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioner counsel Mr. Russell argued that knowing the identity of an item includes knowing that it belongs to another person."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+            "evidence_ids": [
+              "ev-637153a33f31-0003-0000"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "The Government contended that the statutory text is ambiguous and that the rule of lenity applies, allowing policy arguments about how to treat the conduct."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+              "evidence_ids": [
+                "ev-637153a33f31-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioner counsel Mr. Russell argued that knowledge of the identity includes knowing the item belongs to another person."
+        },
+        {
+          "attribution": "Mr. Heytens",
+          "citations": [
+            {
+              "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+              "evidence_ids": [
+                "ev-637153a33f31-0002-0003"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Mr. Heytens, petitioner counsel Mr. Heytens asserted that Congress intended to punish only those who intend to engage in identity theft, not those whose conduct unintentionally has that effect."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+              "evidence_ids": [
+                "ev-637153a33f31-0003-0000"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "The Government argued that the statutory text is ambiguous and that the rule of lenity applies, allowing policy arguments about how to treat the conduct."
+        }
+      ],
+      "heading": "United States",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+      "evidence_ids": [
+        "ev-637153a33f31-0000-0000",
+        "ev-637153a33f31-0000-0001",
+        "ev-637153a33f31-0000-0002",
+        "ev-637153a33f31-0001-0001",
+        "ev-637153a33f31-0001-0003",
+        "ev-637153a33f31-0002-0000",
+        "ev-637153a33f31-0002-0002",
+        "ev-637153a33f31-0002-0003",
+        "ev-637153a33f31-0002-0006",
+        "ev-637153a33f31-0003-0000"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T00:32:15.797212Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "637153a33f31fbd7c0801618d3bd4a87fb7e26dd004bfdf194951574d0ffd4e0",
+            "evidence_ids": [
+              "ev-637153a33f31-0003-0000"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Government argued that the rule of lenity is applicable because the statutory text is ambiguous."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Souter",
+        "citations": [
+          {
+            "document_hash": "110043e615f1b81078154079f1e9f0c285a48a6036927a1945203014ad03e8b1",
+            "evidence_ids": [
+              "ev-110043e615f1-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Souter, the Court is asked whether \u201cconsent once removed\u201d should be recognized as a doctrine that covers confidential informants."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2008-07-751",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-22T23:28:16.230400Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "110043e615f1b81078154079f1e9f0c285a48a6036927a1945203014ad03e8b1"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Peter Stirba",
+        "citations": [
+          {
+            "document_hash": "110043e615f1b81078154079f1e9f0c285a48a6036927a1945203014ad03e8b1",
+            "evidence_ids": [
+              "ev-110043e615f1-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Peter Stirba, counsel for the petitioner, Mr. Stirba, argued that the case is not an implied\u2011consent case."
+      },
+      {
+        "attribution": "Mr. Metzler",
+        "citations": [
+          {
+            "document_hash": "110043e615f1b81078154079f1e9f0c285a48a6036927a1945203014ad03e8b1",
+            "evidence_ids": [
+              "ev-110043e615f1-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Counsel for the respondent, Mr. Metzler, argued that consent does not extend to many people and that the officers should have obtained a warrant."
+      },
+      {
+        "attribution": "Malcolm L. Stewart",
+        "citations": [
+          {
+            "document_hash": "110043e615f1b81078154079f1e9f0c285a48a6036927a1945203014ad03e8b1",
+            "evidence_ids": [
+              "ev-110043e615f1-0000-0005"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "According to Malcolm L. Stewart, amicus counsel, Mr. Stewart, maintained that the police entry was constitutional and that no clearly established right was infringed."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Peter Stirba",
+          "citations": [
+            {
+              "document_hash": "110043e615f1b81078154079f1e9f0c285a48a6036927a1945203014ad03e8b1",
+              "evidence_ids": [
+                "ev-110043e615f1-0000-0004"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Peter Stirba, the petitioner does not contend that this is an implied\u2011consent case."
+        },
+        {
+          "attribution": "Peter Stirba",
+          "citations": [
+            {
+              "document_hash": "110043e615f1b81078154079f1e9f0c285a48a6036927a1945203014ad03e8b1",
+              "evidence_ids": [
+                "ev-110043e615f1-0002-0002"
+              ],
+              "pages": {
+                "end": 53,
+                "start": 53
+              }
+            }
+          ],
+          "text": "According to Peter Stirba, the petitioner argues that safety concerns about a confidential informant versus an officer make the distinction between them less meaningful under the Fourth Amendment."
+        }
+      ],
+      "heading": "Petitioner (Cordell Pearson) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Metzler",
+          "citations": [
+            {
+              "document_hash": "110043e615f1b81078154079f1e9f0c285a48a6036927a1945203014ad03e8b1",
+              "evidence_ids": [
+                "ev-110043e615f1-0002-0000"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Metzler, the respondent contends that consent given to one person does not extend to everyone, emphasizing that consent is based on ordinary social expectations."
+        }
+      ],
+      "heading": "Respondent (Afton Callahan) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "110043e615f1b81078154079f1e9f0c285a48a6036927a1945203014ad03e8b1",
+      "evidence_ids": [
+        "ev-110043e615f1-0000-0000",
+        "ev-110043e615f1-0000-0007",
+        "ev-110043e615f1-0000-0002",
+        "ev-110043e615f1-0000-0004",
+        "ev-110043e615f1-0000-0005",
+        "ev-110043e615f1-0001-0000",
+        "ev-110043e615f1-0001-0001",
+        "ev-110043e615f1-0001-0002",
+        "ev-110043e615f1-0001-0004",
+        "ev-110043e615f1-0002-0000",
+        "ev-110043e615f1-0002-0001",
+        "ev-110043e615f1-0002-0002"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-22T23:34:22.642810Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
