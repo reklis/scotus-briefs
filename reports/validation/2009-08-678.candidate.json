@@ -1,0 +1,485 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0002-0002"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "The central issue presented is whether a waiver of the attorney\u2011client privilege should stay the litigation."
+      },
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justices asked whether the confidentiality right is more important than trade\u2011secret protection and sought a test for determining the importance of the privilege."
+      }
+    ],
+    "heading": "Background and Question Presented",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-678",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T12:38:19.405509Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+          "evidence_ids": [
+            "ev-45722f921809-0000-0002"
+          ],
+          "pages": {
+            "end": 3,
+            "start": 3
+          }
+        }
+      ],
+      "definition": "According to Randall L. Allen, the attorney\u2011client privilege is the seal of secrecy upon communications between a client and attorney, founded on the necessity, in the interest of justice, that legal advice be given freely without fear of disclosure.",
+      "term": "Attorney\u2011client privilege"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the confidentiality right is more important to society than the protection of trade secrets."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0002-0003"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the position advocated would apply universally and sought a test for importance."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether there is a sensible line between invoking the privilege and a holding that the privilege has been waived."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Randall L. Allen",
+        "citations": [
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Randall L. Allen, the attorney\u2011client privilege has been recognized for over a century as essential to the administration of justice."
+      },
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0002-0002"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "The case raises the question of whether a waiver of the attorney\u2011client privilege should stay the litigation."
+      },
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0002-0003"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          },
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0002-0000"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justices questioned whether the confidentiality right is more important than trade\u2011secret protection and asked for a test of importance."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Allen",
+          "citations": [
+            {
+              "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+              "evidence_ids": [
+                "ev-45722f921809-0001-0000"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Allen, allen asked the Court to address the question of waiver of the privilege."
+        },
+        {
+          "attribution": "Randall L. Allen",
+          "citations": [
+            {
+              "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+              "evidence_ids": [
+                "ev-45722f921809-0002-0002"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to Randall L. Allen, he answered Justice Alito that an appeal of a collateral issue dealing with waiver or privilege does not stay the litigation."
+        }
+      ],
+      "heading": "Petitioner \u2013 Randall L. Allen",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Resnik",
+          "citations": [
+            {
+              "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+              "evidence_ids": [
+                "ev-45722f921809-0001-0003"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to Ms. Resnik, resnik argued that the rule advocated should not be extended broadly to work product."
+        }
+      ],
+      "heading": "Respondent \u2013 Ms. Resnik",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+      "evidence_ids": [
+        "ev-45722f921809-0000-0000",
+        "ev-45722f921809-0000-0001",
+        "ev-45722f921809-0000-0002",
+        "ev-45722f921809-0000-0003",
+        "ev-45722f921809-0000-0004",
+        "ev-45722f921809-0001-0000",
+        "ev-45722f921809-0001-0001",
+        "ev-45722f921809-0001-0002",
+        "ev-45722f921809-0001-0003",
+        "ev-45722f921809-0002-0000",
+        "ev-45722f921809-0002-0001",
+        "ev-45722f921809-0002-0002",
+        "ev-45722f921809-0002-0003",
+        "ev-45722f921809-0002-0004"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T12:48:45.272822Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "overview.claims[1] requires attribution",
+      "overview.claims[2] requires attribution",
+      "background_and_question.claims[0] requires attribution",
+      "background_and_question.claims[1] requires attribution",
+      "why_it_matters.claims[1] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "overview.claims[1] requires attribution",
+      "overview.claims[2] requires attribution",
+      "background_and_question.claims[0] requires attribution",
+      "background_and_question.claims[1] requires attribution",
+      "why_it_matters.claims[1] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Randall L. Allen",
+        "citations": [
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Randall L. Allen, the attorney\u2011client privilege is essential for ensuring candid communication between lawyers and clients, which supports the proper functioning of the legal system."
+      },
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0002-0001"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Balancing the privilege against trade\u2011secret protection and governmental deliberative privileges has broader implications for both private and public confidentiality interests."
+      },
+      {
+        "attribution": "Randall L. Allen",
+        "citations": [
+          {
+            "document_hash": "45722f921809ce096bb8724e229dfd9592197bb6e77529be5f4857931a832460",
+            "evidence_ids": [
+              "ev-45722f921809-0002-0002"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "According to Randall L. Allen, allen argued that an appeal of a collateral issue dealing with waiver or privilege would not stay the litigation."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

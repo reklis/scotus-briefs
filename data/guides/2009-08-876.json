@@ -1,0 +1,426 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mr. Dreeben",
+        "citations": [
+          {
+            "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+            "evidence_ids": [
+              "ev-bf2987868f88-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+            "evidence_ids": [
+              "ev-bf2987868f88-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The central issue before the Court is whether the statute is unconstitutionally vague in all of its applications."
+      }
+    ],
+    "heading": "Background & Central Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-876",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T13:54:43.171706Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+            "evidence_ids": [
+              "ev-bf2987868f88-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts announced the hearing: \u201cWe will hear argument first this morning in Case 08\u2011876, Conrad Black et al. v. The United States.\u201d"
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+            "evidence_ids": [
+              "ev-bf2987868f88-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy remarked, \u201cBUT THAT WOULD FIT YOUR TEST, THOUGH.\u201d"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+            "evidence_ids": [
+              "ev-bf2987868f88-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked, \u201cCan you tell us how materiality is related to economic harm to the victim and how it is different from economic harm to the victim?\u201d"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+            "evidence_ids": [
+              "ev-bf2987868f88-0002-0004"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Breyer asked, \u201cThat \u2013 that is Altshuler B, which I \u2013 that seems to work, but then you want to go beyond that.\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+            "evidence_ids": [
+              "ev-bf2987868f88-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioners argue that the unvarnished text of the statute is vague, amorphous, open\u2011ended, and essentially not very helpful."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+            "evidence_ids": [
+              "ev-bf2987868f88-0001-0004"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The courts of appeals have ruled that an intent to interfere with the property rights of the government was not an element of the core meaning of the fraud statute."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+              "evidence_ids": [
+                "ev-bf2987868f88-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioners, the statute is vague, amorphous, and not helpful."
+        },
+        {
+          "attribution": "Mr. Estrada (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+              "evidence_ids": [
+                "ev-bf2987868f88-0002-0003"
+              ],
+              "pages": {
+                "end": 52,
+                "start": 52
+              }
+            }
+          ],
+          "text": "According to Mr. Estrada (Petitioner), according to Mr. Estrada (Petitioner), mr. Estrada emphasizes that the government has again stated this is a federal obligation."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Dreeben (Government)",
+          "citations": [
+            {
+              "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+              "evidence_ids": [
+                "ev-bf2987868f88-0002-0002"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. Dreeben (Government), according to Mr. Dreeben (Government), materiality is generally co\u2011extensive with economic harm, including reputational harm that interferes with a business\u2019s ability to move forward."
+        },
+        {
+          "attribution": "Mr. Dreeben",
+          "citations": [
+            {
+              "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+              "evidence_ids": [
+                "ev-bf2987868f88-0001-0005"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Mr. Dreeben, congress\u2019s effort to reinstate the body of law that this Court previously held was not a valid construction of the mail fraud statute."
+        }
+      ],
+      "heading": "United States (Government)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0000-0000",
+        "ev-bf2987868f88-0000-0003"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0000-0004"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0000-0005"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    },
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0001-0004"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0001-0002"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0001-0005"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0002-0000",
+        "ev-bf2987868f88-0002-0002"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0002-0004"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0002-0003"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    },
+    {
+      "document_hash": "bf2987868f882d2ee84397a8b2e4d7d0a10d76382c6f9e0f7efd0107bd37e776",
+      "evidence_ids": [
+        "ev-bf2987868f88-0002-0005"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T14:03:11.901016Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

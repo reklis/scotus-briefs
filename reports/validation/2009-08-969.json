@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2009-08-969",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that Justice Scalia contrasted \u201cchoate\u201d with \u201cinchoate\u201d is not supported by the provided evidence; the evidence only states that \u201cchoate\u201d is not a proper adjective.",
+    "Overstatement check failed: the same claim adds an unsupported contrast, constituting an overstatement of the evidence."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.8,
+    "neutrality": 0.9,
+    "readability": 0.85,
+    "restraint": 0.85,
+    "traceability": 0.95
+  }
+}

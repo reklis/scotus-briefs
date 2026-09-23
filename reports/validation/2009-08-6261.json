@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2009-08-6261",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": true,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Attribution check failed: several claims attribute statements to Jaclyn S. Frankfurt, Esq., but the supporting evidence shows the statements were made by Ms. Frankfurt, not by the attorney.",
+    "Attribution check failed: the same mis\u2011attribution appears in the Background & Question and Party Positions sections for the claim about the sovereign\u2019s power to prosecute criminal contempt."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.95,
+    "neutrality": 0.9,
+    "readability": 0.85,
+    "restraint": 0.95,
+    "traceability": 1.0
+  }
+}

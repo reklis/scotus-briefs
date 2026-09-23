@@ -1,0 +1,284 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-6925",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T12:52:45.184815Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+            "evidence_ids": [
+              "ev-ba0c55e51848-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts called the case for argument."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+            "evidence_ids": [
+              "ev-ba0c55e51848-0001-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Scalia also asked whether \u201cviolent felony\u201d could be satisfied by a mere threat rather than an act."
+      },
+      {
+        "attribution": "Justice Stevens",
+        "citations": [
+          {
+            "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+            "evidence_ids": [
+              "ev-ba0c55e51848-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Stevens, justice Stevens inquired about other crimes that become felonies on a second conviction after a first misdemeanor."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+            "evidence_ids": [
+              "ev-ba0c55e51848-0002-0003"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the petitioner waived an argument by not raising it earlier."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Lisa Call, Esq., on behalf of the Petitioner",
+        "citations": [
+          {
+            "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+            "evidence_ids": [
+              "ev-ba0c55e51848-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Lisa Call, Esq., on behalf of the Petitioner, Curtis Darnell Johnson was convicted of battery in Florida."
+      },
+      {
+        "attribution": "Lisa Call, Esq., on behalf of the Petitioner",
+        "citations": [
+          {
+            "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+            "evidence_ids": [
+              "ev-ba0c55e51848-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Lisa Call, Esq., on behalf of the Petitioner, the case asks whether that conviction counts as a violent felony under the Armed Career Criminal Act, which defines a violent felony as one involving the use, attempted use, or threatened use of physical force."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Lisa Call, Esq., on behalf of the Petitioner",
+          "citations": [
+            {
+              "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+              "evidence_ids": [
+                "ev-ba0c55e51848-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Lisa Call, Esq., on behalf of the Petitioner, petitioner argues that battery, which requires only contact, does not involve the physical force required by the ACCA\u2019s violent\u2011felony definition."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+              "evidence_ids": [
+                "ev-ba0c55e51848-0002-0001"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "Petitioner warns that treating such conduct as a violent felony would create inconsistent application of federal domestic\u2011violence laws, as seen in United States v. Hayes."
+        }
+      ],
+      "heading": "Petitioner (Curtis Darnell Johnson)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Government",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+      "evidence_ids": [
+        "ev-ba0c55e51848-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+      "evidence_ids": [
+        "ev-ba0c55e51848-0001-0003"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+      "evidence_ids": [
+        "ev-ba0c55e51848-0002-0000"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+      "evidence_ids": [
+        "ev-ba0c55e51848-0002-0001"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "ba0c55e51848a460ae6dccd2050059cae473b36e4420daf210296db16bd0383d",
+      "evidence_ids": [
+        "ev-ba0c55e51848-0002-0003"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T12:58:54.235816Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

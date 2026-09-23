@@ -1,0 +1,229 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "44a17a618bcb25f0ba12459b7f600e58442daa0578e3fc6af294bb0bc9652ac2",
+            "evidence_ids": [
+              "ev-44a17a618bcb-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, petitioner states that Section\u202f48 of Title\u202f18 was enacted to target depictions of actual animal cruelty."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "44a17a618bcb25f0ba12459b7f600e58442daa0578e3fc6af294bb0bc9652ac2",
+            "evidence_ids": [
+              "ev-44a17a618bcb-0000-0004"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the statute might be overbroad because prosecutors have been restrained."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-769",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T13:31:23.044109Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "44a17a618bcb25f0ba12459b7f600e58442daa0578e3fc6af294bb0bc9652ac2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "44a17a618bcb25f0ba12459b7f600e58442daa0578e3fc6af294bb0bc9652ac2",
+            "evidence_ids": [
+              "ev-44a17a618bcb-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioner contends that Section\u202f48 is a narrowly targeted restriction that the Third Circuit struck down without applying overbreadth analysis."
+      },
+      {
+        "attribution": "Ms. Millett",
+        "citations": [
+          {
+            "document_hash": "44a17a618bcb25f0ba12459b7f600e58442daa0578e3fc6af294bb0bc9652ac2",
+            "evidence_ids": [
+              "ev-44a17a618bcb-0001-0001"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Ms. Millett, a properly drawn law could very well survive strict scrutiny."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Katyal",
+          "citations": [
+            {
+              "document_hash": "44a17a618bcb25f0ba12459b7f600e58442daa0578e3fc6af294bb0bc9652ac2",
+              "evidence_ids": [
+                "ev-44a17a618bcb-0003-0001"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "Mr. Katyal argues that Congress could regulate a market that drives violent behavior, such as a snuff video market."
+        }
+      ],
+      "heading": "Petitioner (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Millett",
+          "citations": [
+            {
+              "document_hash": "44a17a618bcb25f0ba12459b7f600e58442daa0578e3fc6af294bb0bc9652ac2",
+              "evidence_ids": [
+                "ev-44a17a618bcb-0001-0001"
+              ],
+              "pages": {
+                "end": 29,
+                "start": 28
+              }
+            }
+          ],
+          "text": "Ms. Millett argues that a properly drawn law could survive strict scrutiny."
+        },
+        {
+          "attribution": "Ms. Millett",
+          "citations": [
+            {
+              "document_hash": "44a17a618bcb25f0ba12459b7f600e58442daa0578e3fc6af294bb0bc9652ac2",
+              "evidence_ids": [
+                "ev-44a17a618bcb-0001-0001"
+              ],
+              "pages": {
+                "end": 29,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to Ms. Millett, ms. Millett suggests the statute could be narrowly tailored to fit within an unprotected category of speech such as obscenity."
+        }
+      ],
+      "heading": "Respondent (Robert J. Stevens)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "44a17a618bcb25f0ba12459b7f600e58442daa0578e3fc6af294bb0bc9652ac2",
+      "evidence_ids": [
+        "ev-44a17a618bcb-0000-0000"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T13:37:11.476878Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

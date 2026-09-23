@@ -1,0 +1,325 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Bryan Stevenson)",
+        "citations": [
+          {
+            "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+            "evidence_ids": [
+              "ev-dd9ec30a5987-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner (Bryan Stevenson), joe Sullivan was 13 years of age when he was arrested with two older boys, convicted of sexual assault, and sentenced to life without parole."
+      },
+      {
+        "attribution": "Petitioner (Bryan Stevenson)",
+        "citations": [
+          {
+            "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+            "evidence_ids": [
+              "ev-dd9ec30a5987-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "He is one of only two children this age who have ever been sentenced to life without parole for a non\u2011homicide offense, and no child has received such a sentence for non\u2011homicide in the past 18 years."
+      },
+      {
+        "attribution": "Mr. Stevenson",
+        "citations": [
+          {
+            "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+            "evidence_ids": [
+              "ev-dd9ec30a5987-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Mr. Stevenson, petitioner asks the Court to adopt a rule that bans life without parole for any child under the age of 14."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-7621",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T13:21:36.374158Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+            "evidence_ids": [
+              "ev-dd9ec30a5987-0001-0004"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Oral argument was presented by respondent counsel Scott D. Makar."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+            "evidence_ids": [
+              "ev-dd9ec30a5987-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Alito asked the petitioner to specify the categorical rule they wish the Court to adopt."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Bryan Stevenson)",
+        "citations": [
+          {
+            "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+            "evidence_ids": [
+              "ev-dd9ec30a5987-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioner (Bryan Stevenson), petitioner argues that challenges to a sentence can be brought at any time under Florida Rule 3.850."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Stevenson",
+          "citations": [
+            {
+              "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+              "evidence_ids": [
+                "ev-dd9ec30a5987-0001-0000"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. Stevenson, petitioner argues that life without parole for children under 14 should be prohibited."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Mr. Makar)",
+          "citations": [
+            {
+              "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+              "evidence_ids": [
+                "ev-dd9ec30a5987-0002-0001"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Petitioner (Mr. Makar), respondent contends that Rule 3.850(b)(2) is consistently and regularly applied."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+      "evidence_ids": [
+        "ev-dd9ec30a5987-0000-0000",
+        "ev-dd9ec30a5987-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+      "evidence_ids": [
+        "ev-dd9ec30a5987-0001-0000",
+        "ev-dd9ec30a5987-0001-0001"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+      "evidence_ids": [
+        "ev-dd9ec30a5987-0001-0002"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+      "evidence_ids": [
+        "ev-dd9ec30a5987-0001-0004"
+      ],
+      "pages": {
+        "end": 29,
+        "start": 29
+      }
+    },
+    {
+      "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+      "evidence_ids": [
+        "ev-dd9ec30a5987-0002-0000"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+      "evidence_ids": [
+        "ev-dd9ec30a5987-0002-0001"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T13:31:23.025092Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Bryan Stevenson)",
+        "citations": [
+          {
+            "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+            "evidence_ids": [
+              "ev-dd9ec30a5987-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "dd9ec30a59879ca7c13408819db5dee18608b0e19b294cd9c4782afe55493bf7",
+            "evidence_ids": [
+              "ev-dd9ec30a5987-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Joe Sullivan is one of only two children sentenced to life without parole for a non\u2011homicide offense, highlighting the rarity of such sentences for juveniles."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

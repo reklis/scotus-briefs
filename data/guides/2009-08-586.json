@@ -1,0 +1,584 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "David C. Frederick",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to David C. Frederick, in 1970 Congress amended the Investment Company Act to create a cause of action for fiduciary breaches related to compensation."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Harris charged twice the percentage fee for providing virtually identical advisory services to institutional investors."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0002-0004"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Petitioners claim that Harris made misrepresentations about profitability and cost accounting, leading to an inflated fee."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "During oral argument, Justice Scalia asked whether the SEC was aware of the divergence between fees charged to institutional investors and other clients."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0002-0002"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia requested citations from the record to determine whether a remand was necessary for fee comparisons."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-586",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T11:36:17.530086Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The oral argument began at 10:04\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the SEC was aware of the divergence between fees charged to institutional investors and other clients."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0001-0005"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the Gartenberg case was relevant to the issues being considered."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0002-0003"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about the petitioners' allegation that the investment adviser did not provide full and accurate information regarding economies of scale, profitability, and other matters."
+      },
+      {
+        "attribution": "Mr. Gannon",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0001-0004"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The Court noted that less formal mechanisms have been used in examinations and investigations."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0002-0005"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "After argument, the case was submitted to the Court."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Harris charged twice as much in percentage terms for providing virtually identical advisory services in arm's\u2011length transactions with institutional investors."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0002-0004"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Petitioners, petitioners allege that Harris made misrepresentations about profitability, leading to an inflated fee calculation."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0000-0004"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The Court noted that any recovery would benefit all investors."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "David C. Frederick",
+          "citations": [
+            {
+              "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+              "evidence_ids": [
+                "ev-bc586594721b-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to David C. Frederick, david C. Frederick noted that the 1970 amendment to the Investment Company Act provides a cause of action for fiduciary breaches related to compensation."
+        }
+      ],
+      "heading": "Petitioners' Arguments",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent's Arguments",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Gannon",
+          "citations": [
+            {
+              "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+              "evidence_ids": [
+                "ev-bc586594721b-0001-0000"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Mr. Gannon, the SEC has authority to file suits under section 36(b)."
+        }
+      ],
+      "heading": "Amicus (Curtis E. Gannon)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "John Bogel",
+          "citations": [
+            {
+              "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+              "evidence_ids": [
+                "ev-bc586594721b-0001-0002"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to John Bogel, a 1969 SEC memorandum suggests that fee comparisons are relevant to show that an adviser\u2019s fees are excessive."
+        }
+      ],
+      "heading": "Amicus (John Bogel)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Solicitor General",
+          "citations": [
+            {
+              "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+              "evidence_ids": [
+                "ev-bc586594721b-0002-0001"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "The Solicitor General argues that the appropriate standard for evaluating fees is the Gartenberg approach."
+        }
+      ],
+      "heading": "Solicitor General",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0000-0004"
+      ],
+      "pages": {
+        "end": 14,
+        "start": 14
+      }
+    },
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0000-0005"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    },
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0001-0001",
+        "ev-bc586594721b-0001-0004"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0001-0002",
+        "ev-bc586594721b-0001-0005"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0002-0001"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0002-0002"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0002-0003"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0002-0004"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+      "evidence_ids": [
+        "ev-bc586594721b-0002-0005"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 50
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T11:49:35.836091Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0000-0004"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "If excessive fees are found to be a breach, any recovery benefits all investors in the fund."
+      },
+      {
+        "attribution": "Solicitor General",
+        "citations": [
+          {
+            "document_hash": "bc586594721bd7bdf1b7a622ddc4c44cac7fab2e248290ae24e8992c398ec8c1",
+            "evidence_ids": [
+              "ev-bc586594721b-0002-0001"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Solicitor General, identifying the appropriate analytical standard (e.g., the Gartenberg approach) guides future fee assessments."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

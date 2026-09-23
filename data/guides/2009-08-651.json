@@ -1,0 +1,403 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-651",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T12:16:29.921819Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+            "evidence_ids": [
+              "ev-2680d3fef795-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Alito asked why the issue would be limited to a decision to plead guilty rather than a trial verdict."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+            "evidence_ids": [
+              "ev-2680d3fef795-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg questioned how the rule would cover the many possible consequences."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+            "evidence_ids": [
+              "ev-2680d3fef795-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia expressed concern about opening a \u201cPandora\u2019s box\u201d and whether the rule could be sensibly limited to deportation."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+            "evidence_ids": [
+              "ev-2680d3fef795-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy remarked that it seemed odd that the government would be at risk when counsel strays from professional responsibility."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+            "evidence_ids": [
+              "ev-2680d3fef795-0001-0004"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how the defense\u2019s argument would be addressed if a trial could win the case."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+            "evidence_ids": [
+              "ev-2680d3fef795-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether counsel should inform a defendant about severe immigration consequences that could lead to death for the defendant and his family."
+      },
+      {
+        "attribution": "Mr. Long",
+        "citations": [
+          {
+            "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+            "evidence_ids": [
+              "ev-2680d3fef795-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Mr. Long argued that prevailing professional norms and ethical obligations in Kentucky do not address this type of situation."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+            "evidence_ids": [
+              "ev-2680d3fef795-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+            "evidence_ids": [
+              "ev-2680d3fef795-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The case Jose Padilla v. Kentucky concerns whether the Sixth Amendment requires defense counsel to advise a defendant about immigration consequences of a guilty plea."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+            "evidence_ids": [
+              "ev-2680d3fef795-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioner argues that the Kentucky Supreme Court\u2019s rule is a categorical restriction of the Sixth Amendment and provides no remedy for defendants misadvised about deportation."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+            "evidence_ids": [
+              "ev-2680d3fef795-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The United States government maintains that the Sixth Amendment does not create a duty to advise about collateral consequences, and that the Kentucky rule is overly expansive."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+            "evidence_ids": [
+              "ev-2680d3fef795-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to United States, there is a split among federal circuits: ten circuits say there is no duty to advise about collateral consequences, while seven circuits allow a claim for affirmative misadvice."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+              "evidence_ids": [
+                "ev-2680d3fef795-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The petitioner argues that the Kentucky Supreme Court announced a categorical rule that is overly restrictive of the Sixth Amendment and provides no remedy for a defendant misadvised about deportation."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+              "evidence_ids": [
+                "ev-2680d3fef795-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "The petitioner contends that the test for misadvice should be whether it is a material misrepresentation that would be material to a reasonable defendant deciding whether to plead guilty."
+        }
+      ],
+      "heading": "Petitioner (Jose Padilla)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+              "evidence_ids": [
+                "ev-2680d3fef795-0001-0003"
+              ],
+              "pages": {
+                "end": 35,
+                "start": 35
+              }
+            }
+          ],
+          "text": "According to Respondent, the respondent cites Hill v. Lockhart, emphasizing that the voluntariness of a plea depends on counsel\u2019s advice and whether that advice is within the range of competence in a criminal proceeding."
+        }
+      ],
+      "heading": "Respondent (Kentucky)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+              "evidence_ids": [
+                "ev-2680d3fef795-0001-0000"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "The United States argues there is a fundamental difference between the petitioner\u2019s claim of a duty to advise on all collateral consequences and the government\u2019s view that such a duty is not required under the Sixth Amendment."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+              "evidence_ids": [
+                "ev-2680d3fef795-0001-0002"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to United States, the amicus notes that ten federal circuits currently hold there is no duty to advise about collateral consequences, while seven circuits allow a claim for affirmative misadvice about such consequences."
+        }
+      ],
+      "heading": "United States (Amicus)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2680d3fef795246349cdf4ba48574b87c70617184e33c0ef1dde61c780711ccd",
+      "evidence_ids": [
+        "ev-2680d3fef795-0000-0005",
+        "ev-2680d3fef795-0000-0000",
+        "ev-2680d3fef795-0000-0001",
+        "ev-2680d3fef795-0000-0002",
+        "ev-2680d3fef795-0000-0004",
+        "ev-2680d3fef795-0000-0003",
+        "ev-2680d3fef795-0001-0000",
+        "ev-2680d3fef795-0001-0001",
+        "ev-2680d3fef795-0001-0002",
+        "ev-2680d3fef795-0001-0003",
+        "ev-2680d3fef795-0001-0004",
+        "ev-2680d3fef795-0002-0000",
+        "ev-2680d3fef795-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T12:26:15.893609Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

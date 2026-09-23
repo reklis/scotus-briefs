@@ -1,0 +1,310 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Parties",
+        "citations": [
+          {
+            "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+            "evidence_ids": [
+              "ev-8444d33056dc-0002-0006"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 55
+            }
+          },
+          {
+            "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+            "evidence_ids": [
+              "ev-8444d33056dc-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The parties dispute whether \u00a71252(b)(6) requires review of motions to reopen."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2009-08-911",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-23T14:12:53.355661Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+            "evidence_ids": [
+              "ev-8444d33056dc-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+            "evidence_ids": [
+              "ev-8444d33056dc-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          },
+          {
+            "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+            "evidence_ids": [
+              "ev-8444d33056dc-0001-0003"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          },
+          {
+            "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+            "evidence_ids": [
+              "ev-8444d33056dc-0001-0004"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          },
+          {
+            "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+            "evidence_ids": [
+              "ev-8444d33056dc-0002-0000"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          },
+          {
+            "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+            "evidence_ids": [
+              "ev-8444d33056dc-0002-0004"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          },
+          {
+            "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+            "evidence_ids": [
+              "ev-8444d33056dc-0002-0001"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "During oral argument, several Justices asked questions about the statutory language and its implications."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+            "evidence_ids": [
+              "ev-8444d33056dc-0002-0006"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case concerns whether Congress intended judicial review of motions to reopen asylum decisions under \u00a71252(b)(6)."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+            "evidence_ids": [
+              "ev-8444d33056dc-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioner argues that Congress limited reduction of judicial review to authority specified in subchapter\u202f2 of chapter\u202f12 of Title\u202f8 and did not intend to remove courts\u2019 jurisdiction over other discretionary decisions."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+              "evidence_ids": [
+                "ev-8444d33056dc-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioner argues that Congress limited reduction of judicial review to authority specified in subchapter\u202f2 of chapter\u202f12 of Title\u202f8, and did not intend to remove courts\u2019 jurisdiction over other discretionary decisions."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+              "evidence_ids": [
+                "ev-8444d33056dc-0002-0006"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner asserts that \u00a71252(b)(6) mandates that review of the underlying decision be consolidated with review of a motion to reopen, indicating congressional intent to allow review of motions to reopen."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Department of Justice",
+          "citations": [
+            {
+              "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+              "evidence_ids": [
+                "ev-8444d33056dc-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "Respondent (Department of Justice) argues that the statutory text is clear and does not remove jurisdiction, so courts retain authority to review."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "8444d33056dc66d0498cd44e3f1122a57e51cea1876645cfc6eb8c73a8eadfee",
+      "evidence_ids": [
+        "ev-8444d33056dc-0000-0000",
+        "ev-8444d33056dc-0000-0001",
+        "ev-8444d33056dc-0000-0003",
+        "ev-8444d33056dc-0001-0000",
+        "ev-8444d33056dc-0001-0001",
+        "ev-8444d33056dc-0001-0003",
+        "ev-8444d33056dc-0001-0004",
+        "ev-8444d33056dc-0002-0000",
+        "ev-8444d33056dc-0002-0001",
+        "ev-8444d33056dc-0002-0004",
+        "ev-8444d33056dc-0002-0006"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-23T14:16:29.827813Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
