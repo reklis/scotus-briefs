@@ -1,0 +1,380 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+            "evidence_ids": [
+              "ev-238955ce48d1-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, one question presented is whether the Wetterling Act applies retroactively."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+            "evidence_ids": [
+              "ev-238955ce48d1-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, another question is whether there were any criminal enforcement options for the Attorney General under the Wetterling Act for conduct that occurred before 1996."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+            "evidence_ids": [
+              "ev-238955ce48d1-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, the Court also asked what constitutes a \u201creasonable time\u201d for compliance with SORNA."
+      }
+    ],
+    "heading": "Background & Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2011-10-6549",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T07:52:00.567921Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+            "evidence_ids": [
+              "ev-238955ce48d1-0000-0001",
+              "ev-238955ce48d1-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+            "evidence_ids": [
+              "ev-238955ce48d1-0001-0004",
+              "ev-238955ce48d1-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 23
+            }
+          }
+        ],
+        "text": "During argument, Justices asked questions about the retroactivity of the Wetterling Act, the existence of criminal enforcement options before 1996, and what constitutes a reasonable time for SORNA compliance."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Ms. Cain",
+        "citations": [
+          {
+            "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+            "evidence_ids": [
+              "ev-238955ce48d1-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Ms. Cain, reynolds argues that, because the Attorney General\u2019s authority under subsection (d) was valid, he had no obligation to register under SORNA and therefore was not subject to its criminal penalties."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+            "evidence_ids": [
+              "ev-238955ce48d1-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, the Court is considering whether the Wetterling Act is retroactive."
+      },
+      {
+        "attribution": "Justices Sotomayor and Breyer",
+        "citations": [
+          {
+            "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+            "evidence_ids": [
+              "ev-238955ce48d1-0001-0004"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+            "evidence_ids": [
+              "ev-238955ce48d1-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "The parties also dispute what counts as a reasonable time for a defendant to comply with SORNA under the final, interim, or earlier rules."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Cain",
+          "citations": [
+            {
+              "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+              "evidence_ids": [
+                "ev-238955ce48d1-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Ms. Cain, reynolds\u2019 counsel argues that, because the Attorney General\u2019s authority under subsection (d) was valid, Reynolds had no duty to register under SORNA and therefore could not be punished under its criminal provisions."
+        },
+        {
+          "attribution": "Ms. Cain",
+          "citations": [
+            {
+              "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+              "evidence_ids": [
+                "ev-238955ce48d1-0002-0003"
+              ],
+              "pages": {
+                "end": 54,
+                "start": 54
+              }
+            }
+          ],
+          "text": "According to Ms. Cain, reynolds\u2019 counsel cites a footnote indicating that the government may be deemed to have substantially implemented SORNA when it registers pre\u2011enactment offenders who remain in the system."
+        }
+      ],
+      "heading": "Petitioner \u2013 Billy Joe Reynolds",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Arbus Sherry",
+          "citations": [
+            {
+              "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+              "evidence_ids": [
+                "ev-238955ce48d1-0002-0000"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Ms. Arbus Sherry, the United States, through counsel, argues that offenders who are already registered under SORNA need only keep their registration information current and updated."
+        }
+      ],
+      "heading": "Respondent \u2013 United States",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+      "evidence_ids": [
+        "ev-238955ce48d1-0000-0003"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+      "evidence_ids": [
+        "ev-238955ce48d1-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+      "evidence_ids": [
+        "ev-238955ce48d1-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+      "evidence_ids": [
+        "ev-238955ce48d1-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+      "evidence_ids": [
+        "ev-238955ce48d1-0000-0004"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+      "evidence_ids": [
+        "ev-238955ce48d1-0001-0004"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+      "evidence_ids": [
+        "ev-238955ce48d1-0002-0000"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+      "evidence_ids": [
+        "ev-238955ce48d1-0002-0002"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "238955ce48d17b98acdaf3d5add3f8e92643fc88d03e10fe0a8a67f790cdb686",
+      "evidence_ids": [
+        "ev-238955ce48d1-0002-0003"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 54
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T07:54:57.863937Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

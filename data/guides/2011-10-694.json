@@ -1,0 +1,401 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+            "evidence_ids": [
+              "ev-f150bfc834f2-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:07\u202fa.m. before the Supreme Court of the United States."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+            "evidence_ids": [
+              "ev-f150bfc834f2-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the Blake and Brieva decisions changed the law."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+            "evidence_ids": [
+              "ev-f150bfc834f2-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about the comparability of the crime involved in\u202fSt.\u202fCyr\u202fand whether the inadmissibility criterion matches the one for deportation."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+            "evidence_ids": [
+              "ev-f150bfc834f2-0002-0005"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned whether there is only one category\u2014aggravated violent felony\u2014and whether that is the test being applied."
+      }
+    ],
+    "heading": "Background & Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2011-10-694",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T07:54:57.884120Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+            "evidence_ids": [
+              "ev-f150bfc834f2-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the Blake and Brieva decisions changed the law."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+            "evidence_ids": [
+              "ev-f150bfc834f2-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about the comparability of the crime in\u202fSt.\u202fCyr\u202fand whether the inadmissibility criterion matches the one for deportation."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+            "evidence_ids": [
+              "ev-f150bfc834f2-0002-0005"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether there is only one category\u2014aggravated violent felony\u2014and whether that is the test being applied."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mark C. Fleming",
+        "citations": [
+          {
+            "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+            "evidence_ids": [
+              "ev-f150bfc834f2-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Mark C. Fleming, the dispute concerns whether a lawful permanent resident subject to deportation must have the same opportunity to seek discretionary relief as an alien who has temporarily left the country and is subject to exclusion proceedings."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+            "evidence_ids": [
+              "ev-f150bfc834f2-0003-0002"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "The Government argues that the Board of Immigration Appeals\u2019 \u201cBlake\u201d rule permits a substantial overlap between the categories of crimes."
+      },
+      {
+        "attribution": "Mr. Gannon",
+        "citations": [
+          {
+            "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+            "evidence_ids": [
+              "ev-f150bfc834f2-0002-0001",
+              "ev-f150bfc834f2-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          },
+          {
+            "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+            "evidence_ids": [
+              "ev-f150bfc834f2-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Petitioner\u2019s counsel, Mr. Gannon, challenges the factual basis of the record and argues that offenses such as simple assault and non\u2011residential burglary should not be treated as crimes involving moral turpitude for deportation purposes."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mark C. Fleming",
+          "citations": [
+            {
+              "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+              "evidence_ids": [
+                "ev-f150bfc834f2-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Mark C. Fleming, petitioner argues that a lawful permanent resident subject to deportation must have the same opportunity to seek discretionary relief as an alien in exclusion proceedings, citing Hernandez\u2011Casillas."
+        },
+        {
+          "attribution": "Mr. Gannon",
+          "citations": [
+            {
+              "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+              "evidence_ids": [
+                "ev-f150bfc834f2-0002-0000"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            },
+            {
+              "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+              "evidence_ids": [
+                "ev-f150bfc834f2-0002-0001",
+                "ev-f150bfc834f2-0002-0002"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to Mr. Gannon, petitioner contends that the administrative record lacks a factual basis for a 1987 trip to the Philippines and that crimes such as simple assault and non\u2011residential burglary should not be classified as crimes involving moral turpitude for deportation purposes."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+              "evidence_ids": [
+                "ev-f150bfc834f2-0001-0005"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Government, according to Mark C. Fleming, the Government\u2019s position represents a change in the law regarding the treatment of permanent\u2011resident aliens."
+        }
+      ],
+      "heading": "Petitioner (Joel Judulang)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+              "evidence_ids": [
+                "ev-f150bfc834f2-0003-0002"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Government, according to the Government, the Board of Immigration Appeals\u2019 \u201cBlake\u201d rule allows substantial overlap between categories of crimes."
+        },
+        {
+          "attribution": "NIJC",
+          "citations": [
+            {
+              "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+              "evidence_ids": [
+                "ev-f150bfc834f2-0000-0004"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "According to NIJC, the NIJC amicus brief notes that individuals such as Ronald Bennett, who pleaded guilty, could still seek 212(c) protection, illustrating that discretionary relief is available after a guilty plea."
+        }
+      ],
+      "heading": "Respondent (Attorney General)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f150bfc834f20e069a8925396525dc7800b57eac221cd8d60e9b3f04f71b73a7",
+      "evidence_ids": [
+        "ev-f150bfc834f2-0000-0000",
+        "ev-f150bfc834f2-0000-0001",
+        "ev-f150bfc834f2-0000-0002",
+        "ev-f150bfc834f2-0000-0004",
+        "ev-f150bfc834f2-0001-0000",
+        "ev-f150bfc834f2-0001-0004",
+        "ev-f150bfc834f2-0001-0001",
+        "ev-f150bfc834f2-0001-0005",
+        "ev-f150bfc834f2-0001-0002",
+        "ev-f150bfc834f2-0001-0003",
+        "ev-f150bfc834f2-0002-0000",
+        "ev-f150bfc834f2-0002-0001",
+        "ev-f150bfc834f2-0002-0002",
+        "ev-f150bfc834f2-0002-0003",
+        "ev-f150bfc834f2-0002-0004",
+        "ev-f150bfc834f2-0002-0005",
+        "ev-f150bfc834f2-0002-0007",
+        "ev-f150bfc834f2-0003-0001",
+        "ev-f150bfc834f2-0003-0002",
+        "ev-f150bfc834f2-0003-0003",
+        "ev-f150bfc834f2-0003-0004",
+        "ev-f150bfc834f2-0003-0005"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T08:02:09.623366Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

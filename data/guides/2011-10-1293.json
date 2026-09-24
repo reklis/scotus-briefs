@@ -1,0 +1,373 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2011-10-1293",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T07:25:15.629822Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+            "evidence_ids": [
+              "ev-05c87c8b8ec8-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kagan asked why the condition requiring broadcasters to refrain from indecent material is appropriate when many other conditions would not be."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+            "evidence_ids": [
+              "ev-05c87c8b8ec8-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether the condition had been defined precisely enough."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+            "evidence_ids": [
+              "ev-05c87c8b8ec8-0001-0004"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether there is a difference between what a person sees on broadcast channels and on basic cable."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+            "evidence_ids": [
+              "ev-05c87c8b8ec8-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia remarked that the vulgarity of cable suggests a different standard."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+            "evidence_ids": [
+              "ev-05c87c8b8ec8-0002-0002"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Scalia asked how many displays of nudity went unsanctioned."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+            "evidence_ids": [
+              "ev-05c87c8b8ec8-0002-0003"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy noted the need to anticipate the natural results or consequences of the Court\u2019s decision."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+            "evidence_ids": [
+              "ev-05c87c8b8ec8-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Respondents argue they have long benefited from free and exclusive use of public spectrum."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+            "evidence_ids": [
+              "ev-05c87c8b8ec8-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Respondents, they contend that neither Congress nor the FCC may condition their licenses on refraining from broadcasting indecent material when children are likely to be in the audience."
+      },
+      {
+        "attribution": "Seth P. Waxman",
+        "citations": [
+          {
+            "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+            "evidence_ids": [
+              "ev-05c87c8b8ec8-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Seth P. Waxman, the FCC\u2019s current enforcement regime is described as inconsistent and intruding into the prohibited zone of indecency regulation."
+      },
+      {
+        "attribution": "General Verrilli",
+        "citations": [
+          {
+            "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+            "evidence_ids": [
+              "ev-05c87c8b8ec8-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The V\u2011chip works with both broadcast and cable transmissions."
+      },
+      {
+        "attribution": "General Verrilli",
+        "citations": [
+          {
+            "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+            "evidence_ids": [
+              "ev-05c87c8b8ec8-0001-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to General Verrilli, the V\u2011chip has been criticized as a deficient technology."
+      },
+      {
+        "attribution": "Fox Television Stations, Inc.",
+        "citations": [
+          {
+            "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+            "evidence_ids": [
+              "ev-05c87c8b8ec8-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Fox Television Stations, Inc., according to Fox Television Stations, Inc., fox Television Stations argue that the existing rules should remain unchanged."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+              "evidence_ids": [
+                "ev-05c87c8b8ec8-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Respondents, respondents have for years benefited enormously from their free and exclusive use of public spectrum."
+        },
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+              "evidence_ids": [
+                "ev-05c87c8b8ec8-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Respondents, they argue that Congress or the FCC may not require them to refrain from broadcasting indecent material when children are likely to be in the audience."
+        },
+        {
+          "attribution": "Fox Television Stations, Inc.",
+          "citations": [
+            {
+              "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+              "evidence_ids": [
+                "ev-05c87c8b8ec8-0001-0003"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Fox Television Stations, Inc., according to Fox Television Stations, Inc., they prefer to keep the current regulatory framework as it stands."
+        }
+      ],
+      "heading": "Respondents (Fox Television Stations Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Seth P. Waxman",
+          "citations": [
+            {
+              "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+              "evidence_ids": [
+                "ev-05c87c8b8ec8-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Seth P. Waxman, the FCC\u2019s enforcement regime is described as inconsistent and intruding into the prohibited zone of indecency regulation."
+        }
+      ],
+      "heading": "Petitioner (Federal Communications Commission)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "05c87c8b8ec8c2045ccac9714ff48af99e9cffe10afc61bebd90171751f98b06",
+      "evidence_ids": [
+        "ev-05c87c8b8ec8-0000-0000"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T07:31:32.226386Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2011-10-1265",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T07:21:10.810532Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5921cebd03841ea3ffe3f79fc751b051960e86213b1eb940f75fd13418d6a3de"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "5921cebd03841ea3ffe3f79fc751b051960e86213b1eb940f75fd13418d6a3de",
+          "evidence_ids": [
+            "ev-5921cebd0384-0001-0006"
+          ],
+          "pages": {
+            "end": 25,
+            "start": 25
+          }
+        }
+      ],
+      "definition": "A volunteer issue is when someone says they do not want to pursue their remedies and simply want to be executed.",
+      "term": "volunteer issue"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "5921cebd03841ea3ffe3f79fc751b051960e86213b1eb940f75fd13418d6a3de",
+            "evidence_ids": [
+              "ev-5921cebd0384-0001-0003"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked if she could give an example from the early litigation."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "5921cebd03841ea3ffe3f79fc751b051960e86213b1eb940f75fd13418d6a3de",
+            "evidence_ids": [
+              "ev-5921cebd0384-0001-0006"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia inquired about the meaning of a \u201cvolunteer issue,\u201d prompting clarification that it refers to a defendant who chooses not to pursue remedies and prefers execution."
+      },
+      {
+        "attribution": "Mr. Waxman",
+        "citations": [
+          {
+            "document_hash": "5921cebd03841ea3ffe3f79fc751b051960e86213b1eb940f75fd13418d6a3de",
+            "evidence_ids": [
+              "ev-5921cebd0384-0001-0004"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Mr. Waxman noted that while the appeal was pending, the respondent filed a Rule\u202f60(b) motion seeking relief based on newly discovered evidence."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5921cebd03841ea3ffe3f79fc751b051960e86213b1eb940f75fd13418d6a3de",
+      "evidence_ids": [
+        "ev-5921cebd0384-0001-0000"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "5921cebd03841ea3ffe3f79fc751b051960e86213b1eb940f75fd13418d6a3de",
+      "evidence_ids": [
+        "ev-5921cebd0384-0001-0003"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "5921cebd03841ea3ffe3f79fc751b051960e86213b1eb940f75fd13418d6a3de",
+      "evidence_ids": [
+        "ev-5921cebd0384-0001-0006"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "5921cebd03841ea3ffe3f79fc751b051960e86213b1eb940f75fd13418d6a3de",
+      "evidence_ids": [
+        "ev-5921cebd0384-0001-0004"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T07:25:15.621292Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
