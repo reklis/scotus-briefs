@@ -1,0 +1,376 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+            "evidence_ids": [
+              "ev-b1cfde40c6ab-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, what standard of review will the district court apply to the exhaustion question?"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+            "evidence_ids": [
+              "ev-b1cfde40c6ab-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, does the district court have jurisdiction over both the discrimination claim and the MSPB's procedural ruling?"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+            "evidence_ids": [
+              "ev-b1cfde40c6ab-0001-0003"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, should the term \u201cjudicially reviewable action\u201d be read differently from \u201caction subject to judicial review\u201d?"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+            "evidence_ids": [
+              "ev-b1cfde40c6ab-0002-0004"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, does the district court review both the CSRA claim and the discrimination claim?"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2012-11-184",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T17:16:02.914223Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+            "evidence_ids": [
+              "ev-b1cfde40c6ab-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts opened the session and called for argument."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+            "evidence_ids": [
+              "ev-b1cfde40c6ab-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the district court deals only with the discrimination claim or also with the MSPB's procedural ruling."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+            "evidence_ids": [
+              "ev-b1cfde40c6ab-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked what standard of review the district court will apply to the exhaustion question."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+            "evidence_ids": [
+              "ev-b1cfde40c6ab-0002-0004"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the opposing counsel\u2019s position that once the Board decides the CSRA claim and the discrimination claim, the district court reviews both."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+            "evidence_ids": [
+              "ev-b1cfde40c6ab-0001-0003"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether \u201cjudicially reviewable action\u201d should be read differently from \u201caction subject to judicial review.\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. Schnapper",
+        "citations": [
+          {
+            "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+            "evidence_ids": [
+              "ev-b1cfde40c6ab-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Mr. Schnapper, all mixed cases should be heard in district court."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+            "evidence_ids": [
+              "ev-b1cfde40c6ab-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, the Court will need to decide what standard of review the district court should apply to the exhaustion question."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Schnapper",
+          "citations": [
+            {
+              "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+              "evidence_ids": [
+                "ev-b1cfde40c6ab-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. Schnapper, all mixed cases should be heard in district court."
+        },
+        {
+          "attribution": "Mr. Schnapper",
+          "citations": [
+            {
+              "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+              "evidence_ids": [
+                "ev-b1cfde40c6ab-0002-0005"
+              ],
+              "pages": {
+                "end": 53,
+                "start": 53
+              }
+            }
+          ],
+          "text": "According to Mr. Schnapper, the Government's answer (the Ballentine rule) has caused confusion in lower courts."
+        }
+      ],
+      "heading": "Petitioner (Kloeckner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Harrington",
+          "citations": [
+            {
+              "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+              "evidence_ids": [
+                "ev-b1cfde40c6ab-0001-0002"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Ms. Harrington, only MSPB decisions on discrimination are reviewable in district court."
+        },
+        {
+          "attribution": "Ms. Harrington",
+          "citations": [
+            {
+              "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+              "evidence_ids": [
+                "ev-b1cfde40c6ab-0002-0001"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Ms. Harrington, the brief is filed on behalf of all agencies affected by this issue."
+        },
+        {
+          "attribution": "Ms. Harrington",
+          "citations": [
+            {
+              "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+              "evidence_ids": [
+                "ev-b1cfde40c6ab-0002-0003"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Ms. Harrington, the exception should not be read broadly; discrimination claims should be determined de novo in district court."
+        }
+      ],
+      "heading": "Respondent (Secretary of Labor / Agencies)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b1cfde40c6ab6b5e9d7f255b3ccec68e4846fb248a0af4feaad062e25c5d717d",
+      "evidence_ids": [
+        "ev-b1cfde40c6ab-0000-0000"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T17:27:05.284050Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "The claim \"According to Chief Justice Roberts, the Court will need to decide what standard of review the district court should apply to the exhaustion question\" overstates the evidence; Roberts posed this as a question, not as a definitive statement that the Court must decide."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

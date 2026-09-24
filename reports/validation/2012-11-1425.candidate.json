@@ -1,0 +1,494 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          },
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "The legal question is whether a warrant is required for blood tests and for breathalyzer tests in DUI cases."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2012-11-1425",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T17:00:21.866145Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked why it took the State so long to realize a warrant was needed."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked if it is permissible for police to take blood without a warrant."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts inquired about the need for a warrant for breathalyzer tests."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0002-0008"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked about the relevance of ongoing alcohol absorption."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0002-0009"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts questioned the relevance of not knowing when the last drink was consumed."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0002-0006"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "Justice Alito asked about the difference between practical limitations in rural jurisdictions."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Missouri",
+        "citations": [
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Missouri argues that a warrant is not required for either breathalyzer or blood tests in DUI cases."
+      },
+      {
+        "attribution": "John N. Koester, Jr., on behalf of the Petitioner",
+        "citations": [
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to John N. Koester, Jr., on behalf of the Petitioner, petitioner contends that quickly obtaining blood alcohol evidence is crucial because delays can cause the evidence to dissipate."
+      },
+      {
+        "attribution": "John N. Koester, Jr., on behalf of the Petitioner",
+        "citations": [
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to John N. Koester, Jr., on behalf of the Petitioner, petitioner adds that obtaining a warrant could take 90 minutes to two hours, during which the probative evidence may be lost."
+      },
+      {
+        "attribution": "Ms. Saharsky",
+        "citations": [
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Ms. Saharsky, petitioner says police must act reasonably when evidence is at risk of being lost."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "John N. Koester, Jr., on behalf of the Petitioner",
+          "citations": [
+            {
+              "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+              "evidence_ids": [
+                "ev-49b7ed8ba130-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to John N. Koester, Jr., on behalf of the Petitioner, petitioner argues that rapid collection of blood alcohol evidence is essential to preserve its probative value."
+        },
+        {
+          "attribution": "John N. Koester, Jr., on behalf of the Petitioner",
+          "citations": [
+            {
+              "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+              "evidence_ids": [
+                "ev-49b7ed8ba130-0000-0003"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to John N. Koester, Jr., on behalf of the Petitioner, petitioner states that obtaining a warrant could take up to two hours, during which the evidence may be lost."
+        },
+        {
+          "attribution": "Ms. Saharsky",
+          "citations": [
+            {
+              "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+              "evidence_ids": [
+                "ev-49b7ed8ba130-0001-0001"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Ms. Saharsky, petitioner asserts that police must act reasonably when evidence is at risk of being lost."
+        },
+        {
+          "attribution": "Mr. Koester",
+          "citations": [
+            {
+              "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+              "evidence_ids": [
+                "ev-49b7ed8ba130-0003-0003"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 62
+              }
+            }
+          ],
+          "text": "According to Mr. Koester, petitioner claims that requiring a warrant in DWI cases is impractical and unworkable."
+        },
+        {
+          "attribution": "Mr. Shapiro",
+          "citations": [
+            {
+              "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+              "evidence_ids": [
+                "ev-49b7ed8ba130-0003-0000"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            },
+            {
+              "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+              "evidence_ids": [
+                "ev-49b7ed8ba130-0003-0001"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 60
+              }
+            }
+          ],
+          "text": "According to Mr. Shapiro, petitioner compares the situation to drug cases where evidence destruction is an exigent circumstance."
+        }
+      ],
+      "heading": "Petitioner (Tyler G. McNeely)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Missouri",
+          "citations": [
+            {
+              "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+              "evidence_ids": [
+                "ev-49b7ed8ba130-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "Missouri contends that no warrant is needed for breathalyzer tests."
+        },
+        {
+          "attribution": "Missouri",
+          "citations": [
+            {
+              "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+              "evidence_ids": [
+                "ev-49b7ed8ba130-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "Missouri also contends that no warrant is needed for blood tests."
+        }
+      ],
+      "heading": "Respondent (Missouri)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+      "evidence_ids": [
+        "ev-49b7ed8ba130-0000-0000",
+        "ev-49b7ed8ba130-0000-0001",
+        "ev-49b7ed8ba130-0000-0003",
+        "ev-49b7ed8ba130-0001-0000",
+        "ev-49b7ed8ba130-0001-0001",
+        "ev-49b7ed8ba130-0001-0002",
+        "ev-49b7ed8ba130-0001-0004",
+        "ev-49b7ed8ba130-0001-0005",
+        "ev-49b7ed8ba130-0002-0000",
+        "ev-49b7ed8ba130-0002-0001",
+        "ev-49b7ed8ba130-0002-0002",
+        "ev-49b7ed8ba130-0002-0006",
+        "ev-49b7ed8ba130-0002-0007",
+        "ev-49b7ed8ba130-0002-0008",
+        "ev-49b7ed8ba130-0002-0009",
+        "ev-49b7ed8ba130-0003-0000",
+        "ev-49b7ed8ba130-0003-0001",
+        "ev-49b7ed8ba130-0003-0003"
+      ],
+      "pages": {
+        "end": 62,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T17:13:45.090451Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim that Justice Sotomayor asked why the State took so long to realize a warrant was needed is not supported by the cited evidence, which actually asks why the State took so long to realize a warrant was NOT needed.",
+      "Oral argument characterization check failed: the same claim misrepresents Justice Sotomayor's question as a statement of the Court\u2019s view rather than a question, violating the requirement to treat oral\u2011argument questions as questions, not holdings or votes.",
+      "Overstatement check failed: the claim overstates the content of Justice Sotomayor's question, implying the Court required a warrant when the evidence shows the question was about the lack of a warrant."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Missouri and Petitioner",
+        "citations": [
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          },
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "49b7ed8ba130ca4451e0ae6f0e42868bcf849097d66a2acf0da183ab3a40b18b",
+            "evidence_ids": [
+              "ev-49b7ed8ba130-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The outcome will affect how law enforcement can obtain blood and breath evidence in DUI cases, particularly regarding the need for a warrant and the risk of evidence loss due to delays."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
