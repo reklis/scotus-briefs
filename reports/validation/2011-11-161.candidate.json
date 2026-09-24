@@ -1,0 +1,275 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mark T. Stancil",
+        "citations": [
+          {
+            "document_hash": "86b656dc615aac74da0faa136a14c0e218406a2f321378fe8411eee3a141690d",
+            "evidence_ids": [
+              "ev-86b656dc615a-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Mark T. Stancil, the petitioners contend that the city\u2019s abandonment of the sewer\u2011funding program forces them to pay about thirty times more than nearby taxpayers, raising an equal\u2011protection concern."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "86b656dc615aac74da0faa136a14c0e218406a2f321378fe8411eee3a141690d",
+            "evidence_ids": [
+              "ev-86b656dc615a-0000-0003",
+              "ev-86b656dc615a-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "86b656dc615aac74da0faa136a14c0e218406a2f321378fe8411eee3a141690d",
+            "evidence_ids": [
+              "ev-86b656dc615a-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The legal question presented is whether the city must refund or otherwise treat equally the taxpayers who have already paid their assessments under the Barrett Law."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2011-11-161",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T10:30:06.373913Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "86b656dc615aac74da0faa136a14c0e218406a2f321378fe8411eee3a141690d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mark T. Stancil",
+        "citations": [
+          {
+            "document_hash": "86b656dc615aac74da0faa136a14c0e218406a2f321378fe8411eee3a141690d",
+            "evidence_ids": [
+              "ev-86b656dc615a-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Mark T. Stancil, armour v. City of Indianapolis concerns a dispute over the city's method of abandoning its sewer\u2011funding mechanism, which allegedly caused the petitioners to pay substantially higher fees than neighboring residents."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mark T. Stancil",
+          "citations": [
+            {
+              "document_hash": "86b656dc615aac74da0faa136a14c0e218406a2f321378fe8411eee3a141690d",
+              "evidence_ids": [
+                "ev-86b656dc615a-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Mark T. Stancil, petitioner argues that the city\u2019s abandonment of the sewer\u2011funding mechanism forces them to pay roughly thirty times more than neighboring taxpayers, which is unfair and likely unconstitutional."
+        },
+        {
+          "attribution": "Mr. Clement (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "86b656dc615aac74da0faa136a14c0e218406a2f321378fe8411eee3a141690d",
+              "evidence_ids": [
+                "ev-86b656dc615a-0003-0000"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Mr. Clement (Petitioner), according to Mr. Clement (Petitioner), petitioner estimates that the dispute involves about twenty projects and could affect at least a thousand people."
+        }
+      ],
+      "heading": "Petitioner (Christine Armour)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Stancil",
+          "citations": [
+            {
+              "document_hash": "86b656dc615aac74da0faa136a14c0e218406a2f321378fe8411eee3a141690d",
+              "evidence_ids": [
+                "ev-86b656dc615a-0001-0002"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Mr. Stancil, the city suggests it could have increased monthly fees under the STEP program to fund the projects, as it does for other city projects."
+        }
+      ],
+      "heading": "Respondent (City of Indianapolis)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "86b656dc615aac74da0faa136a14c0e218406a2f321378fe8411eee3a141690d",
+      "evidence_ids": [
+        "ev-86b656dc615a-0000-0000",
+        "ev-86b656dc615a-0000-0001",
+        "ev-86b656dc615a-0000-0003",
+        "ev-86b656dc615a-0000-0004",
+        "ev-86b656dc615a-0001-0000",
+        "ev-86b656dc615a-0001-0001",
+        "ev-86b656dc615a-0001-0002",
+        "ev-86b656dc615a-0001-0003",
+        "ev-86b656dc615a-0001-0004",
+        "ev-86b656dc615a-0002-0000",
+        "ev-86b656dc615a-0002-0001",
+        "ev-86b656dc615a-0002-0002",
+        "ev-86b656dc615a-0002-0004",
+        "ev-86b656dc615a-0003-0000",
+        "ev-86b656dc615a-0003-0001",
+        "ev-86b656dc615a-0003-0002",
+        "ev-86b656dc615a-0003-0003",
+        "ev-86b656dc615a-0003-0004",
+        "ev-86b656dc615a-0003-0006",
+        "ev-86b656dc615a-0003-0007",
+        "ev-86b656dc615a-0002-0007"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 3
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T10:38:53.777447Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the petitioner claim that the abandonment is \"unfair and likely unconstitutional\" is not backed by any cited evidence.",
+      "Overstatement check failed: the same petitioner claim adds unsupported assertions, constituting a material overstatement."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Mark T. Stancil and Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "86b656dc615aac74da0faa136a14c0e218406a2f321378fe8411eee3a141690d",
+            "evidence_ids": [
+              "ev-86b656dc615a-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "86b656dc615aac74da0faa136a14c0e218406a2f321378fe8411eee3a141690d",
+            "evidence_ids": [
+              "ev-86b656dc615a-0000-0003",
+              "ev-86b656dc615a-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The dispute raises important questions about equal\u2011protection guarantees and how municipalities can fund essential infrastructure without imposing disparate financial burdens on taxpayers."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

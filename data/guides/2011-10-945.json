@@ -1,0 +1,327 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+            "evidence_ids": [
+              "ev-f3a188a0fd57-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned why the Court should change the policy given the prior decision in Bell v. Wolfish, which found the policy successful."
+      }
+    ],
+    "heading": "Background and Questions Raised",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2011-10-945",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T10:02:23.840739Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+            "evidence_ids": [
+              "ev-f3a188a0fd57-0000-0003"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Counsel for the petitioner was Thomas C. Goldstein; counsel for the respondents was Carter G. Phillips; the United States appeared as amicus curiae, represented by Nicole A. Saharsky."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+            "evidence_ids": [
+              "ev-f3a188a0fd57-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia questioned whether visitors can be conditioned on waiving Fourth Amendment rights."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+            "evidence_ids": [
+              "ev-f3a188a0fd57-0001-0004"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the respondent believes there is no reasonable suspicion for a body\u2011cavity search."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+            "evidence_ids": [
+              "ev-f3a188a0fd57-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned why the Court should change the policy given the success of the Bell v. Wolfish approach."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+            "evidence_ids": [
+              "ev-f3a188a0fd57-0003-0003"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts concluded the case after the arguments."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Thomas C. Goldstein",
+        "citations": [
+          {
+            "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+            "evidence_ids": [
+              "ev-f3a188a0fd57-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+            "evidence_ids": [
+              "ev-f3a188a0fd57-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The case concerns whether jails may conduct strip searches of arrestees based on reasonable suspicion."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Thomas C. Goldstein",
+          "citations": [
+            {
+              "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+              "evidence_ids": [
+                "ev-f3a188a0fd57-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            },
+            {
+              "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+              "evidence_ids": [
+                "ev-f3a188a0fd57-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "Petitioner argues that a jail may strip\u2011search an arrestee when there is reasonable suspicion, and that this rule has been applied nationwide without administrative difficulty."
+        }
+      ],
+      "heading": "Petitioner (Albert W. Florence)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Board of Chosen Freeholders of Burlington County)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "MS. SAHARSKY",
+          "citations": [
+            {
+              "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+              "evidence_ids": [
+                "ev-f3a188a0fd57-0003-0001"
+              ],
+              "pages": {
+                "end": 59,
+                "start": 59
+              }
+            }
+          ],
+          "text": "According to MS. SAHARSKY, amicus argues that intake staff in the Federal system lack immediate access to the information needed for searches."
+        }
+      ],
+      "heading": "Amicus United States",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+      "evidence_ids": [
+        "ev-f3a188a0fd57-0000-0002",
+        "ev-f3a188a0fd57-0000-0003",
+        "ev-f3a188a0fd57-0000-0000",
+        "ev-f3a188a0fd57-0001-0000",
+        "ev-f3a188a0fd57-0001-0001",
+        "ev-f3a188a0fd57-0001-0002",
+        "ev-f3a188a0fd57-0001-0004",
+        "ev-f3a188a0fd57-0002-0000",
+        "ev-f3a188a0fd57-0002-0003",
+        "ev-f3a188a0fd57-0003-0000",
+        "ev-f3a188a0fd57-0003-0001",
+        "ev-f3a188a0fd57-0003-0003"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T10:07:56.716079Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+            "evidence_ids": [
+              "ev-f3a188a0fd57-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          },
+          {
+            "document_hash": "f3a188a0fd577d14288685e74d750a2f1a66d0820fe5a1e42f59a8f4f50cd331",
+            "evidence_ids": [
+              "ev-f3a188a0fd57-0002-0003"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "The case involves the balance between prison security and Fourth Amendment privacy rights, as highlighted by Justice Sotomayor\u2019s reference to Bell v. Wolfish and the respondent\u2019s concern about contraband in prisons."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

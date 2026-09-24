@@ -1,0 +1,282 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1d17a9f8eeea4bffeaf349d9d4ba207d75a06b4a5de88baa118f1ebcad6c5099",
+            "evidence_ids": [
+              "ev-1d17a9f8eeea-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The matter came on for oral argument before the Supreme Court of the United States at 11:25\u202fa.m."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "1d17a9f8eeea4bffeaf349d9d4ba207d75a06b4a5de88baa118f1ebcad6c5099",
+            "evidence_ids": [
+              "ev-1d17a9f8eeea-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Scalia asked, \u201cYou haven\u2019t changed your mind in the interim, have you?\u201d"
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2011-10-9647",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T10:16:55.899838Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1d17a9f8eeea4bffeaf349d9d4ba207d75a06b4a5de88baa118f1ebcad6c5099"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1d17a9f8eeea4bffeaf349d9d4ba207d75a06b4a5de88baa118f1ebcad6c5099",
+            "evidence_ids": [
+              "ev-1d17a9f8eeea-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case was presented for oral argument before the Supreme Court at 11:25\u202fa.m."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "1d17a9f8eeea4bffeaf349d9d4ba207d75a06b4a5de88baa118f1ebcad6c5099",
+            "evidence_ids": [
+              "ev-1d17a9f8eeea-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Scalia asked, \u201cYou haven\u2019t changed your mind in the interim, have you?\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "1d17a9f8eeea4bffeaf349d9d4ba207d75a06b4a5de88baa118f1ebcad6c5099",
+            "evidence_ids": [
+              "ev-1d17a9f8eeea-0002-0004"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts thanked counsel."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1d17a9f8eeea4bffeaf349d9d4ba207d75a06b4a5de88baa118f1ebcad6c5099",
+            "evidence_ids": [
+              "ev-1d17a9f8eeea-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case was heard in oral argument before the Supreme Court of the United States at 11:25\u202fa.m."
+      },
+      {
+        "attribution": "Petitioner (Kuntrell Jackson)",
+        "citations": [
+          {
+            "document_hash": "1d17a9f8eeea4bffeaf349d9d4ba207d75a06b4a5de88baa118f1ebcad6c5099",
+            "evidence_ids": [
+              "ev-1d17a9f8eeea-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Petitioner Kuntrell\u202fJackson is serving a life\u2011without\u2011parole sentence."
+      },
+      {
+        "attribution": "Petitioner (Kuntrell Jackson)",
+        "citations": [
+          {
+            "document_hash": "1d17a9f8eeea4bffeaf349d9d4ba207d75a06b4a5de88baa118f1ebcad6c5099",
+            "evidence_ids": [
+              "ev-1d17a9f8eeea-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner (Kuntrell Jackson), according to Petitioner (Kuntrell Jackson), jackson\u2019s counsel argues that the Court\u2019s statements in *Graham*\u2014which protect juveniles who did not kill or intend to kill\u2014support his position."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Kuntrell Jackson)",
+          "citations": [
+            {
+              "document_hash": "1d17a9f8eeea4bffeaf349d9d4ba207d75a06b4a5de88baa118f1ebcad6c5099",
+              "evidence_ids": [
+                "ev-1d17a9f8eeea-0000-0003"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Kuntrell Jackson), according to Petitioner (Kuntrell Jackson), jackson\u2019s counsel argues that the Court\u2019s statements in *Graham*\u2014which protect juveniles who did not kill or intend to kill\u2014provide a basis for his claim."
+        }
+      ],
+      "heading": "Petitioner (Kuntrell Jackson)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Ray Hobbs, Director, Arkansas Department of Corrections)",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1d17a9f8eeea4bffeaf349d9d4ba207d75a06b4a5de88baa118f1ebcad6c5099",
+      "evidence_ids": [
+        "ev-1d17a9f8eeea-0000-0000",
+        "ev-1d17a9f8eeea-0000-0001",
+        "ev-1d17a9f8eeea-0000-0003",
+        "ev-1d17a9f8eeea-0000-0004",
+        "ev-1d17a9f8eeea-0002-0004"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T10:21:14.512641Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Kuntrell Jackson)",
+        "citations": [
+          {
+            "document_hash": "1d17a9f8eeea4bffeaf349d9d4ba207d75a06b4a5de88baa118f1ebcad6c5099",
+            "evidence_ids": [
+              "ev-1d17a9f8eeea-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Kuntrell Jackson is serving a life\u2011without\u2011parole sentence."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2011-11-210",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T11:08:00.127706Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "fc274a6b6e66ca579369ce66d0b712c925cc2f81d1d9732a0ce47ab6d2289436"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "fc274a6b6e66ca579369ce66d0b712c925cc2f81d1d9732a0ce47ab6d2289436",
+            "evidence_ids": [
+              "ev-fc274a6b6e66-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked a question beginning with \u201cGeneral, may I pose a \u2026\u201d."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "fc274a6b6e66ca579369ce66d0b712c925cc2f81d1d9732a0ce47ab6d2289436",
+            "evidence_ids": [
+              "ev-fc274a6b6e66-0000-0006"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "Justice Alito asked, \u201cIs your argument limited to statements that a person makes about himself or herself?\u201d"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "fc274a6b6e66ca579369ce66d0b712c925cc2f81d1d9732a0ce47ab6d2289436",
+            "evidence_ids": [
+              "ev-fc274a6b6e66-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked, \u201cSo, why isn\u2019t the \u2026\u201d."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "fc274a6b6e66ca579369ce66d0b712c925cc2f81d1d9732a0ce47ab6d2289436",
+            "evidence_ids": [
+              "ev-fc274a6b6e66-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Breyer asked, \u201cWhy not?\u201d."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "fc274a6b6e66ca579369ce66d0b712c925cc2f81d1d9732a0ce47ab6d2289436",
+      "evidence_ids": [
+        "ev-fc274a6b6e66-0000-0001",
+        "ev-fc274a6b6e66-0000-0006",
+        "ev-fc274a6b6e66-0002-0000",
+        "ev-fc274a6b6e66-0002-0002"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 3
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T11:09:12.558234Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
