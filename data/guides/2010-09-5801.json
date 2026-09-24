@@ -1,0 +1,394 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-5801",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T01:01:15.022211Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+            "evidence_ids": [
+              "ev-3582b5486727-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked: \u201cWhat separates a stereotype from a reality? \u2026 is it not true that if there is an illegitimate child, it is much more likely that the woman will end up caring for it than the father?\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+            "evidence_ids": [
+              "ev-3582b5486727-0000-0004"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts stated: \u201cThe remedy for an equal protection violation is to treat everybody the same.\u201d"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+            "evidence_ids": [
+              "ev-3582b5486727-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia followed up with the question: \u201cUnless he\u2019s a United States citizen?\u201d"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+            "evidence_ids": [
+              "ev-3582b5486727-0001-0006"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether giving fathers a one\u2011year advantage would be compatible with equal protection."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+            "evidence_ids": [
+              "ev-3582b5486727-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice BREYER, justice Breyer questioned the rationale for treating women worse than men in this context."
+      },
+      {
+        "attribution": "Chief Justice ROBERTS",
+        "citations": [
+          {
+            "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+            "evidence_ids": [
+              "ev-3582b5486727-0002-0003"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the only possible remedy would be to increase the burden on mothers rather than relieve fathers."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+            "evidence_ids": [
+              "ev-3582b5486727-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "In Nguyen, the Court approved a legitimation requirement only for fathers of non\u2011marital children born abroad, based on biological differences between men and women."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+            "evidence_ids": [
+              "ev-3582b5486727-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the residential requirements at issue have no biological basis; they create barriers for younger fathers but not younger mothers and are rooted in gender stereotypes that assume women would care for non\u2011marital children."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+              "evidence_ids": [
+                "ev-3582b5486727-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, the residential requirements are based on gender stereotypes and lack any biological justification, thus violating equal protection."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+              "evidence_ids": [
+                "ev-3582b5486727-0002-0002"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "Congress intentionally made the rule tougher for fathers by balancing the duration of the parental connection, which the petitioner argues is unfair."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+              "evidence_ids": [
+                "ev-3582b5486727-0000-0003"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Respondent, congress was concerned about preventing statelessness, although the record does not support that claim."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+      "evidence_ids": [
+        "ev-3582b5486727-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+      "evidence_ids": [
+        "ev-3582b5486727-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+      "evidence_ids": [
+        "ev-3582b5486727-0000-0002",
+        "ev-3582b5486727-0000-0003"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+      "evidence_ids": [
+        "ev-3582b5486727-0000-0004"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+      "evidence_ids": [
+        "ev-3582b5486727-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+      "evidence_ids": [
+        "ev-3582b5486727-0001-0001"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+      "evidence_ids": [
+        "ev-3582b5486727-0001-0006"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 34
+      }
+    },
+    {
+      "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+      "evidence_ids": [
+        "ev-3582b5486727-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+      "evidence_ids": [
+        "ev-3582b5486727-0002-0002"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+      "evidence_ids": [
+        "ev-3582b5486727-0002-0003"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "3582b5486727c8536ee8e3ad37b52fa12ec3eefc8ad1d60d3ce22db130f7c813",
+      "evidence_ids": [
+        "ev-3582b5486727-0002-0004"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T01:04:15.453340Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

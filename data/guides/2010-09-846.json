@@ -1,0 +1,266 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court Clerk",
+        "citations": [
+          {
+            "document_hash": "166fc160959c4234b6b89213466acb954eaf20821ad210f71c1120ec1edc5c70",
+            "evidence_ids": [
+              "ev-166fc160959c-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The oral argument began at 11:05\u202fa.m. before the Supreme Court of the United States."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "166fc160959c4234b6b89213466acb954eaf20821ad210f71c1120ec1edc5c70",
+            "evidence_ids": [
+              "ev-166fc160959c-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg questioned whether sequential suits are permissible, specifically if a district\u2011court final judgment would allow a subsequent claim in the Court of Federal Claims."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "166fc160959c4234b6b89213466acb954eaf20821ad210f71c1120ec1edc5c70",
+            "evidence_ids": [
+              "ev-166fc160959c-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Breyer highlighted the tribe\u2019s claim that the Bureau of Indian Affairs mismanaged matters, seeking monetary relief and an injunction."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-846",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T01:28:21.418242Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "166fc160959c4234b6b89213466acb954eaf20821ad210f71c1120ec1edc5c70"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court Clerk",
+        "citations": [
+          {
+            "document_hash": "166fc160959c4234b6b89213466acb954eaf20821ad210f71c1120ec1edc5c70",
+            "evidence_ids": [
+              "ev-166fc160959c-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case was presented for oral argument before the Supreme Court at 11:05\u202fa.m."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "166fc160959c4234b6b89213466acb954eaf20821ad210f71c1120ec1edc5c70",
+            "evidence_ids": [
+              "ev-166fc160959c-0001-0003"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Ms. Danielle Spinelli appeared on behalf of the respondent during oral argument."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Anthony Yang",
+        "citations": [
+          {
+            "document_hash": "166fc160959c4234b6b89213466acb954eaf20821ad210f71c1120ec1edc5c70",
+            "evidence_ids": [
+              "ev-166fc160959c-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Anthony Yang, the case raises the question of whether a tribe may bring a claim in the Court of Federal Claims while a related suit is pending in another court."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "166fc160959c4234b6b89213466acb954eaf20821ad210f71c1120ec1edc5c70",
+            "evidence_ids": [
+              "ev-166fc160959c-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether, after a district\u2011court judgment, a tribe could still pursue relief in the Court of Federal Claims."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Anthony Yang",
+          "citations": [
+            {
+              "document_hash": "166fc160959c4234b6b89213466acb954eaf20821ad210f71c1120ec1edc5c70",
+              "evidence_ids": [
+                "ev-166fc160959c-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Anthony Yang, section\u202f1500 of Title\u202f28 deprives the Court of Federal Claims of jurisdiction when the plaintiff has a pending suit in another court based on substantially the same operative facts."
+        },
+        {
+          "attribution": "Anthony Yang",
+          "citations": [
+            {
+              "document_hash": "166fc160959c4234b6b89213466acb954eaf20821ad210f71c1120ec1edc5c70",
+              "evidence_ids": [
+                "ev-166fc160959c-0000-0004"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to Anthony Yang, the Abandoned Property Collection Act provides a special statutory trust remedy."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Tohono O'odham Nation (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "166fc160959c4234b6b89213466acb954eaf20821ad210f71c1120ec1edc5c70",
+      "evidence_ids": [
+        "ev-166fc160959c-0000-0000",
+        "ev-166fc160959c-0000-0001",
+        "ev-166fc160959c-0000-0002",
+        "ev-166fc160959c-0000-0004",
+        "ev-166fc160959c-0001-0000",
+        "ev-166fc160959c-0001-0003"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T01:32:12.616514Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

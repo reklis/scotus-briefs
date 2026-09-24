@@ -1,0 +1,391 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+            "evidence_ids": [
+              "ev-d330bae63973-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began before the Supreme Court at 10:02 a.m."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+            "evidence_ids": [
+              "ev-d330bae63973-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether a state could deem an arbitration clause unconscionable when it requires distant arbitration and costs the other party."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+            "evidence_ids": [
+              "ev-d330bae63973-0000-0003"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan inquired about Discover Bank\u2019s citation of the America Online case and its application to both arbitration and litigation."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+            "evidence_ids": [
+              "ev-d330bae63973-0001-0003"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 35
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how to distinguish facially neutral contract law defenses that implicitly discriminate against arbitration from those that do not."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+            "evidence_ids": [
+              "ev-d330bae63973-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Breyer asked \u201cWhy, why, why?\u201d during the argument."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+            "evidence_ids": [
+              "ev-d330bae63973-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Breyer later asked for the respondent\u2019s answer to the specific effort to assimilate the class\u2011action issue to a discrimination claim."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+            "evidence_ids": [
+              "ev-d330bae63973-0002-0004",
+              "ev-d330bae63973-0002-0005"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Alito asked for clarification on a previous hypothetical question."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+            "evidence_ids": [
+              "ev-d330bae63973-0002-0007"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned whether the test for state interference with arbitration is a purpose test or an effects test."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-893",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T01:43:31.785844Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+            "evidence_ids": [
+              "ev-d330bae63973-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The oral argument was heard before the Supreme Court at 10:02 a.m."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+            "evidence_ids": [
+              "ev-d330bae63973-0003-0002"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts noted that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+            "evidence_ids": [
+              "ev-d330bae63973-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case AT&T Mobility LLC v. Vincent Concepcion was argued before the Supreme Court of the United States."
+      },
+      {
+        "attribution": "Petitioner (Andrew J. Pincus)",
+        "citations": [
+          {
+            "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+            "evidence_ids": [
+              "ev-d330bae63973-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner (Andrew J. Pincus), according to Petitioner (Andrew J. Pincus), the petitioners argue that a state law may require a particular arbitration procedure provided the same procedure is required in litigation."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Andrew J. Pincus)",
+          "citations": [
+            {
+              "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+              "evidence_ids": [
+                "ev-d330bae63973-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner (Andrew J. Pincus), according to Petitioner (Andrew J. Pincus), the Ninth Circuit held that a state law may mandate a particular arbitration procedure if the same procedure is required in litigation."
+        }
+      ],
+      "heading": "Petitioner (AT&T Mobility LLC)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+              "evidence_ids": [
+                "ev-d330bae63973-0001-0002"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 26
+              }
+            }
+          ],
+          "text": "The respondents argue that the state law at issue is not preemptive because it aligns with the equal\u2011footing nondiscrimination principle recognized in Section\u202f2."
+        },
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+              "evidence_ids": [
+                "ev-d330bae63973-0001-0004"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 27
+              }
+            }
+          ],
+          "text": "According to Respondents, they contend that the savings clause in the Federal Arbitration Act serves two critical purposes, ensuring that contract\u2011law doctrines preserve consent."
+        },
+        {
+          "attribution": "Mr. Gupta",
+          "citations": [
+            {
+              "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+              "evidence_ids": [
+                "ev-d330bae63973-0002-0000"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Gupta, mr. Gupta, on behalf of the respondents, concedes that rules requiring arbitration procedures are preempted."
+        },
+        {
+          "attribution": "Mr. Gupta",
+          "citations": [
+            {
+              "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+              "evidence_ids": [
+                "ev-d330bae63973-0002-0002"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Mr. Gupta, he also states that the purpose of the Federal Arbitration Act is to allow parties to tailor their procedures without court interference."
+        }
+      ],
+      "heading": "Respondent (Vincent Concepcion, et ux.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "d330bae63973139a3d28594e6ff472e4eba3083f82204b76c5d45a363464bafd",
+      "evidence_ids": [
+        "ev-d330bae63973-0000-0000"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T01:48:41.616814Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

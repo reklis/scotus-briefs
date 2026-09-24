@@ -1,0 +1,424 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0000-0004"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The legal question is whether a single incident of a Brady violation can give rise to liability for a district attorney\u2019s office under \u00a71983 when there is no pattern of misconduct."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-571",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T00:54:52.617269Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the situation falls between the Canton hypothetical and the present case, noting four prosecutors knew of the evidence."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0001-0006"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned what evidence existed that the evidence was placed in a hip pocket."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0002-0000"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 48
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts inquired whether a mentoring\u2011based training program would be adequate."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0002-0004"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Justice Alito asked if the proposed training is consistent with Arizona v. Youngblood."
+      },
+      {
+        "attribution": "Justice Alito and Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0003-0000"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "According to Justice Alito and Justice Kagan, justices Alito and Kagan asked what advice could be given to ADAs to prevent such violations."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioners ask when a district attorney's office may be liable under \u00a71983 for inadequate training of prosecutors."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "The petitioners contend the office was liable because it was deliberately indifferent to Brady training, even though there was no pattern of prior misconduct."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0000-0004"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The district court exempted the case from the ordinary pattern requirement by analogizing to a hypothetical in the Court\u2019s City of Canton opinion."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+            "evidence_ids": [
+              "ev-6ae201a22e7c-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The case involves a single incident of a Brady violation."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+              "evidence_ids": [
+                "ev-6ae201a22e7c-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            },
+            {
+              "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+              "evidence_ids": [
+                "ev-6ae201a22e7c-0002-0001"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "The petitioners argue the office should be held liable because it was deliberately indifferent to providing Brady training to prosecutors."
+        }
+      ],
+      "heading": "Petitioner (District Attorney\u2019s Office)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (John Thompson)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+      "evidence_ids": [
+        "ev-6ae201a22e7c-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+      "evidence_ids": [
+        "ev-6ae201a22e7c-0000-0001",
+        "ev-6ae201a22e7c-0000-0004"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+      "evidence_ids": [
+        "ev-6ae201a22e7c-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+      "evidence_ids": [
+        "ev-6ae201a22e7c-0000-0003"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+      "evidence_ids": [
+        "ev-6ae201a22e7c-0001-0006"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+      "evidence_ids": [
+        "ev-6ae201a22e7c-0002-0001"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+      "evidence_ids": [
+        "ev-6ae201a22e7c-0002-0000"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+      "evidence_ids": [
+        "ev-6ae201a22e7c-0002-0004"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 50
+      }
+    },
+    {
+      "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+      "evidence_ids": [
+        "ev-6ae201a22e7c-0002-0003"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    },
+    {
+      "document_hash": "6ae201a22e7c0c0759674a09ab7d801ac94829347bc3f4eb4769a4db5410beaa",
+      "evidence_ids": [
+        "ev-6ae201a22e7c-0003-0000"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T01:01:15.003024Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

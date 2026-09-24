@@ -1,0 +1,264 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Melissa A. Sherry",
+        "citations": [
+          {
+            "document_hash": "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854",
+            "evidence_ids": [
+              "ev-9b58e24a0c1b-0000-0002"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "According to Melissa A. Sherry, the key legal question is whether a non\u2011property tax that singles out rail carriers while exempting other carriers violates the discrimination prohibition of subsection (b)(4)."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-09-520",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T00:25:33.063539Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854",
+            "evidence_ids": [
+              "ev-9b58e24a0c1b-0003-0003"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, after argument, Chief Justice Roberts noted that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Melissa A. Sherry",
+        "citations": [
+          {
+            "document_hash": "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854",
+            "evidence_ids": [
+              "ev-9b58e24a0c1b-0000-0002"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "According to Melissa A. Sherry, the Court must decide whether a non\u2011property tax that is imposed on a rail carrier but exempt for its competitors can be treated as a discriminatory tax under subsection (b)(4)."
+      },
+      {
+        "attribution": "CSX",
+        "citations": [
+          {
+            "document_hash": "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854",
+            "evidence_ids": [
+              "ev-9b58e24a0c1b-0002-0000"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "CSX argues that such a tax discriminates because it singles out railroads, and that the term \u201cdiscriminatory tax\u201d should cover any differential treatment of non\u2011property taxes."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "CSX",
+          "citations": [
+            {
+              "document_hash": "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854",
+              "evidence_ids": [
+                "ev-9b58e24a0c1b-0002-0000"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "CSX argues that the tax discriminates because it singles out railroads, and that \u201cdiscriminatory tax\u201d should include any differential treatment of non\u2011property taxes."
+        }
+      ],
+      "heading": "Petitioner (CSX Transportation, Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854",
+              "evidence_ids": [
+                "ev-9b58e24a0c1b-0001-0000"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "The government contends that subsection (c) provides a broad grant of jurisdiction to district courts to adjudicate all violations of subsection (b)."
+        }
+      ],
+      "heading": "Respondent (Alabama Department of Revenue)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854",
+      "evidence_ids": [
+        "ev-9b58e24a0c1b-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854",
+      "evidence_ids": [
+        "ev-9b58e24a0c1b-0000-0002"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    },
+    {
+      "document_hash": "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854",
+      "evidence_ids": [
+        "ev-9b58e24a0c1b-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854",
+      "evidence_ids": [
+        "ev-9b58e24a0c1b-0002-0000"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854",
+      "evidence_ids": [
+        "ev-9b58e24a0c1b-0003-0002"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 59
+      }
+    },
+    {
+      "document_hash": "9b58e24a0c1b28294a1dd62529fccac8680fff82d8a3457a1a0c20c98ea39854",
+      "evidence_ids": [
+        "ev-9b58e24a0c1b-0003-0003"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 60
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T00:28:05.181702Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
