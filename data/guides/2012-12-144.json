@@ -1,0 +1,142 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "a3dc42ffdf2513c2d2413b3a44742f2973c991257c2ba7230bc96ed3789ac3f5",
+            "evidence_ids": [
+              "ev-a3dc42ffdf25-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the Court has ever granted standing to proponents of ballot initiatives."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2012-12-144",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T21:08:21.395595Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a3dc42ffdf2513c2d2413b3a44742f2973c991257c2ba7230bc96ed3789ac3f5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "a3dc42ffdf2513c2d2413b3a44742f2973c991257c2ba7230bc96ed3789ac3f5",
+            "evidence_ids": [
+              "ev-a3dc42ffdf25-0002-0004"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Justice Alito suggested that, on a question of fundamental importance, the issue should be left to the people."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a3dc42ffdf2513c2d2413b3a44742f2973c991257c2ba7230bc96ed3789ac3f5",
+      "evidence_ids": [
+        "ev-a3dc42ffdf25-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "a3dc42ffdf2513c2d2413b3a44742f2973c991257c2ba7230bc96ed3789ac3f5",
+      "evidence_ids": [
+        "ev-a3dc42ffdf25-0002-0004"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T21:09:32.759927Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

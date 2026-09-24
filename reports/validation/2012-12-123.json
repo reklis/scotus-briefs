@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2012-12-123",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": false,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Two claims in the Background & Question section are not sufficiently supported by the cited evidence (the 'as handlers' phrasing and the question of whether the program constitutes a taking).",
+    "The claim about Justice Breyer mischaracterizes his remark as a question about payment, whereas the transcript shows it as a statement of position.",
+    "The Background & Question claims overstate the record by adding details (e.g., 'as handlers') and asserting a taking issue that the evidence does not explicitly address."
+  ],
+  "quality_scores": {
+    "completeness": 0.8,
+    "factual_accuracy": 0.85,
+    "neutrality": 0.9,
+    "readability": 0.85,
+    "restraint": 0.6,
+    "traceability": 0.95
+  }
+}

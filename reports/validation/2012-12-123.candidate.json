@@ -1,0 +1,510 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+            "evidence_ids": [
+              "ev-9a0a8804cdd0-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, a question raised was whether the Hornes, as handlers, can assert a constitutional takings claim against the Department of Agriculture\u2019s raisin program."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+            "evidence_ids": [
+              "ev-9a0a8804cdd0-0000-0008"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "A related issue is whether the Department\u2019s program constitutes a taking that requires compensation under the Fifth Amendment."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2012-12-123",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T20:14:49.186418Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+            "evidence_ids": [
+              "ev-9a0a8804cdd0-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+            "evidence_ids": [
+              "ev-9a0a8804cdd0-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justices Scalia and Ginsburg asked whether the Hornes could assert a takings claim."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+            "evidence_ids": [
+              "ev-9a0a8804cdd0-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned whether the government should have to pay because the program is unconstitutional."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+            "evidence_ids": [
+              "ev-9a0a8804cdd0-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Scalia probed the consequences of declaring the statute an unconstitutional taking, asking whether Congress intended annual compensation through the Court of Claims."
+      },
+      {
+        "attribution": "Mr. Palmore",
+        "citations": [
+          {
+            "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+            "evidence_ids": [
+              "ev-9a0a8804cdd0-0001-0005"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          },
+          {
+            "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+            "evidence_ids": [
+              "ev-9a0a8804cdd0-0001-0007"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "Counsel for the respondent, Mr. Palmore, argued that the case raised capacity and just compensation problems and that the Apfel opinion was not controlling."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Department of Agriculture",
+        "citations": [
+          {
+            "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+            "evidence_ids": [
+              "ev-9a0a8804cdd0-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Department of Agriculture, the Department of Agriculture asserts that it has standing because all money involved comes from its own pocket."
+      },
+      {
+        "attribution": "Justices Scalia and Ginsburg",
+        "citations": [
+          {
+            "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+            "evidence_ids": [
+              "ev-9a0a8804cdd0-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+            "evidence_ids": [
+              "ev-9a0a8804cdd0-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justices Scalia and Ginsburg asked whether the Hornes could assert a takings claim."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. McConnell",
+          "citations": [
+            {
+              "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+              "evidence_ids": [
+                "ev-9a0a8804cdd0-0001-0001"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "Mr. McConnell argued that the case does not involve jurisdiction and that the Tucker Act does not apply to a monetary exaction defense."
+        }
+      ],
+      "heading": "Petitioner (Marvin D. Horne) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Department of Agriculture",
+          "citations": [
+            {
+              "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+              "evidence_ids": [
+                "ev-9a0a8804cdd0-0003-0000"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Department of Agriculture, the Department of Agriculture asserts that it has standing because all money comes from its own pocket and that it acquires the raisins during processing."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+              "evidence_ids": [
+                "ev-9a0a8804cdd0-0002-0001"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "The Government argues that Congress intended flexibility in the statute and did not intend to preclude compensation in the Court of Claims."
+        },
+        {
+          "attribution": "Department of Agriculture",
+          "citations": [
+            {
+              "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+              "evidence_ids": [
+                "ev-9a0a8804cdd0-0003-0000"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "The Department of Agriculture contends that the takings claim is straightforward under Village of Norwood and Missouri Pacific Railroad precedent and that capacity is not an issue."
+        },
+        {
+          "attribution": "Mr. Palmore",
+          "citations": [
+            {
+              "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+              "evidence_ids": [
+                "ev-9a0a8804cdd0-0001-0007"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "Mr. Palmore argued that the Apfel opinion cited by the petitioner is only a plurality and is not controlling authority."
+        }
+      ],
+      "heading": "Respondent (Department of Agriculture) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0000-0001"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0000-0003"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0000-0004"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0000-0005"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 10
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0000-0009"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0000-0008"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0001-0000"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0001-0001"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0001-0002"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0001-0003"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0001-0005"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0001-0007"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 34
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0002-0000"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0002-0001"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0003-0000"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    },
+    {
+      "document_hash": "9a0a8804cdd0a2773e82090207a4e17ae62f4ecdc74e9c1e0075a5809e74db39",
+      "evidence_ids": [
+        "ev-9a0a8804cdd0-0003-0001"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T20:26:54.232242Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Two claims in the Background & Question section are not sufficiently supported by the cited evidence (the 'as handlers' phrasing and the question of whether the program constitutes a taking).",
+      "The claim about Justice Breyer mischaracterizes his remark as a question about payment, whereas the transcript shows it as a statement of position.",
+      "The Background & Question claims overstate the record by adding details (e.g., 'as handlers') and asserting a taking issue that the evidence does not explicitly address."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

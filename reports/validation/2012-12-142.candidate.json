@@ -1,0 +1,472 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, the Court considered whether FDA approval sets a ceiling that bars any tort liability for the drug."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0007"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justices asked whether stopping the sale of the drug would eliminate the impossibility\u2011preemption issue."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0008"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justices also asked whether the argument about stopping the sale of the drug constitutes a clear impossibility case."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2012-12-142",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T20:56:59.826746Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Kagan asked Mr. Lefkowitz to clarify the scope of his argument."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether FDA approval creates a ceiling that bars any tort liability."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether the Solicitor General\u2019s statement that the FDA had a right and considered it was correct."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether New Hampshire strict\u2011liability law is applied without reference to the adequacy of warnings."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Kennedy followed up asking whether the warning is relevant to the determination of strict liability."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0005"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer expressed concern that the FDA must tell the Court something about the issue."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0006"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the drug is still on the market."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0007"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the argument about stopping the sale of the drug eliminates the impossibility\u2011preemption issue."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0008"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito followed with a question suggesting this is a clear impossibility case."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0010"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether obstacle preemption has been waived."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0011"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether a brand\u2011name manufacturer can change design features without FDA approval."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0012"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked how Mutual will respond to the argument that the drug generated $7\u202fmillion in 2005."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0002-0015"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Justice Breyer noted that the adequacy of the warning was not an issue before the jury."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Jay P. Lefkowitz",
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Jay P. Lefkowitz, petitioner argues that federal law requires generic sulindac to have the same ingredients, warnings, and safety profile as the branded version, and that a New Hampshire jury\u2019s liability finding conflicts with this requirement."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Jay P. Lefkowitz",
+          "citations": [
+            {
+              "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+              "evidence_ids": [
+                "ev-3e3f70a1d435-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Jay P. Lefkowitz, mutual asserts that this is a classic impossibility\u2011preemption case because federal law mandates identical ingredients and warnings, and the state jury\u2019s liability finding is inconsistent with that mandate."
+        },
+        {
+          "attribution": "Solicitor General",
+          "citations": [
+            {
+              "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+              "evidence_ids": [
+                "ev-3e3f70a1d435-0002-0000"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "The Solicitor General argues that the evidence relied upon by Mutual was not in the record and that Mutual\u2019s own expert testified that the information was not given to the FDA."
+        }
+      ],
+      "heading": "Mutual Pharmaceutical Company, Inc. (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Karen L. Bartlett (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+      "evidence_ids": [
+        "ev-3e3f70a1d435-0000-0000",
+        "ev-3e3f70a1d435-0000-0002",
+        "ev-3e3f70a1d435-0000-0003",
+        "ev-3e3f70a1d435-0000-0005",
+        "ev-3e3f70a1d435-0000-0004",
+        "ev-3e3f70a1d435-0001-0001",
+        "ev-3e3f70a1d435-0001-0002",
+        "ev-3e3f70a1d435-0002-0000",
+        "ev-3e3f70a1d435-0002-0001",
+        "ev-3e3f70a1d435-0002-0002",
+        "ev-3e3f70a1d435-0002-0003",
+        "ev-3e3f70a1d435-0002-0005",
+        "ev-3e3f70a1d435-0002-0006",
+        "ev-3e3f70a1d435-0002-0007",
+        "ev-3e3f70a1d435-0002-0008",
+        "ev-3e3f70a1d435-0002-0010",
+        "ev-3e3f70a1d435-0002-0011",
+        "ev-3e3f70a1d435-0002-0012",
+        "ev-3e3f70a1d435-0002-0013",
+        "ev-3e3f70a1d435-0002-0015",
+        "ev-3e3f70a1d435-0002-0016"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T21:08:21.374569Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "why_it_matters.claims[0] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "why_it_matters.claims[0] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0000-0004"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 18
+            }
+          },
+          {
+            "document_hash": "3e3f70a1d435bdea9ca82f1074ab50b188f3766d7f10b8c30547ddc5b83ec78f",
+            "evidence_ids": [
+              "ev-3e3f70a1d435-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The case addresses the interaction between federal drug\u2011approval authority and state tort claims, focusing on impossibility preemption under the Mensing doctrine."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
