@@ -1,0 +1,170 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "325a03f48daa66d94d720cba2eeaaf4d52cca581c3905b7c92879e200a497b8b",
+            "evidence_ids": [
+              "ev-325a03f48daa-0002-0007"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "The case was submitted."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-10-5400",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T04:29:11.709096Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "325a03f48daa66d94d720cba2eeaaf4d52cca581c3905b7c92879e200a497b8b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "325a03f48daa66d94d720cba2eeaaf4d52cca581c3905b7c92879e200a497b8b",
+            "evidence_ids": [
+              "ev-325a03f48daa-0001-0001"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "Justice Scalia asked, \u201cIs that all it means?\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "325a03f48daa66d94d720cba2eeaaf4d52cca581c3905b7c92879e200a497b8b",
+            "evidence_ids": [
+              "ev-325a03f48daa-0002-0007"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "The case was submitted."
+      }
+    ],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": "The case was submitted.",
+    "summary_citations": [
+      {
+        "document_hash": "325a03f48daa66d94d720cba2eeaaf4d52cca581c3905b7c92879e200a497b8b",
+        "evidence_ids": [
+          "ev-325a03f48daa-0002-0007"
+        ],
+        "pages": {
+          "end": 51,
+          "start": 51
+        }
+      }
+    ]
+  },
+  "party_positions": [],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "325a03f48daa66d94d720cba2eeaaf4d52cca581c3905b7c92879e200a497b8b",
+      "evidence_ids": [
+        "ev-325a03f48daa-0001-0001"
+      ],
+      "pages": {
+        "end": 35,
+        "start": 35
+      }
+    },
+    {
+      "document_hash": "325a03f48daa66d94d720cba2eeaaf4d52cca581c3905b7c92879e200a497b8b",
+      "evidence_ids": [
+        "ev-325a03f48daa-0002-0007"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 51
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T04:31:24.182670Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

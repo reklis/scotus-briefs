@@ -1,0 +1,252 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "68650afc65b6a758ac8270201c01b6b291f76441abadf6e0a381fb115156f7e4",
+            "evidence_ids": [
+              "ev-68650afc65b6-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether the petitioner was not the trial lawyer."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "68650afc65b6a758ac8270201c01b6b291f76441abadf6e0a381fb115156f7e4",
+            "evidence_ids": [
+              "ev-68650afc65b6-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Justice Breyer later asked whether, if the petitioner wins, they would argue there was no reasonable likelihood of Federal investigation."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "68650afc65b6a758ac8270201c01b6b291f76441abadf6e0a381fb115156f7e4",
+            "evidence_ids": [
+              "ev-68650afc65b6-0002-0004"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor expressed uncertainty about the petitioner\u2019s answer to Justice Kagan\u2019s hypothetical."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-10-5443",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T04:31:24.200442Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "68650afc65b6a758ac8270201c01b6b291f76441abadf6e0a381fb115156f7e4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "68650afc65b6a758ac8270201c01b6b291f76441abadf6e0a381fb115156f7e4",
+            "evidence_ids": [
+              "ev-68650afc65b6-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether the petitioner was not the trial lawyer."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "68650afc65b6a758ac8270201c01b6b291f76441abadf6e0a381fb115156f7e4",
+            "evidence_ids": [
+              "ev-68650afc65b6-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether, if the petitioner wins, they would argue there was no reasonable likelihood of Federal investigation."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "68650afc65b6a758ac8270201c01b6b291f76441abadf6e0a381fb115156f7e4",
+            "evidence_ids": [
+              "ev-68650afc65b6-0002-0004"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor expressed uncertainty about the petitioner\u2019s answer to Justice Kagan\u2019s hypothetical."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "MR. CRAWFORD",
+        "citations": [
+          {
+            "document_hash": "68650afc65b6a758ac8270201c01b6b291f76441abadf6e0a381fb115156f7e4",
+            "evidence_ids": [
+              "ev-68650afc65b6-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "68650afc65b6a758ac8270201c01b6b291f76441abadf6e0a381fb115156f7e4",
+            "evidence_ids": [
+              "ev-68650afc65b6-0003-0001"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "The case concerns whether the record shows a reasonable likelihood of Federal involvement, which the petitioner argues is insufficient."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "MR. CRAWFORD",
+          "citations": [
+            {
+              "document_hash": "68650afc65b6a758ac8270201c01b6b291f76441abadf6e0a381fb115156f7e4",
+              "evidence_ids": [
+                "ev-68650afc65b6-0003-0001"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to MR. CRAWFORD, the petitioner argues that the record is insufficient to establish a reasonable likelihood of Federal involvement."
+        }
+      ],
+      "heading": "Petitioner\u2019s Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "68650afc65b6a758ac8270201c01b6b291f76441abadf6e0a381fb115156f7e4",
+      "evidence_ids": [
+        "ev-68650afc65b6-0001-0001",
+        "ev-68650afc65b6-0002-0001",
+        "ev-68650afc65b6-0002-0004",
+        "ev-68650afc65b6-0003-0000",
+        "ev-68650afc65b6-0003-0001"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 21
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T04:34:03.390313Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

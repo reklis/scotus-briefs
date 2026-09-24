@@ -1,0 +1,339 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+            "evidence_ids": [
+              "ev-3f974d7d6a34-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "According to Justice Alito, what standard of proof should apply to a claim of patent invalidity?"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+            "evidence_ids": [
+              "ev-3f974d7d6a34-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, how does the statutory presumption of validity affect the burden placed on a challenger?"
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-10-290",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T04:13:10.077144Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+            "evidence_ids": [
+              "ev-3f974d7d6a34-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the challenger must bear both the burden of persuasion and the burden of production on the issue of invalidity, given the presumption that a patent is valid."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+            "evidence_ids": [
+              "ev-3f974d7d6a34-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned why the statute\u2019s presumption of validity requires an additional sentence placing the burden of persuasion on the challenger."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+            "evidence_ids": [
+              "ev-3f974d7d6a34-0002-0003"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Alito also asked why re\u2011examination is sufficient to address concerns about patent validity."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+            "evidence_ids": [
+              "ev-3f974d7d6a34-0002-0004"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer inquired about the heightened standard of proof when the Patent Office has considered the issue or could have reconsidered it."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+            "evidence_ids": [
+              "ev-3f974d7d6a34-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "The court noted that a patent is presumed valid until the presumption is overcome by convincing evidence of error."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Microsoft Corporation",
+        "citations": [
+          {
+            "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+            "evidence_ids": [
+              "ev-3f974d7d6a34-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Microsoft Corporation, microsoft argues that the default preponderance of evidence standard should apply to patent invalidity, rather than the clear\u2011and\u2011convincing standard."
+      },
+      {
+        "attribution": "Justice Alito and Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+            "evidence_ids": [
+              "ev-3f974d7d6a34-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          },
+          {
+            "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+            "evidence_ids": [
+              "ev-3f974d7d6a34-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justices asked about the burden of persuasion and the presumption of validity in patent cases."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Microsoft Corporation",
+          "citations": [
+            {
+              "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+              "evidence_ids": [
+                "ev-3f974d7d6a34-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Microsoft Corporation, microsoft contends that the preponderance of evidence standard, not clear and convincing evidence, should govern patent invalidity determinations."
+        }
+      ],
+      "heading": "Microsoft Corporation (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "i4i Limited Partnership (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+      "evidence_ids": [
+        "ev-3f974d7d6a34-0000-0001",
+        "ev-3f974d7d6a34-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+      "evidence_ids": [
+        "ev-3f974d7d6a34-0001-0000"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+      "evidence_ids": [
+        "ev-3f974d7d6a34-0002-0000"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+      "evidence_ids": [
+        "ev-3f974d7d6a34-0002-0001",
+        "ev-3f974d7d6a34-0002-0002"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+      "evidence_ids": [
+        "ev-3f974d7d6a34-0002-0003"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "3f974d7d6a34f70fe6d0791cc1cf160839505bc81eef8fa53aa249db74cdcad2",
+      "evidence_ids": [
+        "ev-3f974d7d6a34-0002-0004"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T04:17:14.451014Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

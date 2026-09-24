@@ -1,0 +1,399 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2010-10-779",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T04:54:16.560359Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0000-0004"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, justice Scalia: Could the data be used for purposes other than those intended by the statute?"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito: Could you answer yes or no if you are changing your position?"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0001-0004"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan: Please explain how you will interpret and apply the statute going forward."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0001-0003"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Scalia: When you say \"privacy,\" do you mean the prescriber's concern that people will know he prescribed certain drugs?"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted that there is another interest besides the State's concern about health\u2011care costs, namely the physicians' privacy interests."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0002-0001"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice BREYER, justice Breyer: Does the Constitution forbid controlling advertising to prevent false and misleading practices?"
+      },
+      {
+        "attribution": "Justice SOTOMAYOR",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0002-0002"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice SOTOMAYOR, justice Sotomayor: With the Internet and computers, there is virtually no privacy for individuals."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0003-0004"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts: Were there findings with respect to the statute as enacted?"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0003-0000"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Breyer: Are you saying that all those should be reexamined?"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "BRIDGET C. ASAY",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0002-0004"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Vermont enacted a statute that restricts the sale of prescribing\u2011information about doctors, aiming to protect physician privacy and control over that data."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0002-0006"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The statute also seeks to contain health\u2011care costs by promoting the use of less expensive drugs and ensuring prescribers receive unbiased information."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "BRIDGET C. ASAY",
+          "citations": [
+            {
+              "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+              "evidence_ids": [
+                "ev-d0a0d77f92a0-0000-0003"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to BRIDGET C. ASAY, the statute\u2019s purpose is to let doctors decide whether sales representatives have access to prescribing information about them."
+        },
+        {
+          "attribution": "Ms. Asay",
+          "citations": [
+            {
+              "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+              "evidence_ids": [
+                "ev-d0a0d77f92a0-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Ms. Asay, the first clause of the statute restricts sales except for the exemptions listed in the law."
+        },
+        {
+          "attribution": "Vermont",
+          "citations": [
+            {
+              "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+              "evidence_ids": [
+                "ev-d0a0d77f92a0-0002-0004"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Vermont, if Vermont truly protected doctors\u2019 privacy, it would not contain the many exemptions; a genuine privacy provision would make the information private."
+        },
+        {
+          "attribution": "State of Vermont",
+          "citations": [
+            {
+              "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+              "evidence_ids": [
+                "ev-d0a0d77f92a0-0003-0001"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to State of Vermont, the statute includes a parallel formulary\u2011compliance exemption and other provisions that reflect advocacy by insurance companies."
+        }
+      ],
+      "heading": "Petitioner (Vermont Attorney General)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (IMS Health)",
+      "status": "pending",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+      "evidence_ids": [
+        "ev-d0a0d77f92a0-0000-0000"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T05:05:49.546041Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0002-0006"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The State argued that the statute was intended to help contain health\u2011care costs by promoting less costly drugs and ensuring prescribers received unbiased information."
+      },
+      {
+        "attribution": "Justice SOTOMAYOR",
+        "citations": [
+          {
+            "document_hash": "d0a0d77f92a05704880b38eb7ccc2a74e76ecabd1f876929da7c579d05bc04e7",
+            "evidence_ids": [
+              "ev-d0a0d77f92a0-0002-0002"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice SOTOMAYOR, the discussion reflects broader concerns about privacy in the digital age, where individuals have little control over personal data."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

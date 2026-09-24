@@ -1,0 +1,132 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "JUSTICE SCALIA",
+        "citations": [
+          {
+            "document_hash": "ced7328e0c66aaef0e2aeba942b259de5daa57d2bd3d45ebe4b36f5e991a13ee",
+            "evidence_ids": [
+              "ev-ced7328e0c66-0002-0002"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Scalia asked, \u201cIs that a closed record?\u201d"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2011-10-1016",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T05:16:15.660108Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ced7328e0c66aaef0e2aeba942b259de5daa57d2bd3d45ebe4b36f5e991a13ee"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "JUSTICE SCALIA",
+        "citations": [
+          {
+            "document_hash": "ced7328e0c66aaef0e2aeba942b259de5daa57d2bd3d45ebe4b36f5e991a13ee",
+            "evidence_ids": [
+              "ev-ced7328e0c66-0002-0002"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Scalia asked, \u201cIs that a closed record?\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ced7328e0c66aaef0e2aeba942b259de5daa57d2bd3d45ebe4b36f5e991a13ee",
+      "evidence_ids": [
+        "ev-ced7328e0c66-0002-0002"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T05:17:10.986860Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
