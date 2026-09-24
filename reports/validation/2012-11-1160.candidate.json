@@ -1,0 +1,383 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Federal Trade Commission",
+        "citations": [
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0000-0006"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0001-0002"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "The central legal question is whether the State Action Doctrine applies to the hospital authority\u2019s power to acquire hospitals, and whether the \u201cany and all\u201d language satisfies the clear\u2011articulation requirement for state\u2011action immunity."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2012-11-1160",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T14:43:53.442853Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts introduced the case, noting the docket number and parties."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the grant of powers would permit the hospital authority to set prices below competitive levels to serve the needy."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Scalia asked for case examples that might illustrate the issue."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0000-0005"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg questioned whether the Hospital Authorities Law\u2019s language about acquiring \u201cany and all\u201d hospitals satisfied the clear\u2011articulation requirement."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked the parties to define the term \u201cnecessity\u201d as used in their arguments."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0002-0000"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the merger would be subject to the antitrust \u201crule of reason.\u201d"
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Federal Trade Commission",
+        "citations": [
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0000-0006"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The Federal Trade Commission argues that the State Action Doctrine can shield the hospital authority\u2019s acquisition of hospitals from antitrust liability because the state has clearly articulated a policy to displace competition."
+      },
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0001-0005"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          },
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0002-0006"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 48
+            }
+          }
+        ],
+        "text": "The case concerns a potential natural monopoly in the county, raising concerns that the merger could eliminate competition in local health\u2011care services."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Federal Trade Commission",
+          "citations": [
+            {
+              "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+              "evidence_ids": [
+                "ev-3d9a9b39358b-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            },
+            {
+              "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+              "evidence_ids": [
+                "ev-3d9a9b39358b-0000-0004"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            },
+            {
+              "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+              "evidence_ids": [
+                "ev-3d9a9b39358b-0000-0006"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to Federal Trade Commission, the FTC contends that the State Action Doctrine provides a defense when a state clearly articulates an intent to displace competition, citing the Goldfarb case and the \u201cany and all\u201d language in the Hospital Authorities Law."
+        }
+      ],
+      "heading": "Federal Trade Commission (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Phoebe Putney Health System (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+      "evidence_ids": [
+        "ev-3d9a9b39358b-0000-0000",
+        "ev-3d9a9b39358b-0000-0001",
+        "ev-3d9a9b39358b-0000-0002",
+        "ev-3d9a9b39358b-0000-0003",
+        "ev-3d9a9b39358b-0000-0004",
+        "ev-3d9a9b39358b-0000-0005",
+        "ev-3d9a9b39358b-0000-0006",
+        "ev-3d9a9b39358b-0000-0008",
+        "ev-3d9a9b39358b-0001-0000",
+        "ev-3d9a9b39358b-0001-0002",
+        "ev-3d9a9b39358b-0001-0004",
+        "ev-3d9a9b39358b-0001-0005",
+        "ev-3d9a9b39358b-0002-0000",
+        "ev-3d9a9b39358b-0002-0001",
+        "ev-3d9a9b39358b-0002-0004",
+        "ev-3d9a9b39358b-0002-0006"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T14:54:35.944655Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Attribution check failed: the claim about a potential natural monopoly and competition concerns lacks an explicit attribution source.",
+      "All other claims are supported by the provided evidence and are correctly attributed where required.",
+      "No overstatements or mischaracterizations of oral\u2011argument questions were found."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Federal Trade Commission",
+        "citations": [
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "3d9a9b39358be735c542e02033091169d962cb8d3a0210b1ca92e8d429ef17ff",
+            "evidence_ids": [
+              "ev-3d9a9b39358b-0000-0006"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Federal Trade Commission, the case tests the scope of the State Action Doctrine."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

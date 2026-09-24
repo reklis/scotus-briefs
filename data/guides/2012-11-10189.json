@@ -1,0 +1,286 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "0eedf2219cbdf1f2bc7cc94c98dad9a49a9852f6a2794414539ba66bcf2b3727",
+            "evidence_ids": [
+              "ev-0eedf2219cbd-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "0eedf2219cbdf1f2bc7cc94c98dad9a49a9852f6a2794414539ba66bcf2b3727",
+            "evidence_ids": [
+              "ev-0eedf2219cbd-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "The central question before the Court is whether the Martinez doctrine applies when a state channels ineffective\u2011assistance claims to a habeas\u2011style proceeding and makes direct\u2011appeal relief impracticable."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2012-11-10189",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T14:18:14.241282Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0eedf2219cbdf1f2bc7cc94c98dad9a49a9852f6a2794414539ba66bcf2b3727"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Warren A. Wolf",
+        "citations": [
+          {
+            "document_hash": "0eedf2219cbdf1f2bc7cc94c98dad9a49a9852f6a2794414539ba66bcf2b3727",
+            "evidence_ids": [
+              "ev-0eedf2219cbd-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Warren A. Wolf, the case concerns whether ineffective assistance of counsel claims can be raised on direct appeal in Texas, or must be brought in state habeas proceedings."
+      },
+      {
+        "attribution": "Warren A. Wolf",
+        "citations": [
+          {
+            "document_hash": "0eedf2219cbdf1f2bc7cc94c98dad9a49a9852f6a2794414539ba66bcf2b3727",
+            "evidence_ids": [
+              "ev-0eedf2219cbd-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Warren A. Wolf, texas operates a dual\u2011track system, created in 1995, to expedite certain claims\u2014especially death\u2011penalty claims\u2014through a separate habeas\u2011style route."
+      },
+      {
+        "attribution": "Warren A. Wolf",
+        "citations": [
+          {
+            "document_hash": "0eedf2219cbdf1f2bc7cc94c98dad9a49a9852f6a2794414539ba66bcf2b3727",
+            "evidence_ids": [
+              "ev-0eedf2219cbd-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Warren A. Wolf, the Texas Court of Criminal Appeals has repeatedly held that defendants should not raise ineffective assistance of counsel claims on direct appeal, making such claims effectively unavailable on that track."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Warren A. Wolf",
+          "citations": [
+            {
+              "document_hash": "0eedf2219cbdf1f2bc7cc94c98dad9a49a9852f6a2794414539ba66bcf2b3727",
+              "evidence_ids": [
+                "ev-0eedf2219cbd-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            },
+            {
+              "document_hash": "0eedf2219cbdf1f2bc7cc94c98dad9a49a9852f6a2794414539ba66bcf2b3727",
+              "evidence_ids": [
+                "ev-0eedf2219cbd-0000-0005"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "According to Warren A. Wolf, petitioner argues that Texas\u2019s procedural scheme makes it virtually impossible to raise ineffective\u2011assistance claims on direct appeal, so the Martinez protection should apply."
+        },
+        {
+          "attribution": "Petitioner (Mr. Wolf)",
+          "citations": [
+            {
+              "document_hash": "0eedf2219cbdf1f2bc7cc94c98dad9a49a9852f6a2794414539ba66bcf2b3727",
+              "evidence_ids": [
+                "ev-0eedf2219cbd-0002-0003"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 49
+              }
+            }
+          ],
+          "text": "According to Petitioner (Mr. Wolf), according to Petitioner (Mr. Wolf), petitioner contends that the abatement issue is only available when a constitutional right to counsel has been denied."
+        }
+      ],
+      "heading": "Petitioner (Carlos Trevino)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Oldham",
+          "citations": [
+            {
+              "document_hash": "0eedf2219cbdf1f2bc7cc94c98dad9a49a9852f6a2794414539ba66bcf2b3727",
+              "evidence_ids": [
+                "ev-0eedf2219cbd-0002-0004"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Mr. Oldham, respondent maintains that Martinez applies only where a state deliberately disallows all ineffective\u2011assistance claims on direct appeal."
+        }
+      ],
+      "heading": "Respondent (Rick Thaler, Director, Texas Dept. of Criminal Justice)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0eedf2219cbdf1f2bc7cc94c98dad9a49a9852f6a2794414539ba66bcf2b3727",
+      "evidence_ids": [
+        "ev-0eedf2219cbd-0000-0000",
+        "ev-0eedf2219cbd-0000-0001",
+        "ev-0eedf2219cbd-0000-0002",
+        "ev-0eedf2219cbd-0000-0003",
+        "ev-0eedf2219cbd-0000-0004",
+        "ev-0eedf2219cbd-0000-0005",
+        "ev-0eedf2219cbd-0001-0000",
+        "ev-0eedf2219cbd-0001-0002",
+        "ev-0eedf2219cbd-0001-0003",
+        "ev-0eedf2219cbd-0001-0004",
+        "ev-0eedf2219cbd-0001-0005",
+        "ev-0eedf2219cbd-0001-0006",
+        "ev-0eedf2219cbd-0001-0007",
+        "ev-0eedf2219cbd-0001-0008",
+        "ev-0eedf2219cbd-0001-0009",
+        "ev-0eedf2219cbd-0002-0000",
+        "ev-0eedf2219cbd-0002-0004",
+        "ev-0eedf2219cbd-0002-0006",
+        "ev-0eedf2219cbd-0002-0001",
+        "ev-0eedf2219cbd-0002-0003",
+        "ev-0eedf2219cbd-0002-0007"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T14:27:43.009164Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0eedf2219cbdf1f2bc7cc94c98dad9a49a9852f6a2794414539ba66bcf2b3727",
+            "evidence_ids": [
+              "ev-0eedf2219cbd-0002-0007"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "The Texas scheme can result in a procedural default that leaves defendants like Mr. Trevino unable to obtain relief for ineffective trial counsel."
+      }
+    ],
+    "heading": "Why it Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2012-11-1160",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": true,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Attribution check failed: the claim about a potential natural monopoly and competition concerns lacks an explicit attribution source.",
+    "All other claims are supported by the provided evidence and are correctly attributed where required.",
+    "No overstatements or mischaracterizations of oral\u2011argument questions were found."
+  ],
+  "quality_scores": {
+    "completeness": 0.95,
+    "factual_accuracy": 1.0,
+    "neutrality": 1.0,
+    "readability": 0.9,
+    "restraint": 1.0,
+    "traceability": 1.0
+  }
+}

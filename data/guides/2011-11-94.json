@@ -1,0 +1,398 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+            "evidence_ids": [
+              "ev-2cf2ed3e46f7-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began before the Supreme Court at 11:05\u202fa.m."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+            "evidence_ids": [
+              "ev-2cf2ed3e46f7-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Justice Scalia, the Court considered whether a jury trial was constitutionally required."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2011-11-94",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T14:12:22.562707Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+            "evidence_ids": [
+              "ev-2cf2ed3e46f7-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Scalia asked, \u201cWas that jury trial constitutionally required?\u201d"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+            "evidence_ids": [
+              "ev-2cf2ed3e46f7-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked, \u201cWhat do you make of this?\u201d"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+            "evidence_ids": [
+              "ev-2cf2ed3e46f7-0001-0005"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the core domain was defined by a specific statutory offense."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+            "evidence_ids": [
+              "ev-2cf2ed3e46f7-0001-0007"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the government could simply request jury findings on the issues."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+            "evidence_ids": [
+              "ev-2cf2ed3e46f7-0001-0008"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Scalia asked to discuss \u201cTyler.\u201d"
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+            "evidence_ids": [
+              "ev-2cf2ed3e46f7-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the issue was a matter of statutory construction."
+      },
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+            "evidence_ids": [
+              "ev-2cf2ed3e46f7-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the parties believed in the Apprendi doctrine."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+            "evidence_ids": [
+              "ev-2cf2ed3e46f7-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether common law required jury submission when only some states used juries."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice Scalia",
+        "citations": [
+          {
+            "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+            "evidence_ids": [
+              "ev-2cf2ed3e46f7-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Scalia asked whether the parties believed in the Apprendi doctrine."
+      },
+      {
+        "attribution": "States",
+        "citations": [
+          {
+            "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+            "evidence_ids": [
+              "ev-2cf2ed3e46f7-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "An amicus brief filed by the States warned that a purely rule\u2011based application of the Apprendi doctrine could threaten fine statutes."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner (Southern Union Company)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (United States)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+      "evidence_ids": [
+        "ev-2cf2ed3e46f7-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+      "evidence_ids": [
+        "ev-2cf2ed3e46f7-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+      "evidence_ids": [
+        "ev-2cf2ed3e46f7-0001-0000"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+      "evidence_ids": [
+        "ev-2cf2ed3e46f7-0001-0001"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+      "evidence_ids": [
+        "ev-2cf2ed3e46f7-0001-0005"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+      "evidence_ids": [
+        "ev-2cf2ed3e46f7-0001-0007"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+      "evidence_ids": [
+        "ev-2cf2ed3e46f7-0001-0008"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+      "evidence_ids": [
+        "ev-2cf2ed3e46f7-0002-0000"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+      "evidence_ids": [
+        "ev-2cf2ed3e46f7-0002-0001"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "2cf2ed3e46f7d98087f0a5a4d5573cd99621d1ab7d7e88df5134d20f8020d4d9",
+      "evidence_ids": [
+        "ev-2cf2ed3e46f7-0002-0002"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T14:18:14.222447Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

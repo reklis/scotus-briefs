@@ -1,0 +1,272 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b3c6211ead19bb95bf3eaa1b205197ba19730b8c8b1c775abb0468fa85221835",
+            "evidence_ids": [
+              "ev-b3c6211ead19-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument was held before the Supreme Court of the United States at 10:13\u202fa.m."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2012-11-1274",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T15:04:46.676022Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b3c6211ead19bb95bf3eaa1b205197ba19730b8c8b1c775abb0468fa85221835"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b3c6211ead19bb95bf3eaa1b205197ba19730b8c8b1c775abb0468fa85221835",
+            "evidence_ids": [
+              "ev-b3c6211ead19-0001-0004"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "b3c6211ead19bb95bf3eaa1b205197ba19730b8c8b1c775abb0468fa85221835",
+            "evidence_ids": [
+              "ev-b3c6211ead19-0002-0003"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned why the government had not asserted this power historically and whether the discovery rule was intended for the present enforcement\u2011priority context."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b3c6211ead19bb95bf3eaa1b205197ba19730b8c8b1c775abb0468fa85221835",
+            "evidence_ids": [
+              "ev-b3c6211ead19-0002-0005"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the government\u2019s interest in repose should be the primary concern."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Lewis Liman",
+        "citations": [
+          {
+            "document_hash": "b3c6211ead19bb95bf3eaa1b205197ba19730b8c8b1c775abb0468fa85221835",
+            "evidence_ids": [
+              "ev-b3c6211ead19-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Lewis Liman, the case concerns a statute that deals exclusively with penalty claims brought by government agencies."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "b3c6211ead19bb95bf3eaa1b205197ba19730b8c8b1c775abb0468fa85221835",
+              "evidence_ids": [
+                "ev-b3c6211ead19-0002-0009"
+              ],
+              "pages": {
+                "end": 49,
+                "start": 49
+              }
+            }
+          ],
+          "text": "The petitioners contend that their argument would be different in a criminal context."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "b3c6211ead19bb95bf3eaa1b205197ba19730b8c8b1c775abb0468fa85221835",
+              "evidence_ids": [
+                "ev-b3c6211ead19-0002-0008"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "Citing *Clark v. Martinez*, the petitioners argue that the label of \u201ccivil penalty\u201d is not dispositive of whether a penalty is civil or criminal, so the lowest common denominator applies."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Jeffrey B. Wall",
+          "citations": [
+            {
+              "document_hash": "b3c6211ead19bb95bf3eaa1b205197ba19730b8c8b1c775abb0468fa85221835",
+              "evidence_ids": [
+                "ev-b3c6211ead19-0001-0001"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Jeffrey B. Wall, the government maintains that the label of the case (penalty or fraud) does not affect the result; the outcome is the same."
+        },
+        {
+          "attribution": "Jeffrey B. Wall",
+          "citations": [
+            {
+              "document_hash": "b3c6211ead19bb95bf3eaa1b205197ba19730b8c8b1c775abb0468fa85221835",
+              "evidence_ids": [
+                "ev-b3c6211ead19-0001-0005"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Jeffrey B. Wall, the government points out that there are 25 reported cases applying the statute."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "b3c6211ead19bb95bf3eaa1b205197ba19730b8c8b1c775abb0468fa85221835",
+              "evidence_ids": [
+                "ev-b3c6211ead19-0002-0007"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Government, the government notes that very few cases address the statute, the Commission has only been able to bring civil penalties for about 20 years, and courts have repeatedly applied the fraud discovery rule in similar contexts."
+        }
+      ],
+      "heading": "Government",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b3c6211ead19bb95bf3eaa1b205197ba19730b8c8b1c775abb0468fa85221835",
+      "evidence_ids": [
+        "ev-b3c6211ead19-0000-0000"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T15:10:14.030845Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2011-11-551",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": false,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the overview claim that \u201cthe case involves a dispute over how the Secretary of the Interior funds tribal contracts\u201d is not directly supported by the supplied evidence.",
+    "Opinion\u2011distinction check failed: the \u201cWhy it matters\u201d claim states that the dispute \u201ccan impact essential services for tribes\u201d as a factual assertion, but the evidence only shows a timing guarantee, not a concrete impact on services.",
+    "Overstatement check failed: the same \u201cWhy it matters\u201d claim overstates the effect on tribal services beyond what the evidence demonstrates."
+  ],
+  "quality_scores": {
+    "completeness": 0.85,
+    "factual_accuracy": 0.9,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.85,
+    "traceability": 0.93
+  }
+}
