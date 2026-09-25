@@ -1,0 +1,132 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "ce8f03bec10c4024b51656b9e6528e28a7e8dfff03f268aa9961ba2dc3491d10",
+            "evidence_ids": [
+              "ev-ce8f03bec10c-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked a question during oral argument."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2015-14-1146",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T09:39:49.630296Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ce8f03bec10c4024b51656b9e6528e28a7e8dfff03f268aa9961ba2dc3491d10"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "ce8f03bec10c4024b51656b9e6528e28a7e8dfff03f268aa9961ba2dc3491d10",
+            "evidence_ids": [
+              "ev-ce8f03bec10c-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked, \u201cWell, is that so?\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ce8f03bec10c4024b51656b9e6528e28a7e8dfff03f268aa9961ba2dc3491d10",
+      "evidence_ids": [
+        "ev-ce8f03bec10c-0000-0003"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T09:40:47.214406Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
