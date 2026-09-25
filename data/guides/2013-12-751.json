@@ -1,0 +1,248 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ee8a6daae86bf967dda78b7ad5527424c62eb64f89860d76b2278ea44ab5d310",
+            "evidence_ids": [
+              "ev-ee8a6daae86b-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, the central issue concerned whether a fiduciary can consider the impact of a decision to stop buying stock on the beneficiaries."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "ee8a6daae86bf967dda78b7ad5527424c62eb64f89860d76b2278ea44ab5d310",
+            "evidence_ids": [
+              "ev-ee8a6daae86b-0002-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, another issue raised was whether the trusteeship should be transferred to a person without the conflicted knowledge."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2013-12-751",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T02:15:42.885926Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ee8a6daae86bf967dda78b7ad5527424c62eb64f89860d76b2278ea44ab5d310"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "ee8a6daae86bf967dda78b7ad5527424c62eb64f89860d76b2278ea44ab5d310",
+            "evidence_ids": [
+              "ev-ee8a6daae86b-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Kagan asked a question (text incomplete)."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ee8a6daae86bf967dda78b7ad5527424c62eb64f89860d76b2278ea44ab5d310",
+            "evidence_ids": [
+              "ev-ee8a6daae86b-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked: \u201cAre they allowed to take into account the impact of a decision to stop buying on the beneficiaries? \u2026 Should he say, I shouldn't buy any more because I think it's going to go down some more? Or should he say, I should keep buying because otherwise all of the holdings \u2026 will go down?\u201d"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "ee8a6daae86bf967dda78b7ad5527424c62eb64f89860d76b2278ea44ab5d310",
+            "evidence_ids": [
+              "ev-ee8a6daae86b-0002-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Breyer asked: \u201cThe union brief says the thing to do in that situation is, without saying anything, turn the trusteeship over to a person who doesn't have that knowledge. That takes care of the problem.\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "ee8a6daae86bf967dda78b7ad5527424c62eb64f89860d76b2278ea44ab5d310",
+            "evidence_ids": [
+              "ev-ee8a6daae86b-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "During oral argument, Justice Kagan asked a question about the case."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ee8a6daae86bf967dda78b7ad5527424c62eb64f89860d76b2278ea44ab5d310",
+            "evidence_ids": [
+              "ev-ee8a6daae86b-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether a fiduciary may consider the impact of stopping stock purchases on beneficiaries."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "ee8a6daae86bf967dda78b7ad5527424c62eb64f89860d76b2278ea44ab5d310",
+            "evidence_ids": [
+              "ev-ee8a6daae86b-0002-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Breyer asked about the possibility of turning the trusteeship over to a person without the conflicted knowledge."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "ee8a6daae86bf967dda78b7ad5527424c62eb64f89860d76b2278ea44ab5d310",
+            "evidence_ids": [
+              "ev-ee8a6daae86b-0002-0002"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to United States, an amicus brief submitted by the United States noted that Section 1104 requires operating the plan for its exclusive purpose."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ee8a6daae86bf967dda78b7ad5527424c62eb64f89860d76b2278ea44ab5d310",
+      "evidence_ids": [
+        "ev-ee8a6daae86b-0001-0000",
+        "ev-ee8a6daae86b-0002-0000",
+        "ev-ee8a6daae86b-0002-0002",
+        "ev-ee8a6daae86b-0002-0003"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 20
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T02:18:33.567429Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
