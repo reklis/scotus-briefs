@@ -1,0 +1,448 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Eric D. Miller",
+        "citations": [
+          {
+            "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+            "evidence_ids": [
+              "ev-f869b1b1e4b9-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Eric D. Miller, in an individual\u2011capacity action against a government employee, the judgment is not enforceable against the government, so sovereign immunity does not attach."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+            "evidence_ids": [
+              "ev-f869b1b1e4b9-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether tribal employees should be treated the same as federal or state employees under the Westfall Act."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-1500",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T17:44:25.245105Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+            "evidence_ids": [
+              "ev-f869b1b1e4b9-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the case is analogous to the Westfall Act for federal employees."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+            "evidence_ids": [
+              "ev-f869b1b1e4b9-0000-0002"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned why the rule should not apply when the State pays, suggesting it should be treated as a suit against the State."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+            "evidence_ids": [
+              "ev-f869b1b1e4b9-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked what language the Court might write that would affect official immunity."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+            "evidence_ids": [
+              "ev-f869b1b1e4b9-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito inquired whether any argument exists in favor of official immunity in this case."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+            "evidence_ids": [
+              "ev-f869b1b1e4b9-0002-0002"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Alito asked why a tribal employee driving a limo should be entitled to official immunity."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+            "evidence_ids": [
+              "ev-f869b1b1e4b9-0002-0003"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether any decision precludes treating the case as sovereign immunity based on an indemnification agreement."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+            "evidence_ids": [
+              "ev-f869b1b1e4b9-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned why, if the tribe waived sovereign immunity, the individual should not be treated the same way."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+            "evidence_ids": [
+              "ev-f869b1b1e4b9-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether any court has held that an indemnification agreement extends sovereign immunity to the employee."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Eric D. Miller",
+        "citations": [
+          {
+            "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+            "evidence_ids": [
+              "ev-f869b1b1e4b9-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Eric D. Miller, the case raises the question of whether sovereign immunity applies to individual\u2011capacity actions against tribal employees."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Katyal (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+              "evidence_ids": [
+                "ev-f869b1b1e4b9-0001-0008"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to Mr. Katyal (Petitioner), mr. Katyal (Petitioner) argues that tribal employees should receive the same protections from suit as other sovereigns; if Clarke were a federal, state, or foreign employee, the suit would be barred."
+        },
+        {
+          "attribution": "Eric D. Miller",
+          "citations": [
+            {
+              "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+              "evidence_ids": [
+                "ev-f869b1b1e4b9-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Eric D. Miller, the petitioner contends that sovereign immunity does not apply to individual\u2011capacity actions against tribal employees."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. O'Conell (Respondent)",
+          "citations": [
+            {
+              "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+              "evidence_ids": [
+                "ev-f869b1b1e4b9-0001-0005"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Ms. O'Conell (Respondent), ms. O'Conell (Respondent) states that the respondent seeks to avoid any court opinion that would preclude a defense of official immunity for tribal employees in this case or future cases."
+        },
+        {
+          "attribution": "Ms. O'Conell (Respondent)",
+          "citations": [
+            {
+              "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+              "evidence_ids": [
+                "ev-f869b1b1e4b9-0001-0006"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Ms. O'Conell (Respondent), ms. O'Conell (Respondent) argues that official immunity does not apply because the employee\u2019s duties (driving) are non\u2011policy\u2011making activities."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+      "evidence_ids": [
+        "ev-f869b1b1e4b9-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+      "evidence_ids": [
+        "ev-f869b1b1e4b9-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+      "evidence_ids": [
+        "ev-f869b1b1e4b9-0000-0002"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+      "evidence_ids": [
+        "ev-f869b1b1e4b9-0001-0005"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+      "evidence_ids": [
+        "ev-f869b1b1e4b9-0001-0006"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+      "evidence_ids": [
+        "ev-f869b1b1e4b9-0001-0008"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+      "evidence_ids": [
+        "ev-f869b1b1e4b9-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+      "evidence_ids": [
+        "ev-f869b1b1e4b9-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+      "evidence_ids": [
+        "ev-f869b1b1e4b9-0002-0002"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "f869b1b1e4b97621db3f42af5c77c3dfbb12cac2e2c2538b07dcd51e1be86fdf",
+      "evidence_ids": [
+        "ev-f869b1b1e4b9-0002-0003"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T17:53:15.801118Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

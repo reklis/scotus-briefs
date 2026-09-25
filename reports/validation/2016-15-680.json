@@ -1,0 +1,38 @@
+{
+  "accepted": false,
+  "case_id": "2016-15-680",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": true,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Attribution check failed: several claims (e.g., the background question and the oral\u2011argument start time) attribute statements to the Court without direct supporting evidence from the Court itself."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.95,
+    "neutrality": 0.9,
+    "readability": 0.9,
+    "restraint": 0.95,
+    "traceability": 0.95
+  }
+}

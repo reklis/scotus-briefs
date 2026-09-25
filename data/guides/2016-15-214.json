@@ -1,0 +1,374 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mr. Groen and Mr. Tseyltin",
+        "citations": [
+          {
+            "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+            "evidence_ids": [
+              "ev-e3ac643b4d24-0001-0000",
+              "ev-e3ac643b4d24-0001-0001"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 27
+            }
+          }
+        ],
+        "text": "The dispute centers on the regulatory treatment of Lot\u202fE and its relationship to Lot\u202fF."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-214",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T17:58:49.158962Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+            "evidence_ids": [
+              "ev-e3ac643b4d24-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts announced the hearing of case\u202f15\u2011214, Murr v. Wisconsin."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+            "evidence_ids": [
+              "ev-e3ac643b4d24-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked a hypothetical question, indicating it was not about the case."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+            "evidence_ids": [
+              "ev-e3ac643b4d24-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Kagan requested to ask a question of counsel."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+            "evidence_ids": [
+              "ev-e3ac643b4d24-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked how the Court would interpret the issue."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+            "evidence_ids": [
+              "ev-e3ac643b4d24-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer offered a hypothetical involving multiple owners of a coal column to explore compensation principles."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+            "evidence_ids": [
+              "ev-e3ac643b4d24-0002-0005"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor raised a concern about appraisal figures and the value of a lot that cannot be built upon."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+            "evidence_ids": [
+              "ev-e3ac643b4d24-0003-0004"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted temporal considerations when discussing property ownership."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. Tseyltin",
+        "citations": [
+          {
+            "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+            "evidence_ids": [
+              "ev-e3ac643b4d24-0001-0001"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Mr. Tseyltin, the State argues that the lots have merged under State law and that the lot line between Lot\u202fE and Lot\u202fF has no continuing legal relevance."
+      },
+      {
+        "attribution": "Petitioners (counsel MR. LAZARUS)",
+        "citations": [
+          {
+            "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+            "evidence_ids": [
+              "ev-e3ac643b4d24-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Petitioners (counsel MR. LAZARUS), according to Petitioners (counsel MR. LAZARUS), petitioners contend that the value of Lot\u202fE to the Murrs, together with Lot\u202fF, defines the burden, and that ownership of only Lot\u202fE would trigger a hardship exemption allowing construction."
+      },
+      {
+        "attribution": "State",
+        "citations": [
+          {
+            "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+            "evidence_ids": [
+              "ev-e3ac643b4d24-0002-0001"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "The State says the law aims to phase out substandard lots without interfering with current investment\u2011backed expectations, and that the phase\u2011out is triggered only when lots are in common ownership."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners (counsel MR. LAZARUS)",
+          "citations": [
+            {
+              "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+              "evidence_ids": [
+                "ev-e3ac643b4d24-0003-0000"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Petitioners (counsel MR. LAZARUS), according to Petitioners (counsel MR. LAZARUS), petitioners contend that the value of Lot\u202fE to the Murrs, together with Lot\u202fF, defines the burden, and that ownership of only Lot\u202fE would trigger a hardship exemption allowing construction."
+        }
+      ],
+      "heading": "Petitioners\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+              "evidence_ids": [
+                "ev-e3ac643b4d24-0002-0001"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "The State says the law\u2019s purpose is to phase out substandard lots without disrupting existing investment\u2011backed expectations, and that the phase\u2011out is triggered only when lots are in common ownership."
+        },
+        {
+          "attribution": "Mr. Tseyltin",
+          "citations": [
+            {
+              "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+              "evidence_ids": [
+                "ev-e3ac643b4d24-0001-0001"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "According to Mr. Tseyltin, the State argues that the lots have merged for all relevant purposes under State law, rendering the lot line between Lot\u202fE and Lot\u202fF legally irrelevant."
+        },
+        {
+          "attribution": "St. Croix County",
+          "citations": [
+            {
+              "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+              "evidence_ids": [
+                "ev-e3ac643b4d24-0002-0004"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 50
+              }
+            }
+          ],
+          "text": "According to St. Croix County, st.\u202fCroix County notes that the combined value of the two parcels for one house is $698,000, whereas separate houses on each parcel would be valued at $771,000."
+        }
+      ],
+      "heading": "Respondent\u2019s Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e3ac643b4d24b9996ec7ddd760b7c5366b461a4289656420bee36d7c522ebf4f",
+      "evidence_ids": [
+        "ev-e3ac643b4d24-0000-0000",
+        "ev-e3ac643b4d24-0000-0001",
+        "ev-e3ac643b4d24-0000-0002",
+        "ev-e3ac643b4d24-0000-0004",
+        "ev-e3ac643b4d24-0001-0000",
+        "ev-e3ac643b4d24-0001-0001",
+        "ev-e3ac643b4d24-0001-0002",
+        "ev-e3ac643b4d24-0001-0004",
+        "ev-e3ac643b4d24-0002-0001",
+        "ev-e3ac643b4d24-0002-0003",
+        "ev-e3ac643b4d24-0002-0004",
+        "ev-e3ac643b4d24-0002-0005",
+        "ev-e3ac643b4d24-0003-0000",
+        "ev-e3ac643b4d24-0003-0002",
+        "ev-e3ac643b4d24-0003-0003",
+        "ev-e3ac643b4d24-0003-0004"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T18:07:27.172873Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

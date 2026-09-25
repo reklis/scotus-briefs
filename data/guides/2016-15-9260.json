@@ -1,0 +1,245 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "5de4b8ccd0980e864938fd7353c72ac7b0445749ac24ebe82c32e39870457bb2",
+            "evidence_ids": [
+              "ev-5de4b8ccd098-0000-0004"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg stated that there is a bar on concurrent sentencing under \u00a7\u202f924(c)."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "5de4b8ccd0980e864938fd7353c72ac7b0445749ac24ebe82c32e39870457bb2",
+            "evidence_ids": [
+              "ev-5de4b8ccd098-0000-0005"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the case was occurring twenty years later."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-9260",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T19:10:59.463979Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5de4b8ccd0980e864938fd7353c72ac7b0445749ac24ebe82c32e39870457bb2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5de4b8ccd0980e864938fd7353c72ac7b0445749ac24ebe82c32e39870457bb2",
+            "evidence_ids": [
+              "ev-5de4b8ccd098-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The case is docket No.\u202f15\u20119260."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5de4b8ccd0980e864938fd7353c72ac7b0445749ac24ebe82c32e39870457bb2",
+            "evidence_ids": [
+              "ev-5de4b8ccd098-0000-0001"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument was held on Tuesday, February\u202f28,\u202f2017."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Stoler",
+          "citations": [
+            {
+              "document_hash": "5de4b8ccd0980e864938fd7353c72ac7b0445749ac24ebe82c32e39870457bb2",
+              "evidence_ids": [
+                "ev-5de4b8ccd098-0001-0001"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Mr. Stoler, petitioner argues that the separate crime and separate punishment provision of \u00a7\u202f924(c) requires a distinct sentencing analysis."
+        },
+        {
+          "attribution": "Mr. Stoler",
+          "citations": [
+            {
+              "document_hash": "5de4b8ccd0980e864938fd7353c72ac7b0445749ac24ebe82c32e39870457bb2",
+              "evidence_ids": [
+                "ev-5de4b8ccd098-0002-0002"
+              ],
+              "pages": {
+                "end": 52,
+                "start": 52
+              }
+            }
+          ],
+          "text": "According to Mr. Stoler, petitioner further contends that district courts have no affirmative ban on applying \u00a7\u202f924(c) sentencing when considering predicate offenses, emphasizing judicial discretion and parsimony."
+        }
+      ],
+      "heading": "Petitioner (Levon Dean, Jr.) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Yang",
+          "citations": [
+            {
+              "document_hash": "5de4b8ccd0980e864938fd7353c72ac7b0445749ac24ebe82c32e39870457bb2",
+              "evidence_ids": [
+                "ev-5de4b8ccd098-0001-0002"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Mr. Yang, respondent argues that, when read together with the Sentencing Reform Act, Congress\u2019s intent in \u00a7\u202f924(c) is clear and supports the statutory scheme."
+        },
+        {
+          "attribution": "Mr. Yang",
+          "citations": [
+            {
+              "document_hash": "5de4b8ccd0980e864938fd7353c72ac7b0445749ac24ebe82c32e39870457bb2",
+              "evidence_ids": [
+                "ev-5de4b8ccd098-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. Yang, respondent further maintains that Congress intended judges to determine the aggregate length of sentences\u2014whether they run concurrently or consecutively\u2014when multiple offenses carry imprisonment terms."
+        }
+      ],
+      "heading": "Respondent (United States) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5de4b8ccd0980e864938fd7353c72ac7b0445749ac24ebe82c32e39870457bb2",
+      "evidence_ids": [
+        "ev-5de4b8ccd098-0000-0000"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T19:16:10.921137Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2016-15-457",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": false,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "support check failed: the Overview claim (\u201cThe dispute centers on the application of Rule\u202f23(f) \u2026\u201d) is not fully supported by the cited evidence; the citation includes a Microsoft party argument rather than a statement from Justice Alito.",
+    "attribution check failed: the same Overview claim attributes the statement to Justice Alito, but the supporting citation does not contain any remark from Justice Alito, resulting in a mismatched attribution."
+  ],
+  "quality_scores": {
+    "completeness": 0.8,
+    "factual_accuracy": 0.89,
+    "neutrality": 0.6,
+    "readability": 0.8,
+    "restraint": 0.9,
+    "traceability": 0.8
+  }
+}

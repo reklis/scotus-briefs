@@ -1,0 +1,314 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mr. KEDEM",
+        "citations": [
+          {
+            "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+            "evidence_ids": [
+              "ev-b503684a355f-0002-0004"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Mr. KEDEM, petitioner Marcelo Manrique filed a notice of appeal from the final judgment and sentence entered on June 24, 2014."
+      },
+      {
+        "attribution": "Justices GINSBURG and KAGAN",
+        "citations": [
+          {
+            "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+            "evidence_ids": [
+              "ev-b503684a355f-0002-0003"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          },
+          {
+            "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+            "evidence_ids": [
+              "ev-b503684a355f-0002-0005"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justices Ginsburg and Kagan asked whether the filing could be treated as an amended notice of appeal and whether the timeliness requirement is jurisdictional."
+      }
+    ],
+    "heading": "Background & Question Presented",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-7250",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T18:44:51.971599Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice GINSBURG",
+        "citations": [
+          {
+            "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+            "evidence_ids": [
+              "ev-b503684a355f-0002-0003"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the petitioner could treat the filing as an amended notice of appeal rather than a second notice."
+      },
+      {
+        "attribution": "Justice KAGAN",
+        "citations": [
+          {
+            "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+            "evidence_ids": [
+              "ev-b503684a355f-0002-0005"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, the requirement of timeliness for a notice of appeal may be jurisdictional."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. KEDEM",
+        "citations": [
+          {
+            "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+            "evidence_ids": [
+              "ev-b503684a355f-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Mr. KEDEM, petitioner argues that a second notice of appeal is required to challenge the amount of attorneys\u2019 fees after a summary\u2011judgment ruling."
+      },
+      {
+        "attribution": "Mr. RASHKIND",
+        "citations": [
+          {
+            "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+            "evidence_ids": [
+              "ev-b503684a355f-0002-0009"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "According to Mr. RASHKIND, respondent contends that a single, possibly amended, notice of appeal suffices in criminal cases."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": "The case concerns whether a second notice of appeal is required to challenge attorneys\u2019 fees after a district\u2011court summary judgment, and whether an amended notice of appeal can satisfy that requirement.",
+    "summary_citations": [
+      {
+        "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+        "evidence_ids": [
+          "ev-b503684a355f-0002-0000"
+        ],
+        "pages": {
+          "end": 38,
+          "start": 38
+        }
+      },
+      {
+        "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+        "evidence_ids": [
+          "ev-b503684a355f-0002-0004"
+        ],
+        "pages": {
+          "end": 39,
+          "start": 39
+        }
+      }
+    ]
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. KEDEM",
+          "citations": [
+            {
+              "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+              "evidence_ids": [
+                "ev-b503684a355f-0002-0000"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. KEDEM, a second notice of appeal is required to challenge the amount of attorneys\u2019 fees after a summary\u2011judgment ruling."
+        },
+        {
+          "attribution": "Mr. KEDEM",
+          "citations": [
+            {
+              "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+              "evidence_ids": [
+                "ev-b503684a355f-0002-0004"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. KEDEM, the notice of appeal must be amended to identify the judgment being appealed, as required by Appellate Rule 3(c)(1)(b)."
+        }
+      ],
+      "heading": "Petitioner (Marcelo Manrique)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. RASHKIND",
+          "citations": [
+            {
+              "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+              "evidence_ids": [
+                "ev-b503684a355f-0002-0009"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 50
+              }
+            }
+          ],
+          "text": "According to Mr. RASHKIND, in criminal cases, one notice of appeal is sufficient; an amended notice can address additional issues such as attorneys\u2019 fees."
+        },
+        {
+          "attribution": "Mr. KEDEM",
+          "citations": [
+            {
+              "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+              "evidence_ids": [
+                "ev-b503684a355f-0002-0002"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. KEDEM, a criminal defendant who is not indigent may file an amended notice of appeal without an additional filing fee."
+        }
+      ],
+      "heading": "Respondent (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b503684a355fd1e8fd71f3fbba7e862b633a40281c24243c07421c671bf3e978",
+      "evidence_ids": [
+        "ev-b503684a355f-0002-0000",
+        "ev-b503684a355f-0002-0002",
+        "ev-b503684a355f-0002-0003",
+        "ev-b503684a355f-0002-0004",
+        "ev-b503684a355f-0002-0005",
+        "ev-b503684a355f-0002-0009"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 38
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T18:50:47.938043Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

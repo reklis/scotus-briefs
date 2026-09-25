@@ -1,0 +1,368 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+            "evidence_ids": [
+              "ev-15706af82df1-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+            "evidence_ids": [
+              "ev-15706af82df1-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+            "evidence_ids": [
+              "ev-15706af82df1-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+            "evidence_ids": [
+              "ev-15706af82df1-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The Court is asked to determine whether Virginia\u2019s 55\u202fpercent racial floor creates a \u201cpredominance\u201d of race that triggers strict scrutiny under the Voting Rights Act."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-680",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T18:36:20.873421Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+            "evidence_ids": [
+              "ev-15706af82df1-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:04\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+            "evidence_ids": [
+              "ev-15706af82df1-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked how the Court should assess \u201cpredominance.\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+            "evidence_ids": [
+              "ev-15706af82df1-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether the legislature\u2019s desire to avoid Voting Rights Act liability constitutes \u201cpredominance.\u201d"
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+            "evidence_ids": [
+              "ev-15706af82df1-0001-0002"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether strict scrutiny had been met because other legitimate factors were considered."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+            "evidence_ids": [
+              "ev-15706af82df1-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer raised a specific question on page\u202f71 of the record."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+            "evidence_ids": [
+              "ev-15706af82df1-0003-0000"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned whether the standard actually affected the ground reality of districting."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Appellants",
+        "citations": [
+          {
+            "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+            "evidence_ids": [
+              "ev-15706af82df1-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+            "evidence_ids": [
+              "ev-15706af82df1-0000-0004"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The appellants contend that Virginia\u2019s district\u2011court plan imposes a uniform 55\u202fpercent racial floor on all twelve predominantly Black districts, an \u201carbitrary threshold\u201d that they argue is legally improper."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Appellants",
+          "citations": [
+            {
+              "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+              "evidence_ids": [
+                "ev-15706af82df1-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Appellants, the district court created a new legal standard that permits Virginia to apply a one\u2011size\u2011fits\u2011all 55\u202fpercent racial floor to all twelve predominantly Black districts."
+        },
+        {
+          "attribution": "Appellants",
+          "citations": [
+            {
+              "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+              "evidence_ids": [
+                "ev-15706af82df1-0000-0004"
+              ],
+              "pages": {
+                "end": 10,
+                "start": 10
+              }
+            }
+          ],
+          "text": "According to Appellants, the 55\u202fpercent threshold is arbitrary and therefore improper."
+        },
+        {
+          "attribution": "Mr. Elias",
+          "citations": [
+            {
+              "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+              "evidence_ids": [
+                "ev-15706af82df1-0001-0003"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. Elias, once predominance is found, strict scrutiny applies and the burden shifts to the government to justify its actions with a strong evidentiary basis."
+        },
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+              "evidence_ids": [
+                "ev-15706af82df1-0002-0002"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, the district\u2019s redrawing moved large numbers of voters based on race, indicating that race was a primary factor in the plan."
+        }
+      ],
+      "heading": "Appellants\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State Legislature of Virginia",
+          "citations": [
+            {
+              "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+              "evidence_ids": [
+                "ev-15706af82df1-0003-0001"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to State Legislature of Virginia, the State argues that the 55\u202fpercent standard is theoretically pure and is intended to avoid prolonged litigation while respecting traditional districting principles."
+        }
+      ],
+      "heading": "Appellee (Virginia State Board of Elections) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "15706af82df1d98e0e77c51487f29d9fe09fa84db08fc1d7b0abf74921de1762",
+      "evidence_ids": [
+        "ev-15706af82df1-0000-0000"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T18:44:51.952147Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Attribution check failed: several claims (e.g., the background question and the oral\u2011argument start time) attribute statements to the Court without direct supporting evidence from the Court itself."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,615 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether religious status can ever be the basis for governmental action absent an Establishment Clause problem."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg referenced the Everson decision (1947) about tax money for churches and asked if it applies here."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how to separate the building\u2019s secular function from its religious exercise."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0001-0005"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether the Constitution permits a state to give public health protection to everyone except churches."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0002-0004"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked how to draw the line between selective and general benefits."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-577",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T18:16:53.729841Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether religious status can ever be the basis for governmental action absent an Establishment Clause problem."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg referenced the Everson decision and asked if it applies here."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how to separate the building\u2019s secular function from its religious exercise."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked, \u201cDo you think that that is the proper way to analyze the question?\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Alito asked the same question about the proper way to analyze the issue."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0001-0005"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether the Constitution permits a state to give public health protection to everyone except churches."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0002-0004"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked how to draw the line between selective and general benefits."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the state\u2019s interest in not appearing to give money to one church affects the analysis."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "David A. Cortman (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to David A. Cortman (Petitioner), according to David A. Cortman (Petitioner), david A. Cortman (Petitioner) argues that the State of Missouri excluded Trinity Lutheran Church\u2019s preschool from a recycling program because it is operated by a church rather than a secular nonprofit."
+      },
+      {
+        "attribution": "David A. Cortman (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to David A. Cortman (Petitioner), according to David A. Cortman (Petitioner), david A. Cortman (Petitioner) contends that the State\u2019s policy is not facially neutral and excludes churches from the benefit."
+      },
+      {
+        "attribution": "David A. Cortman (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to David A. Cortman (Petitioner), according to David A. Cortman (Petitioner), david A. Cortman (Petitioner) maintains that this exclusion violates the Court\u2019s Free Exercise principles."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "David A. Cortman (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+              "evidence_ids": [
+                "ev-097c5fdbc8ed-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to David A. Cortman (Petitioner), according to David A. Cortman (Petitioner), david A. Cortman (Petitioner) argues that the State\u2019s exclusion is discriminatory because the policy is not facially neutral."
+        },
+        {
+          "attribution": "David A. Cortman (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+              "evidence_ids": [
+                "ev-097c5fdbc8ed-0000-0004"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to David A. Cortman (Petitioner), according to David A. Cortman (Petitioner), david A. Cortman (Petitioner) states that the preschool\u2019s religious motivation does not make every activity there religious."
+        },
+        {
+          "attribution": "David A. Cortman (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+              "evidence_ids": [
+                "ev-097c5fdbc8ed-0000-0005"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to David A. Cortman (Petitioner), according to David A. Cortman (Petitioner), david A. Cortman (Petitioner) argues that the surfacing being softer does not enable or prohibit religious activities; it is completely separate."
+        },
+        {
+          "attribution": "David A. Cortman (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+              "evidence_ids": [
+                "ev-097c5fdbc8ed-0000-0007"
+              ],
+              "pages": {
+                "end": 10,
+                "start": 10
+              }
+            }
+          ],
+          "text": "According to David A. Cortman (Petitioner), according to David A. Cortman (Petitioner), david A. Cortman (Petitioner) notes that the State concedes, as did the lower court, that there is no Federal Establishment Clause issue."
+        },
+        {
+          "attribution": "Mr. Cortman",
+          "citations": [
+            {
+              "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+              "evidence_ids": [
+                "ev-097c5fdbc8ed-0001-0002"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "Mr. Cortman argues that the provision at issue resembles a Blaine Amendment with anti\u2011Catholic origins."
+        },
+        {
+          "attribution": "Mr. Cortman",
+          "citations": [
+            {
+              "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+              "evidence_ids": [
+                "ev-097c5fdbc8ed-0001-0003"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "Mr. Cortman contends that the case is straightforward under Free\u2011Exercise and Establishment\u2011Clause jurisprudence and presents a clear Free\u2011Exercise violation."
+        },
+        {
+          "attribution": "David A. Cortman (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+              "evidence_ids": [
+                "ev-097c5fdbc8ed-0003-0000"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to David A. Cortman (Petitioner), according to David A. Cortman (Petitioner), david A. Cortman (Petitioner) argues that the competitive grant\u2019s neutral criteria address any endorsement concerns."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+      "evidence_ids": [
+        "ev-097c5fdbc8ed-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+      "evidence_ids": [
+        "ev-097c5fdbc8ed-0000-0001",
+        "ev-097c5fdbc8ed-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+      "evidence_ids": [
+        "ev-097c5fdbc8ed-0000-0003",
+        "ev-097c5fdbc8ed-0000-0004"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+      "evidence_ids": [
+        "ev-097c5fdbc8ed-0000-0005"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+      "evidence_ids": [
+        "ev-097c5fdbc8ed-0000-0007"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 10
+      }
+    },
+    {
+      "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+      "evidence_ids": [
+        "ev-097c5fdbc8ed-0001-0000",
+        "ev-097c5fdbc8ed-0001-0001",
+        "ev-097c5fdbc8ed-0001-0002"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+      "evidence_ids": [
+        "ev-097c5fdbc8ed-0001-0003"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+      "evidence_ids": [
+        "ev-097c5fdbc8ed-0001-0005"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+      "evidence_ids": [
+        "ev-097c5fdbc8ed-0002-0002"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+      "evidence_ids": [
+        "ev-097c5fdbc8ed-0002-0004"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 53
+      }
+    },
+    {
+      "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+      "evidence_ids": [
+        "ev-097c5fdbc8ed-0003-0000"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T18:30:12.120046Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "David A. Cortman (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to David A. Cortman (Petitioner), according to David A. Cortman (Petitioner), david A. Cortman (Petitioner) argues that the case asks whether a state can exclude a religiously affiliated preschool from a public benefit, implicating the Free\u2011Exercise Clause."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "097c5fdbc8edae1e6d80f543c09692341c7290d7231589afa3bf6386a4fe6ba7",
+            "evidence_ids": [
+              "ev-097c5fdbc8ed-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy\u2019s question highlights the broader significance of whether religious status can ever justify denial of a generally available public benefit."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "John S. Williams; Ms. Rice",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0001-0003"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The core issue is whether the government failed to disclose Brady\u2011material evidence, including observations of a suspect at the scene and impeachment information about a key witness."
+      }
+    ],
+    "heading": "Background & Core Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-1503",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T17:53:15.822366Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Kagan asked Mr. Dreeben to clarify the factual background of the case."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0002-0004"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer inquired whether the same judge handled the post\u2011trial Brady motion and the trial itself."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0002-0006"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Alito later asked about the attack described by Mr. Williams involving the councilwoman."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0002-0009"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked why a particular name was not provided to the defense."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0002-0010"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether prosecutors were advised not to turn over the material to the defense."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "John S. Williams",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to John S. Williams, the petitioners allege that the prosecution suppressed Brady\u2011material evidence that a serial assaulter was seen acting suspiciously at the crime scene before police arrived."
+      },
+      {
+        "attribution": "John S. Williams",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to John S. Williams, the petitioners also claim the prosecution withheld evidence that the assailant\u2019s girlfriend was present in the alley at the time of the attack."
+      },
+      {
+        "attribution": "Ms. Rice",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Ms. Rice, the petitioners argue that the government failed to turn over evidence of two alternative perpetrators."
+      },
+      {
+        "attribution": "Ms. Rice",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0001-0003"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Ms. Rice, the petitioners further allege that impeachment evidence showing a key witness had persuaded another witness to lie was suppressed."
+      },
+      {
+        "attribution": "Mr. Dreeben",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Mr. Dreeben, the government contends that the evidence of a group attack was strong and corroborated by multiple eyewitnesses."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Government, the government states that it searched diligently for witnesses, noting that the alley\u2019s surrounding buildings included a bank with no windows and brick walls."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+            "evidence_ids": [
+              "ev-01b1e0b1cf37-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "A fact recorded by the court indicates that an anonymous woman identified a person named Clifton Yarborough standing by the alley on the night of the crime."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "John S. Williams",
+          "citations": [
+            {
+              "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+              "evidence_ids": [
+                "ev-01b1e0b1cf37-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to John S. Williams, the petitioners allege that the prosecution suppressed evidence that a serial assaulter was seen at the crime scene."
+        },
+        {
+          "attribution": "John S. Williams",
+          "citations": [
+            {
+              "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+              "evidence_ids": [
+                "ev-01b1e0b1cf37-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to John S. Williams, they claim the prosecution withheld evidence that the assailant\u2019s girlfriend was present in the alley."
+        },
+        {
+          "attribution": "Ms. Rice",
+          "citations": [
+            {
+              "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+              "evidence_ids": [
+                "ev-01b1e0b1cf37-0001-0001"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Ms. Rice, they allege that evidence of two alternative perpetrators was not turned over to the defense."
+        }
+      ],
+      "heading": "Petitioners (Charles S. Turner & Russell L. Overton)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Dreeben",
+          "citations": [
+            {
+              "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+              "evidence_ids": [
+                "ev-01b1e0b1cf37-0001-0002"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Mr. Dreeben, the government argues that the evidence of a group attack was strong and corroborated by multiple eyewitnesses."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+              "evidence_ids": [
+                "ev-01b1e0b1cf37-0002-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Government, the government states it looked as hard as possible for witnesses, describing the alley\u2019s surrounding structures."
+        }
+      ],
+      "heading": "Respondent (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "01b1e0b1cf378dcae284afc0a584df56fc27ae927c62a176f44a3df1c7568b54",
+      "evidence_ids": [
+        "ev-01b1e0b1cf37-0000-0000",
+        "ev-01b1e0b1cf37-0000-0001",
+        "ev-01b1e0b1cf37-0000-0002",
+        "ev-01b1e0b1cf37-0000-0003",
+        "ev-01b1e0b1cf37-0000-0004",
+        "ev-01b1e0b1cf37-0001-0001",
+        "ev-01b1e0b1cf37-0001-0002",
+        "ev-01b1e0b1cf37-0001-0003",
+        "ev-01b1e0b1cf37-0002-0000",
+        "ev-01b1e0b1cf37-0002-0001",
+        "ev-01b1e0b1cf37-0002-0002",
+        "ev-01b1e0b1cf37-0002-0003",
+        "ev-01b1e0b1cf37-0002-0004",
+        "ev-01b1e0b1cf37-0002-0005",
+        "ev-01b1e0b1cf37-0002-0006",
+        "ev-01b1e0b1cf37-0002-0007",
+        "ev-01b1e0b1cf37-0002-0008",
+        "ev-01b1e0b1cf37-0002-0009",
+        "ev-01b1e0b1cf37-0002-0010"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T17:58:49.133644Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

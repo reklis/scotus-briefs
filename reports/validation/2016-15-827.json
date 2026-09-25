@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2016-15-827",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "The overview claim that \"the IDEA requires instruction ... and the precise standard ... is contested\" is not fully supported: the evidence only confirms the IDEA requirement, not that the petitioner asserts the standard is contested.",
+    "The attribution for the contested\u2011standard portion of the same claim incorrectly assigns that contention to the petitioner; the evidence for the dispute comes from Justice Ginsburg\u2019s questioning, not the petitioner.",
+    "The background\u2011and\u2011question claim repeats the same unsupported and mis\u2011attributed assertion about the contested standard."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.93,
+    "neutrality": 1.0,
+    "readability": 0.95,
+    "restraint": 1.0,
+    "traceability": 0.85
+  }
+}

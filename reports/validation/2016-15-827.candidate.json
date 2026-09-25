@@ -1,0 +1,618 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Jeffrey L. Fisher)",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner (Jeffrey L. Fisher), the IDEA requires instruction and related services that are reasonably calculated to provide substantially equal educational opportunities, and the precise standard\u2014whether it must be \"substantially equal educational opportunities\" or merely \"more than de minimis\"\u2014is contested."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0003-0004"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "The Court is being asked to decide how to interpret the IDEA standard\u2014whether the \"substantially equal opportunity\" formulation, which Justice Ginsburg said was not adopted, should govern, or whether the \"more than de minimis\" formulation used by many circuits should remain the rule."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-827",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T18:54:29.906032Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the \"substantially equal opportunity\" formulation appears in the law and noted it was not adopted by the Court."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy inquired whether cost considerations should factor into the definition of \"reasonable\" for severely disabled students."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0001-0001"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether cost can be considered in the calculation of a reasonable program."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Breyer asked where the relevant standard could be found."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg suggested that the \"more than de minimis\" formulation might set the standard too low."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether there is consensus on appropriate methodologies for various disabilities."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0003-0001"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the parties favor a standard with \"bite\"."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0003-0004"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether most courts today use the \"more than de minimis\" standard."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Jeffrey L. Fisher)",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner (Jeffrey L. Fisher), the IDEA requires instruction and related services that are reasonably calculated to provide substantially equal educational opportunities, and the precise standard\u2014whether it must be \"substantially equal educational opportunities\" or merely \"more than de minimis\"\u2014is contested."
+      },
+      {
+        "attribution": "Petitioner (Jeffrey L. Fisher)",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner (Jeffrey L. Fisher), according to Petitioner (Jeffrey L. Fisher), the school district\u2019s response is that the \"substantially equal opportunity\" standard does not appear in the IDEA."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0001-0008"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The respondent maintains that the Rowley decision does not require grade\u2011level progress, only that the education be \"appropriate\" to the child\u2019s circumstances."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg noted that the \"substantially equal opportunity\" formulation was not adopted by the Court in prior cases."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether cost considerations may factor into determining a \"reasonable\" program for severely disabled students."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0001-0001"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether cost considerations may factor into determining a \"reasonable\" program for severely disabled students."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+            "evidence_ids": [
+              "ev-ab2062054607-0003-0004"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether most courts today use the \"more than de minimis\" standard."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Jeffrey L. Fisher)",
+          "citations": [
+            {
+              "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+              "evidence_ids": [
+                "ev-ab2062054607-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner (Jeffrey L. Fisher), according to Petitioner (Jeffrey L. Fisher), the IDEA requires schools to provide instruction that is \"reasonably calculated to provide substantially equal educational opportunities\"."
+        },
+        {
+          "attribution": "Petitioner (Jeffrey L. Fisher)",
+          "citations": [
+            {
+              "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+              "evidence_ids": [
+                "ev-ab2062054607-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner (Jeffrey L. Fisher), according to Petitioner (Jeffrey L. Fisher), the school district\u2019s response is that the \"substantially equal opportunity\" standard does not appear in the IDEA."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+              "evidence_ids": [
+                "ev-ab2062054607-0003-0005"
+              ],
+              "pages": {
+                "end": 58,
+                "start": 58
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioners favor the Rowley standard that lower courts have applied for 34 years."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+              "evidence_ids": [
+                "ev-ab2062054607-0001-0008"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Respondent, Rowley does not require grade\u2011level progress; it requires education that is \"appropriate\" to the child\u2019s circumstances."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0000-0003"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0000-0004"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0001-0001"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0001-0006"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0001-0008"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0002-0000"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0003-0000"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0003-0001"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0003-0005"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0003-0003"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 61
+      }
+    },
+    {
+      "document_hash": "ab20620546079f471ccbf7bd699203a1b098d3cde05f5fdf08d87c6078ef45a5",
+      "evidence_ids": [
+        "ev-ab2062054607-0003-0004"
+      ],
+      "pages": {
+        "end": 62,
+        "start": 62
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T19:10:59.444347Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "The overview claim that \"the IDEA requires instruction ... and the precise standard ... is contested\" is not fully supported: the evidence only confirms the IDEA requirement, not that the petitioner asserts the standard is contested.",
+      "The attribution for the contested\u2011standard portion of the same claim incorrectly assigns that contention to the petitioner; the evidence for the dispute comes from Justice Ginsburg\u2019s questioning, not the petitioner.",
+      "The background\u2011and\u2011question claim repeats the same unsupported and mis\u2011attributed assertion about the contested standard."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
