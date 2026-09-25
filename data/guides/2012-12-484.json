@@ -1,0 +1,149 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a9b6c461589c014d0c3d2be3fc153a3cfdbb16d0bb8aadc60e692f6ad16c688f",
+            "evidence_ids": [
+              "ev-a9b6c461589c-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked, \u201cWhere do you see that anywhere in the legislative history?\u201d"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2012-12-484",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T23:39:36.503799Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a9b6c461589c014d0c3d2be3fc153a3cfdbb16d0bb8aadc60e692f6ad16c688f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a9b6c461589c014d0c3d2be3fc153a3cfdbb16d0bb8aadc60e692f6ad16c688f",
+            "evidence_ids": [
+              "ev-a9b6c461589c-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked, \u201cWhere do you see that anywhere in the legislative history?\u201d"
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a9b6c461589c014d0c3d2be3fc153a3cfdbb16d0bb8aadc60e692f6ad16c688f",
+            "evidence_ids": [
+              "ev-a9b6c461589c-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The Court noted that the word \u201cretaliation\u201d does not appear in Title VII."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a9b6c461589c014d0c3d2be3fc153a3cfdbb16d0bb8aadc60e692f6ad16c688f",
+      "evidence_ids": [
+        "ev-a9b6c461589c-0001-0000",
+        "ev-a9b6c461589c-0002-0000"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 20
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T23:40:44.300651Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

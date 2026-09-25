@@ -1,0 +1,384 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, the dispute stems from a British government decision in the Thatcher era to privatize previously state\u2011owned utilities."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          },
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0002-0004"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Petitioner, the central issue is whether the tax is an income tax or a value tax."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2012-12-43",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-24T23:34:26.564894Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0000-0004"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts introduced the case for argument."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned the assumption underlying the petitioners\u2019 argument."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether a statutory purpose to compensate the government would change the petitioners\u2019 argument."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0002-0001"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer noted the lack of authority on the tax treatment question and suggested tax courts may have more expertise."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0002-0002"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          },
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0002-0007"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the Court might follow the Fifth Circuit or Tax Court and whether the regulation could be changed to avoid the outcome."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts thanked counsel at the close of argument."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          },
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0002-0004"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Petitioner, pPL Corporation and its subsidiaries argue that the tax imposed by the Commissioner of Internal Revenue functions as a value tax rather than an income tax."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+              "evidence_ids": [
+                "ev-3f5cf18a023d-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petitioners trace the case\u2019s origins to the British privatization of utilities."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+              "evidence_ids": [
+                "ev-3f5cf18a023d-0002-0000"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Petitioner, if Parliament had used a different valuation method, the tax would be a value tax, not an income tax."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+              "evidence_ids": [
+                "ev-3f5cf18a023d-0002-0004"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Petitioner, the tax is based on a valuation formula that imputes a value to the company, which the petitioners argue is not an income tax."
+        }
+      ],
+      "heading": "Petitioner (PPL Corporation and Subsidiaries)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Commissioner of Internal Revenue)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+      "evidence_ids": [
+        "ev-3f5cf18a023d-0000-0001",
+        "ev-3f5cf18a023d-0000-0004",
+        "ev-3f5cf18a023d-0000-0000",
+        "ev-3f5cf18a023d-0000-0002",
+        "ev-3f5cf18a023d-0000-0005",
+        "ev-3f5cf18a023d-0001-0002",
+        "ev-3f5cf18a023d-0001-0001",
+        "ev-3f5cf18a023d-0002-0000",
+        "ev-3f5cf18a023d-0002-0004",
+        "ev-3f5cf18a023d-0002-0001",
+        "ev-3f5cf18a023d-0002-0002",
+        "ev-3f5cf18a023d-0002-0007",
+        "ev-3f5cf18a023d-0002-0011"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-24T23:39:36.484501Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "If the tax is classified as an income tax, corporations may owe a higher amount, as the petitioners concede the tax functions like a 51.75\u202f% tax on profits above a certain threshold."
+      },
+      {
+        "attribution": "Professor's amicus brief",
+        "citations": [
+          {
+            "document_hash": "3f5cf18a023d3c03338abed4b6ac1e9319d2ecbf58625fe57c5d644c0ca641a4",
+            "evidence_ids": [
+              "ev-3f5cf18a023d-0001-0001"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "According to Professor's amicus brief, the amicus brief points out that under the petitioners\u2019 formulation the tax could be as high as 207\u202f% of the relevant measure, underscoring the financial stakes."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
