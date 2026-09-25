@@ -1,0 +1,397 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how the traditional in\u2011rem forfeiture understanding applies to the modern meaning of disgorgement and noted that the money goes to the court, which decides how it will be paid out."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-16-529",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T22:38:24.410013Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how the traditional in\u2011rem forfeiture understanding applies to the modern meaning of disgorgement."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan suggested the distinction may depend on whether the government keeps the money or gives it to victims."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor clarified that the money goes to the court, which decides how it will be paid out."
+      },
+      {
+        "attribution": "JUSTICE GORSUCH",
+        "citations": [
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0002-0005"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "According to JUSTICE GORSUCH, justice Gorsuch questioned why the civil versus criminal form makes a difference."
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0003-0000"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked why a criminal canon should not apply when the penalty resembles a criminal one."
+      },
+      {
+        "attribution": "Justice KAGAN",
+        "citations": [
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0003-0001"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Kagan asked if the petitioner\u2019s standard that any non\u2011solely remedial measure is a penalty is correct."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked what the difference is between restitution and disgorgement."
+      },
+      {
+        "attribution": "Justice GINSBURG",
+        "citations": [
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0003-0005"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 61
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about a narrow construction of the statute."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Government; MS. GOLDENBERG",
+        "citations": [
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0001-0005"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          },
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0002-0003"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "The classification matters because penalties are subject to different legal limits and statutes of limitations than remedial actions."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner (Charles R. Kokesh)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+              "evidence_ids": [
+                "ev-a872efe8bb09-0001-0002"
+              ],
+              "pages": {
+                "end": 20,
+                "start": 20
+              }
+            }
+          ],
+          "text": "According to Government, disgorgement is both a forfeiture and a penalty under the law."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+              "evidence_ids": [
+                "ev-a872efe8bb09-0001-0003"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Government, statutes on Fair Funds and Sarbanes\u2011Oxley direct distribution of disgorged funds, indicating a remedial purpose."
+        },
+        {
+          "attribution": "SEC",
+          "citations": [
+            {
+              "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+              "evidence_ids": [
+                "ev-a872efe8bb09-0001-0004"
+              ],
+              "pages": {
+                "end": 29,
+                "start": 29
+              }
+            }
+          ],
+          "text": "According to SEC, disgorgement serves to remedy unjust enrichment and may be distributed to victims."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+              "evidence_ids": [
+                "ev-a872efe8bb09-0001-0005"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "According to Government, the government\u2019s brief characterizes disgorgement as a penalty for certain reasons."
+        }
+      ],
+      "heading": "Respondent (SEC)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+      "evidence_ids": [
+        "ev-a872efe8bb09-0003-0004"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T22:49:01.163822Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim in the 'Why It Matters' section that disgorgement, if deemed a penalty, would be subject to a five\u2011year statute of limitations is not supported by the supplied evidence (evidence at page 56 actually states the government could bring actions more than five years after the conduct).",
+      "Overstatement check failed: the same claim overstates the legal effect of the five\u2011year limitation contrary to the evidence provided."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "MS. GOLDENBERG",
+        "citations": [
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0002-0003"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "If disgorgement is deemed a penalty, it could be subject to the five\u2011year statute of limitations, limiting the government\u2019s ability to pursue enforcement."
+      },
+      {
+        "attribution": "SEC",
+        "citations": [
+          {
+            "document_hash": "a872efe8bb09d8c5726b20d90c985100d0151e93c194775e15c0ee384d51ad16",
+            "evidence_ids": [
+              "ev-a872efe8bb09-0001-0004"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "According to SEC, the classification influences whether disgorged funds are treated as civil penalties or can be distributed to victims, affecting restitution for harmed parties."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

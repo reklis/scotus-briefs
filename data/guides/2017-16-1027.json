@@ -1,0 +1,436 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+            "evidence_ids": [
+              "ev-a200b9513b15-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, police obtained a warrant to inspect the vehicle, but it was parked in a port, raising the question whether another warrant is needed to retrieve it."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-1027",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T23:47:50.718033Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+            "evidence_ids": [
+              "ev-a200b9513b15-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, do the police need a separate warrant to retrieve the car for which they already have a warrant?"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+            "evidence_ids": [
+              "ev-a200b9513b15-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Alito, does the search fall within or outside the curtilage, and does that determine whether the Fourth Amendment applies?"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+            "evidence_ids": [
+              "ev-a200b9513b15-0000-0004"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Alito, do you dispute that the police had probable cause to believe the tarp-covered item was the motorcycle they were looking for?"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+            "evidence_ids": [
+              "ev-a200b9513b15-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, do you agree that the policeman on the sidewalk knew, or at least had probable cause to know, that the tarp-covered item was the possibly stolen motorcycle?"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+            "evidence_ids": [
+              "ev-a200b9513b15-0001-0005"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "According to Justice Alito, did you admit that the police had probable cause to believe the tarp-covered thing was the motorcycle they had been chasing?"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+            "evidence_ids": [
+              "ev-a200b9513b15-0001-0004"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, is the law that a policeman cannot enter a house until he gets a warrant, even when he sees the stolen item through a window?"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+            "evidence_ids": [
+              "ev-a200b9513b15-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, is the difference between opening a garage door and simply walking into a car de minimis?"
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+            "evidence_ids": [
+              "ev-a200b9513b15-0002-0001"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, does the automobile exception trace back to the original Carroll decision, which analogized cars to ships in 1790?"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+            "evidence_ids": [
+              "ev-a200b9513b15-0002-0004"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 61
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, was there one search here or were there two searches?"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. FitzGerald",
+        "citations": [
+          {
+            "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+            "evidence_ids": [
+              "ev-a200b9513b15-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+            "evidence_ids": [
+              "ev-a200b9513b15-0000-0004"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Police had probable cause to believe the motorcycle was stolen."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Cox",
+          "citations": [
+            {
+              "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+              "evidence_ids": [
+                "ev-a200b9513b15-0001-0003"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "According to Mr. Cox, officer Rhodes's search of the motorcycle should be upheld because it occurred outside the curtilage where the automobile exception fully applies, and because he had probable cause before stepping onto the driveway."
+        },
+        {
+          "attribution": "Mr. FitzGerald",
+          "citations": [
+            {
+              "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+              "evidence_ids": [
+                "ev-a200b9513b15-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. FitzGerald, the police had probable cause to believe the covered motorcycle was the stolen vehicle they were pursuing."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent Position",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+      "evidence_ids": [
+        "ev-a200b9513b15-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+      "evidence_ids": [
+        "ev-a200b9513b15-0000-0003"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+      "evidence_ids": [
+        "ev-a200b9513b15-0000-0004"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+      "evidence_ids": [
+        "ev-a200b9513b15-0001-0000",
+        "ev-a200b9513b15-0001-0001"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+      "evidence_ids": [
+        "ev-a200b9513b15-0001-0005"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+      "evidence_ids": [
+        "ev-a200b9513b15-0001-0003"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 34
+      }
+    },
+    {
+      "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+      "evidence_ids": [
+        "ev-a200b9513b15-0001-0004"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+      "evidence_ids": [
+        "ev-a200b9513b15-0002-0000"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+      "evidence_ids": [
+        "ev-a200b9513b15-0002-0001"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+      "evidence_ids": [
+        "ev-a200b9513b15-0002-0003"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    },
+    {
+      "document_hash": "a200b9513b155c317e08c8a4124eca890154c0546a09259fe88aeb932b7f9c02",
+      "evidence_ids": [
+        "ev-a200b9513b15-0002-0004"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 61
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T23:57:33.715221Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

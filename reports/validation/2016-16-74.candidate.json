@@ -1,0 +1,326 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-16-74",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T23:23:53.015127Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+            "evidence_ids": [
+              "ev-1ecc9b7c0288-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Petitioners argue that pension plans for religious non\u2011profit organizations are exempt from ERISA."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+            "evidence_ids": [
+              "ev-1ecc9b7c0288-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Petitioners argue that the statutory text does not require a church to establish benefit plans for other employers\u2019 employees."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+            "evidence_ids": [
+              "ev-1ecc9b7c0288-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Petitioners contend that three decades of consistent government interpretation have created a reliance interest that warrants deference."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+            "evidence_ids": [
+              "ev-1ecc9b7c0288-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Petitioners warn that reversing the exemption would resurrect problems the 1980 amendment was intended to fix."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+              "evidence_ids": [
+                "ev-1ecc9b7c0288-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "Petitioners maintain that pension plans for religious non\u2011profits have been exempt from ERISA for over 30 years."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+              "evidence_ids": [
+                "ev-1ecc9b7c0288-0002-0000"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "Petitioners argue that Congress intended a \u201chands\u2011off\u201d approach, allowing churches freedom from ERISA oversight."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+              "evidence_ids": [
+                "ev-1ecc9b7c0288-0003-0002"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 60
+              }
+            }
+          ],
+          "text": "Petitioners state that the statute explicitly permits the maintaining organization, not the church, to fund the plans."
+        },
+        {
+          "attribution": "United Church of Christ and Evangelical Lutheran Church of America",
+          "citations": [
+            {
+              "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+              "evidence_ids": [
+                "ev-1ecc9b7c0288-0003-0003"
+              ],
+              "pages": {
+                "end": 61,
+                "start": 61
+              }
+            }
+          ],
+          "text": "According to United Church of Christ and Evangelical Lutheran Church of America, amicus briefs explain that a centralization requirement would violate the religious beliefs of the United Church of Christ and the Evangelical Lutheran Church of America."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondents",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+      "evidence_ids": [
+        "ev-1ecc9b7c0288-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+      "evidence_ids": [
+        "ev-1ecc9b7c0288-0002-0000"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+      "evidence_ids": [
+        "ev-1ecc9b7c0288-0003-0002"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 60
+      }
+    },
+    {
+      "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+      "evidence_ids": [
+        "ev-1ecc9b7c0288-0003-0003"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 61
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T23:31:08.575321Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: several claims in the \"Why it matters\" section are not directly supported by the supplied evidence (e.g., the claim about ERISA reporting and fiduciary rules, and the claim about balancing governmental regulation with religious freedom).",
+      "Overstatement check failed: the same unsupported claims constitute material overstatements beyond what the evidence demonstrates.",
+      "Traceability score reduced because not all material claims are backed by explicit citations."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+            "evidence_ids": [
+              "ev-1ecc9b7c0288-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Petitioners argue that the exemption determines whether religious organizations must comply with ERISA\u2019s reporting and fiduciary rules."
+      },
+      {
+        "attribution": "United Church of Christ and Evangelical Lutheran Church of America",
+        "citations": [
+          {
+            "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+            "evidence_ids": [
+              "ev-1ecc9b7c0288-0003-0003"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 61
+            }
+          }
+        ],
+        "text": "According to United Church of Christ and Evangelical Lutheran Church of America, amicus briefs argue that the issue balances governmental regulation against religious freedom and the separation of church and state."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "1ecc9b7c0288919a1a67972baacc465991e9c98cc42487a11aca07c37396400b",
+            "evidence_ids": [
+              "ev-1ecc9b7c0288-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Petitioners, petitioners emphasize that Congress intended a \u201chands\u2011off\u201d approach, allowing churches to operate pension plans without ERISA oversight."
+      }
+    ],
+    "heading": "Why it matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Legal Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-16-309",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T21:17:10.498739Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c588a87225f5481d0a0539230f231da3bb9c733d244b59e666b730ceabd8b3e1"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c588a87225f5481d0a0539230f231da3bb9c733d244b59e666b730ceabd8b3e1",
+            "evidence_ids": [
+              "ev-c588a87225f5-0000-0008"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Robert\u202fA.\u202fParker, Esq. argued on behalf of the respondent."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Divna Maslenjak (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "c588a87225f5481d0a0539230f231da3bb9c733d244b59e666b730ceabd8b3e1",
+            "evidence_ids": [
+              "ev-c588a87225f5-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Divna Maslenjak (Petitioner), divna Maslenjak (Petitioner) argues that \u00a7\u202f1425(a) requires a causal link between the procurement of citizenship and the underlying violation of law."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Divna Maslenjak (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "c588a87225f5481d0a0539230f231da3bb9c733d244b59e666b730ceabd8b3e1",
+              "evidence_ids": [
+                "ev-c588a87225f5-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Divna Maslenjak (Petitioner), section\u202f1425(a) requires a causal link between the procurement of citizenship and the underlying violation of law."
+        }
+      ],
+      "heading": "Petitioner (Divna\u202fMaslenjak)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "c588a87225f5481d0a0539230f231da3bb9c733d244b59e666b730ceabd8b3e1",
+              "evidence_ids": [
+                "ev-c588a87225f5-0001-0003"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Respondent, the respondent suggests a \u201cbut\u2011for\u201d causation standard is appropriate."
+        }
+      ],
+      "heading": "Respondent (United\u202fStates / Government)",
+      "status": "complete",
+      "summary": "The government contends that a false statement need not be material and that the statutory language does not require a strict causal link.",
+      "summary_citations": [
+        {
+          "document_hash": "c588a87225f5481d0a0539230f231da3bb9c733d244b59e666b730ceabd8b3e1",
+          "evidence_ids": [
+            "ev-c588a87225f5-0001-0002",
+            "ev-c588a87225f5-0001-0003"
+          ],
+          "pages": {
+            "end": 24,
+            "start": 22
+          }
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c588a87225f5481d0a0539230f231da3bb9c733d244b59e666b730ceabd8b3e1",
+      "evidence_ids": [
+        "ev-c588a87225f5-0000-0008",
+        "ev-c588a87225f5-0000-0000",
+        "ev-c588a87225f5-0000-0002",
+        "ev-c588a87225f5-0000-0001",
+        "ev-c588a87225f5-0000-0003",
+        "ev-c588a87225f5-0000-0006",
+        "ev-c588a87225f5-0001-0000",
+        "ev-c588a87225f5-0001-0001",
+        "ev-c588a87225f5-0001-0002",
+        "ev-c588a87225f5-0001-0003",
+        "ev-c588a87225f5-0001-0004",
+        "ev-c588a87225f5-0001-0005",
+        "ev-c588a87225f5-0002-0000",
+        "ev-c588a87225f5-0002-0001",
+        "ev-c588a87225f5-0002-0002",
+        "ev-c588a87225f5-0002-0003",
+        "ev-c588a87225f5-0002-0004",
+        "ev-c588a87225f5-0002-0005",
+        "ev-c588a87225f5-0003-0000",
+        "ev-c588a87225f5-0003-0001",
+        "ev-c588a87225f5-0003-0002"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T21:21:08.938524Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "c588a87225f5481d0a0539230f231da3bb9c733d244b59e666b730ceabd8b3e1",
+            "evidence_ids": [
+              "ev-c588a87225f5-0002-0005"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts warned that granting unlimited power to the government to strip citizenship is troubling."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": "The outcome will clarify the standards for revoking citizenship under \u00a7\u202f1425(a). A narrow reading could protect naturalized citizens from loss of status based on trivial false statements, while a broader reading could give the government greater power to strip citizenship.",
+    "summary_citations": [
+      {
+        "document_hash": "c588a87225f5481d0a0539230f231da3bb9c733d244b59e666b730ceabd8b3e1",
+        "evidence_ids": [
+          "ev-c588a87225f5-0002-0005"
+        ],
+        "pages": {
+          "end": 54,
+          "start": 54
+        }
+      }
+    ]
+  }
+}

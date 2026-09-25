@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2016-16-74",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: several claims in the \"Why it matters\" section are not directly supported by the supplied evidence (e.g., the claim about ERISA reporting and fiduciary rules, and the claim about balancing governmental regulation with religious freedom).",
+    "Overstatement check failed: the same unsupported claims constitute material overstatements beyond what the evidence demonstrates.",
+    "Traceability score reduced because not all material claims are backed by explicit citations."
+  ],
+  "quality_scores": {
+    "completeness": 0.78,
+    "factual_accuracy": 0.42,
+    "neutrality": 0.88,
+    "readability": 0.91,
+    "restraint": 0.61,
+    "traceability": 0.84
+  }
+}

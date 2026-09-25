@@ -1,0 +1,416 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+            "evidence_ids": [
+              "ev-bf4dc16b57ae-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument took place before the Supreme Court at 11:09\u202fa.m. on March\u202f27,\u202f2017."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+            "evidence_ids": [
+              "ev-bf4dc16b57ae-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how the Court\u2019s decision in Brunette, which held that \u00a71391 governs aliens, applies to this case."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-16-341",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T21:29:44.022436Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+            "evidence_ids": [
+              "ev-bf4dc16b57ae-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned the applicability of Brunette\u2019s holding on aliens."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+            "evidence_ids": [
+              "ev-bf4dc16b57ae-0001-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether \u00a71400 requires the defendant to reside where it resides."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+            "evidence_ids": [
+              "ev-bf4dc16b57ae-0001-0008"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan sought clarification about the original \u00a71391 as it relates to Fourco."
+      },
+      {
+        "attribution": "Mr. Dabney",
+        "citations": [
+          {
+            "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+            "evidence_ids": [
+              "ev-bf4dc16b57ae-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Mr. Dabney, counsel for the respondent, argued that \u00a71400(b) provides a distinct venue definition for non\u2011resident defendants, requiring a regular place of business and an act of infringement, not merely the defendant\u2019s domicile."
+      },
+      {
+        "attribution": "Mr. Jay",
+        "citations": [
+          {
+            "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+            "evidence_ids": [
+              "ev-bf4dc16b57ae-0001-0009"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Mr. Jay, mr. Jay explained that the 2011 amendment expanded the definition of \u201cdomicile\u201d to include individual defendants and other business entities, modifying the Court\u2019s earlier Brunette interpretation."
+      },
+      {
+        "attribution": "Mr. Jay",
+        "citations": [
+          {
+            "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+            "evidence_ids": [
+              "ev-bf4dc16b57ae-0001-0004"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Mr. Jay, mr. Jay also noted that Fourco\u2019s interpretation of the statutes remains good law."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+            "evidence_ids": [
+              "ev-bf4dc16b57ae-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The Court heard oral arguments on March\u202f27,\u202f2017."
+      },
+      {
+        "attribution": "Alderson Reporting Company",
+        "citations": [
+          {
+            "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+            "evidence_ids": [
+              "ev-bf4dc16b57ae-0003-0002"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Alderson Reporting Company, if the Court rules for TC\u202fHeartland, an analysis suggests that about 68\u202f% of small\u2011 and medium\u2011sized businesses could obtain venue relief."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+              "evidence_ids": [
+                "ev-bf4dc16b57ae-0000-0001"
+              ],
+              "pages": {
+                "end": 8,
+                "start": 8
+              }
+            }
+          ],
+          "text": "Petitioner argues that the case rests importantly on the \u201cexcept\u201d provision of the venue statute."
+        }
+      ],
+      "heading": "Petitioner (TC HEARTLAND LLC)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (KRAFT FOODS GROUP BRANDS LLC)",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+      "evidence_ids": [
+        "ev-bf4dc16b57ae-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+      "evidence_ids": [
+        "ev-bf4dc16b57ae-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+      "evidence_ids": [
+        "ev-bf4dc16b57ae-0000-0001"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+      "evidence_ids": [
+        "ev-bf4dc16b57ae-0001-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+      "evidence_ids": [
+        "ev-bf4dc16b57ae-0001-0001"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+      "evidence_ids": [
+        "ev-bf4dc16b57ae-0001-0004"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+      "evidence_ids": [
+        "ev-bf4dc16b57ae-0001-0008"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+      "evidence_ids": [
+        "ev-bf4dc16b57ae-0001-0009"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+      "evidence_ids": [
+        "ev-bf4dc16b57ae-0003-0000"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    },
+    {
+      "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+      "evidence_ids": [
+        "ev-bf4dc16b57ae-0003-0002"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T21:37:14.432337Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Alderson Reporting Company",
+        "citations": [
+          {
+            "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+            "evidence_ids": [
+              "ev-bf4dc16b57ae-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Under \u00a71400(b) a plaintiff must show both an act of infringement and a regular, established place of business in the forum state, shaping where lawsuits can be filed."
+      },
+      {
+        "attribution": "Alderson Reporting Company",
+        "citations": [
+          {
+            "document_hash": "bf4dc16b57aea93195b33d79772ed701c6c282e103df677fad450864a9dbc2e7",
+            "evidence_ids": [
+              "ev-bf4dc16b57ae-0003-0002"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Alderson Reporting Company, an estimated 68\u202f% of small\u2011 and medium\u2011sized businesses stand to gain venue relief if TC\u202fHeartland prevails."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

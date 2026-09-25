@@ -1,0 +1,385 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+            "evidence_ids": [
+              "ev-bbe37c5c6d03-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          },
+          {
+            "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+            "evidence_ids": [
+              "ev-bbe37c5c6d03-0001-0006"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, the central issue is whether a Kentucky statute that limits a power of attorney\u2019s authority to bind a principal to an arbitration agreement conflicts with the Federal Arbitration Act."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-16-32",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T21:21:08.956521Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+            "evidence_ids": [
+              "ev-bbe37c5c6d03-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:22\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+            "evidence_ids": [
+              "ev-bbe37c5c6d03-0002-0004"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "The case was submitted after argument."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+            "evidence_ids": [
+              "ev-bbe37c5c6d03-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioners argue that Kentucky applies a more demanding rule for a power of attorney to authorize arbitration agreements than for contracts generally."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+            "evidence_ids": [
+              "ev-bbe37c5c6d03-0000-0003"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "According to Respondents, respondents note that Kentucky follows common\u2011law principles in power\u2011of\u2011attorney interpretation and is not a uniform\u2011act state."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+              "evidence_ids": [
+                "ev-bbe37c5c6d03-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Petitioners contend that Kentucky\u2019s rule for determining a power of attorney\u2019s authority to enter arbitration agreements is distinct and more demanding than the rule for general contracts."
+        },
+        {
+          "attribution": "Andrew J. Pincus (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+              "evidence_ids": [
+                "ev-bbe37c5c6d03-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Andrew J. Pincus (Petitioner), according to Andrew J. Pincus (Petitioner), they argue that the FAA requires arbitration agreements to be valid, irrevocable, and enforceable, and that any limitation must be grounded in recognized legal or equitable grounds for contract revocation."
+        },
+        {
+          "attribution": "Andrew J. Pincus (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+              "evidence_ids": [
+                "ev-bbe37c5c6d03-0002-0003"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Andrew J. Pincus (Petitioner), according to Andrew J. Pincus (Petitioner), petitioners suggest the Court should apply the objective indicia test, as in *Imburgia*, to assess the true scope of the power of attorney."
+        }
+      ],
+      "heading": "Petitioners' Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+              "evidence_ids": [
+                "ev-bbe37c5c6d03-0000-0003"
+              ],
+              "pages": {
+                "end": 18,
+                "start": 18
+              }
+            }
+          ],
+          "text": "According to Respondents, respondents emphasize that Kentucky is a common\u2011law state in the development of its power\u2011of\u2011attorney interpretive law and does not follow a uniform power\u2011of\u2011attorney act."
+        }
+      ],
+      "heading": "Respondents' Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+      "evidence_ids": [
+        "ev-bbe37c5c6d03-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+      "evidence_ids": [
+        "ev-bbe37c5c6d03-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+      "evidence_ids": [
+        "ev-bbe37c5c6d03-0000-0003"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    },
+    {
+      "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+      "evidence_ids": [
+        "ev-bbe37c5c6d03-0001-0002"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+      "evidence_ids": [
+        "ev-bbe37c5c6d03-0001-0006"
+      ],
+      "pages": {
+        "end": 35,
+        "start": 35
+      }
+    },
+    {
+      "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+      "evidence_ids": [
+        "ev-bbe37c5c6d03-0002-0001"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+      "evidence_ids": [
+        "ev-bbe37c5c6d03-0002-0003"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+      "evidence_ids": [
+        "ev-bbe37c5c6d03-0002-0004"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 50
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T21:25:38.333336Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+            "evidence_ids": [
+              "ev-bbe37c5c6d03-0001-0006"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          },
+          {
+            "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+            "evidence_ids": [
+              "ev-bbe37c5c6d03-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "The case addresses how state laws governing powers of attorney intersect with the Federal Arbitration Act, potentially affecting the enforceability of arbitration agreements."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "bbe37c5c6d03312823972ba214b15589adef02c13609deec19611cfac69bc14f",
+            "evidence_ids": [
+              "ev-bbe37c5c6d03-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, a ruling could clarify whether states may restrict agents from entering arbitration on behalf of principals without violating federal arbitration policy."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

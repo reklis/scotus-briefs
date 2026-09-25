@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2016-16-529",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim in the 'Why It Matters' section that disgorgement, if deemed a penalty, would be subject to a five\u2011year statute of limitations is not supported by the supplied evidence (evidence at page 56 actually states the government could bring actions more than five years after the conduct).",
+    "Overstatement check failed: the same claim overstates the legal effect of the five\u2011year limitation contrary to the evidence provided."
+  ],
+  "quality_scores": {
+    "completeness": 0.95,
+    "factual_accuracy": 0.9,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.9,
+    "traceability": 0.95
+  }
+}

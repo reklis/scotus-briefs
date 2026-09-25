@@ -1,0 +1,472 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Neal K. Katyal",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0000-0001",
+              "ev-683eb00c0f04-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0002-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The case concerns whether California courts have jurisdiction over out\u2011of\u2011state plaintiffs in a mass\u2011tort action involving the drug Plavix, which was designed, manufactured and distributed outside California."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0000-0002"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether a judgment in California would preclude claims in other states (issue preclusion)."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          },
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0001-0003"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justices raised additional questions about due\u2011process."
+      }
+    ],
+    "heading": "Background & Core Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-16-466",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T22:30:15.127271Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0000-0002"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether a California judgment would preclude claims in other states (issue preclusion)."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0001-0001"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg referenced a hypothetical involving the Alderson Reporting Company."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0001-0003"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor noted an amicus brief discussing criminal laws under the due\u2011process theory."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch wondered whether the Court was collapsing two separate due\u2011process inquiries\u2014purposeful availment and fundamental fairness\u2014into a single test."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Kagan asked what would happen doctrinally to the first test and whether it still has bite."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0002-0005"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy inquired whether the case should be heard in state court or the Southern District."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0002-0006"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan suggested that the case might involve zero California plaintiffs if the contacts are truly nationwide."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0002-0008"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked, \u201cWhat\u2019s left?\u201d indicating remaining unresolved issues."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned why he was present concerning a party named Smith, who is not a citizen of the state."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0000-0004"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "There are 575 out\u2011of\u2011State plaintiffs from 33 states involved in the litigation."
+      },
+      {
+        "attribution": "Neal K. Katyal",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Neal K. Katyal, the California Supreme Court previously ruled that plaintiffs who were not prescribed the drug in California, did not take it in California, and had no other connection to California could still sue there."
+      },
+      {
+        "attribution": "Neal K. Katyal",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The petitioner argues that this California rule would distribute the burden of defending mass\u2011tort claims in an uneven way."
+      },
+      {
+        "attribution": "Mr. Goldstein",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0002-0003",
+              "ev-683eb00c0f04-0002-0009"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The California court is providing a forum to adjudicate a claim about the lawfulness of BMS\u2019s design, manufacturing and distribution of the drug Plavix, activities that occurred in New\u202fJersey, not California."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Goldstein",
+          "citations": [
+            {
+              "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+              "evidence_ids": [
+                "ev-683eb00c0f04-0002-0000"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Mr. Goldstein, the petitioner argues that the special federalism interest of the home state or the state of manufacturing should not dictate jurisdiction."
+        },
+        {
+          "attribution": "Mr. Goldstein",
+          "citations": [
+            {
+              "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+              "evidence_ids": [
+                "ev-683eb00c0f04-0003-0001"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Mr. Goldstein, the petitioner emphasizes that non\u2011mutual offensive collateral estoppel is a major issue because the claims share identical legal theories and operative facts."
+        }
+      ],
+      "heading": "Petitioner (Bristol\u2011Myers Squibb Company) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Superior Court of California) Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+      "evidence_ids": [
+        "ev-683eb00c0f04-0000-0000",
+        "ev-683eb00c0f04-0000-0001",
+        "ev-683eb00c0f04-0000-0002",
+        "ev-683eb00c0f04-0000-0003",
+        "ev-683eb00c0f04-0000-0004",
+        "ev-683eb00c0f04-0001-0001",
+        "ev-683eb00c0f04-0001-0003",
+        "ev-683eb00c0f04-0002-0000",
+        "ev-683eb00c0f04-0002-0001",
+        "ev-683eb00c0f04-0002-0002",
+        "ev-683eb00c0f04-0002-0003",
+        "ev-683eb00c0f04-0002-0005",
+        "ev-683eb00c0f04-0002-0006",
+        "ev-683eb00c0f04-0002-0008",
+        "ev-683eb00c0f04-0003-0000",
+        "ev-683eb00c0f04-0003-0001",
+        "ev-683eb00c0f04-0003-0002",
+        "ev-683eb00c0f04-0003-0003",
+        "ev-683eb00c0f04-0003-0004"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T22:38:24.392086Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "683eb00c0f04c4806dc7d213a9e25146827e6b39f8913db6056acc28fce3f40d",
+            "evidence_ids": [
+              "ev-683eb00c0f04-0003-0004"
+            ],
+            "pages": {
+              "end": 64,
+              "start": 64
+            }
+          }
+        ],
+        "text": "Predictability of jurisdictional rules is critically important for litigants and courts."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

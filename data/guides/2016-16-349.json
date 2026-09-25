@@ -1,0 +1,449 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Santander",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Santander, the dispute centers on whether Santander Consumer USA, Inc. qualifies as a debt collector under the statutory exemption at issue."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0001-0001"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "Petitioners argue that the debt remains \u201cowed or due\u201d to Sam\u2019s Cars, suggesting the exemption should not apply."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-16-349",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T21:51:41.731770Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0000-0002"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "Justice Kagan asked the petitioner for examples of sentences using the word \u201cowed\u201d to mean what the petitioner wants in this case."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan later remarked that the case does not make much sense, prompting further discussion."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0002-0009"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the Court would need to leave open the question of the character of the business and the definition of \u201cowed.\u201d"
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0001-0001"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "Petitioners argue that Santander obtained rights in the debt but the debt is still owed or due to Sam's Cars."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Respondent says the provision at issue applies to a bank holding debts as collateral, not to a debt collector."
+      },
+      {
+        "attribution": "Santander",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0002-0000"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Santander contends that \u201cowed\u201d and \u201cdue\u201d have subtly different meanings; a debt can be owed but not yet due."
+      },
+      {
+        "attribution": "Santander",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0002-0002"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Santander, santander states the key question is whether it was a debt collector at the time of the alleged violation."
+      },
+      {
+        "attribution": "Santander",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0002-0004"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Santander argues it may fall within the assignee exclusion, which applies to a person who receives a debt assignment solely to facilitate collection for another."
+      },
+      {
+        "attribution": "Santander",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0002-0008"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Santander, santander notes its servicing activity in 2012 was much less than today, indicating a different business context at the time of the alleged violations."
+      },
+      {
+        "attribution": "Counsel",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0003-0000"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "According to Counsel, counsel alleges that the petitioner's proposed solution to subsection (F)(iv) does not work and lacks any coherent sense."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0003-0001"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "According to Respondent, respondent alleges that a third\u2011party debt collector can evade the statutes if hired before a debt goes into default, even once it is delinquent."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+            "evidence_ids": [
+              "ev-188cd69e39a2-0003-0002"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts noted that the case has been submitted to the Court."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+              "evidence_ids": [
+                "ev-188cd69e39a2-0001-0001"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "Petitioners contend that the debt remains owed or due to Sam\u2019s Cars, meaning the statutory exemption does not apply."
+        }
+      ],
+      "heading": "Petitioners\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+              "evidence_ids": [
+                "ev-188cd69e39a2-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "Respondent says the provision applies only to banks holding debts as collateral, not to debt collectors."
+        },
+        {
+          "attribution": "Santander",
+          "citations": [
+            {
+              "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+              "evidence_ids": [
+                "ev-188cd69e39a2-0002-0000"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "Santander argues that \u201cowed\u201d and \u201cdue\u201d are distinct; a debt can be owed without being due."
+        },
+        {
+          "attribution": "Santander",
+          "citations": [
+            {
+              "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+              "evidence_ids": [
+                "ev-188cd69e39a2-0002-0002"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "Santander maintains the key inquiry is whether it was a debt collector at the time of the alleged violation."
+        },
+        {
+          "attribution": "Santander",
+          "citations": [
+            {
+              "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+              "evidence_ids": [
+                "ev-188cd69e39a2-0002-0004"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "Santander argues it may be covered by the assignee exclusion, which applies to entities receiving debt assignments solely to facilitate collection for another."
+        },
+        {
+          "attribution": "Santander",
+          "citations": [
+            {
+              "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+              "evidence_ids": [
+                "ev-188cd69e39a2-0002-0008"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Santander, santander points out that its servicing activity in 2012 was far less than today, indicating a different business context at the time of the alleged violations."
+        }
+      ],
+      "heading": "Respondent (Santander) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "188cd69e39a2fa1f6dcd22ec0b15391758755818d32eb9b31ae6449e6da85cd5",
+      "evidence_ids": [
+        "ev-188cd69e39a2-0000-0001",
+        "ev-188cd69e39a2-0000-0002",
+        "ev-188cd69e39a2-0001-0001",
+        "ev-188cd69e39a2-0002-0000",
+        "ev-188cd69e39a2-0002-0001",
+        "ev-188cd69e39a2-0002-0002",
+        "ev-188cd69e39a2-0002-0004",
+        "ev-188cd69e39a2-0002-0008",
+        "ev-188cd69e39a2-0002-0009",
+        "ev-188cd69e39a2-0003-0000",
+        "ev-188cd69e39a2-0003-0001",
+        "ev-188cd69e39a2-0003-0002"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T21:56:39.888867Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

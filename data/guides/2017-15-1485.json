@@ -1,0 +1,387 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+            "evidence_ids": [
+              "ev-648838ec3f34-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked for clarification of the other charges in the case, specifically disorderly conduct and negligent supervision."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+            "evidence_ids": [
+              "ev-648838ec3f34-0001-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned whether an arrest is justified when a policeman enters a house and discovers a party where the inviter lacked authority."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+            "evidence_ids": [
+              "ev-648838ec3f34-0002-0000"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito inquired about what additional evidence could have been sought."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-15-1485",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T23:31:08.594367Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+            "evidence_ids": [
+              "ev-648838ec3f34-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked for clarification of the other charges in the case, specifically disorderly conduct and negligent supervision."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+            "evidence_ids": [
+              "ev-648838ec3f34-0001-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned whether an arrest is justified when a policeman enters a house and discovers a party where the inviter lacked authority."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+            "evidence_ids": [
+              "ev-648838ec3f34-0002-0000"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito inquired about what additional evidence could have been sought."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Todd Kim",
+        "citations": [
+          {
+            "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+            "evidence_ids": [
+              "ev-648838ec3f34-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Todd Kim, probable cause is a practical standard that accounts for the practical limitations officers face when making arrest decisions."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+            "evidence_ids": [
+              "ev-648838ec3f34-0002-0001"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Respondents contend that the officers were plainly incompetent in disregarding."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+            "evidence_ids": [
+              "ev-648838ec3f34-0002-0002"
+            ],
+            "pages": {
+              "end": 64,
+              "start": 64
+            }
+          }
+        ],
+        "text": "Petitioners argue that the competing motions for summary judgment were not properly raised and that the factual background was set out in their brief."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+              "evidence_ids": [
+                "ev-648838ec3f34-0002-0002"
+              ],
+              "pages": {
+                "end": 64,
+                "start": 64
+              }
+            }
+          ],
+          "text": "Petitioners argue that the competing motions for summary judgment were not properly raised and that the factual background was set out in their brief."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+              "evidence_ids": [
+                "ev-648838ec3f34-0002-0001"
+              ],
+              "pages": {
+                "end": 48,
+                "start": 48
+              }
+            }
+          ],
+          "text": "Respondents contend that the officers were plainly incompetent in disregarding."
+        }
+      ],
+      "heading": "Respondents",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+      "evidence_ids": [
+        "ev-648838ec3f34-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+      "evidence_ids": [
+        "ev-648838ec3f34-0000-0001"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+      "evidence_ids": [
+        "ev-648838ec3f34-0000-0002"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+      "evidence_ids": [
+        "ev-648838ec3f34-0001-0000"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+      "evidence_ids": [
+        "ev-648838ec3f34-0002-0000"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+      "evidence_ids": [
+        "ev-648838ec3f34-0002-0001"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+      "evidence_ids": [
+        "ev-648838ec3f34-0002-0002"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 64
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T23:36:09.794444Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Todd Kim",
+        "citations": [
+          {
+            "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+            "evidence_ids": [
+              "ev-648838ec3f34-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Todd Kim, the discussion of probable cause as a practical standard highlights the need for courts to account for the real\u2011world constraints faced by police officers."
+      },
+      {
+        "attribution": "Robert A. Parker",
+        "citations": [
+          {
+            "document_hash": "648838ec3f3478642d0bf4af03bc8b2303fa9520beadc56048791167e46fcb54",
+            "evidence_ids": [
+              "ev-648838ec3f34-0000-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Robert A. Parker, an amicus brief argues that lower courts made fundamental errors by isolating facts when analyzing probable cause, suggesting that the Supreme Court may need to clarify the proper analytical approach."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

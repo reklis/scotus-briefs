@@ -1,0 +1,307 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justices (Ginsburg, Kennedy, Kagan)",
+        "citations": [
+          {
+            "document_hash": "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13",
+            "evidence_ids": [
+              "ev-7d518b92c0ea-0002-0000",
+              "ev-7d518b92c0ea-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The core issue is whether *Ake* requires the state to provide a neutral expert only, or whether it obligates the state to furnish an independent expert who works as part of the defense team."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-16-5294",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T22:49:01.181916Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13",
+            "evidence_ids": [
+              "ev-7d518b92c0ea-0000-0005"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts: \"We'll hear argument first this morning in Case 16-5294, McWilliams v. Dunn.\""
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13",
+            "evidence_ids": [
+              "ev-7d518b92c0ea-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer: \"WHERE, SOMEWHERE ELSE, DOES IT BECOME APPARENT THAT HE WANTS THE STATE TO APPOINT AN EXPERT? WHERE? I JUST WANT TO KNOW WHERE.\""
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13",
+            "evidence_ids": [
+              "ev-7d518b92c0ea-0001-0005"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy: \"Suppose the Judge, the court, appoints the head of the psychiatric department at a distinguished private university, one person, and he comes in and he tells the defense counsel, now I'm going to explain to you what all these terms mean.\""
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13",
+            "evidence_ids": [
+              "ev-7d518b92c0ea-0001-0008"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan: \"Sorry, General, but if we could just focus on -- because I think it would help to just sort of -- let's assume for the moment that this defendant did not get what he was asking for, which was a defense expert, and say whether Ake entitled him to such an expert.\""
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13",
+            "evidence_ids": [
+              "ev-7d518b92c0ea-0002-0000"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg: \"Is there any jurisdiction that holds that today, that all that Ake requires is a neutral expert? I thought by now every jurisdiction recognizes that Ake requires an expert who will be, essentially, part of the defense team.\""
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13",
+            "evidence_ids": [
+              "ev-7d518b92c0ea-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Kennedy: \"Well, if Ake says that you have a right to meaningful assistance from a psychiatrist, you, the defense, and then over time it becomes clear to us that that psychiatrist must be retained for the benefit of the defense only, is that a new clearly established holding, or is it simply a refinement of a clearly established right that was set forth in Ake?\""
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Mr. McWilliams) and State of Alabama",
+        "citations": [
+          {
+            "document_hash": "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13",
+            "evidence_ids": [
+              "ev-7d518b92c0ea-0001-0001",
+              "ev-7d518b92c0ea-0001-0002",
+              "ev-7d518b92c0ea-0001-0003"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "In McWilliams v. Dunn, petitioner James E. McWilliams seeks an independent psychiatric expert for his defense, while the State of Alabama contends that the assistance already provided under *Ake* \u2013 a neutral expert \u2013 satisfies his entitlement."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. McWilliams",
+          "citations": [
+            {
+              "document_hash": "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13",
+              "evidence_ids": [
+                "ev-7d518b92c0ea-0001-0002"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. McWilliams, mcWilliams argues that he is entitled to an independent psychiatric expert to assist his defense."
+        }
+      ],
+      "heading": "Petitioner (James E. McWilliams)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State of Alabama",
+          "citations": [
+            {
+              "document_hash": "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13",
+              "evidence_ids": [
+                "ev-7d518b92c0ea-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to State of Alabama, the State contends that McWilliams has already received everything he is entitled to under *Ake* \u2013 a neutral expert \u2013 and is not entitled to any additional assistance."
+        }
+      ],
+      "heading": "Respondent (State of Alabama)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13",
+      "evidence_ids": [
+        "ev-7d518b92c0ea-0000-0005",
+        "ev-7d518b92c0ea-0001-0000",
+        "ev-7d518b92c0ea-0001-0001",
+        "ev-7d518b92c0ea-0001-0002",
+        "ev-7d518b92c0ea-0001-0003",
+        "ev-7d518b92c0ea-0001-0005",
+        "ev-7d518b92c0ea-0001-0008",
+        "ev-7d518b92c0ea-0002-0000",
+        "ev-7d518b92c0ea-0002-0002"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T22:54:47.937917Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justices (Ginsburg, Kennedy, Kagan)",
+        "citations": [
+          {
+            "document_hash": "7d518b92c0ea68e3f6accbd8146940140d4f098880cdad73330a6d2739ee2d13",
+            "evidence_ids": [
+              "ev-7d518b92c0ea-0002-0000",
+              "ev-7d518b92c0ea-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The case addresses whether defendants have a constitutional right to an independent expert who works as part of the defense team."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

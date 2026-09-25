@@ -1,0 +1,469 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Christopher Landau",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Christopher Landau, a related question is whether the Board\u2019s substantive decision on a civil\u2011service claim affects jurisdiction."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-16-399",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T22:13:46.871947Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0001-0000"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether a finding that a suspension or furlough did not meet the required number of days is jurisdictional."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0002-0006"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the settlement issue is jurisdictional."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0003-0001"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked about the problem if the case goes to district court versus the Federal Circuit and the resulting Chenery issues."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0002-0005"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Alito asked who wrote the statute at issue."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0002-0006"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked what else besides furlough and suspension is jurisdictional."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0002-0007"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked for clarification of \u00a7\u202f7703(b)(2) regarding discrimination cases going to district court."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0002-0009"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether an employee could simply ask the district court to decide the case."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. Fletcher",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0001-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Mr. Fletcher, the Federal Circuit generally has exclusive jurisdiction to review MSPB decisions, but Section\u202f7703(b)(2) creates an exception that sends mixed cases to district courts."
+      },
+      {
+        "attribution": "Christopher Landau",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0003-0004"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "Whether the Board\u2019s decision on the merits of a civil service claim determines jurisdiction is irrelevant; jurisdiction depends on the nature of the allegations."
+      },
+      {
+        "attribution": "Christopher Landau",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0002-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "The case also raises whether an employee must exhaust administrative remedies before seeking district\u2011court review."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Christopher Landau",
+          "citations": [
+            {
+              "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+              "evidence_ids": [
+                "ev-0b19dc6f0234-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Christopher Landau, when the Board rejects an employee\u2019s allegations about a civil\u2011service action, it makes a substantive merits decision, which does not determine jurisdiction."
+        },
+        {
+          "attribution": "Christopher Landau",
+          "citations": [
+            {
+              "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+              "evidence_ids": [
+                "ev-0b19dc6f0234-0000-0003"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Christopher Landau, exhaustion is a defense; if the Board\u2019s decision is affirmed, there is a question whether the discrimination claim has been exhausted."
+        },
+        {
+          "attribution": "Mr. Landau",
+          "citations": [
+            {
+              "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+              "evidence_ids": [
+                "ev-0b19dc6f0234-0003-0004"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 62
+              }
+            }
+          ],
+          "text": "According to Mr. Landau, jurisdiction over a mixed question turns on the allegations, not merely on the outcome of the civil\u2011service action."
+        }
+      ],
+      "heading": "Petitioner (Anthony W. Perry) \u2013 Arguments",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Fletcher",
+          "citations": [
+            {
+              "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+              "evidence_ids": [
+                "ev-0b19dc6f0234-0001-0002"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to Mr. Fletcher, the Federal Circuit generally has exclusive jurisdiction to review MSPB decisions, but Section\u202f7703(b)(2) sends mixed cases to district courts."
+        },
+        {
+          "attribution": "Mr. Fletcher",
+          "citations": [
+            {
+              "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+              "evidence_ids": [
+                "ev-0b19dc6f0234-0002-0001"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Mr. Fletcher, employees have a right to a de\u202fnovo trial on discrimination claims, which cannot be obtained in the Federal Circuit."
+        },
+        {
+          "attribution": "Mr. Fletcher",
+          "citations": [
+            {
+              "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+              "evidence_ids": [
+                "ev-0b19dc6f0234-0002-0000"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. Fletcher, a tolling rule is needed to determine which forum the employee should use for the discrimination claim."
+        },
+        {
+          "attribution": "Mr. Fletcher",
+          "citations": [
+            {
+              "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+              "evidence_ids": [
+                "ev-0b19dc6f0234-0003-0002"
+              ],
+              "pages": {
+                "end": 58,
+                "start": 58
+              }
+            }
+          ],
+          "text": "According to Mr. Fletcher, if an employee does not seek review of the Board\u2019s decision, they may proceed directly to district court after exhausting administrative processes."
+        }
+      ],
+      "heading": "Respondent (Merit Systems Protection Board) \u2013 Arguments",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+      "evidence_ids": [
+        "ev-0b19dc6f0234-0000-0000"
+      ],
+      "pages": {
+        "end": 63,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T22:25:41.245072Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Mr. Fletcher",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0001-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          },
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0003-0004"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "Clarifying jurisdiction will determine whether employees must go to the Federal Circuit or can bring discrimination claims directly in district court."
+      },
+      {
+        "attribution": "Mr. Fletcher",
+        "citations": [
+          {
+            "document_hash": "0b19dc6f02344cf22158a13ad40d9bd24cf63f84e4f84b5da2cbb770a465865a",
+            "evidence_ids": [
+              "ev-0b19dc6f0234-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Mr. Fletcher, the outcome affects the employee\u2019s ability to obtain a de\u202fnovo trial on discrimination claims, which is unavailable in the Federal Circuit."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
