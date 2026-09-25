@@ -1,0 +1,206 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mr. Mooppan",
+        "citations": [
+          {
+            "document_hash": "205f3b920b05283c45ee1c9d553541eeff380b7d723da763a4ae241a3ebbd776",
+            "evidence_ids": [
+              "ev-205f3b920b05-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Mr. Mooppan, petitioner argues that supervision is a rigorous standard and that the state should decide the appropriate level of supervision, balancing expertise against the risk of conflicts of interest."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "205f3b920b05283c45ee1c9d553541eeff380b7d723da763a4ae241a3ebbd776",
+            "evidence_ids": [
+              "ev-205f3b920b05-0003-0002"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "Justice Alito asked what would happen if a state supreme court declared teeth whitening to be the practice of dentistry, noting that the holding requires active supervision regardless of whether there is clear articulation."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2014-13-534",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T07:42:03.167202Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "205f3b920b05283c45ee1c9d553541eeff380b7d723da763a4ae241a3ebbd776"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. Mooppan",
+        "citations": [
+          {
+            "document_hash": "205f3b920b05283c45ee1c9d553541eeff380b7d723da763a4ae241a3ebbd776",
+            "evidence_ids": [
+              "ev-205f3b920b05-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Mr. Mooppan, the case discusses the standard of supervision applied to dental practices."
+      },
+      {
+        "attribution": "Mr. Mooppan",
+        "citations": [
+          {
+            "document_hash": "205f3b920b05283c45ee1c9d553541eeff380b7d723da763a4ae241a3ebbd776",
+            "evidence_ids": [
+              "ev-205f3b920b05-0003-0000"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Mr. Mooppan, the parties dispute whether the state board or the FTC should determine the appropriate level of supervision."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Mooppan",
+          "citations": [
+            {
+              "document_hash": "205f3b920b05283c45ee1c9d553541eeff380b7d723da763a4ae241a3ebbd776",
+              "evidence_ids": [
+                "ev-205f3b920b05-0003-0000"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to Mr. Mooppan, the Board contends that supervision is a rigorous standard and that the state should determine the appropriate level of supervision, balancing professional expertise with potential conflicts of interest."
+        }
+      ],
+      "heading": "Petitioner Position (North Carolina State Board of Dental Examiners)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent Position (Federal Trade Commission)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "205f3b920b05283c45ee1c9d553541eeff380b7d723da763a4ae241a3ebbd776",
+      "evidence_ids": [
+        "ev-205f3b920b05-0003-0000"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    },
+    {
+      "document_hash": "205f3b920b05283c45ee1c9d553541eeff380b7d723da763a4ae241a3ebbd776",
+      "evidence_ids": [
+        "ev-205f3b920b05-0003-0002"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T07:45:49.676228Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
