@@ -1,0 +1,265 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Ms. Eisenstein (counsel)",
+        "citations": [
+          {
+            "document_hash": "6e75f3c88285eb76b291cc736a9654a85423b26ae91bf61fceae20c89905673f",
+            "evidence_ids": [
+              "ev-6e75f3c88285-0001-0005"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          },
+          {
+            "document_hash": "6e75f3c88285eb76b291cc736a9654a85423b26ae91bf61fceae20c89905673f",
+            "evidence_ids": [
+              "ev-6e75f3c88285-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Another question is whether a state court may order indemnification to compensate a spouse for loss of retirement benefits due to a disability award."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-1031",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T15:00:14.534800Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6e75f3c88285eb76b291cc736a9654a85423b26ae91bf61fceae20c89905673f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mr. Wirken",
+        "citations": [
+          {
+            "document_hash": "6e75f3c88285eb76b291cc736a9654a85423b26ae91bf61fceae20c89905673f",
+            "evidence_ids": [
+              "ev-6e75f3c88285-0001-0005"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          },
+          {
+            "document_hash": "6e75f3c88285eb76b291cc736a9654a85423b26ae91bf61fceae20c89905673f",
+            "evidence_ids": [
+              "ev-6e75f3c88285-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "John Howell v. Sandra Howell concerns the division of military retirement pay and whether a state court can provide indemnification for loss due to disability benefits."
+      },
+      {
+        "attribution": "Mr. Wirken",
+        "citations": [
+          {
+            "document_hash": "6e75f3c88285eb76b291cc736a9654a85423b26ae91bf61fceae20c89905673f",
+            "evidence_ids": [
+              "ev-6e75f3c88285-0001-0005"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "According to Mr. Wirken, congress gave states the authority to divide retirement pay at the time of divorce, and the divided interests become vested, so an indemnification order does not violate the Act."
+      },
+      {
+        "attribution": "Ms. Eisenstein (counsel)",
+        "citations": [
+          {
+            "document_hash": "6e75f3c88285eb76b291cc736a9654a85423b26ae91bf61fceae20c89905673f",
+            "evidence_ids": [
+              "ev-6e75f3c88285-0002-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Ms. Eisenstein (counsel), according to Ms. Eisenstein (counsel), the case also involves other assets, and the Arizona rule prohibits a party from unilaterally harming the other spouse\u2019s interest, allowing a makeup remedy."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Wirken",
+          "citations": [
+            {
+              "document_hash": "6e75f3c88285eb76b291cc736a9654a85423b26ae91bf61fceae20c89905673f",
+              "evidence_ids": [
+                "ev-6e75f3c88285-0001-0005"
+              ],
+              "pages": {
+                "end": 33,
+                "start": 33
+              }
+            }
+          ],
+          "text": "According to Mr. Wirken, petitioner contends that Congress allows states to divide retirement pay at divorce and that the resulting interests are vested, so indemnification does not violate the Act."
+        },
+        {
+          "attribution": "Mr. Wirken",
+          "citations": [
+            {
+              "document_hash": "6e75f3c88285eb76b291cc736a9654a85423b26ae91bf61fceae20c89905673f",
+              "evidence_ids": [
+                "ev-6e75f3c88285-0001-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Mr. Wirken, petitioner asserts that the decree dividing property is final and cannot be modified."
+        }
+      ],
+      "heading": "Petitioner (John Howell) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Eisenstein (counsel)",
+          "citations": [
+            {
+              "document_hash": "6e75f3c88285eb76b291cc736a9654a85423b26ae91bf61fceae20c89905673f",
+              "evidence_ids": [
+                "ev-6e75f3c88285-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Ms. Eisenstein (counsel), according to Ms. Eisenstein (counsel), respondent argues that indemnification for loss of retirement benefits is permissible under Arizona law, which provides a makeup remedy for harming the other spouse\u2019s interest."
+        },
+        {
+          "attribution": "Ms. Eisenstein (counsel)",
+          "citations": [
+            {
+              "document_hash": "6e75f3c88285eb76b291cc736a9654a85423b26ae91bf61fceae20c89905673f",
+              "evidence_ids": [
+                "ev-6e75f3c88285-0002-0001"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Ms. Eisenstein (counsel), according to Ms. Eisenstein (counsel), respondent emphasizes that there are other assets besides the military pension, affecting the analysis."
+        }
+      ],
+      "heading": "Respondent (Sandra Howell) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6e75f3c88285eb76b291cc736a9654a85423b26ae91bf61fceae20c89905673f",
+      "evidence_ids": [
+        "ev-6e75f3c88285-0000-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T15:03:53.846972Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

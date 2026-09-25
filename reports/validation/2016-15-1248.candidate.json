@@ -1,0 +1,404 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Allyson N. Ho",
+        "citations": [
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0000-0004"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "The central issue is whether appellate review of EEOC subpoena\u2011enforcement decisions should be conducted under an abuse\u2011of\u2011discretion standard rather than a more deferential standard."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-1248",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T15:29:42.445764Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0000-0000"
+            ],
+            "pages": {
+              "end": 1,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:07\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked for clarification of what is on appeal."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0001-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          },
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0001-0010"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Breyer questioned the relevance of the test and its burden on the other party."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0002-0001"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan probed whether the term \u201cabuse of discretion\u201d was being applied too literally."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0001-0008"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          },
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0002-0007"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked about the burden on the other party and the scope of the subpoena."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Allyson N. Ho",
+        "citations": [
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0000-0004"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          },
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Mclane Company, Inc. appealed the Equal Employment Opportunity Commission\u2019s subpoena\u2011enforcement decision, arguing that the Supreme Court should review the EEOC\u2019s actions under an abuse\u2011of\u2011discretion standard."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Allyson N. Ho",
+          "citations": [
+            {
+              "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+              "evidence_ids": [
+                "ev-4cfdf43d41fc-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Allyson N. Ho, petitioner argues that the statutory scheme, appellate tradition, and sound administration of justice all support reviewing EEOC subpoena\u2011enforcement decisions for abuse of discretion."
+        },
+        {
+          "attribution": "Ms. Ho (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+              "evidence_ids": [
+                "ev-4cfdf43d41fc-0002-0004"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Ms. Ho (Petitioner), according to Ms. Ho (Petitioner), petitioner further contends that any test\u2011related information is always relevant to the EEOC\u2019s enforcement actions."
+        }
+      ],
+      "heading": "Petitioner (Mclane Company, Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Rachel P. Kovner",
+          "citations": [
+            {
+              "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+              "evidence_ids": [
+                "ev-4cfdf43d41fc-0000-0004"
+              ],
+              "pages": {
+                "end": 16,
+                "start": 16
+              }
+            }
+          ],
+          "text": "According to Rachel P. Kovner, respondent maintains that historical and functional considerations favor applying an abuse\u2011of\u2011discretion standard in this context."
+        },
+        {
+          "attribution": "Ms. Kovner",
+          "citations": [
+            {
+              "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+              "evidence_ids": [
+                "ev-4cfdf43d41fc-0001-0004"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Ms. Kovner, respondent emphasizes that the EEOC\u2019s subpoena is limited to the specific test at the Arizona facility, underscoring the relevance of the information sought."
+        }
+      ],
+      "heading": "Respondent (Equal Employment Opportunity Commission)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+      "evidence_ids": [
+        "ev-4cfdf43d41fc-0000-0000",
+        "ev-4cfdf43d41fc-0000-0001",
+        "ev-4cfdf43d41fc-0000-0002",
+        "ev-4cfdf43d41fc-0000-0004",
+        "ev-4cfdf43d41fc-0001-0001",
+        "ev-4cfdf43d41fc-0001-0002",
+        "ev-4cfdf43d41fc-0001-0003",
+        "ev-4cfdf43d41fc-0001-0004",
+        "ev-4cfdf43d41fc-0001-0008",
+        "ev-4cfdf43d41fc-0001-0010",
+        "ev-4cfdf43d41fc-0001-0011",
+        "ev-4cfdf43d41fc-0001-0012",
+        "ev-4cfdf43d41fc-0002-0000",
+        "ev-4cfdf43d41fc-0002-0001",
+        "ev-4cfdf43d41fc-0002-0002",
+        "ev-4cfdf43d41fc-0002-0003",
+        "ev-4cfdf43d41fc-0002-0004",
+        "ev-4cfdf43d41fc-0002-0006",
+        "ev-4cfdf43d41fc-0002-0007"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T15:38:31.506246Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: several claims (e.g., overview of Mclane's appeal, background issue framing, Justice Breyer relevance/burden question, Chief Justice Roberts burden/scope question) lack appropriate evidence or are not substantiated by the cited pages.",
+      "Attribution check failed: claims attribute statements to the wrong speaker (e.g., overview cites pages 16 and 38 to Allyson N. Ho, Justice Breyer question cites a Roberts question, etc.).",
+      "Overstatement check failed: the candidate overstates the content of Justice Breyer's and Chief Justice Roberts's questions, presenting them as addressing relevance and burden when the transcript shows otherwise.",
+      "Traceability is low because multiple material claims either have mismatched citations or no supporting evidence, reducing confidence in the link between claim and source."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Allyson N. Ho",
+        "citations": [
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0000-0004"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          },
+          {
+            "document_hash": "4cfdf43d41fc84792a7e7ef67dd4a11d2382b831ff5490605ee5faf7e559f31f",
+            "evidence_ids": [
+              "ev-4cfdf43d41fc-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The case could determine whether appellate courts may scrutinize EEOC subpoena\u2011enforcement decisions under an abuse\u2011of\u2011discretion standard, affecting the enforcement of anti\u2011discrimination laws."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

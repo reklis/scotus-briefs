@@ -1,0 +1,303 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether \u201csubstantial portion\u201d means a majority."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-14-1538",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T14:51:12.442193Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked a question (text not fully captured)."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether \u201csubstantial portion\u201d means a majority."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "Justice Alito followed up asking if four would be enough."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0000-0006"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg questioned the ambiguity of \u201csubstantial portion.\u201d"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor inquired about percentages (20\u202f%, 30\u202f%, 40\u202f%)."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0001-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan wondered if \u201csubstantial portion\u201d means almost all."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0001-0003"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito noted the statutory language refers to \u201ccomponents\u201d rather than the invention itself."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Breyer asked what limits Congress intended to impose."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0002-0001"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked how to decide if one component out of five is substantial."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          },
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0001-0005"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The case concerns the interpretation of Section\u202f271(f) of the patent statute, an anti\u2011circumvention provision aimed at preventing the making of a patented invention in the United States and its export."
+      },
+      {
+        "attribution": "Carter G. Phillips",
+        "citations": [
+          {
+            "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+            "evidence_ids": [
+              "ev-a7e85f7130c8-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Carter G. Phillips, petitioner Carter\u202fG.\u202fPhillips referenced the Deepsouth case, noting that Congress acted to close a loophole after the Court held that minimal foreign assembly did not fall within the patent statute."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a7e85f7130c8707a93ecd54a0441dc874d7c13c07a7234c7825cfe81157c6857",
+      "evidence_ids": [
+        "ev-a7e85f7130c8-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T15:00:14.524424Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,395 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Impression Products, Inc.",
+        "citations": [
+          {
+            "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+            "evidence_ids": [
+              "ev-212e19cd5c83-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Impression Products, Inc., according to Impression Products, Inc., the case presents two questions about the patent exhaustion doctrine."
+      },
+      {
+        "attribution": "Impression Products, Inc.",
+        "citations": [
+          {
+            "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+            "evidence_ids": [
+              "ev-212e19cd5c83-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Impression Products, Inc., according to Impression Products, Inc., the first question asks whether an authorized sale exhausts patent rights or whether the patentee may impose post\u2011sale restrictions through the sales agreement."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-1189",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T15:22:09.733961Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+          "evidence_ids": [
+            "ev-212e19cd5c83-0000-0000"
+          ],
+          "pages": {
+            "end": 3,
+            "start": 3
+          }
+        }
+      ],
+      "definition": "A legal principle, also known as the first sale doctrine, that holds the initial authorized sale of a patented item terminates all patent rights to that item.",
+      "term": "patent exhaustion doctrine"
+    },
+    {
+      "citations": [
+        {
+          "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+          "evidence_ids": [
+            "ev-212e19cd5c83-0000-0000"
+          ],
+          "pages": {
+            "end": 3,
+            "start": 3
+          }
+        }
+      ],
+      "definition": "A legal principle that the authorized sale of a patented article ends the patentee\u2019s monopoly over that article, allowing the purchaser to use or sell it freely.",
+      "term": "first sale doctrine"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+            "evidence_ids": [
+              "ev-212e19cd5c83-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked why the exhaustion doctrine has not been codified."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+            "evidence_ids": [
+              "ev-212e19cd5c83-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the Federal Circuit\u2019s 25\u2011year\u2011old rule on exhaustion has caused many problems."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+            "evidence_ids": [
+              "ev-212e19cd5c83-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer expressed concern about unwitting consumers who may purchase products without knowing about post\u2011sale restrictions."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Impression Products, Inc.",
+        "citations": [
+          {
+            "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+            "evidence_ids": [
+              "ev-212e19cd5c83-0000-0000"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Impression Products, Inc., according to Impression Products, Inc., the case concerns the patent exhaustion (first sale) doctrine, which holds that an authorized sale of a patented item ends the patentee\u2019s rights to control that item."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Impression Products, Inc.",
+          "citations": [
+            {
+              "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+              "evidence_ids": [
+                "ev-212e19cd5c83-0000-0005"
+              ],
+              "pages": {
+                "end": 9,
+                "start": 9
+              }
+            }
+          ],
+          "text": "According to Impression Products, Inc., according to Impression Products, Inc., impression Products argues that the exhaustion rule is a flat rule, not a question of the patentee\u2019s authority, and that prior cases before 1952 did not treat exhaustion as an authority issue."
+        }
+      ],
+      "heading": "Impression Products, Inc.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+      "evidence_ids": [
+        "ev-212e19cd5c83-0000-0000"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+      "evidence_ids": [
+        "ev-212e19cd5c83-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+      "evidence_ids": [
+        "ev-212e19cd5c83-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+      "evidence_ids": [
+        "ev-212e19cd5c83-0000-0003"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+      "evidence_ids": [
+        "ev-212e19cd5c83-0000-0005"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+      "evidence_ids": [
+        "ev-212e19cd5c83-0000-0004"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 10
+      }
+    },
+    {
+      "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+      "evidence_ids": [
+        "ev-212e19cd5c83-0001-0000"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+      "evidence_ids": [
+        "ev-212e19cd5c83-0002-0000",
+        "ev-212e19cd5c83-0002-0004"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+      "evidence_ids": [
+        "ev-212e19cd5c83-0002-0001"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+      "evidence_ids": [
+        "ev-212e19cd5c83-0002-0002"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T15:26:45.762184Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+            "evidence_ids": [
+              "ev-212e19cd5c83-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The government argues that an authorized sale lifts legal restraints, removing the patented article from the patent monopoly."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+            "evidence_ids": [
+              "ev-212e19cd5c83-0002-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer\u2019s concern highlights the risk to consumers who may be unaware of post\u2011sale restrictions imposed by patent owners."
+      },
+      {
+        "attribution": "Mr. Stewart",
+        "citations": [
+          {
+            "document_hash": "212e19cd5c8369bb18a79f8121c11b00968154ea067472fb12d99d0285fb0967",
+            "evidence_ids": [
+              "ev-212e19cd5c83-0002-0004"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Mr. Stewart noted that strict liability for patent infringement is a consequence of the exhaustion issue."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

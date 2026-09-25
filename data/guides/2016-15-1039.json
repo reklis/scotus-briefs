@@ -1,0 +1,374 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Sandoz, Inc.",
+        "citations": [
+          {
+            "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+            "evidence_ids": [
+              "ev-5da794bcd5ea-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Sandoz, Inc., according to Sandoz, Inc., the Biosimilars Act created a comprehensive, self\u2011contained scheme for the early resolution of patent disputes, and courts are urged to apply it as written."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+            "evidence_ids": [
+              "ev-5da794bcd5ea-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether a biosimilar that receives FDA approval in the fourth year of a twelve\u2011year exclusivity period would be considered \u201clicensed\u201d at that time."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-1039",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T15:03:53.867007Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+            "evidence_ids": [
+              "ev-5da794bcd5ea-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether a biosimilar approved in the fourth year of a twelve\u2011year exclusivity period would be considered licensed at that time."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+            "evidence_ids": [
+              "ev-5da794bcd5ea-0001-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked for an explanation of the two rounds of patent infringement referenced in the case."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+            "evidence_ids": [
+              "ev-5da794bcd5ea-0002-0001"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer referenced the 180\u2011day notice provision (section\u202f262(l)(8)(a)) during his questioning."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+            "evidence_ids": [
+              "ev-5da794bcd5ea-0002-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether notice under (8)(a) permits a sponsor to seek a preliminary injunction against commercial marketing."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+            "evidence_ids": [
+              "ev-5da794bcd5ea-0002-0004"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked for clarification that \u201cshall\u201d in the statute is mandatory."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+            "evidence_ids": [
+              "ev-5da794bcd5ea-0002-0007"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts cautioned against prejudging the issues before hearing arguments."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Sandoz, Inc.",
+        "citations": [
+          {
+            "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+            "evidence_ids": [
+              "ev-5da794bcd5ea-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Sandoz, Inc., according to Sandoz, Inc., the case concerns how the Biosimilars Act\u2019s comprehensive scheme for early resolution of patent disputes should be applied to biosimilar applicants and reference\u2011product sponsors."
+      },
+      {
+        "attribution": "Amgen",
+        "citations": [
+          {
+            "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+            "evidence_ids": [
+              "ev-5da794bcd5ea-0003-0001"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 61
+            }
+          }
+        ],
+        "text": "According to Amgen, the party argues that the Biosimilars Act implicitly entitles them to an injunction, contrary to Congress\u2019s provision of only a reasonable\u2011royalty remedy if they choose not to sue."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Sandoz, Inc.",
+          "citations": [
+            {
+              "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+              "evidence_ids": [
+                "ev-5da794bcd5ea-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Sandoz, Inc., sandoz argues that the Biosimilars Act provides a comprehensive, self\u2011contained scheme for early patent\u2011dispute resolution and that courts should apply the scheme exactly as written."
+        }
+      ],
+      "heading": "Sandoz, Inc.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Amgen",
+          "citations": [
+            {
+              "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+              "evidence_ids": [
+                "ev-5da794bcd5ea-0003-0001"
+              ],
+              "pages": {
+                "end": 61,
+                "start": 61
+              }
+            }
+          ],
+          "text": "Amgen contends that the statute implicitly grants them an injunction, and that the remedies Congress provided are merely a backup."
+        }
+      ],
+      "heading": "Amgen, Inc.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Waxman",
+          "citations": [
+            {
+              "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+              "evidence_ids": [
+                "ev-5da794bcd5ea-0002-0000"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Mr. Waxman, the Biosimilars Act requires FDA approval to determine whether a biosimilar is licensed, unlike Hatch\u2011Waxman for small\u2011molecule drugs."
+        },
+        {
+          "attribution": "Mr. Waxman",
+          "citations": [
+            {
+              "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+              "evidence_ids": [
+                "ev-5da794bcd5ea-0002-0008"
+              ],
+              "pages": {
+                "end": 54,
+                "start": 54
+              }
+            }
+          ],
+          "text": "According to Mr. Waxman, mr. Waxman further states that a declaratory\u2011judgment action cannot be filed until the notice under (8)(A) is received."
+        }
+      ],
+      "heading": "Mr. Waxman (representing petitioners)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+              "evidence_ids": [
+                "ev-5da794bcd5ea-0003-0000"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 60
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petitioner emphasizes that the judgment sought is a federal judgment, noting that the Federal Circuit issued a federal injunction and dismissed state\u2011law claims."
+        }
+      ],
+      "heading": "Petitioner (general)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5da794bcd5ea2f5347218c7ef1150a1c0eaab8e7739eacfc9d060c2dd18d1e2e",
+      "evidence_ids": [
+        "ev-5da794bcd5ea-0000-0000"
+      ],
+      "pages": {
+        "end": 63,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T15:11:37.503691Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

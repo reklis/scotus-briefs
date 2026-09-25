@@ -1,0 +1,41 @@
+{
+  "accepted": false,
+  "case_id": "2016-15-1248",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": false,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: several claims (e.g., overview of Mclane's appeal, background issue framing, Justice Breyer relevance/burden question, Chief Justice Roberts burden/scope question) lack appropriate evidence or are not substantiated by the cited pages.",
+    "Attribution check failed: claims attribute statements to the wrong speaker (e.g., overview cites pages 16 and 38 to Allyson N. Ho, Justice Breyer question cites a Roberts question, etc.).",
+    "Overstatement check failed: the candidate overstates the content of Justice Breyer's and Chief Justice Roberts's questions, presenting them as addressing relevance and burden when the transcript shows otherwise.",
+    "Traceability is low because multiple material claims either have mismatched citations or no supporting evidence, reducing confidence in the link between claim and source."
+  ],
+  "quality_scores": {
+    "completeness": 0.71,
+    "factual_accuracy": 0.32,
+    "neutrality": 0.78,
+    "readability": 0.86,
+    "restraint": 0.62,
+    "traceability": 0.79
+  }
+}

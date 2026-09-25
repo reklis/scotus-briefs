@@ -1,0 +1,42 @@
+{
+  "accepted": true,
+  "case_id": "2016-15-118",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": true,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "All claims are supported by the supplied evidence.",
+    "Attributions match the cited sources for each claim.",
+    "No statements present the Court's holding as fact; the decision is correctly marked pending.",
+    "Oral\u2011argument material is correctly characterized as questions or inquiries, not as votes or rulings.",
+    "No material overstatement is present; the summary reflects only what the evidence shows."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.98,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.96,
+    "traceability": 1.0
+  }
+}

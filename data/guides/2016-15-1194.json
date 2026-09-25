@@ -1,0 +1,436 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+            "evidence_ids": [
+              "ev-4f8df18b7f97-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioner contends that Section\u202f202.5 reaches speech unrelated to the government\u2019s preventative purpose, such as speaking to friends and family about a traffic\u2011court case."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+            "evidence_ids": [
+              "ev-4f8df18b7f97-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, the Court asked whether a state can impose such a restriction as a condition of parole."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+            "evidence_ids": [
+              "ev-4f8df18b7f97-0000-0004"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justices also questioned whether the statute is overbroad and fails constitutional scrutiny."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-1194",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T15:26:45.782266Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+            "evidence_ids": [
+              "ev-4f8df18b7f97-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether a state could impose the restriction as a condition of parole."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+            "evidence_ids": [
+              "ev-4f8df18b7f97-0000-0004"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the statute is overbroad and fails the level of scrutiny the Court would apply."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+            "evidence_ids": [
+              "ev-4f8df18b7f97-0001-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts inquired about the possibility of a more narrowly tailored alternative."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+            "evidence_ids": [
+              "ev-4f8df18b7f97-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the state can determine a user\u2019s age to enforce the restriction."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+            "evidence_ids": [
+              "ev-4f8df18b7f97-0001-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          },
+          {
+            "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+            "evidence_ids": [
+              "ev-4f8df18b7f97-0001-0004"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Kagan asked which social networking sites are covered by the statute, mentioning Facebook, LinkedIn, Twitter, and Snapchat."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+            "evidence_ids": [
+              "ev-4f8df18b7f97-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner, lester Gerard Packingham is challenging North Carolina\u2019s Section\u202f202.5, which criminalizes social media use by registered sex offenders."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+            "evidence_ids": [
+              "ev-4f8df18b7f97-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioner argues the law is an overbroad restriction on First Amendment activity."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+              "evidence_ids": [
+                "ev-4f8df18b7f97-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner, the law is a stark abridgement of the Freedom of Speech because it reaches vast swaths of core First Amendment activity unrelated to the government\u2019s preventative purpose."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Montgomery",
+          "citations": [
+            {
+              "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+              "evidence_ids": [
+                "ev-4f8df18b7f97-0001-0006"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            },
+            {
+              "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+              "evidence_ids": [
+                "ev-4f8df18b7f97-0001-0007"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Mr. Montgomery, the statute is narrowly tailored; it excludes some major commercial sites, which the respondent argues is a virtue rather than a vice."
+        },
+        {
+          "attribution": "Mr. Montgomery",
+          "citations": [
+            {
+              "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+              "evidence_ids": [
+                "ev-4f8df18b7f97-0002-0000"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. Montgomery, the respondent likens the case to Burson v. Freeman, suggesting that a 100\u2011foot buffer zone limiting political speech was permissible, and argues the same principle applies here."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+      "evidence_ids": [
+        "ev-4f8df18b7f97-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+      "evidence_ids": [
+        "ev-4f8df18b7f97-0000-0003"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+      "evidence_ids": [
+        "ev-4f8df18b7f97-0000-0004"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 10
+      }
+    },
+    {
+      "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+      "evidence_ids": [
+        "ev-4f8df18b7f97-0001-0001"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+      "evidence_ids": [
+        "ev-4f8df18b7f97-0001-0002"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+      "evidence_ids": [
+        "ev-4f8df18b7f97-0001-0003"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+      "evidence_ids": [
+        "ev-4f8df18b7f97-0001-0006"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 31
+      }
+    },
+    {
+      "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+      "evidence_ids": [
+        "ev-4f8df18b7f97-0001-0007"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+      "evidence_ids": [
+        "ev-4f8df18b7f97-0001-0004"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "4f8df18b7f97683a71a4a37b1a93545e58eb5ab57ced2c6b4b28d2917a2fa083",
+      "evidence_ids": [
+        "ev-4f8df18b7f97-0002-0000"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T15:29:42.424838Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

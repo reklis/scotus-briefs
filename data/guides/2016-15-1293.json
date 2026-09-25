@@ -1,0 +1,494 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2016-15-1293",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-25T15:46:20.915718Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+            "evidence_ids": [
+              "ev-ce7908ff3073-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether copyright is a government program."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+            "evidence_ids": [
+              "ev-ce7908ff3073-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg inquired whether a complimentary term like \u201cSlants Are Superior\u201d would fall outside the disparagement bar."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+            "evidence_ids": [
+              "ev-ce7908ff3073-0001-0000"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about the term \u201cscandalous.\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+            "evidence_ids": [
+              "ev-ce7908ff3073-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the federal courts, as a government program, are open for actions to enforce infringement of a disparaging trademark."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+            "evidence_ids": [
+              "ev-ce7908ff3073-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether the statute meets strict scrutiny or an intermediate level of review."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+            "evidence_ids": [
+              "ev-ce7908ff3073-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the statute is not clear enough for them to get it right."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+            "evidence_ids": [
+              "ev-ce7908ff3073-0001-0007"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Sotomayor raised a hypothetical about a trademark that is also libelous and asked whether canceling it would abridge the First Amendment."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+            "evidence_ids": [
+              "ev-ce7908ff3073-0002-0000"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Kennedy likened trademark law to a public park, asking whether it is a public forum where any speech is allowed."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Malcolm L. Stewart)",
+        "citations": [
+          {
+            "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+            "evidence_ids": [
+              "ev-ce7908ff3073-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner (Malcolm L. Stewart), according to Petitioner (Malcolm L. Stewart), the petitioner argues that Section\u202f52(a)\u2019s disparagement provision merely places a reasonable limit on access to a government program and does not restrict speech, so it does not violate the First Amendment."
+      },
+      {
+        "attribution": "John C. Connell",
+        "citations": [
+          {
+            "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+            "evidence_ids": [
+              "ev-ce7908ff3073-0001-0013"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "According to John C. Connell, the registration denial blocks the applicant from obtaining trademark protection, creating a burden that harms the ability to compete in the marketplace."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Malcolm L. Stewart)",
+          "citations": [
+            {
+              "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+              "evidence_ids": [
+                "ev-ce7908ff3073-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner (Malcolm L. Stewart), according to Petitioner (Malcolm L. Stewart), section\u202f52(a)\u2019s disparagement provision is a reasonable limit on a government program, not a speech restriction, and therefore does not violate the First Amendment."
+        }
+      ],
+      "heading": "Petitioner (Director, USPTO) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "John C. Connell",
+          "citations": [
+            {
+              "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+              "evidence_ids": [
+                "ev-ce7908ff3073-0001-0013"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            }
+          ],
+          "text": "According to John C. Connell, the registration denial blocks the applicant from obtaining trademark protection, creating a burden that harms the ability to compete in the marketplace."
+        },
+        {
+          "attribution": "Mr. Connell",
+          "citations": [
+            {
+              "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+              "evidence_ids": [
+                "ev-ce7908ff3073-0002-0003"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. Connell, the register simply records marks that the government has approved, similar to other ministerial registrations such as patents or vehicle titles."
+        },
+        {
+          "attribution": "Mr. Connell",
+          "citations": [
+            {
+              "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+              "evidence_ids": [
+                "ev-ce7908ff3073-0002-0004"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Mr. Connell, viewpoint discrimination is prohibited in commercial speech under the Sorrell case."
+        },
+        {
+          "attribution": "Mr. Connell",
+          "citations": [
+            {
+              "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+              "evidence_ids": [
+                "ev-ce7908ff3073-0002-0006"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Mr. Connell, disparaging messages in trademarks control a component of the overall message but do not interfere with source identification."
+        },
+        {
+          "attribution": "Mr. Connell",
+          "citations": [
+            {
+              "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+              "evidence_ids": [
+                "ev-ce7908ff3073-0002-0007"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Mr. Connell, all distinctions made by the Lanham Act are viewpoint\u2011neutral and further its commercial objectives of reducing consumer confusion."
+        }
+      ],
+      "heading": "Respondent (Simon Shiao Tam) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0000-0001",
+        "ev-ce7908ff3073-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0000-0004"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0001-0000"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0001-0001"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0001-0002"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0001-0003"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0001-0013"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0001-0007"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0002-0003"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0002-0000"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0002-0007"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0002-0004"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "ce7908ff3073fe9be72d42d42f015739b01abb257c801b122bade49fca10ede5",
+      "evidence_ids": [
+        "ev-ce7908ff3073-0002-0006"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-25T15:57:28.088920Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
