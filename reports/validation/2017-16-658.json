@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2017-16-658",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "support check failed: the overview claim that \"the parties dispute whether the deadline rule is jurisdictional, which would affect the appellate court\u2019s power to hear the case\" is not directly supported by any supplied evidence.",
+    "overstatement check failed: the same overview claim overstates the evidence by asserting a party dispute that is not evidenced; the record only shows Justice Ginsburg questioning the jurisdictional issue, not a documented dispute between the parties."
+  ],
+  "quality_scores": {
+    "completeness": 0.95,
+    "factual_accuracy": 0.9,
+    "neutrality": 1.0,
+    "readability": 0.9,
+    "restraint": 0.9,
+    "traceability": 0.85
+  }
+}

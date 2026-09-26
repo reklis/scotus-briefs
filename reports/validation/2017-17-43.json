@@ -1,0 +1,43 @@
+{
+  "accepted": false,
+  "case_id": "2017-17-43",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": false,
+    "model_oral_argument_characterization": false,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": false,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that Justice Ginsburg \"asked whether there was an invalid application\" misrepresents her statement, which was not a question, and the wording is not fully supported by the evidence.",
+    "Support check failed: the \"Why it matters\" claim adds an unsupported assertion about privacy\u2011rights and law\u2011enforcement implications that is not present in the cited evidence.",
+    "Attribution check failed: the \"Why it matters\" paragraph attributes the implication statement to the petitioner, but the evidence does not contain that language.",
+    "Opinion_distinction check failed: the candidate presents the privacy\u2011rights implication as a factual claim attributed to the petitioner without proper attribution or supporting evidence, conflating opinion with fact.",
+    "Oral_argument_characterization check failed: the Justice Ginsburg claim treats her remark as a question, whereas the evidence shows it was a declarative statement.",
+    "Overstatement check failed: the \"Why it matters\" section overstates the case's significance beyond what is supported by the transcript evidence."
+  ],
+  "quality_scores": {
+    "completeness": 0.78,
+    "factual_accuracy": 0.62,
+    "neutrality": 0.71,
+    "readability": 0.92,
+    "restraint": 0.69,
+    "traceability": 0.85
+  }
+}

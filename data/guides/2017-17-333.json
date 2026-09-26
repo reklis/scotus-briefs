@@ -1,0 +1,320 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question Presented",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-17-333",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T07:32:38.967690Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+            "evidence_ids": [
+              "ev-d0dc013999b7-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether any other test applied, referencing the ACLU."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+            "evidence_ids": [
+              "ev-d0dc013999b7-0001-0003"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg inquired about permissible de\u202fminimis exceptions."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+            "evidence_ids": [
+              "ev-d0dc013999b7-0001-0005"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          },
+          {
+            "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+            "evidence_ids": [
+              "ev-d0dc013999b7-0002-0002",
+              "ev-d0dc013999b7-0002-0003"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch questioned causation and the effect of voter approval on intent."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+            "evidence_ids": [
+              "ev-d0dc013999b7-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether a Maryland constitutional provision requiring partisan advantage would be lawful."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+            "evidence_ids": [
+              "ev-d0dc013999b7-0003-0004"
+            ],
+            "pages": {
+              "end": 73,
+              "start": 73
+            }
+          }
+        ],
+        "text": "The hearing adjourned at 11:06\u202fa.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Kimberly",
+          "citations": [
+            {
+              "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+              "evidence_ids": [
+                "ev-d0dc013999b7-0001-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Mr. Kimberly, the appellants argue that other tests proposed by amici are not appropriate for the Sixth District focus of the case."
+        },
+        {
+          "attribution": "Mr. Kimberly",
+          "citations": [
+            {
+              "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+              "evidence_ids": [
+                "ev-d0dc013999b7-0001-0004"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            }
+          ],
+          "text": "According to Mr. Kimberly, an example of the alleged gerrymandering effect is the change in the Eighth Congressional District."
+        },
+        {
+          "attribution": "Mr. Kimberly",
+          "citations": [
+            {
+              "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+              "evidence_ids": [
+                "ev-d0dc013999b7-0001-0007"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Mr. Kimberly, metrics used to predict electoral outcomes are reliable and uncontested."
+        },
+        {
+          "attribution": "Michael B. Kimberly",
+          "citations": [
+            {
+              "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+              "evidence_ids": [
+                "ev-d0dc013999b7-0003-0002"
+              ],
+              "pages": {
+                "end": 71,
+                "start": 71
+              }
+            }
+          ],
+          "text": "According to Michael B. Kimberly, the burden under the First Amendment makes it more difficult for particular citizens to achieve electoral success because their views are disapproved by those in power."
+        }
+      ],
+      "heading": "Appellants\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Sullivan",
+          "citations": [
+            {
+              "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+              "evidence_ids": [
+                "ev-d0dc013999b7-0003-0000"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Mr. Sullivan, there is no showing of a totality of circumstances indicating historical or sociological exclusion of a minority group."
+        },
+        {
+          "attribution": "Mr. Sullivan",
+          "citations": [
+            {
+              "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+              "evidence_ids": [
+                "ev-d0dc013999b7-0003-0000"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Mr. Sullivan, republicans are a major party that has frequently controlled government, not a protected minority."
+        }
+      ],
+      "heading": "Appellee\u2019s Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+      "evidence_ids": [
+        "ev-d0dc013999b7-0000-0000"
+      ],
+      "pages": {
+        "end": 73,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T07:39:23.521892Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Michael B. Kimberly",
+        "citations": [
+          {
+            "document_hash": "d0dc013999b70159252824ed3dab9324a50dcd9d96ce76d6ec724cb3759c2288",
+            "evidence_ids": [
+              "ev-d0dc013999b7-0003-0002"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "According to Michael B. Kimberly, the burden under the First Amendment makes it more difficult for particular citizens to achieve electoral success because their views are disapproved by those in power."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

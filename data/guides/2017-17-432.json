@@ -1,0 +1,383 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, the central issue is whether, after class certification is denied, former class members may file individual lawsuits."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, the Court could treat many individual suits as a class despite statutes of limitations."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0001-0006"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, the Court considered whether equitable tolling applies."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-17-432",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T07:58:17.342803Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:09\u202fa.m."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          },
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0001-0006"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          },
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0001-0007"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justices asked multiple questions concerning class certification, representative selection, tolling, and equitable doctrines."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, the Justices questioned whether, after a denial of class certification, members of the dissolved class could pursue individual lawsuits."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, the Justices also asked about the appropriate representative under the statute, noting it should be the party with the greatest financial interest."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, further questions addressed whether the Court could treat numerous individual suits as a class despite statutes of limitations."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0001-0006"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, the Justices raised concerns about the applicability of equitable tolling and its consistency with the American Pipe precedent."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0001-0007"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg highlighted that Rule\u202f23 does not discuss tolling, referencing the Shady Grove case."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+            "evidence_ids": [
+              "ev-20bb41799be7-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Breyer asked a clarifying question during the argument."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Aronson",
+          "citations": [
+            {
+              "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+              "evidence_ids": [
+                "ev-20bb41799be7-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Aronson, the petitioner suggested that the Court could handle the thousand individual suits as a class, but it is not required to do so."
+        },
+        {
+          "attribution": "Mr. Aronson",
+          "citations": [
+            {
+              "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+              "evidence_ids": [
+                "ev-20bb41799be7-0001-0002"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Mr. Aronson, the petitioner argued that certifying a class of absent members who have delayed asserting rights should not entitle them to tolling."
+        }
+      ],
+      "heading": "Petitioner (China Agritech, Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Michael H. Resh)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "20bb41799be72e142719dd0b36bf2f59ebbdea9e08c217c8ee74d6c0c0c039ff",
+      "evidence_ids": [
+        "ev-20bb41799be7-0000-0003",
+        "ev-20bb41799be7-0000-0002",
+        "ev-20bb41799be7-0000-0004",
+        "ev-20bb41799be7-0001-0000",
+        "ev-20bb41799be7-0001-0001",
+        "ev-20bb41799be7-0001-0002",
+        "ev-20bb41799be7-0001-0006",
+        "ev-20bb41799be7-0001-0007",
+        "ev-20bb41799be7-0002-0001"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T08:05:41.797834Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

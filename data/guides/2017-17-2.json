@@ -1,0 +1,294 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2",
+            "evidence_ids": [
+              "ev-85e8c0d9c13f-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, the Court is asked whether the Stored Communications Act applies extraterritorially."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-17-2",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T07:11:21.450208Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2",
+            "evidence_ids": [
+              "ev-85e8c0d9c13f-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether other circuits will follow the Second Circuit\u2019s approach to these orders."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2",
+            "evidence_ids": [
+              "ev-85e8c0d9c13f-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether the statute\u2019s warrant language limits the government to a warrant issued under the Federal Rules of Criminal Procedure."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2",
+            "evidence_ids": [
+              "ev-85e8c0d9c13f-0001-0002"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether a court should conduct a comity analysis in these circumstances."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2",
+            "evidence_ids": [
+              "ev-85e8c0d9c13f-0002-0006"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito later questioned the relevance of Ireland\u2019s interest when the data is stored abroad."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2",
+            "evidence_ids": [
+              "ev-85e8c0d9c13f-0002-0008"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 61
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer noted that warrants are not extraterritorial, even though they have nationwide reach within the United States."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "U.S. Department of Justice",
+        "citations": [
+          {
+            "document_hash": "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2",
+            "evidence_ids": [
+              "ev-85e8c0d9c13f-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to U.S. Department of Justice, the Department of Justice describes the Stored Communications Act as a hybrid instrument that requires a provider to disclose information, similar to a subpoena or discovery order."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "U.S. Department of Justice",
+          "citations": [
+            {
+              "document_hash": "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2",
+              "evidence_ids": [
+                "ev-85e8c0d9c13f-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to U.S. Department of Justice, the government says the Act functions like a subpoena, requiring a provider to disclose information."
+        },
+        {
+          "attribution": "U.S. Department of Justice",
+          "citations": [
+            {
+              "document_hash": "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2",
+              "evidence_ids": [
+                "ev-85e8c0d9c13f-0000-0003"
+              ],
+              "pages": {
+                "end": 9,
+                "start": 9
+              }
+            }
+          ],
+          "text": "According to U.S. Department of Justice, the government reads the statute against precedent that extraterritorial application requires clear text, structure, or operation."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Microsoft",
+          "citations": [
+            {
+              "document_hash": "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2",
+              "evidence_ids": [
+                "ev-85e8c0d9c13f-0001-0004"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "Microsoft contends that the Stored Communications Act is limited to the United States and cannot be used to reach data stored abroad."
+        },
+        {
+          "attribution": "Microsoft",
+          "citations": [
+            {
+              "document_hash": "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2",
+              "evidence_ids": [
+                "ev-85e8c0d9c13f-0002-0004"
+              ],
+              "pages": {
+                "end": 48,
+                "start": 48
+              }
+            }
+          ],
+          "text": "According to Microsoft, an extraterritorial search of data stored in a foreign computer would be illegal."
+        }
+      ],
+      "heading": "Microsoft Corporation (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "85e8c0d9c13f4253b5926203aeae80277a3899c451e8600da80cac1a73d3b1d2",
+      "evidence_ids": [
+        "ev-85e8c0d9c13f-0000-0000"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T07:20:15.884389Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,447 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Wisconsin Central (Petitioners)",
+        "citations": [
+          {
+            "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+            "evidence_ids": [
+              "ev-5bc751829d16-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+            "evidence_ids": [
+              "ev-5bc751829d16-0002-0002"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "The case concerns whether stock should be treated as \u201cmoney\u201d for tax purposes under the railroad tax system."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-17-530",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T08:18:46.416750Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+          "evidence_ids": [
+            "ev-5bc751829d16-0000-0001"
+          ],
+          "pages": {
+            "end": 4,
+            "start": 4
+          }
+        }
+      ],
+      "definition": "a generally accepted medium of exchange",
+      "term": "money"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+            "evidence_ids": [
+              "ev-5bc751829d16-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:05\u202fa.m."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+            "evidence_ids": [
+              "ev-5bc751829d16-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Kagan asked about the difference that would justify Congress\u2019s different treatment of stock options."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+            "evidence_ids": [
+              "ev-5bc751829d16-0001-0003"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor stated that the railroad pension system in the 1930s was at risk and that was one of the reasons the scheme was developed."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+            "evidence_ids": [
+              "ev-5bc751829d16-0002-0000"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy inquired whether an employee might wait until retirement before exercising the option."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+            "evidence_ids": [
+              "ev-5bc751829d16-0002-0001"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how many other code provisions use the phrase \u201cmoney remuneration\u201d versus just \u201cmoney.\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Wisconsin Central (Petitioners)",
+        "citations": [
+          {
+            "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+            "evidence_ids": [
+              "ev-5bc751829d16-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Wisconsin Central (Petitioners), according to Wisconsin Central (Petitioners), the petitioners argue that stock is not \u201cmoney\u201d because money means a generally accepted medium of exchange."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+            "evidence_ids": [
+              "ev-5bc751829d16-0001-0004"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The Court notes that the combined railroad tax rate exceeds 30\u202f% while the FICA rate is about 14\u202f%."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Wisconsin Central (Petitioners)",
+          "citations": [
+            {
+              "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+              "evidence_ids": [
+                "ev-5bc751829d16-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Wisconsin Central (Petitioners), according to Wisconsin Central (Petitioners), stock is not money because money is a generally accepted medium of exchange."
+        },
+        {
+          "attribution": "Mr. Dupree",
+          "citations": [
+            {
+              "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+              "evidence_ids": [
+                "ev-5bc751829d16-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Dupree, congress has historically distinguished between wage\u2011based compensation covered by FICA and the narrower tax base for railroads, leading to different treatment of stock options."
+        },
+        {
+          "attribution": "Mr. Dupree",
+          "citations": [
+            {
+              "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+              "evidence_ids": [
+                "ev-5bc751829d16-0002-0002"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Mr. Dupree, when Congress uses the word \u201cmoney\u201d in tax statutes, it does not include stock."
+        }
+      ],
+      "heading": "Petitioner (Wisconsin Central Ltd.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (United States)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+      "evidence_ids": [
+        "ev-5bc751829d16-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+      "evidence_ids": [
+        "ev-5bc751829d16-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+      "evidence_ids": [
+        "ev-5bc751829d16-0000-0003"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+      "evidence_ids": [
+        "ev-5bc751829d16-0001-0004"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+      "evidence_ids": [
+        "ev-5bc751829d16-0001-0001"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+      "evidence_ids": [
+        "ev-5bc751829d16-0001-0003"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+      "evidence_ids": [
+        "ev-5bc751829d16-0002-0000"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+      "evidence_ids": [
+        "ev-5bc751829d16-0002-0002"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    },
+    {
+      "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+      "evidence_ids": [
+        "ev-5bc751829d16-0002-0001"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    },
+    {
+      "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+      "evidence_ids": [
+        "ev-5bc751829d16-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+      "evidence_ids": [
+        "ev-5bc751829d16-0001-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T08:27:40.445974Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+            "evidence_ids": [
+              "ev-5bc751829d16-0001-0004"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "5bc751829d164033b2750ffaf4d70747a7e1ca1c65ab537d020e8c44313412af",
+            "evidence_ids": [
+              "ev-5bc751829d16-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "If stock is treated as money, railroad employees\u2019 compensation could be taxed at the higher railroad rate (over 30\u202f%) rather than the lower FICA rate (about 14\u202f%)."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

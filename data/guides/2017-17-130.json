@@ -1,0 +1,325 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mark Perry",
+        "citations": [
+          {
+            "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+            "evidence_ids": [
+              "ev-6c3cd057013d-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+            "evidence_ids": [
+              "ev-6c3cd057013d-0001-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The central question is whether SEC ALJs qualify as officers of the United States for purposes of the Appointments Clause."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-17-130",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T07:01:15.266393Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+          "evidence_ids": [
+            "ev-6c3cd057013d-0001-0001"
+          ],
+          "pages": {
+            "end": 36,
+            "start": 36
+          }
+        }
+      ],
+      "definition": "An officer of the United States is someone with power to bind the government or private parties in the name of his own office; someone whose acts have no binding effect without the sanction of an officer is not an officer.",
+      "term": "officer of the United States"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+            "evidence_ids": [
+              "ev-6c3cd057013d-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case was presented for oral argument before the Supreme Court at 10:03\u202fa.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mark Perry",
+        "citations": [
+          {
+            "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+            "evidence_ids": [
+              "ev-6c3cd057013d-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+            "evidence_ids": [
+              "ev-6c3cd057013d-0001-0001"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The case concerns whether Securities and Exchange Commission administrative law judges (ALJs) are officers of the United States under the Appointments Clause."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+            "evidence_ids": [
+              "ev-6c3cd057013d-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument was held before the Supreme Court on the scheduled date, beginning at 10:03\u202fa.m."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mark Perry",
+          "citations": [
+            {
+              "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+              "evidence_ids": [
+                "ev-6c3cd057013d-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Mark Perry, petitioner argues that SEC ALJs are officers of the United States, relying on precedents such as *Freytag* and *Edmond*."
+        }
+      ],
+      "heading": "Petitioner \u2013 Raymond J. Lucia",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent \u2013 Securities and Exchange Commission",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Metlitsky",
+          "citations": [
+            {
+              "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+              "evidence_ids": [
+                "ev-6c3cd057013d-0001-0001"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            },
+            {
+              "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+              "evidence_ids": [
+                "ev-6c3cd057013d-0002-0002"
+              ],
+              "pages": {
+                "end": 58,
+                "start": 58
+              }
+            }
+          ],
+          "text": "Amicus contends that an officer of the United States must have the power to bind the government, and that certain individuals lack such authority, so they are not officers."
+        }
+      ],
+      "heading": "Amicus \u2013 Metlitsky",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+      "evidence_ids": [
+        "ev-6c3cd057013d-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+      "evidence_ids": [
+        "ev-6c3cd057013d-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+      "evidence_ids": [
+        "ev-6c3cd057013d-0001-0001"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+      "evidence_ids": [
+        "ev-6c3cd057013d-0002-0002"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    },
+    {
+      "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+      "evidence_ids": [
+        "ev-6c3cd057013d-0003-0004"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T07:05:22.837541Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6c3cd057013ddccfab0e8e102d310c2c0afb6db016a0b79dd5f125f0bff68283",
+            "evidence_ids": [
+              "ev-6c3cd057013d-0003-0004"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "If the Court finds a constitutional violation, Section\u202f706 of the APA requires that the agency\u2019s actions be set aside, potentially wiping out prior agency decisions."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

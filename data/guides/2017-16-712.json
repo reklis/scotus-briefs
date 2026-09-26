@@ -1,0 +1,323 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+            "evidence_ids": [
+              "ev-f53ef8517b11-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether the case involves a private right: \u201cWhy not \u2026 just simply say the question is whether there's a private right involved?\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+            "evidence_ids": [
+              "ev-f53ef8517b11-0002-0000"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts questioned due\u2011process compliance: \u201cDoes it comport to due process to change the composition of the adjudicatory body halfway through the proceeding?\u201d"
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+            "evidence_ids": [
+              "ev-f53ef8517b11-0003-0001"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "According to Justice BREYER, justice Breyer raised a constitutional concern: \u201cI guess that would be unconstitutional, too?\u201d"
+      }
+    ],
+    "heading": "Background & Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-712",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T06:22:18.107371Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Allyson N. Ho",
+        "citations": [
+          {
+            "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+            "evidence_ids": [
+              "ev-f53ef8517b11-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Allyson N. Ho argued that the PTO is not precluded from error correction, but it cannot do so through adjudication; ex parte reexaminations are permissible."
+      },
+      {
+        "attribution": "Ms. Ho",
+        "citations": [
+          {
+            "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+            "evidence_ids": [
+              "ev-f53ef8517b11-0001-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Ms. Ho, ms. Ho asserted that the case involves a private right, citing precedent from Horne."
+      },
+      {
+        "attribution": "Ms. Ho",
+        "citations": [
+          {
+            "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+            "evidence_ids": [
+              "ev-f53ef8517b11-0001-0005"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to Ms. Ho, ms. Ho noted that the Privy Council last revoked a patent in 1779."
+      },
+      {
+        "attribution": "Mr. Kise",
+        "citations": [
+          {
+            "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+            "evidence_ids": [
+              "ev-f53ef8517b11-0001-0007"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "According to Mr. Kise, mr. Kise suggested that the \u201cpanel packing\u201d cited by the petitioner has occurred only once or twice, if at all."
+      },
+      {
+        "attribution": "Mr. Stewart",
+        "citations": [
+          {
+            "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+            "evidence_ids": [
+              "ev-f53ef8517b11-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Mr. Stewart, mr. Stewart also compared the issue to public\u2011employee tenure, noting that a guaranteed right to only be fired for cause creates a property right in the job."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+            "evidence_ids": [
+              "ev-f53ef8517b11-0002-0000"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, one of the issues raised is whether changing the composition of the adjudicatory body during the proceeding complies with due\u2011process requirements."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Party Positions",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+      "evidence_ids": [
+        "ev-f53ef8517b11-0000-0001"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+      "evidence_ids": [
+        "ev-f53ef8517b11-0001-0001"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+      "evidence_ids": [
+        "ev-f53ef8517b11-0001-0000"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+      "evidence_ids": [
+        "ev-f53ef8517b11-0001-0005"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+      "evidence_ids": [
+        "ev-f53ef8517b11-0001-0007"
+      ],
+      "pages": {
+        "end": 35,
+        "start": 35
+      }
+    },
+    {
+      "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+      "evidence_ids": [
+        "ev-f53ef8517b11-0002-0001"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+      "evidence_ids": [
+        "ev-f53ef8517b11-0002-0000"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "f53ef8517b11ce312544b4d6eaa133a457eacbd6e6973b272d08ba68b6f1cede",
+      "evidence_ids": [
+        "ev-f53ef8517b11-0003-0001"
+      ],
+      "pages": {
+        "end": 69,
+        "start": 69
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T06:26:17.433016Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
