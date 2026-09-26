@@ -1,0 +1,276 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "General Francisco",
+        "citations": [
+          {
+            "document_hash": "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c",
+            "evidence_ids": [
+              "ev-70cb9f2786ce-0002-0001"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "According to General Francisco, the case concerns whether discrimination based on sexual orientation is prohibited under Title VII\u2019s ban on discrimination because of sex."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c",
+            "evidence_ids": [
+              "ev-70cb9f2786ce-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justices asked whether historical criminalization of same\u2011sex relations and the classification of homosexuality as a mental illness affect the analysis of \u201csex\u201d discrimination."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-17-1618",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T20:12:35.484064Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c",
+          "evidence_ids": [
+            "ev-70cb9f2786ce-0002-0001"
+          ],
+          "pages": {
+            "end": 54,
+            "start": 54
+          }
+        }
+      ],
+      "definition": "According to General Francisco, sex means whether you're male or female, not whether you're gay or straight.",
+      "term": "sex"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c",
+            "evidence_ids": [
+              "ev-70cb9f2786ce-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c",
+            "evidence_ids": [
+              "ev-70cb9f2786ce-0000-0003"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          },
+          {
+            "document_hash": "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c",
+            "evidence_ids": [
+              "ev-70cb9f2786ce-0002-0000"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          },
+          {
+            "document_hash": "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c",
+            "evidence_ids": [
+              "ev-70cb9f2786ce-0003-0000"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "Justices questioned counsel about the historical context of same\u2011sex relations and the meaning of \u201csex\u201d discrimination."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "General Francisco",
+        "citations": [
+          {
+            "document_hash": "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c",
+            "evidence_ids": [
+              "ev-70cb9f2786ce-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c",
+            "evidence_ids": [
+              "ev-70cb9f2786ce-0000-0003"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          },
+          {
+            "document_hash": "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c",
+            "evidence_ids": [
+              "ev-70cb9f2786ce-0002-0000"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "The central legal question is whether Title VII\u2019s ban on discrimination \u201cbecause of sex\u201d also covers discrimination based on sexual orientation."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "MS. KARLAN",
+          "citations": [
+            {
+              "document_hash": "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c",
+              "evidence_ids": [
+                "ev-70cb9f2786ce-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to MS. KARLAN, petitioner argues that the case should be decided using the standards set in *Oncale* and *Price Waterhouse*."
+        }
+      ],
+      "heading": "Petitioner (GERALD LYNN BOSTOCK & ALTITUDE EXPRESS, INC.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (CLAYTON COUNTY, GEORGIA & MELISSA ZARDA)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "70cb9f2786ce69439dc0bb422fbbf8b8fc0e06144f0607915b0033198201607c",
+      "evidence_ids": [
+        "ev-70cb9f2786ce-0000-0000",
+        "ev-70cb9f2786ce-0000-0004",
+        "ev-70cb9f2786ce-0000-0002",
+        "ev-70cb9f2786ce-0000-0003",
+        "ev-70cb9f2786ce-0001-0000",
+        "ev-70cb9f2786ce-0001-0002",
+        "ev-70cb9f2786ce-0001-0003",
+        "ev-70cb9f2786ce-0002-0000",
+        "ev-70cb9f2786ce-0002-0001",
+        "ev-70cb9f2786ce-0003-0000",
+        "ev-70cb9f2786ce-0003-0001"
+      ],
+      "pages": {
+        "end": 69,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T20:19:27.635297Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Attribution check failed: the overview claim attributes the central legal question to General Francisco, but the cited evidence (pages 7, 9, 49) consists of justices' questions, not a statement by General Francisco."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

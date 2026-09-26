@@ -1,0 +1,355 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Tennessee Wine and Spirits Retailers Association",
+        "citations": [
+          {
+            "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+            "evidence_ids": [
+              "ev-53a7ffde21f8-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+            "evidence_ids": [
+              "ev-53a7ffde21f8-0000-0002"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Tennessee Wine and Spirits Retailers Association, Tennessee imposes a ten\u2011year residency requirement on liquor distributors, a practice that dates back to the era before prohibition and was reaffirmed after the Twenty\u2011First Amendment."
+      },
+      {
+        "attribution": "Tennessee Wine and Spirits Retailers Association",
+        "citations": [
+          {
+            "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+            "evidence_ids": [
+              "ev-53a7ffde21f8-0000-0002"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Tennessee Wine and Spirits Retailers Association, the legal question is whether Tennessee\u2019s residency requirement violates the dormant Commerce Clause."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-18-96",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T19:31:45.726281Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+            "evidence_ids": [
+              "ev-53a7ffde21f8-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked the petitioner to clarify whether the state can prohibit out\u2011of\u2011state wholesalers, distributors, or retailers."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+            "evidence_ids": [
+              "ev-53a7ffde21f8-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether long residency requirements become protectionist and should be disallowed."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+            "evidence_ids": [
+              "ev-53a7ffde21f8-0001-0007"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "The Court referenced the three\u2011tier system, noting that it involves sales to and purchases from an in\u2011state wholesaler."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Tennessee Wine and Spirits Retailers Association",
+        "citations": [
+          {
+            "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+            "evidence_ids": [
+              "ev-53a7ffde21f8-0000-0002"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Tennessee Wine and Spirits Retailers Association, the case concerns Tennessee's residency requirement for liquor distributors, which the state requires a ten\u2011year period of residency before a distributor may operate."
+      },
+      {
+        "attribution": "Tennessee Wine and Spirits Retailers Association",
+        "citations": [
+          {
+            "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+            "evidence_ids": [
+              "ev-53a7ffde21f8-0000-0002"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Tennessee Wine and Spirits Retailers Association, the petitioners argue that the residency requirement does not violate the dormant Commerce Clause because it treats in\u2011state and out\u2011of\u2011state products the same."
+      },
+      {
+        "attribution": "Carter G. Phillips",
+        "citations": [
+          {
+            "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+            "evidence_ids": [
+              "ev-53a7ffde21f8-0001-0005"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          },
+          {
+            "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+            "evidence_ids": [
+              "ev-53a7ffde21f8-0001-0008"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Carter G. Phillips, the respondents contend that the residency requirement is protectionist discrimination against out\u2011of\u2011state interests."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+            "evidence_ids": [
+              "ev-53a7ffde21f8-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The Court has recognized that the Twenty\u2011First Amendment gives states virtually complete control over their domestic liquor distribution systems."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Tennessee Wine and Spirits Retailers Association",
+          "citations": [
+            {
+              "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+              "evidence_ids": [
+                "ev-53a7ffde21f8-0000-0000"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Tennessee Wine and Spirits Retailers Association, the Twenty\u2011First Amendment restored to the states the power to regulate alcohol, including the authority to impose residency requirements."
+        },
+        {
+          "attribution": "Tennessee Wine and Spirits Retailers Association",
+          "citations": [
+            {
+              "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+              "evidence_ids": [
+                "ev-53a7ffde21f8-0000-0002"
+              ],
+              "pages": {
+                "end": 9,
+                "start": 9
+              }
+            }
+          ],
+          "text": "According to Tennessee Wine and Spirits Retailers Association, the residency requirement does not raise a dormant Commerce Clause problem because it treats in\u2011state and out\u2011of\u2011state products the same."
+        }
+      ],
+      "heading": "Tennessee Wine and Spirits Retailers Association (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Carter G. Phillips",
+          "citations": [
+            {
+              "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+              "evidence_ids": [
+                "ev-53a7ffde21f8-0001-0008"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Carter G. Phillips, adopting a durational residency requirement is, by definition, discriminating against out\u2011of\u2011state interests."
+        }
+      ],
+      "heading": "State (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+      "evidence_ids": [
+        "ev-53a7ffde21f8-0000-0000",
+        "ev-53a7ffde21f8-0000-0001",
+        "ev-53a7ffde21f8-0000-0002",
+        "ev-53a7ffde21f8-0001-0000",
+        "ev-53a7ffde21f8-0001-0001",
+        "ev-53a7ffde21f8-0001-0002",
+        "ev-53a7ffde21f8-0001-0005",
+        "ev-53a7ffde21f8-0001-0007",
+        "ev-53a7ffde21f8-0001-0008"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T19:43:25.921255Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "53a7ffde21f8b6cda29d3d557ca38b4a338cd8ad3b5e90a7e581ba8eaa181038",
+            "evidence_ids": [
+              "ev-53a7ffde21f8-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The Court notes that the Twenty\u2011First Amendment gives states virtually complete control over domestic liquor distribution, underscoring the case\u2019s significance for state regulatory authority."
+      }
+    ],
+    "heading": "Why it matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

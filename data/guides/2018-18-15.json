@@ -1,0 +1,460 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Legal Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-18-15",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T17:48:48.520532Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+            "evidence_ids": [
+              "ev-87dd4503a477-0001-0004"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh questioned whether impediments to efficient notice\u2011and\u2011comment rule\u2011making have pushed the government toward the challenged approach."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+            "evidence_ids": [
+              "ev-87dd4503a477-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh raised concern that judges might find an agency\u2019s interpretation wrong yet feel compelled to defer to it."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+            "evidence_ids": [
+              "ev-87dd4503a477-0002-0003"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether overruling Auer and Seminole\u202fRock would create uncertainty for cases that relied on those doctrines."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+            "evidence_ids": [
+              "ev-87dd4503a477-0002-0007"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether the Court is being asked to overrule Auer itself."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+            "evidence_ids": [
+              "ev-87dd4503a477-0003-0002"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch questioned whether the argument showed inter\u2011branch disrespect."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+            "evidence_ids": [
+              "ev-87dd4503a477-0003-0003"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor sought clarification on whether a Board of Immigration Appeals decision alone is sufficient."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Paul W. Hughes)",
+        "citations": [
+          {
+            "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+            "evidence_ids": [
+              "ev-87dd4503a477-0000-0001",
+              "ev-87dd4503a477-0003-0001"
+            ],
+            "pages": {
+              "end": 70,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The petitioner seeks to overturn the Supreme Court\u2019s deference doctrines known as Seminole\u202fRock and Auer."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+            "evidence_ids": [
+              "ev-87dd4503a477-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument was held before the Supreme Court at 10:09\u202fa.m. on the scheduled date."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": "This case concerns a petition to overturn the Supreme Court\u2019s deference doctrines\u2014Seminole Rock and Auer\u2014arguing that they should no longer apply to agency interpretations. The petition was argued before the Supreme Court on March\u202f27\u202f2019.",
+    "summary_citations": [
+      {
+        "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+        "evidence_ids": [
+          "ev-87dd4503a477-0000-0000"
+        ],
+        "pages": {
+          "end": 2,
+          "start": 2
+        }
+      },
+      {
+        "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+        "evidence_ids": [
+          "ev-87dd4503a477-0000-0001",
+          "ev-87dd4503a477-0003-0001"
+        ],
+        "pages": {
+          "end": 70,
+          "start": 4
+        }
+      }
+    ]
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Paul W. Hughes",
+          "citations": [
+            {
+              "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+              "evidence_ids": [
+                "ev-87dd4503a477-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Paul W. Hughes, deference does not apply in this case; the doctrines should be overturned."
+        },
+        {
+          "attribution": "Petitioner (Paul W. Hughes)",
+          "citations": [
+            {
+              "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+              "evidence_ids": [
+                "ev-87dd4503a477-0003-0001"
+              ],
+              "pages": {
+                "end": 70,
+                "start": 70
+              }
+            }
+          ],
+          "text": "According to Petitioner (Paul W. Hughes), according to Petitioner (Paul W. Hughes), overturning Seminole\u202fRock and Auer is critical to restore notice\u2011and\u2011comment rule\u2011making as a democratic check on agencies."
+        }
+      ],
+      "heading": "Petitioner (Paul W. Hughes)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "General Francisco",
+          "citations": [
+            {
+              "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+              "evidence_ids": [
+                "ev-87dd4503a477-0002-0002"
+              ],
+              "pages": {
+                "end": 47,
+                "start": 47
+              }
+            }
+          ],
+          "text": "According to General Francisco, multiple reasonable constructions of a statute are permissible, reflecting the virtue of Seminole\u202fRock."
+        },
+        {
+          "attribution": "General Francisco",
+          "citations": [
+            {
+              "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+              "evidence_ids": [
+                "ev-87dd4503a477-0002-0004"
+              ],
+              "pages": {
+                "end": 48,
+                "start": 48
+              }
+            }
+          ],
+          "text": "According to General Francisco, overturning the doctrines would require relitigation of every regulation currently decided under Seminole\u202fRock."
+        },
+        {
+          "attribution": "Agency (VA Board)",
+          "citations": [
+            {
+              "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+              "evidence_ids": [
+                "ev-87dd4503a477-0003-0000"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 65
+              }
+            }
+          ],
+          "text": "According to Agency (VA Board), according to Agency (VA Board), individual Board decisions do not reflect the considered judgment of the agency as a whole."
+        }
+      ],
+      "heading": "Respondent (Secretary of Veterans Affairs / VA Board)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+      "evidence_ids": [
+        "ev-87dd4503a477-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+      "evidence_ids": [
+        "ev-87dd4503a477-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+      "evidence_ids": [
+        "ev-87dd4503a477-0001-0004"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+      "evidence_ids": [
+        "ev-87dd4503a477-0002-0001"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+      "evidence_ids": [
+        "ev-87dd4503a477-0002-0003",
+        "ev-87dd4503a477-0002-0002"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+      "evidence_ids": [
+        "ev-87dd4503a477-0002-0004"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+      "evidence_ids": [
+        "ev-87dd4503a477-0002-0007"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    },
+    {
+      "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+      "evidence_ids": [
+        "ev-87dd4503a477-0003-0000"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 65
+      }
+    },
+    {
+      "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+      "evidence_ids": [
+        "ev-87dd4503a477-0003-0002"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 66
+      }
+    },
+    {
+      "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+      "evidence_ids": [
+        "ev-87dd4503a477-0003-0003"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+      "evidence_ids": [
+        "ev-87dd4503a477-0003-0001"
+      ],
+      "pages": {
+        "end": 70,
+        "start": 70
+      }
+    },
+    {
+      "document_hash": "87dd4503a477016f75e52afe46615d0779fad6d68416f360b78e638eab72954a",
+      "evidence_ids": [
+        "ev-87dd4503a477-0003-0004",
+        "ev-87dd4503a477-0003-0005"
+      ],
+      "pages": {
+        "end": 74,
+        "start": 74
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T17:54:17.501528Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

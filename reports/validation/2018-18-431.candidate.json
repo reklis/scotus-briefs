@@ -1,0 +1,354 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+            "evidence_ids": [
+              "ev-10bb9263bfa5-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked what Congress intended in 1986."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+            "evidence_ids": [
+              "ev-10bb9263bfa5-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned the statutory language and referenced prior cases Nijhawan and Hayes regarding additional elements beyond the text."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+            "evidence_ids": [
+              "ev-10bb9263bfa5-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito inquired about the practical implications of the Court\u2019s decision for contemporaneous crime statutes."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+            "evidence_ids": [
+              "ev-10bb9263bfa5-0001-0005"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether the argument would result in any substantial change in legal interpretation."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+            "evidence_ids": [
+              "ev-10bb9263bfa5-0001-0009"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether there is an absolute argument against the approach being considered."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-18-431",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T18:21:18.412614Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+            "evidence_ids": [
+              "ev-10bb9263bfa5-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:06\u202fa.m."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+            "evidence_ids": [
+              "ev-10bb9263bfa5-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked what Congress intended in 1986."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+            "evidence_ids": [
+              "ev-10bb9263bfa5-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned the statutory language and referenced prior cases Nijhawan and Hayes regarding additional elements beyond the text."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+            "evidence_ids": [
+              "ev-10bb9263bfa5-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito inquired about the practical implications of the Court\u2019s decision for contemporaneous crime statutes."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+            "evidence_ids": [
+              "ev-10bb9263bfa5-0001-0005"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether the argument would result in any substantial change in legal interpretation."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+            "evidence_ids": [
+              "ev-10bb9263bfa5-0001-0009"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether there is an absolute argument against the approach being considered."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+            "evidence_ids": [
+              "ev-10bb9263bfa5-0002-0003"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Sotomayor later asked whether the reading would expand the categorical approach to cover more defendants."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+              "evidence_ids": [
+                "ev-10bb9263bfa5-0002-0002"
+              ],
+              "pages": {
+                "end": 64,
+                "start": 64
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petitioner presented four points in his oral argument."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+              "evidence_ids": [
+                "ev-10bb9263bfa5-0002-0000"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Government, the United States (as Government) stated that clause A defines an offense as a felony with an element of use, attempted use, or threatened use of physical force."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Maurice Lamont Davis and Andre Levon Glover (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "10bb9263bfa5b37e906cc075e877a2873bf06e3e39fc9b50f67df6737e50676c",
+      "evidence_ids": [
+        "ev-10bb9263bfa5-0000-0000",
+        "ev-10bb9263bfa5-0000-0002",
+        "ev-10bb9263bfa5-0001-0000",
+        "ev-10bb9263bfa5-0001-0001",
+        "ev-10bb9263bfa5-0001-0002",
+        "ev-10bb9263bfa5-0001-0005",
+        "ev-10bb9263bfa5-0001-0009",
+        "ev-10bb9263bfa5-0002-0000",
+        "ev-10bb9263bfa5-0002-0001",
+        "ev-10bb9263bfa5-0002-0002",
+        "ev-10bb9263bfa5-0002-0003"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T18:30:30.931347Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim that Justice Sotomayor later asked whether the reading would expand the categorical approach is not supported as a question; the cited transcript shows a statement, not a question.",
+      "Oral argument characterization check failed: the same claim misrepresents Justice Sotomayor's remark as a question about expanding the categorical approach.",
+      "Overstatement check failed: the claim overstates the nature of Justice Sotomayor's comment by framing it as a question when the evidence records it as a statement."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2018-18-6210",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": false,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "support check failed: the claim in Why_it_matters that \"The outcome could affect how states obtain blood samples in DUI investigations, balancing public safety with individual bodily integrity and dignity\" is not fully supported by the supplied evidence; the evidence only addresses dignity, not the public\u2011safety balancing effect.",
+    "opinion_distinction check failed: the same claim presents a speculative projection about the case\u2019s impact as a factual statement without indicating it is an opinion or speculation.",
+    "overstatement check failed: the claim about the outcome affecting state practices overstates the evidence, introducing material that is not substantiated."
+  ],
+  "quality_scores": {
+    "completeness": 0.95,
+    "factual_accuracy": 0.93,
+    "neutrality": 0.85,
+    "readability": 0.9,
+    "restraint": 0.8,
+    "traceability": 0.85
+  }
+}

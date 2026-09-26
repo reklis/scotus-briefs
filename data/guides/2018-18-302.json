@@ -1,0 +1,288 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+            "evidence_ids": [
+              "ev-647a429dea9c-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case was heard in oral argument before the Supreme Court at 10:07\u202fa.m."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+            "evidence_ids": [
+              "ev-647a429dea9c-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how the term \u201cscandalous mark\u201d is defined."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-18-302",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T18:02:23.740265Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": "The oral argument featured questions from Justices Sotomayor, Alito, and Breyer about the definition of \u201cscandalous mark,\u201d the consequences of striking down the provision, and the treatment of racial slurs, as well as arguments from the petitioner that the ban is viewpoint\u2011neutral and not a speech restriction.",
+    "summary_citations": [
+      {
+        "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+        "evidence_ids": [
+          "ev-647a429dea9c-0000-0001"
+        ],
+        "pages": {
+          "end": 4,
+          "start": 4
+        }
+      },
+      {
+        "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+        "evidence_ids": [
+          "ev-647a429dea9c-0001-0000"
+        ],
+        "pages": {
+          "end": 23,
+          "start": 23
+        }
+      },
+      {
+        "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+        "evidence_ids": [
+          "ev-647a429dea9c-0001-0002"
+        ],
+        "pages": {
+          "end": 24,
+          "start": 24
+        }
+      },
+      {
+        "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+        "evidence_ids": [
+          "ev-647a429dea9c-0002-0003"
+        ],
+        "pages": {
+          "end": 48,
+          "start": 48
+        }
+      }
+    ]
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Department of Justice)",
+        "citations": [
+          {
+            "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+            "evidence_ids": [
+              "ev-647a429dea9c-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner (Department of Justice), according to Petitioner (Department of Justice), the case concerns the constitutionality of the Lanham Act provision that prohibits registration of scandalous trademarks."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Department of Justice)",
+          "citations": [
+            {
+              "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+              "evidence_ids": [
+                "ev-647a429dea9c-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Department of Justice), according to Petitioner (Department of Justice), the Lanham Act\u2019s ban on federal registration of scandalous trademarks is not a restriction on speech but a valid condition on participation in a federal program."
+        },
+        {
+          "attribution": "Petitioner (Department of Justice)",
+          "citations": [
+            {
+              "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+              "evidence_ids": [
+                "ev-647a429dea9c-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Department of Justice), according to Petitioner (Department of Justice), the provision is viewpoint\u2011neutral."
+        }
+      ],
+      "heading": "Petitioner (Department of Justice)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Erik Brunetti)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+      "evidence_ids": [
+        "ev-647a429dea9c-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+      "evidence_ids": [
+        "ev-647a429dea9c-0000-0001",
+        "ev-647a429dea9c-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+      "evidence_ids": [
+        "ev-647a429dea9c-0000-0003"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+      "evidence_ids": [
+        "ev-647a429dea9c-0001-0000"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+      "evidence_ids": [
+        "ev-647a429dea9c-0001-0002"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "647a429dea9c670593c07db9bf476a1bf55fae442a5f2a6d49609ba7e6525b05",
+      "evidence_ids": [
+        "ev-647a429dea9c-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T18:08:04.422345Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,335 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mr. Frederick",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0002-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Mr. Frederick, the case involves a cruise ship owned by a cruise line that subcontracted a Broadway company to provide a traveling music show; a musician injured due to unseaworthiness may sue the vessel owner but not under the Jones Act against the employer."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0002-0004"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justices asked how the Jones Act relates to the common\u2011law maritime function of unseaworthiness."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-18-266",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T17:54:17.518739Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:09\u202fa.m."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether pain and suffering are compensatory damages."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Ginsburg followed with a question asking if the damages are not pecuniary."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0001-0003"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "Justice Alito asked, \u201cIs all that right?\u201d"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0002-0002"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer inquired, \u201cBut can we go back?\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case was heard in oral argument before the Supreme Court of the United States."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0002-0004"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, the arguments focus on the relationship between the Jones Act and maritime unseaworthiness."
+      },
+      {
+        "attribution": "Heritage Reporting Corporation",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0002-0008"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "The discussion addressed the availability of damages for unseaworthiness claims."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "THE DUTRA GROUP (Petitioner)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "CHRISTOPHER BATTERTON (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+      "evidence_ids": [
+        "ev-6da196a0b273-0000-0000",
+        "ev-6da196a0b273-0001-0000",
+        "ev-6da196a0b273-0001-0001",
+        "ev-6da196a0b273-0001-0003",
+        "ev-6da196a0b273-0002-0000",
+        "ev-6da196a0b273-0002-0001",
+        "ev-6da196a0b273-0002-0002",
+        "ev-6da196a0b273-0002-0003",
+        "ev-6da196a0b273-0002-0004",
+        "ev-6da196a0b273-0002-0007",
+        "ev-6da196a0b273-0002-0008"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T17:58:34.112332Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Mr. Frederick",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0002-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Mr. Frederick, the case could clarify whether a worker injured by an unseaworthy vessel may pursue a claim against the vessel owner under maritime law rather than under the Jones Act."
+      },
+      {
+        "attribution": "Mr. Waxman",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0002-0007"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Mr. Waxman, the discussion highlights that punitive damages are essentially unavailable in unseaworthy cases."
+      },
+      {
+        "attribution": "Heritage Reporting Corporation",
+        "citations": [
+          {
+            "document_hash": "6da196a0b2731ee6f622e8d26b5453350586de4b341348f95d9381a1ae594bb8",
+            "evidence_ids": [
+              "ev-6da196a0b273-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "A more relaxed causation standard from CSX v. McBride may affect how proximate cause is evaluated in maritime injury cases."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

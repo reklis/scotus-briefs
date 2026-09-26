@@ -1,0 +1,414 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-18-966",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T19:43:25.940556Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+            "evidence_ids": [
+              "ev-5b4f4d8944f1-0000-0004"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the alleged illegality is a predictive factor for standing."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+            "evidence_ids": [
+              "ev-5b4f4d8944f1-0000-0005"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor referenced a \u201cdeterminate or coercive effect\u201d in her questioning."
+      },
+      {
+        "attribution": "JUSTICE KAGAN",
+        "citations": [
+          {
+            "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+            "evidence_ids": [
+              "ev-5b4f4d8944f1-0001-0004"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to JUSTICE KAGAN, justice Kagan noted that many arguments do not appear in the Secretary\u2019s decision memo."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+            "evidence_ids": [
+              "ev-5b4f4d8944f1-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the citizenship question would help voting\u2011rights enforcement."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+            "evidence_ids": [
+              "ev-5b4f4d8944f1-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether any prior cases showed the Department would be aided by the citizenship question."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+            "evidence_ids": [
+              "ev-5b4f4d8944f1-0003-0000"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the Secretary\u2019s choice was arbitrary given the lack of statistics for the model."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+            "evidence_ids": [
+              "ev-5b4f4d8944f1-0004-0002"
+            ],
+            "pages": {
+              "end": 91,
+              "start": 91
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how much accuracy the proposed question would achieve."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+            "evidence_ids": [
+              "ev-5b4f4d8944f1-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument before the Supreme Court took place at 10:06\u202fa.m."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Secretary of Commerce",
+          "citations": [
+            {
+              "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+              "evidence_ids": [
+                "ev-5b4f4d8944f1-0001-0002"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Secretary of Commerce, the Secretary preferred using the known 98\u202f% accuracy method over an untested statistical model."
+        },
+        {
+          "attribution": "Census Bureau",
+          "citations": [
+            {
+              "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+              "evidence_ids": [
+                "ev-5b4f4d8944f1-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "The Census Bureau told the Secretary that asking the question would yield actual answers for 22.2\u202fmillion people at 98\u202f% accuracy."
+        },
+        {
+          "attribution": "Respondents New York, et al.",
+          "citations": [
+            {
+              "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+              "evidence_ids": [
+                "ev-5b4f4d8944f1-0002-0003"
+              ],
+              "pages": {
+                "end": 49,
+                "start": 49
+              }
+            }
+          ],
+          "text": "According to Respondents New York, et al., according to Respondents New York, et al., the model had not been generated; the Census Bureau asserted it could produce one."
+        }
+      ],
+      "heading": "Petitioners' Arguments",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents New York, et al.",
+          "citations": [
+            {
+              "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+              "evidence_ids": [
+                "ev-5b4f4d8944f1-0002-0000"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Respondents New York, et al., according to Respondents New York, et al., the citizenship question would cause a decline in response rates among non\u2011citizens and Hispanics, harming the states and localities where they live."
+        }
+      ],
+      "heading": "Respondents' Arguments",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States House of Representatives",
+          "citations": [
+            {
+              "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+              "evidence_ids": [
+                "ev-5b4f4d8944f1-0003-0002"
+              ],
+              "pages": {
+                "end": 80,
+                "start": 78
+              }
+            }
+          ],
+          "text": "According to United States House of Representatives, the House stresses that accuracy of the decennial census is of utmost importance and that anything that undermines the accuracy of the enumeration is a problem."
+        },
+        {
+          "attribution": "MR. LETTER",
+          "citations": [
+            {
+              "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+              "evidence_ids": [
+                "ev-5b4f4d8944f1-0004-0000"
+              ],
+              "pages": {
+                "end": 88,
+                "start": 88
+              }
+            }
+          ],
+          "text": "According to MR. LETTER, the Justice Department can obtain citizenship information elsewhere and should not undermine the accuracy of the enumeration."
+        },
+        {
+          "attribution": "GENERAL FRANCISCO",
+          "citations": [
+            {
+              "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+              "evidence_ids": [
+                "ev-5b4f4d8944f1-0004-0001"
+              ],
+              "pages": {
+                "end": 89,
+                "start": 89
+              }
+            }
+          ],
+          "text": "According to GENERAL FRANCISCO, disclosure\u2011avoidance protocols apply to all census data, including the citizen voting\u2011age population."
+        },
+        {
+          "attribution": "GENERAL FRANCISCO",
+          "citations": [
+            {
+              "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+              "evidence_ids": [
+                "ev-5b4f4d8944f1-0004-0003"
+              ],
+              "pages": {
+                "end": 92,
+                "start": 92
+              }
+            }
+          ],
+          "text": "According to GENERAL FRANCISCO, empowering any group to boycott the census would be problematic."
+        }
+      ],
+      "heading": "Amicus and Other Arguments",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+      "evidence_ids": [
+        "ev-5b4f4d8944f1-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T19:52:31.836175Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "United States House of Representatives",
+        "citations": [
+          {
+            "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+            "evidence_ids": [
+              "ev-5b4f4d8944f1-0003-0002"
+            ],
+            "pages": {
+              "end": 80,
+              "start": 78
+            }
+          }
+        ],
+        "text": "According to United States House of Representatives, the decennial census is of utmost importance to the House, and anything that undermines the accuracy of the enumeration is a problem."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "5b4f4d8944f1e8275771f3dfbfdb31bb010b67e59932e39537ddc34405b8af4b",
+            "evidence_ids": [
+              "ev-5b4f4d8944f1-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the citizenship question would help voting\u2011rights enforcement."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

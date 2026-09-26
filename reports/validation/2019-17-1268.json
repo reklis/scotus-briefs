@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2019-17-1268",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claims that punitive damages should apply retroactively under 1605A(c) (Overview claim 2, Background claim 3, Party Positions claim 4) and the claim that Justices asked whether the Landgraf presumption should limit punitive damages are not directly supported by the supplied evidence.",
+    "Overstatement check failed: the statement that Justices asked whether the Landgraf presumption should limit punitive damages overstates the transcript, as no justice question about the Landgraf presumption appears in the evidence."
+  ],
+  "quality_scores": {
+    "completeness": 0.75,
+    "factual_accuracy": 0.8,
+    "neutrality": 0.9,
+    "readability": 0.85,
+    "restraint": 0.6,
+    "traceability": 0.6
+  }
+}

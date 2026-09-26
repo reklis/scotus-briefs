@@ -1,0 +1,475 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the petitioner's claim requires a finding of probable cause."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0000-0005"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch made a comment unrelated to the case."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0000-0007"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked what state\u2011law torts the petitioner might bring under the facts."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Gorsuch questioned whether an element of the claim is now always required."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Kagan noted the petitioner\u2019s difficulty in stating the claim."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0002-0003"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer expressed concern about mixing civil lawsuits with ongoing criminal trials."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0002-0005"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about the effect of an acquittal on liberty deprivation."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-18-485",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T18:56:10.144840Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the petitioner's claim requires a finding of probable cause."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0000-0005"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch made a comment unrelated to the case."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0000-0007"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked what state\u2011law torts the petitioner might bring under the facts."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Gorsuch questioned whether an element of the claim is now always required."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Kagan noted the petitioner\u2019s difficulty in stating the claim."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0002-0003"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer expressed concern about mixing civil lawsuits with ongoing criminal trials."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0002-0005"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about the effect of an acquittal on liberty deprivation."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Edward G. McDonough)",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioner (Edward G. McDonough), petitioner Edward G. McDonough filed a Section\u202f1983 lawsuit alleging that the respondent, Youel Smith, pursued criminal proceedings based on fabricated evidence."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0002-0002"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "The malicious prosecution claim in the lawsuit was dismissed by the Second Circuit and the dismissal remains unchallenged."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+            "evidence_ids": [
+              "ev-295c6e85cd63-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The United States, as amicus curiae, argues that the analogous common\u2011law tort is Heck malicious prosecution, and that favorable termination is an element of the Section\u202f1983 claim."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Edward G. McDonough)",
+          "citations": [
+            {
+              "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+              "evidence_ids": [
+                "ev-295c6e85cd63-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner (Edward G. McDonough), petitioner alleges that the criminal prosecution was based on fabricated evidence."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+              "evidence_ids": [
+                "ev-295c6e85cd63-0002-0001"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "Petitioner asserts two claims: malicious prosecution and fabrication of evidence."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+              "evidence_ids": [
+                "ev-295c6e85cd63-0002-0004"
+              ],
+              "pages": {
+                "end": 48,
+                "start": 48
+              }
+            }
+          ],
+          "text": "Petitioner argues that even after an acquittal, there may be limited circumstances where independent fabricated evidence supports a claim."
+        }
+      ],
+      "heading": "Petitioner (Edward G. McDonough)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Youel Smith, Special District Attorney)",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+              "evidence_ids": [
+                "ev-295c6e85cd63-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "The United States, as amicus, argues that the appropriate tort analog is Heck malicious prosecution, and that favorable termination is an element of the Section\u202f1983 claim."
+        }
+      ],
+      "heading": "United States (Amicus Curiae)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "295c6e85cd63d90ecbdf3ab5dd05b20fb68ec490db4d58913c2706e8943d3f64",
+      "evidence_ids": [
+        "ev-295c6e85cd63-0000-0000",
+        "ev-295c6e85cd63-0000-0001",
+        "ev-295c6e85cd63-0000-0002",
+        "ev-295c6e85cd63-0000-0003",
+        "ev-295c6e85cd63-0000-0005",
+        "ev-295c6e85cd63-0000-0007",
+        "ev-295c6e85cd63-0001-0000",
+        "ev-295c6e85cd63-0001-0001",
+        "ev-295c6e85cd63-0002-0000",
+        "ev-295c6e85cd63-0002-0001",
+        "ev-295c6e85cd63-0002-0002",
+        "ev-295c6e85cd63-0002-0003",
+        "ev-295c6e85cd63-0002-0004",
+        "ev-295c6e85cd63-0002-0005",
+        "ev-295c6e85cd63-0002-0006"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T19:00:14.221036Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
