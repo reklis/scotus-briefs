@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2017-16-1362",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim \"According to Petitioner, according to James A. Feldman, commissions are completely irrelevant to this provision\" is not fully supported because there is no evidence that the Petitioner made that statement; only Feldman's remark is cited.",
+    "Attribution check failed: the background claim is attributed solely to Justice Ginsburg, but the evidence includes a question from Justice Kagan, so the attribution is inaccurate.",
+    "Attribution check failed: the commissions claim is attributed to the Petitioner, yet the cited evidence records the statement as made by James A. Feldman, not the Petitioner."
+  ],
+  "quality_scores": {
+    "completeness": 0.85,
+    "factual_accuracy": 0.78,
+    "neutrality": 0.9,
+    "readability": 0.9,
+    "restraint": 0.95,
+    "traceability": 0.95
+  }
+}

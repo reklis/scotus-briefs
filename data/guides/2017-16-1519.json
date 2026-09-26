@@ -1,0 +1,599 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The oral argument took place before the Supreme Court at 10:07\u202fa.m."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether accepting the petitioner\u2019s view would create a perverse incentive by telling creditors not to investigate immediately."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy inquired whether the issue is different under bankruptcy law and whether the restitution would be dischargeable."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the bankruptcy\u2011related expenses pertain to attorneys\u2019 fees or corporate officers\u2019 attendance at the hearing."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned whether the fees for sitting in a courtroom during a proceeding should be covered."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0001-0008"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether the bankruptcy proceeding is related to the offense because fraud was also at issue."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Gorsuch further asked whether focusing on individual victims poses a serious problem for the Court."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0003-0000"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the client had pointed out the issue to the district court judge."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0003-0002"
+            ],
+            "pages": {
+              "end": 70,
+              "start": 70
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted that the case was submitted."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-1519",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T03:39:57.311500Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The oral argument began at 10:07\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether accepting the petitioner\u2019s view would create a perverse incentive by telling creditors not to investigate immediately."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Kennedy, justice Kennedy inquired whether the issue is different under bankruptcy law and whether the restitution would be dischargeable."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the bankruptcy\u2011related expenses pertain to attorneys\u2019 fees or corporate officers\u2019 attendance at the hearing."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned whether courtroom fees should be covered."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0001-0008"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether the bankruptcy proceeding is related to the offense because fraud was also at issue."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Gorsuch further asked whether focusing on individual victims poses a serious problem for the Court."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0003-0000"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the client had pointed out the issue to the district court judge."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0003-0002"
+            ],
+            "pages": {
+              "end": 70,
+              "start": 70
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Daniel L. Geyser)",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner (Daniel L. Geyser), the case Sergio Fernando Lagos v. United States concerns whether the Mandatory Victims Restitution Act (MVRA) covers costs such as lost income, child care, transportation, and participation in investigations or prosecutions."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The United States argues that the Court should not decide the issue because the case was not properly before the Court and the government did not preserve authority under a different statutory provision."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0001-0005"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "The United States also contends that Congress would not want to burden district judges with fact\u2011intensive restitution disputes given the large number of MVRA proceedings each year."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0001-0006"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "According to Respondent, the respondent states that the MVRA enables victims to recover for participation in investigations and is not limited to government\u2011led investigations."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+            "evidence_ids": [
+              "ev-4c3b1ed147a5-0002-0002"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "The factual background includes that the defendant stole $25\u202fmillion in less than two years."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Daniel L. Geyser)",
+          "citations": [
+            {
+              "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+              "evidence_ids": [
+                "ev-4c3b1ed147a5-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Daniel L. Geyser), the petitioner argues that the MVRA covers costs such as lost income, child care, transportation, and other expenses incurred while participating in the investigation, prosecution, or related proceedings."
+        },
+        {
+          "attribution": "Mr. Huston",
+          "citations": [
+            {
+              "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+              "evidence_ids": [
+                "ev-4c3b1ed147a5-0002-0000"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Mr. Huston, the petitioner (through Mr. Huston) asserts that a company victim of fraud can be considered a victim under the MVRA."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+              "evidence_ids": [
+                "ev-4c3b1ed147a5-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "The United States contends the case is not properly before the Court because the issue was not raised or decided below and the government did not preserve authority under a different statutory provision."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+              "evidence_ids": [
+                "ev-4c3b1ed147a5-0001-0005"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "The United States argues that Congress would not want to burden district judges with fact\u2011intensive restitution disputes given the tens of thousands of MVRA proceedings each year."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+              "evidence_ids": [
+                "ev-4c3b1ed147a5-0001-0003"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "The United States maintains that if Congress intended to provide recovery merely for showing up at civil hearings, it would also cover typical civil proceeding expenses such as filing fees, attorneys\u2019 fees, and expert fees."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+              "evidence_ids": [
+                "ev-4c3b1ed147a5-0001-0006"
+              ],
+              "pages": {
+                "end": 33,
+                "start": 33
+              }
+            }
+          ],
+          "text": "According to Respondent, the United States states that the MVRA enables victims to recover for participation in investigations and is not limited to government investigations."
+        }
+      ],
+      "heading": "United States",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4c3b1ed147a5031b470c985be643e1296560b265c9a9aaadfcdc4f84105bea32",
+      "evidence_ids": [
+        "ev-4c3b1ed147a5-0000-0000",
+        "ev-4c3b1ed147a5-0000-0002",
+        "ev-4c3b1ed147a5-0000-0001",
+        "ev-4c3b1ed147a5-0000-0003",
+        "ev-4c3b1ed147a5-0001-0000",
+        "ev-4c3b1ed147a5-0001-0001",
+        "ev-4c3b1ed147a5-0001-0002",
+        "ev-4c3b1ed147a5-0001-0003",
+        "ev-4c3b1ed147a5-0001-0005",
+        "ev-4c3b1ed147a5-0001-0006",
+        "ev-4c3b1ed147a5-0001-0008",
+        "ev-4c3b1ed147a5-0002-0000",
+        "ev-4c3b1ed147a5-0002-0001",
+        "ev-4c3b1ed147a5-0002-0002",
+        "ev-4c3b1ed147a5-0003-0000",
+        "ev-4c3b1ed147a5-0003-0001",
+        "ev-4c3b1ed147a5-0003-0002",
+        "ev-4c3b1ed147a5-0003-0006"
+      ],
+      "pages": {
+        "end": 70,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T03:43:50.432275Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+            "evidence_ids": [
+              "ev-228d5ced4772-0001-0005"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "The complaint alleges that the defendant\u2019s statement was used in the probable\u2011cause hearing."
+      },
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+            "evidence_ids": [
+              "ev-228d5ced4772-0001-0002"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          },
+          {
+            "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+            "evidence_ids": [
+              "ev-228d5ced4772-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The legal question is whether the use of a compelled statement from a pre\u2011trial probable\u2011cause hearing violates the Fifth Amendment Self\u2011Incrimination Clause."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-1495",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T03:30:52.564709Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+            "evidence_ids": [
+              "ev-228d5ced4772-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the defendant could refuse to answer the question at the probable\u2011cause hearing on self\u2011incrimination grounds."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+            "evidence_ids": [
+              "ev-228d5ced4772-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the government could draw an adverse inference from the defendant\u2019s failure to testify."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+            "evidence_ids": [
+              "ev-228d5ced4772-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Alito asked how the prosecution was caused by the alleged compelled statement."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+            "evidence_ids": [
+              "ev-228d5ced4772-0003-0000"
+            ],
+            "pages": {
+              "end": 67,
+              "start": 67
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor expressed uncertainty about whether any statement was actually compelled."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+            "evidence_ids": [
+              "ev-228d5ced4772-0001-0005"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          },
+          {
+            "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+            "evidence_ids": [
+              "ev-228d5ced4772-0001-0002"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case involves a dispute over the use of a statement obtained at a pre\u2011trial probable\u2011cause hearing."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Toby J. Heytens",
+          "citations": [
+            {
+              "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+              "evidence_ids": [
+                "ev-228d5ced4772-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Toby J. Heytens, the Fifth Amendment privilege against self\u2011incrimination applies only at trial, not during pre\u2011trial proceedings."
+        },
+        {
+          "attribution": "Toby J. Heytens",
+          "citations": [
+            {
+              "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+              "evidence_ids": [
+                "ev-228d5ced4772-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Toby J. Heytens, the Court should reject any notion that a Fifth Amendment violation can occur before trial in the specific type of Fifth Amendment violation alleged here, which is the use of statements in violation of Garrity."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+              "evidence_ids": [
+                "ev-228d5ced4772-0001-0002"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Petitioner, a compelled testimonial incriminating statement cannot be used in a criminal case."
+        }
+      ],
+      "heading": "Petitioner (City of Hays, Kansas)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+              "evidence_ids": [
+                "ev-228d5ced4772-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Respondent, the defendant would still have a valid privilege against self\u2011incrimination because statements made at the probable\u2011cause hearing could be used against him at the ensuing trial."
+        }
+      ],
+      "heading": "Respondent (Matthew Jack Dwight Vogt)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+      "evidence_ids": [
+        "ev-228d5ced4772-0000-0004",
+        "ev-228d5ced4772-0000-0000",
+        "ev-228d5ced4772-0000-0003",
+        "ev-228d5ced4772-0001-0000",
+        "ev-228d5ced4772-0001-0002",
+        "ev-228d5ced4772-0001-0004",
+        "ev-228d5ced4772-0001-0005",
+        "ev-228d5ced4772-0001-0006",
+        "ev-228d5ced4772-0002-0002",
+        "ev-228d5ced4772-0003-0000",
+        "ev-228d5ced4772-0003-0001",
+        "ev-228d5ced4772-0003-0004"
+      ],
+      "pages": {
+        "end": 70,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T03:39:57.303126Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "background_and_question.claims[1] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "background_and_question.claims[1] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+            "evidence_ids": [
+              "ev-228d5ced4772-0001-0004"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Adopting a broader rule that any use of a compelled statement in any criminal proceeding violates the Fifth Amendment would require substantial changes to the criminal process."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "228d5ced477283fd6b05c50d0296cc06011f908512b3409137c6c01eb9f1cc11",
+            "evidence_ids": [
+              "ev-228d5ced4772-0001-0006"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "A decision in favor of the petitioner would represent a major change because it would limit the ability to challenge various pre\u2011trial hearings such as preliminary, grand\u2011jury, and Estelle hearings."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

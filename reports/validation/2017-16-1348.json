@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2017-16-1348",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": true,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Attribution check failed: the overview claim is presented as if made by the Petitioner, but the claim is a summary of the case issue, not a direct petitioner statement.",
+    "Attribution check failed: the background_and_question claim is attributed to Justice Sotomayor, yet it is a summary of the central question rather than a direct quote from her."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.81,
+    "neutrality": 0.92,
+    "readability": 0.86,
+    "restraint": 0.95,
+    "traceability": 1.0
+  }
+}

@@ -1,0 +1,502 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument began before the Supreme Court at 10:04\u202fa.m."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0001-0000",
+              "ev-b585cf99936d-0001-0002",
+              "ev-b585cf99936d-0001-0003",
+              "ev-b585cf99936d-0001-0004",
+              "ev-b585cf99936d-0001-0005",
+              "ev-b585cf99936d-0001-0006",
+              "ev-b585cf99936d-0001-0007",
+              "ev-b585cf99936d-0002-0002"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justices asked what data, criteria, and constitutional standards are needed to determine whether a partisan redistricting plan violates the Constitution."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-1161",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T02:17:02.255243Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked what data and criteria (e.g., two\u2011year cycles, efficiency gap) are needed to define a constitutional standard for redistricting."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether, in Wisconsin, a large number of uncontested districts effectively eliminates competition."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0001-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether a state law or amendment that mandates using all legitimate factors to favor a particular party is lawful."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Kennedy further asked whether such a law would violate the Equal Protection Clause or the First Amendment."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0001-0005"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked what value extreme partisan gerrymandering has for democracy."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0001-0006"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned why the alleged violation should be considered de minimis, suggesting it is not."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0001-0007"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether a resident of an overpopulated district has standing to challenge the entire state map."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0002-0002"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Kagan also asked what threshold should trigger a court\u2011ordered redrawing of a map and where the line should be drawn."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Appellees",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0001-0009"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "The case challenges a Wisconsin redistricting plan that the appellees say is so extreme it effectively nullifies democracy."
+      },
+      {
+        "attribution": "Appellants",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Appellants, the Court has never identified judicially manageable standards for deciding when politicians have acted too politically in drawing district lines."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Appellants",
+          "citations": [
+            {
+              "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+              "evidence_ids": [
+                "ev-b585cf99936d-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "The appellants argue that the Court lacks manageable standards and that the plaintiff\u2019s social\u2011science metrics do not resolve the problem."
+        },
+        {
+          "attribution": "Mr. Smith",
+          "citations": [
+            {
+              "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+              "evidence_ids": [
+                "ev-b585cf99936d-0002-0001"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Mr. Smith, in\u202fVieth the Court said that to impose a new standard the parties must provide substantially more evidence than they have done here."
+        }
+      ],
+      "heading": "Appellants",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Appellees",
+          "citations": [
+            {
+              "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+              "evidence_ids": [
+                "ev-b585cf99936d-0001-0009"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "The appellees contend that the challenged map is an extreme partisan gerrymander that pre\u2011decides political control for a decade, effectively nullifying democracy."
+        }
+      ],
+      "heading": "Appellees",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+      "evidence_ids": [
+        "ev-b585cf99936d-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+      "evidence_ids": [
+        "ev-b585cf99936d-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+      "evidence_ids": [
+        "ev-b585cf99936d-0001-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+      "evidence_ids": [
+        "ev-b585cf99936d-0001-0002"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+      "evidence_ids": [
+        "ev-b585cf99936d-0001-0003"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+      "evidence_ids": [
+        "ev-b585cf99936d-0001-0004"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+      "evidence_ids": [
+        "ev-b585cf99936d-0001-0005"
+      ],
+      "pages": {
+        "end": 29,
+        "start": 29
+      }
+    },
+    {
+      "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+      "evidence_ids": [
+        "ev-b585cf99936d-0001-0009"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 31
+      }
+    },
+    {
+      "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+      "evidence_ids": [
+        "ev-b585cf99936d-0001-0006"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+      "evidence_ids": [
+        "ev-b585cf99936d-0001-0007"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+      "evidence_ids": [
+        "ev-b585cf99936d-0002-0001"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+      "evidence_ids": [
+        "ev-b585cf99936d-0002-0002"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T02:25:45.596190Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0001-0005"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          },
+          {
+            "document_hash": "b585cf99936df6cf2c7e507c38e1df0386b5b305cc51cff1e15117132a826a59",
+            "evidence_ids": [
+              "ev-b585cf99936d-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justices questioned the impact of extreme partisan gerrymandering on democracy, indicating the case\u2019s potential significance for democratic representation."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

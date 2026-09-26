@@ -1,0 +1,294 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a",
+            "evidence_ids": [
+              "ev-ce3963c53a93-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts announced that the Court would hear argument in case 16-285 this term."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a",
+            "evidence_ids": [
+              "ev-ce3963c53a93-0001-0000"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether Title VII\u2019s prohibition on discrimination and Section 7\u2019s protection of concerted activity require employers not to interfere with joint legal actions."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a",
+            "evidence_ids": [
+              "ev-ce3963c53a93-0002-0002"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Alito asked how to distinguish an agreement precluding class arbitration from other procedural rules limiting collective litigation."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a",
+            "evidence_ids": [
+              "ev-ce3963c53a93-0003-0001"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg inquired about confidentiality agreements that might limit how jointly the parties can proceed."
+      }
+    ],
+    "heading": "Background and Questions Raised",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-285",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T03:43:50.449894Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a",
+            "evidence_ids": [
+              "ev-ce3963c53a93-0001-0002"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "Richard D. Griffin, Esq., appeared on behalf of the petitioner."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a",
+            "evidence_ids": [
+              "ev-ce3963c53a93-0002-0003"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Daniel R. Ortiz, Esq., appeared on behalf of the respondents."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a",
+            "evidence_ids": [
+              "ev-ce3963c53a93-0001-0003"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "The Board's precedent holds that individual agreements requiring employees to waive their right to proceed collectively violate the National Labor Relations Act."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a",
+            "evidence_ids": [
+              "ev-ce3963c53a93-0001-0000"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, the case raises whether Title VII and Section 7 require employers not to interfere with concerted activity, including joint legal actions."
+      },
+      {
+        "attribution": "Academy of Arbitrators",
+        "citations": [
+          {
+            "document_hash": "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a",
+            "evidence_ids": [
+              "ev-ce3963c53a93-0002-0001"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "According to Academy of Arbitrators, the Academy of Arbitrators filed an amicus brief supporting the Board\u2019s position that employees may proceed in joint collective representative actions."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a",
+              "evidence_ids": [
+                "ev-ce3963c53a93-0001-0004"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "Petitioner argues that the Federal Arbitration Act is not a rule of statutory construction."
+        }
+      ],
+      "heading": "Petitioner (Epic Systems Corporation and co\u2011petitioners)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Ortiz",
+          "citations": [
+            {
+              "document_hash": "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a",
+              "evidence_ids": [
+                "ev-ce3963c53a93-0003-0000"
+              ],
+              "pages": {
+                "end": 67,
+                "start": 67
+              }
+            }
+          ],
+          "text": "According to Mr. Ortiz, respondents argue that under Section\u202f7, as long as joint legal action is available in one forum, that is sufficient."
+        }
+      ],
+      "heading": "Respondents (Jacob Lewis, Stephen Morris, Murphy Oil USA, Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ce3963c53a937f2b7dd7bfe95cfffe43047f2f566b506ecf0571af2a0379102a",
+      "evidence_ids": [
+        "ev-ce3963c53a93-0000-0005"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T03:49:11.274835Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

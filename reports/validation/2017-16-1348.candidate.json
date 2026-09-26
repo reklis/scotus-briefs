@@ -1,0 +1,288 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9f5455fec8c53da4f1c140f162bbbd602fd79a3f286f1ac0d93f93225763fe61",
+            "evidence_ids": [
+              "ev-9f5455fec8c5-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          },
+          {
+            "document_hash": "9f5455fec8c53da4f1c140f162bbbd602fd79a3f286f1ac0d93f93225763fe61",
+            "evidence_ids": [
+              "ev-9f5455fec8c5-0001-0006"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "The central question is whether issue preclusion (collateral estoppel) applies between separate trials when the same defendant is charged with distinct offenses, and how double\u2011jeopardy protections affect that analysis."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-1348",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T02:41:59.657219Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9f5455fec8c53da4f1c140f162bbbd602fd79a3f286f1ac0d93f93225763fe61"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9f5455fec8c53da4f1c140f162bbbd602fd79a3f286f1ac0d93f93225763fe61",
+            "evidence_ids": [
+              "ev-9f5455fec8c5-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether issue preclusion applies only between the same parties."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9f5455fec8c53da4f1c140f162bbbd602fd79a3f286f1ac0d93f93225763fe61",
+            "evidence_ids": [
+              "ev-9f5455fec8c5-0002-0004"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 65
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor stated that the court does not permit trying a person for robbing one person and then trying a second crime involving a different victim, even though the crimes are distinct."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "9f5455fec8c53da4f1c140f162bbbd602fd79a3f286f1ac0d93f93225763fe61",
+            "evidence_ids": [
+              "ev-9f5455fec8c5-0001-0005"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Alito asked if the result would be different if the first trial had been an acquittal."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "9f5455fec8c53da4f1c140f162bbbd602fd79a3f286f1ac0d93f93225763fe61",
+            "evidence_ids": [
+              "ev-9f5455fec8c5-0002-0003"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 54
+            }
+          }
+        ],
+        "text": "Justice Breyer asked for clarification on the second point raised."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "9f5455fec8c53da4f1c140f162bbbd602fd79a3f286f1ac0d93f93225763fe61",
+            "evidence_ids": [
+              "ev-9f5455fec8c5-0002-0002"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg sought clarification on an aspect of the case."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "9f5455fec8c53da4f1c140f162bbbd602fd79a3f286f1ac0d93f93225763fe61",
+            "evidence_ids": [
+              "ev-9f5455fec8c5-0002-0004"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 65
+            }
+          },
+          {
+            "document_hash": "9f5455fec8c53da4f1c140f162bbbd602fd79a3f286f1ac0d93f93225763fe61",
+            "evidence_ids": [
+              "ev-9f5455fec8c5-0003-0003"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "The case Michael Nelson Currier v. Virginia concerns whether a defendant who waives double\u2011jeopardy rights can be subject to separate trials for related offenses."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "9f5455fec8c53da4f1c140f162bbbd602fd79a3f286f1ac0d93f93225763fe61",
+              "evidence_ids": [
+                "ev-9f5455fec8c5-0003-0003"
+              ],
+              "pages": {
+                "end": 69,
+                "start": 69
+              }
+            }
+          ],
+          "text": "Petitioner argues that a waiver of the constitutional double\u2011jeopardy right must be explicit."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9f5455fec8c53da4f1c140f162bbbd602fd79a3f286f1ac0d93f93225763fe61",
+      "evidence_ids": [
+        "ev-9f5455fec8c5-0000-0000",
+        "ev-9f5455fec8c5-0000-0002",
+        "ev-9f5455fec8c5-0000-0003",
+        "ev-9f5455fec8c5-0001-0001",
+        "ev-9f5455fec8c5-0001-0002",
+        "ev-9f5455fec8c5-0001-0003",
+        "ev-9f5455fec8c5-0001-0004",
+        "ev-9f5455fec8c5-0001-0005",
+        "ev-9f5455fec8c5-0001-0006",
+        "ev-9f5455fec8c5-0001-0008",
+        "ev-9f5455fec8c5-0001-0009",
+        "ev-9f5455fec8c5-0002-0000",
+        "ev-9f5455fec8c5-0002-0001",
+        "ev-9f5455fec8c5-0002-0002",
+        "ev-9f5455fec8c5-0002-0003",
+        "ev-9f5455fec8c5-0002-0004",
+        "ev-9f5455fec8c5-0003-0000",
+        "ev-9f5455fec8c5-0003-0001",
+        "ev-9f5455fec8c5-0003-0002",
+        "ev-9f5455fec8c5-0003-0003",
+        "ev-9f5455fec8c5-0003-0005"
+      ],
+      "pages": {
+        "end": 76,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T02:50:29.640279Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Attribution check failed: the overview claim is presented as if made by the Petitioner, but the claim is a summary of the case issue, not a direct petitioner statement.",
+      "Attribution check failed: the background_and_question claim is attributed to Justice Sotomayor, yet it is a summary of the central question rather than a direct quote from her."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+            "evidence_ids": [
+              "ev-b2eb95a27a0d-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner, the parties ask the Court to interpret the phrase \u201cstatement respecting financial condition\u201d in Section 523(a)(2)(A)."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-1215",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T02:25:45.616427Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+          "evidence_ids": [
+            "ev-b2eb95a27a0d-0000-0000"
+          ],
+          "pages": {
+            "end": 4,
+            "start": 4
+          }
+        }
+      ],
+      "definition": "A term of art used by Congress and in commercial practice to refer to one\u2019s overall financial status.",
+      "term": "financial condition"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+            "evidence_ids": [
+              "ev-b2eb95a27a0d-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked: \u201cWhat is a statement respecting financial condition? In addition to a balance sheet and a profit and loss statement, what else would qualify?\u201d"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+            "evidence_ids": [
+              "ev-b2eb95a27a0d-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Kagan asked: \u201cWhat do you think the difference is between \u2018relating to\u2019 and \u2018about\u2019?\u201d"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+            "evidence_ids": [
+              "ev-b2eb95a27a0d-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Ginsburg later asked for clarification on the argument."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+            "evidence_ids": [
+              "ev-b2eb95a27a0d-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Kagan asked: \u201cWhich says more about your financial condition, Mr. Garre?\u201d"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+            "evidence_ids": [
+              "ev-b2eb95a27a0d-0001-0008"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked about the argument that Congress was seeking to protect debtors from credit\u2011card companies omitting particular items."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+            "evidence_ids": [
+              "ev-b2eb95a27a0d-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Alito asked: \u201cWould you respond to Mr. Garre\u2019s argument that the statement here concerns ability to pay and not financial condition?\u201d"
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+            "evidence_ids": [
+              "ev-b2eb95a27a0d-0002-0002"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked: \u201cWhat about the argument that you would be putting a burden on small businesses that deal informally?\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+            "evidence_ids": [
+              "ev-b2eb95a27a0d-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case concerns the interpretation of Section 523(a)(2)(A) of the Bankruptcy Code, which bars the discharge of debts obtained by fraudulent statements, except when the statement concerns the debtor\u2019s financial condition."
+      },
+      {
+        "attribution": "Petitioner, Respondent, and United States (Amicus)",
+        "citations": [
+          {
+            "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+            "evidence_ids": [
+              "ev-b2eb95a27a0d-0000-0004"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          },
+          {
+            "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+            "evidence_ids": [
+              "ev-b2eb95a27a0d-0001-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          },
+          {
+            "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+            "evidence_ids": [
+              "ev-b2eb95a27a0d-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Both the petitioner, the respondent, and the United States (Amicus) argue about the meaning of a \u201cstatement respecting financial condition\u201d and whether it should be limited to balance\u2011sheet items or include broader statements about ability to pay."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+              "evidence_ids": [
+                "ev-b2eb95a27a0d-0000-0004"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "The petitioner argues that a statement about a single asset or liability is not a \u201cstatement respecting financial condition.\u201d"
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+              "evidence_ids": [
+                "ev-b2eb95a27a0d-0001-0003"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "According to Government, the United States, as amicus, argues that Section 523(a)(2)(A) should be read in light of the specific problem it was intended to address."
+        }
+      ],
+      "heading": "Government (Amicus) Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+              "evidence_ids": [
+                "ev-b2eb95a27a0d-0002-0001"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "The respondent contends that \u201cability\u2011to\u2011pay\u201d statements are part of financial condition and should be considered under the discharge exception."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b2eb95a27a0d39eb030aebbec648ca9dd949286a76fbbdcfc681851a89357e43",
+      "evidence_ids": [
+        "ev-b2eb95a27a0d-0000-0000"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T02:32:13.834374Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

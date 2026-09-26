@@ -1,0 +1,428 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked what would happen if the preliminary question of whether water is \u201cwaters of the United States\u201d and a permit\u2011grant/denial question were presented together."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-299",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T03:49:11.294192Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked about the effect of combining a \u201cwaters of the United States\u201d question with a permit decision question."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0000-0003"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether res judicata or collateral estoppel applies to the government."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether EPA has the power to issue the type of rule Justice Kagan described."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned whether the interpretation depends on the meaning of the word \u201cunder\u201d in the statutory language."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0002-0001"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the case might become moot or take longer than the term."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0002-0003"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Alito asked about the textual argument relating to clause (F)."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "National Association of Manufacturers",
+        "citations": [
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to National Association of Manufacturers, the Clean Water Act limits judicial review by courts of appeals to seven specific EPA actions defined in Section\u202f1369(b)(1)."
+      },
+      {
+        "attribution": "National Association of Manufacturers",
+        "citations": [
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to National Association of Manufacturers, congress intentionally listed only those actions, unlike the Clean Air Act which provides broader appellate review."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "National Association of Manufacturers",
+          "citations": [
+            {
+              "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+              "evidence_ids": [
+                "ev-3e86501da6df-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to National Association of Manufacturers, nAM argues that the Clean Water Act provides a narrow jurisdictional rule for appellate review, based on Section\u202f1369(b)(1)."
+        },
+        {
+          "attribution": "National Association of Manufacturers",
+          "citations": [
+            {
+              "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+              "evidence_ids": [
+                "ev-3e86501da6df-0000-0002"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to National Association of Manufacturers, nAM warns that if challenges are brought in district courts, each must review the entire administrative record, potentially involving dozens of courts, and the record would be reviewed again on appeal."
+        }
+      ],
+      "heading": "National Association of Manufacturers",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Department of Defense",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+      "evidence_ids": [
+        "ev-3e86501da6df-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+      "evidence_ids": [
+        "ev-3e86501da6df-0000-0001"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+      "evidence_ids": [
+        "ev-3e86501da6df-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+      "evidence_ids": [
+        "ev-3e86501da6df-0000-0003"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+      "evidence_ids": [
+        "ev-3e86501da6df-0000-0004"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+      "evidence_ids": [
+        "ev-3e86501da6df-0001-0000",
+        "ev-3e86501da6df-0001-0003"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+      "evidence_ids": [
+        "ev-3e86501da6df-0001-0001"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+      "evidence_ids": [
+        "ev-3e86501da6df-0002-0001"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    },
+    {
+      "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+      "evidence_ids": [
+        "ev-3e86501da6df-0002-0003"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T03:56:39.834031Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "National Association of Manufacturers",
+        "citations": [
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to National Association of Manufacturers, determining the scope of appellate review under the Clean Water Act affects how many courts may be involved in reviewing EPA regulations."
+      },
+      {
+        "attribution": "Ohio, et al.; Mr. Murphy",
+        "citations": [
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0000-0004"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          },
+          {
+            "document_hash": "3e86501da6dfa2c9530ed2d4b85080b74b40f0b7aa010ac7b85d55cb0fe77bbb",
+            "evidence_ids": [
+              "ev-3e86501da6df-0001-0000",
+              "ev-3e86501da6df-0001-0003"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Clarifying whether EPA\u2019s authority derives from Section\u202f1311 or the broader Section\u202f1361 influences the legality of the WOTUS rule."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

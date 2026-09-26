@@ -1,0 +1,355 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+            "evidence_ids": [
+              "ev-32d02cf33b45-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+            "evidence_ids": [
+              "ev-32d02cf33b45-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "The central legal question is whether service advisors, partsmen, and other automobile service workers are covered by the FLSA exemption for salesmen, partsmen, or mechanics."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-1362",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T02:50:29.661065Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+            "evidence_ids": [
+              "ev-32d02cf33b45-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether any category other than the three listed in the statute applies."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+            "evidence_ids": [
+              "ev-32d02cf33b45-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned whether all employees in a service department, such as receptionists and filers, are primarily engaged in servicing automobiles."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+            "evidence_ids": [
+              "ev-32d02cf33b45-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether an automobile upholsterer falls within the exemption."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Paul D. Clement)",
+        "citations": [
+          {
+            "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+            "evidence_ids": [
+              "ev-32d02cf33b45-0001-0000"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          },
+          {
+            "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+            "evidence_ids": [
+              "ev-32d02cf33b45-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The case concerns the Fair Labor Standards Act exemption for salesmen, partsmen, or mechanics primarily engaged in selling or servicing automobiles."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Paul D. Clement)",
+          "citations": [
+            {
+              "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+              "evidence_ids": [
+                "ev-32d02cf33b45-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Paul D. Clement), according to Petitioner (Paul D. Clement), according to Petitioner (Paul D. Clement), service advisors are salespeople primarily engaged in servicing automobiles and therefore fall within the FLSA exemption."
+        },
+        {
+          "attribution": "James A. Feldman",
+          "citations": [
+            {
+              "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+              "evidence_ids": [
+                "ev-32d02cf33b45-0001-0000"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "According to James A. Feldman, service advisors do not actually service automobiles, so they are not covered by the exemption."
+        },
+        {
+          "attribution": "James A. Feldman",
+          "citations": [
+            {
+              "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+              "evidence_ids": [
+                "ev-32d02cf33b45-0001-0004"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to James A. Feldman, \"Customarily\" means regularly or continually, as defined by Black's Law Dictionary."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+              "evidence_ids": [
+                "ev-32d02cf33b45-0002-0001"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Petitioner, according to James A. Feldman, commissions are completely irrelevant to this provision."
+        }
+      ],
+      "heading": "Petitioner (Encino Motorcars, LLC)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Hector Navarro)",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+      "evidence_ids": [
+        "ev-32d02cf33b45-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+      "evidence_ids": [
+        "ev-32d02cf33b45-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+      "evidence_ids": [
+        "ev-32d02cf33b45-0001-0000"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 31
+      }
+    },
+    {
+      "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+      "evidence_ids": [
+        "ev-32d02cf33b45-0001-0004"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+      "evidence_ids": [
+        "ev-32d02cf33b45-0001-0001"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+      "evidence_ids": [
+        "ev-32d02cf33b45-0001-0003"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+      "evidence_ids": [
+        "ev-32d02cf33b45-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "32d02cf33b4504b407cfc75a34f0d6923d8a6bb5b231dba9b10219756dc4f8cd",
+      "evidence_ids": [
+        "ev-32d02cf33b45-0002-0001"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T02:59:46.563901Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim \"According to Petitioner, according to James A. Feldman, commissions are completely irrelevant to this provision\" is not fully supported because there is no evidence that the Petitioner made that statement; only Feldman's remark is cited.",
+      "Attribution check failed: the background claim is attributed solely to Justice Ginsburg, but the evidence includes a question from Justice Kagan, so the attribution is inaccurate.",
+      "Attribution check failed: the commissions claim is attributed to the Petitioner, yet the cited evidence records the statement as made by James A. Feldman, not the Petitioner."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "080dd34af2dc283bd74eccb81ed89f783825240d14af3a45f6e8c2eefe8a3062",
+            "evidence_ids": [
+              "ev-080dd34af2dc-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, the dispute centers on whether the New\u202fJersey law is preempted by federal law (a \u201ccommandeering\u201d problem)."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "080dd34af2dc283bd74eccb81ed89f783825240d14af3a45f6e8c2eefe8a3062",
+            "evidence_ids": [
+              "ev-080dd34af2dc-0001-0000",
+              "ev-080dd34af2dc-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, the Court also considered whether the injunction issued in the case obligates the governor to enforce the law."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-476",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T04:11:57.979826Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "080dd34af2dc283bd74eccb81ed89f783825240d14af3a45f6e8c2eefe8a3062"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "080dd34af2dc283bd74eccb81ed89f783825240d14af3a45f6e8c2eefe8a3062",
+            "evidence_ids": [
+              "ev-080dd34af2dc-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the government\u2019s action amounts to preemption of state law."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "080dd34af2dc283bd74eccb81ed89f783825240d14af3a45f6e8c2eefe8a3062",
+            "evidence_ids": [
+              "ev-080dd34af2dc-0001-0000",
+              "ev-080dd34af2dc-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned whether the injunction requires the governor to enforce the law."
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "080dd34af2dc283bd74eccb81ed89f783825240d14af3a45f6e8c2eefe8a3062",
+            "evidence_ids": [
+              "ev-080dd34af2dc-0002-0000"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked why the Court should consider the severability question posed by the Chief Justice."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justices Ginsburg and Sotomayor",
+        "citations": [
+          {
+            "document_hash": "080dd34af2dc283bd74eccb81ed89f783825240d14af3a45f6e8c2eefe8a3062",
+            "evidence_ids": [
+              "ev-080dd34af2dc-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "080dd34af2dc283bd74eccb81ed89f783825240d14af3a45f6e8c2eefe8a3062",
+            "evidence_ids": [
+              "ev-080dd34af2dc-0001-0000",
+              "ev-080dd34af2dc-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justices asked whether the New\u202fJersey law is preempted by federal authority and whether the injunction requires the governor to enforce the law."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Olson",
+          "citations": [
+            {
+              "document_hash": "080dd34af2dc283bd74eccb81ed89f783825240d14af3a45f6e8c2eefe8a3062",
+              "evidence_ids": [
+                "ev-080dd34af2dc-0001-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Mr. Olson, the governor does not have a duty to enforce the law under the injunction."
+        }
+      ],
+      "heading": "Petitioner (Governor Christie / New\u202fJersey)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "080dd34af2dc283bd74eccb81ed89f783825240d14af3a45f6e8c2eefe8a3062",
+              "evidence_ids": [
+                "ev-080dd34af2dc-0001-0005"
+              ],
+              "pages": {
+                "end": 33,
+                "start": 33
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, the partial repeal of the law is forbidden."
+        }
+      ],
+      "heading": "Respondent (NCAA)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States (Amicus Curiae)",
+          "citations": [
+            {
+              "document_hash": "080dd34af2dc283bd74eccb81ed89f783825240d14af3a45f6e8c2eefe8a3062",
+              "evidence_ids": [
+                "ev-080dd34af2dc-0002-0006"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to United States (Amicus Curiae), according to United States (Amicus Curiae), according to United States (Amicus Curiae), the state\u2019s arguments constitute a commandeering problem because New\u202fJersey is forced to keep a law on its books without a comprehensive federal regime, and those arguments are incorrect."
+        }
+      ],
+      "heading": "Amicus Curiae (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "080dd34af2dc283bd74eccb81ed89f783825240d14af3a45f6e8c2eefe8a3062",
+      "evidence_ids": [
+        "ev-080dd34af2dc-0000-0000"
+      ],
+      "pages": {
+        "end": 75,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T04:20:08.152337Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim that Justice Ginsburg said the dispute centers on a \u201ccommandeering\u201d problem is not supported by the provided evidence (the evidence only shows her asking about preemption).",
+      "Overstatement check failed: the same claim adds the characterization of a \u201ccommandeering\u201d problem, which is not present in the evidence and thus overstates the Justice\u2019s statement."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

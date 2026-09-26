@@ -1,0 +1,421 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The legal question before the Court is how \u201ctolled\u201d should be understood\u2014whether it means \u201csuspended\u201d and whether the statute permits a longer tolling period for state limitations."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, statutory history shows a clear grace period for tolling."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          },
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0002-0007"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether other statutes similarly toll state limitations while a federal suit is pending."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-460",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T04:01:20.583843Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+          "evidence_ids": [
+            "ev-34f29e8f31f3-0000-0000"
+          ],
+          "pages": {
+            "end": 4,
+            "start": 4
+          }
+        }
+      ],
+      "definition": "suspended",
+      "term": "tolled"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether a longer tolling period is unnecessary if the statute already tolls the limitation period."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor referenced statutory history indicating a clear grace period for tolling."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          },
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0002-0007"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer inquired whether other statutes similarly toll state limitations while a federal suit is pending."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0002-0003"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan cited the Jinks decision upholding Congress\u2019s authority under the Necessary and Proper Clause to toll state statutes of limitations."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0003-0000"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked where the constitutional line should be drawn regarding tolling authority."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case concerns the interpretation of the term \u201ctolled\u201d in 28\u202fU.S.C.\u202f\u00a7\u202f1367(d), which governs the tolling of state statutes of limitations while a federal supplemental\u2011jurisdiction claim is pending."
+      },
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0002-0006"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "The parties argue about the balance between protecting defendants and giving plaintiffs sufficient time to sue, and about federalism considerations raised by the statute\u2019s plain text."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+              "evidence_ids": [
+                "ev-34f29e8f31f3-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner, the term \u201ctolled\u201d means \u201csuspended,\u201d consistent with the plain meaning of the word and Black\u2019s Law Dictionary."
+        },
+        {
+          "attribution": "MR. UNIKOWSKY",
+          "citations": [
+            {
+              "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+              "evidence_ids": [
+                "ev-34f29e8f31f3-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to MR. UNIKOWSKY, statutes of limitations should balance protecting defendants with giving plaintiffs enough time to sue, supporting a tolling period while the federal claim is pending."
+        },
+        {
+          "attribution": "Adam G. Unikowski",
+          "citations": [
+            {
+              "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+              "evidence_ids": [
+                "ev-34f29e8f31f3-0002-0006"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 60
+              }
+            }
+          ],
+          "text": "According to Adam G. Unikowski, adam G. Unikowski indicated he would address the plain text of \u00a7\u202f1367(d) and the federalism considerations raised by Respondent."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+      "evidence_ids": [
+        "ev-34f29e8f31f3-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T04:11:57.959971Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "overview.claims[1] requires attribution",
+      "background_and_question.claims[0] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "overview.claims[1] requires attribution",
+      "background_and_question.claims[0] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0002-0003"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan referenced Jinks and noted Congress\u2019s authority under the necessary and proper clause to toll state statutes of limitations."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "34f29e8f31f3bf45d70ec9ce37e3d92629b71223428d86ed30dd267a244a30a9",
+            "evidence_ids": [
+              "ev-34f29e8f31f3-0003-0000"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch raised constitutional considerations about the limits of Congress\u2019s authority to toll state statutes of limitations."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

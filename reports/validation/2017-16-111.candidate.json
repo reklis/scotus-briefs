@@ -1,0 +1,383 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Masterpiece Cakeshop, Ltd. (Petitioners)",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Masterpiece Cakeshop, Ltd. (Petitioners), according to Masterpiece Cakeshop, Ltd. (Petitioners), the Commission ordered the baker to sketch, sculpt, and hand\u2011paint a cake celebrating a marriage that the baker believes violates his religious convictions."
+      },
+      {
+        "attribution": "State Respondent",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0002-0001"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "According to State Respondent, the State argues that, because the bakery operates as a retail service, it may be required to serve all customers regardless of the customers\u2019 identity or the message involved."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2017-16-111",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T01:49:20.569318Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked a question of the parties."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0001-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, the dispute may superficially look like it is about the message, but it is really about the person's identity."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to United States, the United States, through General Noel J. Francisco, filed an amicus brief supporting the petitioners."
+      },
+      {
+        "attribution": "Justice Kennedy",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0001-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Kennedy asked whether, if the baker prevailed, he could post a sign refusing to bake cakes for gay weddings."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0002-0000"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked what additional facts the parties needed."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0002-0002"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, the situation could create a problem for the State."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0002-0003"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts warned that the parties had only five minutes remaining."
+      },
+      {
+        "attribution": "Mr. Yarger",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0003-0002"
+            ],
+            "pages": {
+              "end": 72,
+              "start": 72
+            }
+          }
+        ],
+        "text": "Mr. Yarger argued that a training requirement is a common remedy in civil\u2011rights cases."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0004-0001"
+            ],
+            "pages": {
+              "end": 93,
+              "start": 93
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether Mr. Yarger\u2019s answer to a hypothetical about a religious legal\u2011services organization was the same as his answer to the earlier question."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "State Respondent",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0002-0001"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "According to State Respondent, the Colorado Civil Rights Commission contends that, as a retailer, the bakery must provide its services to all customers without discrimination."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Masterpiece Cakeshop, Ltd. (Petitioners)",
+          "citations": [
+            {
+              "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+              "evidence_ids": [
+                "ev-8413c34f1ba9-0000-0000"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Masterpiece Cakeshop, Ltd. (Petitioners), according to Masterpiece Cakeshop, Ltd. (Petitioners), the First Amendment prohibits the government from forcing the baker to express a message that violates his religious convictions."
+        }
+      ],
+      "heading": "Petitioner (Masterpiece Cakeshop, Ltd.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State Respondent",
+          "citations": [
+            {
+              "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+              "evidence_ids": [
+                "ev-8413c34f1ba9-0002-0001"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to State Respondent, as a retailer, the bakery may be required to provide its services to all customers without discrimination."
+        }
+      ],
+      "heading": "Respondent (Colorado Civil Rights Commission)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+      "evidence_ids": [
+        "ev-8413c34f1ba9-0000-0000",
+        "ev-8413c34f1ba9-0000-0001",
+        "ev-8413c34f1ba9-0001-0000",
+        "ev-8413c34f1ba9-0001-0001",
+        "ev-8413c34f1ba9-0001-0002",
+        "ev-8413c34f1ba9-0002-0000",
+        "ev-8413c34f1ba9-0002-0001",
+        "ev-8413c34f1ba9-0002-0002",
+        "ev-8413c34f1ba9-0002-0003",
+        "ev-8413c34f1ba9-0003-0002",
+        "ev-8413c34f1ba9-0004-0000",
+        "ev-8413c34f1ba9-0004-0001"
+      ],
+      "pages": {
+        "end": 93,
+        "start": 5
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T01:59:18.560898Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "support check failed: the claim that the United States filed an amicus brief supporting the petitioners is not directly supported by the provided evidence, which only records an oral argument by General Noel J. Francisco on behalf of the United States.",
+      "overstatement check failed: the same claim overstates the nature of the United States' participation by describing it as a filed amicus brief rather than the oral argument documented in the evidence."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Masterpiece Cakeshop, Ltd. (Petitioners) and State Respondent",
+        "citations": [
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "8413c34f1ba9c25aff4c494c89d004378570d90c4ca6f4439dc2f76d26d0db02",
+            "evidence_ids": [
+              "ev-8413c34f1ba9-0002-0001"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "The case presents a conflict between the petitioner's First Amendment claim and the respondent's anti\u2011discrimination position."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

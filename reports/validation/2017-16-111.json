@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2017-16-111",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "support check failed: the claim that the United States filed an amicus brief supporting the petitioners is not directly supported by the provided evidence, which only records an oral argument by General Noel J. Francisco on behalf of the United States.",
+    "overstatement check failed: the same claim overstates the nature of the United States' participation by describing it as a filed amicus brief rather than the oral argument documented in the evidence."
+  ],
+  "quality_scores": {
+    "completeness": 1.0,
+    "factual_accuracy": 0.9,
+    "neutrality": 1.0,
+    "readability": 1.0,
+    "restraint": 1.0,
+    "traceability": 0.85
+  }
+}
