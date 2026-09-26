@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2018-17-1717",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: Overview claim that the cross was erected to commemorate 49 individuals in the wake of WWI is not supported; the cited evidence is a question by Monica L. Miller rather than a factual assertion.",
+    "Support check failed: Background claim that the central legal question is whether the Peace Cross violates the Establishment Clause by preferring one religion over another is not directly supported; the cited evidence states the clause\u2019s prohibition but does not frame it as the central question.",
+    "Overstatement check failed: The two unsupported claims above overstate facts that are not established by the evidence, constituting material overstatement."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.82,
+    "neutrality": 0.9,
+    "readability": 0.9,
+    "restraint": 0.8,
+    "traceability": 0.95
+  }
+}

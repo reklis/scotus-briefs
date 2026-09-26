@@ -1,0 +1,392 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+            "evidence_ids": [
+              "ev-c88990bdd34e-0000-0006"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The First Circuit held that independent\u2011contractor agreements are contracts of employment and thus exempt from the Federal Arbitration Act."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+            "evidence_ids": [
+              "ev-c88990bdd34e-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how the word \u201cworker\u201d should apply to contracts of employment for various classes of workers engaged in foreign or interstate commerce."
+      },
+      {
+        "attribution": "New Prime Inc.",
+        "citations": [
+          {
+            "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+            "evidence_ids": [
+              "ev-c88990bdd34e-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to New Prime Inc., according to New Prime Inc., Congress did not create a new definition of \u201cemployment\u201d in the Section\u202f1 exemption."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-340",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T14:36:33.349801Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+          "evidence_ids": [
+            "ev-c88990bdd34e-0002-0007"
+          ],
+          "pages": {
+            "end": 54,
+            "start": 54
+          }
+        }
+      ],
+      "definition": "An agreement between an employer and an employee that states the terms and conditions of employment (Black's Law Dictionary, 1927).",
+      "term": "contract of employment"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+            "evidence_ids": [
+              "ev-c88990bdd34e-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how the term \u201cworker\u201d should apply to contracts of employment for various classes of workers."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+            "evidence_ids": [
+              "ev-c88990bdd34e-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor queried whether any other area of law treats the employee versus independent\u2011contractor label as binding."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+            "evidence_ids": [
+              "ev-c88990bdd34e-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether a genuine independent contractor falls outside the exemption and how that distinction affects the case."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+            "evidence_ids": [
+              "ev-c88990bdd34e-0002-0002"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether an arbitrator would be bound by a determination that Oliveira is an independent contractor for purposes of applying the Fair Labor Standards Act."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+            "evidence_ids": [
+              "ev-c88990bdd34e-0001-0004"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan requested to return to Justice Alito\u2019s earlier question."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+            "evidence_ids": [
+              "ev-c88990bdd34e-0002-0004"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the contract at issue was the one from Coppage v. Kansas."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "New Prime Inc.",
+        "citations": [
+          {
+            "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+            "evidence_ids": [
+              "ev-c88990bdd34e-0000-0001",
+              "ev-c88990bdd34e-0000-0006"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "New Prime Inc. v. Dominic Oliveira concerns whether independent\u2011contractor agreements are considered contracts of employment and therefore exempt from the Federal Arbitration Act."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "New Prime Inc.",
+          "citations": [
+            {
+              "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+              "evidence_ids": [
+                "ev-c88990bdd34e-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to New Prime Inc., according to New Prime Inc., the First Circuit\u2019s view that independent\u2011contractor agreements are contracts of employment makes them exempt from the FAA."
+        },
+        {
+          "attribution": "New Prime Inc.",
+          "citations": [
+            {
+              "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+              "evidence_ids": [
+                "ev-c88990bdd34e-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to New Prime Inc., according to New Prime Inc., this reading conflicts with the plain meaning, structure, purpose, history, and context of the statute."
+        },
+        {
+          "attribution": "New Prime Inc.",
+          "citations": [
+            {
+              "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+              "evidence_ids": [
+                "ev-c88990bdd34e-0000-0004"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to New Prime Inc., according to New Prime Inc., Congress did not define \u201cemployment\u201d in a novel way in the exemption."
+        },
+        {
+          "attribution": "Prime",
+          "citations": [
+            {
+              "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+              "evidence_ids": [
+                "ev-c88990bdd34e-0002-0001"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Prime, New Prime refutes the assertion that cited sources do not address the distinction between independent contractors and common\u2011law servants."
+        }
+      ],
+      "heading": "New Prime Inc. (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Dominic Oliveira (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+      "evidence_ids": [
+        "ev-c88990bdd34e-0000-0006"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T14:44:52.268815Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "New Prime Inc.",
+        "citations": [
+          {
+            "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+            "evidence_ids": [
+              "ev-c88990bdd34e-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to New Prime Inc., according to New Prime Inc., how workers are classified determines whether the FAA exemption applies, which in turn affects whether disputes must be resolved by arbitration."
+      },
+      {
+        "attribution": "New Prime Inc.",
+        "citations": [
+          {
+            "document_hash": "c88990bdd34e2ee2e18759f503279433b31e0f8c314e2f741b1d59d2fc4629fa",
+            "evidence_ids": [
+              "ev-c88990bdd34e-0000-0005"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The classification also influences whether plaintiffs can obtain relief under the Fair Labor Standards Act."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

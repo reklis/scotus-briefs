@@ -1,0 +1,545 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Lawrence D. Rosenberg",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Lawrence D. Rosenberg, the case concerns whether the West Virginia tax exemption for state retirees is facially discriminatory under Section 111."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justices asked what to do with the fact that the job duties of marshals overlap with the two categories of the state."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-419",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T14:44:52.290102Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked what to do with the fact that marshals' job duties overlap with the two categories of the state."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked what would be open on remand."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0001-0002"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Breyer asked who decides which retirement plan a firefighter or policeman joins."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Alito asked about the characteristics of the exemption."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer followed up with \"Okay. So what is it?\""
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0002-0002"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the issue concerned benefits and contributions."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0003-0001"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked why the opposing counsel\u2019s point about treating federal employees like favored state employees was wrong."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0003-0002"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh further questioned why it was inappropriate, noting both approaches were appropriate."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0003-0003"
+            ],
+            "pages": {
+              "end": 72,
+              "start": 72
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked the counsel to slow down."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Lawrence D. Rosenberg",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Lawrence D. Rosenberg, petitioner argues that the State's tax exemption violates Section 111 because it discriminates based on the source of compensation."
+      },
+      {
+        "attribution": "Michael R. Huston",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0000-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "According to Michael R. Huston, an amicus supports the view that the exemption is facially discriminatory."
+      },
+      {
+        "attribution": "State",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0001-0003"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "The State contends that the exemption is based on contribution rates or Social Security contributions, not discrimination."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0001-0005"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The governing statute prohibits discrimination against an officer or employee because of the source of pay or compensation."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Lawrence D. Rosenberg",
+          "citations": [
+            {
+              "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+              "evidence_ids": [
+                "ev-fef54ebfe86b-0000-0000"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Lawrence D. Rosenberg, petitioner asserts the exemption discriminates based on source of compensation because it only exempts state retirement plan benefits."
+        },
+        {
+          "attribution": "Michael R. Huston",
+          "citations": [
+            {
+              "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+              "evidence_ids": [
+                "ev-fef54ebfe86b-0000-0001"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Michael R. Huston, petitioner (supported by amicus) emphasizes that facial discrimination is the critical issue."
+        }
+      ],
+      "heading": "Petitioner (James Dawson, et ux.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+              "evidence_ids": [
+                "ev-fef54ebfe86b-0001-0003"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "State argues the exemption is justified by differences such as contribution rates or Social Security participation."
+        }
+      ],
+      "heading": "Respondent (State)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+      "evidence_ids": [
+        "ev-fef54ebfe86b-0000-0000",
+        "ev-fef54ebfe86b-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+      "evidence_ids": [
+        "ev-fef54ebfe86b-0000-0001"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+      "evidence_ids": [
+        "ev-fef54ebfe86b-0001-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+      "evidence_ids": [
+        "ev-fef54ebfe86b-0001-0003"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 31
+      }
+    },
+    {
+      "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+      "evidence_ids": [
+        "ev-fef54ebfe86b-0001-0005"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+      "evidence_ids": [
+        "ev-fef54ebfe86b-0001-0002"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+      "evidence_ids": [
+        "ev-fef54ebfe86b-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+      "evidence_ids": [
+        "ev-fef54ebfe86b-0002-0001"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+      "evidence_ids": [
+        "ev-fef54ebfe86b-0002-0002"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+      "evidence_ids": [
+        "ev-fef54ebfe86b-0003-0004"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 66
+      }
+    },
+    {
+      "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+      "evidence_ids": [
+        "ev-fef54ebfe86b-0003-0001",
+        "ev-fef54ebfe86b-0003-0002"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+      "evidence_ids": [
+        "ev-fef54ebfe86b-0003-0003"
+      ],
+      "pages": {
+        "end": 72,
+        "start": 72
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T14:54:11.045099Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Lawrence D. Rosenberg",
+        "citations": [
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "fef54ebfe86be0cc2207d9b6a119fb160378e0c8df1ba3bc86047e36ea3685cf",
+            "evidence_ids": [
+              "ev-fef54ebfe86b-0001-0005"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "The case addresses whether a tax exemption that differentiates based on the source of compensation violates anti\u2011discrimination provisions of Section 111."
+      }
+    ],
+    "heading": "Why it matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

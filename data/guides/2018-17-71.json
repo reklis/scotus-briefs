@@ -1,0 +1,189 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-71",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T15:23:33.342895Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "d945c50bd64a23681597a5d4f9ee66922a9264acb87cb35c1a7e16a299b1df47"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Weyerhaeuser Company",
+        "citations": [
+          {
+            "document_hash": "d945c50bd64a23681597a5d4f9ee66922a9264acb87cb35c1a7e16a299b1df47",
+            "evidence_ids": [
+              "ev-d945c50bd64a-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Weyerhaeuser Company, weyerhaeuser argues that the issue must be framed in terms of habitat."
+      },
+      {
+        "attribution": "Mr. Bishop",
+        "citations": [
+          {
+            "document_hash": "d945c50bd64a23681597a5d4f9ee66922a9264acb87cb35c1a7e16a299b1df47",
+            "evidence_ids": [
+              "ev-d945c50bd64a-0002-0003"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "According to Mr. Bishop, weyerhaeuser (through Mr. Bishop) states that critical habitat is only one component of the analysis."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Weyerhaeuser Company",
+          "citations": [
+            {
+              "document_hash": "d945c50bd64a23681597a5d4f9ee66922a9264acb87cb35c1a7e16a299b1df47",
+              "evidence_ids": [
+                "ev-d945c50bd64a-0000-0004"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Weyerhaeuser Company, weyerhaeuser argues that the issue must be framed in terms of habitat."
+        },
+        {
+          "attribution": "Mr. Bishop",
+          "citations": [
+            {
+              "document_hash": "d945c50bd64a23681597a5d4f9ee66922a9264acb87cb35c1a7e16a299b1df47",
+              "evidence_ids": [
+                "ev-d945c50bd64a-0002-0003"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 62
+              }
+            }
+          ],
+          "text": "According to Mr. Bishop, weyerhaeuser (through Mr. Bishop) states that critical habitat is only one component of the analysis."
+        }
+      ],
+      "heading": "Weyerhaeuser Company",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "United States Fish and Wildlife Service",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "d945c50bd64a23681597a5d4f9ee66922a9264acb87cb35c1a7e16a299b1df47",
+      "evidence_ids": [
+        "ev-d945c50bd64a-0000-0004"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "d945c50bd64a23681597a5d4f9ee66922a9264acb87cb35c1a7e16a299b1df47",
+      "evidence_ids": [
+        "ev-d945c50bd64a-0002-0003"
+      ],
+      "pages": {
+        "end": 62,
+        "start": 62
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T15:25:40.917642Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

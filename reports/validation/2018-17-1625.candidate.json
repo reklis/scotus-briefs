@@ -1,0 +1,283 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-1625",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T13:42:02.184754Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b60c8f5c247739829e9bfa74b4e74bdf83b2c5b423bc7e3ef8a966c6292e741a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b60c8f5c247739829e9bfa74b4e74bdf83b2c5b423bc7e3ef8a966c6292e741a",
+            "evidence_ids": [
+              "ev-b60c8f5c2477-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether \u201cfull costs\u201d predated its statutory definition and had an independent historical meaning."
+      },
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "b60c8f5c247739829e9bfa74b4e74bdf83b2c5b423bc7e3ef8a966c6292e741a",
+            "evidence_ids": [
+              "ev-b60c8f5c2477-0001-0000",
+              "ev-b60c8f5c2477-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Alito inquired whether, in 1831, costs were defined by federal law or left to the states."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b60c8f5c247739829e9bfa74b4e74bdf83b2c5b423bc7e3ef8a966c6292e741a",
+            "evidence_ids": [
+              "ev-b60c8f5c2477-0001-0003"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned whether the absence of the word \u201cfull\u201d in the statute would affect the outcome."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "b60c8f5c247739829e9bfa74b4e74bdf83b2c5b423bc7e3ef8a966c6292e741a",
+            "evidence_ids": [
+              "ev-b60c8f5c2477-0001-0004"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer wondered whether Congress\u2019s use of cost\u2011related language reflects a deliberate intent that should be respected."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b60c8f5c247739829e9bfa74b4e74bdf83b2c5b423bc7e3ef8a966c6292e741a",
+            "evidence_ids": [
+              "ev-b60c8f5c2477-0002-0000"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether a judge could reduce attorneys\u2019 fees deemed \u201coutrageous\u201d despite a statutory provision for \u201cfull costs.\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "b60c8f5c247739829e9bfa74b4e74bdf83b2c5b423bc7e3ef8a966c6292e741a",
+            "evidence_ids": [
+              "ev-b60c8f5c2477-0003-0000",
+              "ev-b60c8f5c2477-0003-0004"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 65
+            }
+          }
+        ],
+        "text": "According to Petitioners, rimini Street, Inc. (the petitioner) challenged Oracle USA, Inc. (the respondent) on whether \u201cfull costs\u201d includes expert\u2011witness fees and other non\u2011scheduled fees."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "b60c8f5c247739829e9bfa74b4e74bdf83b2c5b423bc7e3ef8a966c6292e741a",
+              "evidence_ids": [
+                "ev-b60c8f5c2477-0003-0000"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 65
+              }
+            }
+          ],
+          "text": "Petitioners argue that expert\u2011witness fees were never part of \u201cfull costs\u201d in copyright cases from 1831 to 1976."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "b60c8f5c247739829e9bfa74b4e74bdf83b2c5b423bc7e3ef8a966c6292e741a",
+              "evidence_ids": [
+                "ev-b60c8f5c2477-0003-0003"
+              ],
+              "pages": {
+                "end": 67,
+                "start": 67
+              }
+            }
+          ],
+          "text": "According to Petitioners, they contend that \u201cfull costs\u201d is a term of art that does not automatically include non\u2011scheduled fees such as expert\u2011witness fees."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "b60c8f5c247739829e9bfa74b4e74bdf83b2c5b423bc7e3ef8a966c6292e741a",
+              "evidence_ids": [
+                "ev-b60c8f5c2477-0003-0002",
+                "ev-b60c8f5c2477-0003-0003"
+              ],
+              "pages": {
+                "end": 67,
+                "start": 66
+              }
+            }
+          ],
+          "text": "According to Petitioners, they note that Congress in 1976 enacted statutes expressly authorizing expert\u2011witness fees, but the Supreme Court has consistently treated \u201ccosts\u201d as a term of art that Congress can override only by explicit statement."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "b60c8f5c247739829e9bfa74b4e74bdf83b2c5b423bc7e3ef8a966c6292e741a",
+              "evidence_ids": [
+                "ev-b60c8f5c2477-0003-0004"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Petitioners, they assert that non\u2011scheduled fees have never been included in \u201cfull costs,\u201d and that the Court should not reinterpret the term to expand cost awards."
+        }
+      ],
+      "heading": "Petitioners (Rimini Street, Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondents (Oracle USA, Inc.)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b60c8f5c247739829e9bfa74b4e74bdf83b2c5b423bc7e3ef8a966c6292e741a",
+      "evidence_ids": [
+        "ev-b60c8f5c2477-0000-0000"
+      ],
+      "pages": {
+        "end": 1,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T13:50:30.216454Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "oral_argument.claims[1] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "oral_argument.claims[1] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

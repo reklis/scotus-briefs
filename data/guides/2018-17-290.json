@@ -1,0 +1,352 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-290",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T14:29:10.460965Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+          "evidence_ids": [
+            "ev-dd12b39ad517-0002-0004"
+          ],
+          "pages": {
+            "end": 48,
+            "start": 48
+          }
+        }
+      ],
+      "definition": "A stress fracture (also known as an insufficiency fracture) is defined as a partial or complete fracture occurring with either normal or increased activity but without an identifiable external traumatic event.",
+      "term": "stress fracture"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+            "evidence_ids": [
+              "ev-dd12b39ad517-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The oral argument began at 10:05\u202fa.m."
+      },
+      {
+        "attribution": "Court Clerk",
+        "citations": [
+          {
+            "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+            "evidence_ids": [
+              "ev-dd12b39ad517-0003-0006"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "The case was submitted at 11:08\u202fa.m."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+            "evidence_ids": [
+              "ev-dd12b39ad517-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Kagan asked a hypothetical about a warning for major fractures versus stress fractures and whether the manufacturer would be immune from suit if the FDA rejected it."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+            "evidence_ids": [
+              "ev-dd12b39ad517-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Kagan asked how to understand what the FDA knows at any given moment and whether it is impossible for Merck to change its label."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+            "evidence_ids": [
+              "ev-dd12b39ad517-0002-0004"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito quoted Merck\u2019s definition of a stress fracture as a partial or complete fracture occurring with normal or increased activity but without an identifiable external traumatic event."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+            "evidence_ids": [
+              "ev-dd12b39ad517-0003-0000",
+              "ev-dd12b39ad517-0003-0001"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked about the manufacturer\u2019s duty to work with the FDA to ensure the label is correct and whether that duty is the manufacturer\u2019s burden."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+            "evidence_ids": [
+              "ev-dd12b39ad517-0002-0005"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked how the manufacturer\u2019s duty translates into practical obligations."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Merck Sharp & Dohme Corp.",
+          "citations": [
+            {
+              "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+              "evidence_ids": [
+                "ev-dd12b39ad517-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Merck Sharp & Dohme Corp., according to Merck Sharp & Dohme Corp., merck argues that if a manufacturer informs the FDA of a possible risk and unsuccessfully asks to revise its label in light of that risk, failure\u2011to\u2011warn claims based on that risk are pre\u2011empted as a matter of law."
+        },
+        {
+          "attribution": "Merck",
+          "citations": [
+            {
+              "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+              "evidence_ids": [
+                "ev-dd12b39ad517-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "Merck says the FDA\u2019s rejection letter should have clearly stated the reason for rejecting the proposed label addition."
+        },
+        {
+          "attribution": "Merck",
+          "citations": [
+            {
+              "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+              "evidence_ids": [
+                "ev-dd12b39ad517-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Merck, the manufacturer should first look to the letter itself for clarity on the FDA\u2019s decision."
+        },
+        {
+          "attribution": "Mr. Frederick",
+          "citations": [
+            {
+              "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+              "evidence_ids": [
+                "ev-dd12b39ad517-0002-0000"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            },
+            {
+              "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+              "evidence_ids": [
+                "ev-dd12b39ad517-0002-0001"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "Merck questions what the manufacturer knew at a particular point in time and what the FDA understood about that risk."
+        },
+        {
+          "attribution": "Mr. Dvoretsky",
+          "citations": [
+            {
+              "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+              "evidence_ids": [
+                "ev-dd12b39ad517-0003-0002"
+              ],
+              "pages": {
+                "end": 66,
+                "start": 66
+              }
+            }
+          ],
+          "text": "According to Mr. Dvoretsky, the PAS submission included 132 studies about the risk, and the FDA was not misled."
+        }
+      ],
+      "heading": "Merck Sharp & Dohme Corp.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Merck Sharp & Dohme Corp.",
+          "citations": [
+            {
+              "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+              "evidence_ids": [
+                "ev-dd12b39ad517-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Merck Sharp & Dohme Corp., respondents argue that the FDA, fully informed of the risk of atypical femoral fractures, ignored that risk and its statutory responsibilities because it disliked the way Merck phrased its proposed warning."
+        }
+      ],
+      "heading": "Respondents (Doris Albrecht et al.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "dd12b39ad5175049a737e55a121867f4c0917ed1b583aadf7b94e16d2a7991ba",
+      "evidence_ids": [
+        "ev-dd12b39ad517-0000-0000"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T14:36:33.339476Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

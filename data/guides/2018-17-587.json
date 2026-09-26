@@ -1,0 +1,267 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "b06283e89b579f9454857b808e09d2baa17486344c7af7fdde2c10f16bd8044a",
+            "evidence_ids": [
+              "ev-b06283e89b57-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Breyer asked a question during oral argument."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "b06283e89b579f9454857b808e09d2baa17486344c7af7fdde2c10f16bd8044a",
+            "evidence_ids": [
+              "ev-b06283e89b57-0002-0002"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 49
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the plain\u2011text interpretation would treat an employer\u2019s employees as agents of the employer."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b06283e89b579f9454857b808e09d2baa17486344c7af7fdde2c10f16bd8044a",
+            "evidence_ids": [
+              "ev-b06283e89b57-0002-0004"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "The United States filed an amicus curiae brief supporting the respondents."
+      },
+      {
+        "attribution": "United States (amicus curiae)",
+        "citations": [
+          {
+            "document_hash": "b06283e89b579f9454857b808e09d2baa17486344c7af7fdde2c10f16bd8044a",
+            "evidence_ids": [
+              "ev-b06283e89b57-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to United States (amicus curiae), according to United States (amicus curiae), the amicus argued that the Age Act expressly covers state and political\u2011subdivision employers regardless of size."
+      },
+      {
+        "attribution": "United States (amicus curiae)",
+        "citations": [
+          {
+            "document_hash": "b06283e89b579f9454857b808e09d2baa17486344c7af7fdde2c10f16bd8044a",
+            "evidence_ids": [
+              "ev-b06283e89b57-0002-0001"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to United States (amicus curiae), according to United States (amicus curiae), the amicus further argued that the phrase \u201calso means\u201d is used in federal statutes in its ordinary meaning, not following the Title\u202fVII approach."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-587",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T15:07:22.955295Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b06283e89b579f9454857b808e09d2baa17486344c7af7fdde2c10f16bd8044a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justices Breyer and Alito",
+        "citations": [
+          {
+            "document_hash": "b06283e89b579f9454857b808e09d2baa17486344c7af7fdde2c10f16bd8044a",
+            "evidence_ids": [
+              "ev-b06283e89b57-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "b06283e89b579f9454857b808e09d2baa17486344c7af7fdde2c10f16bd8044a",
+            "evidence_ids": [
+              "ev-b06283e89b57-0002-0002"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 49
+            }
+          }
+        ],
+        "text": "During oral argument, Justices Breyer and Alito posed questions about the interpretation of the Age Act."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b06283e89b579f9454857b808e09d2baa17486344c7af7fdde2c10f16bd8044a",
+            "evidence_ids": [
+              "ev-b06283e89b57-0002-0004"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "An amicus curiae brief filed by the United States supported the respondents."
+      },
+      {
+        "attribution": "United States (amicus curiae)",
+        "citations": [
+          {
+            "document_hash": "b06283e89b579f9454857b808e09d2baa17486344c7af7fdde2c10f16bd8044a",
+            "evidence_ids": [
+              "ev-b06283e89b57-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          },
+          {
+            "document_hash": "b06283e89b579f9454857b808e09d2baa17486344c7af7fdde2c10f16bd8044a",
+            "evidence_ids": [
+              "ev-b06283e89b57-0002-0001"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to United States (amicus curiae), according to United States (amicus curiae), the amicus brief argued that the Age Act covers state and political subdivision employers and that statutory language should be read in its ordinary meaning."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Mount Lemmon Fire District (Petitioner)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "John Guido (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b06283e89b579f9454857b808e09d2baa17486344c7af7fdde2c10f16bd8044a",
+      "evidence_ids": [
+        "ev-b06283e89b57-0001-0000",
+        "ev-b06283e89b57-0002-0004",
+        "ev-b06283e89b57-0002-0000",
+        "ev-b06283e89b57-0002-0001",
+        "ev-b06283e89b57-0002-0002"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 24
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T15:10:56.173655Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

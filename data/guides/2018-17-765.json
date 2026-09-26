@@ -1,0 +1,271 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "852c732b76e0c61d49e38df704b1403cfa757350444599ae133b3ecd263ca9d7",
+            "evidence_ids": [
+              "ev-852c732b76e0-0003-0006"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          },
+          {
+            "document_hash": "852c732b76e0c61d49e38df704b1403cfa757350444599ae133b3ecd263ca9d7",
+            "evidence_ids": [
+              "ev-852c732b76e0-0003-0007"
+            ],
+            "pages": {
+              "end": 72,
+              "start": 72
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether a statute that covers only regular cars falls outside the scope of the law."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "852c732b76e0c61d49e38df704b1403cfa757350444599ae133b3ecd263ca9d7",
+            "evidence_ids": [
+              "ev-852c732b76e0-0003-0004"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh suggested that the practical difference between buildings and structures might be relevant to the case."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-765",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T15:26:34.467043Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "852c732b76e0c61d49e38df704b1403cfa757350444599ae133b3ecd263ca9d7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "852c732b76e0c61d49e38df704b1403cfa757350444599ae133b3ecd263ca9d7",
+            "evidence_ids": [
+              "ev-852c732b76e0-0003-0006"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether a statute covering regular cars falls outside the scope of the law."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "852c732b76e0c61d49e38df704b1403cfa757350444599ae133b3ecd263ca9d7",
+            "evidence_ids": [
+              "ev-852c732b76e0-0003-0007"
+            ],
+            "pages": {
+              "end": 72,
+              "start": 72
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether statutes covering vehicles used for business activities are included."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "United States (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "852c732b76e0c61d49e38df704b1403cfa757350444599ae133b3ecd263ca9d7",
+              "evidence_ids": [
+                "ev-852c732b76e0-0000-0003"
+              ],
+              "pages": {
+                "end": 9,
+                "start": 9
+              }
+            }
+          ],
+          "text": "According to United States (Petitioner), according to United States (Petitioner), petitioner argued that the statutes do not encompass the conduct at issue."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "852c732b76e0c61d49e38df704b1403cfa757350444599ae133b3ecd263ca9d7",
+              "evidence_ids": [
+                "ev-852c732b76e0-0003-0002"
+              ],
+              "pages": {
+                "end": 67,
+                "start": 67
+              }
+            }
+          ],
+          "text": "Petitioner contended that Congress would have passed the statute to address a small number of cases, affecting the ACCA burglary definition."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "852c732b76e0c61d49e38df704b1403cfa757350444599ae133b3ecd263ca9d7",
+              "evidence_ids": [
+                "ev-852c732b76e0-0003-0003"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "Petitioner argued that the residual clause was intended to expand the scope of the statute to cover many burglary statutes."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "852c732b76e0c61d49e38df704b1403cfa757350444599ae133b3ecd263ca9d7",
+              "evidence_ids": [
+                "ev-852c732b76e0-0003-0005"
+              ],
+              "pages": {
+                "end": 70,
+                "start": 70
+              }
+            }
+          ],
+          "text": "Petitioner asserted that the government did not claim all statutes would be invalidated if Mathis were decided."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "852c732b76e0c61d49e38df704b1403cfa757350444599ae133b3ecd263ca9d7",
+              "evidence_ids": [
+                "ev-852c732b76e0-0002-0003"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "Government counsel argued that the statistics support their position."
+        }
+      ],
+      "heading": "Government",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "852c732b76e0c61d49e38df704b1403cfa757350444599ae133b3ecd263ca9d7",
+      "evidence_ids": [
+        "ev-852c732b76e0-0003-0006"
+      ],
+      "pages": {
+        "end": 71,
+        "start": 71
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T15:30:00.895517Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

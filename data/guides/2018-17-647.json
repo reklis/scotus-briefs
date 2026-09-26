@@ -1,0 +1,439 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+            "evidence_ids": [
+              "ev-67889625f290-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner, the central legal question is when an invasion of property without just compensation constitutes a taking that requires damages under the Just Compensation Clause."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-647",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T15:14:49.431334Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "16c394c622c44f20a5421333ecdba4df71449e4485cd87fbb4d107a3f03e8f19",
+      "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+            "evidence_ids": [
+              "ev-67889625f290-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked why administrative exhaustion and ripeness are acceptable, but not the same if someone goes to state court for a final decision."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+            "evidence_ids": [
+              "ev-67889625f290-0001-0004"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the property owner is deprived of a constitutional right before the violation occurs."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+            "evidence_ids": [
+              "ev-67889625f290-0001-0005"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch said the petitioner's argument that the property is taken at the moment of invasion seems to contradict their position."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+            "evidence_ids": [
+              "ev-67889625f290-0001-0006"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked why state courts are considered inferior to federal courts for this claim."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+            "evidence_ids": [
+              "ev-67889625f290-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Breyer asked if there is a middle position on the issue."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+            "evidence_ids": [
+              "ev-67889625f290-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked what counts as speedy in the Pennsylvania court system."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+            "evidence_ids": [
+              "ev-67889625f290-0002-0002"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the property owner would be entitled to attorneys' fees if they prevailed."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+            "evidence_ids": [
+              "ev-67889625f290-0002-0003"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether a Section 1983 plaintiff could enjoin the municipality if the case is lost."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+            "evidence_ids": [
+              "ev-67889625f290-0003-0002"
+            ],
+            "pages": {
+              "end": 73,
+              "start": 73
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked if the substance of the claim differs from the takings claim."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+            "evidence_ids": [
+              "ev-67889625f290-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case concerns whether an invasion of property without just compensation violates the Just Compensation Clause, allowing a property owner to claim an unconstitutional taking."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "16c394c622c44f20a5421333ecdba4df71449e4485cd87fbb4d107a3f03e8f19",
+            "evidence_ids": [
+              "ev-16c394c622c4-0003-0004"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          },
+          {
+            "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+            "evidence_ids": [
+              "ev-67889625f290-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case was submitted for oral argument before the Supreme Court of the United States."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+              "evidence_ids": [
+                "ev-67889625f290-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "Petitioner argues that the invasion itself gives rise to a constitutionally rooted claim for compensation, unless the government provides compensation at the time of the invasion."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+      "evidence_ids": [
+        "ev-67889625f290-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "16c394c622c44f20a5421333ecdba4df71449e4485cd87fbb4d107a3f03e8f19",
+      "evidence_ids": [
+        "ev-16c394c622c4-0003-0004"
+      ],
+      "pages": {
+        "end": 71,
+        "start": 71
+      }
+    },
+    {
+      "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+      "evidence_ids": [
+        "ev-67889625f290-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+      "evidence_ids": [
+        "ev-67889625f290-0001-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+      "evidence_ids": [
+        "ev-67889625f290-0001-0004"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+      "evidence_ids": [
+        "ev-67889625f290-0001-0005"
+      ],
+      "pages": {
+        "end": 29,
+        "start": 29
+      }
+    },
+    {
+      "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+      "evidence_ids": [
+        "ev-67889625f290-0001-0006"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+      "evidence_ids": [
+        "ev-67889625f290-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+      "evidence_ids": [
+        "ev-67889625f290-0002-0001"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+      "evidence_ids": [
+        "ev-67889625f290-0002-0002"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+      "evidence_ids": [
+        "ev-67889625f290-0002-0003"
+      ],
+      "pages": {
+        "end": 62,
+        "start": 62
+      }
+    },
+    {
+      "document_hash": "67889625f290e7922d3f47aa6dcca3b9396aa453e868f7ec9304506e6652dca5",
+      "evidence_ids": [
+        "ev-67889625f290-0003-0002"
+      ],
+      "pages": {
+        "end": 73,
+        "start": 73
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T15:23:33.325711Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

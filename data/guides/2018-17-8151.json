@@ -1,0 +1,183 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7f9433d94ce850f12bd6da7f4cb322bd114e84d1bb7f80fef320d71910ec8e3a",
+            "evidence_ids": [
+              "ev-7f9433d94ce8-0003-0005"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "The case concerns a legal question that Missouri has never taken a position on."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-8151",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T15:31:01.048208Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "7f9433d94ce850f12bd6da7f4cb322bd114e84d1bb7f80fef320d71910ec8e3a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "7f9433d94ce850f12bd6da7f4cb322bd114e84d1bb7f80fef320d71910ec8e3a",
+            "evidence_ids": [
+              "ev-7f9433d94ce8-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Petitioner, mR. HOCHMAN: I -- I don't think that -- I don't think that's true, Your Honor."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7f9433d94ce850f12bd6da7f4cb322bd114e84d1bb7f80fef320d71910ec8e3a",
+            "evidence_ids": [
+              "ev-7f9433d94ce8-0003-0005"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "MR. SAUER: Missouri has never taken a position on that question."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "7f9433d94ce850f12bd6da7f4cb322bd114e84d1bb7f80fef320d71910ec8e3a",
+              "evidence_ids": [
+                "ev-7f9433d94ce8-0001-0001"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "Petitioner argues that the court\u2019s statement is not true."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "7f9433d94ce850f12bd6da7f4cb322bd114e84d1bb7f80fef320d71910ec8e3a",
+      "evidence_ids": [
+        "ev-7f9433d94ce8-0001-0001"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "7f9433d94ce850f12bd6da7f4cb322bd114e84d1bb7f80fef320d71910ec8e3a",
+      "evidence_ids": [
+        "ev-7f9433d94ce8-0003-0005"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 66
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T15:34:00.098653Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

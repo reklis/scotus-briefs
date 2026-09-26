@@ -1,0 +1,398 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+            "evidence_ids": [
+              "ev-a5e28d8175ce-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+            "evidence_ids": [
+              "ev-a5e28d8175ce-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+            "evidence_ids": [
+              "ev-a5e28d8175ce-0001-0001"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "Justices asked whether rejection of a trademark license under Section\u202f365 discharges the debtor\u2019s future obligations and how pre\u2011petition versus post\u2011petition damages are treated."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-1657",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T13:50:30.235242Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+            "evidence_ids": [
+              "ev-a5e28d8175ce-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether rejection means the debtor has no obligation to perform future duties under the contract."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+            "evidence_ids": [
+              "ev-a5e28d8175ce-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned the relevance of the trademark obligations after rejection."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+            "evidence_ids": [
+              "ev-a5e28d8175ce-0001-0001"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked why the alleged injury was insufficient for Article\u202fIII standing and whether damages might be available."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+            "evidence_ids": [
+              "ev-a5e28d8175ce-0003-0002"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer inquired whether a trademark lease would dissolve once the lessee holds the \u201cstick\u201d in the bundle of sticks."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+            "evidence_ids": [
+              "ev-a5e28d8175ce-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+            "evidence_ids": [
+              "ev-a5e28d8175ce-0001-0002"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "The case concerns whether a bankruptcy trustee may reject a trademark license under Section\u202f365 of the Bankruptcy Code, and how that rejection affects the debtor\u2019s obligations and any resulting damages."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+              "evidence_ids": [
+                "ev-a5e28d8175ce-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner, section\u202f365 of the Bankruptcy Code lets the trustee decide whether the estate will become a party to an executory contract; rejection constitutes a breach of the contract immediately before the filing of the petition, relieving the debtor of future performance obligations."
+        },
+        {
+          "attribution": "MS. SPINELLI",
+          "citations": [
+            {
+              "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+              "evidence_ids": [
+                "ev-a5e28d8175ce-0003-0001"
+              ],
+              "pages": {
+                "end": 67,
+                "start": 67
+              }
+            }
+          ],
+          "text": "According to MS. SPINELLI, the license is analogous to a lease; prior to bankruptcy the debtor conveyed an interest in its intellectual property, creating a lease\u2011like interest that survives the bankruptcy filing."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+              "evidence_ids": [
+                "ev-a5e28d8175ce-0001-0002"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "According to Respondents, the case is moot because the exclusive distribution rights are off the table, leaving only a non\u2011exclusive trademark license that has already expired."
+        },
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+              "evidence_ids": [
+                "ev-a5e28d8175ce-0001-0004"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Respondents, existing Supreme Court precedent would not allow a claim based on the rejected trademark license."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+      "evidence_ids": [
+        "ev-a5e28d8175ce-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+      "evidence_ids": [
+        "ev-a5e28d8175ce-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+      "evidence_ids": [
+        "ev-a5e28d8175ce-0000-0003"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+      "evidence_ids": [
+        "ev-a5e28d8175ce-0000-0004"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+      "evidence_ids": [
+        "ev-a5e28d8175ce-0001-0002"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 34
+      }
+    },
+    {
+      "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+      "evidence_ids": [
+        "ev-a5e28d8175ce-0001-0001"
+      ],
+      "pages": {
+        "end": 35,
+        "start": 35
+      }
+    },
+    {
+      "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+      "evidence_ids": [
+        "ev-a5e28d8175ce-0001-0004"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+      "evidence_ids": [
+        "ev-a5e28d8175ce-0003-0000"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 66
+      }
+    },
+    {
+      "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+      "evidence_ids": [
+        "ev-a5e28d8175ce-0003-0001"
+      ],
+      "pages": {
+        "end": 67,
+        "start": 67
+      }
+    },
+    {
+      "document_hash": "a5e28d8175ceb6e8c3bc9bdfb099e1a04d86988cdb21ba48f7c8e7066138d461",
+      "evidence_ids": [
+        "ev-a5e28d8175ce-0003-0002"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T14:00:22.036478Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

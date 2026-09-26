@@ -1,0 +1,227 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1afaf600dd2608f30f4fcb02b7bdcc9d7e90a9175743ea9a42338f6558262211",
+            "evidence_ids": [
+              "ev-1afaf600dd26-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The parties appeared before the Court with counsel Aaron M. Panner for the petitioner, Peter K. Stris for the respondents, and Jonathan Y. Ellis representing the United States as amicus curiae supporting the respondents."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-571",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T15:03:07.227970Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1afaf600dd2608f30f4fcb02b7bdcc9d7e90a9175743ea9a42338f6558262211"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "1afaf600dd2608f30f4fcb02b7bdcc9d7e90a9175743ea9a42338f6558262211",
+            "evidence_ids": [
+              "ev-1afaf600dd26-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked what happens if the registrar does not act and whether a final judgment can be entered before the registrar acts."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "1afaf600dd2608f30f4fcb02b7bdcc9d7e90a9175743ea9a42338f6558262211",
+            "evidence_ids": [
+              "ev-1afaf600dd26-0001-0003"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Kagan asked how long the current delays are and how they compare with delays when the Act was passed."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Fourth Estate Public Benefit Corporation",
+        "citations": [
+          {
+            "document_hash": "1afaf600dd2608f30f4fcb02b7bdcc9d7e90a9175743ea9a42338f6558262211",
+            "evidence_ids": [
+              "ev-1afaf600dd26-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Fourth Estate Public Benefit Corporation, the case concerns whether the phrase \u201cregistration has been made\u201d in Section 411(a) refers to the copyright owner\u2019s compliance with the registration requirement of Section 408(a)."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Fourth Estate Public Benefit Corporation",
+          "citations": [
+            {
+              "document_hash": "1afaf600dd2608f30f4fcb02b7bdcc9d7e90a9175743ea9a42338f6558262211",
+              "evidence_ids": [
+                "ev-1afaf600dd26-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Fourth Estate Public Benefit Corporation, the phrase \u201cregistration has been made\u201d in Section 411(a) refers to the copyright owner's compliance with the registration requirement of Section 408(a)."
+        }
+      ],
+      "heading": "Fourth Estate Public Benefit Corporation (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Wall\u2011Street.com, LLC (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1afaf600dd2608f30f4fcb02b7bdcc9d7e90a9175743ea9a42338f6558262211",
+      "evidence_ids": [
+        "ev-1afaf600dd26-0000-0000",
+        "ev-1afaf600dd26-0000-0001",
+        "ev-1afaf600dd26-0000-0003",
+        "ev-1afaf600dd26-0000-0004",
+        "ev-1afaf600dd26-0000-0005",
+        "ev-1afaf600dd26-0000-0006",
+        "ev-1afaf600dd26-0000-0007",
+        "ev-1afaf600dd26-0000-0008",
+        "ev-1afaf600dd26-0000-0009",
+        "ev-1afaf600dd26-0001-0000",
+        "ev-1afaf600dd26-0001-0003",
+        "ev-1afaf600dd26-0002-0005",
+        "ev-1afaf600dd26-0002-0002",
+        "ev-1afaf600dd26-0002-0003"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T15:07:22.937149Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Industry representatives",
+        "citations": [
+          {
+            "document_hash": "1afaf600dd2608f30f4fcb02b7bdcc9d7e90a9175743ea9a42338f6558262211",
+            "evidence_ids": [
+              "ev-1afaf600dd26-0002-0005"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Industry representatives warn that the rule adopted could have a devastating impact and cause severe hardship."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

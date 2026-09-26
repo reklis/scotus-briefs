@@ -1,0 +1,422 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Eric J. Feigin",
+        "citations": [
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Eric J. Feigin, the district judge found, by a preponderance of the evidence, that Andre Ralph Hayden possessed child pornography, leading to revocation of his supervised release under \u00a7\u202f3583(e)(3)."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether any other area of the law permits imprisonment by a preponderance of the evidence."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-1672",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T14:00:22.053983Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument began at 10:06\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether any other area of the law permits imprisonment by a preponderance of the evidence."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0001-0005"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Alito asked about the Alleyne holding and whether a fact must be found by a jury beyond a reasonable doubt to be an element of the charged offense."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Alito asked how the regime protects the judge\u2019s prerogative to decide the term of imprisonment."
+      },
+      {
+        "attribution": "Mr. Lunn",
+        "citations": [
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Mr. Lunn, mr. Lunn raised a concern that the mandatory five\u2011year term should be left to the discretion of the district judge."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Eric J. Feigin",
+        "citations": [
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Eric J. Feigin, the dispute concerns whether a district judge may revoke supervised release under 18\u202fU.S.C.\u202f\u00a7\u202f3583(e)(3) based on a finding of child pornography possession by a preponderance of the evidence."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether any other area of the law permits imprisonment by a preponderance of the evidence."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": "United States v. Andre Ralph Hayden was argued before the Supreme Court on February 26, 2019. The dispute centers on whether a district judge may revoke supervised release under 18\u202fU.S.C.\u202f\u00a7\u202f3583(e)(3) based on a finding of child\u2011pornography possession by a preponderance of the evidence, and whether the same factual finding can support revocation under \u00a7\u202f3583(k). The United States argues that the preponderance finding is sufficient for both statutes, while the respondent contends that \u00a7\u202f3583(k) stretches the original jury\u2011authorized sentence and imposes additional imprisonment only under limited circumstances.",
+    "summary_citations": [
+      {
+        "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+        "evidence_ids": [
+          "ev-fa2afda9ecdd-0000-0003"
+        ],
+        "pages": {
+          "end": 2,
+          "start": 2
+        }
+      },
+      {
+        "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+        "evidence_ids": [
+          "ev-fa2afda9ecdd-0000-0000"
+        ],
+        "pages": {
+          "end": 4,
+          "start": 4
+        }
+      }
+    ]
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Eric J. Feigin",
+          "citations": [
+            {
+              "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+              "evidence_ids": [
+                "ev-fa2afda9ecdd-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Eric J. Feigin, the district judge's finding by a preponderance of the evidence is constitutionally sufficient to revoke supervised release under \u00a7\u202f3583(e)(3)."
+        },
+        {
+          "attribution": "Mr. Feigin",
+          "citations": [
+            {
+              "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+              "evidence_ids": [
+                "ev-fa2afda9ecdd-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Feigin, the Sixth Amendment does not apply, so Apprendi does not apply in this context."
+        },
+        {
+          "attribution": "Mr. Feigin",
+          "citations": [
+            {
+              "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+              "evidence_ids": [
+                "ev-fa2afda9ecdd-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Feigin, the jury's verdict authorizes revocation under \u00a7\u202f3583(k) just as it does under \u00a7\u202f3583(e)(3)."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Lunn",
+          "citations": [
+            {
+              "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+              "evidence_ids": [
+                "ev-fa2afda9ecdd-0001-0004"
+              ],
+              "pages": {
+                "end": 35,
+                "start": 35
+              }
+            }
+          ],
+          "text": "According to Mr. Lunn, section\u202f3583(k) stretches what the original jury\u2011authorized sentence permitted."
+        },
+        {
+          "attribution": "Mr. Lunn",
+          "citations": [
+            {
+              "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+              "evidence_ids": [
+                "ev-fa2afda9ecdd-0001-0006"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            }
+          ],
+          "text": "According to Mr. Lunn, the conditions imposed under \u00a7\u202f3583(k) are akin to a limited contempt sanction designed for rehabilitation."
+        }
+      ],
+      "heading": "Andre Ralph Hayden (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+      "evidence_ids": [
+        "ev-fa2afda9ecdd-0000-0000"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T14:09:01.574834Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Eric J. Feigin",
+        "citations": [
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Eric J. Feigin, eric J. Feigin states that the district judge's finding by a preponderance of the evidence was constitutionally sufficient to revoke supervised release under \u00a7\u202f3583(e)(3)."
+      },
+      {
+        "attribution": "Mr. Feigin",
+        "citations": [
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0001-0003"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          },
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0001-0004"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "The dispute over \u00a7\u202f3583(k) concerns whether the same factual finding can support revocation under that provision."
+      },
+      {
+        "attribution": "Mr. Feigin",
+        "citations": [
+          {
+            "document_hash": "fa2afda9ecdd54f12884b7a045852688847a0464138a95fcfd2f3945949e18c4",
+            "evidence_ids": [
+              "ev-fa2afda9ecdd-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Mr. Feigin, feigin argues that the Sixth Amendment does not apply, so Apprendi does not apply in this context."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
