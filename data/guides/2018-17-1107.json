@@ -1,0 +1,448 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-1107",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T10:48:40.798809Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+            "evidence_ids": [
+              "ev-e822f1390831-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked, \"Exactly when did it do this? What's the exact date?\""
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+            "evidence_ids": [
+              "ev-e822f1390831-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Breyer asked, \"What happens to all those people? What happens to all those laws?\""
+      },
+      {
+        "attribution": "Justice ALITO",
+        "citations": [
+          {
+            "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+            "evidence_ids": [
+              "ev-e822f1390831-0002-0003"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "Justice Alito asked, \"Well, suppose an Indian is charged with a mugging in Tulsa. Where would that case end up?\""
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+            "evidence_ids": [
+              "ev-e822f1390831-0003-0001"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Alito further asked, \"If any of those individuals were charged with an offense normally prosecuted in state court, would they all have to be prosecuted in federal court?\""
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "United States (Edwin S. Kneedler, Deputy Solicitor General)",
+        "citations": [
+          {
+            "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+            "evidence_ids": [
+              "ev-e822f1390831-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to United States (Edwin S. Kneedler, Deputy Solicitor General), the United States filed an amicus brief supporting the petitioner."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Blatt",
+          "citations": [
+            {
+              "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+              "evidence_ids": [
+                "ev-e822f1390831-0001-0003"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Ms. Blatt, solem was not on the books until 80 years after Oklahoma became a state."
+        }
+      ],
+      "heading": "Petitioner \u2013 Mike Carpenter (Interim Warden)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ian H. Gershengorn (Respondent)",
+          "citations": [
+            {
+              "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+              "evidence_ids": [
+                "ev-e822f1390831-0001-0001"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to Ian H. Gershengorn (Respondent), justice Thomas's opinion in Parker requires that the Tenth Circuit decision be affirmed."
+        },
+        {
+          "attribution": "Mr. GERSHENGORN",
+          "citations": [
+            {
+              "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+              "evidence_ids": [
+                "ev-e822f1390831-0002-0001"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Mr. GERSHENGORN, the state's concerns are dramatically overstated, but the Court has doctrines designed to address them."
+        }
+      ],
+      "heading": "Respondent \u2013 Patrick Dwayne Murphy",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Creek Nation",
+          "citations": [
+            {
+              "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+              "evidence_ids": [
+                "ev-e822f1390831-0003-0002"
+              ],
+              "pages": {
+                "end": 67,
+                "start": 67
+              }
+            }
+          ],
+          "text": "According to Creek Nation, the Nation has a robust criminal jurisdiction and is already prosecuting many Indians."
+        },
+        {
+          "attribution": "Creek Nation",
+          "citations": [
+            {
+              "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+              "evidence_ids": [
+                "ev-e822f1390831-0003-0003"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Creek Nation, discussions are ongoing about the allocation of jurisdiction; Congress has provided mechanisms for both criminal and civil jurisdiction."
+        }
+      ],
+      "heading": "Creek Nation (Amicus/Interested Party)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0000-0003"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0001-0003"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0001-0001"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0002-0001"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0002-0004"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 64
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0002-0003"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 65
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0003-0001"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 66
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0003-0002"
+      ],
+      "pages": {
+        "end": 67,
+        "start": 67
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0003-0003"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0003-0006"
+      ],
+      "pages": {
+        "end": 78,
+        "start": 78
+      }
+    },
+    {
+      "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+      "evidence_ids": [
+        "ev-e822f1390831-0003-0007"
+      ],
+      "pages": {
+        "end": 79,
+        "start": 79
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T10:51:42.459894Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Muscogee (Creek) Nation",
+        "citations": [
+          {
+            "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+            "evidence_ids": [
+              "ev-e822f1390831-0002-0004"
+            ],
+            "pages": {
+              "end": 64,
+              "start": 64
+            }
+          }
+        ],
+        "text": "The Muscogee (Creek) Nation argues that there will be no turmoil because precedents restrict tribal power over non\u2011Indians on fee lands within reservations."
+      },
+      {
+        "attribution": "Ms. Blatt",
+        "citations": [
+          {
+            "document_hash": "e822f1390831c8d4a2868135baf3e0040f73861b12ef526bfb1733fb5ccc2f9b",
+            "evidence_ids": [
+              "ev-e822f1390831-0003-0006"
+            ],
+            "pages": {
+              "end": 78,
+              "start": 78
+            }
+          }
+        ],
+        "text": "Ms. Blatt warns that affirming the lower court\u2019s decision could tear families across eastern Oklahoma for many years."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

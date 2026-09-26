@@ -1,0 +1,345 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-1307",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T11:11:37.179523Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+            "evidence_ids": [
+              "ev-5cce377b82d7-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Alito, jUSTICE ALITO: So what is the difference between that situation and the non-judicial foreclosure situation where the -- the homeowner is simply notified that the -- the house that -- the mortgage is being foreclosed?"
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+            "evidence_ids": [
+              "ev-5cce377b82d7-0001-0003"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "JUSTICE GORSUCH: I have another question about your repo man example. You say we need that last sentence to capture him in a(6). But why wouldn't he be captured by the first sentence in a(6) too? Why isn't a repo man a classic debt collector under any definition, even the broad, the very broad ones you proffer for a(6), first sentence?"
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+            "evidence_ids": [
+              "ev-5cce377b82d7-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, jUSTICE KAVANAUGH: You are arguing, I think, that even if I disagree with you, we disagree with you on the first sentence, you win because of the third sentence, right?"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+            "evidence_ids": [
+              "ev-5cce377b82d7-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "JUSTICE BREYER: Can I ask you one question on what you mean? Imagine we have a person just like this one, he's trying to enforce a securities interest and he doesn't ask for any deficiency payment."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+            "evidence_ids": [
+              "ev-5cce377b82d7-0003-0001"
+            ],
+            "pages": {
+              "end": 67,
+              "start": 67
+            }
+          }
+        ],
+        "text": "JUSTICE BREYER: No, in other words, you're saying if the state were exactly the same, but it just didn't say anything about newspapers, then his client would win?"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+            "evidence_ids": [
+              "ev-5cce377b82d7-0003-0002"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, jUSTICE KAGAN: What -- what -- what"
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+            "evidence_ids": [
+              "ev-5cce377b82d7-0003-0003"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, jUSTICE GORSUCH: Can I see if I under -- I'm sorry."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+            "evidence_ids": [
+              "ev-5cce377b82d7-0003-0004"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, jUSTICE GORSUCH: Is your answer that we determine that by reference to state law and what is mandated in order to collect on a security interest or to enforce a security interest?"
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Daniel L. Geyser",
+        "citations": [
+          {
+            "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+            "evidence_ids": [
+              "ev-5cce377b82d7-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Daniel L. Geyser, petitioner argues that non\u2011judicial foreclosures are covered by the Fair Debt Collection Practices Act (FDCPA)."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+            "evidence_ids": [
+              "ev-5cce377b82d7-0001-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The Court noted that after a repossession the debtor still owes 100\u202fpercent of the same debt they owed before the repossession."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Daniel L. Geyser",
+          "citations": [
+            {
+              "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+              "evidence_ids": [
+                "ev-5cce377b82d7-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Daniel L. Geyser, non\u2011judicial foreclosures are covered under the FDCPA as a direct attempt to collect a consumer\u2019s debt."
+        },
+        {
+          "attribution": "Daniel L. Geyser",
+          "citations": [
+            {
+              "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+              "evidence_ids": [
+                "ev-5cce377b82d7-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Daniel L. Geyser, non\u2011judicial foreclosures are covered under the FDCPA as an indirect attempt because the foreclosure process is designed by law to automatically sell the consumer\u2019s house to obtain payment on the debt."
+        }
+      ],
+      "heading": "Petitioner (Dennis Obduskey)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (McCARTHY & HOLTHUS LLP)",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Jonathan C. Bond",
+          "citations": [
+            {
+              "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+              "evidence_ids": [
+                "ev-5cce377b82d7-0002-0002"
+              ],
+              "pages": {
+                "end": 58,
+                "start": 58
+              }
+            }
+          ],
+          "text": "According to Jonathan C. Bond, the FDCPA makes a compromise judgment between security\u2011interest enforcers as debt collectors for a single subsection of the Act, but not for the remainder."
+        }
+      ],
+      "heading": "Amicus (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5cce377b82d7ce533311e22dbb0e548d9fbb8798219df7d38f23744f91fb7549",
+      "evidence_ids": [
+        "ev-5cce377b82d7-0000-0004",
+        "ev-5cce377b82d7-0000-0000",
+        "ev-5cce377b82d7-0000-0001",
+        "ev-5cce377b82d7-0000-0003",
+        "ev-5cce377b82d7-0001-0002",
+        "ev-5cce377b82d7-0001-0000",
+        "ev-5cce377b82d7-0001-0003",
+        "ev-5cce377b82d7-0002-0001",
+        "ev-5cce377b82d7-0002-0002",
+        "ev-5cce377b82d7-0003-0000",
+        "ev-5cce377b82d7-0003-0001",
+        "ev-5cce377b82d7-0003-0002",
+        "ev-5cce377b82d7-0003-0003",
+        "ev-5cce377b82d7-0003-0004"
+      ],
+      "pages": {
+        "end": 69,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T11:15:09.254204Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

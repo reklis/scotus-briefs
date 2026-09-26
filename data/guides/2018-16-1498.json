@@ -1,0 +1,198 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "9c373ba6a477ae5ea996f2814a66fb2be0f6ce61284e4d7180c5c7739c816273",
+            "evidence_ids": [
+              "ev-9c373ba6a477-0001-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, how much is the tax?"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-16-1498",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T10:30:13.989390Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9c373ba6a477ae5ea996f2814a66fb2be0f6ce61284e4d7180c5c7739c816273"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Washington State Department of Licensing",
+        "citations": [
+          {
+            "document_hash": "9c373ba6a477ae5ea996f2814a66fb2be0f6ce61284e4d7180c5c7739c816273",
+            "evidence_ids": [
+              "ev-9c373ba6a477-0000-0007"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "According to Washington State Department of Licensing, the tax applies to the fuel itself regardless of whether or how it is transported."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "9c373ba6a477ae5ea996f2814a66fb2be0f6ce61284e4d7180c5c7739c816273",
+            "evidence_ids": [
+              "ev-9c373ba6a477-0001-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, how much is the tax?"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Washington State Department of Licensing",
+        "citations": [
+          {
+            "document_hash": "9c373ba6a477ae5ea996f2814a66fb2be0f6ce61284e4d7180c5c7739c816273",
+            "evidence_ids": [
+              "ev-9c373ba6a477-0000-0007"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "According to Washington State Department of Licensing, the tax applies to the fuel itself regardless of whether or how it is transported."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Washington State Department of Licensing",
+          "citations": [
+            {
+              "document_hash": "9c373ba6a477ae5ea996f2814a66fb2be0f6ce61284e4d7180c5c7739c816273",
+              "evidence_ids": [
+                "ev-9c373ba6a477-0000-0007"
+              ],
+              "pages": {
+                "end": 10,
+                "start": 10
+              }
+            }
+          ],
+          "text": "According to Washington State Department of Licensing, the tax applies to the fuel itself regardless of whether or how it is transported."
+        }
+      ],
+      "heading": "Department of Licensing (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Cougar Den, Inc. (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9c373ba6a477ae5ea996f2814a66fb2be0f6ce61284e4d7180c5c7739c816273",
+      "evidence_ids": [
+        "ev-9c373ba6a477-0000-0007",
+        "ev-9c373ba6a477-0001-0002"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T10:32:21.180175Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

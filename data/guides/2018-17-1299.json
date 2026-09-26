@@ -1,0 +1,546 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the case concerned \u201cNevada versus Hall.\u201d"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0001-0000"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Kagan asked how to interpret the fact that 45\u201147 states joined an amicus brief, suggesting they view sovereign\u2011immunity power as especially important."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether states have attempted to enter into agreements of this sort."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0002-0003"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the Solicitor General\u2019s submissions should be regarded as reflecting the United States\u2019 views."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0002-0005"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the Nevada court could adjudicate the factual premises of residency and tax liability."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-1299",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T11:08:02.518809Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument was held at 10:03\u202fa.m. before the Supreme Court of the United States."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the case concerned \u201cNevada versus Hall.\u201d"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0001-0000"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Kagan asked how to interpret the fact that 45\u201147 states joined an amicus brief, suggesting they view sovereign\u2011immunity power as especially important."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether states have attempted to enter into agreements of this sort."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0002-0003"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the Solicitor General\u2019s submissions should be regarded as reflecting the United States\u2019 views."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0002-0005"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the Nevada court could adjudicate the factual premises of residency and tax liability."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Franchise Tax Board of California",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Franchise Tax Board of California, the dispute centers on whether one state can be compelled to answer in another state\u2019s courts."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0000-0004"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Historically, states have been understood not to be sued in the courts of other states."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0001-0003"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The case\u2019s financial stakes have fallen from a multimillion\u2011dollar dispute to roughly $100,000."
+      },
+      {
+        "attribution": "Professors Baude and Sachs",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Professors Baude and Sachs, professors Baude and Sachs note a universal rule in the law of nations that has not been constitutionalized."
+      },
+      {
+        "attribution": "Mr. Chemerinsky",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0002-0002"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Mr. Chemerinsky argues that Congress has plenary power over Indian tribes, a principle that historically excludes state interference."
+      },
+      {
+        "attribution": "Mr. Chemerinsky",
+        "citations": [
+          {
+            "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+            "evidence_ids": [
+              "ev-13c0c6a00e7e-0002-0004"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "According to Mr. Chemerinsky, he also cites the Hilton v. South Carolina decision, emphasizing that adherence to precedent promotes stability and respect for judicial authority."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Franchise Tax Board of California",
+          "citations": [
+            {
+              "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+              "evidence_ids": [
+                "ev-13c0c6a00e7e-0000-0001"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Franchise Tax Board of California, the Board argues that only one case in the past 200 years recognized a state\u2019s ability to compel another state to answer, and that case cited no precedent."
+        }
+      ],
+      "heading": "Franchise Tax Board of California",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Gilbert P. Hyatt",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Chemerinsky",
+          "citations": [
+            {
+              "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+              "evidence_ids": [
+                "ev-13c0c6a00e7e-0002-0002"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 50
+              }
+            }
+          ],
+          "text": "According to Mr. Chemerinsky, he asserts that Congress has plenary power over Indian tribes, a principle that historically excludes state interference."
+        },
+        {
+          "attribution": "Mr. Chemerinsky",
+          "citations": [
+            {
+              "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+              "evidence_ids": [
+                "ev-13c0c6a00e7e-0002-0004"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to Mr. Chemerinsky, he cites the Hilton v. South Carolina decision, emphasizing that adherence to precedent promotes stability and respect for judicial authority."
+        }
+      ],
+      "heading": "Mr. Chemerinsky",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+      "evidence_ids": [
+        "ev-13c0c6a00e7e-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+      "evidence_ids": [
+        "ev-13c0c6a00e7e-0000-0004"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+      "evidence_ids": [
+        "ev-13c0c6a00e7e-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+      "evidence_ids": [
+        "ev-13c0c6a00e7e-0000-0001"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+      "evidence_ids": [
+        "ev-13c0c6a00e7e-0001-0003"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+      "evidence_ids": [
+        "ev-13c0c6a00e7e-0001-0004"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+      "evidence_ids": [
+        "ev-13c0c6a00e7e-0001-0000"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+      "evidence_ids": [
+        "ev-13c0c6a00e7e-0002-0000",
+        "ev-13c0c6a00e7e-0002-0003"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+      "evidence_ids": [
+        "ev-13c0c6a00e7e-0002-0005"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+      "evidence_ids": [
+        "ev-13c0c6a00e7e-0002-0002"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 50
+      }
+    },
+    {
+      "document_hash": "13c0c6a00e7e9bcb70cbe7a594a5bb7842588bd40d9b99bb47e7883c79615b87",
+      "evidence_ids": [
+        "ev-13c0c6a00e7e-0002-0004"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 51
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T11:11:37.161225Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

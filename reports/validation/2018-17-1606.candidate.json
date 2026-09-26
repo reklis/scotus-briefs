@@ -1,0 +1,586 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the Appeals Council\u2019s dismissal, which occurred without a hearing, qualifies as a \u201cfinal decision after a hearing\u201d under the statute."
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice GORSUCH, justice Gorsuch questioned whether the Social Security Administration could grant a hearing that it is not statutorily compelled to give."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-1606",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T11:37:14.867547Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked what \u201cafter a hearing\u201d means, noting there are never hearings before the Appeals Council."
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice GORSUCH, justice Gorsuch questioned whether the Social Security Administration could grant a hearing that it is not statutorily compelled to give."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "The Court recorded that there was a hearing on the question of benefits."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0002-0003"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "Justice Breyer asked about the link word \u201cafter\u201d."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0000-0001"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The Appeals Council dismissed the petitioner's request for review as untimely, and this dismissal was a final decision that made the agency's denial of benefits conclusive and binding."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0000-0001"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The United States (amicus) argues that the Appeals Council\u2019s dismissal order is a final agency action, leaving no further agency work to be done."
+      },
+      {
+        "attribution": "Mr. Huston",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Mr. Huston, the petitioner alleges that the agency misapplied its timeliness regulation in this case."
+      },
+      {
+        "attribution": "Mr. Gupta",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "The petitioner states that about 22,000 cases each year are never reviewable."
+      },
+      {
+        "attribution": "Mr. Gupta",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0001-0004"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "The petitioner argues that the only appropriate remedy is a remand."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0000-0004"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "According to United States, the United States (amicus) notes that the agency\u2019s decision was conclusive and that the agency had held a hearing before an administrative law judge on the petitioner\u2019s application."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+              "evidence_ids": [
+                "ev-3b8170245086-0000-0000"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner, the Appeals Council\u2019s dismissal was a final decision that made the agency\u2019s denial of benefits conclusive and binding."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+              "evidence_ids": [
+                "ev-3b8170245086-0000-0003"
+              ],
+              "pages": {
+                "end": 8,
+                "start": 8
+              }
+            }
+          ],
+          "text": "According to Petitioner, congress intended Section\u202f405(h) to make clear that the sole avenue for review of final decisions is a complaint under Section\u202f405(g)."
+        },
+        {
+          "attribution": "Mr. Huston",
+          "citations": [
+            {
+              "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+              "evidence_ids": [
+                "ev-3b8170245086-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Huston, the agency misapplied its timeliness regulation."
+        },
+        {
+          "attribution": "Mr. GUpta",
+          "citations": [
+            {
+              "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+              "evidence_ids": [
+                "ev-3b8170245086-0002-0002"
+              ],
+              "pages": {
+                "end": 49,
+                "start": 49
+              }
+            }
+          ],
+          "text": "According to Mr. GUpta, congress was concerned with ensuring the process is governed by law and providing judicial oversight after exhaustion, not for error correction."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent Position",
+      "status": "not_applicable",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0000-0000"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0000-0003"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0000-0001"
+      ],
+      "pages": {
+        "end": 17,
+        "start": 17
+      }
+    },
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0000-0004"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0001-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0001-0003"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0001-0004"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0001-0001"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0002-0001"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0002-0002"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 49
+      }
+    },
+    {
+      "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+      "evidence_ids": [
+        "ev-3b8170245086-0002-0003"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 51
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T11:52:30.916486Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim \"According to Deepak Gupta, clarifying the scope of Sections\u202f405(g) and\u202f405(h) influences the procedural path for claimants seeking review of Social Security decisions\" lacks evidence for the reference to Section\u202f405(h).",
+      "Oral argument characterization check failed: Justice GORSUCH's remark was a question, but the candidate presented it as an asserted statement about understanding agency discretion.",
+      "Overstatement check failed: the same Deepak Gupta claim overstates the scope by asserting influence of Section\u202f405(h) without supporting evidence."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Deepak Gupta",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0001-0001"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "According to Deepak Gupta, clarifying the scope of Sections\u202f405(g) and\u202f405(h) influences the procedural path for claimants seeking review of Social Security decisions."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0000-0001"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          },
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0000-0004"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The finality of agency decisions impacts claimants\u2019 ability to obtain relief, because a final decision is conclusive and binding."
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "3b8170245086fc9eaea9e37f16a125b58aa335ebb3246bca6d6ebcdce0afa1e0",
+            "evidence_ids": [
+              "ev-3b8170245086-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice GORSUCH, understanding whether the SSA may grant a hearing not required by statute informs the limits of agency discretion."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

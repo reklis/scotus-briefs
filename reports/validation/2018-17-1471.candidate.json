@@ -1,0 +1,323 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+            "evidence_ids": [
+              "ev-ae2963f25dfc-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, is removal permissible when not all defendants agree, and what are the limitations?"
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-1471",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T11:15:09.273017Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+            "evidence_ids": [
+              "ev-ae2963f25dfc-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether, outside the class\u2011action setting, all defendants must agree to removal and what other limitations apply."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+            "evidence_ids": [
+              "ev-ae2963f25dfc-0001-0000"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether the argument is based on the well\u2011pleaded complaint rule rather than the language of original jurisdiction in 1441."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+            "evidence_ids": [
+              "ev-ae2963f25dfc-0002-0000",
+              "ev-ae2963f25dfc-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito inquired about the peer\u2011review status of law review articles and who reviews them."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+            "evidence_ids": [
+              "ev-ae2963f25dfc-0002-0002"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether Home Depot is a defendant under 1453."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+            "evidence_ids": [
+              "ev-ae2963f25dfc-0002-0003"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked where people speak colloquially of third\u2011party defendants."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+            "evidence_ids": [
+              "ev-ae2963f25dfc-0002-0004"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked why the term does not mean each and every defendant in the civil action."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+            "evidence_ids": [
+              "ev-ae2963f25dfc-0003-0000"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Kagan asked for clarification of the argument."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+            "evidence_ids": [
+              "ev-ae2963f25dfc-0003-0003"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted that the case is submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Home Depot U.S.A., Inc.",
+        "citations": [
+          {
+            "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+            "evidence_ids": [
+              "ev-ae2963f25dfc-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Home Depot U.S.A., Inc., according to Home Depot U.S.A., Inc., home Depot is a defendant in this case."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Home Depot U.S.A., Inc.",
+          "citations": [
+            {
+              "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+              "evidence_ids": [
+                "ev-ae2963f25dfc-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Home Depot U.S.A., Inc., according to Home Depot U.S.A., Inc., home Depot states it is only a defendant in this case."
+        }
+      ],
+      "heading": "Home Depot's Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Barnette",
+          "citations": [
+            {
+              "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+              "evidence_ids": [
+                "ev-ae2963f25dfc-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Barnette, counsel points to Rule 3 of the Federal Rules of Civil Procedure, which says a civil action is commenced by filing a complaint."
+        }
+      ],
+      "heading": "Counsel's Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ae2963f25dfcb0842ea20f6cda794e50a4e519d5fb10d2d68bc3ea020fef8b18",
+      "evidence_ids": [
+        "ev-ae2963f25dfc-0000-0000",
+        "ev-ae2963f25dfc-0000-0001",
+        "ev-ae2963f25dfc-0001-0000",
+        "ev-ae2963f25dfc-0001-0001",
+        "ev-ae2963f25dfc-0002-0000",
+        "ev-ae2963f25dfc-0002-0001",
+        "ev-ae2963f25dfc-0002-0002",
+        "ev-ae2963f25dfc-0002-0003",
+        "ev-ae2963f25dfc-0002-0004",
+        "ev-ae2963f25dfc-0003-0000",
+        "ev-ae2963f25dfc-0003-0003"
+      ],
+      "pages": {
+        "end": 69,
+        "start": 4
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T11:22:37.003752Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim in the Background & Question section about Justice Sotomayor\u2019s view is phrased as a question rather than a verifiable factual statement."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

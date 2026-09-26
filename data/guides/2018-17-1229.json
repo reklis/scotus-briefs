@@ -1,0 +1,238 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "2df2a4b59c805b80c01a8b548c9455ea6e96f564d1d6e47d89f5a17cea539fb3",
+            "evidence_ids": [
+              "ev-2df2a4b59c80-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, a key question is whether the AIA\u2019s new language can change the previously settled law on what constitutes an \u201con sale\u201d disclosure."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "2df2a4b59c805b80c01a8b548c9455ea6e96f564d1d6e47d89f5a17cea539fb3",
+            "evidence_ids": [
+              "ev-2df2a4b59c80-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justices asked whether offering an invention to even a single person or a small group qualifies as an \u201con sale\u201d under the AIA."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2018-17-1229",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T10:58:24.661452Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2df2a4b59c805b80c01a8b548c9455ea6e96f564d1d6e47d89f5a17cea539fb3"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "2df2a4b59c805b80c01a8b548c9455ea6e96f564d1d6e47d89f5a17cea539fb3",
+          "evidence_ids": [
+            "ev-2df2a4b59c80-0000-0001"
+          ],
+          "pages": {
+            "end": 4,
+            "start": 4
+          }
+        }
+      ],
+      "definition": "The on\u2011sale bar reaches only a disclosure that makes the claimed invention available to the public.",
+      "term": "on\u2011sale bar"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "2df2a4b59c805b80c01a8b548c9455ea6e96f564d1d6e47d89f5a17cea539fb3",
+            "evidence_ids": [
+              "ev-2df2a4b59c80-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether offering an invention to even one person or a small group makes it \u201con sale.\u201d"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "2df2a4b59c805b80c01a8b548c9455ea6e96f564d1d6e47d89f5a17cea539fb3",
+            "evidence_ids": [
+              "ev-2df2a4b59c80-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan inquired whether the AIA could overturn settled law on the on\u2011sale bar."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "2df2a4b59c805b80c01a8b548c9455ea6e96f564d1d6e47d89f5a17cea539fb3",
+            "evidence_ids": [
+              "ev-2df2a4b59c80-0002-0004"
+            ],
+            "pages": {
+              "end": 64,
+              "start": 64
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "government",
+        "citations": [
+          {
+            "document_hash": "2df2a4b59c805b80c01a8b548c9455ea6e96f564d1d6e47d89f5a17cea539fb3",
+            "evidence_ids": [
+              "ev-2df2a4b59c80-0002-0005"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "According to government, the government submitted an amicus brief that the Court should consider respectfully."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner \u2013 HelSinn Healthcare S.A.",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent \u2013 Teva Pharmaceutical USA, Inc.",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2df2a4b59c805b80c01a8b548c9455ea6e96f564d1d6e47d89f5a17cea539fb3",
+      "evidence_ids": [
+        "ev-2df2a4b59c80-0000-0000",
+        "ev-2df2a4b59c80-0000-0001",
+        "ev-2df2a4b59c80-0000-0003",
+        "ev-2df2a4b59c80-0001-0002",
+        "ev-2df2a4b59c80-0001-0003",
+        "ev-2df2a4b59c80-0002-0000",
+        "ev-2df2a4b59c80-0002-0001",
+        "ev-2df2a4b59c80-0002-0003",
+        "ev-2df2a4b59c80-0002-0004",
+        "ev-2df2a4b59c80-0002-0005"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T11:07:04.953108Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

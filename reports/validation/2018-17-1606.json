@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2018-17-1606",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": false,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim \"According to Deepak Gupta, clarifying the scope of Sections\u202f405(g) and\u202f405(h) influences the procedural path for claimants seeking review of Social Security decisions\" lacks evidence for the reference to Section\u202f405(h).",
+    "Oral argument characterization check failed: Justice GORSUCH's remark was a question, but the candidate presented it as an asserted statement about understanding agency discretion.",
+    "Overstatement check failed: the same Deepak Gupta claim overstates the scope by asserting influence of Section\u202f405(h) without supporting evidence."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.95,
+    "neutrality": 0.9,
+    "readability": 0.9,
+    "restraint": 0.8,
+    "traceability": 0.85
+  }
+}
