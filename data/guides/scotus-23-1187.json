@@ -1,0 +1,378 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "FDA",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case arose after the FDA\u2019s 2016 determination that e\u2011cigarettes are tobacco products, prompting retailers to seek review of an FDA denial order."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-23-1187",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0001-0000"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "No court has ever held that an agency is \u201cadversely affected\u201d or \u201caggrieved\u201d under the APA."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0001-0001"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "Retailers are \u201cadversely affected\u201d by a denial order and are proper petitioners under \u00a7\u202f387l(a)(1)."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0001-0006"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Jackson (dissent) defined the \u201czone\u2011of\u2011interest test\u201d as a guide for deciding whether a plaintiff can challenge an agency decision."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0002-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Jackson (dissent), retailers have no procedural rights after a manufacturer submits its marketing application, and the FDA may deny an application without regard to retailer impact."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0002-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Jackson (dissent), congress may have intended to protect manufacturers\u2019 reliance interests without extending similar protection to retailers."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0002-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice Jackson (dissent), in the APA context, the zone\u2011of\u2011interest test is \u201cnot especially demanding.\u201d"
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0003-0000"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Justice Jackson (dissent), the majority fails to show how retailers are protected by \u00a7\u202f387j; they are not protected at all."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0003-0002"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "According to Justice Jackson (dissent), retailers\u2019 participation was strategically important to circumvent venue restrictions, even though Congress did not intend to protect them."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T17:05:19.654475Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "FDA",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "In 2016, the FDA decided that e\u2011cigarettes and related products were new tobacco products subject to the Tobacco Control Act."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0001-0001"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The Supreme Court held that retailers are \u201cadversely affected\u201d by a denial order and are proper petitioners under \u00a7\u202f387l(a)(1) of the Tobacco Control Act."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0001-0000"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The Court noted that no court had ever held that an agency is \u201cadversely affected\u201d or \u201caggrieved\u201d under the APA."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+            "evidence_ids": [
+              "ev-45eca458b4c9-0001-0006"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Jackson (dissent) defined the \u201czone\u2011of\u2011interest test\u201d as a guide for deciding whether a plaintiff can challenge an agency decision."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "FDA",
+          "citations": [
+            {
+              "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+              "evidence_ids": [
+                "ev-45eca458b4c9-0001-0002"
+              ],
+              "pages": {
+                "end": 13,
+                "start": 13
+              }
+            }
+          ],
+          "text": "The FDA argues that the Tobacco Control Act is concerned exclusively with manufacturers, placing retailers outside the statute\u2019s zone of interest."
+        },
+        {
+          "attribution": "FDA",
+          "citations": [
+            {
+              "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+              "evidence_ids": [
+                "ev-45eca458b4c9-0001-0003"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "The FDA contends that \u00a7\u202f387l(a)(1) applies not only to denial orders under \u00a7\u202f387j(c) but also to regulations promulgated under \u00a7\u202f387g."
+        },
+        {
+          "attribution": "FDA",
+          "citations": [
+            {
+              "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+              "evidence_ids": [
+                "ev-45eca458b4c9-0001-0004"
+              ],
+              "pages": {
+                "end": 16,
+                "start": 16
+              }
+            }
+          ],
+          "text": "The FDA maintains that each petitioner in a joint petition for review must independently establish venue."
+        }
+      ],
+      "heading": "FDA Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+      "evidence_ids": [
+        "ev-45eca458b4c9-0000-0000",
+        "ev-45eca458b4c9-0000-0004",
+        "ev-45eca458b4c9-0001-0000",
+        "ev-45eca458b4c9-0001-0001",
+        "ev-45eca458b4c9-0001-0002",
+        "ev-45eca458b4c9-0001-0003",
+        "ev-45eca458b4c9-0001-0004",
+        "ev-45eca458b4c9-0001-0006",
+        "ev-45eca458b4c9-0002-0000",
+        "ev-45eca458b4c9-0002-0001",
+        "ev-45eca458b4c9-0002-0002",
+        "ev-45eca458b4c9-0003-0000",
+        "ev-45eca458b4c9-0003-0002"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T17:11:53.323691Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

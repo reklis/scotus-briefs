@@ -1,0 +1,312 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+            "evidence_ids": [
+              "ev-9ba92e34aa7a-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Clean Air Act establishes a comprehensive venue framework for judicial review of EPA actions."
+      },
+      {
+        "attribution": "EPA",
+        "citations": [
+          {
+            "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+            "evidence_ids": [
+              "ev-9ba92e34aa7a-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "EPA argued that \u201cdisproportionate economic hardship\u201d applies only to hardship directly caused by renewable fuel program compliance, and that Renewable Identification Number (RIN) costs are fully passed through to consumers, creating a presumption against granting exemptions."
+      },
+      {
+        "attribution": "EPA",
+        "citations": [
+          {
+            "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+            "evidence_ids": [
+              "ev-9ba92e34aa7a-0000-0007"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "EPA asserted that its denials are reviewable only in the D.C. Circuit."
+      }
+    ],
+    "heading": "Background",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-23-1229",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+            "evidence_ids": [
+              "ev-9ba92e34aa7a-0002-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The Court held that a \u201cdetermination\u201d includes any EPA conclusion within the four corners of an action, not limited to novel conclusions."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T17:20:20.523471Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+          "evidence_ids": [
+            "ev-9ba92e34aa7a-0001-0005"
+          ],
+          "pages": {
+            "end": 18,
+            "start": 18
+          }
+        }
+      ],
+      "definition": "A \u201cdetermination\u201d is the \u201csettling and ending of a controversy,\u201d or \u201cthe resolving of a question by argument or reasoning.\u201d (Webster\u2019s 616; OED 548).",
+      "term": "determination"
+    }
+  ],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+            "evidence_ids": [
+              "ev-9ba92e34aa7a-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Clean Air Act provides a venue framework for judicial review of EPA actions."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+            "evidence_ids": [
+              "ev-9ba92e34aa7a-0002-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The Court also held that the term \u201cdetermination\u201d covers any EPA conclusion within the four corners of an action, not only novel conclusions."
+      },
+      {
+        "attribution": "EPA",
+        "citations": [
+          {
+            "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+            "evidence_ids": [
+              "ev-9ba92e34aa7a-0000-0007"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "EPA asserted that its denials are reviewable only in the D.C. Circuit."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "EPA",
+          "citations": [
+            {
+              "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+              "evidence_ids": [
+                "ev-9ba92e34aa7a-0000-0001"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to EPA, ePA interpreted \u201cdisproportionate economic hardship\u201d to cover only hardship directly caused by renewable fuel program compliance."
+        },
+        {
+          "attribution": "EPA",
+          "citations": [
+            {
+              "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+              "evidence_ids": [
+                "ev-9ba92e34aa7a-0000-0001"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "EPA maintained that Renewable Identification Number (RIN) costs are fully passed through to consumers, creating a presumption against granting exemptions."
+        }
+      ],
+      "heading": "EPA Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+      "evidence_ids": [
+        "ev-9ba92e34aa7a-0000-0000",
+        "ev-9ba92e34aa7a-0000-0001"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+      "evidence_ids": [
+        "ev-9ba92e34aa7a-0000-0007"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+      "evidence_ids": [
+        "ev-9ba92e34aa7a-0001-0000"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+      "evidence_ids": [
+        "ev-9ba92e34aa7a-0001-0005"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    },
+    {
+      "document_hash": "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+      "evidence_ids": [
+        "ev-9ba92e34aa7a-0002-0000"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T17:24:28.701180Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

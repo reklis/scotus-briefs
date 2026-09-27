@@ -1,0 +1,194 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+            "evidence_ids": [
+              "ev-3b868b209006-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case, docket No. 23\u2011217, was granted certiorari from the United States Court of Appeals for the Fourth Circuit, was argued on November\u202f5,\u202f2024, and decided on January\u202f15,\u202f2025."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-23-217",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T18:06:42.983867Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "EMD",
+        "citations": [
+          {
+            "document_hash": "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+            "evidence_ids": [
+              "ev-3b868b209006-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "EMD argued that the sales representatives were outside salesmen and therefore exempt from the Fair Labor Standards Act\u2019s overtime\u2011pay requirement."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+            "evidence_ids": [
+              "ev-3b868b209006-0000-0005"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "Justice Gorsuch, in a concurrence, held that the preponderance\u2011of\u2011the\u2011evidence standard applies when an employer seeks to show that an employee is exempt from the minimum\u2011wage and overtime provisions of the FLSA."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "EMD",
+          "citations": [
+            {
+              "document_hash": "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+              "evidence_ids": [
+                "ev-3b868b209006-0000-0001"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "EMD argued that the sales representatives were outside salesmen and therefore exempt from the Fair Labor Standards Act\u2019s overtime\u2011pay requirement."
+        }
+      ],
+      "heading": "EMD",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+      "evidence_ids": [
+        "ev-3b868b209006-0000-0000",
+        "ev-3b868b209006-0000-0001"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+      "evidence_ids": [
+        "ev-3b868b209006-0000-0003"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+      "evidence_ids": [
+        "ev-3b868b209006-0000-0005"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T18:08:04.638213Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

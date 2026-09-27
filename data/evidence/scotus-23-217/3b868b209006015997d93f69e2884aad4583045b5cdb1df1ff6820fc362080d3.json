@@ -1,0 +1,71 @@
+{
+  "case_id": "scotus-23-217",
+  "document_hash": "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+  "records": [
+    {
+      "attribution": "Court",
+      "case_id": "scotus-23-217",
+      "confidence": 1.0,
+      "document_hash": "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+      "evidence_id": "ev-3b868b209006-0000-0000",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "certiorari to the united states court of appeals for the fourth circuit No. 23\u2013217. Argued November 5, 2024\u2014Decided January 15, 2025"
+    },
+    {
+      "attribution": "EMD",
+      "case_id": "scotus-23-217",
+      "confidence": 1.0,
+      "document_hash": "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+      "evidence_id": "ev-3b868b209006-0000-0001",
+      "kind": "party_argument",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "EMD argued that the sales representatives were outside salesmen and therefore exempt from the FLSA's overtime-pay requirement."
+    },
+    {
+      "attribution": "United States",
+      "case_id": "scotus-23-217",
+      "confidence": 1.0,
+      "document_hash": "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+      "evidence_id": "ev-3b868b209006-0000-0003",
+      "kind": "amicus_argument",
+      "opinion_part": null,
+      "pages": {
+        "end": 3,
+        "start": 3
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Aimee W. Brown argued the cause for the United States as amicus curiae urging reversal."
+    },
+    {
+      "attribution": "Justice Gorsuch",
+      "case_id": "scotus-23-217",
+      "confidence": 1.0,
+      "document_hash": "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+      "evidence_id": "ev-3b868b209006-0000-0005",
+      "kind": "concurrence",
+      "opinion_part": "concurrence",
+      "pages": {
+        "end": 11,
+        "start": 11
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "We hold that the preponderance-of-the-evidence standard applies when an employer seeks to show that an employee is exempt from the minimum-wage and overtime-pay provisions of the Fair Labor Standards Act."
+    }
+  ],
+  "schema_version": "1.0.0"
+}

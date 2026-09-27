@@ -1,0 +1,451 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Xiao Wang",
+        "citations": [
+          {
+            "document_hash": "ca34420a7c2cfc9b1a3c3a5e046cd01f9c3788a383d5896321cc1a9a757999a5",
+            "evidence_ids": [
+              "ev-ca34420a7c2c-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+            "evidence_ids": [
+              "ev-d4d84b175bc9-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Sixth Circuit created a \u201cbackground circumstances\u201d rule that requires majority\u2011group plaintiffs to show an additional showing beyond the usual prima facie case of discrimination under Title VII."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+            "evidence_ids": [
+              "ev-d4d84b175bc9-0000-0004"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "ca34420a7c2cfc9b1a3c3a5e046cd01f9c3788a383d5896321cc1a9a757999a5",
+            "evidence_ids": [
+              "ev-ca34420a7c2c-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The question before the Supreme Court was whether that rule is consistent with Title VII."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-23-1039",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+            "evidence_ids": [
+              "ev-d4d84b175bc9-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Court vacated the judgment below and remanded for application of the proper prima facie standard."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+            "evidence_ids": [
+              "ev-d4d84b175bc9-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "Justice Thomas, in a concurrence, rejected the \u201cbackground circumstances\u201d rule."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T16:35:12.879761Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ca34420a7c2cfc9b1a3c3a5e046cd01f9c3788a383d5896321cc1a9a757999a5",
+      "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ca34420a7c2cfc9b1a3c3a5e046cd01f9c3788a383d5896321cc1a9a757999a5",
+            "evidence_ids": [
+              "ev-ca34420a7c2c-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts announced the case and identified the parties."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "ca34420a7c2cfc9b1a3c3a5e046cd01f9c3788a383d5896321cc1a9a757999a5",
+            "evidence_ids": [
+              "ev-ca34420a7c2c-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether the passages are wrong."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "ca34420a7c2cfc9b1a3c3a5e046cd01f9c3788a383d5896321cc1a9a757999a5",
+            "evidence_ids": [
+              "ev-ca34420a7c2c-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Jackson asked what treatment a plaintiff must show."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ca34420a7c2cfc9b1a3c3a5e046cd01f9c3788a383d5896321cc1a9a757999a5",
+            "evidence_ids": [
+              "ev-ca34420a7c2c-0003-0001"
+            ],
+            "pages": {
+              "end": 67,
+              "start": 67
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+            "evidence_ids": [
+              "ev-d4d84b175bc9-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+            "evidence_ids": [
+              "ev-d4d84b175bc9-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The Supreme Court vacated the lower\u2011court judgment and remanded the case to apply the proper Title VII prima facie standard, rejecting the Sixth Circuit\u2019s \u201cbackground circumstances\u201d rule that imposes a heightened burden on majority\u2011group plaintiffs."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Xiao Wang",
+          "citations": [
+            {
+              "document_hash": "ca34420a7c2cfc9b1a3c3a5e046cd01f9c3788a383d5896321cc1a9a757999a5",
+              "evidence_ids": [
+                "ev-ca34420a7c2c-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Xiao Wang, argues that the \u201cbackground circumstances\u201d rule is not consistent with Title VII."
+        }
+      ],
+      "heading": "Xiao Wang (Plaintiff)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ohio",
+          "citations": [
+            {
+              "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+              "evidence_ids": [
+                "ev-d4d84b175bc9-0000-0000"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Ohio, contends the rule does not impose a heightened evidentiary standard but merely asks whether the circumstances suggest discrimination."
+        }
+      ],
+      "heading": "Ohio (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "ca34420a7c2cfc9b1a3c3a5e046cd01f9c3788a383d5896321cc1a9a757999a5",
+              "evidence_ids": [
+                "ev-ca34420a7c2c-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to United States, supports vacatur of the lower\u2011court judgment."
+        }
+      ],
+      "heading": "United States (Amicus)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ashley Robertson",
+          "citations": [
+            {
+              "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+              "evidence_ids": [
+                "ev-d4d84b175bc9-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Ashley Robertson, argues in support of vacatur."
+        }
+      ],
+      "heading": "Ashley Robertson (Amicus)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ca34420a7c2cfc9b1a3c3a5e046cd01f9c3788a383d5896321cc1a9a757999a5",
+      "evidence_ids": [
+        "ev-ca34420a7c2c-0000-0000",
+        "ev-ca34420a7c2c-0000-0001",
+        "ev-ca34420a7c2c-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+      "evidence_ids": [
+        "ev-d4d84b175bc9-0000-0000",
+        "ev-d4d84b175bc9-0000-0002",
+        "ev-d4d84b175bc9-0000-0003",
+        "ev-d4d84b175bc9-0000-0004",
+        "ev-d4d84b175bc9-0000-0005",
+        "ev-d4d84b175bc9-0001-0000",
+        "ev-d4d84b175bc9-0001-0001",
+        "ev-d4d84b175bc9-0001-0002",
+        "ev-d4d84b175bc9-0001-0004",
+        "ev-d4d84b175bc9-0001-0006",
+        "ev-d4d84b175bc9-0002-0000",
+        "ev-d4d84b175bc9-0002-0001",
+        "ev-d4d84b175bc9-0002-0002"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 3
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T16:43:43.408130Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+            "evidence_ids": [
+              "ev-d4d84b175bc9-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          },
+          {
+            "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+            "evidence_ids": [
+              "ev-d4d84b175bc9-0002-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, rejecting the rule removes a heightened burden on majority\u2011group plaintiffs under Title VII."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+            "evidence_ids": [
+              "ev-d4d84b175bc9-0002-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+            "evidence_ids": [
+              "ev-d4d84b175bc9-0002-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, the decision reaffirms that Title VII discrimination can be proved with direct or circumstantial evidence without a special dichotomy for majority\u2011group plaintiffs."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

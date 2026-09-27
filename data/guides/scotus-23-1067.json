@@ -1,0 +1,276 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
+            "evidence_ids": [
+              "ev-6e1293decc75-0001-0003"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "EPA issued disapprovals of the Oklahoma and Utah State Implementation Plans (SIPs)."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
+            "evidence_ids": [
+              "ev-6e1293decc75-0001-0003"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The Tenth Circuit held that the challenges to those disapprovals should be reviewed in the D.C. Circuit."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
+            "evidence_ids": [
+              "ev-6e1293decc75-0001-0000"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The Court granted certiorari to review the transfer decision."
+      }
+    ],
+    "heading": "Background",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-23-1067",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
+            "evidence_ids": [
+              "ev-6e1293decc75-0000-0000"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The Court held that EPA's disapprovals that are locally or regionally applicable are reviewable in a regional circuit."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
+            "evidence_ids": [
+              "ev-6e1293decc75-0001-0003"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The Tenth Circuit erred in holding that the challenges should be reviewed in the D.C. Circuit; the Court reversed that judgment and remanded for further proceedings consistent with this opinion."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
+            "evidence_ids": [
+              "ev-6e1293decc75-0001-0004"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Justice Gorsuch filed a concurrence agreeing that the proper venue is a regional circuit, though he reached that conclusion by a different reasoning."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T16:43:43.426246Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
+            "evidence_ids": [
+              "ev-6e1293decc75-0000-0000"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The Supreme Court held that EPA's disapprovals that are locally or regionally applicable are reviewable in a regional circuit."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
+            "evidence_ids": [
+              "ev-6e1293decc75-0001-0003"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The Court reversed the Tenth Circuit's judgment and remanded the cases for further proceedings consistent with this opinion."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
+            "evidence_ids": [
+              "ev-6e1293decc75-0001-0000"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The Court granted certiorari to review the transfer decision."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "EPA",
+          "citations": [
+            {
+              "document_hash": "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
+              "evidence_ids": [
+                "ev-6e1293decc75-0001-0001"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "EPA argued that its arguments, as well as those of the Tenth Circuit, do not survive scrutiny and should be rejected."
+        }
+      ],
+      "heading": "EPA",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
+      "evidence_ids": [
+        "ev-6e1293decc75-0000-0000",
+        "ev-6e1293decc75-0000-0001",
+        "ev-6e1293decc75-0000-0002",
+        "ev-6e1293decc75-0001-0000",
+        "ev-6e1293decc75-0001-0001",
+        "ev-6e1293decc75-0001-0003",
+        "ev-6e1293decc75-0001-0004"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T16:51:51.808676Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

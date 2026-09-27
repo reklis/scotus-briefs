@@ -1,0 +1,374 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+            "evidence_ids": [
+              "ev-f0ea5f7f316e-0002-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Horn later lost his job after a random drug test revealed tetrahydrocannabinol (THC) in his system; he asserted the THC came from ingesting an over\u2011the\u2011counter product."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+            "evidence_ids": [
+              "ev-f0ea5f7f316e-0000-0005"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Horn's lost employment derived from a personal injury (ingesting THC), the court reasoned."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-23-365",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+            "evidence_ids": [
+              "ev-f0ea5f7f316e-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The majority held that \u201cdamage\u201d has a specialized legal meaning referring to monetary redress and that the statute permits a plaintiff to recover triple the amount of damages to make him whole."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+            "evidence_ids": [
+              "ev-f0ea5f7f316e-0002-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Thomas (dissent): The phrase \u201cinjured in his business or property\u201d does not preclude recovery for all economic harms and the Second Circuit\u2019s judgment should be affirmed and the case remanded."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+            "evidence_ids": [
+              "ev-f0ea5f7f316e-0003-0000"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "Justice Thomas (dissent): The majority misunderstands Medical Marijuana\u2019s position."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+            "evidence_ids": [
+              "ev-f0ea5f7f316e-0004-0000"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh (dissent): Antitrust laws exclude damages to business or property from personal injuries from being treated as distinct business injuries in antitrust suits."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+            "evidence_ids": [
+              "ev-f0ea5f7f316e-0005-0000"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh (dissent): RICO does not authorize personal\u2011injury suits at all."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T18:08:04.659112Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+          "evidence_ids": [
+            "ev-f0ea5f7f316e-0001-0001"
+          ],
+          "pages": {
+            "end": 13,
+            "start": 13
+          }
+        }
+      ],
+      "definition": "A specialized legal meaning referring to monetary redress; the statute allows a plaintiff to recover triple the amount of damages to make him whole.",
+      "term": "damage"
+    }
+  ],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+            "evidence_ids": [
+              "ev-f0ea5f7f316e-0002-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Horn later lost his job after a random drug test showed THC, which he said came from an over\u2011the\u2011counter product."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+            "evidence_ids": [
+              "ev-f0ea5f7f316e-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The majority held that \u201cdamage\u201d has a specialized legal meaning referring to monetary redress and that the statute permits a plaintiff to recover triple the amount of damages to make him whole."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+            "evidence_ids": [
+              "ev-f0ea5f7f316e-0002-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Thomas (dissent): The phrase \u201cinjured in his business or property\u201d does not preclude recovery for all economic harms and the Second Circuit\u2019s judgment should be affirmed and the case remanded."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+            "evidence_ids": [
+              "ev-f0ea5f7f316e-0004-0000"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          },
+          {
+            "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+            "evidence_ids": [
+              "ev-f0ea5f7f316e-0005-0000"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh (dissent): Antitrust laws exclude such claims and RICO does not authorize personal\u2011injury suits."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Medical Marijuana",
+          "citations": [
+            {
+              "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+              "evidence_ids": [
+                "ev-f0ea5f7f316e-0002-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "Medical Marijuana argued that Horn\u2019s lost wages are merely \u201cdamages\u201d that derive from a personal injury and therefore are not recoverable under civil RICO."
+        },
+        {
+          "attribution": "Medical Marijuana",
+          "citations": [
+            {
+              "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+              "evidence_ids": [
+                "ev-f0ea5f7f316e-0003-0001"
+              ],
+              "pages": {
+                "end": 32,
+                "start": 32
+              }
+            }
+          ],
+          "text": "According to Medical Marijuana, medical Marijuana conceded that some harms to business or property are actionable under civil RICO, but asserted that not all economic harms, such as certain lost wages, should be treated as injuries to business or property."
+        },
+        {
+          "attribution": "Medical Marijuana",
+          "citations": [
+            {
+              "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+              "evidence_ids": [
+                "ev-f0ea5f7f316e-0003-0003"
+              ],
+              "pages": {
+                "end": 33,
+                "start": 33
+              }
+            }
+          ],
+          "text": "Medical Marijuana maintained that a plaintiff can bring a civil RICO suit only if a legally protected right in his business or property is invaded."
+        }
+      ],
+      "heading": "Medical Marijuana",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+      "evidence_ids": [
+        "ev-f0ea5f7f316e-0000-0005",
+        "ev-f0ea5f7f316e-0001-0001",
+        "ev-f0ea5f7f316e-0000-0004",
+        "ev-f0ea5f7f316e-0001-0001",
+        "ev-f0ea5f7f316e-0002-0000",
+        "ev-f0ea5f7f316e-0002-0002",
+        "ev-f0ea5f7f316e-0002-0001",
+        "ev-f0ea5f7f316e-0003-0000",
+        "ev-f0ea5f7f316e-0003-0001",
+        "ev-f0ea5f7f316e-0003-0003",
+        "ev-f0ea5f7f316e-0004-0000",
+        "ev-f0ea5f7f316e-0005-0004",
+        "ev-f0ea5f7f316e-0005-0002",
+        "ev-f0ea5f7f316e-0005-0000"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T18:18:12.497809Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

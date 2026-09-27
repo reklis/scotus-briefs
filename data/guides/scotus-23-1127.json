@@ -1,0 +1,378 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Todd Heath",
+        "citations": [
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Todd Heath, todd Heath, an auditor, alleged that Wisconsin Bell defrauded the E\u2011Rate program by overcharging schools."
+      },
+      {
+        "attribution": "Wisconsin Bell",
+        "citations": [
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Wisconsin Bell moved to dismiss, arguing that an E\u2011Rate reimbursement request cannot be an FCA claim because the money comes from private carriers and the government does not provide any portion of the money."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The Supreme Court granted certiorari to resolve the circuit split over whether E\u2011Rate reimbursement requests are FCA \u201cclaims.\u201d"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-23-1127",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Court held that E\u2011Rate reimbursement requests satisfy the FCA claim requirement because the government provided at least a portion of the money, having transferred over $100\u202fmillion from the Treasury into the subsidy pool."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0002-0003"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh (concurring) joined the opinion, noting that the case decides a narrow statutory question regarding the scope of the False Claims Act."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0002-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Thomas (concurring) raised a question about the implications of the Government\u2019s theory that the FCA applies when the government requires one private party to pay another private party."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0001-0006"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "Justice Thomas (concurring) warned that if Heath prevails on the merits, issues about damages may emerge."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T16:54:53.921409Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The Court resolved a split among lower courts about whether E\u2011Rate reimbursement requests qualify as claims under the False Claims Act."
+      },
+      {
+        "attribution": "Todd Heath",
+        "citations": [
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Todd Heath, the case arose from an allegation by auditor Todd Heath that Wisconsin Bell overcharged schools in violation of the lowest\u2011price rule."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Wisconsin Bell",
+          "citations": [
+            {
+              "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+              "evidence_ids": [
+                "ev-f1f6ead7d2d3-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Wisconsin Bell contends that an E\u2011Rate reimbursement request never qualifies as a claim under the FCA because the government does not provide any portion of the money."
+        },
+        {
+          "attribution": "Wisconsin Bell",
+          "citations": [
+            {
+              "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+              "evidence_ids": [
+                "ev-f1f6ead7d2d3-0001-0001"
+              ],
+              "pages": {
+                "end": 13,
+                "start": 13
+              }
+            }
+          ],
+          "text": "Wisconsin Bell further argues that even the $100\u202fmillion transferred by the government came solely from carriers, so the government acted only as an intermediary."
+        }
+      ],
+      "heading": "Wisconsin Bell",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+              "evidence_ids": [
+                "ev-f1f6ead7d2d3-0002-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "The Government argues that the FCA applies whenever the government requires one private party to pay another private party."
+        }
+      ],
+      "heading": "Government",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+      "evidence_ids": [
+        "ev-f1f6ead7d2d3-0000-0000",
+        "ev-f1f6ead7d2d3-0000-0001",
+        "ev-f1f6ead7d2d3-0000-0002",
+        "ev-f1f6ead7d2d3-0000-0003",
+        "ev-f1f6ead7d2d3-0001-0001",
+        "ev-f1f6ead7d2d3-0001-0006",
+        "ev-f1f6ead7d2d3-0002-0000",
+        "ev-f1f6ead7d2d3-0002-0001",
+        "ev-f1f6ead7d2d3-0002-0002",
+        "ev-f1f6ead7d2d3-0002-0003"
+      ],
+      "pages": {
+        "end": 29,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T16:59:25.627357Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The decision clarifies that government involvement, even as a conduit, can make a reimbursement request a false\u2011claims Act claim, affecting how federal programs are funded."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0001-0006"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The clarification may lead to potential damages claims against entities like Wisconsin Bell if they are found to have overcharged."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+            "evidence_ids": [
+              "ev-f1f6ead7d2d3-0002-0003"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh emphasized that the ruling addresses a narrow statutory question, limiting its broader impact."
+      }
+    ],
+    "heading": "Why it matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

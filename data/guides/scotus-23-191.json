@@ -1,0 +1,232 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+            "evidence_ids": [
+              "ev-70ac97f1e8f2-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Petitioners are unemployed workers who contend that the Alabama Department of Labor unlawfully delayed processing their state unemployment benefits claims."
+      },
+      {
+        "attribution": "State trial court",
+        "citations": [
+          {
+            "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+            "evidence_ids": [
+              "ev-70ac97f1e8f2-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The state trial court granted the Secretary\u2019s motion and dismissed the complaint, leaving the claimants in a catch\u201122\u2014unable to sue to obtain an order expediting the administrative process because they had not yet completed the process allegedly being delayed."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+            "evidence_ids": [
+              "ev-70ac97f1e8f2-0000-0006"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "That catch\u201122 prevents the claimants here from obtaining a merits resolution of their \u00a71983 claims in state court and in effect immunizes state officials from those kinds of \u00a71983 suits for injunctive relief."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-23-191",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T18:05:09.555898Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+            "evidence_ids": [
+              "ev-70ac97f1e8f2-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Petitioners are unemployed workers who claim the Alabama Department of Labor unlawfully delayed processing their state unemployment benefits claims."
+      },
+      {
+        "attribution": "State trial court",
+        "citations": [
+          {
+            "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+            "evidence_ids": [
+              "ev-70ac97f1e8f2-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The state trial court dismissed the petitioners\u2019 complaint, leaving them in a catch\u201122 where they cannot sue to obtain an order expediting the administrative process because the process had not yet been completed."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+            "evidence_ids": [
+              "ev-70ac97f1e8f2-0000-0006"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "That catch\u201122 prevents the claimants from obtaining a merits resolution of their \u00a71983 claims in state court and effectively immunizes state officials from injunctive relief under \u00a71983."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioners",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+      "evidence_ids": [
+        "ev-70ac97f1e8f2-0000-0000",
+        "ev-70ac97f1e8f2-0000-0002"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+      "evidence_ids": [
+        "ev-70ac97f1e8f2-0000-0006"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 10
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T18:06:42.964020Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+            "evidence_ids": [
+              "ev-70ac97f1e8f2-0000-0006"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The case raises the question of whether claimants can obtain injunctive relief under \u00a71983 when a state administrative process is delayed, or whether the procedural catch\u201122 immunizes state officials from such suits."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "case_id": "scotus-23-1127",
+  "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+  "records": [
+    {
+      "attribution": "Todd Heath",
+      "case_id": "scotus-23-1127",
+      "confidence": 1.0,
+      "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+      "evidence_id": "ev-f1f6ead7d2d3-0000-0000",
+      "kind": "allegation",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Respondent Todd Heath is an auditor of telecommunications bills who believes that petitioner Wisconsin Bell defrauded the E-Rate program out of millions of dollars. According to Heath, Wisconsin Bell consist-\nently overcharged schools in violation of the \u201clowest corresponding price\u201d rule."
+    },
+    {
+      "attribution": "Wisconsin Bell",
+      "case_id": "scotus-23-1127",
+      "confidence": 1.0,
+      "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+      "evidence_id": "ev-f1f6ead7d2d3-0000-0001",
+      "kind": "party_argument",
+      "opinion_part": null,
+      "pages": {
+        "end": 3,
+        "start": 3
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Wisconsin Bell moved to dismiss Heath's suit. In its view, an E-rate reimbursement request can never qualify as a \u201cclaim\u201d under the FCA because the money comes from private carriers and is handled by a private corporation, meaning the Government does not \u201cprovide[ ] any portion of the money\u201d requested."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "scotus-23-1127",
+      "confidence": 1.0,
+      "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+      "evidence_id": "ev-f1f6ead7d2d3-0000-0002",
+      "kind": "holding",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 5,
+        "start": 5
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "We hold today that the E-Rate reimbursement requests at issue satisfy that require-\nment because the Government provided (at a minimum) a \u201cportion\u201d of the money applied for. In the years in which those requests were made, the Government transferred more than $100 million from the Treasury into the pool of funds used to pay E-Rate subsidies."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "scotus-23-1127",
+      "confidence": 1.0,
+      "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+      "evidence_id": "ev-f1f6ead7d2d3-0000-0003",
+      "kind": "procedural_event",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 10,
+        "start": 10
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "We granted certiorari to resolve the circuit split over whether E-Rate reimbursement requests are FCA \u201cclaims.\u201d"
+    },
+    {
+      "attribution": "Wisconsin Bell",
+      "case_id": "scotus-23-1127",
+      "confidence": 1.0,
+      "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+      "evidence_id": "ev-f1f6ead7d2d3-0001-0001",
+      "kind": "party_argument",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 13,
+        "start": 13
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Wisconsin Bell resists that conclusion, arguing that even the $100 million was provided by, and only by, the carriers. See, e. g., Brief for Wisconsin Bell 27 (\u201cThe E-rate program is funded entirely by private carriers' contributions\u201d). On that alternative view, the Government played no more than an intermediary role: It \u201cmerely collected and held\u201d the carriers' required payments \u201cpending their return\u201d to \u201ctheir rightful owner, the Administrative Company.\u201d Id., at 31. And \u201cfacilitat[ing] the transfer of money,\u201d Wisconsin Bell says, does not amount to \u201cprovid[ing]\u201d money. Id., at 30."
+    },
+    {
+      "attribution": "Justice Thomas",
+      "case_id": "scotus-23-1127",
+      "confidence": 1.0,
+      "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+      "evidence_id": "ev-f1f6ead7d2d3-0001-0006",
+      "kind": "stated_consequence",
+      "opinion_part": "concurrence",
+      "pages": {
+        "end": 17,
+        "start": 17
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "If Heath prevails on the merits, issues about damages may well emerge."
+    },
+    {
+      "attribution": "Justice Thomas",
+      "case_id": "scotus-23-1127",
+      "confidence": 1.0,
+      "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+      "evidence_id": "ev-f1f6ead7d2d3-0002-0000",
+      "kind": "justice_question",
+      "opinion_part": "concurrence",
+      "pages": {
+        "end": 24,
+        "start": 24
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Before we accept the Government's theory that the FCA applies so long as the Government requires one private party to pay another private party, we ought to grapple with that argument's implications."
+    },
+    {
+      "attribution": "Government",
+      "case_id": "scotus-23-1127",
+      "confidence": 1.0,
+      "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+      "evidence_id": "ev-f1f6ead7d2d3-0002-0001",
+      "kind": "party_argument",
+      "opinion_part": "concurrence",
+      "pages": {
+        "end": 24,
+        "start": 24
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "the Government's theory that the FCA applies so long as the Government requires one private party to pay another private party"
+    },
+    {
+      "attribution": "GAO",
+      "case_id": "scotus-23-1127",
+      "confidence": 1.0,
+      "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+      "evidence_id": "ev-f1f6ead7d2d3-0002-0002",
+      "kind": "fact",
+      "opinion_part": "concurrence",
+      "pages": {
+        "end": 27,
+        "start": 27
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The GAO determined that the FCC had violated the GCCA by attempting to establish freestanding corporations to manage certain universal service programs and \u201cact as its agents in carrying out functions assigned by statute to the [FCC].\u201d"
+    },
+    {
+      "attribution": "Justice Kavanaugh",
+      "case_id": "scotus-23-1127",
+      "confidence": 1.0,
+      "document_hash": "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+      "evidence_id": "ev-f1f6ead7d2d3-0002-0003",
+      "kind": "concurrence",
+      "opinion_part": "concurrence",
+      "pages": {
+        "end": 29,
+        "start": 29
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "I join the Court's opinion, which decides a narrow statutory question regarding the scope of the False Claims Act."
+    }
+  ],
+  "schema_version": "1.0.0"
+}

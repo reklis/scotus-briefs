@@ -1,0 +1,119 @@
+{
+  "case_id": "scotus-23-191",
+  "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+  "records": [
+    {
+      "attribution": "Petitioners",
+      "case_id": "scotus-23-191",
+      "confidence": 1.0,
+      "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+      "evidence_id": "ev-70ac97f1e8f2-0000-0000",
+      "kind": "allegation",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Petitioners are unemployed workers who contend that the Alabama Department of Labor unlawfully delayed processing their state unemployment benefts claims."
+    },
+    {
+      "attribution": "Alabama Secretary of Labor",
+      "case_id": "scotus-23-191",
+      "confidence": 1.0,
+      "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+      "evidence_id": "ev-70ac97f1e8f2-0000-0001",
+      "kind": "party_argument",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "uncertain",
+      "text": "The Secretary moved to dismiss on several grounds, including that the state trial court lacked jurisdiction because the claimants had not satisfed the relevant statute's strict administrative-exhaustion requirement."
+    },
+    {
+      "attribution": "State trial court",
+      "case_id": "scotus-23-191",
+      "confidence": 1.0,
+      "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+      "evidence_id": "ev-70ac97f1e8f2-0000-0002",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The state trial court granted the Secretary's motion and dismissed the complaint, leaving the claimants in a catch-22\u2014unable to sue to obtain an order expediting the administrative process because they had not yet completed the process allegedly being delayed."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "scotus-23-191",
+      "confidence": 1.0,
+      "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+      "evidence_id": "ev-70ac97f1e8f2-0000-0007",
+      "kind": "fact",
+      "opinion_part": null,
+      "pages": {
+        "end": 5,
+        "start": 5
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "A claimant who wants to appeal an adverse determination must, within 7 days of the delivery of the notice or 15 days of the mailing of the notice, seek review by an appeals tribunal."
+    },
+    {
+      "attribution": "Alabama Secretary of Labor",
+      "case_id": "scotus-23-191",
+      "confidence": 1.0,
+      "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+      "evidence_id": "ev-70ac97f1e8f2-0000-0005",
+      "kind": "party_argument",
+      "opinion_part": null,
+      "pages": {
+        "end": 7,
+        "start": 7
+      },
+      "schema_version": "1.0.0",
+      "status": "uncertain",
+      "text": "The Secretary argues that Alabama's exhaustion requirement constitutes a \u201cneutral rule of judicial administration\u201d and that the Alabama Supreme Court permissibly applied that statutory rule to bar the claimants' \u00a7 1983 suit in state court."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "scotus-23-191",
+      "confidence": 1.0,
+      "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+      "evidence_id": "ev-70ac97f1e8f2-0000-0006",
+      "kind": "stated_consequence",
+      "opinion_part": null,
+      "pages": {
+        "end": 10,
+        "start": 10
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "That catch-22 prevents the claimants here from obtaining a merits resolution of their \u00a7 1983 claims in state court and in effect immunizes state offcials from those kinds of \u00a7 1983 suits for injunctive relief."
+    },
+    {
+      "attribution": "Secretary of Labor",
+      "case_id": "scotus-23-191",
+      "confidence": 1.0,
+      "document_hash": "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+      "evidence_id": "ev-70ac97f1e8f2-0001-0000",
+      "kind": "party_argument",
+      "opinion_part": null,
+      "pages": {
+        "end": 12,
+        "start": 12
+      },
+      "schema_version": "1.0.0",
+      "status": "uncertain",
+      "text": "In any event, the Secretary's argument based on the supposed availability of mandamus is simply another way of saying that the claimant must go through the process provided by the State before suing under \u00a7 1983 to challenge delays in the state process."
+    }
+  ],
+  "schema_version": "1.0.0"
+}

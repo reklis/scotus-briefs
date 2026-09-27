@@ -1,0 +1,268 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+            "evidence_ids": [
+              "ev-b8bb843416bd-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The District Court vacated Smith\u2019s death sentence after concluding that he is intellectually disabled."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+            "evidence_ids": [
+              "ev-b8bb843416bd-0000-0006"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The Eleventh Circuit\u2019s opinion on the case can be read in two ways."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-23-167",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+            "evidence_ids": [
+              "ev-b8bb843416bd-0000-0005"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The Court granted the petition for certiorari."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+            "evidence_ids": [
+              "ev-b8bb843416bd-0000-0005"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The Court vacated the Eleventh Circuit\u2019s judgment."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+            "evidence_ids": [
+              "ev-b8bb843416bd-0000-0005"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The Court remanded the case for further consideration consistent with this opinion."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T18:01:54.014303Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+            "evidence_ids": [
+              "ev-b8bb843416bd-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Supreme Court granted certiorari in Hamm v. Smith."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+            "evidence_ids": [
+              "ev-b8bb843416bd-0000-0005"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The Court vacated the Eleventh Circuit\u2019s judgment and remanded the case for further consideration consistent with this opinion."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+            "evidence_ids": [
+              "ev-b8bb843416bd-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Smith\u2019s full\u2011scale IQ scores ranged from 72 to 78, and his claim of intellectual disability depended on whether his IQ is 70 or below."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+            "evidence_ids": [
+              "ev-b8bb843416bd-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The District Court vacated Smith\u2019s death sentence after concluding that he is intellectually disabled."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+      "evidence_ids": [
+        "ev-b8bb843416bd-0000-0001",
+        "ev-b8bb843416bd-0000-0002",
+        "ev-b8bb843416bd-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+      "evidence_ids": [
+        "ev-b8bb843416bd-0000-0006"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+      "evidence_ids": [
+        "ev-b8bb843416bd-0000-0004",
+        "ev-b8bb843416bd-0000-0005"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T18:05:09.537790Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,608 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question Presented",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-23-1007",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+            "evidence_ids": [
+              "ev-669943d97001-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The Court held that plaintiffs need only plead a violation of \u00a7\u202f1106(a)(1)(C) and therefore reversed the lower\u2011court ruling."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+            "evidence_ids": [
+              "ev-669943d97001-0001-0003"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "Justice Alito, in a concurring opinion, noted that district courts retain discretionary authority to expedite or limit discovery in \u00a7\u202f1106(a)(1)(C) claims."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T16:16:19.742650Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+      "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+            "evidence_ids": [
+              "ev-8abe84559987-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument was held at 11:22\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "JUSTICE THOMAS",
+        "citations": [
+          {
+            "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+            "evidence_ids": [
+              "ev-8abe84559987-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked what the injury was under the complaint."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+            "evidence_ids": [
+              "ev-8abe84559987-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          },
+          {
+            "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+            "evidence_ids": [
+              "ev-8abe84559987-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          },
+          {
+            "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+            "evidence_ids": [
+              "ev-8abe84559987-0001-0005"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Alito asked about the \u201cguardrails\u201d in the case, Rule\u202f11, standing, and what must be pled to establish standing."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+            "evidence_ids": [
+              "ev-8abe84559987-0001-0007"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Alito also asked about the Rule\u202f7 work\u2011round and whether a district court could rule on a judgment on the pleadings after an answer."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+            "evidence_ids": [
+              "ev-8abe84559987-0002-0001"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the plaintiffs must plead an injury\u2011in\u2011fact."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+            "evidence_ids": [
+              "ev-8abe84559987-0002-0000"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Alito, Justice Alito expressed puzzlement about why the plaintiff should do more than plead the elements of \u00a7\u202f1106."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+            "evidence_ids": [
+              "ev-8abe84559987-0003-0001"
+            ],
+            "pages": {
+              "end": 70,
+              "start": 70
+            }
+          }
+        ],
+        "text": "Justice Thomas asked what should be pled."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+            "evidence_ids": [
+              "ev-669943d97001-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The Supreme Court reversed the lower\u2011court decision, holding that plaintiffs need only plead a violation of ERISA \u00a7\u202f1106(a)(1)(C) to survive a dismissal."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+            "evidence_ids": [
+              "ev-669943d97001-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Petitioners argued that the plans paid service providers substantially more than reasonable record\u2011keeping fees."
+      },
+      {
+        "attribution": "United States (amicus curiae)",
+        "citations": [
+          {
+            "document_hash": "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+            "evidence_ids": [
+              "ev-669943d97001-0000-0003"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to United States (amicus curiae), according to United States (amicus curiae), the United States, as amicus curiae, urged reversal of the lower\u2011court ruling."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+              "evidence_ids": [
+                "ev-669943d97001-0000-0002"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "Petitioners claim the plans paid service providers substantially more than reasonable record\u2011keeping fees."
+        },
+        {
+          "attribution": "XIAO WANG",
+          "citations": [
+            {
+              "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+              "evidence_ids": [
+                "ev-8abe84559987-0000-0003"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to XIAO WANG, petitioners describe the injury as the plans\u2019 engagement of Fidelity and TIAA, which they say violates \u00a7\u202f1106(a)(1)(C)."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+              "evidence_ids": [
+                "ev-8abe84559987-0002-0003"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "Petitioners argue that the explanation of the fee structure is not obvious."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+              "evidence_ids": [
+                "ev-8abe84559987-0002-0007"
+              ],
+              "pages": {
+                "end": 59,
+                "start": 59
+              }
+            }
+          ],
+          "text": "Petitioners contend that Box\u202f3 shows the quality of services and that the Second Circuit held the fees were justified."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+              "evidence_ids": [
+                "ev-8abe84559987-0004-0001"
+              ],
+              "pages": {
+                "end": 87,
+                "start": 87
+              }
+            }
+          ],
+          "text": "Petitioners maintain that trust\u2011law principles do not require the pleading they are being asked to make; the requirement comes from ERISA."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+              "evidence_ids": [
+                "ev-669943d97001-0000-0003"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), amicus counsel Yaira Dubin urged reversal of the lower\u2011court decision."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+              "evidence_ids": [
+                "ev-8abe84559987-0001-0009"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the amicus argued that the 21 exemptions in \u00a7\u202f1108(b) are the fiduciary\u2019s responsibility to plead and that plaintiffs could obtain discovery simply by alleging a routine service\u2011provider transaction."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+              "evidence_ids": [
+                "ev-8abe84559987-0001-0010"
+              ],
+              "pages": {
+                "end": 38,
+                "start": 38
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), service providers are one of nine categories of parties in interest; the other categories pose obvious risks of favoritism and abuse."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+              "evidence_ids": [
+                "ev-8abe84559987-0001-0011"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), excessive fees to service providers can be paid with retirees\u2019 money; the statute sets prohibited transactions and specific exemptions."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+              "evidence_ids": [
+                "ev-8abe84559987-0001-0012"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the scheme was deliberate; fiduciaries bear the burden to justify delegations to third parties."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+              "evidence_ids": [
+                "ev-8abe84559987-0001-0013"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), there is no textual basis to limit the analysis to the narrow slice of transactions the Second Circuit considered."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+              "evidence_ids": [
+                "ev-8abe84559987-0001-0014"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the Court appears inclined to follow the Second Circuit\u2019s approach but not to expand it to other parties in interest."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+              "evidence_ids": [
+                "ev-8abe84559987-0001-0015"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the prohibition\u2011exemption structure functions as an affirmative defense; district courts already have tools to handle bare\u2011bones allegations of routine service\u2011provider transactions."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+              "evidence_ids": [
+                "ev-8abe84559987-0001-0016"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the plausibility framework precludes such complaints because they implicate an affirmative defense."
+        }
+      ],
+      "heading": "United States (Amicus Curiae)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+      "evidence_ids": [
+        "ev-669943d97001-0000-0005"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+      "evidence_ids": [
+        "ev-8abe84559987-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T16:23:17.066541Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+            "evidence_ids": [
+              "ev-669943d97001-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          },
+          {
+            "document_hash": "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+            "evidence_ids": [
+              "ev-669943d97001-0001-0003"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The decision clarifies that a plaintiff need not allege detailed factual misconduct at the pleading stage for ERISA \u00a7\u202f1106(a)(1)(C) service\u2011provider fee claims; a simple allegation of a statutory violation suffices."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+            "evidence_ids": [
+              "ev-669943d97001-0001-0003"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "According to Justice Alito, the concurrence signals that district courts may still manage discovery discretion, which could limit costly discovery in future ERISA service\u2011provider cases."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

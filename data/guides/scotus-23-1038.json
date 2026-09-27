@@ -1,0 +1,440 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "92a8a117541d1bfa7ea96b40da79b40a6c0db991b2ed339ffcbb8afec79b65c9",
+            "evidence_ids": [
+              "ev-92a8a117541d-0002-0000"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The FDA received applications from more than 500 companies covering over 6.5\u202fmillion e\u2011cigarette products."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-23-1038",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "92a8a117541d1bfa7ea96b40da79b40a6c0db991b2ed339ffcbb8afec79b65c9",
+            "evidence_ids": [
+              "ev-92a8a117541d-0003-0003"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "The Court held that respondents failed to show that the FDA changed its position regarding the scientific evidence supporting pre\u2011market tobacco product applications."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "92a8a117541d1bfa7ea96b40da79b40a6c0db991b2ed339ffcbb8afec79b65c9",
+            "evidence_ids": [
+              "ev-92a8a117541d-0002-0003"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Alito, judge Haynes, joined by four other judges, dissented."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "92a8a117541d1bfa7ea96b40da79b40a6c0db991b2ed339ffcbb8afec79b65c9",
+            "evidence_ids": [
+              "ev-92a8a117541d-0004-0005"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Justice Sotomayor wrote a concurrence vacating the Fifth Circuit judgment and remanding for further proceedings consistent with this opinion."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T16:23:17.085664Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "92a8a117541d1bfa7ea96b40da79b40a6c0db991b2ed339ffcbb8afec79b65c9",
+      "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+            "evidence_ids": [
+              "ev-c30ba8c1efdf-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case was argued before the Supreme Court at 10:03\u202fa.m."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+            "evidence_ids": [
+              "ev-c30ba8c1efdf-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether the guidance was a moving target that changed over time."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+            "evidence_ids": [
+              "ev-c30ba8c1efdf-0000-0005"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "Justice Barrett asked the Court to distinguish the case from D.C. Circuit precedent on airwaves."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+            "evidence_ids": [
+              "ev-c30ba8c1efdf-0000-0006"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch questioned whether due\u2011process notice and a hearing were required."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+            "evidence_ids": [
+              "ev-c30ba8c1efdf-0001-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Jackson asked what remedy the Court might fashion."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+            "evidence_ids": [
+              "ev-c30ba8c1efdf-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh inquired about the practical relief available, noting that companies could reapply."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+            "evidence_ids": [
+              "ev-c30ba8c1efdf-0003-0006"
+            ],
+            "pages": {
+              "end": 79,
+              "start": 79
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked how much guidance must be provided when an agency proceeds case\u2011by\u2011case."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "92a8a117541d1bfa7ea96b40da79b40a6c0db991b2ed339ffcbb8afec79b65c9",
+              "evidence_ids": [
+                "ev-92a8a117541d-0002-0004"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "Respondents argue that the FDA changed its guidance on required scientific evidence after they had relied on the original instructions."
+        },
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "92a8a117541d1bfa7ea96b40da79b40a6c0db991b2ed339ffcbb8afec79b65c9",
+              "evidence_ids": [
+                "ev-92a8a117541d-0003-0002"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "Respondents contend that the FDA\u2019s internal memoranda required them to submit evidence from a randomized control trial or longitudinal cohort study, a requirement not present in the original guidance."
+        },
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "92a8a117541d1bfa7ea96b40da79b40a6c0db991b2ed339ffcbb8afec79b65c9",
+              "evidence_ids": [
+                "ev-92a8a117541d-0004-0000"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "Respondents state that they do not argue the TCA imposes an affirmative duty on the FDA to detail how new products should be compared with existing tobacco products."
+        }
+      ],
+      "heading": "Respondents",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Food and Drug Administration",
+          "citations": [
+            {
+              "document_hash": "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+              "evidence_ids": [
+                "ev-c30ba8c1efdf-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Food and Drug Administration, the FDA explains that, under the Tobacco Control Act, a manufacturer may introduce a new tobacco product only with FDA authorization, and the agency must weigh both cessation benefits and the risk of initiating use among non\u2011users."
+        },
+        {
+          "attribution": "Food and Drug Administration",
+          "citations": [
+            {
+              "document_hash": "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+              "evidence_ids": [
+                "ev-c30ba8c1efdf-0000-0002"
+              ],
+              "pages": {
+                "end": 8,
+                "start": 8
+              }
+            }
+          ],
+          "text": "According to Food and Drug Administration, the FDA characterizes its guidance on the \u201cwell\u2011controlled investigations\u201d and \u201cvalid scientific evidence\u201d requirements as non\u2011binding, reflecting the agency\u2019s current thinking."
+        }
+      ],
+      "heading": "Food and Drug Administration",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Petitioner",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Gannon",
+          "citations": [
+            {
+              "document_hash": "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+              "evidence_ids": [
+                "ev-c30ba8c1efdf-0002-0003"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Mr. Gannon, mr. Gannon states that the two requirements for a product are (1) it helps smoking cessation and (2) it does not create other problems; the second is irrelevant if the first fails."
+        }
+      ],
+      "heading": "Mr. Gannon",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Mr. Heyer",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "92a8a117541d1bfa7ea96b40da79b40a6c0db991b2ed339ffcbb8afec79b65c9",
+      "evidence_ids": [
+        "ev-92a8a117541d-0000-0005"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+      "evidence_ids": [
+        "ev-c30ba8c1efdf-0000-0000"
+      ],
+      "pages": {
+        "end": 95,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T16:35:12.862005Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "92a8a117541d1bfa7ea96b40da79b40a6c0db991b2ed339ffcbb8afec79b65c9",
+            "evidence_ids": [
+              "ev-92a8a117541d-0001-0000"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The Tobacco Control Act vests the Secretary of Health and Human Services, acting through the FDA, with authority to regulate the manufacturing, marketing, sale, and distribution of tobacco products."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

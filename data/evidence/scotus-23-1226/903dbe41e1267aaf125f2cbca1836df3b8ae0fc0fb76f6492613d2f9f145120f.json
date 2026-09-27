@@ -1,0 +1,183 @@
+{
+  "case_id": "scotus-23-1226",
+  "document_hash": "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+  "records": [
+    {
+      "attribution": "Court",
+      "case_id": "scotus-23-1226",
+      "confidence": 1.0,
+      "document_hash": "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+      "evidence_id": "ev-903dbe41e126-0000-0000",
+      "kind": "fact",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "McKesson Corporation, a healthcare company, sent unsolicited fax advertisements through a subsidiary in 2009 and 2010 to medical practices, including McLaughlin Chiropractic Associates."
+    },
+    {
+      "attribution": "McLaughlin Chiropractic Associates",
+      "case_id": "scotus-23-1226",
+      "confidence": 1.0,
+      "document_hash": "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+      "evidence_id": "ev-903dbe41e126-0000-0001",
+      "kind": "allegation",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "McLaughlin sued McKesson in the U. S. District Court for the Northern District of California in 2014 for damages and an injunction, alleging TCPA violations for faxing unsolicited advertisements without the required opt-out notices."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "scotus-23-1226",
+      "confidence": 1.0,
+      "document_hash": "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+      "evidence_id": "ev-903dbe41e126-0000-0002",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "While McLaughlin's lawsuit was pending, a company petitioned the Federal Communications Commission for a declaratory ruling about whether the TCPA applies to faxes received through online fax services."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "scotus-23-1226",
+      "confidence": 1.0,
+      "document_hash": "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+      "evidence_id": "ev-903dbe41e126-0000-0003",
+      "kind": "fact",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Months after class certifcation, the FCC issued the Amerifactors order, interpreting \u201ctelephone facsimile machine\u201d in the TCPA to exclude online fax services."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "scotus-23-1226",
+      "confidence": 1.0,
+      "document_hash": "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+      "evidence_id": "ev-903dbe41e126-0001-0000",
+      "kind": "holding",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 12,
+        "start": 12
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Section 703 provides: \u201cExcept to the extent that prior, adequate, and exclusive opportunity for judicial review is provided by law, agency action is subject to judicial review in civil or criminal proceedings for judicial enforcement.\u201d (Emphasis added.) Therefore, \u00a7 703 itself articulates the default principle that parties in enforcement proceedings can challenge an agency's interpretation of a statute."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "scotus-23-1226",
+      "confidence": 1.0,
+      "document_hash": "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+      "evidence_id": "ev-903dbe41e126-0001-0001",
+      "kind": "holding",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 13,
+        "start": 13
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "In enforcement proceedings, district courts independently determine whether an agency's interpretation of a statute is correct."
+    },
+    {
+      "attribution": "Justice Kavanaugh",
+      "case_id": "scotus-23-1226",
+      "confidence": 1.0,
+      "document_hash": "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+      "evidence_id": "ev-903dbe41e126-0001-0005",
+      "kind": "dissent",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 17,
+        "start": 17
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "As the dissent notes, the Hobbs Act provides \u201cexclusive jurisdiction\u201d to the courts of appeals."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "scotus-23-1226",
+      "confidence": 1.0,
+      "document_hash": "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+      "evidence_id": "ev-903dbe41e126-0001-0004",
+      "kind": "holding",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 18,
+        "start": 18
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "In short, the Hobbs Act does not bar McLaughlin from arguing in the district court enforcement proceeding that the FCC's interpretation of the TCPA is incorrect."
+    },
+    {
+      "attribution": "McKesson and the Government",
+      "case_id": "scotus-23-1226",
+      "confidence": 1.0,
+      "document_hash": "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+      "evidence_id": "ev-903dbe41e126-0002-0000",
+      "kind": "party_argument",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 22,
+        "start": 22
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Third, McKesson and the Government argue that practical problems could ensue if the Hobbs Act did not bar judicial review of agency legal interpretations in enforcement proceedings."
+    },
+    {
+      "attribution": "Justice Kagan",
+      "case_id": "scotus-23-1226",
+      "confidence": 1.0,
+      "document_hash": "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+      "evidence_id": "ev-903dbe41e126-0002-0005",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 27,
+        "start": 27
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "\u201cExclusive,\u201d of course, means courts of appeals alone, not district courts."
+    },
+    {
+      "attribution": "Justice Kagan",
+      "case_id": "scotus-23-1226",
+      "confidence": 1.0,
+      "document_hash": "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+      "evidence_id": "ev-903dbe41e126-0003-0000",
+      "kind": "dissent",
+      "opinion_part": "dissent",
+      "pages": {
+        "end": 32,
+        "start": 32
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "It is thus not surprising that when this Court previously\nencountered the Hobbs Act, it reached the same result\u2014once\nagain foreclosing a district court's \u201ccollateral redetermina-\ntion\u201d of the validity of an agency order. Port of Boston Ma-\nrine Terminal Assn. v. Rederiaktiebolaget Transatlantic,\n400 U. S. 62, 72 (1970). And make no mistake: That is Port of\nBoston's holding, however much the majority tries to veil it.\nSee ante, at 164\u2013165."
+    }
+  ],
+  "schema_version": "1.0.0"
+}

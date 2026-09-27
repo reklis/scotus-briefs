@@ -1,0 +1,511 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Glossip",
+        "citations": [
+          {
+            "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+            "evidence_ids": [
+              "ev-a99f203c6818-0000-0003"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Glossip, Richard Glossip sought post\u2011conviction relief after the State disclosed previously withheld documents relating to witness Justin Sneed\u2019s credibility."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+            "evidence_ids": [
+              "ev-a99f203c6818-0000-0001"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The Court was asked to decide whether the State\u2019s failure to correct Sneed\u2019s false testimony constituted a *Napue* violation that required reversal of the conviction."
+      }
+    ],
+    "heading": "Background and Question Presented",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-22-7466",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+            "evidence_ids": [
+              "ev-a99f203c6818-0000-0001"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The majority held that the prosecution\u2019s violation of *Napue* required reversal of the judgment and a new trial."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+            "evidence_ids": [
+              "ev-a99f203c6818-0002-0000"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "The Court concluded that the failure to correct Sneed\u2019s false testimony violated the Due Process Clause, entitling Glossip to a new trial."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+            "evidence_ids": [
+              "ev-a99f203c6818-0003-0000"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "The judgment of the Oklahoma Court of Criminal Appeals was reversed and the case is remanded for further proceedings consistent with this opinion."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+            "evidence_ids": [
+              "ev-a99f203c6818-0003-0002"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Thomas filed a dissent, stating his disagreement with the majority\u2019s analysis."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T16:02:56.601359Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0aa23a90c98867084c5a2999aa568669880a914d48bc48c474272f1ca62c3172",
+      "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "0aa23a90c98867084c5a2999aa568669880a914d48bc48c474272f1ca62c3172",
+            "evidence_ids": [
+              "ev-0aa23a90c988-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether the prosecution had obtained statements from the prosecutors involved."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "0aa23a90c98867084c5a2999aa568669880a914d48bc48c474272f1ca62c3172",
+            "evidence_ids": [
+              "ev-0aa23a90c988-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether Oklahoma courts had ever accepted a waiver in a case involving a constitutional violation."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "0aa23a90c98867084c5a2999aa568669880a914d48bc48c474272f1ca62c3172",
+            "evidence_ids": [
+              "ev-0aa23a90c988-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, Justice Kagan inquired about the \u201cindependence prong\u201d of the jurisdictional analysis."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "0aa23a90c98867084c5a2999aa568669880a914d48bc48c474272f1ca62c3172",
+            "evidence_ids": [
+              "ev-0aa23a90c988-0003-0001"
+            ],
+            "pages": {
+              "end": 86,
+              "start": 86
+            }
+          }
+        ],
+        "text": "Justice Jackson asked whether the statute at issue was jurisdictional."
+      },
+      {
+        "attribution": "Paul D. Clement",
+        "citations": [
+          {
+            "document_hash": "0aa23a90c98867084c5a2999aa568669880a914d48bc48c474272f1ca62c3172",
+            "evidence_ids": [
+              "ev-0aa23a90c988-0001-0001"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "Petitioner\u2019s counsel, Paul D. Clement, argued that Brady and *Napue* violations required the State to waive procedural obstacles."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+            "evidence_ids": [
+              "ev-a99f203c6818-0002-0000"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "The Court held that the prosecution\u2019s failure to correct false testimony violated the Due Process Clause."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+            "evidence_ids": [
+              "ev-a99f203c6818-0000-0001"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+            "evidence_ids": [
+              "ev-a99f203c6818-0003-0000"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "Because of the *Napue* violation, the judgment of the Oklahoma Court of Criminal Appeals was reversed and the case was remanded for a new trial."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": "The Supreme Court reversed the Oklahoma Court of Criminal Appeals and remanded the case for a new trial because the prosecution violated the due\u2011process requirements of *Napue* by failing to correct false testimony by a key witness.",
+    "summary_citations": [
+      {
+        "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+        "evidence_ids": [
+          "ev-a99f203c6818-0000-0001"
+        ],
+        "pages": {
+          "end": 7,
+          "start": 7
+        }
+      },
+      {
+        "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+        "evidence_ids": [
+          "ev-a99f203c6818-0002-0000"
+        ],
+        "pages": {
+          "end": 28,
+          "start": 28
+        }
+      }
+    ]
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Richard Eugene Glossip)",
+          "citations": [
+            {
+              "document_hash": "0aa23a90c98867084c5a2999aa568669880a914d48bc48c474272f1ca62c3172",
+              "evidence_ids": [
+                "ev-0aa23a90c988-0000-0003"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner (Richard Eugene Glossip), according to Petitioner (Richard Eugene Glossip), Glossip argued that there was no independent jurisdictional bar to review and that the Court\u2019s opinion was tainted by merits determinations on Brady and *Napue* claims."
+        }
+      ],
+      "heading": "Petitioner (Richard Glossip)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+              "evidence_ids": [
+                "ev-a99f203c6818-0000-0004"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to State, the State disclosed seven boxes of previously withheld documents, including notes suggesting a key witness considered recanting."
+        }
+      ],
+      "heading": "State",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Oklahoma Attorney General",
+          "citations": [
+            {
+              "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+              "evidence_ids": [
+                "ev-a99f203c6818-0002-0003"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Oklahoma Attorney General, the Attorney General asserted that the State violated the rule of sequestration and destroyed evidence, including financial records related to the case."
+        }
+      ],
+      "heading": "Oklahoma Attorney General",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Van Treese family",
+          "citations": [
+            {
+              "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+              "evidence_ids": [
+                "ev-a99f203c6818-0007-0001"
+              ],
+              "pages": {
+                "end": 78,
+                "start": 78
+              }
+            }
+          ],
+          "text": "According to Van Treese family, the family argued that the notes from Box\u202f8 reflected the witness\u2019s recollection of prior meetings with defense counsel, not a new confession."
+        }
+      ],
+      "heading": "Van Treese Family (Dissent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0aa23a90c98867084c5a2999aa568669880a914d48bc48c474272f1ca62c3172",
+      "evidence_ids": [
+        "ev-0aa23a90c988-0000-0001",
+        "ev-0aa23a90c988-0000-0002",
+        "ev-0aa23a90c988-0000-0003",
+        "ev-0aa23a90c988-0001-0000",
+        "ev-0aa23a90c988-0001-0001",
+        "ev-0aa23a90c988-0002-0000",
+        "ev-0aa23a90c988-0002-0002",
+        "ev-0aa23a90c988-0003-0001",
+        "ev-0aa23a90c988-0005-0002"
+      ],
+      "pages": {
+        "end": 200,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+      "evidence_ids": [
+        "ev-a99f203c6818-0000-0001",
+        "ev-a99f203c6818-0000-0003",
+        "ev-a99f203c6818-0000-0004",
+        "ev-a99f203c6818-0000-0006",
+        "ev-a99f203c6818-0001-0000",
+        "ev-a99f203c6818-0002-0000",
+        "ev-a99f203c6818-0002-0001",
+        "ev-a99f203c6818-0002-0002",
+        "ev-a99f203c6818-0002-0003",
+        "ev-a99f203c6818-0003-0000",
+        "ev-a99f203c6818-0003-0002",
+        "ev-a99f203c6818-0003-0003",
+        "ev-a99f203c6818-0003-0004",
+        "ev-a99f203c6818-0003-0005",
+        "ev-a99f203c6818-0003-0006",
+        "ev-a99f203c6818-0004-0000",
+        "ev-a99f203c6818-0004-0002",
+        "ev-a99f203c6818-0004-0003",
+        "ev-a99f203c6818-0004-0004",
+        "ev-a99f203c6818-0004-0005",
+        "ev-a99f203c6818-0004-0007",
+        "ev-a99f203c6818-0004-0008",
+        "ev-a99f203c6818-0005-0001",
+        "ev-a99f203c6818-0005-0002",
+        "ev-a99f203c6818-0005-0003",
+        "ev-a99f203c6818-0005-0005",
+        "ev-a99f203c6818-0006-0000",
+        "ev-a99f203c6818-0006-0001",
+        "ev-a99f203c6818-0006-0002",
+        "ev-a99f203c6818-0006-0009",
+        "ev-a99f203c6818-0007-0000",
+        "ev-a99f203c6818-0007-0001"
+      ],
+      "pages": {
+        "end": 200,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T16:13:55.745328Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": false,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "sources[0]: cited page is unavailable or outside the PDF",
+      "sources[1]: cited page is unavailable or outside the PDF",
+      "Adversarial verification skipped after deterministic failure",
+      "sources[0]: cited page is unavailable or outside the PDF",
+      "sources[1]: cited page is unavailable or outside the PDF"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+            "evidence_ids": [
+              "ev-a99f203c6818-0003-0000"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "By reversing the Oklahoma Court of Criminal Appeals, the Court emphasizes that state courts must adhere to federal constitutional standards when evaluating prosecutorial misconduct."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
