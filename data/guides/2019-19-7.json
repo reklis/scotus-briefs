@@ -1,0 +1,230 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-19-7",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T20:14:38.515836Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "cd8221c04d4b695aae4babb79617cedb40cb7f52d4661d2d5db0834d08f9a27c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "cd8221c04d4b695aae4babb79617cedb40cb7f52d4661d2d5db0834d08f9a27c",
+            "evidence_ids": [
+              "ev-cd8221c04d4b-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Ginsburg followed up asking about the restriction on the President\u2019s removal power in this context."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "cd8221c04d4b695aae4babb79617cedb40cb7f52d4661d2d5db0834d08f9a27c",
+            "evidence_ids": [
+              "ev-cd8221c04d4b-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether the Department of Justice has previously refused to defend statutes when the President\u2019s removal power is not at issue."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "cd8221c04d4b695aae4babb79617cedb40cb7f52d4661d2d5db0834d08f9a27c",
+            "evidence_ids": [
+              "ev-cd8221c04d4b-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked, \u201cWhat would you say to that?\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Seila Law LLC",
+        "citations": [
+          {
+            "document_hash": "cd8221c04d4b695aae4babb79617cedb40cb7f52d4661d2d5db0834d08f9a27c",
+            "evidence_ids": [
+              "ev-cd8221c04d4b-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Seila Law LLC argues that the CFPB\u2019s structure is unprecedented and unconstitutional because it gives a single director extensive executive power and significantly limits the President\u2019s ability to remove the director."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Seila Law LLC",
+          "citations": [
+            {
+              "document_hash": "cd8221c04d4b695aae4babb79617cedb40cb7f52d4661d2d5db0834d08f9a27c",
+              "evidence_ids": [
+                "ev-cd8221c04d4b-0000-0000"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Seila Law LLC, the CFPB\u2019s structure is unprecedented and unconstitutional because it gives a single director extensive power while restricting the President\u2019s removal authority."
+        }
+      ],
+      "heading": "Seila Law LLC (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Consumer Financial Protection Bureau (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "cd8221c04d4b695aae4babb79617cedb40cb7f52d4661d2d5db0834d08f9a27c",
+      "evidence_ids": [
+        "ev-cd8221c04d4b-0000-0000",
+        "ev-cd8221c04d4b-0003-0008"
+      ],
+      "pages": {
+        "end": 81,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T20:21:24.899227Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "U.S. House of Representatives",
+        "citations": [
+          {
+            "document_hash": "cd8221c04d4b695aae4babb79617cedb40cb7f52d4661d2d5db0834d08f9a27c",
+            "evidence_ids": [
+              "ev-cd8221c04d4b-0003-0006"
+            ],
+            "pages": {
+              "end": 77,
+              "start": 77
+            }
+          }
+        ],
+        "text": "According to U.S. House of Representatives, the House compared the CFPB\u2019s single\u2011director structure to the Federal Reserve\u2019s multi\u2011member board, noting that a President\u2019s influence over the Fed is limited by the longer terms of its members."
+      },
+      {
+        "attribution": "Amicus",
+        "citations": [
+          {
+            "document_hash": "cd8221c04d4b695aae4babb79617cedb40cb7f52d4661d2d5db0834d08f9a27c",
+            "evidence_ids": [
+              "ev-cd8221c04d4b-0003-0008"
+            ],
+            "pages": {
+              "end": 80,
+              "start": 80
+            }
+          }
+        ],
+        "text": "According to Amicus, an amicus brief highlighted that no one defends the rationale of *Humphrey\u2019s Executor* distinguishing between executive and quasi\u2011legislative or quasi\u2011judicial functions."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

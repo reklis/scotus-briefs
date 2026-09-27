@@ -1,0 +1,128 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question Presented",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-18-1259",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T20:31:19.450312Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ca0e5a025f6185bceb8c1932f041682045fb08ec0a6e3567da54f794b7d9b643",
+      "e21708b8149950e5326d7bddc50b44ef694f4543740686f0b7a5045c4ba5612e"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument \u2013 Questions from the Justices",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner (Brett Jones)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (State of Mississippi, represented by Ms. Nobile)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ca0e5a025f6185bceb8c1932f041682045fb08ec0a6e3567da54f794b7d9b643",
+      "evidence_ids": [
+        "ev-ca0e5a025f61-0000-0000"
+      ],
+      "pages": {
+        "end": 88,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "e21708b8149950e5326d7bddc50b44ef694f4543740686f0b7a5045c4ba5612e",
+      "evidence_ids": [
+        "ev-e21708b81499-0000-0000"
+      ],
+      "pages": {
+        "end": 88,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T20:39:27.399169Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": false,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "sources[1]: cited page is unavailable or outside the PDF",
+      "Adversarial verification skipped after deterministic failure",
+      "sources[1]: cited page is unavailable or outside the PDF"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "566e0829d217ceebfd6d4039493621f1f8de9e0a891a251db4b7b0d02efc243b",
+            "evidence_ids": [
+              "ev-566e0829d217-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Late one night Officer James Saylor of the Crow Police Department observed Joshua James Cooley driving a truck on a public highway within the Crow Reservation, noted that Cooley appeared non\u2011native, had watery eyes, and had two semiautomatic rifles in the front seat."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-1414",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T22:04:51.781436Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+      "566e0829d217ceebfd6d4039493621f1f8de9e0a891a251db4b7b0d02efc243b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+            "evidence_ids": [
+              "ev-0369eb1be177-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked where the line is, noting that the Major Crimes Act precludes tribes from trying certain non\u2011native individuals for major crimes."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+            "evidence_ids": [
+              "ev-0369eb1be177-0002-0005"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked why the Court should not simply follow prior cases on the issue."
+      },
+      {
+        "attribution": "Justice BARRETT",
+        "citations": [
+          {
+            "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+            "evidence_ids": [
+              "ev-0369eb1be177-0001-0005"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether the investigative authority extends past Terry stops into arrests, noting that arrests mark the beginning of the adjudicatory process."
+      },
+      {
+        "attribution": "Justice KAVANAUGH",
+        "citations": [
+          {
+            "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+            "evidence_ids": [
+              "ev-0369eb1be177-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh also asked whether the line of authority comes from the Constitution."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Mr. Cooley)",
+        "citations": [
+          {
+            "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+            "evidence_ids": [
+              "ev-0369eb1be177-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "According to Petitioner (Mr. Cooley), according to Petitioner (Mr. Cooley), respondent (Joshua James Cooley) does not contest tribal sovereignty itself but asks that the Court respect the boundaries of tribal authority as previously defined by this Court."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Deputy Solicitor General Eric J. Feigin)",
+          "citations": [
+            {
+              "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+              "evidence_ids": [
+                "ev-0369eb1be177-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Deputy Solicitor General Eric J. Feigin), indian tribes, like other sovereigns, have the core inherent authority to investigate and detain suspects within their borders for the violation of another sovereign's law."
+        },
+        {
+          "attribution": "Petitioner (Deputy Solicitor General Eric J. Feigin)",
+          "citations": [
+            {
+              "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+              "evidence_ids": [
+                "ev-0369eb1be177-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner (Deputy Solicitor General Eric J. Feigin), the holding lacks any meaningful support, substantially chills tribes' ability even to enforce their own laws against their own members, and endangers everyone on Indian reservations. It should be reversed."
+        },
+        {
+          "attribution": "Mr. FEIGIN",
+          "citations": [
+            {
+              "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+              "evidence_ids": [
+                "ev-0369eb1be177-0001-0006"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            }
+          ],
+          "text": "According to Mr. FEIGIN, non\u2011Indians cannot be subject to tribal adjudication, which is another line of demarcation."
+        }
+      ],
+      "heading": "Petitioner (Deputy Solicitor General Eric J. Feigin)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Mr. Cooley)",
+          "citations": [
+            {
+              "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+              "evidence_ids": [
+                "ev-0369eb1be177-0003-0000"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 65
+              }
+            }
+          ],
+          "text": "According to Petitioner (Mr. Cooley), cooley does not challenge tribal sovereignty; he simply asks that the Court respect the boundaries of tribal sovereignty as previously defined."
+        }
+      ],
+      "heading": "Respondent (Joshua James Cooley)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. HENKEL",
+          "citations": [
+            {
+              "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+              "evidence_ids": [
+                "ev-0369eb1be177-0001-0007"
+              ],
+              "pages": {
+                "end": 33,
+                "start": 33
+              }
+            }
+          ],
+          "text": "According to Mr. HENKEL, indian tribes do not possess sovereign authority over non\u2011Indians, and Congress has plenary authority over Indian affairs."
+        },
+        {
+          "attribution": "Mr. Henkel",
+          "citations": [
+            {
+              "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+              "evidence_ids": [
+                "ev-0369eb1be177-0002-0001"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Mr. Henkel, if conduct rises to an ongoing breach of the peace that endangers public safety, it fits under the Ninth Circuit\u2019s standard for tribal authority."
+        },
+        {
+          "attribution": "Mr. Henkel",
+          "citations": [
+            {
+              "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+              "evidence_ids": [
+                "ev-0369eb1be177-0002-0004"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Mr. Henkel, there is virtually no remedy for unlawful tribal seizure other than exclusion of the evidence; tribal officers enjoy sovereign immunity and cannot be sued under 42 U.S.C. \u00a71983."
+        }
+      ],
+      "heading": "Amicus (Mr. Henkel)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0369eb1be177bacb906cd31349e9a3af083fb9dde271f1f6e92dc78e66a21b47",
+      "evidence_ids": [
+        "ev-0369eb1be177-0000-0000",
+        "ev-0369eb1be177-0000-0001",
+        "ev-0369eb1be177-0000-0002",
+        "ev-0369eb1be177-0001-0000",
+        "ev-0369eb1be177-0001-0001",
+        "ev-0369eb1be177-0001-0002",
+        "ev-0369eb1be177-0001-0003",
+        "ev-0369eb1be177-0001-0005",
+        "ev-0369eb1be177-0001-0006",
+        "ev-0369eb1be177-0001-0007",
+        "ev-0369eb1be177-0002-0001",
+        "ev-0369eb1be177-0002-0002",
+        "ev-0369eb1be177-0002-0003",
+        "ev-0369eb1be177-0002-0004",
+        "ev-0369eb1be177-0002-0005",
+        "ev-0369eb1be177-0003-0000",
+        "ev-0369eb1be177-0003-0001",
+        "ev-0369eb1be177-0003-0002",
+        "ev-0369eb1be177-0003-0003"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "566e0829d217ceebfd6d4039493621f1f8de9e0a891a251db4b7b0d02efc243b",
+      "evidence_ids": [
+        "ev-566e0829d217-0000-0000",
+        "ev-566e0829d217-0000-0002",
+        "ev-566e0829d217-0000-0003",
+        "ev-566e0829d217-0000-0004",
+        "ev-566e0829d217-0001-0000",
+        "ev-566e0829d217-0001-0001"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T22:12:32.222434Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

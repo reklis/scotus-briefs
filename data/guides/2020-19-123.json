@@ -1,0 +1,479 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+            "evidence_ids": [
+              "ev-7688ac1a239c-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Catholic Social Services (CSS) holds the religious belief that marriage is a sacred bond between a man and a woman."
+      },
+      {
+        "attribution": "City of Philadelphia",
+        "citations": [
+          {
+            "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+            "evidence_ids": [
+              "ev-7688ac1a239c-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The City of Philadelphia argued that CSS\u2019s refusal to certify same\u2011sex couples violated a non\u2011discrimination provision in its contract and the citywide Fair Practices Ordinance."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+            "evidence_ids": [
+              "ev-7688ac1a239c-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Court, CSS alleged that the City\u2019s referral freeze violated the Free Exercise and Free Speech Clauses of the First Amendment."
+      },
+      {
+        "attribution": "Ms. WINDHAM",
+        "citations": [
+          {
+            "document_hash": "e49a8ecf586de441dadb8d91b0db06f5594d457b7cd9072e2a599c0cc1212099",
+            "evidence_ids": [
+              "ev-e49a8ecf586d-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Ms. Windham, the Court was asked whether the Free Exercise Clause \u201cshrinks every time the government expands its reach and begins to regulate work that has historically and traditionally been done by religious groups.\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+            "evidence_ids": [
+              "ev-7688ac1a239c-0002-0004"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Alito, Justice Alito framed the case as an \u201cimportant constitutional question\u201d about whether the Court\u2019s current interpretation of the Free Exercise Clause is fundamentally wrong."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "e49a8ecf586de441dadb8d91b0db06f5594d457b7cd9072e2a599c0cc1212099",
+            "evidence_ids": [
+              "ev-e49a8ecf586d-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the case involves a clash between free\u2011exercise rights and the rights recognized in Obergefell."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "e49a8ecf586de441dadb8d91b0db06f5594d457b7cd9072e2a599c0cc1212099",
+            "evidence_ids": [
+              "ev-e49a8ecf586d-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether the dispute is about a contractual relationship or a regulatory/licensing scheme."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-123",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+            "evidence_ids": [
+              "ev-7688ac1a239c-0001-0004"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Court held that the contractual non\u2011discrimination requirement imposes a burden on CSS's religious exercise and does not qualify as generally applicable, so it cannot survive strict scrutiny."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+            "evidence_ids": [
+              "ev-7688ac1a239c-0000-0003",
+              "ev-7688ac1a239c-0000-0004"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Court of Appeals for the Third Circuit affirmed the lower court\u2019s denial of preliminary relief."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T21:32:49.664572Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+      "e49a8ecf586de441dadb8d91b0db06f5594d457b7cd9072e2a599c0cc1212099"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "e49a8ecf586de441dadb8d91b0db06f5594d457b7cd9072e2a599c0cc1212099",
+            "evidence_ids": [
+              "ev-e49a8ecf586d-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the case involves a clash between free\u2011exercise rights and the rights recognized in Obergefell."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "e49a8ecf586de441dadb8d91b0db06f5594d457b7cd9072e2a599c0cc1212099",
+            "evidence_ids": [
+              "ev-e49a8ecf586d-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas inquired whether the dispute is a contractual relationship or a licensing case."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+            "evidence_ids": [
+              "ev-7688ac1a239c-0001-0004"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Supreme Court held that the City\u2019s contractual non\u2011discrimination requirement imposed a burden on Catholic Social Services\u2019 free\u2011exercise rights and was not generally applicable."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Catholic Social Services (CSS)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "City",
+          "citations": [
+            {
+              "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+              "evidence_ids": [
+                "ev-7688ac1a239c-0000-0001"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            },
+            {
+              "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+              "evidence_ids": [
+                "ev-7688ac1a239c-0001-0001"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            },
+            {
+              "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+              "evidence_ids": [
+                "ev-7688ac1a239c-0002-0000"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            },
+            {
+              "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+              "evidence_ids": [
+                "ev-7688ac1a239c-0002-0001"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "The City argues that CSS\u2019s refusal to certify same\u2011sex couples violates a non\u2011discrimination provision in its contract and the Fair Practices Ordinance, which serves compelling interests such as maximizing foster\u2011parent numbers and protecting the City from liability."
+        },
+        {
+          "attribution": "City",
+          "citations": [
+            {
+              "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+              "evidence_ids": [
+                "ev-7688ac1a239c-0001-0005"
+              ],
+              "pages": {
+                "end": 15,
+                "start": 15
+              }
+            }
+          ],
+          "text": "The City maintains that it has no intention of granting an exception to CSS under \u00a7\u202f3.21, which allows discretionary exceptions at the Commissioner\u2019s sole discretion."
+        },
+        {
+          "attribution": "City",
+          "citations": [
+            {
+              "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+              "evidence_ids": [
+                "ev-7688ac1a239c-0010-0000"
+              ],
+              "pages": {
+                "end": 102,
+                "start": 102
+              }
+            }
+          ],
+          "text": "The City argues that \u00a7\u202f15.1 of its contract with CSS independently prohibits discrimination on the basis of sexual orientation, creating a second generally applicable rule."
+        }
+      ],
+      "heading": "City of Philadelphia",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "e49a8ecf586de441dadb8d91b0db06f5594d457b7cd9072e2a599c0cc1212099",
+              "evidence_ids": [
+                "ev-e49a8ecf586d-0000-0001",
+                "ev-e49a8ecf586d-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "Petitioners argue that the lower courts erred by applying Employment Division v.\u202fSmith to a situation where the government uses individualized exemptions that undermine the rule\u2019s neutrality."
+        }
+      ],
+      "heading": "Petitioners (General)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+      "evidence_ids": [
+        "ev-7688ac1a239c-0000-0000"
+      ],
+      "pages": {
+        "end": 105,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "e49a8ecf586de441dadb8d91b0db06f5594d457b7cd9072e2a599c0cc1212099",
+      "evidence_ids": [
+        "ev-e49a8ecf586d-0000-0000"
+      ],
+      "pages": {
+        "end": 114,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T21:47:24.776698Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+            "evidence_ids": [
+              "ev-7688ac1a239c-0001-0004"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The decision clarifies that a government\u2011mandated non\u2011discrimination rule that is not generally applicable may be subject to strict scrutiny when it burdens religious exercise."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+            "evidence_ids": [
+              "ev-7688ac1a239c-0004-0000"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Alito argued that the precedent set by Employment Division v.\u202fSmith is \u201cwrongly decided\u201d and threatens fundamental religious freedom."
+      },
+      {
+        "attribution": "Amici and justices",
+        "citations": [
+          {
+            "document_hash": "7688ac1a239c89eb58922876b61bff2f301f0ae8683ca3d64e73b00eb6fb953d",
+            "evidence_ids": [
+              "ev-7688ac1a239c-0002-0005",
+              "ev-7688ac1a239c-0002-0006",
+              "ev-7688ac1a239c-0002-0007",
+              "ev-7688ac1a239c-0002-0008",
+              "ev-7688ac1a239c-0003-0000",
+              "ev-7688ac1a239c-0003-0001"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Amici and justices highlighted the broader impact on religious organizations that provide social services, noting that overturning Smith could affect many similar arrangements."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

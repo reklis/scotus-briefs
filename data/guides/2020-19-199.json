@@ -1,0 +1,293 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991",
+            "evidence_ids": [
+              "ev-990193c52e02-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner, petitioner asserts that Congress, in Section\u202f355(f), made all final decisions of the Railroad Retirement Board, including denials of reopening, reviewable."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991",
+            "evidence_ids": [
+              "ev-990193c52e02-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch posed a hypothetical that, assuming Section\u202f355(f) allows review of reopening petitions, the language of Section\u202f231g might suggest otherwise."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-199",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T22:12:32.243202Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991",
+            "evidence_ids": [
+              "ev-990193c52e02-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch hypothesized that, even if Section\u202f355(f) permits review, Section\u202f231g might limit it."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991",
+            "evidence_ids": [
+              "ev-990193c52e02-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991",
+            "evidence_ids": [
+              "ev-990193c52e02-0001-0004"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          },
+          {
+            "document_hash": "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991",
+            "evidence_ids": [
+              "ev-990193c52e02-0002-0003"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "According to Petitioner, ms. Harris responded that Section\u202f355(f) makes final decisions reviewable and that Section\u202f355(g) is an exclusivity provision, and that the petition is based on an error on the record."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991",
+            "evidence_ids": [
+              "ev-990193c52e02-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case concerns whether the Railroad Retirement Board\u2019s final decisions are subject to judicial review under Section\u202f355(f) of the Railroad Unemployment Insurance Act."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991",
+            "evidence_ids": [
+              "ev-990193c52e02-0001-0004"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Petitioner argues that Section\u202f355(g) provides an exclusivity provision for claims under the Railroad Unemployment Insurance Act."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991",
+              "evidence_ids": [
+                "ev-990193c52e02-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner, section\u202f355(f) subjects any final decision of the Railroad Retirement Board to judicial review."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991",
+              "evidence_ids": [
+                "ev-990193c52e02-0001-0004"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Petitioner, section\u202f355(g) is a review\u2011exclusivity provision that applies to determinations of any claim for benefits or refunds under the RUIA."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991",
+              "evidence_ids": [
+                "ev-990193c52e02-0002-0003"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 60
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petition for reopening is based on an error on the face of the record, as argued in the Fifth Circuit."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "990193c52e02034416020633723d2ee2612a185b13b567f909aff449d36a0991",
+      "evidence_ids": [
+        "ev-990193c52e02-0000-0000",
+        "ev-990193c52e02-0000-0001",
+        "ev-990193c52e02-0000-0002",
+        "ev-990193c52e02-0000-0003",
+        "ev-990193c52e02-0000-0005",
+        "ev-990193c52e02-0000-0006",
+        "ev-990193c52e02-0001-0000",
+        "ev-990193c52e02-0001-0001",
+        "ev-990193c52e02-0001-0003",
+        "ev-990193c52e02-0001-0004",
+        "ev-990193c52e02-0002-0000",
+        "ev-990193c52e02-0002-0002",
+        "ev-990193c52e02-0002-0003"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T22:16:31.809561Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

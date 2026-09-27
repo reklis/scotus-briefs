@@ -1,0 +1,421 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mr. Bronni",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0000-0002",
+              "ev-699224459d84-0001-0001"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Arkansas\u2019s Act\u202f900 seeks to regulate PBM reimbursement rates and requires PBMs to allocate margins back to local pharmacies to preserve access in rural communities."
+      },
+      {
+        "attribution": "Frederick Liu",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0001-0004"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "According to Frederick Liu, the key issue before the Court is whether Act\u202f900 directly regulates a central matter of ERISA plan administration, making it subject to preemption."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-18-540",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T20:46:14.152386Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0001-0003"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Frederick Liu presented oral argument on behalf of the United States as amicus curiae."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0001-0007"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Seth P. Waxman presented oral argument on behalf of the respondent."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0000-0004"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether the copay determination, a central plan function, would be controlled by the plan if the pharmacy won its appeal."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0000-0006"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan inquired about the distinction between regulating PBMs and regulating plans, and whether a plan\u2011managed benefit would raise a different question."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0001-0000"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked a follow\u2011up question seeking clarification of the respondent\u2019s position."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0002-0000"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch questioned whether ERISA preemption of the Arkansas law would also preempt other general benefit regulations."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Leslie Rutledge, Attorney General of Arkansas (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0000-0002"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "According to Leslie Rutledge, Attorney General of Arkansas (Petitioner), according to Leslie Rutledge, Attorney General of Arkansas (Petitioner), pharmacy Benefit Managers (PBMs) act as intermediaries that reimburse pharmacists at rates often below their costs, which can force pharmacies to close and reduce access in rural Arkansas."
+      },
+      {
+        "attribution": "Mr. Bronni",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0001-0001"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "According to Mr. Bronni, the state requires PBMs to reallocate part of their margin back to local pharmacies so that independent rural pharmacies can remain in business and communities retain access to pharmacy services."
+      },
+      {
+        "attribution": "Leslie Rutledge, Attorney General of Arkansas (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0000-0003",
+              "ev-699224459d84-0001-0002"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "The petitioner argues that ERISA does not preempt state laws that implement or enforce rate regulation, and that Act\u202f900\u2019s enforcement mechanisms are permissible under Arkansas law."
+      },
+      {
+        "attribution": "Mr. Waxman",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0001-0008"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "According to Mr. Waxman, the respondent contends that Act\u202f900 directly compels ERISA plan administrators to follow state\u2011specific rules, creating a patchwork that makes uniform plan administration impossible."
+      },
+      {
+        "attribution": "Frederick Liu",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0001-0004"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "According to Frederick Liu, amicus brief by the United States frames the central legal question as whether Arkansas law directly regulates a central matter of plan administration, which would be impermissible under ERISA."
+      },
+      {
+        "attribution": "J.B. Hunt Company",
+        "citations": [
+          {
+            "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+            "evidence_ids": [
+              "ev-699224459d84-0002-0001"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 1
+            }
+          }
+        ],
+        "text": "According to J.B. Hunt Company, amicus brief by J.B. Hunt emphasizes the difficulty of achieving uniform plan administration across states."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Leslie Rutledge, Attorney General of Arkansas (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+              "evidence_ids": [
+                "ev-699224459d84-0000-0002"
+              ],
+              "pages": {
+                "end": 61,
+                "start": 1
+              }
+            }
+          ],
+          "text": "According to Leslie Rutledge, Attorney General of Arkansas (Petitioner), according to Leslie Rutledge, Attorney General of Arkansas (Petitioner), pBMs reimburse pharmacists at rates below cost, threatening pharmacy viability."
+        },
+        {
+          "attribution": "Leslie Rutledge, Attorney General of Arkansas (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+              "evidence_ids": [
+                "ev-699224459d84-0000-0003",
+                "ev-699224459d84-0001-0002"
+              ],
+              "pages": {
+                "end": 61,
+                "start": 1
+              }
+            }
+          ],
+          "text": "ERISA does not preempt laws that implement or enforce rate regulation; Act\u202f900\u2019s enforcement mechanisms are permissible state rate regulation."
+        },
+        {
+          "attribution": "Mr. Bronni",
+          "citations": [
+            {
+              "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+              "evidence_ids": [
+                "ev-699224459d84-0001-0001"
+              ],
+              "pages": {
+                "end": 61,
+                "start": 1
+              }
+            }
+          ],
+          "text": "According to Mr. Bronni, requiring PBMs to reallocate part of their margin to local pharmacies will keep independent rural pharmacies open and maintain community access to pharmacy services."
+        }
+      ],
+      "heading": "Petitioner \u2013 Leslie Rutledge, Attorney General of Arkansas",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Waxman",
+          "citations": [
+            {
+              "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+              "evidence_ids": [
+                "ev-699224459d84-0001-0008"
+              ],
+              "pages": {
+                "end": 61,
+                "start": 1
+              }
+            }
+          ],
+          "text": "According to Mr. Waxman, act\u202f900 directly compels ERISA plan administrators to comply with state\u2011specific rules, creating a patchwork that makes uniform plan administration impossible."
+        }
+      ],
+      "heading": "Respondent \u2013 Pharmaceutical Care Management Association",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "699224459d84f531d4d1f9b20f538451ac65618843da57e2bd34ba0348f02e33",
+      "evidence_ids": [
+        "ev-699224459d84-0000-0002",
+        "ev-699224459d84-0000-0003",
+        "ev-699224459d84-0000-0004",
+        "ev-699224459d84-0000-0006",
+        "ev-699224459d84-0001-0000",
+        "ev-699224459d84-0001-0001",
+        "ev-699224459d84-0001-0002",
+        "ev-699224459d84-0001-0003",
+        "ev-699224459d84-0001-0004",
+        "ev-699224459d84-0001-0007",
+        "ev-699224459d84-0001-0008",
+        "ev-699224459d84-0002-0000",
+        "ev-699224459d84-0002-0001"
+      ],
+      "pages": {
+        "end": 61,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T20:51:57.386952Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
