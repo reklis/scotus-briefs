@@ -1,0 +1,322 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+            "evidence_ids": [
+              "ev-88b8970ca43c-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether but\u2011for causation is required for reinstatement or back pay."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-882",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T04:33:47.293339Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+            "evidence_ids": [
+              "ev-88b8970ca43c-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The oral argument began at 10:04\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+            "evidence_ids": [
+              "ev-88b8970ca43c-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether but\u2011for causation is required for reinstatement or back pay despite the parties\u2019 briefs."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+            "evidence_ids": [
+              "ev-88b8970ca43c-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer followed up with a question about the parties\u2019 earlier answer."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+            "evidence_ids": [
+              "ev-88b8970ca43c-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked for clarification of the statutory wording."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+            "evidence_ids": [
+              "ev-88b8970ca43c-0002-0002"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh also asked \u201cWhy\u2014\u201d indicating further inquiry."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Roman Martinez",
+        "citations": [
+          {
+            "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+            "evidence_ids": [
+              "ev-88b8970ca43c-0000-0002",
+              "ev-88b8970ca43c-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The dispute centers on the interpretation of Section 633a, which requires federal personnel actions to be \"free from any discrimination based on age.\""
+      },
+      {
+        "attribution": "Roman Martinez",
+        "citations": [
+          {
+            "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+            "evidence_ids": [
+              "ev-88b8970ca43c-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Roman Martinez, both parties agree that the language mirrors Title VII\u2019s anti\u2011discrimination provision for race, sex, and religion."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Roman Martinez",
+          "citations": [
+            {
+              "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+              "evidence_ids": [
+                "ev-88b8970ca43c-0003-0000"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 65
+              }
+            }
+          ],
+          "text": "According to Roman Martinez, the Solicitor General misquoted the statute as covering \u201cpersonnel actions based on age,\u201d whereas the correct text says \u201cshall be made free from any discrimination based on age.\u201d"
+        },
+        {
+          "attribution": "Roman Martinez",
+          "citations": [
+            {
+              "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+              "evidence_ids": [
+                "ev-88b8970ca43c-0003-0001"
+              ],
+              "pages": {
+                "end": 66,
+                "start": 66
+              }
+            }
+          ],
+          "text": "According to Roman Martinez, congress deliberately chose the \u201cfree from any discrimination\u201d language after rejecting an earlier draft of the statute."
+        },
+        {
+          "attribution": "Roman Martinez",
+          "citations": [
+            {
+              "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+              "evidence_ids": [
+                "ev-88b8970ca43c-0003-0002"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Roman Martinez, the injury at stake is a process\u2011based equal\u2011protection claim, similar to cases from Bakke through Parents Involved."
+        }
+      ],
+      "heading": "Petitioner (Noris Babb)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "General Francisco",
+          "citations": [
+            {
+              "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+              "evidence_ids": [
+                "ev-88b8970ca43c-0002-0001"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to General Francisco, the respondent emphasizes the statutory phrase \u201cFree from any.\u201d"
+        }
+      ],
+      "heading": "Respondent (Robert Wilkie, Secretary of Veterans Affairs)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "88b8970ca43c81ac8d497c96b48d8b18d30a37738b8b497b545f778d95f26b6f",
+      "evidence_ids": [
+        "ev-88b8970ca43c-0000-0000",
+        "ev-88b8970ca43c-0000-0001",
+        "ev-88b8970ca43c-0000-0002",
+        "ev-88b8970ca43c-0000-0004",
+        "ev-88b8970ca43c-0001-0002",
+        "ev-88b8970ca43c-0001-0005",
+        "ev-88b8970ca43c-0002-0000",
+        "ev-88b8970ca43c-0002-0001",
+        "ev-88b8970ca43c-0002-0002",
+        "ev-88b8970ca43c-0003-0000",
+        "ev-88b8970ca43c-0003-0001",
+        "ev-88b8970ca43c-0003-0002"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T04:40:00.268855Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

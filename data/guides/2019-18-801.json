@@ -1,0 +1,194 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-801",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T04:22:10.310862Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6503ebbc1877ebed1ad4b842a3f8dc5e9547dd483c01b755f9ec7a4476fafad0"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "6503ebbc1877ebed1ad4b842a3f8dc5e9547dd483c01b755f9ec7a4476fafad0",
+          "evidence_ids": [
+            "ev-6503ebbc1877-0001-0007"
+          ],
+          "pages": {
+            "end": 39,
+            "start": 39
+          }
+        }
+      ],
+      "definition": "\"expensae litis\" literally means expenses of litigation, as defined by the Heritage Reporting Corporation's Bouvier Legal Dictionary.",
+      "term": "expensae litis"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Laura Peter, Deputy Director, Patent and Trademark Office)",
+          "citations": [
+            {
+              "document_hash": "6503ebbc1877ebed1ad4b842a3f8dc5e9547dd483c01b755f9ec7a4476fafad0",
+              "evidence_ids": [
+                "ev-6503ebbc1877-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Laura Peter, Deputy Director, Patent and Trademark Office), according to Petitioner (Laura Peter, Deputy Director, Patent and Trademark Office), section\u202f145 requires an unsuccessful patent applicant who files suit under that provision to pay all the expenses of the proceeding."
+        }
+      ],
+      "heading": "Petitioner (Laura Peter, Deputy Director, Patent and Trademark Office)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "6503ebbc1877ebed1ad4b842a3f8dc5e9547dd483c01b755f9ec7a4476fafad0",
+              "evidence_ids": [
+                "ev-6503ebbc1877-0002-0002"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Government, there is no other statute that would be affected by the Court\u2019s decision."
+        }
+      ],
+      "heading": "Government",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6503ebbc1877ebed1ad4b842a3f8dc5e9547dd483c01b755f9ec7a4476fafad0",
+      "evidence_ids": [
+        "ev-6503ebbc1877-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "6503ebbc1877ebed1ad4b842a3f8dc5e9547dd483c01b755f9ec7a4476fafad0",
+      "evidence_ids": [
+        "ev-6503ebbc1877-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "6503ebbc1877ebed1ad4b842a3f8dc5e9547dd483c01b755f9ec7a4476fafad0",
+      "evidence_ids": [
+        "ev-6503ebbc1877-0002-0002"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "6503ebbc1877ebed1ad4b842a3f8dc5e9547dd483c01b755f9ec7a4476fafad0",
+      "evidence_ids": [
+        "ev-6503ebbc1877-0001-0007"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T04:25:09.312333Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

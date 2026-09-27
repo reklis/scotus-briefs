@@ -1,0 +1,430 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice THOMAS",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0001-0005"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "Justice Thomas asked about the standing of the states and the proliferation of nationwide injunctions."
+      },
+      {
+        "attribution": "Justice KAGAN",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0001-0009"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Justice KAGAN, justice Kagan questioned the consistency of the petitioners\u2019 objection to objecting and its implications."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0002-0000"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh followed up on the \u201cleast restrictive alternative\u201d prong of RFRA."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer raised concerns about ambiguity in the statute regarding preventive care guidelines."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0003-0002"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the ACA permits any exemptions for religious objections."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-19-431",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T05:19:44.978044Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Appearances included Solicitor General Noel J. Francisco and Paul D. Clement for the petitioners, and Michael J. Fischer for the respondents."
+      },
+      {
+        "attribution": "Justice THOMAS",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0001-0005"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "Justice Thomas asked about the standing of the states and the proliferation of nationwide injunctions."
+      },
+      {
+        "attribution": "Justice KAGAN",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0001-0009"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Justice KAGAN, justice Kagan questioned the consistency of the petitioners\u2019 objection to objecting."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0002-0000"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh followed up on the \u201cleast restrictive alternative\u201d prong of RFRA."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0002-0003"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts raised a hypothetical scenario from an amicus brief."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "Justice Breyer asked why the petitioners did not argue that the agency action was arbitrary, capricious, or an abuse of discretion given statutory ambiguity."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0003-0002"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the Affordable Care Act allows any exemptions for religious objections to the contraceptive mandate."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The petitioners were represented by Solicitor General Noel J. Francisco and Paul D. Clement; the respondents were represented by Michael J. Fischer."
+      },
+      {
+        "attribution": "General Noel J. Francisco",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to General Noel J. Francisco, petitioners argue that the Religious Freedom Restoration Act (RFRA) authorizes a religious exemption from the contraceptive mandate."
+      },
+      {
+        "attribution": "General FRANCISCO",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0004-0004"
+            ],
+            "pages": {
+              "end": 99,
+              "start": 99
+            }
+          }
+        ],
+        "text": "According to General FRANCISCO, petitioners also contend that the exemption is justified under Section 13(a)(4) of the ACA."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+            "evidence_ids": [
+              "ev-212ca54b7446-0002-0005"
+            ],
+            "pages": {
+              "end": 63,
+              "start": 63
+            }
+          }
+        ],
+        "text": "According to Respondents, respondents assert that they rely on authority under 300gg\u201113 and the ACA\u2019s women\u2019s health amendment for a moral exemption, not on RFRA."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "General Noel J. Francisco",
+          "citations": [
+            {
+              "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+              "evidence_ids": [
+                "ev-212ca54b7446-0000-0003"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to General Noel J. Francisco, the petitioners argue that RFRA at minimum authorizes the religious exemption and prohibits the government from imposing a substantial burden on religious beliefs."
+        },
+        {
+          "attribution": "General FRANCISCO",
+          "citations": [
+            {
+              "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+              "evidence_ids": [
+                "ev-212ca54b7446-0004-0004"
+              ],
+              "pages": {
+                "end": 99,
+                "start": 99
+              }
+            }
+          ],
+          "text": "According to General FRANCISCO, they further argue that the exemption is justified under Section\u202f13(a)(4) of the ACA."
+        }
+      ],
+      "heading": "Little Sisters of the Poor Saints Peter and Paul Home (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+              "evidence_ids": [
+                "ev-212ca54b7446-0002-0005"
+              ],
+              "pages": {
+                "end": 63,
+                "start": 63
+              }
+            }
+          ],
+          "text": "The respondents claim authority under 300gg\u201113 and the ACA\u2019s women\u2019s health amendment for a moral exemption, not relying on RFRA."
+        }
+      ],
+      "heading": "Pennsylvania (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Donald J. Trump, President (Petitioner)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "212ca54b744692a869a70a4fbea812bce1305d5d6af3fe808085d161611061d3",
+      "evidence_ids": [
+        "ev-212ca54b7446-0000-0000",
+        "ev-212ca54b7446-0000-0001"
+      ],
+      "pages": {
+        "end": 100,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T05:24:26.525168Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

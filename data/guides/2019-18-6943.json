@@ -1,0 +1,265 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d918c3b7ea5b31e1fa858748f7dc2f8932f2387da5c8517bda3277784e5c3156",
+            "evidence_ids": [
+              "ev-d918c3b7ea5b-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether the lack of a deadline for ruling on a Rule\u202f59(e) motion is an anomaly."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "d918c3b7ea5b31e1fa858748f7dc2f8932f2387da5c8517bda3277784e5c3156",
+            "evidence_ids": [
+              "ev-d918c3b7ea5b-0002-0000"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked how the Court should respond to the claim that there is no difference between Rule\u202f59 and Rule\u202f60, given historical distinctions."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-6943",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T04:01:31.145173Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "d918c3b7ea5b31e1fa858748f7dc2f8932f2387da5c8517bda3277784e5c3156"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "d918c3b7ea5b31e1fa858748f7dc2f8932f2387da5c8517bda3277784e5c3156",
+            "evidence_ids": [
+              "ev-d918c3b7ea5b-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The argument began at 11:07\u202fa.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Brian T. Burgess (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "d918c3b7ea5b31e1fa858748f7dc2f8932f2387da5c8517bda3277784e5c3156",
+            "evidence_ids": [
+              "ev-d918c3b7ea5b-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Brian T. Burgess (Petitioner), according to Brian T. Burgess (Petitioner), petitioner Gregory Dean Banister argues that a Rule\u202f59(e) motion filed within 20 days of judgment is part of the first opportunity to seek habeas relief and not a second habeas application."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Brian T. Burgess (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "d918c3b7ea5b31e1fa858748f7dc2f8932f2387da5c8517bda3277784e5c3156",
+              "evidence_ids": [
+                "ev-d918c3b7ea5b-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Brian T. Burgess (Petitioner), according to Brian T. Burgess (Petitioner), the Fifth Circuit\u2019s decision should be reversed because a Rule\u202f59(e) motion filed within 20 days of judgment is part of the first full opportunity to pursue habeas relief."
+        },
+        {
+          "attribution": "Brian T. Burgess (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "d918c3b7ea5b31e1fa858748f7dc2f8932f2387da5c8517bda3277784e5c3156",
+              "evidence_ids": [
+                "ev-d918c3b7ea5b-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Brian T. Burgess (Petitioner), according to Brian T. Burgess (Petitioner), a Rule\u202f59(e) motion is not a second habeas application."
+        }
+      ],
+      "heading": "Petitioner (Banister)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Davis)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Texas",
+          "citations": [
+            {
+              "document_hash": "d918c3b7ea5b31e1fa858748f7dc2f8932f2387da5c8517bda3277784e5c3156",
+              "evidence_ids": [
+                "ev-d918c3b7ea5b-0003-0000"
+              ],
+              "pages": {
+                "end": 64,
+                "start": 64
+              }
+            }
+          ],
+          "text": "Texas argues that the petitioner\u2019s examples involve motions that are not genuine Rule\u202f59(e) relief and that the analysis should look beyond the pleading."
+        },
+        {
+          "attribution": "Texas",
+          "citations": [
+            {
+              "document_hash": "d918c3b7ea5b31e1fa858748f7dc2f8932f2387da5c8517bda3277784e5c3156",
+              "evidence_ids": [
+                "ev-d918c3b7ea5b-0003-0001"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 65
+              }
+            }
+          ],
+          "text": "According to Texas, texas concedes that Banister filed a true Rule\u202f59(e) motion but believes it should be subject to Section\u202f2244(b)."
+        }
+      ],
+      "heading": "Texas (Amicus)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "d918c3b7ea5b31e1fa858748f7dc2f8932f2387da5c8517bda3277784e5c3156",
+      "evidence_ids": [
+        "ev-d918c3b7ea5b-0000-0000",
+        "ev-d918c3b7ea5b-0000-0001",
+        "ev-d918c3b7ea5b-0000-0006",
+        "ev-d918c3b7ea5b-0001-0000",
+        "ev-d918c3b7ea5b-0001-0001",
+        "ev-d918c3b7ea5b-0001-0003",
+        "ev-d918c3b7ea5b-0001-0005",
+        "ev-d918c3b7ea5b-0002-0000",
+        "ev-d918c3b7ea5b-0002-0001",
+        "ev-d918c3b7ea5b-0002-0002",
+        "ev-d918c3b7ea5b-0002-0003",
+        "ev-d918c3b7ea5b-0003-0000",
+        "ev-d918c3b7ea5b-0003-0001"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T04:05:29.792478Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-19-631",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T05:39:27.758002Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "976ed1a4de13c226b15de2ce8e6f99d5758b697fda7f4ce6fc8fd2dae3834195"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "976ed1a4de13c226b15de2ce8e6f99d5758b697fda7f4ce6fc8fd2dae3834195",
+            "evidence_ids": [
+              "ev-976ed1a4de13-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument before the Supreme Court began at 11:42\u202fa.m."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "976ed1a4de13c226b15de2ce8e6f99d5758b697fda7f4ce6fc8fd2dae3834195",
+            "evidence_ids": [
+              "ev-976ed1a4de13-0003-0002"
+            ],
+            "pages": {
+              "end": 76,
+              "start": 76
+            }
+          }
+        ],
+        "text": "The case was submitted to the Court at 12:55\u202fp.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (William P. Barr, Attorney General)",
+        "citations": [
+          {
+            "document_hash": "976ed1a4de13c226b15de2ce8e6f99d5758b697fda7f4ce6fc8fd2dae3834195",
+            "evidence_ids": [
+              "ev-976ed1a4de13-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner (William P. Barr, Attorney General), according to Petitioner (William P. Barr, Attorney General), the case concerns the Telephone Consumer Protection Act\u2019s (TCPA) restriction on automated calls to cell phones."
+      },
+      {
+        "attribution": "Roman MARTINEZ",
+        "citations": [
+          {
+            "document_hash": "976ed1a4de13c226b15de2ce8e6f99d5758b697fda7f4ce6fc8fd2dae3834195",
+            "evidence_ids": [
+              "ev-976ed1a4de13-0001-0008"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Roman MARTINEZ, petitioner argues that the 2015 exception to the TCPA undermines privacy\u2011related speech."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "976ed1a4de13c226b15de2ce8e6f99d5758b697fda7f4ce6fc8fd2dae3834195",
+            "evidence_ids": [
+              "ev-976ed1a4de13-0000-0004"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg noted that the content of a message determines whether an automated call is permissible under the TCPA."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (William P. Barr, Attorney General)",
+          "citations": [
+            {
+              "document_hash": "976ed1a4de13c226b15de2ce8e6f99d5758b697fda7f4ce6fc8fd2dae3834195",
+              "evidence_ids": [
+                "ev-976ed1a4de13-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (William P. Barr, Attorney General), according to Petitioner (William P. Barr, Attorney General), petitioner cites the 1991 enactment of the TCPA restricting automated calls to cell phones."
+        }
+      ],
+      "heading": "Petitioner (William P. Barr, Attorney General)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Roman MARTINEZ",
+          "citations": [
+            {
+              "document_hash": "976ed1a4de13c226b15de2ce8e6f99d5758b697fda7f4ce6fc8fd2dae3834195",
+              "evidence_ids": [
+                "ev-976ed1a4de13-0001-0007"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Roman MARTINEZ, federal courts cannot fix First Amendment violations by making more speech illegal."
+        },
+        {
+          "attribution": "Roman MARTINEZ",
+          "citations": [
+            {
+              "document_hash": "976ed1a4de13c226b15de2ce8e6f99d5758b697fda7f4ce6fc8fd2dae3834195",
+              "evidence_ids": [
+                "ev-976ed1a4de13-0001-0008"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "According to Roman MARTINEZ, the 2015 exception undermines privacy\u2011related speech."
+        },
+        {
+          "attribution": "Roman MARTINEZ",
+          "citations": [
+            {
+              "document_hash": "976ed1a4de13c226b15de2ce8e6f99d5758b697fda7f4ce6fc8fd2dae3834195",
+              "evidence_ids": [
+                "ev-976ed1a4de13-0001-0009"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Roman MARTINEZ, the restriction at issue is unconstitutional."
+        }
+      ],
+      "heading": "Respondent (American Association of Political Consultants, Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "976ed1a4de13c226b15de2ce8e6f99d5758b697fda7f4ce6fc8fd2dae3834195",
+      "evidence_ids": [
+        "ev-976ed1a4de13-0000-0000",
+        "ev-976ed1a4de13-0000-0001",
+        "ev-976ed1a4de13-0000-0003",
+        "ev-976ed1a4de13-0000-0004",
+        "ev-976ed1a4de13-0001-0000",
+        "ev-976ed1a4de13-0001-0001",
+        "ev-976ed1a4de13-0001-0002",
+        "ev-976ed1a4de13-0001-0003",
+        "ev-976ed1a4de13-0001-0007",
+        "ev-976ed1a4de13-0001-0008",
+        "ev-976ed1a4de13-0001-0009",
+        "ev-976ed1a4de13-0002-0006",
+        "ev-976ed1a4de13-0003-0000",
+        "ev-976ed1a4de13-0003-0001",
+        "ev-976ed1a4de13-0003-0002"
+      ],
+      "pages": {
+        "end": 76,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T05:42:20.675827Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

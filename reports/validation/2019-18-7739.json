@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2019-18-7739",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "support check failed: two claims in the \"Why It Matters\" section are not supported by the supplied evidence.",
+    "overstatement check failed: the same two claims overstate the evidence by adding conclusions not present in the transcript."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.67,
+    "neutrality": 0.9,
+    "readability": 0.9,
+    "restraint": 0.6,
+    "traceability": 0.6
+  }
+}

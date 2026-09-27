@@ -1,0 +1,359 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "General Francisco",
+        "citations": [
+          {
+            "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+            "evidence_ids": [
+              "ev-a08472d716fb-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          },
+          {
+            "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+            "evidence_ids": [
+              "ev-a08472d716fb-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "General Francisco argued that the subpoena is necessary for a well\u2011founded criminal investigation and that the information cannot be obtained elsewhere."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-19-635",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T05:42:20.696630Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+            "evidence_ids": [
+              "ev-a08472d716fb-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether there is any express language at the founding that provides presidential immunity."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+            "evidence_ids": [
+              "ev-a08472d716fb-0000-0004"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg questioned whether the grand\u2011jury right to every man\u2019s evidence excludes the President."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+            "evidence_ids": [
+              "ev-a08472d716fb-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked how the case is more burdensome than Clinton v.\u202fJones."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+            "evidence_ids": [
+              "ev-a08472d716fb-0001-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh followed up on the Article\u202fII interest before discussing the standard."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+            "evidence_ids": [
+              "ev-a08472d716fb-0002-0006"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked for a precise articulation of the standard the petitioner proposes."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "United States (Amicus Curiae)",
+        "citations": [
+          {
+            "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+            "evidence_ids": [
+              "ev-a08472d716fb-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to United States (Amicus Curiae), the United States, as amicus curiae, filed a brief supporting the petitioner."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Sekulow",
+          "citations": [
+            {
+              "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+              "evidence_ids": [
+                "ev-a08472d716fb-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "Mr. Sekulow argued that the subpoena raises Article\u202fII concerns and could prejudice the President."
+        },
+        {
+          "attribution": "Petitioner (Jay A. Sekulow)",
+          "citations": [
+            {
+              "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+              "evidence_ids": [
+                "ev-a08472d716fb-0005-0000"
+              ],
+              "pages": {
+                "end": 106,
+                "start": 106
+              }
+            }
+          ],
+          "text": "According to Petitioner (Jay A. Sekulow), the New York district attorney\u2019s subpoena imposes Article\u202fII burdens and has already caused harms to the presidency."
+        },
+        {
+          "attribution": "Petitioner (Jay A. Sekulow)",
+          "citations": [
+            {
+              "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+              "evidence_ids": [
+                "ev-a08472d716fb-0005-0001"
+              ],
+              "pages": {
+                "end": 107,
+                "start": 107
+              }
+            }
+          ],
+          "text": "According to Petitioner (Jay A. Sekulow), both the House and the district attorney issued identical subpoenas to the same custodian for the same records, but the House claims a legislative purpose while the district attorney claims a law\u2011enforcement purpose."
+        }
+      ],
+      "heading": "Petitioner (Donald J. Trump)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "General Francisco",
+          "citations": [
+            {
+              "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+              "evidence_ids": [
+                "ev-a08472d716fb-0002-0000",
+                "ev-a08472d716fb-0002-0001"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to General Francisco, general Francisco reiterated that the subpoena is necessary for a well\u2011founded criminal investigation and cannot be satisfied elsewhere."
+        },
+        {
+          "attribution": "DOJ",
+          "citations": [
+            {
+              "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+              "evidence_ids": [
+                "ev-a08472d716fb-0004-0000"
+              ],
+              "pages": {
+                "end": 85,
+                "start": 85
+              }
+            }
+          ],
+          "text": "According to DOJ, the Department of Justice proposes that the prosecutor must first make an affirmative showing that the standard is met before the President bears any burden."
+        }
+      ],
+      "heading": "Respondent (Cyrus R. Vance, Jr., in his capacity)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+      "evidence_ids": [
+        "ev-a08472d716fb-0000-0000",
+        "ev-a08472d716fb-0000-0002",
+        "ev-a08472d716fb-0001-0000",
+        "ev-a08472d716fb-0000-0003",
+        "ev-a08472d716fb-0000-0004",
+        "ev-a08472d716fb-0001-0000",
+        "ev-a08472d716fb-0001-0001",
+        "ev-a08472d716fb-0001-0002",
+        "ev-a08472d716fb-0001-0003",
+        "ev-a08472d716fb-0001-0004",
+        "ev-a08472d716fb-0002-0000",
+        "ev-a08472d716fb-0002-0001",
+        "ev-a08472d716fb-0002-0005",
+        "ev-a08472d716fb-0002-0006",
+        "ev-a08472d716fb-0002-0008",
+        "ev-a08472d716fb-0003-0000",
+        "ev-a08472d716fb-0004-0000",
+        "ev-a08472d716fb-0004-0001",
+        "ev-a08472d716fb-0004-0004",
+        "ev-a08472d716fb-0005-0000",
+        "ev-a08472d716fb-0005-0001",
+        "ev-a08472d716fb-0005-0002"
+      ],
+      "pages": {
+        "end": 108,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T05:51:21.757254Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Mr. Dunne",
+        "citations": [
+          {
+            "document_hash": "a08472d716fb3b53c834e81918609ee70ab0761bbe4a0f9fb067bda6b68636ca",
+            "evidence_ids": [
+              "ev-a08472d716fb-0004-0004"
+            ],
+            "pages": {
+              "end": 105,
+              "start": 105
+            }
+          }
+        ],
+        "text": "According to Mr. Dunne, the case involves two principles: the President\u2019s constitutional duties and the principle that the President, when acting as a private individual, is subject to the law like any other citizen."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

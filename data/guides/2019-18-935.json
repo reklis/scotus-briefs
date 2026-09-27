@@ -1,0 +1,347 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0001-0005"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "The central legal question is whether the child has a habitual residence under the Hague Convention."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-935",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T04:45:03.170656Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "United States (Amicus)",
+        "citations": [
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to United States (Amicus), according to United States (Amicus), the United States filed an amicus brief supporting neither party."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the child, taken to the United States at eight weeks old, has a habitual residence."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned why the case should be decided in the United States rather than elsewhere, given the child\u2019s acclimation."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0001-0005"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked how old a child must be before a habitual residence can be found."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Kagan asked why the Court should not simply accept the formulation of the legal standard offered by Judge Boggs."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0002-0003"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh questioned whether \u201cabsent unusual circumstances\u201d would be sufficient to resolve the case."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0002-0004"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Alito warned that a flexible \u201ctake everything into account\u201d standard could give too much discretion to a single judge."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Amir C. Tayrani)",
+        "citations": [
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner (Amir C. Tayrani), according to Petitioner (Amir C. Tayrani), the Hague Convention on the Civil Aspects of Child Abduction is intended to protect children who have a country of habitual residence from wrongful removal."
+      },
+      {
+        "attribution": "Petitioner (Amir C. Tayrani)",
+        "citations": [
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0000-0004"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "According to Petitioner (Amir C. Tayrani), according to Petitioner (Amir C. Tayrani), in this case the child was taken to the United States at eight weeks old and the dispute has lasted more than four years, far exceeding the Convention\u2019s goal of resolving cases within six weeks."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Amir C. Tayrani)",
+          "citations": [
+            {
+              "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+              "evidence_ids": [
+                "ev-655cb3d39600-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Amir C. Tayrani), according to Petitioner (Amir C. Tayrani), returning the child to Italy would be wrongful because the child has only ever known her mother as caregiver."
+        }
+      ],
+      "heading": "Petitioner (Monasky)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Tagleri)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+      "evidence_ids": [
+        "ev-655cb3d39600-0000-0000",
+        "ev-655cb3d39600-0000-0001",
+        "ev-655cb3d39600-0000-0002",
+        "ev-655cb3d39600-0000-0003",
+        "ev-655cb3d39600-0000-0004",
+        "ev-655cb3d39600-0001-0000",
+        "ev-655cb3d39600-0001-0001",
+        "ev-655cb3d39600-0001-0002",
+        "ev-655cb3d39600-0001-0004",
+        "ev-655cb3d39600-0001-0005",
+        "ev-655cb3d39600-0001-0006",
+        "ev-655cb3d39600-0001-0007",
+        "ev-655cb3d39600-0001-0008",
+        "ev-655cb3d39600-0002-0000",
+        "ev-655cb3d39600-0002-0001",
+        "ev-655cb3d39600-0002-0002",
+        "ev-655cb3d39600-0002-0003",
+        "ev-655cb3d39600-0002-0004"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T04:54:43.073750Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner counsel",
+        "citations": [
+          {
+            "document_hash": "655cb3d39600e0fca56dd6469194182d25b3ccbe7770a7e0cb20d69ed8003d86",
+            "evidence_ids": [
+              "ev-655cb3d39600-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Petitioner counsel argues that the Convention\u2019s protection may be eliminated for very young children because they may lack a habitual residence."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-6135",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T03:51:49.350034Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+            "evidence_ids": [
+              "ev-1d40d0ab8170-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Kagan asked how often insanity defenses are raised and how often juries actually find insanity in the 46 states that retain the rule."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+            "evidence_ids": [
+              "ev-1d40d0ab8170-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked how far the insanity defense must be extended as a matter of due process \u2013 whether to all homicides, all felonies, or where the line should be drawn."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+            "evidence_ids": [
+              "ev-1d40d0ab8170-0001-0005"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned whether the mens\u2011rea test takes away the excusing of a person who, historically, would have been considered a lunatic with no volition to fight back."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+            "evidence_ids": [
+              "ev-1d40d0ab8170-0003-0000"
+            ],
+            "pages": {
+              "end": 67,
+              "start": 67
+            }
+          }
+        ],
+        "text": "Justice Alito asked why the petitioner is arguing for a separate insanity defense tied to M\u2019Naghten, noting that historically insanity was linked to mens\u2011rea and applied categorically in every case."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+            "evidence_ids": [
+              "ev-1d40d0ab8170-0003-0001"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito further questioned whether the 18th\u2011century understanding of the human mind, which lacked modern psychiatry, should affect the analysis of insanity defenses."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Sarah Schrup, on behalf of the Petitioner",
+        "citations": [
+          {
+            "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+            "evidence_ids": [
+              "ev-1d40d0ab8170-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Sarah Schrup, on behalf of the Petitioner, the petitioner argues that Kansas\u2019s statutory approach to the insanity defense, which eliminates a moral\u2011capacity test, violates the Fourteenth and Eighth Amendments."
+      },
+      {
+        "attribution": "United States (Amicus)",
+        "citations": [
+          {
+            "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+            "evidence_ids": [
+              "ev-1d40d0ab8170-0002-0004"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "According to United States (Amicus), according to United States (Amicus), the United States amicus states that the petitioner has not met the burden of showing that substantive due\u2011process principles override Kansas\u2019s mens\u2011rea test of insanity."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Sarah Schrup, on behalf of the Petitioner",
+          "citations": [
+            {
+              "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+              "evidence_ids": [
+                "ev-1d40d0ab8170-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Sarah Schrup, on behalf of the Petitioner, kansas\u2019s law scrubs moral capacity from criminal law, running afoul of the Fourteenth and Eighth Amendments."
+        },
+        {
+          "attribution": "Petitioner (Ms. SCHRUP)",
+          "citations": [
+            {
+              "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+              "evidence_ids": [
+                "ev-1d40d0ab8170-0002-0005"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 62
+              }
+            }
+          ],
+          "text": "According to Petitioner (Ms. SCHRUP), according to Petitioner (Ms. SCHRUP), the mens\u2011rea approach \u201cscrapes out the why,\u201d removing the underlying motivation fueled by mental illness."
+        },
+        {
+          "attribution": "MS. SCHRUP",
+          "citations": [
+            {
+              "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+              "evidence_ids": [
+                "ev-1d40d0ab8170-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to MS. SCHRUP, the petitioner acknowledges that the record does not contain data on how often insanity defenses are raised or successful in the 46 states that retain the rule."
+        },
+        {
+          "attribution": "MS. SCHRUP",
+          "citations": [
+            {
+              "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+              "evidence_ids": [
+                "ev-1d40d0ab8170-0001-0003"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to MS. SCHRUP, the petitioner argues that the line should not be drawn at punishment."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States (Amicus)",
+          "citations": [
+            {
+              "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+              "evidence_ids": [
+                "ev-1d40d0ab8170-0002-0004"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to United States (Amicus), according to United States (Amicus), the United States amicus supports the respondent, stating that the petitioner bears the burden of establishing that substantive due\u2011process principles override Kansas\u2019s mens\u2011rea test and has not carried that burden."
+        },
+        {
+          "attribution": "Elizabeth B. Prelogar, Assistant to the Solicitor General, Department of Justice, Washington, D.C.; for the United States, as amicus curiae, supporting the Respondent",
+          "citations": [
+            {
+              "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+              "evidence_ids": [
+                "ev-1d40d0ab8170-0000-0002"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to Elizabeth B. Prelogar, Assistant to the Solicitor General, Department of Justice, Washington, D.C.; for the United States, as amicus curiae, supporting the Respondent, elizabeth B. Prelogar, Assistant to the Solicitor General, filed an amicus brief supporting the respondent."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1d40d0ab8170cbb6c4996025f0fa3af3283ebdc9e3052ffa247f1286c63efd94",
+      "evidence_ids": [
+        "ev-1d40d0ab8170-0000-0000",
+        "ev-1d40d0ab8170-0000-0002",
+        "ev-1d40d0ab8170-0001-0000",
+        "ev-1d40d0ab8170-0001-0001",
+        "ev-1d40d0ab8170-0001-0002",
+        "ev-1d40d0ab8170-0001-0003",
+        "ev-1d40d0ab8170-0001-0004",
+        "ev-1d40d0ab8170-0001-0005",
+        "ev-1d40d0ab8170-0002-0000",
+        "ev-1d40d0ab8170-0002-0001",
+        "ev-1d40d0ab8170-0002-0004",
+        "ev-1d40d0ab8170-0002-0005",
+        "ev-1d40d0ab8170-0003-0000",
+        "ev-1d40d0ab8170-0003-0001"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T03:56:27.755982Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

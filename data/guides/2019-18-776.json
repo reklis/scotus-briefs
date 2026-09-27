@@ -1,0 +1,484 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioners, the central legal issue is whether \u201cquestions of law\u201d under Section\u202f(2)(D) are reviewable by the courts."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          },
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0001-0004"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "Justices questioned whether the statute\u2019s reference to \u201cquestions of law\u201d covers only pure questions of law or also mixed questions."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-776",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T04:16:29.197942Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0000-0004"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioners were represented by Paul\u202fW.\u202fHughes, Esq.; the respondent was represented by Frederick\u202fLiu."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the government\u2019s theory permits courts to review not only whether the Board articulated the right theory but also whether it actually used the right theory."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0000-0003"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked what the case teaches about the question before the Court."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan commented on the breadth of Justice Gorsuch\u2019s question."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh noted that the statute does not specifically refer to mixed questions and suggested it refers to pure questions of law."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0001-0002"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked the parties to succinctly state the questions of law in the two cases."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0001-0004"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether the government\u2019s position is that only pure questions of law are reviewable or also egregious applications that rise to questions of law."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Breyer stated that the text says \u201cquestions of law\u201d and that statutes using those words clearly mean both."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0002-0004"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor reiterated the presumption in favor of judicial review."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0002-0005"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked if that presumption \u201cbegs the question.\u201d"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0002-0006"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          },
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0002-0007"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the presumption is only about congressional intent and noted that Congress wanted to cut off review for criminal aliens."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0002-0008"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          },
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0002-0009"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Justice Breyer asked the parties what they think about the presumption."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0000-0004"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "Petitioners were represented by Paul\u202fW.\u202fHughes, Esq., and the respondent was represented by Frederick\u202fLiu, Assistant to the Solicitor General."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Petitioners argue that Section\u202f(2)(D) provides for review of questions of law decided by the Board of Immigration Appeals and that courts may review whether the Board identified the proper legal standard."
+      },
+      {
+        "attribution": "Mr. Liu",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0002-0001"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Mr. Liu, the government contends that Congress intended to give criminal aliens no judicial review."
+      },
+      {
+        "attribution": "Mr. Liu",
+        "citations": [
+          {
+            "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+            "evidence_ids": [
+              "ev-9e0320f4515e-0002-0002"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "According to Mr. Liu, the government further states that since 1996 the goal has been to expedite the removal of criminal aliens."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+              "evidence_ids": [
+                "ev-9e0320f4515e-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioners, petitioners assert that courts may review whether the Board identified the proper legal standard."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Liu",
+          "citations": [
+            {
+              "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+              "evidence_ids": [
+                "ev-9e0320f4515e-0002-0001"
+              ],
+              "pages": {
+                "end": 47,
+                "start": 47
+              }
+            }
+          ],
+          "text": "According to Mr. Liu, the respondent argues that Congress intended to give criminal aliens no judicial review."
+        },
+        {
+          "attribution": "Mr. Liu",
+          "citations": [
+            {
+              "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+              "evidence_ids": [
+                "ev-9e0320f4515e-0002-0002"
+              ],
+              "pages": {
+                "end": 48,
+                "start": 48
+              }
+            }
+          ],
+          "text": "According to Mr. Liu, the respondent further argues that since 1996 Congress has aimed to expedite the removal of criminal aliens."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9e0320f4515ed0c5f442e97fce632f2a39ec3d94c0ebf69acea49820d93f0041",
+      "evidence_ids": [
+        "ev-9e0320f4515e-0000-0000"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T04:22:10.291773Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

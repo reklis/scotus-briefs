@@ -1,0 +1,221 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "K. Winn Allen",
+        "citations": [
+          {
+            "document_hash": "406e74c712f62302f79e56c67c9efe661b8de346a251e23da9f3a0fafe0003f7",
+            "evidence_ids": [
+              "ev-406e74c712f6-0001-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to K. Winn Allen, the central question is what a party must do in the district court to preserve a substantive\u2011reasonableness argument for appeal."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-7739",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T04:08:54.682501Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "406e74c712f62302f79e56c67c9efe661b8de346a251e23da9f3a0fafe0003f7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "406e74c712f62302f79e56c67c9efe661b8de346a251e23da9f3a0fafe0003f7",
+            "evidence_ids": [
+              "ev-406e74c712f6-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:13\u202fa.m. before the Supreme Court of the United States."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Turner",
+          "citations": [
+            {
+              "document_hash": "406e74c712f62302f79e56c67c9efe661b8de346a251e23da9f3a0fafe0003f7",
+              "evidence_ids": [
+                "ev-406e74c712f6-0002-0004"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "Both parties agree that the fair\u2011notice standard applies to when arguments are preserved, but Ms. Turner argues that the district court may have had fair notice of more arguments than the government concedes."
+        }
+      ],
+      "heading": "Ms. Turner (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "406e74c712f62302f79e56c67c9efe661b8de346a251e23da9f3a0fafe0003f7",
+      "evidence_ids": [
+        "ev-406e74c712f6-0000-0000",
+        "ev-406e74c712f6-0000-0001",
+        "ev-406e74c712f6-0000-0002",
+        "ev-406e74c712f6-0001-0000",
+        "ev-406e74c712f6-0001-0001",
+        "ev-406e74c712f6-0001-0002",
+        "ev-406e74c712f6-0001-0003",
+        "ev-406e74c712f6-0001-0004",
+        "ev-406e74c712f6-0002-0000",
+        "ev-406e74c712f6-0002-0001",
+        "ev-406e74c712f6-0002-0004",
+        "ev-406e74c712f6-0002-0005"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T04:16:29.180101Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "support check failed: two claims in the \"Why It Matters\" section are not supported by the supplied evidence.",
+      "overstatement check failed: the same two claims overstate the evidence by adding conclusions not present in the transcript."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "K. Winn Allen",
+        "citations": [
+          {
+            "document_hash": "406e74c712f62302f79e56c67c9efe661b8de346a251e23da9f3a0fafe0003f7",
+            "evidence_ids": [
+              "ev-406e74c712f6-0001-0003",
+              "ev-406e74c712f6-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to K. Winn Allen, preserving a substantive\u2011reasonableness argument under Rule\u202f51 requires a party to argue that the imposed sentence is beyond the range of choice permitted by 18\u202fU.S.C.\u202f\u00a7\u202f3553(a)."
+      },
+      {
+        "attribution": "Ms. Turner",
+        "citations": [
+          {
+            "document_hash": "406e74c712f62302f79e56c67c9efe661b8de346a251e23da9f3a0fafe0003f7",
+            "evidence_ids": [
+              "ev-406e74c712f6-0002-0004"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Ms. Turner, the fair\u2011notice standard influences how district courts understand parties\u2019 arguments and can affect the outcome of sentencing appeals."
+      },
+      {
+        "attribution": "K. Winn Allen",
+        "citations": [
+          {
+            "document_hash": "406e74c712f62302f79e56c67c9efe661b8de346a251e23da9f3a0fafe0003f7",
+            "evidence_ids": [
+              "ev-406e74c712f6-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to K. Winn Allen, clarifying that preservation arguments can be made either before or after sentencing helps parties plan their litigation strategy."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

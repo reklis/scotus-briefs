@@ -1,0 +1,445 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Department of Homeland Security",
+        "citations": [
+          {
+            "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+            "evidence_ids": [
+              "ev-4c6b9ff3eec5-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Department of Homeland Security, congress established the expedited removal system in 1996 for aliens who arrive at the border or enter illegally without entry documents."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+            "evidence_ids": [
+              "ev-4c6b9ff3eec5-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Respondent, the case raises the question whether the Suspension Clause requires judicial review of negative credible\u2011fear determinations."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-19-161",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T05:06:10.621488Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+            "evidence_ids": [
+              "ev-4c6b9ff3eec5-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument was held before the Supreme Court at 11:07\u202fa.m."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+            "evidence_ids": [
+              "ev-4c6b9ff3eec5-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned whether an alien who has no protected ground to stay has any legal right to remain, emphasizing that expedited proceedings are permissible."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+            "evidence_ids": [
+              "ev-4c6b9ff3eec5-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the respondent\u2019s view applies only to factual matters or also to legal and mixed questions."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+            "evidence_ids": [
+              "ev-4c6b9ff3eec5-0001-0003"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito referenced earlier \u201cfinality era\u201d cases, noting that individuals once found improperly detained had a right to remain in the United States."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+            "evidence_ids": [
+              "ev-4c6b9ff3eec5-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked what concrete issues could be raised on habeas in this case."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Department of Homeland Security",
+        "citations": [
+          {
+            "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+            "evidence_ids": [
+              "ev-4c6b9ff3eec5-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The Department of Homeland Security argues that Congress created an expedited removal system for aliens who arrive without entry documents and are therefore inadmissible."
+      },
+      {
+        "attribution": "Respondent",
+        "citations": [
+          {
+            "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+            "evidence_ids": [
+              "ev-4c6b9ff3eec5-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The respondent contends that the Suspension Clause requires a fact\u2011laden judicial review of the negative credible\u2011fear determinations made in the expedited removal screening process."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Department of Homeland Security",
+          "citations": [
+            {
+              "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+              "evidence_ids": [
+                "ev-4c6b9ff3eec5-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Department of Homeland Security, congress created the expedited removal system for inadmissible aliens who lack entry documents."
+        },
+        {
+          "attribution": "Counsel GELERNT",
+          "citations": [
+            {
+              "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+              "evidence_ids": [
+                "ev-4c6b9ff3eec5-0001-0005"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "According to Counsel GELERNT, congress\u2019s judgment that judicial review of the removal process is not constitutionally required is entitled to great respect."
+        }
+      ],
+      "heading": "Department of Homeland Security (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+              "evidence_ids": [
+                "ev-4c6b9ff3eec5-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Respondent, the Suspension Clause requires a fact\u2011laden judicial review of the negative credible\u2011fear determinations made in the expedited removal process."
+        }
+      ],
+      "heading": "Vijayakumar Thuraissigiam (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+      "evidence_ids": [
+        "ev-4c6b9ff3eec5-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+      "evidence_ids": [
+        "ev-4c6b9ff3eec5-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+      "evidence_ids": [
+        "ev-4c6b9ff3eec5-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+      "evidence_ids": [
+        "ev-4c6b9ff3eec5-0000-0003"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+      "evidence_ids": [
+        "ev-4c6b9ff3eec5-0001-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+      "evidence_ids": [
+        "ev-4c6b9ff3eec5-0001-0005",
+        "ev-4c6b9ff3eec5-0001-0006"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+      "evidence_ids": [
+        "ev-4c6b9ff3eec5-0001-0003"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+      "evidence_ids": [
+        "ev-4c6b9ff3eec5-0002-0000"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+      "evidence_ids": [
+        "ev-4c6b9ff3eec5-0002-0006"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    },
+    {
+      "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+      "evidence_ids": [
+        "ev-4c6b9ff3eec5-0003-0000",
+        "ev-4c6b9ff3eec5-0003-0001"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 64
+      }
+    },
+    {
+      "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+      "evidence_ids": [
+        "ev-4c6b9ff3eec5-0003-0006"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 66
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T05:09:11.948321Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+            "evidence_ids": [
+              "ev-4c6b9ff3eec5-0001-0006"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "There have been roughly 9,000 negative credible\u2011fear determinations and 100,000 credible\u2011fear referrals in recent years, illustrating the scale of the removal process."
+      },
+      {
+        "attribution": "Heritage Reporting Corporation",
+        "citations": [
+          {
+            "document_hash": "4c6b9ff3eec57b16f8bdf81f7023b292fda599ae83bce0e4745432cdda1ad89a",
+            "evidence_ids": [
+              "ev-4c6b9ff3eec5-0002-0006"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "Only 30 out of an estimated 9,500 individuals who failed their credible\u2011fear interview have filed a habeas petition, suggesting limited judicial oversight of the process."
+      }
+    ],
+    "heading": "Why it Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
