@@ -1,5 +1,3734 @@
 {
-  "changed_case_ids": [],
-  "message": "using imported archive",
-  "mode": "bounded-backfill"
+  "changed_case_ids": [
+    "scotus-22-7466",
+    "scotus-23-1002",
+    "scotus-23-1007",
+    "scotus-23-1038",
+    "scotus-23-1039",
+    "scotus-23-1067",
+    "scotus-23-1095",
+    "scotus-23-1122",
+    "scotus-23-1127",
+    "scotus-23-1141",
+    "scotus-23-1187",
+    "scotus-23-1201",
+    "scotus-23-1226",
+    "scotus-23-1229",
+    "scotus-23-1239",
+    "scotus-23-1259",
+    "scotus-23-1270",
+    "scotus-23-1275",
+    "scotus-23-1300",
+    "scotus-23-1324",
+    "scotus-23-1345",
+    "scotus-23-167",
+    "scotus-23-191",
+    "scotus-23-217",
+    "scotus-23-365",
+    "scotus-23-477",
+    "scotus-23-583",
+    "scotus-23-621",
+    "scotus-23-6573",
+    "scotus-23-677",
+    "scotus-23-713",
+    "scotus-23-715",
+    "scotus-23-7483",
+    "scotus-23-753",
+    "scotus-23-7809",
+    "scotus-23-824",
+    "scotus-23-825",
+    "scotus-23-852",
+    "scotus-23-861",
+    "scotus-23-867",
+    "scotus-23-900",
+    "scotus-23-909",
+    "scotus-23-929",
+    "scotus-23-970",
+    "scotus-23-971",
+    "scotus-23-975",
+    "scotus-23-980",
+    "scotus-23-997",
+    "scotus-24-109",
+    "scotus-24-154",
+    "scotus-24-20",
+    "scotus-24-249",
+    "scotus-24-275",
+    "scotus-24-297",
+    "scotus-24-304",
+    "scotus-24-316",
+    "scotus-24-320",
+    "scotus-24-354",
+    "scotus-24-362",
+    "scotus-24-394",
+    "scotus-24-416",
+    "scotus-24-656",
+    "scotus-24-7",
+    "scotus-24-809",
+    "scotus-24a1007",
+    "scotus-24a884",
+    "scotus-24a910",
+    "scotus-24a931"
+  ],
+  "discovery": {
+    "cases": [
+      {
+        "case_id": "scotus-22-7466",
+        "dates": {
+          "argument": "2024-10-09",
+          "decision": "2025-02-25"
+        },
+        "docket_numbers": [
+          "22-7466"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "22-7466",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 22-7466"
+      },
+      {
+        "case_id": "scotus-23-167",
+        "dates": {
+          "decision": "2024-11-04"
+        },
+        "docket_numbers": [
+          "23-167"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-167",
+        "source_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "term": 2024,
+        "title": "Hamm v. Smith"
+      },
+      {
+        "case_id": "scotus-23-191",
+        "dates": {
+          "argument": "2024-10-07",
+          "decision": "2025-02-21"
+        },
+        "docket_numbers": [
+          "23-191"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-191",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-191"
+      },
+      {
+        "case_id": "scotus-23-217",
+        "dates": {
+          "argument": "2024-11-05",
+          "decision": "2025-01-15"
+        },
+        "docket_numbers": [
+          "23-217"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-217",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-217"
+      },
+      {
+        "case_id": "scotus-23-365",
+        "dates": {
+          "argument": "2024-10-15",
+          "decision": "2025-04-02"
+        },
+        "docket_numbers": [
+          "23-365"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-365",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-365"
+      },
+      {
+        "case_id": "scotus-23-477",
+        "dates": {
+          "argument": "2024-12-04",
+          "decision": "2025-06-18"
+        },
+        "docket_numbers": [
+          "23-477"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-477",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-477"
+      },
+      {
+        "case_id": "scotus-23-583",
+        "dates": {
+          "argument": "2024-10-15",
+          "decision": "2024-12-10"
+        },
+        "docket_numbers": [
+          "23-583"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-583",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-583"
+      },
+      {
+        "case_id": "scotus-23-621",
+        "dates": {
+          "argument": "2024-10-08",
+          "decision": "2025-02-25"
+        },
+        "docket_numbers": [
+          "23-621"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-621",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-621"
+      },
+      {
+        "case_id": "scotus-23-677",
+        "dates": {
+          "argument": "2024-10-07",
+          "decision": "2025-01-15"
+        },
+        "docket_numbers": [
+          "23-677"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-677",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-677"
+      },
+      {
+        "case_id": "scotus-23-713",
+        "dates": {
+          "argument": "2024-10-16",
+          "decision": "2025-03-05"
+        },
+        "docket_numbers": [
+          "23-713"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-713",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-713"
+      },
+      {
+        "case_id": "scotus-23-715",
+        "dates": {
+          "argument": "2024-11-05",
+          "decision": "2025-04-29"
+        },
+        "docket_numbers": [
+          "23-715"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-715",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-715"
+      },
+      {
+        "case_id": "scotus-23-753",
+        "dates": {
+          "argument": "2024-10-16",
+          "decision": "2025-03-04"
+        },
+        "docket_numbers": [
+          "23-753"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-753",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-753"
+      },
+      {
+        "case_id": "scotus-23-824",
+        "dates": {
+          "argument": "2024-12-02",
+          "decision": "2025-03-26"
+        },
+        "docket_numbers": [
+          "23-824"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-824",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-824"
+      },
+      {
+        "case_id": "scotus-23-825",
+        "dates": {
+          "argument": "2024-11-12",
+          "decision": "2025-03-21"
+        },
+        "docket_numbers": [
+          "23-825"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-825",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-825"
+      },
+      {
+        "case_id": "scotus-23-852",
+        "dates": {
+          "argument": "2024-10-08",
+          "decision": "2025-03-26"
+        },
+        "docket_numbers": [
+          "23-852"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-852",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-852"
+      },
+      {
+        "case_id": "scotus-23-861",
+        "dates": {
+          "argument": "2024-12-09",
+          "decision": "2025-04-30"
+        },
+        "docket_numbers": [
+          "23-861"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-861",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-861"
+      },
+      {
+        "case_id": "scotus-23-867",
+        "dates": {
+          "argument": "2024-12-03",
+          "decision": "2025-02-21"
+        },
+        "docket_numbers": [
+          "23-867"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-867",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-867"
+      },
+      {
+        "case_id": "scotus-23-900",
+        "dates": {
+          "argument": "2024-12-11",
+          "decision": "2025-02-26"
+        },
+        "docket_numbers": [
+          "23-900"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-900",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-900"
+      },
+      {
+        "case_id": "scotus-23-909",
+        "dates": {
+          "argument": "2024-12-09",
+          "decision": "2025-05-22"
+        },
+        "docket_numbers": [
+          "23-909"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-909",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-909"
+      },
+      {
+        "case_id": "scotus-23-929",
+        "dates": {
+          "argument": "2024-11-12",
+          "decision": "2025-04-22"
+        },
+        "docket_numbers": [
+          "23-929"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-929",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-929"
+      },
+      {
+        "case_id": "scotus-23-970",
+        "dates": {
+          "argument": "2024-11-13",
+          "decision": "2024-12-11"
+        },
+        "docket_numbers": [
+          "23-970"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-970",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-970"
+      },
+      {
+        "case_id": "scotus-23-971",
+        "dates": {
+          "argument": "2025-01-14",
+          "decision": "2025-02-26"
+        },
+        "docket_numbers": [
+          "23-971"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-971",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-971"
+      },
+      {
+        "case_id": "scotus-23-975",
+        "dates": {
+          "argument": "2024-12-10",
+          "decision": "2025-05-29"
+        },
+        "docket_numbers": [
+          "23-975"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-975",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-975"
+      },
+      {
+        "case_id": "scotus-23-980",
+        "dates": {
+          "argument": "2024-11-06",
+          "decision": "2024-11-22"
+        },
+        "docket_numbers": [
+          "23-980"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-980",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-980"
+      },
+      {
+        "case_id": "scotus-23-997",
+        "dates": {
+          "argument": "2025-01-13",
+          "decision": "2025-06-20"
+        },
+        "docket_numbers": [
+          "23-997"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-997",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-997"
+      },
+      {
+        "case_id": "scotus-23-1002",
+        "dates": {
+          "argument": "2025-01-13",
+          "decision": "2025-06-26"
+        },
+        "docket_numbers": [
+          "23-1002"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1002",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1002"
+      },
+      {
+        "case_id": "scotus-23-1007",
+        "dates": {
+          "argument": "2025-01-22",
+          "decision": "2025-04-17"
+        },
+        "docket_numbers": [
+          "23-1007"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1007",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1007"
+      },
+      {
+        "case_id": "scotus-23-1038",
+        "dates": {
+          "argument": "2024-12-02",
+          "decision": "2025-04-02"
+        },
+        "docket_numbers": [
+          "23-1038"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1038",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1038"
+      },
+      {
+        "case_id": "scotus-23-1039",
+        "dates": {
+          "argument": "2025-02-26",
+          "decision": "2025-06-05"
+        },
+        "docket_numbers": [
+          "23-1039"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1039",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1039"
+      },
+      {
+        "case_id": "scotus-23-1067",
+        "dates": {
+          "argument": "2025-03-25",
+          "decision": "2025-06-18"
+        },
+        "docket_numbers": [
+          "23-1067"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1067",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1067"
+      },
+      {
+        "case_id": "scotus-23-1095",
+        "dates": {
+          "argument": "2025-01-14",
+          "decision": "2025-03-21"
+        },
+        "docket_numbers": [
+          "23-1095"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1095",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1095"
+      },
+      {
+        "case_id": "scotus-23-1122",
+        "dates": {
+          "argument": "2025-01-15",
+          "decision": "2025-06-27"
+        },
+        "docket_numbers": [
+          "23-1122"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1122",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1122"
+      },
+      {
+        "case_id": "scotus-23-1127",
+        "dates": {
+          "argument": "2024-11-04",
+          "decision": "2025-02-21"
+        },
+        "docket_numbers": [
+          "23-1127"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1127",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1127"
+      },
+      {
+        "case_id": "scotus-23-1141",
+        "dates": {
+          "argument": "2025-03-04",
+          "decision": "2025-06-05"
+        },
+        "docket_numbers": [
+          "23-1141"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1141",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1141"
+      },
+      {
+        "case_id": "scotus-23-1187",
+        "dates": {
+          "argument": "2025-01-21",
+          "decision": "2025-06-20"
+        },
+        "docket_numbers": [
+          "23-1187"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1187",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1187"
+      },
+      {
+        "case_id": "scotus-23-1201",
+        "dates": {
+          "argument": "2025-03-03",
+          "decision": "2025-06-05"
+        },
+        "docket_numbers": [
+          "23-1201"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1201",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1201"
+      },
+      {
+        "case_id": "scotus-23-1226",
+        "dates": {
+          "argument": "2025-01-21",
+          "decision": "2025-06-20"
+        },
+        "docket_numbers": [
+          "23-1226"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1226",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1226"
+      },
+      {
+        "case_id": "scotus-23-1229",
+        "dates": {
+          "argument": "2025-03-25",
+          "decision": "2025-06-18"
+        },
+        "docket_numbers": [
+          "23-1229"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1229",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1229"
+      },
+      {
+        "case_id": "scotus-23-1239",
+        "dates": {
+          "argument": "2025-01-22",
+          "decision": "2025-05-15"
+        },
+        "docket_numbers": [
+          "23-1239"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1239",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1239"
+      },
+      {
+        "case_id": "scotus-23-1259",
+        "dates": {
+          "argument": "2025-03-03",
+          "decision": "2025-06-05"
+        },
+        "docket_numbers": [
+          "23-1259"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1259",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1259"
+      },
+      {
+        "case_id": "scotus-23-1270",
+        "dates": {
+          "argument": "2025-03-24",
+          "decision": "2025-06-26"
+        },
+        "docket_numbers": [
+          "23-1270"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1270",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1270"
+      },
+      {
+        "case_id": "scotus-23-1275",
+        "dates": {
+          "argument": "2025-04-02",
+          "decision": "2025-06-26"
+        },
+        "docket_numbers": [
+          "23-1275"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1275",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1275"
+      },
+      {
+        "case_id": "scotus-23-1300",
+        "dates": {
+          "argument": "2025-03-05",
+          "decision": "2025-06-18"
+        },
+        "docket_numbers": [
+          "23-1300"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1300",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1300"
+      },
+      {
+        "case_id": "scotus-23-1324",
+        "dates": {
+          "argument": "2025-02-25",
+          "decision": "2025-06-18"
+        },
+        "docket_numbers": [
+          "23-1324"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1324",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1324"
+      },
+      {
+        "case_id": "scotus-23-1345",
+        "dates": {
+          "argument": "2025-03-31",
+          "decision": "2025-06-12"
+        },
+        "docket_numbers": [
+          "23-1345"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-1345",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-1345"
+      },
+      {
+        "case_id": "scotus-23-6573",
+        "dates": {
+          "decision": "2025-01-21"
+        },
+        "docket_numbers": [
+          "23-6573"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-6573",
+        "source_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "term": 2024,
+        "title": "Andrew v. White"
+      },
+      {
+        "case_id": "scotus-23-7483",
+        "dates": {
+          "argument": "2025-02-25",
+          "decision": "2025-06-20"
+        },
+        "docket_numbers": [
+          "23-7483"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-7483",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-7483"
+      },
+      {
+        "case_id": "scotus-23-7809",
+        "dates": {
+          "argument": "2025-02-24",
+          "decision": "2025-06-26"
+        },
+        "docket_numbers": [
+          "23-7809"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "23-7809",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 23-7809"
+      },
+      {
+        "case_id": "scotus-24-7",
+        "dates": {
+          "argument": "2025-04-23",
+          "decision": "2025-06-20"
+        },
+        "docket_numbers": [
+          "24-7"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-7",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-7"
+      },
+      {
+        "case_id": "scotus-24-20",
+        "dates": {
+          "argument": "2025-04-01",
+          "decision": "2025-06-20"
+        },
+        "docket_numbers": [
+          "24-20"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-20",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-20"
+      },
+      {
+        "case_id": "scotus-24-109",
+        "dates": {
+          "argument": "2025-03-24"
+        },
+        "docket_numbers": [
+          "24-109"
+        ],
+        "lifecycle": "argued",
+        "primary_docket": "24-109",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-109"
+      },
+      {
+        "case_id": "scotus-24-154",
+        "dates": {
+          "argument": "2025-03-31",
+          "decision": "2025-06-05"
+        },
+        "docket_numbers": [
+          "24-154"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-154",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-154"
+      },
+      {
+        "case_id": "scotus-24-249",
+        "dates": {
+          "argument": "2025-04-28",
+          "decision": "2025-06-12"
+        },
+        "docket_numbers": [
+          "24-249"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-249",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-249"
+      },
+      {
+        "case_id": "scotus-24-275",
+        "dates": {
+          "argument": "2025-04-21",
+          "decision": "2025-06-12"
+        },
+        "docket_numbers": [
+          "24-275"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-275",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-275"
+      },
+      {
+        "case_id": "scotus-24-297",
+        "dates": {
+          "argument": "2025-04-22",
+          "decision": "2025-06-27"
+        },
+        "docket_numbers": [
+          "24-297"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-297",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-297"
+      },
+      {
+        "case_id": "scotus-24-304",
+        "dates": {
+          "argument": "2025-04-29",
+          "decision": "2025-06-05"
+        },
+        "docket_numbers": [
+          "24-304"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-304",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-304"
+      },
+      {
+        "case_id": "scotus-24-316",
+        "dates": {
+          "argument": "2025-04-21",
+          "decision": "2025-06-27"
+        },
+        "docket_numbers": [
+          "24-316"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-316",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-316"
+      },
+      {
+        "case_id": "scotus-24-320",
+        "dates": {
+          "argument": "2025-04-28",
+          "decision": "2025-06-12"
+        },
+        "docket_numbers": [
+          "24-320"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-320",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-320"
+      },
+      {
+        "case_id": "scotus-24-354",
+        "dates": {
+          "argument": "2025-03-26",
+          "decision": "2025-06-27"
+        },
+        "docket_numbers": [
+          "24-354"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-354",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-354"
+      },
+      {
+        "case_id": "scotus-24-362",
+        "dates": {
+          "argument": "2025-04-29",
+          "decision": "2025-06-12"
+        },
+        "docket_numbers": [
+          "24-362"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-362",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-362"
+      },
+      {
+        "case_id": "scotus-24-394",
+        "dates": {
+          "argument": "2025-04-30",
+          "decision": "2025-05-22"
+        },
+        "docket_numbers": [
+          "24-394"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-394",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-394"
+      },
+      {
+        "case_id": "scotus-24-416",
+        "dates": {
+          "argument": "2025-04-22",
+          "decision": "2025-06-12"
+        },
+        "docket_numbers": [
+          "24-416"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-416",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-416"
+      },
+      {
+        "case_id": "scotus-24-656",
+        "dates": {
+          "argument": "2025-01-10",
+          "decision": "2025-01-17"
+        },
+        "docket_numbers": [
+          "24-656"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-656",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24-656"
+      },
+      {
+        "case_id": "scotus-24-809",
+        "dates": {
+          "decision": "2025-06-30"
+        },
+        "docket_numbers": [
+          "24-809"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24-809",
+        "source_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "term": 2024,
+        "title": "Goldey v. Fields"
+      },
+      {
+        "case_id": "scotus-24a884",
+        "dates": {
+          "argument": "2025-05-15",
+          "decision": "2025-06-27"
+        },
+        "docket_numbers": [
+          "24A884"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24A884",
+        "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "term": 2024,
+        "title": "Supreme Court case 24A884"
+      },
+      {
+        "case_id": "scotus-24a910",
+        "dates": {
+          "decision": "2025-04-04"
+        },
+        "docket_numbers": [
+          "24A910"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24A910",
+        "source_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "term": 2024,
+        "title": "Department of Education v. California"
+      },
+      {
+        "case_id": "scotus-24a931",
+        "dates": {
+          "decision": "2025-04-07"
+        },
+        "docket_numbers": [
+          "24A931"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24A931",
+        "source_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "term": 2024,
+        "title": "Trump v. J. G. G."
+      },
+      {
+        "case_id": "scotus-24a1007",
+        "dates": {
+          "decision": "2025-05-16"
+        },
+        "docket_numbers": [
+          "24A1007"
+        ],
+        "lifecycle": "decided",
+        "primary_docket": "24A1007",
+        "source_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "term": 2024,
+        "title": "A.A.R.P. v. Trump"
+      }
+    ],
+    "changed_case_ids": [
+      "scotus-22-7466",
+      "scotus-23-1002",
+      "scotus-23-1007",
+      "scotus-23-1038",
+      "scotus-23-1039",
+      "scotus-23-1067",
+      "scotus-23-1095",
+      "scotus-23-1122",
+      "scotus-23-1127",
+      "scotus-23-1141",
+      "scotus-23-1187",
+      "scotus-23-1201",
+      "scotus-23-1226",
+      "scotus-23-1229",
+      "scotus-23-1239",
+      "scotus-23-1259",
+      "scotus-23-1270",
+      "scotus-23-1275",
+      "scotus-23-1300",
+      "scotus-23-1324",
+      "scotus-23-1345",
+      "scotus-23-167",
+      "scotus-23-191",
+      "scotus-23-217",
+      "scotus-23-365",
+      "scotus-23-477",
+      "scotus-23-583",
+      "scotus-23-621",
+      "scotus-23-6573",
+      "scotus-23-677",
+      "scotus-23-713",
+      "scotus-23-715",
+      "scotus-23-7483",
+      "scotus-23-753",
+      "scotus-23-7809",
+      "scotus-23-824",
+      "scotus-23-825",
+      "scotus-23-852",
+      "scotus-23-861",
+      "scotus-23-867",
+      "scotus-23-900",
+      "scotus-23-909",
+      "scotus-23-929",
+      "scotus-23-970",
+      "scotus-23-971",
+      "scotus-23-975",
+      "scotus-23-980",
+      "scotus-23-997",
+      "scotus-24-109",
+      "scotus-24-154",
+      "scotus-24-20",
+      "scotus-24-249",
+      "scotus-24-275",
+      "scotus-24-297",
+      "scotus-24-304",
+      "scotus-24-316",
+      "scotus-24-320",
+      "scotus-24-354",
+      "scotus-24-362",
+      "scotus-24-394",
+      "scotus-24-416",
+      "scotus-24-656",
+      "scotus-24-7",
+      "scotus-24-809",
+      "scotus-24a1007",
+      "scotus-24a884",
+      "scotus-24a910",
+      "scotus-24a931"
+    ],
+    "documents": [
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-167",
+            "docket_numbers": [
+              "23-167"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r01_2dq3.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-167:/opinions/24pdf/604us1r01_2dq3.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r01_2dq3.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-980",
+            "docket_numbers": [
+              "23-980"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r02_j4ek.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-980:/opinions/24pdf/604us1r02_j4ek.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r02_j4ek.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-583",
+            "docket_numbers": [
+              "23-583"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r03_3f14.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-583:/opinions/24pdf/604us1r03_3f14.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r03_3f14.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-970",
+            "docket_numbers": [
+              "23-970"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r04_5i36.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-970:/opinions/24pdf/604us1r04_5i36.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r04_5i36.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-677",
+            "docket_numbers": [
+              "23-677"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r05_db8e.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-677:/opinions/24pdf/604us1r05_db8e.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r05_db8e.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-217",
+            "docket_numbers": [
+              "23-217"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r06_5ifl.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-217:/opinions/24pdf/604us1r06_5ifl.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r06_5ifl.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-656",
+            "docket_numbers": [
+              "24-656"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r07_k536.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-656:/opinions/24pdf/604us1r07_k536.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r07_k536.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-6573",
+            "docket_numbers": [
+              "23-6573"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r08_db8e.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-6573:/opinions/24pdf/604us1r08_db8e.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r08_db8e.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-867",
+            "docket_numbers": [
+              "23-867"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r09_1b7d.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-867:/opinions/24pdf/604us1r09_1b7d.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r09_1b7d.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1127",
+            "docket_numbers": [
+              "23-1127"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r10_mlio.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1127:/opinions/24pdf/604us1r10_mlio.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r10_mlio.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-191",
+            "docket_numbers": [
+              "23-191"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r11_2b8e.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-191:/opinions/24pdf/604us1r11_2b8e.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r11_2b8e.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-621",
+            "docket_numbers": [
+              "23-621"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r12_8njq.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-621:/opinions/24pdf/604us1r12_8njq.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r12_8njq.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-22-7466",
+            "docket_numbers": [
+              "22-7466"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r13_c0n2.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-22-7466:/opinions/24pdf/604us1r13_c0n2.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r13_c0n2.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-971",
+            "docket_numbers": [
+              "23-971"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r14_6kg7.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-971:/opinions/24pdf/604us1r14_6kg7.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r14_6kg7.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-900",
+            "docket_numbers": [
+              "23-900"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r15_dc8f.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-900:/opinions/24pdf/604us1r15_dc8f.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r15_dc8f.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-753",
+            "docket_numbers": [
+              "23-753"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r16_o759.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-753:/opinions/24pdf/604us1r16_o759.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r16_o759.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-713",
+            "docket_numbers": [
+              "23-713"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us1r17_olp1.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-713:/opinions/24pdf/604us1r17_olp1.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r17_olp1.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1095",
+            "docket_numbers": [
+              "23-1095"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us2r18_9p6b.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1095:/opinions/24pdf/604us2r18_9p6b.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us2r18_9p6b.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-825",
+            "docket_numbers": [
+              "23-825"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us2r19_i42j.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-825:/opinions/24pdf/604us2r19_i42j.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us2r19_i42j.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-852",
+            "docket_numbers": [
+              "23-852"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us2r20_q8l1.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-852:/opinions/24pdf/604us2r20_q8l1.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us2r20_q8l1.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-824",
+            "docket_numbers": [
+              "23-824"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us2r21_6kh7.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-824:/opinions/24pdf/604us2r21_6kh7.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us2r21_6kh7.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1038",
+            "docket_numbers": [
+              "23-1038"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us2r22_ed9g.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1038:/opinions/24pdf/604us2r22_ed9g.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us2r22_ed9g.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-365",
+            "docket_numbers": [
+              "23-365"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us2r23_3e04.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-365:/opinions/24pdf/604us2r23_3e04.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us2r23_3e04.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24a910",
+            "docket_numbers": [
+              "24A910"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us2r24_l53m.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24a910:/opinions/24pdf/604us2r24_l53m.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us2r24_l53m.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24a931",
+            "docket_numbers": [
+              "24A931"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us2r25_7648.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24a931:/opinions/24pdf/604us2r25_7648.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us2r25_7648.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1007",
+            "docket_numbers": [
+              "23-1007"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us2r26_7m48.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1007:/opinions/24pdf/604us2r26_7m48.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us2r26_7m48.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-929",
+            "docket_numbers": [
+              "23-929"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "604us2r27_e2pg.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-929:/opinions/24pdf/604us2r27_e2pg.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/604us2r27_e2pg.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-715",
+            "docket_numbers": [
+              "23-715"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r28_limq.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-715:/opinions/24pdf/605us1r28_limq.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r28_limq.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-861",
+            "docket_numbers": [
+              "23-861"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r29_bp7c.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-861:/opinions/24pdf/605us1r29_bp7c.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r29_bp7c.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1239",
+            "docket_numbers": [
+              "23-1239"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r30_h315.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1239:/opinions/24pdf/605us1r30_h315.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r30_h315.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24a1007",
+            "docket_numbers": [
+              "24A1007"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r31_7k47.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24a1007:/opinions/24pdf/605us1r31_7k47.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r31_7k47.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-909",
+            "docket_numbers": [
+              "23-909"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r32_f2ah.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-909:/opinions/24pdf/605us1r32_f2ah.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r32_f2ah.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-394",
+            "docket_numbers": [
+              "24-394"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r33_5h26.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-394:/opinions/24pdf/605us1r33_5h26.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r33_5h26.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-975",
+            "docket_numbers": [
+              "23-975"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r34_h3ci.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-975:/opinions/24pdf/605us1r34_h3ci.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r34_h3ci.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1259",
+            "docket_numbers": [
+              "23-1259"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r35_4f14.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1259:/opinions/24pdf/605us1r35_4f14.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r35_4f14.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1201",
+            "docket_numbers": [
+              "23-1201"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r36_4f14.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1201:/opinions/24pdf/605us1r36_4f14.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r36_4f14.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-154",
+            "docket_numbers": [
+              "24-154"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r37_986b.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-154:/opinions/24pdf/605us1r37_986b.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r37_986b.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1141",
+            "docket_numbers": [
+              "23-1141"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r38_j426.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1141:/opinions/24pdf/605us1r38_j426.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r38_j426.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1039",
+            "docket_numbers": [
+              "23-1039"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r39_kkg1.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1039:/opinions/24pdf/605us1r39_kkg1.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r39_kkg1.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-304",
+            "docket_numbers": [
+              "24-304"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us1r40_f1gk.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-304:/opinions/24pdf/605us1r40_f1gk.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r40_f1gk.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-249",
+            "docket_numbers": [
+              "24-249"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us2r41_bp7c.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-249:/opinions/24pdf/605us2r41_bp7c.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r41_bp7c.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-320",
+            "docket_numbers": [
+              "24-320"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us2r42_k5fl.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-320:/opinions/24pdf/605us2r42_k5fl.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r42_k5fl.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-275",
+            "docket_numbers": [
+              "24-275"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us2r43_e29g.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-275:/opinions/24pdf/605us2r43_e29g.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r43_e29g.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-362",
+            "docket_numbers": [
+              "24-362"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us2r44_4f57.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-362:/opinions/24pdf/605us2r44_4f57.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r44_4f57.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-416",
+            "docket_numbers": [
+              "24-416"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us2r45_3f14.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-416:/opinions/24pdf/605us2r45_3f14.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r45_3f14.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1345",
+            "docket_numbers": [
+              "23-1345"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us2r46_kjfm.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1345:/opinions/24pdf/605us2r46_kjfm.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r46_kjfm.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1324",
+            "docket_numbers": [
+              "23-1324"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us2r47_bqm2.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1324:/opinions/24pdf/605us2r47_bqm2.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r47_bqm2.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-477",
+            "docket_numbers": [
+              "23-477"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us2r48_m648.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-477:/opinions/24pdf/605us2r48_m648.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r48_m648.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1067",
+            "docket_numbers": [
+              "23-1067"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us2r49_pok0.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1067:/opinions/24pdf/605us2r49_pok0.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r49_pok0.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1229",
+            "docket_numbers": [
+              "23-1229"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us2r50_g2hk.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1229:/opinions/24pdf/605us2r50_g2hk.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r50_g2hk.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1300",
+            "docket_numbers": [
+              "23-1300"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "605us2r51_4f57.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1300:/opinions/24pdf/605us2r51_4f57.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r51_4f57.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-20",
+            "docket_numbers": [
+              "24-20"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us1r52_3eah.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-20:/opinions/24pdf/606us1r52_3eah.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r52_3eah.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-997",
+            "docket_numbers": [
+              "23-997"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us1r53_5i36.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-997:/opinions/24pdf/606us1r53_5i36.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r53_5i36.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-7",
+            "docket_numbers": [
+              "24-7"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us1r54_j4ek.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-7:/opinions/24pdf/606us1r54_j4ek.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r54_j4ek.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1226",
+            "docket_numbers": [
+              "23-1226"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us1r55_3d9g.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1226:/opinions/24pdf/606us1r55_3d9g.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r55_3d9g.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-7483",
+            "docket_numbers": [
+              "23-7483"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us1r56_bq7d.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-7483:/opinions/24pdf/606us1r56_bq7d.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r56_bq7d.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1187",
+            "docket_numbers": [
+              "23-1187"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us1r57_n6io.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1187:/opinions/24pdf/606us1r57_n6io.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r57_n6io.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1270",
+            "docket_numbers": [
+              "23-1270"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us1r58_5h25.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1270:/opinions/24pdf/606us1r58_5h25.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r58_5h25.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-7809",
+            "docket_numbers": [
+              "23-7809"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us1r59_g31h.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-7809:/opinions/24pdf/606us1r59_g31h.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r59_g31h.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1275",
+            "docket_numbers": [
+              "23-1275"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us1r60_h3ci.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1275:/opinions/24pdf/606us1r60_h3ci.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r60_h3ci.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1002",
+            "docket_numbers": [
+              "23-1002"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us1r61_2dp3.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1002:/opinions/24pdf/606us1r61_2dp3.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r61_2dp3.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1122",
+            "docket_numbers": [
+              "23-1122"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us2r62_986b.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-23-1122:/opinions/24pdf/606us2r62_986b.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us2r62_986b.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-297",
+            "docket_numbers": [
+              "24-297"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us2r63_n648.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-297:/opinions/24pdf/606us2r63_n648.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us2r63_n648.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-354",
+            "docket_numbers": [
+              "24-354"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us2r64_8nj9.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-354:/opinions/24pdf/606us2r64_8nj9.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us2r64_8nj9.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-316",
+            "docket_numbers": [
+              "24-316"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us2r65_3314.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-316:/opinions/24pdf/606us2r65_3314.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us2r65_3314.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24a884",
+            "docket_numbers": [
+              "24A884"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us2r66_j426.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24a884:/opinions/24pdf/606us2r66_j426.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us2r66_j426.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-809",
+            "docket_numbers": [
+              "24-809"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "opinion",
+        "expected_sha256": null,
+        "official_filename": "606us2r67_8nka.pdf",
+        "page_url": "https://www.supremecourt.gov/opinions/slipopinion/24",
+        "source_id": "scotus-24-809:/opinions/24pdf/606us2r67_8nka.pdf",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us2r67_8nka.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-22-7466",
+            "docket_numbers": [
+              "22-7466"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "22-7466_c9dh.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-22-7466:/oral_arguments/argument_transcripts/2024/22-7466_c9dh.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/22-7466_c9dh.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1002",
+            "docket_numbers": [
+              "23-1002"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1002_5h25.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1002:/oral_arguments/argument_transcripts/2024/23-1002_5h25.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1002_5h25.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1007",
+            "docket_numbers": [
+              "23-1007"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1007_8ok0.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1007:/oral_arguments/argument_transcripts/2024/23-1007_8ok0.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1007_8ok0.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1038",
+            "docket_numbers": [
+              "23-1038"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1038_l1gk.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1038:/oral_arguments/argument_transcripts/2024/23-1038_l1gk.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1038_l1gk.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1039",
+            "docket_numbers": [
+              "23-1039"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1039_k86m.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1039:/oral_arguments/argument_transcripts/2024/23-1039_k86m.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1039_k86m.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1067",
+            "docket_numbers": [
+              "23-1067"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1067_3nb3.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1067:/oral_arguments/argument_transcripts/2024/23-1067_3nb3.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1067_3nb3.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1095",
+            "docket_numbers": [
+              "23-1095"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1095_1o8l.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1095:/oral_arguments/argument_transcripts/2024/23-1095_1o8l.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1095_1o8l.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1122",
+            "docket_numbers": [
+              "23-1122"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1122_22p3.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1122:/oral_arguments/argument_transcripts/2024/23-1122_22p3.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1122_22p3.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1127",
+            "docket_numbers": [
+              "23-1127"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1127_c2d4.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1127:/oral_arguments/argument_transcripts/2024/23-1127_c2d4.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1127_c2d4.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1141",
+            "docket_numbers": [
+              "23-1141"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1141_8o6g.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1141:/oral_arguments/argument_transcripts/2024/23-1141_8o6g.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1141_8o6g.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1187",
+            "docket_numbers": [
+              "23-1187"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1187_h3cj.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1187:/oral_arguments/argument_transcripts/2024/23-1187_h3cj.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1187_h3cj.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1201",
+            "docket_numbers": [
+              "23-1201"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1201_5b35.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1201:/oral_arguments/argument_transcripts/2024/23-1201_5b35.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1201_5b35.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1226",
+            "docket_numbers": [
+              "23-1226"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1226_94k8.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1226:/oral_arguments/argument_transcripts/2024/23-1226_94k8.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1226_94k8.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1229",
+            "docket_numbers": [
+              "23-1229"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1229_3eah.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1229:/oral_arguments/argument_transcripts/2024/23-1229_3eah.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1229_3eah.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1239",
+            "docket_numbers": [
+              "23-1239"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1239_09m1.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1239:/oral_arguments/argument_transcripts/2024/23-1239_09m1.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1239_09m1.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1259",
+            "docket_numbers": [
+              "23-1259"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1259_6k4c.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1259:/oral_arguments/argument_transcripts/2024/23-1259_6k4c.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1259_6k4c.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1270",
+            "docket_numbers": [
+              "23-1270"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1270_2feh.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1270:/oral_arguments/argument_transcripts/2024/23-1270_2feh.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1270_2feh.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1275",
+            "docket_numbers": [
+              "23-1275"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1275_ba7d.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1275:/oral_arguments/argument_transcripts/2024/23-1275_ba7d.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1275_ba7d.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1300",
+            "docket_numbers": [
+              "23-1300"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1300_ifjm.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1300:/oral_arguments/argument_transcripts/2024/23-1300_ifjm.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1300_ifjm.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1324",
+            "docket_numbers": [
+              "23-1324"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1324_7k5h.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1324:/oral_arguments/argument_transcripts/2024/23-1324_7k5h.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1324_7k5h.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-1345",
+            "docket_numbers": [
+              "23-1345"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-1345_pok0.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-1345:/oral_arguments/argument_transcripts/2024/23-1345_pok0.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1345_pok0.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-191",
+            "docket_numbers": [
+              "23-191"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-191_q4lp.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-191:/oral_arguments/argument_transcripts/2024/23-191_q4lp.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-191_q4lp.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-217",
+            "docket_numbers": [
+              "23-217"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-217_h21b.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-217:/oral_arguments/argument_transcripts/2024/23-217_h21b.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-217_h21b.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-365",
+            "docket_numbers": [
+              "23-365"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-365_3307.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-365:/oral_arguments/argument_transcripts/2024/23-365_3307.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-365_3307.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-477",
+            "docket_numbers": [
+              "23-477"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-477_hgdj.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-477:/oral_arguments/argument_transcripts/2024/23-477_hgdj.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-477_hgdj.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-583",
+            "docket_numbers": [
+              "23-583"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-583_869c.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-583:/oral_arguments/argument_transcripts/2024/23-583_869c.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-583_869c.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-621",
+            "docket_numbers": [
+              "23-621"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-621_n7j3.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-621:/oral_arguments/argument_transcripts/2024/23-621_n7j3.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-621_n7j3.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-677",
+            "docket_numbers": [
+              "23-677"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-677_a4l9.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-677:/oral_arguments/argument_transcripts/2024/23-677_a4l9.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-677_a4l9.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-713",
+            "docket_numbers": [
+              "23-713"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-713_5iel.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-713:/oral_arguments/argument_transcripts/2024/23-713_5iel.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-713_5iel.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-715",
+            "docket_numbers": [
+              "23-715"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-715_8837.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-715:/oral_arguments/argument_transcripts/2024/23-715_8837.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-715_8837.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-7483",
+            "docket_numbers": [
+              "23-7483"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-7483_p83l.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-7483:/oral_arguments/argument_transcripts/2024/23-7483_p83l.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-7483_p83l.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-753",
+            "docket_numbers": [
+              "23-753"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-753_5i26.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-753:/oral_arguments/argument_transcripts/2024/23-753_5i26.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-753_5i26.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-7809",
+            "docket_numbers": [
+              "23-7809"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-7809_9o6b.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-7809:/oral_arguments/argument_transcripts/2024/23-7809_9o6b.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-7809_9o6b.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-824",
+            "docket_numbers": [
+              "23-824"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-824_hhdp.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-824:/oral_arguments/argument_transcripts/2024/23-824_hhdp.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-824_hhdp.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-825",
+            "docket_numbers": [
+              "23-825"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-825_2je3.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-825:/oral_arguments/argument_transcripts/2024/23-825_2je3.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-825_2je3.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-852",
+            "docket_numbers": [
+              "23-852"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-852_h315.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-852:/oral_arguments/argument_transcripts/2024/23-852_h315.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-852_h315.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-861",
+            "docket_numbers": [
+              "23-861"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-861_7k8b.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-861:/oral_arguments/argument_transcripts/2024/23-861_7k8b.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-861_7k8b.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-867",
+            "docket_numbers": [
+              "23-867"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-867_4256.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-867:/oral_arguments/argument_transcripts/2024/23-867_4256.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-867_4256.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-900",
+            "docket_numbers": [
+              "23-900"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-900_f2ah.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-900:/oral_arguments/argument_transcripts/2024/23-900_f2ah.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-900_f2ah.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-909",
+            "docket_numbers": [
+              "23-909"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-909_6k4c.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-909:/oral_arguments/argument_transcripts/2024/23-909_6k4c.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-909_6k4c.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-929",
+            "docket_numbers": [
+              "23-929"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-929_3ebh.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-929:/oral_arguments/argument_transcripts/2024/23-929_3ebh.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-929_3ebh.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-970",
+            "docket_numbers": [
+              "23-970"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-970_1b82.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-970:/oral_arguments/argument_transcripts/2024/23-970_1b82.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-970_1b82.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-971",
+            "docket_numbers": [
+              "23-971"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-971_4mi5.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-971:/oral_arguments/argument_transcripts/2024/23-971_4mi5.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-971_4mi5.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-975",
+            "docket_numbers": [
+              "23-975"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-975_5h26.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-975:/oral_arguments/argument_transcripts/2024/23-975_5h26.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-975_5h26.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-980",
+            "docket_numbers": [
+              "23-980"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-980_p702.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-980:/oral_arguments/argument_transcripts/2024/23-980_p702.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-980_p702.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-23-997",
+            "docket_numbers": [
+              "23-997"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "23-997_cbi8.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-23-997:/oral_arguments/argument_transcripts/2024/23-997_cbi8.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-997_cbi8.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-109",
+            "docket_numbers": [
+              "24-109"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-109_l53m.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-109:/oral_arguments/argument_transcripts/2024/24-109_l53m.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-109_l53m.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-154",
+            "docket_numbers": [
+              "24-154"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-154_5f57.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-154:/oral_arguments/argument_transcripts/2024/24-154_5f57.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-154_5f57.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-20",
+            "docket_numbers": [
+              "24-20"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-20_k536.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-20:/oral_arguments/argument_transcripts/2024/24-20_k536.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-20_k536.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-249",
+            "docket_numbers": [
+              "24-249"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-249_la7n.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-249:/oral_arguments/argument_transcripts/2024/24-249_la7n.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-249_la7n.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-275",
+            "docket_numbers": [
+              "24-275"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-275_8m59.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-275:/oral_arguments/argument_transcripts/2024/24-275_8m59.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-275_8m59.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-297",
+            "docket_numbers": [
+              "24-297"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-297_2035.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-297:/oral_arguments/argument_transcripts/2024/24-297_2035.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-297_2035.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-304",
+            "docket_numbers": [
+              "24-304"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-304_4g15.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-304:/oral_arguments/argument_transcripts/2024/24-304_4g15.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-304_4g15.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-316",
+            "docket_numbers": [
+              "24-316"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-316_1a72.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-316:/oral_arguments/argument_transcripts/2024/24-316_1a72.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-316_1a72.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-320",
+            "docket_numbers": [
+              "24-320"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-320_50e5.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-320:/oral_arguments/argument_transcripts/2024/24-320_50e5.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-320_50e5.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-354",
+            "docket_numbers": [
+              "24-354"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-354_3e07.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-354:/oral_arguments/argument_transcripts/2024/24-354_3e07.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-354_3e07.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-362",
+            "docket_numbers": [
+              "24-362"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-362_m7i2.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-362:/oral_arguments/argument_transcripts/2024/24-362_m7i2.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-362_m7i2.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-394",
+            "docket_numbers": [
+              "24-394"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-394_3135.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-394:/oral_arguments/argument_transcripts/2024/24-394_3135.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-394_3135.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-416",
+            "docket_numbers": [
+              "24-416"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-416_m54f.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-416:/oral_arguments/argument_transcripts/2024/24-416_m54f.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-416_m54f.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-656",
+            "docket_numbers": [
+              "24-656"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-656_pm02.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-656:/oral_arguments/argument_transcripts/2024/24-656_pm02.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-656_pm02.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24-7",
+            "docket_numbers": [
+              "24-7"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24-7_7j7a.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24-7:/oral_arguments/argument_transcripts/2024/24-7_7j7a.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-7_7j7a.pdf"
+      },
+      {
+        "cases": [
+          {
+            "case_id": "scotus-24a884",
+            "docket_numbers": [
+              "24A884"
+            ],
+            "historical_group": null
+          }
+        ],
+        "document_type": "oral_argument_transcript",
+        "expected_sha256": null,
+        "official_filename": "24a884_7lhn.pdf",
+        "page_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+        "source_id": "scotus-24a884:/oral_arguments/argument_transcripts/2024/24a884_7lhn.pdf",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24a884_7lhn.pdf"
+      }
+    ],
+    "failures": []
+  },
+  "mode": "incremental",
+  "reconcile": {
+    "accepted_hashes": [
+      "b8bb843416bd0728270e476df524320954f34b1f90815459b84ef5aee734b691",
+      "38509063dc07b5d012a6813596fb727e5328fb9f8ec9c83103b5e84dcfafaf98",
+      "20f6932b2c8343d956c6dfb0bc2d7819c4e01ea4bf02534d3cfcb8add6580e3d",
+      "4eee58f8aa6c1a77360cba25b8b0851d534497691d2d1c7c1f4b491353846efe",
+      "bb3fa65f1ea6eb5c9219a19b502409ab394d02b4f05e18ccb9e4156c4fee86ad",
+      "3b868b209006015997d93f69e2884aad4583045b5cdb1df1ff6820fc362080d3",
+      "68f00463b5e6e2ffdb8ca1a57847ed227a37c6f1d40d1ac707235f8fa9b5f1c2",
+      "09253689557eaf7d86e30dadc9cbe57a8478886e72f0e8129195e9b975cdd519",
+      "100f2dd107fc40bda158f7c5f4535e616d3c5689caef7a192ec11fb00e7ca3e7",
+      "f1f6ead7d2d391deed0c9b7e893994a22b1b3b2ca28d2183d927e78b9854ec13",
+      "70ac97f1e8f2fd88eab09827553fba69e2e6d085ad5f484ec2ff2556d2f45f16",
+      "d3ed0ddf1df0252872012b137e544ae57e393fac309ab379cf4f8d96751b2410",
+      "a99f203c6818a16ec5f5c72763acf2806ba455bebef7dcaa81832f982cddcae1",
+      "7451a9b18c22a7d213a4f49904dac1a9607d2cdb973ee5a7d4e76188ad0e8ea4",
+      "97910a1eda9991ca6d6e17e93bfff2902ebae33effaec2473daf70d3f25d581d",
+      "18a7d7f73dd8c8b8596da74744fc2e0ef413e20135a3be5fcf757c2006dafed3",
+      "1fc157538a633606b67856ef76288bd923595fd72588254f2ca0e6c7525c4657",
+      "f7ae99c987c4f760ac69dd85b50dea36d03572d148df839b16ead7fc097edfb2",
+      "bc0a11a2c67c52f2f4673e03a96fa228c25a1ad966d6fe51ef8e55729d10dd27",
+      "0178aa7c909d39e21bb4f3502f288d21fd379cb3d18a0ecc56c0bf315fd2c9a5",
+      "1d48bb9e054345914844e6c24e22ca69478938f88a42e76259668e4670fd4de5",
+      "92a8a117541d1bfa7ea96b40da79b40a6c0db991b2ed339ffcbb8afec79b65c9",
+      "f0ea5f7f316e00ac2150526cfc81dc97a3faeb3a5ef26b387754313ff90077c3",
+      "28e93b1e50f078d4cc056d60a8de2f49e85baf73da3cdfa494ac94a3b5b67fef",
+      "9233da9701b9d81fb8523feed90695a65f53ccf661d919fefcda0db5331331d3",
+      "669943d97001d2aa403be01ae9b56f0c92a386191321d0b4956f8e28dff2cb61",
+      "412e5db49df9abdd1a8d9dfea76c1a20d21ab6ee7a9935a7cb3bbfc07a0093e4",
+      "e2adc6205d74a8cf7c8f79ea53deffafa7402414808b78c68e9ef539514f1d5f",
+      "5080e91a9d106a41538890d85d639a943c7d47c606fff7a7f66ecd4c653c2535",
+      "2454ec25332d9fc45e9e38c0b0af24881f604092c21d3574adcd338e35f255d1",
+      "84a0f5065a945f62cf1db8406860aefb5c3f52c70d887dc8b06b125872531670",
+      "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
+      "58b34001b0e43c40da1d5485feda45faf35837241f8493caca21da041d385396",
+      "29b956d5b985309b9b690ecb191c032b3d8c7afb2387c12c3a6a7acbe69652f7",
+      "61e5766206c58fdc9e8773ca47bd9c43155c62a012d2aa0dfb9a9410d5de43a2",
+      "44dee03581c22cc57dd2cb2a58c95f1b7d37b8b31b83a35ab7b781e931187dc8",
+      "3bf648c8d88b1204f354168f13ac94f67f750f69238f07786c7992e063eb7a66",
+      "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
+      "1f75a92a9fc815bd5dd9313f2813b62bccbc8d77ec4e6d0938c738c26aa441af",
+      "c7f7f47ffad4432638caa73968012e870208d9f094db359790334a7d1832cfb7",
+      "5e7c6d18dd0ae60698c1105912ac4e107927d376d3733d3e69209c624f0d6e55",
+      "2ef27744581013d7493d44266ef3b455becb446d4e372ba307342b2814924c14",
+      "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
+      "c72b9eaf400f4f0d9fbbf464bcb3343e2b5cdb4c0828b6db7eb912324b7c7551",
+      "2b97ff6b76054c9ac57e987676a8ec6a7d32c1bbfa6ffc51042e7a2b4555a8b5",
+      "d9bcfe43d5d8593b765f8ba8dacca1517d1601e340f4c84c2eb9cfe519861c48",
+      "e41700aa9485a8ed11f43687f4310d72f3bb0ba846f9faee2c61d3d181fa88f6",
+      "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
+      "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
+      "98dc84420df006fb94835269e9e88bd2e2a8f206be5762daeffd2f41a431bae6",
+      "40cc667d588bdba0c030ac314608d52fbf94b1f5b7152f014ec55723ce7eabbe",
+      "eeb94ef457b828e26c9932a43b6311de3f645ed2b2251caa6d8b1f7190d0883c",
+      "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
+      "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
+      "d45a4197f26807aba7615e1ddf1933cb4bd86508a89df46f44b64e15336cede4",
+      "45eca458b4c9706cb6cf62ef9761b3a544206ee8defe3927503f6c75364ab586",
+      "5bf1012a4d4cf70aae4a1b1db2d896736fbe82332e7c6b85ca2488dcc43403ef",
+      "13f4072b0746020ed2b37b2df58a1cd05253dadfe89c1a2d9b3121b6b3ffaec1",
+      "1d34a3b4a43cc3a02ee71c033327e3d8e3f94ea90e18bf1026df244ea2dbbcb8",
+      "e97e497ae03807852e809b712653e4f64efa6b818be7f48a02a1beb3869817d2",
+      "5c2805a93c6082b67e99b64b0f3ebc8e58a79a3a0eb67fa066bb84274381910a",
+      "0a28233df1d708765ce3398e2897d44e11bbf1875ee13100d18920c542b8273b",
+      "64626d90f6ee7e69b784fb395ad03b5c15a3fc8361b7104fbb4e8138c93bb1d2",
+      "9dc973cac6aac30683dc4259e88dd2fade41cadbb058a5cd322f2877d01c12e7",
+      "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
+      "635c1b5d0f10d4243bab8900a365d7eac08d4364f3451a9e2ff25fefe08a5dd2",
+      "0aa23a90c98867084c5a2999aa568669880a914d48bc48c474272f1ca62c3172",
+      "9c5f8ee9bdeb154575a7895973e3a15cf91cfeeadd5647ab17e5bdd6689ff527",
+      "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
+      "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+      "ca34420a7c2cfc9b1a3c3a5e046cd01f9c3788a383d5896321cc1a9a757999a5"
+    ],
+    "changed_case_ids": [
+      "scotus-22-7466",
+      "scotus-23-1002",
+      "scotus-23-1007",
+      "scotus-23-1038",
+      "scotus-23-1039",
+      "scotus-23-1067",
+      "scotus-23-1095",
+      "scotus-23-1122",
+      "scotus-23-1127",
+      "scotus-23-1141",
+      "scotus-23-1187",
+      "scotus-23-1201",
+      "scotus-23-1226",
+      "scotus-23-1229",
+      "scotus-23-1239",
+      "scotus-23-1259",
+      "scotus-23-1270",
+      "scotus-23-1275",
+      "scotus-23-1300",
+      "scotus-23-1324",
+      "scotus-23-1345",
+      "scotus-23-167",
+      "scotus-23-191",
+      "scotus-23-217",
+      "scotus-23-365",
+      "scotus-23-477",
+      "scotus-23-583",
+      "scotus-23-621",
+      "scotus-23-6573",
+      "scotus-23-677",
+      "scotus-23-713",
+      "scotus-23-715",
+      "scotus-23-7483",
+      "scotus-23-753",
+      "scotus-23-7809",
+      "scotus-23-824",
+      "scotus-23-825",
+      "scotus-23-852",
+      "scotus-23-861",
+      "scotus-23-867",
+      "scotus-23-900",
+      "scotus-23-909",
+      "scotus-23-929",
+      "scotus-23-970",
+      "scotus-23-971",
+      "scotus-23-975",
+      "scotus-23-980",
+      "scotus-23-997",
+      "scotus-24-154",
+      "scotus-24-20",
+      "scotus-24-249",
+      "scotus-24-275",
+      "scotus-24-297",
+      "scotus-24-304",
+      "scotus-24-316",
+      "scotus-24-320",
+      "scotus-24-354",
+      "scotus-24-362",
+      "scotus-24-394",
+      "scotus-24-416",
+      "scotus-24-656",
+      "scotus-24-7",
+      "scotus-24-809",
+      "scotus-24a884",
+      "scotus-24a910",
+      "scotus-24a931"
+    ],
+    "failures": [
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us1r31_7k47.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r31_7k47.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1067_3nb3.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1067_3nb3.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1095_1o8l.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1095_1o8l.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1122_22p3.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1122_22p3.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1127_c2d4.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1127_c2d4.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1141_8o6g.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1141_8o6g.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1187_h3cj.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1187_h3cj.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1201_5b35.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1201_5b35.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1226_94k8.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1226_94k8.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1229_3eah.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1229_3eah.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1239_09m1.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1239_09m1.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1259_6k4c.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1259_6k4c.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1270_2feh.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1270_2feh.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1275_ba7d.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1275_ba7d.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1300_ifjm.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1300_ifjm.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1324_7k5h.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1324_7k5h.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1345_pok0.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1345_pok0.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-191_q4lp.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-191_q4lp.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-217_h21b.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-217_h21b.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-365_3307.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-365_3307.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-477_hgdj.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-477_hgdj.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-583_869c.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-583_869c.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-621_n7j3.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-621_n7j3.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-677_a4l9.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-677_a4l9.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-713_5iel.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-713_5iel.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-715_8837.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-715_8837.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-7483_p83l.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-7483_p83l.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-753_5i26.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-753_5i26.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-7809_9o6b.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-7809_9o6b.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-824_hhdp.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-824_hhdp.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-825_2je3.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-825_2je3.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-852_h315.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-852_h315.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-861_7k8b.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-861_7k8b.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-867_4256.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-867_4256.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-900_f2ah.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-900_f2ah.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-909_6k4c.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-909_6k4c.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-929_3ebh.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-929_3ebh.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-970_1b82.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-970_1b82.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-971_4mi5.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-971_4mi5.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-975_5h26.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-975_5h26.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-980_p702.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-980_p702.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-997_cbi8.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-997_cbi8.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-109_l53m.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-109_l53m.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-154_5f57.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-154_5f57.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-20_k536.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-20_k536.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-249_la7n.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-249_la7n.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-275_8m59.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-275_8m59.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-297_2035.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-297_2035.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-304_4g15.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-304_4g15.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-316_1a72.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-316_1a72.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-320_50e5.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-320_50e5.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-354_3e07.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-354_3e07.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-362_m7i2.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-362_m7i2.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-394_3135.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-394_3135.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-416_m54f.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-416_m54f.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-656_pm02.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-656_pm02.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-7_7j7a.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-7_7j7a.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24a884_7lhn.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24a884_7lhn.pdf"
+      }
+    ],
+    "unchanged_hashes": []
+  }
 }

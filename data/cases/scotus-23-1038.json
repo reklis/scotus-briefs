@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "scotus-23-1038",
+  "slug": "scotus-23-1038",
+  "title": "Supreme Court case 23-1038",
+  "term": 2024,
+  "docket_numbers": [
+    "23-1038"
+  ],
+  "primary_docket": "23-1038",
+  "aliases": [],
+  "lifecycle": "decided",
+  "dates": {
+    "filed": null,
+    "granted": null,
+    "argument": "2024-12-02",
+    "decision": "2025-04-02"
+  },
+  "parties": [],
+  "provenance": [
+    {
+      "field": "discovery",
+      "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+      "document_hash": null,
+      "observed_at": "2026-09-27T14:01:08.458117Z",
+      "method": "official",
+      "confidence": 1.0
+    }
+  ],
+  "documents": [
+    {
+      "sha256": "92a8a117541d1bfa7ea96b40da79b40a6c0db991b2ed339ffcbb8afec79b65c9",
+      "document_type": "opinion",
+      "current": true
+    },
+    {
+      "sha256": "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
+      "document_type": "oral_argument_transcript",
+      "current": true
+    }
+  ],
+  "unresolved_group": null
+}

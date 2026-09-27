@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "scotus-24-20",
+  "slug": "scotus-24-20",
+  "title": "Supreme Court case 24-20",
+  "term": 2024,
+  "docket_numbers": [
+    "24-20"
+  ],
+  "primary_docket": "24-20",
+  "aliases": [],
+  "lifecycle": "decided",
+  "dates": {
+    "filed": null,
+    "granted": null,
+    "argument": "2025-04-01",
+    "decision": "2025-06-20"
+  },
+  "parties": [],
+  "provenance": [
+    {
+      "field": "discovery",
+      "source_url": "https://www.supremecourt.gov/oral_arguments/argument_transcript/2024",
+      "document_hash": null,
+      "observed_at": "2026-09-27T14:01:08.530418Z",
+      "method": "official",
+      "confidence": 1.0
+    }
+  ],
+  "documents": [
+    {
+      "sha256": "40cc667d588bdba0c030ac314608d52fbf94b1f5b7152f014ec55723ce7eabbe",
+      "document_type": "unknown",
+      "current": true
+    }
+  ],
+  "unresolved_group": null
+}
