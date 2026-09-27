@@ -1,0 +1,426 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Elbert Lin)",
+        "citations": [
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0000-0001"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Petitioner (Elbert Lin), according to Petitioner (Elbert Lin), according to Petitioner (Elbert Lin), petitioner argues that the Clean Water Act defines a point source as a \u201cdiscernible, confined, and discrete conveyance,\u201d and that groundwater, being diffuse, is a nonpoint source."
+      },
+      {
+        "attribution": "Petitioner (Elbert Lin)",
+        "citations": [
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0000-0001"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Petitioner (Elbert Lin), according to Petitioner (Elbert Lin), according to Petitioner (Elbert Lin), the core legal question is where the line falls between the federal point\u2011source program and the state nonpoint\u2011source program for groundwater that eventually reaches navigable waters."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-260",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T01:06:36.085012Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+          "evidence_ids": [
+            "ev-4fbfc238bdfc-0000-0000"
+          ],
+          "pages": {
+            "end": 4,
+            "start": 4
+          }
+        }
+      ],
+      "definition": "A point source is a discernible, confined, and discrete conveyance of pollutants.",
+      "term": "point source"
+    },
+    {
+      "citations": [
+        {
+          "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+          "evidence_ids": [
+            "ev-4fbfc238bdfc-0000-0001"
+          ],
+          "pages": {
+            "end": 7,
+            "start": 7
+          }
+        }
+      ],
+      "definition": "Groundwater is characterized as a nonpoint source because it diffuses through the ground rather than flowing through a discrete conveyance.",
+      "term": "nonpoint source"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0001-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether any small amount of groundwater is enough to break the chain of causation for a point\u2011source violation."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor inquired about the distinction between groundwater and land in the context of the Clean Water Act."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0003-0000"
+            ],
+            "pages": {
+              "end": 67,
+              "start": 67
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked why Congress, despite debating groundwater regulation, rejected proposals to exempt groundwater from the Act."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0001-0007"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked whether the Fourth Circuit\u2019s \u201cfairly traceable\u201d test is being advanced."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Elbert Lin)",
+        "citations": [
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0000-0001"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Petitioner (Elbert Lin), according to Petitioner (Elbert Lin), according to Petitioner (Elbert Lin), the case concerns whether releases from Maui\u2019s underground injection wells are regulated as point sources under the Clean Water Act."
+      },
+      {
+        "attribution": "Petitioner (Elbert Lin)",
+        "citations": [
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0000-0001"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Petitioner (Elbert Lin), according to Petitioner (Elbert Lin), according to Petitioner (Elbert Lin), the dispute centers on how the Clean Water Act\u2019s point\u2011source program interacts with state nonpoint\u2011source regulation for groundwater discharges."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Elbert Lin)",
+          "citations": [
+            {
+              "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+              "evidence_ids": [
+                "ev-4fbfc238bdfc-0000-0001"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to Petitioner (Elbert Lin), according to Petitioner (Elbert Lin), according to Petitioner (Elbert Lin), groundwater is a nonpoint source."
+        },
+        {
+          "attribution": "Petitioner (Elbert Lin)",
+          "citations": [
+            {
+              "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+              "evidence_ids": [
+                "ev-4fbfc238bdfc-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Elbert Lin), according to Petitioner (Elbert Lin), according to Petitioner (Elbert Lin), the Clean Water Act defines a point source as a discernible, confined, and discrete conveyance."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Henkin",
+          "citations": [
+            {
+              "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+              "evidence_ids": [
+                "ev-4fbfc238bdfc-0001-0002"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "According to Mr. Henkin, the Clean Water Act prohibits unpermitted additions of pollutants to navigable waters from any point source, and the statute does not limit the prohibition to \u201cdirect\u201d discharges."
+        },
+        {
+          "attribution": "Mr. Henkin",
+          "citations": [
+            {
+              "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+              "evidence_ids": [
+                "ev-4fbfc238bdfc-0003-0001"
+              ],
+              "pages": {
+                "end": 69,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Mr. Henkin, Congress did not expressly exempt groundwater discharges that reach navigable waters, indicating that such discharges fall within the Act\u2019s scope."
+        },
+        {
+          "attribution": "Mr. Henkin",
+          "citations": [
+            {
+              "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+              "evidence_ids": [
+                "ev-4fbfc238bdfc-0001-0008"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Mr. Henkin, the respondent\u2019s test focuses on a \u201cdirect hydrologic connection,\u201d which aligns with the EPA\u2019s historic approach before its 2020 policy change."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+      "evidence_ids": [
+        "ev-4fbfc238bdfc-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T01:15:52.085141Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Elbert Lin)",
+        "citations": [
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "4fbfc238bdfc0be91d4d1b8d78365642789561ed34920cddaf1b2db835bdd319",
+            "evidence_ids": [
+              "ev-4fbfc238bdfc-0001-0002"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "The case addresses whether groundwater discharges that eventually reach navigable waters are subject to the Clean Water Act\u2019s point\u2011source permitting regime."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

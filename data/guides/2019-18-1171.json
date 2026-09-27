@@ -1,0 +1,335 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Comcast Corporation",
+        "citations": [
+          {
+            "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+            "evidence_ids": [
+              "ev-7163a04b2b39-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Comcast Corporation, comcast argues that the 1991 amendment to Title VII created a motivating\u2011factor standard but did not amend Section\u202f1981 to provide the same standard."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-1171",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T23:54:06.448677Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+            "evidence_ids": [
+              "ev-7163a04b2b39-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked why the issue was not actionable."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+            "evidence_ids": [
+              "ev-7163a04b2b39-0001-0005"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justice Alito asked what the burden of persuasion was in this case."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+            "evidence_ids": [
+              "ev-7163a04b2b39-0001-0004"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Kagan asked about the burden of persuasion as to what issue."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+            "evidence_ids": [
+              "ev-7163a04b2b39-0001-0003"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Breyer asked why, on the same facts, the plaintiff could not assert a but\u2011for causal claim."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+            "evidence_ids": [
+              "ev-7163a04b2b39-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether a hypothetical would satisfy the but\u2011for test."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+            "evidence_ids": [
+              "ev-7163a04b2b39-0002-0002"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether it would be unusual to apply a motivating\u2011factor test at pleading and a but\u2011for test at trial."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+            "evidence_ids": [
+              "ev-7163a04b2b39-0002-0004"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "Justice Alito asked what would happen if the complaint alleged a motivating\u2011factor rather than but\u2011for causation."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+            "evidence_ids": [
+              "ev-7163a04b2b39-0002-0005"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether the Ninth Circuit was wrong."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+            "evidence_ids": [
+              "ev-7163a04b2b39-0002-0006"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether the party thought they would win."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+            "evidence_ids": [
+              "ev-7163a04b2b39-0002-0007"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the focus was on the availability of the burden\u2011shifting mechanism."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+            "evidence_ids": [
+              "ev-7163a04b2b39-0002-0008"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the but\u2011for reason was the basis for the denial of a contract."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Comcast Corporation",
+          "citations": [
+            {
+              "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+              "evidence_ids": [
+                "ev-7163a04b2b39-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Comcast Corporation, comcast argues that the 1991 amendment to Title VII created a motivating\u2011factor standard but did not amend Section\u202f1981 to provide the same standard."
+        }
+      ],
+      "heading": "Comcast Corporation",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "National Association of African American\u2011Owned Media",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "7163a04b2b3940a60b0b6b61d38092dae8bec824476ca0ee1efb56ca69e9e0b1",
+      "evidence_ids": [
+        "ev-7163a04b2b39-0000-0002",
+        "ev-7163a04b2b39-0001-0000",
+        "ev-7163a04b2b39-0001-0005",
+        "ev-7163a04b2b39-0001-0004",
+        "ev-7163a04b2b39-0001-0003",
+        "ev-7163a04b2b39-0002-0000",
+        "ev-7163a04b2b39-0002-0002",
+        "ev-7163a04b2b39-0002-0004",
+        "ev-7163a04b2b39-0002-0005",
+        "ev-7163a04b2b39-0002-0006",
+        "ev-7163a04b2b39-0002-0007",
+        "ev-7163a04b2b39-0002-0008"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 5
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T00:02:20.388606Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

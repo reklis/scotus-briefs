@@ -1,0 +1,566 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The case asks whether life\u2011without\u2011parole sentences imposed on a juvenile must be resentenced under Miller and Montgomery when the original sentence was mandatory rather than discretionary."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-217",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T00:53:44.914831Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked why these sentences are not mandatory, noting the jury had only two choices, death or life without parole."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned whether the judge knew he could exercise discretion given the lack of prior history."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked how a discretionary sentencing scheme satisfies the substantive right recognized in Miller and Montgomery."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0001-0003"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "According to Justice Ginsburg, justice Ginsburg followed up on the government\u2019s change in position regarding whether juveniles sentenced to life without parole must be resentenced after Miller and Montgomery."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether judges who consider age under post\u2011Jones statutes are presumed to follow Miller and Montgomery."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the statutes set out the factors required by Miller and Montgomery and require courts to evaluate them."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0002-0002"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether competent defense counsel would argue the youth factor in a discretionary regime where life without parole is possible."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0002-0004"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch raised the question of whether a Sixth Amendment right requires a jury, rather than a judge, to find incorrigibility before imposing life without parole."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0003-0002"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether a juvenile who demonstrates rehabilitation must be released."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0003-0006"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "Justice Sotomayor inquired about a case where counsel raised the youth argument and the judge claimed no power to consider it."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner, Lee Boyd\u202fMalvo was tried, convicted, and sentenced for his role in the D.C. sniper attacks."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner, petitioner relies on the Miller rule in seeking federal habeas relief."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Toby J. Heytens",
+          "citations": [
+            {
+              "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+              "evidence_ids": [
+                "ev-71b68fec51fe-0003-0005"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Toby J. Heytens, counsel contends that a new rule is required for retroactive relief under Teague."
+        },
+        {
+          "attribution": "Ms. Spinelli",
+          "citations": [
+            {
+              "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+              "evidence_ids": [
+                "ev-71b68fec51fe-0002-0007"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            },
+            {
+              "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+              "evidence_ids": [
+                "ev-71b68fec51fe-0003-0001"
+              ],
+              "pages": {
+                "end": 66,
+                "start": 66
+              }
+            }
+          ],
+          "text": "Ms.\u202fSpinelli argues that if a juvenile is sentenced under a discretionary scheme that requires consideration of certain factors, the sentencer may consider evidence of rehabilitation at resentencing."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0000-0004"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0000-0001"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0001-0000"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0001-0003"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0002-0000",
+        "ev-71b68fec51fe-0002-0007"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0002-0001"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0002-0002"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0002-0004"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 50
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0003-0000",
+        "ev-71b68fec51fe-0003-0001",
+        "ev-71b68fec51fe-0003-0002"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 66
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0003-0004"
+      ],
+      "pages": {
+        "end": 67,
+        "start": 67
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0003-0005"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0003-0006"
+      ],
+      "pages": {
+        "end": 69,
+        "start": 69
+      }
+    },
+    {
+      "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+      "evidence_ids": [
+        "ev-71b68fec51fe-0003-0007"
+      ],
+      "pages": {
+        "end": 71,
+        "start": 71
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T01:06:36.065668Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim in the 'Why It Matters' section that the case could affect inmates nationwide is not backed by any cited evidence.",
+      "Overstatement check failed: the same claim overstates the case's impact without supporting evidence."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The case could determine whether juveniles sentenced to life without parole under a mandatory scheme must be resentenced, affecting inmates nationwide."
+      },
+      {
+        "attribution": "Toby J. Heytens",
+        "citations": [
+          {
+            "document_hash": "71b68fec51fe737c782f16ec87c00d83633dae3f433699380ac80f5028843b98",
+            "evidence_ids": [
+              "ev-71b68fec51fe-0003-0005"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Toby J. Heytens, a ruling in favor of the petitioner would apply the Miller and Montgomery decisions retroactively, potentially granting relief to other juvenile offenders."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

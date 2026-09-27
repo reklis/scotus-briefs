@@ -1,0 +1,543 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0001-0005"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          },
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0001-0006"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "The central question is whether disgorgement funds should be returned to investors when feasible or paid to the Treasury."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-1501",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T00:34:24.202175Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0001-0012"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Malcolm L. Stewart presented oral argument on behalf of the respondent."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0001-0005"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          },
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0001-0006"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Justices asked questions about whether disgorgement is a penalty, whether funds should go to the Treasury or be returned to investors, and what equitable principles apply."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Petitioners argue that SEC disgorgement orders are penalties."
+      },
+      {
+        "attribution": "Petitioner (Gregory G. Rapawy)",
+        "citations": [
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0002-0000"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          },
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0002-0001"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          },
+          {
+            "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+            "evidence_ids": [
+              "ev-62ee51fc719c-0002-0004"
+            ],
+            "pages": {
+              "end": 55,
+              "start": 55
+            }
+          }
+        ],
+        "text": "According to Petitioner (Gregory G. Rapawy), according to Petitioner (Gregory G. Rapawy), petitioners contend that the government\u2019s practice of sending disgorged funds to the Treasury is a substantial departure from historical norms."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+              "evidence_ids": [
+                "ev-62ee51fc719c-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "Petitioners argue that SEC disgorgement orders are penalties."
+        },
+        {
+          "attribution": "Petitioner (Gregory G. Rapawy)",
+          "citations": [
+            {
+              "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+              "evidence_ids": [
+                "ev-62ee51fc719c-0002-0000"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            }
+          ],
+          "text": "According to Petitioner (Gregory G. Rapawy), according to Petitioner (Gregory G. Rapawy), the government has conceded that disgorgement is a substantial departure from historical norms."
+        },
+        {
+          "attribution": "Petitioner (Gregory G. Rapawy)",
+          "citations": [
+            {
+              "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+              "evidence_ids": [
+                "ev-62ee51fc719c-0002-0001"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Petitioner (Gregory G. Rapawy), according to Petitioner (Gregory G. Rapawy), courts must grapple with how private\u2011suit legal principles map onto government enforcement actions."
+        },
+        {
+          "attribution": "Petitioner (Gregory G. Rapawy)",
+          "citations": [
+            {
+              "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+              "evidence_ids": [
+                "ev-62ee51fc719c-0002-0003"
+              ],
+              "pages": {
+                "end": 49,
+                "start": 49
+              }
+            }
+          ],
+          "text": "According to Petitioner (Gregory G. Rapawy), according to Petitioner (Gregory G. Rapawy), in patent cases, a defendant\u2019s profits have been an appropriate element of relief."
+        },
+        {
+          "attribution": "Petitioner (Gregory G. Rapawy)",
+          "citations": [
+            {
+              "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+              "evidence_ids": [
+                "ev-62ee51fc719c-0002-0004"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "According to Petitioner (Gregory G. Rapawy), according to Petitioner (Gregory G. Rapawy), the Gabelli case found no precedent for applying the equitable discovery rule to government actions."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "MR. STEWART",
+          "citations": [
+            {
+              "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+              "evidence_ids": [
+                "ev-62ee51fc719c-0001-0015"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to MR. STEWART, sometimes the SEC cannot return the money because there is no identifiable universe of investors."
+        },
+        {
+          "attribution": "MR. STEWART",
+          "citations": [
+            {
+              "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+              "evidence_ids": [
+                "ev-62ee51fc719c-0001-0017"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to MR. STEWART, such an instruction would be consistent with the SEC\u2019s practice."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0001-0000"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0001-0001"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0001-0012"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0001-0014",
+        "ev-62ee51fc719c-0001-0005"
+      ],
+      "pages": {
+        "end": 35,
+        "start": 35
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0001-0015"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0001-0016",
+        "ev-62ee51fc719c-0001-0006"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0001-0017"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0002-0000"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0002-0001",
+        "ev-62ee51fc719c-0002-0006"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0002-0003"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 49
+      }
+    },
+    {
+      "document_hash": "62ee51fc719c4d47b1aae27464aa6f36488a81fd72bcec005070df246e3520e9",
+      "evidence_ids": [
+        "ev-62ee51fc719c-0002-0004"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T00:43:18.658413Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,417 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether the Clemons precedent, which allows appellate courts to reweigh, is still good law."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch questioned whether states define their own procedures."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0001-0002"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked if there is a difference between a correctable surgical mistake and a comprehensive mistake that infects the whole proceeding."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0003-0000"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh later asked about Justice Blackmun's dissent."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-1109",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T23:22:02.732368Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:11\u202fa.m."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether the Clemons precedent is still good law."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch questioned whether states define their own procedures."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0001-0002"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked if there is a difference between a surgical mistake that can be corrected and a comprehensive mistake that infects the whole proceeding."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0003-0000"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh later asked about Justice Blackmun's dissent."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0003-0004"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted the case was submitted at 12:11\u202fp.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Petitioner argued that the Ninth Circuit's decision created new state action."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0002-0001"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Petitioner, petitioner challenged the existing aggravators in the case."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0001-0004"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "The Court indicated it could dismiss the case as improvidently granted."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+              "evidence_ids": [
+                "ev-e93fa9e20780-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "Petitioner argued that the Ninth Circuit's decision created new state action."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+              "evidence_ids": [
+                "ev-e93fa9e20780-0002-0001"
+              ],
+              "pages": {
+                "end": 47,
+                "start": 47
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner challenged the existing aggravators in the case."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+              "evidence_ids": [
+                "ev-e93fa9e20780-0002-0004"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 65
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner submitted a rebuttal argument on behalf of Neal K. Katyal."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent Position",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+      "evidence_ids": [
+        "ev-e93fa9e20780-0000-0000",
+        "ev-e93fa9e20780-0000-0002",
+        "ev-e93fa9e20780-0000-0003",
+        "ev-e93fa9e20780-0001-0000",
+        "ev-e93fa9e20780-0001-0001",
+        "ev-e93fa9e20780-0001-0002",
+        "ev-e93fa9e20780-0001-0004",
+        "ev-e93fa9e20780-0002-0001",
+        "ev-e93fa9e20780-0002-0004",
+        "ev-e93fa9e20780-0003-0000",
+        "ev-e93fa9e20780-0003-0005",
+        "ev-e93fa9e20780-0003-0004"
+      ],
+      "pages": {
+        "end": 69,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T23:28:14.601123Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case raises questions about whether a circuit court's decision can create new state action, a significant issue for state sovereignty."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e93fa9e20780322b453431c24f93cedcfa08f102032aefc8319118b092edec17",
+            "evidence_ids": [
+              "ev-e93fa9e20780-0001-0004"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "The Court's consideration of dismissing the case as improvidently granted highlights the importance of procedural propriety in Supreme Court review."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2019-18-1584",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the overview claim that the dispute includes how rights\u2011of\u2011way over, under, or along the trail are to be treated is not supported by the supplied evidence (evidence only addresses land administration, not rights\u2011of\u2011way).",
+    "Overstatement check failed: the same overview claim overstates the dispute by asserting rights\u2011of\u2011way treatment that is not evidenced in the transcript."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.95,
+    "neutrality": 1.0,
+    "readability": 0.9,
+    "restraint": 0.9,
+    "traceability": 0.85
+  }
+}

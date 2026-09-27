@@ -1,0 +1,393 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case came on for oral argument before the Supreme Court of the United States at 10:12\u202fa.m."
+      },
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked why diverting resources for a political benefit is not considered private use."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the analysis would change if the defendants acted for personal benefit rather than political reasons."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned how the petitioner\u2019s argument fits within the language of the statute."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-1059",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T23:05:12.292016Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+          "evidence_ids": [
+            "ev-d50d6981804f-0001-0007"
+          ],
+          "pages": {
+            "end": 37,
+            "start": 37
+          }
+        }
+      ],
+      "definition": "A specific kind of fraud where the defendant tries to take over property that is in the hands of the victim and manage it as if it is his own property.",
+      "term": "commandeering fraud"
+    }
+  ],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Ginsburg",
+        "citations": [
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Ginsburg asked why diverting resources for a political benefit is not considered private use."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether personal benefit would change the legal analysis."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito sought clarification on how the petitioner\u2019s argument fits the statutory language."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the New York representative is the executive director and the New Jersey representative the deputy."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor referenced the government\u2019s argument that the defendant allegedly lied to Port Authority employees about the executive director\u2019s knowledge of the lane change."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0001-0007"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "Bridget Anne Kelly v. United States concerns alleged fraud involving the reallocation of two traffic lanes on a public bridge for political reasons."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+            "evidence_ids": [
+              "ev-d50d6981804f-0000-0005"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The dispute centers on whether reallocating public road lanes without disclosing the political motive constitutes property fraud under federal statutes."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+              "evidence_ids": [
+                "ev-d50d6981804f-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "The petitioner argues that the government is using broad federal fraud statutes to target state and local actions, alleging property fraud by reallocating two traffic lanes without disclosing the political motive."
+        },
+        {
+          "attribution": "Eric J. Feigin",
+          "citations": [
+            {
+              "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+              "evidence_ids": [
+                "ev-d50d6981804f-0001-0007"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Eric J. Feigin, the petitioner characterizes the conduct as \"commandeering fraud,\" where the defendants took control of bridge lanes as if they were their own property."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+              "evidence_ids": [
+                "ev-d50d6981804f-0000-0005"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "The respondent contends that a public official acting for political reasons, not personal gain, does not commit fraud by misrepresenting the reason for an official decision that is within his authority."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "d50d6981804f539b69dece1d4726e68c9ee1697ebcc182a3a397edc06a22bd6a",
+      "evidence_ids": [
+        "ev-d50d6981804f-0000-0000",
+        "ev-d50d6981804f-0000-0001",
+        "ev-d50d6981804f-0000-0002",
+        "ev-d50d6981804f-0000-0003",
+        "ev-d50d6981804f-0000-0004",
+        "ev-d50d6981804f-0000-0005",
+        "ev-d50d6981804f-0001-0000",
+        "ev-d50d6981804f-0001-0001",
+        "ev-d50d6981804f-0001-0005",
+        "ev-d50d6981804f-0001-0006",
+        "ev-d50d6981804f-0001-0007",
+        "ev-d50d6981804f-0002-0000",
+        "ev-d50d6981804f-0002-0001",
+        "ev-d50d6981804f-0003-0000",
+        "ev-d50d6981804f-0003-0001"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T23:09:57.143960Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

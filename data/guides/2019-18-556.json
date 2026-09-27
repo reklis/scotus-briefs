@@ -1,0 +1,246 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Ms. Sarah E. Harrington",
+        "citations": [
+          {
+            "document_hash": "efd3f60c6f52c0fd19b23e82a96d4b1c84d12dcbf04e379693f0f9a5f4bf0088",
+            "evidence_ids": [
+              "ev-efd3f60c6f52-0001-0012"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Ms. Sarah E. Harrington, kansas asks the Court to adopt a bright\u2011line nationwide rule that it is always reasonable to assume a car is being driven by its unlicensed owner."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-556",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T01:28:57.752084Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "efd3f60c6f52c0fd19b23e82a96d4b1c84d12dcbf04e379693f0f9a5f4bf0088"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "efd3f60c6f52c0fd19b23e82a96d4b1c84d12dcbf04e379693f0f9a5f4bf0088",
+            "evidence_ids": [
+              "ev-efd3f60c6f52-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The appearances included Toby Crouse, Solicitor General for Kansas; Michael R. Huston, Assistant to the Solicitor General for the United States (amicus); and Sarah E. Harrington, Esq., for the respondent."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Ms. Sarah E. Harrington",
+        "citations": [
+          {
+            "document_hash": "efd3f60c6f52c0fd19b23e82a96d4b1c84d12dcbf04e379693f0f9a5f4bf0088",
+            "evidence_ids": [
+              "ev-efd3f60c6f52-0001-0012"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Ms. Sarah E. Harrington, kansas (the petitioner) contends that it is always reasonable to presume that a car is being driven by its unlicensed owner."
+      },
+      {
+        "attribution": "Ms. Sarah E. Harrington",
+        "citations": [
+          {
+            "document_hash": "efd3f60c6f52c0fd19b23e82a96d4b1c84d12dcbf04e379693f0f9a5f4bf0088",
+            "evidence_ids": [
+              "ev-efd3f60c6f52-0001-0013"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Ms. Sarah E. Harrington, Charles Glover (the respondent) argues that the assumption that an unlicensed owner is the driver is not justified because the officer had no knowledge of who was driving."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Toby Crouse",
+          "citations": [
+            {
+              "document_hash": "efd3f60c6f52c0fd19b23e82a96d4b1c84d12dcbf04e379693f0f9a5f4bf0088",
+              "evidence_ids": [
+                "ev-efd3f60c6f52-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Toby Crouse, Kansas argues that reasonable suspicion is a minimal standard that permits a brief investigation based on an officer\u2019s objective and particularized suspicion."
+        }
+      ],
+      "heading": "Petitioner (Kansas)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Sarah E. Harrington",
+          "citations": [
+            {
+              "document_hash": "efd3f60c6f52c0fd19b23e82a96d4b1c84d12dcbf04e379693f0f9a5f4bf0088",
+              "evidence_ids": [
+                "ev-efd3f60c6f52-0001-0012"
+              ],
+              "pages": {
+                "end": 36,
+                "start": 36
+              }
+            }
+          ],
+          "text": "According to Ms. Sarah E. Harrington, Glover\u2019s counsel argues that the Court has been asked to adopt a nationwide bright\u2011line rule that it is always reasonable to assume an unlicensed owner is driving, but no evidence has been provided to support that assumption."
+        },
+        {
+          "attribution": "Ms. Sarah E. Harrington",
+          "citations": [
+            {
+              "document_hash": "efd3f60c6f52c0fd19b23e82a96d4b1c84d12dcbf04e379693f0f9a5f4bf0088",
+              "evidence_ids": [
+                "ev-efd3f60c6f52-0001-0013"
+              ],
+              "pages": {
+                "end": 37,
+                "start": 37
+              }
+            }
+          ],
+          "text": "According to Ms. Sarah E. Harrington, the respondent points out that the officer stipulated he had no idea who was driving and declined to testify about why an unlicensed driver would be presumed to be behind the wheel."
+        },
+        {
+          "attribution": "Ms. Sarah E. Harrington",
+          "citations": [
+            {
+              "document_hash": "efd3f60c6f52c0fd19b23e82a96d4b1c84d12dcbf04e379693f0f9a5f4bf0088",
+              "evidence_ids": [
+                "ev-efd3f60c6f52-0001-0015"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Ms. Sarah E. Harrington, the core question, according to the respondent, is whether an owner who lacks a valid license usually drives the vehicle, not merely whether owners typically drive their cars."
+        }
+      ],
+      "heading": "Respondent (Charles Glover)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "efd3f60c6f52c0fd19b23e82a96d4b1c84d12dcbf04e379693f0f9a5f4bf0088",
+      "evidence_ids": [
+        "ev-efd3f60c6f52-0000-0000"
+      ],
+      "pages": {
+        "end": 80,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T01:37:43.689627Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

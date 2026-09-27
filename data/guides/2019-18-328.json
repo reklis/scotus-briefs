@@ -1,0 +1,353 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+            "evidence_ids": [
+              "ev-b360289d7a29-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case was heard by the Supreme Court at 11:07\u202fa.m. on the day of oral argument."
+      },
+      {
+        "attribution": "Official",
+        "citations": [
+          {
+            "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+            "evidence_ids": [
+              "ev-b360289d7a29-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Official, the plaintiff alleges that the service attempt falsely claimed he was personally served, identified him as Black and 51\u202fyears old, though he is Caucasian and in his late 30s."
+      },
+      {
+        "attribution": "Petitioner (Scott E. Gant)",
+        "citations": [
+          {
+            "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+            "evidence_ids": [
+              "ev-b360289d7a29-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner (Scott E. Gant), the petitioner frames the dispute as involving the Fair Debt Collection Practices Act (FDCPA) and the relationship between the Court and Congress."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-328",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-27T01:26:24.831649Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "United States (amicus)",
+        "citations": [
+          {
+            "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+            "evidence_ids": [
+              "ev-b360289d7a29-0002-0002"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "According to United States (amicus), the United States filed an amicus brief supporting the respondents."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+            "evidence_ids": [
+              "ev-b360289d7a29-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked a question during oral argument."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+            "evidence_ids": [
+              "ev-b360289d7a29-0002-0004"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned whether the equitable principle at issue is the same as the Court\u2019s definition of equitable tolling."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+            "evidence_ids": [
+              "ev-b360289d7a29-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case was heard by the Supreme Court at 11:07\u202fa.m. on the day of oral argument."
+      },
+      {
+        "attribution": "Official",
+        "citations": [
+          {
+            "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+            "evidence_ids": [
+              "ev-b360289d7a29-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Official, the plaintiff alleges that the service attempt falsely claimed he was personally served, identified him as Black and 51\u202fyears old, though he is Caucasian and in his late 30s."
+      },
+      {
+        "attribution": "Petitioner (Scott E. Gant)",
+        "citations": [
+          {
+            "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+            "evidence_ids": [
+              "ev-b360289d7a29-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner (Scott E. Gant), the petitioner argues the case concerns the FDCPA and the broader relationship between this Court and Congress, noting two presumptions about congressional legislation."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Scott E. Gant)",
+          "citations": [
+            {
+              "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+              "evidence_ids": [
+                "ev-b360289d7a29-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Scott E. Gant), congress legislates against the backdrop of the common law and is aware of this Court\u2019s decisions."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+              "evidence_ids": [
+                "ev-b360289d7a29-0002-0000"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Petitioner, the alleged conduct does not constitute common\u2011law self\u2011concealing fraud."
+        }
+      ],
+      "heading": "Petitioner (Kevin C. Rotkiske)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Paul Klemm)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+      "evidence_ids": [
+        "ev-b360289d7a29-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+      "evidence_ids": [
+        "ev-b360289d7a29-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+      "evidence_ids": [
+        "ev-b360289d7a29-0001-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+      "evidence_ids": [
+        "ev-b360289d7a29-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+      "evidence_ids": [
+        "ev-b360289d7a29-0002-0001"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+      "evidence_ids": [
+        "ev-b360289d7a29-0002-0002"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    },
+    {
+      "document_hash": "b360289d7a29611552fe106378a728e4d40dea0637f66643ae458b16570577c4",
+      "evidence_ids": [
+        "ev-b360289d7a29-0002-0004"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-27T01:28:57.734415Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

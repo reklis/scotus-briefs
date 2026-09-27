@@ -1,0 +1,481 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          },
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0001-0000"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          },
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0003-0001"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "The case raises the question whether an ESOP fiduciary has an ERISA\u2011based duty to act on inside information about the plan\u2019s net buyer or seller status and to disclose it through standard corporate disclosure channels."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2019-18-1165",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-26T23:41:13.732742Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0001-0000"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked \u201cWhy?\u201d during the argument."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch questioned whether the fiduciary would know if the fund is a net buyer or seller."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0003-0001"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Breyer asked about the sufficiency of the four allegations and why they might not be enough."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0003-0006"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Larry W. Jander",
+        "citations": [
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Larry W. Jander, respondent argues that fiduciaries should disclose inside corporate information through regular corporate disclosure channels because nondisclosure causes growing harms over time."
+      },
+      {
+        "attribution": "Mr. Clement",
+        "citations": [
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Mr. Clement, petitioner contends that the plan was a net seller of several hundred million dollars, which is typical for a mature IBM plan rather than a startup."
+      },
+      {
+        "attribution": "MR. BONDEROFF",
+        "citations": [
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          },
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0003-0004"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "Petitioner emphasizes that fiduciaries must consider the long\u2011term interests of plan holders (shareholders) rather than short\u2011term buying or selling dynamics."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+              "evidence_ids": [
+                "ev-32393b588517-0001-0001"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, petitioner argues the plan was a net seller of several hundred million dollars, which is expected for a mature IBM plan."
+        },
+        {
+          "attribution": "MR. BONDEROFF",
+          "citations": [
+            {
+              "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+              "evidence_ids": [
+                "ev-32393b588517-0002-0001"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            },
+            {
+              "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+              "evidence_ids": [
+                "ev-32393b588517-0002-0002"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to MR. BONDEROFF, petitioner says fiduciaries should focus on the long\u2011term interests of plan holders (shareholders) and are not required to predict future buying or selling trends."
+        },
+        {
+          "attribution": "Paul D. Clement",
+          "citations": [
+            {
+              "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+              "evidence_ids": [
+                "ev-32393b588517-0003-0000"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 65
+              }
+            }
+          ],
+          "text": "According to Paul D. Clement, petitioner claims the allegations are generic and that the specific claim of the plan being a net buyer is false."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Larry W. Jander",
+          "citations": [
+            {
+              "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+              "evidence_ids": [
+                "ev-32393b588517-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Larry W. Jander, respondent alleges fiduciaries should have taken inside corporate information and disclosed it through regular corporate disclosure channels because disclosure was inevitable and harms from concealment grow over time."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+      "evidence_ids": [
+        "ev-32393b588517-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+      "evidence_ids": [
+        "ev-32393b588517-0001-0001"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+      "evidence_ids": [
+        "ev-32393b588517-0001-0002"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+      "evidence_ids": [
+        "ev-32393b588517-0001-0000"
+      ],
+      "pages": {
+        "end": 29,
+        "start": 29
+      }
+    },
+    {
+      "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+      "evidence_ids": [
+        "ev-32393b588517-0002-0000"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+      "evidence_ids": [
+        "ev-32393b588517-0002-0001"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+      "evidence_ids": [
+        "ev-32393b588517-0002-0002"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+      "evidence_ids": [
+        "ev-32393b588517-0003-0000"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 65
+      }
+    },
+    {
+      "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+      "evidence_ids": [
+        "ev-32393b588517-0003-0001"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 66
+      }
+    },
+    {
+      "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+      "evidence_ids": [
+        "ev-32393b588517-0003-0004"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+      "evidence_ids": [
+        "ev-32393b588517-0003-0005",
+        "ev-32393b588517-0003-0006"
+      ],
+      "pages": {
+        "end": 69,
+        "start": 69
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-26T23:54:06.430420Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim in the 'Why it matters' section adds that the dispute \"affects plan participants\u2019 long\u2011term financial interests,\" which is not directly supported by the cited amicus brief evidence.",
+      "Overstatement check failed: the same 'Why it matters' claim overstates the impact beyond what the provided evidence demonstrates."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Amicus (Jonathan Y. Ellis)",
+        "citations": [
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0001-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          },
+          {
+            "document_hash": "32393b5885176b0962c40e5ae23af403d6987b0c45ff8f5d738413a9ee6a2e64",
+            "evidence_ids": [
+              "ev-32393b588517-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "The dispute highlights how ERISA fiduciary duties intersect with insider information and securities disclosure, affecting plan participants\u2019 long\u2011term financial interests."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
