@@ -1,0 +1,438 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9d333f89c250927d1987bbf1c9318ed8c17199d88cf09447fb6882bee30910fa",
+            "evidence_ids": [
+              "ev-9d333f89c250-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Guam and the United States dispute liability for environmental hazards at the Ordot Dump, a site constructed by the Navy in the 1940s and used for waste disposal over several decades."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+            "evidence_ids": [
+              "ev-bfb527815e38-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, the case turns on whether \u00a7\u202f113(f)(3)(B) should be read to allow contribution claims only after a party settles a CERCLA\u2011specific liability."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-20-382",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9d333f89c250927d1987bbf1c9318ed8c17199d88cf09447fb6882bee30910fa",
+            "evidence_ids": [
+              "ev-9d333f89c250-0001-0001"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The Court reversed the Court of Appeals judgment and remanded the case, holding that \u00a7\u202f113(f)(3)(B) permits contribution only after a party settles a CERCLA\u2011specific liability."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T06:34:13.801168Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9d333f89c250927d1987bbf1c9318ed8c17199d88cf09447fb6882bee30910fa",
+      "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+            "evidence_ids": [
+              "ev-bfb527815e38-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the United States\u2019 position improperly imports the term \u201cunder CERCLA\u201d into Section\u202f113 while the case is brought under Section\u202f107."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+            "evidence_ids": [
+              "ev-bfb527815e38-0000-0007"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "Justice Sotomayor questioned whether the Court had resolved the claims rather than the liability."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+            "evidence_ids": [
+              "ev-bfb527815e38-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked for clarification on the preemptive effect of the government\u2019s position for state contribution laws."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+            "evidence_ids": [
+              "ev-bfb527815e38-0001-0003"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas inquired whether a CERCLA recovery could be sought for penalties under other environmental provisions."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+            "evidence_ids": [
+              "ev-bfb527815e38-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked why the source of an activity should matter for determining whether a \u201cresponse action\u201d is CERCLA\u2011specific."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9d333f89c250927d1987bbf1c9318ed8c17199d88cf09447fb6882bee30910fa",
+            "evidence_ids": [
+              "ev-9d333f89c250-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Territory of Guam and the United States dispute liability for environmental hazards at the Ordot Dump, a site built by the Navy in the 1940s where both parties have allegedly deposited waste."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9d333f89c250927d1987bbf1c9318ed8c17199d88cf09447fb6882bee30910fa",
+            "evidence_ids": [
+              "ev-9d333f89c250-0001-0001"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The Court held that the natural reading of \u00a7\u202f113(f)(3)(B) limits a party\u2019s right to seek contribution under CERCLA to situations where the party has settled a CERCLA\u2011specific liability, and therefore reversed the Court of Appeals judgment and remanded for further proceedings."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+              "evidence_ids": [
+                "ev-bfb527815e38-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner, guam argues that the United States is trying to steer the cleanup away from CERCLA and sue Guam under the Clean Water Act to avoid its own liability."
+        }
+      ],
+      "heading": "Territory of Guam (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "9d333f89c250927d1987bbf1c9318ed8c17199d88cf09447fb6882bee30910fa",
+              "evidence_ids": [
+                "ev-9d333f89c250-0000-0004"
+              ],
+              "pages": {
+                "end": 10,
+                "start": 10
+              }
+            },
+            {
+              "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+              "evidence_ids": [
+                "ev-bfb527815e38-0002-0001"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "The United States argues that remedial measures taken under other environmental statutes can be considered CERCLA \u201cresponse actions.\u201d"
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "9d333f89c250927d1987bbf1c9318ed8c17199d88cf09447fb6882bee30910fa",
+              "evidence_ids": [
+                "ev-9d333f89c250-0001-0000"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "The United States contends that \u00a7\u202f113(f)(3)(B) already permits contribution after any civil action under \u00a7\u00a7\u202f106 and\u202f107, making an additional reading redundant."
+        }
+      ],
+      "heading": "United States (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9d333f89c250927d1987bbf1c9318ed8c17199d88cf09447fb6882bee30910fa",
+      "evidence_ids": [
+        "ev-9d333f89c250-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "9d333f89c250927d1987bbf1c9318ed8c17199d88cf09447fb6882bee30910fa",
+      "evidence_ids": [
+        "ev-9d333f89c250-0001-0001"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "9d333f89c250927d1987bbf1c9318ed8c17199d88cf09447fb6882bee30910fa",
+      "evidence_ids": [
+        "ev-9d333f89c250-0000-0004"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 10
+      }
+    },
+    {
+      "document_hash": "9d333f89c250927d1987bbf1c9318ed8c17199d88cf09447fb6882bee30910fa",
+      "evidence_ids": [
+        "ev-9d333f89c250-0001-0000"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+      "evidence_ids": [
+        "ev-bfb527815e38-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+      "evidence_ids": [
+        "ev-bfb527815e38-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+      "evidence_ids": [
+        "ev-bfb527815e38-0000-0007"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    },
+    {
+      "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+      "evidence_ids": [
+        "ev-bfb527815e38-0001-0002"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+      "evidence_ids": [
+        "ev-bfb527815e38-0001-0003"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 37
+      }
+    },
+    {
+      "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+      "evidence_ids": [
+        "ev-bfb527815e38-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "bfb527815e386b669231b2a817dca41453430433818eadfcdd7888e85dd5d945",
+      "evidence_ids": [
+        "ev-bfb527815e38-0002-0001"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T06:39:16.907973Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

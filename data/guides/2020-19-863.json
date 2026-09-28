@@ -1,0 +1,532 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+            "evidence_ids": [
+              "ev-52e1c2d11acf-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The government ordered the removal of petitioner Agusto Niz\u2011Chavez and sent him a first document with the charges, followed two months later by a second document giving the time and place of his hearing."
+      },
+      {
+        "attribution": "Justice KAVANAUGH",
+        "citations": [
+          {
+            "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+            "evidence_ids": [
+              "ev-dd9c73c93a20-0001-0004"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "According to Justice KAVANAUGH, the Court asked whether the written notice required by \u00a7\u202f1229(a) was satisfied by the two documents that the government had sent."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-863",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+            "evidence_ids": [
+              "ev-52e1c2d11acf-0001-0000"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The majority held that interpreting the phrase \u201ca notice to appear\u201d to require a single notice means the statute mandates one written document, not multiple."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+            "evidence_ids": [
+              "ev-52e1c2d11acf-0002-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          },
+          {
+            "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+            "evidence_ids": [
+              "ev-52e1c2d11acf-0003-0001"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          },
+          {
+            "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+            "evidence_ids": [
+              "ev-52e1c2d11acf-0003-0002"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh dissented, arguing that the statutory phrase \u201cwritten notice\u201d does not require a single document and that the Court\u2019s decision will not meaningfully benefit non\u2011citizens while imposing significant costs on the immigration system."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T04:36:00.819861Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+      "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice KAVANAUGH",
+        "citations": [
+          {
+            "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+            "evidence_ids": [
+              "ev-dd9c73c93a20-0001-0004"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked why the case does not end if the client received written notice of everything required by \u00a7\u202f1229(a)."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+            "evidence_ids": [
+              "ev-dd9c73c93a20-0003-0002"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh sought clarification on whether, if the immigration judge rejected cancellation of removal, the removal would still be discretionary rather than mandatory."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+            "evidence_ids": [
+              "ev-dd9c73c93a20-0003-0005"
+            ],
+            "pages": {
+              "end": 73,
+              "start": 72
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether DHS could issue notices to appear with estimated dates after a non\u2011citizen is already in detention."
+      }
+    ],
+    "heading": "Oral Argument Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+            "evidence_ids": [
+              "ev-52e1c2d11acf-0001-0000"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The Supreme Court held that the phrase \u201cnotice to appear\u201d in the immigration statute requires a single written notice document, not multiple documents."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+            "evidence_ids": [
+              "ev-52e1c2d11acf-0001-0000"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The case turned on how the statutory language affects whether a non\u2011citizen receives proper notice for cancellation\u2011of\u2011removal eligibility."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+              "evidence_ids": [
+                "ev-52e1c2d11acf-0001-0002"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            },
+            {
+              "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+              "evidence_ids": [
+                "ev-52e1c2d11acf-0001-0003"
+              ],
+              "pages": {
+                "end": 17,
+                "start": 17
+              }
+            }
+          ],
+          "text": "The government argues that the statute does not contemplate multiple documents and that requiring a single notice would unfairly limit its ability to provide timely hearing information."
+        },
+        {
+          "attribution": "David Zimmer",
+          "citations": [
+            {
+              "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+              "evidence_ids": [
+                "ev-dd9c73c93a20-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "Attorney David Zimmer argues that the statutory text and the IIRIRA changes make clear that a \u201cnotice to appear\u201d is a specific document, not an abstract concept."
+        }
+      ],
+      "heading": "Government",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+              "evidence_ids": [
+                "ev-dd9c73c93a20-0002-0000"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            }
+          ],
+          "text": "The petitioner argues that EOIR issues hearing notices as the adjudicator of the charges, and that combining the NTA form with the hearing notice would be administratively difficult for DHS."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. YANG (Respondent)",
+          "citations": [
+            {
+              "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+              "evidence_ids": [
+                "ev-dd9c73c93a20-0001-0009"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to Mr. YANG (Respondent), according to Mr. YANG (Respondent), mr. Yang, citing the Board of Immigration Appeals, maintains that the written\u2011notice requirement can be satisfied by two documents: an NTA form and a separate hearing notice."
+        },
+        {
+          "attribution": "Mr. YANG",
+          "citations": [
+            {
+              "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+              "evidence_ids": [
+                "ev-dd9c73c93a20-0003-0001"
+              ],
+              "pages": {
+                "end": 64,
+                "start": 64
+              }
+            }
+          ],
+          "text": "According to Mr. YANG, he also argued that the essential question is whether notice is adequately conveyed, noting prior case law where a missing signature did not invalidate a notice."
+        }
+      ],
+      "heading": "Respondent (Mr. Yang)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+      "evidence_ids": [
+        "ev-52e1c2d11acf-0000-0000",
+        "ev-52e1c2d11acf-0000-0004"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+      "evidence_ids": [
+        "ev-52e1c2d11acf-0000-0003"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+      "evidence_ids": [
+        "ev-dd9c73c93a20-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+      "evidence_ids": [
+        "ev-dd9c73c93a20-0001-0004"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+      "evidence_ids": [
+        "ev-dd9c73c93a20-0001-0009"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+      "evidence_ids": [
+        "ev-dd9c73c93a20-0002-0000"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+      "evidence_ids": [
+        "ev-dd9c73c93a20-0003-0001"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 64
+      }
+    },
+    {
+      "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+      "evidence_ids": [
+        "ev-dd9c73c93a20-0003-0002"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+      "evidence_ids": [
+        "ev-dd9c73c93a20-0003-0005"
+      ],
+      "pages": {
+        "end": 73,
+        "start": 72
+      }
+    },
+    {
+      "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+      "evidence_ids": [
+        "ev-dd9c73c93a20-0003-0004"
+      ],
+      "pages": {
+        "end": 76,
+        "start": 76
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T04:43:08.913217Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+            "evidence_ids": [
+              "ev-52e1c2d11acf-0001-0000"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          },
+          {
+            "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+            "evidence_ids": [
+              "ev-52e1c2d11acf-0003-0002"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "The Court\u2019s interpretation determines whether a non\u2011citizen can satisfy the written\u2011notice requirement with a single document or with multiple documents, directly affecting eligibility for cancellation of removal."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "dd9c73c93a20ee79412ce7b1086ff968685e3e4a30812095f8302ee4e2dd7ea7",
+            "evidence_ids": [
+              "ev-dd9c73c93a20-0003-0004"
+            ],
+            "pages": {
+              "end": 76,
+              "start": 76
+            }
+          }
+        ],
+        "text": "Congressional intent, as reflected in the statutory text, requires written notice to be in writing and served personally or by mail, underscoring the importance of the notice\u2019s form."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "52e1c2d11acf20ed9b9c9c493251eace454892f9c420d41a236199b7ae3d5150",
+            "evidence_ids": [
+              "ev-52e1c2d11acf-0003-0001"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, the dissent warns that the decision may increase administrative costs and provide little benefit to non\u2011citizens who have already received notice."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

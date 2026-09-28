@@ -1,0 +1,519 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "fa24f9592f389f71ce6f887329d8930a2ee14ba12001b9947c660c96a9b654a8",
+            "evidence_ids": [
+              "ev-fa24f9592f38-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, the question presented is whether the pursuit of a fleeing misdemeanor suspect always qualifies as an exigent circumstance."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-20-18",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fa24f9592f389f71ce6f887329d8930a2ee14ba12001b9947c660c96a9b654a8",
+            "evidence_ids": [
+              "ev-fa24f9592f38-0001-0007"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The majority held that the common law does not support a categorical rule allowing warrantless home entry when a misdemeanant fees. It had a rule of that kind for felonies. But much as in Welsh centuries later, the common law made distinctions based on \u201cthe gravity of the underlying offense.\u201d"
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fa24f9592f389f71ce6f887329d8930a2ee14ba12001b9947c660c96a9b654a8",
+            "evidence_ids": [
+              "ev-fa24f9592f38-0001-0002"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The Court rejected the amicus\u2019s broad view that any suspect, felony or misdemeanor, could be entered under a categorical hot\u2011pursuit rule."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fa24f9592f389f71ce6f887329d8930a2ee14ba12001b9947c660c96a9b654a8",
+            "evidence_ids": [
+              "ev-fa24f9592f38-0001-0007"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Court noted that common law historically distinguished the scope of hot\u2011pursuit based on the gravity of the underlying offense."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "fa24f9592f389f71ce6f887329d8930a2ee14ba12001b9947c660c96a9b654a8",
+            "evidence_ids": [
+              "ev-fa24f9592f38-0002-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          },
+          {
+            "document_hash": "fa24f9592f389f71ce6f887329d8930a2ee14ba12001b9947c660c96a9b654a8",
+            "evidence_ids": [
+              "ev-fa24f9592f38-0003-0000"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh\u2019s concurrence clarified that an exigent circumstance includes a risk of escape, destruction of evidence, or harm to others, and that hot\u2011pursuit often gives rise to multiple exigencies."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T05:33:00.447522Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+      "fa24f9592f389f71ce6f887329d8930a2ee14ba12001b9947c660c96a9b654a8"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+          "evidence_ids": [
+            "ev-5b03da1a84ab-0002-0010"
+          ],
+          "pages": {
+            "end": 62,
+            "start": 62
+          }
+        }
+      ],
+      "definition": "The hot\u2011pursuit exception justifies warrantless home entry in a narrow class of cases where a suspect tries to thwart a lawful public arrest by outrunning an officer to a dwelling; it does not depend on the classification of the underlying offense.",
+      "term": "hot pursuit"
+    }
+  ],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+            "evidence_ids": [
+              "ev-5b03da1a84ab-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether allowing police to \u201cjust go ahead and knock on the door\u201d would create a terribly dangerous situation."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+            "evidence_ids": [
+              "ev-5b03da1a84ab-0000-0003"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether someone who disobeys an officer\u2019s orders or resists arrest could be analogized to an escapee under common law."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+            "evidence_ids": [
+              "ev-5b03da1a84ab-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned whether the pursuit of a fleeing misdemeanor suspect always qualifies as an exigent circumstance."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+            "evidence_ids": [
+              "ev-5b03da1a84ab-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether a categorical rule for felonies would create an absurd incentive for states to elevate ordinary police\u2011lights violations to felonies."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+            "evidence_ids": [
+              "ev-5b03da1a84ab-0002-0007"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          },
+          {
+            "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+            "evidence_ids": [
+              "ev-5b03da1a84ab-0002-0008"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether exigent circumstances could justify a warrantless entry into a home without a warrant."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+            "evidence_ids": [
+              "ev-5b03da1a84ab-0004-0003"
+            ],
+            "pages": {
+              "end": 87,
+              "start": 87
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether resisting arrest could be considered a breach of the peace at common law."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+            "evidence_ids": [
+              "ev-5b03da1a84ab-0004-0005"
+            ],
+            "pages": {
+              "end": 98,
+              "start": 98
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether the rule would apply to an IRS officer chasing a tax\u2011evasion suspect into a house."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+            "evidence_ids": [
+              "ev-5b03da1a84ab-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          },
+          {
+            "document_hash": "fa24f9592f389f71ce6f887329d8930a2ee14ba12001b9947c660c96a9b654a8",
+            "evidence_ids": [
+              "ev-fa24f9592f38-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Supreme Court heard oral argument in this case on February 24, 2021, and issued its decision on June 23, 2021."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fa24f9592f389f71ce6f887329d8930a2ee14ba12001b9947c660c96a9b654a8",
+            "evidence_ids": [
+              "ev-fa24f9592f38-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+            "evidence_ids": [
+              "ev-5b03da1a84ab-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The case centered on whether the Fourth Amendment \u201chot\u2011pursuit\u201d exception creates a categorical rule that permits warrantless entry into a home when police chase a fleeing misdemeanor suspect."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Jeffrey L. Fisher",
+          "citations": [
+            {
+              "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+              "evidence_ids": [
+                "ev-5b03da1a84ab-0000-0002"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Jeffrey L. Fisher, petitioner argues that there is no precedent for a categorical \u201cpursuit rule\u201d and that police may not enter a home without a magistrate\u2019s approval unless an emergency exists."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Harbourt",
+          "citations": [
+            {
+              "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+              "evidence_ids": [
+                "ev-5b03da1a84ab-0002-0000"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            },
+            {
+              "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+              "evidence_ids": [
+                "ev-5b03da1a84ab-0002-0001"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Mr. Harbourt, respondent contends that limiting the hot\u2011pursuit exception to felonies does not forbid warrantless entries in misdemeanor cases; it merely requires a case\u2011specific basis for entry."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Amanda K. Rice",
+          "citations": [
+            {
+              "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+              "evidence_ids": [
+                "ev-5b03da1a84ab-0002-0010"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 62
+              }
+            }
+          ],
+          "text": "According to Amanda K. Rice, amicus counsel (Amanda K. Rice) defines the hot\u2011pursuit exception as a narrow rule that justifies warrantless home entry only when a suspect tries to thwart a lawful public arrest by outrunning an officer, and it does not depend on the classification of the underlying offense."
+        },
+        {
+          "attribution": "Constitutional Accountability Center",
+          "citations": [
+            {
+              "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+              "evidence_ids": [
+                "ev-5b03da1a84ab-0001-0003"
+              ],
+              "pages": {
+                "end": 29,
+                "start": 29
+              }
+            }
+          ],
+          "text": "According to Constitutional Accountability Center, the Constitutional Accountability Center amicus seeks guidance from common\u2011law history to articulate a rule on warrantless entry."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+              "evidence_ids": [
+                "ev-5b03da1a84ab-0004-0007"
+              ],
+              "pages": {
+                "end": 91,
+                "start": 91
+              }
+            },
+            {
+              "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+              "evidence_ids": [
+                "ev-5b03da1a84ab-0004-0009"
+              ],
+              "pages": {
+                "end": 95,
+                "start": 95
+              }
+            }
+          ],
+          "text": "According to United States, the United States amicus supports affirmance and notes that common law does not fully answer the question presented."
+        }
+      ],
+      "heading": "Amicus",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5b03da1a84ab108d1c96f5f4dc4c7ab6f0203447eca52e5cfd3874c8b4719fd4",
+      "evidence_ids": [
+        "ev-5b03da1a84ab-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "fa24f9592f389f71ce6f887329d8930a2ee14ba12001b9947c660c96a9b654a8",
+      "evidence_ids": [
+        "ev-fa24f9592f38-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T05:43:41.676247Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

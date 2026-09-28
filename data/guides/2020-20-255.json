@@ -1,0 +1,371 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "97b3a7a938d2e5b7c4c497fe9c0b15b24bda6f0d6aa663adb3f257ee69f974ba",
+            "evidence_ids": [
+              "ev-97b3a7a938d2-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "B.L. posted messages expressing frustration with her school and cheerleading squad, using vulgar language and gestures."
+      },
+      {
+        "attribution": "B. L. (petitioner)",
+        "citations": [
+          {
+            "document_hash": "97b3a7a938d2e5b7c4c497fe9c0b15b24bda6f0d6aa663adb3f257ee69f974ba",
+            "evidence_ids": [
+              "ev-97b3a7a938d2-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to B. L. (petitioner), according to B. L. (petitioner), according to B. L. (petitioner), according to B. L. (petitioner), B.L. and her parents sued in federal court, claiming that punishing her speech violated the First Amendment."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "97b3a7a938d2e5b7c4c497fe9c0b15b24bda6f0d6aa663adb3f257ee69f974ba",
+            "evidence_ids": [
+              "ev-97b3a7a938d2-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The district court granted an injunction ordering the school to reinstate B.L. to the cheerleading team."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "dea4cd024cd1c96f3addaa940136f9c5229d89b18fc1106a7ee2a24a5d0525f8",
+            "evidence_ids": [
+              "ev-dea4cd024cd1-0001-0000",
+              "ev-dea4cd024cd1-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "The Supreme Court was asked whether the Tinker standard applies to off\u2011campus speech."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-20-255",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "97b3a7a938d2e5b7c4c497fe9c0b15b24bda6f0d6aa663adb3f257ee69f974ba",
+            "evidence_ids": [
+              "ev-97b3a7a938d2-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The majority identified three features of off\u2011campus speech that often, though not always, allow schools to regulate that speech."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T05:49:58.750375Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "97b3a7a938d2e5b7c4c497fe9c0b15b24bda6f0d6aa663adb3f257ee69f974ba",
+      "dea4cd024cd1c96f3addaa940136f9c5229d89b18fc1106a7ee2a24a5d0525f8"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "dea4cd024cd1c96f3addaa940136f9c5229d89b18fc1106a7ee2a24a5d0525f8",
+            "evidence_ids": [
+              "ev-dea4cd024cd1-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, Justice Kagan questioned whether the petition\u2019s reliance on Tinker required a version of Tinker not adopted by lower courts."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "dea4cd024cd1c96f3addaa940136f9c5229d89b18fc1106a7ee2a24a5d0525f8",
+            "evidence_ids": [
+              "ev-dea4cd024cd1-0001-0005"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether political speech opposing a school referendum should be treated as political speech."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "dea4cd024cd1c96f3addaa940136f9c5229d89b18fc1106a7ee2a24a5d0525f8",
+            "evidence_ids": [
+              "ev-dea4cd024cd1-0002-0000"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether material disruption could be localized to a team and still justify discipline."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "dea4cd024cd1c96f3addaa940136f9c5229d89b18fc1106a7ee2a24a5d0525f8",
+            "evidence_ids": [
+              "ev-dea4cd024cd1-0004-0000",
+              "ev-dea4cd024cd1-0004-0001"
+            ],
+            "pages": {
+              "end": 83,
+              "start": 83
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked for clarification about the aggressiveness of the speech in question."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "97b3a7a938d2e5b7c4c497fe9c0b15b24bda6f0d6aa663adb3f257ee69f974ba",
+            "evidence_ids": [
+              "ev-97b3a7a938d2-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The majority identified three features of off\u2011campus speech that often, though not always, allow schools to regulate that speech."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "B. L. (petitioner)",
+          "citations": [
+            {
+              "document_hash": "97b3a7a938d2e5b7c4c497fe9c0b15b24bda6f0d6aa663adb3f257ee69f974ba",
+              "evidence_ids": [
+                "ev-97b3a7a938d2-0000-0001"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to B. L. (petitioner), according to B. L. (petitioner), according to B. L. (petitioner), according to B. L. (petitioner), punishing B.L. for her off\u2011campus speech violates the First Amendment."
+        }
+      ],
+      "heading": "Petitioner (B.L.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mahany Area School District",
+          "citations": [
+            {
+              "document_hash": "97b3a7a938d2e5b7c4c497fe9c0b15b24bda6f0d6aa663adb3f257ee69f974ba",
+              "evidence_ids": [
+                "ev-97b3a7a938d2-0003-0002"
+              ],
+              "pages": {
+                "end": 32,
+                "start": 32
+              }
+            }
+          ],
+          "text": "According to Mahany Area School District, the school claimed the messages upset some students, caused negativity, and could impact the school environment."
+        }
+      ],
+      "heading": "Respondent (Mahany Area School District)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Malcolm L. STEWART",
+          "citations": [
+            {
+              "document_hash": "dea4cd024cd1c96f3addaa940136f9c5229d89b18fc1106a7ee2a24a5d0525f8",
+              "evidence_ids": [
+                "ev-dea4cd024cd1-0001-0002"
+              ],
+              "pages": {
+                "end": 39,
+                "start": 39
+              }
+            }
+          ],
+          "text": "According to Malcolm L. STEWART, the amicus argued that under the Third Circuit\u2019s approach, B.L. could send disparaging snaps from home about coaches and teammates."
+        }
+      ],
+      "heading": "Amicus (U.S. Department of Justice)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "97b3a7a938d2e5b7c4c497fe9c0b15b24bda6f0d6aa663adb3f257ee69f974ba",
+      "evidence_ids": [
+        "ev-97b3a7a938d2-0000-0000",
+        "ev-97b3a7a938d2-0000-0001",
+        "ev-97b3a7a938d2-0000-0002",
+        "ev-97b3a7a938d2-0001-0000"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "dea4cd024cd1c96f3addaa940136f9c5229d89b18fc1106a7ee2a24a5d0525f8",
+      "evidence_ids": [
+        "ev-dea4cd024cd1-0000-0000",
+        "ev-dea4cd024cd1-0000-0001",
+        "ev-dea4cd024cd1-0001-0000",
+        "ev-dea4cd024cd1-0001-0001",
+        "ev-dea4cd024cd1-0001-0002",
+        "ev-dea4cd024cd1-0001-0003",
+        "ev-dea4cd024cd1-0002-0000",
+        "ev-dea4cd024cd1-0002-0001",
+        "ev-dea4cd024cd1-0003-0000",
+        "ev-dea4cd024cd1-0003-0001",
+        "ev-dea4cd024cd1-0003-0002",
+        "ev-dea4cd024cd1-0003-0003",
+        "ev-dea4cd024cd1-0003-0004",
+        "ev-dea4cd024cd1-0004-0000",
+        "ev-dea4cd024cd1-0004-0001",
+        "ev-dea4cd024cd1-0005-0001",
+        "ev-dea4cd024cd1-0005-0002",
+        "ev-dea4cd024cd1-0005-0005",
+        "ev-dea4cd024cd1-0005-0006",
+        "ev-dea4cd024cd1-0005-0007",
+        "ev-dea4cd024cd1-0005-0009"
+      ],
+      "pages": {
+        "end": 115,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T05:59:39.638028Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

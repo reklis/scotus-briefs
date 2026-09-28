@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2020-19-930",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": false,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that the case will affect future rulemaking practices is not directly supported by the supplied evidence.",
+    "Opinion_distinction check failed: the future\u2011rulemaking impact claim presents an opinion/prediction as a factual statement without clearly marking it as an opinion.",
+    "Overstatement check failed: the statement that the decision will reinforce APA compliance and shape future rulemaking overstates what the evidence actually says."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.71,
+    "neutrality": 0.92,
+    "readability": 0.86,
+    "restraint": 0.81,
+    "traceability": 0.84
+  }
+}

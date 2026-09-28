@@ -1,0 +1,501 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+            "evidence_ids": [
+              "ev-27dd16f9c708-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case was argued on January\u202f11,\u202f2021 and decided on June\u202f29,\u202f2021."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-897",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+            "evidence_ids": [
+              "ev-27dd16f9c708-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+            "evidence_ids": [
+              "ev-27dd16f9c708-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The majority held that \u00a7\u202f1231, not \u00a7\u202f1226, governs respondents\u2019 detention and that they are not entitled to bond hearings while seeking withholding of removal."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+            "evidence_ids": [
+              "ev-27dd16f9c708-0003-0000",
+              "ev-27dd16f9c708-0003-0001",
+              "ev-27dd16f9c708-0003-0002",
+              "ev-27dd16f9c708-0003-0003",
+              "ev-27dd16f9c708-0003-0004"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Breyer dissented, arguing that \u00a7\u202f1231 should not be read to deny bond hearings to aliens seeking withholding\u2011only relief and that \u00a7\u202f1226 should apply instead."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T04:43:08.928731Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+      "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+            "evidence_ids": [
+              "ev-f19b7e17b04e-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked about the possibility of judicial review of the withholding\u2011only proceedings under \u00a7\u202f1252."
+      },
+      {
+        "attribution": "Justice BARRETT",
+        "citations": [
+          {
+            "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+            "evidence_ids": [
+              "ev-f19b7e17b04e-0001-0002"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether post\u2011order custody review regulations automatically apply after the 90\u2011day removal period."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+            "evidence_ids": [
+              "ev-f19b7e17b04e-0002-0002"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice Alito, Justice Alito questioned how the argument depended on statistics about the feasibility of removal to a third country."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+            "evidence_ids": [
+              "ev-f19b7e17b04e-0002-0003"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the Government\u2019s reading raised due\u2011process concerns."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+            "evidence_ids": [
+              "ev-27dd16f9c708-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+            "evidence_ids": [
+              "ev-27dd16f9c708-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The Supreme Court held that \u00a7\u202f1231, not \u00a7\u202f1226, governs the detention of aliens subject to reinstated orders of removal, meaning they are not entitled to bond hearings while pursuing withholding of removal."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+              "evidence_ids": [
+                "ev-27dd16f9c708-0000-0003"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "The Government opposed release, maintaining that because respondents were detained under \u00a7\u202f1231, not \u00a7\u202f1226, they were not entitled to bond hearings."
+        }
+      ],
+      "heading": "Government",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+              "evidence_ids": [
+                "ev-27dd16f9c708-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Respondents contended that \u00a7\u202f1231 ceases to apply when the alien pursues withholding\u2011only relief."
+        }
+      ],
+      "heading": "Respondents",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Vivek Suri (Petitioners' counsel)",
+          "citations": [
+            {
+              "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+              "evidence_ids": [
+                "ev-f19b7e17b04e-0000-0000"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Vivek Suri (Petitioners' counsel), according to Vivek Suri (Petitioners' counsel), petitioners argued that respondents are detained under \u00a7\u202f1231, not \u00a7\u202f1226, because the text of \u00a7\u202f1231 repeatedly refers to an order of removal."
+        },
+        {
+          "attribution": "Vivek Suri (Petitioners' counsel)",
+          "citations": [
+            {
+              "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+              "evidence_ids": [
+                "ev-f19b7e17b04e-0000-0002"
+              ],
+              "pages": {
+                "end": 17,
+                "start": 17
+              }
+            }
+          ],
+          "text": "According to Vivek Suri (Petitioners' counsel), according to Vivek Suri (Petitioners' counsel), they noted that the supervised release conditions in \u00a7\u202f1231(a)(3) require periodic appearances before an immigration officer and compliance with medical examinations and conduct restrictions."
+        },
+        {
+          "attribution": "Vivek Suri (Petitioners' counsel)",
+          "citations": [
+            {
+              "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+              "evidence_ids": [
+                "ev-f19b7e17b04e-0000-0004"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "According to Vivek Suri (Petitioners' counsel), according to Vivek Suri (Petitioners' counsel), they argued that the 90\u2011day removal period in \u00a7\u202f1231(a)(1)(A) should not preclude detention when withholding\u2011only proceedings last longer."
+        }
+      ],
+      "heading": "Petitioners\u2019 Counsel (Vivek Suri)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+      "evidence_ids": [
+        "ev-27dd16f9c708-0000-0001"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+      "evidence_ids": [
+        "ev-27dd16f9c708-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+      "evidence_ids": [
+        "ev-27dd16f9c708-0000-0002"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+      "evidence_ids": [
+        "ev-27dd16f9c708-0000-0000"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+      "evidence_ids": [
+        "ev-27dd16f9c708-0001-0000"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+      "evidence_ids": [
+        "ev-27dd16f9c708-0003-0000",
+        "ev-27dd16f9c708-0003-0001",
+        "ev-27dd16f9c708-0003-0002",
+        "ev-27dd16f9c708-0003-0003",
+        "ev-27dd16f9c708-0003-0004"
+      ],
+      "pages": {
+        "end": 37,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+      "evidence_ids": [
+        "ev-f19b7e17b04e-0000-0000"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+      "evidence_ids": [
+        "ev-f19b7e17b04e-0000-0002"
+      ],
+      "pages": {
+        "end": 17,
+        "start": 17
+      }
+    },
+    {
+      "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+      "evidence_ids": [
+        "ev-f19b7e17b04e-0000-0004"
+      ],
+      "pages": {
+        "end": 14,
+        "start": 14
+      }
+    },
+    {
+      "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+      "evidence_ids": [
+        "ev-f19b7e17b04e-0001-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+      "evidence_ids": [
+        "ev-f19b7e17b04e-0001-0002"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+      "evidence_ids": [
+        "ev-f19b7e17b04e-0002-0002"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "f19b7e17b04e7cdedc4943e01c8a0f15ef697b7c638a50382c3742c2dada76fa",
+      "evidence_ids": [
+        "ev-f19b7e17b04e-0002-0003"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T04:53:43.623304Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "27dd16f9c7089148e6a9cea4eaf12ff2edc2c91a229684885329cf93cf354270",
+            "evidence_ids": [
+              "ev-27dd16f9c708-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The decision clarifies that aliens in withholding\u2011only proceedings are not entitled to bond hearings, shaping how immigration detention is applied during such proceedings."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

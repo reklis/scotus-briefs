@@ -1,0 +1,492 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+            "evidence_ids": [
+              "ev-0ee6bc7a8465-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, the petition seeks an injunction against enforcement of the notice, raising the question whether the requested relief is a tax\u2011related injunction or a technical matter."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c29edfc66eaffdc83532e25c1b90d2668fe5b75eb7feb4add0d57ea9cfed3557",
+            "evidence_ids": [
+              "ev-c29edfc66eaf-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+            "evidence_ids": [
+              "ev-0ee6bc7a8465-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The Court must decide whether the civil penalties are tax penalties and whether the IRS complied with the APA when issuing the notice."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-930",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c29edfc66eaffdc83532e25c1b90d2668fe5b75eb7feb4add0d57ea9cfed3557",
+            "evidence_ids": [
+              "ev-c29edfc66eaf-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The Court held that civil penalties for violating Notice\u202f16\u201166 are tax penalties and must be treated as such."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T04:53:43.644515Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "c29edfc66eaffdc83532e25c1b90d2668fe5b75eb7feb4add0d57ea9cfed3557"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+            "evidence_ids": [
+              "ev-0ee6bc7a8465-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the petition seeks an injunction against enforcement of the notice or a technical matter."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+            "evidence_ids": [
+              "ev-0ee6bc7a8465-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch raised concern that interpreting the Anti\u2011Injunction Act and Tax Injunction Act in parallel could affect state sovereign interests."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+            "evidence_ids": [
+              "ev-0ee6bc7a8465-0001-0001"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether the challenge targets the regulatory portion of the tax rule rather than enforcement of the liability itself."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+            "evidence_ids": [
+              "ev-0ee6bc7a8465-0002-0001"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned how judicial review can be obtained without paying the tax\u2011like penalty."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+            "evidence_ids": [
+              "ev-0ee6bc7a8465-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito noted that willful failure to comply with the reporting requirement is a crime, questioning how review is possible without a criminal violation."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+            "evidence_ids": [
+              "ev-0ee6bc7a8465-0003-0003"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts concluded the oral argument, stating that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Heritage Reporting Corporation",
+        "citations": [
+          {
+            "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+            "evidence_ids": [
+              "ev-0ee6bc7a8465-0001-0005"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "The notice imposes a burdensome reporting regime on an entire industry, labeling transactions as reportable and making it harder to attract clients."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "CIC Services",
+          "citations": [
+            {
+              "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+              "evidence_ids": [
+                "ev-0ee6bc7a8465-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            },
+            {
+              "document_hash": "c29edfc66eaffdc83532e25c1b90d2668fe5b75eb7feb4add0d57ea9cfed3557",
+              "evidence_ids": [
+                "ev-c29edfc66eaf-0000-0002"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "The IRS violated the Administrative Procedure Act by issuing Notice\u202f16\u201166 without notice\u2011and\u2011comment rulemaking."
+        }
+      ],
+      "heading": "CIC Services, LLC (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Internal Revenue Service (Respondent)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "evidence_ids": [
+        "ev-0ee6bc7a8465-0000-0005"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "evidence_ids": [
+        "ev-0ee6bc7a8465-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "evidence_ids": [
+        "ev-0ee6bc7a8465-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "evidence_ids": [
+        "ev-0ee6bc7a8465-0001-0000"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "evidence_ids": [
+        "ev-0ee6bc7a8465-0001-0001"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "evidence_ids": [
+        "ev-0ee6bc7a8465-0001-0005"
+      ],
+      "pages": {
+        "end": 31,
+        "start": 31
+      }
+    },
+    {
+      "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "evidence_ids": [
+        "ev-0ee6bc7a8465-0001-0004"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "evidence_ids": [
+        "ev-0ee6bc7a8465-0002-0001"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "evidence_ids": [
+        "ev-0ee6bc7a8465-0002-0002"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "evidence_ids": [
+        "ev-0ee6bc7a8465-0003-0001"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 65
+      }
+    },
+    {
+      "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "evidence_ids": [
+        "ev-0ee6bc7a8465-0003-0002"
+      ],
+      "pages": {
+        "end": 69,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+      "evidence_ids": [
+        "ev-0ee6bc7a8465-0003-0003"
+      ],
+      "pages": {
+        "end": 71,
+        "start": 71
+      }
+    },
+    {
+      "document_hash": "c29edfc66eaffdc83532e25c1b90d2668fe5b75eb7feb4add0d57ea9cfed3557",
+      "evidence_ids": [
+        "ev-c29edfc66eaf-0000-0007"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "c29edfc66eaffdc83532e25c1b90d2668fe5b75eb7feb4add0d57ea9cfed3557",
+      "evidence_ids": [
+        "ev-c29edfc66eaf-0000-0005"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "c29edfc66eaffdc83532e25c1b90d2668fe5b75eb7feb4add0d57ea9cfed3557",
+      "evidence_ids": [
+        "ev-c29edfc66eaf-0000-0002"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T05:06:48.627529Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim that the case will affect future rulemaking practices is not directly supported by the supplied evidence.",
+      "Opinion_distinction check failed: the future\u2011rulemaking impact claim presents an opinion/prediction as a factual statement without clearly marking it as an opinion.",
+      "Overstatement check failed: the statement that the decision will reinforce APA compliance and shape future rulemaking overstates what the evidence actually says."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c29edfc66eaffdc83532e25c1b90d2668fe5b75eb7feb4add0d57ea9cfed3557",
+            "evidence_ids": [
+              "ev-c29edfc66eaf-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Classifying the penalties as tax penalties subjects them to tax\u2011law enforcement."
+      },
+      {
+        "attribution": "CIC Services",
+        "citations": [
+          {
+            "document_hash": "0ee6bc7a84652d28057534b3637f2328cde2c021f434ba7b7378bd956fa13de1",
+            "evidence_ids": [
+              "ev-0ee6bc7a8465-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to CIC Services, the case reinforces the requirement that federal agencies follow the Administrative Procedure Act when issuing regulations, affecting future rulemaking practices."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
