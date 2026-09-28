@@ -1,0 +1,392 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-1641",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "27a67cc0da8009ca93fd46a3b69801429004ed193ea6870fd35b6664f0fc2aa4",
+            "evidence_ids": [
+              "ev-27a67cc0da80-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The Court concluded that the Marietta Plan does not differentiate the benefits it provides to ESRD patients versus other enrollees."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "27a67cc0da8009ca93fd46a3b69801429004ed193ea6870fd35b6664f0fc2aa4",
+            "evidence_ids": [
+              "ev-27a67cc0da80-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "Justice Kagan dissented, stating that Congress did not intend to permit the plan\u2019s approach and that the statute must be corrected."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T14:19:41.172226Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "27a67cc0da8009ca93fd46a3b69801429004ed193ea6870fd35b6664f0fc2aa4",
+      "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506",
+            "evidence_ids": [
+              "ev-f7fd77b06ae5-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Breyer asked, \u201cWhy does this not violate the statute from your point of view?\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506",
+            "evidence_ids": [
+              "ev-f7fd77b06ae5-0001-0003"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito expressed bafflement at the statutory language."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506",
+            "evidence_ids": [
+              "ev-f7fd77b06ae5-0003-0000"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Alito later asked, \u201cIs that vulnerable? Is that illegal in your view?\u201d"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506",
+            "evidence_ids": [
+              "ev-f7fd77b06ae5-0003-0002"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "Justice Breyer asked, \u201cWho are you going to compare it with?\u201d"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506",
+            "evidence_ids": [
+              "ev-f7fd77b06ae5-0004-0000"
+            ],
+            "pages": {
+              "end": 88,
+              "start": 88
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked, \u201cAre you finished with\u2014\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506",
+            "evidence_ids": [
+              "ev-f7fd77b06ae5-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "27a67cc0da8009ca93fd46a3b69801429004ed193ea6870fd35b6664f0fc2aa4",
+            "evidence_ids": [
+              "ev-27a67cc0da80-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The case concerns the Marietta Memorial Hospital Employee Health Benefit Plan (the \u201cMarietta Plan\u201d) and DaVita Inc. over whether the plan differentiates benefits for patients with end\u2011stage renal disease (ESRD) in violation of the Medicare Secondary Payer Act."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "27a67cc0da8009ca93fd46a3b69801429004ed193ea6870fd35b6664f0fc2aa4",
+            "evidence_ids": [
+              "ev-27a67cc0da80-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The Supreme Court held that the Marietta Plan does not differentiate the benefits it provides to ESRD patients versus other enrollees."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "27a67cc0da8009ca93fd46a3b69801429004ed193ea6870fd35b6664f0fc2aa4",
+            "evidence_ids": [
+              "ev-27a67cc0da80-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "Justice Kagan filed a dissent arguing that Congress did not intend to allow the plan\u2019s approach and that the statute should be fixed."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506",
+              "evidence_ids": [
+                "ev-f7fd77b06ae5-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "Petitioners argue that the Medicare Secondary Payer Act requires a group health plan to pay its benefits first for a 30\u2011month coordination period and not to consider Medicare eligibility or differentiate benefits based on an ESRD diagnosis."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506",
+              "evidence_ids": [
+                "ev-f7fd77b06ae5-0002-0001"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 61
+              }
+            }
+          ],
+          "text": "Respondents argue that differential treatment of outpatient renal dialysis is permissible because Congress recognized the unique, lifelong need of ESRD patients for dialysis."
+        }
+      ],
+      "heading": "Respondents",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "27a67cc0da8009ca93fd46a3b69801429004ed193ea6870fd35b6664f0fc2aa4",
+      "evidence_ids": [
+        "ev-27a67cc0da80-0000-0000",
+        "ev-27a67cc0da80-0000-0004",
+        "ev-27a67cc0da80-0000-0005",
+        "ev-27a67cc0da80-0001-0001"
+      ],
+      "pages": {
+        "end": 14,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506",
+      "evidence_ids": [
+        "ev-f7fd77b06ae5-0000-0001",
+        "ev-f7fd77b06ae5-0000-0002",
+        "ev-f7fd77b06ae5-0000-0004",
+        "ev-f7fd77b06ae5-0001-0000",
+        "ev-f7fd77b06ae5-0001-0003",
+        "ev-f7fd77b06ae5-0001-0002",
+        "ev-f7fd77b06ae5-0002-0001",
+        "ev-f7fd77b06ae5-0002-0002",
+        "ev-f7fd77b06ae5-0003-0000",
+        "ev-f7fd77b06ae5-0003-0002",
+        "ev-f7fd77b06ae5-0004-0000",
+        "ev-f7fd77b06ae5-0004-0001",
+        "ev-f7fd77b06ae5-0004-0002",
+        "ev-f7fd77b06ae5-0004-0003",
+        "ev-f7fd77b06ae5-0004-0004",
+        "ev-f7fd77b06ae5-0002-0004"
+      ],
+      "pages": {
+        "end": 94,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T14:27:08.398654Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506",
+            "evidence_ids": [
+              "ev-f7fd77b06ae5-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          },
+          {
+            "document_hash": "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506",
+            "evidence_ids": [
+              "ev-f7fd77b06ae5-0001-0002"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "If relief were granted, dialysis participants could see out\u2011of\u2011pocket costs rise dramatically, from roughly $96 per treatment to as much as $1,800 per treatment."
+      },
+      {
+        "attribution": "Matthew Guarnieri",
+        "citations": [
+          {
+            "document_hash": "f7fd77b06ae5ea33ab8418039e48f105dfdf2b10ab0898793d891003f71fd506",
+            "evidence_ids": [
+              "ev-f7fd77b06ae5-0002-0004"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 56
+            }
+          }
+        ],
+        "text": "The decision could increase overall Medicare spending and potentially reduce coverage options for ESRD patients."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

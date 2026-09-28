@@ -1,0 +1,317 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d697120ce3af1be9db27b7ede1aa75db495955868f9314a87d43b79accfe4189",
+            "evidence_ids": [
+              "ev-d697120ce3af-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "In 1987 Congress restored the Tribe\u2019s federal trust status and included a prohibition on any gaming activity that Texas law prohibits."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "b2bddc0e03890ddd83f12ea2586917ae74028ce68a99fe74a2563491c2278c05",
+            "evidence_ids": [
+              "ev-b2bddc0e0389-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioners, the case presented the question whether the Restoration Act subjects the Pueblo to Texas\u2019s time, place, and manner restrictions for games Texas does not flatly prohibit."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-493",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d697120ce3af1be9db27b7ede1aa75db495955868f9314a87d43b79accfe4189",
+            "evidence_ids": [
+              "ev-d697120ce3af-0002-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The Restoration Act bans as a matter of federal law on tribal lands only those gaming activities also banned in Texas."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T15:37:41.659181Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b2bddc0e03890ddd83f12ea2586917ae74028ce68a99fe74a2563491c2278c05",
+      "d697120ce3af1be9db27b7ede1aa75db495955868f9314a87d43b79accfe4189"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "b2bddc0e03890ddd83f12ea2586917ae74028ce68a99fe74a2563491c2278c05",
+            "evidence_ids": [
+              "ev-b2bddc0e0389-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether there is any grant of jurisdiction in \u00a7107(a)."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "b2bddc0e03890ddd83f12ea2586917ae74028ce68a99fe74a2563491c2278c05",
+            "evidence_ids": [
+              "ev-b2bddc0e0389-0001-0003"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked about the negative consequences of ignoring the Cabazon distinction."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "b2bddc0e03890ddd83f12ea2586917ae74028ce68a99fe74a2563491c2278c05",
+            "evidence_ids": [
+              "ev-b2bddc0e0389-0004-0006"
+            ],
+            "pages": {
+              "end": 94,
+              "start": 94
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether a newly defined Texas Traditional Board Game would be prohibited or regulated."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d697120ce3af1be9db27b7ede1aa75db495955868f9314a87d43b79accfe4189",
+            "evidence_ids": [
+              "ev-d697120ce3af-0002-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The Restoration Act bans as a matter of federal law on tribal lands only those gaming activities also banned in Texas."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "b2bddc0e03890ddd83f12ea2586917ae74028ce68a99fe74a2563491c2278c05",
+              "evidence_ids": [
+                "ev-b2bddc0e0389-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "Petitioners argue that the Restoration Act does not give Texas regulatory authority over tribal gaming that is not expressly prohibited, following the Cabazon framework."
+        }
+      ],
+      "heading": "Petitioners (Ysleta del Sur Pueblo)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Texas",
+          "citations": [
+            {
+              "document_hash": "d697120ce3af1be9db27b7ede1aa75db495955868f9314a87d43b79accfe4189",
+              "evidence_ids": [
+                "ev-d697120ce3af-0000-0005"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            },
+            {
+              "document_hash": "d697120ce3af1be9db27b7ede1aa75db495955868f9314a87d43b79accfe4189",
+              "evidence_ids": [
+                "ev-d697120ce3af-0002-0002"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 24
+              }
+            }
+          ],
+          "text": "Texas argues that Congress intended all Texas gaming laws to act as surrogate federal law on tribal lands, requiring the Tribe to follow state gaming regulations."
+        },
+        {
+          "attribution": "Texas",
+          "citations": [
+            {
+              "document_hash": "d697120ce3af1be9db27b7ede1aa75db495955868f9314a87d43b79accfe4189",
+              "evidence_ids": [
+                "ev-d697120ce3af-0000-0005"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "Texas contends that the Restoration Act displaced IGRA and forces the Tribe to comply with all state gaming laws."
+        }
+      ],
+      "heading": "Respondent (Texas)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b2bddc0e03890ddd83f12ea2586917ae74028ce68a99fe74a2563491c2278c05",
+      "evidence_ids": [
+        "ev-b2bddc0e0389-0000-0000"
+      ],
+      "pages": {
+        "end": 94,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "d697120ce3af1be9db27b7ede1aa75db495955868f9314a87d43b79accfe4189",
+      "evidence_ids": [
+        "ev-d697120ce3af-0000-0000"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T15:45:50.807242Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d697120ce3af1be9db27b7ede1aa75db495955868f9314a87d43b79accfe4189",
+            "evidence_ids": [
+              "ev-d697120ce3af-0002-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The decision holds that the Restoration Act bans on tribal lands only those gaming activities also banned in Texas."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

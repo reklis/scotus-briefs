@@ -1,0 +1,475 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Cummings",
+        "citations": [
+          {
+            "document_hash": "e63f6e3f9c14cf645ce7d18bcf2a4efae503d7c383259f0d719ea1fbf69d03a5",
+            "evidence_ids": [
+              "ev-e63f6e3f9c14-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Cummings, cummings alleges that Premier\u2019s refusal violated the Rehabilitation Act of 1973 and the Affordable Care Act, constituting disability discrimination."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, the legal question presented is whether emotional\u2011distress damages are traditionally available as remedies for breaches of Spending\u2011Clause statutes that prohibit discrimination."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-219",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0002-0002"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          },
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0003-0003"
+            ],
+            "pages": {
+              "end": 80,
+              "start": 80
+            }
+          }
+        ],
+        "text": "The Court held that emotional\u2011distress damages are not traditionally available under Spending\u2011Clause statutes prohibiting discrimination and therefore are unavailable as a remedy in this case."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "e63f6e3f9c14cf645ce7d18bcf2a4efae503d7c383259f0d719ea1fbf69d03a5",
+            "evidence_ids": [
+              "ev-e63f6e3f9c14-0002-0000",
+              "ev-e63f6e3f9c14-0002-0001",
+              "ev-e63f6e3f9c14-0002-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Breyer filed a dissent arguing that Congress, not the Court, should expand remedies and that emotional\u2011distress damages are not traditionally available under the implied Title\u202fVI cause of action."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T14:57:18.603136Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+      "e63f6e3f9c14cf645ce7d18bcf2a4efae503d7c383259f0d719ea1fbf69d03a5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether, if emotional\u2011distress damages were not traditionally available, the parties had another argument."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Barrett, Justice Barrett referenced treatises that limit emotional\u2011distress damages to narrow contract categories such as telegram and dead\u2011body cases."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0002-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito noted that emotional\u2011distress damages are notoriously difficult to quantify."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0002-0006"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Kagan asked for clarification of a hypothetical scenario."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0003-0001"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer inquired about the specific exception to the general rule."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Cummings",
+        "citations": [
+          {
+            "document_hash": "e63f6e3f9c14cf645ce7d18bcf2a4efae503d7c383259f0d719ea1fbf69d03a5",
+            "evidence_ids": [
+              "ev-e63f6e3f9c14-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          },
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The case concerns whether emotional\u2011distress damages are available under Spending\u2011Clause statutes that prohibit discrimination, a question raised by Cummings\u2019s claim that Premier Rehab Keller failed to provide an ASL interpreter."
+      },
+      {
+        "attribution": "Petitioners and Respondents",
+        "citations": [
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0002-0004"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 46
+            }
+          }
+        ],
+        "text": "The parties disagree on the traditional availability of emotional\u2011distress damages in contract\u2011type actions, with petitioners arguing they are permissible and respondents asserting they are categorically unavailable."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Cummings",
+          "citations": [
+            {
+              "document_hash": "e63f6e3f9c14cf645ce7d18bcf2a4efae503d7c383259f0d719ea1fbf69d03a5",
+              "evidence_ids": [
+                "ev-e63f6e3f9c14-0000-0004"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "Cummings argues that traditional contract remedies include emotional\u2011distress damages when a breach is likely to cause serious emotional disturbance, and therefore such damages should be available here."
+        }
+      ],
+      "heading": "Cummings (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Andrew Rozynski",
+          "citations": [
+            {
+              "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+              "evidence_ids": [
+                "ev-202ea2e7da5d-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Andrew Rozynski, Rozynski contends that the Fifth Circuit\u2019s categorical prohibition on emotional\u2011distress damages under Spending\u2011Clause statutes is erroneous, citing precedents (Franklin and Barnes) that allow compensatory damages."
+        },
+        {
+          "attribution": "Andrew Rozynski",
+          "citations": [
+            {
+              "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+              "evidence_ids": [
+                "ev-202ea2e7da5d-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Andrew Rozynski, he also argues that Premier cannot dispute the likelihood of serious emotional disturbance resulting from intentional discrimination."
+        }
+      ],
+      "heading": "Andrew Rozynski (Petitioner\u2019s Counsel)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Shanmugam",
+          "citations": [
+            {
+              "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+              "evidence_ids": [
+                "ev-202ea2e7da5d-0002-0007"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            },
+            {
+              "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+              "evidence_ids": [
+                "ev-202ea2e7da5d-0002-0004"
+              ],
+              "pages": {
+                "end": 47,
+                "start": 47
+              }
+            }
+          ],
+          "text": "According to Mr. Shanmugam, Shanmugam urges affirmation of the Court of Appeals judgment, asserting that the prevailing rule permits emotional\u2011distress damages in contract actions."
+        },
+        {
+          "attribution": "Mr. Shanmugam",
+          "citations": [
+            {
+              "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+              "evidence_ids": [
+                "ev-202ea2e7da5d-0002-0005"
+              ],
+              "pages": {
+                "end": 53,
+                "start": 53
+              }
+            }
+          ],
+          "text": "According to Mr. Shanmugam, he notes that some jurisdictions have not permitted emotional\u2011distress damages even in similar cases."
+        }
+      ],
+      "heading": "Mr. Shanmugam (Respondent\u2019s Counsel)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+      "evidence_ids": [
+        "ev-202ea2e7da5d-0000-0006"
+      ],
+      "pages": {
+        "end": 79,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "e63f6e3f9c14cf645ce7d18bcf2a4efae503d7c383259f0d719ea1fbf69d03a5",
+      "evidence_ids": [
+        "ev-e63f6e3f9c14-0000-0000"
+      ],
+      "pages": {
+        "end": 80,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T15:07:14.000016Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": false,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": false,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "sources[1]: cited page is unavailable or outside the PDF",
+      "complete decision section lacks holding evidence",
+      "Adversarial verification skipped after deterministic failure",
+      "sources[1]: cited page is unavailable or outside the PDF",
+      "complete decision section lacks holding evidence"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to United States, the availability of emotional\u2011distress damages affects victims of discrimination and determines the scope of liability for federal\u2011funding recipients."
+      },
+      {
+        "attribution": "Heritage Reporting Corporation",
+        "citations": [
+          {
+            "document_hash": "202ea2e7da5d69b2d5543bd3156607e39ff966d1bf73556554c1bd4e6a0f7e5e",
+            "evidence_ids": [
+              "ev-202ea2e7da5d-0003-0004"
+            ],
+            "pages": {
+              "end": 79,
+              "start": 79
+            }
+          }
+        ],
+        "text": "One commentator noted that if emotional\u2011distress damages are made available, Congress would need to address the remedy first."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

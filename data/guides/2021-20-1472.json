@@ -1,0 +1,462 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+            "evidence_ids": [
+              "ev-f376976326ff-0000-0004"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "In 2015 the Internal Revenue Service notified Boechler, P.C., a North Dakota law firm, of a discrepancy in its tax filings."
+      },
+      {
+        "attribution": "Boechler, P.C.",
+        "citations": [
+          {
+            "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+            "evidence_ids": [
+              "ev-f376976326ff-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Boechler, P.C., according to Boechler, P.C., boechler challenged the penalty, arguing that there was no discrepancy and that the penalty was excessive."
+      },
+      {
+        "attribution": "Commissioner",
+        "citations": [
+          {
+            "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+            "evidence_ids": [
+              "ev-f376976326ff-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Commissioner, the Commissioner asserted that the missed deadline extinguished Boechler\u2019s opportunity to seek review because the deadline is jurisdictional, meaning the Tax Court lacks authority to consider late petitions."
+      },
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+            "evidence_ids": [
+              "ev-f376976326ff-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Boechler filed its petition one day after the 30\u2011day deadline, missing the statutory window."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-1472",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+            "evidence_ids": [
+              "ev-f376976326ff-0001-0000"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The Court held that the 30\u2011day time limit in \u00a7\u202f6330(d)(1) is an ordinary, non\u2011jurisdictional deadline that is subject to equitable tolling."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T13:59:58.518164Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+      "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+            "evidence_ids": [
+              "ev-6921b6cce87f-0001-0003"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether, under current practice, any time limits are ever tolled for any reason."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+            "evidence_ids": [
+              "ev-6921b6cce87f-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer inquired about the ordinary English meaning of the phrase \u201csuch matter.\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+            "evidence_ids": [
+              "ev-6921b6cce87f-0002-0003"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito posed a hypothetical re\u2011wording of \u00a7\u202f6330(d)(1) to test whether explicit jurisdictional language would change the analysis."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+            "evidence_ids": [
+              "ev-6921b6cce87f-0003-0001"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh referenced the \u201cclear statement rule\u201d and asked about the role of expert drafters in statutory construction."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+            "evidence_ids": [
+              "ev-f376976326ff-0001-0000"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The Supreme Court held that the 30\u2011day deadline in \u00a7\u202f6330(d)(1) is an ordinary, non\u2011jurisdictional time limit that may be equitably tolled."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner (Boechler, P.C.)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Commissioner",
+          "citations": [
+            {
+              "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+              "evidence_ids": [
+                "ev-f376976326ff-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            },
+            {
+              "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+              "evidence_ids": [
+                "ev-f376976326ff-0001-0001"
+              ],
+              "pages": {
+                "end": 13,
+                "start": 13
+              }
+            }
+          ],
+          "text": "The Commissioner argued that the 30\u2011day limit is jurisdictional, thereby barring the Tax Court from hearing any petition filed after the deadline."
+        }
+      ],
+      "heading": "Respondent (Commissioner of Internal Revenue)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+      "evidence_ids": [
+        "ev-6921b6cce87f-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+      "evidence_ids": [
+        "ev-6921b6cce87f-0001-0003"
+      ],
+      "pages": {
+        "end": 38,
+        "start": 38
+      }
+    },
+    {
+      "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+      "evidence_ids": [
+        "ev-6921b6cce87f-0002-0000"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+      "evidence_ids": [
+        "ev-6921b6cce87f-0002-0003"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 53
+      }
+    },
+    {
+      "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+      "evidence_ids": [
+        "ev-6921b6cce87f-0003-0000"
+      ],
+      "pages": {
+        "end": 67,
+        "start": 67
+      }
+    },
+    {
+      "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+      "evidence_ids": [
+        "ev-6921b6cce87f-0003-0001"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+      "evidence_ids": [
+        "ev-6921b6cce87f-0003-0004"
+      ],
+      "pages": {
+        "end": 73,
+        "start": 73
+      }
+    },
+    {
+      "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+      "evidence_ids": [
+        "ev-6921b6cce87f-0003-0002"
+      ],
+      "pages": {
+        "end": 82,
+        "start": 82
+      }
+    },
+    {
+      "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+      "evidence_ids": [
+        "ev-f376976326ff-0000-0004"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+      "evidence_ids": [
+        "ev-f376976326ff-0000-0001"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+      "evidence_ids": [
+        "ev-f376976326ff-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+      "evidence_ids": [
+        "ev-f376976326ff-0000-0003"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+      "evidence_ids": [
+        "ev-f376976326ff-0001-0001"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 13
+      }
+    },
+    {
+      "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+      "evidence_ids": [
+        "ev-f376976326ff-0001-0000"
+      ],
+      "pages": {
+        "end": 14,
+        "start": 14
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T14:05:23.372395Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+            "evidence_ids": [
+              "ev-f376976326ff-0001-0000"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          },
+          {
+            "document_hash": "6921b6cce87fb1cd8353949e5e006ef3e6d4c13a0044d0d571cc36eeda15288d",
+            "evidence_ids": [
+              "ev-6921b6cce87f-0003-0002"
+            ],
+            "pages": {
+              "end": 82,
+              "start": 82
+            }
+          }
+        ],
+        "text": "Because the deadline is non\u2011jurisdictional, taxpayers can seek equitable tolling, preventing the harsh forfeiture of review rights that occurs when courts treat the deadline as jurisdictional."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

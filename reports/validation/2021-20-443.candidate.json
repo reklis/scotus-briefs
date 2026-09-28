@@ -1,0 +1,434 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+            "evidence_ids": [
+              "ev-ed6beaa249bd-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "On April\u202f15,\u202f2013, brothers Dzhokhar and Tamerlan\u202fTsarnaev planted and detonated two pressure\u2011cooker bombs near the finish line of the Boston Marathon, killing three people and injuring hundreds."
+      },
+      {
+        "attribution": "Dzhokhar",
+        "citations": [
+          {
+            "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+            "evidence_ids": [
+              "ev-ed6beaa249bd-0001-0003"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 17
+            }
+          }
+        ],
+        "text": "During sentencing, Dzhokhar sought to introduce evidence that his brother Tamerlan had participated in the 2011 Waltham murders as a mitigating factor, arguing that Tamerlan was the mastermind of the bombing."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+            "evidence_ids": [
+              "ev-ed6beaa249bd-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "According to Government, the legal question before the Supreme Court was whether the district court erred in excluding the Waltham\u2011murder evidence under the Federal Death Penalty Act\u2019s standards for admissibility of mitigating evidence."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-443",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+            "evidence_ids": [
+              "ev-ed6beaa249bd-0001-0006"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The Court held that the Waltham\u2011murder evidence was inadmissible at sentencing."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+            "evidence_ids": [
+              "ev-ed6beaa249bd-0001-0006"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The majority held that the Waltham\u2011murder evidence was without probative value and would confuse the jury, and therefore it was properly excluded."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+            "evidence_ids": [
+              "ev-ed6beaa249bd-0001-0006"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The Court affirmed the district court\u2019s exclusion of the evidence."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+            "evidence_ids": [
+              "ev-ed6beaa249bd-0002-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Barrett, in a concurring opinion, agreed that the evidence would be complex, confusing, and offered little insight into Tamerlan\u2019s role."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+            "evidence_ids": [
+              "ev-ed6beaa249bd-0002-0005"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          },
+          {
+            "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+            "evidence_ids": [
+              "ev-ed6beaa249bd-0003-0000"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "Justice Breyer dissented, arguing that the evidence met the relevance threshold and that the Court\u2019s supervisory authority over appellate procedural rules lacks a clear constitutional foundation."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T15:19:24.824867Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "83fed1b5cf4c4078e60bcc4a0410df8d748273d6eed4ba34c958f47c39a92bb5",
+      "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "83fed1b5cf4c4078e60bcc4a0410df8d748273d6eed4ba34c958f47c39a92bb5",
+            "evidence_ids": [
+              "ev-83fed1b5cf4c-0000-0004"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether a pro\u202fse prisoner must be fully informed of the rights they are giving up when proceeding pro\u202fse."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "83fed1b5cf4c4078e60bcc4a0410df8d748273d6eed4ba34c958f47c39a92bb5",
+            "evidence_ids": [
+              "ev-83fed1b5cf4c-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned whether the Court had committed reversible error in excluding the Waltham evidence."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "83fed1b5cf4c4078e60bcc4a0410df8d748273d6eed4ba34c958f47c39a92bb5",
+            "evidence_ids": [
+              "ev-83fed1b5cf4c-0003-0005"
+            ],
+            "pages": {
+              "end": 84,
+              "start": 84
+            }
+          },
+          {
+            "document_hash": "83fed1b5cf4c4078e60bcc4a0410df8d748273d6eed4ba34c958f47c39a92bb5",
+            "evidence_ids": [
+              "ev-83fed1b5cf4c-0004-0000"
+            ],
+            "pages": {
+              "end": 85,
+              "start": 85
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the standard for excluding mitigating evidence under the Federal Death Penalty Act is that the probative value be outweighed by the danger of unfair prejudice, confusion, or misleading the jury."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "83fed1b5cf4c4078e60bcc4a0410df8d748273d6eed4ba34c958f47c39a92bb5",
+            "evidence_ids": [
+              "ev-83fed1b5cf4c-0001-0001"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan also inquired about the balance between probative value and the risk of prejudice or confusion."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+            "evidence_ids": [
+              "ev-ed6beaa249bd-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Dzhokhar Tsarnaev was convicted for the April\u202f15,\u202f2013 Boston Marathon bombing that killed three people and wounded hundreds."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": null,
+          "citations": [
+            {
+              "document_hash": "83fed1b5cf4c4078e60bcc4a0410df8d748273d6eed4ba34c958f47c39a92bb5",
+              "evidence_ids": [
+                "ev-83fed1b5cf4c-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            },
+            {
+              "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+              "evidence_ids": [
+                "ev-ed6beaa249bd-0001-0000"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "The Government argued that the Waltham\u2011murder evidence should be excluded because it was irrelevant, lacked probative value, and would confuse the jury."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+              "evidence_ids": [
+                "ev-ed6beaa249bd-0001-0000"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "The Government also contended that the Court of Appeals improperly vacated Dzhokhar\u2019s capital sentences by relying on the juror questionnaire and the Waltham evidence."
+        }
+      ],
+      "heading": "Petitioner (U.S. Government / Department of Justice)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Defense",
+          "citations": [
+            {
+              "document_hash": "83fed1b5cf4c4078e60bcc4a0410df8d748273d6eed4ba34c958f47c39a92bb5",
+              "evidence_ids": [
+                "ev-83fed1b5cf4c-0003-0006"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 65
+              }
+            }
+          ],
+          "text": "According to Defense, Ms. Anders, counsel for the Respondent, asserted that the evidence was reliable and met the Federal Death Penalty Act\u2019s threshold for admissibility."
+        }
+      ],
+      "heading": "Respondent (Dzhokhar\u202fTsarnaev)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "83fed1b5cf4c4078e60bcc4a0410df8d748273d6eed4ba34c958f47c39a92bb5",
+      "evidence_ids": [
+        "ev-83fed1b5cf4c-0000-0002",
+        "ev-83fed1b5cf4c-0000-0004",
+        "ev-83fed1b5cf4c-0001-0000",
+        "ev-83fed1b5cf4c-0001-0001",
+        "ev-83fed1b5cf4c-0003-0005",
+        "ev-83fed1b5cf4c-0004-0000",
+        "ev-83fed1b5cf4c-0003-0006"
+      ],
+      "pages": {
+        "end": 85,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "ed6beaa249bdb6b9bd0e3b43b3a53797ff1b8cb468a5d68fdcbd4aea74928da6",
+      "evidence_ids": [
+        "ev-ed6beaa249bd-0000-0000",
+        "ev-ed6beaa249bd-0001-0000",
+        "ev-ed6beaa249bd-0001-0003",
+        "ev-ed6beaa249bd-0001-0006",
+        "ev-ed6beaa249bd-0002-0002",
+        "ev-ed6beaa249bd-0002-0005",
+        "ev-ed6beaa249bd-0003-0000"
+      ],
+      "pages": {
+        "end": 32,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T15:30:32.320078Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": false,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "party_positions[0].claims[0] requires attribution",
+      "complete decision section lacks holding evidence",
+      "Adversarial verification skipped after deterministic failure",
+      "party_positions[0].claims[0] requires attribution",
+      "complete decision section lacks holding evidence"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,608 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "15e99cd593a6011d20a94bb44af6e10228e6c5bb87c3f3d97ee3638ecd857226",
+            "evidence_ids": [
+              "ev-15e99cd593a6-0000-0005"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Supreme Court granted certiorari to resolve the questions of whether Boston\u2019s flag\u2011raising forum is government speech and whether the city could lawfully deny a petition to raise a religious flag."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "15e99cd593a6011d20a94bb44af6e10228e6c5bb87c3f3d97ee3638ecd857226",
+            "evidence_ids": [
+              "ev-15e99cd593a6-0001-0000"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "Justice Breyer asked when government\u2011public engagement transmits the government\u2019s own message versus when it creates a forum for private speakers."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+            "evidence_ids": [
+              "ev-ecf79e111aaf-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas questioned whether the city\u2019s designation of the flagpole as a limited or designated public forum was necessary for the petitioners to succeed."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-1800",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "15e99cd593a6011d20a94bb44af6e10228e6c5bb87c3f3d97ee3638ecd857226",
+            "evidence_ids": [
+              "ev-15e99cd593a6-0001-0004"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The Court held that the City\u2019s refusal to allow the petitioners to raise a religious flag discriminated based on religious viewpoint and violated the Free Speech Clause."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T14:53:40.833629Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "15e99cd593a6011d20a94bb44af6e10228e6c5bb87c3f3d97ee3638ecd857226",
+      "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+            "evidence_ids": [
+              "ev-ecf79e111aaf-0000-0009"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument before the Supreme Court took place at 10:00\u202fa.m."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+            "evidence_ids": [
+              "ev-ecf79e111aaf-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether the City\u2019s designation of the flagpole as a limited or designated public forum was essential for the petitioners\u2019 success."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+            "evidence_ids": [
+              "ev-ecf79e111aaf-0000-0006"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh questioned whether the City could allow patriotic flags but not those deemed anti\u2011American, such as an al\u202fQaeda flag."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+            "evidence_ids": [
+              "ev-ecf79e111aaf-0001-0004"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer raised a procedural concern about the record\u2019s emptiness."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+            "evidence_ids": [
+              "ev-ecf79e111aaf-0001-0001"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the lack of city control meant the forum was not government speech."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+            "evidence_ids": [
+              "ev-ecf79e111aaf-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor inquired whether the nature of the forum was relevant to the case."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+            "evidence_ids": [
+              "ev-ecf79e111aaf-0003-0004"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether a loss would cause the City to restructure its program to regain control over religious flags."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+            "evidence_ids": [
+              "ev-ecf79e111aaf-0003-0000"
+            ],
+            "pages": {
+              "end": 67,
+              "start": 67
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch questioned whether the flagpole was in fact a public forum open to all comers."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "15e99cd593a6011d20a94bb44af6e10228e6c5bb87c3f3d97ee3638ecd857226",
+            "evidence_ids": [
+              "ev-15e99cd593a6-0000-0005"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Supreme Court granted certiorari to decide whether Boston\u2019s flag\u2011raising forum is government speech and whether the city could deny the petitioners\u2019 request to raise a religious flag."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "15e99cd593a6011d20a94bb44af6e10228e6c5bb87c3f3d97ee3638ecd857226",
+            "evidence_ids": [
+              "ev-15e99cd593a6-0001-0004"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The Court held that the city\u2019s refusal discriminated based on religious viewpoint and violated the Free Speech Clause."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "15e99cd593a6011d20a94bb44af6e10228e6c5bb87c3f3d97ee3638ecd857226",
+            "evidence_ids": [
+              "ev-15e99cd593a6-0001-0007"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The flagpoles outside Boston City Hall normally fly the American, Commonwealth of Massachusetts, and city flags on an ordinary day."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "City of Boston",
+          "citations": [
+            {
+              "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+              "evidence_ids": [
+                "ev-ecf79e111aaf-0000-0001"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to City of Boston, the City argues that its flag\u2011raising forum is not government speech under Walker and Summum; it is a public forum open to all applicants."
+        },
+        {
+          "attribution": "City of Boston",
+          "citations": [
+            {
+              "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+              "evidence_ids": [
+                "ev-ecf79e111aaf-0003-0001"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to City of Boston, if the flagpoles are deemed a public forum, the City acknowledges it must be viewpoint\u2011neutral and cannot exclude religious or offensive speech."
+        }
+      ],
+      "heading": "City of Boston",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+              "evidence_ids": [
+                "ev-ecf79e111aaf-0002-0001"
+              ],
+              "pages": {
+                "end": 53,
+                "start": 53
+              }
+            }
+          ],
+          "text": "The Respondents contend that the sole issue is whether the City\u2019s decision to replace Boston\u2019s flag on the City Hall flagpole is the City\u2019s own speech; if so, under Summum the City may select the views it wishes to express."
+        }
+      ],
+      "heading": "Respondents (Petitioners)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mathew Staver",
+          "citations": [
+            {
+              "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+              "evidence_ids": [
+                "ev-ecf79e111aaf-0004-0000"
+              ],
+              "pages": {
+                "end": 88,
+                "start": 88
+              }
+            }
+          ],
+          "text": "According to Mathew Staver, staver testified that the City\u2019s website and policies from 2005\u20112017 state that the flagpoles are public forums open to all applicants, and those guidelines remain unchanged."
+        },
+        {
+          "attribution": "Mathew Staver",
+          "citations": [
+            {
+              "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+              "evidence_ids": [
+                "ev-ecf79e111aaf-0004-0001"
+              ],
+              "pages": {
+                "end": 91,
+                "start": 91
+              }
+            }
+          ],
+          "text": "According to Mathew Staver, he argued that the First Circuit erred by assuming a flagpole forum could never exist and by treating the entire issue as government speech, bypassing traditional public\u2011forum analysis."
+        }
+      ],
+      "heading": "Mathew Staver (Petitioner\u2019s Counsel)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "15e99cd593a6011d20a94bb44af6e10228e6c5bb87c3f3d97ee3638ecd857226",
+      "evidence_ids": [
+        "ev-15e99cd593a6-0000-0005"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "15e99cd593a6011d20a94bb44af6e10228e6c5bb87c3f3d97ee3638ecd857226",
+      "evidence_ids": [
+        "ev-15e99cd593a6-0001-0000"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    },
+    {
+      "document_hash": "15e99cd593a6011d20a94bb44af6e10228e6c5bb87c3f3d97ee3638ecd857226",
+      "evidence_ids": [
+        "ev-15e99cd593a6-0001-0004"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    },
+    {
+      "document_hash": "15e99cd593a6011d20a94bb44af6e10228e6c5bb87c3f3d97ee3638ecd857226",
+      "evidence_ids": [
+        "ev-15e99cd593a6-0001-0007"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0000-0009"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0000-0001"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0000-0002"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0000-0006"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0001-0004"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0001-0001"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0002-0001"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 53
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0003-0001"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0004-0000"
+      ],
+      "pages": {
+        "end": 88,
+        "start": 88
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0004-0001"
+      ],
+      "pages": {
+        "end": 91,
+        "start": 91
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0003-0004"
+      ],
+      "pages": {
+        "end": 69,
+        "start": 69
+      }
+    },
+    {
+      "document_hash": "ecf79e111aaf5fa85d7a9214b5f8c925fe9a872e3e9434661c76262b42f8b6b0",
+      "evidence_ids": [
+        "ev-ecf79e111aaf-0003-0000"
+      ],
+      "pages": {
+        "end": 67,
+        "start": 67
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T14:57:18.592790Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

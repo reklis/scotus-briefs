@@ -1,0 +1,626 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Several parties",
+        "citations": [
+          {
+            "document_hash": "4e7803b8ffead847691a215687afcc726eb547da5ef9cbbaaf67d76413d3e47a",
+            "evidence_ids": [
+              "ev-4e7803b8ffea-0000-0005"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Several parties argue the public charge rule is unlawful because it defines \u201cpublic charge\u201d too broadly."
+      },
+      {
+        "attribution": "Gen. Mark Brnovich",
+        "citations": [
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Gen. Mark Brnovich, the Ninth Circuit refused to let Arizona and other states intervene to defend the public charge rule."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether the petitioners have standing to challenge the Ninth Circuit\u2019s preliminary injunction."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-1775",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T14:40:23.473016Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4e7803b8ffead847691a215687afcc726eb547da5ef9cbbaaf67d76413d3e47a",
+      "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether the petitioners have standing to challenge the Ninth Circuit\u2019s preliminary injunction."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0001-0000"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          },
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0001-0002"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "Justice Barrett asked how important the Administrative Procedure Act is to the argument and whether the issue is a statute."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0001-0007"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether the fact that cert had already been granted on this issue matters."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Alito asked why the issue is so."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0002-0003"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh noted it is odd to think about notice\u2011and\u2011comment for repeal after an acquiescence."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0002-0004"
+            ],
+            "pages": {
+              "end": 63,
+              "start": 63
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked why it is wrong for the states to intervene to try to Munsingwear the adverse decisions."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0002-0006"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          },
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0002-0007"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked about the Munsingwear doctrine in this context."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Gen. Mark Brnovich",
+        "citations": [
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Gen. Mark Brnovich, arizona says the rule saves the states collectively more than a billion dollars per year."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "State of Arizona",
+          "citations": [
+            {
+              "document_hash": "4e7803b8ffead847691a215687afcc726eb547da5ef9cbbaaf67d76413d3e47a",
+              "evidence_ids": [
+                "ev-4e7803b8ffea-0000-0000"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to State of Arizona, mark Brnovich, Attorney General of Arizona, argued the cause for petitioners."
+        },
+        {
+          "attribution": "Gen. Mark Brnovich",
+          "citations": [
+            {
+              "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+              "evidence_ids": [
+                "ev-a7f771ea39dc-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Gen. Mark Brnovich, arizona claims the Ninth Circuit\u2019s refusal to let the state intervene was an unprecedented effort to unlawfully disregard a prior administration\u2019s rule."
+        },
+        {
+          "attribution": "Gen. Mark Brnovich",
+          "citations": [
+            {
+              "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+              "evidence_ids": [
+                "ev-a7f771ea39dc-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Gen. Mark Brnovich, arizona says the rule saves the states collectively more than a billion dollars per year."
+        }
+      ],
+      "heading": "State of Arizona",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State of Ohio",
+          "citations": [
+            {
+              "document_hash": "4e7803b8ffead847691a215687afcc726eb547da5ef9cbbaaf67d76413d3e47a",
+              "evidence_ids": [
+                "ev-4e7803b8ffea-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to State of Ohio, briefs of amici curiae urging reversal were filed for the State of Ohio by Attorney General Dave Yost, Solicitor General Benjamin M. Flowers, and Deputy Solicitor General John L. Rockenbach."
+        }
+      ],
+      "heading": "State of Ohio",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Several parties",
+          "citations": [
+            {
+              "document_hash": "4e7803b8ffead847691a215687afcc726eb547da5ef9cbbaaf67d76413d3e47a",
+              "evidence_ids": [
+                "ev-4e7803b8ffea-0000-0005"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Several parties, several parties filed lawsuits arguing that the public charge rule is unlawful because it defines \u201cpublic charge\u201d too broadly."
+        }
+      ],
+      "heading": "Other Parties",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Fletcher",
+          "citations": [
+            {
+              "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+              "evidence_ids": [
+                "ev-a7f771ea39dc-0002-0001"
+              ],
+              "pages": {
+                "end": 47,
+                "start": 47
+              }
+            }
+          ],
+          "text": "Fletcher argued that the situation is not a circumvention of notice\u2011and\u2011comment regulation."
+        },
+        {
+          "attribution": "Fletcher",
+          "citations": [
+            {
+              "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+              "evidence_ids": [
+                "ev-a7f771ea39dc-0002-0002"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 50
+              }
+            }
+          ],
+          "text": "According to Fletcher, fletcher said the solution is not changing the rules of intervention or letting states block adverse decisions."
+        }
+      ],
+      "heading": "Fletcher",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4e7803b8ffead847691a215687afcc726eb547da5ef9cbbaaf67d76413d3e47a",
+      "evidence_ids": [
+        "ev-4e7803b8ffea-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "4e7803b8ffead847691a215687afcc726eb547da5ef9cbbaaf67d76413d3e47a",
+      "evidence_ids": [
+        "ev-4e7803b8ffea-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "4e7803b8ffead847691a215687afcc726eb547da5ef9cbbaaf67d76413d3e47a",
+      "evidence_ids": [
+        "ev-4e7803b8ffea-0000-0005"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0000-0001"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0001-0000"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0001-0002"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 34
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0001-0007"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0002-0000"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0002-0001"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0002-0002"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 50
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0002-0003"
+      ],
+      "pages": {
+        "end": 62,
+        "start": 62
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0002-0004"
+      ],
+      "pages": {
+        "end": 63,
+        "start": 63
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0002-0006"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 65
+      }
+    },
+    {
+      "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+      "evidence_ids": [
+        "ev-a7f771ea39dc-0002-0007"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 66
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T14:53:40.815322Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Gen. Mark Brnovich",
+        "citations": [
+          {
+            "document_hash": "a7f771ea39dcae175c445be76ec9fbcdb845f2c24d905d7ba3f6826c521fe804",
+            "evidence_ids": [
+              "ev-a7f771ea39dc-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Gen. Mark Brnovich, the public charge rule could affect state budgets, as Arizona claims it saves the states more than a billion dollars per year."
+      },
+      {
+        "attribution": "Several parties",
+        "citations": [
+          {
+            "document_hash": "4e7803b8ffead847691a215687afcc726eb547da5ef9cbbaaf67d76413d3e47a",
+            "evidence_ids": [
+              "ev-4e7803b8ffea-0000-0005"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Several parties, if the rule\u2019s definition of \u201cpublic charge\u201d is too broad, it could limit access to benefits for many individuals."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

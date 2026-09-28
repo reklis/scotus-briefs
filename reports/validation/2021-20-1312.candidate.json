@@ -1,0 +1,645 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner (Xavier Becerra, Secretary of HHS)",
+        "citations": [
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner (Xavier Becerra, Secretary of HHS), according to Petitioner (Xavier Becerra, Secretary of HHS), under the Medicare fraction, HHS must count patient days of patients who were entitled to benefits under Part\u202fA of Medicare."
+      },
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The question before the Court was which patients are considered entitled to Part\u202fA benefits."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-1312",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6cd983751b20af09cd946e2c166d6d1f8e754628d8fe4849801e0125ca799655",
+            "evidence_ids": [
+              "ev-6cd983751b20-0001-0002"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Court held that the statutory phrase \u201centitled to [Part\u202fA] benefits\u201d means qualifying for those benefits, and nothing more."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T13:36:47.798185Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6cd983751b20af09cd946e2c166d6d1f8e754628d8fe4849801e0125ca799655",
+      "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked: what is the difference between \u201centitled to\u201d and \u201celigible for\u201d?"
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether the Court was interpreting \u201centitled\u201d differently for Medicare and SSI."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0000-0005"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the Court should give Chevron deference to the agency\u2019s interpretation."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0001-0000",
+              "ev-ce3cd1733405-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Barrett asked about the difference between SSI and Medicare Part\u202fA entitlement and whether entitlement for disabled persons requires a determination."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0001-0003"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether Congress intended the Court\u2019s interpretation of \u201centitled to benefits.\u201d"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0001-0004"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the agency\u2019s commenters understood the status quo they were asked to comment on."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0001-0005"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          },
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0002-0000",
+              "ev-ce3cd1733405-0002-0001"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Breyer questioned whether the statute plainly says \u201centitled to benefits under Part\u202fA of Medicare.\u201d"
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0001-0006"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether the agency\u2019s approach was aimed at reducing spending on the program."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0001-0007"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether the agency\u2019s historical approach was to lower payments compared with what they would otherwise have been."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0003-0004"
+            ],
+            "pages": {
+              "end": 67,
+              "start": 67
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether inpatient services are the only benefits under Part\u202fA."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": null,
+        "citations": [
+          {
+            "document_hash": "6cd983751b20af09cd946e2c166d6d1f8e754628d8fe4849801e0125ca799655",
+            "evidence_ids": [
+              "ev-6cd983751b20-0001-0002"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+            "evidence_ids": [
+              "ev-ce3cd1733405-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The case dealt with how to interpret the phrase \u201centitled to benefits\u201d under Medicare Part\u202fA."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6cd983751b20af09cd946e2c166d6d1f8e754628d8fe4849801e0125ca799655",
+            "evidence_ids": [
+              "ev-6cd983751b20-0001-0002"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Court held that \u201centitled\u201d means merely qualifying for benefits, not actually receiving payments."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Xavier Becerra, Secretary of HHS)",
+          "citations": [
+            {
+              "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+              "evidence_ids": [
+                "ev-ce3cd1733405-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Xavier Becerra, Secretary of HHS), according to Petitioner (Xavier Becerra, Secretary of HHS), petitioner argues that the Medicare fraction directs HHS to count patient days of patients who were entitled to benefits under Part\u202fA of Medicare."
+        },
+        {
+          "attribution": "Petitioner (Xavier Becerra, Secretary of HHS)",
+          "citations": [
+            {
+              "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+              "evidence_ids": [
+                "ev-ce3cd1733405-0000-0006"
+              ],
+              "pages": {
+                "end": 15,
+                "start": 15
+              }
+            }
+          ],
+          "text": "According to Petitioner (Xavier Becerra, Secretary of HHS), according to Petitioner (Xavier Becerra, Secretary of HHS), petitioner seeks Chevron deference for its interpretation of the statute."
+        }
+      ],
+      "heading": "Petitioner (Secretary of Health and Human Services)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Empire",
+          "citations": [
+            {
+              "document_hash": "6cd983751b20af09cd946e2c166d6d1f8e754628d8fe4849801e0125ca799655",
+              "evidence_ids": [
+                "ev-6cd983751b20-0002-0000"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Empire, respondent argues that low\u2011income persons excluded from the Medicare fraction would instead be counted in the Medicaid fraction."
+        },
+        {
+          "attribution": "Empire",
+          "citations": [
+            {
+              "document_hash": "6cd983751b20af09cd946e2c166d6d1f8e754628d8fe4849801e0125ca799655",
+              "evidence_ids": [
+                "ev-6cd983751b20-0002-0001"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to Empire, respondent contends that the phrase \u201centitled to benefits\u201d should be read to mean actually receiving payments, not merely qualifying."
+        }
+      ],
+      "heading": "Respondent (Empire Health Foundation)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6cd983751b20af09cd946e2c166d6d1f8e754628d8fe4849801e0125ca799655",
+      "evidence_ids": [
+        "ev-6cd983751b20-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "6cd983751b20af09cd946e2c166d6d1f8e754628d8fe4849801e0125ca799655",
+      "evidence_ids": [
+        "ev-6cd983751b20-0001-0002"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "6cd983751b20af09cd946e2c166d6d1f8e754628d8fe4849801e0125ca799655",
+      "evidence_ids": [
+        "ev-6cd983751b20-0002-0000",
+        "ev-6cd983751b20-0002-0001"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0000-0003"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0000-0006"
+      ],
+      "pages": {
+        "end": 15,
+        "start": 15
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0001-0000",
+        "ev-ce3cd1733405-0001-0001"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0001-0002"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0001-0003"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0001-0004"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0001-0005"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0001-0006"
+      ],
+      "pages": {
+        "end": 32,
+        "start": 32
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0001-0007"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 34
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0002-0000",
+        "ev-ce3cd1733405-0002-0001"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0002-0004"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0003-0000"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 64
+      }
+    },
+    {
+      "document_hash": "ce3cd1733405b188e0515be120ce13532626827088b86f6d8a73518c41385c28",
+      "evidence_ids": [
+        "ev-ce3cd1733405-0003-0004"
+      ],
+      "pages": {
+        "end": 67,
+        "start": 67
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T13:50:20.967488Z",
+    "checks": {
+      "attribution": false,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "overview.claims[0] requires attribution",
+      "background_and_question.claims[1] requires attribution",
+      "Adversarial verification skipped after deterministic failure",
+      "overview.claims[0] requires attribution",
+      "background_and_question.claims[1] requires attribution"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

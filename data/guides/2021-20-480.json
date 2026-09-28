@@ -1,0 +1,331 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "MS. REAVES",
+        "citations": [
+          {
+            "document_hash": "6db7207bf8d892f64feb75adff94a43b2a19512e02e932b6e1bd3d572b400be1",
+            "evidence_ids": [
+              "ev-6db7207bf8d8-0002-0002"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "Dual\u2011status technicians trace back to 1916 congressional authorization of military caretakers, a role traditionally filled by National Guard members."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-480",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T15:30:32.340211Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "6db7207bf8d892f64feb75adff94a43b2a19512e02e932b6e1bd3d572b400be1",
+      "d18a826d1bf7bfcf94b71134db1d5493e0acc95f69e54f9dd26de5296139d973"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d18a826d1bf7bfcf94b71134db1d5493e0acc95f69e54f9dd26de5296139d973",
+            "evidence_ids": [
+              "ev-d18a826d1bf7-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The Social Security Act generally reduces the benefits of retirees who receive payments from separate pensions based on employment not subject to Social Security taxes."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d18a826d1bf7bfcf94b71134db1d5493e0acc95f69e54f9dd26de5296139d973",
+            "evidence_ids": [
+              "ev-d18a826d1bf7-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Act exempts \u201ca payment based wholly on service as a member of a uniformed service.\u201d"
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Neal K. Katyal)",
+          "citations": [
+            {
+              "document_hash": "6db7207bf8d892f64feb75adff94a43b2a19512e02e932b6e1bd3d572b400be1",
+              "evidence_ids": [
+                "ev-6db7207bf8d8-0002-0001"
+              ],
+              "pages": {
+                "end": 56,
+                "start": 56
+              }
+            }
+          ],
+          "text": "According to Petitioner (Neal K. Katyal), according to Petitioner (Neal K. Katyal), section\u202f415 looks to service, not status, and specifically to uniformed service."
+        }
+      ],
+      "heading": "Petitioner \u2013 Neal K. Katyal",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Babcock",
+          "citations": [
+            {
+              "document_hash": "d18a826d1bf7bfcf94b71134db1d5493e0acc95f69e54f9dd26de5296139d973",
+              "evidence_ids": [
+                "ev-d18a826d1bf7-0000-0005"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to Babcock, the agency and lower courts erred in reducing his Social Security benefits based on his pension for technician employment."
+        }
+      ],
+      "heading": "Respondent \u2013 David Babcock",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "6db7207bf8d892f64feb75adff94a43b2a19512e02e932b6e1bd3d572b400be1",
+      "evidence_ids": [
+        "ev-6db7207bf8d8-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "6db7207bf8d892f64feb75adff94a43b2a19512e02e932b6e1bd3d572b400be1",
+      "evidence_ids": [
+        "ev-6db7207bf8d8-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "6db7207bf8d892f64feb75adff94a43b2a19512e02e932b6e1bd3d572b400be1",
+      "evidence_ids": [
+        "ev-6db7207bf8d8-0002-0001"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 56
+      }
+    },
+    {
+      "document_hash": "6db7207bf8d892f64feb75adff94a43b2a19512e02e932b6e1bd3d572b400be1",
+      "evidence_ids": [
+        "ev-6db7207bf8d8-0002-0002"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 49
+      }
+    },
+    {
+      "document_hash": "6db7207bf8d892f64feb75adff94a43b2a19512e02e932b6e1bd3d572b400be1",
+      "evidence_ids": [
+        "ev-6db7207bf8d8-0000-0003"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    },
+    {
+      "document_hash": "6db7207bf8d892f64feb75adff94a43b2a19512e02e932b6e1bd3d572b400be1",
+      "evidence_ids": [
+        "ev-6db7207bf8d8-0000-0004"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "d18a826d1bf7bfcf94b71134db1d5493e0acc95f69e54f9dd26de5296139d973",
+      "evidence_ids": [
+        "ev-d18a826d1bf7-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "d18a826d1bf7bfcf94b71134db1d5493e0acc95f69e54f9dd26de5296139d973",
+      "evidence_ids": [
+        "ev-d18a826d1bf7-0000-0003"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "d18a826d1bf7bfcf94b71134db1d5493e0acc95f69e54f9dd26de5296139d973",
+      "evidence_ids": [
+        "ev-d18a826d1bf7-0000-0005"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "d18a826d1bf7bfcf94b71134db1d5493e0acc95f69e54f9dd26de5296139d973",
+      "evidence_ids": [
+        "ev-d18a826d1bf7-0000-0006"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T15:37:41.636343Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d18a826d1bf7bfcf94b71134db1d5493e0acc95f69e54f9dd26de5296139d973",
+            "evidence_ids": [
+              "ev-d18a826d1bf7-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "d18a826d1bf7bfcf94b71134db1d5493e0acc95f69e54f9dd26de5296139d973",
+            "evidence_ids": [
+              "ev-d18a826d1bf7-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Court noted that the Social Security Act generally reduces benefits for retirees receiving separate pensions, but exempts payments based wholly on service as a member of a uniformed service."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "d18a826d1bf7bfcf94b71134db1d5493e0acc95f69e54f9dd26de5296139d973",
+            "evidence_ids": [
+              "ev-d18a826d1bf7-0000-0006"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Clarifying the meaning of \u201cas\u201d in the statutory language affects how payments are classified for exemption purposes."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "case_id": "2021-20-1472",
+  "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+  "records": [
+    {
+      "attribution": "Supreme Court",
+      "case_id": "2021-20-1472",
+      "confidence": 1.0,
+      "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+      "evidence_id": "ev-f376976326ff-0000-0004",
+      "kind": "fact",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "In 2015, the Internal Revenue Service notifed Boechler, P.C., a North Dakota law frm, of a discrepancy in its tax flings."
+    },
+    {
+      "attribution": "Boechler, P.C.",
+      "case_id": "2021-20-1472",
+      "confidence": 1.0,
+      "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+      "evidence_id": "ev-f376976326ff-0000-0001",
+      "kind": "party_argument",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 5,
+        "start": 5
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "At its hearing, Boechler challenged the penalty, arguing both that there was no discrepancy in its tax flings and that the penalty was excessive."
+    },
+    {
+      "attribution": "Commissioner",
+      "case_id": "2021-20-1472",
+      "confidence": 1.0,
+      "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+      "evidence_id": "ev-f376976326ff-0000-0002",
+      "kind": "party_argument",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 5,
+        "start": 5
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "According to the Commissioner of the IRS, this tardiness extinguished Boechler's opportunity to seek review of the agency's determination. The Commissioner insists that the deadline is jurisdictional, which means that the Tax Court has no authority to consider late-fled petitions."
+    },
+    {
+      "attribution": "Supreme Court",
+      "case_id": "2021-20-1472",
+      "confidence": 1.0,
+      "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+      "evidence_id": "ev-f376976326ff-0000-0003",
+      "kind": "procedural_event",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 6,
+        "start": 6
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The Independent Offce of Appeals sustained the proposed levy. Under \u00a7 6330(d)(1), Boechler had 30 days to petition the Tax Court to review this collection due process determination. But Boechler dropped the ball and fled its petition a day late."
+    },
+    {
+      "attribution": "Commissioner",
+      "case_id": "2021-20-1472",
+      "confidence": 1.0,
+      "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+      "evidence_id": "ev-f376976326ff-0001-0001",
+      "kind": "party_argument",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 13,
+        "start": 13
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The Commissioner protests that if equitable tolling is available, the IRS will not know whether it can proceed with a collection action after \u00a7 6330(d)(1)'s deadline passes."
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2021-20-1472",
+      "confidence": 1.0,
+      "document_hash": "f376976326ff9e75be8cfa9da6cb7ed25f056b7e86514d3095aae710dc74d5e9",
+      "evidence_id": "ev-f376976326ff-0001-0000",
+      "kind": "holding",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 14,
+        "start": 14
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "Section 6330(d)(1)'s 30-day time limit to fle a petition for review of a collection due process determination is an ordinary, nonjurisdictional deadline subject to equitable tolling."
+    }
+  ],
+  "schema_version": "1.0.0"
+}

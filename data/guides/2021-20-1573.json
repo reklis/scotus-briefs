@@ -1,0 +1,465 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+            "evidence_ids": [
+              "ev-04de0530b297-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The question for decision is whether the Federal Arbitration Act, 9 U.S.C. \u00a7\u202f1 et seq., preempts a rule of California law that invalidates contractual waivers of the right to assert representative claims under California\u2019s Labor Code Private Attorneys General Act of 2004 (PAGA)."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-1573",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+            "evidence_ids": [
+              "ev-04de0530b297-0002-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The Court held that the FAA preempts the rule of Iskanian insofar as it precludes division of PAGA actions into individual and non\u2011individual claims through an agreement to arbitrate."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+            "evidence_ids": [
+              "ev-04de0530b297-0001-0003"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "The Court reiterated that the FAA does not require enforcement of waivers of substantive rights; its mandate is limited to enforcing arbitration agreements."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+            "evidence_ids": [
+              "ev-04de0530b297-0001-0004"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The Court found that PAGA actions do not involve the class\u2011arbitration problems of notice, due process, and adequate representation."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+            "evidence_ids": [
+              "ev-04de0530b297-0002-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Thomas dissented, maintaining that the FAA does not apply to proceedings in state courts."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T14:13:36.368014Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+      "16b68b87cf1e61a20f7fc3a8ff02b4f1808ca4da26c4231206e5a54ebec01325"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+          "evidence_ids": [
+            "ev-04de0530b297-0000-0000"
+          ],
+          "pages": {
+            "end": 2,
+            "start": 2
+          }
+        }
+      ],
+      "definition": "California\u2019s Labor Code Private Attorneys General Act (PAGA) enlists employees as private attorneys general to enforce California labor law.",
+      "term": "PAGA"
+    }
+  ],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "16b68b87cf1e61a20f7fc3a8ff02b4f1808ca4da26c4231206e5a54ebec01325",
+            "evidence_ids": [
+              "ev-16b68b87cf1e-0001-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor requested a preemption case where a substantive state cause of action is implicitly preempted."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "16b68b87cf1e61a20f7fc3a8ff02b4f1808ca4da26c4231206e5a54ebec01325",
+            "evidence_ids": [
+              "ev-16b68b87cf1e-0001-0003"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether the Court would be bound by Erie based on California courts\u2019 procedural characterization of PAGA."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "16b68b87cf1e61a20f7fc3a8ff02b4f1808ca4da26c4231206e5a54ebec01325",
+            "evidence_ids": [
+              "ev-16b68b87cf1e-0002-0005"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the Court is bound by California\u2019s characterization of the PAGA claim."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+            "evidence_ids": [
+              "ev-04de0530b297-0001-0003"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "The Court further explained that the FAA does not require courts to enforce waivers of substantive rights, because the FAA\u2019s mandate is only to enforce arbitration agreements."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+            "evidence_ids": [
+              "ev-04de0530b297-0001-0004"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "The Court also found that PAGA actions do not present the notice, due\u2011process, and adequacy\u2011of\u2011representation problems that make class arbitration inconsistent with the traditionally individualized form of arbitration."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Viking River Cruises, Inc.",
+          "citations": [
+            {
+              "document_hash": "16b68b87cf1e61a20f7fc3a8ff02b4f1808ca4da26c4231206e5a54ebec01325",
+              "evidence_ids": [
+                "ev-16b68b87cf1e-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Viking River Cruises, Inc., according to Viking River Cruises, Inc., viking argues that the outcome is controlled by Supreme Court decisions in\u202fConcepcion,\u202fEpic, and\u202fLamps\u202fPlus, which prevent a state from declaring a statute too important to be relegated to bilateral arbitration."
+        },
+        {
+          "attribution": "Viking River Cruises, Inc.",
+          "citations": [
+            {
+              "document_hash": "16b68b87cf1e61a20f7fc3a8ff02b4f1808ca4da26c4231206e5a54ebec01325",
+              "evidence_ids": [
+                "ev-16b68b87cf1e-0000-0002"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to Viking River Cruises, Inc., according to Viking River Cruises, Inc., viking maintains that the arbitration provision bars employees from participating in a class, collective, or PAGA action."
+        }
+      ],
+      "heading": "Viking River Cruises, Inc.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Moriana",
+          "citations": [
+            {
+              "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+              "evidence_ids": [
+                "ev-04de0530b297-0001-0002"
+              ],
+              "pages": {
+                "end": 15,
+                "start": 15
+              }
+            }
+          ],
+          "text": "Moriana argues that PAGA creates only a substantive cause of action, not a procedural one, and therefore the FAA does not apply to it."
+        }
+      ],
+      "heading": "Angie Moriana",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+      "evidence_ids": [
+        "ev-04de0530b297-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+      "evidence_ids": [
+        "ev-04de0530b297-0001-0005"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    },
+    {
+      "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+      "evidence_ids": [
+        "ev-04de0530b297-0001-0000"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+      "evidence_ids": [
+        "ev-04de0530b297-0001-0002"
+      ],
+      "pages": {
+        "end": 15,
+        "start": 15
+      }
+    },
+    {
+      "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+      "evidence_ids": [
+        "ev-04de0530b297-0001-0003"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    },
+    {
+      "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+      "evidence_ids": [
+        "ev-04de0530b297-0001-0004"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    },
+    {
+      "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+      "evidence_ids": [
+        "ev-04de0530b297-0002-0000"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "04de0530b297067d10c9f63230646000a1600ff432d262c7da7ceb35cb14a89e",
+      "evidence_ids": [
+        "ev-04de0530b297-0002-0004"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "16b68b87cf1e61a20f7fc3a8ff02b4f1808ca4da26c4231206e5a54ebec01325",
+      "evidence_ids": [
+        "ev-16b68b87cf1e-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "16b68b87cf1e61a20f7fc3a8ff02b4f1808ca4da26c4231206e5a54ebec01325",
+      "evidence_ids": [
+        "ev-16b68b87cf1e-0000-0002"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "16b68b87cf1e61a20f7fc3a8ff02b4f1808ca4da26c4231206e5a54ebec01325",
+      "evidence_ids": [
+        "ev-16b68b87cf1e-0001-0000"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "16b68b87cf1e61a20f7fc3a8ff02b4f1808ca4da26c4231206e5a54ebec01325",
+      "evidence_ids": [
+        "ev-16b68b87cf1e-0001-0003"
+      ],
+      "pages": {
+        "end": 41,
+        "start": 41
+      }
+    },
+    {
+      "document_hash": "16b68b87cf1e61a20f7fc3a8ff02b4f1808ca4da26c4231206e5a54ebec01325",
+      "evidence_ids": [
+        "ev-16b68b87cf1e-0002-0005"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 53
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T14:19:41.152821Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

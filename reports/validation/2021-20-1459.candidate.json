@@ -1,0 +1,409 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "85269f114e4eedd14fa0d0c0562975f5819ae1c053f7a9a650567906ec04bef2",
+            "evidence_ids": [
+              "ev-85269f114e4e-0000-0002",
+              "ev-85269f114e4e-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case centered on whether an attempted Hobbs Act robbery qualifies as a \u201ccrime of violence\u201d under 18\u202fU.S.C.\u202f\u00a7\u202f924(c)."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-1459",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "85269f114e4eedd14fa0d0c0562975f5819ae1c053f7a9a650567906ec04bef2",
+            "evidence_ids": [
+              "ev-85269f114e4e-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The majority held that Taylor may be sentenced to up to 20 years in federal prison for his Hobbs Act conviction."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "85269f114e4eedd14fa0d0c0562975f5819ae1c053f7a9a650567906ec04bef2",
+            "evidence_ids": [
+              "ev-85269f114e4e-0003-0000"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Alito dissented, arguing that the sentencing judge found Taylor intended to use force and took a substantial step toward robbery, which satisfies \u00a7\u202f924(c)(3)(A)."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "85269f114e4eedd14fa0d0c0562975f5819ae1c053f7a9a650567906ec04bef2",
+            "evidence_ids": [
+              "ev-85269f114e4e-0001-0003",
+              "ev-85269f114e4e-0001-0004"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "Justice Thomas, in dissent, noted that Taylor pleaded guilty to using a firearm during an attempted Hobbs Act robbery, which he conceded was a crime of violence, and that the Fourth Circuit correctly held that no additional elements need be proved."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T13:50:20.989425Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "677ae170f321f23335caab51f93de5580b95626af8b7c8e915176b70a59cd43a",
+      "85269f114e4eedd14fa0d0c0562975f5819ae1c053f7a9a650567906ec04bef2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "677ae170f321f23335caab51f93de5580b95626af8b7c8e915176b70a59cd43a",
+            "evidence_ids": [
+              "ev-677ae170f321-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether abandoning the categorical approach would change the case."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "677ae170f321f23335caab51f93de5580b95626af8b7c8e915176b70a59cd43a",
+            "evidence_ids": [
+              "ev-677ae170f321-0000-0005"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor inquired about the relevance of the Williams case."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "677ae170f321f23335caab51f93de5580b95626af8b7c8e915176b70a59cd43a",
+            "evidence_ids": [
+              "ev-677ae170f321-0001-0001"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Kagan asked a follow\u2011up question about the abstract nature of \u201cthreat.\u201d"
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "677ae170f321f23335caab51f93de5580b95626af8b7c8e915176b70a59cd43a",
+            "evidence_ids": [
+              "ev-677ae170f321-0001-0003"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether the Court should accept the Government\u2019s representation regarding \u201cattempted threat\u201d cases, referencing Davis."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "677ae170f321f23335caab51f93de5580b95626af8b7c8e915176b70a59cd43a",
+            "evidence_ids": [
+              "ev-677ae170f321-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice Barrett, justice Barrett questioned whether a threat must be heard by the victim to count as a threat."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "677ae170f321f23335caab51f93de5580b95626af8b7c8e915176b70a59cd43a",
+            "evidence_ids": [
+              "ev-677ae170f321-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan raised the issue of threats that have not yet been consummated."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "677ae170f321f23335caab51f93de5580b95626af8b7c8e915176b70a59cd43a",
+            "evidence_ids": [
+              "ev-677ae170f321-0003-0001"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked about the relevance of Moncrieffe and Duenas\u2011Alvarez cases to the Government\u2019s argument."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "85269f114e4eedd14fa0d0c0562975f5819ae1c053f7a9a650567906ec04bef2",
+            "evidence_ids": [
+              "ev-85269f114e4e-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The Court held that Taylor may be sentenced to up to 20 years in federal prison for his Hobbs Act conviction."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "85269f114e4eedd14fa0d0c0562975f5819ae1c053f7a9a650567906ec04bef2",
+              "evidence_ids": [
+                "ev-85269f114e4e-0000-0002"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to United States, the Government maintains that Taylor\u2019s Hobbs Act offense qualifies as a crime of violence under \u00a7\u202f924(c)."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "677ae170f321f23335caab51f93de5580b95626af8b7c8e915176b70a59cd43a",
+              "evidence_ids": [
+                "ev-677ae170f321-0004-0000"
+              ],
+              "pages": {
+                "end": 89,
+                "start": 89
+              }
+            }
+          ],
+          "text": "According to Government, the Government asserts that attempted threat cases cannot be prosecuted under the Hobbs Act unless the conduct at least threatens the use of force as required by \u00a7\u202f924(c)(3)(A)."
+        }
+      ],
+      "heading": "United States (Government)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Justin Taylor",
+          "citations": [
+            {
+              "document_hash": "85269f114e4eedd14fa0d0c0562975f5819ae1c053f7a9a650567906ec04bef2",
+              "evidence_ids": [
+                "ev-85269f114e4e-0000-0003"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to Justin Taylor, taylor argues that neither of his Hobbs Act offenses qualifies as a crime of violence for purposes of \u00a7\u202f924(c) after the Supreme Court\u2019s decision in United States v. Davis."
+        },
+        {
+          "attribution": "Mr. Dreeben",
+          "citations": [
+            {
+              "document_hash": "677ae170f321f23335caab51f93de5580b95626af8b7c8e915176b70a59cd43a",
+              "evidence_ids": [
+                "ev-677ae170f321-0002-0003"
+              ],
+              "pages": {
+                "end": 48,
+                "start": 48
+              }
+            }
+          ],
+          "text": "Counsel for Taylor (Mr. Dreeben) contends that an attempt to commit Hobbs Act robbery is not a crime of violence under the elements clause, because the categorical approach looks only at the minimum prohibited conduct, which does not require the use of force."
+        }
+      ],
+      "heading": "Justin Taylor (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "677ae170f321f23335caab51f93de5580b95626af8b7c8e915176b70a59cd43a",
+      "evidence_ids": [
+        "ev-677ae170f321-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T13:59:58.499405Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": false,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "complete decision section lacks holding evidence",
+      "Adversarial verification skipped after deterministic failure",
+      "complete decision section lacks holding evidence"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "85269f114e4eedd14fa0d0c0562975f5819ae1c053f7a9a650567906ec04bef2",
+            "evidence_ids": [
+              "ev-85269f114e4e-0000-0004"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          },
+          {
+            "document_hash": "85269f114e4eedd14fa0d0c0562975f5819ae1c053f7a9a650567906ec04bef2",
+            "evidence_ids": [
+              "ev-85269f114e4e-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "By confirming that an attempted Hobbs Act robbery can be treated as a crime of violence, the decision influences future prosecutions and the potential length of prison terms for similar offenses."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
