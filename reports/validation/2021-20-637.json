@@ -1,0 +1,41 @@
+{
+  "accepted": false,
+  "case_id": "2021-20-637",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim that the central legal question was whether the admission of the plea allocution violated the Confrontation Clause under Crawford is not backed by any supplied evidence.",
+    "Support check failed: the claim that the case addresses the scope of the Confrontation Clause as a core protection for criminal defendants against testimonial hearsay is not supported by any supplied evidence attributed to Justice Sotomayor.",
+    "Support check failed: the claim that Justice Thomas said the dispute over the Reid rule\u2019s relationship to the Confrontation Clause could affect how courts handle evidence that a defendant \u201copens the door\u201d to otherwise inadmissible testimony is not supported by the supplied evidence.",
+    "Overstatement check failed: the three unsupported claims above overstate what the evidence actually says."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.85,
+    "neutrality": 0.9,
+    "readability": 0.9,
+    "restraint": 0.6,
+    "traceability": 0.85
+  }
+}

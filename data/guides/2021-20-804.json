@@ -1,0 +1,515 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+            "evidence_ids": [
+              "ev-f8277ad59f68-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+            "evidence_ids": [
+              "ev-f8277ad59f68-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, the Supreme Court considered whether an elected body\u2019s censure of a member is protected speech or a permissible disciplinary action."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-804",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "379c245eb7248f0ddfce9a885dbfbf8b67a269e7f888a13fa7e65de9f898be1b",
+            "evidence_ids": [
+              "ev-379c245eb724-0001-0000"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The Supreme Court reversed the Fifth Circuit\u2019s judgment."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "379c245eb7248f0ddfce9a885dbfbf8b67a269e7f888a13fa7e65de9f898be1b",
+            "evidence_ids": [
+              "ev-379c245eb724-0001-0001"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "Justice Gorsuch noted that elected officials are expected to endure criticism and continue exercising free\u2011speech rights."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T18:47:38.802772Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "379c245eb7248f0ddfce9a885dbfbf8b67a269e7f888a13fa7e65de9f898be1b",
+      "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+            "evidence_ids": [
+              "ev-f8277ad59f68-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether a legislative body has any limit to its authority to expel or sanction a member."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+            "evidence_ids": [
+              "ev-f8277ad59f68-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, he also inquired about the historical basis for sanctioning a private citizen."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+            "evidence_ids": [
+              "ev-f8277ad59f68-0003-0000"
+            ],
+            "pages": {
+              "end": 64,
+              "start": 64
+            }
+          }
+        ],
+        "text": "Justice Kagan asked which side of Senator McCarthy\u2019s censure the case falls on."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+            "evidence_ids": [
+              "ev-f8277ad59f68-0004-0003"
+            ],
+            "pages": {
+              "end": 87,
+              "start": 87
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts concluded the oral argument by noting the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "379c245eb7248f0ddfce9a885dbfbf8b67a269e7f888a13fa7e65de9f898be1b",
+            "evidence_ids": [
+              "ev-379c245eb724-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          },
+          {
+            "document_hash": "379c245eb7248f0ddfce9a885dbfbf8b67a269e7f888a13fa7e65de9f898be1b",
+            "evidence_ids": [
+              "ev-379c245eb724-0001-0000"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The Supreme Court decided Houston Community College System v. Wilson on March\u202f24,\u202f2022, reversing the Fifth Circuit\u2019s judgment."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Houston Community College System",
+          "citations": [
+            {
+              "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+              "evidence_ids": [
+                "ev-f8277ad59f68-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Houston Community College System, the petitioner argued that the Fifth Circuit\u2019s decision was wrong because it ignored historical parliamentary tradition that allows elected bodies to govern their own affairs, including censuring members, and because it turned the Free Speech Clause into a \u201ccudgel and a shield.\u201d"
+        }
+      ],
+      "heading": "Petitioner \u2013 Houston Community College System",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Michael B. Kimberly (respondent)",
+          "citations": [
+            {
+              "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+              "evidence_ids": [
+                "ev-f8277ad59f68-0001-0003"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            }
+          ],
+          "text": "According to Michael B. Kimberly (respondent), according to Michael B. Kimberly (respondent), the respondent contended that the central issue was whether the Board\u2019s censure was merely an expression of governmental opinion about Mr. Wilson\u2019s speech or a punishment for that speech."
+        },
+        {
+          "attribution": "Board",
+          "citations": [
+            {
+              "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+              "evidence_ids": [
+                "ev-f8277ad59f68-0004-0000"
+              ],
+              "pages": {
+                "end": 85,
+                "start": 85
+              }
+            }
+          ],
+          "text": "The Board also argued that it needed the ability to speak in response to Mr. Wilson\u2019s public accusations, but that tying a censure to a rules violation would violate the First Amendment."
+        }
+      ],
+      "heading": "Respondent \u2013 Michael B. Kimberly (on behalf of the Board of Trustees)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+              "evidence_ids": [
+                "ev-f8277ad59f68-0001-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the United States argued that a censure resolution adopted by an elected body does not abridge the member\u2019s freedom of speech."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+              "evidence_ids": [
+                "ev-f8277ad59f68-0001-0002"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), it further noted that Anglo\u2011American legal tradition has long permitted elected bodies to discipline members, including for speech, without violating free\u2011speech principles."
+        }
+      ],
+      "heading": "Amicus \u2013 United States (Solicitor General\u2019s Office)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "379c245eb7248f0ddfce9a885dbfbf8b67a269e7f888a13fa7e65de9f898be1b",
+      "evidence_ids": [
+        "ev-379c245eb724-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "379c245eb7248f0ddfce9a885dbfbf8b67a269e7f888a13fa7e65de9f898be1b",
+      "evidence_ids": [
+        "ev-379c245eb724-0001-0001"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "379c245eb7248f0ddfce9a885dbfbf8b67a269e7f888a13fa7e65de9f898be1b",
+      "evidence_ids": [
+        "ev-379c245eb724-0001-0000"
+      ],
+      "pages": {
+        "end": 17,
+        "start": 17
+      }
+    },
+    {
+      "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+      "evidence_ids": [
+        "ev-f8277ad59f68-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+      "evidence_ids": [
+        "ev-f8277ad59f68-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+      "evidence_ids": [
+        "ev-f8277ad59f68-0001-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+      "evidence_ids": [
+        "ev-f8277ad59f68-0001-0001"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+      "evidence_ids": [
+        "ev-f8277ad59f68-0001-0002"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+      "evidence_ids": [
+        "ev-f8277ad59f68-0001-0003"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+      "evidence_ids": [
+        "ev-f8277ad59f68-0003-0000"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 64
+      }
+    },
+    {
+      "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+      "evidence_ids": [
+        "ev-f8277ad59f68-0004-0000"
+      ],
+      "pages": {
+        "end": 85,
+        "start": 85
+      }
+    },
+    {
+      "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+      "evidence_ids": [
+        "ev-f8277ad59f68-0004-0002"
+      ],
+      "pages": {
+        "end": 87,
+        "start": 87
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T18:57:19.583690Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "United States (amicus curiae)",
+        "citations": [
+          {
+            "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+            "evidence_ids": [
+              "ev-f8277ad59f68-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to United States (amicus curiae), united States (amicus curiae) argued that elected bodies have long disciplined members, including for speech, without violating free\u2011speech principles."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "379c245eb7248f0ddfce9a885dbfbf8b67a269e7f888a13fa7e65de9f898be1b",
+            "evidence_ids": [
+              "ev-379c245eb724-0001-0001"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The Court\u2019s acknowledgment that elected officials must tolerate criticism reinforces longstanding free\u2011speech principles for public officials."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f8277ad59f68b737bf930958828df1a0cb4cf5e6199b948dbd250425685b7a90",
+            "evidence_ids": [
+              "ev-f8277ad59f68-0004-0002"
+            ],
+            "pages": {
+              "end": 87,
+              "start": 87
+            }
+          }
+        ],
+        "text": "The case highlights that local governmental bodies frequently use censure for conduct both inside and outside the body, indicating the practice is a normal part of governance."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

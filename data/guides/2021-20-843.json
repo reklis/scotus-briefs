@@ -1,0 +1,379 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-843",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
+            "evidence_ids": [
+              "ev-050f4a002f60-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The majority held that New York\u2019s proper\u2011cause licensing requirement violates the Second Amendment."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
+            "evidence_ids": [
+              "ev-050f4a002f60-0008-0001"
+            ],
+            "pages": {
+              "end": 80,
+              "start": 80
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh, joined by the Chief Justice, concurred, emphasizing that the Second Amendment guarantees the right to self\u2011defense and that New York\u2019s regime is inconsistent with that right."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
+            "evidence_ids": [
+              "ev-050f4a002f60-0008-0003"
+            ],
+            "pages": {
+              "end": 82,
+              "start": 82
+            }
+          }
+        ],
+        "text": "Justice Barrett concurred, noting that the right is not unlimited and that prohibitions on dangerous and unusual weapons are historically permissible."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
+            "evidence_ids": [
+              "ev-050f4a002f60-0008-0008"
+            ],
+            "pages": {
+              "end": 87,
+              "start": 87
+            }
+          },
+          {
+            "document_hash": "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
+            "evidence_ids": [
+              "ev-050f4a002f60-0010-0001"
+            ],
+            "pages": {
+              "end": 103,
+              "start": 103
+            }
+          }
+        ],
+        "text": "Justice Breyer dissented, warning of the dangers posed by firearms and questioning the Court\u2019s approach to historical analysis."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T19:37:57.970488Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
+      "e1f8a701a0bc54fb034d7205ef127c7ca5c86644e539b4189e6c7e2b57703812"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "e1f8a701a0bc54fb034d7205ef127c7ca5c86644e539b4189e6c7e2b57703812",
+            "evidence_ids": [
+              "ev-e1f8a701a0bc-0001-0003"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether New York could ban open carry while permitting concealed carry."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "e1f8a701a0bc54fb034d7205ef127c7ca5c86644e539b4189e6c7e2b57703812",
+            "evidence_ids": [
+              "ev-e1f8a701a0bc-0001-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts inquired about places where the state could lawfully exclude firearms, such as establishments serving alcohol."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "e1f8a701a0bc54fb034d7205ef127c7ca5c86644e539b4189e6c7e2b57703812",
+            "evidence_ids": [
+              "ev-e1f8a701a0bc-0001-0006"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the purpose of the personal right to keep and bear arms is self\u2011defense, setting aside any military purpose."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "e1f8a701a0bc54fb034d7205ef127c7ca5c86644e539b4189e6c7e2b57703812",
+            "evidence_ids": [
+              "ev-e1f8a701a0bc-0002-0003"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Gorsuch made a statement about lower courts applying the history test, rather than asking a question."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "e1f8a701a0bc54fb034d7205ef127c7ca5c86644e539b4189e6c7e2b57703812",
+            "evidence_ids": [
+              "ev-e1f8a701a0bc-0002-0001"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh sought clarification on whether the discretion granted to licensing officials is compatible with constitutional rights."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "e1f8a701a0bc54fb034d7205ef127c7ca5c86644e539b4189e6c7e2b57703812",
+            "evidence_ids": [
+              "ev-e1f8a701a0bc-0005-0001"
+            ],
+            "pages": {
+              "end": 109,
+              "start": 109
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked what the Court should do with categories of exclusion identified in Heller, such as the mentally ill and felons."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "e1f8a701a0bc54fb034d7205ef127c7ca5c86644e539b4189e6c7e2b57703812",
+            "evidence_ids": [
+              "ev-e1f8a701a0bc-0005-0002"
+            ],
+            "pages": {
+              "end": 112,
+              "start": 112
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether there are studies on how eliminating the licensing regime would affect policing and public safety."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
+            "evidence_ids": [
+              "ev-050f4a002f60-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The Court held that New York\u2019s \u201cmay\u2011issue\u201d licensing regime, which requires applicants to demonstrate a special need for self\u2011defense, violates the Constitution\u2019s Second Amendment."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
+            "evidence_ids": [
+              "ev-050f4a002f60-0007-0000"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "The Court concluded that historical tradition does not support the proper\u2011cause requirement, and therefore the law is unconstitutional."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
+              "evidence_ids": [
+                "ev-050f4a002f60-0003-0001"
+              ],
+              "pages": {
+                "end": 32,
+                "start": 32
+              }
+            }
+          ],
+          "text": "Respondents argued that the proper\u2011cause licensing scheme was a permissible regulation that did not infringe the Second Amendment and that exempting cities would erode the general right to publicly carry arms."
+        }
+      ],
+      "heading": "Respondents",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "e1f8a701a0bc54fb034d7205ef127c7ca5c86644e539b4189e6c7e2b57703812",
+              "evidence_ids": [
+                "ev-e1f8a701a0bc-0001-0005"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, petitioners asserted that the Second Amendment guarantees a baseline right for every person to carry firearms in public."
+        }
+      ],
+      "heading": "Applicants",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "050f4a002f60f97729bd9a1da879cf1dc0c08955859b56aac8966c0a4bb3e76f",
+      "evidence_ids": [
+        "ev-050f4a002f60-0001-0000"
+      ],
+      "pages": {
+        "end": 100,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "e1f8a701a0bc54fb034d7205ef127c7ca5c86644e539b4189e6c7e2b57703812",
+      "evidence_ids": [
+        "ev-e1f8a701a0bc-0000-0003"
+      ],
+      "pages": {
+        "end": 120,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T19:44:55.081750Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

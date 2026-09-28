@@ -1,0 +1,405 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+            "evidence_ids": [
+              "ev-226b539cbf9b-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          },
+          {
+            "document_hash": "607a38d079cbc8a990eb1bfac54f401f355bf59921872054beb16c0285772a6d",
+            "evidence_ids": [
+              "ev-607a38d079cb-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Petitioner was represented by David C. Frederick, Esq.; the United States filed an amicus brief supporting the petitioner; Respondent was represented by J. Scott Ballenger, Esq."
+      },
+      {
+        "attribution": "FRA",
+        "citations": [
+          {
+            "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+            "evidence_ids": [
+              "ev-226b539cbf9b-0004-0004"
+            ],
+            "pages": {
+              "end": 96,
+              "start": 96
+            }
+          },
+          {
+            "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+            "evidence_ids": [
+              "ev-226b539cbf9b-0002-0001"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "The case centered on the definition of when a locomotive is considered \u201cin use\u201d under the Safety Appliance Act."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-807",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "607a38d079cbc8a990eb1bfac54f401f355bf59921872054beb16c0285772a6d",
+            "evidence_ids": [
+              "ev-607a38d079cb-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The judgment was affirmed by an equally divided Court."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "607a38d079cbc8a990eb1bfac54f401f355bf59921872054beb16c0285772a6d",
+            "evidence_ids": [
+              "ev-607a38d079cb-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Justice Barrett did not participate in the consideration or decision of the case."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T18:57:19.601760Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+      "607a38d079cbc8a990eb1bfac54f401f355bf59921872054beb16c0285772a6d"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+          "evidence_ids": [
+            "ev-226b539cbf9b-0004-0004"
+          ],
+          "pages": {
+            "end": 96,
+            "start": 96
+          }
+        }
+      ],
+      "definition": "A railcar, including a locomotive, which is a car under the Safety Appliance Act, comes into use when it is moving or shortly before movement if all inspections have been completed and it is deemed ready for imminent movement.",
+      "term": "in use"
+    }
+  ],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+            "evidence_ids": [
+              "ev-226b539cbf9b-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The oral argument began with appearances by counsel for the petitioner, an amicus, and the respondent."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+            "evidence_ids": [
+              "ev-226b539cbf9b-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+            "evidence_ids": [
+              "ev-226b539cbf9b-0002-0001"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          },
+          {
+            "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+            "evidence_ids": [
+              "ev-226b539cbf9b-0002-0002"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justices asked several questions about the meaning of terms such as \u201csafe to operate,\u201d \u201cplaced into service,\u201d and the appropriate theory of statutory interpretation."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+            "evidence_ids": [
+              "ev-226b539cbf9b-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh inquired whether a locomotive stored on a side track for a few days is considered \u201cin storage\u201d only after fuel is drained and the battery disconnected."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+            "evidence_ids": [
+              "ev-226b539cbf9b-0003-0001"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          },
+          {
+            "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+            "evidence_ids": [
+              "ev-226b539cbf9b-0004-0001"
+            ],
+            "pages": {
+              "end": 87,
+              "start": 87
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the statute imposes obligations on railroads before a train starts moving and whether unhooking the battery and draining fluid are required steps."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "607a38d079cbc8a990eb1bfac54f401f355bf59921872054beb16c0285772a6d",
+            "evidence_ids": [
+              "ev-607a38d079cb-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Court affirmed the lower\u2011court judgment in an equally divided decision."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "607a38d079cbc8a990eb1bfac54f401f355bf59921872054beb16c0285772a6d",
+            "evidence_ids": [
+              "ev-607a38d079cb-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Justice Barrett did not take part in the consideration or decision of the case."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "David C. Frederick",
+          "citations": [
+            {
+              "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+              "evidence_ids": [
+                "ev-226b539cbf9b-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to David C. Frederick, petitioner argues that the 1904 Johnson v. Southern Pacific decision, which held that a motionless dining car was \u201cin use\u201d when a worker\u2019s hand was crushed while coupling, supports its view of the statute."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "J. Scott Ballenger",
+          "citations": [
+            {
+              "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+              "evidence_ids": [
+                "ev-226b539cbf9b-0003-0002"
+              ],
+              "pages": {
+                "end": 69,
+                "start": 69
+              }
+            }
+          ],
+          "text": "According to J. Scott Ballenger, respondent contends that the petitioner and the government are rewriting the statute; the issues about draining fluids and unhooking batteries are not found in the statutory text."
+        },
+        {
+          "attribution": "J. Scott Ballenger",
+          "citations": [
+            {
+              "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+              "evidence_ids": [
+                "ev-226b539cbf9b-0003-0004"
+              ],
+              "pages": {
+                "end": 76,
+                "start": 76
+              }
+            }
+          ],
+          "text": "According to J. Scott Ballenger, respondent further points out that the regulations define a \u201cdead locomotive movement\u201d as a movement when the locomotive is not applying tractive power and that the locomotive may be idling."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "226b539cbf9bfae972ae092499c0d00463de80fd94ff964869995d1f43818b32",
+      "evidence_ids": [
+        "ev-226b539cbf9b-0000-0000"
+      ],
+      "pages": {
+        "end": 100,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "607a38d079cbc8a990eb1bfac54f401f355bf59921872054beb16c0285772a6d",
+      "evidence_ids": [
+        "ev-607a38d079cb-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T19:01:50.677614Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

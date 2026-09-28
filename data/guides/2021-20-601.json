@@ -1,0 +1,372 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "b5ffe750859666f3edaa287090b55221d3655ba55c9dbc77e7f9029c6a3f24a2",
+            "evidence_ids": [
+              "ev-b5ffe7508596-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked what basis exists for the Attorney General's intervention beyond the rules of appellate procedure."
+      },
+      {
+        "attribution": "Attorney General Matthew Kuhn (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "b5ffe750859666f3edaa287090b55221d3655ba55c9dbc77e7f9029c6a3f24a2",
+            "evidence_ids": [
+              "ev-b5ffe7508596-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Attorney General Matthew Kuhn (Petitioner), according to Attorney General Matthew Kuhn (Petitioner), the Attorney General argued that the lower panel ignored Kentucky's sovereign interests in enforcing its law."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-601",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "95e36bc4f6021527ad42427c03fdadd12fa9de01f65a013c7f16614e608cc898",
+            "evidence_ids": [
+              "ev-95e36bc4f602-0001-0000"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The majority held that the Court of Appeals erred in denying the Attorney General's motion to intervene; the judgment was reversed and the case remanded."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "95e36bc4f6021527ad42427c03fdadd12fa9de01f65a013c7f16614e608cc898",
+            "evidence_ids": [
+              "ev-95e36bc4f602-0003-0000"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "Justice Sotomayor, in dissent, expressed no quarrel with the holding that no jurisdictional bar precluded the Attorney General's intervention."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T18:03:31.459063Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "95e36bc4f6021527ad42427c03fdadd12fa9de01f65a013c7f16614e608cc898",
+      "b5ffe750859666f3edaa287090b55221d3655ba55c9dbc77e7f9029c6a3f24a2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "b5ffe750859666f3edaa287090b55221d3655ba55c9dbc77e7f9029c6a3f24a2",
+            "evidence_ids": [
+              "ev-b5ffe7508596-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked what basis exists for intervention beyond the rules of appellate procedure."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "b5ffe750859666f3edaa287090b55221d3655ba55c9dbc77e7f9029c6a3f24a2",
+            "evidence_ids": [
+              "ev-b5ffe7508596-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas later noted that the Sixth Circuit focused on prejudice and a third\u2011party standing argument raised by the Attorney General."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b5ffe750859666f3edaa287090b55221d3655ba55c9dbc77e7f9029c6a3f24a2",
+            "evidence_ids": [
+              "ev-b5ffe7508596-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the Court had discussed intervention in the Torres case."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "95e36bc4f6021527ad42427c03fdadd12fa9de01f65a013c7f16614e608cc898",
+            "evidence_ids": [
+              "ev-95e36bc4f602-0001-0000"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The Court reversed the Court of Appeals' denial of the Kentucky Attorney General's motion to intervene and remanded the case for further proceedings consistent with this opinion."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "95e36bc4f6021527ad42427c03fdadd12fa9de01f65a013c7f16614e608cc898",
+            "evidence_ids": [
+              "ev-95e36bc4f602-0003-0003"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "The Supreme Court granted the Attorney General's petition for certiorari before issuing the reversal."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Kentucky Attorney General",
+          "citations": [
+            {
+              "document_hash": "95e36bc4f6021527ad42427c03fdadd12fa9de01f65a013c7f16614e608cc898",
+              "evidence_ids": [
+                "ev-95e36bc4f602-0001-0002"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "According to Kentucky Attorney General, the Attorney General asserts a substantial legal interest in defending Kentucky law."
+        },
+        {
+          "attribution": "Attorney General Cameron",
+          "citations": [
+            {
+              "document_hash": "95e36bc4f6021527ad42427c03fdadd12fa9de01f65a013c7f16614e608cc898",
+              "evidence_ids": [
+                "ev-95e36bc4f602-0003-0002"
+              ],
+              "pages": {
+                "end": 32,
+                "start": 32
+              }
+            }
+          ],
+          "text": "According to Attorney General Cameron, the Attorney General also claimed that the law does not give the Attorney General authority or duty to enforce its provisions, and therefore the AG had no interest in the case."
+        }
+      ],
+      "heading": "Kentucky Attorney General (Cameron)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Attorney General Matthew Kuhn (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "b5ffe750859666f3edaa287090b55221d3655ba55c9dbc77e7f9029c6a3f24a2",
+              "evidence_ids": [
+                "ev-b5ffe7508596-0000-0000"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Attorney General Matthew Kuhn (Petitioner), according to Attorney General Matthew Kuhn (Petitioner), the petitioner argued that the panel treated Kentucky's sovereign interests as irrelevant to the timeliness inquiry."
+        }
+      ],
+      "heading": "Attorney General Matthew Kuhn (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Secretary",
+          "citations": [
+            {
+              "document_hash": "b5ffe750859666f3edaa287090b55221d3655ba55c9dbc77e7f9029c6a3f24a2",
+              "evidence_ids": [
+                "ev-b5ffe7508596-0002-0001"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "The Secretary argued that the prejudice claim was waived because the Secretary had not appealed the district court's third\u2011party standing finding."
+        }
+      ],
+      "heading": "Secretary (State Official)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "95e36bc4f6021527ad42427c03fdadd12fa9de01f65a013c7f16614e608cc898",
+      "evidence_ids": [
+        "ev-95e36bc4f602-0001-0002",
+        "ev-95e36bc4f602-0001-0000",
+        "ev-95e36bc4f602-0003-0003",
+        "ev-95e36bc4f602-0003-0002",
+        "ev-95e36bc4f602-0003-0000"
+      ],
+      "pages": {
+        "end": 32,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "b5ffe750859666f3edaa287090b55221d3655ba55c9dbc77e7f9029c6a3f24a2",
+      "evidence_ids": [
+        "ev-b5ffe7508596-0000-0000",
+        "ev-b5ffe7508596-0000-0001",
+        "ev-b5ffe7508596-0002-0000",
+        "ev-b5ffe7508596-0002-0001",
+        "ev-b5ffe7508596-0003-0000",
+        "ev-b5ffe7508596-0003-0006"
+      ],
+      "pages": {
+        "end": 67,
+        "start": 4
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T18:10:40.324687Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Attorney General Matthew Kuhn (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "b5ffe750859666f3edaa287090b55221d3655ba55c9dbc77e7f9029c6a3f24a2",
+            "evidence_ids": [
+              "ev-b5ffe7508596-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Attorney General Matthew Kuhn (Petitioner), according to Attorney General Matthew Kuhn (Petitioner), the case highlights the importance of considering a state's sovereign interests when courts evaluate intervention requests."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

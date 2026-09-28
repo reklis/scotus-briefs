@@ -1,0 +1,41 @@
+{
+  "accepted": false,
+  "case_id": "2021-20-828",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": false,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check fails because the claim that \u201cthe outcome could determine whether individuals can pursue claims when the evidence they need is classified under the state\u2011secrets privilege\u201d is a prediction not backed by any cited evidence.",
+    "Attribution check fails for the three \u201cWhy it matters\u201d statements: they attribute analytical or predictive statements to the Court or Justice Barrett, but the supplied evidence does not contain those attributions.",
+    "Opinion distinction check fails because the \u201cWhy it matters\u201d section presents evaluative commentary as factual statements attributed to the Court, without separating opinion from fact.",
+    "Overstatement check fails because the \u201cWhy it matters\u201d claims contain forward\u2011looking predictions about the case\u2019s future impact, which are not supported by the evidence and constitute material overstatement."
+  ],
+  "quality_scores": {
+    "completeness": 0.85,
+    "factual_accuracy": 0.68,
+    "neutrality": 0.92,
+    "readability": 0.91,
+    "restraint": 0.61,
+    "traceability": 0.93
+  }
+}

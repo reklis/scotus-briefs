@@ -1,0 +1,488 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-147",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "77aca25def67fac2c73605cc5f4633d292b5449bbc6616d69d09bf9a6609c853",
+            "evidence_ids": [
+              "ev-77aca25def67-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The Court held that there is no Bivens action for First Amendment retaliation."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "77aca25def67fac2c73605cc5f4633d292b5449bbc6616d69d09bf9a6609c853",
+            "evidence_ids": [
+              "ev-77aca25def67-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Court of Appeals erred when it created causes of action for Boule."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "77aca25def67fac2c73605cc5f4633d292b5449bbc6616d69d09bf9a6609c853",
+            "evidence_ids": [
+              "ev-77aca25def67-0004-0003"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Gorsuch dissented from the Court\u2019s treatment of Boule\u2019s Fourth Amendment claim."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T20:15:33.270860Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "77aca25def67fac2c73605cc5f4633d292b5449bbc6616d69d09bf9a6609c853",
+      "9c6212bd4d60d6c0564b9e6879092a7243d7b078c29e34954781a4b5bc3ad4f4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "9c6212bd4d60d6c0564b9e6879092a7243d7b078c29e34954781a4b5bc3ad4f4",
+            "evidence_ids": [
+              "ev-9c6212bd4d60-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether the Fourth Amendment claim here forecloses the argument that it is excluded."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "9c6212bd4d60d6c0564b9e6879092a7243d7b078c29e34954781a4b5bc3ad4f4",
+            "evidence_ids": [
+              "ev-9c6212bd4d60-0001-0002"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas questioned why the Court has declined to apply or extend Bivens in recent history."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "9c6212bd4d60d6c0564b9e6879092a7243d7b078c29e34954781a4b5bc3ad4f4",
+            "evidence_ids": [
+              "ev-9c6212bd4d60-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked about the relevance of Canada and cross\u2011border cooperation to the case."
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "9c6212bd4d60d6c0564b9e6879092a7243d7b078c29e34954781a4b5bc3ad4f4",
+            "evidence_ids": [
+              "ev-9c6212bd4d60-0003-0000"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "According to Justice GORSUCH, justice Gorsuch inquired about qualified immunity and whether the law is clearly established."
+      },
+      {
+        "attribution": "Justice BARRETT",
+        "citations": [
+          {
+            "document_hash": "9c6212bd4d60d6c0564b9e6879092a7243d7b078c29e34954781a4b5bc3ad4f4",
+            "evidence_ids": [
+              "ev-9c6212bd4d60-0003-0002"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "Justice Barrett questioned whether the Court should recognize a new Bivens claim given its disfavor in recent years."
+      },
+      {
+        "attribution": "Justice KAGAN",
+        "citations": [
+          {
+            "document_hash": "9c6212bd4d60d6c0564b9e6879092a7243d7b078c29e34954781a4b5bc3ad4f4",
+            "evidence_ids": [
+              "ev-9c6212bd4d60-0003-0003"
+            ],
+            "pages": {
+              "end": 74,
+              "start": 74
+            }
+          }
+        ],
+        "text": "Justice Kagan asked how the Court should handle Fourth Amendment claims that invoke national security."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "77aca25def67fac2c73605cc5f4633d292b5449bbc6616d69d09bf9a6609c853",
+            "evidence_ids": [
+              "ev-77aca25def67-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The Court held that there is no Bivens action for First Amendment retaliation."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "77aca25def67fac2c73605cc5f4633d292b5449bbc6616d69d09bf9a6609c853",
+            "evidence_ids": [
+              "ev-77aca25def67-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Court of Appeals erred when it created causes of action for Boule."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "77aca25def67fac2c73605cc5f4633d292b5449bbc6616d69d09bf9a6609c853",
+            "evidence_ids": [
+              "ev-77aca25def67-0004-0003"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Gorsuch dissented from the Court\u2019s treatment of Boule\u2019s Fourth Amendment claim."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Sarah M. Harris",
+          "citations": [
+            {
+              "document_hash": "9c6212bd4d60d6c0564b9e6879092a7243d7b078c29e34954781a4b5bc3ad4f4",
+              "evidence_ids": [
+                "ev-9c6212bd4d60-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Sarah M. Harris, the Court should not expand Bivens for the first time in 40 years because recent precedent rejects that premise."
+        }
+      ],
+      "heading": "Petitioner (Sarah M. Harris)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Michael R. Huston (Amicus Curiae for United States)",
+          "citations": [
+            {
+              "document_hash": "9c6212bd4d60d6c0564b9e6879092a7243d7b078c29e34954781a4b5bc3ad4f4",
+              "evidence_ids": [
+                "ev-9c6212bd4d60-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Michael R. Huston (Amicus Curiae for United States), according to Michael R. Huston (Amicus Curiae for United States), a straightforward application of recent Bivens precedents demonstrates the limits of Bivens extensions."
+        }
+      ],
+      "heading": "Amicus Curiae (Michael R. Huston, United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Felicia H. Ellsworth (Counsel for Respondent)",
+          "citations": [
+            {
+              "document_hash": "9c6212bd4d60d6c0564b9e6879092a7243d7b078c29e34954781a4b5bc3ad4f4",
+              "evidence_ids": [
+                "ev-9c6212bd4d60-0001-0001"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Felicia H. Ellsworth (Counsel for Respondent), according to Felicia H. Ellsworth (Counsel for Respondent), Mr. Boule\u2019s Fourth Amendment claim is materially indistinguishable from Bivens itself."
+        }
+      ],
+      "heading": "Respondent (Felicia H. Ellsworth)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Agent Egbert",
+          "citations": [
+            {
+              "document_hash": "77aca25def67fac2c73605cc5f4633d292b5449bbc6616d69d09bf9a6609c853",
+              "evidence_ids": [
+                "ev-77aca25def67-0002-0003"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "According to Agent Egbert, operating under a statutory mandate not invoked in prior cases dooms Boule\u2019s no\u2011new\u2011context argument."
+        },
+        {
+          "attribution": "Agent Egbert",
+          "citations": [
+            {
+              "document_hash": "77aca25def67fac2c73605cc5f4633d292b5449bbc6616d69d09bf9a6609c853",
+              "evidence_ids": [
+                "ev-77aca25def67-0004-0001"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Agent Egbert, the FTCA offers an alternative remedy for claims like Boule\u2019s."
+        }
+      ],
+      "heading": "Agent Egbert",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "CBP",
+          "citations": [
+            {
+              "document_hash": "77aca25def67fac2c73605cc5f4633d292b5449bbc6616d69d09bf9a6609c853",
+              "evidence_ids": [
+                "ev-77aca25def67-0004-0000"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "CBP\u2019s internal administrative grievance procedure offers an adequate remedy and does not require a Bivens\u2011type claim for participation or appeal rights."
+        }
+      ],
+      "heading": "Customs and Border Protection (CBP)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "9c6212bd4d60d6c0564b9e6879092a7243d7b078c29e34954781a4b5bc3ad4f4",
+              "evidence_ids": [
+                "ev-9c6212bd4d60-0002-0002"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Petitioner, border Patrol agents should not be subjected to Bivens actions."
+        }
+      ],
+      "heading": "Petitioner (Border Patrol Position)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "77aca25def67fac2c73605cc5f4633d292b5449bbc6616d69d09bf9a6609c853",
+      "evidence_ids": [
+        "ev-77aca25def67-0001-0001",
+        "ev-77aca25def67-0001-0000",
+        "ev-77aca25def67-0002-0000",
+        "ev-77aca25def67-0002-0005",
+        "ev-77aca25def67-0002-0001",
+        "ev-77aca25def67-0002-0002",
+        "ev-77aca25def67-0004-0000",
+        "ev-77aca25def67-0004-0001",
+        "ev-77aca25def67-0004-0003"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 13
+      }
+    },
+    {
+      "document_hash": "9c6212bd4d60d6c0564b9e6879092a7243d7b078c29e34954781a4b5bc3ad4f4",
+      "evidence_ids": [
+        "ev-9c6212bd4d60-0000-0005",
+        "ev-9c6212bd4d60-0000-0000",
+        "ev-9c6212bd4d60-0000-0001",
+        "ev-9c6212bd4d60-0001-0000",
+        "ev-9c6212bd4d60-0001-0001",
+        "ev-9c6212bd4d60-0001-0002",
+        "ev-9c6212bd4d60-0002-0000",
+        "ev-9c6212bd4d60-0002-0001",
+        "ev-9c6212bd4d60-0002-0002",
+        "ev-9c6212bd4d60-0002-0003",
+        "ev-9c6212bd4d60-0003-0000",
+        "ev-9c6212bd4d60-0003-0006",
+        "ev-9c6212bd4d60-0003-0001",
+        "ev-9c6212bd4d60-0003-0002",
+        "ev-9c6212bd4d60-0003-0005",
+        "ev-9c6212bd4d60-0003-0003"
+      ],
+      "pages": {
+        "end": 74,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T20:28:18.479195Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

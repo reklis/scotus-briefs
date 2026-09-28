@@ -1,0 +1,620 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b1cb893711d795c32b66fad93265411e704163d6bf44e5c190951cfb8f3bf05e",
+            "evidence_ids": [
+              "ev-b1cb893711d7-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "After the September\u202f11,\u202f2001 attacks, the CIA believed Abu\u202fZubaydah was a senior al\u202fQaeda lieutenant with knowledge of future attacks against the United States."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b1cb893711d795c32b66fad93265411e704163d6bf44e5c190951cfb8f3bf05e",
+            "evidence_ids": [
+              "ev-b1cb893711d7-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Government intervened and asserted the state\u2011secrets privilege to block Zubaydah\u2019s discovery request."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether the two contractors had previously testified about detainee treatment."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0001-0005"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh questioned the constitutional versus common\u2011law nature of the privilege and whether Congress could alter it."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0001-0006"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the case should be analyzed under Reynolds (state\u2011secrets) or an intelligence\u2011law framework."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0001-0002"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether the government bears the burden of proving the privilege."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-827",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b1cb893711d795c32b66fad93265411e704163d6bf44e5c190951cfb8f3bf05e",
+            "evidence_ids": [
+              "ev-b1cb893711d7-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The majority held that the state\u2011secrets privilege applies to the existence (or non\u2011existence) of a CIA facility in Poland and therefore precludes further discovery."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "b1cb893711d795c32b66fad93265411e704163d6bf44e5c190951cfb8f3bf05e",
+            "evidence_ids": [
+              "ev-b1cb893711d7-0003-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh concurred, stating that Zubaydah has shown only a \u201cdubious showing of necessity\u201d for the discovery he seeks."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "b1cb893711d795c32b66fad93265411e704163d6bf44e5c190951cfb8f3bf05e",
+            "evidence_ids": [
+              "ev-b1cb893711d7-0004-0002",
+              "ev-b1cb893711d7-0004-0010"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Gorsuch dissented, arguing that the treatment of Zubaydah involved severe abuse, that discovery could proceed without confirming the location of the alleged CIA site, and that 28\u202fU.S.C.\u202f\u00a7\u202f1782 authorizes foreign\u2011related discovery."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T19:10:01.676960Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b1cb893711d795c32b66fad93265411e704163d6bf44e5c190951cfb8f3bf05e",
+      "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas: \u201cThe two contractors have testified about the treatment of detainees before, right?\u201d"
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0001-0005"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh: \u201cTo what extent is the privilege a constitutional privilege? And to what extent do you think the privilege is a common law privilege that could be altered by Congress?\u201d"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0001-0006"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor: \u201cMr. Fletcher, should we be thinking about this as a Reynolds case or a \u2013 an Intel case?\u201d"
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0001-0002"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch: \u201cMr. Fletcher, do we start on an agreed premise that the government bears the burden of proving the privilege up?\u201d"
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas: \u201cMr. Klein, you said that much of this has already been disclosed. If it has been, why do you need additional testimony?\u201d"
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0002-0004"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "According to Justice Barrett, justice Barrett: \u201cSo you don\u2019t need them for that?\u201d"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0002-0003"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor: \u201cMr. Klein, am I \u2013 I think I understand, because you\u2019re held in Guantanamo, you\u2019re not permitted to sign affidavits or give any testimony, correct?\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0002-0002"
+            ],
+            "pages": {
+              "end": 64,
+              "start": 64
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito: \u201cCan this whole thing be boiled down into much simpler terms? Is it correct that what you want in the \u2013 in the end is a more official link between what happened and Poland?\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "Justice Alito: \u201cWell, you know \u2013 you say you know what happened, and what you want to add is where it happened, right? That\u2019s the link. That\u2019s what this all boils down to.\u201d"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0003-0002"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan: \u201cDoes \u2013 does \u2013 is that in the end what your argument depends on, that we should treat the contractors differently from an employee? If \u2013 if these people were current employees, would your entire argument go up in smoke?\u201d"
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+            "evidence_ids": [
+              "ev-d242b06a673c-0003-0004"
+            ],
+            "pages": {
+              "end": 74,
+              "start": 74
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch: \u201cWill the government make Petitioner available to testify as to his treatment during these dates?\u201d"
+      }
+    ],
+    "heading": "Oral Argument \u2013 Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b1cb893711d795c32b66fad93265411e704163d6bf44e5c190951cfb8f3bf05e",
+            "evidence_ids": [
+              "ev-b1cb893711d7-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The Court held that the state\u2011secrets privilege bars discovery of whether a CIA detention facility exists in Poland, precluding the government\u2019s request for information from contractors Mitchell and Jessen."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "b1cb893711d795c32b66fad93265411e704163d6bf44e5c190951cfb8f3bf05e",
+            "evidence_ids": [
+              "ev-b1cb893711d7-0003-0001"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh filed a brief concurrence stating that Abu\u202fZubaydah showed only a \u201cdubious showing of necessity\u201d for the discovery he seeks."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "b1cb893711d795c32b66fad93265411e704163d6bf44e5c190951cfb8f3bf05e",
+            "evidence_ids": [
+              "ev-b1cb893711d7-0004-0002",
+              "ev-b1cb893711d7-0004-0010"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Gorsuch authored a dissent arguing that the discovery could proceed without revealing the location of the alleged CIA site and citing 28\u202fU.S.C.\u202f\u00a7\u202f1782 as authority for foreign\u2011related discovery."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "b1cb893711d795c32b66fad93265411e704163d6bf44e5c190951cfb8f3bf05e",
+              "evidence_ids": [
+                "ev-b1cb893711d7-0002-0002"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to United States, the Government said it had provided a reasonable explanation why the proposed discovery could significantly harm national security."
+        }
+      ],
+      "heading": "United States Government",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Brian H. Fletcher",
+          "citations": [
+            {
+              "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+              "evidence_ids": [
+                "ev-d242b06a673c-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Brian H. Fletcher, fletcher argued that the nation\u2019s covert intelligence partnerships depend on keeping relationships confidential."
+        },
+        {
+          "attribution": "Brian H. Fletcher",
+          "citations": [
+            {
+              "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+              "evidence_ids": [
+                "ev-d242b06a673c-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Brian H. Fletcher, he said respondents seek discovery that would breach that trust by confirming or denying the existence of an alleged CIA facility in Poland, and that the request is not to vindicate U.S. rights but to aid a foreign (Polish) investigation."
+        },
+        {
+          "attribution": "Mr. Fletcher",
+          "citations": [
+            {
+              "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+              "evidence_ids": [
+                "ev-d242b06a673c-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Fletcher, he maintained that the executive\u2019s national\u2011security judgment deserves deference, and if the court agrees that disclosure would harm national security, the evidence must not be disclosed."
+        },
+        {
+          "attribution": "Mr. Fletcher",
+          "citations": [
+            {
+              "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+              "evidence_ids": [
+                "ev-d242b06a673c-0003-0003"
+              ],
+              "pages": {
+                "end": 75,
+                "start": 75
+              }
+            }
+          ],
+          "text": "According to Mr. Fletcher, he clarified that all communications by Abu\u202fZubaydah could proceed subject to security screening, eliminating classified information."
+        }
+      ],
+      "heading": "Brian H. Fletcher (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Klein",
+          "citations": [
+            {
+              "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+              "evidence_ids": [
+                "ev-d242b06a673c-0001-0004"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Mr. Klein, klein stated that the Polish prosecutor already possesses information about the alleged CIA site, so U.S. discovery is unnecessary."
+        },
+        {
+          "attribution": "Mr. KLEIN",
+          "citations": [
+            {
+              "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+              "evidence_ids": [
+                "ev-d242b06a673c-0002-0001"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Mr. KLEIN, he explained that under Polish law Zubaydah has the right to act as a complainant and submit evidence to the prosecutor, with a right of appeal if the prosecution is declined."
+        }
+      ],
+      "heading": "Mr. Klein (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b1cb893711d795c32b66fad93265411e704163d6bf44e5c190951cfb8f3bf05e",
+      "evidence_ids": [
+        "ev-b1cb893711d7-0001-0000"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "d242b06a673cdd9762d4df6a09b3cffa87a33825e92f9c08d53a693dab2e5fc4",
+      "evidence_ids": [
+        "ev-d242b06a673c-0000-0000"
+      ],
+      "pages": {
+        "end": 75,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T19:20:32.427229Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

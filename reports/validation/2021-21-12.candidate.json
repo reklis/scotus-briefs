@@ -1,0 +1,373 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e647a0103404fbc6de6f3be3a18ceb770480c3e49676e1f2a9dcc112437ed2c5",
+            "evidence_ids": [
+              "ev-e647a0103404-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "During his 2018 Senate reelection campaign, Senator Ted Cruz loaned $260,000 to his campaign committee."
+      },
+      {
+        "attribution": "Ted Cruz and the Committee",
+        "citations": [
+          {
+            "document_hash": "e647a0103404fbc6de6f3be3a18ceb770480c3e49676e1f2a9dcc112437ed2c5",
+            "evidence_ids": [
+              "ev-e647a0103404-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Ted Cruz and the Committee, Cruz and the Committee argue that Section\u202f304 of the BCRA violates the First Amendment and challenge the FEC\u2019s implementing regulation \u00a7\u202f116.11."
+      }
+    ],
+    "heading": "Background and Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-12",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e647a0103404fbc6de6f3be3a18ceb770480c3e49676e1f2a9dcc112437ed2c5",
+            "evidence_ids": [
+              "ev-e647a0103404-0000-0007"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The Court held that an injury resulting from the application or threatened application of an unlawful enactment is fairly traceable to the statute, and no Article\u202fIII rule bars such challenges."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "e647a0103404fbc6de6f3be3a18ceb770480c3e49676e1f2a9dcc112437ed2c5",
+            "evidence_ids": [
+              "ev-e647a0103404-0003-0000"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "In her dissent, Justice Kagan argued that contributions toward loan repayment have exceptional value to the candidate."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T20:05:14.427207Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "cf97b7bcda1b4ed93e28183909ee53b696d429648fe4ada8ba48f85ec7629fa9",
+      "e647a0103404fbc6de6f3be3a18ceb770480c3e49676e1f2a9dcc112437ed2c5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "cf97b7bcda1b4ed93e28183909ee53b696d429648fe4ada8ba48f85ec7629fa9",
+            "evidence_ids": [
+              "ev-cf97b7bcda1b-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether any basis other than Section\u202f304 exists for enforcing the regulation."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "cf97b7bcda1b4ed93e28183909ee53b696d429648fe4ada8ba48f85ec7629fa9",
+            "evidence_ids": [
+              "ev-cf97b7bcda1b-0001-0003"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, Justice Kavanaugh questioned why the $2,900 limit is insufficient to address anti\u2011corruption concerns, noting that a loan is not a gift."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "cf97b7bcda1b4ed93e28183909ee53b696d429648fe4ada8ba48f85ec7629fa9",
+            "evidence_ids": [
+              "ev-cf97b7bcda1b-0001-0004"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Thomas followed up, asking whether the government could similarly limit media outlets\u2019 editorial spending to equalize influence."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "cf97b7bcda1b4ed93e28183909ee53b696d429648fe4ada8ba48f85ec7629fa9",
+            "evidence_ids": [
+              "ev-cf97b7bcda1b-0001-0006"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Justice Alito, Justice Alito questioned why repayment of the loan is treated as a gift when other loan repayments are not."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "cf97b7bcda1b4ed93e28183909ee53b696d429648fe4ada8ba48f85ec7629fa9",
+            "evidence_ids": [
+              "ev-cf97b7bcda1b-0001-0008"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked about the basis for Congress\u2019s $250,000 figure and whether it is defensible."
+      }
+    ],
+    "heading": "Oral Argument Highlights",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "cf97b7bcda1b4ed93e28183909ee53b696d429648fe4ada8ba48f85ec7629fa9",
+            "evidence_ids": [
+              "ev-cf97b7bcda1b-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The Court reiterated that standing requires a concrete, fairly traceable injury, citing the TransUnion principle that a plaintiff without concrete harm cannot proceed."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Charles J. Cooper (appellees)",
+          "citations": [
+            {
+              "document_hash": "cf97b7bcda1b4ed93e28183909ee53b696d429648fe4ada8ba48f85ec7629fa9",
+              "evidence_ids": [
+                "ev-cf97b7bcda1b-0002-0004"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Charles J. Cooper (appellees), according to Charles J. Cooper (appellees), the regulation \u201cmost dominantly burdens and creates a drag on the campaign\u2019s speech, on the candidate\u2019s speech.\u201d"
+        },
+        {
+          "attribution": "Mr. Cooper",
+          "citations": [
+            {
+              "document_hash": "cf97b7bcda1b4ed93e28183909ee53b696d429648fe4ada8ba48f85ec7629fa9",
+              "evidence_ids": [
+                "ev-cf97b7bcda1b-0003-0000"
+              ],
+              "pages": {
+                "end": 66,
+                "start": 66
+              }
+            }
+          ],
+          "text": "According to Mr. Cooper, the appellees assert that the regulation is arbitrary and capricious."
+        }
+      ],
+      "heading": "Appellees (Ted Cruz and Committee)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "e647a0103404fbc6de6f3be3a18ceb770480c3e49676e1f2a9dcc112437ed2c5",
+              "evidence_ids": [
+                "ev-e647a0103404-0000-0003"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "The Government argues that the appellees knowingly triggered the loan\u2011repayment limitation, so any injury is self\u2011inflicted and not attributable to the government."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "e647a0103404fbc6de6f3be3a18ceb770480c3e49676e1f2a9dcc112437ed2c5",
+              "evidence_ids": [
+                "ev-e647a0103404-0002-0002"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Government, a Senator testified that without the limitation, a winning candidate could \u201cget it back from constituents at fundraising events,\u201d suggesting a risk of corruption."
+        }
+      ],
+      "heading": "Government (Federal Election Commission)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "cf97b7bcda1b4ed93e28183909ee53b696d429648fe4ada8ba48f85ec7629fa9",
+      "evidence_ids": [
+        "ev-cf97b7bcda1b-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "e647a0103404fbc6de6f3be3a18ceb770480c3e49676e1f2a9dcc112437ed2c5",
+      "evidence_ids": [
+        "ev-e647a0103404-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T20:15:33.249936Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the overview claim and the why_it_matters claim contain material (the \u201cfairly traceable\u201d element) that is not supported by the cited evidence."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "cf97b7bcda1b4ed93e28183909ee53b696d429648fe4ada8ba48f85ec7629fa9",
+            "evidence_ids": [
+              "ev-cf97b7bcda1b-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "The decision clarifies the standing requirement for campaign\u2011finance challenges, emphasizing that an injury must be concrete and fairly traceable to the statute."
+      }
+    ],
+    "heading": "Why This Case Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

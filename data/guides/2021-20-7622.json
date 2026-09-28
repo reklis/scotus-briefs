@@ -1,0 +1,530 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a8b478ea4a87a7bf666a17a31581935177394d3c6e84801c89d990800500d4b5",
+            "evidence_ids": [
+              "ev-a8b478ea4a87-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The District Court denied Denezpi's motion."
+      },
+      {
+        "attribution": "Petitioner Denezpi",
+        "citations": [
+          {
+            "document_hash": "a8b478ea4a87a7bf666a17a31581935177394d3c6e84801c89d990800500d4b5",
+            "evidence_ids": [
+              "ev-a8b478ea4a87-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Petitioner Denezpi, denezpi argues that the dual\u2011sovereignty doctrine applies only when offenses are enacted and enforced by separate sovereigns, and that his second prosecution by a CFR court violates double jeopardy because both prosecutions are by the United States."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+            "evidence_ids": [
+              "ev-b48b2ef6f5a9-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, the Court is asked whether the two prosecutions constitute the same offense for double\u2011jeopardy purposes."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-7622",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T18:39:37.643911Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a8b478ea4a87a7bf666a17a31581935177394d3c6e84801c89d990800500d4b5",
+      "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+            "evidence_ids": [
+              "ev-b48b2ef6f5a9-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, are those two separate offenses with which he's being charged?"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+            "evidence_ids": [
+              "ev-b48b2ef6f5a9-0000-0003"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, going back to our decision in Wheeler, the Court in Wheeler went through quite a number of ways in which the Navajo tribal court at issue was subject to ultimate federal control, and I want to know what you see as the difference between the federal control recognized by us in Wheeler and the federal control at issue here in CF \u2013 CRT \u2013 CFR courts?"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+            "evidence_ids": [
+              "ev-b48b2ef6f5a9-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, well, I guess, Mr. Kimberly, I think Justice Breyer was asking you for examples of how it would matter."
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+            "evidence_ids": [
+              "ev-b48b2ef6f5a9-0002-0004"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "According to Justice GORSUCH, but just so I'm clear, the -- the Assistant Secretary can curate the tribal code and there would be no double jeopardy problem according to the government?"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+            "evidence_ids": [
+              "ev-b48b2ef6f5a9-0003-0001"
+            ],
+            "pages": {
+              "end": 67,
+              "start": 67
+            }
+          }
+        ],
+        "text": "According to Justice Alito, suppose someone -- you mentioned that the defendant is a -- I'm sorry, the Petitioner is a member of the Navajo Nation. Suppose someone who is of Indian ancestry has not associated at all with a tribe and says, I don't -- I don't identify as an Indian. Can that person be tried before a CFR court?"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+            "evidence_ids": [
+              "ev-b48b2ef6f5a9-0003-0002"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, i understand, 1999, 2000, the United States took the position with a -- not this tribe but another tribe that it could unilaterally establish a CFR court without the tribe's permission and appoint a magistrate without any need for confirmation by the tribal governing body."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+            "evidence_ids": [
+              "ev-b48b2ef6f5a9-0003-0003"
+            ],
+            "pages": {
+              "end": 70,
+              "start": 70
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, so I -- I just want to make sure I understand your -- your position, that the Assistant Secretary could create his own court, appoint his own prosecutor, tell him to report to the Department of Justice, appoint the judge, and then curate the tribal code and choose which tribal offenses can be prosecuted, and there would be no double jeopardy problem, right?"
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+            "evidence_ids": [
+              "ev-b48b2ef6f5a9-0003-0004"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, and then, finally, there was a -- a Judge Calabresi opinion, United States versus All Assets, in which he did find the Bartkus exception potentially applied and remanded because the state would receive certain assets in forfeiture. Do you think that case is wrongly decided?"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner Denezpi",
+        "citations": [
+          {
+            "document_hash": "a8b478ea4a87a7bf666a17a31581935177394d3c6e84801c89d990800500d4b5",
+            "evidence_ids": [
+              "ev-a8b478ea4a87-0001-0000"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          },
+          {
+            "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+            "evidence_ids": [
+              "ev-b48b2ef6f5a9-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The case examines whether the Double Jeopardy Clause bars successive prosecutions of a Native American defendant by tribal courts and by federal courts operating under the Criminal Code of the Federal Regulations (CFR)."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a8b478ea4a87a7bf666a17a31581935177394d3c6e84801c89d990800500d4b5",
+            "evidence_ids": [
+              "ev-a8b478ea4a87-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The District Court denied Denezpi's motion to dismiss the double\u2011jeopardy claim."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner Denezpi",
+          "citations": [
+            {
+              "document_hash": "a8b478ea4a87a7bf666a17a31581935177394d3c6e84801c89d990800500d4b5",
+              "evidence_ids": [
+                "ev-a8b478ea4a87-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Petitioner Denezpi, denezpi contends that the dual\u2011sovereignty doctrine does not apply when the same sovereign, the United States, conducts both prosecutions, even if one is in a tribal court."
+        },
+        {
+          "attribution": "Petitioner Denezpi",
+          "citations": [
+            {
+              "document_hash": "a8b478ea4a87a7bf666a17a31581935177394d3c6e84801c89d990800500d4b5",
+              "evidence_ids": [
+                "ev-a8b478ea4a87-0001-0000"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "According to Petitioner Denezpi, he asserts that successive prosecutions by the same sovereign are prohibited by the Double Jeopardy Clause because they are for the same offense."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+              "evidence_ids": [
+                "ev-b48b2ef6f5a9-0003-0007"
+              ],
+              "pages": {
+                "end": 74,
+                "start": 74
+              }
+            }
+          ],
+          "text": "According to Petitioner, he advocates that tribes should be allowed to appoint their own prosecutors to respect tribal sovereignty."
+        },
+        {
+          "attribution": "Petitioner (Michael B. Kimberly)",
+          "citations": [
+            {
+              "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+              "evidence_ids": [
+                "ev-b48b2ef6f5a9-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Michael B. Kimberly), according to Petitioner (Michael B. Kimberly), the Double Jeopardy Clause implicates two distinct exercises of sovereign authority: defining the offense and putting an individual in jeopardy for that offense."
+        }
+      ],
+      "heading": "Petitioner \u2013 Merle Denezpi",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent \u2013 United States",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a8b478ea4a87a7bf666a17a31581935177394d3c6e84801c89d990800500d4b5",
+      "evidence_ids": [
+        "ev-a8b478ea4a87-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "a8b478ea4a87a7bf666a17a31581935177394d3c6e84801c89d990800500d4b5",
+      "evidence_ids": [
+        "ev-a8b478ea4a87-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "a8b478ea4a87a7bf666a17a31581935177394d3c6e84801c89d990800500d4b5",
+      "evidence_ids": [
+        "ev-a8b478ea4a87-0001-0000"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    },
+    {
+      "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+      "evidence_ids": [
+        "ev-b48b2ef6f5a9-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+      "evidence_ids": [
+        "ev-b48b2ef6f5a9-0000-0001"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+      "evidence_ids": [
+        "ev-b48b2ef6f5a9-0000-0003"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+      "evidence_ids": [
+        "ev-b48b2ef6f5a9-0001-0001"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+      "evidence_ids": [
+        "ev-b48b2ef6f5a9-0002-0004"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 59
+      }
+    },
+    {
+      "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+      "evidence_ids": [
+        "ev-b48b2ef6f5a9-0002-0003"
+      ],
+      "pages": {
+        "end": 62,
+        "start": 62
+      }
+    },
+    {
+      "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+      "evidence_ids": [
+        "ev-b48b2ef6f5a9-0003-0001"
+      ],
+      "pages": {
+        "end": 67,
+        "start": 67
+      }
+    },
+    {
+      "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+      "evidence_ids": [
+        "ev-b48b2ef6f5a9-0003-0002"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+      "evidence_ids": [
+        "ev-b48b2ef6f5a9-0003-0003"
+      ],
+      "pages": {
+        "end": 70,
+        "start": 70
+      }
+    },
+    {
+      "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+      "evidence_ids": [
+        "ev-b48b2ef6f5a9-0003-0004"
+      ],
+      "pages": {
+        "end": 71,
+        "start": 71
+      }
+    },
+    {
+      "document_hash": "b48b2ef6f5a9e9788342bd4f7d1f3270108c581911f4a3b073858823c4a653f0",
+      "evidence_ids": [
+        "ev-b48b2ef6f5a9-0003-0007"
+      ],
+      "pages": {
+        "end": 74,
+        "start": 74
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T18:47:38.784617Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
