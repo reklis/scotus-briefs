@@ -1,0 +1,476 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "American Hospital Association (Petitioner)",
+        "citations": [
+          {
+            "document_hash": "04c04c6f4ebb6c86b7acb501f483c54ef28468c8579ab9e7df9aa4d43f0b29a6",
+            "evidence_ids": [
+              "ev-04c04c6f4ebb-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          },
+          {
+            "document_hash": "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675",
+            "evidence_ids": [
+              "ev-4a073a748883-0000-0010"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The dispute centered on whether HHS could set different Medicare reimbursement rates for 340B hospitals using \u201coption\u202f2\u201d (price\u2011based calculation) without first conducting a cost\u2011study of hospitals\u2019 acquisition costs as required by the statute."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-1114",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675",
+            "evidence_ids": [
+              "ev-4a073a748883-0001-0004"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The Court concluded that, absent a survey of hospitals\u2019 acquisition costs, HHS may not vary the reimbursement rates for 340B hospitals; the 2018 and 2019 rates were contrary to the statute and unlawful."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675",
+            "evidence_ids": [
+              "ev-4a073a748883-0001-0005"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The judgment of the U.S. Court of Appeals for the D.C. Circuit was reversed and the case was remanded for further proceedings consistent with this opinion."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T11:28:36.995561Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "04c04c6f4ebb6c86b7acb501f483c54ef28468c8579ab9e7df9aa4d43f0b29a6",
+      "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "04c04c6f4ebb6c86b7acb501f483c54ef28468c8579ab9e7df9aa4d43f0b29a6",
+            "evidence_ids": [
+              "ev-04c04c6f4ebb-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether the Court should overrule Chevron to reach the statutory approach the petitioners were taking."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "04c04c6f4ebb6c86b7acb501f483c54ef28468c8579ab9e7df9aa4d43f0b29a6",
+            "evidence_ids": [
+              "ev-04c04c6f4ebb-0001-0002"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas also inquired how often the petitioners had conducted subclause\u202f1 surveys."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "04c04c6f4ebb6c86b7acb501f483c54ef28468c8579ab9e7df9aa4d43f0b29a6",
+            "evidence_ids": [
+              "ev-04c04c6f4ebb-0002-0000"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked what to do with the calculation in section\u202f3a."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "04c04c6f4ebb6c86b7acb501f483c54ef28468c8579ab9e7df9aa4d43f0b29a6",
+            "evidence_ids": [
+              "ev-04c04c6f4ebb-0002-0003"
+            ],
+            "pages": {
+              "end": 59,
+              "start": 59
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh questioned whether the term \u201coverpayment\u201d with respect to 340B hospitals was appropriate."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "04c04c6f4ebb6c86b7acb501f483c54ef28468c8579ab9e7df9aa4d43f0b29a6",
+            "evidence_ids": [
+              "ev-04c04c6f4ebb-0003-0000"
+            ],
+            "pages": {
+              "end": 63,
+              "start": 63
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether the government agrees with the statement of when Chevron deference applies."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675",
+            "evidence_ids": [
+              "ev-4a073a748883-0001-0004"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The Supreme Court held that the Department of Health and Human Services may not vary Medicare reimbursement rates for 340B hospitals without first conducting a survey of hospitals\u2019 acquisition costs; the 2018 and 2019 rates were therefore contrary to the statute and unlawful."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675",
+            "evidence_ids": [
+              "ev-4a073a748883-0001-0005"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The Court reversed the judgment of the U.S. Court of Appeals for the D.C. Circuit and remanded the case for further proceedings consistent with its opinion."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "American Hospital Association (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "04c04c6f4ebb6c86b7acb501f483c54ef28468c8579ab9e7df9aa4d43f0b29a6",
+              "evidence_ids": [
+                "ev-04c04c6f4ebb-0000-0000"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to American Hospital Association (Petitioner), the petitioners argued that the reimbursement rates for 340B hospitals differed from those for other hospitals and that HHS failed to conduct the statutory cost study."
+        },
+        {
+          "attribution": "American Hospital Association (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "04c04c6f4ebb6c86b7acb501f483c54ef28468c8579ab9e7df9aa4d43f0b29a6",
+              "evidence_ids": [
+                "ev-04c04c6f4ebb-0000-0003"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to American Hospital Association (Petitioner), they contend that Congress did not intend to delegate to HHS the authority to vary reimbursement rates without a cost study."
+        },
+        {
+          "attribution": "American Hospital Association (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "04c04c6f4ebb6c86b7acb501f483c54ef28468c8579ab9e7df9aa4d43f0b29a6",
+              "evidence_ids": [
+                "ev-04c04c6f4ebb-0000-0005"
+              ],
+              "pages": {
+                "end": 9,
+                "start": 9
+              }
+            },
+            {
+              "document_hash": "04c04c6f4ebb6c86b7acb501f483c54ef28468c8579ab9e7df9aa4d43f0b29a6",
+              "evidence_ids": [
+                "ev-04c04c6f4ebb-0000-0006"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "According to American Hospital Association (Petitioner), they assert that Congress legislates not only objectives but also the means, requiring a cost\u2011study to ensure accuracy and transparency."
+        },
+        {
+          "attribution": "American Hospital Association",
+          "citations": [
+            {
+              "document_hash": "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675",
+              "evidence_ids": [
+                "ev-4a073a748883-0000-0000"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to American Hospital Association, the AHA and other interested parties challenged the 2018 and 2019 reimbursement rates in federal court."
+        }
+      ],
+      "heading": "American Hospital Association (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "HHS",
+          "citations": [
+            {
+              "document_hash": "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675",
+              "evidence_ids": [
+                "ev-4a073a748883-0001-0002"
+              ],
+              "pages": {
+                "end": 15,
+                "start": 14
+              }
+            }
+          ],
+          "text": "HHS maintains that, even without a cost\u2011study, it may \u201cadjust\u201d the average price as necessary under the statutory provision."
+        }
+      ],
+      "heading": "Department of Health and Human Services (HHS)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "04c04c6f4ebb6c86b7acb501f483c54ef28468c8579ab9e7df9aa4d43f0b29a6",
+      "evidence_ids": [
+        "ev-04c04c6f4ebb-0000-0000",
+        "ev-04c04c6f4ebb-0000-0001",
+        "ev-04c04c6f4ebb-0000-0003",
+        "ev-04c04c6f4ebb-0000-0005",
+        "ev-04c04c6f4ebb-0000-0006",
+        "ev-04c04c6f4ebb-0001-0000",
+        "ev-04c04c6f4ebb-0001-0001",
+        "ev-04c04c6f4ebb-0001-0002",
+        "ev-04c04c6f4ebb-0002-0000",
+        "ev-04c04c6f4ebb-0002-0003",
+        "ev-04c04c6f4ebb-0003-0000",
+        "ev-04c04c6f4ebb-0003-0001",
+        "ev-04c04c6f4ebb-0003-0003"
+      ],
+      "pages": {
+        "end": 75,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675",
+      "evidence_ids": [
+        "ev-4a073a748883-0000-0000",
+        "ev-4a073a748883-0000-0008",
+        "ev-4a073a748883-0000-0009",
+        "ev-4a073a748883-0000-0010",
+        "ev-4a073a748883-0001-0000",
+        "ev-4a073a748883-0001-0001",
+        "ev-4a073a748883-0001-0002",
+        "ev-4a073a748883-0001-0004",
+        "ev-4a073a748883-0001-0005",
+        "ev-4a073a748883-0001-0003"
+      ],
+      "pages": {
+        "end": 17,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T11:36:19.789005Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675",
+            "evidence_ids": [
+              "ev-4a073a748883-0000-0008"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "HHS\u2019s total reimbursements to hospitals for prescription drugs total tens of billions of dollars each year."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675",
+            "evidence_ids": [
+              "ev-4a073a748883-0000-0009"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "For 340B hospitals, the case involves economic consequences of about $1.6\u202fbillion annually."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675",
+            "evidence_ids": [
+              "ev-4a073a748883-0000-0010"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Statutory \u201coption\u202f2\u201d does not authorize HHS to vary reimbursement rates for different groups of hospitals."
+      },
+      {
+        "attribution": "37 State and Regional Hospital Associations",
+        "citations": [
+          {
+            "document_hash": "4a073a7488831863f1a28a7a7cd2692ca70bc6ba192bef152e63bd0c9ee59675",
+            "evidence_ids": [
+              "ev-4a073a748883-0001-0003"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "According to 37 State and Regional Hospital Associations, amici noted that the payments to 340B hospitals help offset the considerable costs these providers incur in caring for the uninsured, underinsured, and patients in remote areas."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

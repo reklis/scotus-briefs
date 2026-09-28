@@ -1,0 +1,41 @@
+{
+  "accepted": false,
+  "case_id": "2021-19-896",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: The claim that the Court said there is no plausible construction of \u00a7\u202f1231(a)(6) requiring bond hearings after six months is cited to page 8, but the supporting evidence for that statement is on page 10.",
+    "Support check failed: The decision claim that the Court held \u00a7\u202f1231(a)(6) does not expressly require bond hearings after the 90\u2011day removal period is not directly supported by the cited evidence, which only discusses the statute\u2019s lack of explicit time limits, not bond\u2011hearing requirements.",
+    "Support check failed: The decision claim that there is no plausible construction of \u00a7\u202f1231(a)(6) obligating bond hearings is also cited to page 8, whereas the evidence containing that language is on page 10.",
+    "Overstatement check failed: The decision section overstates the Court\u2019s holding by asserting that \u00a7\u202f1231(a)(6) expressly does not require bond hearings after the 90\u2011day removal period, a conclusion not found in the cited opinion."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.77,
+    "neutrality": 0.9,
+    "readability": 0.9,
+    "restraint": 0.8,
+    "traceability": 0.77
+  }
+}

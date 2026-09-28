@@ -1,0 +1,574 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+            "evidence_ids": [
+              "ev-4cd0802427d5-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+            "evidence_ids": [
+              "ev-4cd0802427d5-0002-0001"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "The case centered on whether the Federal Arbitration Act provides federal\u2011question jurisdiction under Sections\u202f4,\u202f8, and\u202f9."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+            "evidence_ids": [
+              "ev-4cd0802427d5-0001-0001",
+              "ev-4cd0802427d5-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justices asked how a federal judge should determine jurisdiction for arbitration petitions and whether a uniform rule is appropriate."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-1143",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+            "evidence_ids": [
+              "ev-6f6d3249767c-0001-0007"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The majority held that Section\u202f9 and Section\u202f10 applications should be heard in state courts when they involve non\u2011diverse parties and state law."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+            "evidence_ids": [
+              "ev-6f6d3249767c-0001-0008"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Breyer, writing a dissent, reversed the Fifth Circuit judgment and remanded the case for further proceedings consistent with this opinion."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T11:36:19.808120Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+      "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+            "evidence_ids": [
+              "ev-4cd0802427d5-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked how the FAA provides federal\u2011question jurisdiction under Sections\u202f4 and\u202f8."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+            "evidence_ids": [
+              "ev-4cd0802427d5-0001-0001",
+              "ev-4cd0802427d5-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh noted an amicus argument and asked whether a uniform rule for jurisdiction makes sense."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+            "evidence_ids": [
+              "ev-4cd0802427d5-0002-0001"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked, \u201cWhat do we do with Section\u202f8?\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+            "evidence_ids": [
+              "ev-6f6d3249767c-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Court stated that a federal court must have an independent jurisdictional basis to hear a case."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+            "evidence_ids": [
+              "ev-6f6d3249767c-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "In Vaden v. Discover Bank, the Court examined the parties' underlying dispute to determine jurisdiction for an FAA Section\u202f4 petition."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+            "evidence_ids": [
+              "ev-6f6d3249767c-0001-0007"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The majority held that Section\u202f9 and Section\u202f10 applications should be heard in state courts when they involve non\u2011diverse parties and state law."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+              "evidence_ids": [
+                "ev-4cd0802427d5-0002-0002"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "Petitioner argues that Section\u202f4 is a free\u2011standing jurisdictional grant, contrary to three prior Supreme Court cases."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+              "evidence_ids": [
+                "ev-4cd0802427d5-0002-0003"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Petitioner, petitioner disputes the venue argument, stating that Section\u202f4 is not merely a venue provision."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Walters",
+          "citations": [
+            {
+              "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+              "evidence_ids": [
+                "ev-6f6d3249767c-0001-0003"
+              ],
+              "pages": {
+                "end": 13,
+                "start": 13
+              }
+            }
+          ],
+          "text": "Walters contests the majority view and argues that the FAA\u2019s text justifies exercising jurisdiction here."
+        }
+      ],
+      "heading": "Walters",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Chamber of Commerce",
+          "citations": [
+            {
+              "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+              "evidence_ids": [
+                "ev-4cd0802427d5-0002-0000"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "The Chamber of Commerce argues that the Act allows filing in any court but limits it to cases where jurisdiction exists."
+        }
+      ],
+      "heading": "Chamber of Commerce",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Daniel L. Geyser",
+          "citations": [
+            {
+              "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+              "evidence_ids": [
+                "ev-4cd0802427d5-0000-0003"
+              ],
+              "pages": {
+                "end": 16,
+                "start": 16
+              }
+            }
+          ],
+          "text": "According to Daniel L. Geyser, geyser says Section\u202f9 is a ministerial function of confirming the award and does not require knowing the underlying dispute\u2019s nature."
+        },
+        {
+          "attribution": "Mr. Geyser",
+          "citations": [
+            {
+              "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+              "evidence_ids": [
+                "ev-4cd0802427d5-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Geyser, geyser noted that in a 12\u2011month period ending March\u202f2020 there were 332,000 civil filings in U.S. district courts and 380,000 arbitrations in the AAA that year."
+        }
+      ],
+      "heading": "Daniel L. Geyser",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+      "evidence_ids": [
+        "ev-4cd0802427d5-0000-0001"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+      "evidence_ids": [
+        "ev-4cd0802427d5-0000-0001"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+      "evidence_ids": [
+        "ev-4cd0802427d5-0000-0003"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    },
+    {
+      "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+      "evidence_ids": [
+        "ev-4cd0802427d5-0001-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+      "evidence_ids": [
+        "ev-4cd0802427d5-0001-0001",
+        "ev-4cd0802427d5-0001-0002"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+      "evidence_ids": [
+        "ev-4cd0802427d5-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+      "evidence_ids": [
+        "ev-4cd0802427d5-0002-0001"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 49
+      }
+    },
+    {
+      "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+      "evidence_ids": [
+        "ev-4cd0802427d5-0002-0002"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 51
+      }
+    },
+    {
+      "document_hash": "4cd0802427d56c590292fa45df9e87034aab9d0edcd6baeb3ed1f664dd59d4fb",
+      "evidence_ids": [
+        "ev-4cd0802427d5-0002-0003"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    },
+    {
+      "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+      "evidence_ids": [
+        "ev-6f6d3249767c-0000-0001",
+        "ev-6f6d3249767c-0000-0002"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+      "evidence_ids": [
+        "ev-6f6d3249767c-0001-0003"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 13
+      }
+    },
+    {
+      "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+      "evidence_ids": [
+        "ev-6f6d3249767c-0001-0007"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+      "evidence_ids": [
+        "ev-6f6d3249767c-0001-0008"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+      "evidence_ids": [
+        "ev-6f6d3249767c-0002-0002",
+        "ev-6f6d3249767c-0002-0003"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T11:47:34.339929Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: The background claim that the FAA provides federal\u2011question jurisdiction under Sections\u202f4,\u202f8,\u202fand\u202f9 is unsupported for Section\u202f9 (evidence only covers Sections\u202f4 and\u202f8).",
+      "Support check failed: The background claim that Justice Kavanaugh said the justices asked how a federal judge should determine jurisdiction for arbitration petitions is unsupported (evidence only shows Kavanaugh discussing a uniform rule).",
+      "Overstatement check failed: The claim that the FAA provides federal\u2011question jurisdiction under Sections\u202f4,\u202f8,\u202fand\u202f9 overstates the evidence, which does not address Section\u202f9."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+            "evidence_ids": [
+              "ev-6f6d3249767c-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Court\u2019s emphasis on an independent jurisdictional basis determines when federal courts can hear arbitration disputes."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "6f6d3249767ca1b731e0c182e353f0861e39046561d12aba7023ed35138cd9fe",
+            "evidence_ids": [
+              "ev-6f6d3249767c-0002-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The dissent warned that limiting jurisdiction to the petition itself could produce \u201ccurious practical consequences\u201d and artificially restrict the scope of Section\u202f4."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

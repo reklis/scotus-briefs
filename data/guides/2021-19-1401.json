@@ -1,0 +1,590 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Legal Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-19-1401",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T10:19:28.181372Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9bab6e2d0d8292b059b5b0ed800ef49c1bf4409ad59dd13bef356e67a1190f62",
+      "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts stated that the Court would hear argument for the case next."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas questioned how much difference in investment returns would be required to avoid imprudence."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0000-0006"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether respondents alleged that they failed to meet pleading thresholds for certain funds."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0000-0007"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan probed whether the petitioners were alleging that Northwestern ignored a bargain for lower\u2011cost funds."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0000-0008"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked about the implications of the case for judicial competence and reasonable judgment."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0002-0001"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas inquired whether a trustee who follows imprudent advice would be considered imprudent."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0002-0003"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts questioned whether cost is the only factor in evaluating mutual\u2011fund choices."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0002-0005"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Breyer asked whether the Seventh Circuit\u2019s rule on offering both high\u2011fee and low\u2011fee funds was correct."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "Justice Kagan asked why petitioners could not simply point to lower\u2011cost competitors."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0003-0004"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor noted that the petitioners were still defending the Seventh Circuit\u2019s rule against imprudent selection."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Frederick",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0001-0003"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "According to Frederick, petitioners allege that Northwestern University\u2019s retirement\u2011plan fiduciaries paid excessively high fees, costing the plan $4\u20115\u202fmillion a year when a reasonable fee would have been about $1\u202fmillion."
+      },
+      {
+        "attribution": "Michael R. Huston",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0001-0002"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "According to Michael R. Huston, under ERISA, plan administrators must act with \u201ccare, skill, prudence, and diligence\u201d when selecting investment options and recordkeepers."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "9bab6e2d0d8292b059b5b0ed800ef49c1bf4409ad59dd13bef356e67a1190f62",
+            "evidence_ids": [
+              "ev-9bab6e2d0d82-0000-0005"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The Court\u2019s opinion was delivered by Justice Sotomayor."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+              "evidence_ids": [
+                "ev-b5ccd5c0bc72-0000-0000"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the United States amicus curiae supports the petitioners\u2019 position."
+        }
+      ],
+      "heading": "Petitioners (Hughes et\u202fal.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Garre",
+          "citations": [
+            {
+              "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+              "evidence_ids": [
+                "ev-b5ccd5c0bc72-0002-0014"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 60
+              }
+            }
+          ],
+          "text": "Garre argues that the complaint fails to allege facts from which a reasonable inference that lower\u2011cost funds were actually available could be drawn."
+        },
+        {
+          "attribution": "Mr. Garre",
+          "citations": [
+            {
+              "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+              "evidence_ids": [
+                "ev-b5ccd5c0bc72-0003-0002"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Mr. Garre, garre states that the plaintiffs provide no factual content to support a reasonable inference that the alleged lower\u2011cost funds existed."
+        },
+        {
+          "attribution": "Mr. Garre",
+          "citations": [
+            {
+              "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+              "evidence_ids": [
+                "ev-b5ccd5c0bc72-0003-0007"
+              ],
+              "pages": {
+                "end": 78,
+                "start": 78
+              }
+            }
+          ],
+          "text": "According to Mr. Garre, garre notes that the use of multiple recordkeepers was common, suggesting the plan\u2019s structure was not unusual."
+        }
+      ],
+      "heading": "Respondents (Northwestern University) \u2013 Represented by Garre",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "9bab6e2d0d8292b059b5b0ed800ef49c1bf4409ad59dd13bef356e67a1190f62",
+      "evidence_ids": [
+        "ev-9bab6e2d0d82-0000-0005"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0000-0001",
+        "ev-b5ccd5c0bc72-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0000-0004"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0000-0006"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0000-0007"
+      ],
+      "pages": {
+        "end": 17,
+        "start": 17
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0000-0008"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 20
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0001-0000"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0001-0003"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 34
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0001-0002"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0002-0000",
+        "ev-b5ccd5c0bc72-0002-0001"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0002-0002",
+        "ev-b5ccd5c0bc72-0002-0003"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0002-0005"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0002-0014"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 60
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0003-0000"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 65
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0003-0002"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0003-0004"
+      ],
+      "pages": {
+        "end": 71,
+        "start": 71
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0003-0007"
+      ],
+      "pages": {
+        "end": 78,
+        "start": 78
+      }
+    },
+    {
+      "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+      "evidence_ids": [
+        "ev-b5ccd5c0bc72-0004-0003"
+      ],
+      "pages": {
+        "end": 93,
+        "start": 93
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T10:36:08.441128Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Heritage Reporting Corporation",
+        "citations": [
+          {
+            "document_hash": "b5ccd5c0bc7277f05d2eea5e7f52bf0bd0a7ef713eba03c043c3f5534b3be7ae",
+            "evidence_ids": [
+              "ev-b5ccd5c0bc72-0004-0003"
+            ],
+            "pages": {
+              "end": 93,
+              "start": 93
+            }
+          }
+        ],
+        "text": "Heritage Reporting Corporation notes that the case could harm retirees and employees by increasing plan costs, administrative burdens of litigation, and insurance premiums."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

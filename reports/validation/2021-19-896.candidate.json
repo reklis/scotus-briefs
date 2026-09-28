@@ -1,0 +1,436 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+            "evidence_ids": [
+              "ev-0aeadfe36e46-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Antonio Arteaga\u2011Martinez is a citizen of Mexico who was removed in July\u202f2012 and re\u2011entered the United States in September\u202f2012."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+            "evidence_ids": [
+              "ev-0aeadfe36e46-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "U.S. Immigration and Customs Enforcement (ICE) issued a warrant for Arteaga\u2011Martinez\u2019s arrest in 2018."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "d018fbc8512df656af15d2d953cd3261bcf7c582a1d96e74b8e5b920601bc3ae",
+            "evidence_ids": [
+              "ev-d018fbc8512d-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioners, the question presented is whether the language of \u00a7\u202f1231(a)(6) that allows certain non\u2011citizens to be detained beyond the removal period requires that they be afforded a bond hearing before an immigration judge after six months of detention, with the government bearing the burden of proving by clear and convincing evidence that the non\u2011citizen is a flight risk or a danger to the community."
+      }
+    ],
+    "heading": "Background and Question Presented",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-19-896",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+            "evidence_ids": [
+              "ev-0aeadfe36e46-0000-0008"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "The Court held that \u00a7\u202f1231(a)(6) does not expressly require bond hearings after the 90\u2011day removal period for detainees in the four statutory categories."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+            "evidence_ids": [
+              "ev-0aeadfe36e46-0000-0010"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The Court further held that there is no plausible construction of \u00a7\u202f1231(a)(6) that obligates the government to provide bond hearings before immigration judges after six months, nor to bear the burden of proving a detainee\u2019s flight risk or danger by clear and convincing evidence."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T10:36:08.459992Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+      "d018fbc8512df656af15d2d953cd3261bcf7c582a1d96e74b8e5b920601bc3ae"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "d018fbc8512df656af15d2d953cd3261bcf7c582a1d96e74b8e5b920601bc3ae",
+            "evidence_ids": [
+              "ev-d018fbc8512d-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer questioned whether the government could keep the respondent in detention for 50\u202fyears."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "d018fbc8512df656af15d2d953cd3261bcf7c582a1d96e74b8e5b920601bc3ae",
+            "evidence_ids": [
+              "ev-d018fbc8512d-0001-0006"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned the accuracy of the average detention statistic presented by counsel."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+            "evidence_ids": [
+              "ev-0aeadfe36e46-0000-0010"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The Supreme Court held that \u00a7\u202f1231(a)(6) does not require a bond hearing after six months of detention for non\u2011citizens covered by the statute."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+            "evidence_ids": [
+              "ev-0aeadfe36e46-0000-0008"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "The Court said there is no plausible construction of \u00a7\u202f1231(a)(6) that obligates the government to provide bond hearings before immigration judges after six months, nor to bear the burden of proving a detainee\u2019s flight risk or danger by clear and convincing evidence."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "d018fbc8512df656af15d2d953cd3261bcf7c582a1d96e74b8e5b920601bc3ae",
+              "evidence_ids": [
+                "ev-d018fbc8512d-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "Petitioners argue that \u00a7\u202f1231(a)(6) does not require a bond hearing after six months of detention."
+        }
+      ],
+      "heading": "Petitioners\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+              "evidence_ids": [
+                "ev-0aeadfe36e46-0000-0012"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "Respondents argue that regulations provide custody hearings for non\u2011citizens deemed \u201cspecially dangerous\u201d under \u00a7\u202f1231(a)(6)."
+        },
+        {
+          "attribution": "Arteaga-Martinez",
+          "citations": [
+            {
+              "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+              "evidence_ids": [
+                "ev-0aeadfe36e46-0001-0000"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "According to Arteaga-Martinez, according to Arteaga\u2011Martinez, reading \u00a7\u202f1231(a)(6) to not require bond hearings raises serious due\u2011process concerns because prolonged detention without an individualized hearing has never been authorized outside the national\u2011security context."
+        },
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "d018fbc8512df656af15d2d953cd3261bcf7c582a1d96e74b8e5b920601bc3ae",
+              "evidence_ids": [
+                "ev-d018fbc8512d-0001-0007"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "According to Respondent, respondents emphasize that an individual hearing is \u201cvery important\u201d for due\u2011process purposes."
+        }
+      ],
+      "heading": "Respondents\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+      "evidence_ids": [
+        "ev-0aeadfe36e46-0000-0000",
+        "ev-0aeadfe36e46-0000-0001"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+      "evidence_ids": [
+        "ev-0aeadfe36e46-0000-0005",
+        "ev-0aeadfe36e46-0000-0006"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+      "evidence_ids": [
+        "ev-0aeadfe36e46-0000-0008"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+      "evidence_ids": [
+        "ev-0aeadfe36e46-0000-0010"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 10
+      }
+    },
+    {
+      "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+      "evidence_ids": [
+        "ev-0aeadfe36e46-0000-0012"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    },
+    {
+      "document_hash": "0aeadfe36e462b140606a8a880f5094c728c75133655604b4eb73b639001526a",
+      "evidence_ids": [
+        "ev-0aeadfe36e46-0001-0000"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "d018fbc8512df656af15d2d953cd3261bcf7c582a1d96e74b8e5b920601bc3ae",
+      "evidence_ids": [
+        "ev-d018fbc8512d-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "d018fbc8512df656af15d2d953cd3261bcf7c582a1d96e74b8e5b920601bc3ae",
+      "evidence_ids": [
+        "ev-d018fbc8512d-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "d018fbc8512df656af15d2d953cd3261bcf7c582a1d96e74b8e5b920601bc3ae",
+      "evidence_ids": [
+        "ev-d018fbc8512d-0001-0000",
+        "ev-d018fbc8512d-0001-0001"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "d018fbc8512df656af15d2d953cd3261bcf7c582a1d96e74b8e5b920601bc3ae",
+      "evidence_ids": [
+        "ev-d018fbc8512d-0001-0006"
+      ],
+      "pages": {
+        "end": 32,
+        "start": 32
+      }
+    },
+    {
+      "document_hash": "d018fbc8512df656af15d2d953cd3261bcf7c582a1d96e74b8e5b920601bc3ae",
+      "evidence_ids": [
+        "ev-d018fbc8512d-0001-0007"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 34
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T10:47:39.474614Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: The claim that the Court said there is no plausible construction of \u00a7\u202f1231(a)(6) requiring bond hearings after six months is cited to page 8, but the supporting evidence for that statement is on page 10.",
+      "Support check failed: The decision claim that the Court held \u00a7\u202f1231(a)(6) does not expressly require bond hearings after the 90\u2011day removal period is not directly supported by the cited evidence, which only discusses the statute\u2019s lack of explicit time limits, not bond\u2011hearing requirements.",
+      "Support check failed: The decision claim that there is no plausible construction of \u00a7\u202f1231(a)(6) obligating bond hearings is also cited to page 8, whereas the evidence containing that language is on page 10.",
+      "Overstatement check failed: The decision section overstates the Court\u2019s holding by asserting that \u00a7\u202f1231(a)(6) expressly does not require bond hearings after the 90\u2011day removal period, a conclusion not found in the cited opinion."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

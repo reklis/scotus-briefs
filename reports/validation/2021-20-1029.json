@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2021-20-1029",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim in the Background and Question section (that Justice Kavanaugh said the Court must decide whether the off\u2011premises sign restriction is content\u2011based under Reed) is not directly supported by the cited transcript excerpts.",
+    "Overstatement check failed: the same claim overstates Justice Kavanaugh\u2019s remarks by attributing a specific focus on the off\u2011premises sign restriction, which is not evident in the evidence."
+  ],
+  "quality_scores": {
+    "completeness": 0.79,
+    "factual_accuracy": 0.42,
+    "neutrality": 0.91,
+    "readability": 0.88,
+    "restraint": 0.61,
+    "traceability": 0.74
+  }
+}

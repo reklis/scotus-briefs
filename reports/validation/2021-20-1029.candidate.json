@@ -1,0 +1,368 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice KAVANAUGH",
+        "citations": [
+          {
+            "document_hash": "68db19da18c0deb426b5288627bd6b5fb7e64cca03efba2b2840995eaafb6744",
+            "evidence_ids": [
+              "ev-68db19da18c0-0001-0001",
+              "ev-68db19da18c0-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice KAVANAUGH, the Court must decide whether the off\u2011premises sign restriction is content\u2011based under Reed."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-20-1029",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "c3b8f23b481c9fcd0bb0a84dd0676b572f1d4d19f0c746219194f5562bdad67a",
+            "evidence_ids": [
+              "ev-c3b8f23b481c-0003-0000",
+              "ev-c3b8f23b481c-0003-0001",
+              "ev-c3b8f23b481c-0003-0002"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 31
+            }
+          }
+        ],
+        "text": "Justice Thomas, in dissent, argues that Austin\u2019s off\u2011premises sign restriction is content\u2011based."
+      }
+    ],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T10:55:45.761564Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "68db19da18c0deb426b5288627bd6b5fb7e64cca03efba2b2840995eaafb6744",
+      "c3b8f23b481c9fcd0bb0a84dd0676b572f1d4d19f0c746219194f5562bdad67a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "68db19da18c0deb426b5288627bd6b5fb7e64cca03efba2b2840995eaafb6744",
+            "evidence_ids": [
+              "ev-68db19da18c0-0000-0005"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether a sign regulation that exempts business advertising signs would be content\u2011based."
+      },
+      {
+        "attribution": "Justice KAVANAUGH",
+        "citations": [
+          {
+            "document_hash": "68db19da18c0deb426b5288627bd6b5fb7e64cca03efba2b2840995eaafb6744",
+            "evidence_ids": [
+              "ev-68db19da18c0-0001-0001",
+              "ev-68db19da18c0-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice KAVANAUGH, justice Kavanaugh questioned whether the case should be analyzed under strict scrutiny (content\u2011based) or intermediate scrutiny (content\u2011neutral)."
+      },
+      {
+        "attribution": "Justice THOMAS",
+        "citations": [
+          {
+            "document_hash": "68db19da18c0deb426b5288627bd6b5fb7e64cca03efba2b2840995eaafb6744",
+            "evidence_ids": [
+              "ev-68db19da18c0-0001-0003",
+              "ev-68db19da18c0-0001-0004"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Justice THOMAS, justice Thomas inquired whether the secondary effects doctrine should apply."
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "68db19da18c0deb426b5288627bd6b5fb7e64cca03efba2b2840995eaafb6744",
+            "evidence_ids": [
+              "ev-68db19da18c0-0001-0007",
+              "ev-68db19da18c0-0001-0008"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether the regulation would favor majoritarian voices."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice KAVANAUGH",
+        "citations": [
+          {
+            "document_hash": "68db19da18c0deb426b5288627bd6b5fb7e64cca03efba2b2840995eaafb6744",
+            "evidence_ids": [
+              "ev-68db19da18c0-0001-0001",
+              "ev-68db19da18c0-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 26
+            }
+          }
+        ],
+        "text": "According to Justice KAVANAUGH, the Court heard arguments about whether the regulation should be evaluated under strict scrutiny (content\u2011based) or intermediate scrutiny (content\u2011neutral)."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "68db19da18c0deb426b5288627bd6b5fb7e64cca03efba2b2840995eaafb6744",
+              "evidence_ids": [
+                "ev-68db19da18c0-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "The petitioner argues that Reed requires a law to be content\u2011based only when its text explicitly singles out a subject matter, not merely because an officer must read a sign to enforce it."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "68db19da18c0deb426b5288627bd6b5fb7e64cca03efba2b2840995eaafb6744",
+              "evidence_ids": [
+                "ev-68db19da18c0-0000-0007"
+              ],
+              "pages": {
+                "end": 10,
+                "start": 10
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petitioner cites cases (Sorrell, Carey, Mosley) to show that content\u2011based regulation is limited to laws that target specific subject matter."
+        }
+      ],
+      "heading": "Petitioner (City of Austin)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Kannon K. Shanmugam",
+          "citations": [
+            {
+              "document_hash": "68db19da18c0deb426b5288627bd6b5fb7e64cca03efba2b2840995eaafb6744",
+              "evidence_ids": [
+                "ev-68db19da18c0-0002-0002"
+              ],
+              "pages": {
+                "end": 54,
+                "start": 54
+              }
+            }
+          ],
+          "text": "According to Kannon K. Shanmugam, shanmugam argues that under Reed, the city\u2019s distinction is content\u2011based because it regulates signs that advertise off\u2011premises activities."
+        },
+        {
+          "attribution": "Reagan",
+          "citations": [
+            {
+              "document_hash": "c3b8f23b481c9fcd0bb0a84dd0676b572f1d4d19f0c746219194f5562bdad67a",
+              "evidence_ids": [
+                "ev-c3b8f23b481c-0001-0002"
+              ],
+              "pages": {
+                "end": 15,
+                "start": 15
+              }
+            }
+          ],
+          "text": "According to Reagan, the respondent\u2019s brief asks the Court to reaffirm that a regulation defining speech by its function or purpose is content\u2011based on its face."
+        }
+      ],
+      "heading": "Respondent (Reagan National Advertising of Austin, LLC)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "68db19da18c0deb426b5288627bd6b5fb7e64cca03efba2b2840995eaafb6744",
+      "evidence_ids": [
+        "ev-68db19da18c0-0000-0000",
+        "ev-68db19da18c0-0000-0001",
+        "ev-68db19da18c0-0000-0005",
+        "ev-68db19da18c0-0000-0007",
+        "ev-68db19da18c0-0001-0001",
+        "ev-68db19da18c0-0001-0002",
+        "ev-68db19da18c0-0001-0003",
+        "ev-68db19da18c0-0001-0004",
+        "ev-68db19da18c0-0001-0007",
+        "ev-68db19da18c0-0001-0008",
+        "ev-68db19da18c0-0002-0002",
+        "ev-68db19da18c0-0002-0004"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "c3b8f23b481c9fcd0bb0a84dd0676b572f1d4d19f0c746219194f5562bdad67a",
+      "evidence_ids": [
+        "ev-c3b8f23b481c-0000-0003",
+        "ev-c3b8f23b481c-0000-0004",
+        "ev-c3b8f23b481c-0001-0002",
+        "ev-c3b8f23b481c-0002-0001",
+        "ev-c3b8f23b481c-0003-0000",
+        "ev-c3b8f23b481c-0003-0001",
+        "ev-c3b8f23b481c-0003-0002"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 5
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T11:09:23.380082Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim in the Background and Question section (that Justice Kavanaugh said the Court must decide whether the off\u2011premises sign restriction is content\u2011based under Reed) is not directly supported by the cited transcript excerpts.",
+      "Overstatement check failed: the same claim overstates Justice Kavanaugh\u2019s remarks by attributing a specific focus on the off\u2011premises sign restriction, which is not evident in the evidence."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "c3b8f23b481c9fcd0bb0a84dd0676b572f1d4d19f0c746219194f5562bdad67a",
+            "evidence_ids": [
+              "ev-c3b8f23b481c-0003-0000",
+              "ev-c3b8f23b481c-0003-0001",
+              "ev-c3b8f23b481c-0003-0002"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, the case involves a content\u2011based restriction on off\u2011premises signs under Reed."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "c3b8f23b481c9fcd0bb0a84dd0676b572f1d4d19f0c746219194f5562bdad67a",
+            "evidence_ids": [
+              "ev-c3b8f23b481c-0002-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to United States, amicus briefs argue that digital billboards can increase traffic accidents, highlighting public safety considerations in the regulatory debate."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

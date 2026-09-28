@@ -1,0 +1,327 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "8d043f3930f4bf2d69fb57cf25ddbd5dc46c2688d6b16d2b98afc401e5f75788",
+            "evidence_ids": [
+              "ev-8d043f3930f4-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, the Court was asked to decide whether ANCs are \u201cIndian tribes\u201d under ISDA and therefore eligible for CARES Act relief."
+      },
+      {
+        "attribution": "Treasury Department",
+        "citations": [
+          {
+            "document_hash": "8d043f3930f4bf2d69fb57cf25ddbd5dc46c2688d6b16d2b98afc401e5f75788",
+            "evidence_ids": [
+              "ev-8d043f3930f4-0000-0007"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The Treasury Department had previously determined that ANCs were eligible for CARES Act relief and set aside more than $500\u202fmillion for them."
+      }
+    ],
+    "heading": "Background & Question Presented",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-20-543",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8d043f3930f4bf2d69fb57cf25ddbd5dc46c2688d6b16d2b98afc401e5f75788",
+            "evidence_ids": [
+              "ev-8d043f3930f4-0000-0005"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "8d043f3930f4bf2d69fb57cf25ddbd5dc46c2688d6b16d2b98afc401e5f75788",
+            "evidence_ids": [
+              "ev-8d043f3930f4-0001-0000"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          }
+        ],
+        "text": "The Court held that ANCs are \u201cIndian tribes\u201d under ISDA, making them eligible for CARES Act relief."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8d043f3930f4bf2d69fb57cf25ddbd5dc46c2688d6b16d2b98afc401e5f75788",
+            "evidence_ids": [
+              "ev-8d043f3930f4-0001-0005"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Court declined to take the \u201cdoubtful step\u201d of reading the statute to exclude ANCs."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T10:01:20.766095Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "8d043f3930f4bf2d69fb57cf25ddbd5dc46c2688d6b16d2b98afc401e5f75788",
+      "d293fbb46078af1619a52cbb6f1a5589aee4db266079b33a1a3650709d04d908"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8d043f3930f4bf2d69fb57cf25ddbd5dc46c2688d6b16d2b98afc401e5f75788",
+            "evidence_ids": [
+              "ev-8d043f3930f4-0000-0005"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "8d043f3930f4bf2d69fb57cf25ddbd5dc46c2688d6b16d2b98afc401e5f75788",
+            "evidence_ids": [
+              "ev-8d043f3930f4-0001-0000"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          }
+        ],
+        "text": "The Supreme Court held that Alaska Native Corporations (ANCs) are \u201cIndian tribes\u201d under the Indian Self\u2011Determination Act (ISDA), making them eligible for relief under the CARES Act."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "federally recognized tribes",
+          "citations": [
+            {
+              "document_hash": "8d043f3930f4bf2d69fb57cf25ddbd5dc46c2688d6b16d2b98afc401e5f75788",
+              "evidence_ids": [
+                "ev-8d043f3930f4-0000-0006"
+              ],
+              "pages": {
+                "end": 10,
+                "start": 10
+              }
+            }
+          ],
+          "text": "According to federally recognized tribes, they argue that only federally recognized tribes qualify as \u201cIndian tribes\u201d under ISDA, and therefore ANCs are excluded."
+        },
+        {
+          "attribution": "respondent tribe",
+          "citations": [
+            {
+              "document_hash": "8d043f3930f4bf2d69fb57cf25ddbd5dc46c2688d6b16d2b98afc401e5f75788",
+              "evidence_ids": [
+                "ev-8d043f3930f4-0000-0003"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "One respondent tribe contends that the CARES Act excludes ANCs because they lack a \u201crecognized governing body.\u201d"
+        }
+      ],
+      "heading": "Federally Recognized Tribes (Respondents)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Secretary of the Treasury (Petitioner)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Guarnieri",
+          "citations": [
+            {
+              "document_hash": "d293fbb46078af1619a52cbb6f1a5589aee4db266079b33a1a3650709d04d908",
+              "evidence_ids": [
+                "ev-d293fbb46078-0001-0001"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            }
+          ],
+          "text": "According to Mr. Guarnieri, mr.\u202fGuarnieri warns that affirming the D.C. Circuit\u2019s decision could have wide\u2011reaching effects on other federal programs."
+        },
+        {
+          "attribution": "Mr. Rasmussen",
+          "citations": [
+            {
+              "document_hash": "d293fbb46078af1619a52cbb6f1a5589aee4db266079b33a1a3650709d04d908",
+              "evidence_ids": [
+                "ev-d293fbb46078-0003-0000"
+              ],
+              "pages": {
+                "end": 64,
+                "start": 64
+              }
+            },
+            {
+              "document_hash": "d293fbb46078af1619a52cbb6f1a5589aee4db266079b33a1a3650709d04d908",
+              "evidence_ids": [
+                "ev-d293fbb46078-0003-0003"
+              ],
+              "pages": {
+                "end": 66,
+                "start": 66
+              }
+            }
+          ],
+          "text": "According to Mr. Rasmussen, mr.\u202fRasmussen notes that Congress faced substantial uncertainty in 1975 about how ANCs would fit into ISDA, supporting the view that the statute\u2019s language was ambiguous."
+        }
+      ],
+      "heading": "Other Respondents (Guarnieri, Clement, Rasmussen, etc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "8d043f3930f4bf2d69fb57cf25ddbd5dc46c2688d6b16d2b98afc401e5f75788",
+      "evidence_ids": [
+        "ev-8d043f3930f4-0000-0002"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "d293fbb46078af1619a52cbb6f1a5589aee4db266079b33a1a3650709d04d908",
+      "evidence_ids": [
+        "ev-d293fbb46078-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T10:06:07.805553Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8d043f3930f4bf2d69fb57cf25ddbd5dc46c2688d6b16d2b98afc401e5f75788",
+            "evidence_ids": [
+              "ev-8d043f3930f4-0001-0000"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          }
+        ],
+        "text": "The decision clarifies the statutory definition of \u201cIndian tribe\u201d for future federal programs that rely on ISDA definitions."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

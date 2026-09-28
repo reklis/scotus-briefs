@@ -1,0 +1,276 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Renewable Fuel Producers",
+        "citations": [
+          {
+            "document_hash": "25993d3741ea8374b33fc51610eb4a232985c549b712c94819633532bf0160d4",
+            "evidence_ids": [
+              "ev-25993d3741ea-0000-0001"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Renewable Fuel Producers argue that the EPA exceeded its authority by granting extensions."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-20-472",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T09:36:29.962929Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "25993d3741ea8374b33fc51610eb4a232985c549b712c94819633532bf0160d4",
+      "f46442e9a45dafac9f735c531e5f003c9ea7f28e02b84ee8af86daabe74559d5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "25993d3741ea8374b33fc51610eb4a232985c549b712c94819633532bf0160d4",
+            "evidence_ids": [
+              "ev-25993d3741ea-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case was argued on April\u202f27,\u202f2021 and decided on June\u202f25,\u202f2021."
+      },
+      {
+        "attribution": "Petitioners (HollyFrontier Cheyenne Refining LLC)",
+        "citations": [
+          {
+            "document_hash": "f46442e9a45dafac9f735c531e5f003c9ea7f28e02b84ee8af86daabe74559d5",
+            "evidence_ids": [
+              "ev-f46442e9a45d-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioners (HollyFrontier Cheyenne Refining LLC), petitioners (HollyFrontier Cheyenne Refining LLC) asked the Court to allow small refineries to obtain extensions of the Renewable Fuel Standard exemption based on hardship."
+      },
+      {
+        "attribution": "Petitioners (HollyFrontier Cheyenne Refining LLC)",
+        "citations": [
+          {
+            "document_hash": "f46442e9a45dafac9f735c531e5f003c9ea7f28e02b84ee8af86daabe74559d5",
+            "evidence_ids": [
+              "ev-f46442e9a45d-0000-0001"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Petitioners (HollyFrontier Cheyenne Refining LLC), petitioners also argued that the word \u201cextension\u201d should be read temporally to mean an increase in the length of time of the exemption."
+      },
+      {
+        "attribution": "Renewable Fuel Producers",
+        "citations": [
+          {
+            "document_hash": "25993d3741ea8374b33fc51610eb4a232985c549b712c94819633532bf0160d4",
+            "evidence_ids": [
+              "ev-25993d3741ea-0000-0001"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Renewable Fuel Producers contended that the EPA acted beyond its statutory jurisdiction by granting such extensions."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "25993d3741ea8374b33fc51610eb4a232985c549b712c94819633532bf0160d4",
+            "evidence_ids": [
+              "ev-25993d3741ea-0001-0000"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "The Court issued a holding in the case."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioners (HollyFrontier Cheyenne Refining LLC)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Renewable Fuel Producers",
+          "citations": [
+            {
+              "document_hash": "25993d3741ea8374b33fc51610eb4a232985c549b712c94819633532bf0160d4",
+              "evidence_ids": [
+                "ev-25993d3741ea-0000-0001"
+              ],
+              "pages": {
+                "end": 8,
+                "start": 8
+              }
+            }
+          ],
+          "text": "Renewable Fuel Producers argue that the EPA acted in excess of its statutory jurisdiction by granting extensions to small refineries."
+        }
+      ],
+      "heading": "Renewable Fuel Producers",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Federal Respondent (EPA)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "25993d3741ea8374b33fc51610eb4a232985c549b712c94819633532bf0160d4",
+      "evidence_ids": [
+        "ev-25993d3741ea-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "f46442e9a45dafac9f735c531e5f003c9ea7f28e02b84ee8af86daabe74559d5",
+      "evidence_ids": [
+        "ev-f46442e9a45d-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "f46442e9a45dafac9f735c531e5f003c9ea7f28e02b84ee8af86daabe74559d5",
+      "evidence_ids": [
+        "ev-f46442e9a45d-0000-0001"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "25993d3741ea8374b33fc51610eb4a232985c549b712c94819633532bf0160d4",
+      "evidence_ids": [
+        "ev-25993d3741ea-0000-0001"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "25993d3741ea8374b33fc51610eb4a232985c549b712c94819633532bf0160d4",
+      "evidence_ids": [
+        "ev-25993d3741ea-0001-0000"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T09:41:48.796805Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
