@@ -1,0 +1,417 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0de8cbea5e6309e6dec8901a674799104713d2fb70e0059593b1be60fd74f7df",
+            "evidence_ids": [
+              "ev-0de8cbea5e63-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "In 2011 the Environmental Protection Agency (EPA) proposed a rule governing \u201ccooling water intake structures\u201d used by industrial facilities."
+      },
+      {
+        "attribution": "Sierra Club",
+        "citations": [
+          {
+            "document_hash": "0de8cbea5e6309e6dec8901a674799104713d2fb70e0059593b1be60fd74f7df",
+            "evidence_ids": [
+              "ev-0de8cbea5e63-0000-0003"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          },
+          {
+            "document_hash": "c15656ca357998e9232b0fc2c6fe94d84e70b8eaff2f28f962d302e2dfb6e44c",
+            "evidence_ids": [
+              "ev-c15656ca3579-0000-0001"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The case involved a dispute over whether draft biological opinions prepared by the United States Fish and Wildlife Service were subject to disclosure under the Freedom of Information Act."
+      },
+      {
+        "attribution": "Petitioners (United States Fish and Wildlife Service)",
+        "citations": [
+          {
+            "document_hash": "c15656ca357998e9232b0fc2c6fe94d84e70b8eaff2f28f962d302e2dfb6e44c",
+            "evidence_ids": [
+              "ev-c15656ca3579-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "c15656ca357998e9232b0fc2c6fe94d84e70b8eaff2f28f962d302e2dfb6e44c",
+            "evidence_ids": [
+              "ev-c15656ca3579-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "The parties argued whether a draft biological opinion constitutes a final agency decision for FOIA purposes."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-547",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0de8cbea5e6309e6dec8901a674799104713d2fb70e0059593b1be60fd74f7df",
+            "evidence_ids": [
+              "ev-0de8cbea5e63-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The majority held that a draft biological opinion is not a final agency decision."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "0de8cbea5e6309e6dec8901a674799104713d2fb70e0059593b1be60fd74f7df",
+            "evidence_ids": [
+              "ev-0de8cbea5e63-0001-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "Justice Breyer filed a dissent arguing that the deliberative\u2011process privilege protects the draft biological opinions and that the Court of Appeals\u2019 contrary judgment should be reversed and the case remanded."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T02:03:41.970023Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0de8cbea5e6309e6dec8901a674799104713d2fb70e0059593b1be60fd74f7df",
+      "c15656ca357998e9232b0fc2c6fe94d84e70b8eaff2f28f962d302e2dfb6e44c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "c15656ca357998e9232b0fc2c6fe94d84e70b8eaff2f28f962d302e2dfb6e44c",
+            "evidence_ids": [
+              "ev-c15656ca3579-0000-0001"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether a regulation prohibiting the issuance of a final opinion while a draft was under agency review would affect the analysis."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "c15656ca357998e9232b0fc2c6fe94d84e70b8eaff2f28f962d302e2dfb6e44c",
+            "evidence_ids": [
+              "ev-c15656ca3579-0000-0002"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan inquired whether the Services could avoid FOIA disclosure by informing the EPA head directly rather than releasing the draft."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "c15656ca357998e9232b0fc2c6fe94d84e70b8eaff2f28f962d302e2dfb6e44c",
+            "evidence_ids": [
+              "ev-c15656ca3579-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice BREYER, justice Breyer clarified whether the draft biological opinion could be obtained by private parties under FOIA."
+      },
+      {
+        "attribution": "Justice KAVANAUGH",
+        "citations": [
+          {
+            "document_hash": "c15656ca357998e9232b0fc2c6fe94d84e70b8eaff2f28f962d302e2dfb6e44c",
+            "evidence_ids": [
+              "ev-c15656ca3579-0002-0005",
+              "ev-c15656ca3579-0002-0006"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 60
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked what constitutes the \u201cagency decision\u201d and emphasized the need for clear FOIA rules."
+      },
+      {
+        "attribution": "Justice BARRETT; Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "c15656ca357998e9232b0fc2c6fe94d84e70b8eaff2f28f962d302e2dfb6e44c",
+            "evidence_ids": [
+              "ev-c15656ca3579-0002-0007",
+              "ev-c15656ca3579-0003-0000",
+              "ev-c15656ca3579-0003-0001"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 63
+            }
+          }
+        ],
+        "text": "Justice Barrett questioned whether a draft opinion can have a legal effect and whether it is always FOIA\u2011discoverable."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0de8cbea5e6309e6dec8901a674799104713d2fb70e0059593b1be60fd74f7df",
+            "evidence_ids": [
+              "ev-0de8cbea5e63-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Court held that a draft biological opinion is not a final agency decision."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners (United States Fish and Wildlife Service)",
+          "citations": [
+            {
+              "document_hash": "c15656ca357998e9232b0fc2c6fe94d84e70b8eaff2f28f962d302e2dfb6e44c",
+              "evidence_ids": [
+                "ev-c15656ca3579-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioners (United States Fish and Wildlife Service), according to Petitioners (United States Fish and Wildlife Service), the Services argue that the December 2013 draft biological opinions are privileged, predecisional, and deliberative material because they were written by agency staff as recommendations to decision\u2011makers."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "c15656ca357998e9232b0fc2c6fe94d84e70b8eaff2f28f962d302e2dfb6e44c",
+              "evidence_ids": [
+                "ev-c15656ca3579-0003-0002"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Petitioners, the petitioners propose a bright\u2011line rule: until a biological opinion is formally signed and issued, there is no final decision in an inter\u2011agency consultation."
+        }
+      ],
+      "heading": "Petitioners (United States Fish and Wildlife Service)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Sierra Club",
+          "citations": [
+            {
+              "document_hash": "0de8cbea5e6309e6dec8901a674799104713d2fb70e0059593b1be60fd74f7df",
+              "evidence_ids": [
+                "ev-0de8cbea5e63-0000-0003"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "The Sierra Club contends that, although labeled \u201cdrafts,\u201d the documents were intended to give the EPA a preview of a conclusion the Services had already reached and were unwilling to change."
+        },
+        {
+          "attribution": "Sierra Club",
+          "citations": [
+            {
+              "document_hash": "0de8cbea5e6309e6dec8901a674799104713d2fb70e0059593b1be60fd74f7df",
+              "evidence_ids": [
+                "ev-0de8cbea5e63-0001-0000"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "The Sierra Club argues that the \u201creal operative effect\u201d of a decision refers to its legal consequences, not merely its practical impact."
+        }
+      ],
+      "heading": "Respondent (Sierra Club)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0de8cbea5e6309e6dec8901a674799104713d2fb70e0059593b1be60fd74f7df",
+      "evidence_ids": [
+        "ev-0de8cbea5e63-0000-0001",
+        "ev-0de8cbea5e63-0000-0002",
+        "ev-0de8cbea5e63-0000-0003",
+        "ev-0de8cbea5e63-0001-0000",
+        "ev-0de8cbea5e63-0001-0001",
+        "ev-0de8cbea5e63-0001-0002"
+      ],
+      "pages": {
+        "end": 14,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "c15656ca357998e9232b0fc2c6fe94d84e70b8eaff2f28f962d302e2dfb6e44c",
+      "evidence_ids": [
+        "ev-c15656ca3579-0000-0000",
+        "ev-c15656ca3579-0000-0001",
+        "ev-c15656ca3579-0000-0002",
+        "ev-c15656ca3579-0001-0000",
+        "ev-c15656ca3579-0001-0001",
+        "ev-c15656ca3579-0001-0002",
+        "ev-c15656ca3579-0001-0003",
+        "ev-c15656ca3579-0001-0004",
+        "ev-c15656ca3579-0002-0000",
+        "ev-c15656ca3579-0002-0004",
+        "ev-c15656ca3579-0002-0005",
+        "ev-c15656ca3579-0002-0006",
+        "ev-c15656ca3579-0002-0007",
+        "ev-c15656ca3579-0003-0000",
+        "ev-c15656ca3579-0003-0001",
+        "ev-c15656ca3579-0003-0002",
+        "ev-c15656ca3579-0003-0003"
+      ],
+      "pages": {
+        "end": 71,
+        "start": 4
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T02:15:07.176438Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "The background claim that \u201cthe case involved a dispute over whether draft biological opinions ... were subject to disclosure under the Freedom of Information Act\u201d is not supported by the cited evidence; provide a source that explicitly states the FOIA dispute.",
+      "The attribution for the same claim is incorrect \u2013 it is presented as a factual description of the case, not a statement made by the Sierra Club. Adjust the attribution accordingly."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,390 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Shareholders",
+        "citations": [
+          {
+            "document_hash": "a83f490ef3c8fe7dff60a323e464fd4bdc73fb805602248348e30a8a8e31debd",
+            "evidence_ids": [
+              "ev-a83f490ef3c8-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Shareholders argue that the FHFA exceeded its statutory authority under the Recovery Act and that the agency\u2019s single\u2011director structure violates the Constitution\u2019s separation\u2011of\u2011powers principle."
+      },
+      {
+        "attribution": "Federal parties",
+        "citations": [
+          {
+            "document_hash": "b35da9b2c234f06ea445c98ef57c335f1dee514e1611ee1b2e7b108f1d829857",
+            "evidence_ids": [
+              "ev-b35da9b2c234-0000-0001",
+              "ev-b35da9b2c234-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "The Federal parties contend that the shareholders\u2019 claims are barred by the Recovery Act\u2019s succession clause and anti\u2011injunction clause, which give the conservator exclusive authority to decide whether shareholders may bring derivative suits and prevent courts from restraining the conservator\u2019s actions."
+      }
+    ],
+    "heading": "Background & Question Presented",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-422",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a83f490ef3c8fe7dff60a323e464fd4bdc73fb805602248348e30a8a8e31debd",
+            "evidence_ids": [
+              "ev-a83f490ef3c8-0002-0006"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "The Court concluded that the Recovery Act\u2019s removal restriction does not extend to an Acting Director of the FHFA."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T01:09:01.017673Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "a83f490ef3c8fe7dff60a323e464fd4bdc73fb805602248348e30a8a8e31debd",
+      "b35da9b2c234f06ea445c98ef57c335f1dee514e1611ee1b2e7b108f1d829857"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b35da9b2c234f06ea445c98ef57c335f1dee514e1611ee1b2e7b108f1d829857",
+            "evidence_ids": [
+              "ev-b35da9b2c234-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument was held before the Supreme Court at 10:00\u202fa.m."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b35da9b2c234f06ea445c98ef57c335f1dee514e1611ee1b2e7b108f1d829857",
+            "evidence_ids": [
+              "ev-b35da9b2c234-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the case required more than a declaratory judgment on the amendment\u2019s validity."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b35da9b2c234f06ea445c98ef57c335f1dee514e1611ee1b2e7b108f1d829857",
+            "evidence_ids": [
+              "ev-b35da9b2c234-0002-0000"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked what the Court should do if shareholders wrote to the confirmed Director asking him to abandon the amendment."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "b35da9b2c234f06ea445c98ef57c335f1dee514e1611ee1b2e7b108f1d829857",
+            "evidence_ids": [
+              "ev-b35da9b2c234-0004-0006"
+            ],
+            "pages": {
+              "end": 91,
+              "start": 91
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, Justice Gorsuch questioned what would legally prohibit ratification of the amendment."
+      },
+      {
+        "attribution": "Amicus",
+        "citations": [
+          {
+            "document_hash": "b35da9b2c234f06ea445c98ef57c335f1dee514e1611ee1b2e7b108f1d829857",
+            "evidence_ids": [
+              "ev-b35da9b2c234-0004-0007"
+            ],
+            "pages": {
+              "end": 95,
+              "start": 95
+            }
+          }
+        ],
+        "text": "An amicus asked whether the phrase \u201csignificant executive power\u201d is a necessary condition for finding a for\u2011cause removal restriction unconstitutional."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Shareholders",
+        "citations": [
+          {
+            "document_hash": "a83f490ef3c8fe7dff60a323e464fd4bdc73fb805602248348e30a8a8e31debd",
+            "evidence_ids": [
+              "ev-a83f490ef3c8-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Shareholders, shareholders challenged the FHFA\u2019s Third Amendment on both statutory grounds \u2013 that the FHFA exceeded its authority as a conservator \u2013 and constitutional grounds \u2013 that the agency\u2019s single\u2011director structure violates the separation of powers."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a83f490ef3c8fe7dff60a323e464fd4bdc73fb805602248348e30a8a8e31debd",
+            "evidence_ids": [
+              "ev-a83f490ef3c8-0002-0006"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "The Court also concluded that the Recovery Act\u2019s removal restriction does not apply to an Acting Director of the FHFA."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Shareholders",
+          "citations": [
+            {
+              "document_hash": "a83f490ef3c8fe7dff60a323e464fd4bdc73fb805602248348e30a8a8e31debd",
+              "evidence_ids": [
+                "ev-a83f490ef3c8-0000-0002"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to Shareholders, the FHFA exceeded its statutory authority under the Recovery Act by agreeing to the new variable dividend formula."
+        }
+      ],
+      "heading": "Shareholders",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Federal parties",
+          "citations": [
+            {
+              "document_hash": "b35da9b2c234f06ea445c98ef57c335f1dee514e1611ee1b2e7b108f1d829857",
+              "evidence_ids": [
+                "ev-b35da9b2c234-0000-0001"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Federal parties, the shareholders\u2019 claims are barred by the Recovery Act\u2019s succession clause, which gives the conservator exclusive authority to decide whether shareholders may bring derivative suits."
+        },
+        {
+          "attribution": "Federal parties",
+          "citations": [
+            {
+              "document_hash": "b35da9b2c234f06ea445c98ef57c335f1dee514e1611ee1b2e7b108f1d829857",
+              "evidence_ids": [
+                "ev-b35da9b2c234-0000-0002"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Federal parties, the claims are also barred by the Recovery Act\u2019s anti\u2011injunction clause, which prevents courts from restraining the conservator\u2019s powers."
+        }
+      ],
+      "heading": "Federal Parties",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Amicus",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "a83f490ef3c8fe7dff60a323e464fd4bdc73fb805602248348e30a8a8e31debd",
+      "evidence_ids": [
+        "ev-a83f490ef3c8-0000-0002",
+        "ev-a83f490ef3c8-0002-0006"
+      ],
+      "pages": {
+        "end": 32,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "b35da9b2c234f06ea445c98ef57c335f1dee514e1611ee1b2e7b108f1d829857",
+      "evidence_ids": [
+        "ev-b35da9b2c234-0000-0000",
+        "ev-b35da9b2c234-0000-0001",
+        "ev-b35da9b2c234-0000-0002",
+        "ev-b35da9b2c234-0001-0000",
+        "ev-b35da9b2c234-0001-0003",
+        "ev-b35da9b2c234-0001-0005",
+        "ev-b35da9b2c234-0002-0000",
+        "ev-b35da9b2c234-0002-0001",
+        "ev-b35da9b2c234-0002-0005",
+        "ev-b35da9b2c234-0003-0000",
+        "ev-b35da9b2c234-0003-0001",
+        "ev-b35da9b2c234-0004-0002",
+        "ev-b35da9b2c234-0004-0003",
+        "ev-b35da9b2c234-0004-0004",
+        "ev-b35da9b2c234-0004-0006",
+        "ev-b35da9b2c234-0004-0007",
+        "ev-b35da9b2c234-0005-0002",
+        "ev-b35da9b2c234-0005-0000",
+        "ev-b35da9b2c234-0005-0001"
+      ],
+      "pages": {
+        "end": 95,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T01:19:55.310080Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": false,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "sources[1]: evidence ev-b35da9b2c234-0005-0002 does not support citation",
+      "sources[1]: evidence ev-b35da9b2c234-0005-0000 does not support citation",
+      "sources[1]: evidence ev-b35da9b2c234-0005-0001 does not support citation",
+      "Adversarial verification skipped after deterministic failure",
+      "sources[1]: evidence ev-b35da9b2c234-0005-0002 does not support citation",
+      "sources[1]: evidence ev-b35da9b2c234-0005-0000 does not support citation",
+      "sources[1]: evidence ev-b35da9b2c234-0005-0001 does not support citation"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "a83f490ef3c8fe7dff60a323e464fd4bdc73fb805602248348e30a8a8e31debd",
+            "evidence_ids": [
+              "ev-a83f490ef3c8-0002-0006"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "The Court\u2019s holding clarifies that the Recovery Act\u2019s removal restriction does not apply to an Acting Director of the FHFA."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

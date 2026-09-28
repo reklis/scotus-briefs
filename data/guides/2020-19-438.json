@@ -1,0 +1,382 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+            "evidence_ids": [
+              "ev-e06fa515ec7e-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Petitioner Mr. Pereida argued that because it is unclear whether his crime involved moral turpitude, he should remain eligible for immigration relief."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+            "evidence_ids": [
+              "ev-e06fa515ec7e-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Counsel asked the immigration judge to postpone further proceedings on Mr. Pereida\u2019s relief application until his criminal case concluded, and the judge agreed."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-438",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+            "evidence_ids": [
+              "ev-e06fa515ec7e-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The majority held that any lingering uncertainty about whether Mr. Pereida was convicted of a crime involving moral turpitude defeats his application for relief."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+            "evidence_ids": [
+              "ev-e06fa515ec7e-0002-0002"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Breyer (dissent) stated there is no unresolved factual question because the conviction is undisputed, and that unless the offense is necessarily a crime involving moral turpitude, the judge must find it is not."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+            "evidence_ids": [
+              "ev-e06fa515ec7e-0003-0000"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Breyer (dissent) also argued that the petitioner should not bear the burden of proof because the evidence sought lies beyond the limited record allowed by precedent."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T01:19:55.329808Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+            "evidence_ids": [
+              "ev-e06fa515ec7e-0003-0001"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "According to Government, during oral argument, the Government confirmed that it had not advocated for a judge to consider a broader set of evidentiary materials, noting that no other documents were available."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+            "evidence_ids": [
+              "ev-e06fa515ec7e-0000-0005"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The Court held that any lingering uncertainty about whether Mr. Pereida was convicted of a crime involving moral turpitude is enough to defeat his application for relief."
+      },
+      {
+        "attribution": "Pereida",
+        "citations": [
+          {
+            "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+            "evidence_ids": [
+              "ev-e06fa515ec7e-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "According to Pereida, the case centered on whether the categorical approach to determining moral turpitude applies to Mr. Pereida\u2019s conviction under Nebraska law."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+              "evidence_ids": [
+                "ev-e06fa515ec7e-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "Petitioner contends that the ambiguity surrounding whether his offense involved moral turpitude makes him eligible for relief."
+        },
+        {
+          "attribution": "Pereida",
+          "citations": [
+            {
+              "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+              "evidence_ids": [
+                "ev-e06fa515ec7e-0001-0000"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "According to Pereida, petitioner argues that under the categorical approach, Nebraska\u2019s statute does not necessarily involve fraud, so his conviction should not be treated as a crime involving moral turpitude."
+        }
+      ],
+      "heading": "Petitioner (Mr. Pereida)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+              "evidence_ids": [
+                "ev-e06fa515ec7e-0003-0001"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "The Government repeatedly stated at oral argument that it had not argued for a broader evidentiary review because no additional documents existed."
+        }
+      ],
+      "heading": "Government",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+      "evidence_ids": [
+        "ev-e06fa515ec7e-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+      "evidence_ids": [
+        "ev-e06fa515ec7e-0000-0003"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+      "evidence_ids": [
+        "ev-e06fa515ec7e-0000-0005"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+      "evidence_ids": [
+        "ev-e06fa515ec7e-0001-0000"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+      "evidence_ids": [
+        "ev-e06fa515ec7e-0002-0002"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+      "evidence_ids": [
+        "ev-e06fa515ec7e-0003-0000"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+      "evidence_ids": [
+        "ev-e06fa515ec7e-0003-0001"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 34
+      }
+    },
+    {
+      "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+      "evidence_ids": [
+        "ev-e06fa515ec7e-0003-0002"
+      ],
+      "pages": {
+        "end": 35,
+        "start": 35
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T01:24:09.462986Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "e06fa515ec7e0ff0900f3ed7946fb40af5a67134ae5eae6b34b664120cfb0222",
+            "evidence_ids": [
+              "ev-e06fa515ec7e-0003-0002"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "The decision may make immigration law less fair and predictable, as the categorical approach helps aliens anticipate immigration consequences of guilty pleas and provides a \u201csafe harbor\u201d for pleas that do not trigger sanctions."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,476 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-292",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a0e77e7c462b1ca3a9185afa1406677b4e5b28cee2f9fdfc78f5929d4c87f53",
+            "evidence_ids": [
+              "ev-4a0e77e7c462-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The Court vacated the judgment of the Court of Appeals and remanded the case."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a0e77e7c462b1ca3a9185afa1406677b4e5b28cee2f9fdfc78f5929d4c87f53",
+            "evidence_ids": [
+              "ev-4a0e77e7c462-0001-0000"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The Court announced a narrow rule that a seizure by force lasts only as long as the application of force and requires intent to restrain."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "4a0e77e7c462b1ca3a9185afa1406677b4e5b28cee2f9fdfc78f5929d4c87f53",
+            "evidence_ids": [
+              "ev-4a0e77e7c462-0001-0004"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Gorsuch dissented, stating that the judgment of the Court of Appeals is vacated and the case is remanded for further proceedings consistent with his opinion."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T00:39:33.471100Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4a0e77e7c462b1ca3a9185afa1406677b4e5b28cee2f9fdfc78f5929d4c87f53",
+      "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "4a0e77e7c462b1ca3a9185afa1406677b4e5b28cee2f9fdfc78f5929d4c87f53",
+          "evidence_ids": [
+            "ev-4a0e77e7c462-0003-0001"
+          ],
+          "pages": {
+            "end": 34,
+            "start": 34
+          }
+        }
+      ],
+      "definition": "to seize, to detain by power, to withhold; to hinder; to stop motion.",
+      "term": "arrest"
+    },
+    {
+      "citations": [
+        {
+          "document_hash": "4a0e77e7c462b1ca3a9185afa1406677b4e5b28cee2f9fdfc78f5929d4c87f53",
+          "evidence_ids": [
+            "ev-4a0e77e7c462-0003-0002"
+          ],
+          "pages": {
+            "end": 42,
+            "start": 42
+          }
+        }
+      ],
+      "definition": "occurs only when there is a governmental termination of freedom of movement through means intentionally applied.",
+      "term": "seizure"
+    }
+  ],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+            "evidence_ids": [
+              "ev-7c7d2c11e5b2-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether shooting the tires of a car, yet allowing it to continue driving, would constitute a seizure."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+            "evidence_ids": [
+              "ev-7c7d2c11e5b2-0001-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas inquired whether the individual had thrown drugs away and then was later tackled."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+            "evidence_ids": [
+              "ev-7c7d2c11e5b2-0001-0004"
+            ],
+            "pages": {
+              "end": 40,
+              "start": 40
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether Justice Scalia\u2019s view was being endorsed as precedent."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+            "evidence_ids": [
+              "ev-7c7d2c11e5b2-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch questioned whether private\u2011citizen \u201cmere touch\u201d cases should be treated as police seizures."
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+            "evidence_ids": [
+              "ev-7c7d2c11e5b2-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked how the parties would respond to concerns that the proposed rule would create difficult line\u2011drawing problems."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+            "evidence_ids": [
+              "ev-7c7d2c11e5b2-0003-0006"
+            ],
+            "pages": {
+              "end": 72,
+              "start": 72
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh compared the issue to the GPS case, noting the similarity of intent to search and touching a body with intent to restrain."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a0e77e7c462b1ca3a9185afa1406677b4e5b28cee2f9fdfc78f5929d4c87f53",
+            "evidence_ids": [
+              "ev-4a0e77e7c462-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The Court vacated the judgment of the Court of Appeals and remanded the case for further proceedings."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a0e77e7c462b1ca3a9185afa1406677b4e5b28cee2f9fdfc78f5929d4c87f53",
+            "evidence_ids": [
+              "ev-4a0e77e7c462-0001-0000"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The Court announced a narrow rule: a seizure by force lasts only as long as the application of force and requires intent to restrain."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "KELSI B. CORKRAN (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+              "evidence_ids": [
+                "ev-7c7d2c11e5b2-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to KELSI B. CORKRAN (Petitioner), police approached Ms. Torres, opened the car door without announcing themselves, fired 13 shots, and two bullets hit her in the back."
+        }
+      ],
+      "heading": "Petitioner (KELSI B. CORKRAN)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Standridge",
+          "citations": [
+            {
+              "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+              "evidence_ids": [
+                "ev-7c7d2c11e5b2-0002-0001"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Mr. Standridge, the \u201cmere touch\u201d rule should not be applied here because it arose in a very limited and narrow context."
+        }
+      ],
+      "heading": "Respondent (Mr. Standridge)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Police officers",
+          "citations": [
+            {
+              "document_hash": "4a0e77e7c462b1ca3a9185afa1406677b4e5b28cee2f9fdfc78f5929d4c87f53",
+              "evidence_ids": [
+                "ev-4a0e77e7c462-0001-0001"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "According to Police officers, common\u2011law rules are not automatically elevated to constitutional prohibitions, especially when they are distorted beyond recognition when applied literally."
+        }
+      ],
+      "heading": "Police Officers",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4a0e77e7c462b1ca3a9185afa1406677b4e5b28cee2f9fdfc78f5929d4c87f53",
+      "evidence_ids": [
+        "ev-4a0e77e7c462-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "4a0e77e7c462b1ca3a9185afa1406677b4e5b28cee2f9fdfc78f5929d4c87f53",
+      "evidence_ids": [
+        "ev-4a0e77e7c462-0001-0000",
+        "ev-4a0e77e7c462-0001-0001"
+      ],
+      "pages": {
+        "end": 14,
+        "start": 14
+      }
+    },
+    {
+      "document_hash": "4a0e77e7c462b1ca3a9185afa1406677b4e5b28cee2f9fdfc78f5929d4c87f53",
+      "evidence_ids": [
+        "ev-4a0e77e7c462-0001-0004"
+      ],
+      "pages": {
+        "end": 21,
+        "start": 21
+      }
+    },
+    {
+      "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+      "evidence_ids": [
+        "ev-7c7d2c11e5b2-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+      "evidence_ids": [
+        "ev-7c7d2c11e5b2-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+      "evidence_ids": [
+        "ev-7c7d2c11e5b2-0001-0002"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+      "evidence_ids": [
+        "ev-7c7d2c11e5b2-0001-0004"
+      ],
+      "pages": {
+        "end": 40,
+        "start": 40
+      }
+    },
+    {
+      "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+      "evidence_ids": [
+        "ev-7c7d2c11e5b2-0002-0000",
+        "ev-7c7d2c11e5b2-0002-0001"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+      "evidence_ids": [
+        "ev-7c7d2c11e5b2-0003-0000"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 65
+      }
+    },
+    {
+      "document_hash": "7c7d2c11e5b26972448426c3bd21a2c2f494873925696c87001ecd1070f22852",
+      "evidence_ids": [
+        "ev-7c7d2c11e5b2-0003-0006"
+      ],
+      "pages": {
+        "end": 72,
+        "start": 72
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T00:43:04.356493Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

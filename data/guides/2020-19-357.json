@@ -1,0 +1,313 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Craig Goldblatt",
+        "citations": [
+          {
+            "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+            "evidence_ids": [
+              "ev-3149228e4fe1-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Craig Goldblatt, the central legal question is whether the automatic stay obligates a creditor in possession of estate property to return that property to the debtor immediately or to pay damages."
+      },
+      {
+        "attribution": "City of Chicago",
+        "citations": [
+          {
+            "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+            "evidence_ids": [
+              "ev-3149228e4fe1-0003-0004"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "The City of Chicago argues that the automatic stay\u2019s only function is to maintain the status quo and does not require a creditor to turn over property it already holds."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-357",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T01:00:29.205503Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+            "evidence_ids": [
+              "ev-3149228e4fe1-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:04\u202fa.m. before the Supreme Court on the scheduled date."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Craig Goldblatt",
+        "citations": [
+          {
+            "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+            "evidence_ids": [
+              "ev-3149228e4fe1-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Craig Goldblatt, the case asks whether the Bankruptcy Code\u2019s automatic stay requires a creditor who is already in lawful possession of estate property to turn that property over to the debtor or pay damages."
+      },
+      {
+        "attribution": "Craig Goldblatt; City of Chicago",
+        "citations": [
+          {
+            "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+            "evidence_ids": [
+              "ev-3149228e4fe1-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+            "evidence_ids": [
+              "ev-3149228e4fe1-0003-0004"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "Both parties argue that the purpose of the automatic stay is to preserve the status quo rather than to compel a creditor to surrender property it already holds."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "City of Chicago",
+          "citations": [
+            {
+              "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+              "evidence_ids": [
+                "ev-3149228e4fe1-0003-0004"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 65
+              }
+            }
+          ],
+          "text": "The City of Chicago argues that the automatic stay\u2019s only function is to maintain the status quo and does not require a creditor to turn over property it already holds."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+              "evidence_ids": [
+                "ev-3149228e4fe1-0003-0009"
+              ],
+              "pages": {
+                "end": 80,
+                "start": 80
+              }
+            }
+          ],
+          "text": "According to Petitioner, the petitioner cites the Supreme Court\u2019s Whiting Pools decision to emphasize that the Bankruptcy Code balances secured\u2011creditor rights with debtor rights to marshal estate assets."
+        }
+      ],
+      "heading": "City of Chicago (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents (Eugene R. Wedoff)",
+          "citations": [
+            {
+              "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+              "evidence_ids": [
+                "ev-3149228e4fe1-0002-0006"
+              ],
+              "pages": {
+                "end": 47,
+                "start": 47
+              }
+            }
+          ],
+          "text": "According to Respondents (Eugene R. Wedoff), according to Respondents (Eugene R. Wedoff), the respondents contend that a creditor may not prevent a Chapter\u202f13 debtor from recovering property seized before the bankruptcy filing when the debtor lacks a court order directing return."
+        }
+      ],
+      "heading": "Respondents (Fulton)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+      "evidence_ids": [
+        "ev-3149228e4fe1-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+      "evidence_ids": [
+        "ev-3149228e4fe1-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+      "evidence_ids": [
+        "ev-3149228e4fe1-0002-0006"
+      ],
+      "pages": {
+        "end": 47,
+        "start": 47
+      }
+    },
+    {
+      "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+      "evidence_ids": [
+        "ev-3149228e4fe1-0003-0004"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 65
+      }
+    },
+    {
+      "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+      "evidence_ids": [
+        "ev-3149228e4fe1-0003-0009"
+      ],
+      "pages": {
+        "end": 80,
+        "start": 80
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T01:09:00.998528Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "3149228e4fe1974762f8e719a51eea777063f77260152ac0b6a7d07f75de7819",
+            "evidence_ids": [
+              "ev-3149228e4fe1-0003-0009"
+            ],
+            "pages": {
+              "end": 80,
+              "start": 80
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case also touches on the broader balance the Bankruptcy Code seeks between protecting secured\u2011creditor interests and allowing debtors to marshal estate assets, a principle highlighted by the petitioner\u2019s reference to Whiting Pools."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

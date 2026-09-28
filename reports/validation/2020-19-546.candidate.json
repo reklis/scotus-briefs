@@ -1,0 +1,532 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "ab86178527114df990a97e4bf003874663c9fa71072ee3b6e32bd195b993f76f",
+            "evidence_ids": [
+              "ev-ab8617852711-0001-0003"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          },
+          {
+            "document_hash": "ab86178527114df990a97e4bf003874663c9fa71072ee3b6e32bd195b993f76f",
+            "evidence_ids": [
+              "ev-ab8617852711-0000-0002"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "The Court was asked whether the judgment bar applies to separate claims, such as a Bivens action, brought in the same lawsuit after the FTCA claims are resolved."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-546",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ab86178527114df990a97e4bf003874663c9fa71072ee3b6e32bd195b993f76f",
+            "evidence_ids": [
+              "ev-ab8617852711-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, the Court held that the district court\u2019s order was a judgment on the merits of the FTCA claims, triggering the FTCA judgment bar and precluding the Bivens action."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+            "evidence_ids": [
+              "ev-c885f4756b56-0001-0004"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh (dissent) argues that the judgment bar should not apply to the Bivens claim, questioning whether the statutory language covers \u201cany action\u201d rather than \u201cany claims.\u201d"
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T01:50:59.134952Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "ab86178527114df990a97e4bf003874663c9fa71072ee3b6e32bd195b993f76f",
+      "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "JUSTICE ALITO",
+        "citations": [
+          {
+            "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+            "evidence_ids": [
+              "ev-c885f4756b56-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether a district court\u2019s dismissal of an FTCA claim for failure of proof triggers the judgment bar, or whether that is merely a jurisdictional determination."
+      },
+      {
+        "attribution": "JUSTICE BARRETT",
+        "citations": [
+          {
+            "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+            "evidence_ids": [
+              "ev-c885f4756b56-0002-0003"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 61
+            }
+          }
+        ],
+        "text": "According to JUSTICE BARRETT, justice Barrett inquired whether a summary judgment, as requested by the government, would invoke the judgment bar."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+            "evidence_ids": [
+              "ev-c885f4756b56-0003-0006"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted that the fallback argument was not cert\u2011worthy and that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ab86178527114df990a97e4bf003874663c9fa71072ee3b6e32bd195b993f76f",
+            "evidence_ids": [
+              "ev-ab8617852711-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, the Court held that the district court\u2019s order was a judgment on the merits of the FTCA claims, triggering the FTCA judgment bar and precluding the Bivens action."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "King",
+          "citations": [
+            {
+              "document_hash": "ab86178527114df990a97e4bf003874663c9fa71072ee3b6e32bd195b993f76f",
+              "evidence_ids": [
+                "ev-ab8617852711-0000-0002"
+              ],
+              "pages": {
+                "end": 8,
+                "start": 8
+              }
+            }
+          ],
+          "text": "King argues that the judgment bar does not apply to a dismissal of claims raised in the same lawsuit because common\u2011law claim preclusion is not appropriate within a single lawsuit."
+        },
+        {
+          "attribution": "King",
+          "citations": [
+            {
+              "document_hash": "ab86178527114df990a97e4bf003874663c9fa71072ee3b6e32bd195b993f76f",
+              "evidence_ids": [
+                "ev-ab8617852711-0001-0004"
+              ],
+              "pages": {
+                "end": 13,
+                "start": 13
+              }
+            }
+          ],
+          "text": "King further contends that the FTCA judgment bar is triggered only by \u201cthe judgment in an action under section 1346(b),\u201d and therefore does not bar the Bivens claim."
+        }
+      ],
+      "heading": "King's Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "ab86178527114df990a97e4bf003874663c9fa71072ee3b6e32bd195b993f76f",
+              "evidence_ids": [
+                "ev-ab8617852711-0001-0003"
+              ],
+              "pages": {
+                "end": 13,
+                "start": 13
+              }
+            }
+          ],
+          "text": "Petitioners argue that the judgment bar provides that any order resolving an FTCA claim automatically precludes separate claims brought in the same action arising from the same common nucleus of facts."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "ab86178527114df990a97e4bf003874663c9fa71072ee3b6e32bd195b993f76f",
+              "evidence_ids": [
+                "ev-ab8617852711-0001-0005"
+              ],
+              "pages": {
+                "end": 15,
+                "start": 15
+              }
+            }
+          ],
+          "text": "Petitioners note that referring to the entire lawsuit as \u201can action under section 1346(b)\u201d after the FTCA claims are decided would be strange, suggesting the bar should apply to the whole case."
+        },
+        {
+          "attribution": "Petitioners (Michael R. Huston)",
+          "citations": [
+            {
+              "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+              "evidence_ids": [
+                "ev-c885f4756b56-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioners (Michael R. Huston), according to Petitioners (Michael R. Huston), in oral argument Michael R. Huston asserted that the FTCA judgment bar \u201cunambiguously precludes\u201d the Bivens action because the district court entered judgment in an action under \u00a71346(b)."
+        },
+        {
+          "attribution": "Mr. Huston",
+          "citations": [
+            {
+              "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+              "evidence_ids": [
+                "ev-c885f4756b56-0001-0001"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            },
+            {
+              "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+              "evidence_ids": [
+                "ev-c885f4756b56-0001-0003"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Huston, the purpose of the judgment bar is repose; Congress intended the judgment in the FTCA action to bring finality to the entire controversy."
+        }
+      ],
+      "heading": "Petitioners' Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+              "evidence_ids": [
+                "ev-c885f4756b56-0003-0000"
+              ],
+              "pages": {
+                "end": 64,
+                "start": 64
+              }
+            }
+          ],
+          "text": "According to Government, the Government characterizes the FTCA judgment bar as a simple common\u2011law doctrine of res judicata."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+              "evidence_ids": [
+                "ev-c885f4756b56-0003-0001"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 65
+              }
+            }
+          ],
+          "text": "The Government argues that jurisdictional issues control, not merits, and that the judgment bar should apply regardless of the basis for the district court\u2019s dismissal."
+        }
+      ],
+      "heading": "Government's Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Jaicomo",
+          "citations": [
+            {
+              "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+              "evidence_ids": [
+                "ev-c885f4756b56-0001-0005"
+              ],
+              "pages": {
+                "end": 35,
+                "start": 35
+              }
+            }
+          ],
+          "text": "Mr. Jaicomo argues that the judgment bar does not apply to claims brought together in a single action."
+        }
+      ],
+      "heading": "Mr. Jaicomo's Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ab86178527114df990a97e4bf003874663c9fa71072ee3b6e32bd195b993f76f",
+      "evidence_ids": [
+        "ev-ab8617852711-0000-0001",
+        "ev-ab8617852711-0000-0002",
+        "ev-ab8617852711-0000-0004",
+        "ev-ab8617852711-0001-0000",
+        "ev-ab8617852711-0001-0001",
+        "ev-ab8617852711-0001-0003",
+        "ev-ab8617852711-0001-0004",
+        "ev-ab8617852711-0001-0005",
+        "ev-ab8617852711-0001-0006"
+      ],
+      "pages": {
+        "end": 70,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+      "evidence_ids": [
+        "ev-c885f4756b56-0000-0000",
+        "ev-c885f4756b56-0001-0001",
+        "ev-c885f4756b56-0001-0003",
+        "ev-c885f4756b56-0001-0005",
+        "ev-c885f4756b56-0002-0000",
+        "ev-c885f4756b56-0002-0002",
+        "ev-c885f4756b56-0002-0003",
+        "ev-c885f4756b56-0003-0000",
+        "ev-c885f4756b56-0003-0001",
+        "ev-c885f4756b56-0003-0002",
+        "ev-c885f4756b56-0003-0003",
+        "ev-c885f4756b56-0003-0004",
+        "ev-c885f4756b56-0003-0005",
+        "ev-c885f4756b56-0003-0006"
+      ],
+      "pages": {
+        "end": 70,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T02:03:41.949728Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": false,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": false,
+      "oral_argument": true,
+      "page_ranges": false,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "sources[0]: cited page is unavailable or outside the PDF",
+      "sources[1]: cited page is unavailable or outside the PDF",
+      "separate-opinion claim must name its author and label the disagreement",
+      "complete decision section lacks holding evidence",
+      "Adversarial verification skipped after deterministic failure",
+      "sources[0]: cited page is unavailable or outside the PDF",
+      "sources[1]: cited page is unavailable or outside the PDF",
+      "separate-opinion claim must name its author and label the disagreement",
+      "complete decision section lacks holding evidence"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ab86178527114df990a97e4bf003874663c9fa71072ee3b6e32bd195b993f76f",
+            "evidence_ids": [
+              "ev-ab8617852711-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          },
+          {
+            "document_hash": "ab86178527114df990a97e4bf003874663c9fa71072ee3b6e32bd195b993f76f",
+            "evidence_ids": [
+              "ev-ab8617852711-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The decision clarifies that a judgment under the FTCA bars not only further FTCA claims but also other federal\u2011law claims, such as Bivens actions, arising from the same facts."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+            "evidence_ids": [
+              "ev-c885f4756b56-0001-0001"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          },
+          {
+            "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+            "evidence_ids": [
+              "ev-c885f4756b56-0003-0005"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "The ruling reinforces Congress\u2019s intent that the judgment bar provide finality (\u201crepose\u201d) to the entire controversy, limiting litigants from relitigating the same injuries in separate federal claims."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+            "evidence_ids": [
+              "ev-c885f4756b56-0003-0003"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          },
+          {
+            "document_hash": "c885f4756b56460eac53d19ff3637bc994e9a8ad34f90eb8ee1d9a4eb8fec078",
+            "evidence_ids": [
+              "ev-c885f4756b56-0002-0002"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 61
+            }
+          }
+        ],
+        "text": "The case signals to lower courts that summary judgments or dismissals in FTCA actions can have preclusive effect on related claims, affecting litigation strategy."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

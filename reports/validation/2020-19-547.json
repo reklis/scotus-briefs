@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2020-19-547",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": false,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": true,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "The background claim that \u201cthe case involved a dispute over whether draft biological opinions ... were subject to disclosure under the Freedom of Information Act\u201d is not supported by the cited evidence; provide a source that explicitly states the FOIA dispute.",
+    "The attribution for the same claim is incorrect \u2013 it is presented as a factual description of the case, not a statement made by the Sierra Club. Adjust the attribution accordingly."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.93,
+    "neutrality": 0.9,
+    "readability": 0.85,
+    "restraint": 0.95,
+    "traceability": 0.9
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+            "evidence_ids": [
+              "ev-357e8872f659-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          },
+          {
+            "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+            "evidence_ids": [
+              "ev-357e8872f659-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          },
+          {
+            "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+            "evidence_ids": [
+              "ev-357e8872f659-0002-0021"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "The Court is examining whether the FSIA\u2019s ex\u2011propriation exception applies to takings that violate international law, including Holocaust\u2011era confiscations, and how sovereign immunity may affect such claims."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-351",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T00:52:32.402340Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+            "evidence_ids": [
+              "ev-357e8872f659-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Oral argument began at 11:24\u202fa.m. before the Supreme Court."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+            "evidence_ids": [
+              "ev-357e8872f659-0004-0003"
+            ],
+            "pages": {
+              "end": 90,
+              "start": 90
+            }
+          }
+        ],
+        "text": "The case was submitted at 12:52\u202fp.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Jonathan M. Freiman",
+        "citations": [
+          {
+            "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+            "evidence_ids": [
+              "ev-357e8872f659-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Jonathan M. Freiman, petitioners contend that the 1976 ex\u2011propriation exception was created because Communist states were expropriating property from U.S. nationals without compensation."
+      },
+      {
+        "attribution": "Jonathan M. Freiman",
+        "citations": [
+          {
+            "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+            "evidence_ids": [
+              "ev-357e8872f659-0000-0005"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Petitioners argue that Congress has not yet taken the risk of allowing Holocaust\u2011era claims, but it could if it chose to."
+      },
+      {
+        "attribution": "Respondents",
+        "citations": [
+          {
+            "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+            "evidence_ids": [
+              "ev-357e8872f659-0002-0011"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Respondents argue that the FSIA provides jurisdiction over cases where property is taken in violation of international law, and that this applies to Holocaust\u2011era takings."
+      },
+      {
+        "attribution": "United States (Amicus Curiae)",
+        "citations": [
+          {
+            "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+            "evidence_ids": [
+              "ev-357e8872f659-0001-0004"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to United States (Amicus Curiae), according to United States (Amicus Curiae), the United States deplores the atrocities committed against victims of the Nazi regime and has long had a policy of encouraging Germany and other countries to provide mechanisms to afford a measure of justice."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Jonathan M. Freiman",
+          "citations": [
+            {
+              "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+              "evidence_ids": [
+                "ev-357e8872f659-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Jonathan M. Freiman, freiman notes that the 1976 expropriation exception was enacted amid concerns about Communist states expropriating property from U.S. nationals."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+              "evidence_ids": [
+                "ev-357e8872f659-0004-0000"
+              ],
+              "pages": {
+                "end": 85,
+                "start": 85
+              }
+            }
+          ],
+          "text": "Petitioners assert that the Clarification Act\u2019s language recognizing Nazi\u2011era looting shows congressional intent to permit these claims."
+        },
+        {
+          "attribution": "Mr. Freiman",
+          "citations": [
+            {
+              "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+              "evidence_ids": [
+                "ev-357e8872f659-0004-0002"
+              ],
+              "pages": {
+                "end": 87,
+                "start": 87
+              }
+            }
+          ],
+          "text": "According to Mr. Freiman, petitioners argue that a remand is not appropriate if the ex\u2011propriation exception applies only to violations of the international law of takings."
+        }
+      ],
+      "heading": "Petitioners (Federal Republic of Germany)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+              "evidence_ids": [
+                "ev-357e8872f659-0002-0011"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 50
+              }
+            }
+          ],
+          "text": "Respondents argue that the FSIA provides jurisdiction over cases in which rights and property taken in violation of international law are at issue, and that this applies to the petitioners\u2019 Holocaust\u2011era takings."
+        },
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+              "evidence_ids": [
+                "ev-357e8872f659-0002-0011"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 50
+              }
+            }
+          ],
+          "text": "Respondents claim that the ordinary meaning of \u201crights and property taken in violation of international law\u201d applies to the petitioners\u2019 property takings during the Holocaust."
+        },
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+              "evidence_ids": [
+                "ev-357e8872f659-0002-0020"
+              ],
+              "pages": {
+                "end": 62,
+                "start": 62
+              }
+            }
+          ],
+          "text": "Respondents claim that the violation of the international norm does not itself cause the deprivation of property."
+        }
+      ],
+      "heading": "Respondents (Alan Philipp)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "357e8872f65915e423556e02f675c84a38c2c15b9e0161dc88551ae29fb3686b",
+      "evidence_ids": [
+        "ev-357e8872f659-0000-0000"
+      ],
+      "pages": {
+        "end": 90,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T01:00:29.184481Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-783",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T02:35:02.063690Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+      "cbd94e4c35491d0b2cb9adb545e3481816069b4cce1a25b4db614e741548140c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+            "evidence_ids": [
+              "ev-765aff5c1e32-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked Mr. Fisher to explain the two ways the CFAA criminalizes improper access, referencing *Musacchio*."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+            "evidence_ids": [
+              "ev-765aff5c1e32-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned whether an employee checking Instagram at work constitutes \u201cobtaining or altering information.\u201d"
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+            "evidence_ids": [
+              "ev-765aff5c1e32-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked about the constitutional implications of the petitioner\u2019s examples."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+            "evidence_ids": [
+              "ev-765aff5c1e32-0001-0002"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "According to Justice Barrett, justice Barrett focused on how the \u201cexceeds authorized access\u201d prong relates to the \u201cwithout authorization\u201d prong."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+            "evidence_ids": [
+              "ev-765aff5c1e32-0002-0002"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned whether the petitioner\u2019s reading makes the second part of the statute superfluous."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Jeffrey L. Fisher (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+              "evidence_ids": [
+                "ev-765aff5c1e32-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Jeffrey L. Fisher (Petitioner), according to Jeffrey L. Fisher (Petitioner), according to Jeffrey L. Fisher (Petitioner), the CFAA prohibits obtaining information from a computer without authorization and also prohibits \u201cexceeding authorized access.\u201d"
+        },
+        {
+          "attribution": "Jeffrey L. Fisher (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+              "evidence_ids": [
+                "ev-765aff5c1e32-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Jeffrey L. Fisher (Petitioner), according to Jeffrey L. Fisher (Petitioner), according to Jeffrey L. Fisher (Petitioner), that construction would criminalize the everyday conduct of most Americans."
+        },
+        {
+          "attribution": "Mr. Fisher",
+          "citations": [
+            {
+              "document_hash": "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+              "evidence_ids": [
+                "ev-765aff5c1e32-0001-0003"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 24
+              }
+            },
+            {
+              "document_hash": "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+              "evidence_ids": [
+                "ev-765aff5c1e32-0003-0002",
+                "ev-765aff5c1e32-0003-0003"
+              ],
+              "pages": {
+                "end": 66,
+                "start": 66
+              }
+            }
+          ],
+          "text": "According to Mr. Fisher, there are First Amendment concerns and a vagueness problem with the statute\u2019s application."
+        }
+      ],
+      "heading": "Petitioner (Jeffrey L. Fisher)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Defendant (Nathan Van Buren)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "cbd94e4c35491d0b2cb9adb545e3481816069b4cce1a25b4db614e741548140c",
+              "evidence_ids": [
+                "ev-cbd94e4c3549-0002-0000"
+              ],
+              "pages": {
+                "end": 21,
+                "start": 21
+              }
+            }
+          ],
+          "text": "According to United States, congress intended the amendment to have a real and substantial effect; removing the statute\u2019s reference to purpose cuts against reading the statute to capture that concept."
+        }
+      ],
+      "heading": "United States (Government)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Feigin",
+          "citations": [
+            {
+              "document_hash": "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+              "evidence_ids": [
+                "ev-765aff5c1e32-0001-0004"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to Mr. Feigin, the statute is not ambiguous and clearly supports the petitioner\u2019s reading; the government\u2019s interpretation is textually unsupportable."
+        },
+        {
+          "attribution": "Mr. Feigin",
+          "citations": [
+            {
+              "document_hash": "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+              "evidence_ids": [
+                "ev-765aff5c1e32-0003-0000"
+              ],
+              "pages": {
+                "end": 63,
+                "start": 63
+              }
+            }
+          ],
+          "text": "According to Mr. Feigin, \u201cAuthorization\u201d refers to the owner of the computer data, not to external constraints placed on a user."
+        },
+        {
+          "attribution": "Mr. Feigin",
+          "citations": [
+            {
+              "document_hash": "765aff5c1e323b4d2ec871721e65b6390eead0606bd0a3489a410d1e45770186",
+              "evidence_ids": [
+                "ev-765aff5c1e32-0003-0001"
+              ],
+              "pages": {
+                "end": 64,
+                "start": 64
+              }
+            }
+          ],
+          "text": "According to Mr. Feigin, the Court should not interpret the statute in a way that departs from the plain language used in *Musacchio*."
+        }
+      ],
+      "heading": "Mr. Feigin",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "cbd94e4c35491d0b2cb9adb545e3481816069b4cce1a25b4db614e741548140c",
+      "evidence_ids": [
+        "ev-cbd94e4c3549-0000-0002"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "cbd94e4c35491d0b2cb9adb545e3481816069b4cce1a25b4db614e741548140c",
+      "evidence_ids": [
+        "ev-cbd94e4c3549-0000-0004"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T02:44:54.810454Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

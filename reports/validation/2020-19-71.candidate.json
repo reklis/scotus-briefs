@@ -1,0 +1,458 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0000-0001"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          },
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0001-0006"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          },
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "The central question is whether the phrase \u201cappropriate relief\u201d in RFRA includes monetary damages against federal officials."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-71",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T02:24:27.743369Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0000-0001"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether money damages would be available under a private cause of action."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch redirected counsel to the issue of whether the government agrees a private contractor can be sued for damages."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0001-0004"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer inquired about the phrase \u201cperson acting under color of law.\u201d"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0001-0006"
+            ],
+            "pages": {
+              "end": 43,
+              "start": 43
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned whether any statute has interpreted \u201cappropriate relief\u201d to include damages against federal officials."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Sotomayor further asked whether Congress intended \u201cappropriate relief\u201d to include states and their officials, referencing 1983 actions."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0002-0002"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether RFRA should be interpreted like other statutes without special rules."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Edwin S. Kneedler (Petitioners)",
+        "citations": [
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0000-0001"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "The case concerns whether the Religious Freedom Restoration Act (RFRA) creates a private right of action for monetary damages against federal employees."
+      },
+      {
+        "attribution": "Edwin S. Kneedler (Petitioners)",
+        "citations": [
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Edwin S. Kneedler (Petitioners), according to Edwin S. Kneedler (Petitioners), petitioners argue that RFRA\u2019s remedy provision only allows relief against the government, not against individual employees in their personal capacity."
+      },
+      {
+        "attribution": "Ramzi KASSEM",
+        "citations": [
+          {
+            "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+            "evidence_ids": [
+              "ev-b765d6fc7bdd-0001-0002"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "According to Ramzi KASSEM, respondents contend that damages may be appropriate where necessary to provide meaningful relief to victims."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Edwin S. Kneedler (Petitioners)",
+          "citations": [
+            {
+              "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+              "evidence_ids": [
+                "ev-b765d6fc7bdd-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            },
+            {
+              "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+              "evidence_ids": [
+                "ev-b765d6fc7bdd-0001-0001"
+              ],
+              "pages": {
+                "end": 30,
+                "start": 30
+              }
+            }
+          ],
+          "text": "Petitioners assert that RFRA does not create a private cause of action for damages against federal employees; the statute\u2019s remedy provision is limited to relief against the government."
+        },
+        {
+          "attribution": "Edwin S. Kneedler (Petitioners)",
+          "citations": [
+            {
+              "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+              "evidence_ids": [
+                "ev-b765d6fc7bdd-0000-0002"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Edwin S. Kneedler (Petitioners), according to Edwin S. Kneedler (Petitioners), petitioners reference the Westfall Act and congressional practice to support the view that no private damage remedy exists."
+        }
+      ],
+      "heading": "Petitioner Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ramzi KASSEM",
+          "citations": [
+            {
+              "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+              "evidence_ids": [
+                "ev-b765d6fc7bdd-0001-0002"
+              ],
+              "pages": {
+                "end": 32,
+                "start": 32
+              }
+            }
+          ],
+          "text": "According to Ramzi KASSEM, respondents argue that monetary damages may be available under RFRA when necessary to provide meaningful relief to victims."
+        }
+      ],
+      "heading": "Respondent Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+      "evidence_ids": [
+        "ev-b765d6fc7bdd-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+      "evidence_ids": [
+        "ev-b765d6fc7bdd-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+      "evidence_ids": [
+        "ev-b765d6fc7bdd-0000-0001"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+      "evidence_ids": [
+        "ev-b765d6fc7bdd-0001-0000"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+      "evidence_ids": [
+        "ev-b765d6fc7bdd-0001-0001"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+      "evidence_ids": [
+        "ev-b765d6fc7bdd-0001-0002"
+      ],
+      "pages": {
+        "end": 32,
+        "start": 32
+      }
+    },
+    {
+      "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+      "evidence_ids": [
+        "ev-b765d6fc7bdd-0001-0004"
+      ],
+      "pages": {
+        "end": 39,
+        "start": 39
+      }
+    },
+    {
+      "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+      "evidence_ids": [
+        "ev-b765d6fc7bdd-0001-0006"
+      ],
+      "pages": {
+        "end": 43,
+        "start": 43
+      }
+    },
+    {
+      "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+      "evidence_ids": [
+        "ev-b765d6fc7bdd-0002-0001"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "b765d6fc7bdd552f34b38a2d2625f9362a12e4797846054be27a42c46426ec28",
+      "evidence_ids": [
+        "ev-b765d6fc7bdd-0002-0002"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T02:35:02.047859Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Attribution check failed for the background_and_question claim: the claim is attributed to Justice Thomas, but the central question about \u201cappropriate relief\u201d is drawn from multiple justices\u2019 questions (Thomas, Sotomayor, etc.), so the attribution is inaccurate."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

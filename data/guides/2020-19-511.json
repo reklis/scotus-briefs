@@ -1,0 +1,314 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "28e6840e19a47d85627f1a04c55d8a801073a3959a9a1ebba6ae444ac6bfe66b",
+            "evidence_ids": [
+              "ev-28e6840e19a4-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The case concerned whether equipment that does not use a random or sequential number generator falls within the definition of an automatic telephone dialing system under 47\u202fU.S.C.\u202f\u00a7\u202f227(a)(1)(A)."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-511",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "28e6840e19a47d85627f1a04c55d8a801073a3959a9a1ebba6ae444ac6bfe66b",
+            "evidence_ids": [
+              "ev-28e6840e19a4-0001-0002"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          },
+          {
+            "document_hash": "28e6840e19a47d85627f1a04c55d8a801073a3959a9a1ebba6ae444ac6bfe66b",
+            "evidence_ids": [
+              "ev-28e6840e19a4-0001-0006"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          }
+        ],
+        "text": "The Court held that Duguid\u2019s counterarguments cannot overcome the clear commands of \u00a7\u202f227(a)(1)(A) and that the narrow statutory design does not support his broad interpretation."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T01:37:48.948455Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "13fce8305df8d3b3abd89915d46d7509034e7ad80e1d54b57e911e00ad58dff9",
+      "28e6840e19a47d85627f1a04c55d8a801073a3959a9a1ebba6ae444ac6bfe66b"
+    ]
+  },
+  "glossary": [
+    {
+      "citations": [
+        {
+          "document_hash": "13fce8305df8d3b3abd89915d46d7509034e7ad80e1d54b57e911e00ad58dff9",
+          "evidence_ids": [
+            "ev-13fce8305df8-0000-0000"
+          ],
+          "pages": {
+            "end": 4,
+            "start": 4
+          }
+        },
+        {
+          "document_hash": "13fce8305df8d3b3abd89915d46d7509034e7ad80e1d54b57e911e00ad58dff9",
+          "evidence_ids": [
+            "ev-13fce8305df8-0000-0005"
+          ],
+          "pages": {
+            "end": 4,
+            "start": 4
+          }
+        }
+      ],
+      "definition": "Equipment with the capacity to store or produce telephone numbers to be called, using a random or sequential number generator, and to dial such numbers.",
+      "term": "Automatic Telephone Dialing System (ATDS)"
+    }
+  ],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "28e6840e19a47d85627f1a04c55d8a801073a3959a9a1ebba6ae444ac6bfe66b",
+            "evidence_ids": [
+              "ev-28e6840e19a4-0001-0002"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          },
+          {
+            "document_hash": "28e6840e19a47d85627f1a04c55d8a801073a3959a9a1ebba6ae444ac6bfe66b",
+            "evidence_ids": [
+              "ev-28e6840e19a4-0001-0006"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          },
+          {
+            "document_hash": "28e6840e19a47d85627f1a04c55d8a801073a3959a9a1ebba6ae444ac6bfe66b",
+            "evidence_ids": [
+              "ev-28e6840e19a4-0001-0000"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The Supreme Court held that the Telephone Consumer Protection Act\u2019s definition of an automatic telephone dialing system requires the use of a random or sequential number generator, and rejected the broader interpretation advanced by Duguid."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Facebook, Inc.",
+          "citations": [
+            {
+              "document_hash": "13fce8305df8d3b3abd89915d46d7509034e7ad80e1d54b57e911e00ad58dff9",
+              "evidence_ids": [
+                "ev-13fce8305df8-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Facebook, Inc., according to Facebook, Inc., according to Facebook, Inc., facebook argues that the TCPA defines an Automatic Telephone Dialing System as equipment that can store or produce telephone numbers to be called, using a random or sequential number generator, and that can dial those numbers."
+        }
+      ],
+      "heading": "Facebook, Inc.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "13fce8305df8d3b3abd89915d46d7509034e7ad80e1d54b57e911e00ad58dff9",
+              "evidence_ids": [
+                "ev-13fce8305df8-0001-0001"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "The United States contends that if the ATDS provisions were meant to cover equipment broader than random or sequential dialing, Congress would not have left residential landlines unprotected."
+        }
+      ],
+      "heading": "United States",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Duguid",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "13fce8305df8d3b3abd89915d46d7509034e7ad80e1d54b57e911e00ad58dff9",
+      "evidence_ids": [
+        "ev-13fce8305df8-0000-0004"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "13fce8305df8d3b3abd89915d46d7509034e7ad80e1d54b57e911e00ad58dff9",
+      "evidence_ids": [
+        "ev-13fce8305df8-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "13fce8305df8d3b3abd89915d46d7509034e7ad80e1d54b57e911e00ad58dff9",
+      "evidence_ids": [
+        "ev-13fce8305df8-0001-0001"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "28e6840e19a47d85627f1a04c55d8a801073a3959a9a1ebba6ae444ac6bfe66b",
+      "evidence_ids": [
+        "ev-28e6840e19a4-0001-0000"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "28e6840e19a47d85627f1a04c55d8a801073a3959a9a1ebba6ae444ac6bfe66b",
+      "evidence_ids": [
+        "ev-28e6840e19a4-0001-0002"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 13
+      }
+    },
+    {
+      "document_hash": "28e6840e19a47d85627f1a04c55d8a801073a3959a9a1ebba6ae444ac6bfe66b",
+      "evidence_ids": [
+        "ev-28e6840e19a4-0001-0005",
+        "ev-28e6840e19a4-0001-0006"
+      ],
+      "pages": {
+        "end": 15,
+        "start": 15
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T01:44:34.967846Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

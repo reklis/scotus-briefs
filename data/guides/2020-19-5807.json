@@ -1,0 +1,309 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "aa2a60ff15d80f6fe8e5706e9f0dc75121eb9e981c7c0b63b21fe3c301151192",
+            "evidence_ids": [
+              "ev-aa2a60ff15d8-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "At the time of Edwards' conviction, Louisiana law permitted non\u2011unanimous jury verdicts if at least 10 of the 12 jurors found the defendant guilty."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "aa2a60ff15d80f6fe8e5706e9f0dc75121eb9e981c7c0b63b21fe3c301151192",
+            "evidence_ids": [
+              "ev-aa2a60ff15d8-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Edwards filed a federal habeas corpus petition arguing that the non\u2011unanimous jury verdict violated his constitutional right to a unanimous jury."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "aa2a60ff15d80f6fe8e5706e9f0dc75121eb9e981c7c0b63b21fe3c301151192",
+            "evidence_ids": [
+              "ev-aa2a60ff15d8-0001-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          },
+          {
+            "document_hash": "0548110b4daad2cbb30aa446fd27c62a3b68b97a042cf43bb38a14c693ade6a8",
+            "evidence_ids": [
+              "ev-0548110b4daa-0002-0001"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 61
+            }
+          }
+        ],
+        "text": "The Court considered whether the Ramos rule applies retroactively on federal collateral review."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2020-19-5807",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T02:15:07.199535Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0548110b4daad2cbb30aa446fd27c62a3b68b97a042cf43bb38a14c693ade6a8",
+      "aa2a60ff15d80f6fe8e5706e9f0dc75121eb9e981c7c0b63b21fe3c301151192"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "0548110b4daad2cbb30aa446fd27c62a3b68b97a042cf43bb38a14c693ade6a8",
+            "evidence_ids": [
+              "ev-0548110b4daa-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice GORSUCH, justice Gorsuch stated that Ramos did not announce a new rule."
+      },
+      {
+        "attribution": "Justice THOMAS",
+        "citations": [
+          {
+            "document_hash": "0548110b4daad2cbb30aa446fd27c62a3b68b97a042cf43bb38a14c693ade6a8",
+            "evidence_ids": [
+              "ev-0548110b4daa-0001-0004"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Thomas asked what the term \u201caccuracy\u201d means in this context."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "0548110b4daad2cbb30aa446fd27c62a3b68b97a042cf43bb38a14c693ade6a8",
+            "evidence_ids": [
+              "ev-0548110b4daa-0002-0005"
+            ],
+            "pages": {
+              "end": 63,
+              "start": 63
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked the federal government to provide statistics on the issue."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "aa2a60ff15d80f6fe8e5706e9f0dc75121eb9e981c7c0b63b21fe3c301151192",
+            "evidence_ids": [
+              "ev-aa2a60ff15d8-0001-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          },
+          {
+            "document_hash": "0548110b4daad2cbb30aa446fd27c62a3b68b97a042cf43bb38a14c693ade6a8",
+            "evidence_ids": [
+              "ev-0548110b4daa-0002-0001"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 61
+            }
+          }
+        ],
+        "text": "The Court considered whether the Ramos decision, which requires unanimous juries for serious crimes, applies retroactively to Edwards' conviction."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Edwards (Petitioner)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Andre Belanger",
+          "citations": [
+            {
+              "document_hash": "0548110b4daad2cbb30aa446fd27c62a3b68b97a042cf43bb38a14c693ade6a8",
+              "evidence_ids": [
+                "ev-0548110b4daa-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "Andre Belanger contends that the Ramos ruling does not help Edwards because his life sentence was imposed under a non\u2011unanimous verdict that would be illegal elsewhere."
+        }
+      ],
+      "heading": "United States (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0548110b4daad2cbb30aa446fd27c62a3b68b97a042cf43bb38a14c693ade6a8",
+      "evidence_ids": [
+        "ev-0548110b4daa-0000-0000"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "aa2a60ff15d80f6fe8e5706e9f0dc75121eb9e981c7c0b63b21fe3c301151192",
+      "evidence_ids": [
+        "ev-aa2a60ff15d8-0000-0001"
+      ],
+      "pages": {
+        "end": 56,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T02:24:27.723364Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Andre Belanger",
+        "citations": [
+          {
+            "document_hash": "0548110b4daad2cbb30aa446fd27c62a3b68b97a042cf43bb38a14c693ade6a8",
+            "evidence_ids": [
+              "ev-0548110b4daa-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Andre Belanger argues that the Ramos ruling does not help Edwards because his life sentence was imposed under a non\u2011unanimous verdict that would be illegal elsewhere."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "aa2a60ff15d80f6fe8e5706e9f0dc75121eb9e981c7c0b63b21fe3c301151192",
+            "evidence_ids": [
+              "ev-aa2a60ff15d8-0002-0000"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh noted that criminal defendants as a group are better off under the Ramos decision and the Court\u2019s present ruling than they would have been under the dissent\u2019s view in Ramos."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
