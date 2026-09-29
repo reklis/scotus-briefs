@@ -1,0 +1,242 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2023-22-1079",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "eed3e88da7134ce8672ad23000a9da9533250bba44546bdb9e0c9e6b81c16ec7",
+            "evidence_ids": [
+              "ev-eed3e88da713-0001-0000"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The Court reversed the judgment of the United States Court of Appeals for the Fourth Circuit and remanded the case for further proceedings."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "eed3e88da7134ce8672ad23000a9da9533250bba44546bdb9e0c9e6b81c16ec7",
+            "evidence_ids": [
+              "ev-eed3e88da713-0001-0005"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Section\u202f1109(b) provides parties in interest a voice in bankruptcy proceedings; an insurer with financial responsibility for bankruptcy claims is a party in interest that may object to a Chapter\u202f11 plan of reorganization."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T17:54:31.359338Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3192e101bf3975817c1ae1ea7ed56114831ef1d7f47d9a222b0bec52ba063b7e",
+      "eed3e88da7134ce8672ad23000a9da9533250bba44546bdb9e0c9e6b81c16ec7"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "3192e101bf3975817c1ae1ea7ed56114831ef1d7f47d9a222b0bec52ba063b7e",
+            "evidence_ids": [
+              "ev-3192e101bf39-0000-0004"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "The United States, represented by Anthony A. Yang, appeared as amicus curiae supporting the petitioner."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "eed3e88da7134ce8672ad23000a9da9533250bba44546bdb9e0c9e6b81c16ec7",
+            "evidence_ids": [
+              "ev-eed3e88da713-0001-0005"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "Truck Insurance Exchange v. Kaiser Gypsum concerns whether an insurer can be treated as a \u201cparty in interest\u201d under Section\u202f1109(b) of the Bankruptcy Code and therefore object to a Chapter\u202f11 reorganization plan."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Truck Insurance Exchange",
+          "citations": [
+            {
+              "document_hash": "eed3e88da7134ce8672ad23000a9da9533250bba44546bdb9e0c9e6b81c16ec7",
+              "evidence_ids": [
+                "ev-eed3e88da713-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Truck Insurance Exchange, truck Insurance Exchange objects to the reorganization plan because it lacks disclosure requirements that could protect the insurer from paying fraudulent claims."
+        }
+      ],
+      "heading": "Truck Insurance Exchange Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Debtor-Side Respondents",
+          "citations": [
+            {
+              "document_hash": "eed3e88da7134ce8672ad23000a9da9533250bba44546bdb9e0c9e6b81c16ec7",
+              "evidence_ids": [
+                "ev-eed3e88da713-0001-0002"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "According to Debtor-Side Respondents, according to Debtor\u2011Side Respondents, the Debtor\u2011Side Respondents argue that Section\u202f1109(b) gives any party directly and adversely affected by the reorganization \u2013 including insurers \u2013 a voice in the bankruptcy proceeding."
+        }
+      ],
+      "heading": "Debtor\u2011Side Respondents Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3192e101bf3975817c1ae1ea7ed56114831ef1d7f47d9a222b0bec52ba063b7e",
+      "evidence_ids": [
+        "ev-3192e101bf39-0000-0000"
+      ],
+      "pages": {
+        "end": 85,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "eed3e88da7134ce8672ad23000a9da9533250bba44546bdb9e0c9e6b81c16ec7",
+      "evidence_ids": [
+        "ev-eed3e88da713-0001-0000"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T17:58:05.284713Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "eed3e88da7134ce8672ad23000a9da9533250bba44546bdb9e0c9e6b81c16ec7",
+            "evidence_ids": [
+              "ev-eed3e88da713-0001-0005"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The decision clarifies that insurers can be recognized as parties in interest under Section\u202f1109(b), giving them the ability to object to Chapter\u202f11 plans that could expose them to large fraudulent claims."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

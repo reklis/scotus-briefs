@@ -1,0 +1,535 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-22-49",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "337341fd16d462a379b89feff32c3840fed571f0a4e25e64e4e6a8154c383db4",
+            "evidence_ids": [
+              "ev-337341fd16d4-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Supreme Court vacated the Court of Appeals\u2019 judgment and remanded the case for further proceedings consistent with its opinion."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "337341fd16d462a379b89feff32c3840fed571f0a4e25e64e4e6a8154c383db4",
+            "evidence_ids": [
+              "ev-337341fd16d4-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Court held that the District Court had discretion to impose a \u00a7924(j) sentence concurrently with another sentence because the consecutive\u2011sentence mandate in \u00a7924(c)(1)(D)(ii) does not govern \u00a7924(j) sentences."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T16:49:09.574581Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "337341fd16d462a379b89feff32c3840fed571f0a4e25e64e4e6a8154c383db4",
+      "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+            "evidence_ids": [
+              "ev-ec6f697a0eb7-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, \"What do you do with the government's argument that seems to suggest that it's simply an accumulation of the penalties, an aggregation or an increase of the penalties under (c)?\""
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+            "evidence_ids": [
+              "ev-ec6f697a0eb7-0000-0003"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "Justice Alito: \"Can I ask you a -- a question about section (c)(1)(C), capital C --\""
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+            "evidence_ids": [
+              "ev-ec6f697a0eb7-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, \"And so the government can charge even a death under (c) if it doesn't intend to seek the death penalty?\""
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+            "evidence_ids": [
+              "ev-ec6f697a0eb7-0001-0001"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "According to Justice Alito, \"So, in that situation, is the person convicted under (j) and 1112 or just under (j)?\""
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+            "evidence_ids": [
+              "ev-ec6f697a0eb7-0001-0006"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, \"Well, but why is that, Ms. Ross? I mean, suppose that (j) had not said in the course of a violation of subsection (c) but just repeated all of subsection (c)'s language. Then what?\""
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+            "evidence_ids": [
+              "ev-ec6f697a0eb7-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Jackson: \"I'm asking how the Court looks at -- not -- at (j), not 924(c). What -- why is it absurd for a Congress that is enacting (j) to have had a separate penalty structure that did not incorporate the mandatory minimums of (c) but instead took care of that circumstance through, as the text says here, giving the death penalty, increasing the maximums and the like?\""
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+            "evidence_ids": [
+              "ev-ec6f697a0eb7-0002-0002"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "Justice Jackson: \"But that's not the Blockburger test. I don't understand. So you're -- you're suddenly now asking us as a result of this case to revisit Blockburger and what it says about when there are separate offenses?\""
+      }
+    ],
+    "heading": "Oral Argument \u2013 Justice Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "337341fd16d462a379b89feff32c3840fed571f0a4e25e64e4e6a8154c383db4",
+            "evidence_ids": [
+              "ev-337341fd16d4-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case was argued before the Supreme Court on March 28, 2023, and decided on June 16, 2023."
+      },
+      {
+        "attribution": "Court of Appeals",
+        "citations": [
+          {
+            "document_hash": "337341fd16d462a379b89feff32c3840fed571f0a4e25e64e4e6a8154c383db4",
+            "evidence_ids": [
+              "ev-337341fd16d4-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Court of Appeals affirmed the lower court\u2019s judgment."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "337341fd16d462a379b89feff32c3840fed571f0a4e25e64e4e6a8154c383db4",
+            "evidence_ids": [
+              "ev-337341fd16d4-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Supreme Court vacated the Court of Appeals\u2019 judgment and remanded the case for further proceedings consistent with its opinion."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "337341fd16d462a379b89feff32c3840fed571f0a4e25e64e4e6a8154c383db4",
+            "evidence_ids": [
+              "ev-337341fd16d4-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Court held that the District Court had discretion to impose a \u00a7924(j) sentence concurrently with another sentence because the consecutive\u2011sentence mandate in \u00a7924(c)(1)(D)(ii) does not govern \u00a7924(j) sentences."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Lawrence D. Rosenberg)",
+          "citations": [
+            {
+              "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+              "evidence_ids": [
+                "ev-ec6f697a0eb7-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Lawrence D. Rosenberg), according to Petitioner (Lawrence D. Rosenberg), according to Petitioner (Lawrence D. Rosenberg), subsection\u202f924(j) does not contain a bar against concurrent sentences."
+        },
+        {
+          "attribution": "Lawrence D. Rosenberg",
+          "citations": [
+            {
+              "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+              "evidence_ids": [
+                "ev-ec6f697a0eb7-0003-0003"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Lawrence D. Rosenberg, congress\u2019s intent regarding the relationship between \u00a7\u00a7\u202f924(c) and\u202f924(j) is unclear."
+        }
+      ],
+      "heading": "Petitioner (Efrain Lora)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Ross (Respondent)",
+          "citations": [
+            {
+              "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+              "evidence_ids": [
+                "ev-ec6f697a0eb7-0001-0002"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to Ms. Ross (Respondent), according to Ms. Ross (Respondent), according to Ms. Ross (Respondent), section\u202f924(j) sweeps in all of subsection\u202f(c)\u2019s provisions and does not pick and choose particular factual elements."
+        },
+        {
+          "attribution": "Ms. Ross (Respondent)",
+          "citations": [
+            {
+              "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+              "evidence_ids": [
+                "ev-ec6f697a0eb7-0001-0003"
+              ],
+              "pages": {
+                "end": 28,
+                "start": 28
+              }
+            }
+          ],
+          "text": "According to Ms. Ross (Respondent), according to Ms. Ross (Respondent), according to Ms. Ross (Respondent), section\u202f924(j) requires the court to consider whether to add additional punishment for the homicide."
+        }
+      ],
+      "heading": "Respondent (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "337341fd16d462a379b89feff32c3840fed571f0a4e25e64e4e6a8154c383db4",
+      "evidence_ids": [
+        "ev-337341fd16d4-0000-0001",
+        "ev-337341fd16d4-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "337341fd16d462a379b89feff32c3840fed571f0a4e25e64e4e6a8154c383db4",
+      "evidence_ids": [
+        "ev-337341fd16d4-0000-0004",
+        "ev-337341fd16d4-0000-0005"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    },
+    {
+      "document_hash": "337341fd16d462a379b89feff32c3840fed571f0a4e25e64e4e6a8154c383db4",
+      "evidence_ids": [
+        "ev-337341fd16d4-0000-0008"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "337341fd16d462a379b89feff32c3840fed571f0a4e25e64e4e6a8154c383db4",
+      "evidence_ids": [
+        "ev-337341fd16d4-0001-0000"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "337341fd16d462a379b89feff32c3840fed571f0a4e25e64e4e6a8154c383db4",
+      "evidence_ids": [
+        "ev-337341fd16d4-0001-0001"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 13
+      }
+    },
+    {
+      "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+      "evidence_ids": [
+        "ev-ec6f697a0eb7-0000-0000",
+        "ev-ec6f697a0eb7-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+      "evidence_ids": [
+        "ev-ec6f697a0eb7-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+      "evidence_ids": [
+        "ev-ec6f697a0eb7-0000-0003"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    },
+    {
+      "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+      "evidence_ids": [
+        "ev-ec6f697a0eb7-0001-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+      "evidence_ids": [
+        "ev-ec6f697a0eb7-0001-0001"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+      "evidence_ids": [
+        "ev-ec6f697a0eb7-0001-0002",
+        "ev-ec6f697a0eb7-0001-0003"
+      ],
+      "pages": {
+        "end": 28,
+        "start": 28
+      }
+    },
+    {
+      "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+      "evidence_ids": [
+        "ev-ec6f697a0eb7-0001-0006"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 30
+      }
+    },
+    {
+      "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+      "evidence_ids": [
+        "ev-ec6f697a0eb7-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+      "evidence_ids": [
+        "ev-ec6f697a0eb7-0002-0002"
+      ],
+      "pages": {
+        "end": 54,
+        "start": 54
+      }
+    },
+    {
+      "document_hash": "ec6f697a0eb7197e7ddeb53116fdea2d718d0f0d69aae81edd75a7676333ee8c",
+      "evidence_ids": [
+        "ev-ec6f697a0eb7-0003-0003"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T17:03:06.704155Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

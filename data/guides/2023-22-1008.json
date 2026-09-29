@@ -1,0 +1,508 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "623b36ce767f3ecb639d9bae6e989e405892ff64ced272f19c3266b1a5df2c21",
+            "evidence_ids": [
+              "ev-623b36ce767f-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The Court must decide whether the limitations period begins when the plaintiff first suffers an injury from the final agency action, or at some earlier point such as the issuance of the rule."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2023-22-1008",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "623b36ce767f3ecb639d9bae6e989e405892ff64ced272f19c3266b1a5df2c21",
+            "evidence_ids": [
+              "ev-623b36ce767f-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "623b36ce767f3ecb639d9bae6e989e405892ff64ced272f19c3266b1a5df2c21",
+            "evidence_ids": [
+              "ev-623b36ce767f-0002-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The Court held that the six\u2011year statute of limitations for an APA claim begins when the plaintiff has the right to apply to the court for relief, i.e., when the plaintiff is injured by the final agency action."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "623b36ce767f3ecb639d9bae6e989e405892ff64ced272f19c3266b1a5df2c21",
+            "evidence_ids": [
+              "ev-623b36ce767f-0002-0006"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "The Court reversed the Eighth Circuit\u2019s judgment and remanded for further proceedings consistent with this opinion."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "623b36ce767f3ecb639d9bae6e989e405892ff64ced272f19c3266b1a5df2c21",
+            "evidence_ids": [
+              "ev-623b36ce767f-0002-0002"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh, in a concurring opinion, agreed that an APA claim accrues when the plaintiff is injured by the challenged agency rule."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "623b36ce767f3ecb639d9bae6e989e405892ff64ced272f19c3266b1a5df2c21",
+            "evidence_ids": [
+              "ev-623b36ce767f-0004-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Jackson dissented, arguing that vacatur is an appropriate remedy when a federal court finds an agency rule unlawful, and that Corner Post could obtain meaningful relief through vacatur."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T17:29:44.996477Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+      "623b36ce767f3ecb639d9bae6e989e405892ff64ced272f19c3266b1a5df2c21"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0000-0003"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether there is any res judicata or collateral estoppel issue."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0001-0002"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          }
+        ],
+        "text": "Justice Thomas asked when the claim accrued for the petitioner."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0001-0003"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Justice Thomas followed up, asking whether it is normal to have two different accrual times."
+      },
+      {
+        "attribution": "Justice KAGAN",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0002-0002"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Justice Kagan asked about the scope of the decision\u2019s impact (small, medium, large)."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "Justice Jackson asked when the injury would occur under the plaintiff\u2019s theory of an invalid rule promulgation."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0003-0001"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Jackson followed up, asking how to pin down the clock for the rule challenge."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0003-0002"
+            ],
+            "pages": {
+              "end": 67,
+              "start": 67
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether a facial challenge accrues at the time of rule adoption and whether the statute of limitations bars later challenges."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0003-0003"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito gave a hypothetical about a gender\u2011based admission rule to illustrate the limitation issue."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0003-0004"
+            ],
+            "pages": {
+              "end": 69,
+              "start": 69
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh suggested that the accrual date for a corporation that incorporated later should be the date it opened for business."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0003-0006"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked how the answers apply to a corporation incorporated after the six\u2011year period."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0003-0007"
+            ],
+            "pages": {
+              "end": 72,
+              "start": 72
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether a party that has not yet incorporated but is within the six\u2011year window has standing."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0003-0009"
+            ],
+            "pages": {
+              "end": 77,
+              "start": 77
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh followed up on standing, asking how the plaintiff can obtain redress if the rule cannot be set aside under the APA."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+            "evidence_ids": [
+              "ev-409425713905-0003-0011"
+            ],
+            "pages": {
+              "end": 79,
+              "start": 79
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, justice Jackson raised the issue of finality, questioning why a new company should be allowed to unsettle long\u2011established rules."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "623b36ce767f3ecb639d9bae6e989e405892ff64ced272f19c3266b1a5df2c21",
+            "evidence_ids": [
+              "ev-623b36ce767f-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The central legal question is when the six\u2011year statute of limitations for an APA claim begins to run."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Corner Post, Inc.",
+          "citations": [
+            {
+              "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+              "evidence_ids": [
+                "ev-409425713905-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Corner Post, Inc., according to Corner Post, Inc., corner Post argues that the limitations clock should start when it first incurred debit\u2011card fees, i.e., when it swiped its first card in 2018."
+        },
+        {
+          "attribution": "Corner Post, Inc.",
+          "citations": [
+            {
+              "document_hash": "623b36ce767f3ecb639d9bae6e989e405892ff64ced272f19c3266b1a5df2c21",
+              "evidence_ids": [
+                "ev-623b36ce767f-0003-0000"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            }
+          ],
+          "text": "According to Corner Post, Inc., according to Corner Post, Inc., corner Post contends that the Board\u2019s 21\u2011cent fee cap is unreasonably high and therefore arbitrary and capricious under the APA."
+        }
+      ],
+      "heading": "Corner Post, Inc.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Board of Governors of the Federal Reserve System",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4094257139054485421596b261241923e2544d5b06f09b4fc0656855880c7d30",
+      "evidence_ids": [
+        "ev-409425713905-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "623b36ce767f3ecb639d9bae6e989e405892ff64ced272f19c3266b1a5df2c21",
+      "evidence_ids": [
+        "ev-623b36ce767f-0000-0004"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T17:35:31.895792Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "623b36ce767f3ecb639d9bae6e989e405892ff64ced272f19c3266b1a5df2c21",
+            "evidence_ids": [
+              "ev-623b36ce767f-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The decision clarifies when the limitations period starts for challenges to agency rules, affecting when businesses like Corner Post can bring APA suits."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "623b36ce767f3ecb639d9bae6e989e405892ff64ced272f19c3266b1a5df2c21",
+            "evidence_ids": [
+              "ev-623b36ce767f-0004-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, the dissent highlights that vacatur remains an available remedy under the APA, offering a path for plaintiffs to obtain relief even after the limitations period has run."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

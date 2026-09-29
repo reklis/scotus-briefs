@@ -1,0 +1,241 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Legal Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2023-22-1218",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T18:18:42.944436Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "8a950433877af8b20ab809412c984d5772126dcfb8c9b6936611a92646518d8f",
+      "e75b081189b42def82bc3104957a2f23724d448b465686fba5e4d075d0cd59ab"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "8a950433877af8b20ab809412c984d5772126dcfb8c9b6936611a92646518d8f",
+            "evidence_ids": [
+              "ev-8a950433877a-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Justice Thomas asked what difference it makes to grant a stay versus a dismissal without prejudice."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "8a950433877af8b20ab809412c984d5772126dcfb8c9b6936611a92646518d8f",
+            "evidence_ids": [
+              "ev-8a950433877a-0001-0002"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts inquired whether any of the six circuits that have applied the petitioners\u2019 rule have encountered problems."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "8a950433877af8b20ab809412c984d5772126dcfb8c9b6936611a92646518d8f",
+            "evidence_ids": [
+              "ev-8a950433877a-0001-0004"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Jackson asked whether a district court is required to hold a status conference."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "8a950433877af8b20ab809412c984d5772126dcfb8c9b6936611a92646518d8f",
+              "evidence_ids": [
+                "ev-8a950433877a-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "Petitioners argue that Section\u202f3 unambiguously mandates a stay pending arbitration and that the FAA\u2019s text, structure, and purpose support that reading."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "8a950433877af8b20ab809412c984d5772126dcfb8c9b6936611a92646518d8f",
+              "evidence_ids": [
+                "ev-8a950433877a-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "Petitioners contend that \u201cstay\u201d can be achieved either by retaining jurisdiction or by dismissing the case without prejudice, reflecting the historical meaning of the term in 1925."
+        }
+      ],
+      "heading": "Petitioners\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "8a950433877af8b20ab809412c984d5772126dcfb8c9b6936611a92646518d8f",
+              "evidence_ids": [
+                "ev-8a950433877a-0000-0003"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "Respondents argue that Congress meant a \u201cstay\u201d only to stop parallel in\u2011court litigation, which a court may achieve by dismissing the case."
+        }
+      ],
+      "heading": "Respondents\u2019 Position",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "8a950433877af8b20ab809412c984d5772126dcfb8c9b6936611a92646518d8f",
+      "evidence_ids": [
+        "ev-8a950433877a-0000-0000",
+        "ev-8a950433877a-0000-0001",
+        "ev-8a950433877a-0000-0002",
+        "ev-8a950433877a-0000-0003",
+        "ev-8a950433877a-0001-0000",
+        "ev-8a950433877a-0001-0001",
+        "ev-8a950433877a-0001-0002",
+        "ev-8a950433877a-0001-0004",
+        "ev-8a950433877a-0001-0005"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "e75b081189b42def82bc3104957a2f23724d448b465686fba5e4d075d0cd59ab",
+      "evidence_ids": [
+        "ev-e75b081189b4-0000-0000",
+        "ev-e75b081189b4-0000-0001",
+        "ev-e75b081189b4-0000-0002",
+        "ev-e75b081189b4-0000-0003",
+        "ev-e75b081189b4-0000-0005",
+        "ev-e75b081189b4-0000-0006",
+        "ev-e75b081189b4-0000-0007",
+        "ev-e75b081189b4-0000-0008",
+        "ev-e75b081189b4-0000-0010",
+        "ev-e75b081189b4-0000-0011",
+        "ev-e75b081189b4-0000-0012"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T18:25:29.957394Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

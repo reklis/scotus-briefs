@@ -1,0 +1,580 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4",
+            "evidence_ids": [
+              "ev-70318283ef0b-0000-0006"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The central issue is whether the respondents have standing to challenge the Department\u2019s HEROES Act loan\u2011forgiveness plan on procedural grounds."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-22-535",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4",
+            "evidence_ids": [
+              "ev-70318283ef0b-0000-0006"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The respondents lack standing to bring their procedural claim."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4",
+            "evidence_ids": [
+              "ev-70318283ef0b-0001-0003"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The Court vacates the judgment of the United States District Court for the Northern District of Texas."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4",
+            "evidence_ids": [
+              "ev-70318283ef0b-0001-0003"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The case is remanded with instructions to dismiss."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4",
+            "evidence_ids": [
+              "ev-70318283ef0b-0001-0004"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Department\u2019s application for a stay is denied as moot."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T17:10:14.626478Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+      "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts: We will hear argument, we'll continue argument, in Case 22-535, Department of Education versus Brown. Welcome back."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0000-0000"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas: Are there any instances in which you would have procedural standing?"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor: The -- this action has nothing to do with their right if they thought it was permissible to seek relief under the Education Act, correct?"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0001-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts: Counsel, I'm -- I'm sure I'm misreading the graphs on -- I'm looking at 247, 248. Didn't half the borrowers say they would not have any trouble paying their loans without regard to the forgiveness program?"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0001-0002"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito: Why is it fair?"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0001-0007"
+            ],
+            "pages": {
+              "end": 37,
+              "start": 37
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor: I take your bottom\u2011line answer to be everybody suffered in the pandemic, but different people got different benefits because they qualified under different programs, correct?"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0001-0006"
+            ],
+            "pages": {
+              "end": 38,
+              "start": 38
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan: I mean, Congress passed a statute that dealt with loan repayment for colleges, and it didn't pass a statute that dealt with loan repayment for lawn businesses."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0002-0000"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh: If --if it were party\u2011specific relief and it went up to the court of appeals and the court of -- and you had sought an emergency injunction in the court of appeals and the court of appeals ruled against the government on that, would you then follow that in that circuit or not?"
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0002-0002"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas: Mr. Connolly, has this Court ever held that the notice\u2011and\u2011comment provisions of the APA can establish \u2014 are enough for standing in a \u2014 in a case like this?"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0002-0003"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor: Except my biggest problem is you've shown me nothing to suggest that if they'd have to or will go under HEA, that they're going to deprive you of due process."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0003-0000"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan: But, Mr. Connolly, aren't you really fighting Congress on this one?"
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0003-0003"
+            ],
+            "pages": {
+              "end": 67,
+              "start": 67
+            }
+          }
+        ],
+        "text": "According to Justice Barrett, justice Barrett: Mr. Connolly, what are the limits of your theory?"
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+            "evidence_ids": [
+              "ev-463a78cada97-0003-0005"
+            ],
+            "pages": {
+              "end": 72,
+              "start": 72
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh: So, for purposes of standing, as distinct as to who can comment, because anyone can comment \u2014"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4",
+            "evidence_ids": [
+              "ev-70318283ef0b-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Court granted certiorari before judgment to hear the case together with a related case, Biden v. Nebraska."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4",
+            "evidence_ids": [
+              "ev-70318283ef0b-0000-0006"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4",
+            "evidence_ids": [
+              "ev-70318283ef0b-0001-0003"
+            ],
+            "pages": {
+              "end": 19,
+              "start": 19
+            }
+          }
+        ],
+        "text": "The respondents lack standing to bring their procedural claim, the Court vacated the district\u2011court judgment, and remanded with instructions to dismiss."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4",
+            "evidence_ids": [
+              "ev-70318283ef0b-0001-0004"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Department\u2019s application for a stay is denied as moot."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "General Prelogar",
+          "citations": [
+            {
+              "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+              "evidence_ids": [
+                "ev-463a78cada97-0001-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to General Prelogar, the Secretary made the requisite findings that the financial harms derive directly from and are a but\u2011for result of the COVID pandemic."
+        },
+        {
+          "attribution": "General Prelogar",
+          "citations": [
+            {
+              "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+              "evidence_ids": [
+                "ev-463a78cada97-0001-0005"
+              ],
+              "pages": {
+                "end": 41,
+                "start": 41
+              }
+            }
+          ],
+          "text": "According to General Prelogar, the proper review is arbitrary and capricious because the statute tolerates some overbreadth, requiring examination of the Secretary\u2019s justification."
+        }
+      ],
+      "heading": "Department of Education (General Prelogar)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Connolly",
+          "citations": [
+            {
+              "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+              "evidence_ids": [
+                "ev-463a78cada97-0003-0001"
+              ],
+              "pages": {
+                "end": 66,
+                "start": 66
+              }
+            }
+          ],
+          "text": "According to Mr. Connolly, congress required that waivers and modifications under the HEROES Act be authorized by the Act; merely labeling something a waiver is insufficient."
+        },
+        {
+          "attribution": "Mr. Connolly",
+          "citations": [
+            {
+              "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+              "evidence_ids": [
+                "ev-463a78cada97-0003-0006"
+              ],
+              "pages": {
+                "end": 70,
+                "start": 70
+              }
+            }
+          ],
+          "text": "According to Mr. Connolly, the negotiated rulemaking statute is relevant to the analysis of the Department\u2019s authority."
+        }
+      ],
+      "heading": "Department of Education (Mr. Connolly)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents Myra Brown and Alexander Taylor",
+          "citations": [
+            {
+              "document_hash": "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4",
+              "evidence_ids": [
+                "ev-70318283ef0b-0000-0000"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to Respondents Myra Brown and Alexander Taylor, the HEROES Act\u2019s procedural exemptions apply only when the rule is substantively authorized; therefore the Secretary must follow negotiated rulemaking and notice\u2011and\u2011comment."
+        },
+        {
+          "attribution": "Brown and Taylor",
+          "citations": [
+            {
+              "document_hash": "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4",
+              "evidence_ids": [
+                "ev-70318283ef0b-0001-0001"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "According to Brown and Taylor, if the Plan is vacated, the Department may seek loan relief under the Higher Education Act, which could affect the outcome."
+        }
+      ],
+      "heading": "Respondents (Myra Brown and Alexander Taylor)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "463a78cada97e3c67158872692ba4c6999b4de384652196f4e344e465231d480",
+      "evidence_ids": [
+        "ev-463a78cada97-0000-0002"
+      ],
+      "pages": {
+        "end": 90,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "70318283ef0b48f1536222f5538c5184177424fd3ae256579d4d380ae5f411b4",
+      "evidence_ids": [
+        "ev-70318283ef0b-0000-0000"
+      ],
+      "pages": {
+        "end": 20,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T17:19:27.737867Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

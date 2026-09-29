@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2023-22-1178",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": true,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the 'Why it matters' claim adds unsupported material about affecting future challenges to the No\u202fFly\u202fList and government transparency, which is not found in the supplied evidence.",
+    "Overstatement check failed: the same 'Why it matters' claim overstates the case\u2019s impact beyond what the evidence demonstrates."
+  ],
+  "quality_scores": {
+    "completeness": 0.95,
+    "factual_accuracy": 0.94,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.8,
+    "traceability": 0.85
+  }
+}

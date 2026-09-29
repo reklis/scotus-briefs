@@ -1,0 +1,55 @@
+{
+  "case_id": "2023-22-1178",
+  "document_hash": "2e660573a1fc05d1f324bd8e6aba05e78bce70cfa6d679984f942e6ea9db9aae",
+  "records": [
+    {
+      "attribution": "Court",
+      "case_id": "2023-22-1178",
+      "confidence": 1.0,
+      "document_hash": "2e660573a1fc05d1f324bd8e6aba05e78bce70cfa6d679984f942e6ea9db9aae",
+      "evidence_id": "ev-2e660573a1fc-0000-0002",
+      "kind": "procedural_event",
+      "opinion_part": null,
+      "pages": {
+        "end": 2,
+        "start": 2
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The district court agreed with the government, but the Ninth Circuit reversed, holding that a party seeking to moot a case based on its own voluntary cessation of challenged conduct must show that the conduct cannot \u201creasonably be expected to recur.\u201d"
+    },
+    {
+      "attribution": "Government",
+      "case_id": "2023-22-1178",
+      "confidence": 1.0,
+      "document_hash": "2e660573a1fc05d1f324bd8e6aba05e78bce70cfa6d679984f942e6ea9db9aae",
+      "evidence_id": "ev-2e660573a1fc-0000-0005",
+      "kind": "party_argument",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 8,
+        "start": 8
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "The declaration represented that Mr. Fikre \u201cwill not be placed on the No Fly List in the future based on the currently available information.\u201d"
+    },
+    {
+      "attribution": "Court",
+      "case_id": "2023-22-1178",
+      "confidence": 1.0,
+      "document_hash": "2e660573a1fc05d1f324bd8e6aba05e78bce70cfa6d679984f942e6ea9db9aae",
+      "evidence_id": "ev-2e660573a1fc-0001-0000",
+      "kind": "holding",
+      "opinion_part": "majority",
+      "pages": {
+        "end": 12,
+        "start": 12
+      },
+      "schema_version": "1.0.0",
+      "status": "supported",
+      "text": "What matters is not whether a defendant repudiates its past actions, but what repudiation can prove about its future conduct. It is on that consideration alone\u2014the potential for a defendant's future conduct\u2014that we rest our judgment."
+    }
+  ],
+  "schema_version": "1.0.0"
+}

@@ -1,0 +1,398 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "edd396522ae99e3751f9b25bff8ee62d7fb6e030cc9306b4731cd17edd4868b6",
+            "evidence_ids": [
+              "ev-edd396522ae9-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "While Kevin Younger was being held as a pre\u2011trial detainee in a Maryland state prison, three corrections officers assaulted him."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+            "evidence_ids": [
+              "ev-71ab8cb112e9-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Thomas asked: \u201cHow would you define \u2018purely legal\u2019?\u201d"
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-22-210",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "edd396522ae99e3751f9b25bff8ee62d7fb6e030cc9306b4731cd17edd4868b6",
+            "evidence_ids": [
+              "ev-edd396522ae9-0000-0005"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The Court held that the judgment of the Court of Appeals was improper, vacated it, and remanded the case for further proceedings consistent with this opinion."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T16:25:59.730444Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+      "edd396522ae99e3751f9b25bff8ee62d7fb6e030cc9306b4731cd17edd4868b6"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+            "evidence_ids": [
+              "ev-71ab8cb112e9-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Appearances: Andrew T. Tutt, Esq., on behalf of the Petitioner; Amy M. Saharia, Esq., on behalf of the Respondent."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+            "evidence_ids": [
+              "ev-71ab8cb112e9-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts introduced the case: \u201cWe\u2019ll hear argument first this morning in Case 22\u2011210, Dupree versus Younger.\u201d"
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+            "evidence_ids": [
+              "ev-71ab8cb112e9-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Thomas asked how to define \u201cpurely legal.\u201d"
+      },
+      {
+        "attribution": "Justice BARRETT",
+        "citations": [
+          {
+            "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+            "evidence_ids": [
+              "ev-71ab8cb112e9-0001-0004"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Barrett asked, \u201cWhy should we decide any of that?\u201d"
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+            "evidence_ids": [
+              "ev-71ab8cb112e9-0001-0003"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "According to Justice GORSUCH, justice Gorsuch questioned the relevance of a JMOL motion because no affirmative defense was presented."
+      },
+      {
+        "attribution": "Justice SOTOMAYOR",
+        "citations": [
+          {
+            "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+            "evidence_ids": [
+              "ev-71ab8cb112e9-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked why the issue matters, noting that the parties are \u201cstuck with the record they created.\u201d"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner and Respondent",
+        "citations": [
+          {
+            "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+            "evidence_ids": [
+              "ev-71ab8cb112e9-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          },
+          {
+            "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+            "evidence_ids": [
+              "ev-71ab8cb112e9-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Dupree v. Younger concerned whether a party can preserve a purely legal issue for appellate review without filing additional motions after a summary\u2011judgment denial."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "edd396522ae99e3751f9b25bff8ee62d7fb6e030cc9306b4731cd17edd4868b6",
+            "evidence_ids": [
+              "ev-edd396522ae9-0000-0005"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The Supreme Court vacated the judgment of the Court of Appeals and remanded the case for further proceedings consistent with this opinion."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+              "evidence_ids": [
+                "ev-71ab8cb112e9-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner, when a district court resolves a purely legal issue at summary judgment, the issue is preserved for appellate review and does not require additional motions at trial."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+              "evidence_ids": [
+                "ev-71ab8cb112e9-0000-0003"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Respondent, parties could preserve purely legal issues by adding one sentence to Rule\u202f50 JMOL motions."
+        },
+        {
+          "attribution": "Ms. SAHARIA",
+          "citations": [
+            {
+              "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+              "evidence_ids": [
+                "ev-71ab8cb112e9-0001-0001"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "According to Ms. SAHARIA, when a court denies a defendant\u2019s motion for summary judgment on an affirmative defense, the defendant must raise the defense at trial to preserve it, and must move under Rules\u202f50(a) and (b) to preserve a judgment different from the jury\u2019s verdict."
+        },
+        {
+          "attribution": "Ms. SAHARIA",
+          "citations": [
+            {
+              "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+              "evidence_ids": [
+                "ev-71ab8cb112e9-0001-0000"
+              ],
+              "pages": {
+                "end": 34,
+                "start": 34
+              }
+            }
+          ],
+          "text": "According to Ms. SAHARIA, if a court denies summary judgment on a question of law, the claim or defense remains live until trial; the only way to finally adjudicate it at summary judgment is to grant summary judgment to one of the parties."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "71ab8cb112e99c01527b75d950776b833dfac95986abbd891dd054d045712125",
+      "evidence_ids": [
+        "ev-71ab8cb112e9-0000-0000",
+        "ev-71ab8cb112e9-0000-0001",
+        "ev-71ab8cb112e9-0000-0002",
+        "ev-71ab8cb112e9-0000-0003",
+        "ev-71ab8cb112e9-0000-0004",
+        "ev-71ab8cb112e9-0000-0005",
+        "ev-71ab8cb112e9-0001-0004",
+        "ev-71ab8cb112e9-0001-0003",
+        "ev-71ab8cb112e9-0001-0000",
+        "ev-71ab8cb112e9-0001-0001",
+        "ev-71ab8cb112e9-0002-0000",
+        "ev-71ab8cb112e9-0002-0001",
+        "ev-71ab8cb112e9-0002-0003",
+        "ev-71ab8cb112e9-0002-0005"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "edd396522ae99e3751f9b25bff8ee62d7fb6e030cc9306b4731cd17edd4868b6",
+      "evidence_ids": [
+        "ev-edd396522ae9-0000-0000",
+        "ev-edd396522ae9-0000-0005"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 5
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T16:33:27.248905Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": false,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "complete decision section lacks holding evidence",
+      "Adversarial verification skipped after deterministic failure",
+      "complete decision section lacks holding evidence"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
