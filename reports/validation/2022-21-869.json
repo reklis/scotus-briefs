@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "case_id": "2022-21-869",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the claim \"The Court affirmed the Court of Appeals\u2019 judgment, rejecting the Warhol Foundation\u2019s fair\u2011use claim\" is not directly supported by the cited opinion text; the opinion affirms the judgment but does not explicitly state that the Court rejected the Foundation\u2019s fair\u2011use claim.",
+    "Overstatement check failed: the same claim overstates the Court\u2019s holding by adding a rejection of the fair\u2011use claim that is not present in the evidence.",
+    "All other claims have appropriate attribution, correctly distinguish majority and dissent opinions, and accurately characterize oral\u2011argument questions."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.78,
+    "neutrality": 0.92,
+    "readability": 0.86,
+    "restraint": 0.71,
+    "traceability": 0.81
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "accepted": false,
+  "case_id": "2022-21-908",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": false,
+    "model_oral_argument_characterization": false,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": false,
+    "quality_traceability": true,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: overview claims 1 and 2 lack supporting evidence.",
+    "Opinion distinction check failed: decision claim presents a concurring opinion as the Court's holding.",
+    "Oral argument characterization check failed: oral argument claims misrepresent Justice Thomas and Justice Kagan statements as questions.",
+    "Overstatement check failed: decision claim overstates the Court's holding by attributing it to the majority when only a concurrence is cited."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.64,
+    "neutrality": 0.9,
+    "readability": 0.85,
+    "restraint": 0.7,
+    "traceability": 0.95
+  }
+}

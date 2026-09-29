@@ -1,0 +1,346 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-22-138",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56",
+            "evidence_ids": [
+              "ev-fe6940feec1c-0001-0000"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          },
+          {
+            "document_hash": "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56",
+            "evidence_ids": [
+              "ev-fe6940feec1c-0002-0003"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The majority held that recklessness is an ample subjective mens\u202frea for true\u2011threat prosecutions."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56",
+            "evidence_ids": [
+              "ev-fe6940feec1c-0002-0005"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "The Court defined true threats as statements where the speaker means to communicate a serious intent to commit unlawful violence."
+      },
+      {
+        "attribution": "Justice Barrett; Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56",
+            "evidence_ids": [
+              "ev-fe6940feec1c-0004-0000"
+            ],
+            "pages": {
+              "end": 41,
+              "start": 41
+            }
+          },
+          {
+            "document_hash": "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56",
+            "evidence_ids": [
+              "ev-fe6940feec1c-0005-0000"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "Justice Thomas, joined by Justice Barrett, dissented, arguing that the Court\u2019s reliance on New\u202fYork\u202fTimes\u202fCo.\u202fv.\u202fSullivan was misplaced and that an objective test better captures the nature of true threats."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T13:39:15.997451Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "e617c1b6e0761a5928ba09e55046773046208e9a0a2619ce287e213ffee51abc",
+      "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "e617c1b6e0761a5928ba09e55046773046208e9a0a2619ce287e213ffee51abc",
+            "evidence_ids": [
+              "ev-e617c1b6e076-0002-0002",
+              "ev-e617c1b6e076-0002-0003"
+            ],
+            "pages": {
+              "end": 64,
+              "start": 59
+            }
+          }
+        ],
+        "text": "Justices asked both parties about the role of the speaker\u2019s intent and whether a recklessness standard was sufficient."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56",
+            "evidence_ids": [
+              "ev-fe6940feec1c-0001-0000"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          },
+          {
+            "document_hash": "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56",
+            "evidence_ids": [
+              "ev-fe6940feec1c-0002-0003"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The Supreme Court held that a recklessness standard satisfies the required subjective mens\u202frea for true\u2011threat prosecutions under the First Amendment."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56",
+            "evidence_ids": [
+              "ev-fe6940feec1c-0002-0005"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "The Court defined a true threat as a statement in which the speaker means to communicate a serious intent to commit unlawful violence."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Billy Counterman",
+          "citations": [
+            {
+              "document_hash": "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56",
+              "evidence_ids": [
+                "ev-fe6940feec1c-0000-0001"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to Billy Counterman, counterman contended that his online messages were not true threats and therefore could not support a criminal prosecution."
+        }
+      ],
+      "heading": "Petitioner \u2013 Billy Counterman",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent (Philip J. Weiser)",
+          "citations": [
+            {
+              "document_hash": "e617c1b6e0761a5928ba09e55046773046208e9a0a2619ce287e213ffee51abc",
+              "evidence_ids": [
+                "ev-e617c1b6e076-0002-0004"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to Respondent (Philip J. Weiser), according to Respondent (Philip J. Weiser), according to Respondent (Philip J. Weiser), weiser argued that true threats have always been prosecuted without First Amendment protection and that imposing a specific\u2011intent requirement is unnecessary."
+        }
+      ],
+      "heading": "Respondent \u2013 State of Colorado (Philip J.\u202fWeiser)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Eric J. Feigin",
+          "citations": [
+            {
+              "document_hash": "e617c1b6e0761a5928ba09e55046773046208e9a0a2619ce287e213ffee51abc",
+              "evidence_ids": [
+                "ev-e617c1b6e076-0003-0001"
+              ],
+              "pages": {
+                "end": 85,
+                "start": 85
+              }
+            }
+          ],
+          "text": "According to Eric J. Feigin, the United States amicus brief framed the issue as a question of specific intent and knowledge, not recklessness."
+        }
+      ],
+      "heading": "Amicus \u2013 United States (Eric J.\u202fFeigin)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "e617c1b6e0761a5928ba09e55046773046208e9a0a2619ce287e213ffee51abc",
+      "evidence_ids": [
+        "ev-e617c1b6e076-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56",
+      "evidence_ids": [
+        "ev-fe6940feec1c-0001-0000"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 18
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T13:48:18.810194Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56",
+            "evidence_ids": [
+              "ev-fe6940feec1c-0001-0001",
+              "ev-fe6940feec1c-0001-0002"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 10
+            }
+          }
+        ],
+        "text": "True threats generate fear of violence and can lead to self\u2011censorship, chilling the exercise of protected speech."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "fe6940feec1c23c8acc9787e87ad3d644dfea245c08f792187db7da82f48dd56",
+            "evidence_ids": [
+              "ev-fe6940feec1c-0005-0005"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "According to Justice Barrett, the Court\u2019s holding also affects civil contexts, such as employer or school discipline of individuals who make true threats."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

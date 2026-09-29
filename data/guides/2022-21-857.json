@@ -1,0 +1,352 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Jones",
+        "citations": [
+          {
+            "document_hash": "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d",
+            "evidence_ids": [
+              "ev-7fc24aa16225-0000-0001"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Jones, petitioner Jones challenges his continued detention, arguing that a motion under \u00a7\u202f2255 is \u201cinadequate or ineffective\u201d to test the legality of his confinement."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d",
+            "evidence_ids": [
+              "ev-7fc24aa16225-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Court, the question presented is whether that limitation on second or successive motions makes \u00a7\u202f2255 \u201cinadequate or ineffective\u201d such that the prisoner may proceed with his statutory claim under \u00a7\u202f2241."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-857",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d",
+            "evidence_ids": [
+              "ev-7fc24aa16225-0001-0005"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          },
+          {
+            "document_hash": "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d",
+            "evidence_ids": [
+              "ev-7fc24aa16225-0001-0006"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The majority held that the saving clause does not authorize a prisoner to bypass AEDPA, so Jones cannot bring his claim under \u00a7\u202f2241."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T12:34:32.687447Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "41482b7e5c30df05b47c79e887c513a48bc6f046c53403788cee8c8e2d305684",
+      "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "41482b7e5c30df05b47c79e887c513a48bc6f046c53403788cee8c8e2d305684",
+            "evidence_ids": [
+              "ev-41482b7e5c30-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts opened the argument, noting the case number and parties."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "41482b7e5c30df05b47c79e887c513a48bc6f046c53403788cee8c8e2d305684",
+            "evidence_ids": [
+              "ev-41482b7e5c30-0000-0004"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether the petitioner\u2019s argument would apply when circuit precedent changes rather than Supreme Court precedent."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d",
+            "evidence_ids": [
+              "ev-7fc24aa16225-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Court, the Supreme Court considered whether the statutory \u201csaving clause\u201d permits a federal prisoner to bypass the limitations of the Antiterrorism and Effective Death Penalty Act (AEDPA) when a motion under 28\u202fU.S.C.\u202f\u00a7\u202f2255 is \u201cinadequate or ineffective.\u201d"
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d",
+            "evidence_ids": [
+              "ev-7fc24aa16225-0001-0005"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          },
+          {
+            "document_hash": "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d",
+            "evidence_ids": [
+              "ev-7fc24aa16225-0001-0006"
+            ],
+            "pages": {
+              "end": 17,
+              "start": 17
+            }
+          }
+        ],
+        "text": "The Court held that the saving clause does not authorize such an end\u2011run around AEDPA, so the petitioner cannot bring his claim under 28\u202fU.S.C.\u202f\u00a7\u202f2241."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Jones",
+          "citations": [
+            {
+              "document_hash": "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d",
+              "evidence_ids": [
+                "ev-7fc24aa16225-0000-0001"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "Jones argues that \u00a7\u202f2255 is \u201cinadequate or ineffective\u201d to test his claim because the court failed to apply the correct substantive law."
+        }
+      ],
+      "heading": "Petitioner (Jones)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d",
+              "evidence_ids": [
+                "ev-7fc24aa16225-0002-0004",
+                "ev-7fc24aa16225-0002-0006"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Government, it proposes a novel interpretation of the saving clause, arguing that the phrase \u201cinadequate or ineffective\u201d refers only to the ability to test claims that are cognizable under the general habeas statutes, not to statutory\u2011injustice claims like Jones\u2019s."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d",
+              "evidence_ids": [
+                "ev-7fc24aa16225-0002-0006"
+              ],
+              "pages": {
+                "end": 27,
+                "start": 27
+              }
+            }
+          ],
+          "text": "The Government also argues that allowing a statutory\u2011injustice claim would create \u201chighly counterintuitive\u201d results and that Congress did not intend the saving clause to function as a \u201cRube\u2011Goldberg contrivance.\u201d"
+        }
+      ],
+      "heading": "Respondent (Government)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Ratner",
+          "citations": [
+            {
+              "document_hash": "41482b7e5c30df05b47c79e887c513a48bc6f046c53403788cee8c8e2d305684",
+              "evidence_ids": [
+                "ev-41482b7e5c30-0003-0002"
+              ],
+              "pages": {
+                "end": 67,
+                "start": 67
+              }
+            }
+          ],
+          "text": "According to Ms. Ratner, amicus Ratner argues that Congress did not intend the saving clause to create a new remedy for statutory\u2011injustice claims and that treating it as such would be inconsistent with the clause\u2019s historical framing."
+        }
+      ],
+      "heading": "Amicus (Morgan L. Ratner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "41482b7e5c30df05b47c79e887c513a48bc6f046c53403788cee8c8e2d305684",
+      "evidence_ids": [
+        "ev-41482b7e5c30-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d",
+      "evidence_ids": [
+        "ev-7fc24aa16225-0000-0001"
+      ],
+      "pages": {
+        "end": 3,
+        "start": 3
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T12:39:36.160377Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "7fc24aa16225dbf8d0062f3010102176f90566c52d691205dba91358ab22b19d",
+            "evidence_ids": [
+              "ev-7fc24aa16225-0001-0005"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The decision clarifies that the statutory saving clause does not create a gateway for prisoners to sidestep AEDPA\u2019s restrictions, limiting post\u2011conviction relief avenues."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

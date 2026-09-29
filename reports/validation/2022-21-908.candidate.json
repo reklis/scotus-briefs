@@ -1,0 +1,320 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "b690b4e2f718cd62ddc03905dc917c7f99aeb0a13a22f892f3b96dde19c065db",
+            "evidence_ids": [
+              "ev-b690b4e2f718-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "During the remodel, David managed the project while Kate was largely uninvolved."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "4c259655120889cc82ee1762df2690c679edac8f713216be86e3ab295882e7f8",
+            "evidence_ids": [
+              "ev-4c2596551208-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked how the statute could be read to focus on the debtor rather than the debt itself."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-908",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b690b4e2f718cd62ddc03905dc917c7f99aeb0a13a22f892f3b96dde19c065db",
+            "evidence_ids": [
+              "ev-b690b4e2f718-0001-0003"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "Justice Sotomayor (concurring) \u2013 The Court correctly holds that 11\u202fU.S.C.\u202f\u00a7\u202f523(a)(2)(A) bars debtors from discharging a debt obtained by fraud of the debtor's agent or partner."
+      }
+    ],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T13:12:05.156902Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4c259655120889cc82ee1762df2690c679edac8f713216be86e3ab295882e7f8",
+      "b690b4e2f718cd62ddc03905dc917c7f99aeb0a13a22f892f3b96dde19c065db"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "4c259655120889cc82ee1762df2690c679edac8f713216be86e3ab295882e7f8",
+            "evidence_ids": [
+              "ev-4c2596551208-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, jUSTICE THOMAS: Does \u00a7\u202f523(a)(2)(A) focus on the debtor or on the debt?"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "4c259655120889cc82ee1762df2690c679edac8f713216be86e3ab295882e7f8",
+            "evidence_ids": [
+              "ev-4c2596551208-0000-0003"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, jUSTICE KAGAN: Is Congress being careless in drafting the statute?"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Kate Bartenwerfer",
+        "citations": [
+          {
+            "document_hash": "b690b4e2f718cd62ddc03905dc917c7f99aeb0a13a22f892f3b96dde19c065db",
+            "evidence_ids": [
+              "ev-b690b4e2f718-0000-0007"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to Kate Bartenwerfer, the petition asks whether the debt is dischargeable under 11\u202fU.S.C.\u202f\u00a7\u202f523(a)(2)(A), which bars discharge of a debt \u201cfor money obtained by actual fraud.\u201d"
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "4c259655120889cc82ee1762df2690c679edac8f713216be86e3ab295882e7f8",
+            "evidence_ids": [
+              "ev-4c2596551208-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, the central question is how broadly \u00a7\u202f523(a)(2)(A) applies when the fraud is committed by the debtor\u2019s partner or agent rather than the debtor herself."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "4c259655120889cc82ee1762df2690c679edac8f713216be86e3ab295882e7f8",
+              "evidence_ids": [
+                "ev-4c2596551208-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner, bankruptcy law provides a \u201cfresh start\u201d for honest debtors, and the statute\u2019s exceptions should apply only to the debtor\u2019s own intentional wrongdoing."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "4c259655120889cc82ee1762df2690c679edac8f713216be86e3ab295882e7f8",
+              "evidence_ids": [
+                "ev-4c2596551208-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner, the government argues that any fraud that results in a debt should be non\u2011dischargeable, even if the debtor did not personally commit the fraud."
+        },
+        {
+          "attribution": "Kate Bartenwerfer",
+          "citations": [
+            {
+              "document_hash": "b690b4e2f718cd62ddc03905dc917c7f99aeb0a13a22f892f3b96dde19c065db",
+              "evidence_ids": [
+                "ev-b690b4e2f718-0000-0007"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Kate Bartenwerfer, bartenwerfer relies on subparagraphs (B) and (C) of \u00a7\u202f523(a)(2)(A), which require some culpable action by the debtor herself."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "4c259655120889cc82ee1762df2690c679edac8f713216be86e3ab295882e7f8",
+              "evidence_ids": [
+                "ev-4c2596551208-0003-0000"
+              ],
+              "pages": {
+                "end": 64,
+                "start": 64
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the amicus brief argues that the plain text of \u00a7\u202f523(a)(2)(A) bars discharge of the petitioner's debt because it is \u201ca debt for money obtained by actual fraud.\u201d"
+        }
+      ],
+      "heading": "Petitioner (Kate Bartenwerfer)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4c259655120889cc82ee1762df2690c679edac8f713216be86e3ab295882e7f8",
+      "evidence_ids": [
+        "ev-4c2596551208-0000-0000",
+        "ev-4c2596551208-0000-0001",
+        "ev-4c2596551208-0000-0002",
+        "ev-4c2596551208-0000-0003",
+        "ev-4c2596551208-0000-0004",
+        "ev-4c2596551208-0001-0001",
+        "ev-4c2596551208-0002-0000",
+        "ev-4c2596551208-0002-0001",
+        "ev-4c2596551208-0002-0002",
+        "ev-4c2596551208-0002-0003",
+        "ev-4c2596551208-0002-0004",
+        "ev-4c2596551208-0003-0000",
+        "ev-4c2596551208-0003-0001"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "b690b4e2f718cd62ddc03905dc917c7f99aeb0a13a22f892f3b96dde19c065db",
+      "evidence_ids": [
+        "ev-b690b4e2f718-0000-0000",
+        "ev-b690b4e2f718-0000-0001",
+        "ev-b690b4e2f718-0000-0007",
+        "ev-b690b4e2f718-0001-0000",
+        "ev-b690b4e2f718-0001-0001",
+        "ev-b690b4e2f718-0001-0003"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T13:20:20.251384Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: overview claims 1 and 2 lack supporting evidence.",
+      "Opinion distinction check failed: decision claim presents a concurring opinion as the Court's holding.",
+      "Oral argument characterization check failed: oral argument claims misrepresent Justice Thomas and Justice Kagan statements as questions.",
+      "Overstatement check failed: decision claim overstates the Court's holding by attributing it to the majority when only a concurrence is cited."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

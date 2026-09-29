@@ -1,0 +1,556 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "8420ac57fa4bfecbdf590ce6ac319787446a50b402fed94fba95c6c7af7547f5",
+            "evidence_ids": [
+              "ev-8420ac57fa4b-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Geraldine Tyler owed $15,000 in taxes and penalties; Hennepin County seized her home, sold it for $40,000, and retained the $25,000 surplus."
+      },
+      {
+        "attribution": "Geraldine Tyler",
+        "citations": [
+          {
+            "document_hash": "8420ac57fa4bfecbdf590ce6ac319787446a50b402fed94fba95c6c7af7547f5",
+            "evidence_ids": [
+              "ev-8420ac57fa4b-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Geraldine Tyler, the legal question is whether the county\u2019s retention of the surplus constitutes a taking under the Fifth Amendment and an excessive fine under the Eighth Amendment."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-22-166",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8420ac57fa4bfecbdf590ce6ac319787446a50b402fed94fba95c6c7af7547f5",
+            "evidence_ids": [
+              "ev-8420ac57fa4b-0001-0003"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          }
+        ],
+        "text": "The Court rejected the plaintiff\u2019s belated argument."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8420ac57fa4bfecbdf590ce6ac319787446a50b402fed94fba95c6c7af7547f5",
+            "evidence_ids": [
+              "ev-8420ac57fa4b-0001-0000"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "Because the Court found that Tyler plausibly alleged a taking, it did not need to decide the excessive\u2011fines claim."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T13:58:09.046499Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+      "8420ac57fa4bfecbdf590ce6ac319787446a50b402fed94fba95c6c7af7547f5"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether a taking exists if there is no surplus equity."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor questioned whether taking and selling a home to satisfy a debt, while keeping the surplus, violates the Takings Clause."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the county must sell the property at a regular auction."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0001-0004"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito inquired whether the theory applies to personal property such as vehicles."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0001-0006"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Kagan asked about a hypothetical state that keeps 50\u202f% of surplus as a penalty."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Barrett asked about Virginia\u2019s historical lack of a just\u2011compensation requirement."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0002-0001"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the Nelson decision is inconsistent with Knick."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0002-0003"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Jackson asked whether taking occurs when the government takes absolute title without a mechanism to recover excess value."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0002-0005"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the government may keep its administrative expenses incurred during the seizure process."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0002-0006"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 54
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito questioned whether a property could be deemed abandoned, allowing the government to keep its full value."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0002-0007"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch raised the excessive\u2011fines question, noting the district court\u2019s reasoning."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0005-0001"
+            ],
+            "pages": {
+              "end": 108,
+              "start": 108
+            }
+          }
+        ],
+        "text": "Justice Kagan asked why the state\u2019s interests are not fully accommodated when it can impose a meaningful penalty."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0005-0002"
+            ],
+            "pages": {
+              "end": 109,
+              "start": 109
+            }
+          }
+        ],
+        "text": "Justice Jackson asked whether the county could pursue the remaining value after the property is sold to satisfy the tax debt."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+            "evidence_ids": [
+              "ev-036f9c3d45ea-0005-0004"
+            ],
+            "pages": {
+              "end": 111,
+              "start": 111
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, justice Jackson questioned why the government could extinguish the owner\u2019s entire right in the property."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Questions Posed",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "8420ac57fa4bfecbdf590ce6ac319787446a50b402fed94fba95c6c7af7547f5",
+            "evidence_ids": [
+              "ev-8420ac57fa4b-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Hennepin County sold Geraldine Tyler\u2019s home for $40,000 to satisfy a $15,000 tax bill and kept the $25,000 surplus."
+      },
+      {
+        "attribution": "Geraldine Tyler",
+        "citations": [
+          {
+            "document_hash": "8420ac57fa4bfecbdf590ce6ac319787446a50b402fed94fba95c6c7af7547f5",
+            "evidence_ids": [
+              "ev-8420ac57fa4b-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Geraldine Tyler, tyler alleges that the county\u2019s retention of the surplus violates the Takings Clause of the Fifth Amendment and the Excessive Fines Clause of the Eighth Amendment."
+      },
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "8420ac57fa4bfecbdf590ce6ac319787446a50b402fed94fba95c6c7af7547f5",
+            "evidence_ids": [
+              "ev-8420ac57fa4b-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The district court dismissed the suit for failure to state a claim, and the Eighth Circuit affirmed."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8420ac57fa4bfecbdf590ce6ac319787446a50b402fed94fba95c6c7af7547f5",
+            "evidence_ids": [
+              "ev-8420ac57fa4b-0001-0003"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          }
+        ],
+        "text": "The Supreme Court rejected the plaintiff\u2019s belated argument."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8420ac57fa4bfecbdf590ce6ac319787446a50b402fed94fba95c6c7af7547f5",
+            "evidence_ids": [
+              "ev-8420ac57fa4b-0001-0000"
+            ],
+            "pages": {
+              "end": 18,
+              "start": 18
+            }
+          }
+        ],
+        "text": "Because the Court found that Tyler plausibly alleged a taking, it did not need to decide whether she also alleged an excessive\u2011fines claim."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Christina M. Martin",
+          "citations": [
+            {
+              "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+              "evidence_ids": [
+                "ev-036f9c3d45ea-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            },
+            {
+              "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+              "evidence_ids": [
+                "ev-036f9c3d45ea-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Christina M. Martin, tyler argues that the county should have returned the surplus proceeds to her after satisfying the tax debt."
+        },
+        {
+          "attribution": "Ms. Martin",
+          "citations": [
+            {
+              "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+              "evidence_ids": [
+                "ev-036f9c3d45ea-0001-0001"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to Ms. Martin, tyler\u2019s counsel further contends that the surplus value is a taking that the government must refund."
+        }
+      ],
+      "heading": "Geraldine Tyler (Plaintiff)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Hennepin County",
+          "citations": [
+            {
+              "document_hash": "8420ac57fa4bfecbdf590ce6ac319787446a50b402fed94fba95c6c7af7547f5",
+              "evidence_ids": [
+                "ev-8420ac57fa4b-0001-0001"
+              ],
+              "pages": {
+                "end": 17,
+                "start": 17
+              }
+            }
+          ],
+          "text": "According to Hennepin County, the County argues that Tyler abandoned her home by failing to pay taxes and therefore has no interest in the surplus."
+        }
+      ],
+      "heading": "Hennepin County (Defendant)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "036f9c3d45eac34887942a8b0c91eb05e1468f42c22970b414be02ab838a6463",
+      "evidence_ids": [
+        "ev-036f9c3d45ea-0000-0000"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "8420ac57fa4bfecbdf590ce6ac319787446a50b402fed94fba95c6c7af7547f5",
+      "evidence_ids": [
+        "ev-8420ac57fa4b-0000-0000"
+      ],
+      "pages": {
+        "end": 18,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T14:02:14.276777Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

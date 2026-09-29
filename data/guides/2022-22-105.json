@@ -1,0 +1,444 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+            "evidence_ids": [
+              "ev-d8359aba3435-0000-0001",
+              "ev-d8359aba3435-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, the Court considered whether an interlocutory appeal of a denial of a motion to compel arbitration automatically triggers a stay of district\u2011court proceedings."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-22-105",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T13:36:00.763625Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "c3f0f38cf9abade9232171ed39804c6bb24837048492de241f3c728ea273914f",
+      "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+            "evidence_ids": [
+              "ev-d8359aba3435-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas: Haven\u2019t we treated qualified immunity differently from other interlocutory appeals?"
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+            "evidence_ids": [
+              "ev-d8359aba3435-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas: Does it follow automatically that when you have an interlocutory appeal, there\u2019s an automatic stay?"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+            "evidence_ids": [
+              "ev-d8359aba3435-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Sotomayor: Why is that different than a forum selection clause, which we say is not subject to an automatic stay?"
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+            "evidence_ids": [
+              "ev-d8359aba3435-0001-0003"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch: Where does this background rule come from? Is it a federal common law principle? How old is it?"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+            "evidence_ids": [
+              "ev-d8359aba3435-0003-0000"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "According to Justice Alito, justice Alito: Was that right?"
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+            "evidence_ids": [
+              "ev-d8359aba3435-0003-0004"
+            ],
+            "pages": {
+              "end": 73,
+              "start": 73
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh: Should we have an automatic stay on the discretionary factors if discovery is about to be ordered?"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+            "evidence_ids": [
+              "ev-d8359aba3435-0003-0006"
+            ],
+            "pages": {
+              "end": 83,
+              "start": 83
+            }
+          }
+        ],
+        "text": "Justice Sotomayor: If we say a stay is mandatory, could state courts say no?"
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+            "evidence_ids": [
+              "ev-d8359aba3435-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, justice Jackson: Can you help me understand why this is not that scenario?"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "c3f0f38cf9abade9232171ed39804c6bb24837048492de241f3c728ea273914f",
+            "evidence_ids": [
+              "ev-c3f0f38cf9ab-0000-0004"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Section 16(a) of the Federal Arbitration Act does not say whether district\u2011court proceedings must be stayed pending resolution of an interlocutory appeal."
+      },
+      {
+        "attribution": "Coinbase, Inc.",
+        "citations": [
+          {
+            "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+            "evidence_ids": [
+              "ev-d8359aba3435-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Coinbase, Inc., when a party appeals the denial of a motion to compel arbitration, the appeal stays the litigation, based on the long\u2011standing divestiture rule and Congress\u2019s adoption of an asymmetric interlocutory rule in FAA Section\u202f16(a)."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Bielski",
+          "citations": [
+            {
+              "document_hash": "c3f0f38cf9abade9232171ed39804c6bb24837048492de241f3c728ea273914f",
+              "evidence_ids": [
+                "ev-c3f0f38cf9ab-0000-0002"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to Bielski, bielski\u2019s arguments to overcome the Griggs principle are unpersuasive, because appellate courts have tools to prevent unwarranted delay and deter frivolous interlocutory appeals."
+        },
+        {
+          "attribution": "Bielski",
+          "citations": [
+            {
+              "document_hash": "c3f0f38cf9abade9232171ed39804c6bb24837048492de241f3c728ea273914f",
+              "evidence_ids": [
+                "ev-c3f0f38cf9ab-0001-0000"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "Bielski does not argue that Coinbase\u2019s appeal in this case is frivolous."
+        },
+        {
+          "attribution": "Bielski",
+          "citations": [
+            {
+              "document_hash": "c3f0f38cf9abade9232171ed39804c6bb24837048492de241f3c728ea273914f",
+              "evidence_ids": [
+                "ev-c3f0f38cf9ab-0001-0001"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "According to Bielski, requiring an automatic stay would create a special, arbitration\u2011preferring procedural rule."
+        }
+      ],
+      "heading": "Bielski",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Coinbase, Inc.",
+          "citations": [
+            {
+              "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+              "evidence_ids": [
+                "ev-d8359aba3435-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Coinbase, Inc., coinbase argues that an appeal of the denial of a motion to compel arbitration stays the litigation, following the divestiture rule and FAA Section\u202f16(a)."
+        }
+      ],
+      "heading": "Coinbase, Inc.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Katyal",
+          "citations": [
+            {
+              "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+              "evidence_ids": [
+                "ev-d8359aba3435-0002-0000"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Mr. Katyal, courts have mechanisms in every circuit to weed out frivolous appeals, such as district\u2011court motions to expedite or return jurisdiction."
+        },
+        {
+          "attribution": "Petitioner (Neal K. Katyal)",
+          "citations": [
+            {
+              "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+              "evidence_ids": [
+                "ev-d8359aba3435-0004-0000"
+              ],
+              "pages": {
+                "end": 88,
+                "start": 88
+              }
+            }
+          ],
+          "text": "According to Petitioner (Neal K. Katyal), eleven times Congress explicitly said there is no automatic stay during interlocutory appeals, including the day before Section\u202f16(a) was enacted."
+        },
+        {
+          "attribution": "Petitioner (Neal K. Katyal)",
+          "citations": [
+            {
+              "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+              "evidence_ids": [
+                "ev-d8359aba3435-0004-0001"
+              ],
+              "pages": {
+                "end": 90,
+                "start": 90
+              }
+            }
+          ],
+          "text": "According to Petitioner (Neal K. Katyal), if there is no automatic stay, parties will incur huge costs and spend thousands of hours in the interim."
+        }
+      ],
+      "heading": "Petitioner (Neal K. Katyal)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "c3f0f38cf9abade9232171ed39804c6bb24837048492de241f3c728ea273914f",
+      "evidence_ids": [
+        "ev-c3f0f38cf9ab-0000-0004",
+        "ev-c3f0f38cf9ab-0000-0002",
+        "ev-c3f0f38cf9ab-0001-0000",
+        "ev-c3f0f38cf9ab-0001-0001"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "d8359aba3435e4b8198b3221c34fc496b91354ef8636a3f49b0218c9e56408eb",
+      "evidence_ids": [
+        "ev-d8359aba3435-0000-0000",
+        "ev-d8359aba3435-0000-0001",
+        "ev-d8359aba3435-0000-0002",
+        "ev-d8359aba3435-0001-0000",
+        "ev-d8359aba3435-0001-0001",
+        "ev-d8359aba3435-0001-0002",
+        "ev-d8359aba3435-0001-0003",
+        "ev-d8359aba3435-0001-0004",
+        "ev-d8359aba3435-0002-0000",
+        "ev-d8359aba3435-0002-0001",
+        "ev-d8359aba3435-0003-0000",
+        "ev-d8359aba3435-0003-0004",
+        "ev-d8359aba3435-0003-0006",
+        "ev-d8359aba3435-0004-0000",
+        "ev-d8359aba3435-0004-0001",
+        "ev-d8359aba3435-0004-0002"
+      ],
+      "pages": {
+        "end": 93,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T13:39:15.979456Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

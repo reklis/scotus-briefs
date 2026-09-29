@@ -1,0 +1,541 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2122362beae66d73dc6fcd3d85641136975f93ec7f8b8aef9cd692ce63572dca",
+            "evidence_ids": [
+              "ev-2122362beae6-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Miguel\u202fLuna\u202fPerez alleged that Sturgis provided inadequate sign\u2011language aides, raising issues under the Individuals with Disabilities Education Act (IDEA) and the Americans with Disabilities Act (ADA)."
+      }
+    ],
+    "heading": "Background and Question(s)",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-887",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2122362beae66d73dc6fcd3d85641136975f93ec7f8b8aef9cd692ce63572dca",
+            "evidence_ids": [
+              "ev-2122362beae6-0000-0005"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The Court reversed the judgment of the Court of Appeals and remanded the case for further proceedings consistent with this opinion."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T12:59:50.672876Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+      "2122362beae66d73dc6fcd3d85641136975f93ec7f8b8aef9cd692ce63572dca"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+            "evidence_ids": [
+              "ev-05ebdebb8d96-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts introduced the case."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+            "evidence_ids": [
+              "ev-05ebdebb8d96-0004-0000"
+            ],
+            "pages": {
+              "end": 87,
+              "start": 87
+            }
+          }
+        ],
+        "text": "Justice Thomas asked if any ADA claim could avoid exhaustion."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+            "evidence_ids": [
+              "ev-05ebdebb8d96-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the gravamen of the complaint is the denial of a FAPE."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+            "evidence_ids": [
+              "ev-05ebdebb8d96-0001-0005"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether a straight ADA claim could proceed if the IDEA were not applicable."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2122362beae66d73dc6fcd3d85641136975f93ec7f8b8aef9cd692ce63572dca",
+            "evidence_ids": [
+              "ev-2122362beae6-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Supreme Court granted certiorari to review the case from the Sixth Circuit (No.\u202f21\u2011887)."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2122362beae66d73dc6fcd3d85641136975f93ec7f8b8aef9cd692ce63572dca",
+            "evidence_ids": [
+              "ev-2122362beae6-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Miguel\u202fLuna\u202fPerez, a deaf student, attended schools in the Sturgis Public School District and alleged that the district provided unqualified or absent sign\u2011language aides."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "2122362beae66d73dc6fcd3d85641136975f93ec7f8b8aef9cd692ce63572dca",
+            "evidence_ids": [
+              "ev-2122362beae6-0000-0005"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The Court reversed the judgment of the Court of Appeals and remanded the case for further proceedings consistent with this opinion."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner (Sturgis Public Schools)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Martinez",
+          "citations": [
+            {
+              "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+              "evidence_ids": [
+                "ev-05ebdebb8d96-0001-0000"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to Mr. Martinez, martinez argues that a global settlement is preferable, but a partial settlement that only addresses IDEA claims would force Miguel to reject the settlement, lose immediate FAPE relief, and risk further litigation."
+        },
+        {
+          "attribution": "Mr. Martinez",
+          "citations": [
+            {
+              "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+              "evidence_ids": [
+                "ev-05ebdebb8d96-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Martinez, martinez asserts that refusing to give up ADA claims would make settlement ineffective."
+        }
+      ],
+      "heading": "Mr. Martinez (representing Sturgis)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Yang",
+          "citations": [
+            {
+              "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+              "evidence_ids": [
+                "ev-05ebdebb8d96-0002-0001"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to Mr. Yang, yang states that the hearing officer would dismiss the ADA claim."
+        }
+      ],
+      "heading": "Mr. Yang",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Dvoretzky",
+          "citations": [
+            {
+              "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+              "evidence_ids": [
+                "ev-05ebdebb8d96-0002-0004"
+              ],
+              "pages": {
+                "end": 51,
+                "start": 51
+              }
+            }
+          ],
+          "text": "According to Mr. Dvoretzky, dvoretzky argues that Congress intended exhaustion procedures for FAPE claims under the IDEA."
+        },
+        {
+          "attribution": "Mr. Dvoretzky",
+          "citations": [
+            {
+              "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+              "evidence_ids": [
+                "ev-05ebdebb8d96-0003-0001"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Mr. Dvoretzky, dvoretzky suggests the exhaustion requirement is not jurisdictional."
+        }
+      ],
+      "heading": "Mr. Dvoretzky",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Roman Martinez (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+              "evidence_ids": [
+                "ev-05ebdebb8d96-0004-0004"
+              ],
+              "pages": {
+                "end": 97,
+                "start": 97
+              }
+            }
+          ],
+          "text": "According to Roman Martinez (Petitioner), according to Roman Martinez (Petitioner), roman Martinez argues that if Sturgis refuses to settle, Miguel would have to reject the settlement, lose immediate FAPE relief, and risk losing attorneys\u2019 fees."
+        }
+      ],
+      "heading": "Roman Martinez (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2122362beae66d73dc6fcd3d85641136975f93ec7f8b8aef9cd692ce63572dca",
+      "evidence_ids": [
+        "ev-2122362beae6-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "2122362beae66d73dc6fcd3d85641136975f93ec7f8b8aef9cd692ce63572dca",
+      "evidence_ids": [
+        "ev-2122362beae6-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "2122362beae66d73dc6fcd3d85641136975f93ec7f8b8aef9cd692ce63572dca",
+      "evidence_ids": [
+        "ev-2122362beae6-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "2122362beae66d73dc6fcd3d85641136975f93ec7f8b8aef9cd692ce63572dca",
+      "evidence_ids": [
+        "ev-2122362beae6-0000-0005"
+      ],
+      "pages": {
+        "end": 11,
+        "start": 11
+      }
+    },
+    {
+      "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+      "evidence_ids": [
+        "ev-05ebdebb8d96-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+      "evidence_ids": [
+        "ev-05ebdebb8d96-0001-0000"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+      "evidence_ids": [
+        "ev-05ebdebb8d96-0001-0001"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+      "evidence_ids": [
+        "ev-05ebdebb8d96-0001-0002"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+      "evidence_ids": [
+        "ev-05ebdebb8d96-0001-0005"
+      ],
+      "pages": {
+        "end": 36,
+        "start": 36
+      }
+    },
+    {
+      "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+      "evidence_ids": [
+        "ev-05ebdebb8d96-0002-0001"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+      "evidence_ids": [
+        "ev-05ebdebb8d96-0002-0004"
+      ],
+      "pages": {
+        "end": 51,
+        "start": 51
+      }
+    },
+    {
+      "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+      "evidence_ids": [
+        "ev-05ebdebb8d96-0003-0001",
+        "ev-05ebdebb8d96-0003-0002"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+      "evidence_ids": [
+        "ev-05ebdebb8d96-0004-0000"
+      ],
+      "pages": {
+        "end": 87,
+        "start": 87
+      }
+    },
+    {
+      "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+      "evidence_ids": [
+        "ev-05ebdebb8d96-0004-0001"
+      ],
+      "pages": {
+        "end": 88,
+        "start": 88
+      }
+    },
+    {
+      "document_hash": "05ebdebb8d96d4639a893030ed0dd2fc8ffa1cccbfca48ad088adadc79dde28b",
+      "evidence_ids": [
+        "ev-05ebdebb8d96-0004-0004"
+      ],
+      "pages": {
+        "end": 97,
+        "start": 97
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T13:12:05.137326Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "2122362beae66d73dc6fcd3d85641136975f93ec7f8b8aef9cd692ce63572dca",
+            "evidence_ids": [
+              "ev-2122362beae6-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to United States, the United States filed an amicus brief urging reversal, underscoring the case\u2019s significance for the interaction between IDEA exhaustion rules and ADA claims."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,492 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Supreme Court",
+        "citations": [
+          {
+            "document_hash": "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+            "evidence_ids": [
+              "ev-45a1d9a2e608-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case was argued on March\u202f22,\u202f2023 and decided on June\u202f8,\u202f2023."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-22-148",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+            "evidence_ids": [
+              "ev-45a1d9a2e608-0000-0007"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+            "evidence_ids": [
+              "ev-45a1d9a2e608-0001-0003"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 15
+            }
+          }
+        ],
+        "text": "The majority held that using a trademark to designate the source of the infringer\u2019s own goods is not a permissible non\u2011commercial use, even if the use is a parody."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+            "evidence_ids": [
+              "ev-45a1d9a2e608-0002-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The majority also held that the \u201cnon\u2011commercial use\u201d exemption cannot be applied to every parody or humorous commentary."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+            "evidence_ids": [
+              "ev-45a1d9a2e608-0002-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Sotomayor wrote a concurrence noting that some survey respondents mistakenly believe that all parodies require permission from the mark owner."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+            "evidence_ids": [
+              "ev-45a1d9a2e608-0002-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Gorsuch wrote a concurrence emphasizing that lower courts should handle Rogers v. Grimaldi with care."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T13:48:18.830533Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+      "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d",
+            "evidence_ids": [
+              "ev-59ebbc138d52-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether a statement could be misleading yet not be confusing under the Lanham Act."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d",
+            "evidence_ids": [
+              "ev-59ebbc138d52-0000-0002"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan questioned why the plaintiff was making a broad argument when narrower arguments were available."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d",
+            "evidence_ids": [
+              "ev-59ebbc138d52-0001-0000"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the survey results should be decided by a jury."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d",
+            "evidence_ids": [
+              "ev-59ebbc138d52-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor expressed hesitation about discarding the Rogers test that many circuits rely on."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d",
+            "evidence_ids": [
+              "ev-59ebbc138d52-0002-0002"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked how the Court should handle the case on remand, given the parody nature of the product."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+            "evidence_ids": [
+              "ev-45a1d9a2e608-0000-0007"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          },
+          {
+            "document_hash": "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+            "evidence_ids": [
+              "ev-45a1d9a2e608-0001-0003"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 15
+            }
+          }
+        ],
+        "text": "The Supreme Court held that using a trademark to designate the source of the infringer\u2019s own goods is not a permissible non\u2011commercial use, even when the use is a parody."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+            "evidence_ids": [
+              "ev-45a1d9a2e608-0002-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The Court also rejected the Ninth Circuit\u2019s broad \u201cnon\u2011commercial use\u201d exemption, stating it cannot cover every parody or humorous commentary."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Jack Daniel's Properties, Inc.",
+          "citations": [
+            {
+              "document_hash": "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d",
+              "evidence_ids": [
+                "ev-59ebbc138d52-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Jack Daniel's Properties, Inc., jack Daniel's Properties, Inc. argued that VIP\u2019s \u201cBad Spaniels\u201d dog toy copies Jack Daniel\u2019s trademark and trade dress and associates its whiskey with dog poop, constituting infringement and dilution."
+        },
+        {
+          "attribution": "MS. BLATT",
+          "citations": [
+            {
+              "document_hash": "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d",
+              "evidence_ids": [
+                "ev-59ebbc138d52-0001-0001"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to MS. BLATT, ms. Blatt testified that a survey showed 25\u202f% of respondents were confused about the source of the product, which the plaintiff described as a \u201cmassively high\u201d level of confusion."
+        },
+        {
+          "attribution": "Ms. Blatt",
+          "citations": [
+            {
+              "document_hash": "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d",
+              "evidence_ids": [
+                "ev-59ebbc138d52-0004-0002"
+              ],
+              "pages": {
+                "end": 95,
+                "start": 95
+              }
+            }
+          ],
+          "text": "Ms. Blatt argued that all trademarks are expressive and that infringing them implicates speech rights, asserting the plaintiff\u2019s interests include preventing compelled speech in contexts such as pornography and sex toys."
+        }
+      ],
+      "heading": "Jack Daniel's Properties, Inc.",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Cooper",
+          "citations": [
+            {
+              "document_hash": "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d",
+              "evidence_ids": [
+                "ev-59ebbc138d52-0003-0001"
+              ],
+              "pages": {
+                "end": 67,
+                "start": 67
+              }
+            }
+          ],
+          "text": "According to Mr. Cooper, vIP argued that the \u201cBad Spaniels\u201d product is a parody."
+        },
+        {
+          "attribution": "Mr. Cooper",
+          "citations": [
+            {
+              "document_hash": "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d",
+              "evidence_ids": [
+                "ev-59ebbc138d52-0003-0003"
+              ],
+              "pages": {
+                "end": 71,
+                "start": 71
+              }
+            }
+          ],
+          "text": "According to Mr. Cooper, vIP contended that the product\u2019s \u201cexplicitly misleading\u201d aspect is a mechanism of confusion consistent with the Lanham Act."
+        },
+        {
+          "attribution": "Mr. Cooper",
+          "citations": [
+            {
+              "document_hash": "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d",
+              "evidence_ids": [
+                "ev-59ebbc138d52-0004-0001"
+              ],
+              "pages": {
+                "end": 91,
+                "start": 91
+              }
+            }
+          ],
+          "text": "According to Mr. Cooper, vIP explained that a commercial would be an advertisement, and the \u201cBad Spaniels\u201d product is not an advertisement, thus not commercial speech."
+        }
+      ],
+      "heading": "VIP Products LLC",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+      "evidence_ids": [
+        "ev-45a1d9a2e608-0000-0000",
+        "ev-45a1d9a2e608-0000-0007",
+        "ev-45a1d9a2e608-0000-0008",
+        "ev-45a1d9a2e608-0001-0003",
+        "ev-45a1d9a2e608-0002-0000",
+        "ev-45a1d9a2e608-0002-0002",
+        "ev-45a1d9a2e608-0002-0003"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "59ebbc138d52549ad4729c03ac29de6947662bdc29c38d156b159b83a4d7cf7d",
+      "evidence_ids": [
+        "ev-59ebbc138d52-0000-0000",
+        "ev-59ebbc138d52-0001-0001",
+        "ev-59ebbc138d52-0001-0002",
+        "ev-59ebbc138d52-0003-0001",
+        "ev-59ebbc138d52-0003-0003",
+        "ev-59ebbc138d52-0004-0001",
+        "ev-59ebbc138d52-0004-0002",
+        "ev-59ebbc138d52-0000-0001",
+        "ev-59ebbc138d52-0000-0002",
+        "ev-59ebbc138d52-0001-0000",
+        "ev-59ebbc138d52-0002-0000",
+        "ev-59ebbc138d52-0002-0002",
+        "ev-59ebbc138d52-0002-0005",
+        "ev-59ebbc138d52-0002-0006",
+        "ev-59ebbc138d52-0003-0000",
+        "ev-59ebbc138d52-0004-0000"
+      ],
+      "pages": {
+        "end": 95,
+        "start": 4
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T13:58:09.037324Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+            "evidence_ids": [
+              "ev-45a1d9a2e608-0000-0007"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The decision clarifies that a parody does not automatically exempt a product from trademark infringement under the Lanham Act."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "45a1d9a2e608ac47828291ce48d6a830256f15642804891e3f6a9157452eb597",
+            "evidence_ids": [
+              "ev-45a1d9a2e608-0002-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "It limits the scope of the \u201cnon\u2011commercial use\u201d defense, affecting future cases involving parodic uses of trademarks."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,476 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+            "evidence_ids": [
+              "ev-867b8717e71a-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "From 2014 to 2017, Hewitt worked on an offshore oil rig 84 hours a week and was paid a daily rate with no overtime compensation."
+      },
+      {
+        "attribution": "Justices",
+        "citations": [
+          {
+            "document_hash": "dd8541ad60a210e575c056fb4731f2355fc62c980ce9e7324883fd996efc925d",
+            "evidence_ids": [
+              "ev-dd8541ad60a2-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          },
+          {
+            "document_hash": "dd8541ad60a210e575c056fb4731f2355fc62c980ce9e7324883fd996efc925d",
+            "evidence_ids": [
+              "ev-dd8541ad60a2-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "The legal question was whether Hewitt qualified as a bona fide executive exempt from the FLSA, specifically whether he was paid on a salary basis."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": "Michael J. Hewitt worked on an offshore oil rig from 2014\u20112017, logging 84 hours per week and being paid a daily rate with no overtime compensation. The Court needed to decide whether Hewitt qualified as a \u201cbona fide executive\u201d exempt from the Fair Labor Standards Act, focusing on whether he was paid on a salary basis.",
+    "summary_citations": [
+      {
+        "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+        "evidence_ids": [
+          "ev-867b8717e71a-0000-0000"
+        ],
+        "pages": {
+          "end": 2,
+          "start": 2
+        }
+      },
+      {
+        "document_hash": "dd8541ad60a210e575c056fb4731f2355fc62c980ce9e7324883fd996efc925d",
+        "evidence_ids": [
+          "ev-dd8541ad60a2-0000-0002"
+        ],
+        "pages": {
+          "end": 6,
+          "start": 6
+        }
+      }
+    ]
+  },
+  "case_id": "2022-21-984",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+            "evidence_ids": [
+              "ev-867b8717e71a-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Court held that Helix did not pay Hewitt on a salary basis as defined in \u00a7602(a)."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+            "evidence_ids": [
+              "ev-867b8717e71a-0002-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Because \u00a7602(a) was not satisfied, \u00a7604(b) applies to Hewitt, extending overtime protections."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T13:20:20.269220Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+      "dd8541ad60a210e575c056fb4731f2355fc62c980ce9e7324883fd996efc925d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "dd8541ad60a210e575c056fb4731f2355fc62c980ce9e7324883fd996efc925d",
+            "evidence_ids": [
+              "ev-dd8541ad60a2-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether Hewitt was salaried."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "dd8541ad60a210e575c056fb4731f2355fc62c980ce9e7324883fd996efc925d",
+            "evidence_ids": [
+              "ev-dd8541ad60a2-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "Justice Jackson asked about the proper reading of the regulation and whether compensation amount alone determines applicability of \u00a7601."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "dd8541ad60a210e575c056fb4731f2355fc62c980ce9e7324883fd996efc925d",
+            "evidence_ids": [
+              "ev-dd8541ad60a2-0000-0005"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh questioned the meaning of the phrase \u201cor part\u201d in \u00a7602."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "dd8541ad60a210e575c056fb4731f2355fc62c980ce9e7324883fd996efc925d",
+            "evidence_ids": [
+              "ev-dd8541ad60a2-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether a client\u2019s hourly billable rate or a check every hour was being referenced."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+            "evidence_ids": [
+              "ev-867b8717e71a-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "Helix Energy Solutions Group did not pay Hewitt on a salary basis as defined in \u00a7602(a)."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+            "evidence_ids": [
+              "ev-867b8717e71a-0002-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "Because \u00a7602(a) was not satisfied, \u00a7604(b) applies to Hewitt, extending overtime protections."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": "The Supreme Court held that Helix Energy Solutions Group did not pay Michael J. Hewitt on a salary basis under \u00a7602(a) of the Fair Labor Standards Act, so he was not exempt from overtime protections. Because \u00a7602(a) was not satisfied, \u00a7604(b) applies, extending overtime coverage to Hewitt.",
+    "summary_citations": [
+      {
+        "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+        "evidence_ids": [
+          "ev-867b8717e71a-0001-0001"
+        ],
+        "pages": {
+          "end": 13,
+          "start": 13
+        }
+      },
+      {
+        "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+        "evidence_ids": [
+          "ev-867b8717e71a-0002-0001"
+        ],
+        "pages": {
+          "end": 21,
+          "start": 21
+        }
+      }
+    ]
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Helix Energy Solutions Group",
+          "citations": [
+            {
+              "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+              "evidence_ids": [
+                "ev-867b8717e71a-0000-0001"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to Helix Energy Solutions Group, helix argued that Hewitt was exempt as a bona fide executive."
+        },
+        {
+          "attribution": "Helix Energy Solutions Group, Inc.",
+          "citations": [
+            {
+              "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+              "evidence_ids": [
+                "ev-867b8717e71a-0001-0002"
+              ],
+              "pages": {
+                "end": 15,
+                "start": 15
+              }
+            }
+          ],
+          "text": "According to Helix Energy Solutions Group, Inc., according to Helix Energy Solutions Group, Inc., helix contended that the word \u201creceives\u201d in \u00a7602(a) only requires a paycheck no more often than once a week."
+        }
+      ],
+      "heading": "Helix Energy Solutions Group",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Hewitt",
+          "citations": [
+            {
+              "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+              "evidence_ids": [
+                "ev-867b8717e71a-0001-0003"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "Hewitt argued that he was not paid on a salary basis, challenging his executive status."
+        }
+      ],
+      "heading": "Michael J. Hewitt",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Paul D. Clement",
+          "citations": [
+            {
+              "document_hash": "dd8541ad60a210e575c056fb4731f2355fc62c980ce9e7324883fd996efc925d",
+              "evidence_ids": [
+                "ev-dd8541ad60a2-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Paul D. Clement, clement asserted that Hewitt earned over $200,000 a year, performed executive functions, and was guaranteed at least $963 each week, making him exempt under the highly compensated employee exemption (\u00a7601)."
+        }
+      ],
+      "heading": "Paul D. Clement (for Hewitt)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Sullivan",
+          "citations": [
+            {
+              "document_hash": "dd8541ad60a210e575c056fb4731f2355fc62c980ce9e7324883fd996efc925d",
+              "evidence_ids": [
+                "ev-dd8541ad60a2-0002-0001"
+              ],
+              "pages": {
+                "end": 58,
+                "start": 58
+              }
+            }
+          ],
+          "text": "According to Mr. Sullivan, sullivan stated that the FLSA has long required a bona fide executive to be paid on a salary basis and that a daily\u2011rate employee is not paid on a salary basis."
+        }
+      ],
+      "heading": "Mr. Sullivan (for Helix)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+      "evidence_ids": [
+        "ev-867b8717e71a-0001-0001"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 13
+      }
+    },
+    {
+      "document_hash": "dd8541ad60a210e575c056fb4731f2355fc62c980ce9e7324883fd996efc925d",
+      "evidence_ids": [
+        "ev-dd8541ad60a2-0000-0001"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T13:25:43.567207Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Helix Energy Solutions Group, Inc.",
+        "citations": [
+          {
+            "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+            "evidence_ids": [
+              "ev-867b8717e71a-0002-0005"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Helix warned that its position could deprive workers earning less than $100,000 of overtime pay."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": "The ruling clarifies that workers paid a daily rate are not considered salaried, limiting the executive exemption and preserving overtime rights for many employees, including those earning under $100,000 annually.",
+    "summary_citations": [
+      {
+        "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+        "evidence_ids": [
+          "ev-867b8717e71a-0001-0001"
+        ],
+        "pages": {
+          "end": 13,
+          "start": 13
+        }
+      },
+      {
+        "document_hash": "867b8717e71a423b8175fa7667dd9be2b67ec2f5415761f962d1c343f0ec788e",
+        "evidence_ids": [
+          "ev-867b8717e71a-0002-0005"
+        ],
+        "pages": {
+          "end": 24,
+          "start": 24
+        }
+      }
+    ]
+  }
+}
