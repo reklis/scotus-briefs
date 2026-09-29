@@ -1,0 +1,402 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-1158",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f3b062f51237430ae3a89ab85890e4cb3002f476cd3ac4f1be40f86822377b1",
+            "evidence_ids": [
+              "ev-5f3b062f5123-0001-0000"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Court held that a private citizen cannot be convicted of honest\u2011services fraud."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "5f3b062f51237430ae3a89ab85890e4cb3002f476cd3ac4f1be40f86822377b1",
+            "evidence_ids": [
+              "ev-5f3b062f5123-0001-0001"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "Justice Gorsuch, in a concurring opinion, reversed the judgment of the Court of Appeals and remanded the case for further proceedings consistent with this opinion."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T04:36:04.342886Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5f3b062f51237430ae3a89ab85890e4cb3002f476cd3ac4f1be40f86822377b1",
+      "c9b6985259972ea26a2dc2de9fdff03d5ce94ff5df4d99dca5f0838efc648bcf"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "c9b6985259972ea26a2dc2de9fdff03d5ce94ff5df4d99dca5f0838efc648bcf",
+            "evidence_ids": [
+              "ev-c9b698525997-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "JUSTICE THOMAS: Counsel, let's assume that Petitioner did not resign much more than, say, one afternoon and then engaged in this conduct. Do you think you would still be able to make the exact same argument?"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "c9b6985259972ea26a2dc2de9fdff03d5ce94ff5df4d99dca5f0838efc648bcf",
+            "evidence_ids": [
+              "ev-c9b698525997-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "JUSTICE KAGAN: So, Mr. Roth, I understand what you're saying, that the -- that the government didn't prove the kind of facts."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "c9b6985259972ea26a2dc2de9fdff03d5ce94ff5df4d99dca5f0838efc648bcf",
+            "evidence_ids": [
+              "ev-c9b698525997-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "JUSTICE BARRETT: So you're asking for a bright line even if it leads to the situation Justice Kagan hypothesizes?"
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "c9b6985259972ea26a2dc2de9fdff03d5ce94ff5df4d99dca5f0838efc648bcf",
+            "evidence_ids": [
+              "ev-c9b698525997-0002-0000"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, jUSTICE GORSUCH: Yeah. Where do they come from, is my question."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "c9b6985259972ea26a2dc2de9fdff03d5ce94ff5df4d99dca5f0838efc648bcf",
+            "evidence_ids": [
+              "ev-c9b698525997-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "JUSTICE KAGAN: Okay. I think Mr. Roth would say that's an agent, all right? I mean, because Mr. Roth has a way to deal with that. He -- he says, you know, you don't have to be, like, on the books if there's been that clear a delegation from the principal."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "c9b6985259972ea26a2dc2de9fdff03d5ce94ff5df4d99dca5f0838efc648bcf",
+            "evidence_ids": [
+              "ev-c9b698525997-0003-0002"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, jUSTICE SOTOMAYOR: So please tell me why it can't be simply an agent, meaning, why can't we just simply -- instead of this functional whatever, government official, or reliance and control, as the Second Circuit called it, why can't the charge be something as simple as are you acting as an agent?"
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f3b062f51237430ae3a89ab85890e4cb3002f476cd3ac4f1be40f86822377b1",
+            "evidence_ids": [
+              "ev-5f3b062f5123-0001-0000"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Court held that a private citizen cannot be convicted of honest\u2011services fraud."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "5f3b062f51237430ae3a89ab85890e4cb3002f476cd3ac4f1be40f86822377b1",
+            "evidence_ids": [
+              "ev-5f3b062f5123-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Petitioner, petitioner Joseph Percoco accepted $35,000 in payments to assist a real\u2011estate development company owned by Steven Aiello while he was out of public office."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": "The Supreme Court held that a private citizen cannot be convicted of honest\u2011services fraud. The case arose from payments that former public official Joseph Percoco accepted while he was out of office.",
+    "summary_citations": [
+      {
+        "document_hash": "5f3b062f51237430ae3a89ab85890e4cb3002f476cd3ac4f1be40f86822377b1",
+        "evidence_ids": [
+          "ev-5f3b062f5123-0001-0000"
+        ],
+        "pages": {
+          "end": 13,
+          "start": 13
+        }
+      },
+      {
+        "document_hash": "5f3b062f51237430ae3a89ab85890e4cb3002f476cd3ac4f1be40f86822377b1",
+        "evidence_ids": [
+          "ev-5f3b062f5123-0000-0000"
+        ],
+        "pages": {
+          "end": 2,
+          "start": 2
+        }
+      }
+    ]
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "5f3b062f51237430ae3a89ab85890e4cb3002f476cd3ac4f1be40f86822377b1",
+              "evidence_ids": [
+                "ev-5f3b062f5123-0000-0001"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to Petitioner, percoco argued that a private citizen cannot commit or conspire to commit honest\u2011services wire fraud because he had no duty of honest services to the public."
+        }
+      ],
+      "heading": "Petitioner (Joseph Percoco)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "5f3b062f51237430ae3a89ab85890e4cb3002f476cd3ac4f1be40f86822377b1",
+              "evidence_ids": [
+                "ev-5f3b062f5123-0001-0002"
+              ],
+              "pages": {
+                "end": 14,
+                "start": 14
+              }
+            }
+          ],
+          "text": "The Government argued that the jury instructions were harmless and did not accurately state the law, but it did not defend them."
+        }
+      ],
+      "heading": "Government",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Jacob M. Roth",
+          "citations": [
+            {
+              "document_hash": "c9b6985259972ea26a2dc2de9fdff03d5ce94ff5df4d99dca5f0838efc648bcf",
+              "evidence_ids": [
+                "ev-c9b698525997-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Jacob M. Roth, bribery requires an agent who exercises authority on behalf of a principal; a private citizen who lacks such authority cannot be guilty of bribery."
+        }
+      ],
+      "heading": "Jacob M. Roth (Counsel for Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Ms. Reaves (Counsel for Government)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5f3b062f51237430ae3a89ab85890e4cb3002f476cd3ac4f1be40f86822377b1",
+      "evidence_ids": [
+        "ev-5f3b062f5123-0000-0000",
+        "ev-5f3b062f5123-0000-0001",
+        "ev-5f3b062f5123-0001-0000",
+        "ev-5f3b062f5123-0001-0001",
+        "ev-5f3b062f5123-0001-0002"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "c9b6985259972ea26a2dc2de9fdff03d5ce94ff5df4d99dca5f0838efc648bcf",
+      "evidence_ids": [
+        "ev-c9b698525997-0000-0000",
+        "ev-c9b698525997-0000-0002",
+        "ev-c9b698525997-0000-0003",
+        "ev-c9b698525997-0001-0000",
+        "ev-c9b698525997-0002-0000",
+        "ev-c9b698525997-0003-0000",
+        "ev-c9b698525997-0003-0002",
+        "ev-c9b698525997-0003-0001",
+        "ev-c9b698525997-0003-0003"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 4
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T04:45:01.488710Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f3b062f51237430ae3a89ab85890e4cb3002f476cd3ac4f1be40f86822377b1",
+            "evidence_ids": [
+              "ev-5f3b062f5123-0001-0000"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The decision limits the reach of the honest\u2011services fraud statute to public officials, preventing its application to private citizens who lack a fiduciary duty to the public."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

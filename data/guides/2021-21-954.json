@@ -1,0 +1,246 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-954",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T03:45:23.658037Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "166258bcddf0eccd8abdd6ff4bf0c6e3acab26758ee8bd852862e22bc75a7d1d",
+      "6617eaffedbd3ab78aaf1c20e6ce2821c93efbe806d5060e90156953c198be76"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners (General Prelogar)",
+          "citations": [
+            {
+              "document_hash": "166258bcddf0eccd8abdd6ff4bf0c6e3acab26758ee8bd852862e22bc75a7d1d",
+              "evidence_ids": [
+                "ev-166258bcddf0-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioners (General Prelogar), according to Petitioners (General Prelogar), the Secretary of Homeland Security exercised discretionary authority and erred in ordering DHS to reinstate the Migrant Protection Protocols (MPP) despite the costs."
+        },
+        {
+          "attribution": "General Prelogar",
+          "citations": [
+            {
+              "document_hash": "166258bcddf0eccd8abdd6ff4bf0c6e3acab26758ee8bd852862e22bc75a7d1d",
+              "evidence_ids": [
+                "ev-166258bcddf0-0001-0001"
+              ],
+              "pages": {
+                "end": 23,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to General Prelogar, Congress focused on detention issues and expected the new expedited removal provisions to alleviate detention strain."
+        },
+        {
+          "attribution": "General Prelogar",
+          "citations": [
+            {
+              "document_hash": "166258bcddf0eccd8abdd6ff4bf0c6e3acab26758ee8bd852862e22bc75a7d1d",
+              "evidence_ids": [
+                "ev-166258bcddf0-0002-0001"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to General Prelogar, the word \u201cshall\u201d properly means that the government should use the detention capacity that has been afforded."
+        },
+        {
+          "attribution": "General Prelogar",
+          "citations": [
+            {
+              "document_hash": "166258bcddf0eccd8abdd6ff4bf0c6e3acab26758ee8bd852862e22bc75a7d1d",
+              "evidence_ids": [
+                "ev-166258bcddf0-0002-0003"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "According to General Prelogar, statutory release authorities are being used in conformance with the INA."
+        }
+      ],
+      "heading": "Petitioner (Biden et al.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "166258bcddf0eccd8abdd6ff4bf0c6e3acab26758ee8bd852862e22bc75a7d1d",
+              "evidence_ids": [
+                "ev-166258bcddf0-0003-0004"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 65
+              }
+            }
+          ],
+          "text": "According to Respondents, Texas asserts that the October\u202f29 termination decision constitutes a new agency action."
+        },
+        {
+          "attribution": "Texas",
+          "citations": [
+            {
+              "document_hash": "166258bcddf0eccd8abdd6ff4bf0c6e3acab26758ee8bd852862e22bc75a7d1d",
+              "evidence_ids": [
+                "ev-166258bcddf0-0004-0003"
+              ],
+              "pages": {
+                "end": 91,
+                "start": 91
+              }
+            }
+          ],
+          "text": "Texas brings arbitrary and capricious APA claims."
+        }
+      ],
+      "heading": "Respondent (Texas)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "166258bcddf0eccd8abdd6ff4bf0c6e3acab26758ee8bd852862e22bc75a7d1d",
+              "evidence_ids": [
+                "ev-166258bcddf0-0005-0001"
+              ],
+              "pages": {
+                "end": 109,
+                "start": 109
+              }
+            }
+          ],
+          "text": "The United States argued statutory points relating to sections\u202f1182 and\u202f1225."
+        }
+      ],
+      "heading": "United States",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "166258bcddf0eccd8abdd6ff4bf0c6e3acab26758ee8bd852862e22bc75a7d1d",
+      "evidence_ids": [
+        "ev-166258bcddf0-0000-0000"
+      ],
+      "pages": {
+        "end": 122,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "6617eaffedbd3ab78aaf1c20e6ce2821c93efbe806d5060e90156953c198be76",
+      "evidence_ids": [
+        "ev-6617eaffedbd-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T03:53:34.940469Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

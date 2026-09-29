@@ -1,0 +1,540 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Mallory",
+        "citations": [
+          {
+            "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+            "evidence_ids": [
+              "ev-5149e9957088-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "According to Mallory, the central issue is whether Norfolk Southern consented to Pennsylvania jurisdiction by registering to do business in the state."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "17c21e7f79a06e3278d9174eccc41e891f7dcabb21978c156178e9e3dfaf0e58",
+            "evidence_ids": [
+              "ev-17c21e7f79a0-0000-0004"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked how many states have statutes similar to Pennsylvania\u2019s and how to know when there is enough history to support the petitioner\u2019s position."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "17c21e7f79a06e3278d9174eccc41e891f7dcabb21978c156178e9e3dfaf0e58",
+            "evidence_ids": [
+              "ev-17c21e7f79a0-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked why the Court should distinguish between the two approaches and whether the distinction is relevant."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "17c21e7f79a06e3278d9174eccc41e891f7dcabb21978c156178e9e3dfaf0e58",
+            "evidence_ids": [
+              "ev-17c21e7f79a0-0001-0002"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether there is a pre\u2011existing right, a pre\u2011waiver, that the petitioner is asserting."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "17c21e7f79a06e3278d9174eccc41e891f7dcabb21978c156178e9e3dfaf0e58",
+            "evidence_ids": [
+              "ev-17c21e7f79a0-0002-0009"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether only Pennsylvania has a statute like the one at issue."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "17c21e7f79a06e3278d9174eccc41e891f7dcabb21978c156178e9e3dfaf0e58",
+            "evidence_ids": [
+              "ev-17c21e7f79a0-0003-0001"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether historical case law permits consent\u2011by\u2011registration for cases arising from doing business in the state."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-1168",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+            "evidence_ids": [
+              "ev-5149e9957088-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The majority held that the law permits suits against individuals in any jurisdiction where they can be found."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+            "evidence_ids": [
+              "ev-5149e9957088-0002-0006"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "The Pennsylvania Supreme Court judgment was vacated and the case was remanded."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+            "evidence_ids": [
+              "ev-5149e9957088-0005-0000"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Barrett dissented, arguing that the plurality could not locate a historical case supporting its theory."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T04:54:50.027030Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "17c21e7f79a06e3278d9174eccc41e891f7dcabb21978c156178e9e3dfaf0e58",
+      "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Mallory",
+        "citations": [
+          {
+            "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+            "evidence_ids": [
+              "ev-5149e9957088-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          },
+          {
+            "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+            "evidence_ids": [
+              "ev-5149e9957088-0000-0006"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Robert Mallory, a former Norfolk Southern freight\u2011car mechanic, sued Norfolk Southern in Pennsylvania alleging exposure to carcinogens while working on freight\u2011car interiors."
+      },
+      {
+        "attribution": "Norfolk Southern",
+        "citations": [
+          {
+            "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+            "evidence_ids": [
+              "ev-5149e9957088-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Norfolk Southern argued that the Due Process Clause gives it a rule shielding it from suits in Pennsylvania."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+            "evidence_ids": [
+              "ev-5149e9957088-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          },
+          {
+            "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+            "evidence_ids": [
+              "ev-5149e9957088-0002-0006"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "The Court held that the law permits suits against individuals in any jurisdiction where they can be found, vacated the Pennsylvania Supreme Court judgment, and remanded the case."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+            "evidence_ids": [
+              "ev-5149e9957088-0005-0000"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Barrett dissented, stating that the plurality could not identify a single historical case supporting its theory."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mallory",
+          "citations": [
+            {
+              "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+              "evidence_ids": [
+                "ev-5149e9957088-0000-0002"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "Mallory argues that by complying with Pennsylvania\u2019s registration scheme, Norfolk Southern consented to suit in Pennsylvania."
+        },
+        {
+          "attribution": "Ashley C. Keller",
+          "citations": [
+            {
+              "document_hash": "17c21e7f79a06e3278d9174eccc41e891f7dcabb21978c156178e9e3dfaf0e58",
+              "evidence_ids": [
+                "ev-17c21e7f79a0-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            },
+            {
+              "document_hash": "17c21e7f79a06e3278d9174eccc41e891f7dcabb21978c156178e9e3dfaf0e58",
+              "evidence_ids": [
+                "ev-17c21e7f79a0-0000-0006"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to Ashley C. Keller, Keller testified that consent\u2011by\u2011registration statutes have existed since the 1820s, showing historical support for the doctrine."
+        }
+      ],
+      "heading": "Petitioner (Robert Mallory)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Norfolk Southern",
+          "citations": [
+            {
+              "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+              "evidence_ids": [
+                "ev-5149e9957088-0000-0003"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "Norfolk Southern contends that the Due Process Clause entitles it to a rule shielding it from suits in Pennsylvania."
+        },
+        {
+          "attribution": "Norfolk Southern",
+          "citations": [
+            {
+              "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+              "evidence_ids": [
+                "ev-5149e9957088-0001-0004"
+              ],
+              "pages": {
+                "end": 17,
+                "start": 17
+              }
+            }
+          ],
+          "text": "According to Norfolk Southern, the Court\u2019s decision in International Shoe already addresses the jurisdictional issue."
+        },
+        {
+          "attribution": "Norfolk Southern",
+          "citations": [
+            {
+              "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+              "evidence_ids": [
+                "ev-5149e9957088-0002-0003"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Norfolk Southern, norfolk Southern asserts that it has not submitted to Pennsylvania proceedings."
+        },
+        {
+          "attribution": "Norfolk Southern",
+          "citations": [
+            {
+              "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+              "evidence_ids": [
+                "ev-5149e9957088-0003-0001"
+              ],
+              "pages": {
+                "end": 33,
+                "start": 33
+              }
+            }
+          ],
+          "text": "According to Norfolk Southern, the company argues that its conduct and connection with Pennsylvania should make it reasonably anticipate being haled into court there."
+        }
+      ],
+      "heading": "Respondent (Norfolk Southern)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+      "evidence_ids": [
+        "ev-5149e9957088-0000-0000",
+        "ev-5149e9957088-0000-0005",
+        "ev-5149e9957088-0000-0003",
+        "ev-5149e9957088-0000-0006",
+        "ev-5149e9957088-0000-0002",
+        "ev-5149e9957088-0001-0001",
+        "ev-5149e9957088-0001-0004",
+        "ev-5149e9957088-0002-0001",
+        "ev-5149e9957088-0002-0003",
+        "ev-5149e9957088-0002-0004",
+        "ev-5149e9957088-0002-0006",
+        "ev-5149e9957088-0003-0001",
+        "ev-5149e9957088-0005-0000"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "17c21e7f79a06e3278d9174eccc41e891f7dcabb21978c156178e9e3dfaf0e58",
+      "evidence_ids": [
+        "ev-17c21e7f79a0-0000-0002",
+        "ev-17c21e7f79a0-0000-0003",
+        "ev-17c21e7f79a0-0000-0004",
+        "ev-17c21e7f79a0-0000-0006",
+        "ev-17c21e7f79a0-0001-0001",
+        "ev-17c21e7f79a0-0001-0002",
+        "ev-17c21e7f79a0-0001-0004",
+        "ev-17c21e7f79a0-0001-0006",
+        "ev-17c21e7f79a0-0001-0007",
+        "ev-17c21e7f79a0-0001-0008",
+        "ev-17c21e7f79a0-0002-0000",
+        "ev-17c21e7f79a0-0002-0001",
+        "ev-17c21e7f79a0-0002-0002",
+        "ev-17c21e7f79a0-0002-0003",
+        "ev-17c21e7f79a0-0002-0004",
+        "ev-17c21e7f79a0-0002-0009",
+        "ev-17c21e7f79a0-0003-0001",
+        "ev-17c21e7f79a0-0004-0000",
+        "ev-17c21e7f79a0-0004-0001",
+        "ev-17c21e7f79a0-0004-0002",
+        "ev-17c21e7f79a0-0004-0003",
+        "ev-17c21e7f79a0-0004-0006",
+        "ev-17c21e7f79a0-0004-0008",
+        "ev-17c21e7f79a0-0005-0000",
+        "ev-17c21e7f79a0-0005-0001",
+        "ev-17c21e7f79a0-0005-0002",
+        "ev-17c21e7f79a0-0005-0003",
+        "ev-17c21e7f79a0-0005-0005",
+        "ev-17c21e7f79a0-0005-0006",
+        "ev-17c21e7f79a0-0005-0007",
+        "ev-17c21e7f79a0-0005-0008"
+      ],
+      "pages": {
+        "end": 123,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T05:08:24.187474Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "The 'overstatement' check is false because the claim in the 'Why It Matters' section that the decision \"signaling possible future litigation on the issue\" goes beyond the supplied evidence; the evidence records only the dissent\u2019s criticism of historical support, not any prediction of future litigation."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+            "evidence_ids": [
+              "ev-5149e9957088-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The decision clarifies that consent\u2011by\u2011registration can create general jurisdiction, affecting how corporations assess legal exposure across states."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "5149e9957088896777c37e9b85b7b4f13b1039e3b1ca526cc9a4fff773c15bbc",
+            "evidence_ids": [
+              "ev-5149e9957088-0005-0000"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Barrett\u2019s dissent highlights ongoing disagreement about the historical basis for consent\u2011by\u2011registration, signaling possible future litigation on the issue."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

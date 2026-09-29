@@ -1,0 +1,372 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+            "evidence_ids": [
+              "ev-4beb59d5910b-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Harvard\u2019s admissions process begins with a \u201cfirst reader\u201d who assigns numerical scores in six categories, and the overall rating may consider an applicant\u2019s race."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-20-1199",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+            "evidence_ids": [
+              "ev-4beb59d5910b-0003-0000"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "The majority held that Harvard\u2019s admissions program must be invalidated under the Equal Protection Clause."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+            "evidence_ids": [
+              "ev-4beb59d5910b-0005-0000"
+            ],
+            "pages": {
+              "end": 51,
+              "start": 51
+            }
+          }
+        ],
+        "text": "The Court also held that UNC\u2019s admissions program cannot be reconciled with the guarantees of the Equal Protection Clause."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+            "evidence_ids": [
+              "ev-4beb59d5910b-0004-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "The majority emphasized that race may never be used as a negative factor or as a stereotype."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T04:04:41.118935Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "47499ebb140529313b2a34a93621a62fce283a3cf05e8faadbbc5b73426d01b9",
+      "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "47499ebb140529313b2a34a93621a62fce283a3cf05e8faadbbc5b73426d01b9",
+            "evidence_ids": [
+              "ev-47499ebb1405-0001-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch inquired about the extent to which the Court should defer to a university\u2019s compelling interest in diversity."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+            "evidence_ids": [
+              "ev-4beb59d5910b-0003-0000"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "The Supreme Court held that Harvard University's race\u2011based admissions program violates the Equal Protection Clause of the Fourteenth Amendment."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+            "evidence_ids": [
+              "ev-4beb59d5910b-0003-0000"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "The Court also held that the University of North Carolina\u2019s race\u2011based admissions program is unconstitutional for the same reason."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+            "evidence_ids": [
+              "ev-4beb59d5910b-0004-0000"
+            ],
+            "pages": {
+              "end": 39,
+              "start": 39
+            }
+          }
+        ],
+        "text": "The majority said that race may never be used as a negative factor or as a stereotype in admissions."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Norris",
+          "citations": [
+            {
+              "document_hash": "47499ebb140529313b2a34a93621a62fce283a3cf05e8faadbbc5b73426d01b9",
+              "evidence_ids": [
+                "ev-47499ebb1405-0001-0000",
+                "ev-47499ebb1405-0001-0001"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 23
+              }
+            }
+          ],
+          "text": "According to Mr. Norris, the petitioner argues that a race\u2011neutral alternative based on socioeconomic status would increase Asian, Hispanic, and Black enrollment."
+        }
+      ],
+      "heading": "Students for Fair Admissions (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Harvard",
+          "citations": [
+            {
+              "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+              "evidence_ids": [
+                "ev-4beb59d5910b-0004-0001"
+              ],
+              "pages": {
+                "end": 40,
+                "start": 40
+              }
+            }
+          ],
+          "text": "Harvard says race is not a negative factor because it does not affect many admissions decisions."
+        },
+        {
+          "attribution": "Harvard",
+          "citations": [
+            {
+              "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+              "evidence_ids": [
+                "ev-4beb59d5910b-0004-0005"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Harvard, harvard reviews its admissions program regularly to determine whether it remains necessary."
+        }
+      ],
+      "heading": "Harvard (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "University of North Carolina",
+          "citations": [
+            {
+              "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+              "evidence_ids": [
+                "ev-4beb59d5910b-0004-0003"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to University of North Carolina, uNC frames its admissions challenge as increasing enrollment of underrepresented minorities."
+        }
+      ],
+      "heading": "University of North Carolina (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "American Bar Association",
+          "citations": [
+            {
+              "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+              "evidence_ids": [
+                "ev-4beb59d5910b-0020-0001"
+              ],
+              "pages": {
+                "end": 202,
+                "start": 202
+              }
+            }
+          ],
+          "text": "According to American Bar Association, amici state that race\u2011conscious admissions are critical for providing equitable public services and a diverse legal profession."
+        }
+      ],
+      "heading": "United States (Amicus)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "47499ebb140529313b2a34a93621a62fce283a3cf05e8faadbbc5b73426d01b9",
+      "evidence_ids": [
+        "ev-47499ebb1405-0000-0005"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+      "evidence_ids": [
+        "ev-4beb59d5910b-0000-0002"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T04:09:22.920073Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4beb59d5910b71771b9a671684a3dca9ce8fd2483d4dbd8a71cc129ea0182911",
+            "evidence_ids": [
+              "ev-4beb59d5910b-0003-0000"
+            ],
+            "pages": {
+              "end": 34,
+              "start": 34
+            }
+          }
+        ],
+        "text": "The ruling requires Harvard and UNC to change their admissions processes, eliminating the use of race as a factor."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
