@@ -1,0 +1,629 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f9681d83b18ec27196b249b714269cded64cf31c4159df0d45a5463ed299cb1",
+            "evidence_ids": [
+              "ev-5f9681d83b18-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          },
+          {
+            "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+            "evidence_ids": [
+              "ev-aa69b4e4a284-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Morgan\u2019s employment agreement required arbitration of any dispute, raising the question of whether Sundance could waive that right by filing a motion to dismiss and omitting any reference to arbitration."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f9681d83b18ec27196b249b714269cded64cf31c4159df0d45a5463ed299cb1",
+            "evidence_ids": [
+              "ev-5f9681d83b18-0000-0007"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The Court needed to decide whether a new procedural rule could be fashioned under the FAA\u2019s arbitration\u2011favoring policy."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-328",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f9681d83b18ec27196b249b714269cded64cf31c4159df0d45a5463ed299cb1",
+            "evidence_ids": [
+              "ev-5f9681d83b18-0000-0007"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The Court held that it may not make up a new procedural rule based on the FAA's policy favoring arbitration."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "5f9681d83b18ec27196b249b714269cded64cf31c4159df0d45a5463ed299cb1",
+            "evidence_ids": [
+              "ev-5f9681d83b18-0000-0008"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, judge Colloton dissented, arguing that Sundance had led Morgan to waste time and money and engaged in fruitless mediation."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T22:50:06.200115Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5f9681d83b18ec27196b249b714269cded64cf31c4159df0d45a5463ed299cb1",
+      "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+            "evidence_ids": [
+              "ev-aa69b4e4a284-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether there is a default under Heritage Reporting Corporation."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+            "evidence_ids": [
+              "ev-aa69b4e4a284-0002-0001"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice Barrett, justice Barrett questioned whether Iowa law\u2019s prejudice requirement would defeat an estoppel argument."
+      },
+      {
+        "attribution": "Justice KAGAN",
+        "citations": [
+          {
+            "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+            "evidence_ids": [
+              "ev-aa69b4e4a284-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "According to Justice KAGAN, justice Kagan inquired about the source of the federal common\u2011law rule defining \u201cdefault.\u201d"
+      },
+      {
+        "attribution": "Justice KAGAN",
+        "citations": [
+          {
+            "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+            "evidence_ids": [
+              "ev-aa69b4e4a284-0003-0002"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "According to Justice KAGAN, justice Kagan suggested the rule might be \u201cmade up\u201d because it draws an arbitrary line about default."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+            "evidence_ids": [
+              "ev-aa69b4e4a284-0003-0004"
+            ],
+            "pages": {
+              "end": 67,
+              "start": 67
+            }
+          }
+        ],
+        "text": "Justice Breyer noted that the parties may have waited too long to ask for relief."
+      },
+      {
+        "attribution": "Justice SOTOMAYOR",
+        "citations": [
+          {
+            "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+            "evidence_ids": [
+              "ev-aa69b4e4a284-0003-0006"
+            ],
+            "pages": {
+              "end": 71,
+              "start": 71
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked why the conduct should not be considered a waiver of a known right."
+      },
+      {
+        "attribution": "JUSTICE KAVANAUGH",
+        "citations": [
+          {
+            "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+            "evidence_ids": [
+              "ev-aa69b4e4a284-0003-0010"
+            ],
+            "pages": {
+              "end": 79,
+              "start": 79
+            }
+          }
+        ],
+        "text": "According to JUSTICE KAVANAUGH, justice Kavanaugh requested an explanation of how Rule\u202f15 analogizes to the present dispute."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f9681d83b18ec27196b249b714269cded64cf31c4159df0d45a5463ed299cb1",
+            "evidence_ids": [
+              "ev-5f9681d83b18-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Robyn Morgan, an hourly employee at a Taco\u202fBell franchise owned by Sundance, Inc., signed an agreement to arbitrate any employment dispute."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5f9681d83b18ec27196b249b714269cded64cf31c4159df0d45a5463ed299cb1",
+            "evidence_ids": [
+              "ev-5f9681d83b18-0000-0007"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The Court held that it may not create a new procedural rule based on the Federal Arbitration Act\u2019s (FAA) policy favoring arbitration."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "5f9681d83b18ec27196b249b714269cded64cf31c4159df0d45a5463ed299cb1",
+            "evidence_ids": [
+              "ev-5f9681d83b18-0000-0008"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, judge Colloton dissented, arguing that Sundance had led Morgan to waste time and money and engaged in fruitless mediation."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Karla A. Gilbride (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+              "evidence_ids": [
+                "ev-aa69b4e4a284-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Karla A. Gilbride (Petitioner), according to Karla A. Gilbride (Petitioner), section\u202f2 of the Federal Arbitration Act requires that an arbitration agreement be enforced unless a generally applicable contract defense makes it unenforceable."
+        },
+        {
+          "attribution": "Karla A. Gilbride (Petitioner)",
+          "citations": [
+            {
+              "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+              "evidence_ids": [
+                "ev-aa69b4e4a284-0000-0003"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Karla A. Gilbride (Petitioner), according to Karla A. Gilbride (Petitioner), sundance intentionally relinquished its contractual arbitration rights by asking a federal judge to dismiss the case and filing an answer that omitted any reference to arbitration; those actions should constitute a waiver and place Sundance in default under Section\u202f3 of the FAA."
+        },
+        {
+          "attribution": "MS. GILBRIDE",
+          "citations": [
+            {
+              "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+              "evidence_ids": [
+                "ev-aa69b4e4a284-0003-0014"
+              ],
+              "pages": {
+                "end": 84,
+                "start": 84
+              }
+            }
+          ],
+          "text": "According to MS. GILBRIDE, there should be no prejudice requirement; the FAA\u2019s structure indicates that waiver questions should be decided in a summary manner."
+        }
+      ],
+      "heading": "Petitioner (Robyn Morgan)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Clement",
+          "citations": [
+            {
+              "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+              "evidence_ids": [
+                "ev-aa69b4e4a284-0002-0000"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Mr. Clement, neither the FAA nor Iowa state law supports the petitioner\u2019s rule that a motion to stay litigation in favor of arbitration must be filed expeditiously or be lost forever; Section\u202f3 of the FAA directs courts to grant such motions unless the stay applicant is in default."
+        },
+        {
+          "attribution": "Mr. CLEMENT",
+          "citations": [
+            {
+              "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+              "evidence_ids": [
+                "ev-aa69b4e4a284-0003-0005"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to Mr. CLEMENT, most circuits follow a two\u2011step analysis: first determine whether the party knew about the arbitration agreement, then assess whether the party acted inconsistently with that agreement."
+        },
+        {
+          "attribution": "Mr. CLEMENT",
+          "citations": [
+            {
+              "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+              "evidence_ids": [
+                "ev-aa69b4e4a284-0003-0009"
+              ],
+              "pages": {
+                "end": 78,
+                "start": 78
+              }
+            }
+          ],
+          "text": "According to Mr. CLEMENT, incentives should consider the party that first defaults or first violates the arbitration agreement."
+        },
+        {
+          "attribution": "Sundance",
+          "citations": [
+            {
+              "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+              "evidence_ids": [
+                "ev-aa69b4e4a284-0004-0000"
+              ],
+              "pages": {
+                "end": 85,
+                "start": 85
+              }
+            }
+          ],
+          "text": "Sundance argues that the appropriate standard for staying litigation should be \u201csubstantial participation in discovery.\u201d"
+        }
+      ],
+      "heading": "Respondent (Sundance, Inc.)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5f9681d83b18ec27196b249b714269cded64cf31c4159df0d45a5463ed299cb1",
+      "evidence_ids": [
+        "ev-5f9681d83b18-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "5f9681d83b18ec27196b249b714269cded64cf31c4159df0d45a5463ed299cb1",
+      "evidence_ids": [
+        "ev-5f9681d83b18-0000-0008"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "5f9681d83b18ec27196b249b714269cded64cf31c4159df0d45a5463ed299cb1",
+      "evidence_ids": [
+        "ev-5f9681d83b18-0000-0007"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 10
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0000-0003"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0002-0000"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0003-0005"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0003-0009"
+      ],
+      "pages": {
+        "end": 78,
+        "start": 78
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0004-0000"
+      ],
+      "pages": {
+        "end": 85,
+        "start": 85
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0001-0001"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0002-0001"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0003-0000"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 65
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0003-0002"
+      ],
+      "pages": {
+        "end": 66,
+        "start": 66
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0003-0004"
+      ],
+      "pages": {
+        "end": 67,
+        "start": 67
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0003-0006"
+      ],
+      "pages": {
+        "end": 71,
+        "start": 71
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0003-0010"
+      ],
+      "pages": {
+        "end": 79,
+        "start": 79
+      }
+    },
+    {
+      "document_hash": "aa69b4e4a284aa033510dcd6df25541de416a04956274c507d389ccdb729b017",
+      "evidence_ids": [
+        "ev-aa69b4e4a284-0003-0014"
+      ],
+      "pages": {
+        "end": 84,
+        "start": 84
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T23:03:38.016148Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim in the Background & Legal Question section that Sundance could waive the arbitration right by filing a motion to dismiss and omitting any reference to arbitration is not backed by any supplied evidence.",
+      "Overstatement check failed: the same claim overstates the record by asserting a waiver question that is not evidenced in the provided documents."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

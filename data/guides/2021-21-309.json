@@ -1,0 +1,359 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "694d9e9fed03aca856e1ce141a4c9e7f5e1d6475ea75467b87ffad8bb5063f0c",
+            "evidence_ids": [
+              "ev-694d9e9fed03-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The question presented is whether, under \u00a7\u202f1 of the Federal Arbitration Act, Latrice Saxon belongs to a \u201cclass of workers engaged in foreign or interstate commerce\u201d that is exempted from the Act\u2019s coverage."
+      }
+    ],
+    "heading": "Background & Question Presented",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-309",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T22:44:08.650623Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+      "694d9e9fed03aca856e1ce141a4c9e7f5e1d6475ea75467b87ffad8bb5063f0c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+            "evidence_ids": [
+              "ev-2ddef3554d3b-0000-0004"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked: \u201cNow what evidence is there that railroad workers who did that were or were not covered by this statutory language? And, if they were covered by it, do you lose?\u201d"
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+            "evidence_ids": [
+              "ev-2ddef3554d3b-0001-0002"
+            ],
+            "pages": {
+              "end": 42,
+              "start": 42
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked: \u201cWhat about ticket agents? Are they included as transport workers under your approach?\u201d"
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+            "evidence_ids": [
+              "ev-2ddef3554d3b-0001-0004"
+            ],
+            "pages": {
+              "end": 44,
+              "start": 44
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked: \u201cIn your answers to the Chief Justice, you have two arguments, alternative arguments. Are you distinguishing your broader \u2018all airline workers\u2019 from your narrower argument, or am I misreading how you constructed your \u2013 your argument?\u201d"
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+            "evidence_ids": [
+              "ev-2ddef3554d3b-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh followed up: \u201cBut, on your narrower argument, does that bring in then the gate ticket agents, or is that a question for another day, or where does that stand?\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+            "evidence_ids": [
+              "ev-2ddef3554d3b-0002-0003"
+            ],
+            "pages": {
+              "end": 58,
+              "start": 58
+            }
+          }
+        ],
+        "text": "Justice Alito asked: \u201cWhat \u2013 to what industries would it apply besides the airlines?\u201d"
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+            "evidence_ids": [
+              "ev-2ddef3554d3b-0002-0005"
+            ],
+            "pages": {
+              "end": 61,
+              "start": 61
+            }
+          }
+        ],
+        "text": "Justice Breyer asked: \u201cHow \u2013 how do you distinguish \u2013 trucking is in \u2013 you say trucking is in the exemption.\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+            "evidence_ids": [
+              "ev-2ddef3554d3b-0002-0006"
+            ],
+            "pages": {
+              "end": 64,
+              "start": 64
+            }
+          }
+        ],
+        "text": "Justice Alito asked: \u201cIf everybody who worked for the Cunard line was covered, what would be the point of \u2013 or that's not a \u2013 that's a passenger shipping line.\u201d"
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+            "evidence_ids": [
+              "ev-2ddef3554d3b-0002-0007"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "Justice Alito further asked: \u201cSuppose it said seamen, railroad engineers, and others engaged in interstate or foreign commerce. Would everybody who worked for the railroad be covered?\u201d"
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+            "evidence_ids": [
+              "ev-2ddef3554d3b-0003-0000"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Kagan asked: \u201cSo would \u2013 would \u2013 assume two things for me.\u201d"
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+            "evidence_ids": [
+              "ev-2ddef3554d3b-0003-0002"
+            ],
+            "pages": {
+              "end": 68,
+              "start": 68
+            }
+          }
+        ],
+        "text": "According to Justice Gorsuch, justice Gorsuch added: \u201cI have a historical question you \u2013\u201d"
+      }
+    ],
+    "heading": "Oral Argument \u2013 Questions from the Justices",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "694d9e9fed03aca856e1ce141a4c9e7f5e1d6475ea75467b87ffad8bb5063f0c",
+            "evidence_ids": [
+              "ev-694d9e9fed03-0000-0002"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Supreme Court held that Latrice Saxon belongs to a class of workers engaged in foreign or interstate commerce and is therefore exempt from the Federal Arbitration Act\u2019s coverage."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Southwest Airlines",
+          "citations": [
+            {
+              "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+              "evidence_ids": [
+                "ev-2ddef3554d3b-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Southwest Airlines, section\u202f1 of the Federal Arbitration Act exempts only classes of workers that work on an instrumentality of foreign or interstate commerce, such as a plane, ship, or train, as it moves goods or people across borders."
+        },
+        {
+          "attribution": "Southwest",
+          "citations": [
+            {
+              "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+              "evidence_ids": [
+                "ev-2ddef3554d3b-0002-0008"
+              ],
+              "pages": {
+                "end": 54,
+                "start": 54
+              }
+            }
+          ],
+          "text": "Southwest argues that the cases cited by the Court are not under the specific statute at issue because that statute did not exist when those cases were decided, but Congress deliberately used the language \u201cengaged in interstate commerce\u201d in the current statute."
+        }
+      ],
+      "heading": "Southwest Airlines (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "2ddef3554d3b7430bceec138581bb714ad46b67b2df3695672b091edc6e7f720",
+      "evidence_ids": [
+        "ev-2ddef3554d3b-0000-0000",
+        "ev-2ddef3554d3b-0000-0001",
+        "ev-2ddef3554d3b-0000-0004",
+        "ev-2ddef3554d3b-0001-0002",
+        "ev-2ddef3554d3b-0001-0004",
+        "ev-2ddef3554d3b-0002-0000",
+        "ev-2ddef3554d3b-0002-0008",
+        "ev-2ddef3554d3b-0002-0003",
+        "ev-2ddef3554d3b-0002-0005",
+        "ev-2ddef3554d3b-0002-0006",
+        "ev-2ddef3554d3b-0002-0007",
+        "ev-2ddef3554d3b-0003-0000",
+        "ev-2ddef3554d3b-0003-0002",
+        "ev-2ddef3554d3b-0003-0003"
+      ],
+      "pages": {
+        "end": 72,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "694d9e9fed03aca856e1ce141a4c9e7f5e1d6475ea75467b87ffad8bb5063f0c",
+      "evidence_ids": [
+        "ev-694d9e9fed03-0000-0003",
+        "ev-694d9e9fed03-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T22:50:06.189435Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

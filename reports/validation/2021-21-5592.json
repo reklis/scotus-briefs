@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "case_id": "2021-21-5592",
+  "checks": {
+    "attribution": true,
+    "case_identity": true,
+    "citation_targets": true,
+    "document_currency": true,
+    "lifecycle": true,
+    "model_attribution": true,
+    "model_opinion_distinction": true,
+    "model_oral_argument_characterization": true,
+    "model_overstatement": false,
+    "model_support": false,
+    "opinion_distinction": true,
+    "oral_argument": true,
+    "page_ranges": true,
+    "provenance": true,
+    "quality_completeness": true,
+    "quality_factual_accuracy": false,
+    "quality_neutrality": true,
+    "quality_readability": true,
+    "quality_restraint": true,
+    "quality_traceability": false,
+    "schema": true
+  },
+  "messages": [
+    "Support check failed: the oral\u2011argument claim attributes to Justice Barrett a question about both the State\u2019s compelling interest and less\u2011restrictive means, but the transcript evidence only records a question about \u201cleast restrictive alternatives\u201d and does not show a direct inquiry about whether the State\u2019s interest is compelling.",
+    "Overstatement check failed: the overview claim that \u201cRamirez\u2019s claim \u2026 was granted\u201d overstates the Court\u2019s holding, which merely states that Ramirez is \u201clikely to prevail\u201d and is entitled to preliminary relief, not that the claim has been finally granted."
+  ],
+  "quality_scores": {
+    "completeness": 0.9,
+    "factual_accuracy": 0.85,
+    "neutrality": 0.95,
+    "readability": 0.9,
+    "restraint": 0.95,
+    "traceability": 0.88
+  }
+}

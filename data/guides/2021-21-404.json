@@ -1,0 +1,632 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+            "evidence_ids": [
+              "ev-11e8d038e880-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          },
+          {
+            "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+            "evidence_ids": [
+              "ev-11e8d038e880-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          },
+          {
+            "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+            "evidence_ids": [
+              "ev-11e8d038e880-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Washington enacted a law that allows the state to apply its workers\u2019 compensation system to federal premises, raising the question whether the law violates the Supremacy Clause by discriminating against the Federal Government."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-404",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+            "evidence_ids": [
+              "ev-11e8d038e880-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Court held that Washington\u2019s law is unconstitutional under the Supremacy Clause."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+            "evidence_ids": [
+              "ev-11e8d038e880-0001-0003"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The Court found Washington\u2019s other arguments unconvincing."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+            "evidence_ids": [
+              "ev-11e8d038e880-0001-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The Court concluded that Washington\u2019s law facially discriminates against the Federal Government and its contractors, and because \u00a73172 does not clearly waive the Government\u2019s immunity, the law is unconstitutional under the Supremacy Clause."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T23:03:38.034421Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+      "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+            "evidence_ids": [
+              "ev-8a29967361ad-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Kagan asked what the statute would have to look like to mean what Washington says it means."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+            "evidence_ids": [
+              "ev-8a29967361ad-0001-0005"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether an otherwise existing generally applicable law can be applied to federal facilities under \u00a73172."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+            "evidence_ids": [
+              "ev-8a29967361ad-0001-0003"
+            ],
+            "pages": {
+              "end": 32,
+              "start": 32
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether the case would be stronger if the Washington Supreme Court had decided it."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+            "evidence_ids": [
+              "ev-8a29967361ad-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Breyer asked about the authority for the claim under Washington law."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+            "evidence_ids": [
+              "ev-8a29967361ad-0002-0001"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether the statute allows a state to single out a federal facility by name."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+            "evidence_ids": [
+              "ev-8a29967361ad-0002-0002"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether the state has exclusive jurisdiction except as Congress may allow."
+      },
+      {
+        "attribution": "Mr. Stewart",
+        "citations": [
+          {
+            "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+            "evidence_ids": [
+              "ev-8a29967361ad-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "According to Mr. Stewart, mr. Stewart noted that even when Congress clearly waives immunity, disputes about the scope of that waiver require a clear\u2011statement requirement."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+            "evidence_ids": [
+              "ev-8a29967361ad-0003-0000"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan explained that \u00a73172(c) does not affect federal employees, only federal contract workers."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+            "evidence_ids": [
+              "ev-8a29967361ad-0003-0001"
+            ],
+            "pages": {
+              "end": 65,
+              "start": 65
+            }
+          }
+        ],
+        "text": "According to Justice Breyer, justice Breyer clarified that the complaint is not that Washington is treating workers too generously."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+            "evidence_ids": [
+              "ev-11e8d038e880-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Supreme Court held that Washington\u2019s workers\u2019 compensation law is unconstitutional because it discriminates against the Federal Government, violating the Supremacy Clause."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+            "evidence_ids": [
+              "ev-11e8d038e880-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The decision could affect between $17\u202fmillion and $37\u202fmillion in workers\u2019 compensation claims that the United States seeks to recoup or avoid paying."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+              "evidence_ids": [
+                "ev-11e8d038e880-0000-0001"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to United States, washington\u2019s law discriminates against the Federal Government and therefore violates the Supremacy Clause."
+        }
+      ],
+      "heading": "United States (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Washington",
+          "citations": [
+            {
+              "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+              "evidence_ids": [
+                "ev-11e8d038e880-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Washington, the waiver language in the statute only permits the extension of generally applicable workers\u2019 compensation laws to federal premises, not a discriminatory scheme."
+        },
+        {
+          "attribution": "Washington",
+          "citations": [
+            {
+              "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+              "evidence_ids": [
+                "ev-11e8d038e880-0001-0001"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "According to Washington, other congressional waivers of intergovernmental immunity explicitly maintain the prohibition against discriminatory state laws."
+        }
+      ],
+      "heading": "Washington (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+      "evidence_ids": [
+        "ev-11e8d038e880-0000-0001"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+      "evidence_ids": [
+        "ev-11e8d038e880-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+      "evidence_ids": [
+        "ev-11e8d038e880-0000-0004"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+      "evidence_ids": [
+        "ev-11e8d038e880-0000-0005"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+      "evidence_ids": [
+        "ev-11e8d038e880-0001-0001"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+      "evidence_ids": [
+        "ev-11e8d038e880-0001-0003"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+      "evidence_ids": [
+        "ev-11e8d038e880-0001-0002"
+      ],
+      "pages": {
+        "end": 14,
+        "start": 14
+      }
+    },
+    {
+      "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+      "evidence_ids": [
+        "ev-11e8d038e880-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "evidence_ids": [
+        "ev-8a29967361ad-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "evidence_ids": [
+        "ev-8a29967361ad-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "evidence_ids": [
+        "ev-8a29967361ad-0001-0000"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "evidence_ids": [
+        "ev-8a29967361ad-0001-0001"
+      ],
+      "pages": {
+        "end": 26,
+        "start": 26
+      }
+    },
+    {
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "evidence_ids": [
+        "ev-8a29967361ad-0001-0005"
+      ],
+      "pages": {
+        "end": 29,
+        "start": 29
+      }
+    },
+    {
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "evidence_ids": [
+        "ev-8a29967361ad-0001-0003"
+      ],
+      "pages": {
+        "end": 32,
+        "start": 32
+      }
+    },
+    {
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "evidence_ids": [
+        "ev-8a29967361ad-0002-0000"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "evidence_ids": [
+        "ev-8a29967361ad-0002-0001"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "evidence_ids": [
+        "ev-8a29967361ad-0002-0002"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 49
+      }
+    },
+    {
+      "document_hash": "8a29967361ad198168098af207e6d7045f634a911a4a48708c8cd91f6d31156d",
+      "evidence_ids": [
+        "ev-8a29967361ad-0003-0000",
+        "ev-8a29967361ad-0003-0001"
+      ],
+      "pages": {
+        "end": 65,
+        "start": 65
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T23:14:22.519240Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+            "evidence_ids": [
+              "ev-11e8d038e880-0000-0004"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The ruling reinforces the Supremacy Clause by preventing states from enacting laws that discriminate against the Federal Government."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "11e8d038e8804c511df6f790afbbca61922aacab96865312e740ae0cc38bb290",
+            "evidence_ids": [
+              "ev-11e8d038e880-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The United States asserts that the decision could prevent it from paying up to $37\u202fmillion in workers\u2019 compensation claims."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

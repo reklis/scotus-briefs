@@ -1,0 +1,455 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "eced1b5b6fdff9d7d10d981c7a09b02fdde851a83dd48cfe364fc90e1aad17dd",
+            "evidence_ids": [
+              "ev-eced1b5b6fdf-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether a judge enforcing a state law by merely adjudicating a case counts as \u201cenforcing\u201d that law."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-463",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5bfc2df3943f04277b26094114526ecbba2b7f2ed6dc8b51fdde62743965d4a6",
+            "evidence_ids": [
+              "ev-5bfc2df3943f-0002-0000"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The court held that there is no unqualified right to pre\u2011enforcement review of constitutional claims in federal court."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "5bfc2df3943f04277b26094114526ecbba2b7f2ed6dc8b51fdde62743965d4a6",
+            "evidence_ids": [
+              "ev-5bfc2df3943f-0002-0002"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Thomas (concurring) disagreed with the majority's conclusion that the four licensing\u2011official respondents are appropriate defendants under Ex parte Young."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "5bfc2df3943f04277b26094114526ecbba2b7f2ed6dc8b51fdde62743965d4a6",
+            "evidence_ids": [
+              "ev-5bfc2df3943f-0004-0004"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "Justice Thomas (concurring) noted that the Court has now foreclosed the most straightforward route for relief under its precedents."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T23:55:18.531032Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5bfc2df3943f04277b26094114526ecbba2b7f2ed6dc8b51fdde62743965d4a6",
+      "eced1b5b6fdff9d7d10d981c7a09b02fdde851a83dd48cfe364fc90e1aad17dd"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "eced1b5b6fdff9d7d10d981c7a09b02fdde851a83dd48cfe364fc90e1aad17dd",
+            "evidence_ids": [
+              "ev-eced1b5b6fdf-0001-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether a judge merely adjudicating a case counts as \u201cenforcing\u201d a state law."
+      },
+      {
+        "attribution": "Justice Breyer",
+        "citations": [
+          {
+            "document_hash": "eced1b5b6fdff9d7d10d981c7a09b02fdde851a83dd48cfe364fc90e1aad17dd",
+            "evidence_ids": [
+              "ev-eced1b5b6fdf-0002-0002"
+            ],
+            "pages": {
+              "end": 56,
+              "start": 56
+            }
+          }
+        ],
+        "text": "Justice Breyer asked about the broader implications of the \u201croadmap\u201d argument raised by the parties."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "eced1b5b6fdff9d7d10d981c7a09b02fdde851a83dd48cfe364fc90e1aad17dd",
+            "evidence_ids": [
+              "ev-eced1b5b6fdf-0003-0001"
+            ],
+            "pages": {
+              "end": 73,
+              "start": 73
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether the decision could become a model for suppressing other constitutional rights, especially the Second Amendment."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5bfc2df3943f04277b26094114526ecbba2b7f2ed6dc8b51fdde62743965d4a6",
+            "evidence_ids": [
+              "ev-5bfc2df3943f-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Senate Bill\u202f8 (S.B.\u202f8) directs enforcement of abortion restrictions through private civil actions rather than state officials."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5bfc2df3943f04277b26094114526ecbba2b7f2ed6dc8b51fdde62743965d4a6",
+            "evidence_ids": [
+              "ev-5bfc2df3943f-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The petitioners, abortion providers, filed a pre\u2011enforcement review suit claiming S.B.\u202f8 violates the U.S. Constitution."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "5bfc2df3943f04277b26094114526ecbba2b7f2ed6dc8b51fdde62743965d4a6",
+              "evidence_ids": [
+                "ev-5bfc2df3943f-0001-0001"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "According to Petitioners, petitioners seek an injunction preventing state\u2011court clerks from docketing S.B.\u202f8 cases and judges from hearing them."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "eced1b5b6fdff9d7d10d981c7a09b02fdde851a83dd48cfe364fc90e1aad17dd",
+              "evidence_ids": [
+                "ev-eced1b5b6fdf-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "Petitioners argue that S.B.\u202f8 deliberately prohibits a constitutional right and evades judicial protection."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "eced1b5b6fdff9d7d10d981c7a09b02fdde851a83dd48cfe364fc90e1aad17dd",
+              "evidence_ids": [
+                "ev-eced1b5b6fdf-0002-0000"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "Respondents contend that the individuals sued are not proper defendants under Article\u202fIII and equitable principles."
+        },
+        {
+          "attribution": "Respondents",
+          "citations": [
+            {
+              "document_hash": "eced1b5b6fdff9d7d10d981c7a09b02fdde851a83dd48cfe364fc90e1aad17dd",
+              "evidence_ids": [
+                "ev-eced1b5b6fdf-0002-0003"
+              ],
+              "pages": {
+                "end": 52,
+                "start": 52
+              }
+            }
+          ],
+          "text": "Respondents argue that the suit would expand federal\u2011court access, which only Congress may provide."
+        }
+      ],
+      "heading": "Respondents",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State of Texas",
+          "citations": [
+            {
+              "document_hash": "eced1b5b6fdff9d7d10d981c7a09b02fdde851a83dd48cfe364fc90e1aad17dd",
+              "evidence_ids": [
+                "ev-eced1b5b6fdf-0003-0003"
+              ],
+              "pages": {
+                "end": 78,
+                "start": 78
+              }
+            }
+          ],
+          "text": "The State of Texas says its courts will faithfully apply this Court\u2019s decisions to federal cases."
+        }
+      ],
+      "heading": "State of Texas",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Heritage Reporting Corp.",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Firearms Policy Coalition",
+          "citations": [
+            {
+              "document_hash": "5bfc2df3943f04277b26094114526ecbba2b7f2ed6dc8b51fdde62743965d4a6",
+              "evidence_ids": [
+                "ev-5bfc2df3943f-0000-0005"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Firearms Policy Coalition, the amicus brief urged reversal of the district court\u2019s denial."
+        }
+      ],
+      "heading": "Firearms Policy Coalition (Amicus)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5bfc2df3943f04277b26094114526ecbba2b7f2ed6dc8b51fdde62743965d4a6",
+      "evidence_ids": [
+        "ev-5bfc2df3943f-0000-0000",
+        "ev-5bfc2df3943f-0000-0001",
+        "ev-5bfc2df3943f-0002-0000",
+        "ev-5bfc2df3943f-0002-0002",
+        "ev-5bfc2df3943f-0004-0004"
+      ],
+      "pages": {
+        "end": 90,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "eced1b5b6fdff9d7d10d981c7a09b02fdde851a83dd48cfe364fc90e1aad17dd",
+      "evidence_ids": [
+        "ev-eced1b5b6fdf-0000-0000",
+        "ev-eced1b5b6fdf-0000-0002",
+        "ev-eced1b5b6fdf-0000-0003",
+        "ev-eced1b5b6fdf-0000-0004",
+        "ev-eced1b5b6fdf-0001-0000",
+        "ev-eced1b5b6fdf-0001-0002",
+        "ev-eced1b5b6fdf-0001-0003",
+        "ev-eced1b5b6fdf-0002-0000",
+        "ev-eced1b5b6fdf-0002-0001",
+        "ev-eced1b5b6fdf-0002-0002",
+        "ev-eced1b5b6fdf-0002-0003",
+        "ev-eced1b5b6fdf-0003-0000",
+        "ev-eced1b5b6fdf-0003-0001",
+        "ev-eced1b5b6fdf-0003-0002",
+        "ev-eced1b5b6fdf-0003-0003",
+        "ev-eced1b5b6fdf-0003-0004",
+        "ev-eced1b5b6fdf-0004-0000",
+        "ev-eced1b5b6fdf-0004-0001",
+        "ev-eced1b5b6fdf-0004-0002",
+        "ev-eced1b5b6fdf-0004-0003",
+        "ev-eced1b5b6fdf-0004-0005",
+        "ev-eced1b5b6fdf-0004-0006"
+      ],
+      "pages": {
+        "end": 90,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T00:07:29.424505Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": false,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "sources[0]: cited page is unavailable or outside the PDF",
+      "Adversarial verification skipped after deterministic failure",
+      "sources[0]: cited page is unavailable or outside the PDF"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Heritage Reporting Corporation",
+        "citations": [
+          {
+            "document_hash": "eced1b5b6fdff9d7d10d981c7a09b02fdde851a83dd48cfe364fc90e1aad17dd",
+            "evidence_ids": [
+              "ev-eced1b5b6fdf-0001-0003"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "If the Court does not allow the suit, it could become a model for other states to suppress constitutional rights."
+      },
+      {
+        "attribution": "Firearms Policy Coalition",
+        "citations": [
+          {
+            "document_hash": "eced1b5b6fdff9d7d10d981c7a09b02fdde851a83dd48cfe364fc90e1aad17dd",
+            "evidence_ids": [
+              "ev-eced1b5b6fdf-0003-0002"
+            ],
+            "pages": {
+              "end": 73,
+              "start": 73
+            }
+          }
+        ],
+        "text": "The Firearms Policy Coalition warned that the decision could be used to suppress other rights, including the Second Amendment."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

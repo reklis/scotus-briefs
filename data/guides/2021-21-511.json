@@ -1,0 +1,611 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+            "evidence_ids": [
+              "ev-8efa05321ad4-0001-0002"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The district court entered an order directing the State to transport Twyford to a medical facility to aid its adjudication of his habeas petition."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+            "evidence_ids": [
+              "ev-8efa05321ad4-0002-0001"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The Court granted review to decide whether and under what circumstances a federal district court may order a State to transport a prisoner to a hospital for testing."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+            "evidence_ids": [
+              "ev-14614e2953d7-0001-0000"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "In certain rare circumstances, a federal court may order a state prisoner transported under the All Writs Act."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-511",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+            "evidence_ids": [
+              "ev-8efa05321ad4-0002-0000"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Gorsuch dissented, stating he would not reach the merits of the petition."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+            "evidence_ids": [
+              "ev-8efa05321ad4-0001-0000"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The Supreme Court held that the district court erred in ordering Twyford's transport."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T00:15:41.135825Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+            "evidence_ids": [
+              "ev-14614e2953d7-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Thomas asked how to determine if the writ is agreeable to the usages and principles of law without a common\u2011law analogue."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+            "evidence_ids": [
+              "ev-14614e2953d7-0002-0002"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, justice Thomas questioned the lack of a limiting principle in the Court\u2019s approach."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+            "evidence_ids": [
+              "ev-14614e2953d7-0002-0004"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked if the issue had been presented to the lower court."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+            "evidence_ids": [
+              "ev-14614e2953d7-0002-0003"
+            ],
+            "pages": {
+              "end": 52,
+              "start": 52
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether a vague request for testing is sufficient."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+            "evidence_ids": [
+              "ev-8efa05321ad4-0000-0007"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "The Supreme Court granted certiorari to review the district court's order directing the State to transport prisoner Twyford to a medical facility."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+            "evidence_ids": [
+              "ev-8efa05321ad4-0002-0000"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Gorsuch dissented, stating he would not reach the merits of the petition."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+            "evidence_ids": [
+              "ev-8efa05321ad4-0001-0000"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The Supreme Court held that the district court erred in ordering Twyford's transport."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Benjamin M. Flowers)",
+          "citations": [
+            {
+              "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+              "evidence_ids": [
+                "ev-14614e2953d7-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Benjamin M. Flowers), according to Petitioner (Benjamin M. Flowers), justice Jackson warned against giving the convict population new and unprecedented opportunities to litigate until they serve their sentences."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+              "evidence_ids": [
+                "ev-14614e2953d7-0002-0000"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Petitioner, section 18\u202fU.S.C.\u202f\u00a7\u202f3599 entitles death\u2011row inmates to expert investigative services where reasonably necessary."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+              "evidence_ids": [
+                "ev-14614e2953d7-0002-0006"
+              ],
+              "pages": {
+                "end": 59,
+                "start": 59
+              }
+            }
+          ],
+          "text": "According to Petitioner, the district court has authority under the All Writs Act to issue the transport order."
+        }
+      ],
+      "heading": "Petitioner (Benjamin M. Flowers)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+              "evidence_ids": [
+                "ev-14614e2953d7-0001-0002"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to United States, the United States agrees that the warden has jurisdiction and that the transport order resolves the disputed question of transport."
+        }
+      ],
+      "heading": "United States",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+              "evidence_ids": [
+                "ev-14614e2953d7-0001-0003"
+              ],
+              "pages": {
+                "end": 29,
+                "start": 29
+              }
+            }
+          ],
+          "text": "The respondent argues that orders requiring a state warden to transport a prisoner would be immediately appealable."
+        }
+      ],
+      "heading": "Respondent",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+              "evidence_ids": [
+                "ev-14614e2953d7-0002-0001"
+              ],
+              "pages": {
+                "end": 55,
+                "start": 55
+              }
+            }
+          ],
+          "text": "The State argues the Court should not create a new category of appealable transportation orders."
+        },
+        {
+          "attribution": "State",
+          "citations": [
+            {
+              "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+              "evidence_ids": [
+                "ev-14614e2953d7-0002-0005"
+              ],
+              "pages": {
+                "end": 58,
+                "start": 58
+              }
+            }
+          ],
+          "text": "The State notes it did not argue public safety and that the inmate\u2019s prior transports caused no incidents despite his age and blindness."
+        }
+      ],
+      "heading": "State",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+      "evidence_ids": [
+        "ev-8efa05321ad4-0000-0001"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+      "evidence_ids": [
+        "ev-8efa05321ad4-0000-0007"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+      "evidence_ids": [
+        "ev-8efa05321ad4-0000-0006"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+      "evidence_ids": [
+        "ev-8efa05321ad4-0001-0002"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 13
+      }
+    },
+    {
+      "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+      "evidence_ids": [
+        "ev-8efa05321ad4-0001-0000"
+      ],
+      "pages": {
+        "end": 14,
+        "start": 14
+      }
+    },
+    {
+      "document_hash": "8efa05321ad41a05288b326714ba62acb7f259b789a5e70335653034f69d9ad2",
+      "evidence_ids": [
+        "ev-8efa05321ad4-0002-0000",
+        "ev-8efa05321ad4-0002-0001"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 22
+      }
+    },
+    {
+      "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "evidence_ids": [
+        "ev-14614e2953d7-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "evidence_ids": [
+        "ev-14614e2953d7-0002-0002"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "evidence_ids": [
+        "ev-14614e2953d7-0001-0001"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "evidence_ids": [
+        "ev-14614e2953d7-0001-0000"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "evidence_ids": [
+        "ev-14614e2953d7-0001-0002"
+      ],
+      "pages": {
+        "end": 25,
+        "start": 25
+      }
+    },
+    {
+      "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "evidence_ids": [
+        "ev-14614e2953d7-0001-0003"
+      ],
+      "pages": {
+        "end": 29,
+        "start": 29
+      }
+    },
+    {
+      "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "evidence_ids": [
+        "ev-14614e2953d7-0002-0001"
+      ],
+      "pages": {
+        "end": 55,
+        "start": 55
+      }
+    },
+    {
+      "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "evidence_ids": [
+        "ev-14614e2953d7-0002-0005"
+      ],
+      "pages": {
+        "end": 58,
+        "start": 58
+      }
+    },
+    {
+      "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "evidence_ids": [
+        "ev-14614e2953d7-0002-0006"
+      ],
+      "pages": {
+        "end": 59,
+        "start": 59
+      }
+    },
+    {
+      "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "evidence_ids": [
+        "ev-14614e2953d7-0002-0004"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 49
+      }
+    },
+    {
+      "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "evidence_ids": [
+        "ev-14614e2953d7-0002-0003"
+      ],
+      "pages": {
+        "end": 52,
+        "start": 52
+      }
+    },
+    {
+      "document_hash": "14614e2953d714489a1e377430903a4d6885661cc39ce1096ff60c869f32eb71",
+      "evidence_ids": [
+        "ev-14614e2953d7-0002-0000"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T00:36:38.361755Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "92b7e67d77f48b236327c2f0a5c6b06d57ba27da70d4277e2f399275ecf9684c",
+            "evidence_ids": [
+              "ev-92b7e67d77f4-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Court, Nance\u2019s claim seeks to enjoin the state from using lethal injection because it allegedly creates a substantial risk of severe pain."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-439",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "92b7e67d77f48b236327c2f0a5c6b06d57ba27da70d4277e2f399275ecf9684c",
+            "evidence_ids": [
+              "ev-92b7e67d77f4-0001-0000"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "A claim should proceed under \u00a7\u202f1983 only if granting relief would necessarily prevent the state from carrying out the execution."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "92b7e67d77f48b236327c2f0a5c6b06d57ba27da70d4277e2f399275ecf9684c",
+            "evidence_ids": [
+              "ev-92b7e67d77f4-0001-0001"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The Court affirmed that the claim points toward \u00a7\u202f1983 because the prisoner is not challenging the death sentence itself."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "92b7e67d77f48b236327c2f0a5c6b06d57ba27da70d4277e2f399275ecf9684c",
+            "evidence_ids": [
+              "ev-92b7e67d77f4-0001-0002"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Court held that the rule remains true even if the alternative route necessitates a change in state law."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T23:31:43.826580Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3f3a2025eb5767d81dae0d40763129b8398174fe2263917000fb74a2dc4a2e45",
+      "92b7e67d77f48b236327c2f0a5c6b06d57ba27da70d4277e2f399275ecf9684c"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "3f3a2025eb5767d81dae0d40763129b8398174fe2263917000fb74a2dc4a2e45",
+            "evidence_ids": [
+              "ev-3f3a2025eb57-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Thomas asked whether a state could legislate that certain crimes be executed only by lethal injection."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "3f3a2025eb5767d81dae0d40763129b8398174fe2263917000fb74a2dc4a2e45",
+            "evidence_ids": [
+              "ev-3f3a2025eb57-0001-0001"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "According to Justice Alito, Justice Alito inquired how a ruling for the State might adversely affect federal interests."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "3f3a2025eb5767d81dae0d40763129b8398174fe2263917000fb74a2dc4a2e45",
+            "evidence_ids": [
+              "ev-3f3a2025eb57-0002-0000"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh questioned whether the petitioner had shown severe pain as required for the first prong of his claim."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "92b7e67d77f48b236327c2f0a5c6b06d57ba27da70d4277e2f399275ecf9684c",
+            "evidence_ids": [
+              "ev-92b7e67d77f4-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          },
+          {
+            "document_hash": "92b7e67d77f48b236327c2f0a5c6b06d57ba27da70d4277e2f399275ecf9684c",
+            "evidence_ids": [
+              "ev-92b7e67d77f4-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Court, petitioner Michael Nance sued under 42 U.S.C. \u00a7\u202f1983 to stop Georgia from using lethal injection to carry out his execution, alleging that the method poses a substantial risk of severe pain."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "92b7e67d77f48b236327c2f0a5c6b06d57ba27da70d4277e2f399275ecf9684c",
+            "evidence_ids": [
+              "ev-92b7e67d77f4-0001-0002"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "The Court further held that a \u00a7\u202f1983 claim is appropriate even if the relief sought would require the state to change its execution method."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Matthew S. Hellman",
+          "citations": [
+            {
+              "document_hash": "3f3a2025eb5767d81dae0d40763129b8398174fe2263917000fb74a2dc4a2e45",
+              "evidence_ids": [
+                "ev-3f3a2025eb57-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Matthew S. Hellman, Nance argues that his claim is properly framed as a \u00a7\u202f1983 action because it challenges the method of execution, not the death sentence itself."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "3f3a2025eb5767d81dae0d40763129b8398174fe2263917000fb74a2dc4a2e45",
+              "evidence_ids": [
+                "ev-3f3a2025eb57-0004-0003"
+              ],
+              "pages": {
+                "end": 92,
+                "start": 92
+              }
+            }
+          ],
+          "text": "According to Petitioner, Nance\u2019s counsel contends that Georgia law separates the death sentence from the method of execution, citing Dawson v. State."
+        }
+      ],
+      "heading": "Petitioner (Michael Nance)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "92b7e67d77f48b236327c2f0a5c6b06d57ba27da70d4277e2f399275ecf9684c",
+              "evidence_ids": [
+                "ev-92b7e67d77f4-0000-0004"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the United States amicus supports the petitioner\u2019s \u00a7\u202f1983 claim."
+        }
+      ],
+      "heading": "Amicus (United States)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "92b7e67d77f48b236327c2f0a5c6b06d57ba27da70d4277e2f399275ecf9684c",
+      "evidence_ids": [
+        "ev-92b7e67d77f4-0000-0001",
+        "ev-92b7e67d77f4-0000-0002",
+        "ev-92b7e67d77f4-0001-0000",
+        "ev-92b7e67d77f4-0001-0001",
+        "ev-92b7e67d77f4-0001-0002",
+        "ev-92b7e67d77f4-0000-0004"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "3f3a2025eb5767d81dae0d40763129b8398174fe2263917000fb74a2dc4a2e45",
+      "evidence_ids": [
+        "ev-3f3a2025eb57-0000-0001",
+        "ev-3f3a2025eb57-0000-0002",
+        "ev-3f3a2025eb57-0001-0001",
+        "ev-3f3a2025eb57-0002-0000",
+        "ev-3f3a2025eb57-0004-0003"
+      ],
+      "pages": {
+        "end": 92,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T23:41:51.493779Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": false,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "Support check failed: the claim that \u2018Nance\u2019s counsel contends that Georgia law separates the death sentence from the method of execution, citing Dawson v. State\u2019 is not backed by any evidence with that attribution; the only evidence referencing Dawson is an argument by Mr. Hellman, not the petitioner.",
+      "Attribution check failed: the same claim incorrectly attributes the Dawson v. State citation to the \u2018Petitioner\u2019; the source evidence attributes it to Mr. Hellman (party argument), so the attribution is inaccurate."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "92b7e67d77f48b236327c2f0a5c6b06d57ba27da70d4277e2f399275ecf9684c",
+            "evidence_ids": [
+              "ev-92b7e67d77f4-0001-0000"
+            ],
+            "pages": {
+              "end": 11,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The holding that relief must necessarily prevent the execution sets a clear threshold for future \u00a7\u202f1983 method\u2011of\u2011execution claims."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

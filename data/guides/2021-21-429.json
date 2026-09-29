@@ -1,0 +1,466 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "a3f7c4ce621e18dc086cc7e1814aef07c9eaeb53ac91e7b70cd91e11ae21c0cb",
+            "evidence_ids": [
+              "ev-a3f7c4ce621e-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case asks whether a State has authority to prosecute non\u2011Indians who commit crimes in Indian country, regardless of whether the victim is a non\u2011Indian or an Indian."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-429",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+            "evidence_ids": [
+              "ev-4a468821a41d-0002-0000"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "The Court held that Indian country within a State\u2019s territory is part of the State, so State jurisdiction exists unless preempted."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+            "evidence_ids": [
+              "ev-4a468821a41d-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Court concluded that the General Crimes Act does not preempt State jurisdiction over crimes by non\u2011Indians against Indians in Indian country."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+            "evidence_ids": [
+              "ev-4a468821a41d-0002-0004"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Gorsuch authored a dissent warning that tribal sovereignty endures unless Congress expressly changes it."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T23:22:50.908497Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+      "a3f7c4ce621e18dc086cc7e1814aef07c9eaeb53ac91e7b70cd91e11ae21c0cb"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "a3f7c4ce621e18dc086cc7e1814aef07c9eaeb53ac91e7b70cd91e11ae21c0cb",
+            "evidence_ids": [
+              "ev-a3f7c4ce621e-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked why the Court is hearing the first case on jurisdiction over non\u2011Indians committing crimes against Indians after many years."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "a3f7c4ce621e18dc086cc7e1814aef07c9eaeb53ac91e7b70cd91e11ae21c0cb",
+            "evidence_ids": [
+              "ev-a3f7c4ce621e-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, she questioned whether the federal government can preempt State law at all in this context."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+            "evidence_ids": [
+              "ev-4a468821a41d-0000-0007"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Supreme Court granted certiorari to resolve whether a State may prosecute non\u2011Indians for crimes against Indians in Indian country."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+            "evidence_ids": [
+              "ev-4a468821a41d-0002-0000"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          },
+          {
+            "document_hash": "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+            "evidence_ids": [
+              "ev-4a468821a41d-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Court held that Indian country within a State\u2019s territory is part of the State, so State jurisdiction exists unless preempted."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+            "evidence_ids": [
+              "ev-4a468821a41d-0001-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Court concluded that the General Crimes Act does not preempt State jurisdiction over crimes committed by non\u2011Indians against Indians in Indian country."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+            "evidence_ids": [
+              "ev-4a468821a41d-0002-0004"
+            ],
+            "pages": {
+              "end": 30,
+              "start": 30
+            }
+          }
+        ],
+        "text": "Justice Gorsuch authored a dissent warning that tribal sovereignty endures unless Congress expressly alters it."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Victor Manuel Castro-Huerta",
+          "citations": [
+            {
+              "document_hash": "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+              "evidence_ids": [
+                "ev-4a468821a41d-0000-0001"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to Victor Manuel Castro-Huerta, argued that the Federal Government has exclusive jurisdiction to prosecute him, a non\u2011Indian, for a crime against his stepdaughter, a Cherokee Indian, in Indian country, and that the State therefore lacks jurisdiction."
+        }
+      ],
+      "heading": "Victor Manuel Castro\u2011Huerta",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Oklahoma Court of Criminal Appeals",
+          "citations": [
+            {
+              "document_hash": "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+              "evidence_ids": [
+                "ev-4a468821a41d-0000-0002"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to Oklahoma Court of Criminal Appeals, agreed with Castro\u2011Huerta and vacated his conviction."
+        }
+      ],
+      "heading": "Oklahoma Court of Criminal Appeals",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "a3f7c4ce621e18dc086cc7e1814aef07c9eaeb53ac91e7b70cd91e11ae21c0cb",
+              "evidence_ids": [
+                "ev-a3f7c4ce621e-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner, asserted that a State has inherent sovereign authority to punish crimes committed within its borders and that no federal law preempts that authority for crimes committed by non\u2011Indians."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "a3f7c4ce621e18dc086cc7e1814aef07c9eaeb53ac91e7b70cd91e11ae21c0cb",
+              "evidence_ids": [
+                "ev-a3f7c4ce621e-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner, stated that the General Crimes Act merely incorporates federal substantive law for federal enclaves and does not address State jurisdiction; Public Law 280 expanded State jurisdiction rather than divesting it."
+        }
+      ],
+      "heading": "Petitioner (Oral Argument)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State of Oklahoma",
+          "citations": [
+            {
+              "document_hash": "a3f7c4ce621e18dc086cc7e1814aef07c9eaeb53ac91e7b70cd91e11ae21c0cb",
+              "evidence_ids": [
+                "ev-a3f7c4ce621e-0001-0001"
+              ],
+              "pages": {
+                "end": 26,
+                "start": 26
+              }
+            }
+          ],
+          "text": "According to State of Oklahoma, requested that the Court provide concurrent jurisdiction for the State with the Federal Government, arguing that Indian country is within the State\u2019s normal jurisdictional framework."
+        }
+      ],
+      "heading": "State of Oklahoma",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Edwin S. Kneedler (United States, amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "a3f7c4ce621e18dc086cc7e1814aef07c9eaeb53ac91e7b70cd91e11ae21c0cb",
+              "evidence_ids": [
+                "ev-a3f7c4ce621e-0005-0000"
+              ],
+              "pages": {
+                "end": 108,
+                "start": 108
+              }
+            }
+          ],
+          "text": "According to Edwin S. Kneedler (United States, amicus curiae), according to United States, as amicus curiae, argued that the General Crimes Act provides exclusive Federal jurisdiction over crimes by non\u2011Indians against Indians in Indian country."
+        }
+      ],
+      "heading": "United States (Amicus Curiae)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Oklahoma District Attorneys Association",
+          "citations": [
+            {
+              "document_hash": "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+              "evidence_ids": [
+                "ev-4a468821a41d-0006-0002"
+              ],
+              "pages": {
+                "end": 64,
+                "start": 64
+              }
+            }
+          ],
+          "text": "According to Oklahoma District Attorneys Association, described the State\u2019s prosecutorial authority as an important tool for law enforcement."
+        }
+      ],
+      "heading": "Oklahoma District Attorneys Association (Amicus)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4a468821a41d0eb3d2992bd74e63cf74d84201c490b761c9418b5cac9f190b20",
+      "evidence_ids": [
+        "ev-4a468821a41d-0000-0007",
+        "ev-4a468821a41d-0001-0000",
+        "ev-4a468821a41d-0002-0000",
+        "ev-4a468821a41d-0002-0004"
+      ],
+      "pages": {
+        "end": 30,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "a3f7c4ce621e18dc086cc7e1814aef07c9eaeb53ac91e7b70cd91e11ae21c0cb",
+      "evidence_ids": [
+        "ev-a3f7c4ce621e-0000-0000",
+        "ev-a3f7c4ce621e-0000-0002",
+        "ev-a3f7c4ce621e-0000-0003"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 4
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T23:31:43.807967Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "a3f7c4ce621e18dc086cc7e1814aef07c9eaeb53ac91e7b70cd91e11ae21c0cb",
+            "evidence_ids": [
+              "ev-a3f7c4ce621e-0006-0004"
+            ],
+            "pages": {
+              "end": 135,
+              "start": 135
+            }
+          }
+        ],
+        "text": "The Court\u2019s decision in McGirt, as applied here, could result in less protection for tribal victims of serious crimes."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-248",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b",
+            "evidence_ids": [
+              "ev-86792f4b70a7-0001-0006"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The majority held that a presumption of adequate representation is inappropriate when a duly authorized state agent seeks to intervene to defend a state law."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b",
+            "evidence_ids": [
+              "ev-86792f4b70a7-0002-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Sotomayor dissented, stating that the General Assembly\u2019s authority to defend duly enacted state statutes should be respected."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T22:36:37.622754Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "79fc0b1b8362518878448abb22147526f16b00a8666702c08abdeb6016459daa",
+      "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b",
+            "evidence_ids": [
+              "ev-86792f4b70a7-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "In 2018, North Carolina amended its Constitution to require photographic identification for in\u2011person voting."
+      },
+      {
+        "attribution": "NAACP",
+        "citations": [
+          {
+            "document_hash": "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b",
+            "evidence_ids": [
+              "ev-86792f4b70a7-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to NAACP, the NAACP alleged that S.B.\u202f824, the voter\u2011ID law, offends the Federal Constitution."
+      },
+      {
+        "attribution": "District Court",
+        "citations": [
+          {
+            "document_hash": "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b",
+            "evidence_ids": [
+              "ev-86792f4b70a7-0000-0003"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The District Court denied the legislative leaders\u2019 motion to intervene and stayed the case pending Supreme Court review."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b",
+            "evidence_ids": [
+              "ev-86792f4b70a7-0001-0006"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Supreme Court held that a presumption of adequate representation is inappropriate when a duly authorized state agent seeks to intervene to defend a state law."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b",
+            "evidence_ids": [
+              "ev-86792f4b70a7-0002-0002"
+            ],
+            "pages": {
+              "end": 23,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Sotomayor dissented, arguing that the General Assembly\u2019s authority to defend duly enacted state statutes should be respected."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Legislative leaders",
+          "citations": [
+            {
+              "document_hash": "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b",
+              "evidence_ids": [
+                "ev-86792f4b70a7-0000-0002"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to Legislative leaders, they argue that without their participation, important state interests would not be adequately represented, especially given the Governor\u2019s opposition to S.B.\u202f824."
+        }
+      ],
+      "heading": "Petitioners (Legislative Leaders)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "NAACP",
+          "citations": [
+            {
+              "document_hash": "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b",
+              "evidence_ids": [
+                "ev-86792f4b70a7-0001-0005"
+              ],
+              "pages": {
+                "end": 17,
+                "start": 17
+              }
+            }
+          ],
+          "text": "According to NAACP, they argue that Rule\u202f24(a)(2) permits intervention only by \u201cnew\u201d parties, and the legislative leaders are already \u201cexisting\u201d parties, so intervention should be denied."
+        },
+        {
+          "attribution": "NAACP",
+          "citations": [
+            {
+              "document_hash": "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b",
+              "evidence_ids": [
+                "ev-86792f4b70a7-0002-0000"
+              ],
+              "pages": {
+                "end": 22,
+                "start": 22
+              }
+            }
+          ],
+          "text": "According to NAACP, they warn that allowing the legislative leaders to intervene could make trial management impossible."
+        }
+      ],
+      "heading": "NAACP",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "David H. Thompson",
+          "citations": [
+            {
+              "document_hash": "79fc0b1b8362518878448abb22147526f16b00a8666702c08abdeb6016459daa",
+              "evidence_ids": [
+                "ev-79fc0b1b8362-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to David H. Thompson, north Carolina law designates the state as a necessary party and the petitioners as agents of the state in actions challenging state statutes; they were denied intervention in federal court."
+        },
+        {
+          "attribution": "David H. Thompson",
+          "citations": [
+            {
+              "document_hash": "79fc0b1b8362518878448abb22147526f16b00a8666702c08abdeb6016459daa",
+              "evidence_ids": [
+                "ev-79fc0b1b8362-0000-0004"
+              ],
+              "pages": {
+                "end": 16,
+                "start": 16
+              }
+            }
+          ],
+          "text": "According to David H. Thompson, federal Rule of Civil Procedure\u202f24(b)(2) reflects the interest in administering a law, not created by state law."
+        },
+        {
+          "attribution": "MR. THOMPSON",
+          "citations": [
+            {
+              "document_hash": "79fc0b1b8362518878448abb22147526f16b00a8666702c08abdeb6016459daa",
+              "evidence_ids": [
+                "ev-79fc0b1b8362-0001-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to MR. THOMPSON, states can create interests, as shown by Rule\u202f24\u2019s discussion of property and contracts, which are traditionally matters of state law."
+        }
+      ],
+      "heading": "State (Attorney General / Board)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "79fc0b1b8362518878448abb22147526f16b00a8666702c08abdeb6016459daa",
+      "evidence_ids": [
+        "ev-79fc0b1b8362-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b",
+      "evidence_ids": [
+        "ev-86792f4b70a7-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T22:44:08.631145Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "86792f4b70a745703817d47d780cf8aa708a61eca0fa41b27c3df9f5dbc6584b",
+            "evidence_ids": [
+              "ev-86792f4b70a7-0001-0006"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The case determines who may represent state interests in federal courts, affecting the ability of state legislatures to defend laws such as voter\u2011ID requirements."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

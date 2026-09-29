@@ -1,0 +1,338 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Ninth Circuit",
+        "citations": [
+          {
+            "document_hash": "5b39af57a191e4ffa6dc532fdfadf86f90a84f196e9c2331d6c16f91afd0a215",
+            "evidence_ids": [
+              "ev-5b39af57a191-0000-0002"
+            ],
+            "pages": {
+              "end": 10,
+              "start": 10
+            }
+          }
+        ],
+        "text": "The Ninth Circuit held that a violation of Miranda constitutes a Fifth Amendment violation."
+      },
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "ec32c9c02a71487021e6307322393f7033cae138a897d306c871d9914b723a1f",
+            "evidence_ids": [
+              "ev-ec32c9c02a71-0000-0001"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioner, the case presented the question of whether a violation of Miranda can serve as the basis for a \u00a7\u202f1983 claim."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-499",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5b39af57a191e4ffa6dc532fdfadf86f90a84f196e9c2331d6c16f91afd0a215",
+            "evidence_ids": [
+              "ev-5b39af57a191-0000-0003"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "We hold that it does not."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T00:07:29.442008Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "5b39af57a191e4ffa6dc532fdfadf86f90a84f196e9c2331d6c16f91afd0a215",
+      "ec32c9c02a71487021e6307322393f7033cae138a897d306c871d9914b723a1f"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ec32c9c02a71487021e6307322393f7033cae138a897d306c871d9914b723a1f",
+            "evidence_ids": [
+              "ev-ec32c9c02a71-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case was heard before the Supreme Court at 10:00\u202fa.m. on the oral\u2011argument date."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ec32c9c02a71487021e6307322393f7033cae138a897d306c871d9914b723a1f",
+            "evidence_ids": [
+              "ev-ec32c9c02a71-0003-0006"
+            ],
+            "pages": {
+              "end": 83,
+              "start": 83
+            }
+          }
+        ],
+        "text": "The case was submitted at 11:21\u202fa.m."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "5b39af57a191e4ffa6dc532fdfadf86f90a84f196e9c2331d6c16f91afd0a215",
+            "evidence_ids": [
+              "ev-5b39af57a191-0000-0003"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The Supreme Court held that a Miranda violation does not give rise to a civil\u2011rights claim under 42 U.S.C. \u00a7\u202f1983."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Tekoh",
+          "citations": [
+            {
+              "document_hash": "5b39af57a191e4ffa6dc532fdfadf86f90a84f196e9c2331d6c16f91afd0a215",
+              "evidence_ids": [
+                "ev-5b39af57a191-0000-0001"
+              ],
+              "pages": {
+                "end": 2,
+                "start": 2
+              }
+            }
+          ],
+          "text": "According to Tekoh, a violation of Miranda constitutes a violation of the Fifth Amendment right against compelled self\u2011incrimination."
+        }
+      ],
+      "heading": "Tekoh",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "ec32c9c02a71487021e6307322393f7033cae138a897d306c871d9914b723a1f",
+              "evidence_ids": [
+                "ev-ec32c9c02a71-0000-0001"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner, the Ninth Circuit's extension of Miranda into \u00a7\u202f1983 litigation is inconsistent with settled precedent and sound policy; the Court should reverse."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "ec32c9c02a71487021e6307322393f7033cae138a897d306c871d9914b723a1f",
+              "evidence_ids": [
+                "ev-ec32c9c02a71-0000-0002"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioner, Tekoh now concedes that the Ninth Circuit's proximate\u2011causation holding is wrong, providing a complete basis for reversal; officers cannot be held liable for mistakes made by prosecutors and judges."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Mr. Suri",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Mr. Hoffman",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "5b39af57a191e4ffa6dc532fdfadf86f90a84f196e9c2331d6c16f91afd0a215",
+      "evidence_ids": [
+        "ev-5b39af57a191-0000-0003"
+      ],
+      "pages": {
+        "end": 9,
+        "start": 9
+      }
+    },
+    {
+      "document_hash": "5b39af57a191e4ffa6dc532fdfadf86f90a84f196e9c2331d6c16f91afd0a215",
+      "evidence_ids": [
+        "ev-5b39af57a191-0000-0002"
+      ],
+      "pages": {
+        "end": 10,
+        "start": 10
+      }
+    },
+    {
+      "document_hash": "ec32c9c02a71487021e6307322393f7033cae138a897d306c871d9914b723a1f",
+      "evidence_ids": [
+        "ev-ec32c9c02a71-0000-0001"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "5b39af57a191e4ffa6dc532fdfadf86f90a84f196e9c2331d6c16f91afd0a215",
+      "evidence_ids": [
+        "ev-5b39af57a191-0000-0001"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "ec32c9c02a71487021e6307322393f7033cae138a897d306c871d9914b723a1f",
+      "evidence_ids": [
+        "ev-ec32c9c02a71-0000-0002"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "ec32c9c02a71487021e6307322393f7033cae138a897d306c871d9914b723a1f",
+      "evidence_ids": [
+        "ev-ec32c9c02a71-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "ec32c9c02a71487021e6307322393f7033cae138a897d306c871d9914b723a1f",
+      "evidence_ids": [
+        "ev-ec32c9c02a71-0003-0006"
+      ],
+      "pages": {
+        "end": 83,
+        "start": 83
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T00:15:41.115343Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

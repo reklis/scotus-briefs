@@ -1,0 +1,347 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "f82ca55ec7e1045cde1dc649f1a88e5b39a0d643cefc4a486f850cc0212be749",
+            "evidence_ids": [
+              "ev-f82ca55ec7e1-0000-0003"
+            ],
+            "pages": {
+              "end": 9,
+              "start": 9
+            }
+          }
+        ],
+        "text": "The case turns on whether the CUE doctrine covers a later change in law or a change in the interpretation of law."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2021-21-234",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-28T22:30:52.576552Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+      "f82ca55ec7e1045cde1dc649f1a88e5b39a0d643cefc4a486f850cc0212be749"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+            "evidence_ids": [
+              "ev-95ee156d9f71-0000-0003"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the issue was \u201cjust like an unfortunate part of that\u2026\u201d."
+      },
+      {
+        "attribution": "Justice BREYER",
+        "citations": [
+          {
+            "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+            "evidence_ids": [
+              "ev-95ee156d9f71-0001-0000"
+            ],
+            "pages": {
+              "end": 25,
+              "start": 25
+            }
+          }
+        ],
+        "text": "Justice Breyer questioned the soundness of a prior statement, asking \u201cWas it that? No.\u201d"
+      },
+      {
+        "attribution": "Justice KAGAN",
+        "citations": [
+          {
+            "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+            "evidence_ids": [
+              "ev-95ee156d9f71-0001-0005"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Kagan followed up, asking what effect a regulation had."
+      },
+      {
+        "attribution": "Justice ALITO",
+        "citations": [
+          {
+            "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+            "evidence_ids": [
+              "ev-95ee156d9f71-0001-0002"
+            ],
+            "pages": {
+              "end": 28,
+              "start": 28
+            }
+          }
+        ],
+        "text": "Justice Alito asked why the issue was not simply about the interpretation of error."
+      },
+      {
+        "attribution": "Justice SOTOMAYOR",
+        "citations": [
+          {
+            "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+            "evidence_ids": [
+              "ev-95ee156d9f71-0001-0006"
+            ],
+            "pages": {
+              "end": 35,
+              "start": 35
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether the statute concerned adjudicator error or error in the decision."
+      },
+      {
+        "attribution": "Justice THOMAS",
+        "citations": [
+          {
+            "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+            "evidence_ids": [
+              "ev-95ee156d9f71-0002-0004"
+            ],
+            "pages": {
+              "end": 47,
+              "start": 47
+            }
+          }
+        ],
+        "text": "According to Justice THOMAS, justice Thomas questioned whether Congress had codified the petitioner\u2019s understanding of CUE."
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+            "evidence_ids": [
+              "ev-95ee156d9f71-0002-0001"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked how to treat an amicus brief that discusses judicial interpretations as changes in law."
+      },
+      {
+        "attribution": "Justice KAVANAUGH",
+        "citations": [
+          {
+            "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+            "evidence_ids": [
+              "ev-95ee156d9f71-0003-0000"
+            ],
+            "pages": {
+              "end": 74,
+              "start": 74
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether a prior regulation, later declared invalid, would trigger retroactive benefits."
+      },
+      {
+        "attribution": "Justice KAVANAUGH",
+        "citations": [
+          {
+            "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+            "evidence_ids": [
+              "ev-95ee156d9f71-0003-0001"
+            ],
+            "pages": {
+              "end": 79,
+              "start": 79
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh also asked whether the Secretary\u2019s review is a real thing."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Questions Posed",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner (Melanie L. Bostwick)",
+          "citations": [
+            {
+              "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+              "evidence_ids": [
+                "ev-95ee156d9f71-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioner (Melanie L. Bostwick), according to Petitioner (Melanie L. Bostwick), petitioner argues that the veterans benefits system is uniquely pro\u2011claimant and that CUE is a special protection preventing agency errors from depriving veterans of benefits."
+        },
+        {
+          "attribution": "Petitioner (MS. BOSTWICK)",
+          "citations": [
+            {
+              "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+              "evidence_ids": [
+                "ev-95ee156d9f71-0003-0004"
+              ],
+              "pages": {
+                "end": 84,
+                "start": 83
+              }
+            }
+          ],
+          "text": "According to Petitioner (MS. BOSTWICK), according to Petitioner (MS. BOSTWICK), petitioner contends that supplemental claims are available only for new and material evidence, not for cumulative evidence or alleged legal error."
+        },
+        {
+          "attribution": "Petitioner (MR. YANG)",
+          "citations": [
+            {
+              "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+              "evidence_ids": [
+                "ev-95ee156d9f71-0003-0003"
+              ],
+              "pages": {
+                "end": 70,
+                "start": 69
+              }
+            }
+          ],
+          "text": "According to Petitioner (MR. YANG), according to Petitioner (MR. YANG), petitioner asserts that a clear misinterpretation of the statute could constitute clear and unmistakable error."
+        }
+      ],
+      "heading": "Petitioner (Kevin George)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "95ee156d9f71f1f428cb296f97e6bfd52142271612cd32d708dbd001fb1b2430",
+      "evidence_ids": [
+        "ev-95ee156d9f71-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "f82ca55ec7e1045cde1dc649f1a88e5b39a0d643cefc4a486f850cc0212be749",
+      "evidence_ids": [
+        "ev-f82ca55ec7e1-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-28T22:36:37.604976Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "f82ca55ec7e1045cde1dc649f1a88e5b39a0d643cefc4a486f850cc0212be749",
+            "evidence_ids": [
+              "ev-f82ca55ec7e1-0002-0000",
+              "ev-f82ca55ec7e1-0002-0002",
+              "ev-f82ca55ec7e1-0002-0003"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Gorsuch warned that a narrow reading of CUE could shield the Department of Veterans Affairs from accountability for clear errors, affecting countless veterans."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
