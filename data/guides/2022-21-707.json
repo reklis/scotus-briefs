@@ -1,0 +1,409 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background & Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-707",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T10:05:21.721434Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+            "evidence_ids": [
+              "ev-b15032ff7827-0000-0003"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, Chief Justice Roberts announced the case and the start of argument."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+            "evidence_ids": [
+              "ev-b15032ff7827-0001-0001"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "Justice Barrett asked to return to a question previously posed by Justice Sotomayor."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+            "evidence_ids": [
+              "ev-b15032ff7827-0001-0003"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked \u201cWhere?\u201d in response to a prior question."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+            "evidence_ids": [
+              "ev-b15032ff7827-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          },
+          {
+            "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+            "evidence_ids": [
+              "ev-b15032ff7827-0002-0004"
+            ],
+            "pages": {
+              "end": 57,
+              "start": 57
+            }
+          },
+          {
+            "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+            "evidence_ids": [
+              "ev-b15032ff7827-0004-0002"
+            ],
+            "pages": {
+              "end": 90,
+              "start": 90
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, Justice Kavanaugh questioned the definition of \u201crace\u2011neutral\u201d and the difficulty of measuring it."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+            "evidence_ids": [
+              "ev-b15032ff7827-0004-0004"
+            ],
+            "pages": {
+              "end": 104,
+              "start": 104
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked about narrow tailoring under strict scrutiny."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+            "evidence_ids": [
+              "ev-b15032ff7827-0007-0001"
+            ],
+            "pages": {
+              "end": 156,
+              "start": 156
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, states banning race consideration have seen dramatic drops in enrollment of Black and Native American students."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+            "evidence_ids": [
+              "ev-b15032ff7827-0008-0004"
+            ],
+            "pages": {
+              "end": 183,
+              "start": 183
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, Chief Justice Roberts closed the argument and submitted the case."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Students for Fair Admissions, Inc.",
+          "citations": [
+            {
+              "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+              "evidence_ids": [
+                "ev-b15032ff7827-0000-0000"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Students for Fair Admissions, Inc., according to Students for Fair Admissions, Inc., racial classifications are wrong and should not be used in admissions."
+        },
+        {
+          "attribution": "Mr. Strawbridge",
+          "citations": [
+            {
+              "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+              "evidence_ids": [
+                "ev-b15032ff7827-0001-0002"
+              ],
+              "pages": {
+                "end": 42,
+                "start": 42
+              }
+            }
+          ],
+          "text": "According to Mr. Strawbridge, the university has not committed to race\u2011neutral alternatives."
+        },
+        {
+          "attribution": "Strawbridge",
+          "citations": [
+            {
+              "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+              "evidence_ids": [
+                "ev-b15032ff7827-0002-0001"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to Strawbridge, descendants of slaves are highly correlated with race, and no college has proposed a preference based on that status."
+        },
+        {
+          "attribution": "Strawbridge",
+          "citations": [
+            {
+              "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+              "evidence_ids": [
+                "ev-b15032ff7827-0002-0003"
+              ],
+              "pages": {
+                "end": 50,
+                "start": 50
+              }
+            }
+          ],
+          "text": "According to Strawbridge, the district court conflated the educational benefits of diversity with raw representation on campus."
+        },
+        {
+          "attribution": "Strawbridge",
+          "citations": [
+            {
+              "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+              "evidence_ids": [
+                "ev-b15032ff7827-0002-0006"
+              ],
+              "pages": {
+                "end": 65,
+                "start": 65
+              }
+            }
+          ],
+          "text": "According to Strawbridge, measuring race\u2011neutral alternatives is difficult because it requires replicating the precise level of diversity achieved today."
+        },
+        {
+          "attribution": "Mr. Strawbridge",
+          "citations": [
+            {
+              "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+              "evidence_ids": [
+                "ev-b15032ff7827-0008-0005"
+              ],
+              "pages": {
+                "end": 179,
+                "start": 179
+              }
+            }
+          ],
+          "text": "According to Mr. Strawbridge, the military argues that race\u2011neutral alternatives are unavailable, but provides no evidence of such alternatives."
+        }
+      ],
+      "heading": "Students for Fair Admissions, Inc. (Petitioner)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "University of North Carolina",
+          "citations": [
+            {
+              "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+              "evidence_ids": [
+                "ev-b15032ff7827-0004-0001"
+              ],
+              "pages": {
+                "end": 93,
+                "start": 93
+              }
+            }
+          ],
+          "text": "According to University of North Carolina, expert evidence indicates that about 1.2\u202f% of the applicant pool is affected by the university\u2019s race\u2011conscious admissions program."
+        }
+      ],
+      "heading": "University of North Carolina (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+      "evidence_ids": [
+        "ev-b15032ff7827-0000-0000"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T10:10:03.026377Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "General Elizabeth B. Prelogar",
+        "citations": [
+          {
+            "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+            "evidence_ids": [
+              "ev-b15032ff7827-0006-0001"
+            ],
+            "pages": {
+              "end": 145,
+              "start": 145
+            }
+          }
+        ],
+        "text": "According to General Elizabeth B. Prelogar, the Supreme Court has long recognized that student\u2011body diversity is a compelling governmental interest that can justify limited consideration of race in admissions."
+      },
+      {
+        "attribution": "General Elizabeth B. Prelogar",
+        "citations": [
+          {
+            "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+            "evidence_ids": [
+              "ev-b15032ff7827-0006-0004"
+            ],
+            "pages": {
+              "end": 147,
+              "start": 147
+            }
+          }
+        ],
+        "text": "According to General Elizabeth B. Prelogar, benefits of diversity include increased cross\u2011racial understanding and positive effects on cognitive development early in college."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "b15032ff7827658d503ef1087aa78dc56f35de3a163b964b11132e73ef0c82c0",
+            "evidence_ids": [
+              "ev-b15032ff7827-0007-0001"
+            ],
+            "pages": {
+              "end": 156,
+              "start": 156
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, states that have banned race\u2011consideration in admissions have experienced sharp declines in enrollment of underrepresented minority students, especially Black students."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,679 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1d26b87b0bfaf22eaba67f05c3aa90eb0c1e37f8e84b969a3be84bcd251cb10f",
+            "evidence_ids": [
+              "ev-1d26b87b0bfa-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Petitioners sought review in the Sixth Circuit, which denied relief."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-1454",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "FLRA",
+        "citations": [
+          {
+            "document_hash": "1d26b87b0bfaf22eaba67f05c3aa90eb0c1e37f8e84b969a3be84bcd251cb10f",
+            "evidence_ids": [
+              "ev-1d26b87b0bfa-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "The Court ordered petitioners to follow the mandatory terms of the 2011 collective bargaining agreement, bargain in good faith, and reinstate union\u2011dues withholding."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "1d26b87b0bfaf22eaba67f05c3aa90eb0c1e37f8e84b969a3be84bcd251cb10f",
+            "evidence_ids": [
+              "ev-1d26b87b0bfa-0001-0002",
+              "ev-1d26b87b0bfa-0002-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 23
+            }
+          }
+        ],
+        "text": "Justice Alito dissented, arguing that no petitioner is an \u201cagency\u201d within the meaning of \u00a7\u202f7105(g)(3) and therefore should be outside the remedial jurisdiction of the FLRA."
+      }
+    ],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T08:49:22.888739Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1d26b87b0bfaf22eaba67f05c3aa90eb0c1e37f8e84b969a3be84bcd251cb10f",
+      "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+            "evidence_ids": [
+              "ev-3568c4a02edd-0000-0000"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "Chief Justice Roberts asked whether the Court will hear argument next in Case 21\u20111454, Ohio ADJ vs. FLRA."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+            "evidence_ids": [
+              "ev-3568c4a02edd-0002-0000"
+            ],
+            "pages": {
+              "end": 49,
+              "start": 49
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether the collective bargaining agreement here is approved by the Department of Defense."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+            "evidence_ids": [
+              "ev-3568c4a02edd-0002-0002"
+            ],
+            "pages": {
+              "end": 62,
+              "start": 62
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked about the federalism implications of the case, specifically whether state employees funded by the federal government are effectively federal agencies."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+            "evidence_ids": [
+              "ev-3568c4a02edd-0003-0002"
+            ],
+            "pages": {
+              "end": 88,
+              "start": 88
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether Ohio\u2019s claim that complying with the collective\u2011bargaining order would be impractical or unlawful is an open question or a baseless assertion."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+            "evidence_ids": [
+              "ev-3568c4a02edd-0004-0000"
+            ],
+            "pages": {
+              "end": 91,
+              "start": 91
+            }
+          }
+        ],
+        "text": "Justice Jackson asked whether the adjutant generals are subject to FLRA authority only when acting as employers of federal employees."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+            "evidence_ids": [
+              "ev-3568c4a02edd-0004-0001"
+            ],
+            "pages": {
+              "end": 92,
+              "start": 92
+            }
+          }
+        ],
+        "text": "Justice Jackson followed up, asking if the FLRA is involved only when the state officer supervises federal employees, not when supervising state employees."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+            "evidence_ids": [
+              "ev-3568c4a02edd-0004-0003"
+            ],
+            "pages": {
+              "end": 97,
+              "start": 97
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked why the Board was collecting forms for union\u2011dues deductions if the federal government pays the dual\u2011citizens\u2019 salary."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+            "evidence_ids": [
+              "ev-3568c4a02edd-0004-0002"
+            ],
+            "pages": {
+              "end": 102,
+              "start": 102
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked what to do about the omission of the military departments on page 102."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1d26b87b0bfaf22eaba67f05c3aa90eb0c1e37f8e84b969a3be84bcd251cb10f",
+            "evidence_ids": [
+              "ev-1d26b87b0bfa-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Petitioners sought review in the Sixth Circuit, which denied relief."
+      },
+      {
+        "attribution": "FLRA",
+        "citations": [
+          {
+            "document_hash": "1d26b87b0bfaf22eaba67f05c3aa90eb0c1e37f8e84b969a3be84bcd251cb10f",
+            "evidence_ids": [
+              "ev-1d26b87b0bfa-0000-0004"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "The Court ordered petitioners to follow the mandatory terms of the 2011 collective bargaining agreement, bargain in good faith going forward, and reinstate union\u2011dues withholding."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "1d26b87b0bfaf22eaba67f05c3aa90eb0c1e37f8e84b969a3be84bcd251cb10f",
+              "evidence_ids": [
+                "ev-1d26b87b0bfa-0001-0000"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "Petitioners contend that federalism concerns require the Court to read the statute to exempt them from the FLRA\u2019s jurisdiction."
+        }
+      ],
+      "heading": "Petitioners (general)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+              "evidence_ids": [
+                "ev-3568c4a02edd-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "Petitioners argue that the Sixth Circuit and the FLRA erred in holding that adjutants general and state guards, when they employ technicians, are federal agencies subject to FLRA orders."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+              "evidence_ids": [
+                "ev-3568c4a02edd-0000-0001"
+              ],
+              "pages": {
+                "end": 5,
+                "start": 5
+              }
+            }
+          ],
+          "text": "According to Petitioners, he further asserts that the Reform Act defines agencies to include executive departments, government corporations, and independent establishments, not the state entities at issue."
+        }
+      ],
+      "heading": "Mr. Flowers (Petitioners)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Ms. Reaves",
+          "citations": [
+            {
+              "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+              "evidence_ids": [
+                "ev-3568c4a02edd-0002-0001"
+              ],
+              "pages": {
+                "end": 57,
+                "start": 57
+              }
+            }
+          ],
+          "text": "According to Ms. Reaves, petitioners are required to comply with the Act and submit to the FLRA\u2019s orders because they play a role in the federal employment system."
+        },
+        {
+          "attribution": "Ms. Reaves",
+          "citations": [
+            {
+              "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+              "evidence_ids": [
+                "ev-3568c4a02edd-0002-0003"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 59
+              }
+            }
+          ],
+          "text": "According to Ms. Reaves, dual\u2011status technicians have collective\u2011bargaining rights as federal civilian employees employed by parts of the Department of Defense, a covered agency."
+        },
+        {
+          "attribution": "Ms. Reaves",
+          "citations": [
+            {
+              "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+              "evidence_ids": [
+                "ev-3568c4a02edd-0002-0003"
+              ],
+              "pages": {
+                "end": 60,
+                "start": 59
+              }
+            }
+          ],
+          "text": "According to Ms. Reaves, the term \u201cagency\u201d in the statute includes subcomponents that act on behalf of the agency, which covers the petitioners\u2019 situation."
+        }
+      ],
+      "heading": "Ms. Reaves (FLRA / Government)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Grajales (Union Respondent)",
+          "citations": [
+            {
+              "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+              "evidence_ids": [
+                "ev-3568c4a02edd-0004-0004"
+              ],
+              "pages": {
+                "end": 93,
+                "start": 93
+              }
+            }
+          ],
+          "text": "According to Mr. Grajales (Union Respondent), according to Mr. Grajales (Union Respondent), a ruling in favor of the union will not affect any other state entity; the scheme is unique to the technicians and the National Guard."
+        },
+        {
+          "attribution": "Mr. Grajales (Union Respondent)",
+          "citations": [
+            {
+              "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+              "evidence_ids": [
+                "ev-3568c4a02edd-0004-0005"
+              ],
+              "pages": {
+                "end": 94,
+                "start": 94
+              }
+            }
+          ],
+          "text": "According to Mr. Grajales (Union Respondent), according to Mr. Grajales (Union Respondent), moving bargaining to the Department of Defense would render parts of the statute inoperative; the Technicians Act gives day\u2011to\u2011day supervision to the Ohio Adjutant General."
+        }
+      ],
+      "heading": "Mr. Grajales (Union Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "American Federation of Labor and Congress of Industrial Organizations",
+          "citations": [
+            {
+              "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+              "evidence_ids": [
+                "ev-3568c4a02edd-0003-0001"
+              ],
+              "pages": {
+                "end": 68,
+                "start": 68
+              }
+            }
+          ],
+          "text": "According to American Federation of Labor and Congress of Industrial Organizations, the amici argue that the National Guard is a unit or component of the Department of Defense."
+        }
+      ],
+      "heading": "American Federation of Labor and Congress of Industrial Organizations (Amicus)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1d26b87b0bfaf22eaba67f05c3aa90eb0c1e37f8e84b969a3be84bcd251cb10f",
+      "evidence_ids": [
+        "ev-1d26b87b0bfa-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "1d26b87b0bfaf22eaba67f05c3aa90eb0c1e37f8e84b969a3be84bcd251cb10f",
+      "evidence_ids": [
+        "ev-1d26b87b0bfa-0000-0004"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "1d26b87b0bfaf22eaba67f05c3aa90eb0c1e37f8e84b969a3be84bcd251cb10f",
+      "evidence_ids": [
+        "ev-1d26b87b0bfa-0001-0000"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "1d26b87b0bfaf22eaba67f05c3aa90eb0c1e37f8e84b969a3be84bcd251cb10f",
+      "evidence_ids": [
+        "ev-1d26b87b0bfa-0001-0002",
+        "ev-1d26b87b0bfa-0002-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0000-0000",
+        "ev-3568c4a02edd-0000-0001"
+      ],
+      "pages": {
+        "end": 5,
+        "start": 5
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0001-0000"
+      ],
+      "pages": {
+        "end": 27,
+        "start": 27
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0001-0004"
+      ],
+      "pages": {
+        "end": 42,
+        "start": 42
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0002-0000"
+      ],
+      "pages": {
+        "end": 49,
+        "start": 49
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0002-0001"
+      ],
+      "pages": {
+        "end": 57,
+        "start": 57
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0002-0003"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 59
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0002-0002"
+      ],
+      "pages": {
+        "end": 62,
+        "start": 62
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0003-0001"
+      ],
+      "pages": {
+        "end": 68,
+        "start": 68
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0003-0002"
+      ],
+      "pages": {
+        "end": 88,
+        "start": 88
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0004-0000"
+      ],
+      "pages": {
+        "end": 91,
+        "start": 91
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0004-0001"
+      ],
+      "pages": {
+        "end": 92,
+        "start": 92
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0004-0004"
+      ],
+      "pages": {
+        "end": 93,
+        "start": 93
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0004-0005"
+      ],
+      "pages": {
+        "end": 94,
+        "start": 94
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0004-0003"
+      ],
+      "pages": {
+        "end": 97,
+        "start": 97
+      }
+    },
+    {
+      "document_hash": "3568c4a02eddbab839fa6a70a4dbaa93a61d2129a1f6b39396c27985f550813b",
+      "evidence_ids": [
+        "ev-3568c4a02edd-0004-0002"
+      ],
+      "pages": {
+        "end": 102,
+        "start": 102
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T08:56:42.524216Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "background_and_question": {
+    "claims": [],
+    "heading": "Background and Question",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-757",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "38eee11ef8e39ed40e566961077ead7fb0ccb9ed2143eb51f71b85ab47ab174b",
+            "evidence_ids": [
+              "ev-38eee11ef8e3-0002-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The Supreme Court affirmed the Federal Circuit\u2019s judgment that the patents do not satisfy the enablement requirement."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T10:10:03.047894Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "38eee11ef8e39ed40e566961077ead7fb0ccb9ed2143eb51f71b85ab47ab174b",
+      "ec566d675926d179609290f6aa9f35a3e6b90a84a65854400950a71f59b7b914"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "ec566d675926d179609290f6aa9f35a3e6b90a84a65854400950a71f59b7b914",
+            "evidence_ids": [
+              "ev-ec566d675926-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked counsel to explain exactly what the invention is."
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "ec566d675926d179609290f6aa9f35a3e6b90a84a65854400950a71f59b7b914",
+            "evidence_ids": [
+              "ev-ec566d675926-0000-0003"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas followed up asking whether only 26 antibodies had been invented."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "ec566d675926d179609290f6aa9f35a3e6b90a84a65854400950a71f59b7b914",
+            "evidence_ids": [
+              "ev-ec566d675926-0000-0008"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Jackson questioned how many \u201cone\u2011offs\u201d could be claimed."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "ec566d675926d179609290f6aa9f35a3e6b90a84a65854400950a71f59b7b914",
+            "evidence_ids": [
+              "ev-ec566d675926-0001-0001"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Kagan asked whether the parties agree on the legal test."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "ec566d675926d179609290f6aa9f35a3e6b90a84a65854400950a71f59b7b914",
+            "evidence_ids": [
+              "ev-ec566d675926-0002-0004"
+            ],
+            "pages": {
+              "end": 48,
+              "start": 48
+            }
+          }
+        ],
+        "text": "According to Justice Kavanaugh, justice Kavanaugh referenced hypothetical examples from the Solicitor General\u2019s brief."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "ec566d675926d179609290f6aa9f35a3e6b90a84a65854400950a71f59b7b914",
+            "evidence_ids": [
+              "ev-ec566d675926-0004-0003"
+            ],
+            "pages": {
+              "end": 96,
+              "start": 96
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked about the legal standard for full enablement."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "38eee11ef8e39ed40e566961077ead7fb0ccb9ed2143eb51f71b85ab47ab174b",
+            "evidence_ids": [
+              "ev-38eee11ef8e3-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "This case concerns patents covering engineered antibodies that lower LDL cholesterol, a form of \u201cbad\u201d cholesterol linked to cardiovascular disease."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "38eee11ef8e39ed40e566961077ead7fb0ccb9ed2143eb51f71b85ab47ab174b",
+            "evidence_ids": [
+              "ev-38eee11ef8e3-0000-0008"
+            ],
+            "pages": {
+              "end": 5,
+              "start": 5
+            }
+          }
+        ],
+        "text": "The Supreme Court delivered a unanimous opinion."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "38eee11ef8e39ed40e566961077ead7fb0ccb9ed2143eb51f71b85ab47ab174b",
+            "evidence_ids": [
+              "ev-38eee11ef8e3-0001-0002"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The district court granted judgment as a matter of law that the patents were not enabled."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "38eee11ef8e39ed40e566961077ead7fb0ccb9ed2143eb51f71b85ab47ab174b",
+            "evidence_ids": [
+              "ev-38eee11ef8e3-0001-0003"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "The Federal Circuit affirmed that the patents did not provide adequate guidance to make and use the claimed antibodies."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "38eee11ef8e39ed40e566961077ead7fb0ccb9ed2143eb51f71b85ab47ab174b",
+            "evidence_ids": [
+              "ev-38eee11ef8e3-0002-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          }
+        ],
+        "text": "The Supreme Court affirmed the Federal Circuit\u2019s decision."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Amgen",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Sanofi",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "38eee11ef8e39ed40e566961077ead7fb0ccb9ed2143eb51f71b85ab47ab174b",
+      "evidence_ids": [
+        "ev-38eee11ef8e3-0000-0000",
+        "ev-38eee11ef8e3-0000-0008",
+        "ev-38eee11ef8e3-0001-0002",
+        "ev-38eee11ef8e3-0001-0003",
+        "ev-38eee11ef8e3-0002-0000"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "ec566d675926d179609290f6aa9f35a3e6b90a84a65854400950a71f59b7b914",
+      "evidence_ids": [
+        "ev-ec566d675926-0000-0002",
+        "ev-ec566d675926-0000-0003",
+        "ev-ec566d675926-0000-0008",
+        "ev-ec566d675926-0001-0001",
+        "ev-ec566d675926-0002-0004",
+        "ev-ec566d675926-0004-0003"
+      ],
+      "pages": {
+        "end": 96,
+        "start": 6
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T10:15:09.179074Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why it matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

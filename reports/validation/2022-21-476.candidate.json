@@ -1,0 +1,369 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "87fd2aa79e9a73dc85458ffb4e41ac91a0c6d2e40bf2d2774a812a9225317587",
+            "evidence_ids": [
+              "ev-87fd2aa79e9a-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Supreme Court granted certiorari to review the dispute (No.\u202f21\u2011476); oral argument was held on December\u202f5,\u202f2022, and a decision is pending."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "87fd2aa79e9a73dc85458ffb4e41ac91a0c6d2e40bf2d2774a812a9225317587",
+            "evidence_ids": [
+              "ev-87fd2aa79e9a-0002-0000"
+            ],
+            "pages": {
+              "end": 24,
+              "start": 24
+            }
+          },
+          {
+            "document_hash": "87fd2aa79e9a73dc85458ffb4e41ac91a0c6d2e40bf2d2774a812a9225317587",
+            "evidence_ids": [
+              "ev-87fd2aa79e9a-0003-0001"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          }
+        ],
+        "text": "The central legal question is whether applying Colorado\u2019s public\u2011accommodations statute to a website designer who refuses to create speech that conflicts with her religious convictions constitutes unconstitutional compelled speech."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-476",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "pending",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T09:53:58.818662Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "87fd2aa79e9a73dc85458ffb4e41ac91a0c6d2e40bf2d2774a812a9225317587",
+      "fcc45048ea693ddfe5dfb21d388f9e04d11af7c5ed697b4eba372307713cfbac"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "argued",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "fcc45048ea693ddfe5dfb21d388f9e04d11af7c5ed697b4eba372307713cfbac",
+            "evidence_ids": [
+              "ev-fcc45048ea69-0000-0002"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Kagan asked a hypothetical about the parties\u2019 websites."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "fcc45048ea693ddfe5dfb21d388f9e04d11af7c5ed697b4eba372307713cfbac",
+            "evidence_ids": [
+              "ev-fcc45048ea69-0000-0003"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor inquired, \u201cWhere?\u201d seeking clarification of the hypothetical."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "fcc45048ea693ddfe5dfb21d388f9e04d11af7c5ed697b4eba372307713cfbac",
+            "evidence_ids": [
+              "ev-fcc45048ea69-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked whether the dispute was about protecting both gay\u2011rights and free\u2011speech rights."
+      },
+      {
+        "attribution": "Justice GORSUCH",
+        "citations": [
+          {
+            "document_hash": "fcc45048ea693ddfe5dfb21d388f9e04d11af7c5ed697b4eba372307713cfbac",
+            "evidence_ids": [
+              "ev-fcc45048ea69-0004-0000"
+            ],
+            "pages": {
+              "end": 88,
+              "start": 88
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether every freelance writer would have to produce a press release for an organization whose beliefs they find objectionable."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "fcc45048ea693ddfe5dfb21d388f9e04d11af7c5ed697b4eba372307713cfbac",
+            "evidence_ids": [
+              "ev-fcc45048ea69-0005-0000"
+            ],
+            "pages": {
+              "end": 110,
+              "start": 110
+            }
+          }
+        ],
+        "text": "According to United States, the United States, as amicus, supported the respondents and offered a two\u2011part test for when a commercial business may be exempt from a generally applicable public\u2011accommodations law."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "fcc45048ea693ddfe5dfb21d388f9e04d11af7c5ed697b4eba372307713cfbac",
+            "evidence_ids": [
+              "ev-fcc45048ea69-0007-0003"
+            ],
+            "pages": {
+              "end": 156,
+              "start": 156
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts concluded the oral argument and noted that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioner",
+        "citations": [
+          {
+            "document_hash": "87fd2aa79e9a73dc85458ffb4e41ac91a0c6d2e40bf2d2774a812a9225317587",
+            "evidence_ids": [
+              "ev-87fd2aa79e9a-0003-0001"
+            ],
+            "pages": {
+              "end": 31,
+              "start": 31
+            }
+          },
+          {
+            "document_hash": "87fd2aa79e9a73dc85458ffb4e41ac91a0c6d2e40bf2d2774a812a9225317587",
+            "evidence_ids": [
+              "ev-87fd2aa79e9a-0002-0002"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "The petitioner, 303\u202fCreative\u202fLLC, contends that providing such services would force it to convey a message it finds offensive, which is a form of compelled speech."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [],
+      "heading": "Petitioner (303\u202fCreative\u202fLLC)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Respondent",
+          "citations": [
+            {
+              "document_hash": "fcc45048ea693ddfe5dfb21d388f9e04d11af7c5ed697b4eba372307713cfbac",
+              "evidence_ids": [
+                "ev-fcc45048ea69-0001-0009"
+              ],
+              "pages": {
+                "end": 43,
+                "start": 43
+              }
+            },
+            {
+              "document_hash": "fcc45048ea693ddfe5dfb21d388f9e04d11af7c5ed697b4eba372307713cfbac",
+              "evidence_ids": [
+                "ev-fcc45048ea69-0001-0008"
+              ],
+              "pages": {
+                "end": 45,
+                "start": 45
+              }
+            }
+          ],
+          "text": "The respondent, supported by amicus briefs, maintains that the public\u2011accommodations law applies to the services offered and does not target speech, so the law should be enforced."
+        }
+      ],
+      "heading": "Respondent (Aubrey\u202fElenis)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State of Colorado",
+          "citations": [
+            {
+              "document_hash": "87fd2aa79e9a73dc85458ffb4e41ac91a0c6d2e40bf2d2774a812a9225317587",
+              "evidence_ids": [
+                "ev-87fd2aa79e9a-0002-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to State of Colorado, the State argues that, under Colorado law, the designer must provide the same product to all customers, regardless of the customers\u2019 sexual orientation, because the business is offering a product to the public."
+        }
+      ],
+      "heading": "State of Colorado",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "87fd2aa79e9a73dc85458ffb4e41ac91a0c6d2e40bf2d2774a812a9225317587",
+      "evidence_ids": [
+        "ev-87fd2aa79e9a-0000-0000",
+        "ev-87fd2aa79e9a-0000-0001",
+        "ev-87fd2aa79e9a-0002-0000",
+        "ev-87fd2aa79e9a-0002-0001",
+        "ev-87fd2aa79e9a-0002-0002",
+        "ev-87fd2aa79e9a-0003-0001",
+        "ev-87fd2aa79e9a-0004-0000",
+        "ev-87fd2aa79e9a-0005-0000",
+        "ev-87fd2aa79e9a-0006-0000",
+        "ev-87fd2aa79e9a-0007-0000"
+      ],
+      "pages": {
+        "end": 71,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "fcc45048ea693ddfe5dfb21d388f9e04d11af7c5ed697b4eba372307713cfbac",
+      "evidence_ids": [
+        "ev-fcc45048ea69-0000-0002",
+        "ev-fcc45048ea69-0000-0003",
+        "ev-fcc45048ea69-0000-0004",
+        "ev-fcc45048ea69-0001-0000",
+        "ev-fcc45048ea69-0001-0005",
+        "ev-fcc45048ea69-0001-0008",
+        "ev-fcc45048ea69-0001-0009",
+        "ev-fcc45048ea69-0002-0000",
+        "ev-fcc45048ea69-0002-0002",
+        "ev-fcc45048ea69-0005-0000",
+        "ev-fcc45048ea69-0005-0001",
+        "ev-fcc45048ea69-0006-0000",
+        "ev-fcc45048ea69-0006-0001",
+        "ev-fcc45048ea69-0006-0002",
+        "ev-fcc45048ea69-0007-0003"
+      ],
+      "pages": {
+        "end": 156,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T10:05:21.700753Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": false,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [
+      "The claim that the Supreme Court decision is pending is unsupported; the evidence shows the decision was issued on June 30, 2023.",
+      "Because the pending\u2011decision claim is false, the overstatement check fails (material overstatement present).",
+      "Overall support fails because not all material claims are backed by the supplied evidence."
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

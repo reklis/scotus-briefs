@@ -1,0 +1,498 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe76c1f6e8ed6b17d3a6a0bd8f602ee9a5f1a361aa25faad62e6caf2be65b647",
+            "evidence_ids": [
+              "ev-fe76c1f6e8ed-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "In 2015, Nohemi Gonzalez, a U.S. citizen, was killed in coordinated terrorist attacks in Paris by ISIS."
+      },
+      {
+        "attribution": "Plaintiffs",
+        "citations": [
+          {
+            "document_hash": "fe76c1f6e8ed6b17d3a6a0bd8f602ee9a5f1a361aa25faad62e6caf2be65b647",
+            "evidence_ids": [
+              "ev-fe76c1f6e8ed-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Plaintiffs, plaintiffs alleged that Google, via YouTube, aided, abetted, and conspired with ISIS."
+      }
+    ],
+    "heading": "Background",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-1333",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe76c1f6e8ed6b17d3a6a0bd8f602ee9a5f1a361aa25faad62e6caf2be65b647",
+            "evidence_ids": [
+              "ev-fe76c1f6e8ed-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The Court held that the complaint fails to state a claim for aiding and abetting under \u00a72333(d)(2)."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe76c1f6e8ed6b17d3a6a0bd8f602ee9a5f1a361aa25faad62e6caf2be65b647",
+            "evidence_ids": [
+              "ev-fe76c1f6e8ed-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The Court vacated the judgment below and remanded the case for further consideration."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T08:17:51.256394Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+      "fe76c1f6e8ed6b17d3a6a0bd8f602ee9a5f1a361aa25faad62e6caf2be65b647"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+            "evidence_ids": [
+              "ev-73e33d103042-0001-0002"
+            ],
+            "pages": {
+              "end": 26,
+              "start": 26
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether intent and knowledge are required to aid and abet."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+            "evidence_ids": [
+              "ev-73e33d103042-0004-0000"
+            ],
+            "pages": {
+              "end": 91,
+              "start": 91
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether an internet service provider could ever be sued for defamatory content it provides."
+      },
+      {
+        "attribution": "Justice Barrett",
+        "citations": [
+          {
+            "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+            "evidence_ids": [
+              "ev-73e33d103042-0005-0001"
+            ],
+            "pages": {
+              "end": 110,
+              "start": 110
+            }
+          }
+        ],
+        "text": "Justice Barrett asked whether retweeting is protected by \u00a7230(c)."
+      },
+      {
+        "attribution": "Justice Kagan",
+        "citations": [
+          {
+            "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+            "evidence_ids": [
+              "ev-73e33d103042-0005-0005"
+            ],
+            "pages": {
+              "end": 128,
+              "start": 128
+            }
+          }
+        ],
+        "text": "According to Justice Kagan, justice Kagan referenced Justice Thomas\u2019s earlier question about algorithm differences."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+            "evidence_ids": [
+              "ev-73e33d103042-0007-0000"
+            ],
+            "pages": {
+              "end": 150,
+              "start": 150
+            }
+          }
+        ],
+        "text": "Justice Alito asked whether Google\u2019s liability would cause the internet to collapse."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+            "evidence_ids": [
+              "ev-73e33d103042-0007-0001"
+            ],
+            "pages": {
+              "end": 152,
+              "start": 152
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked, \u201cIs that right in your view?\u201d"
+      },
+      {
+        "attribution": "Ms. Blatt",
+        "citations": [
+          {
+            "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+            "evidence_ids": [
+              "ev-73e33d103042-0007-0004"
+            ],
+            "pages": {
+              "end": 161,
+              "start": 161
+            }
+          }
+        ],
+        "text": "Ms. Blatt warned that holding platforms liable for topic headings would render the statute a dead letter."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe76c1f6e8ed6b17d3a6a0bd8f602ee9a5f1a361aa25faad62e6caf2be65b647",
+            "evidence_ids": [
+              "ev-fe76c1f6e8ed-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "In 2015, Nohemi Gonzalez, a U.S. citizen, was killed in coordinated terrorist attacks in Paris by ISIS."
+      },
+      {
+        "attribution": "Plaintiffs",
+        "citations": [
+          {
+            "document_hash": "fe76c1f6e8ed6b17d3a6a0bd8f602ee9a5f1a361aa25faad62e6caf2be65b647",
+            "evidence_ids": [
+              "ev-fe76c1f6e8ed-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "According to Plaintiffs, plaintiffs alleged that Google, via YouTube, aided, abetted, and conspired with ISIS."
+      },
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "fe76c1f6e8ed6b17d3a6a0bd8f602ee9a5f1a361aa25faad62e6caf2be65b647",
+            "evidence_ids": [
+              "ev-fe76c1f6e8ed-0000-0002"
+            ],
+            "pages": {
+              "end": 3,
+              "start": 3
+            }
+          }
+        ],
+        "text": "According to United States, the United States, as amicus curiae, urged vacatur of the lower\u2011court judgment."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe76c1f6e8ed6b17d3a6a0bd8f602ee9a5f1a361aa25faad62e6caf2be65b647",
+            "evidence_ids": [
+              "ev-fe76c1f6e8ed-0000-0003"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The Supreme Court granted certiorari to review the Ninth Circuit's application of \u00a7230."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe76c1f6e8ed6b17d3a6a0bd8f602ee9a5f1a361aa25faad62e6caf2be65b647",
+            "evidence_ids": [
+              "ev-fe76c1f6e8ed-0000-0004"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "The Court held that the complaint fails to state a claim for aiding and abetting under \u00a72333(d)(2)."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "fe76c1f6e8ed6b17d3a6a0bd8f602ee9a5f1a361aa25faad62e6caf2be65b647",
+            "evidence_ids": [
+              "ev-fe76c1f6e8ed-0000-0005"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Consequently, the Court vacated the judgment below and remanded the case for further consideration."
+      },
+      {
+        "attribution": "Petitioners (Eric Schnapper)",
+        "citations": [
+          {
+            "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+            "evidence_ids": [
+              "ev-73e33d103042-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Petitioners (Eric Schnapper), according to Petitioners (Eric Schnapper), section\u202f230(c)(1) distinguishes between claims based on third\u2011party content and claims based on a company\u2019s own conduct."
+      },
+      {
+        "attribution": "United States (amicus curiae)",
+        "citations": [
+          {
+            "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+            "evidence_ids": [
+              "ev-73e33d103042-0003-0000"
+            ],
+            "pages": {
+              "end": 73,
+              "start": 73
+            }
+          }
+        ],
+        "text": "According to United States (amicus curiae), according to United States (amicus curiae), the amicus argued that an internet service provider can be sued for its own organizational choices, but such choices do not strip it of \u00a7230 liability."
+      },
+      {
+        "attribution": "United States (amicus curiae)",
+        "citations": [
+          {
+            "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+            "evidence_ids": [
+              "ev-73e33d103042-0003-0003"
+            ],
+            "pages": {
+              "end": 81,
+              "start": 81
+            }
+          }
+        ],
+        "text": "According to United States (amicus curiae), according to United States (amicus curiae), youTube\u2019s own conduct falls outside of \u00a7230(c)(1)."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+              "evidence_ids": [
+                "ev-73e33d103042-0003-0000"
+              ],
+              "pages": {
+                "end": 73,
+                "start": 73
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), the amicus argued that an internet service provider can be sued for its own organizational choices, but such choices do not strip it of \u00a7230 liability."
+        },
+        {
+          "attribution": "United States (amicus curiae)",
+          "citations": [
+            {
+              "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+              "evidence_ids": [
+                "ev-73e33d103042-0003-0003"
+              ],
+              "pages": {
+                "end": 81,
+                "start": 81
+              }
+            }
+          ],
+          "text": "According to United States (amicus curiae), according to United States (amicus curiae), youTube\u2019s own conduct falls outside of \u00a7230(c)(1)."
+        }
+      ],
+      "heading": "United States (Amicus Curiae)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners (Eric Schnapper)",
+          "citations": [
+            {
+              "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+              "evidence_ids": [
+                "ev-73e33d103042-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioners (Eric Schnapper), according to Petitioners (Eric Schnapper), section\u202f230(c)(1) distinguishes between claims based on third\u2011party content and claims based on a company\u2019s own conduct."
+        }
+      ],
+      "heading": "Petitioners (Eric Schnapper)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "73e33d103042e1deed48435472e9b8c565fc8b64d70d46184f3542e1206bf166",
+      "evidence_ids": [
+        "ev-73e33d103042-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "fe76c1f6e8ed6b17d3a6a0bd8f602ee9a5f1a361aa25faad62e6caf2be65b647",
+      "evidence_ids": [
+        "ev-fe76c1f6e8ed-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T08:23:26.858541Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

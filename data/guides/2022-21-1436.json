@@ -1,0 +1,436 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "523f28ee5dcc03b08320fba42182bda07a87c6300af4eca30f8ded2febcc96ea",
+            "evidence_ids": [
+              "ev-523f28ee5dcc-0001-0001",
+              "ev-523f28ee5dcc-0001-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 11
+            }
+          }
+        ],
+        "text": "The case concerned whether the exhaustion requirement in \u00a71252(d)(1) is jurisdictional, which would affect whether waiver and forfeiture rules apply."
+      }
+    ],
+    "heading": "Background & Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-1436",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "523f28ee5dcc03b08320fba42182bda07a87c6300af4eca30f8ded2febcc96ea",
+            "evidence_ids": [
+              "ev-523f28ee5dcc-0001-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The Court held that \u00a71252(d)(1)\u2019s exhaustion requirement is not jurisdictional and therefore is subject to waiver and forfeiture."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "523f28ee5dcc03b08320fba42182bda07a87c6300af4eca30f8ded2febcc96ea",
+            "evidence_ids": [
+              "ev-523f28ee5dcc-0002-0000"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Alito (concurrence) noted that the Court vacated the portion of the Court of Appeals judgment dismissing Santos\u2011Zacaria\u2019s petition for review and remanded for further proceedings consistent with this opinion."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T08:23:26.879374Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+      "523f28ee5dcc03b08320fba42182bda07a87c6300af4eca30f8ded2febcc96ea"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+            "evidence_ids": [
+              "ev-1c0b8504ef7b-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Petitioner was represented by Paul W. Hughes, Esquire, of Washington, D.C."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+            "evidence_ids": [
+              "ev-1c0b8504ef7b-0001-0003"
+            ],
+            "pages": {
+              "end": 27,
+              "start": 27
+            }
+          }
+        ],
+        "text": "Justice Jackson asked whether the Court needed to opine on exhaustion versus remedy exhaustion if the parties agreed on \u201cas of right.\u201d"
+      },
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+            "evidence_ids": [
+              "ev-1c0b8504ef7b-0001-0005"
+            ],
+            "pages": {
+              "end": 36,
+              "start": 36
+            }
+          }
+        ],
+        "text": "Justice Thomas asked for an example of another provision using the phrase \u201cas of right.\u201d"
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+            "evidence_ids": [
+              "ev-1c0b8504ef7b-0002-0000"
+            ],
+            "pages": {
+              "end": 45,
+              "start": 45
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, the statute did not codify the exact language."
+      },
+      {
+        "attribution": "Justice Kavanaugh",
+        "citations": [
+          {
+            "document_hash": "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+            "evidence_ids": [
+              "ev-1c0b8504ef7b-0003-0000"
+            ],
+            "pages": {
+              "end": 66,
+              "start": 66
+            }
+          }
+        ],
+        "text": "Justice Kavanaugh asked the petitioner to describe an impermissible fact\u2011finding claim when successful."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+            "evidence_ids": [
+              "ev-1c0b8504ef7b-0003-0005"
+            ],
+            "pages": {
+              "end": 77,
+              "start": 77
+            }
+          }
+        ],
+        "text": "The case was submitted after argument."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "523f28ee5dcc03b08320fba42182bda07a87c6300af4eca30f8ded2febcc96ea",
+            "evidence_ids": [
+              "ev-523f28ee5dcc-0001-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The Supreme Court held that \u00a71252(d)(1)\u2019s exhaustion requirement is not jurisdictional and therefore is subject to waiver and forfeiture."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "523f28ee5dcc03b08320fba42182bda07a87c6300af4eca30f8ded2febcc96ea",
+            "evidence_ids": [
+              "ev-523f28ee5dcc-0002-0000"
+            ],
+            "pages": {
+              "end": 22,
+              "start": 22
+            }
+          }
+        ],
+        "text": "Justice Alito, in a concurring opinion, noted that the Court vacated the portion of the Court of Appeals judgment dismissing Santos\u2011Zacaria\u2019s petition for review and remanded the case for further proceedings consistent with this opinion."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+              "evidence_ids": [
+                "ev-1c0b8504ef7b-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "Petitioner argues that the Court of Appeals erred in dismissing its improper fact\u2011finding claim."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+              "evidence_ids": [
+                "ev-1c0b8504ef7b-0003-0004"
+              ],
+              "pages": {
+                "end": 75,
+                "start": 75
+              }
+            }
+          ],
+          "text": "According to Petitioner, the phrase \u201cas of right\u201d in \u00a71252(d)(1) has a specific purpose and only the petitioner can give it meaning."
+        },
+        {
+          "attribution": "Petitioner",
+          "citations": [
+            {
+              "document_hash": "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+              "evidence_ids": [
+                "ev-1c0b8504ef7b-0003-0001"
+              ],
+              "pages": {
+                "end": 66,
+                "start": 66
+              }
+            }
+          ],
+          "text": "According to Petitioner, an impermissible fact\u2011finding claim occurs when the Board relies on facts the immigration judge did not consider."
+        }
+      ],
+      "heading": "Petitioner",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "523f28ee5dcc03b08320fba42182bda07a87c6300af4eca30f8ded2febcc96ea",
+              "evidence_ids": [
+                "ev-523f28ee5dcc-0001-0001"
+              ],
+              "pages": {
+                "end": 11,
+                "start": 11
+              }
+            }
+          ],
+          "text": "The Government contends that \u00a71252(d)(1) is jurisdictional because it addresses the court and limits review."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+              "evidence_ids": [
+                "ev-1c0b8504ef7b-0001-0001"
+              ],
+              "pages": {
+                "end": 25,
+                "start": 25
+              }
+            }
+          ],
+          "text": "According to Government, the Government acknowledges that waiver and forfeiture apply to \u00a71252(d)(1)."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "523f28ee5dcc03b08320fba42182bda07a87c6300af4eca30f8ded2febcc96ea",
+              "evidence_ids": [
+                "ev-523f28ee5dcc-0001-0004"
+              ],
+              "pages": {
+                "end": 16,
+                "start": 16
+              }
+            }
+          ],
+          "text": "According to Government, the exhaustion requirement only demands exhaustion of remedies \u201cavailable as of right,\u201d not discretionary remedies."
+        },
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+              "evidence_ids": [
+                "ev-1c0b8504ef7b-0001-0000"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "The Government argues that the statute requires filing a petition for review and, simultaneously, a motion to reconsider before the Board."
+        }
+      ],
+      "heading": "Government",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "1c0b8504ef7b5036a3e37a2b0e987a2703a806724dd38aae6e2e02e4095425cd",
+      "evidence_ids": [
+        "ev-1c0b8504ef7b-0000-0000"
+      ],
+      "pages": {
+        "end": 77,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "523f28ee5dcc03b08320fba42182bda07a87c6300af4eca30f8ded2febcc96ea",
+      "evidence_ids": [
+        "ev-523f28ee5dcc-0000-0005"
+      ],
+      "pages": {
+        "end": 22,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T08:34:18.663826Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "523f28ee5dcc03b08320fba42182bda07a87c6300af4eca30f8ded2febcc96ea",
+            "evidence_ids": [
+              "ev-523f28ee5dcc-0001-0002"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "Because \u00a71252(d)(1)\u2019s exhaustion requirement is not jurisdictional, it is subject to waiver and forfeiture."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

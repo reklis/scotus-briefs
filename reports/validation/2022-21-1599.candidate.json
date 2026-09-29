@@ -1,0 +1,581 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+            "evidence_ids": [
+              "ev-ed40ef933c84-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The Internal Revenue Service has the power to issue summonses to pursue unpaid federal taxes and the people who owe them."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+            "evidence_ids": [
+              "ev-ed40ef933c84-0000-0002"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "When a summons is issued \u201cin aid of the collection of an assessment \u2026 against the person with respect to whose liability the summons is issued,\u201d notice is not required."
+      },
+      {
+        "attribution": "District Court",
+        "citations": [
+          {
+            "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+            "evidence_ids": [
+              "ev-ed40ef933c84-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The District Court concluded that, under this exception, petitioners could not bring a motion to quash."
+      }
+    ],
+    "heading": "Background",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-1599",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+            "evidence_ids": [
+              "ev-ed40ef933c84-0001-0003"
+            ],
+            "pages": {
+              "end": 15,
+              "start": 15
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, the Court holds that there is no \u201clegal interest\u201d limitation on the IRS\u2019s power to summon records without notice under \u00a7\u202f7609(c)(2)(D)(i)."
+      },
+      {
+        "attribution": "Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+            "evidence_ids": [
+              "ev-ed40ef933c84-0000-0009"
+            ],
+            "pages": {
+              "end": 7,
+              "start": 7
+            }
+          }
+        ],
+        "text": "Justice Roberts, dissenting, argues that the statutory context requires a narrower construction of the notice exemption."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T09:14:08.616106Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+      "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+            "evidence_ids": [
+              "ev-9c05bb2b17b6-0001-0002"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 33
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked whether there must be a causal link between the liability and the IRS\u2019s actions."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+            "evidence_ids": [
+              "ev-9c05bb2b17b6-0002-0000"
+            ],
+            "pages": {
+              "end": 46,
+              "start": 46
+            }
+          }
+        ],
+        "text": "Justice Jackson asked about the argument that the subsection did not apply in the law\u2011firm situation."
+      },
+      {
+        "attribution": "Justice Gorsuch",
+        "citations": [
+          {
+            "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+            "evidence_ids": [
+              "ev-9c05bb2b17b6-0002-0001"
+            ],
+            "pages": {
+              "end": 50,
+              "start": 50
+            }
+          }
+        ],
+        "text": "Justice Gorsuch asked about the government\u2019s reading of the statute that might render subsection (ii) almost superfluous."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+            "evidence_ids": [
+              "ev-9c05bb2b17b6-0002-0002"
+            ],
+            "pages": {
+              "end": 53,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Justice Sotomayor asked whether there is a regulation that prevents the IRS from engaging until there is collection."
+      },
+      {
+        "attribution": "Chief Justice Roberts",
+        "citations": [
+          {
+            "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+            "evidence_ids": [
+              "ev-9c05bb2b17b6-0002-0006"
+            ],
+            "pages": {
+              "end": 60,
+              "start": 60
+            }
+          }
+        ],
+        "text": "According to Chief Justice Roberts, chief Justice Roberts noted that the case was submitted."
+      }
+    ],
+    "heading": "Oral Argument \u2013 Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+            "evidence_ids": [
+              "ev-9c05bb2b17b6-0000-0000"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "Petitioners argue that Congress enacted \u00a7\u202f7609 to give the public privacy rights to notice and an opportunity to quash third\u2011party IRS summonses, and limited the exceptions."
+      },
+      {
+        "attribution": "District Court",
+        "citations": [
+          {
+            "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+            "evidence_ids": [
+              "ev-ed40ef933c84-0000-0003"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The District Court concluded that no notice was required and dismissed the petitioners\u2019 motion to quash."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+              "evidence_ids": [
+                "ev-9c05bb2b17b6-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Petitioners, Congress enacted \u00a7\u202f7609 to give the public privacy rights to notice and an opportunity to quash third\u2011party IRS summonses, and carefully limited the exceptions."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+              "evidence_ids": [
+                "ev-ed40ef933c84-0001-0000"
+              ],
+              "pages": {
+                "end": 12,
+                "start": 12
+              }
+            }
+          ],
+          "text": "According to Petitioners, clause (i) concerns assessments or judgments against a taxpayer, while clause (ii) concerns the liability of a transferee or fiduciary; the notice exception distinguishes between them."
+        },
+        {
+          "attribution": "Petitioners",
+          "citations": [
+            {
+              "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+              "evidence_ids": [
+                "ev-ed40ef933c84-0001-0001"
+              ],
+              "pages": {
+                "end": 13,
+                "start": 13
+              }
+            }
+          ],
+          "text": "According to Petitioners, Congress enacted \u00a7\u202f7609 in response to earlier decisions that gave a broad construction to the IRS\u2019s summons power, reflecting privacy concerns."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "McDowell",
+          "citations": [
+            {
+              "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+              "evidence_ids": [
+                "ev-9c05bb2b17b6-0002-0003"
+              ],
+              "pages": {
+                "end": 46,
+                "start": 46
+              }
+            }
+          ],
+          "text": "According to McDowell, the government disagrees with the scope of the summons."
+        },
+        {
+          "attribution": "McDowell",
+          "citations": [
+            {
+              "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+              "evidence_ids": [
+                "ev-9c05bb2b17b6-0002-0004"
+              ],
+              "pages": {
+                "end": 48,
+                "start": 48
+              }
+            }
+          ],
+          "text": "According to McDowell, the summons sought records of payments to the law firm, which may be a different type of case."
+        }
+      ],
+      "heading": "Government (Respondent)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+      "evidence_ids": [
+        "ev-ed40ef933c84-0000-0002"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+      "evidence_ids": [
+        "ev-9c05bb2b17b6-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+      "evidence_ids": [
+        "ev-ed40ef933c84-0000-0003"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+      "evidence_ids": [
+        "ev-ed40ef933c84-0001-0003"
+      ],
+      "pages": {
+        "end": 15,
+        "start": 15
+      }
+    },
+    {
+      "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+      "evidence_ids": [
+        "ev-ed40ef933c84-0000-0009"
+      ],
+      "pages": {
+        "end": 7,
+        "start": 7
+      }
+    },
+    {
+      "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+      "evidence_ids": [
+        "ev-ed40ef933c84-0000-0000"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+      "evidence_ids": [
+        "ev-ed40ef933c84-0001-0000"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    },
+    {
+      "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+      "evidence_ids": [
+        "ev-ed40ef933c84-0001-0001"
+      ],
+      "pages": {
+        "end": 13,
+        "start": 13
+      }
+    },
+    {
+      "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+      "evidence_ids": [
+        "ev-9c05bb2b17b6-0002-0003"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+      "evidence_ids": [
+        "ev-9c05bb2b17b6-0002-0004"
+      ],
+      "pages": {
+        "end": 48,
+        "start": 48
+      }
+    },
+    {
+      "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+      "evidence_ids": [
+        "ev-9c05bb2b17b6-0001-0002"
+      ],
+      "pages": {
+        "end": 33,
+        "start": 33
+      }
+    },
+    {
+      "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+      "evidence_ids": [
+        "ev-9c05bb2b17b6-0002-0000"
+      ],
+      "pages": {
+        "end": 46,
+        "start": 46
+      }
+    },
+    {
+      "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+      "evidence_ids": [
+        "ev-9c05bb2b17b6-0002-0001"
+      ],
+      "pages": {
+        "end": 50,
+        "start": 50
+      }
+    },
+    {
+      "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+      "evidence_ids": [
+        "ev-9c05bb2b17b6-0002-0002"
+      ],
+      "pages": {
+        "end": 53,
+        "start": 53
+      }
+    },
+    {
+      "document_hash": "9c05bb2b17b6cf0f27e8880766a1511340c32b0cd7e56b536f2681ba5fc847b3",
+      "evidence_ids": [
+        "ev-9c05bb2b17b6-0002-0006"
+      ],
+      "pages": {
+        "end": 60,
+        "start": 60
+      }
+    },
+    {
+      "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+      "evidence_ids": [
+        "ev-ed40ef933c84-0001-0004"
+      ],
+      "pages": {
+        "end": 16,
+        "start": 16
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T09:27:33.251635Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": false,
+      "model_attribution": false,
+      "model_opinion_distinction": false,
+      "model_oral_argument_characterization": false,
+      "model_overstatement": false,
+      "model_support": false,
+      "opinion_distinction": false,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": false,
+      "quality_factual_accuracy": false,
+      "quality_neutrality": false,
+      "quality_readability": false,
+      "quality_restraint": false,
+      "quality_traceability": false,
+      "schema": true
+    },
+    "messages": [
+      "separate-opinion claim must name its author and label the disagreement",
+      "complete decision section lacks holding evidence",
+      "Adversarial verification skipped after deterministic failure",
+      "separate-opinion claim must name its author and label the disagreement",
+      "complete decision section lacks holding evidence"
+    ],
+    "state": "rejected"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+            "evidence_ids": [
+              "ev-ed40ef933c84-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "According to Petitioners, privacy concerns motivated Congress\u2019s notice requirement, underscoring the importance of limiting the IRS\u2019s summons power."
+      },
+      {
+        "attribution": "Justice Jackson",
+        "citations": [
+          {
+            "document_hash": "ed40ef933c84dc7711bb4329fc16f9eb5d364590e17b6842b44f42a142a6a6d0",
+            "evidence_ids": [
+              "ev-ed40ef933c84-0001-0004"
+            ],
+            "pages": {
+              "end": 16,
+              "start": 16
+            }
+          }
+        ],
+        "text": "According to Justice Jackson, notice serves an important function in tax administration, ensuring that the interests of those affected are balanced."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

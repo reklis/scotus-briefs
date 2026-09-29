@@ -1,0 +1,335 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "3c5942d83fce1e0461d572acc3e92a331235447fc23e31dc1dbebb3325f09cf3",
+            "evidence_ids": [
+              "ev-3c5942d83fce-0000-0002"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "According to Justice Thomas, the case concerns whether intrastate, purely intrastate, navigable bodies of water are \u201cwaters of the United States.\u201d"
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-454",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "af7b29e1907045cb3cccc7b0d8e36db50772a59a7ccb0def8afad6bbdf2c4ccb",
+            "evidence_ids": [
+              "ev-af7b29e19070-0001-0005"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The Court granted certiorari to decide the proper test for determining whether wetlands are \u201cwaters of the United States.\u201d"
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T09:38:20.719187Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "3c5942d83fce1e0461d572acc3e92a331235447fc23e31dc1dbebb3325f09cf3",
+      "af7b29e1907045cb3cccc7b0d8e36db50772a59a7ccb0def8afad6bbdf2c4ccb"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Syllabus",
+        "citations": [
+          {
+            "document_hash": "af7b29e1907045cb3cccc7b0d8e36db50772a59a7ccb0def8afad6bbdf2c4ccb",
+            "evidence_ids": [
+              "ev-af7b29e19070-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          },
+          {
+            "document_hash": "af7b29e1907045cb3cccc7b0d8e36db50772a59a7ccb0def8afad6bbdf2c4ccb",
+            "evidence_ids": [
+              "ev-af7b29e19070-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "Petitioners Michael and Chantell Sackett purchased land near Priest Lake, Idaho, began backfilling the lot, and the EPA ordered them to restore the site, threatening penalties of over $40,000 per day."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "af7b29e1907045cb3cccc7b0d8e36db50772a59a7ccb0def8afad6bbdf2c4ccb",
+            "evidence_ids": [
+              "ev-af7b29e19070-0001-0005"
+            ],
+            "pages": {
+              "end": 14,
+              "start": 14
+            }
+          }
+        ],
+        "text": "The Supreme Court granted certiorari to decide the proper test for determining whether wetlands are \u201cwaters of the United States.\u201d"
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Damien M. Schiff",
+          "citations": [
+            {
+              "document_hash": "3c5942d83fce1e0461d572acc3e92a331235447fc23e31dc1dbebb3325f09cf3",
+              "evidence_ids": [
+                "ev-3c5942d83fce-0005-0004"
+              ],
+              "pages": {
+                "end": 122,
+                "start": 121
+              }
+            }
+          ],
+          "text": "According to Damien M. Schiff, the \u201csignificant nexus\u201d test is far broader than the traditional line\u2011drawing test and better fits the case."
+        }
+      ],
+      "heading": "Petitioners",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "EPA",
+          "citations": [
+            {
+              "document_hash": "af7b29e1907045cb3cccc7b0d8e36db50772a59a7ccb0def8afad6bbdf2c4ccb",
+              "evidence_ids": [
+                "ev-af7b29e19070-0003-0000"
+              ],
+              "pages": {
+                "end": 31,
+                "start": 31
+              }
+            },
+            {
+              "document_hash": "af7b29e1907045cb3cccc7b0d8e36db50772a59a7ccb0def8afad6bbdf2c4ccb",
+              "evidence_ids": [
+                "ev-af7b29e19070-0003-0002"
+              ],
+              "pages": {
+                "end": 32,
+                "start": 32
+              }
+            }
+          ],
+          "text": "The EPA contends that the \u201csignificant nexus\u201d test has no statutory basis and is implausible, extending the definition of \u201cwaters of the United States\u201d too far."
+        }
+      ],
+      "heading": "Respondents",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "U.S. Army Corps of Engineers",
+          "citations": [
+            {
+              "document_hash": "af7b29e1907045cb3cccc7b0d8e36db50772a59a7ccb0def8afad6bbdf2c4ccb",
+              "evidence_ids": [
+                "ev-af7b29e19070-0001-0003"
+              ],
+              "pages": {
+                "end": 15,
+                "start": 15
+              }
+            }
+          ],
+          "text": "According to U.S. Army Corps of Engineers, according to the U.S. Army Corps of Engineers, the Corps asserts jurisdiction only over traditional navigable waters, consistent with its historic authority to regulate obstructions to navigation."
+        }
+      ],
+      "heading": "U.S. Army Corps of Engineers",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "State of Alaska",
+          "citations": [
+            {
+              "document_hash": "af7b29e1907045cb3cccc7b0d8e36db50772a59a7ccb0def8afad6bbdf2c4ccb",
+              "evidence_ids": [
+                "ev-af7b29e19070-0000-0007"
+              ],
+              "pages": {
+                "end": 7,
+                "start": 7
+              }
+            }
+          ],
+          "text": "According to State of Alaska, according to the State of Alaska, amici curiae filed briefs urging reversal of the lower\u2011court decision."
+        }
+      ],
+      "heading": "Amicus (State of Alaska)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "3c5942d83fce1e0461d572acc3e92a331235447fc23e31dc1dbebb3325f09cf3",
+      "evidence_ids": [
+        "ev-3c5942d83fce-0000-0000",
+        "ev-3c5942d83fce-0000-0002",
+        "ev-3c5942d83fce-0000-0003",
+        "ev-3c5942d83fce-0005-0004"
+      ],
+      "pages": {
+        "end": 122,
+        "start": 1
+      }
+    },
+    {
+      "document_hash": "af7b29e1907045cb3cccc7b0d8e36db50772a59a7ccb0def8afad6bbdf2c4ccb",
+      "evidence_ids": [
+        "ev-af7b29e19070-0000-0000",
+        "ev-af7b29e19070-0000-0001",
+        "ev-af7b29e19070-0000-0007",
+        "ev-af7b29e19070-0001-0000",
+        "ev-af7b29e19070-0001-0001",
+        "ev-af7b29e19070-0001-0003",
+        "ev-af7b29e19070-0001-0005",
+        "ev-af7b29e19070-0002-0002",
+        "ev-af7b29e19070-0003-0000",
+        "ev-af7b29e19070-0003-0002",
+        "ev-af7b29e19070-0003-0003"
+      ],
+      "pages": {
+        "end": 34,
+        "start": 1
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T09:46:15.399428Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "af7b29e1907045cb3cccc7b0d8e36db50772a59a7ccb0def8afad6bbdf2c4ccb",
+            "evidence_ids": [
+              "ev-af7b29e19070-0001-0000",
+              "ev-af7b29e19070-0001-0001"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 10
+            }
+          },
+          {
+            "document_hash": "af7b29e1907045cb3cccc7b0d8e36db50772a59a7ccb0def8afad6bbdf2c4ccb",
+            "evidence_ids": [
+              "ev-af7b29e19070-0003-0000",
+              "ev-af7b29e19070-0003-0003"
+            ],
+            "pages": {
+              "end": 33,
+              "start": 31
+            }
+          }
+        ],
+        "text": "The case determines the scope of EPA and Corps regulatory authority over wetlands, affecting enforcement actions and potential penalties for landowners."
+      }
+    ],
+    "heading": "Why it matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}

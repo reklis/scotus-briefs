@@ -1,0 +1,410 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+            "evidence_ids": [
+              "ev-fb711db546a5-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked the counsel to explain the precise liberty interests that the client claims have been deprived and who deprived him of those interests."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+            "evidence_ids": [
+              "ev-fb711db546a5-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor referenced the Court\u2019s finality rule (Court Rule 13.3) during questioning."
+      }
+    ],
+    "heading": "Background and Questions",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-442",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T09:33:28.071831Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "4cde8b7a5790b7038bf86d6952cd768906229c29b03a68b057ccb18c19a8d28f",
+      "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [
+      {
+        "attribution": "Justice Thomas",
+        "citations": [
+          {
+            "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+            "evidence_ids": [
+              "ev-fb711db546a5-0000-0001"
+            ],
+            "pages": {
+              "end": 6,
+              "start": 6
+            }
+          }
+        ],
+        "text": "Justice Thomas asked counsel to clarify the specific liberty interests at issue and who deprived the client of them."
+      },
+      {
+        "attribution": "Justice Sotomayor",
+        "citations": [
+          {
+            "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+            "evidence_ids": [
+              "ev-fb711db546a5-0000-0003"
+            ],
+            "pages": {
+              "end": 8,
+              "start": 8
+            }
+          }
+        ],
+        "text": "According to Justice Sotomayor, justice Sotomayor referenced the Court\u2019s finality rule (Court Rule 13.3)."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+            "evidence_ids": [
+              "ev-fb711db546a5-0002-0004"
+            ],
+            "pages": {
+              "end": 64,
+              "start": 64
+            }
+          }
+        ],
+        "text": "Justice Alito questioned whether exhaustion of state remedies is required for a \u00a71983 due process claim."
+      }
+    ],
+    "heading": "Oral Argument",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [],
+    "heading": "Overview",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Texas",
+          "citations": [
+            {
+              "document_hash": "4cde8b7a5790b7038bf86d6952cd768906229c29b03a68b057ccb18c19a8d28f",
+              "evidence_ids": [
+                "ev-4cde8b7a5790-0000-0002"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "Texas argues that Reed lacks standing."
+        },
+        {
+          "attribution": "Texas",
+          "citations": [
+            {
+              "document_hash": "4cde8b7a5790b7038bf86d6952cd768906229c29b03a68b057ccb18c19a8d28f",
+              "evidence_ids": [
+                "ev-4cde8b7a5790-0000-0003"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Texas, texas invokes the State's sovereign immunity."
+        }
+      ],
+      "heading": "Texas",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Parker Rider-Longmaid",
+          "citations": [
+            {
+              "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+              "evidence_ids": [
+                "ev-fb711db546a5-0000-0000"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to Parker Rider-Longmaid, a claim modeled after Skinner accrues at the end of the state court litigation seeking DNA testing, based on doctrinal and practical reasons."
+        },
+        {
+          "attribution": "Parker Rider-Longmaid",
+          "citations": [
+            {
+              "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+              "evidence_ids": [
+                "ev-fb711db546a5-0000-0002"
+              ],
+              "pages": {
+                "end": 6,
+                "start": 6
+              }
+            }
+          ],
+          "text": "According to Parker Rider-Longmaid, the liberty interest at issue is proving one's innocence with newly discovered evidence, which must be vindicated by fair procedural due process."
+        },
+        {
+          "attribution": "Parker Rider-Longmaid",
+          "citations": [
+            {
+              "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+              "evidence_ids": [
+                "ev-fb711db546a5-0000-0006"
+              ],
+              "pages": {
+                "end": 19,
+                "start": 19
+              }
+            }
+          ],
+          "text": "According to Parker Rider-Longmaid, the injury claimed is the deprivation without due process of the liberty interest in proving innocence with newly discovered evidence."
+        },
+        {
+          "attribution": "Mr. Rider-Longmaid",
+          "citations": [
+            {
+              "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+              "evidence_ids": [
+                "ev-fb711db546a5-0001-0002"
+              ],
+              "pages": {
+                "end": 24,
+                "start": 24
+              }
+            }
+          ],
+          "text": "According to Mr. Rider-Longmaid, practical considerations include the Fifth Circuit's rule on Goertz and the injury that arises when a trial court first denies testing."
+        }
+      ],
+      "heading": "Parker Rider\u2011Longmaid",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [
+        {
+          "attribution": "Mr. Stone",
+          "citations": [
+            {
+              "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+              "evidence_ids": [
+                "ev-fb711db546a5-0002-0000"
+              ],
+              "pages": {
+                "end": 44,
+                "start": 44
+              }
+            }
+          ],
+          "text": "According to Mr. Stone, the petition under Section 1257 is a proper vehicle for alleging a due process problem in the Court of Criminal Appeals."
+        }
+      ],
+      "heading": "Mr. Stone",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "4cde8b7a5790b7038bf86d6952cd768906229c29b03a68b057ccb18c19a8d28f",
+      "evidence_ids": [
+        "ev-4cde8b7a5790-0000-0002",
+        "ev-4cde8b7a5790-0000-0003"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+      "evidence_ids": [
+        "ev-fb711db546a5-0000-0000"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+      "evidence_ids": [
+        "ev-fb711db546a5-0000-0001",
+        "ev-fb711db546a5-0000-0002"
+      ],
+      "pages": {
+        "end": 6,
+        "start": 6
+      }
+    },
+    {
+      "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+      "evidence_ids": [
+        "ev-fb711db546a5-0000-0003"
+      ],
+      "pages": {
+        "end": 8,
+        "start": 8
+      }
+    },
+    {
+      "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+      "evidence_ids": [
+        "ev-fb711db546a5-0000-0006"
+      ],
+      "pages": {
+        "end": 19,
+        "start": 19
+      }
+    },
+    {
+      "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+      "evidence_ids": [
+        "ev-fb711db546a5-0001-0000"
+      ],
+      "pages": {
+        "end": 23,
+        "start": 23
+      }
+    },
+    {
+      "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+      "evidence_ids": [
+        "ev-fb711db546a5-0001-0002"
+      ],
+      "pages": {
+        "end": 24,
+        "start": 24
+      }
+    },
+    {
+      "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+      "evidence_ids": [
+        "ev-fb711db546a5-0002-0000"
+      ],
+      "pages": {
+        "end": 44,
+        "start": 44
+      }
+    },
+    {
+      "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+      "evidence_ids": [
+        "ev-fb711db546a5-0002-0003"
+      ],
+      "pages": {
+        "end": 45,
+        "start": 45
+      }
+    },
+    {
+      "document_hash": "fb711db546a54e09824c8d8940f362ec22731ff09585fe7709af2d63cdab9a92",
+      "evidence_ids": [
+        "ev-fb711db546a5-0002-0004"
+      ],
+      "pages": {
+        "end": 64,
+        "start": 64
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T09:38:20.710977Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}

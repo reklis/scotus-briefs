@@ -1,0 +1,321 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "United States",
+        "citations": [
+          {
+            "document_hash": "ccdfb4f3491a102d5121840e3e1265f427098cb431b09ea5240d4ce2e6c7fb0a",
+            "evidence_ids": [
+              "ev-ccdfb4f3491a-0002-0002",
+              "ev-ccdfb4f3491a-0002-0003"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 53
+            }
+          }
+        ],
+        "text": "According to United States, the central legal question is whether Proposition\u202f12\u2019s extraterritorial regulation violates the Dormant Commerce Clause under the Pike balancing test."
+      }
+    ],
+    "heading": "Background & Legal Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "2022-21-468",
+  "decision": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+            "evidence_ids": [
+              "ev-0028ea4c7941-0002-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          }
+        ],
+        "text": "The Court held that Proposition\u202f12\u2019s ban on pork sales has an impermissible extraterritorial effect that burdens interstate commerce."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+            "evidence_ids": [
+              "ev-0028ea4c7941-0002-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          },
+          {
+            "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+            "evidence_ids": [
+              "ev-0028ea4c7941-0002-0005"
+            ],
+            "pages": {
+              "end": 29,
+              "start": 29
+            }
+          }
+        ],
+        "text": "The Court rejected the petitioners\u2019 \u201calmost per se\u201d theory and emphasized that a plaintiff must first show a substantial burden on interstate commerce before the Pike balancing test can be applied."
+      }
+    ],
+    "heading": "Decision",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-09-29T09:46:15.419196Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+      "ccdfb4f3491a102d5121840e3e1265f427098cb431b09ea5240d4ce2e6c7fb0a"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+            "evidence_ids": [
+              "ev-0028ea4c7941-0000-0000"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The case challenges California\u2019s Proposition\u202f12, which bans the in\u2011state sale of pork that comes from pigs raised in confinement that does not allow them to lie down, stand up, fully extend their limbs, or turn around freely."
+      },
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+            "evidence_ids": [
+              "ev-0028ea4c7941-0002-0000"
+            ],
+            "pages": {
+              "end": 20,
+              "start": 20
+            }
+          },
+          {
+            "document_hash": "ccdfb4f3491a102d5121840e3e1265f427098cb431b09ea5240d4ce2e6c7fb0a",
+            "evidence_ids": [
+              "ev-ccdfb4f3491a-0002-0002",
+              "ev-ccdfb4f3491a-0002-0003"
+            ],
+            "pages": {
+              "end": 54,
+              "start": 53
+            }
+          }
+        ],
+        "text": "Petitioners argue that Proposition\u202f12 violates the Dormant Commerce Clause because it imposes an extraterritorial regulation that forces out\u2011of\u2011state pork producers to adopt California\u2019s farming methods without a legitimate local benefit."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "National Pork Producers Council",
+          "citations": [
+            {
+              "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+              "evidence_ids": [
+                "ev-0028ea4c7941-0000-0004"
+              ],
+              "pages": {
+                "end": 3,
+                "start": 3
+              }
+            }
+          ],
+          "text": "According to National Pork Producers Council, petitioners rely on the Dormant Commerce Clause\u2019s negative command, arguing that states may not enforce regulations that affect interstate commerce when Congress has not legislated on the subject."
+        },
+        {
+          "attribution": "National Pork Producers Council",
+          "citations": [
+            {
+              "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+              "evidence_ids": [
+                "ev-0028ea4c7941-0000-0005"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "According to National Pork Producers Council, petitioners claim that prior cases (Baldwin, Brown\u2011Forman, Healy) suggest an \u201calmost per se\u201d rule against state laws with extraterritorial effects."
+        },
+        {
+          "attribution": "United States",
+          "citations": [
+            {
+              "document_hash": "ccdfb4f3491a102d5121840e3e1265f427098cb431b09ea5240d4ce2e6c7fb0a",
+              "evidence_ids": [
+                "ev-ccdfb4f3491a-0002-0002",
+                "ev-ccdfb4f3491a-0002-0003"
+              ],
+              "pages": {
+                "end": 54,
+                "start": 53
+              }
+            }
+          ],
+          "text": "According to United States, petitioners argue that Proposition\u202f12 fails the Pike test because it imposes a substantial burden on interstate commerce without a legitimate local benefit."
+        }
+      ],
+      "heading": "Petitioners (National Pork Producers Council)",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    },
+    {
+      "claims": [],
+      "heading": "Respondent (Secretary Ross, California Dept. of Food & Agriculture)",
+      "status": "source_limited",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+      "evidence_ids": [
+        "ev-0028ea4c7941-0000-0000",
+        "ev-0028ea4c7941-0000-0004",
+        "ev-0028ea4c7941-0000-0005",
+        "ev-0028ea4c7941-0000-0006",
+        "ev-0028ea4c7941-0001-0006",
+        "ev-0028ea4c7941-0002-0000",
+        "ev-0028ea4c7941-0002-0001",
+        "ev-0028ea4c7941-0002-0005",
+        "ev-0028ea4c7941-0003-0002",
+        "ev-0028ea4c7941-0003-0003"
+      ],
+      "pages": {
+        "end": 32,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "ccdfb4f3491a102d5121840e3e1265f427098cb431b09ea5240d4ce2e6c7fb0a",
+      "evidence_ids": [
+        "ev-ccdfb4f3491a-0000-0007"
+      ],
+      "pages": {
+        "end": 118,
+        "start": 2
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-09-29T09:53:58.798083Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [
+      {
+        "attribution": "Petitioners",
+        "citations": [
+          {
+            "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+            "evidence_ids": [
+              "ev-0028ea4c7941-0001-0006"
+            ],
+            "pages": {
+              "end": 13,
+              "start": 13
+            }
+          }
+        ],
+        "text": "If upheld, Proposition\u202f12 would increase pork production costs for out\u2011of\u2011state farmers by roughly 9\u202f%, potentially raising consumer prices."
+      },
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "0028ea4c79418459882785fe66f8b64eaf0c17a2a79ef532651101ebd2638187",
+            "evidence_ids": [
+              "ev-0028ea4c7941-0002-0001"
+            ],
+            "pages": {
+              "end": 21,
+              "start": 21
+            }
+          }
+        ],
+        "text": "The decision clarifies the limits of state authority to regulate out\u2011of\u2011state economic activity under the Dormant Commerce Clause."
+      }
+    ],
+    "heading": "Why It Matters",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  }
+}
