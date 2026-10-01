@@ -1,40 +1,11 @@
 {
   "completed_case_ids": [
-    "2022-22-227",
-    "2022-22-381",
-    "2022-22-49",
-    "2022-22-535",
-    "2022-22-58",
-    "2022-22-96",
-    "2023-22-1008",
-    "2023-22-1074",
-    "2023-22-1079",
-    "2023-22-1165",
-    "2023-22-1218"
+    "scotus-24a1007"
   ],
-  "failures": {
-    "2022-22-210": "candidate rejected; prior accepted guide retained",
-    "2022-22-506": "candidate rejected; prior accepted guide retained",
-    "2023-22-1025": "candidate rejected; prior accepted guide retained",
-    "2023-22-1178": "candidate rejected; prior accepted guide retained"
-  },
-  "mode": "bounded-backfill",
+  "failures": {},
+  "mode": "incremental",
   "selected_case_ids": [
-    "2022-22-210",
-    "2022-22-227",
-    "2022-22-381",
-    "2022-22-49",
-    "2022-22-506",
-    "2022-22-535",
-    "2022-22-58",
-    "2022-22-96",
-    "2023-22-1008",
-    "2023-22-1025",
-    "2023-22-1074",
-    "2023-22-1079",
-    "2023-22-1165",
-    "2023-22-1178",
-    "2023-22-1218"
+    "scotus-24a1007"
   ],
   "skipped_case_ids": []
 }

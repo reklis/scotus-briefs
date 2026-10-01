@@ -1,0 +1,225 @@
+{
+  "background_and_question": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "19fb94ec530c6871d4474b9b2e30a425dd80fe6f7026b707247daf62f90a55df",
+            "evidence_ids": [
+              "ev-19fb94ec530c-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "On April 17, 2025, the District Court denied the detainees' motion for a temporary restraining order."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "19fb94ec530c6871d4474b9b2e30a425dd80fe6f7026b707247daf62f90a55df",
+            "evidence_ids": [
+              "ev-19fb94ec530c-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "According to Government, the Government told the Court that it would not remove any putative class members on April 18 and that removal the next day would be consistent with due\u2011process obligations, while reserving the right to act."
+      }
+    ],
+    "heading": "Background and Question",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "case_id": "scotus-24a1007",
+  "decision": {
+    "claims": [],
+    "heading": "Decision",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "generation": {
+    "extractor_version": "1.0.3",
+    "generated_at": "2026-10-01T15:31:52.471298Z",
+    "model_digest": "820a68f9c4f7253846f5d82d225bc45ca93faa8cfe2a1009bff6efb15d662863",
+    "model_name": "ragchew-gpt-oss:120b-32k",
+    "parameters": {
+      "num_ctx": 32768,
+      "seed": 0,
+      "temperature": 0
+    },
+    "prompt_version": "evidence-1.0.6+guide-1.0.7+verification-1.0.3",
+    "schema_version": "1.0.0",
+    "source_hashes": [
+      "19fb94ec530c6871d4474b9b2e30a425dd80fe6f7026b707247daf62f90a55df"
+    ]
+  },
+  "glossary": [],
+  "lifecycle": "decided",
+  "oral_argument": {
+    "claims": [],
+    "heading": "Oral Argument",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  },
+  "overview": {
+    "claims": [
+      {
+        "attribution": "Court",
+        "citations": [
+          {
+            "document_hash": "19fb94ec530c6871d4474b9b2e30a425dd80fe6f7026b707247daf62f90a55df",
+            "evidence_ids": [
+              "ev-19fb94ec530c-0000-0001"
+            ],
+            "pages": {
+              "end": 2,
+              "start": 2
+            }
+          }
+        ],
+        "text": "The District Court denied the detainees' motion for a temporary restraining order on April 17, 2025."
+      },
+      {
+        "attribution": "Government",
+        "citations": [
+          {
+            "document_hash": "19fb94ec530c6871d4474b9b2e30a425dd80fe6f7026b707247daf62f90a55df",
+            "evidence_ids": [
+              "ev-19fb94ec530c-0000-0002"
+            ],
+            "pages": {
+              "end": 4,
+              "start": 4
+            }
+          }
+        ],
+        "text": "The Government argued that no putative class members would be removed on April 18 and that removal the next day would be consistent with its due\u2011process obligations, reserving the right to act."
+      },
+      {
+        "attribution": "Justice Alito",
+        "citations": [
+          {
+            "document_hash": "19fb94ec530c6871d4474b9b2e30a425dd80fe6f7026b707247daf62f90a55df",
+            "evidence_ids": [
+              "ev-19fb94ec530c-0001-0002"
+            ],
+            "pages": {
+              "end": 12,
+              "start": 12
+            }
+          }
+        ],
+        "text": "Justice Alito dissented, saying the theory rests on a mischaracterization of what happened in the District Court."
+      }
+    ],
+    "heading": "Overview",
+    "status": "complete",
+    "summary": null,
+    "summary_citations": []
+  },
+  "party_positions": [
+    {
+      "claims": [
+        {
+          "attribution": "Government",
+          "citations": [
+            {
+              "document_hash": "19fb94ec530c6871d4474b9b2e30a425dd80fe6f7026b707247daf62f90a55df",
+              "evidence_ids": [
+                "ev-19fb94ec530c-0000-0002"
+              ],
+              "pages": {
+                "end": 4,
+                "start": 4
+              }
+            }
+          ],
+          "text": "The Government guaranteed that no putative class members would be removed on April 18 and argued that removal the next day would be consistent with its due\u2011process obligations, reserving the right to take such action."
+        }
+      ],
+      "heading": "Government",
+      "status": "complete",
+      "summary": null,
+      "summary_citations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "document_hash": "19fb94ec530c6871d4474b9b2e30a425dd80fe6f7026b707247daf62f90a55df",
+      "evidence_ids": [
+        "ev-19fb94ec530c-0000-0001"
+      ],
+      "pages": {
+        "end": 2,
+        "start": 2
+      }
+    },
+    {
+      "document_hash": "19fb94ec530c6871d4474b9b2e30a425dd80fe6f7026b707247daf62f90a55df",
+      "evidence_ids": [
+        "ev-19fb94ec530c-0000-0002"
+      ],
+      "pages": {
+        "end": 4,
+        "start": 4
+      }
+    },
+    {
+      "document_hash": "19fb94ec530c6871d4474b9b2e30a425dd80fe6f7026b707247daf62f90a55df",
+      "evidence_ids": [
+        "ev-19fb94ec530c-0001-0002"
+      ],
+      "pages": {
+        "end": 12,
+        "start": 12
+      }
+    }
+  ],
+  "validation": {
+    "checked_at": "2026-10-01T15:33:36.410158Z",
+    "checks": {
+      "attribution": true,
+      "case_identity": true,
+      "citation_targets": true,
+      "document_currency": true,
+      "lifecycle": true,
+      "model_attribution": true,
+      "model_opinion_distinction": true,
+      "model_oral_argument_characterization": true,
+      "model_overstatement": true,
+      "model_support": true,
+      "opinion_distinction": true,
+      "oral_argument": true,
+      "page_ranges": true,
+      "provenance": true,
+      "quality_completeness": true,
+      "quality_factual_accuracy": true,
+      "quality_neutrality": true,
+      "quality_readability": true,
+      "quality_restraint": true,
+      "quality_traceability": true,
+      "schema": true
+    },
+    "messages": [],
+    "state": "accepted"
+  },
+  "why_it_matters": {
+    "claims": [],
+    "heading": "Why It Matters",
+    "status": "source_limited",
+    "summary": null,
+    "summary_citations": []
+  }
+}
