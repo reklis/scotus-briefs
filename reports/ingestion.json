@@ -1,6 +1,17 @@
 {
   "changed_case_ids": [
-    "scotus-24a1007"
+    "scotus-24-275",
+    "scotus-24-297",
+    "scotus-24-304",
+    "scotus-24-316",
+    "scotus-24-320",
+    "scotus-24-354",
+    "scotus-24-362",
+    "scotus-24-394",
+    "scotus-24-416",
+    "scotus-24-656",
+    "scotus-24-7",
+    "scotus-24a884"
   ],
   "discovery": {
     "cases": [
@@ -3219,12 +3230,134 @@
   "mode": "incremental",
   "reconcile": {
     "accepted_hashes": [
-      "19fb94ec530c6871d4474b9b2e30a425dd80fe6f7026b707247daf62f90a55df"
+      "77624f43e868d6184c8e694687aca317a1689d11a6aa167e4685465e379285a8",
+      "2b4c1e744dc187b0401b5e30ebd7a3704e4c8a2907e1b5b18d3ca94ddc00c38c",
+      "fe7c353a4d6a787d6c64e9a236efb85b94f86b44896533fc721664eea07b2d13",
+      "0c9e98323d78014f5132b9a2fa56019356dc154ce13410cd0d4c670932ca3b07",
+      "5562cf6cd09385c8179644f828094b21cf14dc1ee9ff727ba7615e3bc90b02d5",
+      "240c0a64f497828c4a710e3de89403d9ff196946ab4397506080e172b453819a",
+      "ae8402906c3f6b8a66be948faae8f08b6932b93d4d98c8f81904d14e8c4aa7c7",
+      "90e3c01ef6654550bb985f24f6a673251334ce0647976c74322dfb3e9bd9e6f6",
+      "c85cb80c21c1c11eb037c6d65a82abaf4564fb1aac130f9b631a4b2484ea9800",
+      "5d1a6c69821a99f3c7ec584565d9bb24f0728f1f6ed86a7bf84a805755ee01a7",
+      "05f2a4cd4aa661bb34fc5eed40dbcedbaee6f16ba85e0d323d6e65ffb6ea0a0d",
+      "f96a441c2d484a57cd3055a83ddee3cda1c55c285ecfb99b57c629f5caecbe76"
     ],
     "changed_case_ids": [
-      "scotus-24a1007"
+      "scotus-24-275",
+      "scotus-24-297",
+      "scotus-24-304",
+      "scotus-24-316",
+      "scotus-24-320",
+      "scotus-24-354",
+      "scotus-24-362",
+      "scotus-24-394",
+      "scotus-24-416",
+      "scotus-24-656",
+      "scotus-24-7",
+      "scotus-24a884"
     ],
     "failures": [
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us1r31_7k47.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r31_7k47.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us1r32_f2ah.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r32_f2ah.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us1r33_5h26.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r33_5h26.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us1r34_h3ci.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r34_h3ci.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us1r35_4f14.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r35_4f14.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us1r36_4f14.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r36_4f14.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us1r37_986b.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r37_986b.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us1r38_j426.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r38_j426.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us1r39_kkg1.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r39_kkg1.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us1r40_f1gk.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us1r40_f1gk.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us2r41_bp7c.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r41_bp7c.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us2r42_k5fl.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r42_k5fl.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us2r43_e29g.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r43_e29g.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us2r44_4f57.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r44_4f57.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us2r45_3f14.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r45_3f14.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us2r46_kjfm.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r46_kjfm.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us2r47_bqm2.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r47_bqm2.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us2r48_m648.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r48_m648.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us2r49_pok0.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r49_pok0.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us2r50_g2hk.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r50_g2hk.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/605us2r51_4f57.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/605us2r51_4f57.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us1r52_3eah.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r52_3eah.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us1r53_5i36.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r53_5i36.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us1r54_j4ek.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r54_j4ek.pdf"
+      },
+      {
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us1r55_3d9g.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r55_3d9g.pdf"
+      },
       {
         "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us1r56_bq7d.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
         "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r56_bq7d.pdf"
@@ -3238,168 +3371,96 @@
         "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r58_5h25.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-191_q4lp.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-191_q4lp.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us1r59_g31h.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r59_g31h.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-217_h21b.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-217_h21b.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us1r60_h3ci.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r60_h3ci.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-365_3307.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-365_3307.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us1r61_2dp3.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us1r61_2dp3.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-477_hgdj.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-477_hgdj.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us2r62_986b.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us2r62_986b.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-583_869c.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-583_869c.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us2r63_n648.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us2r63_n648.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-621_n7j3.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-621_n7j3.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us2r64_8nj9.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us2r64_8nj9.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-677_a4l9.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-677_a4l9.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us2r65_3314.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us2r65_3314.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-713_5iel.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-713_5iel.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us2r66_j426.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us2r66_j426.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-715_8837.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-715_8837.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/opinions/24pdf/606us2r67_8nka.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/opinions/24pdf/606us2r67_8nka.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-7483_p83l.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-7483_p83l.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/22-7466_c9dh.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/22-7466_c9dh.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-753_5i26.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-753_5i26.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1002_5h25.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1002_5h25.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-7809_9o6b.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-7809_9o6b.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1007_8ok0.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1007_8ok0.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-824_hhdp.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-824_hhdp.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1038_l1gk.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1038_l1gk.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-825_2je3.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-825_2je3.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1039_k86m.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1039_k86m.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-852_h315.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-852_h315.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1067_3nb3.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1067_3nb3.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-861_7k8b.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-861_7k8b.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1095_1o8l.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1095_1o8l.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-867_4256.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-867_4256.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1122_22p3.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1122_22p3.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-900_f2ah.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-900_f2ah.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1127_c2d4.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1127_c2d4.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-909_6k4c.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-909_6k4c.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1141_8o6g.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1141_8o6g.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-929_3ebh.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-929_3ebh.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1187_h3cj.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1187_h3cj.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-970_1b82.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-970_1b82.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1201_5b35.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1201_5b35.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-971_4mi5.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-971_4mi5.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1226_94k8.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1226_94k8.pdf"
       },
       {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-975_5h26.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-975_5h26.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-980_p702.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-980_p702.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-997_cbi8.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-997_cbi8.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-109_l53m.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-109_l53m.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-154_5f57.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-154_5f57.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-20_k536.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-20_k536.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-249_la7n.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-249_la7n.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-275_8m59.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-275_8m59.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-297_2035.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-297_2035.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-304_4g15.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-304_4g15.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-316_1a72.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-316_1a72.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-320_50e5.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-320_50e5.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-354_3e07.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-354_3e07.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-362_m7i2.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-362_m7i2.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-394_3135.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-394_3135.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-416_m54f.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-416_m54f.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-656_pm02.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-656_pm02.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-7_7j7a.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24-7_7j7a.pdf"
-      },
-      {
-        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24a884_7lhn.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/24a884_7lhn.pdf"
+        "error": "Client error '403 Forbidden' for url 'https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1229_3eah.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+        "url": "https://www.supremecourt.gov/oral_arguments/argument_transcripts/2024/23-1229_3eah.pdf"
       }
     ],
     "unchanged_hashes": [
@@ -3433,60 +3494,42 @@
       "e2adc6205d74a8cf7c8f79ea53deffafa7402414808b78c68e9ef539514f1d5f",
       "5080e91a9d106a41538890d85d639a943c7d47c606fff7a7f66ecd4c653c2535",
       "2454ec25332d9fc45e9e38c0b0af24881f604092c21d3574adcd338e35f255d1",
-      "84a0f5065a945f62cf1db8406860aefb5c3f52c70d887dc8b06b125872531670",
-      "6744b9949e83773a58b4030525d1ff8478d46759bea43081367f80683274a509",
-      "58b34001b0e43c40da1d5485feda45faf35837241f8493caca21da041d385396",
-      "29b956d5b985309b9b690ecb191c032b3d8c7afb2387c12c3a6a7acbe69652f7",
-      "61e5766206c58fdc9e8773ca47bd9c43155c62a012d2aa0dfb9a9410d5de43a2",
-      "44dee03581c22cc57dd2cb2a58c95f1b7d37b8b31b83a35ab7b781e931187dc8",
-      "3bf648c8d88b1204f354168f13ac94f67f750f69238f07786c7992e063eb7a66",
-      "d4d84b175bc99b5f4b1a74c5c6fab70031b128fb4aac82f4e7e9935684b1f7c0",
-      "1f75a92a9fc815bd5dd9313f2813b62bccbc8d77ec4e6d0938c738c26aa441af",
-      "c7f7f47ffad4432638caa73968012e870208d9f094db359790334a7d1832cfb7",
-      "5e7c6d18dd0ae60698c1105912ac4e107927d376d3733d3e69209c624f0d6e55",
-      "2ef27744581013d7493d44266ef3b455becb446d4e372ba307342b2814924c14",
-      "8933bf7d996bc5c2ae8ab08459d4a3adc78f35aa83b11886d7b89cba3e00f97b",
-      "c72b9eaf400f4f0d9fbbf464bcb3343e2b5cdb4c0828b6db7eb912324b7c7551",
-      "2b97ff6b76054c9ac57e987676a8ec6a7d32c1bbfa6ffc51042e7a2b4555a8b5",
-      "d9bcfe43d5d8593b765f8ba8dacca1517d1601e340f4c84c2eb9cfe519861c48",
-      "e41700aa9485a8ed11f43687f4310d72f3bb0ba846f9faee2c61d3d181fa88f6",
-      "6e1293decc758c7c322b748ee8f01065b0fc60d21f9ac27a44e264918d695fa0",
-      "9ba92e34aa7a5df33e91702e1d18cdb675d83c827c65951dfa15d780c773e8fc",
-      "98dc84420df006fb94835269e9e88bd2e2a8f206be5762daeffd2f41a431bae6",
-      "40cc667d588bdba0c030ac314608d52fbf94b1f5b7152f014ec55723ce7eabbe",
-      "eeb94ef457b828e26c9932a43b6311de3f645ed2b2251caa6d8b1f7190d0883c",
-      "b5d7daa366245deda468df4b5f19d0cc00a08aeeada5d83c308abad031571c2a",
-      "903dbe41e1267aaf125f2cbca1836df3b8ae0fc0fb76f6492613d2f9f145120f",
-      "13f4072b0746020ed2b37b2df58a1cd05253dadfe89c1a2d9b3121b6b3ffaec1",
-      "1d34a3b4a43cc3a02ee71c033327e3d8e3f94ea90e18bf1026df244ea2dbbcb8",
-      "e97e497ae03807852e809b712653e4f64efa6b818be7f48a02a1beb3869817d2",
-      "5c2805a93c6082b67e99b64b0f3ebc8e58a79a3a0eb67fa066bb84274381910a",
-      "0a28233df1d708765ce3398e2897d44e11bbf1875ee13100d18920c542b8273b",
-      "64626d90f6ee7e69b784fb395ad03b5c15a3fc8361b7104fbb4e8138c93bb1d2",
-      "9dc973cac6aac30683dc4259e88dd2fade41cadbb058a5cd322f2877d01c12e7",
-      "fb37a04b11076b76687f6970fbcc6672693c2d9a8f7115cee4ab8eb3c2bf008a",
-      "635c1b5d0f10d4243bab8900a365d7eac08d4364f3451a9e2ff25fefe08a5dd2",
-      "0aa23a90c98867084c5a2999aa568669880a914d48bc48c474272f1ca62c3172",
-      "9c5f8ee9bdeb154575a7895973e3a15cf91cfeeadd5647ab17e5bdd6689ff527",
-      "8abe845599872cc6dbf023b5249ebb695b10d26624891b6281e0fa74e8cc2f07",
-      "c30ba8c1efdf0d152df794d8e35f4b812e1c7036290d5dea953f42fcb04d813a",
-      "ca34420a7c2cfc9b1a3c3a5e046cd01f9c3788a383d5896321cc1a9a757999a5",
-      "561bd2f5f8a31c4b093572a4cf8e3f80127dcd9cd824e6a5afa0fef378331c96",
-      "ad6785ec47a654630883d29a359295525cf866be347628466265a7ea15eb55b1",
-      "36972d537d35dcbec2244a84ae1666b0ec7f35e4bc4226a07aafdad1784e33c8",
-      "9805ec28565c4f9db8ad8a92e11b4e0d14f76579b3005bb92da87af43157084b",
-      "28d17614fb08f957335bd71036eb3fe3206376ac42af2d212a56d0b2564dfa0f",
-      "d1ece530b6fe384e48640d2de09ee387258760e84c60b7536e94142be633a2d5",
-      "902a3d2ce0dcb1f33c0a9892919f179e680b0dbf695fd3ccb23fe5c22d4c275a",
-      "ca75869a3cb3fa104c335633464b9833a6b712350dcce63bcb1a4b7b72331d6b",
-      "1621635685a49d54cb3bcd8afb3ce0dbb7ff1047c94d6831dc20d22153309a27",
       "c2477d2ab34c3a37b738ef20476fa655624ac1c478f09391fb987f0c25cf1e4f",
       "38722d5ecf26d2e392d54e7be1a774b1c379dbce9799d34bbfa67b8d5ada4b0a",
       "cb67e793faa4fda5b1b716e46437b13e7dc3a20d0c0c29629267f6c096be2eb4",
       "bcdd36c3f5cac57cea09049a99430ef93c1cd3af89160e8fa45f8fbe402bd0f2",
       "9b65623aa6c56556df9e5f9b1834181baa73ea05147147c0868ef1384b07c042",
       "3ada8e1d3d19f052ea058d880c0af764aeb10cffb46018b1c48c30ec0fa03c35",
-      "eea102aea60f6d326861005f80413a1e015547dd1723257a0b02c93651a0ec54"
+      "eea102aea60f6d326861005f80413a1e015547dd1723257a0b02c93651a0ec54",
+      "497dc41a1448ab75e15c4bbc6b5cbb088300da412dd2fc8cb8bdb2ec639e4255",
+      "c99fa41efdbae8a0364e96e5c36091abe772cf29f1586accc87c7d288509d0cd",
+      "c09b1bc266873688ee70bea53fd5269906fcded5360aca2e76f159b1c4d17560",
+      "770bb42d8b3a7a6897f1b967a4dd715c8cb13cfb2627d489fa47a3baf7f706ad",
+      "a410eb69b0d61d3a64b39cc1db835cd726f8d39bc468d25de07965dd2ce7de2e",
+      "36a1c7db220df31be7476edfd19e22f861bff533f116ea51bd29758ae6b8a95b",
+      "a338603d4515b1e0e15345fca565e72451859f4f9dc2fb0ee515fc82cf1be838",
+      "d2e9e3bd47c4948e3be6217b9f4a93c678228e8ee54f3166d8a493427a44a901",
+      "bffe4ea875379c09dda85c1d1ca11e43dd1fa3f0f1379f6a4d7dd306698800fc",
+      "82f578aa454ea3a552319af268fdad9ff6044755f8ca3d3bc95aab587d3748fe",
+      "bf1a2ebfe21b024f0336895a5d42cb5edd6bff7a47ec44fbac8802d039019656",
+      "b25bd22f49997772dd1320d0594debb7c4309d16ee8f667d69e66f67d0e9c92b",
+      "e308028e01b8b9617d360db819c25a74ed64fb0573d7b8eec28b85e0628e0706",
+      "5f8534a354ef0057939a21a9a7711b03efe01434f74c0f18e4731a7973cf9264",
+      "2c2d39883d840465e48763539b80975b5182658964ddb6a0cfabf15bf24a8946",
+      "dd5e3eba946721443c721dfb2020640aedbd9ba45255555e8d5916427087854d",
+      "9edc4e5f9a3da8f34a27589df5704016ef6dd70cfe7bec1758e53df95f1e800b",
+      "be7ab97553aa6bbe8023c2b80e9fbe749709275fc96472dcbb353f2a2dee7d02",
+      "48a949fabee09dcbddb60e0f2325b65adba1397b1ca05e1d0509f69a80cc039f",
+      "956d9c23d307264fc5f1e15055bb23ae1f735fbfcf8ae17729b2f99dc6a056b6",
+      "4fdb2994df67ebec124e9cfeb3fc60da9f0ebda0e67f1c6436d45d72ff9e61d1",
+      "cae03f877872124332ec4f20954476f1b43bc70e769e5e9581075445f1e0cddd",
+      "a979cccd800a715f65a86179cbdfadf9c298eb3aecfd57d190c2c8705e4c2080",
+      "228af32b6982df9661505fdb0bc855eced14fcb3f76fee44b49070f542eea009",
+      "479cbbc7ae3cff2cc30415bea5f438820057c12f1af8468c7880a7f220ca9996",
+      "cf55d9fd88ffcabef7ba571cfdd5e43b3464da3bca6c56220f51dcef62e4b41b",
+      "14f4095c24aed41b993e7f5ab1c8ae928f83583a0ca89a1ee42d730766cad911",
+      "1abacaecaec8d6eaee3d1326d7e3896e75011b7ff51540a0eba95ccc98a9b221",
+      "9ff217544eaa600f5a4affe18328f5dff3eeb994de13d39f620867af13a9afcb"
     ]
   }
 }
