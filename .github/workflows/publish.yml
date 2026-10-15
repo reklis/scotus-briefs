@@ -26,8 +26,9 @@ on:
         description: Stable case ID (required for case-regeneration)
         required: false
         type: string
-  schedule:
-    - cron: '17 8 * * *'
+  # Nightly runs temporarily disabled; manual dispatch remains available.
+  # schedule:
+  #   - cron: '17 8 * * *'
 
 # Never cancel a run after it may have downloaded source material. Queuing also
 # prevents two checkouts from pushing archive/checkpoint changes concurrently.
