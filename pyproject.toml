@@ -9,7 +9,7 @@ description = "A citizen's guide to the Supreme Court: monitor the docket, expla
 requires-python = ">=3.12"
 dependencies = [
   "httpx>=0.27,<1",
-  "pypdf>=5.0,<6",
+  "pypdf>=5.0,<7",
 ]
 
 [project.scripts]
