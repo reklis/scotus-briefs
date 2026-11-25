@@ -1,0 +1,71 @@
+name: Nightly Backfill & Docket Update
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+    inputs:
+      skip_backfill:
+        description: Skip previous-term backfill
+        type: boolean
+        default: false
+
+concurrency:
+  group: scotus-nightly
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  nightly:
+    runs-on: [self-hosted, spark]
+    timeout-minutes: 360
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+
+      - name: Backfill one previous term with Gemma 3 (12B)
+        if: ${{ !inputs.skip_backfill }}
+        env:
+          LLM_BASE_URL: ${{ vars.BACKFILL_LLM_BASE_URL || 'http://192.168.1.81:11434/v1' }}
+          LLM_MODEL: ${{ vars.BACKFILL_LLM_MODEL || 'gemma3:12b' }}
+          LLM_MAX_TOKENS: "2500"
+        run: uv run python -u -m scotus.cli backfill
+
+      - name: Monitor and explain current term with Spark
+        env:
+          LLM_BASE_URL: ${{ vars.SPARK_LLM_BASE_URL || 'http://192.168.1.41:8080/v1' }}
+          LLM_MODEL: ${{ vars.SPARK_LLM_MODEL || 'qwen3.8-flash-next-iq3_s' }}
+          LLM_MAX_TOKENS: "6000"
+        run: |
+          uv run python -u -m scotus.cli monitor
+          uv run python -u -m scotus.cli explain
+
+      - name: Build static site
+        env:
+          GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
+        run: uv run python -u -m scotus.cli build
+
+      - name: Commit updated dockets, PDFs, and explanations
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/docket data/explanations documents
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: nightly docket update and backfill"
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4

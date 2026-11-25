@@ -8,12 +8,8 @@ __pycache__/
 .coverage
 htmlcov/
 
-# Node / SvelteKit
-site/node_modules/
-site/.svelte-kit/
-site/build/
-site/.vite/
-site/coverage/
+# Generated static site
+dist/
 
 # Local settings
 .env
@@ -21,15 +17,13 @@ site/coverage/
 !.env.example
 .DS_Store
 
-# Original local import source; accepted PDFs are copied to documents/
+# Original local import source; archived PDFs live in documents/
 /official/
 /fixed-ten/
 /manifest.jsonl
 /export-summary.json
 
-# Pipeline temporary files
+# Temporary files
 .tmp/
 *.part
-reports/*.tmp
-reports/workflow/
 manifests/*.lock

@@ -1,20 +1,46 @@
-# SCOTUS Briefs — A Citizen's Guide to Supreme Court Cases
+# SCOTUS Briefs — A Citizen's Guide to the Supreme Court
 
-This repository archives primary Supreme Court PDFs and publishes plain-language, source-cited case guides at [scotusbriefs.us](https://scotusbriefs.us/).
+A simple pipeline that monitors the U.S. Supreme Court docket, downloads primary filings, passes them to an LLM to produce plain-English explanations for regular people, and builds a zero-JavaScript static site for [scotusbriefs.us](https://scotusbriefs.us/).
 
-The guides are independent, AI-generated explanations for civic education. They can be incomplete or mistaken, are **not legal advice**, and do not replace the Court's opinions, orders, transcripts, or filings. Every published guide exposes its primary sources so readers can verify it.
+## How it works
 
-## Repository layout
+Five small Python modules under `scotus/`:
 
-- `documents/` — immutable, content-addressed PDF archive (not included in Pages)
-- `manifests/` — source provenance and revision records
-- `data/cases/` — normalized case metadata
-- `data/evidence/` — page-cited extracted evidence
-- `data/guides/` — verified, accepted guide records
-- `data/checkpoints/` — resumable batch progress
-- `reports/` — pipeline diagnostics
-- `pipeline/` — downloader, archive, extraction, and generation tooling
-- `schemas/` — shared data contracts
-- `site/` — static SvelteKit publication
+- `scotus/docket.py` — Discovers active dockets from `supremecourt.gov`, parses full docket proceedings (petitions, briefs, orders, transcripts, opinions), and archives PDFs to `documents/`.
+- `scotus/extract.py` — Extracts clean text from archived PDFs and builds a concise case briefing.
+- `scotus/explain.py` — Calls any OpenAI-compatible LLM (Ollama, Gemini, OpenAI, etc.) to write a plain-English citizen's guide saved in `data/explanations/`.
+- `scotus/site.py` — Renders a fast, zero-JS static HTML site + Atom feed into `dist/`.
+- `scotus/cli.py` — Four commands: `monitor`, `explain`, `build`, and `run`.
 
-See [`docs/operations.md`](docs/operations.md) for setup, common commands, Ollama and ARM64 `spark` runner configuration, GitHub Pages operation, policy, and recovery. Python archive commands are covered in [`docs/python-pipeline.md`](docs/python-pipeline.md), and authoritative discovery sources in [`docs/official-sources.md`](docs/official-sources.md). The implementation plan is under [`openspec/changes/launch-citizens-scotus-guide/`](openspec/changes/launch-citizens-scotus-guide/).
+## Quick start
+
+```bash
+# Install dependencies
+uv sync
+
+# Configure your LLM (defaults to Spark at 192.168.1.41:8080; works with any OpenAI-compatible server)
+export LLM_BASE_URL="http://192.168.1.41:8080/v1"
+export LLM_MODEL="qwen3.8-flash-next-iq3_s"
+export LLM_API_KEY=""                              # required for cloud providers
+
+# Run everything for a specific docket (or omit the docket to monitor the current term)
+uv run scotus run 24-297
+
+# Or run each step individually
+uv run scotus monitor --term 2024 --limit 10
+uv run scotus explain
+uv run scotus build
+```
+
+Open `dist/index.html` in a browser to preview the generated site.
+
+## Tests
+
+```bash
+uv run pytest
+uv run ruff check scotus tests
+```
+
+## Disclaimer
+
+Explanations are AI-generated for civic education, are **not legal advice**, and always link directly to the official Supreme Court docket and filings on `supremecourt.gov`.
