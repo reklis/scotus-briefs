@@ -15,8 +15,8 @@ import httpx
 from .docket import CaseDocket
 from .extract import build_case_briefing
 
-DEFAULT_BASE_URL = "http://192.168.1.41:8080/v1"
-DEFAULT_MODEL = "qwen3.8-flash-next-iq3_s"
+DEFAULT_BASE_URL = "http://192.168.1.81:11434/v1"
+DEFAULT_MODEL = "gemma3:12b"
 
 SYSTEM_PROMPT = """\
 You write a "Citizen's Guide to the Supreme Court" for everyday people who are not lawyers.
@@ -51,7 +51,7 @@ class LLMConfig:
     model: str = DEFAULT_MODEL
     api_key: str = ""
     temperature: float = 0.2
-    max_tokens: int = 6000
+    max_tokens: int = 2500
     timeout: float = 240.0
 
     @classmethod
@@ -61,7 +61,7 @@ class LLMConfig:
             model=os.environ.get("LLM_MODEL", DEFAULT_MODEL),
             api_key=os.environ.get("LLM_API_KEY", ""),
             temperature=float(os.environ.get("LLM_TEMPERATURE", "0.2")),
-            max_tokens=int(os.environ.get("LLM_MAX_TOKENS", "6000")),
+            max_tokens=int(os.environ.get("LLM_MAX_TOKENS", "2500")),
             timeout=float(os.environ.get("LLM_TIMEOUT", "240")),
         )
 

@@ -18,9 +18,9 @@ Five small Python modules under `scotus/`:
 # Install dependencies
 uv sync
 
-# Configure your LLM (defaults to Spark at 192.168.1.41:8080; works with any OpenAI-compatible server)
-export LLM_BASE_URL="http://192.168.1.41:8080/v1"
-export LLM_MODEL="qwen3.8-flash-next-iq3_s"
+# Configure your LLM (defaults to Ollama at 192.168.1.81:11434; works with any OpenAI-compatible server)
+export LLM_BASE_URL="http://192.168.1.81:11434/v1"
+export LLM_MODEL="gemma3:12b"
 export LLM_API_KEY=""                              # required for cloud providers
 
 # Run everything for a specific docket (or omit the docket to monitor the current term)

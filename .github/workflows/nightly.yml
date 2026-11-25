@@ -21,26 +21,24 @@ permissions:
 
 jobs:
   nightly:
-    runs-on: [self-hosted, spark]
+    runs-on: [self-hosted, ollama]
     timeout-minutes: 360
+    env:
+      LLM_BASE_URL: ${{ vars.OLLAMA_LLM_BASE_URL || 'http://192.168.1.81:11434/v1' }}
+      LLM_MODEL: ${{ vars.OLLAMA_LLM_MODEL || 'gemma3:12b' }}
+      LLM_MAX_TOKENS: "2500"
     steps:
       - uses: actions/checkout@v4
         with:
           ref: dev
 
-      - name: Backfill one previous term with Gemma 3 (12B)
+      # Steps run sequentially (and scotus.cli calls Ollama synchronously, one request at a time)
+      # to avoid GPU contention on 192.168.1.81.
+      - name: Backfill one previous term with Ollama
         if: ${{ !inputs.skip_backfill }}
-        env:
-          LLM_BASE_URL: ${{ vars.BACKFILL_LLM_BASE_URL || 'http://192.168.1.81:11434/v1' }}
-          LLM_MODEL: ${{ vars.BACKFILL_LLM_MODEL || 'gemma3:12b' }}
-          LLM_MAX_TOKENS: "2500"
         run: uv run python -u -m scotus.cli backfill
 
-      - name: Monitor and explain current term with Spark
-        env:
-          LLM_BASE_URL: ${{ vars.SPARK_LLM_BASE_URL || 'http://192.168.1.41:8080/v1' }}
-          LLM_MODEL: ${{ vars.SPARK_LLM_MODEL || 'qwen3.8-flash-next-iq3_s' }}
-          LLM_MAX_TOKENS: "6000"
+      - name: Monitor and explain current term with Ollama
         run: |
           uv run python -u -m scotus.cli monitor
           uv run python -u -m scotus.cli explain
